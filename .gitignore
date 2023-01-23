@@ -2,3 +2,7 @@
 /.helix
 /result
 /.direnv
+# Devenv
+.devenv*
+devenv.local.nix
+
