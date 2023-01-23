@@ -1,15 +1,20 @@
 name: "ci"
 
-on: 
-  pull_request:
+on:
   push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
 
 jobs:
   tests:
-   strategy:
-    matrix:
-      os: [ubuntu-latest, macos-latest]
-    runs-on: ${{ matrix.os }} 
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+      runs-on: ${{ matrix.os }} 
     steps:
       - uses: actions/checkout@v3
       - uses: cachix/install-nix-action@v18
@@ -18,7 +23,7 @@ jobs:
           name: devenv
       - name: install devenv.sh
         run: nix profile install github:cachix/devenv/v0.5
-        shell: bash
+        shell: sh
       - run: devenv ci
       - run: devenv shell echo ok
 
