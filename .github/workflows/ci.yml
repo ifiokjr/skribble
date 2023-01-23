@@ -24,6 +24,6 @@ jobs:
       - name: install devenv.sh
         run: nix profile install github:cachix/devenv/v0.5
         shell: sh
-      - run: devenv ci
-      - run: devenv shell echo ok
+      - run: devenv shell lint:all
+      - run: devenv shell build:all
 
