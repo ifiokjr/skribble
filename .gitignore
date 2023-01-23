@@ -1,6 +1,4 @@
 /target
 /.helix
-[[language]]
-name = "markdown"
-auto-format = true
-formatter = { command = "dprint", args = ["fmt", "--stdin", "file.md"] }
+/result
+/.direnv
