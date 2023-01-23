@@ -1,0 +1,24 @@
+[package]
+name = "skribble_core"
+version = "0.0.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+colorsys = { workspace = true }
+enum-ordinalize = { workspace = true }
+heck = { workspace = true }
+indexmap = { features = ["serde-1"], workspace = true }
+lazy_static = { workspace = true }
+lightningcss = { workspace = true }
+parcel_sourcemap = { workspace = true }
+readonly = { workspace = true }
+regex = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+typed-builder = { workspace = true }
+
+[dev-dependencies]
+insta = { features = ["json"], workspace = true }

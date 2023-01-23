@@ -34,6 +34,8 @@
     "use_field_init_shorthand": true
   },
   "excludes": [
+    "**/dist",
+    ".devenv/**",
     "**/fixtures",
     "**/snapshots",
     "target/**"

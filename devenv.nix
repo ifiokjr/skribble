@@ -1,7 +1,6 @@
 { pkgs, ... }:
 
 {
-  # https://devenv.sh/packages/
   packages = [ 
     pkgs.cargo-all-features
     pkgs.cargo-generate
@@ -19,15 +18,27 @@
   difftastic.enable = true;
   devcontainer.enable = true;
 
-  # https://devenv.sh/languages/
-  # languages.nix.enable = true;
-
-  # https://devenv.sh/scripts/
-  scripts.hello.exec = "echo hello from YO";
-
-  # https://devenv.sh/pre-commit-hooks/
-  # pre-commit.hooks.shellcheck.enable = true;
-
-  # https://devenv.sh/processes/
-  # processes.ping.exec = "ping example.com";
+  scripts."build:all".exec = ''
+    cargo build
+  '';
+  scripts."fix:all".exec = ''
+    fix:format
+    fix:clippy
+  '';
+  scripts."fix:format".exec = ''
+    dprint fmt
+  '';
+  scripts."fix:clippy".exec = ''
+    cargo clippy --fix --allow-dirty --allow-staged
+  '';
+  scripts."lint:all".exec = ''
+    lint:format
+    lint:clippy
+  '';
+  scripts."lint:format".exec = ''
+    dprint check
+  '';
+  scripts."lint:clippy".exec = ''
+    cargo clippy
+  '';
 }
