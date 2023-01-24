@@ -8,20 +8,19 @@ use typed_builder::TypedBuilder;
 pub struct Options {
   #[serde(default)]
   pub color_format: ColorFormat,
+
+  /// By default there is no variable prefix.
+  #[serde(default)]
+  pub variable_prefix: String,
 }
 
-#[derive(Serialize, Deserialize, Debug, PartialEq)]
+#[derive(Default, Serialize, Deserialize, Debug, PartialEq)]
 pub enum ColorFormat {
   #[serde(rename = "rgb")]
   Rgb,
   #[serde(rename = "hsl")]
+  #[default]
   Hsl,
-}
-
-impl Default for ColorFormat {
-  fn default() -> ColorFormat {
-    ColorFormat::Hsl
-  }
 }
 
 /// The min width can either be a string or a number. If a number it will be

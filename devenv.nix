@@ -44,4 +44,10 @@
   scripts."lint:clippy".exec = ''
     cargo clippy
   '';
+  scripts."test:snapshot".exec = ''
+    cargo insta accept
+  '';
+  scripts."test:all".exec = ''
+    cargo test
+  '';
 }

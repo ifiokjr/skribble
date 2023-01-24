@@ -1,0 +1,10 @@
+---
+source: crates/skribble_core/src/config/style.rs
+expression: "StyleConfig::default()"
+---
+{
+  "options": {
+    "colorFormat": "hsl",
+    "variablePrefix": ""
+  }
+}
