@@ -1,5 +1,5 @@
 name: devenv
-description: 'Setup development environment with devenv'
+description: "Setup development environment with devenv"
 
 runs:
   using: composite
@@ -7,7 +7,7 @@ runs:
     - name: cache nix store
       uses: actions/cache@3
       id: nix-cache
-      with: 
+      with:
         path: /tmp/nixcache
         key: ${{ runner.os }}-nix-cache
 
@@ -20,7 +20,7 @@ runs:
 
     - name: enable cachix
       uses: cachix/cachix-action@v12
-      with: 
+      with:
         name: devenv
 
     - name: install devenv.sh
@@ -33,4 +33,3 @@ runs:
     - name: export nix store cache
       if: "steps.nix-cache.outputs.cache-hit != 'true'"
       run: "nix-store --export $(find /nix/store -maxdepth 1 -name '*-*')> /tmp/nixcache"
-    

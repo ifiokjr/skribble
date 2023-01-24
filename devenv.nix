@@ -18,6 +18,9 @@
   difftastic.enable = true;
   devcontainer.enable = true;
 
+
+  # Scripts
+
   scripts."build:all".exec = ''
     cargo build
   '';
