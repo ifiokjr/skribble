@@ -4,7 +4,7 @@ runs:
   using: composite
   steps:
     - name: cache nix store
-      uses: actions/cache@3
+      uses: actions/cache@v3
       id: nix-cache
       with:
         path: /tmp/nixcache
