@@ -10,20 +10,22 @@ on:
       - main
 
 jobs:
-  tests:
+  checks:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }} 
     steps:
-      - uses: actions/checkout@v3
-      - uses: cachix/install-nix-action@v18
-      - uses: cachix/cachix-action@v12
-        with:
-          name: devenv
-      - name: install devenv.sh
-        run: nix profile install github:cachix/devenv/v0.5
-        shell: sh
-      - run: devenv shell lint:all
-      - run: devenv shell build:all
+      - name: checkout repository
+        uses: actions/checkout@v3
+
+      - name: setup development environment
+        uses: ./.github/actions/devenv
+
+      - name: lint 
+        run: devenv shell lint:all
+
+      - name: build 
+        run: devenv shell build:all
+
 
