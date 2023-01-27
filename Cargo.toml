@@ -32,8 +32,8 @@ typed-builder = "0.11"
 wasm-bindgen = "0.2"
 wasm-bindgen-test = "0.3"
 
-skribble = { path = "./crates/skribble" }
-skribble_core = { path = "./crates/skribble_core" }
+skribble = { path = "./crates/skribble", version = "0.0.0" }
+skribble_core = { path = "./crates/skribble_core", version = "0.0.0" }
 
 [profile.release.package.skribble]
 opt-level = "s"
