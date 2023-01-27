@@ -1,5 +1,10 @@
 name: devenv
 description: "Setup development environment with devenv"
+inputs:
+  github-token:
+    description: Provide a github token
+    required: true
+
 runs:
   using: composite
   steps:
@@ -27,7 +32,7 @@ runs:
       run: nix profile install github:cachix/devenv/v0.5
       shell: bash
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ inputs.github-token }}
 
     - name: run devenv in ci
       run: devenv ci
