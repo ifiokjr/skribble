@@ -75,3 +75,10 @@ direnv allow .
 ```
 
 At this point you should see the `nix` commands available in your terminal.
+
+To setup recommended configuration for your favourite editor run the following commands.
+
+```bash
+setup:vscode # Setup vscode
+setup:helix  # Setup helix configuration
+```

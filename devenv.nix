@@ -6,10 +6,13 @@
     pkgs.cargo-generate
     pkgs.cargo-insta
     pkgs.cargo-make
+    pkgs.cargo-workspaces
+    pkgs.cargo-edit
     pkgs.deno
     pkgs.dprint
     pkgs.fnm
     pkgs.git
+    pkgs.ripgrep
     pkgs.rust-analyzer
     pkgs.rustup
     pkgs.trunk
@@ -50,4 +53,13 @@
   scripts."test:all".exec = ''
     cargo test
   '';
+  scripts."setup:helix".exec = ''
+    rm -rf .helix
+    cp -r setup/editors/helix .helix
+  '';
+  scripts."setup:vscode".exec = ''
+    rm -rf .vscode
+    cp -r ./setup/editors/vscode .vscode
+  '';
+
 }

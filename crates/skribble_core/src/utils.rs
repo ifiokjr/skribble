@@ -78,7 +78,7 @@ pub fn indent(props: IndentProps) -> String {
       IndentStyle::Spaces(spaces) => " ".repeat(spaces.into()),
     };
 
-    result.push_str(&format!("{}{}\n", indentation, line));
+    result.push_str(&format!("{indentation}{line}\n"));
   }
 
   result.trim_end().to_string()
@@ -145,6 +145,6 @@ pub fn wrap_css_variable(value: &str) -> String {
   if value.starts_with("var(") && value.ends_with(')') {
     value.to_owned()
   } else {
-    format!("var({})", value)
+    format!("var({value})")
   }
 }
