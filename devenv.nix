@@ -1,17 +1,18 @@
 { pkgs, ... }:
 
 {
-  packages = [ 
+  packages = [
     pkgs.cargo-all-features
+    pkgs.cargo-edit
     pkgs.cargo-generate
     pkgs.cargo-insta
     pkgs.cargo-make
     pkgs.cargo-workspaces
-    pkgs.cargo-edit
     pkgs.deno
     pkgs.dprint
     pkgs.fnm
     pkgs.git
+    pkgs.mdbook
     pkgs.ripgrep
     pkgs.rust-analyzer
     pkgs.rustup

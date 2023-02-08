@@ -11,3 +11,7 @@ devenv.local.nix
 # insta snapshots
 *.pending-snap
 *.snap.new
+
+# setup
+/.helix
+/.vscode
