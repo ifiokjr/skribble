@@ -10,14 +10,14 @@ Using `skribble` in rust is composed of four parts:
 
 ```rust
 use skribble::config::load;
-use skribble::config::Config;
+use skribble::config::StyleConfig;
 use skribble::config::StyleRules;
 
 fn main() {
   let mut style_rules = StyleRules::default();
   style_rules.add("p", vec!["padding"]);
 
-  let config = Config::builder().style_rules().build();
+  let config = StyleConfig::builder().style_rules().build();
 
   // This pulls in configuration from any dependencies so that projects can be
   // composed together. Any conflicts are highlighted during the build process
@@ -30,10 +30,10 @@ Alternatively, you can use the default configuration.
 
 ```rust
 use skribble::config::load;
-use skribble::config::Config;
+use skribble::config::StyleConfig;
 
 fn main() {
-  load(Config::default());
+  load(StyleConfig::default());
 }
 ```
 
@@ -57,19 +57,20 @@ pub use skribble::*;
 ```rust
 use leptos::*;
 
-use crate::skribble::c;
+use crate::skribble::sk;
 
 #[component]
 pub fn MyComponent() -> Html {
   html! {
-    <div class={c.md().PX()}>
+    <div class={sk.md().PX()}>
       {"Hello World"}
     </div>
   }
 }
 ```
 
-4. Run the skribble build script to generate the css.
+4. Run the `skribble` build script to generate the css. This will walk through the directory and
+   find all references to the skribble library and generate the css.
 
 ```bash
 skribble build
