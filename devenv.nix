@@ -2,26 +2,19 @@
 
 {
   packages = [
-    pkgs.cargo-all-features
-    pkgs.cargo-edit
-    pkgs.cargo-generate
     pkgs.cargo-insta
     pkgs.cargo-make
+    pkgs.cargo-tarpaulin
+    pkgs.cargo-nextest
     pkgs.cargo-workspaces
     pkgs.deno
     pkgs.dprint
-    pkgs.fnm
-    pkgs.git
     pkgs.mdbook
-    pkgs.ripgrep
-    pkgs.rust-analyzer
     pkgs.rustup
-    pkgs.trunk
   ];
 
   difftastic.enable = true;
   devcontainer.enable = true;
-
 
   # Scripts
 
@@ -30,7 +23,6 @@
   '';
   scripts."fix:all".exec = ''
     fix:format
-    fix:clippy
   '';
   scripts."fix:format".exec = ''
     dprint fmt

@@ -16,7 +16,7 @@ runs:
         key: ${{ runner.os }}-nix-cache
 
     - name: install nix
-      uses: cachix/install-nix-action@v18
+      uses: cachix/install-nix-action@v20
       with:
         github_access_token: ${{ inputs.github-token }}
 
@@ -31,7 +31,9 @@ runs:
         name: devenv
 
     - name: install devenv.sh
-      run: nix profile install github:cachix/devenv/v0.5.1
+      run: |
+        cachix use devenv
+        nix profile install --accept-flake-config github:cachix/devenv/v0.6
       shell: bash
 
     - name: run devenv in ci
