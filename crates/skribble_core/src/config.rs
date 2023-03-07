@@ -15,14 +15,14 @@ use crate::Result;
 pub struct StyleConfig {
   /// The general options.
   pub options: Options,
-
+  /// Setup the media queries.
+  pub media_queries: MediaQueries,
   /// Set up the style rules which determine the styles that each atom name will
   /// correspond to.
   pub rules: NamedRules,
   /// Named classes.
   pub classes: NamedClasses,
-  /// Setup the media queries.
-  pub breakpoints: MediaQueries,
+  /// Setup the keyframes.
   pub keyframes: Keyframes,
   pub palette: Palette,
 }
@@ -35,6 +35,10 @@ impl StyleConfig {
   }
 
   pub fn to_json(&self) -> Result<String> {
+    serde_json::to_string(self).map_err(|source| Error::CouldNotSerializeConfig { source })
+  }
+
+  pub fn to_pretty_json(&self) -> Result<String> {
     serde_json::to_string_pretty(self).map_err(|source| Error::CouldNotSerializeConfig { source })
   }
 }

@@ -7,9 +7,9 @@ expression: "StyleConfig::default()"
     "colorFormat": "hsl",
     "variablePrefix": "sk"
   },
+  "mediaQueries": {},
   "rules": {},
   "classes": {},
-  "breakpoints": {},
   "keyframes": {},
   "palette": {}
 }
