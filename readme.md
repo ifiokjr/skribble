@@ -69,12 +69,25 @@ To automatically load the environment you should
 [install direnv](https://devenv.sh/automatic-shell-activation/) and then load the `direnv`.
 
 ```bash
-# The security mechanism didn't allow to load the `.envrc`. 
+# The security mechanism didn't allow to load the `.envrc`.
 # Since we trust it, let's allow it execution.
 direnv allow .
 ```
 
 At this point you should see the `nix` commands available in your terminal.
+
+### Upgrading `devenv`
+
+If you have an outdated version of `devenv` you can update it by running the following commands. If
+you have an easier way, please create a PR and I'll update these docs.
+
+```bash
+nix profile list # find the index of the nxi package
+nix profile remove <index>
+nix profile install --accept-flake-config github:cachix/devenv/<version>
+```
+
+### Editor Setup
 
 To setup recommended configuration for your favourite editor run the following commands.
 

@@ -19,42 +19,55 @@
   # Scripts
 
   scripts."build:all".exec = ''
+    set -e
     cargo build
   '';
   scripts."fix:all".exec = ''
+    set -e
     fix:format
   '';
   scripts."fix:format".exec = ''
+    set -e
     dprint fmt
   '';
   scripts."fix:clippy".exec = ''
+    set -e
     cargo clippy --fix --allow-dirty --allow-staged
   '';
   scripts."lint:all".exec = ''
+    set -e
     lint:format
     lint:clippy
   '';
   scripts."lint:format".exec = ''
+    set -e
     dprint check
   '';
   scripts."lint:clippy".exec = ''
+    set -e
     cargo clippy
   '';
   scripts."test:snapshot".exec = ''
+    set -e
     cargo insta accept
   '';
   scripts."test:all".exec = ''
-    cargo test
+    set -e
+    cargo nextest run
+    cargo test --doc
   '';
   scripts."setup:helix".exec = ''
+    set -e
     rm -rf .helix
     cp -r setup/editors/helix .helix
   '';
   scripts."setup:vscode".exec = ''
+    set -e
     rm -rf .vscode
     cp -r ./setup/editors/vscode .vscode
   '';
   scripts."setup:ci".exec = ''
+    set -e
     # update GitHub CI Path
     echo "$DEVENV_PROFILE/bin" >> $GITHUB_PATH
     echo "DEVENV_PROFILE=$DEVENV_PROFILE" >> $GITHUB_ENV
