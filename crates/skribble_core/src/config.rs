@@ -1,3 +1,6 @@
+use std::ops::Deref;
+use std::ops::DerefMut;
+
 use indexmap::IndexMap;
 use serde::Deserialize;
 use serde::Serialize;
@@ -15,51 +18,48 @@ pub struct StyleConfig {
 
   /// Set up the style rules which determine the styles that each atom name will
   /// correspond to.
-  pub named_rules: NamedRules,
-  /// Shorthand properties.
-  ///
-  /// ```json
-  /// {
-  ///   "group": [],
-  ///   "container": [
-  ///     ["width", "100%"],
-  ///     ["max-width", "var(--container-max-width)"]
-  ///   ]
-  /// }
-  /// ```
-  pub shortcuts: NamedRules,
-  /// Setup the breakpoints.
-  pub breakpoints: Breakpoints,
+  pub rules: NamedRules,
+  /// Named classes.
+  pub classes: NamedClasses,
+  /// Setup the media queries.
+  pub breakpoints: MediaQueries,
   pub keyframes: Keyframes,
   pub palette: Palette,
 }
 
 impl StyleConfig {
-  pub fn from_json(json: &str) -> Result<Self> {
+  pub fn from_json(json: impl AsRef<str>) -> Result<Self> {
     let config: Self =
-      serde_json::from_str(json).map_err(|source| Error::InvalidConfig { source })?;
+      serde_json::from_str(json.as_ref()).map_err(|source| Error::InvalidConfig { source })?;
     Ok(config)
+  }
+
+  pub fn to_json(&self) -> Result<String> {
+    serde_json::to_string_pretty(self).map_err(|source| Error::CouldNotSerializeConfig { source })
   }
 }
 
-/// `NamedRules` connect all the atomic names to their atomic styles.
+/// `NamedRules` connect all the atomic names to their atomic styles. Each style
+/// that is defined as null will be provided the value from the atom style.
+///
+/// Atoms are defined as a style rule that receives one value from the user.
 ///
 /// ```json
 /// {
-///   "namedRules": {
-///     "p": ["padding"],
-///     "py": ["padding-top", "padding-bottom"],
-///     "px": ["padding-right", "padding-left"],
-///     "pt": ["padding-top"],
-///     "pr": ["padding-right"],
-///     "pb": ["padding-bottom"],
-///     "pl": ["padding-left"],
-///     "pbl": ["padding-block"],
-///     "pbls": ["padding-block-start"],
-///     "pble": ["padding-block-end"],
-///     "pin": ["padding-inline"],
-///     "pins": ["padding-inline-start"],
-///     "pine": ["padding-inline-end"]
+///   "rules": {
+///     "p": { "padding": null },
+///     "py": { "padding-top": null, "padding-bottom": null },
+///     "px": { "padding-right": null, "padding-left": null },
+///     "pt": { "padding-top": null },
+///     "pr": { "padding-right": null },
+///     "pb": { "padding-bottom": null },
+///     "pl": { "padding-left": null },
+///     "pbl": { "padding-block": null },
+///     "pbls": { "padding-block-start": null },
+///     "pble": { "padding-block-end": null },
+///     "pin": { "padding-inline": null },
+///     "pins": { "padding-inline-start": null },
+///     "pine": { "padding-inline-end": null }
 ///   }
 /// }
 /// ```
@@ -68,49 +68,67 @@ impl StyleConfig {
 /// properties that it controls. The styles rules are later connected with
 /// `Atoms` which are passed to each individual style rule.
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
-pub struct NamedRules(IndexMap<String, Vec<StyleRule>>);
+pub struct NamedRules(IndexMap<String, IndexMap<String, Option<CssValue>>>);
 
-impl NamedRules {
-  pub fn add_rule(&mut self, name: impl Into<String>, rule: Vec<StyleRule>) {
-    self.0.insert(name.into(), rule);
-  }
+impl<K, C, V, I> From<I> for NamedRules
+where
+  K: Into<String>,
+  C: Into<CssValue>,
+  V: IntoIterator<Item = (K, Option<C>)>,
+  I: IntoIterator<Item = (K, V)>,
+{
+  fn from(value: I) -> Self {
+    let mut rules = IndexMap::new();
 
-  pub fn update_rule(&mut self, name: impl Into<String>, rule: Vec<StyleRule>) {
-    let name: String = name.into();
+    for (name, values) in value {
+      let name = name.into();
+      let values = values
+        .into_iter()
+        .map(|(name, value)| (name.into(), value.map(|v| v.into())))
+        .collect();
 
-    match self.0.get_mut(&name) {
-      Some(rules) => rules.extend(rule),
-      None => self.add_rule(name, rule),
-    };
-  }
-
-  pub fn add_rules(&mut self, rules: IndexMap<String, Vec<StyleRule>>) {
-    self.0.extend(rules);
-  }
-}
-
-#[derive(Serialize, Deserialize, Debug, PartialEq, Clone, PartialOrd)]
-#[serde(untagged)]
-pub enum StyleRule {
-  /// The rule has a value.
-  WithValue(String, CssValue),
-  Name(String),
-}
-
-impl StyleRule {
-  pub fn get_style_declaration(&self, css_value: Option<CssValue>) -> String {
-    match self {
-      StyleRule::WithValue(name, value) => format!("{}: {}", name, value.get_string()),
-      StyleRule::Name(name) => {
-        let value = if let Some(v) = css_value {
-          v.get_string()
-        } else {
-          "".to_string()
-        };
-
-        format!("{name}: {value}")
-      }
+      rules.insert(name, values);
     }
+
+    Self(rules)
+  }
+}
+
+/// The named classes with their own defined values.
+///
+/// ```json
+/// {
+///   "group": {}, // Empty class
+///   "container": {
+///     "width": "100%",
+///     "max-width": "var(--container-max-width)"
+///   }
+/// }
+/// ```
+#[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
+pub struct NamedClasses(IndexMap<String, IndexMap<String, CssValue>>);
+
+impl<K, C, V, I> From<I> for NamedClasses
+where
+  K: Into<String>,
+  C: Into<CssValue>,
+  V: IntoIterator<Item = (K, C)>,
+  I: IntoIterator<Item = (K, V)>,
+{
+  fn from(value: I) -> Self {
+    let mut classes = IndexMap::new();
+
+    for (name, values) in value {
+      let name = name.into();
+      let values = values
+        .into_iter()
+        .map(|(name, value)| (name.into(), value.into()))
+        .collect();
+
+      classes.insert(name, values);
+    }
+
+    Self(classes)
   }
 }
 
@@ -173,47 +191,58 @@ impl CssValue {
   }
 }
 
-/// The breakpoints are a shorthand way of creating media queries based on the
-/// min-width.
+/// Media queries can should be defined as a map of names to their css queries.
 ///
 /// ```json
 /// {
-///   "breakpoints": {
-///     "sm": "640px",
-///     "md": "768px",
-///     "lg": "1024px",
-///     "xl": "1280px",
-///     "xxl": "1536px"
+///   "mediaQueries": {
+///     "sm": "(min-width: 640px)",
+///     "md": "(min-width: 768px)",
+///     "lg": "(min-width: 1024px)",
+///     "xl": "(min-width: 1280px)",
+///     "xxl": "(min-width: 1536px)",
+///     "portrait": "(orientation: portrait)",
+///     "combined": "(min-width: 30em) and (orientation: landscape)"
 ///   }
 /// }
 /// ```
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
-pub struct Breakpoints(IndexMap<String, CssValue>);
+pub struct MediaQueries(IndexMap<String, String>);
 
-impl Breakpoints {
-  /// Add a breakpoint to the configuration.
-  pub fn insert(&mut self, name: impl Into<String>, value: impl Into<CssValue>) {
-    self.0.insert(name.into(), value.into());
+impl MediaQueries {
+  pub fn breakpoint(
+    &mut self,
+    name: impl Into<String>,
+    value: impl Into<String>,
+  ) -> Option<String> {
+    let query = format!("(min-width: {})", value.into());
+    self.0.insert(name.into(), query)
   }
+}
 
-  /// Add multiple breakpoints to the configuration.
-  pub fn insert_multiple<Name, Value, I>(&mut self, breakpoints: I)
-  where
-    Name: Into<String>,
-    Value: Into<CssValue>,
-    I: IntoIterator<Item = (Name, Value)>,
-  {
-    let iterable = breakpoints.into_iter();
-    let reserve = if self.0.is_empty() {
-      iterable.size_hint().0
-    } else {
-      (iterable.size_hint().0 + 1) / 2
-    };
-    self.0.reserve(reserve);
+impl<K: Into<String>, V: Into<String>, I: IntoIterator<Item = (K, V)>> From<I> for MediaQueries {
+  fn from(value: I) -> Self {
+    let mut breakpoints = IndexMap::new();
 
-    iterable.for_each(move |(k, v)| {
-      self.insert(k, v);
-    });
+    for (name, value) in value {
+      breakpoints.insert(name.into(), value.into());
+    }
+
+    Self(breakpoints)
+  }
+}
+
+impl Deref for MediaQueries {
+  type Target = IndexMap<String, String>;
+
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+impl DerefMut for MediaQueries {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.0
   }
 }
 
@@ -300,8 +329,8 @@ mod tests {
 
   #[test]
   fn check_config_can_serialize() {
-    let config: StyleConfig = serde_json::from_str(include_str!("default.json")).unwrap();
-    let json = serde_json::to_string(&config).unwrap();
+    let config: StyleConfig = Default::default();
+    let json = config.to_json().unwrap();
     assert_eq!(config, serde_json::from_str(&json).unwrap());
   }
 

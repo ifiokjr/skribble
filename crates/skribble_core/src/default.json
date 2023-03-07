@@ -4,7 +4,8 @@
     "variablePrefix": "sk"
   },
   "keyframes": {},
-  "namedRules": {},
+  "rules": {},
+  "classes": {},
   "breakpoints": {},
   "palette": {}
 }
