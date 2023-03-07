@@ -1,7 +1,9 @@
 {
   "options": {
     "colorFormat": "rgb",
-    "variablePrefix": "sk"
+    "variablePrefix": "sk",
+    "charset": "utf-8",
+    "useRegisteredProperties": false
   },
   "keyframes": {},
   "mediaQueries": {},

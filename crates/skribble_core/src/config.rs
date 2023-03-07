@@ -64,6 +64,12 @@ pub struct Options {
   /// By default there is no variable prefix.
   #[serde(default = "default_variable_prefix")]
   pub variable_prefix: String,
+  /// The character encoding used in the style sheet
+  pub charset: Option<String>,
+  /// This determines whether the new [`@property`](https://developer.mozilla.org/en-US/docs/Web/CSS/@property) syntax
+  ///  is used for variables. Defaults to false.
+  #[builder(default, setter(into))]
+  pub use_registered_properties: bool,
 }
 
 impl Default for Options {
