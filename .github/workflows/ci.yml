@@ -40,3 +40,7 @@ jobs:
       - name: lint
         run: lint:all
         shell: bash
+
+      - name: test
+        run: test:all
+        shell: bash
