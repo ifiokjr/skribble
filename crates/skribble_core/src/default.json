@@ -3,9 +3,11 @@
     "colorFormat": "rgb",
     "variablePrefix": "sk"
   },
+  "mediaQueries": {},
+  "parentModifiers": {},
+  "modifiers": [],
   "keyframes": {},
   "rules": {},
   "classes": {},
-  "mediaQueries": {},
   "palette": {}
 }

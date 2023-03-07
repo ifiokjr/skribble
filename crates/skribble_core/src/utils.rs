@@ -3,14 +3,13 @@ use std::str::FromStr;
 use colorsys::ColorAlpha;
 use colorsys::Hsl;
 use colorsys::Rgb;
-use indexmap::IndexMap;
 use indexmap::IndexSet;
 use lazy_static::lazy_static;
 use regex::Regex;
 use typed_builder::TypedBuilder;
 
 use crate::constants::INDENTATION;
-use crate::CssValue;
+use crate::Palette;
 
 lazy_static! {
   static ref ESCAPE_CSS_STRING_REGEX: Regex =
@@ -87,12 +86,12 @@ pub fn indent(props: IndentProps) -> String {
 /// Convert the color to a valid css value with the opacity set to the provided
 /// css variable.
 pub fn convert_css_value_to_color(
-  original: &CssValue,
-  palette: &IndexMap<String, String>,
-  opacity: &str,
+  original: impl AsRef<str>,
+  palette: &Palette,
+  opacity: impl AsRef<str>,
 ) -> String {
   // Create a copy of the string value to search against.
-  let mut string_value = original.get_string();
+  let mut string_value = original.as_ref().to_string();
 
   if let Some(derived_value) = palette.get(&string_value) {
     string_value = derived_value.clone();
@@ -102,8 +101,8 @@ pub fn convert_css_value_to_color(
 }
 
 /// Will return the string unchanged if the color provided is not valid.
-pub fn get_rgba_color_from_string(value: &str, opacity: &str) -> String {
-  let mut string_value = value.to_owned();
+pub fn get_rgba_color_from_string(value: impl AsRef<str>, opacity: impl AsRef<str>) -> String {
+  let mut string_value = value.as_ref().to_string();
 
   let rgb = if let Some(stripped) = string_value.strip_prefix('#') {
     Rgb::from_hex_str(stripped).ok()
@@ -141,7 +140,8 @@ pub fn get_rgba_color_from_string(value: &str, opacity: &str) -> String {
 }
 
 /// Wrap the opacity value in `var()` if not already done in the config.
-pub fn wrap_css_variable(value: &str) -> String {
+pub fn wrap_css_variable(value: impl AsRef<str>) -> String {
+  let value = value.as_ref();
   if value.starts_with("var(") && value.ends_with(')') {
     value.to_owned()
   } else {

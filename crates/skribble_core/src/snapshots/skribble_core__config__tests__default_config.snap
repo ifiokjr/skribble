@@ -8,6 +8,8 @@ expression: "StyleConfig::default()"
     "variablePrefix": "sk"
   },
   "mediaQueries": {},
+  "parentModifiers": {},
+  "modifiers": [],
   "rules": {},
   "classes": {},
   "keyframes": {},

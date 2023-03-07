@@ -17,6 +17,10 @@ pub struct StyleConfig {
   pub options: Options,
   /// Setup the media queries.
   pub media_queries: MediaQueries,
+  /// Modifiers are used to nest styles within a selector.
+  pub parent_modifiers: ParentModifiers,
+  /// Modifiers are used to nest styles within a selector.
+  pub modifiers: Modifiers,
   /// Set up the style rules which determine the styles that each atom name will
   /// correspond to.
   pub rules: NamedRules,
@@ -24,6 +28,7 @@ pub struct StyleConfig {
   pub classes: NamedClasses,
   /// Setup the keyframes.
   pub keyframes: Keyframes,
+  /// Hardcoded colors for the pallette.
   pub palette: Palette,
 }
 
@@ -72,12 +77,12 @@ impl StyleConfig {
 /// properties that it controls. The styles rules are later connected with
 /// `Atoms` which are passed to each individual style rule.
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
-pub struct NamedRules(IndexMap<String, IndexMap<String, Option<CssValue>>>);
+pub struct NamedRules(IndexMap<String, IndexMap<String, Option<String>>>);
 
 impl<K, C, V, I> From<I> for NamedRules
 where
   K: Into<String>,
-  C: Into<CssValue>,
+  C: Into<String>,
   V: IntoIterator<Item = (K, Option<C>)>,
   I: IntoIterator<Item = (K, V)>,
 {
@@ -110,12 +115,12 @@ where
 /// }
 /// ```
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
-pub struct NamedClasses(IndexMap<String, IndexMap<String, CssValue>>);
+pub struct NamedClasses(IndexMap<String, IndexMap<String, String>>);
 
 impl<K, C, V, I> From<I> for NamedClasses
 where
   K: Into<String>,
-  C: Into<CssValue>,
+  C: Into<String>,
   V: IntoIterator<Item = (K, C)>,
   I: IntoIterator<Item = (K, V)>,
 {
@@ -140,6 +145,7 @@ where
 #[derive(Serialize, Deserialize, TypedBuilder, Debug, PartialEq)]
 #[serde(rename_all = "camelCase")]
 pub struct Options {
+  /// This is the default format of colors rendered in css.
   #[serde(default)]
   pub color_format: ColorFormat,
 
@@ -171,30 +177,6 @@ pub enum ColorFormat {
   Hsl,
 }
 
-/// The min width can either be a string or a number. If a number it will be
-/// interpreted as a pixel measurement.
-#[derive(Serialize, Deserialize, Debug, PartialEq, Clone, PartialOrd)]
-#[serde(untagged)]
-pub enum CssValue {
-  Number(f32),
-  String(String),
-}
-
-impl<T: AsRef<str>> From<T> for CssValue {
-  fn from(value: T) -> Self {
-    CssValue::String(value.as_ref().to_string())
-  }
-}
-
-impl CssValue {
-  pub fn get_string(&self) -> String {
-    match self {
-      CssValue::Number(value) => value.to_string(),
-      CssValue::String(value) => value.clone(),
-    }
-  }
-}
-
 /// Media queries can should be defined as a map of names to their css queries.
 ///
 /// ```json
@@ -224,7 +206,12 @@ impl MediaQueries {
   }
 }
 
-impl<K: Into<String>, V: Into<String>, I: IntoIterator<Item = (K, V)>> From<I> for MediaQueries {
+impl<K, V, I> From<I> for MediaQueries
+where
+  K: Into<String>,
+  V: Into<String>,
+  I: IntoIterator<Item = (K, V)>,
+{
   fn from(value: I) -> Self {
     let mut breakpoints = IndexMap::new();
 
@@ -286,7 +273,37 @@ impl DerefMut for MediaQueries {
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
 pub struct Palette(IndexMap<String, String>);
 
-type Frames = IndexMap<String, IndexMap<String, CssValue>>;
+impl<K, V, I> From<I> for Palette
+where
+  K: Into<String>,
+  V: Into<String>,
+  I: IntoIterator<Item = (K, V)>,
+{
+  fn from(value: I) -> Self {
+    let palette = value
+      .into_iter()
+      .map(|(name, value)| (name.into(), value.into()))
+      .collect();
+
+    Self(palette)
+  }
+}
+
+impl Deref for Palette {
+  type Target = IndexMap<String, String>;
+
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+impl DerefMut for Palette {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.0
+  }
+}
+
+type Frames = IndexMap<String, IndexMap<String, String>>;
 /// This setups up the animation keyframes for the configuration. The names can
 /// be reference in the atoms.
 ///
@@ -326,6 +343,141 @@ type Frames = IndexMap<String, IndexMap<String, CssValue>>;
 /// ```
 #[derive(Serialize, Deserialize, Debug, Default, PartialEq, Clone)]
 pub struct Keyframes(Frames);
+
+impl Deref for Keyframes {
+  type Target = Frames;
+
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+impl DerefMut for Keyframes {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.0
+  }
+}
+
+/// This is the setup for the parent modifiers.
+///
+/// ```json
+/// {
+///   "parentModifiers": {
+///     "light": [".light &"],
+///     "dark": [".dark &"],
+///     "rtl": ["[dir=rtl] &"],
+///     "groupHover": [
+///       ".\\$group:hover &",
+///       ".group:hover &",
+///       "[role='group']:hover &"
+///     ],
+///     "groupFocus": [
+///       ".\\$group:focus &",
+///       ".group:focus &",
+///       "[role='group']:focus &"
+///     ],
+///     "groupActive": [
+///       ".\\$group:active &",
+///       ".group:active &",
+///       "[role='group']:active &"
+///     ],
+///     "groupVisited": [
+///       ".\\$group:visited &",
+///       ".group:visited &",
+///       "[role='group']:visited &"
+///     ]
+///   }
+/// }
+/// ```
+#[derive(Serialize, Deserialize, Debug, Default, PartialEq, Clone)]
+pub struct ParentModifiers(IndexMap<String, Vec<String>>);
+
+impl<K, C, V, I> From<I> for ParentModifiers
+where
+  K: Into<String>,
+  C: Into<String>,
+  V: IntoIterator<Item = C>,
+  I: IntoIterator<Item = (K, V)>,
+{
+  fn from(iter: I) -> Self {
+    let parent_modifiers = iter
+      .into_iter()
+      .map(|(k, v)| (k.into(), v.into_iter().map(|v| v.into()).collect()))
+      .collect();
+
+    Self(parent_modifiers)
+  }
+}
+
+impl Deref for ParentModifiers {
+  type Target = IndexMap<String, Vec<String>>;
+
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+impl DerefMut for ParentModifiers {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.0
+  }
+}
+
+/// This is the setup for named modifiers.
+///
+/// ```json
+/// [
+///   { "hover": ["&:hover"] },
+///   { "active": ["&:active"] },
+///   { "focus": ["&:focus"] },
+///   { "focusWithin": ["&:focus-within"] },
+///   { "focusVisible": ["&:focus-visible"] },
+///   {
+///     "disabled": ["&[disabled]", "&[aria-disabled=true]", "&:disabled"],
+///     "notDisabled": ["&[aria-disabled=false]", "&:disabled"],
+///     "enabled": ["&:enabled"]
+///   },
+///   { "empty": ["&:empty"] },
+/// ]
+/// ```
+#[derive(Serialize, Deserialize, Debug, Default, PartialEq, Clone)]
+pub struct Modifiers(Vec<IndexMap<String, Vec<String>>>);
+
+impl<K, IK, IV, V, I> From<I> for Modifiers
+where
+  K: Into<String>,
+  IK: Into<String>,
+  IV: IntoIterator<Item = IK>,
+  V: IntoIterator<Item = (K, IV)>,
+  I: IntoIterator<Item = V>,
+{
+  fn from(iter: I) -> Self {
+    let modifiers = iter
+      .into_iter()
+      .map(|v| {
+        v.into_iter()
+          .map(|(k, iv)| (k.into(), iv.into_iter().map(|ik| ik.into()).collect()))
+          .collect()
+      })
+      .collect();
+
+    Self(modifiers)
+  }
+}
+
+impl Deref for Modifiers {
+  type Target = Vec<IndexMap<String, Vec<String>>>;
+
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+impl DerefMut for Modifiers {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.0
+  }
+}
 
 #[cfg(test)]
 mod tests {
