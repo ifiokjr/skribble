@@ -64,7 +64,7 @@ pub fn Counters(cx: Scope) -> impl IntoView {
         <For
           each={move || counters.get()}
           key={|counter| counter.0}
-          view=move |(id, (value, set_value))| {
+          view=move |cx, (id, (value, set_value))| {
             view! {
               cx,
               <Counter id value set_value />
@@ -83,7 +83,7 @@ fn Counter(
   value: ReadSignal<i32>,
   set_value: WriteSignal<i32>,
 ) -> impl IntoView {
-  let CounterUpdater { set_counters } = use_context(cx).unwrap_throw();
+  let CounterUpdater { set_counters } = use_context(cx).unwrap();
   let input = move |event| {
     set_value.set(
       event_target_value(&event)

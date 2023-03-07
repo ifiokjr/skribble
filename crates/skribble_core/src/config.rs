@@ -1,3 +1,5 @@
+use std::fmt::Display;
+use std::fmt::Formatter;
 use std::ops::Deref;
 use std::ops::DerefMut;
 
@@ -15,26 +17,36 @@ use crate::Result;
 #[serde(rename_all = "camelCase")]
 pub struct StyleConfig {
   /// The general options.
+  #[builder(default, setter(into))]
   pub options: Options,
   /// Setup the keyframes.
+  #[builder(default, setter(into))]
   pub keyframes: Keyframes,
+  /// CSS variables which can be reused throughout the configuration.
+  pub variables: CssVariables,
   /// Setup the media queries.
+  #[builder(default, setter(into))]
   pub media_queries: MediaQueries,
   /// Modifiers are used to nest styles within a selector.
+  #[builder(default, setter(into))]
   pub parent_modifiers: ParentModifiers,
   /// Modifiers are used to nest styles within a selector.
+  #[builder(default, setter(into))]
   pub modifiers: Modifiers,
   /// Set up the style rules which determine the styles that each atom name will
   /// correspond to.
+  #[builder(default, setter(into))]
   pub rules: NamedRules,
   /// Named classes.
+  #[builder(default, setter(into))]
   pub classes: NamedClasses,
   /// Hardcoded colors for the pallette.
+  #[builder(default, setter(into))]
   pub palette: Palette,
   /// Support additional fields for plugins.
-  #[serde(flatten, skip_serializing_if = "Option::is_none", default = "None")]
-  #[builder(default, setter(into, strip_option))]
-  pub additional_fields: Option<AdditionalFields>,
+  #[serde(flatten, default)]
+  #[builder(default, setter(into))]
+  pub additional_fields: AdditionalFields,
 }
 
 impl StyleConfig {
@@ -60,7 +72,6 @@ pub struct Options {
   /// This is the default format of colors rendered in css.
   #[serde(default)]
   pub color_format: ColorFormat,
-
   /// By default there is no variable prefix.
   #[serde(default = "default_variable_prefix")]
   pub variable_prefix: String,
@@ -77,6 +88,8 @@ impl Default for Options {
     Self {
       color_format: Default::default(),
       variable_prefix: default_variable_prefix(),
+      charset: Some("utf-8".to_string()),
+      use_registered_properties: false,
     }
   }
 }
@@ -86,13 +99,32 @@ fn default_variable_prefix() -> String {
 }
 
 /// ColorFormat is used to determine the default format of the colors.
-#[derive(Default, Serialize, Deserialize, Debug, PartialEq)]
+#[derive(Default, Serialize, Deserialize, Debug, PartialEq, Clone, Copy)]
 pub enum ColorFormat {
   #[serde(rename = "rgb")]
   Rgb,
   #[serde(rename = "hsl")]
   #[default]
   Hsl,
+}
+
+impl AsRef<str> for ColorFormat {
+  fn as_ref(&self) -> &str {
+    match self {
+      Self::Rgb => "rgb",
+      Self::Hsl => "hsl",
+    }
+  }
+}
+
+impl<T: Into<String>> From<T> for ColorFormat {
+  fn from(value: T) -> Self {
+    match value.into().as_str() {
+      "rgb" => Self::Rgb,
+      "hsl" => Self::Hsl,
+      _ => Self::Hsl,
+    }
+  }
 }
 
 /// This setups up the animation keyframes for the configuration. The names can
@@ -396,6 +428,253 @@ impl Deref for NamedClasses {
 impl DerefMut for NamedClasses {
   fn deref_mut(&mut self) -> &mut Self::Target {
     &mut self.0
+  }
+}
+
+/// Create CSS variables from a list of atoms.
+#[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
+pub struct CssVariables(Vec<CssVariable>);
+
+impl<V: Into<CssVariable>, I: IntoIterator<Item = V>> From<I> for CssVariables {
+  fn from(value: I) -> Self {
+    Self(value.into_iter().map(|v| v.into()).collect())
+  }
+}
+
+impl FromIterator<CssVariable> for CssVariables {
+  fn from_iter<T: IntoIterator<Item = CssVariable>>(iter: T) -> Self {
+    Self::from(iter)
+  }
+}
+
+impl Deref for CssVariables {
+  type Target = Vec<CssVariable>;
+
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+impl DerefMut for CssVariables {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.0
+  }
+}
+
+pub type CssVariableSelectors = IndexMap<String, String>;
+pub type NestedCssVariableSelectors = IndexMap<String, CssVariableSelectors>;
+
+/// This can be used to define colors and other CSS variables.
+///
+/// For colors you should set the `syntax` to [PropertySyntaxValue::Color].
+#[derive(Serialize, Deserialize, TypedBuilder, Debug, PartialEq, Clone)]
+#[serde(rename_all = "camelCase")]
+pub struct CssVariable {
+  /// A required name. This should always start with `--`.
+  #[builder(setter(into))]
+  pub name: String,
+  /// The [syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/@property/syntax) of the CSS variable.
+  #[builder(default, setter(into))]
+  pub syntax: PropertySyntax,
+  /// The initial value of the CSS variable. This is required if the
+  /// [PropertySyntax] is set to anything other than [PropertySyntaxValue::Any].
+  #[builder(default, setter(into, strip_option))]
+  pub initial_value: Option<String>,
+  /// Define the value of the CSS variables for each selector.
+  #[builder(default, setter(strip_option, into))]
+  pub selectors: Option<CssVariableSelectors>,
+  /// Define the value of the CSS variable for the nested media query.
+  #[builder(default, setter(strip_option, into))]
+  pub media_queries: Option<NestedCssVariableSelectors>,
+}
+
+impl CssVariable {
+  #[inline]
+  pub fn get_name(&self) -> &str {
+    &self.name
+  }
+
+  #[inline]
+  pub fn get_variable(&self) -> String {
+    format!("var({})", self.name)
+  }
+
+  #[inline]
+  pub fn get_variable_with_fallback(&self, fallback: &str) -> String {
+    format!("var({}, {})", self.name, fallback)
+  }
+}
+
+impl<T: Into<String>> From<T> for CssVariable {
+  #[inline]
+  fn from(name: T) -> Self {
+    CssVariable::builder().name(name).build()
+  }
+}
+
+#[derive(Serialize, Deserialize, Clone, Debug, PartialEq)]
+#[serde(untagged)]
+pub enum PropertySyntax {
+  Value(PropertySyntaxValue),
+  List(Vec<PropertySyntaxValue>),
+}
+
+impl PropertySyntax {
+  #[inline]
+  pub fn from_string<T: Into<String>>(value: T) -> Self {
+    PropertySyntax::Value(PropertySyntaxValue::from(value))
+  }
+
+  #[inline]
+  pub fn from_iterator<V: Into<String>, I: IntoIterator<Item = V>>(iter: I) -> Self {
+    let property = iter
+      .into_iter()
+      .map(|v| PropertySyntaxValue::from(v))
+      .collect();
+
+    PropertySyntax::List(property)
+  }
+
+  #[inline]
+  pub fn is_color(&self) -> bool {
+    match self {
+      PropertySyntax::Value(value) => *value == PropertySyntaxValue::Color,
+      PropertySyntax::List(_) => false,
+    }
+  }
+}
+
+impl Default for PropertySyntax {
+  fn default() -> Self {
+    PropertySyntax::Value(PropertySyntaxValue::Any)
+  }
+}
+
+impl<T: Into<String>> From<T> for PropertySyntax {
+  fn from(value: T) -> Self {
+    Self::from_string(value)
+  }
+}
+
+impl Display for PropertySyntax {
+  fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+    match self {
+      PropertySyntax::Value(value) => write!(f, "{}", value),
+      PropertySyntax::List(values) => {
+        let values = values
+          .iter()
+          .map(|v| v.to_string())
+          .collect::<Vec<String>>()
+          .join(" | ");
+
+        write!(f, "{}", values)
+      }
+    }
+  }
+}
+
+#[derive(Default, Serialize, Deserialize, Debug, Clone, PartialEq)]
+pub enum PropertySyntaxValue {
+  /// Any valid <length> values.
+  #[serde(rename = "<length>")]
+  Length,
+  #[serde(rename = "<number>")]
+  Number,
+  /// Any valid <percentage> values.
+  #[serde(rename = "<percentage>")]
+  Percentage,
+  /// Any valid <length-percentage> values.
+  #[serde(rename = "<length-percentage>")]
+  LengthPercentage,
+  /// Any valid <color> values.
+  #[serde(rename = "<color>")]
+  Color,
+  /// Any valid <image> values.
+  #[serde(rename = "<image>")]
+  Image,
+  /// Any valid url() values.
+  #[serde(rename = "<url>")]
+  Url,
+  /// Any valid <integer> values.
+  #[serde(rename = "<integer>")]
+  Integer,
+  /// Any valid <angle> values.
+  #[serde(rename = "<angle>")]
+  Angle,
+  /// Any valid <time> values.
+  #[serde(rename = "<time>")]
+  Time,
+  /// Any valid <resolution> values.
+  #[serde(rename = "<resolution>")]
+  Resolution,
+  /// Any valid <transform-function> values.
+  #[serde(rename = "<transform-function>")]
+  TransformFunction,
+  /// Any valid <custom-ident> values.
+  #[serde(rename = "<custom-ident>")]
+  CustomIdent,
+  /// A list of valid <transform-function> values.
+  #[serde(rename = "<transform-list>")]
+  TransformList,
+  /// Any valid token
+  #[serde(rename = "*")]
+  #[default]
+  Any,
+  /// Accepts this value as custom idents
+  String(String),
+}
+
+impl<T: Into<String>> From<T> for PropertySyntaxValue {
+  fn from(value: T) -> Self {
+    let value = value.into();
+
+    match value.as_str() {
+      "<length>" => PropertySyntaxValue::Length,
+      "<number>" => PropertySyntaxValue::Number,
+      "<percentage>" => PropertySyntaxValue::Percentage,
+      "<length-percentage>" => PropertySyntaxValue::LengthPercentage,
+      "<color>" => PropertySyntaxValue::Color,
+      "<image>" => PropertySyntaxValue::Image,
+      "<url>" => PropertySyntaxValue::Url,
+      "<integer>" => PropertySyntaxValue::Integer,
+      "<angle>" => PropertySyntaxValue::Angle,
+      "<time>" => PropertySyntaxValue::Time,
+      "<resolution>" => PropertySyntaxValue::Resolution,
+      "<transform-function>" => PropertySyntaxValue::TransformFunction,
+      "<custom-ident>" => PropertySyntaxValue::CustomIdent,
+      "<transform-list>" => PropertySyntaxValue::TransformList,
+      "*" => PropertySyntaxValue::Any,
+      _ => PropertySyntaxValue::String(value),
+    }
+  }
+}
+
+impl AsRef<str> for PropertySyntaxValue {
+  fn as_ref(&self) -> &str {
+    match self {
+      PropertySyntaxValue::Length => "<length>",
+      PropertySyntaxValue::Number => "<number>",
+      PropertySyntaxValue::Percentage => "<percentage>",
+      PropertySyntaxValue::LengthPercentage => "<length-percentage>",
+      PropertySyntaxValue::Color => "<color>",
+      PropertySyntaxValue::Image => "<image>",
+      PropertySyntaxValue::Url => "<url>",
+      PropertySyntaxValue::Integer => "<integer>",
+      PropertySyntaxValue::Angle => "<angle>",
+      PropertySyntaxValue::Time => "<time>",
+      PropertySyntaxValue::Resolution => "<resolution>",
+      PropertySyntaxValue::TransformFunction => "<transform-function>",
+      PropertySyntaxValue::CustomIdent => "<custom-ident>",
+      PropertySyntaxValue::TransformList => "<transform-list>",
+      PropertySyntaxValue::Any => "*",
+      PropertySyntaxValue::String(value) => value,
+    }
+  }
+}
+
+impl Display for PropertySyntaxValue {
+  fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+    write!(f, "{}", self.as_ref())
   }
 }
 
