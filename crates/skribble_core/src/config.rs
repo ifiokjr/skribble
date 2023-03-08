@@ -379,7 +379,6 @@ impl DerefMut for NamedRules {
   }
 }
 
-/// [NamedRule]
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
 pub struct NamedRule {
@@ -400,45 +399,31 @@ pub struct NamedRule {
 
 /// The named classes with their own defined values.
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
-pub struct NamedClasses(IndexMap<String, IndexMap<String, String>>);
+pub struct NamedClasses(Vec<NamedClass>);
 
-impl<K, C, V, I> From<I> for NamedClasses
+impl<V, I> From<I> for NamedClasses
 where
-  K: Into<String>,
-  C: Into<String>,
-  V: IntoIterator<Item = (K, C)>,
-  I: IntoIterator<Item = (K, V)>,
+  V: Into<NamedClass>,
+  I: IntoIterator<Item = V>,
 {
   fn from(value: I) -> Self {
-    let mut classes = IndexMap::new();
-
-    for (name, values) in value {
-      let name = name.into();
-      let values = values
-        .into_iter()
-        .map(|(name, value)| (name.into(), value.into()))
-        .collect();
-
-      classes.insert(name, values);
-    }
+    let classes = value.into_iter().map(|value| value.into()).collect();
 
     Self(classes)
   }
 }
 
-impl<K, C, V> FromIterator<(K, V)> for NamedClasses
+impl<V> FromIterator<V> for NamedClasses
 where
-  K: Into<String>,
-  C: Into<String>,
-  V: IntoIterator<Item = (K, C)>,
+  V: Into<NamedClass>,
 {
-  fn from_iter<T: IntoIterator<Item = (K, V)>>(iter: T) -> Self {
+  fn from_iter<T: IntoIterator<Item = V>>(iter: T) -> Self {
     Self::from(iter)
   }
 }
 
 impl Deref for NamedClasses {
-  type Target = IndexMap<String, IndexMap<String, String>>;
+  type Target = Vec<NamedClass>;
 
   fn deref(&self) -> &Self::Target {
     &self.0
@@ -449,6 +434,24 @@ impl DerefMut for NamedClasses {
   fn deref_mut(&mut self) -> &mut Self::Target {
     &mut self.0
   }
+}
+
+/// [NamedClass]
+#[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize, TypedBuilder)]
+#[serde(rename_all = "camelCase")]
+pub struct NamedClass {
+  /// The name of the media query.
+  #[builder(setter(into))]
+  pub name: String,
+  /// A markdown description of what this media query should be used for.
+  #[builder(default, setter(into))]
+  pub description: Option<String>,
+  /// The priority of this items.
+  #[builder(default, setter(into))]
+  pub priority: Priority,
+  /// The styles for the specific class.
+  #[builder(setter(into))]
+  styles: StringValueMap,
 }
 
 /// Create CSS variables from a list of atoms.
