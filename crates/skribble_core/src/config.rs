@@ -743,11 +743,11 @@ impl DerefMut for Palette {
 
 /// This is the setup for the parent modifiers.
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
-pub struct ParentModifiers(Vec<ParentModifier>);
+pub struct ParentModifiers(Vec<Modifier>);
 
 impl<V, I> From<I> for ParentModifiers
 where
-  V: Into<ParentModifier>,
+  V: Into<Modifier>,
   I: IntoIterator<Item = V>,
 {
   fn from(iter: I) -> Self {
@@ -759,7 +759,7 @@ where
 
 impl<V> FromIterator<V> for ParentModifiers
 where
-  V: Into<ParentModifier>,
+  V: Into<Modifier>,
 {
   fn from_iter<T>(iter: T) -> Self
   where
@@ -770,7 +770,7 @@ where
 }
 
 impl Deref for ParentModifiers {
-  type Target = Vec<ParentModifier>;
+  type Target = Vec<Modifier>;
 
   fn deref(&self) -> &Self::Target {
     &self.0
@@ -785,7 +785,7 @@ impl DerefMut for ParentModifiers {
 
 #[derive(Clone, Debug, Deserialize, PartialEq, Serialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
-pub struct ParentModifier {
+pub struct Modifier {
   /// The name of the parent modifier will be used to reference
   #[builder(setter(into))]
   pub name: String,
@@ -804,37 +804,66 @@ pub struct ParentModifier {
   additional_fields: AdditionalFields,
 }
 
-/// This is the setup for named modifiers.
-
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
-pub struct Modifiers(Vec<IndexMap<String, Vec<String>>>);
+pub struct ModifierGroup(Vec<Modifier>);
 
-impl<S, IV, V, I> From<I> for Modifiers
+impl<V, I> From<I> for ModifierGroup
 where
-  S: Into<String>,
-  IV: IntoIterator<Item = S>,
-  V: IntoIterator<Item = (S, IV)>,
+  V: Into<Modifier>,
   I: IntoIterator<Item = V>,
 {
   fn from(iter: I) -> Self {
-    let modifiers = iter
-      .into_iter()
-      .map(|v| {
-        v.into_iter()
-          .map(|(k, iv)| (k.into(), iv.into_iter().map(|ik| ik.into()).collect()))
-          .collect()
-      })
-      .collect();
+    let modifiers = iter.into_iter().map(|value| value.into()).collect();
 
     Self(modifiers)
   }
 }
 
-impl<S, IV, V> FromIterator<V> for Modifiers
+impl<V> FromIterator<V> for ModifierGroup
 where
-  S: Into<String>,
-  IV: IntoIterator<Item = S>,
-  V: IntoIterator<Item = (S, IV)>,
+  V: Into<Modifier>,
+{
+  fn from_iter<T>(iter: T) -> Self
+  where
+    T: IntoIterator<Item = V>,
+  {
+    Self::from(iter)
+  }
+}
+
+impl Deref for ModifierGroup {
+  type Target = Vec<Modifier>;
+
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+impl DerefMut for ModifierGroup {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.0
+  }
+}
+
+/// This is the setup for named modifiers.
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
+pub struct Modifiers(Vec<ModifierGroup>);
+
+impl<V, I> From<I> for Modifiers
+where
+  V: Into<ModifierGroup>,
+  I: IntoIterator<Item = V>,
+{
+  fn from(iter: I) -> Self {
+    let modifiers = iter.into_iter().map(|value| value.into()).collect();
+
+    Self(modifiers)
+  }
+}
+
+impl<V> FromIterator<V> for Modifiers
+where
+  V: Into<ModifierGroup>,
 {
   fn from_iter<T>(iter: T) -> Self
   where
@@ -845,7 +874,7 @@ where
 }
 
 impl Deref for Modifiers {
-  type Target = Vec<IndexMap<String, Vec<String>>>;
+  type Target = Vec<ModifierGroup>;
 
   fn deref(&self) -> &Self::Target {
     &self.0
