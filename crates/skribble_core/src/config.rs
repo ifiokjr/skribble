@@ -10,10 +10,11 @@ use serde_json::Value;
 use typed_builder::TypedBuilder;
 
 use crate::Error;
+use crate::Plugin;
 use crate::Result;
 
 /// The style configuration which can also use the builder pattern.
-#[derive(Serialize, Deserialize, TypedBuilder, Default, Debug, PartialEq)]
+#[derive(Debug, Deserialize, Serialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
 pub struct StyleConfig {
   /// The general options.
@@ -23,6 +24,7 @@ pub struct StyleConfig {
   #[builder(default, setter(into))]
   pub keyframes: Keyframes,
   /// CSS variables which can be reused throughout the configuration.
+  #[builder(default, setter(into))]
   pub variables: CssVariables,
   /// Setup the media queries.
   #[builder(default, setter(into))]
@@ -46,10 +48,21 @@ pub struct StyleConfig {
   /// The atoms which provide the values.
   #[builder(default, setter(into))]
   pub atoms: Atoms,
+  /// The plugins which can be used to add new functionality and extend the
+  /// configuration.
+  #[serde(skip)]
+  #[builder(default, setter(into))]
+  pub plugins: Vec<Box<dyn Plugin>>,
   /// Support additional fields for plugins.
   #[serde(flatten, default)]
   #[builder(default, setter(into))]
   pub additional_fields: AdditionalFields,
+}
+
+impl Default for StyleConfig {
+  fn default() -> Self {
+    Self::builder().build()
+  }
 }
 
 impl StyleConfig {
