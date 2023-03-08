@@ -25,6 +25,7 @@
   scripts."fix:all".exec = ''
     set -e
     fix:format
+    fix:clippy
   '';
   scripts."fix:format".exec = ''
     set -e

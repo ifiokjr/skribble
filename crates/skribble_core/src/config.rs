@@ -600,7 +600,7 @@ impl<T: Into<String>> From<T> for PropertySyntax {
 impl Display for PropertySyntax {
   fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
     match self {
-      PropertySyntax::Value(value) => write!(f, "{}", value),
+      PropertySyntax::Value(value) => write!(f, "{value}"),
       PropertySyntax::List(values) => {
         let values = values
           .iter()
@@ -608,7 +608,7 @@ impl Display for PropertySyntax {
           .collect::<Vec<String>>()
           .join(" | ");
 
-        write!(f, "{}", values)
+        write!(f, "{values}")
       }
     }
   }
