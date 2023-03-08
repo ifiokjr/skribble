@@ -43,6 +43,9 @@ pub struct StyleConfig {
   /// Hardcoded colors for the pallette.
   #[builder(default, setter(into))]
   pub palette: Palette,
+  /// The atoms which provide the values.
+  #[builder(default, setter(into))]
+  pub atoms: Atoms,
   /// Support additional fields for plugins.
   #[serde(flatten, default)]
   #[builder(default, setter(into))]
@@ -174,23 +177,25 @@ pub struct Keyframe {
   /// extension.
   #[builder(default, setter(into))]
   pub description: Option<String>,
-  /// The priority of item.
+  /// The priority of this items.
   #[builder(default, setter(into))]
   pub priority: Priority,
   /// The rules for the specific keyframe.
   #[serde(flatten, default)]
   #[builder(default, setter(into))]
-  pub rules: KeyframeRules,
+  pub rules: StringValueObject,
 }
 
+/// This is a more usable version of Index<String, String> which allows for
+/// easier construction and fully supports serde with renaming built in.
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
-pub struct KeyframeRules(IndexMap<String, String>);
+#[serde(rename_all = "camelCase")]
+pub struct StringValueObject(IndexMap<String, String>);
 
-impl<K, V, I> From<I> for KeyframeRules
+impl<S, I> From<I> for StringValueObject
 where
-  K: Into<String>,
-  V: Into<String>,
-  I: IntoIterator<Item = (K, V)>,
+  S: Into<String>,
+  I: IntoIterator<Item = (S, S)>,
 {
   fn from(iter: I) -> Self {
     let rules = iter
@@ -202,17 +207,16 @@ where
   }
 }
 
-impl<K, V> FromIterator<(K, V)> for KeyframeRules
+impl<S> FromIterator<(S, S)> for StringValueObject
 where
-  K: Into<String>,
-  V: Into<String>,
+  S: Into<String>,
 {
-  fn from_iter<T: IntoIterator<Item = (K, V)>>(iter: T) -> Self {
+  fn from_iter<T: IntoIterator<Item = (S, S)>>(iter: T) -> Self {
     Self::from(iter)
   }
 }
 
-impl Deref for KeyframeRules {
+impl Deref for StringValueObject {
   type Target = IndexMap<String, String>;
 
   fn deref(&self) -> &Self::Target {
@@ -220,7 +224,7 @@ impl Deref for KeyframeRules {
   }
 }
 
-impl DerefMut for KeyframeRules {
+impl DerefMut for StringValueObject {
   fn deref_mut(&mut self) -> &mut Self::Target {
     &mut self.0
   }
@@ -278,7 +282,7 @@ pub struct MediaQuery {
   /// A markdown description of what this media query should be used for.
   #[builder(default, setter(into))]
   pub description: Option<String>,
-  /// The priority of item.
+  /// The priority of this items.
   #[builder(default, setter(into))]
   pub priority: Priority,
 }
@@ -453,7 +457,7 @@ pub struct CssVariable {
   /// A description of the CSS variable and what it is used for.
   #[builder(default, setter(strip_option, into))]
   pub description: Option<String>,
-  /// The priority of item.
+  /// The priority of this items.
   #[builder(default, setter(into))]
   pub priority: Priority,
   /// The [syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/@property/syntax) of the CSS variable.
@@ -697,11 +701,10 @@ impl Display for PropertySyntaxValue {
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct Palette(IndexMap<String, String>);
 
-impl<K, V, I> From<I> for Palette
+impl<S, I> From<I> for Palette
 where
-  K: Into<String>,
-  V: Into<String>,
-  I: IntoIterator<Item = (K, V)>,
+  S: Into<String>,
+  I: IntoIterator<Item = (S, S)>,
 {
   fn from(value: I) -> Self {
     let palette = value
@@ -713,12 +716,11 @@ where
   }
 }
 
-impl<K, V> FromIterator<(K, V)> for Palette
+impl<S> FromIterator<(S, S)> for Palette
 where
-  K: Into<String>,
-  V: Into<String>,
+  S: Into<String>,
 {
-  fn from_iter<T: IntoIterator<Item = (K, V)>>(iter: T) -> Self {
+  fn from_iter<T: IntoIterator<Item = (S, S)>>(iter: T) -> Self {
     Self::from(iter)
   }
 }
@@ -741,12 +743,11 @@ impl DerefMut for Palette {
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct ParentModifiers(IndexMap<String, Vec<String>>);
 
-impl<K, C, V, I> From<I> for ParentModifiers
+impl<S, V, I> From<I> for ParentModifiers
 where
-  K: Into<String>,
-  C: Into<String>,
-  V: IntoIterator<Item = C>,
-  I: IntoIterator<Item = (K, V)>,
+  S: Into<String>,
+  V: IntoIterator<Item = S>,
+  I: IntoIterator<Item = (S, V)>,
 {
   fn from(iter: I) -> Self {
     let parent_modifiers = iter
@@ -758,13 +759,15 @@ where
   }
 }
 
-impl<K, C, V> FromIterator<(K, V)> for ParentModifiers
+impl<S, V> FromIterator<(S, V)> for ParentModifiers
 where
-  K: Into<String>,
-  C: Into<String>,
-  V: IntoIterator<Item = C>,
+  S: Into<String>,
+  V: IntoIterator<Item = S>,
 {
-  fn from_iter<T: IntoIterator<Item = (K, V)>>(iter: T) -> Self {
+  fn from_iter<T>(iter: T) -> Self
+  where
+    T: IntoIterator<Item = (S, V)>,
+  {
     Self::from(iter)
   }
 }
@@ -788,12 +791,11 @@ impl DerefMut for ParentModifiers {
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct Modifiers(Vec<IndexMap<String, Vec<String>>>);
 
-impl<K, IK, IV, V, I> From<I> for Modifiers
+impl<S, IV, V, I> From<I> for Modifiers
 where
-  K: Into<String>,
-  IK: Into<String>,
-  IV: IntoIterator<Item = IK>,
-  V: IntoIterator<Item = (K, IV)>,
+  S: Into<String>,
+  IV: IntoIterator<Item = S>,
+  V: IntoIterator<Item = (S, IV)>,
   I: IntoIterator<Item = V>,
 {
   fn from(iter: I) -> Self {
@@ -807,6 +809,20 @@ where
       .collect();
 
     Self(modifiers)
+  }
+}
+
+impl<S, IV, V> FromIterator<V> for Modifiers
+where
+  S: Into<String>,
+  IV: IntoIterator<Item = S>,
+  V: IntoIterator<Item = (S, IV)>,
+{
+  fn from_iter<T>(iter: T) -> Self
+  where
+    T: IntoIterator<Item = V>,
+  {
+    Self::from(iter)
   }
 }
 
@@ -864,6 +880,174 @@ impl Deref for AdditionalFields {
 impl DerefMut for AdditionalFields {
   fn deref_mut(&mut self) -> &mut Self::Target {
     &mut self.0
+  }
+}
+
+/// The value and color atoms.
+
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
+pub struct Atoms(Vec<Atom>);
+
+impl<V, I> From<I> for Atoms
+where
+  V: Into<Atom>,
+  I: IntoIterator<Item = V>,
+{
+  fn from(iter: I) -> Self {
+    let atoms = iter.into_iter().map(|v| v.into()).collect();
+
+    Self(atoms)
+  }
+}
+
+impl<V> FromIterator<V> for Atoms
+where
+  V: Into<Atom>,
+{
+  fn from_iter<T>(iter: T) -> Self
+  where
+    T: IntoIterator<Item = V>,
+  {
+    Self::from(iter)
+  }
+}
+
+impl Deref for Atoms {
+  type Target = Vec<Atom>;
+
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+impl DerefMut for Atoms {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.0
+  }
+}
+
+/// The atom.
+#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+pub enum Atom {
+  Color(AtomColor),
+  Value(AtomValue),
+}
+
+impl From<AtomColor> for Atom {
+  fn from(value: AtomColor) -> Self {
+    Self::Color(value)
+  }
+}
+
+impl From<AtomValue> for Atom {
+  fn from(value: AtomValue) -> Self {
+    Self::Value(value)
+  }
+}
+
+/// The color atom.
+#[derive(Clone, Debug, Deserialize, PartialEq, Serialize, TypedBuilder)]
+#[serde(rename_all = "camelCase")]
+pub struct AtomColor {
+  /// The name of the color.
+  pub name: String,
+  #[builder(default, setter(into))]
+  pub description: Option<String>,
+  /// The priority of this items.
+  #[builder(default, setter(into))]
+  pub priority: Priority,
+  /// The name of the CSS Variable which is used to set the color opacity (must
+  /// start with `--`).
+  pub opacity: String,
+  /// When true the built in palette will also be available as values for the
+  /// colors. If false only the colors defined in the `variables` will be
+  /// available.
+  #[builder(default, setter(into))]
+  pub palette: bool,
+  /// Support additional fields for plugins.
+  #[serde(flatten, default)]
+  #[builder(default, setter(into))]
+  additional_fields: AdditionalFields,
+}
+
+/// The value atom.
+#[derive(Clone, Debug, Deserialize, PartialEq, Serialize, TypedBuilder)]
+#[serde(rename_all = "camelCase")]
+pub struct AtomValue {
+  pub name: String,
+  #[builder(default, setter(into))]
+  pub description: Option<String>,
+  /// The priority of this items.
+  #[builder(default, setter(into))]
+  pub priority: Priority,
+  /// The values for the atom.
+  pub values: AtomCssValues,
+  /// Support additional fields for plugins.
+  #[serde(flatten, default)]
+  #[builder(default, setter(into))]
+  additional_fields: AdditionalFields,
+}
+
+/// Values for the value atom.
+#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+pub struct AtomCssValues(IndexMap<String, AtomCssValue>);
+
+impl<K, V, I> From<I> for AtomCssValues
+where
+  K: Into<String>,
+  V: Into<AtomCssValue>,
+  I: IntoIterator<Item = (K, V)>,
+{
+  fn from(iter: I) -> Self {
+    let values = iter
+      .into_iter()
+      .map(|(k, v)| (k.into(), v.into()))
+      .collect();
+
+    Self(values)
+  }
+}
+
+impl<K, V> FromIterator<(K, V)> for AtomCssValues
+where
+  K: Into<String>,
+  V: Into<AtomCssValue>,
+{
+  fn from_iter<T>(iter: T) -> Self
+  where
+    T: IntoIterator<Item = (K, V)>,
+  {
+    Self::from(iter)
+  }
+}
+
+impl Deref for AtomCssValues {
+  type Target = IndexMap<String, AtomCssValue>;
+
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+impl DerefMut for AtomCssValues {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.0
+  }
+}
+
+/// The value of an individual value atom.
+#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[serde(untagged)]
+pub enum AtomCssValue {
+  /// A singular value. Use this with named rules.
+  Value(String),
+  /// Provide an object with the values.
+  Object(StringValueObject),
+}
+
+impl<T: Into<String>> From<T> for AtomCssValue {
+  fn from(value: T) -> Self {
+    Self::Value(value.into())
   }
 }
 

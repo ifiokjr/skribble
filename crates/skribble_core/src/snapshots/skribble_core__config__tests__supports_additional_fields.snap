@@ -17,5 +17,6 @@ expression: config
   "rules": {},
   "classes": {},
   "palette": {},
+  "atoms": [],
   "notDefined": {}
 }

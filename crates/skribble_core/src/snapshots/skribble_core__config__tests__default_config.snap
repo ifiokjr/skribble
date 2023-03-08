@@ -16,5 +16,6 @@ expression: "StyleConfig::default()"
   "modifiers": [],
   "rules": {},
   "classes": {},
-  "palette": {}
+  "palette": {},
+  "atoms": []
 }
