@@ -172,6 +172,7 @@ impl DerefMut for Keyframes {
 #[serde(rename_all = "camelCase")]
 pub struct Keyframe {
   /// The name of the keyframe.
+  #[builder(setter(into))]
   pub name: String,
   /// The description of the keyframe. This will be used in the vscode
   /// extension.
@@ -276,6 +277,7 @@ impl DerefMut for MediaQueries {
 #[serde(rename_all = "camelCase")]
 pub struct MediaQuery {
   /// The name of the media query.
+  #[builder(setter(into))]
   pub name: String,
   /// The query to use for the media query.
   pub query: String,
@@ -741,39 +743,34 @@ impl DerefMut for Palette {
 
 /// This is the setup for the parent modifiers.
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
-pub struct ParentModifiers(IndexMap<String, Vec<String>>);
+pub struct ParentModifiers(Vec<ParentModifier>);
 
-impl<S, V, I> From<I> for ParentModifiers
+impl<V, I> From<I> for ParentModifiers
 where
-  S: Into<String>,
-  V: IntoIterator<Item = S>,
-  I: IntoIterator<Item = (S, V)>,
+  V: Into<ParentModifier>,
+  I: IntoIterator<Item = V>,
 {
   fn from(iter: I) -> Self {
-    let parent_modifiers = iter
-      .into_iter()
-      .map(|(k, v)| (k.into(), v.into_iter().map(|v| v.into()).collect()))
-      .collect();
+    let parent_modifiers = iter.into_iter().map(|value| value.into()).collect();
 
     Self(parent_modifiers)
   }
 }
 
-impl<S, V> FromIterator<(S, V)> for ParentModifiers
+impl<V> FromIterator<V> for ParentModifiers
 where
-  S: Into<String>,
-  V: IntoIterator<Item = S>,
+  V: Into<ParentModifier>,
 {
   fn from_iter<T>(iter: T) -> Self
   where
-    T: IntoIterator<Item = (S, V)>,
+    T: IntoIterator<Item = V>,
   {
     Self::from(iter)
   }
 }
 
 impl Deref for ParentModifiers {
-  type Target = IndexMap<String, Vec<String>>;
+  type Target = Vec<ParentModifier>;
 
   fn deref(&self) -> &Self::Target {
     &self.0
@@ -784,6 +781,27 @@ impl DerefMut for ParentModifiers {
   fn deref_mut(&mut self) -> &mut Self::Target {
     &mut self.0
   }
+}
+
+#[derive(Clone, Debug, Deserialize, PartialEq, Serialize, TypedBuilder)]
+#[serde(rename_all = "camelCase")]
+pub struct ParentModifier {
+  /// The name of the parent modifier will be used to reference
+  #[builder(setter(into))]
+  pub name: String,
+  /// The values.
+  #[builder(setter(into))]
+  pub values: Vec<String>,
+  /// The description for this item
+  #[builder(default, setter(into))]
+  pub description: Option<String>,
+  /// The priority for this item.
+  #[builder(default, setter(into))]
+  pub priority: Priority,
+  /// Support additional fields for plugins.
+  #[serde(flatten, default)]
+  #[builder(default, setter(into))]
+  additional_fields: AdditionalFields,
 }
 
 /// This is the setup for named modifiers.
@@ -950,6 +968,7 @@ impl From<AtomValue> for Atom {
 #[serde(rename_all = "camelCase")]
 pub struct AtomColor {
   /// The name of the color.
+  #[builder(setter(into))]
   pub name: String,
   #[builder(default, setter(into))]
   pub description: Option<String>,
@@ -974,6 +993,7 @@ pub struct AtomColor {
 #[derive(Clone, Debug, Deserialize, PartialEq, Serialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
 pub struct AtomValue {
+  #[builder(setter(into))]
   pub name: String,
   #[builder(default, setter(into))]
   pub description: Option<String>,

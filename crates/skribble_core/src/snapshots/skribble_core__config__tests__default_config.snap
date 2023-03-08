@@ -12,7 +12,7 @@ expression: "StyleConfig::default()"
   "keyframes": [],
   "variables": [],
   "mediaQueries": [],
-  "parentModifiers": {},
+  "parentModifiers": [],
   "modifiers": [],
   "rules": {},
   "classes": {},
