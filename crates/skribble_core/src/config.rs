@@ -984,6 +984,43 @@ impl DerefMut for AdditionalFields {
   }
 }
 
+/// The priority of a an ordered item. A lower number is better. The default is
+/// 150.
+#[derive(Clone, Copy, Debug, Deserialize, Eq, PartialEq, Serialize)]
+pub struct Priority(u8);
+
+impl Priority {
+  pub const DEFAULT: Self = Self(150);
+  pub const HIGH: Self = Self(50);
+  pub const LOW: Self = Self(200);
+  pub const MEDIUM: Self = Self(100);
+}
+
+impl Default for Priority {
+  fn default() -> Self {
+    Self::DEFAULT
+  }
+}
+
+impl<T: Into<u8>> From<T> for Priority {
+  fn from(value: T) -> Self {
+    Self(value.into())
+  }
+}
+
+impl Deref for Priority {
+  type Target = u8;
+
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+impl DerefMut for Priority {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.0
+  }
+}
 #[cfg(test)]
 mod tests {
   use super::*;
