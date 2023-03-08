@@ -48,6 +48,9 @@ pub struct StyleConfig {
   /// The atoms which provide the values.
   #[builder(default, setter(into))]
   pub atoms: Atoms,
+  /// Groups which are usually used to activate a set of css variables.
+  #[builder(default, setter(into))]
+  pub groups: Groups,
   /// The plugins which can be used to add new functionality and extend the
   /// configuration.
   #[serde(skip)]
@@ -1126,6 +1129,57 @@ impl<T: Into<String>> From<T> for AtomCssValue {
   }
 }
 
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
+pub struct Groups(Vec<Group>);
+impl<V, I> From<I> for Groups
+where
+  V: Into<Group>,
+  I: IntoIterator<Item = V>,
+{
+  fn from(iter: I) -> Self {
+    let groups = iter.into_iter().map(|v| v.into()).collect();
+
+    Self(groups)
+  }
+}
+
+impl<V: Into<Group>> FromIterator<V> for Groups {
+  fn from_iter<T>(iter: T) -> Self
+  where
+    T: IntoIterator<Item = V>,
+  {
+    Self::from(iter)
+  }
+}
+
+impl Deref for Groups {
+  type Target = Vec<Group>;
+
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+impl DerefMut for Groups {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.0
+  }
+}
+
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize, TypedBuilder)]
+pub struct Group {
+  /// The name of the group.
+  pub name: String,
+  /// The description of the group.
+  #[builder(default, setter(into))]
+  pub description: Option<String>,
+  /// The priority of this items.
+  #[builder(default, setter(into))]
+  pub priority: Priority,
+  /// The styles for the specific class.
+  #[builder(setter(into))]
+  pub styles: StringValueMap,
+}
 /// The priority of a an ordered item. A lower number is better. The default is
 /// 150.
 #[derive(Clone, Copy, Debug, Deserialize, Eq, PartialEq, Serialize)]

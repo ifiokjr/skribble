@@ -17,5 +17,6 @@ expression: "StyleConfig::default()"
   "rules": [],
   "classes": [],
   "palette": {},
-  "atoms": []
+  "atoms": [],
+  "groups": []
 }
