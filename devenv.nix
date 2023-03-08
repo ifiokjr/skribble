@@ -49,7 +49,6 @@
   '';
   scripts."test:snapshot".exec = ''
     cargo nextest run
-    set -e
     cargo insta accept
   '';
   scripts."test:all".exec = ''
