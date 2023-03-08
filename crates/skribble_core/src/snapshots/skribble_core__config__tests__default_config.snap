@@ -14,7 +14,7 @@ expression: "StyleConfig::default()"
   "mediaQueries": [],
   "parentModifiers": [],
   "modifiers": [],
-  "rules": {},
+  "rules": [],
   "classes": {},
   "palette": {},
   "atoms": []

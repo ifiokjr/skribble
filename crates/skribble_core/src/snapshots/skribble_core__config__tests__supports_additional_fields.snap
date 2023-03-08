@@ -14,7 +14,7 @@ expression: config
   "mediaQueries": [],
   "parentModifiers": [],
   "modifiers": [],
-  "rules": {},
+  "rules": [],
   "classes": {},
   "palette": {},
   "atoms": [],

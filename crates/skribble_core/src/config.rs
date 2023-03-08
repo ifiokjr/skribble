@@ -184,16 +184,16 @@ pub struct Keyframe {
   /// The rules for the specific keyframe.
   #[serde(flatten, default)]
   #[builder(default, setter(into))]
-  pub rules: StringValueObject,
+  pub rules: StringValueMap,
 }
 
 /// This is a more usable version of Index<String, String> which allows for
 /// easier construction and fully supports serde with renaming built in.
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct StringValueObject(IndexMap<String, String>);
+pub struct StringValueMap(IndexMap<String, String>);
 
-impl<S, I> From<I> for StringValueObject
+impl<S, I> From<I> for StringValueMap
 where
   S: Into<String>,
   I: IntoIterator<Item = (S, S)>,
@@ -208,7 +208,7 @@ where
   }
 }
 
-impl<S> FromIterator<(S, S)> for StringValueObject
+impl<S> FromIterator<(S, S)> for StringValueMap
 where
   S: Into<String>,
 {
@@ -217,7 +217,7 @@ where
   }
 }
 
-impl Deref for StringValueObject {
+impl Deref for StringValueMap {
   type Target = IndexMap<String, String>;
 
   fn deref(&self) -> &Self::Target {
@@ -225,7 +225,49 @@ impl Deref for StringValueObject {
   }
 }
 
-impl DerefMut for StringValueObject {
+impl DerefMut for StringValueMap {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.0
+  }
+}
+
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct StringOptionValueMap(IndexMap<String, Option<String>>);
+
+impl<S, I> From<I> for StringOptionValueMap
+where
+  S: Into<String>,
+  I: IntoIterator<Item = (S, Option<S>)>,
+{
+  fn from(iter: I) -> Self {
+    let rules = iter
+      .into_iter()
+      .map(|(key, value)| (key.into(), value.map(|v| v.into())))
+      .collect();
+
+    Self(rules)
+  }
+}
+
+impl<S> FromIterator<(S, Option<S>)> for StringOptionValueMap
+where
+  S: Into<String>,
+{
+  fn from_iter<T: IntoIterator<Item = (S, Option<S>)>>(iter: T) -> Self {
+    Self::from(iter)
+  }
+}
+
+impl Deref for StringOptionValueMap {
+  type Target = IndexMap<String, Option<String>>;
+
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+impl DerefMut for StringOptionValueMap {
   fn deref_mut(&mut self) -> &mut Self::Target {
     &mut self.0
   }
@@ -280,6 +322,7 @@ pub struct MediaQuery {
   #[builder(setter(into))]
   pub name: String,
   /// The query to use for the media query.
+  #[builder(setter(into))]
   pub query: String,
   /// A markdown description of what this media query should be used for.
   #[builder(default, setter(into))]
@@ -289,8 +332,9 @@ pub struct MediaQuery {
   pub priority: Priority,
 }
 
-/// `NamedRules` connect all the atomic names to their atomic styles. Each style
-/// that is defined as null will be provided the value from the atom style.
+/// [`NamedRules`] connect all the atomic names to their atomic styles. Each
+/// style that is defined as null will be provided the value from the atom
+/// style.
 ///
 /// Atoms are defined as a style rule that receives one value from the user.
 ///
@@ -298,45 +342,31 @@ pub struct MediaQuery {
 /// properties that it controls. The styles rules are later connected with
 /// `Atoms` which are passed to each individual style rule.
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
-pub struct NamedRules(IndexMap<String, IndexMap<String, Option<String>>>);
+pub struct NamedRules(Vec<NamedRule>);
 
-impl<K, C, V, I> From<I> for NamedRules
+impl<V, I> From<I> for NamedRules
 where
-  K: Into<String>,
-  C: Into<String>,
-  V: IntoIterator<Item = (K, Option<C>)>,
-  I: IntoIterator<Item = (K, V)>,
+  V: Into<NamedRule>,
+  I: IntoIterator<Item = V>,
 {
   fn from(value: I) -> Self {
-    let mut rules = IndexMap::new();
-
-    for (name, values) in value {
-      let name = name.into();
-      let values = values
-        .into_iter()
-        .map(|(name, value)| (name.into(), value.map(|v| v.into())))
-        .collect();
-
-      rules.insert(name, values);
-    }
+    let rules = value.into_iter().map(|value| value.into()).collect();
 
     Self(rules)
   }
 }
 
-impl<K, C, V> FromIterator<(K, V)> for NamedRules
+impl<V> FromIterator<V> for NamedRules
 where
-  K: Into<String>,
-  C: Into<String>,
-  V: IntoIterator<Item = (K, Option<C>)>,
+  V: Into<NamedRule>,
 {
-  fn from_iter<T: IntoIterator<Item = (K, V)>>(iter: T) -> Self {
+  fn from_iter<T: IntoIterator<Item = V>>(iter: T) -> Self {
     Self::from(iter)
   }
 }
 
 impl Deref for NamedRules {
-  type Target = IndexMap<String, IndexMap<String, Option<String>>>;
+  type Target = Vec<NamedRule>;
 
   fn deref(&self) -> &Self::Target {
     &self.0
@@ -347,6 +377,25 @@ impl DerefMut for NamedRules {
   fn deref_mut(&mut self) -> &mut Self::Target {
     &mut self.0
   }
+}
+
+/// [NamedRule]
+#[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize, TypedBuilder)]
+#[serde(rename_all = "camelCase")]
+pub struct NamedRule {
+  /// The name of the media query.
+  #[builder(setter(into))]
+  pub name: String,
+  /// A markdown description of what this media query should be used for.
+  #[builder(default, setter(into))]
+  pub description: Option<String>,
+  /// The priority of this items.
+  #[builder(default, setter(into))]
+  pub priority: Priority,
+  /// The styles for the specific named rule. All values left as [None] will be
+  /// filled with the value provided by the `atom`.
+  #[builder(setter(into))]
+  styles: StringOptionValueMap,
 }
 
 /// The named classes with their own defined values.
@@ -700,7 +749,7 @@ impl Display for PropertySyntaxValue {
 ///   }
 /// }
 /// ```
-pub type Palette = StringValueObject;
+pub type Palette = StringValueMap;
 
 /// This is the setup for the parent modifiers.
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
@@ -1052,7 +1101,7 @@ pub enum AtomCssValue {
   /// A singular value. Use this with named rules.
   Value(String),
   /// Provide an object with the values.
-  Object(StringValueObject),
+  Object(StringValueMap),
 }
 
 impl<T: Into<String>> From<T> for AtomCssValue {
