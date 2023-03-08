@@ -700,46 +700,7 @@ impl Display for PropertySyntaxValue {
 ///   }
 /// }
 /// ```
-#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
-pub struct Palette(IndexMap<String, String>);
-
-impl<S, I> From<I> for Palette
-where
-  S: Into<String>,
-  I: IntoIterator<Item = (S, S)>,
-{
-  fn from(value: I) -> Self {
-    let palette = value
-      .into_iter()
-      .map(|(name, value)| (name.into(), value.into()))
-      .collect();
-
-    Self(palette)
-  }
-}
-
-impl<S> FromIterator<(S, S)> for Palette
-where
-  S: Into<String>,
-{
-  fn from_iter<T: IntoIterator<Item = (S, S)>>(iter: T) -> Self {
-    Self::from(iter)
-  }
-}
-
-impl Deref for Palette {
-  type Target = IndexMap<String, String>;
-
-  fn deref(&self) -> &Self::Target {
-    &self.0
-  }
-}
-
-impl DerefMut for Palette {
-  fn deref_mut(&mut self) -> &mut Self::Target {
-    &mut self.0
-  }
-}
+pub type Palette = StringValueObject;
 
 /// This is the setup for the parent modifiers.
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
