@@ -129,41 +129,6 @@ impl<T: Into<String>> From<T> for ColorFormat {
 
 /// This setups up the animation keyframes for the configuration. The names can
 /// be reference in the atoms.
-///
-/// ```json
-/// {
-///   "keyframes": {
-///     "enter": {
-///       "from": {
-///         "opacity": "var(--enter-opacity, 1)",
-///         "transform": "translate3d(var(--enter-translate-x, 0), var(--enter-translate-y, 0), 0) scale3d(var(--enter-scale, 1), var(--enter-scale, 1), var(--enter-scale, 1)) rotate(var(--enter-rotate, 0))"
-///       }
-///     },
-///     "exit": {
-///       "to": {
-///         "opacity": "var(--exit-opacity, 1)",
-///         "transform": "translate3d(var(--exit-translate-x, 0), var(--exit-translate-y, 0), 0) scale3d(var(--exit-scale, 1), var(--exit-scale, 1), var(--exit-scale, 1)) rotate(var(--exit-rotate, 0))"
-///       }
-///     },
-///     "spin": {
-///       "from": { "transform": "rotate(0deg)" },
-///       "to": { "transform": "rotate(360deg)" }
-///     },
-///     "ping": { "75%, 100%": { "transform": "scale(2)", "opacity": "0" } },
-///     "pulse": { "0%, 100%": { "opacity": "1" }, "50%": { "opacity": "0.5" } },
-///     "bounce": {
-///       "0%, 100%": {
-///         "transform": "translateY(-25%)",
-///         "animationTimingFunction": "cubic-bezier(0.8, 0, 1, 1)"
-///       },
-///       "50%": {
-///         "transform": "translateY(0)",
-///         "animationTimingFunction": "cubic-bezier(0, 0, 0.2, 1)"
-///       }
-///     }
-///   }
-/// }
-/// ```
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct Keyframes(Vec<Keyframe>);
 
@@ -209,6 +174,9 @@ pub struct Keyframe {
   /// extension.
   #[builder(default, setter(into))]
   pub description: Option<String>,
+  /// The priority of item.
+  #[builder(default, setter(into))]
+  pub priority: Priority,
   /// The rules for the specific keyframe.
   #[serde(flatten, default)]
   #[builder(default, setter(into))]
@@ -259,63 +227,35 @@ impl DerefMut for KeyframeRules {
 }
 
 /// Media queries can should be defined as a map of names to their css queries.
-///
-/// ```json
-/// {
-///   "mediaQueries": {
-///     "sm": "(min-width: 640px)",
-///     "md": "(min-width: 768px)",
-///     "lg": "(min-width: 1024px)",
-///     "xl": "(min-width: 1280px)",
-///     "xxl": "(min-width: 1536px)",
-///     "portrait": "(orientation: portrait)",
-///     "combined": "(min-width: 30em) and (orientation: landscape)"
-///   }
-/// }
-/// ```
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
-pub struct MediaQueries(IndexMap<String, String>);
+pub struct MediaQueries(Vec<MediaQuery>);
 
-impl MediaQueries {
-  pub fn breakpoint(
-    &mut self,
-    name: impl Into<String>,
-    value: impl Into<String>,
-  ) -> Option<String> {
-    let query = format!("(min-width: {})", value.into());
-    self.0.insert(name.into(), query)
-  }
-}
-
-impl<K, V, I> From<I> for MediaQueries
+impl<V, I> From<I> for MediaQueries
 where
-  K: Into<String>,
-  V: Into<String>,
-  I: IntoIterator<Item = (K, V)>,
+  V: Into<MediaQuery>,
+  I: IntoIterator<Item = V>,
 {
-  fn from(value: I) -> Self {
-    let mut breakpoints = IndexMap::new();
-
-    for (name, value) in value {
-      breakpoints.insert(name.into(), value.into());
-    }
+  fn from(iter: I) -> Self {
+    let breakpoints = iter.into_iter().map(|value| value.into()).collect();
 
     Self(breakpoints)
   }
 }
 
-impl<K, V> FromIterator<(K, V)> for MediaQueries
+impl<V> FromIterator<V> for MediaQueries
 where
-  K: Into<String>,
-  V: Into<String>,
+  V: Into<MediaQuery>,
 {
-  fn from_iter<T: IntoIterator<Item = (K, V)>>(iter: T) -> Self {
+  fn from_iter<T>(iter: T) -> Self
+  where
+    T: IntoIterator<Item = V>,
+  {
     Self::from(iter)
   }
 }
 
 impl Deref for MediaQueries {
-  type Target = IndexMap<String, String>;
+  type Target = Vec<MediaQuery>;
 
   fn deref(&self) -> &Self::Target {
     &self.0
@@ -328,30 +268,25 @@ impl DerefMut for MediaQueries {
   }
 }
 
+#[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize, TypedBuilder)]
+#[serde(rename_all = "camelCase")]
+pub struct MediaQuery {
+  /// The name of the media query.
+  pub name: String,
+  /// The query to use for the media query.
+  pub query: String,
+  /// A markdown description of what this media query should be used for.
+  #[builder(default, setter(into))]
+  pub description: Option<String>,
+  /// The priority of item.
+  #[builder(default, setter(into))]
+  pub priority: Priority,
+}
+
 /// `NamedRules` connect all the atomic names to their atomic styles. Each style
 /// that is defined as null will be provided the value from the atom style.
 ///
 /// Atoms are defined as a style rule that receives one value from the user.
-///
-/// ```json
-/// {
-///   "rules": {
-///     "p": { "padding": null },
-///     "py": { "padding-top": null, "padding-bottom": null },
-///     "px": { "padding-right": null, "padding-left": null },
-///     "pt": { "padding-top": null },
-///     "pr": { "padding-right": null },
-///     "pb": { "padding-bottom": null },
-///     "pl": { "padding-left": null },
-///     "pbl": { "padding-block": null },
-///     "pbls": { "padding-block-start": null },
-///     "pble": { "padding-block-end": null },
-///     "pin": { "padding-inline": null },
-///     "pins": { "padding-inline-start": null },
-///     "pine": { "padding-inline-end": null }
-///   }
-/// }
-/// ```
 ///
 /// Each of the style rules above maps an atomic style name to a list of CSS
 /// properties that it controls. The styles rules are later connected with
@@ -409,17 +344,7 @@ impl DerefMut for NamedRules {
 }
 
 /// The named classes with their own defined values.
-///
-/// ```json
-/// {
-///   "group": {}, // Empty class
-///   "container": {
-///     "width": "100%",
-///     "max-width": "var(--container-max-width)"
-///   }
-/// }
-/// ```
-#[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct NamedClasses(IndexMap<String, IndexMap<String, String>>);
 
 impl<K, C, V, I> From<I> for NamedClasses
@@ -528,6 +453,9 @@ pub struct CssVariable {
   /// A description of the CSS variable and what it is used for.
   #[builder(default, setter(strip_option, into))]
   pub description: Option<String>,
+  /// The priority of item.
+  #[builder(default, setter(into))]
+  pub priority: Priority,
   /// The [syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/@property/syntax) of the CSS variable.
   #[builder(default, setter(into))]
   pub syntax: PropertySyntax,
@@ -810,36 +738,6 @@ impl DerefMut for Palette {
 }
 
 /// This is the setup for the parent modifiers.
-///
-/// ```json
-/// {
-///   "parentModifiers": {
-///     "light": [".light &"],
-///     "dark": [".dark &"],
-///     "rtl": ["[dir=rtl] &"],
-///     "groupHover": [
-///       ".\\$group:hover &",
-///       ".group:hover &",
-///       "[role='group']:hover &"
-///     ],
-///     "groupFocus": [
-///       ".\\$group:focus &",
-///       ".group:focus &",
-///       "[role='group']:focus &"
-///     ],
-///     "groupActive": [
-///       ".\\$group:active &",
-///       ".group:active &",
-///       "[role='group']:active &"
-///     ],
-///     "groupVisited": [
-///       ".\\$group:visited &",
-///       ".group:visited &",
-///       "[role='group']:visited &"
-///     ]
-///   }
-/// }
-/// ```
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct ParentModifiers(IndexMap<String, Vec<String>>);
 
@@ -886,22 +784,7 @@ impl DerefMut for ParentModifiers {
 }
 
 /// This is the setup for named modifiers.
-///
-/// ```json
-/// [
-///   { "hover": ["&:hover"] },
-///   { "active": ["&:active"] },
-///   { "focus": ["&:focus"] },
-///   { "focusWithin": ["&:focus-within"] },
-///   { "focusVisible": ["&:focus-visible"] },
-///   {
-///     "disabled": ["&[disabled]", "&[aria-disabled=true]", "&:disabled"],
-///     "notDisabled": ["&[aria-disabled=false]", "&:disabled"],
-///     "enabled": ["&:enabled"]
-///   },
-///   { "empty": ["&:empty"] },
-/// ]
-/// ```
+
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct Modifiers(Vec<IndexMap<String, Vec<String>>>);
 
@@ -1021,6 +904,7 @@ impl DerefMut for Priority {
     &mut self.0
   }
 }
+
 #[cfg(test)]
 mod tests {
   use super::*;
