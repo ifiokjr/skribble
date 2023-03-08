@@ -9,7 +9,7 @@ expression: "StyleConfig::default()"
     "charset": "utf-8",
     "useRegisteredProperties": false
   },
-  "keyframes": {},
+  "keyframes": [],
   "variables": [],
   "mediaQueries": {},
   "parentModifiers": {},

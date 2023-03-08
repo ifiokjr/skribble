@@ -66,7 +66,7 @@ impl StyleConfig {
 }
 
 /// Options to use in the configuration.
-#[derive(Serialize, Deserialize, TypedBuilder, Debug, PartialEq)]
+#[derive(Clone, Debug, Deserialize, PartialEq, Serialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
 pub struct Options {
   /// This is the default format of colors rendered in css.
@@ -99,7 +99,7 @@ fn default_variable_prefix() -> String {
 }
 
 /// ColorFormat is used to determine the default format of the colors.
-#[derive(Default, Serialize, Deserialize, Debug, PartialEq, Clone, Copy)]
+#[derive(Clone, Copy, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub enum ColorFormat {
   #[serde(rename = "rgb")]
   Rgb,
@@ -164,48 +164,30 @@ impl<T: Into<String>> From<T> for ColorFormat {
 ///   }
 /// }
 /// ```
-#[derive(Serialize, Deserialize, Debug, Default, PartialEq, Clone)]
-pub struct Keyframes(Frames);
-type Frames = IndexMap<String, IndexMap<String, String>>;
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
+pub struct Keyframes(Vec<Keyframe>);
 
-impl<K, C, V, I> From<I> for Keyframes
+impl<V, I> From<I> for Keyframes
 where
-  K: Into<String>,
-  C: Into<String>,
-  V: IntoIterator<Item = (K, C)>,
-  I: IntoIterator<Item = (K, V)>,
+  V: Into<Keyframe>,
+  I: IntoIterator<Item = V>,
 {
   fn from(iter: I) -> Self {
-    let frames = iter
-      .into_iter()
-      .map(|(name, value)| {
-        (
-          name.into(),
-          value
-            .into_iter()
-            .map(|(key, value)| (key.into(), value.into()))
-            .collect(),
-        )
-      })
-      .collect();
-
-    Self(frames)
+    Self(iter.into_iter().map(|value| value.into()).collect())
   }
 }
 
-impl<K, C, V> FromIterator<(K, V)> for Keyframes
+impl<V> FromIterator<V> for Keyframes
 where
-  K: Into<String>,
-  C: Into<String>,
-  V: IntoIterator<Item = (K, C)>,
+  V: Into<Keyframe>,
 {
-  fn from_iter<T: IntoIterator<Item = (K, V)>>(iter: T) -> Self {
+  fn from_iter<T: IntoIterator<Item = V>>(iter: T) -> Self {
     Self::from(iter)
   }
 }
 
 impl Deref for Keyframes {
-  type Target = Frames;
+  type Target = Vec<Keyframe>;
 
   fn deref(&self) -> &Self::Target {
     &self.0
@@ -213,6 +195,64 @@ impl Deref for Keyframes {
 }
 
 impl DerefMut for Keyframes {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.0
+  }
+}
+
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize, TypedBuilder)]
+#[serde(rename_all = "camelCase")]
+pub struct Keyframe {
+  /// The name of the keyframe.
+  pub name: String,
+  /// The description of the keyframe. This will be used in the vscode
+  /// extension.
+  #[builder(default, setter(into))]
+  pub description: Option<String>,
+  /// The rules for the specific keyframe.
+  #[serde(flatten, default)]
+  #[builder(default, setter(into))]
+  pub rules: KeyframeRules,
+}
+
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
+pub struct KeyframeRules(IndexMap<String, String>);
+
+impl<K, V, I> From<I> for KeyframeRules
+where
+  K: Into<String>,
+  V: Into<String>,
+  I: IntoIterator<Item = (K, V)>,
+{
+  fn from(iter: I) -> Self {
+    let rules = iter
+      .into_iter()
+      .map(|(key, value)| (key.into(), value.into()))
+      .collect();
+
+    Self(rules)
+  }
+}
+
+impl<K, V> FromIterator<(K, V)> for KeyframeRules
+where
+  K: Into<String>,
+  V: Into<String>,
+{
+  fn from_iter<T: IntoIterator<Item = (K, V)>>(iter: T) -> Self {
+    Self::from(iter)
+  }
+}
+
+impl Deref for KeyframeRules {
+  type Target = IndexMap<String, String>;
+
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+impl DerefMut for KeyframeRules {
   fn deref_mut(&mut self) -> &mut Self::Target {
     &mut self.0
   }
@@ -435,14 +475,24 @@ impl DerefMut for NamedClasses {
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
 pub struct CssVariables(Vec<CssVariable>);
 
-impl<V: Into<CssVariable>, I: IntoIterator<Item = V>> From<I> for CssVariables {
+impl<V, I> From<I> for CssVariables
+where
+  V: Into<CssVariable>,
+  I: IntoIterator<Item = V>,
+{
   fn from(value: I) -> Self {
     Self(value.into_iter().map(|v| v.into()).collect())
   }
 }
 
-impl FromIterator<CssVariable> for CssVariables {
-  fn from_iter<T: IntoIterator<Item = CssVariable>>(iter: T) -> Self {
+impl<V> FromIterator<V> for CssVariables
+where
+  V: Into<CssVariable>,
+{
+  fn from_iter<T>(iter: T) -> Self
+  where
+    T: IntoIterator<Item = V>,
+  {
     Self::from(iter)
   }
 }
@@ -467,12 +517,17 @@ pub type NestedCssVariableSelectors = IndexMap<String, CssVariableSelectors>;
 /// This can be used to define colors and other CSS variables.
 ///
 /// For colors you should set the `syntax` to [PropertySyntaxValue::Color].
-#[derive(Serialize, Deserialize, TypedBuilder, Debug, PartialEq, Clone)]
+///
+/// All CSS variables are made available in the produced code.
+#[derive(Clone, Debug, Deserialize, PartialEq, Serialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
 pub struct CssVariable {
   /// A required name. This should always start with `--`.
   #[builder(setter(into))]
   pub name: String,
+  /// A description of the CSS variable and what it is used for.
+  #[builder(default, setter(strip_option, into))]
+  pub description: Option<String>,
   /// The [syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/@property/syntax) of the CSS variable.
   #[builder(default, setter(into))]
   pub syntax: PropertySyntax,
@@ -711,7 +766,7 @@ impl Display for PropertySyntaxValue {
 ///   }
 /// }
 /// ```
-#[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct Palette(IndexMap<String, String>);
 
 impl<K, V, I> From<I> for Palette
@@ -785,7 +840,7 @@ impl DerefMut for Palette {
 ///   }
 /// }
 /// ```
-#[derive(Serialize, Deserialize, Debug, Default, PartialEq, Clone)]
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct ParentModifiers(IndexMap<String, Vec<String>>);
 
 impl<K, C, V, I> From<I> for ParentModifiers
@@ -847,7 +902,7 @@ impl DerefMut for ParentModifiers {
 ///   { "empty": ["&:empty"] },
 /// ]
 /// ```
-#[derive(Serialize, Deserialize, Debug, Default, PartialEq, Clone)]
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct Modifiers(Vec<IndexMap<String, Vec<String>>>);
 
 impl<K, IK, IV, V, I> From<I> for Modifiers
@@ -886,7 +941,7 @@ impl DerefMut for Modifiers {
   }
 }
 
-#[derive(Serialize, Deserialize, Debug, Default, PartialEq, Clone)]
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct AdditionalFields(IndexMap<String, Value>);
 
 impl<K, V, I> From<I> for AdditionalFields
