@@ -55,7 +55,7 @@ pub struct StyleConfig {
   /// configuration.
   #[serde(skip)]
   #[builder(default, setter(into))]
-  pub plugins: Vec<Box<dyn Plugin>>,
+  pub plugins: PluginsContainer,
   /// Support additional fields for plugins.
   #[serde(flatten, default)]
   #[builder(default, setter(into))]
@@ -467,7 +467,7 @@ pub struct NamedClass {
   pub priority: Priority,
   /// The styles for the specific class.
   #[builder(setter(into))]
-  styles: StringValueMap,
+  pub styles: StringValueMap,
 }
 
 /// Create CSS variables from a list of atoms.
@@ -1067,7 +1067,7 @@ pub struct AtomValue {
 }
 
 /// Values for the value atom.
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct AtomCssValues(IndexMap<String, AtomCssValue>);
 
 impl<K, V, I> From<I> for AtomCssValues
@@ -1180,6 +1180,42 @@ pub struct Group {
   #[builder(setter(into))]
   pub styles: StringValueMap,
 }
+
+/// A map of string values.
+#[derive(Debug, Default)]
+pub struct PluginsContainer(Vec<Box<dyn Plugin>>);
+
+impl<P: Plugin + 'static, I: IntoIterator<Item = P>> From<I> for PluginsContainer {
+  fn from(iter: I) -> Self {
+    let plugins = iter.into_iter().map(|p| p.into()).collect();
+
+    Self(plugins)
+  }
+}
+
+impl<P: Plugin + 'static> FromIterator<P> for PluginsContainer {
+  fn from_iter<T>(iter: T) -> Self
+  where
+    T: IntoIterator<Item = P>,
+  {
+    Self::from(iter)
+  }
+}
+
+impl Deref for PluginsContainer {
+  type Target = Vec<Box<dyn Plugin>>;
+
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+impl DerefMut for PluginsContainer {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.0
+  }
+}
+
 /// The priority of a an ordered item. A lower number is better. The default is
 /// 150.
 #[derive(Clone, Copy, Debug, Deserialize, Eq, PartialEq, Serialize)]
