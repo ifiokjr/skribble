@@ -4,8 +4,8 @@ use indexmap::IndexMap;
 use serde::Deserialize;
 use serde::Serialize;
 
-use crate::base::OPEN_COLOR_PALETTE;
-use crate::base::TAILWIND_PALETTE;
+use crate::data::OPEN_COLOR_PALETTE;
+use crate::data::TAILWIND_PALETTE;
 
 /// Choose how `light` and `dark` mode are handled. via the media query
 /// `prefers-color-scheme` or `class` based.

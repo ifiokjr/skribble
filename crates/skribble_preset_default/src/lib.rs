@@ -1,11 +1,14 @@
 #![deny(clippy::all)]
 
-pub use base::PaletteType;
-use base::*;
+use data::*;
+use enums::*;
 use serde::Deserialize;
 use serde::Serialize;
 use skribble_core::*;
 use typed_builder::TypedBuilder;
+
+pub(crate) mod data;
+mod enums;
 
 #[derive(Debug, Clone, Default, Deserialize, TypedBuilder, Serialize)]
 pub struct PresetDefault {
@@ -26,13 +29,13 @@ impl Plugin for PresetDefault {
   fn mutate_config(&mut self, config: &mut ConfigEnum) -> AnyResult {
     match config {
       ConfigEnum::Palette(ref mut palette) => {
-        update_palette(palette, self.palette);
+        self.update_palette(palette);
       }
       ConfigEnum::MediaQueries(ref mut media_queries) => {
-        update_media_queries(media_queries, self.dark_mode);
+        self.update_media_queries(media_queries);
       }
       ConfigEnum::ParentModifiers(ref mut parent_modifiers) => {
-        update_parent_modifiers(parent_modifiers, self.dark_mode);
+        self.update_parent_modifiers(parent_modifiers);
       }
       _ => {}
     }
@@ -49,4 +52,24 @@ impl Plugin for PresetDefault {
   }
 }
 
-mod base;
+impl PresetDefault {
+  fn update_media_queries(&self, media_queries: &mut MediaQueries) {
+    media_queries.extend(MEDIA_QUERIES.clone());
+
+    if self.dark_mode == DarkMode::Media {
+      media_queries.extend(DARK_MEDIA_QUERIES.clone());
+    }
+  }
+
+  fn update_palette(&self, palette: &mut Palette) {
+    palette.extend(self.palette.palette());
+  }
+
+  fn update_parent_modifiers(&self, parent_modifiers: &mut ParentModifiers) {
+    if self.dark_mode == DarkMode::Class {
+      parent_modifiers.extend(DARK_PARENT_MODIFIERS.clone());
+    }
+
+    parent_modifiers.extend(PARENT_MODIFIERS.clone());
+  }
+}
