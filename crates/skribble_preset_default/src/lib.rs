@@ -37,6 +37,9 @@ impl Plugin for PresetDefault {
       ConfigEnum::ParentModifiers(ref mut parent_modifiers) => {
         self.update_parent_modifiers(parent_modifiers);
       }
+      ConfigEnum::Modifiers(ref mut modifiers) => {
+        self.update_modifiers(modifiers);
+      }
       _ => {}
     }
 
@@ -71,5 +74,9 @@ impl PresetDefault {
     }
 
     parent_modifiers.extend(PARENT_MODIFIERS.clone());
+  }
+
+  fn update_modifiers(&self, modifiers: &mut Modifiers) {
+    modifiers.extend(MODIFIERS.clone());
   }
 }
