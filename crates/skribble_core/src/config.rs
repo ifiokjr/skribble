@@ -55,7 +55,7 @@ pub struct StyleConfig {
   /// configuration.
   #[serde(skip)]
   #[builder(default, setter(into))]
-  pub plugins: PluginsContainer,
+  pub plugins: Plugins,
   /// Support additional fields for plugins.
   #[serde(flatten, default)]
   #[builder(default, setter(into))]
@@ -1169,6 +1169,7 @@ impl DerefMut for Groups {
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize, TypedBuilder)]
 pub struct Group {
   /// The name of the group.
+  #[builder(setter(into))]
   pub name: String,
   /// The description of the group.
   #[builder(default, setter(into))]
@@ -1183,36 +1184,48 @@ pub struct Group {
 
 /// A map of string values.
 #[derive(Debug, Default)]
-pub struct PluginsContainer(Vec<Box<dyn Plugin>>);
+pub struct Plugins(Vec<PluginContainer>);
 
-impl<P: Plugin + 'static, I: IntoIterator<Item = P>> From<I> for PluginsContainer {
+impl<P: Into<PluginContainer>, I: IntoIterator<Item = P>> From<I> for Plugins {
   fn from(iter: I) -> Self {
-    let plugins = iter.into_iter().map(|p| p.into()).collect();
-
+    let plugins = iter.into_iter().map(|v| v.into()).collect();
     Self(plugins)
   }
 }
 
-impl<P: Plugin + 'static> FromIterator<P> for PluginsContainer {
-  fn from_iter<T>(iter: T) -> Self
-  where
-    T: IntoIterator<Item = P>,
-  {
-    Self::from(iter)
+#[derive(Debug, Serialize, TypedBuilder)]
+pub struct PluginContainer {
+  /// Get the default priority of this plugin which will be used to determine
+  /// the order in which plugins are loaded. This can be overridden by the
+  /// user.
+  #[builder(default, setter(into))]
+  pub priority: Priority,
+  /// The plugin.
+  #[serde(skip)]
+  #[builder(setter(into))]
+  pub plugin: Box<dyn Plugin>,
+}
+
+impl<P: Plugin + 'static> From<P> for PluginContainer {
+  fn from(plugin: P) -> Self {
+    Self {
+      priority: Default::default(),
+      plugin: Box::new(plugin),
+    }
   }
 }
 
-impl Deref for PluginsContainer {
-  type Target = Vec<Box<dyn Plugin>>;
+impl Deref for PluginContainer {
+  type Target = Box<dyn Plugin>;
 
   fn deref(&self) -> &Self::Target {
-    &self.0
+    &self.plugin
   }
 }
 
-impl DerefMut for PluginsContainer {
+impl DerefMut for PluginContainer {
   fn deref_mut(&mut self) -> &mut Self::Target {
-    &mut self.0
+    &mut self.plugin
   }
 }
 
