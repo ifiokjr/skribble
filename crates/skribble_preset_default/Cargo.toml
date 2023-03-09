@@ -13,4 +13,7 @@ repository = { workspace = true }
 description = "This plugin provides a default preset for Skribble which is similar to `tailwind`, `windi` and `unocss`."
 
 [dependencies]
+indexmap = { workspace = true }
+lazy_static = { workspace = true }
 skribble_core = { workspace = true }
+typed-builder = { workspace = true }

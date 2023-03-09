@@ -20,4 +20,18 @@ pub enum Error {
     #[source]
     source: serde_json::Error,
   },
+
+  #[error("something went wrong with the plugin: `{id}` while running `mutate_config`")]
+  PluginMutateConfigError {
+    id: String,
+    #[source]
+    source: Box<dyn std::error::Error>,
+  },
+
+  #[error("something went wrong with the plugin: `{id}` while running `finalize_config`")]
+  PluginFinalizeConfigError {
+    id: String,
+    #[source]
+    source: Box<dyn std::error::Error>,
+  },
 }

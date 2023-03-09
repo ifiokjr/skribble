@@ -3,6 +3,7 @@ use std::fmt::Formatter;
 use std::ops::Deref;
 use std::ops::DerefMut;
 
+use derivative::Derivative;
 use indexmap::IndexMap;
 use serde::Deserialize;
 use serde::Serialize;
@@ -14,7 +15,8 @@ use crate::Plugin;
 use crate::Result;
 
 /// The style configuration which can also use the builder pattern.
-#[derive(Debug, Deserialize, Serialize, TypedBuilder)]
+#[derive(Derivative, Deserialize, Serialize, TypedBuilder)]
+#[derivative(Debug)]
 #[serde(rename_all = "camelCase")]
 pub struct StyleConfig {
   /// The general options.
@@ -53,6 +55,7 @@ pub struct StyleConfig {
   pub groups: Groups,
   /// The plugins which can be used to add new functionality and extend the
   /// configuration.
+  #[derivative(Debug = "ignore")]
   #[serde(skip)]
   #[builder(default, setter(into))]
   pub plugins: Plugins,
@@ -209,10 +212,11 @@ pub struct Keyframe {
 #[serde(rename_all = "camelCase")]
 pub struct StringValueMap(IndexMap<String, String>);
 
-impl<S, I> From<I> for StringValueMap
+impl<K, V, I> From<I> for StringValueMap
 where
-  S: Into<String>,
-  I: IntoIterator<Item = (S, S)>,
+  K: Into<String>,
+  V: Into<String>,
+  I: IntoIterator<Item = (K, V)>,
 {
   fn from(iter: I) -> Self {
     let rules = iter
@@ -224,11 +228,12 @@ where
   }
 }
 
-impl<S> FromIterator<(S, S)> for StringValueMap
+impl<K, V> FromIterator<(K, V)> for StringValueMap
 where
-  S: Into<String>,
+  K: Into<String>,
+  V: Into<String>,
 {
-  fn from_iter<T: IntoIterator<Item = (S, S)>>(iter: T) -> Self {
+  fn from_iter<T: IntoIterator<Item = (K, V)>>(iter: T) -> Self {
     Self::from(iter)
   }
 }
@@ -1183,7 +1188,7 @@ pub struct Group {
 }
 
 /// A map of string values.
-#[derive(Debug, Default)]
+#[derive(Default)]
 pub struct Plugins(Vec<PluginContainer>);
 
 impl<P: Into<PluginContainer>, I: IntoIterator<Item = P>> From<I> for Plugins {
@@ -1193,7 +1198,7 @@ impl<P: Into<PluginContainer>, I: IntoIterator<Item = P>> From<I> for Plugins {
   }
 }
 
-#[derive(Debug, Serialize, TypedBuilder)]
+#[derive(Serialize, TypedBuilder)]
 pub struct PluginContainer {
   /// Get the default priority of this plugin which will be used to determine
   /// the order in which plugins are loaded. This can be overridden by the
