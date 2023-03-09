@@ -1,0 +1,16 @@
+[package]
+name = "skribble_plugin_rust"
+version = { workspace = true }
+authors = { workspace = true }
+documentation = "https://docs.rs/skribble_plugin_rust"
+edition = { workspace = true }
+homepage = { workspace = true }
+include = ["src/**/*.rs", "Cargo.toml", "readme.md"]
+keywords = ["build", "atomic", "css", "preset", "skribble", "rust"]
+license = { workspace = true }
+readme = "readme.md"
+repository = { workspace = true }
+description = "This plugin provides support for generating rust code from your `skribble` configuration."
+
+[dependencies]
+skribble_core = { workspace = true }
