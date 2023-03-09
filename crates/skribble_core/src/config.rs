@@ -154,13 +154,12 @@ impl<T: Into<String>> From<T> for ColorFormat {
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct Keyframes(Vec<Keyframe>);
 
-impl<V, I> From<I> for Keyframes
-where
-  V: Into<Keyframe>,
-  I: IntoIterator<Item = V>,
-{
-  fn from(iter: I) -> Self {
-    Self(iter.into_iter().map(|value| value.into()).collect())
+impl IntoIterator for Keyframes {
+  type IntoIter = std::vec::IntoIter<Self::Item>;
+  type Item = Keyframe;
+
+  fn into_iter(self) -> Self::IntoIter {
+    self.0.into_iter()
   }
 }
 
@@ -169,7 +168,7 @@ where
   V: Into<Keyframe>,
 {
   fn from_iter<T: IntoIterator<Item = V>>(iter: T) -> Self {
-    Self::from(iter)
+    Self(iter.into_iter().map(|value| value.into()).collect())
   }
 }
 
@@ -212,19 +211,12 @@ pub struct Keyframe {
 #[serde(rename_all = "camelCase")]
 pub struct StringValueMap(IndexMap<String, String>);
 
-impl<K, V, I> From<I> for StringValueMap
-where
-  K: Into<String>,
-  V: Into<String>,
-  I: IntoIterator<Item = (K, V)>,
-{
-  fn from(iter: I) -> Self {
-    let rules = iter
-      .into_iter()
-      .map(|(key, value)| (key.into(), value.into()))
-      .collect();
+impl IntoIterator for StringValueMap {
+  type IntoIter = indexmap::map::IntoIter<String, String>;
+  type Item = (String, String);
 
-    Self(rules)
+  fn into_iter(self) -> Self::IntoIter {
+    self.0.into_iter()
   }
 }
 
@@ -234,7 +226,12 @@ where
   V: Into<String>,
 {
   fn from_iter<T: IntoIterator<Item = (K, V)>>(iter: T) -> Self {
-    Self::from(iter)
+    let rules = iter
+      .into_iter()
+      .map(|(key, value)| (key.into(), value.into()))
+      .collect();
+
+    Self(rules)
   }
 }
 
@@ -256,18 +253,12 @@ impl DerefMut for StringValueMap {
 #[serde(rename_all = "camelCase")]
 pub struct StringOptionValueMap(IndexMap<String, Option<String>>);
 
-impl<S, I> From<I> for StringOptionValueMap
-where
-  S: Into<String>,
-  I: IntoIterator<Item = (S, Option<S>)>,
-{
-  fn from(iter: I) -> Self {
-    let rules = iter
-      .into_iter()
-      .map(|(key, value)| (key.into(), value.map(|v| v.into())))
-      .collect();
+impl IntoIterator for StringOptionValueMap {
+  type IntoIter = indexmap::map::IntoIter<String, Option<String>>;
+  type Item = (String, Option<String>);
 
-    Self(rules)
+  fn into_iter(self) -> Self::IntoIter {
+    self.0.into_iter()
   }
 }
 
@@ -276,7 +267,12 @@ where
   S: Into<String>,
 {
   fn from_iter<T: IntoIterator<Item = (S, Option<S>)>>(iter: T) -> Self {
-    Self::from(iter)
+    let rules = iter
+      .into_iter()
+      .map(|(key, value)| (key.into(), value.map(|v| v.into())))
+      .collect();
+
+    Self(rules)
   }
 }
 
@@ -298,15 +294,12 @@ impl DerefMut for StringOptionValueMap {
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
 pub struct MediaQueries(Vec<MediaQuery>);
 
-impl<V, I> From<I> for MediaQueries
-where
-  V: Into<MediaQuery>,
-  I: IntoIterator<Item = V>,
-{
-  fn from(iter: I) -> Self {
-    let breakpoints = iter.into_iter().map(|value| value.into()).collect();
+impl IntoIterator for MediaQueries {
+  type IntoIter = std::vec::IntoIter<Self::Item>;
+  type Item = MediaQuery;
 
-    Self(breakpoints)
+  fn into_iter(self) -> Self::IntoIter {
+    self.0.into_iter()
   }
 }
 
@@ -318,7 +311,8 @@ where
   where
     T: IntoIterator<Item = V>,
   {
-    Self::from(iter)
+    let breakpoints = iter.into_iter().map(|value| value.into()).collect();
+    Self(breakpoints)
   }
 }
 
@@ -365,15 +359,12 @@ pub struct MediaQuery {
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
 pub struct NamedRules(Vec<NamedRule>);
 
-impl<V, I> From<I> for NamedRules
-where
-  V: Into<NamedRule>,
-  I: IntoIterator<Item = V>,
-{
-  fn from(value: I) -> Self {
-    let rules = value.into_iter().map(|value| value.into()).collect();
+impl IntoIterator for NamedRules {
+  type IntoIter = std::vec::IntoIter<Self::Item>;
+  type Item = NamedRule;
 
-    Self(rules)
+  fn into_iter(self) -> Self::IntoIter {
+    self.0.into_iter()
   }
 }
 
@@ -382,7 +373,9 @@ where
   V: Into<NamedRule>,
 {
   fn from_iter<T: IntoIterator<Item = V>>(iter: T) -> Self {
-    Self::from(iter)
+    let rules = iter.into_iter().map(|value| value.into()).collect();
+
+    Self(rules)
   }
 }
 
@@ -422,15 +415,12 @@ pub struct NamedRule {
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct NamedClasses(Vec<NamedClass>);
 
-impl<V, I> From<I> for NamedClasses
-where
-  V: Into<NamedClass>,
-  I: IntoIterator<Item = V>,
-{
-  fn from(value: I) -> Self {
-    let classes = value.into_iter().map(|value| value.into()).collect();
+impl IntoIterator for NamedClasses {
+  type IntoIter = std::vec::IntoIter<Self::Item>;
+  type Item = NamedClass;
 
-    Self(classes)
+  fn into_iter(self) -> Self::IntoIter {
+    self.0.into_iter()
   }
 }
 
@@ -439,7 +429,9 @@ where
   V: Into<NamedClass>,
 {
   fn from_iter<T: IntoIterator<Item = V>>(iter: T) -> Self {
-    Self::from(iter)
+    let classes = iter.into_iter().map(|value| value.into()).collect();
+
+    Self(classes)
   }
 }
 
@@ -479,13 +471,12 @@ pub struct NamedClass {
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
 pub struct CssVariables(Vec<CssVariable>);
 
-impl<V, I> From<I> for CssVariables
-where
-  V: Into<CssVariable>,
-  I: IntoIterator<Item = V>,
-{
-  fn from(value: I) -> Self {
-    Self(value.into_iter().map(|v| v.into()).collect())
+impl IntoIterator for CssVariables {
+  type IntoIter = std::vec::IntoIter<Self::Item>;
+  type Item = CssVariable;
+
+  fn into_iter(self) -> Self::IntoIter {
+    self.0.into_iter()
   }
 }
 
@@ -497,7 +488,9 @@ where
   where
     T: IntoIterator<Item = V>,
   {
-    Self::from(iter)
+    let css_variables = iter.into_iter().map(|v| v.into()).collect();
+
+    Self(css_variables)
   }
 }
 
@@ -515,7 +508,7 @@ impl DerefMut for CssVariables {
   }
 }
 
-pub type CssVariableSelectors = IndexMap<String, String>;
+pub type CssVariableSelectors = StringValueMap;
 pub type NestedCssVariableSelectors = IndexMap<String, CssVariableSelectors>;
 
 /// This can be used to define colors and other CSS variables.
@@ -779,15 +772,12 @@ pub type Palette = StringValueMap;
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct ParentModifiers(Vec<Modifier>);
 
-impl<V, I> From<I> for ParentModifiers
-where
-  V: Into<Modifier>,
-  I: IntoIterator<Item = V>,
-{
-  fn from(iter: I) -> Self {
-    let parent_modifiers = iter.into_iter().map(|value| value.into()).collect();
+impl IntoIterator for ParentModifiers {
+  type IntoIter = std::vec::IntoIter<Self::Item>;
+  type Item = Modifier;
 
-    Self(parent_modifiers)
+  fn into_iter(self) -> Self::IntoIter {
+    self.0.into_iter()
   }
 }
 
@@ -799,7 +789,9 @@ where
   where
     T: IntoIterator<Item = V>,
   {
-    Self::from(iter)
+    let parent_modifiers = iter.into_iter().map(|value| value.into()).collect();
+
+    Self(parent_modifiers)
   }
 }
 
@@ -841,15 +833,12 @@ pub struct Modifier {
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct ModifierGroup(Vec<Modifier>);
 
-impl<V, I> From<I> for ModifierGroup
-where
-  V: Into<Modifier>,
-  I: IntoIterator<Item = V>,
-{
-  fn from(iter: I) -> Self {
-    let modifiers = iter.into_iter().map(|value| value.into()).collect();
+impl IntoIterator for ModifierGroup {
+  type IntoIter = std::vec::IntoIter<Self::Item>;
+  type Item = Modifier;
 
-    Self(modifiers)
+  fn into_iter(self) -> Self::IntoIter {
+    self.0.into_iter()
   }
 }
 
@@ -861,7 +850,9 @@ where
   where
     T: IntoIterator<Item = V>,
   {
-    Self::from(iter)
+    let modifiers = iter.into_iter().map(|value| value.into()).collect();
+
+    Self(modifiers)
   }
 }
 
@@ -883,15 +874,12 @@ impl DerefMut for ModifierGroup {
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct Modifiers(Vec<ModifierGroup>);
 
-impl<V, I> From<I> for Modifiers
-where
-  V: Into<ModifierGroup>,
-  I: IntoIterator<Item = V>,
-{
-  fn from(iter: I) -> Self {
-    let modifiers = iter.into_iter().map(|value| value.into()).collect();
+impl IntoIterator for Modifiers {
+  type IntoIter = std::vec::IntoIter<Self::Item>;
+  type Item = ModifierGroup;
 
-    Self(modifiers)
+  fn into_iter(self) -> Self::IntoIter {
+    self.0.into_iter()
   }
 }
 
@@ -903,7 +891,9 @@ where
   where
     T: IntoIterator<Item = V>,
   {
-    Self::from(iter)
+    let modifiers = iter.into_iter().map(|value| value.into()).collect();
+
+    Self(modifiers)
   }
 }
 
@@ -924,19 +914,12 @@ impl DerefMut for Modifiers {
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct AdditionalFields(IndexMap<String, Value>);
 
-impl<K, V, I> From<I> for AdditionalFields
-where
-  K: Into<String>,
-  V: Into<Value>,
-  I: IntoIterator<Item = (K, V)>,
-{
-  fn from(iter: I) -> Self {
-    let additional_fields = iter
-      .into_iter()
-      .map(|(k, v)| (k.into(), v.into()))
-      .collect();
+impl IntoIterator for AdditionalFields {
+  type IntoIter = indexmap::map::IntoIter<String, Value>;
+  type Item = (String, Value);
 
-    Self(additional_fields)
+  fn into_iter(self) -> Self::IntoIter {
+    self.0.into_iter()
   }
 }
 
@@ -946,7 +929,12 @@ where
   V: Into<Value>,
 {
   fn from_iter<T: IntoIterator<Item = (K, V)>>(iter: T) -> Self {
-    Self::from(iter)
+    let additional_fields = iter
+      .into_iter()
+      .map(|(k, v)| (k.into(), v.into()))
+      .collect();
+
+    Self(additional_fields)
   }
 }
 
@@ -969,15 +957,12 @@ impl DerefMut for AdditionalFields {
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct Atoms(Vec<Atom>);
 
-impl<V, I> From<I> for Atoms
-where
-  V: Into<Atom>,
-  I: IntoIterator<Item = V>,
-{
-  fn from(iter: I) -> Self {
-    let atoms = iter.into_iter().map(|v| v.into()).collect();
+impl IntoIterator for Atoms {
+  type IntoIter = std::vec::IntoIter<Self::Item>;
+  type Item = Atom;
 
-    Self(atoms)
+  fn into_iter(self) -> Self::IntoIter {
+    self.0.into_iter()
   }
 }
 
@@ -989,7 +974,9 @@ where
   where
     T: IntoIterator<Item = V>,
   {
-    Self::from(iter)
+    let atoms = iter.into_iter().map(|v| v.into()).collect();
+
+    Self(atoms)
   }
 }
 
@@ -1075,19 +1062,12 @@ pub struct AtomValue {
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct AtomCssValues(IndexMap<String, AtomCssValue>);
 
-impl<K, V, I> From<I> for AtomCssValues
-where
-  K: Into<String>,
-  V: Into<AtomCssValue>,
-  I: IntoIterator<Item = (K, V)>,
-{
-  fn from(iter: I) -> Self {
-    let values = iter
-      .into_iter()
-      .map(|(k, v)| (k.into(), v.into()))
-      .collect();
+impl IntoIterator for AtomCssValues {
+  type IntoIter = indexmap::map::IntoIter<String, AtomCssValue>;
+  type Item = (String, AtomCssValue);
 
-    Self(values)
+  fn into_iter(self) -> Self::IntoIter {
+    self.0.into_iter()
   }
 }
 
@@ -1100,7 +1080,12 @@ where
   where
     T: IntoIterator<Item = (K, V)>,
   {
-    Self::from(iter)
+    let values = iter
+      .into_iter()
+      .map(|(k, v)| (k.into(), v.into()))
+      .collect();
+
+    Self(values)
   }
 }
 
@@ -1136,15 +1121,13 @@ impl<T: Into<String>> From<T> for AtomCssValue {
 
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct Groups(Vec<Group>);
-impl<V, I> From<I> for Groups
-where
-  V: Into<Group>,
-  I: IntoIterator<Item = V>,
-{
-  fn from(iter: I) -> Self {
-    let groups = iter.into_iter().map(|v| v.into()).collect();
 
-    Self(groups)
+impl IntoIterator for Groups {
+  type IntoIter = std::vec::IntoIter<Self::Item>;
+  type Item = Group;
+
+  fn into_iter(self) -> Self::IntoIter {
+    self.0.into_iter()
   }
 }
 
@@ -1153,7 +1136,9 @@ impl<V: Into<Group>> FromIterator<V> for Groups {
   where
     T: IntoIterator<Item = V>,
   {
-    Self::from(iter)
+    let groups = iter.into_iter().map(|v| v.into()).collect();
+
+    Self(groups)
   }
 }
 
@@ -1191,9 +1176,22 @@ pub struct Group {
 #[derive(Default)]
 pub struct Plugins(Vec<PluginContainer>);
 
-impl<P: Into<PluginContainer>, I: IntoIterator<Item = P>> From<I> for Plugins {
-  fn from(iter: I) -> Self {
+impl IntoIterator for Plugins {
+  type IntoIter = std::vec::IntoIter<Self::Item>;
+  type Item = PluginContainer;
+
+  fn into_iter(self) -> Self::IntoIter {
+    self.0.into_iter()
+  }
+}
+
+impl<V: Into<PluginContainer>> FromIterator<V> for Plugins {
+  fn from_iter<T>(iter: T) -> Self
+  where
+    T: IntoIterator<Item = V>,
+  {
     let plugins = iter.into_iter().map(|v| v.into()).collect();
+
     Self(plugins)
   }
 }
