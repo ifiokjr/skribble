@@ -1,0 +1,16 @@
+[package]
+name = "skribble_preset_default"
+version = { workspace = true }
+authors = { workspace = true }
+documentation = "https://docs.rs/skribble_preset_default"
+edition = { workspace = true }
+homepage = { workspace = true }
+include = ["src/**/*.rs", "Cargo.toml", "readme.md"]
+keywords = ["build", "atomic", "css", "preset", "skribble"]
+license = { workspace = true }
+readme = "readme.md"
+repository = { workspace = true }
+description = "This plugin provides a default preset for Skribble which is similar to `tailwind`, `windi` and `unocss`."
+
+[dependencies]
+skribble_core = { workspace = true }

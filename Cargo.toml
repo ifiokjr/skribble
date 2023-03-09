@@ -34,6 +34,15 @@ wasm-bindgen-test = "0.3"
 
 skribble = { path = "./crates/skribble", version = "0.0.0" }
 skribble_core = { path = "./crates/skribble_core", version = "0.0.0" }
+skribble_preset_default = { path = "./crates/skribble_preset_default", version = "0.0.0" }
 
 [profile.release.package.skribble]
 opt-level = "s"
+
+[workspace.package]
+version = "0.0.0"
+homepage = "https://github.com/ifiokjr/skribble"
+repository = "https://github.com/ifiokjr/skribble"
+authors = ["Ifiok Jr. <ifiokotung@gmail.com>"]
+edition = "2021"
+license = "Unlicense"

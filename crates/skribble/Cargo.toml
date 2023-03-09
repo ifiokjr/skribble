@@ -1,15 +1,15 @@
 [package]
 name = "skribble"
-version = "0.0.0"
+version = { workspace = true }
 authors = ["Ifiok Jr. <ifiokotung@gmail.com>"]
 documentation = "https://docs.rs/skribble"
-edition = "2021"
-homepage = "https://github.com/ifiokjr/skribble"
+edition = { workspace = true }
+homepage = { workspace = true }
 include = ["src/**/*.rs", "Cargo.toml", "readme.md"]
 keywords = ["build", "atomic", "css"]
-license = "Unlicense"
+license = { workspace = true }
 readme = "readme.md"
-repository = "https://github.com/ifiokjr/skribble"
+repository = { workspace = true }
 description = "skribble is a fully typed atomic css compiler for rust, node, deno and the browser"
 
 [dependencies]
