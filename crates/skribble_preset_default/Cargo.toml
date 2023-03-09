@@ -15,5 +15,6 @@ description = "This plugin provides a default preset for Skribble which is simil
 [dependencies]
 indexmap = { workspace = true }
 lazy_static = { workspace = true }
+serde = { workspace = true }
 skribble_core = { workspace = true }
 typed-builder = { workspace = true }

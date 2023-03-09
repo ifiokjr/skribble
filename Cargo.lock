@@ -1721,6 +1721,7 @@ version = "0.0.0"
 dependencies = [
  "indexmap",
  "lazy_static",
+ "serde",
  "skribble_core",
  "typed-builder 0.14.0",
 ]

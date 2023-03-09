@@ -1,67 +1,16 @@
-use std::fmt::Display;
-
 use indexmap::indexmap;
 use indexmap::IndexMap;
 use lazy_static::lazy_static;
 use skribble_core::*;
 
+use crate::PaletteType;
+
 pub fn update_palette(palette: &mut Palette, ty: PaletteType) {
   palette.extend(ty.palette());
 }
 
-/// The color palette to use.
-#[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
-#[non_exhaustive]
-pub enum PaletteType {
-  OpenColor,
-  #[default]
-  Tailwind,
-}
-
-impl PaletteType {
-  pub fn palette(&self) -> IndexMap<String, String> {
-    match self {
-      PaletteType::OpenColor => {
-        OPEN_COLOR_PALETTE
-          .clone()
-          .into_iter()
-          .map(|(k, v)| (k.into(), v.into()))
-          .collect()
-      }
-      // PaletteType::Tailwind => Palette::from_iter(TAILWIND_PALETTE.into()),
-      // PaletteType::OpenColor => Palette::default(),
-      PaletteType::Tailwind => {
-        TAILWIND_PALETTE
-          .clone()
-          .into_iter()
-          .map(|(k, v)| (k.into(), v.into()))
-          .collect()
-      }
-    }
-  }
-}
-
-impl<S: Into<String>> From<S> for PaletteType {
-  fn from(s: S) -> Self {
-    match s.into().as_str() {
-      "openColor" => PaletteType::OpenColor,
-      "tailwind" => PaletteType::Tailwind,
-      _ => PaletteType::Tailwind,
-    }
-  }
-}
-
-impl Display for PaletteType {
-  fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-    match self {
-      PaletteType::OpenColor => write!(f, "openColor"),
-      PaletteType::Tailwind => write!(f, "tailwind"),
-    }
-  }
-}
-
 lazy_static! {
-  static ref OPEN_COLOR_PALETTE: IndexMap<&'static str, &'static str> = indexmap! {
+  pub(crate) static ref OPEN_COLOR_PALETTE: IndexMap<&'static str, &'static str> = indexmap! {
     "inherit" => "inherit",
     "current" => "currentColor",
     "transparent" => "transparent",
@@ -198,7 +147,7 @@ lazy_static! {
     "orange800" => "#e8590c",
     "orange900" => "#d9480f",
   };
-  static ref TAILWIND_PALETTE: IndexMap<&'static str, &'static str> = indexmap! {
+  pub(crate) static ref TAILWIND_PALETTE: IndexMap<&'static str, &'static str> = indexmap! {
     "inherit" => "inherit",
     "current" => "currentColor",
     "transparent" => "transparent",

@@ -52,6 +52,6 @@ pub enum ConfigEnum {
   NamedClasses(NamedClasses),
   Palette(Palette),
   Atoms(Atoms),
-  Groups(Groups),
+  Groups(VariableGroups),
   AdditionalFields(AdditionalFields),
 }

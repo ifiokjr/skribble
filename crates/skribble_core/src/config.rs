@@ -52,7 +52,7 @@ pub struct StyleConfig {
   pub atoms: Atoms,
   /// Groups which are usually used to activate a set of css variables.
   #[builder(default, setter(into))]
-  pub groups: Groups,
+  pub groups: VariableGroups,
   /// The plugins which can be used to add new functionality and extend the
   /// configuration.
   #[derivative(Debug = "ignore")]
@@ -194,7 +194,7 @@ pub struct Keyframe {
   pub name: String,
   /// The description of the keyframe. This will be used in the vscode
   /// extension.
-  #[builder(default, setter(into))]
+  #[builder(default, setter(into, strip_option))]
   pub description: Option<String>,
   /// The priority of this items.
   #[builder(default, setter(into))]
@@ -292,11 +292,11 @@ impl DerefMut for StringOptionValueMap {
 
 /// Media queries can should be defined as a map of names to their css queries.
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
-pub struct MediaQueries(Vec<MediaQuery>);
+pub struct MediaQueries(Vec<Group<MediaQuery>>);
 
 impl IntoIterator for MediaQueries {
   type IntoIter = std::vec::IntoIter<Self::Item>;
-  type Item = MediaQuery;
+  type Item = Group<MediaQuery>;
 
   fn into_iter(self) -> Self::IntoIter {
     self.0.into_iter()
@@ -305,7 +305,7 @@ impl IntoIterator for MediaQueries {
 
 impl<V> FromIterator<V> for MediaQueries
 where
-  V: Into<MediaQuery>,
+  V: Into<Group<MediaQuery>>,
 {
   fn from_iter<T>(iter: T) -> Self
   where
@@ -317,7 +317,7 @@ where
 }
 
 impl Deref for MediaQueries {
-  type Target = Vec<MediaQuery>;
+  type Target = Vec<Group<MediaQuery>>;
 
   fn deref(&self) -> &Self::Target {
     &self.0
@@ -340,7 +340,7 @@ pub struct MediaQuery {
   #[builder(setter(into))]
   pub query: String,
   /// A markdown description of what this media query should be used for.
-  #[builder(default, setter(into))]
+  #[builder(default, setter(into, strip_option))]
   pub description: Option<String>,
   /// The priority of this items.
   #[builder(default, setter(into))]
@@ -400,7 +400,7 @@ pub struct NamedRule {
   #[builder(setter(into))]
   pub name: String,
   /// A markdown description of what this media query should be used for.
-  #[builder(default, setter(into))]
+  #[builder(default, setter(into, strip_option))]
   pub description: Option<String>,
   /// The priority of this items.
   #[builder(default, setter(into))]
@@ -457,7 +457,7 @@ pub struct NamedClass {
   #[builder(setter(into))]
   pub name: String,
   /// A markdown description of what this media query should be used for.
-  #[builder(default, setter(into))]
+  #[builder(default, setter(into, strip_option))]
   pub description: Option<String>,
   /// The priority of this items.
   #[builder(default, setter(into))]
@@ -523,7 +523,7 @@ pub struct CssVariable {
   #[builder(setter(into))]
   pub name: String,
   /// A description of the CSS variable and what it is used for.
-  #[builder(default, setter(strip_option, into))]
+  #[builder(default, setter(into, strip_option))]
   pub description: Option<String>,
   /// The priority of this items.
   #[builder(default, setter(into))]
@@ -819,7 +819,7 @@ pub struct Modifier {
   #[builder(setter(into))]
   pub values: Vec<String>,
   /// The description for this item
-  #[builder(default, setter(into))]
+  #[builder(default, setter(into, strip_option))]
   pub description: Option<String>,
   /// The priority for this item.
   #[builder(default, setter(into))]
@@ -830,53 +830,49 @@ pub struct Modifier {
   additional_fields: AdditionalFields,
 }
 
-#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
-pub struct ModifierGroup(Vec<Modifier>);
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize, TypedBuilder)]
+pub struct Group<T> {
+  #[builder(setter(into))]
+  pub name: String,
+  #[builder(default, setter(into, strip_option))]
+  pub description: Option<String>,
+  #[builder(default, setter(into))]
+  pub priority: Priority,
+  /// The items in this group.
+  #[builder(setter(into))]
+  pub items: Vec<T>,
+}
 
-impl IntoIterator for ModifierGroup {
+impl<T> IntoIterator for Group<T> {
   type IntoIter = std::vec::IntoIter<Self::Item>;
-  type Item = Modifier;
+  type Item = T;
 
   fn into_iter(self) -> Self::IntoIter {
-    self.0.into_iter()
+    self.items.into_iter()
   }
 }
 
-impl<V> FromIterator<V> for ModifierGroup
-where
-  V: Into<Modifier>,
-{
-  fn from_iter<T>(iter: T) -> Self
-  where
-    T: IntoIterator<Item = V>,
-  {
-    let modifiers = iter.into_iter().map(|value| value.into()).collect();
-
-    Self(modifiers)
-  }
-}
-
-impl Deref for ModifierGroup {
-  type Target = Vec<Modifier>;
+impl<T> Deref for Group<T> {
+  type Target = Vec<T>;
 
   fn deref(&self) -> &Self::Target {
-    &self.0
+    &self.items
   }
 }
 
-impl DerefMut for ModifierGroup {
+impl<T> DerefMut for Group<T> {
   fn deref_mut(&mut self) -> &mut Self::Target {
-    &mut self.0
+    &mut self.items
   }
 }
 
 /// This is the setup for named modifiers.
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
-pub struct Modifiers(Vec<ModifierGroup>);
+pub struct Modifiers(Vec<Group<Modifier>>);
 
 impl IntoIterator for Modifiers {
   type IntoIter = std::vec::IntoIter<Self::Item>;
-  type Item = ModifierGroup;
+  type Item = Group<Modifier>;
 
   fn into_iter(self) -> Self::IntoIter {
     self.0.into_iter()
@@ -885,7 +881,7 @@ impl IntoIterator for Modifiers {
 
 impl<V> FromIterator<V> for Modifiers
 where
-  V: Into<ModifierGroup>,
+  V: Into<Group<Modifier>>,
 {
   fn from_iter<T>(iter: T) -> Self
   where
@@ -898,7 +894,7 @@ where
 }
 
 impl Deref for Modifiers {
-  type Target = Vec<ModifierGroup>;
+  type Target = Vec<Group<Modifier>>;
 
   fn deref(&self) -> &Self::Target {
     &self.0
@@ -1020,7 +1016,7 @@ pub struct AtomColor {
   /// The name of the color.
   #[builder(setter(into))]
   pub name: String,
-  #[builder(default, setter(into))]
+  #[builder(default, setter(into, strip_option))]
   pub description: Option<String>,
   /// The priority of this items.
   #[builder(default, setter(into))]
@@ -1045,7 +1041,7 @@ pub struct AtomColor {
 pub struct AtomValue {
   #[builder(setter(into))]
   pub name: String,
-  #[builder(default, setter(into))]
+  #[builder(default, setter(into, strip_option))]
   pub description: Option<String>,
   /// The priority of this items.
   #[builder(default, setter(into))]
@@ -1120,18 +1116,18 @@ impl<T: Into<String>> From<T> for AtomCssValue {
 }
 
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
-pub struct Groups(Vec<Group>);
+pub struct VariableGroups(Vec<VariableGroup>);
 
-impl IntoIterator for Groups {
+impl IntoIterator for VariableGroups {
   type IntoIter = std::vec::IntoIter<Self::Item>;
-  type Item = Group;
+  type Item = VariableGroup;
 
   fn into_iter(self) -> Self::IntoIter {
     self.0.into_iter()
   }
 }
 
-impl<V: Into<Group>> FromIterator<V> for Groups {
+impl<V: Into<VariableGroup>> FromIterator<V> for VariableGroups {
   fn from_iter<T>(iter: T) -> Self
   where
     T: IntoIterator<Item = V>,
@@ -1142,27 +1138,27 @@ impl<V: Into<Group>> FromIterator<V> for Groups {
   }
 }
 
-impl Deref for Groups {
-  type Target = Vec<Group>;
+impl Deref for VariableGroups {
+  type Target = Vec<VariableGroup>;
 
   fn deref(&self) -> &Self::Target {
     &self.0
   }
 }
 
-impl DerefMut for Groups {
+impl DerefMut for VariableGroups {
   fn deref_mut(&mut self) -> &mut Self::Target {
     &mut self.0
   }
 }
 
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize, TypedBuilder)]
-pub struct Group {
+pub struct VariableGroup {
   /// The name of the group.
   #[builder(setter(into))]
   pub name: String,
   /// The description of the group.
-  #[builder(default, setter(into))]
+  #[builder(default, setter(into, strip_option))]
   pub description: Option<String>,
   /// The priority of this items.
   #[builder(default, setter(into))]
