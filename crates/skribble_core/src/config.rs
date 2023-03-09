@@ -202,16 +202,16 @@ pub struct Keyframe {
   /// The rules for the specific keyframe.
   #[serde(flatten, default)]
   #[builder(default, setter(into))]
-  pub rules: StringValueMap,
+  pub rules: StringMap,
 }
 
 /// This is a more usable version of Index<String, String> which allows for
 /// easier construction and fully supports serde with renaming built in.
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct StringValueMap(IndexMap<String, String>);
+pub struct StringMap(IndexMap<String, String>);
 
-impl IntoIterator for StringValueMap {
+impl IntoIterator for StringMap {
   type IntoIter = indexmap::map::IntoIter<String, String>;
   type Item = (String, String);
 
@@ -220,7 +220,7 @@ impl IntoIterator for StringValueMap {
   }
 }
 
-impl<K, V> FromIterator<(K, V)> for StringValueMap
+impl<K, V> FromIterator<(K, V)> for StringMap
 where
   K: Into<String>,
   V: Into<String>,
@@ -235,7 +235,7 @@ where
   }
 }
 
-impl Deref for StringValueMap {
+impl Deref for StringMap {
   type Target = IndexMap<String, String>;
 
   fn deref(&self) -> &Self::Target {
@@ -243,7 +243,51 @@ impl Deref for StringValueMap {
   }
 }
 
-impl DerefMut for StringValueMap {
+impl DerefMut for StringMap {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.0
+  }
+}
+
+/// This is a more usable version of Vec<String> which allows for
+/// easier construction and fully supports serde with renaming built in.
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
+pub struct StringList(Vec<String>);
+
+impl<V: Into<String>> From<Vec<V>> for StringList {
+  fn from(value: Vec<V>) -> Self {
+    Self::from_iter(value)
+  }
+}
+
+impl IntoIterator for StringList {
+  type IntoIter = std::vec::IntoIter<Self::Item>;
+  type Item = String;
+
+  fn into_iter(self) -> Self::IntoIter {
+    self.0.into_iter()
+  }
+}
+
+impl<V> FromIterator<V> for StringList
+where
+  V: Into<String>,
+{
+  fn from_iter<T: IntoIterator<Item = V>>(iter: T) -> Self {
+    let rules = iter.into_iter().map(|value| value.into()).collect();
+    Self(rules)
+  }
+}
+
+impl Deref for StringList {
+  type Target = Vec<String>;
+
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+impl DerefMut for StringList {
   fn deref_mut(&mut self) -> &mut Self::Target {
     &mut self.0
   }
@@ -464,7 +508,7 @@ pub struct NamedClass {
   pub priority: Priority,
   /// The styles for the specific class.
   #[builder(setter(into))]
-  pub styles: StringValueMap,
+  pub styles: StringMap,
 }
 
 /// Create CSS variables from a list of atoms.
@@ -508,7 +552,7 @@ impl DerefMut for CssVariables {
   }
 }
 
-pub type CssVariableSelectors = StringValueMap;
+pub type CssVariableSelectors = StringMap;
 pub type NestedCssVariableSelectors = IndexMap<String, CssVariableSelectors>;
 
 /// This can be used to define colors and other CSS variables.
@@ -766,7 +810,7 @@ impl Display for PropertySyntaxValue {
 ///   }
 /// }
 /// ```
-pub type Palette = StringValueMap;
+pub type Palette = StringMap;
 
 /// This is the setup for the parent modifiers.
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
@@ -817,7 +861,7 @@ pub struct Modifier {
   pub name: String,
   /// The values.
   #[builder(setter(into))]
-  pub values: Vec<String>,
+  pub values: StringList,
   /// The description for this item
   #[builder(default, setter(into, strip_option))]
   pub description: Option<String>,
@@ -1106,7 +1150,7 @@ pub enum AtomCssValue {
   /// A singular value. Use this with named rules.
   Value(String),
   /// Provide an object with the values.
-  Object(StringValueMap),
+  Object(StringMap),
 }
 
 impl<T: Into<String>> From<T> for AtomCssValue {
@@ -1165,7 +1209,7 @@ pub struct VariableGroup {
   pub priority: Priority,
   /// The styles for the specific class.
   #[builder(setter(into))]
-  pub styles: StringValueMap,
+  pub styles: StringMap,
 }
 
 /// A map of string values.

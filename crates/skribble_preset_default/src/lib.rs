@@ -2,10 +2,12 @@
 
 pub use base::PaletteType;
 use base::*;
+use serde::Deserialize;
+use serde::Serialize;
 use skribble_core::*;
 use typed_builder::TypedBuilder;
 
-#[derive(Debug, Clone, Default, TypedBuilder)]
+#[derive(Debug, Clone, Default, Deserialize, TypedBuilder, Serialize)]
 pub struct PresetDefault {
   /// Choose the palette colors from either Tailwind or OpenColors.
   #[builder(default, setter(into))]
@@ -28,6 +30,9 @@ impl Plugin for PresetDefault {
       }
       ConfigEnum::MediaQueries(ref mut media_queries) => {
         update_media_queries(media_queries, self.dark_mode);
+      }
+      ConfigEnum::ParentModifiers(ref mut parent_modifiers) => {
+        update_parent_modifiers(parent_modifiers, self.dark_mode);
       }
       _ => {}
     }
