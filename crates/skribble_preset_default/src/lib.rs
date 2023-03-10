@@ -93,8 +93,9 @@ impl PresetDefault {
   #[allow(unused)]
   fn update_groups(&self, groups: &mut VariableGroups) {}
 
-  #[allow(unused)]
-  fn update_named_classes(&self, named_classes: &mut NamedClasses) {}
+  fn update_named_classes(&self, named_classes: &mut NamedClasses) {
+    named_classes.extend(NAMED_CLASSES.clone());
+  }
 
   #[allow(unused)]
   fn update_value_sets(&self, value_sets: &mut ValueSets) {

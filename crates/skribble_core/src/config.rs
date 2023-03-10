@@ -760,7 +760,7 @@ pub struct CssVariable {
   /// The priority of this items.
   #[builder(default, setter(into))]
   pub priority: Priority,
-  /// The variable name. This should always start with `--`.
+  /// The variable token. This should always start with `--`.
   #[builder(setter(into))]
   pub variable: String,
   /// The [syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/@property/syntax) of the CSS variable.
