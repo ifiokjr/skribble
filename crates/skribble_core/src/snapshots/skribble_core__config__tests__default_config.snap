@@ -4,10 +4,22 @@ expression: "StyleConfig::default()"
 ---
 {
   "options": {
-    "colorFormat": "hsl",
-    "variablePrefix": "sk",
     "charset": "utf-8",
-    "useRegisteredProperties": false
+    "colorFormat": "hsl",
+    "mergeRules": {
+      "keyframes": "append",
+      "variables": "append",
+      "mediaQueries": "append",
+      "parentModifiers": "append",
+      "modifiers": "append",
+      "rules": "append",
+      "classes": "append",
+      "palette": "append",
+      "atoms": "append",
+      "groups": "append"
+    },
+    "useRegisteredProperties": false,
+    "variablePrefix": "sk"
   },
   "keyframes": [],
   "variables": [],

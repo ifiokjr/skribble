@@ -88,37 +88,124 @@ impl StyleConfig {
   }
 }
 
+/// The rules to follow when merging the provided configuration with the derived
+/// configuration from plugins.
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize, TypedBuilder)]
+#[serde(rename_all = "camelCase")]
+pub struct MergeRules {
+  #[builder(default, setter(into))]
+  pub keyframes: MergeRule,
+  #[builder(default, setter(into))]
+  pub variables: MergeRule,
+  #[builder(default, setter(into))]
+  pub media_queries: MergeRule,
+  #[builder(default, setter(into))]
+  pub parent_modifiers: MergeRule,
+  #[builder(default, setter(into))]
+  pub modifiers: MergeRule,
+  #[builder(default, setter(into))]
+  pub rules: MergeRule,
+  #[builder(default, setter(into))]
+  pub classes: MergeRule,
+  #[builder(default, setter(into))]
+  pub palette: MergeRule,
+  #[builder(default, setter(into))]
+  pub atoms: MergeRule,
+  #[builder(default, setter(into))]
+  pub groups: MergeRule,
+  #[serde(flatten, default)]
+  #[builder(default, setter(into))]
+  pub other: IndexMap<String, MergeRule>,
+}
+
+#[derive(Clone, Copy, Debug, Default, Deserialize, PartialEq, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub enum MergeRule {
+  /// The configuration provided by the user will be merged with the
+  /// configuration from the plugins. Any clashing keys will be overwritten by
+  /// the user configuration.
+  #[default]
+  Append,
+  /// The configuration provided by the user will be applied first and the
+  /// configuration from the plugins will be applied second. Any clashing keys
+  /// will be overwritten by the plugin configuration.
+  Prepend,
+  /// Only the configuration from the user will be used.
+  Replace,
+  /// Only the configuration from the plugins will be used.
+  Ignore,
+  /// The configuration will be reset to the default value and neither the user
+  /// configuration nor the plugin configuration will be used (not recommended -
+  /// mainly here for completeness)..
+  Reset,
+}
+
+impl Display for MergeRule {
+  fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+    let value = match self {
+      MergeRule::Append => "append",
+      MergeRule::Prepend => "prepend",
+      MergeRule::Replace => "replace",
+      MergeRule::Ignore => "ignore",
+      MergeRule::Reset => "reset",
+    };
+    write!(f, "{value}")
+  }
+}
+
+impl<V: Into<String>> From<V> for MergeRule {
+  fn from(value: V) -> Self {
+    match value.into().as_str() {
+      "append" => MergeRule::Append,
+      "prepend" => MergeRule::Prepend,
+      "replace" => MergeRule::Replace,
+      "ignore" => MergeRule::Ignore,
+      "reset" => MergeRule::Reset,
+      _ => MergeRule::Append,
+    }
+  }
+}
+
 /// Options to use in the configuration.
 #[derive(Clone, Debug, Deserialize, PartialEq, Serialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
 pub struct Options {
+  /// The character encoding used in the style sheet
+  #[serde(default = "default_charset")]
+  #[builder(default = default_charset(), setter(into))]
+  pub charset: String,
   /// This is the default format of colors rendered in css.
   #[serde(default)]
+  #[builder(default, setter(into))]
   pub color_format: ColorFormat,
-  /// By default there is no variable prefix.
-  #[serde(default = "default_variable_prefix")]
-  pub variable_prefix: String,
-  /// The character encoding used in the style sheet
-  pub charset: Option<String>,
+  /// The rules to control how the user configuration is merged with the
+  /// configuration extracted from plugins.
+  #[serde(default)]
+  #[builder(default, setter(into))]
+  pub merge_rules: MergeRules,
   /// This determines whether the new [`@property`](https://developer.mozilla.org/en-US/docs/Web/CSS/@property) syntax
-  ///  is used for variables. Defaults to false.
+  ///  is used for variables. Defaults to `false`.
+  #[serde(default)]
   #[builder(default, setter(into))]
   pub use_registered_properties: bool,
+  /// Set the prefix that all css variables should use.
+  #[serde(default = "default_variable_prefix")]
+  #[builder(default = default_variable_prefix(), setter(into))]
+  pub variable_prefix: String,
 }
 
 impl Default for Options {
   fn default() -> Self {
-    Self {
-      color_format: Default::default(),
-      variable_prefix: default_variable_prefix(),
-      charset: Some("utf-8".to_string()),
-      use_registered_properties: false,
-    }
+    Self::builder().build()
   }
 }
 
 fn default_variable_prefix() -> String {
   "sk".to_string()
+}
+
+fn default_charset() -> String {
+  "utf-8".to_string()
 }
 
 /// ColorFormat is used to determine the default format of the colors.
