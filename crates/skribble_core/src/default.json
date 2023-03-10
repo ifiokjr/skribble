@@ -10,10 +10,11 @@
   "mediaQueries": [],
   "parentModifiers": [],
   "modifiers": [],
-  "rules": [],
+  "atoms": [],
   "classes": [],
   "palette": {},
-  "atoms": [],
+  "valueSets": [],
   "groups": [],
-  "notDefined": {}
+  "notDefined": {},
+  "extraStuff": {}
 }

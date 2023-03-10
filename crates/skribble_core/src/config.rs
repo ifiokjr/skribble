@@ -41,8 +41,8 @@ pub struct StyleConfig {
   /// Set up the style rules which determine the styles that each atom name will
   /// correspond to.
   #[builder(default, setter(into))]
-  pub rules: NamedRules,
-  /// Named classes.
+  pub atoms: Atoms,
+  /// A list of classes with predefined styles.
   #[builder(default, setter(into))]
   pub classes: NamedClasses,
   /// Hardcoded colors for the pallette.
@@ -50,7 +50,7 @@ pub struct StyleConfig {
   pub palette: Palette,
   /// The atoms which provide the values.
   #[builder(default, setter(into))]
-  pub atoms: Atoms,
+  pub value_sets: ValueSets,
   /// Groups which are usually used to activate a set of css variables.
   #[builder(default, setter(into))]
   pub groups: VariableGroups,
@@ -383,9 +383,9 @@ impl DerefMut for StringList {
 
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 #[serde(rename_all = "camelCase")]
-pub struct StringOptionValueMap(IndexMap<String, Option<String>>);
+pub struct OptionalStringMap(IndexMap<String, Option<String>>);
 
-impl IntoIterator for StringOptionValueMap {
+impl IntoIterator for OptionalStringMap {
   type IntoIter = indexmap::map::IntoIter<String, Option<String>>;
   type Item = (String, Option<String>);
 
@@ -394,7 +394,7 @@ impl IntoIterator for StringOptionValueMap {
   }
 }
 
-impl<S> FromIterator<(S, Option<S>)> for StringOptionValueMap
+impl<S> FromIterator<(S, Option<S>)> for OptionalStringMap
 where
   S: Into<String>,
 {
@@ -408,7 +408,7 @@ where
   }
 }
 
-impl Deref for StringOptionValueMap {
+impl Deref for OptionalStringMap {
   type Target = IndexMap<String, Option<String>>;
 
   fn deref(&self) -> &Self::Target {
@@ -416,7 +416,7 @@ impl Deref for StringOptionValueMap {
   }
 }
 
-impl DerefMut for StringOptionValueMap {
+impl DerefMut for OptionalStringMap {
   fn deref_mut(&mut self) -> &mut Self::Target {
     &mut self.0
   }
@@ -479,7 +479,7 @@ pub struct MediaQuery {
   pub priority: Priority,
 }
 
-/// [`NamedRules`] connect all the atomic names to their atomic styles. Each
+/// [`Atoms`] are class that take a single value. Each
 /// style that is defined as null will be provided the value from the atom
 /// style.
 ///
@@ -489,20 +489,20 @@ pub struct MediaQuery {
 /// properties that it controls. The styles rules are later connected with
 /// `Atoms` which are passed to each individual style rule.
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
-pub struct NamedRules(Vec<NamedRule>);
+pub struct Atoms(Vec<Atom>);
 
-impl IntoIterator for NamedRules {
+impl IntoIterator for Atoms {
   type IntoIter = std::vec::IntoIter<Self::Item>;
-  type Item = NamedRule;
+  type Item = Atom;
 
   fn into_iter(self) -> Self::IntoIter {
     self.0.into_iter()
   }
 }
 
-impl<V> FromIterator<V> for NamedRules
+impl<V> FromIterator<V> for Atoms
 where
-  V: Into<NamedRule>,
+  V: Into<Atom>,
 {
   fn from_iter<T: IntoIterator<Item = V>>(iter: T) -> Self {
     let rules = iter.into_iter().map(|value| value.into()).collect();
@@ -511,15 +511,15 @@ where
   }
 }
 
-impl Deref for NamedRules {
-  type Target = Vec<NamedRule>;
+impl Deref for Atoms {
+  type Target = Vec<Atom>;
 
   fn deref(&self) -> &Self::Target {
     &self.0
   }
 }
 
-impl DerefMut for NamedRules {
+impl DerefMut for Atoms {
   fn deref_mut(&mut self) -> &mut Self::Target {
     &mut self.0
   }
@@ -527,8 +527,8 @@ impl DerefMut for NamedRules {
 
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
-pub struct NamedRule {
-  /// The name of the media query.
+pub struct Atom {
+  /// The name of the atom.
   #[builder(setter(into))]
   pub name: String,
   /// A markdown description of what this media query should be used for.
@@ -540,7 +540,43 @@ pub struct NamedRule {
   /// The styles for the specific named rule. All values left as [None] will be
   /// filled with the value provided by the `atom`.
   #[builder(setter(into))]
-  styles: StringOptionValueMap,
+  pub styles: OptionalStringMap,
+  /// The names of the [`ValueSet`]s that will be used to generate the styles.
+  #[builder(default, setter(into))]
+  pub values: LinkedValues,
+  /// Support additional fields for plugins to add extra functionality.
+  #[serde(flatten, default)]
+  #[builder(default, setter(into))]
+  additional_fields: AdditionalFields,
+}
+
+#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
+#[serde(rename_all = "camelCase", tag = "type")]
+pub enum LinkedValues {
+  /// The atom will be linked to colors and the settings determine how the link
+  /// is made.
+  Color(ColorSettings),
+  /// The [`ValueSet`] names that will be used to populate the names that can be
+  /// used.
+  Values(ValueSetNames),
+}
+
+impl Default for LinkedValues {
+  fn default() -> Self {
+    Self::Values(ValueSetNames::default())
+  }
+}
+
+impl<V: Into<ValueSetNames>> From<V> for LinkedValues {
+  fn from(value: V) -> Self {
+    Self::Values(value.into())
+  }
+}
+
+impl From<ColorSettings> for LinkedValues {
+  fn from(value: ColorSettings) -> Self {
+    Self::Color(value)
+  }
 }
 
 /// The named classes with their own defined values.
@@ -581,7 +617,7 @@ impl DerefMut for NamedClasses {
   }
 }
 
-/// [NamedClass]
+/// A named class is a class with all it's values defined ahead of time.
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
 pub struct NamedClass {
@@ -1066,23 +1102,23 @@ impl DerefMut for AdditionalFields {
   }
 }
 
-/// The value and color atoms.
+/// A set of values that referenced by .
 
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
-pub struct Atoms(Vec<Atom>);
+pub struct ValueSets(Vec<ValueSet>);
 
-impl IntoIterator for Atoms {
+impl IntoIterator for ValueSets {
   type IntoIter = std::vec::IntoIter<Self::Item>;
-  type Item = Atom;
+  type Item = ValueSet;
 
   fn into_iter(self) -> Self::IntoIter {
     self.0.into_iter()
   }
 }
 
-impl<V> FromIterator<V> for Atoms
+impl<V> FromIterator<V> for ValueSets
 where
-  V: Into<Atom>,
+  V: Into<ValueSet>,
 {
   fn from_iter<T>(iter: T) -> Self
   where
@@ -1094,69 +1130,24 @@ where
   }
 }
 
-impl Deref for Atoms {
-  type Target = Vec<Atom>;
+impl Deref for ValueSets {
+  type Target = Vec<ValueSet>;
 
   fn deref(&self) -> &Self::Target {
     &self.0
   }
 }
 
-impl DerefMut for Atoms {
+impl DerefMut for ValueSets {
   fn deref_mut(&mut self) -> &mut Self::Target {
     &mut self.0
   }
 }
 
-/// The atom.
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-pub enum Atom {
-  Color(AtomColor),
-  Value(AtomValue),
-}
-
-impl From<AtomColor> for Atom {
-  fn from(value: AtomColor) -> Self {
-    Self::Color(value)
-  }
-}
-
-impl From<AtomValue> for Atom {
-  fn from(value: AtomValue) -> Self {
-    Self::Value(value)
-  }
-}
-
-/// The color atom.
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize, TypedBuilder)]
-#[serde(rename_all = "camelCase")]
-pub struct AtomColor {
-  /// The name of the color.
-  #[builder(setter(into))]
-  pub name: String,
-  #[builder(default, setter(into, strip_option))]
-  pub description: Option<String>,
-  /// The priority of this items.
-  #[builder(default, setter(into))]
-  pub priority: Priority,
-  /// The name of the CSS Variable which is used to set the color opacity (must
-  /// start with `--`).
-  pub opacity: String,
-  /// When true the built in palette will also be available as values for the
-  /// colors. If false only the colors defined in the `variables` will be
-  /// available.
-  #[builder(default, setter(into))]
-  pub palette: bool,
-  /// Support additional fields for plugins.
-  #[serde(flatten, default)]
-  #[builder(default, setter(into))]
-  additional_fields: AdditionalFields,
-}
-
 /// The value atom.
 #[derive(Clone, Debug, Deserialize, PartialEq, Serialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
-pub struct AtomValue {
+pub struct ValueSet {
   #[builder(setter(into))]
   pub name: String,
   #[builder(default, setter(into, strip_option))]
@@ -1165,7 +1156,7 @@ pub struct AtomValue {
   #[builder(default, setter(into))]
   pub priority: Priority,
   /// The values for the atom.
-  pub values: AtomCssValues,
+  pub values: CssValues,
   /// Support additional fields for plugins.
   #[serde(flatten, default)]
   #[builder(default, setter(into))]
@@ -1174,21 +1165,21 @@ pub struct AtomValue {
 
 /// Values for the value atom.
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
-pub struct AtomCssValues(IndexMap<String, AtomCssValue>);
+pub struct CssValues(IndexMap<String, CssValue>);
 
-impl IntoIterator for AtomCssValues {
-  type IntoIter = indexmap::map::IntoIter<String, AtomCssValue>;
-  type Item = (String, AtomCssValue);
+impl IntoIterator for CssValues {
+  type IntoIter = indexmap::map::IntoIter<String, CssValue>;
+  type Item = (String, CssValue);
 
   fn into_iter(self) -> Self::IntoIter {
     self.0.into_iter()
   }
 }
 
-impl<K, V> FromIterator<(K, V)> for AtomCssValues
+impl<K, V> FromIterator<(K, V)> for CssValues
 where
   K: Into<String>,
-  V: Into<AtomCssValue>,
+  V: Into<CssValue>,
 {
   fn from_iter<T>(iter: T) -> Self
   where
@@ -1203,15 +1194,15 @@ where
   }
 }
 
-impl Deref for AtomCssValues {
-  type Target = IndexMap<String, AtomCssValue>;
+impl Deref for CssValues {
+  type Target = IndexMap<String, CssValue>;
 
   fn deref(&self) -> &Self::Target {
     &self.0
   }
 }
 
-impl DerefMut for AtomCssValues {
+impl DerefMut for CssValues {
   fn deref_mut(&mut self) -> &mut Self::Target {
     &mut self.0
   }
@@ -1220,14 +1211,14 @@ impl DerefMut for AtomCssValues {
 /// The value of an individual value atom.
 #[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
 #[serde(untagged)]
-pub enum AtomCssValue {
+pub enum CssValue {
   /// A singular value. Use this with named rules.
   Value(String),
   /// Provide an object with the values.
   Object(StringMap),
 }
 
-impl<T: Into<String>> From<T> for AtomCssValue {
+impl<T: Into<String>> From<T> for CssValue {
   fn from(value: T) -> Self {
     Self::Value(value.into())
   }
@@ -1379,6 +1370,93 @@ impl Deref for Priority {
 }
 
 impl DerefMut for Priority {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.0
+  }
+}
+
+#[derive(Clone, Debug, Deserialize, PartialEq, Serialize, TypedBuilder)]
+#[serde(rename_all = "camelCase")]
+pub struct Prioritized<T> {
+  #[builder(default, setter(into))]
+  pub priority: Priority,
+  #[builder(setter(into))]
+  pub value: T,
+}
+
+impl<T> From<T> for Prioritized<T> {
+  fn from(value: T) -> Self {
+    Self {
+      priority: Default::default(),
+      value,
+    }
+  }
+}
+
+impl<T> Deref for Prioritized<T> {
+  type Target = T;
+
+  fn deref(&self) -> &Self::Target {
+    &self.value
+  }
+}
+
+impl<T> DerefMut for Prioritized<T> {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.value
+  }
+}
+
+/// The color atom.
+#[derive(Clone, Debug, Deserialize, PartialEq, Serialize, TypedBuilder)]
+#[serde(rename_all = "camelCase")]
+pub struct ColorSettings {
+  #[builder(setter(into))]
+  /// The name of the CSS Variable which is used to set the color opacity.
+  pub opacity: String,
+  /// When true the built in palette will also be available as values for the
+  /// colors. If false only the colors defined in the `variables` will be
+  /// available.
+  #[builder(default, setter(into))]
+  pub palette: bool,
+  /// Support additional fields for plugins to add extra functionality.
+  #[serde(flatten, default)]
+  #[builder(default, setter(into))]
+  additional_fields: AdditionalFields,
+}
+
+#[derive(Clone, Default, Debug, Deserialize, PartialEq, Serialize)]
+pub struct ValueSetNames(Vec<Prioritized<String>>);
+
+impl IntoIterator for ValueSetNames {
+  type IntoIter = std::vec::IntoIter<Self::Item>;
+  type Item = Prioritized<String>;
+
+  fn into_iter(self) -> Self::IntoIter {
+    self.0.into_iter()
+  }
+}
+
+impl<V: Into<Prioritized<String>>> FromIterator<V> for ValueSetNames {
+  fn from_iter<T>(iter: T) -> Self
+  where
+    T: IntoIterator<Item = V>,
+  {
+    let values = iter.into_iter().map(|v| v.into()).collect();
+
+    Self(values)
+  }
+}
+
+impl Deref for ValueSetNames {
+  type Target = Vec<Prioritized<String>>;
+
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+impl DerefMut for ValueSetNames {
   fn deref_mut(&mut self) -> &mut Self::Target {
     &mut self.0
   }
