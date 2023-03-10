@@ -90,8 +90,9 @@ impl PresetDefault {
   #[allow(unused)]
   fn update_atoms(&self, atoms: &mut Atoms) {}
 
-  #[allow(unused)]
-  fn update_groups(&self, groups: &mut VariableGroups) {}
+  fn update_groups(&self, groups: &mut VariableGroups) {
+    groups.extend(GROUPS.clone());
+  }
 
   fn update_named_classes(&self, named_classes: &mut NamedClasses) {
     named_classes.extend(NAMED_CLASSES.clone());
