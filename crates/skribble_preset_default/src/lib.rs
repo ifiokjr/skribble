@@ -97,5 +97,7 @@ impl PresetDefault {
   fn update_named_classes(&self, named_classes: &mut NamedClasses) {}
 
   #[allow(unused)]
-  fn update_value_sets(&self, value_sets: &mut ValueSets) {}
+  fn update_value_sets(&self, value_sets: &mut ValueSets) {
+    value_sets.extend(ANIMATION_VALUE_SETS.clone());
+  }
 }

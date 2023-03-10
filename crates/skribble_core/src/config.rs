@@ -1219,7 +1219,8 @@ pub struct ValueSet {
   /// The priority of this items.
   #[builder(default, setter(into))]
   pub priority: Priority,
-  /// The values for the atom.
+  /// The values for this set.
+  #[builder(setter(into))]
   pub values: CssValues,
   /// Support additional fields for plugins.
   #[serde(flatten, default)]
@@ -1258,6 +1259,12 @@ where
   }
 }
 
+impl<K: Into<String>, V: Into<CssValue>> From<IndexMap<K, V>> for CssValues {
+  fn from(values: IndexMap<K, V>) -> Self {
+    Self::from_iter(values)
+  }
+}
+
 impl Deref for CssValues {
   type Target = IndexMap<String, CssValue>;
 
@@ -1282,9 +1289,21 @@ pub enum CssValue {
   Object(StringMap),
 }
 
-impl<T: Into<String>> From<T> for CssValue {
-  fn from(value: T) -> Self {
+impl From<&str> for CssValue {
+  fn from(value: &str) -> Self {
     Self::Value(value.into())
+  }
+}
+
+impl From<String> for CssValue {
+  fn from(value: String) -> Self {
+    Self::Value(value)
+  }
+}
+
+impl<V: Into<StringMap>> From<V> for CssValue {
+  fn from(map: V) -> Self {
+    Self::Object(map.into())
   }
 }
 
