@@ -287,6 +287,9 @@ pub struct Keyframe {
   /// The priority of this items.
   #[builder(default, setter(into))]
   pub priority: Priority,
+  /// The values that are linked to this keyframe.
+  #[builder(default, setter(into))]
+  pub values: ValueSetNames,
   /// The rules for the specific keyframe.
   #[serde(flatten, default)]
   #[builder(default, setter(into))]
