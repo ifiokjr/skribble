@@ -20,7 +20,6 @@ lazy_static! {
         Modifier::builder()
           .name("active")
           .values(vec!["&:active"])
-          .description("")
           .build()
       ])
       .build(),
@@ -30,7 +29,6 @@ lazy_static! {
         Modifier::builder()
           .name("focus")
           .values(vec!["&:focus"])
-          .description("")
           .build()
       ])
       .build(),
@@ -40,7 +38,6 @@ lazy_static! {
         Modifier::builder()
           .name("focusWithin")
           .values(vec!["&:focus-within"])
-          .description("")
           .build()
       ])
       .build(),
@@ -50,7 +47,6 @@ lazy_static! {
         Modifier::builder()
           .name("focusVisible")
           .values(vec!["&:focus-visible"])
-          .description("")
           .build()
       ])
       .build(),
@@ -60,17 +56,14 @@ lazy_static! {
         Modifier::builder()
           .name("disabled")
           .values(vec!["&[disabled]", "&[aria-disabled=true]", "&:disabled"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("notDisabled")
           .values(vec!["&[aria-disabled=false]", "&:disabled"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("enabled")
           .values(vec!["&:enabled"])
-          .description("")
           .build(),
       ])
       .build(),
@@ -80,7 +73,6 @@ lazy_static! {
         Modifier::builder()
           .name("empty")
           .values(vec!["&:empty"])
-          .description("")
           .build()
       ])
       .build(),
@@ -90,12 +82,10 @@ lazy_static! {
         Modifier::builder()
           .name("readWrite")
           .values(vec!["&:read-write"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("readOnly")
           .values(vec!["&[aria-readonly=true]", "&[readonly]", "&:read-only"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("notReadOnly")
@@ -104,7 +94,6 @@ lazy_static! {
             "&[readonly=false]",
             "&:not(:read-only)"
           ])
-          .description("")
           .build(),
       ])
       .build(),
@@ -114,7 +103,6 @@ lazy_static! {
         Modifier::builder()
           .name("expanded")
           .values(vec!["&[aria-expanded=true]"])
-          .description("")
           .build()
       ])
       .build(),
@@ -124,17 +112,14 @@ lazy_static! {
         Modifier::builder()
           .name("indeterminate")
           .values(vec!["&:indeterminate", "&[aria-checked=mixed]"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("checked")
           .values(vec!["&[aria-checked=true]", "&:checked"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("unchecked")
           .values(vec!["&[aria-checked=false]", "&:not(:checked)"])
-          .description("")
           .build(),
       ])
       .build(),
@@ -144,7 +129,6 @@ lazy_static! {
         Modifier::builder()
           .name("grabbed")
           .values(vec!["&[aria-grabbed=true]"])
-          .description("")
           .build()
       ])
       .build(),
@@ -154,7 +138,6 @@ lazy_static! {
         Modifier::builder()
           .name("pressed")
           .values(vec!["&[aria-pressed=true]"])
-          .description("")
           .build()
       ])
       .build(),
@@ -164,7 +147,6 @@ lazy_static! {
         Modifier::builder()
           .name("invalidGrammar")
           .values(vec!["&[aria-invalid=grammar]"])
-          .description("")
           .build()
       ])
       .build(),
@@ -174,7 +156,6 @@ lazy_static! {
         Modifier::builder()
           .name("invalidSpelling")
           .values(vec!["&[aria-invalid=spelling]"])
-          .description("")
           .build()
       ])
       .build(),
@@ -184,12 +165,10 @@ lazy_static! {
         Modifier::builder()
           .name("valid")
           .values(vec!["&[aria-invalid=false]", "&:valid"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("invalid")
           .values(vec!["&[aria-invalid=true]", "&:invalid"])
-          .description("")
           .build(),
       ])
       .build(),
@@ -199,7 +178,6 @@ lazy_static! {
         Modifier::builder()
           .name("loading")
           .values(vec!["&[aria-busy=true]"])
-          .description("")
           .build()
       ])
       .build(),
@@ -209,7 +187,6 @@ lazy_static! {
         Modifier::builder()
           .name("selected")
           .values(vec!["&[aria-selected=true]"])
-          .description("")
           .build()
       ])
       .build(),
@@ -219,7 +196,6 @@ lazy_static! {
         Modifier::builder()
           .name("hidden")
           .values(vec!["&[hidden]"])
-          .description("")
           .build()
       ])
       .build(),
@@ -229,7 +205,6 @@ lazy_static! {
         Modifier::builder()
           .name("autofill")
           .values(vec!["&:-webkit-autofill"])
-          .description("")
           .build()
       ])
       .build(),
@@ -239,12 +214,10 @@ lazy_static! {
         Modifier::builder()
           .name("even")
           .values(vec!["&:even"])
-          .description("")
           .build(),
         Modifier::builder()
           .name("odd")
           .values(vec!["&:odd"])
-          .description("")
           .build()
       ])
       .build(),
@@ -254,12 +227,10 @@ lazy_static! {
         Modifier::builder()
           .name("evenOfType")
           .values(vec!["&:nth-of-type(even)"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("oddOfType")
           .values(vec!["&:nth-of-type(odd)"])
-          .description("")
           .build(),
       ])
       .build(),
@@ -269,22 +240,18 @@ lazy_static! {
         Modifier::builder()
           .name("first")
           .values(vec!["&:first"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("notFirst")
           .values(vec!["&:not(:first-child)"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("last")
           .values(vec!["&:last"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("notLast")
           .values(vec!["&:not(:last-child)"])
-          .description("")
           .build(),
       ])
       .build(),
@@ -294,22 +261,18 @@ lazy_static! {
         Modifier::builder()
           .name("firstOfType")
           .values(vec!["&:first-of-type"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("notFirstOfType")
           .values(vec!["&:not(:first-of-type)"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("lastOfType")
           .values(vec!["&:last-of-type"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("notLastOfType")
           .values(vec!["&:not(:last-of-type)"])
-          .description("")
           .build(),
       ])
       .build(),
@@ -319,7 +282,6 @@ lazy_static! {
         Modifier::builder()
           .name("visited")
           .values(vec!["&:visited"])
-          .description("")
           .build()
       ])
       .build(),
@@ -329,7 +291,6 @@ lazy_static! {
         Modifier::builder()
           .name("optional")
           .values(vec!["&:optional"])
-          .description("")
           .build()
       ])
       .build(),
@@ -339,27 +300,22 @@ lazy_static! {
         Modifier::builder()
           .name("activeLink")
           .values(vec!["&[aria-current=page]"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("activeLocation")
           .values(vec!["&[aria-current=location]"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("activeDate")
           .values(vec!["&[aria-current=date]"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("activeTime")
           .values(vec!["&[aria-current=time]"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("activeStep")
           .values(vec!["&[aria-current=step]"])
-          .description("")
           .build(),
       ])
       .build(),
@@ -369,7 +325,6 @@ lazy_static! {
         Modifier::builder()
           .name("fullScreen")
           .values(vec!["&:fullscreen"])
-          .description("")
           .build()
       ])
       .build(),
@@ -379,7 +334,6 @@ lazy_static! {
         Modifier::builder()
           .name("target")
           .values(vec!["&:target"])
-          .description("")
           .build()
       ])
       .build(),
@@ -389,7 +343,6 @@ lazy_static! {
         Modifier::builder()
           .name("placeholderShown")
           .values(vec!["&:placeholder-shown"])
-          .description("")
           .build()
       ])
       .build(),
@@ -399,12 +352,10 @@ lazy_static! {
         Modifier::builder()
           .name("required")
           .values(vec!["[aria-required=true]", "&:required"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("notRequired")
           .values(vec!["[arira-required=false]", "&:not(:required)"])
-          .description("")
           .build(),
       ])
       .build(),
@@ -414,7 +365,6 @@ lazy_static! {
         Modifier::builder()
           .name("default")
           .values(vec!["&:default"])
-          .description("")
           .build()
       ])
       .build(),
@@ -424,12 +374,10 @@ lazy_static! {
         Modifier::builder()
           .name("onlyChild")
           .values(vec!["&:only-child"])
-          .description("")
           .build(),
         Modifier::builder()
           .name("notOnlyChild")
           .values(vec!["&:not(:only-child)"])
-          .description("")
           .build()
       ])
       .build(),
@@ -439,12 +387,10 @@ lazy_static! {
         Modifier::builder()
           .name("onlyOfType")
           .values(vec!["&:only-of-type"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("notOnlyOfType")
           .values(vec!["&:not(:only-of-type)"])
-          .description("")
           .build(),
       ])
       .build(),
@@ -454,7 +400,6 @@ lazy_static! {
         Modifier::builder()
           .name("root")
           .values(vec!["&:root"])
-          .description("")
           .build()
       ])
       .build(),
@@ -464,7 +409,6 @@ lazy_static! {
         Modifier::builder()
           .name("link")
           .values(vec!["&:link"])
-          .description("")
           .build()
       ])
       .build(),
@@ -474,32 +418,26 @@ lazy_static! {
         Modifier::builder()
           .name("placeholder")
           .values(vec!["&::placeholder"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("selection")
           .values(vec!["&::selection"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("firstLetter")
           .values(vec!["&::first-letter"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("firstLine")
           .values(vec!["&::first-line"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("before")
           .values(vec!["&::before"],)
-          .description("")
           .build(),
         Modifier::builder()
           .name("after")
           .values(vec!["&::after"])
-          .description("")
           .build(),
       ])
       .build(),

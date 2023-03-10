@@ -84,6 +84,7 @@ impl PresetDefault {
   }
 
   fn update_css_variables(&self, css_variables: &mut CssVariables) {
+    css_variables.extend(COLOR_CSS_VARIABLES.clone());
     css_variables.extend(CSS_VARIABLES.clone());
   }
 }

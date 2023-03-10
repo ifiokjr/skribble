@@ -670,9 +670,15 @@ pub struct CssVariable {
   /// [PropertySyntax] is set to anything other than [PropertySyntaxValue::Any].
   #[builder(default, setter(into, strip_option))]
   pub value: Option<String>,
-  /// Define the value of the CSS variables different selector contexts.
+  /// Define the value of the CSS variables different parent selector contexts.
+  /// Only parent modifiers defined in the configuration are allowed.
   #[builder(default, setter(into, strip_option))]
-  pub selectors: Option<CssVariableSelectors>,
+  pub parent_modifiers: Option<CssVariableSelectors>,
+  /// Define the value of the CSS variables within different modifier contexts
+  /// For example a variable can be a certain value when :hovered, :active and
+  /// other inline pseudo states.
+  #[builder(default, setter(into, strip_option))]
+  pub modifiers: Option<CssVariableSelectors>,
   /// Define the value of the CSS variable under different nested media query
   /// situations.
   #[builder(default, setter(into, strip_option))]
@@ -699,16 +705,6 @@ impl CssVariable {
   #[inline]
   pub fn is_color(&self) -> bool {
     self.syntax.is_color()
-  }
-}
-
-impl CssVariable {
-  /// Generate a placeholder for the variable by using the name. This inserts
-  /// some text which will be replaced by the actual variable name when the code
-  /// is generated.
-  #[inline]
-  pub fn placeholder(name: impl AsRef<str>) -> String {
-    format!("_[VARIABLE::{}]_", name.as_ref())
   }
 }
 
@@ -759,9 +755,9 @@ impl Default for PropertySyntax {
   }
 }
 
-impl<T: Into<String>> From<T> for PropertySyntax {
-  fn from(value: T) -> Self {
-    Self::from_string(value)
+impl<V: Into<PropertySyntaxValue>> From<V> for PropertySyntax {
+  fn from(value: V) -> Self {
+    PropertySyntax::Value(value.into())
   }
 }
 
@@ -888,38 +884,6 @@ impl Display for PropertySyntaxValue {
 }
 
 /// Create a palette for the configuration.
-///
-/// ```json
-/// {
-///   "palette": {
-///     "inherit": "inherit",
-///     "current": "currentColor",
-///     "transparent": "transparent",
-///     "black": "#000",
-///     "white": "#fff",
-///     "slate50": "#f8fafc",
-///     "slate100": "#f1f5f9",
-///     "slate200": "#e2e8f0",
-///     "slate300": "#cbd5e1",
-///     "slate400": "#94a3b8",
-///     "slate500": "#64748b",
-///     "slate600": "#475569",
-///     "slate700": "#334155",
-///     "slate800": "#1e293b",
-///     "slate900": "#0f172a",
-///     "gray50": "#f9fafb",
-///     "gray100": "#f3f4f6",
-///     "gray200": "#e5e7eb",
-///     "gray300": "#d1d5db",
-///     "gray400": "#9ca3af",
-///     "gray500": "#6b7280",
-///     "gray600": "#4b5563",
-///     "gray700": "#374151",
-///     "gray800": "#1f2937",
-///     "gray900": "#111827"
-///   }
-/// }
-/// ```
 pub type Palette = StringMap;
 
 /// This is the setup for the parent modifiers.
