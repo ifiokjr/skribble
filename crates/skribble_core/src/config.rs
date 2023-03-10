@@ -4,6 +4,7 @@ use std::ops::Deref;
 use std::ops::DerefMut;
 
 use derivative::Derivative;
+use heck::ToKebabCase;
 use indexmap::IndexMap;
 use serde::Deserialize;
 use serde::Serialize;
@@ -563,7 +564,7 @@ pub type NestedCssVariableSelectors = IndexMap<String, CssVariableSelectors>;
 #[derive(Clone, Debug, Deserialize, PartialEq, Serialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
 pub struct CssVariable {
-  /// A required name. This should always start with `--`.
+  /// A required name which is used to reference the variable.
   #[builder(setter(into))]
   pub name: String,
   /// A description of the CSS variable and what it is used for.
@@ -572,18 +573,22 @@ pub struct CssVariable {
   /// The priority of this items.
   #[builder(default, setter(into))]
   pub priority: Priority,
+  /// The variable name. This should always start with `--`.
+  #[builder(setter(into))]
+  pub variable: String,
   /// The [syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/@property/syntax) of the CSS variable.
   #[builder(default, setter(into))]
   pub syntax: PropertySyntax,
   /// The initial value of the CSS variable. This is required if the
   /// [PropertySyntax] is set to anything other than [PropertySyntaxValue::Any].
   #[builder(default, setter(into, strip_option))]
-  pub initial_value: Option<String>,
-  /// Define the value of the CSS variables for each selector.
-  #[builder(default, setter(strip_option, into))]
+  pub value: Option<String>,
+  /// Define the value of the CSS variables different selector contexts.
+  #[builder(default, setter(into, strip_option))]
   pub selectors: Option<CssVariableSelectors>,
-  /// Define the value of the CSS variable for the nested media query.
-  #[builder(default, setter(strip_option, into))]
+  /// Define the value of the CSS variable under different nested media query
+  /// situations.
+  #[builder(default, setter(into, strip_option))]
   pub media_queries: Option<NestedCssVariableSelectors>,
 }
 
@@ -595,19 +600,37 @@ impl CssVariable {
 
   #[inline]
   pub fn get_variable(&self) -> String {
-    format!("var({})", self.name)
+    format!("var({})", self.variable)
   }
 
   #[inline]
   pub fn get_variable_with_fallback(&self, fallback: &str) -> String {
     format!("var({}, {})", self.name, fallback)
   }
+
+  /// Check whether this instance of [CssVariable] is a color.
+  #[inline]
+  pub fn is_color(&self) -> bool {
+    self.syntax.is_color()
+  }
+}
+
+impl CssVariable {
+  /// Generate a placeholder for the variable by using the name. This inserts
+  /// some text which will be replaced by the actual variable name when the code
+  /// is generated.
+  #[inline]
+  pub fn placeholder(name: impl AsRef<str>) -> String {
+    format!("_[VARIABLE::{}]_", name.as_ref())
+  }
 }
 
 impl<T: Into<String>> From<T> for CssVariable {
   #[inline]
   fn from(name: T) -> Self {
-    CssVariable::builder().name(name).build()
+    let name: String = name.into();
+    let variable: String = format!("--{}", name.to_kebab_case());
+    CssVariable::builder().name(name).variable(variable).build()
   }
 }
 

@@ -40,6 +40,9 @@ impl Plugin for PresetDefault {
       ConfigEnum::Modifiers(ref mut modifiers) => {
         self.update_modifiers(modifiers);
       }
+      ConfigEnum::CssVariables(ref mut css_variables) => {
+        self.update_css_variables(css_variables);
+      }
       _ => {}
     }
 
@@ -78,5 +81,9 @@ impl PresetDefault {
 
   fn update_modifiers(&self, modifiers: &mut Modifiers) {
     modifiers.extend(MODIFIERS.clone());
+  }
+
+  fn update_css_variables(&self, css_variables: &mut CssVariables) {
+    css_variables.extend(CSS_VARIABLES.clone());
   }
 }
