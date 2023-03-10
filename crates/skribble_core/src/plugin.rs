@@ -48,10 +48,10 @@ pub enum ConfigEnum {
   MediaQueries(MediaQueries),
   ParentModifiers(ParentModifiers),
   Modifiers(Modifiers),
-  NamedRules(Atoms),
+  Atoms(Atoms),
   NamedClasses(NamedClasses),
   Palette(Palette),
-  Atoms(ValueSets),
+  ValueSets(ValueSets),
   Groups(VariableGroups),
   AdditionalFields(AdditionalFields),
 }

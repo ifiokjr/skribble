@@ -293,7 +293,7 @@ pub struct Keyframe {
   /// The rules for the specific keyframe.
   #[serde(flatten, default)]
   #[builder(default, setter(into))]
-  pub rules: StringMap,
+  pub rules: NestedStringMap,
 }
 
 /// This is a more usable version of Index<String, String> which allows for
@@ -317,12 +317,18 @@ where
   V: Into<String>,
 {
   fn from_iter<T: IntoIterator<Item = (K, V)>>(iter: T) -> Self {
-    let rules = iter
+    let map = iter
       .into_iter()
       .map(|(key, value)| (key.into(), value.into()))
       .collect();
 
-    Self(rules)
+    Self(map)
+  }
+}
+
+impl<K: Into<String>, V: Into<String>> From<IndexMap<K, V>> for StringMap {
+  fn from(value: IndexMap<K, V>) -> Self {
+    Self::from_iter(value)
   }
 }
 
@@ -335,6 +341,49 @@ impl Deref for StringMap {
 }
 
 impl DerefMut for StringMap {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.0
+  }
+}
+
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
+pub struct NestedStringMap(IndexMap<String, StringMap>);
+
+impl IntoIterator for NestedStringMap {
+  type IntoIter = indexmap::map::IntoIter<String, StringMap>;
+  type Item = (String, StringMap);
+
+  fn into_iter(self) -> Self::IntoIter {
+    self.0.into_iter()
+  }
+}
+
+impl<K: Into<String>, V: Into<StringMap>> FromIterator<(K, V)> for NestedStringMap {
+  fn from_iter<T: IntoIterator<Item = (K, V)>>(iter: T) -> Self {
+    let map = iter
+      .into_iter()
+      .map(|(k, v)| (k.into(), v.into()))
+      .collect();
+
+    Self(map)
+  }
+}
+
+impl<K: Into<String>, V: Into<StringMap>> From<IndexMap<K, V>> for NestedStringMap {
+  fn from(value: IndexMap<K, V>) -> Self {
+    Self::from_iter(value)
+  }
+}
+
+impl Deref for NestedStringMap {
+  type Target = IndexMap<String, StringMap>;
+
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+impl DerefMut for NestedStringMap {
   fn deref_mut(&mut self) -> &mut Self::Target {
     &mut self.0
   }
@@ -553,6 +602,18 @@ pub struct Atom {
   additional_fields: AdditionalFields,
 }
 
+impl Atom {
+  /// Add a value to the [`ValueSet`] that will be used to generate the builtin
+  /// style variants.
+  pub fn add_value_set<V: Into<Prioritized<String>>>(&mut self, value: V) -> &Self {
+    if let LinkedValues::Values(value_set) = &mut self.values {
+      value_set.push(value.into());
+    }
+
+    self
+  }
+}
+
 #[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
 #[serde(rename_all = "camelCase", tag = "type")]
 pub enum LinkedValues {
@@ -680,7 +741,7 @@ impl DerefMut for CssVariables {
 }
 
 pub type CssVariableSelectors = StringMap;
-pub type NestedCssVariableSelectors = IndexMap<String, CssVariableSelectors>;
+pub type NestedCssVariableSelectors = NestedStringMap;
 
 /// This can be used to define colors and other CSS variables.
 ///
@@ -1387,11 +1448,11 @@ pub struct Prioritized<T> {
   pub value: T,
 }
 
-impl<T> From<T> for Prioritized<T> {
+impl<T: Into<String>> From<T> for Prioritized<String> {
   fn from(value: T) -> Self {
     Self {
       priority: Default::default(),
-      value,
+      value: value.into(),
     }
   }
 }
@@ -1428,31 +1489,39 @@ pub struct ColorSettings {
   additional_fields: AdditionalFields,
 }
 
+pub type PrioritizedString = Prioritized<String>;
+
 #[derive(Clone, Default, Debug, Deserialize, PartialEq, Serialize)]
-pub struct ValueSetNames(Vec<Prioritized<String>>);
+pub struct ValueSetNames(Vec<PrioritizedString>);
 
 impl IntoIterator for ValueSetNames {
   type IntoIter = std::vec::IntoIter<Self::Item>;
-  type Item = Prioritized<String>;
+  type Item = PrioritizedString;
 
   fn into_iter(self) -> Self::IntoIter {
     self.0.into_iter()
   }
 }
 
-impl<V: Into<Prioritized<String>>> FromIterator<V> for ValueSetNames {
+impl<V: Into<PrioritizedString>> FromIterator<V> for ValueSetNames {
   fn from_iter<T>(iter: T) -> Self
   where
     T: IntoIterator<Item = V>,
   {
-    let values = iter.into_iter().map(|v| v.into()).collect();
+    let list = iter.into_iter().map(|v| v.into()).collect();
 
-    Self(values)
+    Self(list)
+  }
+}
+
+impl<I: Into<PrioritizedString>> From<Vec<I>> for ValueSetNames {
+  fn from(list: Vec<I>) -> Self {
+    Self::from_iter(list)
   }
 }
 
 impl Deref for ValueSetNames {
-  type Target = Vec<Prioritized<String>>;
+  type Target = Vec<PrioritizedString>;
 
   fn deref(&self) -> &Self::Target {
     &self.0

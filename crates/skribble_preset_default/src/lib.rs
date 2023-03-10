@@ -28,21 +28,16 @@ impl Plugin for PresetDefault {
 
   fn mutate_config(&mut self, config: &mut ConfigEnum) -> AnyResult {
     match config {
-      ConfigEnum::Palette(ref mut palette) => {
-        self.update_palette(palette);
-      }
-      ConfigEnum::MediaQueries(ref mut media_queries) => {
-        self.update_media_queries(media_queries);
-      }
-      ConfigEnum::ParentModifiers(ref mut parent_modifiers) => {
-        self.update_parent_modifiers(parent_modifiers);
-      }
-      ConfigEnum::Modifiers(ref mut modifiers) => {
-        self.update_modifiers(modifiers);
-      }
-      ConfigEnum::CssVariables(ref mut css_variables) => {
-        self.update_css_variables(css_variables);
-      }
+      ConfigEnum::Palette(ref mut palette) => self.update_palette(palette),
+      ConfigEnum::MediaQueries(ref mut media_queries) => self.update_media_queries(media_queries),
+      ConfigEnum::ParentModifiers(ref mut parent) => self.update_parent_modifiers(parent),
+      ConfigEnum::Modifiers(ref mut modifiers) => self.update_modifiers(modifiers),
+      ConfigEnum::CssVariables(ref mut css_variables) => self.update_css_variables(css_variables),
+      ConfigEnum::Keyframes(ref mut keyframes) => self.update_keyframes(keyframes),
+      ConfigEnum::Atoms(ref mut atoms) => self.update_atoms(atoms),
+      ConfigEnum::Groups(ref mut groups) => self.update_groups(groups),
+      ConfigEnum::NamedClasses(ref mut named_classes) => self.update_named_classes(named_classes),
+      ConfigEnum::ValueSets(ref mut value_sets) => self.update_value_sets(value_sets),
       _ => {}
     }
 
@@ -87,4 +82,20 @@ impl PresetDefault {
     css_variables.extend(COLOR_CSS_VARIABLES.clone());
     css_variables.extend(CSS_VARIABLES.clone());
   }
+
+  fn update_keyframes(&self, keyframes: &mut Keyframes) {
+    keyframes.extend(KEYFRAMES.clone());
+  }
+
+  #[allow(unused)]
+  fn update_atoms(&self, atoms: &mut Atoms) {}
+
+  #[allow(unused)]
+  fn update_groups(&self, groups: &mut VariableGroups) {}
+
+  #[allow(unused)]
+  fn update_named_classes(&self, named_classes: &mut NamedClasses) {}
+
+  #[allow(unused)]
+  fn update_value_sets(&self, value_sets: &mut ValueSets) {}
 }
