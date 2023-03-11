@@ -446,17 +446,28 @@ impl IntoIterator for OptionalStringMap {
   }
 }
 
-impl<S> FromIterator<(S, Option<S>)> for OptionalStringMap
+impl<K, V> FromIterator<(K, Option<V>)> for OptionalStringMap
 where
-  S: Into<String>,
+  K: Into<String>,
+  V: Into<String>,
 {
-  fn from_iter<T: IntoIterator<Item = (S, Option<S>)>>(iter: T) -> Self {
+  fn from_iter<T: IntoIterator<Item = (K, Option<V>)>>(iter: T) -> Self {
     let rules = iter
       .into_iter()
       .map(|(key, value)| (key.into(), value.map(|v| v.into())))
       .collect();
 
     Self(rules)
+  }
+}
+
+impl<K, V> From<IndexMap<K, Option<V>>> for OptionalStringMap
+where
+  K: Into<String>,
+  V: Into<String>,
+{
+  fn from(value: IndexMap<K, Option<V>>) -> Self {
+    Self::from_iter(value)
   }
 }
 
@@ -787,18 +798,10 @@ pub struct CssVariable {
 
 impl CssVariable {
   #[inline]
-  pub fn get_name(&self) -> &str {
-    &self.name
-  }
-
-  #[inline]
-  pub fn get_variable(&self) -> String {
-    format!("var({})", self.variable)
-  }
-
-  #[inline]
-  pub fn get_variable_with_fallback(&self, fallback: &str) -> String {
-    format!("var({}, {})", self.name, fallback)
+  pub fn get_variable(&self, prefix: impl AsRef<str>) -> String {
+    let prefix = prefix.as_ref();
+    let replacement = format!("--{prefix}-");
+    self.variable.as_str().replacen("--", &replacement, 1)
   }
 
   /// Check whether this instance of [CssVariable] is a color.
@@ -1497,15 +1500,21 @@ pub struct ColorSettings {
   #[builder(setter(into))]
   /// The name of the CSS Variable which is used to set the color opacity.
   pub opacity: String,
-  /// When true the built in palette will also be available as values for the
-  /// colors. If false only the colors defined in the `variables` will be
-  /// available.
+  /// When set to true the color palette will not be available for the atom
+  /// property which is using colors.
+  #[serde(default)]
   #[builder(default, setter(into))]
-  pub palette: bool,
+  pub ignore_palette: bool,
   /// Support additional fields for plugins to add extra functionality.
   #[serde(flatten, default)]
   #[builder(default, setter(into))]
-  additional_fields: AdditionalFields,
+  pub additional_fields: AdditionalFields,
+}
+
+impl<S: Into<String>> From<S> for ColorSettings {
+  fn from(opacity: S) -> Self {
+    Self::builder().opacity(opacity).build()
+  }
 }
 
 pub type PrioritizedString = Prioritized<String>;

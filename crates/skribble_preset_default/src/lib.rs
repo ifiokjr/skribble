@@ -19,6 +19,10 @@ pub struct PresetDefault {
   /// or `class` based.
   #[builder(default, setter(into))]
   pub dark_mode: DarkMode,
+  /// Choose to ignore the color variables so that you can define your own
+  /// custom theme.
+  #[builder(default, setter(into))]
+  pub ignore_colors: bool,
 }
 
 impl Plugin for PresetDefault {
@@ -79,7 +83,10 @@ impl PresetDefault {
   }
 
   fn update_css_variables(&self, css_variables: &mut CssVariables) {
-    css_variables.extend(COLOR_CSS_VARIABLES.clone());
+    if !self.ignore_colors {
+      css_variables.extend(COLOR_CSS_VARIABLES.clone());
+    }
+
     css_variables.extend(CSS_VARIABLES.clone());
   }
 
@@ -87,8 +94,9 @@ impl PresetDefault {
     keyframes.extend(KEYFRAMES.clone());
   }
 
-  #[allow(unused)]
-  fn update_atoms(&self, atoms: &mut Atoms) {}
+  fn update_atoms(&self, atoms: &mut Atoms) {
+    atoms.extend(ATOMS.clone());
+  }
 
   fn update_groups(&self, groups: &mut VariableGroups) {
     groups.extend(GROUPS.clone());
@@ -98,8 +106,8 @@ impl PresetDefault {
     named_classes.extend(NAMED_CLASSES.clone());
   }
 
-  #[allow(unused)]
   fn update_value_sets(&self, value_sets: &mut ValueSets) {
+    value_sets.extend(ATOM_VALUE_SETS.clone());
     value_sets.extend(ANIMATION_VALUE_SETS.clone());
   }
 }

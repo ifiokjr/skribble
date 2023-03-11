@@ -153,6 +153,11 @@ lazy_static! {
       .value("container",)
       .build(),
     CssVariable::builder()
+      .name("empty")
+      .variable("--empty")
+      .value("/* */",)
+      .build(),
+    CssVariable::builder()
       .name("filterBlur")
       .variable("--filter-blur")
       .build(),
@@ -285,6 +290,14 @@ lazy_static! {
       .name("defaultAnimationDuration")
       .variable("--default-animation-duration")
       .value("1s")
+      .build(),
+    CssVariable::builder()
+      .name("enterTranslateX")
+      .variable("--etx")
+      .build(),
+    CssVariable::builder()
+      .name("enterTranslateY")
+      .variable("--ety")
       .build(),
   ];
 }
