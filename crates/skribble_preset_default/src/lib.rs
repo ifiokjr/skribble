@@ -30,20 +30,17 @@ impl Plugin for PresetDefault {
     "skribble_preset_default".into()
   }
 
-  fn mutate_config(&mut self, config: &mut ConfigEnum) -> AnyResult {
-    match config {
-      ConfigEnum::Palette(ref mut palette) => self.update_palette(palette),
-      ConfigEnum::MediaQueries(ref mut media_queries) => self.update_media_queries(media_queries),
-      ConfigEnum::ParentModifiers(ref mut parent) => self.update_parent_modifiers(parent),
-      ConfigEnum::Modifiers(ref mut modifiers) => self.update_modifiers(modifiers),
-      ConfigEnum::CssVariables(ref mut css_variables) => self.update_css_variables(css_variables),
-      ConfigEnum::Keyframes(ref mut keyframes) => self.update_keyframes(keyframes),
-      ConfigEnum::Atoms(ref mut atoms) => self.update_atoms(atoms),
-      ConfigEnum::Groups(ref mut groups) => self.update_groups(groups),
-      ConfigEnum::NamedClasses(ref mut named_classes) => self.update_named_classes(named_classes),
-      ConfigEnum::ValueSets(ref mut value_sets) => self.update_value_sets(value_sets),
-      _ => {}
-    }
+  fn mutate_config(&self, config: &mut WrappedPluginConfig) -> AnyResult {
+    self.update_palette(&mut config.palette);
+    self.update_media_queries(&mut config.media_queries);
+    self.update_parent_modifiers(&mut config.parent_modifiers);
+    self.update_modifiers(&mut config.modifiers);
+    self.update_css_variables(&mut config.css_variables);
+    self.update_keyframes(&mut config.keyframes);
+    self.update_atoms(&mut config.atoms);
+    self.update_groups(&mut config.groups);
+    self.update_named_classes(&mut config.named_classes);
+    self.update_value_sets(&mut config.value_sets);
 
     Ok(())
   }
@@ -109,5 +106,24 @@ impl PresetDefault {
   fn update_value_sets(&self, value_sets: &mut ValueSets) {
     value_sets.extend(ATOM_VALUE_SETS.clone());
     value_sets.extend(ANIMATION_VALUE_SETS.clone());
+  }
+}
+
+#[cfg(test)]
+mod tests {
+  use skribble_core::*;
+
+  use super::*;
+
+  #[test]
+  fn default_can_be_added_to_runner() {
+    let plugin = PresetDefault::builder().build();
+
+    let config: StyleConfig = StyleConfig::builder()
+      .plugins(vec![PluginContainer::from(plugin)])
+      .build();
+
+    let runner = SkribbleRunner::new(config);
+    let _ = runner.prepare();
   }
 }

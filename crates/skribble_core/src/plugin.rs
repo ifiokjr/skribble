@@ -5,9 +5,7 @@ pub trait Plugin {
   /// published crate_name of the plugin.
   fn get_id(&self) -> String;
 
-  /// Here the plugin can inspect a reference to the received configuration.
-  #[allow(unused)]
-  fn load_config(&mut self, config: &StyleConfig) -> AnyResult {
+  fn read_options(&mut self, options: &Options) -> AnyResult {
     Ok(())
   }
 
@@ -15,7 +13,7 @@ pub trait Plugin {
   /// the original configuration but created at the start just for the plugins.
   /// It will be merged into the [`StyleConfig`].
   #[allow(unused)]
-  fn mutate_config(&mut self, config: &mut ConfigEnum) -> AnyResult {
+  fn mutate_config(&self, config: &mut WrappedPluginConfig) -> AnyResult {
     Ok(())
   }
 
@@ -41,17 +39,17 @@ impl<P: Plugin + 'static> From<P> for Box<dyn Plugin> {
 
 pub type AnyResult = Result<(), Box<dyn std::error::Error>>;
 
-#[non_exhaustive]
-pub enum ConfigEnum {
-  Keyframes(Keyframes),
-  CssVariables(CssVariables),
-  MediaQueries(MediaQueries),
-  ParentModifiers(ParentModifiers),
-  Modifiers(Modifiers),
-  Atoms(Atoms),
-  NamedClasses(NamedClasses),
-  Palette(Palette),
-  ValueSets(ValueSets),
-  Groups(VariableGroups),
-  AdditionalFields(AdditionalFields),
+#[derive(Clone, Default)]
+pub struct WrappedPluginConfig {
+  pub keyframes: Keyframes,
+  pub css_variables: CssVariables,
+  pub media_queries: MediaQueries,
+  pub parent_modifiers: ParentModifiers,
+  pub modifiers: Modifiers,
+  pub atoms: Atoms,
+  pub named_classes: NamedClasses,
+  pub palette: Palette,
+  pub value_sets: ValueSets,
+  pub groups: VariableGroups,
+  pub additional_fields: AdditionalFields,
 }

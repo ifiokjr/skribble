@@ -2,6 +2,8 @@ use std::fmt::Display;
 use std::fmt::Formatter;
 use std::ops::Deref;
 use std::ops::DerefMut;
+use std::sync::Arc;
+use std::sync::Mutex;
 
 use derivative::Derivative;
 use heck::ToKebabCase;
@@ -192,6 +194,10 @@ pub struct Options {
   #[serde(default = "default_variable_prefix")]
   #[builder(default = default_variable_prefix(), setter(into))]
   pub variable_prefix: String,
+  /// Support additional fields for plugins.
+  #[serde(flatten, default)]
+  #[builder(default, setter(into))]
+  pub additional_fields: AdditionalFields,
 }
 
 impl Default for Options {
@@ -1367,14 +1373,14 @@ pub struct VariableGroup {
 #[derive(Default)]
 pub struct Plugins(Vec<PluginContainer>);
 
-impl IntoIterator for Plugins {
-  type IntoIter = std::vec::IntoIter<Self::Item>;
-  type Item = PluginContainer;
+// impl IntoIterator for Plugins {
+//   type IntoIter = std::vec::IntoIter<Self::Item>;
+//   type Item = PluginContainer;
 
-  fn into_iter(self) -> Self::IntoIter {
-    self.0.into_iter()
-  }
-}
+//   fn into_iter(self) -> Self::IntoIter {
+//     self.0.into_iter()
+//   }
+// }
 
 impl<V: Into<PluginContainer>> FromIterator<V> for Plugins {
   fn from_iter<T>(iter: T) -> Self
@@ -1387,6 +1393,26 @@ impl<V: Into<PluginContainer>> FromIterator<V> for Plugins {
   }
 }
 
+impl From<Vec<PluginContainer>> for Plugins {
+  fn from(plugins: Vec<PluginContainer>) -> Self {
+    Self::from_iter(plugins)
+  }
+}
+
+impl Deref for Plugins {
+  type Target = Vec<PluginContainer>;
+
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+impl DerefMut for Plugins {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.0
+  }
+}
+
 #[derive(Serialize, TypedBuilder)]
 pub struct PluginContainer {
   /// Get the default priority of this plugin which will be used to determine
@@ -1396,30 +1422,16 @@ pub struct PluginContainer {
   pub priority: Priority,
   /// The plugin.
   #[serde(skip)]
-  #[builder(setter(into))]
-  pub plugin: Box<dyn Plugin>,
+  #[builder(setter(transform = |p: impl Plugin + 'static| Arc::new(Mutex::new(Box::new(p) as Box<dyn Plugin>))))]
+  pub plugin: Arc<Mutex<Box<dyn Plugin>>>,
 }
 
 impl<P: Plugin + 'static> From<P> for PluginContainer {
   fn from(plugin: P) -> Self {
     Self {
       priority: Default::default(),
-      plugin: Box::new(plugin),
+      plugin: Arc::new(Mutex::new(Box::new(plugin))),
     }
-  }
-}
-
-impl Deref for PluginContainer {
-  type Target = Box<dyn Plugin>;
-
-  fn deref(&self) -> &Self::Target {
-    &self.plugin
-  }
-}
-
-impl DerefMut for PluginContainer {
-  fn deref_mut(&mut self) -> &mut Self::Target {
-    &mut self.plugin
   }
 }
 

@@ -29,7 +29,7 @@ pub enum Error {
   },
 
   #[error("something went wrong with the plugin: `{id}` while running `finalize_config`")]
-  PluginFinalizeConfigError {
+  PluginReadConfigError {
     id: String,
     #[source]
     source: Box<dyn std::error::Error>,
