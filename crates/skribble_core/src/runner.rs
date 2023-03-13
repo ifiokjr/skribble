@@ -1,9 +1,10 @@
 use std::sync::Arc;
 use std::sync::Mutex;
 
-use indexmap::indexmap;
 use indexmap::IndexMap;
 
+
+use crate::CssVariable;
 use crate::Error;
 use crate::Keyframe;
 use crate::Plugin;
@@ -87,7 +88,8 @@ impl SkribbleRunner {
 
   fn merge(&self, wrapped_config: &WrappedPluginConfig) -> MergedConfig {
     // let merge_rules = &self.config.options.merge_rules;
-    let mut keyframes: IndexMap<String, Keyframe> = indexmap! {};
+    let mut keyframes = IndexMap::<String, Keyframe>::new();
+    let mut css_variables = IndexMap::<String, CssVariable>::new();
     // let mut keyframes = self.config.keyframes.clone();
     // keyframes.extend(wrapped_config.keyframes);
 
@@ -104,7 +106,26 @@ impl SkribbleRunner {
       }
     }
 
-    MergedConfig { keyframes }
+    for css_variable in wrapped_config.css_variables.iter() {
+      let key = css_variable.name.clone();
+
+      match css_variables.get_mut(&key) {
+        Some(existing) => {
+          existing.merge(css_variable);
+        }
+        None => {
+          css_variables.insert(key, css_variable.clone());
+        }
+      }
+    }
+
+    keyframes.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
+    css_variables.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
+
+    MergedConfig {
+      keyframes,
+      css_variables,
+    }
   }
 }
 
@@ -112,4 +133,5 @@ impl SkribbleRunner {
 #[derive(Clone, Default)]
 pub struct MergedConfig {
   pub keyframes: IndexMap<String, Keyframe>,
+  pub css_variables: IndexMap<String, CssVariable>,
 }

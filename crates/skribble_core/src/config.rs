@@ -823,6 +823,53 @@ pub struct CssVariable {
 }
 
 impl CssVariable {
+  pub fn merge(&mut self, other: &Self) {
+    if self.name != other.name {
+      panic!("Cannot merge CSS variables with different names");
+    }
+
+    if let Some(ref description) = other.description {
+      self.description = Some(description.clone());
+    }
+
+    self.variable = other.variable.clone();
+    self.syntax = other.syntax.clone();
+
+    if let Some(ref value) = other.value {
+      self.value = Some(value.clone());
+    }
+
+    if let Some(ref parent_modifiers) = other.parent_modifiers {
+      match self.parent_modifiers {
+        Some(ref mut original_parent_modifiers) => {
+          original_parent_modifiers.extend(parent_modifiers.clone());
+        }
+        None => self.parent_modifiers = Some(parent_modifiers.clone()),
+      };
+    }
+
+    if let Some(ref modifiers) = other.modifiers {
+      match self.modifiers {
+        Some(ref mut original_modifiers) => {
+          original_modifiers.extend(modifiers.clone());
+        }
+
+        None => self.modifiers = Some(modifiers.clone()),
+      };
+    }
+
+    if let Some(ref media_queries) = other.media_queries {
+      match self.media_queries {
+        Some(ref mut original_media_queries) => {
+          original_media_queries.extend(media_queries.clone());
+        }
+        None => self.media_queries = Some(media_queries.clone()),
+      };
+    }
+  }
+}
+
+impl CssVariable {
   #[inline]
   pub fn get_variable(&self, prefix: impl AsRef<str>) -> String {
     let prefix = prefix.as_ref();
