@@ -39,7 +39,7 @@ impl Plugin for PresetDefault {
     self.update_keyframes(&mut config.keyframes);
     self.update_atoms(&mut config.atoms);
     self.update_groups(&mut config.groups);
-    self.update_named_classes(&mut config.named_classes);
+    self.update_named_classes(&mut config.classes);
     self.update_value_sets(&mut config.value_sets);
 
     Ok(())

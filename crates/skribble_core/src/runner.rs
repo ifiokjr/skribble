@@ -3,15 +3,20 @@ use std::sync::Mutex;
 
 use indexmap::IndexMap;
 
+use crate::AdditionalFields;
 use crate::Atom;
 use crate::CssVariable;
 use crate::Error;
 use crate::Keyframe;
 use crate::MediaQuery;
 use crate::Modifier;
+use crate::NamedClass;
 use crate::Plugin;
 use crate::Result;
+use crate::StringMap;
 use crate::StyleConfig;
+use crate::ValueSet;
+use crate::VariableGroup;
 use crate::WrappedPluginConfig;
 
 pub struct SkribbleRunner {
@@ -96,6 +101,11 @@ impl SkribbleRunner {
     let mut parent_modifiers = IndexMap::<String, Modifier>::new();
     let mut modifiers = IndexMap::<String, IndexMap<String, Modifier>>::new();
     let mut atoms = IndexMap::<String, Atom>::new();
+    let mut classes = IndexMap::<String, NamedClass>::new();
+    let mut palette = StringMap::default();
+    let mut value_sets = IndexMap::<String, ValueSet>::new();
+    let mut groups = IndexMap::<String, VariableGroup>::new();
+    let mut additional_fields = AdditionalFields::default();
 
     // keyframes
     for keyframe in wrapped_config.keyframes.iter() {
@@ -217,11 +227,64 @@ impl SkribbleRunner {
       }
     }
 
+    // classes
+    for class in wrapped_config.classes.iter() {
+      let key = class.name.clone();
+
+      match classes.get_mut(&key) {
+        Some(existing) => {
+          existing.merge(class);
+        }
+        None => {
+          classes.insert(key, class.clone());
+        }
+      }
+    }
+
+    // palette
+    palette.extend(wrapped_config.palette.clone());
+    palette.extend(self.config.palette.clone());
+
+    // value_sets
+    for value_set in wrapped_config.value_sets.iter() {
+      let key = value_set.name.clone();
+
+      match value_sets.get_mut(&key) {
+        Some(existing) => {
+          existing.merge(value_set);
+        }
+        None => {
+          value_sets.insert(key, value_set.clone());
+        }
+      }
+    }
+
+    // groups
+    for group in wrapped_config.groups.iter() {
+      let key = group.name.clone();
+
+      match groups.get_mut(&key) {
+        Some(existing) => {
+          existing.merge(group);
+        }
+        None => {
+          groups.insert(key, group.clone());
+        }
+      }
+    }
+
+    // additional_fields
+    additional_fields.extend(wrapped_config.additional_fields.clone());
+    additional_fields.extend(self.config.additional_fields.clone());
+
     // sort by priority
     keyframes.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
     css_variables.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
     parent_modifiers.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
     atoms.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
+    classes.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
+    value_sets.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
+    groups.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
 
     MergedConfig {
       keyframes,
@@ -230,6 +293,11 @@ impl SkribbleRunner {
       parent_modifiers,
       modifiers,
       atoms,
+      classes,
+      palette,
+      value_sets,
+      groups,
+      additional_fields,
     }
   }
 }
@@ -243,4 +311,9 @@ pub struct MergedConfig {
   pub parent_modifiers: IndexMap<String, Modifier>,
   pub modifiers: IndexMap<String, IndexMap<String, Modifier>>,
   pub atoms: IndexMap<String, Atom>,
+  pub classes: IndexMap<String, NamedClass>,
+  pub palette: StringMap,
+  pub value_sets: IndexMap<String, ValueSet>,
+  pub groups: IndexMap<String, VariableGroup>,
+  pub additional_fields: AdditionalFields,
 }

@@ -48,7 +48,7 @@ pub struct WrappedPluginConfig {
   pub parent_modifiers: ParentModifiers,
   pub modifiers: Modifiers,
   pub atoms: Atoms,
-  pub named_classes: NamedClasses,
+  pub classes: NamedClasses,
   pub palette: Palette,
   pub value_sets: ValueSets,
   pub groups: VariableGroups,
