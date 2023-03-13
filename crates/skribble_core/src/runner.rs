@@ -3,6 +3,7 @@ use std::sync::Mutex;
 
 use indexmap::IndexMap;
 
+use crate::Atom;
 use crate::CssVariable;
 use crate::Error;
 use crate::Keyframe;
@@ -94,6 +95,7 @@ impl SkribbleRunner {
     let mut media_queries = IndexMap::<String, IndexMap<String, MediaQuery>>::new();
     let mut parent_modifiers = IndexMap::<String, Modifier>::new();
     let mut modifiers = IndexMap::<String, IndexMap<String, Modifier>>::new();
+    let mut atoms = IndexMap::<String, Atom>::new();
 
     // keyframes
     for keyframe in wrapped_config.keyframes.iter() {
@@ -201,10 +203,25 @@ impl SkribbleRunner {
       }
     }
 
+    // css_variables
+    for atom in wrapped_config.atoms.iter() {
+      let key = atom.name.clone();
+
+      match atoms.get_mut(&key) {
+        Some(existing) => {
+          existing.merge(atom);
+        }
+        None => {
+          atoms.insert(key, atom.clone());
+        }
+      }
+    }
+
     // sort by priority
     keyframes.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
     css_variables.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
     parent_modifiers.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
+    atoms.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
 
     MergedConfig {
       keyframes,
@@ -212,6 +229,7 @@ impl SkribbleRunner {
       media_queries,
       parent_modifiers,
       modifiers,
+      atoms,
     }
   }
 }
@@ -224,4 +242,5 @@ pub struct MergedConfig {
   pub media_queries: IndexMap<String, IndexMap<String, MediaQuery>>,
   pub parent_modifiers: IndexMap<String, Modifier>,
   pub modifiers: IndexMap<String, IndexMap<String, Modifier>>,
+  pub atoms: IndexMap<String, Atom>,
 }

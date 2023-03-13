@@ -667,6 +667,26 @@ impl Atom {
 
     self
   }
+
+  pub fn merge(&mut self, other: &Self) {
+    if self.name != other.name {
+      panic!("Cannot merge atoms with different names");
+    }
+
+    if let Some(ref description) = other.description {
+      self.description = Some(description.clone());
+    }
+
+    if other.priority < self.priority {
+      self.priority = other.priority;
+    }
+
+    self.styles.extend(other.styles.clone());
+    self.values.merge(&other.values);
+    self
+      .additional_fields
+      .extend(other.additional_fields.clone());
+  }
 }
 
 #[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
@@ -678,6 +698,24 @@ pub enum LinkedValues {
   /// The [`ValueSet`] names that will be used to populate the names that can be
   /// used.
   Values(ValueSetNames),
+}
+
+impl LinkedValues {
+  pub fn merge(&mut self, other: &Self) {
+    match self {
+      Self::Color(color_settings) => {
+        if let Self::Color(other_color_settings) = other {
+          color_settings.merge(other_color_settings);
+        }
+      }
+
+      Self::Values(value_set) => {
+        if let Self::Values(other_value_set) = other {
+          value_set.extend(other_value_set.clone());
+        }
+      }
+    }
+  }
 }
 
 impl Default for LinkedValues {
@@ -1645,6 +1683,16 @@ pub struct ColorSettings {
   #[serde(flatten, default)]
   #[builder(default, setter(into))]
   pub additional_fields: AdditionalFields,
+}
+
+impl ColorSettings {
+  pub fn merge(&mut self, other: &Self) {
+    self.opacity = other.opacity.clone();
+    self.ignore_palette = other.ignore_palette;
+    self
+      .additional_fields
+      .extend(other.additional_fields.clone());
+  }
 }
 
 impl<S: Into<String>> From<S> for ColorSettings {
