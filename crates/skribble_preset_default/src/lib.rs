@@ -123,7 +123,7 @@ mod tests {
       .plugins(vec![PluginContainer::from(plugin)])
       .build();
 
-    let runner = SkribbleRunner::new(config);
-    let _ = runner.prepare();
+    let mut runner = SkribbleRunner::new(config);
+    let _ = runner.run();
   }
 }

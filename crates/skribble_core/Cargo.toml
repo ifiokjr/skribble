@@ -19,7 +19,7 @@ colorsys = { workspace = true }
 derivative = { workspace = true }
 enum-ordinalize = { workspace = true }
 heck = { workspace = true }
-indexmap = { features = ["serde-1"], workspace = true }
+indexmap = { features = ["serde"], workspace = true }
 lazy_static = { workspace = true }
 lightningcss = { workspace = true }
 parcel_sourcemap = { workspace = true }

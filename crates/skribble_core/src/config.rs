@@ -8,6 +8,7 @@ use std::sync::Mutex;
 use derivative::Derivative;
 use heck::ToKebabCase;
 use indexmap::IndexMap;
+use indexmap::IndexSet;
 use serde::Deserialize;
 use serde::Serialize;
 use serde_json::Value;
@@ -300,6 +301,25 @@ pub struct Keyframe {
   #[serde(flatten, default)]
   #[builder(default, setter(into))]
   pub rules: NestedStringMap,
+}
+
+impl Keyframe {
+  pub fn merge(&mut self, other: &Keyframe) {
+    if self.name != other.name {
+      panic!("Cannot merge keyframes with different names");
+    }
+
+    if let Some(ref description) = other.description {
+      self.description = Some(description.clone());
+    }
+
+    if self.priority > other.priority {
+      self.priority = other.priority;
+    }
+
+    self.values.extend(other.values.clone());
+    self.rules.extend(other.rules.clone());
+  }
 }
 
 /// This is a more usable version of Index<String, String> which allows for
@@ -624,7 +644,7 @@ impl Atom {
   /// style variants.
   pub fn add_value_set<V: Into<Prioritized<String>>>(&mut self, value: V) -> &Self {
     if let LinkedValues::Values(value_set) = &mut self.values {
-      value_set.push(value.into());
+      value_set.insert(value.into());
     }
 
     self
@@ -1437,7 +1457,7 @@ impl<P: Plugin + 'static> From<P> for PluginContainer {
 
 /// The priority of a an ordered item. A lower number is better. The default is
 /// 150.
-#[derive(Clone, Copy, Debug, Deserialize, Eq, PartialEq, Serialize)]
+#[derive(Clone, Copy, Debug, Deserialize, Hash, Eq, Ord, PartialEq, PartialOrd, Serialize)]
 pub struct Priority(u8);
 
 impl Priority {
@@ -1473,7 +1493,7 @@ impl DerefMut for Priority {
   }
 }
 
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize, TypedBuilder)]
+#[derive(Clone, Debug, Deserialize, Eq, Hash, PartialEq, Serialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
 pub struct Prioritized<T> {
   #[builder(default, setter(into))]
@@ -1532,10 +1552,10 @@ impl<S: Into<String>> From<S> for ColorSettings {
 pub type PrioritizedString = Prioritized<String>;
 
 #[derive(Clone, Default, Debug, Deserialize, PartialEq, Serialize)]
-pub struct ValueSetNames(Vec<PrioritizedString>);
+pub struct ValueSetNames(IndexSet<PrioritizedString>);
 
 impl IntoIterator for ValueSetNames {
-  type IntoIter = std::vec::IntoIter<Self::Item>;
+  type IntoIter = indexmap::set::IntoIter<Self::Item>;
   type Item = PrioritizedString;
 
   fn into_iter(self) -> Self::IntoIter {
@@ -1561,7 +1581,7 @@ impl<I: Into<PrioritizedString>> From<Vec<I>> for ValueSetNames {
 }
 
 impl Deref for ValueSetNames {
-  type Target = Vec<PrioritizedString>;
+  type Target = IndexSet<PrioritizedString>;
 
   fn deref(&self) -> &Self::Target {
     &self.0

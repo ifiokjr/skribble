@@ -5,6 +5,7 @@ pub trait Plugin {
   /// published crate_name of the plugin.
   fn get_id(&self) -> String;
 
+  #[allow(unused)]
   fn read_options(&mut self, options: &Options) -> AnyResult {
     Ok(())
   }
