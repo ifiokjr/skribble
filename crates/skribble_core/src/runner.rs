@@ -93,6 +93,7 @@ impl SkribbleRunner {
     let mut css_variables = IndexMap::<String, CssVariable>::new();
     let mut media_queries = IndexMap::<String, IndexMap<String, MediaQuery>>::new();
     let mut parent_modifiers = IndexMap::<String, Modifier>::new();
+    let mut modifiers = IndexMap::<String, IndexMap<String, Modifier>>::new();
 
     // keyframes
     for keyframe in wrapped_config.keyframes.iter() {
@@ -168,6 +169,38 @@ impl SkribbleRunner {
       }
     }
 
+    // modifiers
+    let mut wrapped_modifiers = wrapped_config.modifiers.clone();
+    wrapped_modifiers.sort_by(|a, z| z.priority.cmp(&a.priority));
+
+    for modifier_group in wrapped_modifiers.iter() {
+      let group_name = modifier_group.name.clone();
+      let mut group = IndexMap::<String, Modifier>::new();
+
+      for modifier in modifier_group.iter() {
+        let key = modifier.name.clone();
+        match group.get_mut(&key) {
+          Some(existing) => {
+            existing.merge(modifier);
+          }
+          None => {
+            group.insert(key, modifier.clone());
+          }
+        }
+      }
+
+      group.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
+
+      match modifiers.get_mut(&group_name) {
+        Some(existing) => {
+          existing.extend(group);
+        }
+        None => {
+          modifiers.insert(group_name, group);
+        }
+      }
+    }
+
     // sort by priority
     keyframes.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
     css_variables.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
@@ -177,6 +210,8 @@ impl SkribbleRunner {
       keyframes,
       css_variables,
       media_queries,
+      parent_modifiers,
+      modifiers,
     }
   }
 }
@@ -187,4 +222,6 @@ pub struct MergedConfig {
   pub keyframes: IndexMap<String, Keyframe>,
   pub css_variables: IndexMap<String, CssVariable>,
   pub media_queries: IndexMap<String, IndexMap<String, MediaQuery>>,
+  pub parent_modifiers: IndexMap<String, Modifier>,
+  pub modifiers: IndexMap<String, IndexMap<String, Modifier>>,
 }
