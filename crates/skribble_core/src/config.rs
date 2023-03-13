@@ -792,6 +792,24 @@ pub struct NamedClass {
   pub styles: StringMap,
 }
 
+impl NamedClass {
+  pub fn merge(&mut self, other: &Self) {
+    if self.name != other.name {
+      panic!("Cannot merge named classes with different names");
+    }
+
+    if let Some(ref description) = other.description {
+      self.description = Some(description.clone());
+    }
+
+    if other.priority < self.priority {
+      self.priority = other.priority;
+    }
+
+    self.styles.extend(other.styles.clone());
+  }
+}
+
 /// Create CSS variables from a list of atoms.
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
 pub struct CssVariables(Vec<CssVariable>);
@@ -1396,7 +1414,28 @@ pub struct ValueSet {
   /// Support additional fields for plugins.
   #[serde(flatten, default)]
   #[builder(default, setter(into))]
-  additional_fields: AdditionalFields,
+  pub additional_fields: AdditionalFields,
+}
+
+impl ValueSet {
+  pub fn merge(&mut self, other: &Self) {
+    if self.name != other.name {
+      panic!("Cannot merge groups with different names");
+    }
+
+    if let Some(ref description) = other.description {
+      self.description = Some(description.clone());
+    }
+
+    if other.priority < self.priority {
+      self.priority = other.priority;
+    }
+
+    self.values.extend(other.values.clone());
+    self
+      .additional_fields
+      .extend(other.additional_fields.clone());
+  }
 }
 
 /// Values for the value atom.
@@ -1531,18 +1570,36 @@ pub struct VariableGroup {
   pub styles: StringMap,
 }
 
+impl VariableGroup {
+  pub fn merge(&mut self, other: &Self) {
+    if self.name != other.name {
+      panic!("Cannot merge groups with different names");
+    }
+
+    if let Some(ref description) = other.description {
+      self.description = Some(description.clone());
+    }
+
+    if other.priority < self.priority {
+      self.priority = other.priority;
+    }
+
+    self.styles.extend(other.styles.clone());
+  }
+}
+
 /// A map of string values.
 #[derive(Default)]
 pub struct Plugins(Vec<PluginContainer>);
 
-// impl IntoIterator for Plugins {
-//   type IntoIter = std::vec::IntoIter<Self::Item>;
-//   type Item = PluginContainer;
+impl IntoIterator for Plugins {
+  type IntoIter = std::vec::IntoIter<Self::Item>;
+  type Item = PluginContainer;
 
-//   fn into_iter(self) -> Self::IntoIter {
-//     self.0.into_iter()
-//   }
-// }
+  fn into_iter(self) -> Self::IntoIter {
+    self.0.into_iter()
+  }
+}
 
 impl<V: Into<PluginContainer>> FromIterator<V> for Plugins {
   fn from_iter<T>(iter: T) -> Self
