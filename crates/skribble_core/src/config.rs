@@ -568,6 +568,24 @@ pub struct MediaQuery {
   pub priority: Priority,
 }
 
+impl MediaQuery {
+  pub fn merge(&mut self, other: &Self) {
+    if self.name != other.name {
+      panic!("Cannot merge media queries with different names");
+    }
+
+    if let Some(ref description) = other.description {
+      self.description = Some(description.clone());
+    }
+
+    if other.priority < self.priority {
+      self.priority = other.priority;
+    }
+
+    self.query = other.query.clone();
+  }
+}
+
 /// [`Atoms`] are class that take a single value. Each
 /// style that is defined as null will be provided the value from the atom
 /// style.
@@ -1125,7 +1143,7 @@ pub struct Modifier {
 }
 
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize, TypedBuilder)]
-pub struct Group<T> {
+pub struct Group<T: Clone> {
   #[builder(setter(into))]
   pub name: String,
   #[builder(default, setter(into, strip_option))]
@@ -1137,7 +1155,25 @@ pub struct Group<T> {
   pub items: Vec<T>,
 }
 
-impl<T> IntoIterator for Group<T> {
+impl<T: Clone> Group<T> {
+  pub fn merge(&mut self, other: &Self) {
+    if self.name != other.name {
+      panic!("Cannot merge groups with different names");
+    }
+
+    if let Some(ref description) = other.description {
+      self.description = Some(description.clone());
+    }
+
+    if other.priority < self.priority {
+      self.priority = other.priority;
+    }
+
+    self.items.extend(other.items.clone());
+  }
+}
+
+impl<T: Clone> IntoIterator for Group<T> {
   type IntoIter = std::vec::IntoIter<Self::Item>;
   type Item = T;
 
@@ -1146,7 +1182,7 @@ impl<T> IntoIterator for Group<T> {
   }
 }
 
-impl<T> Deref for Group<T> {
+impl<T: Clone> Deref for Group<T> {
   type Target = Vec<T>;
 
   fn deref(&self) -> &Self::Target {
@@ -1154,7 +1190,7 @@ impl<T> Deref for Group<T> {
   }
 }
 
-impl<T> DerefMut for Group<T> {
+impl<T: Clone> DerefMut for Group<T> {
   fn deref_mut(&mut self) -> &mut Self::Target {
     &mut self.items
   }

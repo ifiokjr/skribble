@@ -3,10 +3,10 @@ use std::sync::Mutex;
 
 use indexmap::IndexMap;
 
-
 use crate::CssVariable;
 use crate::Error;
 use crate::Keyframe;
+use crate::MediaQuery;
 use crate::Plugin;
 use crate::Result;
 use crate::StyleConfig;
@@ -31,8 +31,8 @@ impl SkribbleRunner {
     self.extract_plugins();
     self.provide_options_to_plugins()?;
 
-    let mut wrapped_config = self.generate_wrapped_config()?;
-    self.merge(&mut wrapped_config);
+    let wrapped_config = self.generate_wrapped_config()?;
+    self.merge(&wrapped_config);
 
     // TODO ignoring options around how the config should be extended for now.
 
@@ -90,6 +90,7 @@ impl SkribbleRunner {
     // let merge_rules = &self.config.options.merge_rules;
     let mut keyframes = IndexMap::<String, Keyframe>::new();
     let mut css_variables = IndexMap::<String, CssVariable>::new();
+    let mut media_queries = IndexMap::<String, IndexMap<String, MediaQuery>>::new();
     // let mut keyframes = self.config.keyframes.clone();
     // keyframes.extend(wrapped_config.keyframes);
 
@@ -119,12 +120,44 @@ impl SkribbleRunner {
       }
     }
 
+    let mut wrapped_media_queries = wrapped_config.media_queries.clone();
+    wrapped_media_queries.sort_by(|a, z| z.priority.cmp(&a.priority));
+
+    for media_query_group in wrapped_media_queries.iter() {
+      let group_name = media_query_group.name.clone();
+      let mut group = IndexMap::<String, MediaQuery>::new();
+
+      for media_query in media_query_group.iter() {
+        let key = media_query.name.clone();
+        match group.get_mut(&key) {
+          Some(existing) => {
+            existing.merge(media_query);
+          }
+          None => {
+            group.insert(key, media_query.clone());
+          }
+        }
+      }
+
+      group.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
+
+      match media_queries.get_mut(&group_name) {
+        Some(existing) => {
+          existing.extend(group);
+        }
+        None => {
+          media_queries.insert(group_name, group);
+        }
+      }
+    }
+
     keyframes.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
     css_variables.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
 
     MergedConfig {
       keyframes,
       css_variables,
+      media_queries,
     }
   }
 }
@@ -134,4 +167,5 @@ impl SkribbleRunner {
 pub struct MergedConfig {
   pub keyframes: IndexMap<String, Keyframe>,
   pub css_variables: IndexMap<String, CssVariable>,
+  pub media_queries: IndexMap<String, IndexMap<String, MediaQuery>>,
 }
