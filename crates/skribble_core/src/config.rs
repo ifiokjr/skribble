@@ -1142,6 +1142,27 @@ pub struct Modifier {
   additional_fields: AdditionalFields,
 }
 
+impl Modifier {
+  pub fn merge(&mut self, other: &Self) {
+    if self.name != other.name {
+      panic!("Cannot merge modifiers with different names");
+    }
+
+    if let Some(ref description) = other.description {
+      self.description = Some(description.clone());
+    }
+
+    if other.priority < self.priority {
+      self.priority = other.priority;
+    }
+
+    self.values.extend(other.values.clone());
+    self
+      .additional_fields
+      .extend(other.additional_fields.clone());
+  }
+}
+
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize, TypedBuilder)]
 pub struct Group<T: Clone> {
   #[builder(setter(into))]

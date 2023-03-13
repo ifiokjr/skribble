@@ -7,6 +7,7 @@ use crate::CssVariable;
 use crate::Error;
 use crate::Keyframe;
 use crate::MediaQuery;
+use crate::Modifier;
 use crate::Plugin;
 use crate::Result;
 use crate::StyleConfig;
@@ -91,9 +92,9 @@ impl SkribbleRunner {
     let mut keyframes = IndexMap::<String, Keyframe>::new();
     let mut css_variables = IndexMap::<String, CssVariable>::new();
     let mut media_queries = IndexMap::<String, IndexMap<String, MediaQuery>>::new();
-    // let mut keyframes = self.config.keyframes.clone();
-    // keyframes.extend(wrapped_config.keyframes);
+    let mut parent_modifiers = IndexMap::<String, Modifier>::new();
 
+    // keyframes
     for keyframe in wrapped_config.keyframes.iter() {
       let key = keyframe.name.clone();
 
@@ -107,6 +108,7 @@ impl SkribbleRunner {
       }
     }
 
+    // css_variables
     for css_variable in wrapped_config.css_variables.iter() {
       let key = css_variable.name.clone();
 
@@ -120,6 +122,7 @@ impl SkribbleRunner {
       }
     }
 
+    // media_queries
     let mut wrapped_media_queries = wrapped_config.media_queries.clone();
     wrapped_media_queries.sort_by(|a, z| z.priority.cmp(&a.priority));
 
@@ -151,8 +154,24 @@ impl SkribbleRunner {
       }
     }
 
+    // parent_modifiers
+    for parent_modifier in wrapped_config.parent_modifiers.iter() {
+      let key = parent_modifier.name.clone();
+
+      match parent_modifiers.get_mut(&key) {
+        Some(existing) => {
+          existing.merge(parent_modifier);
+        }
+        None => {
+          parent_modifiers.insert(key, parent_modifier.clone());
+        }
+      }
+    }
+
+    // sort by priority
     keyframes.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
     css_variables.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
+    parent_modifiers.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
 
     MergedConfig {
       keyframes,
