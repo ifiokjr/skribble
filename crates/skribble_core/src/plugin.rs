@@ -43,7 +43,7 @@ pub type AnyResult = Result<(), Box<dyn std::error::Error>>;
 #[derive(Clone, Default)]
 pub struct WrappedPluginConfig {
   pub keyframes: Keyframes,
-  pub css_variables: CssVariables,
+  pub variables: CssVariables,
   pub media_queries: MediaQueries,
   pub parent_modifiers: ParentModifiers,
   pub modifiers: Modifiers,

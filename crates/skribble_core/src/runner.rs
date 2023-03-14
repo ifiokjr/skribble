@@ -2,16 +2,20 @@ use std::sync::Arc;
 use std::sync::Mutex;
 
 use indexmap::IndexMap;
+use serde::Deserialize;
+use serde::Serialize;
+use typed_builder::TypedBuilder;
 
 use crate::AdditionalFields;
 use crate::Atom;
+use crate::BoxedPlugin;
 use crate::CssVariable;
 use crate::Error;
 use crate::Keyframe;
 use crate::MediaQuery;
 use crate::Modifier;
 use crate::NamedClass;
-use crate::Plugin;
+use crate::Options;
 use crate::Result;
 use crate::StringMap;
 use crate::StyleConfig;
@@ -20,51 +24,49 @@ use crate::VariableGroup;
 use crate::WrappedPluginConfig;
 
 pub struct SkribbleRunner {
-  config: StyleConfig,
-  plugins: Vec<Arc<Mutex<Box<dyn Plugin>>>>,
+  options: Arc<Options>,
+  config: Arc<WrappedPluginConfig>,
+  plugins: Arc<Mutex<Vec<BoxedPlugin>>>,
+  /// This is only available once the runner has been set up.
+  merged_config: Option<MergedConfig>,
 }
 
 impl SkribbleRunner {
   pub fn new(config: StyleConfig) -> Self {
+    let (options, wrapped_config, mut plugins) = config.into_wrapped_config();
+    let options = Arc::new(options);
+    let config = Arc::new(wrapped_config);
+
+    // Extract the plugins from the config and sort them by priority.
+    plugins.sort_by_priority();
+    let plugins = Arc::new(Mutex::new(plugins.extract_plugins()));
+
     Self {
+      options,
       config,
-      plugins: vec![],
+      plugins,
+      merged_config: None,
     }
   }
 
   /// Run the plugins to mutate the config and get the transformed config which
   /// is used.
   pub fn run(&mut self) -> Result<()> {
-    self.extract_plugins();
     self.provide_options_to_plugins()?;
-
-    let wrapped_config = self.generate_wrapped_config()?;
-    self.merge(&wrapped_config);
+    self.merge(&self.generate_wrapped_config()?);
 
     // TODO ignoring options around how the config should be extended for now.
 
     Ok(())
   }
 
-  /// Extract the plugins from the config and sort them by priority.
-  fn extract_plugins(&mut self) {
-    let mut containers = vec![];
-
-    for container in self.config.plugins.iter() {
-      containers.push(container);
-    }
-
-    containers.sort_by(|a, z| a.priority.cmp(&z.priority));
-    self.plugins = containers.iter().map(|c| c.plugin.clone()).collect();
-  }
-
   /// Provide options to the plugins.
   fn provide_options_to_plugins(&mut self) -> Result<()> {
-    let options = &self.config.options;
+    let options = &self.options;
+    let mut plugins = self.plugins.lock().unwrap();
 
-    for container in self.plugins.iter_mut() {
-      let mut plugin = container.lock().unwrap();
-      let plugin = plugin.as_mut();
+    for boxed_plugin in plugins.iter_mut() {
+      let plugin = boxed_plugin.as_mut();
       plugin.read_options(options).map_err(|e| {
         Error::PluginReadConfigError {
           id: plugin.get_id(),
@@ -78,10 +80,10 @@ impl SkribbleRunner {
 
   fn generate_wrapped_config(&self) -> Result<WrappedPluginConfig> {
     let mut wrapped_config = WrappedPluginConfig::default();
+    let plugins = self.plugins.lock().unwrap();
 
-    for container in self.plugins.iter() {
-      let plugin = container.lock().unwrap();
-      let plugin = plugin.as_ref();
+    for boxed_plugin in plugins.iter() {
+      let plugin = boxed_plugin.as_ref();
       plugin.mutate_config(&mut wrapped_config).map_err(|e| {
         Error::PluginMutateConfigError {
           id: plugin.get_id(),
@@ -93,7 +95,7 @@ impl SkribbleRunner {
     Ok(wrapped_config)
   }
 
-  fn merge(&self, wrapped_config: &WrappedPluginConfig) -> MergedConfig {
+  fn merge(&mut self, wrapped_config: &WrappedPluginConfig) {
     // let merge_rules = &self.config.options.merge_rules;
     let mut keyframes = IndexMap::<String, Keyframe>::new();
     let mut css_variables = IndexMap::<String, CssVariable>::new();
@@ -122,7 +124,7 @@ impl SkribbleRunner {
     }
 
     // css_variables
-    for css_variable in wrapped_config.css_variables.iter() {
+    for css_variable in wrapped_config.variables.iter() {
       let key = css_variable.name.clone();
 
       match css_variables.get_mut(&key) {
@@ -286,24 +288,26 @@ impl SkribbleRunner {
     value_sets.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
     groups.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
 
-    MergedConfig {
-      keyframes,
-      css_variables,
-      media_queries,
-      parent_modifiers,
-      modifiers,
-      atoms,
-      classes,
-      palette,
-      value_sets,
-      groups,
-      additional_fields,
-    }
+    self.merged_config = Some(
+      MergedConfig::builder()
+        .keyframes(keyframes)
+        .css_variables(css_variables)
+        .media_queries(media_queries)
+        .parent_modifiers(parent_modifiers)
+        .modifiers(modifiers)
+        .atoms(atoms)
+        .classes(classes)
+        .palette(palette)
+        .value_sets(value_sets)
+        .groups(groups)
+        .additional_fields(additional_fields)
+        .build(),
+    );
   }
 }
 
 /// The configuration after all plugins have been run.
-#[derive(Clone, Default)]
+#[derive(Clone, Default, Deserialize, Serialize, TypedBuilder)]
 pub struct MergedConfig {
   pub keyframes: IndexMap<String, Keyframe>,
   pub css_variables: IndexMap<String, CssVariable>,

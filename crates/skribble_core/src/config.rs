@@ -2,8 +2,6 @@ use std::fmt::Display;
 use std::fmt::Formatter;
 use std::ops::Deref;
 use std::ops::DerefMut;
-use std::sync::Arc;
-use std::sync::Mutex;
 
 use derivative::Derivative;
 use heck::ToKebabCase;
@@ -17,6 +15,7 @@ use typed_builder::TypedBuilder;
 use crate::Error;
 use crate::Plugin;
 use crate::Result;
+use crate::WrappedPluginConfig;
 
 /// The style configuration which can also use the builder pattern.
 #[derive(Derivative, Deserialize, Serialize, TypedBuilder)]
@@ -80,6 +79,42 @@ impl StyleConfig {
     let config: Self =
       serde_json::from_str(json.as_ref()).map_err(|source| Error::InvalidConfig { source })?;
     Ok(config)
+  }
+
+  pub(crate) fn into_wrapped_config(self) -> (Options, WrappedPluginConfig, Plugins) {
+    let Self {
+      additional_fields,
+      atoms,
+      classes,
+      groups,
+      keyframes,
+      media_queries,
+      modifiers,
+      options,
+      palette,
+      parent_modifiers,
+      plugins,
+      value_sets,
+      variables,
+    } = self;
+
+    (
+      options,
+      WrappedPluginConfig {
+        atoms,
+        classes,
+        groups,
+        keyframes,
+        media_queries,
+        modifiers,
+        palette,
+        parent_modifiers,
+        value_sets,
+        variables,
+        additional_fields,
+      },
+      plugins,
+    )
   }
 
   pub fn to_json(&self) -> Result<String> {
@@ -1592,6 +1627,26 @@ impl VariableGroup {
 #[derive(Default)]
 pub struct Plugins(Vec<PluginContainer>);
 
+pub(crate) type BoxedPlugin = Box<dyn Plugin>;
+
+impl Plugins {
+  /// Sort the plugins by priority and deduplicate them.
+  pub(crate) fn sort_by_priority(&mut self) {
+    self.0.sort_by(|a, z| a.priority.cmp(&z.priority));
+  }
+
+  /// Remove the the container plugins.
+  pub(crate) fn extract_plugins(self) -> Vec<BoxedPlugin> {
+    let mut plugins = vec![];
+
+    for container in self.into_iter() {
+      plugins.push(container.extract_plugin());
+    }
+
+    plugins
+  }
+}
+
 impl IntoIterator for Plugins {
   type IntoIter = std::vec::IntoIter<Self::Item>;
   type Item = PluginContainer;
@@ -1641,15 +1696,22 @@ pub struct PluginContainer {
   pub priority: Priority,
   /// The plugin.
   #[serde(skip)]
-  #[builder(setter(transform = |p: impl Plugin + 'static| Arc::new(Mutex::new(Box::new(p) as Box<dyn Plugin>))))]
-  pub plugin: Arc<Mutex<Box<dyn Plugin>>>,
+  #[builder(setter(transform = |p: impl Plugin + 'static| Box::new(p) as Box<dyn Plugin>))]
+  plugin: BoxedPlugin,
+}
+
+impl PluginContainer {
+  /// Get the plugin.
+  pub fn extract_plugin(self) -> BoxedPlugin {
+    self.plugin
+  }
 }
 
 impl<P: Plugin + 'static> From<P> for PluginContainer {
   fn from(plugin: P) -> Self {
     Self {
       priority: Default::default(),
-      plugin: Arc::new(Mutex::new(Box::new(plugin))),
+      plugin: Box::new(plugin),
     }
   }
 }

@@ -35,7 +35,7 @@ impl Plugin for PresetDefault {
     self.update_media_queries(&mut config.media_queries);
     self.update_parent_modifiers(&mut config.parent_modifiers);
     self.update_modifiers(&mut config.modifiers);
-    self.update_css_variables(&mut config.css_variables);
+    self.update_variables(&mut config.variables);
     self.update_keyframes(&mut config.keyframes);
     self.update_atoms(&mut config.atoms);
     self.update_groups(&mut config.groups);
@@ -79,7 +79,7 @@ impl PresetDefault {
     modifiers.extend(MODIFIERS.clone());
   }
 
-  fn update_css_variables(&self, css_variables: &mut CssVariables) {
+  fn update_variables(&self, css_variables: &mut CssVariables) {
     if !self.ignore_colors {
       css_variables.extend(COLOR_CSS_VARIABLES.clone());
     }
