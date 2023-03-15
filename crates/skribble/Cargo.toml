@@ -10,6 +10,7 @@ keywords = ["build", "atomic", "css"]
 license = { workspace = true }
 readme = "readme.md"
 repository = { workspace = true }
+rust-version = { workspace = true }
 description = "skribble is a fully typed atomic css compiler for rust, node, deno and the browser"
 
 [dependencies]

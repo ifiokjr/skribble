@@ -24,8 +24,7 @@ impl Plugin for RustPlugin {
     "skribble_plugin_rust".into()
   }
 
-  #[allow(unused)]
-  fn generate_code(&self, config: &MergedConfig) -> AnyResult<GeneratedFiles> {
+  fn generate_code(&self, _config: &MergedConfig) -> AnyResult<GeneratedFiles> {
     let mut files = GeneratedFiles::default();
 
     files.push(
