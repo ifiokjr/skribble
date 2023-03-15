@@ -11,6 +11,7 @@ use crate::Atom;
 use crate::BoxedPlugin;
 use crate::CssVariable;
 use crate::Error;
+use crate::GeneratedFile;
 use crate::Keyframe;
 use crate::MediaQuery;
 use crate::Modifier;
@@ -53,7 +54,8 @@ impl SkribbleRunner {
   /// is used.
   pub fn run(&mut self) -> Result<()> {
     self.provide_options_to_plugins()?;
-    self.merge(&self.generate_wrapped_config()?);
+    let config_from_plugins = self.generate_wrapped_config()?;
+    self.merge(config_from_plugins);
 
     // TODO ignoring options around how the config should be extended for now.
 
@@ -62,7 +64,7 @@ impl SkribbleRunner {
 
   /// Provide options to the plugins.
   fn provide_options_to_plugins(&mut self) -> Result<()> {
-    let options = &self.options;
+    let options = self.options.as_ref();
     let mut plugins = self.plugins.lock().unwrap();
 
     for boxed_plugin in plugins.iter_mut() {
@@ -76,6 +78,28 @@ impl SkribbleRunner {
     }
 
     Ok(())
+  }
+
+  /// Run the generate functions on all plugins with the provided merged
+  /// configuration.
+  pub fn generate(&self) -> Result<Vec<GeneratedFile>> {
+    let Some(ref config) = self.merged_config else {
+      return Err(Error::RunnerNotSetup);
+    };
+
+    let plugins = self.plugins.lock().unwrap();
+
+    for boxed_plugin in plugins.iter() {
+      let plugin = boxed_plugin.as_ref();
+      plugin.generate_code(config).map_err(|e| {
+        Error::PluginGenerateCodeError {
+          id: plugin.get_id(),
+          source: e,
+        }
+      })?;
+    }
+
+    Ok(vec![])
   }
 
   fn generate_wrapped_config(&self) -> Result<WrappedPluginConfig> {
@@ -95,7 +119,7 @@ impl SkribbleRunner {
     Ok(wrapped_config)
   }
 
-  fn merge(&mut self, wrapped_config: &WrappedPluginConfig) {
+  fn merge(&mut self, wrapped_config: WrappedPluginConfig) {
     // let merge_rules = &self.config.options.merge_rules;
     let mut keyframes = IndexMap::<String, Keyframe>::new();
     let mut css_variables = IndexMap::<String, CssVariable>::new();
@@ -110,49 +134,49 @@ impl SkribbleRunner {
     let mut additional_fields = AdditionalFields::default();
 
     // keyframes
-    for keyframe in wrapped_config.keyframes.iter() {
-      let key = keyframe.name.clone();
+    for keyframe in wrapped_config.keyframes.into_iter() {
+      let key = &keyframe.name;
 
-      match keyframes.get_mut(&key) {
+      match keyframes.get_mut(key) {
         Some(existing) => {
           existing.merge(keyframe);
         }
         None => {
-          keyframes.insert(key, keyframe.clone());
+          keyframes.insert(key.clone(), keyframe);
         }
       }
     }
 
     // css_variables
-    for css_variable in wrapped_config.variables.iter() {
-      let key = css_variable.name.clone();
+    for css_variable in wrapped_config.variables.into_iter() {
+      let key = &css_variable.name;
 
-      match css_variables.get_mut(&key) {
+      match css_variables.get_mut(key) {
         Some(existing) => {
           existing.merge(css_variable);
         }
         None => {
-          css_variables.insert(key, css_variable.clone());
+          css_variables.insert(key.clone(), css_variable);
         }
       }
     }
 
     // media_queries
-    let mut wrapped_media_queries = wrapped_config.media_queries.clone();
+    let mut wrapped_media_queries = wrapped_config.media_queries;
     wrapped_media_queries.sort_by(|a, z| z.priority.cmp(&a.priority));
 
-    for media_query_group in wrapped_media_queries.iter() {
+    for media_query_group in wrapped_media_queries.into_iter() {
       let group_name = media_query_group.name.clone();
       let mut group = IndexMap::<String, MediaQuery>::new();
 
-      for media_query in media_query_group.iter() {
-        let key = media_query.name.clone();
-        match group.get_mut(&key) {
+      for media_query in media_query_group.into_iter() {
+        let key = &media_query.name;
+        match group.get_mut(key) {
           Some(existing) => {
             existing.merge(media_query);
           }
           None => {
-            group.insert(key, media_query.clone());
+            group.insert(key.clone(), media_query);
           }
         }
       }
@@ -170,35 +194,35 @@ impl SkribbleRunner {
     }
 
     // parent_modifiers
-    for parent_modifier in wrapped_config.parent_modifiers.iter() {
-      let key = parent_modifier.name.clone();
+    for parent_modifier in wrapped_config.parent_modifiers.into_iter() {
+      let key = &parent_modifier.name;
 
-      match parent_modifiers.get_mut(&key) {
+      match parent_modifiers.get_mut(key) {
         Some(existing) => {
           existing.merge(parent_modifier);
         }
         None => {
-          parent_modifiers.insert(key, parent_modifier.clone());
+          parent_modifiers.insert(key.clone(), parent_modifier);
         }
       }
     }
 
     // modifiers
-    let mut wrapped_modifiers = wrapped_config.modifiers.clone();
+    let mut wrapped_modifiers = wrapped_config.modifiers;
     wrapped_modifiers.sort_by(|a, z| z.priority.cmp(&a.priority));
 
-    for modifier_group in wrapped_modifiers.iter() {
+    for modifier_group in wrapped_modifiers.into_iter() {
       let group_name = modifier_group.name.clone();
       let mut group = IndexMap::<String, Modifier>::new();
 
-      for modifier in modifier_group.iter() {
-        let key = modifier.name.clone();
-        match group.get_mut(&key) {
+      for modifier in modifier_group.into_iter() {
+        let key = &modifier.name;
+        match group.get_mut(key) {
           Some(existing) => {
             existing.merge(modifier);
           }
           None => {
-            group.insert(key, modifier.clone());
+            group.insert(key.clone(), modifier);
           }
         }
       }
@@ -210,73 +234,73 @@ impl SkribbleRunner {
           existing.extend(group);
         }
         None => {
-          modifiers.insert(group_name, group);
+          modifiers.insert(group_name.clone(), group);
         }
       }
     }
 
     // css_variables
-    for atom in wrapped_config.atoms.iter() {
-      let key = atom.name.clone();
+    for atom in wrapped_config.atoms.into_iter() {
+      let key = &atom.name;
 
-      match atoms.get_mut(&key) {
+      match atoms.get_mut(key) {
         Some(existing) => {
           existing.merge(atom);
         }
         None => {
-          atoms.insert(key, atom.clone());
+          atoms.insert(key.clone(), atom);
         }
       }
     }
 
     // classes
-    for class in wrapped_config.classes.iter() {
-      let key = class.name.clone();
+    for class in wrapped_config.classes.into_iter() {
+      let key = &class.name;
 
-      match classes.get_mut(&key) {
+      match classes.get_mut(key) {
         Some(existing) => {
           existing.merge(class);
         }
         None => {
-          classes.insert(key, class.clone());
+          classes.insert(key.clone(), class);
         }
       }
     }
 
     // palette
-    palette.extend(wrapped_config.palette.clone());
+    palette.extend(wrapped_config.palette);
     palette.extend(self.config.palette.clone());
 
     // value_sets
-    for value_set in wrapped_config.value_sets.iter() {
-      let key = value_set.name.clone();
+    for value_set in wrapped_config.value_sets.into_iter() {
+      let key = &value_set.name;
 
-      match value_sets.get_mut(&key) {
+      match value_sets.get_mut(key) {
         Some(existing) => {
           existing.merge(value_set);
         }
         None => {
-          value_sets.insert(key, value_set.clone());
+          value_sets.insert(key.clone(), value_set);
         }
       }
     }
 
     // groups
-    for group in wrapped_config.groups.iter() {
-      let key = group.name.clone();
+    for group in wrapped_config.groups.into_iter() {
+      let key = &group.name;
 
-      match groups.get_mut(&key) {
+      match groups.get_mut(key) {
         Some(existing) => {
           existing.merge(group);
         }
         None => {
-          groups.insert(key, group.clone());
+          groups.insert(key.clone(), group);
         }
       }
     }
 
     // additional_fields
-    additional_fields.extend(wrapped_config.additional_fields.clone());
+    additional_fields.extend(wrapped_config.additional_fields);
     additional_fields.extend(self.config.additional_fields.clone());
 
     // sort by priority

@@ -21,17 +21,32 @@ pub enum Error {
     source: serde_json::Error,
   },
 
-  #[error("something went wrong with the plugin: `{id}` while running `mutate_config`")]
+  #[error(
+    "something went wrong with the plugin: `{id}` while generating the config in `mutate_config`"
+  )]
   PluginMutateConfigError {
     id: String,
     #[source]
     source: Box<dyn std::error::Error>,
   },
 
-  #[error("something went wrong with the plugin: `{id}` while running `finalize_config`")]
+  #[error("something went wrong with the plugin: `{id}` while reading options in `read_options`")]
   PluginReadConfigError {
     id: String,
     #[source]
     source: Box<dyn std::error::Error>,
   },
+
+  #[error("something went wrong with the plugin: `{id}` while generating code in `generate_code`")]
+  PluginGenerateCodeError {
+    id: String,
+    #[source]
+    source: Box<dyn std::error::Error>,
+  },
+
+  #[error(
+    "the runner has not generated the merged config yet, make sure to run `run()` before \
+     `generate()`"
+  )]
+  RunnerNotSetup,
 }

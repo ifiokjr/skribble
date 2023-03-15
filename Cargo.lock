@@ -2294,7 +2294,13 @@ dependencies = [
 name = "skribble_plugin_rust"
 version = "0.0.0"
 dependencies = [
+ "heck",
+ "indexmap",
+ "lazy_static",
+ "serde",
  "skribble_core",
+ "skribble_preset_default",
+ "typed-builder",
 ]
 
 [[package]]

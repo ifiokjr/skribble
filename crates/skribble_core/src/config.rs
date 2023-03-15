@@ -339,13 +339,15 @@ pub struct Keyframe {
 }
 
 impl Keyframe {
-  pub fn merge(&mut self, other: &Keyframe) {
+  pub fn merge(&mut self, other: impl Into<Keyframe>) {
+    let other = other.into();
+
     if self.name != other.name {
       panic!("Cannot merge keyframes with different names");
     }
 
-    if let Some(ref description) = other.description {
-      self.description = Some(description.clone());
+    if let Some(description) = other.description {
+      self.description = Some(description);
     }
 
     if self.priority > other.priority {
@@ -604,13 +606,15 @@ pub struct MediaQuery {
 }
 
 impl MediaQuery {
-  pub fn merge(&mut self, other: &Self) {
+  pub fn merge(&mut self, other: impl Into<Self>) {
+    let other = other.into();
+
     if self.name != other.name {
       panic!("Cannot merge media queries with different names");
     }
 
-    if let Some(ref description) = other.description {
-      self.description = Some(description.clone());
+    if let Some(description) = other.description {
+      self.description = Some(description);
     }
 
     if other.priority < self.priority {
@@ -703,24 +707,24 @@ impl Atom {
     self
   }
 
-  pub fn merge(&mut self, other: &Self) {
+  pub fn merge(&mut self, other: impl Into<Self>) {
+    let other = other.into();
+
     if self.name != other.name {
       panic!("Cannot merge atoms with different names");
     }
 
-    if let Some(ref description) = other.description {
-      self.description = Some(description.clone());
+    if let Some(description) = other.description {
+      self.description = Some(description);
     }
 
     if other.priority < self.priority {
       self.priority = other.priority;
     }
 
-    self.styles.extend(other.styles.clone());
-    self.values.merge(&other.values);
-    self
-      .additional_fields
-      .extend(other.additional_fields.clone());
+    self.styles.extend(other.styles);
+    self.values.merge(other.values);
+    self.additional_fields.extend(other.additional_fields);
   }
 }
 
@@ -736,7 +740,7 @@ pub enum LinkedValues {
 }
 
 impl LinkedValues {
-  pub fn merge(&mut self, other: &Self) {
+  pub fn merge(&mut self, other: Self) {
     match self {
       Self::Color(color_settings) => {
         if let Self::Color(other_color_settings) = other {
@@ -746,7 +750,7 @@ impl LinkedValues {
 
       Self::Values(value_set) => {
         if let Self::Values(other_value_set) = other {
-          value_set.extend(other_value_set.clone());
+          value_set.extend(other_value_set);
         }
       }
     }
@@ -828,20 +832,22 @@ pub struct NamedClass {
 }
 
 impl NamedClass {
-  pub fn merge(&mut self, other: &Self) {
+  pub fn merge(&mut self, other: impl Into<Self>) {
+    let other = other.into();
+
     if self.name != other.name {
       panic!("Cannot merge named classes with different names");
     }
 
-    if let Some(ref description) = other.description {
-      self.description = Some(description.clone());
+    if let Some(description) = other.description {
+      self.description = Some(description);
     }
 
     if other.priority < self.priority {
       self.priority = other.priority;
     }
 
-    self.styles.extend(other.styles.clone());
+    self.styles.extend(other.styles);
   }
 }
 
@@ -932,13 +938,15 @@ pub struct CssVariable {
 }
 
 impl CssVariable {
-  pub fn merge(&mut self, other: &Self) {
+  pub fn merge(&mut self, other: impl Into<Self>) {
+    let other = other.into();
+
     if self.name != other.name {
       panic!("Cannot merge CSS variables with different names");
     }
 
-    if let Some(ref description) = other.description {
-      self.description = Some(description.clone());
+    if let Some(description) = other.description {
+      self.description = Some(description);
     }
 
     self.variable = other.variable.clone();
@@ -1234,13 +1242,15 @@ pub struct Modifier {
 }
 
 impl Modifier {
-  pub fn merge(&mut self, other: &Self) {
+  pub fn merge(&mut self, other: impl Into<Self>) {
+    let other = other.into();
+
     if self.name != other.name {
       panic!("Cannot merge modifiers with different names");
     }
 
-    if let Some(ref description) = other.description {
-      self.description = Some(description.clone());
+    if let Some(description) = other.description {
+      self.description = Some(description);
     }
 
     if other.priority < self.priority {
@@ -1268,13 +1278,15 @@ pub struct Group<T: Clone> {
 }
 
 impl<T: Clone> Group<T> {
-  pub fn merge(&mut self, other: &Self) {
+  pub fn merge(&mut self, other: impl Into<Self>) {
+    let other = other.into();
+
     if self.name != other.name {
       panic!("Cannot merge groups with different names");
     }
 
-    if let Some(ref description) = other.description {
-      self.description = Some(description.clone());
+    if let Some(description) = other.description {
+      self.description = Some(description);
     }
 
     if other.priority < self.priority {
@@ -1453,13 +1465,15 @@ pub struct ValueSet {
 }
 
 impl ValueSet {
-  pub fn merge(&mut self, other: &Self) {
+  pub fn merge(&mut self, other: impl Into<Self>) {
+    let other = other.into();
+
     if self.name != other.name {
       panic!("Cannot merge groups with different names");
     }
 
-    if let Some(ref description) = other.description {
-      self.description = Some(description.clone());
+    if let Some(description) = other.description {
+      self.description = Some(description);
     }
 
     if other.priority < self.priority {
@@ -1606,13 +1620,15 @@ pub struct VariableGroup {
 }
 
 impl VariableGroup {
-  pub fn merge(&mut self, other: &Self) {
+  pub fn merge(&mut self, other: impl Into<Self>) {
+    let other = other.into();
+
     if self.name != other.name {
       panic!("Cannot merge groups with different names");
     }
 
-    if let Some(ref description) = other.description {
-      self.description = Some(description.clone());
+    if let Some(description) = other.description {
+      self.description = Some(description);
     }
 
     if other.priority < self.priority {
@@ -1805,12 +1821,11 @@ pub struct ColorSettings {
 }
 
 impl ColorSettings {
-  pub fn merge(&mut self, other: &Self) {
+  pub fn merge(&mut self, other: impl Into<Self>) {
+    let other = other.into();
     self.opacity = other.opacity.clone();
     self.ignore_palette = other.ignore_palette;
-    self
-      .additional_fields
-      .extend(other.additional_fields.clone());
+    self.additional_fields.extend(other.additional_fields);
   }
 }
 
