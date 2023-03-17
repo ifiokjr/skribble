@@ -1,18 +1,17 @@
 [package]
-name = "skribble"
+name = "skribble_client"
 version = { workspace = true }
 authors = ["Ifiok Jr. <ifiokotung@gmail.com>"]
 categories = { workspace = true }
-documentation = "https://docs.rs/skribble"
+documentation = "https://docs.rs/skribble_client"
 edition = { workspace = true }
 homepage = { workspace = true }
 include = ["src/**/*.rs", "Cargo.toml", "readme.md"]
-keywords = ["build", "atomic", "css"]
+keywords = ["client", "atomic", "css"]
 license = { workspace = true }
 readme = "readme.md"
 repository = { workspace = true }
 rust-version = { workspace = true }
-description = "skribble is a fully typed atomic css compiler for rust, node, deno and the browser"
+description = "This is the `skribble_client` crate."
 
 [dependencies]
-skribble_core = { workspace = true }

@@ -2,6 +2,7 @@
 name = "skribble_core"
 version = { workspace = true }
 authors = { workspace = true }
+categories = { workspace = true }
 documentation = "https://docs.rs/skribble_core"
 edition = { workspace = true }
 homepage = { workspace = true }
@@ -12,8 +13,6 @@ readme = "readme.md"
 repository = { workspace = true }
 rust-version = { workspace = true }
 description = "Core features for the skribble atomic css library"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 colorsys = { workspace = true }

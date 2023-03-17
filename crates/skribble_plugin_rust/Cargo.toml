@@ -2,6 +2,7 @@
 name = "skribble_plugin_rust"
 version = { workspace = true }
 authors = { workspace = true }
+categories = { workspace = true }
 documentation = "https://docs.rs/skribble_plugin_rust"
 edition = { workspace = true }
 homepage = { workspace = true }

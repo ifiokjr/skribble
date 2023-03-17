@@ -2269,6 +2269,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "skribble_client"
+version = "0.0.0"
+
+[[package]]
 name = "skribble_core"
 version = "0.0.0"
 dependencies = [
