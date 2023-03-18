@@ -17,6 +17,7 @@ description = "This plugin provides support for generating rust code from your `
 [dependencies]
 heck = { workspace = true }
 indexmap = { workspace = true }
+indoc = { workspace = true }
 lazy_static = { workspace = true }
 quote = { workspace = true }
 serde = { workspace = true }
