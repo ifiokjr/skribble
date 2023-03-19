@@ -47,7 +47,7 @@ pub struct IndentProps {
   pub style: IndentStyle,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Clone, Copy, Debug)]
 pub enum IndentStyle {
   Tab,
   Spaces(u8),
@@ -60,8 +60,8 @@ impl Default for IndentStyle {
 }
 
 /// Indent the string with the given amount of spaces.
-pub fn indent(props: IndentProps) -> String {
-  let IndentProps { content, style } = props;
+pub fn indent(content: impl AsRef<str>, style: IndentStyle) -> String {
+  let content = content.as_ref();
   let lines = content.split('\n');
   let mut result = String::new();
   let empty_line_regex = Regex::new(r"^\s*$").unwrap();

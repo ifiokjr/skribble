@@ -1,4 +1,5 @@
 #![deny(clippy::all)]
+#![forbid(clippy::indexing_slicing)]
 
 use data::*;
 use enums::*;

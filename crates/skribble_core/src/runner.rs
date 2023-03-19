@@ -11,7 +11,7 @@ use crate::Atom;
 use crate::BoxedPlugin;
 use crate::CssVariable;
 use crate::Error;
-use crate::GeneratedFile;
+use crate::GeneratedFiles;
 use crate::Keyframe;
 use crate::MediaQuery;
 use crate::Modifier;
@@ -82,24 +82,27 @@ impl SkribbleRunner {
 
   /// Run the generate functions on all plugins with the provided merged
   /// configuration.
-  pub fn generate(&self) -> Result<Vec<GeneratedFile>> {
+  pub fn generate(&self) -> Result<GeneratedFiles> {
     let Some(ref config) = self.merged_config else {
       return Err(Error::RunnerNotSetup);
     };
 
     let plugins = self.plugins.lock().unwrap();
+    let mut generated_files = GeneratedFiles::default();
 
     for boxed_plugin in plugins.iter() {
       let plugin = boxed_plugin.as_ref();
-      plugin.generate_code(config).map_err(|e| {
+      let generated = plugin.generate_code(config).map_err(|e| {
         Error::PluginGenerateCodeError {
           id: plugin.get_id(),
           source: e,
         }
       })?;
+
+      generated_files.merge(generated);
     }
 
-    Ok(vec![])
+    Ok(generated_files)
   }
 
   fn generate_wrapped_config(&self) -> Result<WrappedPluginConfig> {

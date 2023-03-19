@@ -1,4 +1,5 @@
 #![deny(clippy::all)]
+#![forbid(clippy::indexing_slicing)]
 
 use heck::ToPascalCase;
 use heck::ToSnakeCase;
@@ -34,7 +35,12 @@ impl Plugin for RustPlugin {
 
   fn generate_code(&self, config: &MergedConfig) -> AnyResult<GeneratedFiles> {
     let mut files = GeneratedFiles::default();
-    files.push(self.generate_file_contents(config));
+    files.push(
+      GeneratedFile::builder()
+        .path("./src/skribble.rs")
+        .content(self.generate_file_contents(config))
+        .build(),
+    );
 
     Ok(files)
   }
@@ -46,10 +52,10 @@ impl Plugin for RustPlugin {
 }
 
 impl RustPlugin {
-  fn generate_file_contents(&self, config: &MergedConfig) -> GeneratedFile {
+  fn generate_file_contents(&self, config: &MergedConfig) -> String {
     let mut sections = Vec::<String>::new();
-    let mut trait_implementations = Vec::<String>::new();
-    let mut trait_map: IndexMap<String, usize> = indexmap! {"SkribbleRoot".into() => 0};
+    let mut trait_names = vec![];
+    let mut struct_names_map: IndexMap<String, usize> = indexmap! {"SkribbleRoot".into() => 0};
 
     for (key, map) in config.media_queries.iter() {
       let mut section = Vec::<String>::new();
@@ -68,32 +74,37 @@ impl RustPlugin {
             .split('\n')
             .collect::<Vec<&str>>()
             .join("\n/// ");
-          methods.push(format!("/// {description}"));
+          methods.push(indent(format!("/// {description}"), Default::default()));
         }
-        methods.push(format!("fn {method_name}(&self) -> {struct_name} {{",));
         methods.push(indent(
-          IndentProps::builder()
-            .content(format!(
-              "{struct_name}::from_ref(self.append_to_skribble_value(\"{name}\"))"
-            ))
-            .build(),
+          format!("fn {method_name}(&self) -> {struct_name} {{",),
+          Default::default(),
         ));
-        methods.push("}".into());
+        methods.push(indent(
+          indent(
+            format!("{struct_name}::from_ref(self.append_to_skribble_value(\"{name}\"))"),
+            Default::default(),
+          ),
+          Default::default(),
+        ));
+        methods.push(indent("}", Default::default()));
       }
+
       methods.push("}".into());
       section.push(methods.join("\n"));
 
-      trait_implementations.push(struct_name.to_string());
-      trait_map.insert(trait_name, trait_implementations.len());
+      trait_names.push(trait_name.into());
+      struct_names_map.insert(struct_name, trait_names.len());
       sections.push(section.join("\n"));
     }
 
-    let contents = format!("{HEADER}\n{}", sections.join("\n"));
+    // Add the implementation for each of the structs.
+    sections.push(generate_struct_implementations(
+      &struct_names_map,
+      &trait_names,
+    ));
 
-    GeneratedFile::builder()
-      .path("./src/skribble.rs")
-      .content(contents)
-      .build()
+    format!("{HEADER}\n{}", sections.join("\n"))
   }
 }
 
@@ -113,6 +124,22 @@ fn generate_impl_skribble_value(name: impl AsRef<str>) -> String {
     ),
     name.as_ref()
   )
+}
+
+fn generate_struct_implementations(
+  struct_names_map: &IndexMap<String, usize>,
+  trait_names: &Vec<String>,
+) -> String {
+  let mut content = Vec::<String>::new();
+  for (struct_name, min_index) in struct_names_map.iter() {
+    for (index, trait_name) in trait_names.iter().enumerate() {
+      if *min_index <= index {
+        content.push(format!("impl {trait_name} for {struct_name} {{}}",));
+      }
+    }
+  }
+
+  content.join("\n")
 }
 
 fn generate_struct(name: impl AsRef<str>) -> String {
@@ -159,7 +186,6 @@ mod tests {
 
   #[test]
   fn default_can_be_added_to_runner() {
-    println!("TRYING SOMETHING! {{");
     let default_preset = PresetDefault::builder().build();
     let rust_plugin = RustPlugin::builder().build();
 
@@ -172,6 +198,7 @@ mod tests {
 
     let mut runner = SkribbleRunner::new(config);
     let _ = runner.run();
-    let _ = runner.generate();
+    let content = &runner.generate().unwrap()[0].content;
+    insta::assert_display_snapshot!(content);
   }
 }

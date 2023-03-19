@@ -26,4 +26,5 @@ syn = { workspace = true, features = ["full"] }
 typed-builder = { workspace = true }
 
 [dev-dependencies]
+insta = { workspace = true }
 skribble_preset_default = { workspace = true }

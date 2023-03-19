@@ -1,4 +1,5 @@
 #![deny(clippy::all)]
+#![forbid(clippy::indexing_slicing)]
 
 pub use config::*;
 pub use constants::*;
