@@ -1,5 +1,5 @@
 #![deny(clippy::all)]
-#![forbid(clippy::indexing_slicing)]
+#![deny(clippy::indexing_slicing)]
 
 use heck::ToPascalCase;
 use heck::ToSnakeCase;
@@ -93,7 +93,7 @@ impl RustPlugin {
       methods.push("}".into());
       section.push(methods.join("\n"));
 
-      trait_names.push(trait_name.into());
+      trait_names.push(trait_name);
       struct_names_map.insert(struct_name, trait_names.len());
       sections.push(section.join("\n"));
     }
