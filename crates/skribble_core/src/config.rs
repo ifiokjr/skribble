@@ -750,7 +750,7 @@ impl LinkedValues {
 
       Self::Values(value_set) => {
         if let Self::Values(other_value_set) = other {
-          value_set.extend(other_value_set);
+          value_set.merge(other_value_set);
         }
       }
     }
@@ -1839,6 +1839,17 @@ pub type PrioritizedString = Prioritized<String>;
 
 #[derive(Clone, Default, Debug, Deserialize, PartialEq, Serialize)]
 pub struct ValueSetNames(IndexSet<PrioritizedString>);
+
+impl ValueSetNames {
+  pub fn sort_by_priority(&mut self) {
+    self.sort_by(|a, z| a.priority.cmp(&z.priority));
+  }
+
+  pub fn merge(&mut self, other: impl Into<Self>) {
+    self.extend(other.into());
+    self.sort_by_priority();
+  }
+}
 
 impl IntoIterator for ValueSetNames {
   type IntoIter = indexmap::set::IntoIter<Self::Item>;

@@ -89,6 +89,14 @@ impl RustPlugin {
       &mut trait_names,
     );
 
+    generate_atoms(
+      config,
+      indent_style,
+      &mut method_names,
+      &mut sections,
+      &mut trait_names,
+    );
+
     // Add the implementation for each of the structs.
     generate_struct_implementations(&struct_names_map, &trait_names, &mut sections);
     combine_sections_with_header(sections)

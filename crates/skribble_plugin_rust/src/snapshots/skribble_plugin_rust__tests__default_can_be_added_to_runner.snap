@@ -40,7 +40,6 @@ impl SkribbleValue for MediaQueryDeviceCategoriesChild {
     &self.0
   }
 }
-
 pub trait MediaQueryDeviceCategories: SkribbleValue {
   /// The media query for devices with a screen.
   fn screen(&self) -> MediaQueryDeviceCategoriesChild {
@@ -60,7 +59,6 @@ impl SkribbleValue for MediaQueryBreakpointsChild {
     &self.0
   }
 }
-
 pub trait MediaQueryBreakpoints: SkribbleValue {
   /// The breakpoint for devices with screen size greater than tiny.
   fn sm(&self) -> MediaQueryBreakpointsChild {
@@ -92,7 +90,6 @@ impl SkribbleValue for MediaQueryOrientationChild {
     &self.0
   }
 }
-
 pub trait MediaQueryOrientation: SkribbleValue {
   /// The media query for devices with a portrait orientation.
   fn portrait(&self) -> MediaQueryOrientationChild {
@@ -112,7 +109,6 @@ impl SkribbleValue for MediaQueryMotionChild {
     &self.0
   }
 }
-
 pub trait MediaQueryMotion: SkribbleValue {
   /// The media query for devices with a reduced motion preference.
   fn motion_reduce(&self) -> MediaQueryMotionChild {
@@ -132,7 +128,6 @@ impl SkribbleValue for MediaQueryDarkModeChild {
     &self.0
   }
 }
-
 pub trait MediaQueryDarkMode: SkribbleValue {
   /// The media query for devices with a dark color scheme.
   fn dark(&self) -> MediaQueryDarkModeChild {
@@ -152,7 +147,6 @@ impl SkribbleValue for ParentModifierChild {
     &self.0
   }
 }
-
 pub trait ParentModifier: SkribbleValue {
   /// This class modifier becomes active when when the text direction of any parent nodes is set to right to left.
   fn rtl(&self) -> ParentModifierChild {
@@ -184,7 +178,6 @@ impl SkribbleValue for ModifierHoverGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierHoverGroup: SkribbleValue {
   /// This class modifier becomes active when the element is hovered.
   fn hover(&self) -> ModifierHoverGroupChild {
@@ -200,7 +193,6 @@ impl SkribbleValue for ModifierActiveGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierActiveGroup: SkribbleValue {
   fn active(&self) -> ModifierActiveGroupChild {
     ModifierActiveGroupChild::from_ref(self.append_to_skribble_value("active"))
@@ -230,7 +222,6 @@ impl SkribbleValue for ModifierFocusGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierFocusGroup: SkribbleValue {
   fn focus(&self) -> ModifierFocusGroupChild {
     ModifierFocusGroupChild::from_ref(self.append_to_skribble_value("focus"))
@@ -245,7 +236,6 @@ impl SkribbleValue for ModifierFocusWithinGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierFocusWithinGroup: SkribbleValue {
   fn focus_within(&self) -> ModifierFocusWithinGroupChild {
     ModifierFocusWithinGroupChild::from_ref(self.append_to_skribble_value("focusWithin"))
@@ -260,7 +250,6 @@ impl SkribbleValue for ModifierFocusVisibleGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierFocusVisibleGroup: SkribbleValue {
   fn focus_visible(&self) -> ModifierFocusVisibleGroupChild {
     ModifierFocusVisibleGroupChild::from_ref(self.append_to_skribble_value("focusVisible"))
@@ -275,7 +264,6 @@ impl SkribbleValue for ModifierEnabledGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierEnabledGroup: SkribbleValue {
   fn disabled(&self) -> ModifierEnabledGroupChild {
     ModifierEnabledGroupChild::from_ref(self.append_to_skribble_value("disabled"))
@@ -296,7 +284,6 @@ impl SkribbleValue for ModifierEmptyGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierEmptyGroup: SkribbleValue {
   fn empty(&self) -> ModifierEmptyGroupChild {
     ModifierEmptyGroupChild::from_ref(self.append_to_skribble_value("empty"))
@@ -311,7 +298,6 @@ impl SkribbleValue for ModifierReadGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierReadGroup: SkribbleValue {
   fn read_write(&self) -> ModifierReadGroupChild {
     ModifierReadGroupChild::from_ref(self.append_to_skribble_value("readWrite"))
@@ -332,7 +318,6 @@ impl SkribbleValue for ModifierExpandedGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierExpandedGroup: SkribbleValue {
   fn expanded(&self) -> ModifierExpandedGroupChild {
     ModifierExpandedGroupChild::from_ref(self.append_to_skribble_value("expanded"))
@@ -347,7 +332,6 @@ impl SkribbleValue for ModifierCheckedGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierCheckedGroup: SkribbleValue {
   fn indeterminate(&self) -> ModifierCheckedGroupChild {
     ModifierCheckedGroupChild::from_ref(self.append_to_skribble_value("indeterminate"))
@@ -368,7 +352,6 @@ impl SkribbleValue for ModifierGrabbedGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierGrabbedGroup: SkribbleValue {
   fn grabbed(&self) -> ModifierGrabbedGroupChild {
     ModifierGrabbedGroupChild::from_ref(self.append_to_skribble_value("grabbed"))
@@ -383,7 +366,6 @@ impl SkribbleValue for ModifierPressedGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierPressedGroup: SkribbleValue {
   fn pressed(&self) -> ModifierPressedGroupChild {
     ModifierPressedGroupChild::from_ref(self.append_to_skribble_value("pressed"))
@@ -398,7 +380,6 @@ impl SkribbleValue for ModifierInvalidGrammarGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierInvalidGrammarGroup: SkribbleValue {
   fn invalid_grammar(&self) -> ModifierInvalidGrammarGroupChild {
     ModifierInvalidGrammarGroupChild::from_ref(self.append_to_skribble_value("invalidGrammar"))
@@ -413,7 +394,6 @@ impl SkribbleValue for ModifierInvalidSpellingGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierInvalidSpellingGroup: SkribbleValue {
   fn invalid_spelling(&self) -> ModifierInvalidSpellingGroupChild {
     ModifierInvalidSpellingGroupChild::from_ref(self.append_to_skribble_value("invalidSpelling"))
@@ -428,7 +408,6 @@ impl SkribbleValue for ModifierValidGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierValidGroup: SkribbleValue {
   fn valid(&self) -> ModifierValidGroupChild {
     ModifierValidGroupChild::from_ref(self.append_to_skribble_value("valid"))
@@ -446,7 +425,6 @@ impl SkribbleValue for ModifierLoadingGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierLoadingGroup: SkribbleValue {
   fn loading(&self) -> ModifierLoadingGroupChild {
     ModifierLoadingGroupChild::from_ref(self.append_to_skribble_value("loading"))
@@ -461,7 +439,6 @@ impl SkribbleValue for ModifierSelectedGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierSelectedGroup: SkribbleValue {
   fn selected(&self) -> ModifierSelectedGroupChild {
     ModifierSelectedGroupChild::from_ref(self.append_to_skribble_value("selected"))
@@ -476,7 +453,6 @@ impl SkribbleValue for ModifierHiddenGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierHiddenGroup: SkribbleValue {
   fn hidden(&self) -> ModifierHiddenGroupChild {
     ModifierHiddenGroupChild::from_ref(self.append_to_skribble_value("hidden"))
@@ -491,7 +467,6 @@ impl SkribbleValue for ModifierAutofillGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierAutofillGroup: SkribbleValue {
   fn autofill(&self) -> ModifierAutofillGroupChild {
     ModifierAutofillGroupChild::from_ref(self.append_to_skribble_value("autofill"))
@@ -506,7 +481,6 @@ impl SkribbleValue for ModifierEvenGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierEvenGroup: SkribbleValue {
   fn even(&self) -> ModifierEvenGroupChild {
     ModifierEvenGroupChild::from_ref(self.append_to_skribble_value("even"))
@@ -530,7 +504,6 @@ impl SkribbleValue for ModifierNodePositionGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierNodePositionGroup: SkribbleValue {
   fn first(&self) -> ModifierNodePositionGroupChild {
     ModifierNodePositionGroupChild::from_ref(self.append_to_skribble_value("first"))
@@ -554,7 +527,6 @@ impl SkribbleValue for ModifierNodeOfTypeGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierNodeOfTypeGroup: SkribbleValue {
   fn first_of_type(&self) -> ModifierNodeOfTypeGroupChild {
     ModifierNodeOfTypeGroupChild::from_ref(self.append_to_skribble_value("firstOfType"))
@@ -578,7 +550,6 @@ impl SkribbleValue for ModifierVisitedGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierVisitedGroup: SkribbleValue {
   fn visited(&self) -> ModifierVisitedGroupChild {
     ModifierVisitedGroupChild::from_ref(self.append_to_skribble_value("visited"))
@@ -593,7 +564,6 @@ impl SkribbleValue for ModifierOptionalGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierOptionalGroup: SkribbleValue {
   fn optional(&self) -> ModifierOptionalGroupChild {
     ModifierOptionalGroupChild::from_ref(self.append_to_skribble_value("optional"))
@@ -608,7 +578,6 @@ impl SkribbleValue for ModifierFullScreenGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierFullScreenGroup: SkribbleValue {
   fn full_screen(&self) -> ModifierFullScreenGroupChild {
     ModifierFullScreenGroupChild::from_ref(self.append_to_skribble_value("fullScreen"))
@@ -623,7 +592,6 @@ impl SkribbleValue for ModifierTargetGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierTargetGroup: SkribbleValue {
   fn target(&self) -> ModifierTargetGroupChild {
     ModifierTargetGroupChild::from_ref(self.append_to_skribble_value("target"))
@@ -638,7 +606,6 @@ impl SkribbleValue for ModifierPlaceholderShownGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierPlaceholderShownGroup: SkribbleValue {
   fn placeholder_shown(&self) -> ModifierPlaceholderShownGroupChild {
     ModifierPlaceholderShownGroupChild::from_ref(self.append_to_skribble_value("placeholderShown"))
@@ -653,7 +620,6 @@ impl SkribbleValue for ModifierRequiredGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierRequiredGroup: SkribbleValue {
   fn required(&self) -> ModifierRequiredGroupChild {
     ModifierRequiredGroupChild::from_ref(self.append_to_skribble_value("required"))
@@ -671,7 +637,6 @@ impl SkribbleValue for ModifierDefaultGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierDefaultGroup: SkribbleValue {
   fn default(&self) -> ModifierDefaultGroupChild {
     ModifierDefaultGroupChild::from_ref(self.append_to_skribble_value("default"))
@@ -686,7 +651,6 @@ impl SkribbleValue for ModifierOnlyChildGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierOnlyChildGroup: SkribbleValue {
   fn only_child(&self) -> ModifierOnlyChildGroupChild {
     ModifierOnlyChildGroupChild::from_ref(self.append_to_skribble_value("onlyChild"))
@@ -704,7 +668,6 @@ impl SkribbleValue for ModifierOnlyGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierOnlyGroup: SkribbleValue {
   fn only_of_type(&self) -> ModifierOnlyGroupChild {
     ModifierOnlyGroupChild::from_ref(self.append_to_skribble_value("onlyOfType"))
@@ -722,7 +685,6 @@ impl SkribbleValue for ModifierRootGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierRootGroup: SkribbleValue {
   fn root(&self) -> ModifierRootGroupChild {
     ModifierRootGroupChild::from_ref(self.append_to_skribble_value("root"))
@@ -737,7 +699,6 @@ impl SkribbleValue for ModifierLinkGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierLinkGroup: SkribbleValue {
   fn link(&self) -> ModifierLinkGroupChild {
     ModifierLinkGroupChild::from_ref(self.append_to_skribble_value("link"))
@@ -752,7 +713,6 @@ impl SkribbleValue for ModifierPseudoGroupChild {
     &self.0
   }
 }
-
 pub trait ModifierPseudoGroup: SkribbleValue {
   fn placeholder(&self) -> ModifierPseudoGroupChild {
     ModifierPseudoGroupChild::from_ref(self.append_to_skribble_value("placeholder"))
@@ -771,6 +731,544 @@ pub trait ModifierPseudoGroup: SkribbleValue {
   }
   fn after(&self) -> ModifierPseudoGroupChild {
     ModifierPseudoGroupChild::from_ref(self.append_to_skribble_value("after"))
+  }
+}
+pub struct AtomSr(String);
+impl SkribbleValue for AtomSr {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetScreenReader for AtomSr {}
+pub struct AtomTransition(String);
+impl SkribbleValue for AtomTransition {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetTransitions for AtomTransition {}
+pub struct AtomTransitionProperty(String);
+impl SkribbleValue for AtomTransitionProperty {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetTransitionProperties for AtomTransitionProperty {}
+pub struct AtomDuration(String);
+impl SkribbleValue for AtomDuration {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetDurations for AtomDuration {}
+pub struct AtomEase(String);
+impl SkribbleValue for AtomEase {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetEasing for AtomEase {}
+pub struct AtomDelay(String);
+impl SkribbleValue for AtomDelay {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetDurations for AtomDelay {}
+pub struct AtomAnimate(String);
+impl SkribbleValue for AtomAnimate {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetDurations for AtomAnimate {}
+pub struct AtomAnimationDuration(String);
+impl SkribbleValue for AtomAnimationDuration {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetDurations for AtomAnimationDuration {}
+pub struct AtomAnimationEasing(String);
+impl SkribbleValue for AtomAnimationEasing {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetEasing for AtomAnimationEasing {}
+pub struct AtomAnimationDelay(String);
+impl SkribbleValue for AtomAnimationDelay {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetDurations for AtomAnimationDelay {}
+pub struct AtomAnimationRepeat(String);
+impl SkribbleValue for AtomAnimationRepeat {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetAnimationRepetitions for AtomAnimationRepeat {}
+pub struct AtomAnimationDirection(String);
+impl SkribbleValue for AtomAnimationDirection {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetAnimationDirection for AtomAnimationDirection {}
+pub struct AtomAnimationFillMode(String);
+impl SkribbleValue for AtomAnimationFillMode {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetAnimationFillMode for AtomAnimationFillMode {}
+pub struct AtomAnimationState(String);
+impl SkribbleValue for AtomAnimationState {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetAnimationState for AtomAnimationState {}
+pub struct AtomZoom(String);
+impl SkribbleValue for AtomZoom {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetZoom for AtomZoom {}
+pub struct AtomFont(String);
+impl SkribbleValue for AtomFont {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetFonts for AtomFont {}
+pub struct AtomP(String);
+impl SkribbleValue for AtomP {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomP {}
+pub struct AtomPy(String);
+impl SkribbleValue for AtomPy {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomPy {}
+pub struct AtomPx(String);
+impl SkribbleValue for AtomPx {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomPx {}
+pub struct AtomPt(String);
+impl SkribbleValue for AtomPt {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomPt {}
+pub struct AtomPr(String);
+impl SkribbleValue for AtomPr {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomPr {}
+pub struct AtomPb(String);
+impl SkribbleValue for AtomPb {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomPb {}
+pub struct AtomPl(String);
+impl SkribbleValue for AtomPl {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomPl {}
+pub struct AtomPbl(String);
+impl SkribbleValue for AtomPbl {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomPbl {}
+pub struct AtomPbls(String);
+impl SkribbleValue for AtomPbls {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomPbls {}
+pub struct AtomPble(String);
+impl SkribbleValue for AtomPble {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomPble {}
+pub struct AtomPin(String);
+impl SkribbleValue for AtomPin {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomPin {}
+pub struct AtomPins(String);
+impl SkribbleValue for AtomPins {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomPins {}
+pub struct AtomPine(String);
+impl SkribbleValue for AtomPine {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomPine {}
+pub struct AtomM(String);
+impl SkribbleValue for AtomM {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomM {}
+pub struct AtomMy(String);
+impl SkribbleValue for AtomMy {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomMy {}
+pub struct AtomMx(String);
+impl SkribbleValue for AtomMx {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomMx {}
+pub struct AtomMt(String);
+impl SkribbleValue for AtomMt {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomMt {}
+pub struct AtomMr(String);
+impl SkribbleValue for AtomMr {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomMr {}
+pub struct AtomMb(String);
+impl SkribbleValue for AtomMb {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomMb {}
+pub struct AtomMl(String);
+impl SkribbleValue for AtomMl {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetSpacing for AtomMl {}
+pub struct AtomZ(String);
+impl SkribbleValue for AtomZ {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetZIndex for AtomZ {}
+pub struct AtomDir(String);
+impl SkribbleValue for AtomDir {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetDirection for AtomDir {}
+pub struct AtomBg(String);
+impl SkribbleValue for AtomBg {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl Color for AtomBg {}
+impl Palette for AtomBg {}
+pub struct AtomBgOpacity(String);
+impl SkribbleValue for AtomBgOpacity {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetOpacity for AtomBgOpacity {}
+pub struct AtomOpacity(String);
+impl SkribbleValue for AtomOpacity {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl ValueSetOpacity for AtomOpacity {}
+pub trait Atom: SkribbleValue {
+  /// Screen reader only
+  fn sr(&self) -> AtomSr {
+    AtomSr::from_ref(self.append_to_skribble_value("sr"))
+  }
+  /// A class to apply transition effects.
+  fn transition(&self) -> AtomTransition {
+    AtomTransition::from_ref(self.append_to_skribble_value("transition"))
+  }
+  fn transition_property(&self) -> AtomTransitionProperty {
+    AtomTransitionProperty::from_ref(self.append_to_skribble_value("transitionProperty"))
+  }
+  fn duration(&self) -> AtomDuration {
+    AtomDuration::from_ref(self.append_to_skribble_value("duration"))
+  }
+  fn ease(&self) -> AtomEase {
+    AtomEase::from_ref(self.append_to_skribble_value("ease"))
+  }
+  fn delay(&self) -> AtomDelay {
+    AtomDelay::from_ref(self.append_to_skribble_value("delay"))
+  }
+  fn animate(&self) -> AtomAnimate {
+    AtomAnimate::from_ref(self.append_to_skribble_value("animate"))
+  }
+  fn animation_duration(&self) -> AtomAnimationDuration {
+    AtomAnimationDuration::from_ref(self.append_to_skribble_value("animationDuration"))
+  }
+  fn animation_easing(&self) -> AtomAnimationEasing {
+    AtomAnimationEasing::from_ref(self.append_to_skribble_value("animationEasing"))
+  }
+  fn animation_delay(&self) -> AtomAnimationDelay {
+    AtomAnimationDelay::from_ref(self.append_to_skribble_value("animationDelay"))
+  }
+  fn animation_repeat(&self) -> AtomAnimationRepeat {
+    AtomAnimationRepeat::from_ref(self.append_to_skribble_value("animationRepeat"))
+  }
+  fn animation_direction(&self) -> AtomAnimationDirection {
+    AtomAnimationDirection::from_ref(self.append_to_skribble_value("animationDirection"))
+  }
+  fn animation_fill_mode(&self) -> AtomAnimationFillMode {
+    AtomAnimationFillMode::from_ref(self.append_to_skribble_value("animationFillMode"))
+  }
+  fn animation_state(&self) -> AtomAnimationState {
+    AtomAnimationState::from_ref(self.append_to_skribble_value("animationState"))
+  }
+  fn zoom(&self) -> AtomZoom {
+    AtomZoom::from_ref(self.append_to_skribble_value("zoom"))
+  }
+  fn font(&self) -> AtomFont {
+    AtomFont::from_ref(self.append_to_skribble_value("font"))
+  }
+  fn p(&self) -> AtomP {
+    AtomP::from_ref(self.append_to_skribble_value("p"))
+  }
+  fn py(&self) -> AtomPy {
+    AtomPy::from_ref(self.append_to_skribble_value("py"))
+  }
+  fn px(&self) -> AtomPx {
+    AtomPx::from_ref(self.append_to_skribble_value("px"))
+  }
+  fn pt(&self) -> AtomPt {
+    AtomPt::from_ref(self.append_to_skribble_value("pt"))
+  }
+  fn pr(&self) -> AtomPr {
+    AtomPr::from_ref(self.append_to_skribble_value("pr"))
+  }
+  fn pb(&self) -> AtomPb {
+    AtomPb::from_ref(self.append_to_skribble_value("pb"))
+  }
+  fn pl(&self) -> AtomPl {
+    AtomPl::from_ref(self.append_to_skribble_value("pl"))
+  }
+  fn pbl(&self) -> AtomPbl {
+    AtomPbl::from_ref(self.append_to_skribble_value("pbl"))
+  }
+  fn pbls(&self) -> AtomPbls {
+    AtomPbls::from_ref(self.append_to_skribble_value("pbls"))
+  }
+  fn pble(&self) -> AtomPble {
+    AtomPble::from_ref(self.append_to_skribble_value("pble"))
+  }
+  fn pin(&self) -> AtomPin {
+    AtomPin::from_ref(self.append_to_skribble_value("pin"))
+  }
+  fn pins(&self) -> AtomPins {
+    AtomPins::from_ref(self.append_to_skribble_value("pins"))
+  }
+  fn pine(&self) -> AtomPine {
+    AtomPine::from_ref(self.append_to_skribble_value("pine"))
+  }
+  fn m(&self) -> AtomM {
+    AtomM::from_ref(self.append_to_skribble_value("m"))
+  }
+  fn my(&self) -> AtomMy {
+    AtomMy::from_ref(self.append_to_skribble_value("my"))
+  }
+  fn mx(&self) -> AtomMx {
+    AtomMx::from_ref(self.append_to_skribble_value("mx"))
+  }
+  fn mt(&self) -> AtomMt {
+    AtomMt::from_ref(self.append_to_skribble_value("mt"))
+  }
+  fn mr(&self) -> AtomMr {
+    AtomMr::from_ref(self.append_to_skribble_value("mr"))
+  }
+  fn mb(&self) -> AtomMb {
+    AtomMb::from_ref(self.append_to_skribble_value("mb"))
+  }
+  fn ml(&self) -> AtomMl {
+    AtomMl::from_ref(self.append_to_skribble_value("ml"))
+  }
+  fn z(&self) -> AtomZ {
+    AtomZ::from_ref(self.append_to_skribble_value("z"))
+  }
+  fn dir(&self) -> AtomDir {
+    AtomDir::from_ref(self.append_to_skribble_value("dir"))
+  }
+  fn bg(&self) -> AtomBg {
+    AtomBg::from_ref(self.append_to_skribble_value("bg"))
+  }
+  fn bg_opacity(&self) -> AtomBgOpacity {
+    AtomBgOpacity::from_ref(self.append_to_skribble_value("bgOpacity"))
+  }
+  fn opacity(&self) -> AtomOpacity {
+    AtomOpacity::from_ref(self.append_to_skribble_value("opacity"))
   }
 }
 impl MediaQueryDeviceCategories for SkribbleRoot {}
@@ -813,6 +1311,7 @@ impl ModifierOnlyGroup for SkribbleRoot {}
 impl ModifierRootGroup for SkribbleRoot {}
 impl ModifierLinkGroup for SkribbleRoot {}
 impl ModifierPseudoGroup for SkribbleRoot {}
+impl Atom for SkribbleRoot {}
 impl MediaQueryBreakpoints for MediaQueryDeviceCategoriesChild {}
 impl MediaQueryOrientation for MediaQueryDeviceCategoriesChild {}
 impl MediaQueryMotion for MediaQueryDeviceCategoriesChild {}
@@ -852,6 +1351,7 @@ impl ModifierOnlyGroup for MediaQueryDeviceCategoriesChild {}
 impl ModifierRootGroup for MediaQueryDeviceCategoriesChild {}
 impl ModifierLinkGroup for MediaQueryDeviceCategoriesChild {}
 impl ModifierPseudoGroup for MediaQueryDeviceCategoriesChild {}
+impl Atom for MediaQueryDeviceCategoriesChild {}
 impl MediaQueryOrientation for MediaQueryBreakpointsChild {}
 impl MediaQueryMotion for MediaQueryBreakpointsChild {}
 impl MediaQueryDarkMode for MediaQueryBreakpointsChild {}
@@ -890,6 +1390,7 @@ impl ModifierOnlyGroup for MediaQueryBreakpointsChild {}
 impl ModifierRootGroup for MediaQueryBreakpointsChild {}
 impl ModifierLinkGroup for MediaQueryBreakpointsChild {}
 impl ModifierPseudoGroup for MediaQueryBreakpointsChild {}
+impl Atom for MediaQueryBreakpointsChild {}
 impl MediaQueryMotion for MediaQueryOrientationChild {}
 impl MediaQueryDarkMode for MediaQueryOrientationChild {}
 impl ParentModifier for MediaQueryOrientationChild {}
@@ -927,6 +1428,7 @@ impl ModifierOnlyGroup for MediaQueryOrientationChild {}
 impl ModifierRootGroup for MediaQueryOrientationChild {}
 impl ModifierLinkGroup for MediaQueryOrientationChild {}
 impl ModifierPseudoGroup for MediaQueryOrientationChild {}
+impl Atom for MediaQueryOrientationChild {}
 impl MediaQueryDarkMode for MediaQueryMotionChild {}
 impl ParentModifier for MediaQueryMotionChild {}
 impl ModifierHoverGroup for MediaQueryMotionChild {}
@@ -963,6 +1465,7 @@ impl ModifierOnlyGroup for MediaQueryMotionChild {}
 impl ModifierRootGroup for MediaQueryMotionChild {}
 impl ModifierLinkGroup for MediaQueryMotionChild {}
 impl ModifierPseudoGroup for MediaQueryMotionChild {}
+impl Atom for MediaQueryMotionChild {}
 impl ParentModifier for MediaQueryDarkModeChild {}
 impl ModifierHoverGroup for MediaQueryDarkModeChild {}
 impl ModifierActiveGroup for MediaQueryDarkModeChild {}
@@ -998,6 +1501,7 @@ impl ModifierOnlyGroup for MediaQueryDarkModeChild {}
 impl ModifierRootGroup for MediaQueryDarkModeChild {}
 impl ModifierLinkGroup for MediaQueryDarkModeChild {}
 impl ModifierPseudoGroup for MediaQueryDarkModeChild {}
+impl Atom for MediaQueryDarkModeChild {}
 impl ModifierHoverGroup for ParentModifierChild {}
 impl ModifierActiveGroup for ParentModifierChild {}
 impl ModifierFocusGroup for ParentModifierChild {}
@@ -1032,6 +1536,7 @@ impl ModifierOnlyGroup for ParentModifierChild {}
 impl ModifierRootGroup for ParentModifierChild {}
 impl ModifierLinkGroup for ParentModifierChild {}
 impl ModifierPseudoGroup for ParentModifierChild {}
+impl Atom for ParentModifierChild {}
 impl ModifierActiveGroup for ModifierHoverGroupChild {}
 impl ModifierFocusGroup for ModifierHoverGroupChild {}
 impl ModifierFocusWithinGroup for ModifierHoverGroupChild {}
@@ -1065,6 +1570,7 @@ impl ModifierOnlyGroup for ModifierHoverGroupChild {}
 impl ModifierRootGroup for ModifierHoverGroupChild {}
 impl ModifierLinkGroup for ModifierHoverGroupChild {}
 impl ModifierPseudoGroup for ModifierHoverGroupChild {}
+impl Atom for ModifierHoverGroupChild {}
 impl ModifierFocusGroup for ModifierActiveGroupChild {}
 impl ModifierFocusWithinGroup for ModifierActiveGroupChild {}
 impl ModifierFocusVisibleGroup for ModifierActiveGroupChild {}
@@ -1097,6 +1603,7 @@ impl ModifierOnlyGroup for ModifierActiveGroupChild {}
 impl ModifierRootGroup for ModifierActiveGroupChild {}
 impl ModifierLinkGroup for ModifierActiveGroupChild {}
 impl ModifierPseudoGroup for ModifierActiveGroupChild {}
+impl Atom for ModifierActiveGroupChild {}
 impl ModifierFocusWithinGroup for ModifierFocusGroupChild {}
 impl ModifierFocusVisibleGroup for ModifierFocusGroupChild {}
 impl ModifierEnabledGroup for ModifierFocusGroupChild {}
@@ -1128,6 +1635,7 @@ impl ModifierOnlyGroup for ModifierFocusGroupChild {}
 impl ModifierRootGroup for ModifierFocusGroupChild {}
 impl ModifierLinkGroup for ModifierFocusGroupChild {}
 impl ModifierPseudoGroup for ModifierFocusGroupChild {}
+impl Atom for ModifierFocusGroupChild {}
 impl ModifierFocusVisibleGroup for ModifierFocusWithinGroupChild {}
 impl ModifierEnabledGroup for ModifierFocusWithinGroupChild {}
 impl ModifierEmptyGroup for ModifierFocusWithinGroupChild {}
@@ -1158,6 +1666,7 @@ impl ModifierOnlyGroup for ModifierFocusWithinGroupChild {}
 impl ModifierRootGroup for ModifierFocusWithinGroupChild {}
 impl ModifierLinkGroup for ModifierFocusWithinGroupChild {}
 impl ModifierPseudoGroup for ModifierFocusWithinGroupChild {}
+impl Atom for ModifierFocusWithinGroupChild {}
 impl ModifierEnabledGroup for ModifierFocusVisibleGroupChild {}
 impl ModifierEmptyGroup for ModifierFocusVisibleGroupChild {}
 impl ModifierReadGroup for ModifierFocusVisibleGroupChild {}
@@ -1187,6 +1696,7 @@ impl ModifierOnlyGroup for ModifierFocusVisibleGroupChild {}
 impl ModifierRootGroup for ModifierFocusVisibleGroupChild {}
 impl ModifierLinkGroup for ModifierFocusVisibleGroupChild {}
 impl ModifierPseudoGroup for ModifierFocusVisibleGroupChild {}
+impl Atom for ModifierFocusVisibleGroupChild {}
 impl ModifierEmptyGroup for ModifierEnabledGroupChild {}
 impl ModifierReadGroup for ModifierEnabledGroupChild {}
 impl ModifierExpandedGroup for ModifierEnabledGroupChild {}
@@ -1215,6 +1725,7 @@ impl ModifierOnlyGroup for ModifierEnabledGroupChild {}
 impl ModifierRootGroup for ModifierEnabledGroupChild {}
 impl ModifierLinkGroup for ModifierEnabledGroupChild {}
 impl ModifierPseudoGroup for ModifierEnabledGroupChild {}
+impl Atom for ModifierEnabledGroupChild {}
 impl ModifierReadGroup for ModifierEmptyGroupChild {}
 impl ModifierExpandedGroup for ModifierEmptyGroupChild {}
 impl ModifierCheckedGroup for ModifierEmptyGroupChild {}
@@ -1242,6 +1753,7 @@ impl ModifierOnlyGroup for ModifierEmptyGroupChild {}
 impl ModifierRootGroup for ModifierEmptyGroupChild {}
 impl ModifierLinkGroup for ModifierEmptyGroupChild {}
 impl ModifierPseudoGroup for ModifierEmptyGroupChild {}
+impl Atom for ModifierEmptyGroupChild {}
 impl ModifierExpandedGroup for ModifierReadGroupChild {}
 impl ModifierCheckedGroup for ModifierReadGroupChild {}
 impl ModifierGrabbedGroup for ModifierReadGroupChild {}
@@ -1268,6 +1780,7 @@ impl ModifierOnlyGroup for ModifierReadGroupChild {}
 impl ModifierRootGroup for ModifierReadGroupChild {}
 impl ModifierLinkGroup for ModifierReadGroupChild {}
 impl ModifierPseudoGroup for ModifierReadGroupChild {}
+impl Atom for ModifierReadGroupChild {}
 impl ModifierCheckedGroup for ModifierExpandedGroupChild {}
 impl ModifierGrabbedGroup for ModifierExpandedGroupChild {}
 impl ModifierPressedGroup for ModifierExpandedGroupChild {}
@@ -1293,6 +1806,7 @@ impl ModifierOnlyGroup for ModifierExpandedGroupChild {}
 impl ModifierRootGroup for ModifierExpandedGroupChild {}
 impl ModifierLinkGroup for ModifierExpandedGroupChild {}
 impl ModifierPseudoGroup for ModifierExpandedGroupChild {}
+impl Atom for ModifierExpandedGroupChild {}
 impl ModifierGrabbedGroup for ModifierCheckedGroupChild {}
 impl ModifierPressedGroup for ModifierCheckedGroupChild {}
 impl ModifierInvalidGrammarGroup for ModifierCheckedGroupChild {}
@@ -1317,6 +1831,7 @@ impl ModifierOnlyGroup for ModifierCheckedGroupChild {}
 impl ModifierRootGroup for ModifierCheckedGroupChild {}
 impl ModifierLinkGroup for ModifierCheckedGroupChild {}
 impl ModifierPseudoGroup for ModifierCheckedGroupChild {}
+impl Atom for ModifierCheckedGroupChild {}
 impl ModifierPressedGroup for ModifierGrabbedGroupChild {}
 impl ModifierInvalidGrammarGroup for ModifierGrabbedGroupChild {}
 impl ModifierInvalidSpellingGroup for ModifierGrabbedGroupChild {}
@@ -1340,6 +1855,7 @@ impl ModifierOnlyGroup for ModifierGrabbedGroupChild {}
 impl ModifierRootGroup for ModifierGrabbedGroupChild {}
 impl ModifierLinkGroup for ModifierGrabbedGroupChild {}
 impl ModifierPseudoGroup for ModifierGrabbedGroupChild {}
+impl Atom for ModifierGrabbedGroupChild {}
 impl ModifierInvalidGrammarGroup for ModifierPressedGroupChild {}
 impl ModifierInvalidSpellingGroup for ModifierPressedGroupChild {}
 impl ModifierValidGroup for ModifierPressedGroupChild {}
@@ -1362,6 +1878,7 @@ impl ModifierOnlyGroup for ModifierPressedGroupChild {}
 impl ModifierRootGroup for ModifierPressedGroupChild {}
 impl ModifierLinkGroup for ModifierPressedGroupChild {}
 impl ModifierPseudoGroup for ModifierPressedGroupChild {}
+impl Atom for ModifierPressedGroupChild {}
 impl ModifierInvalidSpellingGroup for ModifierInvalidGrammarGroupChild {}
 impl ModifierValidGroup for ModifierInvalidGrammarGroupChild {}
 impl ModifierLoadingGroup for ModifierInvalidGrammarGroupChild {}
@@ -1383,6 +1900,7 @@ impl ModifierOnlyGroup for ModifierInvalidGrammarGroupChild {}
 impl ModifierRootGroup for ModifierInvalidGrammarGroupChild {}
 impl ModifierLinkGroup for ModifierInvalidGrammarGroupChild {}
 impl ModifierPseudoGroup for ModifierInvalidGrammarGroupChild {}
+impl Atom for ModifierInvalidGrammarGroupChild {}
 impl ModifierValidGroup for ModifierInvalidSpellingGroupChild {}
 impl ModifierLoadingGroup for ModifierInvalidSpellingGroupChild {}
 impl ModifierSelectedGroup for ModifierInvalidSpellingGroupChild {}
@@ -1403,6 +1921,7 @@ impl ModifierOnlyGroup for ModifierInvalidSpellingGroupChild {}
 impl ModifierRootGroup for ModifierInvalidSpellingGroupChild {}
 impl ModifierLinkGroup for ModifierInvalidSpellingGroupChild {}
 impl ModifierPseudoGroup for ModifierInvalidSpellingGroupChild {}
+impl Atom for ModifierInvalidSpellingGroupChild {}
 impl ModifierLoadingGroup for ModifierValidGroupChild {}
 impl ModifierSelectedGroup for ModifierValidGroupChild {}
 impl ModifierHiddenGroup for ModifierValidGroupChild {}
@@ -1422,6 +1941,7 @@ impl ModifierOnlyGroup for ModifierValidGroupChild {}
 impl ModifierRootGroup for ModifierValidGroupChild {}
 impl ModifierLinkGroup for ModifierValidGroupChild {}
 impl ModifierPseudoGroup for ModifierValidGroupChild {}
+impl Atom for ModifierValidGroupChild {}
 impl ModifierSelectedGroup for ModifierLoadingGroupChild {}
 impl ModifierHiddenGroup for ModifierLoadingGroupChild {}
 impl ModifierAutofillGroup for ModifierLoadingGroupChild {}
@@ -1440,6 +1960,7 @@ impl ModifierOnlyGroup for ModifierLoadingGroupChild {}
 impl ModifierRootGroup for ModifierLoadingGroupChild {}
 impl ModifierLinkGroup for ModifierLoadingGroupChild {}
 impl ModifierPseudoGroup for ModifierLoadingGroupChild {}
+impl Atom for ModifierLoadingGroupChild {}
 impl ModifierHiddenGroup for ModifierSelectedGroupChild {}
 impl ModifierAutofillGroup for ModifierSelectedGroupChild {}
 impl ModifierEvenGroup for ModifierSelectedGroupChild {}
@@ -1457,6 +1978,7 @@ impl ModifierOnlyGroup for ModifierSelectedGroupChild {}
 impl ModifierRootGroup for ModifierSelectedGroupChild {}
 impl ModifierLinkGroup for ModifierSelectedGroupChild {}
 impl ModifierPseudoGroup for ModifierSelectedGroupChild {}
+impl Atom for ModifierSelectedGroupChild {}
 impl ModifierAutofillGroup for ModifierHiddenGroupChild {}
 impl ModifierEvenGroup for ModifierHiddenGroupChild {}
 impl ModifierNodePositionGroup for ModifierHiddenGroupChild {}
@@ -1473,6 +1995,7 @@ impl ModifierOnlyGroup for ModifierHiddenGroupChild {}
 impl ModifierRootGroup for ModifierHiddenGroupChild {}
 impl ModifierLinkGroup for ModifierHiddenGroupChild {}
 impl ModifierPseudoGroup for ModifierHiddenGroupChild {}
+impl Atom for ModifierHiddenGroupChild {}
 impl ModifierEvenGroup for ModifierAutofillGroupChild {}
 impl ModifierNodePositionGroup for ModifierAutofillGroupChild {}
 impl ModifierNodeOfTypeGroup for ModifierAutofillGroupChild {}
@@ -1488,6 +2011,7 @@ impl ModifierOnlyGroup for ModifierAutofillGroupChild {}
 impl ModifierRootGroup for ModifierAutofillGroupChild {}
 impl ModifierLinkGroup for ModifierAutofillGroupChild {}
 impl ModifierPseudoGroup for ModifierAutofillGroupChild {}
+impl Atom for ModifierAutofillGroupChild {}
 impl ModifierNodePositionGroup for ModifierEvenGroupChild {}
 impl ModifierNodeOfTypeGroup for ModifierEvenGroupChild {}
 impl ModifierVisitedGroup for ModifierEvenGroupChild {}
@@ -1502,6 +2026,7 @@ impl ModifierOnlyGroup for ModifierEvenGroupChild {}
 impl ModifierRootGroup for ModifierEvenGroupChild {}
 impl ModifierLinkGroup for ModifierEvenGroupChild {}
 impl ModifierPseudoGroup for ModifierEvenGroupChild {}
+impl Atom for ModifierEvenGroupChild {}
 impl ModifierNodeOfTypeGroup for ModifierNodePositionGroupChild {}
 impl ModifierVisitedGroup for ModifierNodePositionGroupChild {}
 impl ModifierOptionalGroup for ModifierNodePositionGroupChild {}
@@ -1515,6 +2040,7 @@ impl ModifierOnlyGroup for ModifierNodePositionGroupChild {}
 impl ModifierRootGroup for ModifierNodePositionGroupChild {}
 impl ModifierLinkGroup for ModifierNodePositionGroupChild {}
 impl ModifierPseudoGroup for ModifierNodePositionGroupChild {}
+impl Atom for ModifierNodePositionGroupChild {}
 impl ModifierVisitedGroup for ModifierNodeOfTypeGroupChild {}
 impl ModifierOptionalGroup for ModifierNodeOfTypeGroupChild {}
 impl ModifierFullScreenGroup for ModifierNodeOfTypeGroupChild {}
@@ -1527,6 +2053,7 @@ impl ModifierOnlyGroup for ModifierNodeOfTypeGroupChild {}
 impl ModifierRootGroup for ModifierNodeOfTypeGroupChild {}
 impl ModifierLinkGroup for ModifierNodeOfTypeGroupChild {}
 impl ModifierPseudoGroup for ModifierNodeOfTypeGroupChild {}
+impl Atom for ModifierNodeOfTypeGroupChild {}
 impl ModifierOptionalGroup for ModifierVisitedGroupChild {}
 impl ModifierFullScreenGroup for ModifierVisitedGroupChild {}
 impl ModifierTargetGroup for ModifierVisitedGroupChild {}
@@ -1538,6 +2065,7 @@ impl ModifierOnlyGroup for ModifierVisitedGroupChild {}
 impl ModifierRootGroup for ModifierVisitedGroupChild {}
 impl ModifierLinkGroup for ModifierVisitedGroupChild {}
 impl ModifierPseudoGroup for ModifierVisitedGroupChild {}
+impl Atom for ModifierVisitedGroupChild {}
 impl ModifierFullScreenGroup for ModifierOptionalGroupChild {}
 impl ModifierTargetGroup for ModifierOptionalGroupChild {}
 impl ModifierPlaceholderShownGroup for ModifierOptionalGroupChild {}
@@ -1548,6 +2076,7 @@ impl ModifierOnlyGroup for ModifierOptionalGroupChild {}
 impl ModifierRootGroup for ModifierOptionalGroupChild {}
 impl ModifierLinkGroup for ModifierOptionalGroupChild {}
 impl ModifierPseudoGroup for ModifierOptionalGroupChild {}
+impl Atom for ModifierOptionalGroupChild {}
 impl ModifierTargetGroup for ModifierFullScreenGroupChild {}
 impl ModifierPlaceholderShownGroup for ModifierFullScreenGroupChild {}
 impl ModifierRequiredGroup for ModifierFullScreenGroupChild {}
@@ -1557,6 +2086,7 @@ impl ModifierOnlyGroup for ModifierFullScreenGroupChild {}
 impl ModifierRootGroup for ModifierFullScreenGroupChild {}
 impl ModifierLinkGroup for ModifierFullScreenGroupChild {}
 impl ModifierPseudoGroup for ModifierFullScreenGroupChild {}
+impl Atom for ModifierFullScreenGroupChild {}
 impl ModifierPlaceholderShownGroup for ModifierTargetGroupChild {}
 impl ModifierRequiredGroup for ModifierTargetGroupChild {}
 impl ModifierDefaultGroup for ModifierTargetGroupChild {}
@@ -1565,6 +2095,7 @@ impl ModifierOnlyGroup for ModifierTargetGroupChild {}
 impl ModifierRootGroup for ModifierTargetGroupChild {}
 impl ModifierLinkGroup for ModifierTargetGroupChild {}
 impl ModifierPseudoGroup for ModifierTargetGroupChild {}
+impl Atom for ModifierTargetGroupChild {}
 impl ModifierRequiredGroup for ModifierPlaceholderShownGroupChild {}
 impl ModifierDefaultGroup for ModifierPlaceholderShownGroupChild {}
 impl ModifierOnlyChildGroup for ModifierPlaceholderShownGroupChild {}
@@ -1572,24 +2103,32 @@ impl ModifierOnlyGroup for ModifierPlaceholderShownGroupChild {}
 impl ModifierRootGroup for ModifierPlaceholderShownGroupChild {}
 impl ModifierLinkGroup for ModifierPlaceholderShownGroupChild {}
 impl ModifierPseudoGroup for ModifierPlaceholderShownGroupChild {}
+impl Atom for ModifierPlaceholderShownGroupChild {}
 impl ModifierDefaultGroup for ModifierRequiredGroupChild {}
 impl ModifierOnlyChildGroup for ModifierRequiredGroupChild {}
 impl ModifierOnlyGroup for ModifierRequiredGroupChild {}
 impl ModifierRootGroup for ModifierRequiredGroupChild {}
 impl ModifierLinkGroup for ModifierRequiredGroupChild {}
 impl ModifierPseudoGroup for ModifierRequiredGroupChild {}
+impl Atom for ModifierRequiredGroupChild {}
 impl ModifierOnlyChildGroup for ModifierDefaultGroupChild {}
 impl ModifierOnlyGroup for ModifierDefaultGroupChild {}
 impl ModifierRootGroup for ModifierDefaultGroupChild {}
 impl ModifierLinkGroup for ModifierDefaultGroupChild {}
 impl ModifierPseudoGroup for ModifierDefaultGroupChild {}
+impl Atom for ModifierDefaultGroupChild {}
 impl ModifierOnlyGroup for ModifierOnlyChildGroupChild {}
 impl ModifierRootGroup for ModifierOnlyChildGroupChild {}
 impl ModifierLinkGroup for ModifierOnlyChildGroupChild {}
 impl ModifierPseudoGroup for ModifierOnlyChildGroupChild {}
+impl Atom for ModifierOnlyChildGroupChild {}
 impl ModifierRootGroup for ModifierOnlyGroupChild {}
 impl ModifierLinkGroup for ModifierOnlyGroupChild {}
 impl ModifierPseudoGroup for ModifierOnlyGroupChild {}
+impl Atom for ModifierOnlyGroupChild {}
 impl ModifierLinkGroup for ModifierRootGroupChild {}
 impl ModifierPseudoGroup for ModifierRootGroupChild {}
+impl Atom for ModifierRootGroupChild {}
 impl ModifierPseudoGroup for ModifierLinkGroupChild {}
+impl Atom for ModifierLinkGroupChild {}
+impl Atom for ModifierPseudoGroupChild {}
