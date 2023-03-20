@@ -89,6 +89,9 @@ impl RustPlugin {
       &mut trait_names,
     );
 
+    generate_value_sets(config, indent_style, &mut sections);
+    generate_palette(config, indent_style, &mut sections);
+
     generate_atoms(
       config,
       indent_style,
@@ -96,8 +99,6 @@ impl RustPlugin {
       &mut sections,
       &mut trait_names,
     );
-
-    generate_value_sets(config, indent_style, &mut sections);
 
     // Add the implementation for each of the structs.
     generate_struct_implementations(&struct_names_map, &trait_names, &mut sections);

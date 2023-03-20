@@ -735,6 +735,1169 @@ pub trait ModifierPseudoGroup: SkribbleValue {
     ModifierPseudoGroupChild::from_ref(self.append_to_skribble_value("after"))
   }
 }
+pub trait ValueSetScreenReader: SkribbleValue {
+  fn only(&self) -> String {
+    self.append_string_to_skribble_value("only")
+  }
+  fn exclude(&self) -> String {
+    self.append_string_to_skribble_value("exclude")
+  }
+}
+pub trait ValueSetTransitions: SkribbleValue {
+  /// The built-in transition class values.
+  fn (&self) -> String {
+    self.append_string_to_skribble_value("")
+  }
+  /// The built-in transition class values.
+  fn none(&self) -> String {
+    self.append_string_to_skribble_value("none")
+  }
+  /// The built-in transition class values.
+  fn all(&self) -> String {
+    self.append_string_to_skribble_value("all")
+  }
+  /// The built-in transition class values.
+  fn colors(&self) -> String {
+    self.append_string_to_skribble_value("colors")
+  }
+  /// The built-in transition class values.
+  fn opacity(&self) -> String {
+    self.append_string_to_skribble_value("opacity")
+  }
+  /// The built-in transition class values.
+  fn shadow(&self) -> String {
+    self.append_string_to_skribble_value("shadow")
+  }
+  /// The built-in transition class values.
+  fn transform(&self) -> String {
+    self.append_string_to_skribble_value("transform")
+  }
+}
+pub trait ValueSetTransitionProperties: SkribbleValue {
+  fn (&self) -> String {
+    self.append_string_to_skribble_value("")
+  }
+  fn none(&self) -> String {
+    self.append_string_to_skribble_value("none")
+  }
+  fn all(&self) -> String {
+    self.append_string_to_skribble_value("all")
+  }
+  fn colors(&self) -> String {
+    self.append_string_to_skribble_value("colors")
+  }
+  fn opacity(&self) -> String {
+    self.append_string_to_skribble_value("opacity")
+  }
+  fn shadow(&self) -> String {
+    self.append_string_to_skribble_value("shadow")
+  }
+  fn transform(&self) -> String {
+    self.append_string_to_skribble_value("transform")
+  }
+}
+pub trait ValueSetDurations: SkribbleValue {
+  fn 0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  fn 75(&self) -> String {
+    self.append_string_to_skribble_value("75")
+  }
+  fn 100(&self) -> String {
+    self.append_string_to_skribble_value("100")
+  }
+  fn 150(&self) -> String {
+    self.append_string_to_skribble_value("150")
+  }
+  fn 200(&self) -> String {
+    self.append_string_to_skribble_value("200")
+  }
+  fn 300(&self) -> String {
+    self.append_string_to_skribble_value("300")
+  }
+  fn 500(&self) -> String {
+    self.append_string_to_skribble_value("500")
+  }
+  fn 700(&self) -> String {
+    self.append_string_to_skribble_value("700")
+  }
+  fn 1000(&self) -> String {
+    self.append_string_to_skribble_value("1000")
+  }
+  fn 1500(&self) -> String {
+    self.append_string_to_skribble_value("1500")
+  }
+  fn 2000(&self) -> String {
+    self.append_string_to_skribble_value("2000")
+  }
+}
+pub trait ValueSetEasing: SkribbleValue {
+  fn linear(&self) -> String {
+    self.append_string_to_skribble_value("linear")
+  }
+  fn in(&self) -> String {
+    self.append_string_to_skribble_value("in")
+  }
+  fn out(&self) -> String {
+    self.append_string_to_skribble_value("out")
+  }
+  fn in_out(&self) -> String {
+    self.append_string_to_skribble_value("inOut")
+  }
+}
+pub trait ValueSetAnimationRepetitions: SkribbleValue {
+  fn 0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  fn 0_5(&self) -> String {
+    self.append_string_to_skribble_value("0.5")
+  }
+  fn 1(&self) -> String {
+    self.append_string_to_skribble_value("1")
+  }
+  fn 2(&self) -> String {
+    self.append_string_to_skribble_value("2")
+  }
+  fn 3(&self) -> String {
+    self.append_string_to_skribble_value("3")
+  }
+  fn infinite(&self) -> String {
+    self.append_string_to_skribble_value("infinite")
+  }
+  fn in(&self) -> String {
+    self.append_string_to_skribble_value("in")
+  }
+  fn out(&self) -> String {
+    self.append_string_to_skribble_value("out")
+  }
+  fn in_out(&self) -> String {
+    self.append_string_to_skribble_value("inOut")
+  }
+}
+pub trait ValueSetAnimationDirection: SkribbleValue {
+  fn normal(&self) -> String {
+    self.append_string_to_skribble_value("normal")
+  }
+  fn reverse(&self) -> String {
+    self.append_string_to_skribble_value("reverse")
+  }
+  fn alt(&self) -> String {
+    self.append_string_to_skribble_value("alt")
+  }
+  fn alt_reverse(&self) -> String {
+    self.append_string_to_skribble_value("altReverse")
+  }
+}
+pub trait ValueSetAnimationFillMode: SkribbleValue {
+  /// These are the default animation fill mode values.
+  fn none(&self) -> String {
+    self.append_string_to_skribble_value("none")
+  }
+  /// These are the default animation fill mode values.
+  fn forwards(&self) -> String {
+    self.append_string_to_skribble_value("forwards")
+  }
+  /// These are the default animation fill mode values.
+  fn backwards(&self) -> String {
+    self.append_string_to_skribble_value("backwards")
+  }
+  /// These are the default animation fill mode values.
+  fn both(&self) -> String {
+    self.append_string_to_skribble_value("both")
+  }
+}
+pub trait ValueSetAnimationState: SkribbleValue {
+  /// These are the default animation state values.
+  fn running(&self) -> String {
+    self.append_string_to_skribble_value("running")
+  }
+  /// These are the default animation state values.
+  fn paused(&self) -> String {
+    self.append_string_to_skribble_value("paused")
+  }
+}
+pub trait ValueSetOpacity: SkribbleValue {
+  /// These are the default opacity values.
+  fn 0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  /// These are the default opacity values.
+  fn 5(&self) -> String {
+    self.append_string_to_skribble_value("5")
+  }
+  /// These are the default opacity values.
+  fn 10(&self) -> String {
+    self.append_string_to_skribble_value("10")
+  }
+  /// These are the default opacity values.
+  fn 20(&self) -> String {
+    self.append_string_to_skribble_value("20")
+  }
+  /// These are the default opacity values.
+  fn 30(&self) -> String {
+    self.append_string_to_skribble_value("30")
+  }
+  /// These are the default opacity values.
+  fn 40(&self) -> String {
+    self.append_string_to_skribble_value("40")
+  }
+  /// These are the default opacity values.
+  fn 50(&self) -> String {
+    self.append_string_to_skribble_value("50")
+  }
+  /// These are the default opacity values.
+  fn 60(&self) -> String {
+    self.append_string_to_skribble_value("60")
+  }
+  /// These are the default opacity values.
+  fn 70(&self) -> String {
+    self.append_string_to_skribble_value("70")
+  }
+  /// These are the default opacity values.
+  fn 75(&self) -> String {
+    self.append_string_to_skribble_value("75")
+  }
+  /// These are the default opacity values.
+  fn 80(&self) -> String {
+    self.append_string_to_skribble_value("80")
+  }
+  /// These are the default opacity values.
+  fn 90(&self) -> String {
+    self.append_string_to_skribble_value("90")
+  }
+  /// These are the default opacity values.
+  fn 95(&self) -> String {
+    self.append_string_to_skribble_value("95")
+  }
+  /// These are the default opacity values.
+  fn 100(&self) -> String {
+    self.append_string_to_skribble_value("100")
+  }
+}
+pub trait ValueSetSpacing: SkribbleValue {
+  fn 0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  fn 1(&self) -> String {
+    self.append_string_to_skribble_value("1")
+  }
+  fn 2(&self) -> String {
+    self.append_string_to_skribble_value("2")
+  }
+  fn 3(&self) -> String {
+    self.append_string_to_skribble_value("3")
+  }
+  fn 4(&self) -> String {
+    self.append_string_to_skribble_value("4")
+  }
+  fn 5(&self) -> String {
+    self.append_string_to_skribble_value("5")
+  }
+  fn 6(&self) -> String {
+    self.append_string_to_skribble_value("6")
+  }
+  fn 7(&self) -> String {
+    self.append_string_to_skribble_value("7")
+  }
+  fn 8(&self) -> String {
+    self.append_string_to_skribble_value("8")
+  }
+  fn 9(&self) -> String {
+    self.append_string_to_skribble_value("9")
+  }
+  fn 10(&self) -> String {
+    self.append_string_to_skribble_value("10")
+  }
+  fn 11(&self) -> String {
+    self.append_string_to_skribble_value("11")
+  }
+  fn 12(&self) -> String {
+    self.append_string_to_skribble_value("12")
+  }
+  fn 14(&self) -> String {
+    self.append_string_to_skribble_value("14")
+  }
+  fn 16(&self) -> String {
+    self.append_string_to_skribble_value("16")
+  }
+  fn 20(&self) -> String {
+    self.append_string_to_skribble_value("20")
+  }
+  fn 24(&self) -> String {
+    self.append_string_to_skribble_value("24")
+  }
+  fn 28(&self) -> String {
+    self.append_string_to_skribble_value("28")
+  }
+  fn 32(&self) -> String {
+    self.append_string_to_skribble_value("32")
+  }
+  fn 36(&self) -> String {
+    self.append_string_to_skribble_value("36")
+  }
+  fn 40(&self) -> String {
+    self.append_string_to_skribble_value("40")
+  }
+  fn 44(&self) -> String {
+    self.append_string_to_skribble_value("44")
+  }
+  fn 48(&self) -> String {
+    self.append_string_to_skribble_value("48")
+  }
+  fn 52(&self) -> String {
+    self.append_string_to_skribble_value("52")
+  }
+  fn 56(&self) -> String {
+    self.append_string_to_skribble_value("56")
+  }
+  fn 60(&self) -> String {
+    self.append_string_to_skribble_value("60")
+  }
+  fn 64(&self) -> String {
+    self.append_string_to_skribble_value("64")
+  }
+  fn 72(&self) -> String {
+    self.append_string_to_skribble_value("72")
+  }
+  fn 80(&self) -> String {
+    self.append_string_to_skribble_value("80")
+  }
+  fn 96(&self) -> String {
+    self.append_string_to_skribble_value("96")
+  }
+  fn px(&self) -> String {
+    self.append_string_to_skribble_value("px")
+  }
+  fn 0_5(&self) -> String {
+    self.append_string_to_skribble_value("0.5")
+  }
+  fn 1_5(&self) -> String {
+    self.append_string_to_skribble_value("1.5")
+  }
+  fn 2_5(&self) -> String {
+    self.append_string_to_skribble_value("2.5")
+  }
+  fn 3_5(&self) -> String {
+    self.append_string_to_skribble_value("3.5")
+  }
+}
+pub trait ValueSetZIndex: SkribbleValue {
+  fn 0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  fn 1(&self) -> String {
+    self.append_string_to_skribble_value("1")
+  }
+  fn 2(&self) -> String {
+    self.append_string_to_skribble_value("2")
+  }
+  fn 3(&self) -> String {
+    self.append_string_to_skribble_value("3")
+  }
+  fn 4(&self) -> String {
+    self.append_string_to_skribble_value("4")
+  }
+  fn 5(&self) -> String {
+    self.append_string_to_skribble_value("5")
+  }
+  fn 10(&self) -> String {
+    self.append_string_to_skribble_value("10")
+  }
+  fn 20(&self) -> String {
+    self.append_string_to_skribble_value("20")
+  }
+  fn 30(&self) -> String {
+    self.append_string_to_skribble_value("30")
+  }
+  fn 40(&self) -> String {
+    self.append_string_to_skribble_value("40")
+  }
+  fn 50(&self) -> String {
+    self.append_string_to_skribble_value("50")
+  }
+  fn 60(&self) -> String {
+    self.append_string_to_skribble_value("60")
+  }
+  fn auto(&self) -> String {
+    self.append_string_to_skribble_value("auto")
+  }
+  fn 1(&self) -> String {
+    self.append_string_to_skribble_value("-1")
+  }
+  fn 2(&self) -> String {
+    self.append_string_to_skribble_value("-2")
+  }
+  fn 3(&self) -> String {
+    self.append_string_to_skribble_value("-3")
+  }
+  fn 5(&self) -> String {
+    self.append_string_to_skribble_value("-5")
+  }
+}
+pub trait ValueSetDirection: SkribbleValue {
+  fn ltr(&self) -> String {
+    self.append_string_to_skribble_value("ltr")
+  }
+  fn rtl(&self) -> String {
+    self.append_string_to_skribble_value("rtl")
+  }
+}
+pub trait ValueSetZoom: SkribbleValue {
+  fn 0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  fn 50(&self) -> String {
+    self.append_string_to_skribble_value("50")
+  }
+  fn 75(&self) -> String {
+    self.append_string_to_skribble_value("75")
+  }
+  fn 90(&self) -> String {
+    self.append_string_to_skribble_value("90")
+  }
+  fn 95(&self) -> String {
+    self.append_string_to_skribble_value("95")
+  }
+  fn 100(&self) -> String {
+    self.append_string_to_skribble_value("100")
+  }
+  fn 105(&self) -> String {
+    self.append_string_to_skribble_value("105")
+  }
+  fn 110(&self) -> String {
+    self.append_string_to_skribble_value("110")
+  }
+  fn 125(&self) -> String {
+    self.append_string_to_skribble_value("125")
+  }
+  fn 150(&self) -> String {
+    self.append_string_to_skribble_value("150")
+  }
+}
+pub trait ValueSetFonts: SkribbleValue {
+  fn sans(&self) -> String {
+    self.append_string_to_skribble_value("sans")
+  }
+  fn serif(&self) -> String {
+    self.append_string_to_skribble_value("serif")
+  }
+  fn mono(&self) -> String {
+    self.append_string_to_skribble_value("mono")
+  }
+}
+pub trait ValueSetSpinAnimation: SkribbleValue {
+  /// The spin animation.
+  fn spin(&self) -> String {
+    self.append_string_to_skribble_value("spin")
+  }
+}
+pub trait ValueSetPingAnimation: SkribbleValue {
+  /// The ping animation.
+  fn ping(&self) -> String {
+    self.append_string_to_skribble_value("ping")
+  }
+}
+pub trait ValueSetPulseAnimation: SkribbleValue {
+  /// The pulse animation.
+  fn pulse(&self) -> String {
+    self.append_string_to_skribble_value("pulse")
+  }
+}
+pub trait ValueSetBounceAnimation: SkribbleValue {
+  /// The bounce animation.
+  fn bounce(&self) -> String {
+    self.append_string_to_skribble_value("bounce")
+  }
+}
+pub trait ValueSetEnterAnimation: SkribbleValue {
+  /// The enter animation.
+  fn in(&self) -> String {
+    self.append_string_to_skribble_value("in")
+  }
+}
+pub trait ValueSetExitAnimation: SkribbleValue {
+  /// The exit animation.
+  fn out(&self) -> String {
+    self.append_string_to_skribble_value("out")
+  }
+}
+pub trait Palette: SkribbleValue {
+  fn inherit(&self) -> String {
+    self.append_string_to_skribble_value("inherit")
+  }
+  fn current(&self) -> String {
+    self.append_string_to_skribble_value("current")
+  }
+  fn transparent(&self) -> String {
+    self.append_string_to_skribble_value("transparent")
+  }
+  fn black(&self) -> String {
+    self.append_string_to_skribble_value("black")
+  }
+  fn white(&self) -> String {
+    self.append_string_to_skribble_value("white")
+  }
+  fn slate50(&self) -> String {
+    self.append_string_to_skribble_value("slate50")
+  }
+  fn slate100(&self) -> String {
+    self.append_string_to_skribble_value("slate100")
+  }
+  fn slate200(&self) -> String {
+    self.append_string_to_skribble_value("slate200")
+  }
+  fn slate300(&self) -> String {
+    self.append_string_to_skribble_value("slate300")
+  }
+  fn slate400(&self) -> String {
+    self.append_string_to_skribble_value("slate400")
+  }
+  fn slate500(&self) -> String {
+    self.append_string_to_skribble_value("slate500")
+  }
+  fn slate600(&self) -> String {
+    self.append_string_to_skribble_value("slate600")
+  }
+  fn slate700(&self) -> String {
+    self.append_string_to_skribble_value("slate700")
+  }
+  fn slate800(&self) -> String {
+    self.append_string_to_skribble_value("slate800")
+  }
+  fn slate900(&self) -> String {
+    self.append_string_to_skribble_value("slate900")
+  }
+  fn gray50(&self) -> String {
+    self.append_string_to_skribble_value("gray50")
+  }
+  fn gray100(&self) -> String {
+    self.append_string_to_skribble_value("gray100")
+  }
+  fn gray200(&self) -> String {
+    self.append_string_to_skribble_value("gray200")
+  }
+  fn gray300(&self) -> String {
+    self.append_string_to_skribble_value("gray300")
+  }
+  fn gray400(&self) -> String {
+    self.append_string_to_skribble_value("gray400")
+  }
+  fn gray500(&self) -> String {
+    self.append_string_to_skribble_value("gray500")
+  }
+  fn gray600(&self) -> String {
+    self.append_string_to_skribble_value("gray600")
+  }
+  fn gray700(&self) -> String {
+    self.append_string_to_skribble_value("gray700")
+  }
+  fn gray800(&self) -> String {
+    self.append_string_to_skribble_value("gray800")
+  }
+  fn gray900(&self) -> String {
+    self.append_string_to_skribble_value("gray900")
+  }
+  fn zinc50(&self) -> String {
+    self.append_string_to_skribble_value("zinc50")
+  }
+  fn zinc100(&self) -> String {
+    self.append_string_to_skribble_value("zinc100")
+  }
+  fn zinc200(&self) -> String {
+    self.append_string_to_skribble_value("zinc200")
+  }
+  fn zinc300(&self) -> String {
+    self.append_string_to_skribble_value("zinc300")
+  }
+  fn zinc400(&self) -> String {
+    self.append_string_to_skribble_value("zinc400")
+  }
+  fn zinc500(&self) -> String {
+    self.append_string_to_skribble_value("zinc500")
+  }
+  fn zinc600(&self) -> String {
+    self.append_string_to_skribble_value("zinc600")
+  }
+  fn zinc700(&self) -> String {
+    self.append_string_to_skribble_value("zinc700")
+  }
+  fn zinc800(&self) -> String {
+    self.append_string_to_skribble_value("zinc800")
+  }
+  fn zinc900(&self) -> String {
+    self.append_string_to_skribble_value("zinc900")
+  }
+  fn neutral50(&self) -> String {
+    self.append_string_to_skribble_value("neutral50")
+  }
+  fn neutral100(&self) -> String {
+    self.append_string_to_skribble_value("neutral100")
+  }
+  fn neutral200(&self) -> String {
+    self.append_string_to_skribble_value("neutral200")
+  }
+  fn neutral300(&self) -> String {
+    self.append_string_to_skribble_value("neutral300")
+  }
+  fn neutral400(&self) -> String {
+    self.append_string_to_skribble_value("neutral400")
+  }
+  fn neutral500(&self) -> String {
+    self.append_string_to_skribble_value("neutral500")
+  }
+  fn neutral600(&self) -> String {
+    self.append_string_to_skribble_value("neutral600")
+  }
+  fn neutral700(&self) -> String {
+    self.append_string_to_skribble_value("neutral700")
+  }
+  fn neutral800(&self) -> String {
+    self.append_string_to_skribble_value("neutral800")
+  }
+  fn neutral900(&self) -> String {
+    self.append_string_to_skribble_value("neutral900")
+  }
+  fn stone50(&self) -> String {
+    self.append_string_to_skribble_value("stone50")
+  }
+  fn stone100(&self) -> String {
+    self.append_string_to_skribble_value("stone100")
+  }
+  fn stone200(&self) -> String {
+    self.append_string_to_skribble_value("stone200")
+  }
+  fn stone300(&self) -> String {
+    self.append_string_to_skribble_value("stone300")
+  }
+  fn stone400(&self) -> String {
+    self.append_string_to_skribble_value("stone400")
+  }
+  fn stone500(&self) -> String {
+    self.append_string_to_skribble_value("stone500")
+  }
+  fn stone600(&self) -> String {
+    self.append_string_to_skribble_value("stone600")
+  }
+  fn stone700(&self) -> String {
+    self.append_string_to_skribble_value("stone700")
+  }
+  fn stone800(&self) -> String {
+    self.append_string_to_skribble_value("stone800")
+  }
+  fn stone900(&self) -> String {
+    self.append_string_to_skribble_value("stone900")
+  }
+  fn red50(&self) -> String {
+    self.append_string_to_skribble_value("red50")
+  }
+  fn red100(&self) -> String {
+    self.append_string_to_skribble_value("red100")
+  }
+  fn red200(&self) -> String {
+    self.append_string_to_skribble_value("red200")
+  }
+  fn red300(&self) -> String {
+    self.append_string_to_skribble_value("red300")
+  }
+  fn red400(&self) -> String {
+    self.append_string_to_skribble_value("red400")
+  }
+  fn red500(&self) -> String {
+    self.append_string_to_skribble_value("red500")
+  }
+  fn red600(&self) -> String {
+    self.append_string_to_skribble_value("red600")
+  }
+  fn red700(&self) -> String {
+    self.append_string_to_skribble_value("red700")
+  }
+  fn red800(&self) -> String {
+    self.append_string_to_skribble_value("red800")
+  }
+  fn red900(&self) -> String {
+    self.append_string_to_skribble_value("red900")
+  }
+  fn orange50(&self) -> String {
+    self.append_string_to_skribble_value("orange50")
+  }
+  fn orange100(&self) -> String {
+    self.append_string_to_skribble_value("orange100")
+  }
+  fn orange200(&self) -> String {
+    self.append_string_to_skribble_value("orange200")
+  }
+  fn orange300(&self) -> String {
+    self.append_string_to_skribble_value("orange300")
+  }
+  fn orange400(&self) -> String {
+    self.append_string_to_skribble_value("orange400")
+  }
+  fn orange500(&self) -> String {
+    self.append_string_to_skribble_value("orange500")
+  }
+  fn orange600(&self) -> String {
+    self.append_string_to_skribble_value("orange600")
+  }
+  fn orange700(&self) -> String {
+    self.append_string_to_skribble_value("orange700")
+  }
+  fn orange800(&self) -> String {
+    self.append_string_to_skribble_value("orange800")
+  }
+  fn orange900(&self) -> String {
+    self.append_string_to_skribble_value("orange900")
+  }
+  fn amber50(&self) -> String {
+    self.append_string_to_skribble_value("amber50")
+  }
+  fn amber100(&self) -> String {
+    self.append_string_to_skribble_value("amber100")
+  }
+  fn amber200(&self) -> String {
+    self.append_string_to_skribble_value("amber200")
+  }
+  fn amber300(&self) -> String {
+    self.append_string_to_skribble_value("amber300")
+  }
+  fn amber400(&self) -> String {
+    self.append_string_to_skribble_value("amber400")
+  }
+  fn amber500(&self) -> String {
+    self.append_string_to_skribble_value("amber500")
+  }
+  fn amber600(&self) -> String {
+    self.append_string_to_skribble_value("amber600")
+  }
+  fn amber700(&self) -> String {
+    self.append_string_to_skribble_value("amber700")
+  }
+  fn amber800(&self) -> String {
+    self.append_string_to_skribble_value("amber800")
+  }
+  fn amber900(&self) -> String {
+    self.append_string_to_skribble_value("amber900")
+  }
+  fn yellow50(&self) -> String {
+    self.append_string_to_skribble_value("yellow50")
+  }
+  fn yellow100(&self) -> String {
+    self.append_string_to_skribble_value("yellow100")
+  }
+  fn yellow200(&self) -> String {
+    self.append_string_to_skribble_value("yellow200")
+  }
+  fn yellow300(&self) -> String {
+    self.append_string_to_skribble_value("yellow300")
+  }
+  fn yellow400(&self) -> String {
+    self.append_string_to_skribble_value("yellow400")
+  }
+  fn yellow500(&self) -> String {
+    self.append_string_to_skribble_value("yellow500")
+  }
+  fn yellow600(&self) -> String {
+    self.append_string_to_skribble_value("yellow600")
+  }
+  fn yellow700(&self) -> String {
+    self.append_string_to_skribble_value("yellow700")
+  }
+  fn yellow800(&self) -> String {
+    self.append_string_to_skribble_value("yellow800")
+  }
+  fn yellow900(&self) -> String {
+    self.append_string_to_skribble_value("yellow900")
+  }
+  fn lime50(&self) -> String {
+    self.append_string_to_skribble_value("lime50")
+  }
+  fn lime100(&self) -> String {
+    self.append_string_to_skribble_value("lime100")
+  }
+  fn lime200(&self) -> String {
+    self.append_string_to_skribble_value("lime200")
+  }
+  fn lime300(&self) -> String {
+    self.append_string_to_skribble_value("lime300")
+  }
+  fn lime400(&self) -> String {
+    self.append_string_to_skribble_value("lime400")
+  }
+  fn lime500(&self) -> String {
+    self.append_string_to_skribble_value("lime500")
+  }
+  fn lime600(&self) -> String {
+    self.append_string_to_skribble_value("lime600")
+  }
+  fn lime700(&self) -> String {
+    self.append_string_to_skribble_value("lime700")
+  }
+  fn lime800(&self) -> String {
+    self.append_string_to_skribble_value("lime800")
+  }
+  fn lime900(&self) -> String {
+    self.append_string_to_skribble_value("lime900")
+  }
+  fn green50(&self) -> String {
+    self.append_string_to_skribble_value("green50")
+  }
+  fn green100(&self) -> String {
+    self.append_string_to_skribble_value("green100")
+  }
+  fn green200(&self) -> String {
+    self.append_string_to_skribble_value("green200")
+  }
+  fn green300(&self) -> String {
+    self.append_string_to_skribble_value("green300")
+  }
+  fn green400(&self) -> String {
+    self.append_string_to_skribble_value("green400")
+  }
+  fn green500(&self) -> String {
+    self.append_string_to_skribble_value("green500")
+  }
+  fn green600(&self) -> String {
+    self.append_string_to_skribble_value("green600")
+  }
+  fn green700(&self) -> String {
+    self.append_string_to_skribble_value("green700")
+  }
+  fn green800(&self) -> String {
+    self.append_string_to_skribble_value("green800")
+  }
+  fn green900(&self) -> String {
+    self.append_string_to_skribble_value("green900")
+  }
+  fn emerald50(&self) -> String {
+    self.append_string_to_skribble_value("emerald50")
+  }
+  fn emerald100(&self) -> String {
+    self.append_string_to_skribble_value("emerald100")
+  }
+  fn emerald200(&self) -> String {
+    self.append_string_to_skribble_value("emerald200")
+  }
+  fn emerald300(&self) -> String {
+    self.append_string_to_skribble_value("emerald300")
+  }
+  fn emerald400(&self) -> String {
+    self.append_string_to_skribble_value("emerald400")
+  }
+  fn emerald500(&self) -> String {
+    self.append_string_to_skribble_value("emerald500")
+  }
+  fn emerald600(&self) -> String {
+    self.append_string_to_skribble_value("emerald600")
+  }
+  fn emerald700(&self) -> String {
+    self.append_string_to_skribble_value("emerald700")
+  }
+  fn emerald800(&self) -> String {
+    self.append_string_to_skribble_value("emerald800")
+  }
+  fn emerald900(&self) -> String {
+    self.append_string_to_skribble_value("emerald900")
+  }
+  fn teal50(&self) -> String {
+    self.append_string_to_skribble_value("teal50")
+  }
+  fn teal100(&self) -> String {
+    self.append_string_to_skribble_value("teal100")
+  }
+  fn teal200(&self) -> String {
+    self.append_string_to_skribble_value("teal200")
+  }
+  fn teal300(&self) -> String {
+    self.append_string_to_skribble_value("teal300")
+  }
+  fn teal400(&self) -> String {
+    self.append_string_to_skribble_value("teal400")
+  }
+  fn teal500(&self) -> String {
+    self.append_string_to_skribble_value("teal500")
+  }
+  fn teal600(&self) -> String {
+    self.append_string_to_skribble_value("teal600")
+  }
+  fn teal700(&self) -> String {
+    self.append_string_to_skribble_value("teal700")
+  }
+  fn teal800(&self) -> String {
+    self.append_string_to_skribble_value("teal800")
+  }
+  fn teal900(&self) -> String {
+    self.append_string_to_skribble_value("teal900")
+  }
+  fn cyan50(&self) -> String {
+    self.append_string_to_skribble_value("cyan50")
+  }
+  fn cyan100(&self) -> String {
+    self.append_string_to_skribble_value("cyan100")
+  }
+  fn cyan200(&self) -> String {
+    self.append_string_to_skribble_value("cyan200")
+  }
+  fn cyan300(&self) -> String {
+    self.append_string_to_skribble_value("cyan300")
+  }
+  fn cyan400(&self) -> String {
+    self.append_string_to_skribble_value("cyan400")
+  }
+  fn cyan500(&self) -> String {
+    self.append_string_to_skribble_value("cyan500")
+  }
+  fn cyan600(&self) -> String {
+    self.append_string_to_skribble_value("cyan600")
+  }
+  fn cyan700(&self) -> String {
+    self.append_string_to_skribble_value("cyan700")
+  }
+  fn cyan800(&self) -> String {
+    self.append_string_to_skribble_value("cyan800")
+  }
+  fn cyan900(&self) -> String {
+    self.append_string_to_skribble_value("cyan900")
+  }
+  fn sky50(&self) -> String {
+    self.append_string_to_skribble_value("sky50")
+  }
+  fn sky100(&self) -> String {
+    self.append_string_to_skribble_value("sky100")
+  }
+  fn sky200(&self) -> String {
+    self.append_string_to_skribble_value("sky200")
+  }
+  fn sky300(&self) -> String {
+    self.append_string_to_skribble_value("sky300")
+  }
+  fn sky400(&self) -> String {
+    self.append_string_to_skribble_value("sky400")
+  }
+  fn sky500(&self) -> String {
+    self.append_string_to_skribble_value("sky500")
+  }
+  fn sky600(&self) -> String {
+    self.append_string_to_skribble_value("sky600")
+  }
+  fn sky700(&self) -> String {
+    self.append_string_to_skribble_value("sky700")
+  }
+  fn sky800(&self) -> String {
+    self.append_string_to_skribble_value("sky800")
+  }
+  fn sky900(&self) -> String {
+    self.append_string_to_skribble_value("sky900")
+  }
+  fn blue50(&self) -> String {
+    self.append_string_to_skribble_value("blue50")
+  }
+  fn blue100(&self) -> String {
+    self.append_string_to_skribble_value("blue100")
+  }
+  fn blue200(&self) -> String {
+    self.append_string_to_skribble_value("blue200")
+  }
+  fn blue300(&self) -> String {
+    self.append_string_to_skribble_value("blue300")
+  }
+  fn blue400(&self) -> String {
+    self.append_string_to_skribble_value("blue400")
+  }
+  fn blue500(&self) -> String {
+    self.append_string_to_skribble_value("blue500")
+  }
+  fn blue600(&self) -> String {
+    self.append_string_to_skribble_value("blue600")
+  }
+  fn blue700(&self) -> String {
+    self.append_string_to_skribble_value("blue700")
+  }
+  fn blue800(&self) -> String {
+    self.append_string_to_skribble_value("blue800")
+  }
+  fn blue900(&self) -> String {
+    self.append_string_to_skribble_value("blue900")
+  }
+  fn indigo50(&self) -> String {
+    self.append_string_to_skribble_value("indigo50")
+  }
+  fn indigo100(&self) -> String {
+    self.append_string_to_skribble_value("indigo100")
+  }
+  fn indigo200(&self) -> String {
+    self.append_string_to_skribble_value("indigo200")
+  }
+  fn indigo300(&self) -> String {
+    self.append_string_to_skribble_value("indigo300")
+  }
+  fn indigo400(&self) -> String {
+    self.append_string_to_skribble_value("indigo400")
+  }
+  fn indigo500(&self) -> String {
+    self.append_string_to_skribble_value("indigo500")
+  }
+  fn indigo600(&self) -> String {
+    self.append_string_to_skribble_value("indigo600")
+  }
+  fn indigo700(&self) -> String {
+    self.append_string_to_skribble_value("indigo700")
+  }
+  fn indigo800(&self) -> String {
+    self.append_string_to_skribble_value("indigo800")
+  }
+  fn indigo900(&self) -> String {
+    self.append_string_to_skribble_value("indigo900")
+  }
+  fn violet50(&self) -> String {
+    self.append_string_to_skribble_value("violet50")
+  }
+  fn violet100(&self) -> String {
+    self.append_string_to_skribble_value("violet100")
+  }
+  fn violet200(&self) -> String {
+    self.append_string_to_skribble_value("violet200")
+  }
+  fn violet300(&self) -> String {
+    self.append_string_to_skribble_value("violet300")
+  }
+  fn violet400(&self) -> String {
+    self.append_string_to_skribble_value("violet400")
+  }
+  fn violet500(&self) -> String {
+    self.append_string_to_skribble_value("violet500")
+  }
+  fn violet600(&self) -> String {
+    self.append_string_to_skribble_value("violet600")
+  }
+  fn violet700(&self) -> String {
+    self.append_string_to_skribble_value("violet700")
+  }
+  fn violet800(&self) -> String {
+    self.append_string_to_skribble_value("violet800")
+  }
+  fn violet900(&self) -> String {
+    self.append_string_to_skribble_value("violet900")
+  }
+  fn purple50(&self) -> String {
+    self.append_string_to_skribble_value("purple50")
+  }
+  fn purple100(&self) -> String {
+    self.append_string_to_skribble_value("purple100")
+  }
+  fn purple200(&self) -> String {
+    self.append_string_to_skribble_value("purple200")
+  }
+  fn purple300(&self) -> String {
+    self.append_string_to_skribble_value("purple300")
+  }
+  fn purple400(&self) -> String {
+    self.append_string_to_skribble_value("purple400")
+  }
+  fn purple500(&self) -> String {
+    self.append_string_to_skribble_value("purple500")
+  }
+  fn purple600(&self) -> String {
+    self.append_string_to_skribble_value("purple600")
+  }
+  fn purple700(&self) -> String {
+    self.append_string_to_skribble_value("purple700")
+  }
+  fn purple800(&self) -> String {
+    self.append_string_to_skribble_value("purple800")
+  }
+  fn purple900(&self) -> String {
+    self.append_string_to_skribble_value("purple900")
+  }
+  fn fuchsia50(&self) -> String {
+    self.append_string_to_skribble_value("fuchsia50")
+  }
+  fn fuchsia100(&self) -> String {
+    self.append_string_to_skribble_value("fuchsia100")
+  }
+  fn fuchsia200(&self) -> String {
+    self.append_string_to_skribble_value("fuchsia200")
+  }
+  fn fuchsia300(&self) -> String {
+    self.append_string_to_skribble_value("fuchsia300")
+  }
+  fn fuchsia400(&self) -> String {
+    self.append_string_to_skribble_value("fuchsia400")
+  }
+  fn fuchsia500(&self) -> String {
+    self.append_string_to_skribble_value("fuchsia500")
+  }
+  fn fuchsia600(&self) -> String {
+    self.append_string_to_skribble_value("fuchsia600")
+  }
+  fn fuchsia700(&self) -> String {
+    self.append_string_to_skribble_value("fuchsia700")
+  }
+  fn fuchsia800(&self) -> String {
+    self.append_string_to_skribble_value("fuchsia800")
+  }
+  fn fuchsia900(&self) -> String {
+    self.append_string_to_skribble_value("fuchsia900")
+  }
+  fn pink50(&self) -> String {
+    self.append_string_to_skribble_value("pink50")
+  }
+  fn pink100(&self) -> String {
+    self.append_string_to_skribble_value("pink100")
+  }
+  fn pink200(&self) -> String {
+    self.append_string_to_skribble_value("pink200")
+  }
+  fn pink300(&self) -> String {
+    self.append_string_to_skribble_value("pink300")
+  }
+  fn pink400(&self) -> String {
+    self.append_string_to_skribble_value("pink400")
+  }
+  fn pink500(&self) -> String {
+    self.append_string_to_skribble_value("pink500")
+  }
+  fn pink600(&self) -> String {
+    self.append_string_to_skribble_value("pink600")
+  }
+  fn pink700(&self) -> String {
+    self.append_string_to_skribble_value("pink700")
+  }
+  fn pink800(&self) -> String {
+    self.append_string_to_skribble_value("pink800")
+  }
+  fn pink900(&self) -> String {
+    self.append_string_to_skribble_value("pink900")
+  }
+  fn rose50(&self) -> String {
+    self.append_string_to_skribble_value("rose50")
+  }
+  fn rose100(&self) -> String {
+    self.append_string_to_skribble_value("rose100")
+  }
+  fn rose200(&self) -> String {
+    self.append_string_to_skribble_value("rose200")
+  }
+  fn rose300(&self) -> String {
+    self.append_string_to_skribble_value("rose300")
+  }
+  fn rose400(&self) -> String {
+    self.append_string_to_skribble_value("rose400")
+  }
+  fn rose500(&self) -> String {
+    self.append_string_to_skribble_value("rose500")
+  }
+  fn rose600(&self) -> String {
+    self.append_string_to_skribble_value("rose600")
+  }
+  fn rose700(&self) -> String {
+    self.append_string_to_skribble_value("rose700")
+  }
+  fn rose800(&self) -> String {
+    self.append_string_to_skribble_value("rose800")
+  }
+  fn rose900(&self) -> String {
+    self.append_string_to_skribble_value("rose900")
+  }
+}
 pub struct AtomSr(String);
 impl SkribbleValue for AtomSr {
   fn from_ref(value: impl AsRef<str>) -> Self {
@@ -1271,492 +2434,6 @@ pub trait Atom: SkribbleValue {
   }
   fn opacity(&self) -> AtomOpacity {
     AtomOpacity::from_ref(self.append_to_skribble_value("opacity"))
-  }
-}
-pub trait ValueSetScreenReader: SkribbleValue {
-  fn only(&self) -> String {
-    self.append_string_to_skribble_value("only")
-  }
-  fn exclude(&self) -> String {
-    self.append_string_to_skribble_value("exclude")
-  }
-}
-pub trait ValueSetTransitions: SkribbleValue {
-  /// The built-in transition class values.
-  fn (&self) -> String {
-    self.append_string_to_skribble_value("")
-  }
-  /// The built-in transition class values.
-  fn none(&self) -> String {
-    self.append_string_to_skribble_value("none")
-  }
-  /// The built-in transition class values.
-  fn all(&self) -> String {
-    self.append_string_to_skribble_value("all")
-  }
-  /// The built-in transition class values.
-  fn colors(&self) -> String {
-    self.append_string_to_skribble_value("colors")
-  }
-  /// The built-in transition class values.
-  fn opacity(&self) -> String {
-    self.append_string_to_skribble_value("opacity")
-  }
-  /// The built-in transition class values.
-  fn shadow(&self) -> String {
-    self.append_string_to_skribble_value("shadow")
-  }
-  /// The built-in transition class values.
-  fn transform(&self) -> String {
-    self.append_string_to_skribble_value("transform")
-  }
-}
-pub trait ValueSetTransitionProperties: SkribbleValue {
-  fn (&self) -> String {
-    self.append_string_to_skribble_value("")
-  }
-  fn none(&self) -> String {
-    self.append_string_to_skribble_value("none")
-  }
-  fn all(&self) -> String {
-    self.append_string_to_skribble_value("all")
-  }
-  fn colors(&self) -> String {
-    self.append_string_to_skribble_value("colors")
-  }
-  fn opacity(&self) -> String {
-    self.append_string_to_skribble_value("opacity")
-  }
-  fn shadow(&self) -> String {
-    self.append_string_to_skribble_value("shadow")
-  }
-  fn transform(&self) -> String {
-    self.append_string_to_skribble_value("transform")
-  }
-}
-pub trait ValueSetDurations: SkribbleValue {
-  fn 0(&self) -> String {
-    self.append_string_to_skribble_value("0")
-  }
-  fn 75(&self) -> String {
-    self.append_string_to_skribble_value("75")
-  }
-  fn 100(&self) -> String {
-    self.append_string_to_skribble_value("100")
-  }
-  fn 150(&self) -> String {
-    self.append_string_to_skribble_value("150")
-  }
-  fn 200(&self) -> String {
-    self.append_string_to_skribble_value("200")
-  }
-  fn 300(&self) -> String {
-    self.append_string_to_skribble_value("300")
-  }
-  fn 500(&self) -> String {
-    self.append_string_to_skribble_value("500")
-  }
-  fn 700(&self) -> String {
-    self.append_string_to_skribble_value("700")
-  }
-  fn 1000(&self) -> String {
-    self.append_string_to_skribble_value("1000")
-  }
-  fn 1500(&self) -> String {
-    self.append_string_to_skribble_value("1500")
-  }
-  fn 2000(&self) -> String {
-    self.append_string_to_skribble_value("2000")
-  }
-}
-pub trait ValueSetEasing: SkribbleValue {
-  fn linear(&self) -> String {
-    self.append_string_to_skribble_value("linear")
-  }
-  fn in(&self) -> String {
-    self.append_string_to_skribble_value("in")
-  }
-  fn out(&self) -> String {
-    self.append_string_to_skribble_value("out")
-  }
-  fn in_out(&self) -> String {
-    self.append_string_to_skribble_value("inOut")
-  }
-}
-pub trait ValueSetAnimationRepetitions: SkribbleValue {
-  fn 0(&self) -> String {
-    self.append_string_to_skribble_value("0")
-  }
-  fn 0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
-  }
-  fn 1(&self) -> String {
-    self.append_string_to_skribble_value("1")
-  }
-  fn 2(&self) -> String {
-    self.append_string_to_skribble_value("2")
-  }
-  fn 3(&self) -> String {
-    self.append_string_to_skribble_value("3")
-  }
-  fn infinite(&self) -> String {
-    self.append_string_to_skribble_value("infinite")
-  }
-  fn in(&self) -> String {
-    self.append_string_to_skribble_value("in")
-  }
-  fn out(&self) -> String {
-    self.append_string_to_skribble_value("out")
-  }
-  fn in_out(&self) -> String {
-    self.append_string_to_skribble_value("inOut")
-  }
-}
-pub trait ValueSetAnimationDirection: SkribbleValue {
-  fn normal(&self) -> String {
-    self.append_string_to_skribble_value("normal")
-  }
-  fn reverse(&self) -> String {
-    self.append_string_to_skribble_value("reverse")
-  }
-  fn alt(&self) -> String {
-    self.append_string_to_skribble_value("alt")
-  }
-  fn alt_reverse(&self) -> String {
-    self.append_string_to_skribble_value("altReverse")
-  }
-}
-pub trait ValueSetAnimationFillMode: SkribbleValue {
-  /// These are the default animation fill mode values.
-  fn none(&self) -> String {
-    self.append_string_to_skribble_value("none")
-  }
-  /// These are the default animation fill mode values.
-  fn forwards(&self) -> String {
-    self.append_string_to_skribble_value("forwards")
-  }
-  /// These are the default animation fill mode values.
-  fn backwards(&self) -> String {
-    self.append_string_to_skribble_value("backwards")
-  }
-  /// These are the default animation fill mode values.
-  fn both(&self) -> String {
-    self.append_string_to_skribble_value("both")
-  }
-}
-pub trait ValueSetAnimationState: SkribbleValue {
-  /// These are the default animation state values.
-  fn running(&self) -> String {
-    self.append_string_to_skribble_value("running")
-  }
-  /// These are the default animation state values.
-  fn paused(&self) -> String {
-    self.append_string_to_skribble_value("paused")
-  }
-}
-pub trait ValueSetOpacity: SkribbleValue {
-  /// These are the default opacity values.
-  fn 0(&self) -> String {
-    self.append_string_to_skribble_value("0")
-  }
-  /// These are the default opacity values.
-  fn 5(&self) -> String {
-    self.append_string_to_skribble_value("5")
-  }
-  /// These are the default opacity values.
-  fn 10(&self) -> String {
-    self.append_string_to_skribble_value("10")
-  }
-  /// These are the default opacity values.
-  fn 20(&self) -> String {
-    self.append_string_to_skribble_value("20")
-  }
-  /// These are the default opacity values.
-  fn 30(&self) -> String {
-    self.append_string_to_skribble_value("30")
-  }
-  /// These are the default opacity values.
-  fn 40(&self) -> String {
-    self.append_string_to_skribble_value("40")
-  }
-  /// These are the default opacity values.
-  fn 50(&self) -> String {
-    self.append_string_to_skribble_value("50")
-  }
-  /// These are the default opacity values.
-  fn 60(&self) -> String {
-    self.append_string_to_skribble_value("60")
-  }
-  /// These are the default opacity values.
-  fn 70(&self) -> String {
-    self.append_string_to_skribble_value("70")
-  }
-  /// These are the default opacity values.
-  fn 75(&self) -> String {
-    self.append_string_to_skribble_value("75")
-  }
-  /// These are the default opacity values.
-  fn 80(&self) -> String {
-    self.append_string_to_skribble_value("80")
-  }
-  /// These are the default opacity values.
-  fn 90(&self) -> String {
-    self.append_string_to_skribble_value("90")
-  }
-  /// These are the default opacity values.
-  fn 95(&self) -> String {
-    self.append_string_to_skribble_value("95")
-  }
-  /// These are the default opacity values.
-  fn 100(&self) -> String {
-    self.append_string_to_skribble_value("100")
-  }
-}
-pub trait ValueSetSpacing: SkribbleValue {
-  fn 0(&self) -> String {
-    self.append_string_to_skribble_value("0")
-  }
-  fn 1(&self) -> String {
-    self.append_string_to_skribble_value("1")
-  }
-  fn 2(&self) -> String {
-    self.append_string_to_skribble_value("2")
-  }
-  fn 3(&self) -> String {
-    self.append_string_to_skribble_value("3")
-  }
-  fn 4(&self) -> String {
-    self.append_string_to_skribble_value("4")
-  }
-  fn 5(&self) -> String {
-    self.append_string_to_skribble_value("5")
-  }
-  fn 6(&self) -> String {
-    self.append_string_to_skribble_value("6")
-  }
-  fn 7(&self) -> String {
-    self.append_string_to_skribble_value("7")
-  }
-  fn 8(&self) -> String {
-    self.append_string_to_skribble_value("8")
-  }
-  fn 9(&self) -> String {
-    self.append_string_to_skribble_value("9")
-  }
-  fn 10(&self) -> String {
-    self.append_string_to_skribble_value("10")
-  }
-  fn 11(&self) -> String {
-    self.append_string_to_skribble_value("11")
-  }
-  fn 12(&self) -> String {
-    self.append_string_to_skribble_value("12")
-  }
-  fn 14(&self) -> String {
-    self.append_string_to_skribble_value("14")
-  }
-  fn 16(&self) -> String {
-    self.append_string_to_skribble_value("16")
-  }
-  fn 20(&self) -> String {
-    self.append_string_to_skribble_value("20")
-  }
-  fn 24(&self) -> String {
-    self.append_string_to_skribble_value("24")
-  }
-  fn 28(&self) -> String {
-    self.append_string_to_skribble_value("28")
-  }
-  fn 32(&self) -> String {
-    self.append_string_to_skribble_value("32")
-  }
-  fn 36(&self) -> String {
-    self.append_string_to_skribble_value("36")
-  }
-  fn 40(&self) -> String {
-    self.append_string_to_skribble_value("40")
-  }
-  fn 44(&self) -> String {
-    self.append_string_to_skribble_value("44")
-  }
-  fn 48(&self) -> String {
-    self.append_string_to_skribble_value("48")
-  }
-  fn 52(&self) -> String {
-    self.append_string_to_skribble_value("52")
-  }
-  fn 56(&self) -> String {
-    self.append_string_to_skribble_value("56")
-  }
-  fn 60(&self) -> String {
-    self.append_string_to_skribble_value("60")
-  }
-  fn 64(&self) -> String {
-    self.append_string_to_skribble_value("64")
-  }
-  fn 72(&self) -> String {
-    self.append_string_to_skribble_value("72")
-  }
-  fn 80(&self) -> String {
-    self.append_string_to_skribble_value("80")
-  }
-  fn 96(&self) -> String {
-    self.append_string_to_skribble_value("96")
-  }
-  fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
-  }
-  fn 0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
-  }
-  fn 1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
-  }
-  fn 2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
-  }
-  fn 3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
-  }
-}
-pub trait ValueSetZIndex: SkribbleValue {
-  fn 0(&self) -> String {
-    self.append_string_to_skribble_value("0")
-  }
-  fn 1(&self) -> String {
-    self.append_string_to_skribble_value("1")
-  }
-  fn 2(&self) -> String {
-    self.append_string_to_skribble_value("2")
-  }
-  fn 3(&self) -> String {
-    self.append_string_to_skribble_value("3")
-  }
-  fn 4(&self) -> String {
-    self.append_string_to_skribble_value("4")
-  }
-  fn 5(&self) -> String {
-    self.append_string_to_skribble_value("5")
-  }
-  fn 10(&self) -> String {
-    self.append_string_to_skribble_value("10")
-  }
-  fn 20(&self) -> String {
-    self.append_string_to_skribble_value("20")
-  }
-  fn 30(&self) -> String {
-    self.append_string_to_skribble_value("30")
-  }
-  fn 40(&self) -> String {
-    self.append_string_to_skribble_value("40")
-  }
-  fn 50(&self) -> String {
-    self.append_string_to_skribble_value("50")
-  }
-  fn 60(&self) -> String {
-    self.append_string_to_skribble_value("60")
-  }
-  fn auto(&self) -> String {
-    self.append_string_to_skribble_value("auto")
-  }
-  fn 1(&self) -> String {
-    self.append_string_to_skribble_value("-1")
-  }
-  fn 2(&self) -> String {
-    self.append_string_to_skribble_value("-2")
-  }
-  fn 3(&self) -> String {
-    self.append_string_to_skribble_value("-3")
-  }
-  fn 5(&self) -> String {
-    self.append_string_to_skribble_value("-5")
-  }
-}
-pub trait ValueSetDirection: SkribbleValue {
-  fn ltr(&self) -> String {
-    self.append_string_to_skribble_value("ltr")
-  }
-  fn rtl(&self) -> String {
-    self.append_string_to_skribble_value("rtl")
-  }
-}
-pub trait ValueSetZoom: SkribbleValue {
-  fn 0(&self) -> String {
-    self.append_string_to_skribble_value("0")
-  }
-  fn 50(&self) -> String {
-    self.append_string_to_skribble_value("50")
-  }
-  fn 75(&self) -> String {
-    self.append_string_to_skribble_value("75")
-  }
-  fn 90(&self) -> String {
-    self.append_string_to_skribble_value("90")
-  }
-  fn 95(&self) -> String {
-    self.append_string_to_skribble_value("95")
-  }
-  fn 100(&self) -> String {
-    self.append_string_to_skribble_value("100")
-  }
-  fn 105(&self) -> String {
-    self.append_string_to_skribble_value("105")
-  }
-  fn 110(&self) -> String {
-    self.append_string_to_skribble_value("110")
-  }
-  fn 125(&self) -> String {
-    self.append_string_to_skribble_value("125")
-  }
-  fn 150(&self) -> String {
-    self.append_string_to_skribble_value("150")
-  }
-}
-pub trait ValueSetFonts: SkribbleValue {
-  fn sans(&self) -> String {
-    self.append_string_to_skribble_value("sans")
-  }
-  fn serif(&self) -> String {
-    self.append_string_to_skribble_value("serif")
-  }
-  fn mono(&self) -> String {
-    self.append_string_to_skribble_value("mono")
-  }
-}
-pub trait ValueSetSpinAnimation: SkribbleValue {
-  /// The spin animation.
-  fn spin(&self) -> String {
-    self.append_string_to_skribble_value("spin")
-  }
-}
-pub trait ValueSetPingAnimation: SkribbleValue {
-  /// The ping animation.
-  fn ping(&self) -> String {
-    self.append_string_to_skribble_value("ping")
-  }
-}
-pub trait ValueSetPulseAnimation: SkribbleValue {
-  /// The pulse animation.
-  fn pulse(&self) -> String {
-    self.append_string_to_skribble_value("pulse")
-  }
-}
-pub trait ValueSetBounceAnimation: SkribbleValue {
-  /// The bounce animation.
-  fn bounce(&self) -> String {
-    self.append_string_to_skribble_value("bounce")
-  }
-}
-pub trait ValueSetEnterAnimation: SkribbleValue {
-  /// The enter animation.
-  fn in(&self) -> String {
-    self.append_string_to_skribble_value("in")
-  }
-}
-pub trait ValueSetExitAnimation: SkribbleValue {
-  /// The exit animation.
-  fn out(&self) -> String {
-    self.append_string_to_skribble_value("out")
   }
 }
 impl MediaQueryDeviceCategories for SkribbleRoot {}

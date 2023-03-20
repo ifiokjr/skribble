@@ -270,6 +270,35 @@ pub(crate) fn generate_atoms(
   sections.push(trait_content.join("\n"));
 }
 
+pub(crate) fn generate_palette(
+  config: &MergedConfig,
+  indent_style: IndentStyle,
+  sections: &mut Vec<String>,
+) {
+  sections.push("pub trait Palette: SkribbleValue {".into());
+
+  for (name, _) in config.palette.iter() {
+    let method_name = name.to_snake_case();
+
+    sections.push(indent(
+      format!("fn {method_name}(&self) -> String {{",),
+      indent_style,
+    ));
+
+    sections.push(indent(
+      indent(
+        format!("self.append_string_to_skribble_value(\"{name}\")",),
+        indent_style,
+      ),
+      indent_style,
+    ));
+
+    sections.push(indent("}", indent_style));
+  }
+
+  sections.push("}".into());
+}
+
 fn get_value_set_trait_name(value_set_name: impl Into<String>) -> String {
   format!("ValueSet{}", value_set_name.into().to_pascal_case())
 }
