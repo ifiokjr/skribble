@@ -31,7 +31,7 @@ impl Plugin for PresetDefault {
     "skribble_preset_default".into()
   }
 
-  fn mutate_config(&self, config: &mut WrappedPluginConfig) -> AnyEmptyResult {
+  fn mutate_config(&self, config: &mut WrappedPluginConfig, _: &Options) -> AnyEmptyResult {
     self.update_palette(&mut config.palette);
     self.update_media_queries(&mut config.media_queries);
     self.update_parent_modifiers(&mut config.parent_modifiers);

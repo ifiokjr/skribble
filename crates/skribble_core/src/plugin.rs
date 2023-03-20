@@ -23,14 +23,14 @@ pub trait Plugin {
   /// the original configuration but created at the start just for the plugins.
   /// It will be merged into the [`StyleConfig`].
   #[allow(unused)]
-  fn mutate_config(&self, config: &mut WrappedPluginConfig) -> AnyEmptyResult {
+  fn mutate_config(&self, config: &mut WrappedPluginConfig, options: &Options) -> AnyEmptyResult {
     Ok(())
   }
 
   /// Generate code from the configuration. This is called after the config has
   /// been generated.
   #[allow(unused)]
-  fn generate_code(&self, config: &MergedConfig) -> AnyResult<GeneratedFiles> {
+  fn generate_code(&self, config: &MergedConfig, options: &Options) -> AnyResult<GeneratedFiles> {
     Ok(GeneratedFiles::default())
   }
 

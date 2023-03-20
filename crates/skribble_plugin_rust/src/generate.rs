@@ -31,7 +31,7 @@ pub(crate) fn generate_media_queries(
         methods.push(indent(format!("/// {description}"), indent_style));
       }
       methods.push(indent(
-        format!("fn {method_name}(&self) -> {struct_name} {{",),
+        format!("fn {method_name}(&self) -> {struct_name} {{"),
         indent_style,
       ));
       methods.push(indent(
@@ -80,7 +80,7 @@ pub(crate) fn generate_parent_modifiers(
     }
 
     sections.push(indent(
-      format!("fn {method_name}(&self) -> {PARENT_MODIFIER_STRUCT_NAME} {{",),
+      format!("fn {method_name}(&self) -> {PARENT_MODIFIER_STRUCT_NAME} {{"),
       indent_style,
     ));
 
@@ -134,7 +134,7 @@ pub(crate) fn generate_modifiers(
         methods.push(indent(format!("/// {description}"), indent_style));
       }
       methods.push(indent(
-        format!("fn {method_name}(&self) -> {struct_name} {{",),
+        format!("fn {method_name}(&self) -> {struct_name} {{"),
         indent_style,
       ));
       methods.push(indent(
@@ -179,13 +179,13 @@ pub(crate) fn generate_value_sets(
       }
 
       sections.push(indent(
-        format!("fn {method_name}(&self) -> String {{",),
+        format!("fn {method_name}(&self) -> String {{"),
         indent_style,
       ));
 
       sections.push(indent(
         indent(
-          format!("self.append_string_to_skribble_value(\"{value_name}\")",),
+          format!("self.append_string_to_skribble_value(\"{value_name}\")"),
           indent_style,
         ),
         indent_style,
@@ -248,7 +248,7 @@ pub(crate) fn generate_atoms(
     }
 
     trait_content.push(indent(
-      format!("fn {method_name}(&self) -> {atom_struct_name} {{",),
+      format!("fn {method_name}(&self) -> {atom_struct_name} {{"),
       indent_style,
     ));
 
@@ -281,13 +281,13 @@ pub(crate) fn generate_palette(
     let method_name = name.to_snake_case();
 
     sections.push(indent(
-      format!("fn {method_name}(&self) -> String {{",),
+      format!("fn {method_name}(&self) -> String {{"),
       indent_style,
     ));
 
     sections.push(indent(
       indent(
-        format!("self.append_string_to_skribble_value(\"{name}\")",),
+        format!("self.append_string_to_skribble_value(\"{name}\")"),
         indent_style,
       ),
       indent_style,
@@ -297,6 +297,67 @@ pub(crate) fn generate_palette(
   }
 
   sections.push("}".into());
+}
+
+pub(crate) fn generate_css_variables(
+  config: &MergedConfig,
+  variable_prefix: impl AsRef<str>,
+  indent_style: IndentStyle,
+  sections: &mut Vec<String>,
+) {
+  let mut entries = vec![
+    indoc!(
+      "
+    pub fn vars() -> CssVariables {
+      CssVariables
+    }
+    pub struct CssVariables;
+    impl CssVariables {"
+    )
+    .into(),
+  ];
+  let mut colors = vec!["pub trait Color: SkribbleValue {".into()];
+
+  for (name, css_variable) in config.css_variables.iter() {
+    let method_name = name.to_snake_case();
+    entries.push(indent(
+      format!("fn {method_name}(&self) -> String {{"),
+      indent_style,
+    ));
+
+    entries.push(indent(
+      indent(
+        format!(
+          "\"{}\".into()",
+          css_variable.get_variable(variable_prefix.as_ref())
+        ),
+        indent_style,
+      ),
+      indent_style,
+    ));
+
+    entries.push(indent("}", indent_style));
+
+    if css_variable.syntax.is_color() {
+      colors.push(indent(
+        format!("fn {method_name}(&self) -> String {{"),
+        indent_style,
+      ));
+      colors.push(indent(
+        indent(
+          "self.append_string_to_skribble_value(\"{name}\")",
+          indent_style,
+        ),
+        indent_style,
+      ));
+      colors.push(indent("}", indent_style))
+    }
+  }
+
+  entries.push("}".into());
+  colors.push("}".into());
+  sections.push(entries.join("\n"));
+  sections.push(colors.join("\n"));
 }
 
 fn get_value_set_trait_name(value_set_name: impl Into<String>) -> String {

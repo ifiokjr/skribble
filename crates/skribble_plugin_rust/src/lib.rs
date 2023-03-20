@@ -35,12 +35,12 @@ impl Plugin for RustPlugin {
     "skribble_plugin_rust".into()
   }
 
-  fn generate_code(&self, config: &MergedConfig) -> AnyResult<GeneratedFiles> {
+  fn generate_code(&self, config: &MergedConfig, options: &Options) -> AnyResult<GeneratedFiles> {
     let mut files = GeneratedFiles::default();
     files.push(
       GeneratedFile::builder()
         .path("./src/skribble.rs")
-        .content(self.generate_file_contents(config))
+        .content(self.generate_file_contents(config, options))
         .build(),
     );
 
@@ -54,12 +54,19 @@ impl Plugin for RustPlugin {
 }
 
 impl RustPlugin {
-  fn generate_file_contents(&self, config: &MergedConfig) -> String {
+  fn generate_file_contents(&self, config: &MergedConfig, options: &Options) -> String {
     let mut method_names: IndexSet<String> = indexset! {};
     let indent_style = IndentStyle::default();
     let mut sections = Vec::<String>::new();
     let mut trait_names = vec![];
     let mut struct_names_map: IndexMap<String, usize> = indexmap! {"SkribbleRoot".into() => 0};
+
+    generate_css_variables(
+      config,
+      &options.variable_prefix,
+      indent_style,
+      &mut sections,
+    );
 
     // media queries
     generate_media_queries(

@@ -33,6 +33,218 @@ pub trait SkribbleValue {
     format!("{}:${}", self.get_skribble_value(), value.as_ref())
   }
 }
+pub fn vars() -> CssVariables {
+  CssVariables
+}
+pub struct CssVariables;
+impl CssVariables {
+  fn primary(&self) -> String {
+    "--sk-p".into()
+  }
+  fn primary_content(&self) -> String {
+    "--sk-pc".into()
+  }
+  fn secondary(&self) -> String {
+    "--sk-s".into()
+  }
+  fn secondary_content(&self) -> String {
+    "--sk-sc".into()
+  }
+  fn accent(&self) -> String {
+    "--sk-a".into()
+  }
+  fn accent_content(&self) -> String {
+    "--sk-ac".into()
+  }
+  fn neutral(&self) -> String {
+    "--sk-n".into()
+  }
+  fn neutral_content(&self) -> String {
+    "--sk-nc".into()
+  }
+  fn base100(&self) -> String {
+    "--sk-b1".into()
+  }
+  fn base200(&self) -> String {
+    "--sk-b2".into()
+  }
+  fn base300(&self) -> String {
+    "--sk-b3".into()
+  }
+  fn base_content(&self) -> String {
+    "--sk-bc".into()
+  }
+  fn info(&self) -> String {
+    "--sk-in".into()
+  }
+  fn info_content(&self) -> String {
+    "--sk-inc".into()
+  }
+  fn success(&self) -> String {
+    "--sk-su".into()
+  }
+  fn success_content(&self) -> String {
+    "--sk-suc".into()
+  }
+  fn warning(&self) -> String {
+    "--sk-wa".into()
+  }
+  fn warning_content(&self) -> String {
+    "--sk-wac".into()
+  }
+  fn error(&self) -> String {
+    "--sk-er".into()
+  }
+  fn error_content(&self) -> String {
+    "--sk-erc".into()
+  }
+  fn container_max_width(&self) -> String {
+    "--sk-container-max-width".into()
+  }
+  fn empty(&self) -> String {
+    "--sk-empty".into()
+  }
+  fn filter_blur(&self) -> String {
+    "--sk-filter-blur".into()
+  }
+  fn filter_brightness(&self) -> String {
+    "--sk-filter-brightness".into()
+  }
+  fn filter_contrast(&self) -> String {
+    "--sk-filter-contrast".into()
+  }
+  fn filter_custom(&self) -> String {
+    "--sk-filter-custom".into()
+  }
+  fn filter_grayscale(&self) -> String {
+    "--sk-filter-grayscale".into()
+  }
+  fn filter_hue_rotate(&self) -> String {
+    "--sk-filter-hue-rotate".into()
+  }
+  fn filter_invert(&self) -> String {
+    "--sk-filter-invert".into()
+  }
+  fn filter_saturate(&self) -> String {
+    "--sk-filter-saturate".into()
+  }
+  fn filter_sepia(&self) -> String {
+    "--sk-filter-sepia".into()
+  }
+  fn filter_drop_shadow(&self) -> String {
+    "--sk-filter-drop-shadow".into()
+  }
+  fn group_nested_filter(&self) -> String {
+    "--sk-group-nested-filter".into()
+  }
+  fn backdrop_blur(&self) -> String {
+    "--sk-backdrop-blur".into()
+  }
+  fn backdrop_brightness(&self) -> String {
+    "--sk-backdrop-brightness".into()
+  }
+  fn backdrop_contrast(&self) -> String {
+    "--sk-backdrop-contrast".into()
+  }
+  fn backdrop_custom(&self) -> String {
+    "--sk-backdrop-custom".into()
+  }
+  fn backdrop_grayscale(&self) -> String {
+    "--sk-backdrop-grayscale".into()
+  }
+  fn backdrop_hue_rotate(&self) -> String {
+    "--sk-backdrop-hue-rotate".into()
+  }
+  fn backdrop_invert(&self) -> String {
+    "--sk-backdrop-invert".into()
+  }
+  fn backdrop_saturate(&self) -> String {
+    "--sk-backdrop-saturate".into()
+  }
+  fn backdrop_sepia(&self) -> String {
+    "--sk-backdrop-sepia".into()
+  }
+  fn backdrop_drop_shadow(&self) -> String {
+    "--sk-backdrop-drop-shadow".into()
+  }
+  fn group_nested_backdrop(&self) -> String {
+    "--sk-group-nested-backdrop".into()
+  }
+  fn default_transition_duration(&self) -> String {
+    "--sk-default-transition-duration".into()
+  }
+  fn default_animation_duration(&self) -> String {
+    "--sk-default-animation-duration".into()
+  }
+  fn enter_translate_x(&self) -> String {
+    "--sk-etx".into()
+  }
+  fn enter_translate_y(&self) -> String {
+    "--sk-ety".into()
+  }
+}
+pub trait Color: SkribbleValue {
+  fn primary(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+  fn primary_content(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+  fn secondary(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+  fn secondary_content(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+  fn accent(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+  fn accent_content(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+  fn neutral(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+  fn neutral_content(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+  fn base100(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+  fn base200(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+  fn base300(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+  fn base_content(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+  fn info(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+  fn info_content(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+  fn success(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+  fn success_content(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+  fn warning(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+  fn warning_content(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+  fn error(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+  fn error_content(&self) -> String {
+    self.append_string_to_skribble_value("{name}")
+  }
+}
 pub struct MediaQueryDeviceCategoriesChild(String);
 impl SkribbleValue for MediaQueryDeviceCategoriesChild {
   fn from_ref(value: impl AsRef<str>) -> Self {

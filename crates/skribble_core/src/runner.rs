@@ -92,7 +92,7 @@ impl SkribbleRunner {
 
     for boxed_plugin in plugins.iter() {
       let plugin = boxed_plugin.as_ref();
-      let generated = plugin.generate_code(config).map_err(|e| {
+      let generated = plugin.generate_code(config, &self.options).map_err(|e| {
         Error::PluginGenerateCodeError {
           id: plugin.get_id(),
           source: e,
@@ -111,12 +111,14 @@ impl SkribbleRunner {
 
     for boxed_plugin in plugins.iter() {
       let plugin = boxed_plugin.as_ref();
-      plugin.mutate_config(&mut wrapped_config).map_err(|e| {
-        Error::PluginMutateConfigError {
-          id: plugin.get_id(),
-          source: e,
-        }
-      })?;
+      plugin
+        .mutate_config(&mut wrapped_config, &self.options)
+        .map_err(|e| {
+          Error::PluginMutateConfigError {
+            id: plugin.get_id(),
+            source: e,
+          }
+        })?;
     }
 
     Ok(wrapped_config)
