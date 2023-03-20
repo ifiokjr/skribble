@@ -197,13 +197,14 @@ fn get_method_name(name: impl Into<String>, method_names: &mut IndexSet<String>)
   let mut index = 0;
   let mut current_method_name = method_name.clone();
   loop {
-    if !current_method_name.contains(&method_name) {
-      method_names.insert(method_name.clone());
-      break;
+    if method_names.contains(&current_method_name) {
+      index += 1;
+      current_method_name = format!("{}{}", method_name, index);
+      continue;
     }
 
-    index += 1;
-    current_method_name = format!("{}{}", method_name, index);
+    method_names.insert(current_method_name.clone());
+    break;
   }
 
   current_method_name

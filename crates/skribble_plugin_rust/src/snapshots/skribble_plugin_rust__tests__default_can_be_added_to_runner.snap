@@ -143,18 +143,50 @@ pub trait MediaQueryDarkMode: SkribbleValue {
     MediaQueryDarkModeChild::from_ref(self.append_to_skribble_value("light"))
   }
 }
+pub struct ParentModifierChild(String);
+impl SkribbleValue for ParentModifierChild {
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+
+pub trait ParentModifier: SkribbleValue {
+  /// This class modifier becomes active when when the text direction of any parent nodes is set to right to left.
+  fn rtl(&self) -> ParentModifierChild {
+    ParentModifierChild::from_ref(self.append_to_skribble_value("rtl"))
+  /// This class modifier becomes active when a parent group is hovered.
+  fn group_hover(&self) -> ParentModifierChild {
+    ParentModifierChild::from_ref(self.append_to_skribble_value("groupHover"))
+  /// This class modifier becomes active when a parent group is focused.
+  fn group_focus(&self) -> ParentModifierChild {
+    ParentModifierChild::from_ref(self.append_to_skribble_value("groupFocus"))
+  /// This class modifier becomes active when a parent group is active.
+  fn group_active(&self) -> ParentModifierChild {
+    ParentModifierChild::from_ref(self.append_to_skribble_value("groupActive"))
+  /// This class modifier becomes active when a parent group is visited.
+  fn group_visited(&self) -> ParentModifierChild {
+    ParentModifierChild::from_ref(self.append_to_skribble_value("groupVisited"))
 impl MediaQueryDeviceCategories for SkribbleRoot {}
 impl MediaQueryBreakpoints for SkribbleRoot {}
 impl MediaQueryOrientation for SkribbleRoot {}
 impl MediaQueryMotion for SkribbleRoot {}
 impl MediaQueryDarkMode for SkribbleRoot {}
+impl ParentModifier for SkribbleRoot {}
 impl MediaQueryBreakpoints for MediaQueryDeviceCategoriesChild {}
 impl MediaQueryOrientation for MediaQueryDeviceCategoriesChild {}
 impl MediaQueryMotion for MediaQueryDeviceCategoriesChild {}
 impl MediaQueryDarkMode for MediaQueryDeviceCategoriesChild {}
+impl ParentModifier for MediaQueryDeviceCategoriesChild {}
 impl MediaQueryOrientation for MediaQueryBreakpointsChild {}
 impl MediaQueryMotion for MediaQueryBreakpointsChild {}
 impl MediaQueryDarkMode for MediaQueryBreakpointsChild {}
+impl ParentModifier for MediaQueryBreakpointsChild {}
 impl MediaQueryMotion for MediaQueryOrientationChild {}
 impl MediaQueryDarkMode for MediaQueryOrientationChild {}
+impl ParentModifier for MediaQueryOrientationChild {}
 impl MediaQueryDarkMode for MediaQueryMotionChild {}
+impl ParentModifier for MediaQueryMotionChild {}
+impl ParentModifier for MediaQueryDarkModeChild {}
