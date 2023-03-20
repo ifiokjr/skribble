@@ -3,56 +3,6 @@ use indexmap::IndexSet;
 
 use super::*;
 
-pub(crate) fn generate_parent_modifiers(
-  config: &MergedConfig,
-  indent_style: IndentStyle,
-  method_names: &mut IndexSet<String>,
-  sections: &mut Vec<String>,
-  struct_names_map: &mut IndexMap<String, usize>,
-  trait_names: &mut Vec<String>,
-) {
-  // parent modifiers
-  sections.push(generate_struct(PARENT_MODIFIER_STRUCT_NAME));
-  sections.push(generate_impl_skribble_value(PARENT_MODIFIER_STRUCT_NAME));
-  sections.push(format!(
-    "pub trait {PARENT_MODIFIER_TRAIT_NAME}: SkribbleValue {{"
-  ));
-
-  for (name, modifier) in config.parent_modifiers.iter() {
-    let method_name = get_method_name(name, method_names);
-
-    if let Some(ref description) = modifier.description {
-      let description = description
-        .split('\n')
-        .collect::<Vec<&str>>()
-        .join("\n/// ");
-      sections.push(indent(format!("/// {description}"), indent_style));
-    }
-
-    sections.push(indent(
-      format!("fn {method_name}(&self) -> {PARENT_MODIFIER_STRUCT_NAME} {{",),
-      indent_style,
-    ));
-
-    sections.push(indent(
-      indent(
-        format!(
-          "{PARENT_MODIFIER_STRUCT_NAME}::from_ref(self.append_to_skribble_value(\"{name}\"))"
-        ),
-        indent_style,
-      ),
-      indent_style,
-    ));
-
-    sections.push(indent("}", indent_style));
-  }
-
-  sections.push("}".into());
-
-  trait_names.push(PARENT_MODIFIER_TRAIT_NAME.into());
-  struct_names_map.insert(PARENT_MODIFIER_STRUCT_NAME.into(), trait_names.len());
-}
-
 pub(crate) fn generate_media_queries(
   config: &MergedConfig,
   indent_style: IndentStyle,
@@ -103,9 +53,108 @@ pub(crate) fn generate_media_queries(
   }
 }
 
-pub(crate) const PARENT_MODIFIER_TRAIT_NAME: &str = "ParentModifier";
+pub(crate) fn generate_parent_modifiers(
+  config: &MergedConfig,
+  indent_style: IndentStyle,
+  method_names: &mut IndexSet<String>,
+  sections: &mut Vec<String>,
+  struct_names_map: &mut IndexMap<String, usize>,
+  trait_names: &mut Vec<String>,
+) {
+  // parent modifiers
+  sections.push(generate_struct(PARENT_MODIFIER_STRUCT_NAME));
+  sections.push(generate_impl_skribble_value(PARENT_MODIFIER_STRUCT_NAME));
+  sections.push(format!(
+    "pub trait {PARENT_MODIFIER_TRAIT_NAME}: SkribbleValue {{"
+  ));
 
-pub(crate) const PARENT_MODIFIER_STRUCT_NAME: &str = "ParentModifierChild";
+  for (name, modifier) in config.parent_modifiers.iter() {
+    let method_name = get_method_name(name, method_names);
+
+    if let Some(ref description) = modifier.description {
+      let description = description
+        .split('\n')
+        .collect::<Vec<&str>>()
+        .join("\n/// ");
+      sections.push(indent(format!("/// {description}"), indent_style));
+    }
+
+    sections.push(indent(
+      format!("fn {method_name}(&self) -> {PARENT_MODIFIER_STRUCT_NAME} {{",),
+      indent_style,
+    ));
+
+    sections.push(indent(
+      indent(
+        format!(
+          "{PARENT_MODIFIER_STRUCT_NAME}::from_ref(self.append_to_skribble_value(\"{name}\"))"
+        ),
+        indent_style,
+      ),
+      indent_style,
+    ));
+
+    sections.push(indent("}", indent_style));
+  }
+
+  sections.push("}".into());
+
+  trait_names.push(PARENT_MODIFIER_TRAIT_NAME.into());
+  struct_names_map.insert(PARENT_MODIFIER_STRUCT_NAME.into(), trait_names.len());
+}
+
+const PARENT_MODIFIER_TRAIT_NAME: &str = "ParentModifier";
+const PARENT_MODIFIER_STRUCT_NAME: &str = "ParentModifierChild";
+
+pub(crate) fn generate_modifiers(
+  config: &MergedConfig,
+  indent_style: IndentStyle,
+  method_names: &mut IndexSet<String>,
+  sections: &mut Vec<String>,
+  struct_names_map: &mut IndexMap<String, usize>,
+  trait_names: &mut Vec<String>,
+) {
+  for (key, map) in config.modifiers.iter() {
+    let mut section = Vec::<String>::new();
+    let trait_name = format!("Modifier{}", key.to_pascal_case());
+    let struct_name = format!("{trait_name}Child");
+    section.push(generate_struct(&struct_name));
+    section.push(generate_impl_skribble_value(&struct_name));
+
+    let mut methods = vec![format!("pub trait {trait_name}: SkribbleValue {{")];
+
+    for (name, value) in map.iter() {
+      let method_name = get_method_name(name, method_names);
+
+      if let Some(ref description) = value.description {
+        let description = description
+          .split('\n')
+          .collect::<Vec<&str>>()
+          .join("\n/// ");
+        methods.push(indent(format!("/// {description}"), indent_style));
+      }
+      methods.push(indent(
+        format!("fn {method_name}(&self) -> {struct_name} {{",),
+        indent_style,
+      ));
+      methods.push(indent(
+        indent(
+          format!("{struct_name}::from_ref(self.append_to_skribble_value(\"{name}\"))"),
+          indent_style,
+        ),
+        indent_style,
+      ));
+      methods.push(indent("}", indent_style));
+    }
+
+    methods.push("}".into());
+    section.push(methods.join("\n"));
+
+    trait_names.push(trait_name);
+    struct_names_map.insert(struct_name, trait_names.len());
+    sections.push(section.join("\n"));
+  }
+}
 
 pub(crate) fn generate_impl_skribble_value(name: impl AsRef<str>) -> String {
   format!(
@@ -128,7 +177,8 @@ pub(crate) fn generate_impl_skribble_value(name: impl AsRef<str>) -> String {
 pub(crate) fn generate_struct_implementations(
   struct_names_map: &IndexMap<String, usize>,
   trait_names: &Vec<String>,
-) -> String {
+  sections: &mut Vec<String>,
+) {
   let mut content = Vec::<String>::new();
   for (struct_name, min_index) in struct_names_map.iter() {
     for (index, trait_name) in trait_names.iter().enumerate() {
@@ -138,7 +188,7 @@ pub(crate) fn generate_struct_implementations(
     }
   }
 
-  content.join("\n")
+  sections.push(content.join("\n"));
 }
 
 pub(crate) fn generate_struct(name: impl AsRef<str>) -> String {

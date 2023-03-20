@@ -80,12 +80,17 @@ impl RustPlugin {
       &mut trait_names,
     );
 
-    // Add the implementation for each of the structs.
-    sections.push(generate_struct_implementations(
-      &struct_names_map,
-      &trait_names,
-    ));
+    generate_modifiers(
+      config,
+      indent_style,
+      &mut method_names,
+      &mut sections,
+      &mut struct_names_map,
+      &mut trait_names,
+    );
 
+    // Add the implementation for each of the structs.
+    generate_struct_implementations(&struct_names_map, &trait_names, &mut sections);
     combine_sections_with_header(sections)
   }
 }
