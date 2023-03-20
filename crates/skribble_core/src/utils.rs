@@ -18,14 +18,6 @@ lazy_static! {
     Regex::new(r#"(?m)(?i)var\((--[a-zA-Z0-9_\-]+?)(?:,.*?)?\)"#).unwrap();
 }
 
-/// Retrieve the css variables from the provided css value.
-pub fn get_css_variables_from_string(value: &str) -> IndexSet<String> {
-  CSS_VARIABLE_REGEX
-    .captures_iter(value)
-    .map(|capture| capture[1].to_owned())
-    .collect()
-}
-
 /// Escape a css string.
 pub fn escape_css_string(value: &str) -> String {
   ESCAPE_CSS_STRING_REGEX
