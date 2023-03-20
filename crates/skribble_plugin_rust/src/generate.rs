@@ -156,6 +156,48 @@ pub(crate) fn generate_modifiers(
   }
 }
 
+pub(crate) fn generate_value_sets(
+  config: &MergedConfig,
+  indent_style: IndentStyle,
+  sections: &mut Vec<String>,
+) {
+  for (name, value_set) in config.value_sets.iter() {
+    let value_set_trait_name = get_value_set_trait_name(name);
+    sections.push(format!(
+      "pub trait {value_set_trait_name}: SkribbleValue {{"
+    ));
+
+    for (value_name, _) in value_set.values.iter() {
+      let method_name = value_name.to_snake_case();
+
+      if let Some(ref description) = value_set.description {
+        let description = description
+          .split('\n')
+          .collect::<Vec<&str>>()
+          .join("\n/// ");
+        sections.push(indent(format!("/// {description}"), indent_style));
+      }
+
+      sections.push(indent(
+        format!("fn {method_name}(&self) -> String {{",),
+        indent_style,
+      ));
+
+      sections.push(indent(
+        indent(
+          format!("self.append_string_to_skribble_value(\"{value_name}\")",),
+          indent_style,
+        ),
+        indent_style,
+      ));
+
+      sections.push(indent("}", indent_style));
+    }
+
+    sections.push("}".into());
+  }
+}
+
 const ATOM_TRAIT_NAME: &str = "Atom";
 
 pub(crate) fn generate_atoms(
@@ -188,7 +230,7 @@ pub(crate) fn generate_atoms(
       }
       LinkedValues::Values(ref value_set) => {
         for value_set_name in value_set.iter() {
-          let value_set_trait_name = get_value_set_trait_name(value_set_name);
+          let value_set_trait_name = get_value_set_trait_name(&value_set_name.value);
 
           struct_content.push(format!(
             "impl {value_set_trait_name} for {atom_struct_name} {{}}",
@@ -228,8 +270,8 @@ pub(crate) fn generate_atoms(
   sections.push(trait_content.join("\n"));
 }
 
-fn get_value_set_trait_name(value_set_name: &Prioritized<String>) -> String {
-  format!("ValueSet{}", value_set_name.to_pascal_case())
+fn get_value_set_trait_name(value_set_name: impl Into<String>) -> String {
+  format!("ValueSet{}", value_set_name.into().to_pascal_case())
 }
 
 fn generate_impl_skribble_value(name: impl AsRef<str>) -> String {
@@ -314,10 +356,12 @@ pub trait SkribbleValue {
   fn from_ref(value: impl AsRef<str>) -> Self;
   fn get_skribble_value(&self) -> &String;
   fn append_to_skribble_value(&self, value: impl AsRef<str>) -> String {
-    format!("{}{}", self.get_skribble_value(), value.as_ref())
+    format!("{}:{}", self.get_skribble_value(), value.as_ref())
   }
-}
-"#;
+  fn append_string_to_skribble_value(&self, value: impl AsRef<str>) -> String {
+    format!("{}:${}", self.get_skribble_value(), value.as_ref())
+  }
+}"#;
 
 pub(crate) fn combine_sections_with_header(sections: Vec<String>) -> String {
   format!("{HEADER}\n{}", sections.join("\n"))

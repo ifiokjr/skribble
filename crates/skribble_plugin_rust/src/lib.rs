@@ -97,6 +97,8 @@ impl RustPlugin {
       &mut trait_names,
     );
 
+    generate_value_sets(config, indent_style, &mut sections);
+
     // Add the implementation for each of the structs.
     generate_struct_implementations(&struct_names_map, &trait_names, &mut sections);
     combine_sections_with_header(sections)

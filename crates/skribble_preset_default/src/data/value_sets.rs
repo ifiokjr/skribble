@@ -31,7 +31,6 @@ lazy_static! {
             "whiteSpace" => "normal"
           }
         })
-        .description("")
         .build(),
       ValueSet::builder()
         .name("transitions")
@@ -81,7 +80,6 @@ lazy_static! {
           "shadow" => "box-shadow",
           "transform" => "transform",
         })
-        .description("")
         .build(),
       ValueSet::builder()
         .name("durations")
@@ -98,7 +96,6 @@ lazy_static! {
           "1500" => "1500ms",
           "2000" => "2000ms",
         })
-        .description("")
         .build(),
       ValueSet::builder()
         .name("easing")
@@ -108,7 +105,6 @@ lazy_static! {
           "out" => "cubic-bezier(0, 0, 0.2, 1)",
           "inOut" => "cubic-bezier(0.4, 0, 0.2, 1)",
         })
-        .description("")
         .build(),
       ValueSet::builder()
         .name("animationRepetitions")
@@ -123,7 +119,6 @@ lazy_static! {
           "out" => "cubic-bezier(0, 0, 0.2, 1)",
           "inOut" => "cubic-bezier(0.4, 0, 0.2, 1)",
         })
-        .description("")
         .build(),
       ValueSet::builder()
         .name("animationDirection")
@@ -133,7 +128,6 @@ lazy_static! {
           "alt" => "alternate",
           "altReverse" => "alternate-reverse"
         })
-        .description("")
         .build(),
       ValueSet::builder()
         .name("animationFillMode")

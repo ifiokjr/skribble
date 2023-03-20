@@ -27,10 +27,12 @@ pub trait SkribbleValue {
   fn from_ref(value: impl AsRef<str>) -> Self;
   fn get_skribble_value(&self) -> &String;
   fn append_to_skribble_value(&self, value: impl AsRef<str>) -> String {
-    format!("{}{}", self.get_skribble_value(), value.as_ref())
+    format!("{}:{}", self.get_skribble_value(), value.as_ref())
+  }
+  fn append_string_to_skribble_value(&self, value: impl AsRef<str>) -> String {
+    format!("{}:${}", self.get_skribble_value(), value.as_ref())
   }
 }
-
 pub struct MediaQueryDeviceCategoriesChild(String);
 impl SkribbleValue for MediaQueryDeviceCategoriesChild {
   fn from_ref(value: impl AsRef<str>) -> Self {
@@ -1269,6 +1271,492 @@ pub trait Atom: SkribbleValue {
   }
   fn opacity(&self) -> AtomOpacity {
     AtomOpacity::from_ref(self.append_to_skribble_value("opacity"))
+  }
+}
+pub trait ValueSetScreenReader: SkribbleValue {
+  fn only(&self) -> String {
+    self.append_string_to_skribble_value("only")
+  }
+  fn exclude(&self) -> String {
+    self.append_string_to_skribble_value("exclude")
+  }
+}
+pub trait ValueSetTransitions: SkribbleValue {
+  /// The built-in transition class values.
+  fn (&self) -> String {
+    self.append_string_to_skribble_value("")
+  }
+  /// The built-in transition class values.
+  fn none(&self) -> String {
+    self.append_string_to_skribble_value("none")
+  }
+  /// The built-in transition class values.
+  fn all(&self) -> String {
+    self.append_string_to_skribble_value("all")
+  }
+  /// The built-in transition class values.
+  fn colors(&self) -> String {
+    self.append_string_to_skribble_value("colors")
+  }
+  /// The built-in transition class values.
+  fn opacity(&self) -> String {
+    self.append_string_to_skribble_value("opacity")
+  }
+  /// The built-in transition class values.
+  fn shadow(&self) -> String {
+    self.append_string_to_skribble_value("shadow")
+  }
+  /// The built-in transition class values.
+  fn transform(&self) -> String {
+    self.append_string_to_skribble_value("transform")
+  }
+}
+pub trait ValueSetTransitionProperties: SkribbleValue {
+  fn (&self) -> String {
+    self.append_string_to_skribble_value("")
+  }
+  fn none(&self) -> String {
+    self.append_string_to_skribble_value("none")
+  }
+  fn all(&self) -> String {
+    self.append_string_to_skribble_value("all")
+  }
+  fn colors(&self) -> String {
+    self.append_string_to_skribble_value("colors")
+  }
+  fn opacity(&self) -> String {
+    self.append_string_to_skribble_value("opacity")
+  }
+  fn shadow(&self) -> String {
+    self.append_string_to_skribble_value("shadow")
+  }
+  fn transform(&self) -> String {
+    self.append_string_to_skribble_value("transform")
+  }
+}
+pub trait ValueSetDurations: SkribbleValue {
+  fn 0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  fn 75(&self) -> String {
+    self.append_string_to_skribble_value("75")
+  }
+  fn 100(&self) -> String {
+    self.append_string_to_skribble_value("100")
+  }
+  fn 150(&self) -> String {
+    self.append_string_to_skribble_value("150")
+  }
+  fn 200(&self) -> String {
+    self.append_string_to_skribble_value("200")
+  }
+  fn 300(&self) -> String {
+    self.append_string_to_skribble_value("300")
+  }
+  fn 500(&self) -> String {
+    self.append_string_to_skribble_value("500")
+  }
+  fn 700(&self) -> String {
+    self.append_string_to_skribble_value("700")
+  }
+  fn 1000(&self) -> String {
+    self.append_string_to_skribble_value("1000")
+  }
+  fn 1500(&self) -> String {
+    self.append_string_to_skribble_value("1500")
+  }
+  fn 2000(&self) -> String {
+    self.append_string_to_skribble_value("2000")
+  }
+}
+pub trait ValueSetEasing: SkribbleValue {
+  fn linear(&self) -> String {
+    self.append_string_to_skribble_value("linear")
+  }
+  fn in(&self) -> String {
+    self.append_string_to_skribble_value("in")
+  }
+  fn out(&self) -> String {
+    self.append_string_to_skribble_value("out")
+  }
+  fn in_out(&self) -> String {
+    self.append_string_to_skribble_value("inOut")
+  }
+}
+pub trait ValueSetAnimationRepetitions: SkribbleValue {
+  fn 0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  fn 0_5(&self) -> String {
+    self.append_string_to_skribble_value("0.5")
+  }
+  fn 1(&self) -> String {
+    self.append_string_to_skribble_value("1")
+  }
+  fn 2(&self) -> String {
+    self.append_string_to_skribble_value("2")
+  }
+  fn 3(&self) -> String {
+    self.append_string_to_skribble_value("3")
+  }
+  fn infinite(&self) -> String {
+    self.append_string_to_skribble_value("infinite")
+  }
+  fn in(&self) -> String {
+    self.append_string_to_skribble_value("in")
+  }
+  fn out(&self) -> String {
+    self.append_string_to_skribble_value("out")
+  }
+  fn in_out(&self) -> String {
+    self.append_string_to_skribble_value("inOut")
+  }
+}
+pub trait ValueSetAnimationDirection: SkribbleValue {
+  fn normal(&self) -> String {
+    self.append_string_to_skribble_value("normal")
+  }
+  fn reverse(&self) -> String {
+    self.append_string_to_skribble_value("reverse")
+  }
+  fn alt(&self) -> String {
+    self.append_string_to_skribble_value("alt")
+  }
+  fn alt_reverse(&self) -> String {
+    self.append_string_to_skribble_value("altReverse")
+  }
+}
+pub trait ValueSetAnimationFillMode: SkribbleValue {
+  /// These are the default animation fill mode values.
+  fn none(&self) -> String {
+    self.append_string_to_skribble_value("none")
+  }
+  /// These are the default animation fill mode values.
+  fn forwards(&self) -> String {
+    self.append_string_to_skribble_value("forwards")
+  }
+  /// These are the default animation fill mode values.
+  fn backwards(&self) -> String {
+    self.append_string_to_skribble_value("backwards")
+  }
+  /// These are the default animation fill mode values.
+  fn both(&self) -> String {
+    self.append_string_to_skribble_value("both")
+  }
+}
+pub trait ValueSetAnimationState: SkribbleValue {
+  /// These are the default animation state values.
+  fn running(&self) -> String {
+    self.append_string_to_skribble_value("running")
+  }
+  /// These are the default animation state values.
+  fn paused(&self) -> String {
+    self.append_string_to_skribble_value("paused")
+  }
+}
+pub trait ValueSetOpacity: SkribbleValue {
+  /// These are the default opacity values.
+  fn 0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  /// These are the default opacity values.
+  fn 5(&self) -> String {
+    self.append_string_to_skribble_value("5")
+  }
+  /// These are the default opacity values.
+  fn 10(&self) -> String {
+    self.append_string_to_skribble_value("10")
+  }
+  /// These are the default opacity values.
+  fn 20(&self) -> String {
+    self.append_string_to_skribble_value("20")
+  }
+  /// These are the default opacity values.
+  fn 30(&self) -> String {
+    self.append_string_to_skribble_value("30")
+  }
+  /// These are the default opacity values.
+  fn 40(&self) -> String {
+    self.append_string_to_skribble_value("40")
+  }
+  /// These are the default opacity values.
+  fn 50(&self) -> String {
+    self.append_string_to_skribble_value("50")
+  }
+  /// These are the default opacity values.
+  fn 60(&self) -> String {
+    self.append_string_to_skribble_value("60")
+  }
+  /// These are the default opacity values.
+  fn 70(&self) -> String {
+    self.append_string_to_skribble_value("70")
+  }
+  /// These are the default opacity values.
+  fn 75(&self) -> String {
+    self.append_string_to_skribble_value("75")
+  }
+  /// These are the default opacity values.
+  fn 80(&self) -> String {
+    self.append_string_to_skribble_value("80")
+  }
+  /// These are the default opacity values.
+  fn 90(&self) -> String {
+    self.append_string_to_skribble_value("90")
+  }
+  /// These are the default opacity values.
+  fn 95(&self) -> String {
+    self.append_string_to_skribble_value("95")
+  }
+  /// These are the default opacity values.
+  fn 100(&self) -> String {
+    self.append_string_to_skribble_value("100")
+  }
+}
+pub trait ValueSetSpacing: SkribbleValue {
+  fn 0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  fn 1(&self) -> String {
+    self.append_string_to_skribble_value("1")
+  }
+  fn 2(&self) -> String {
+    self.append_string_to_skribble_value("2")
+  }
+  fn 3(&self) -> String {
+    self.append_string_to_skribble_value("3")
+  }
+  fn 4(&self) -> String {
+    self.append_string_to_skribble_value("4")
+  }
+  fn 5(&self) -> String {
+    self.append_string_to_skribble_value("5")
+  }
+  fn 6(&self) -> String {
+    self.append_string_to_skribble_value("6")
+  }
+  fn 7(&self) -> String {
+    self.append_string_to_skribble_value("7")
+  }
+  fn 8(&self) -> String {
+    self.append_string_to_skribble_value("8")
+  }
+  fn 9(&self) -> String {
+    self.append_string_to_skribble_value("9")
+  }
+  fn 10(&self) -> String {
+    self.append_string_to_skribble_value("10")
+  }
+  fn 11(&self) -> String {
+    self.append_string_to_skribble_value("11")
+  }
+  fn 12(&self) -> String {
+    self.append_string_to_skribble_value("12")
+  }
+  fn 14(&self) -> String {
+    self.append_string_to_skribble_value("14")
+  }
+  fn 16(&self) -> String {
+    self.append_string_to_skribble_value("16")
+  }
+  fn 20(&self) -> String {
+    self.append_string_to_skribble_value("20")
+  }
+  fn 24(&self) -> String {
+    self.append_string_to_skribble_value("24")
+  }
+  fn 28(&self) -> String {
+    self.append_string_to_skribble_value("28")
+  }
+  fn 32(&self) -> String {
+    self.append_string_to_skribble_value("32")
+  }
+  fn 36(&self) -> String {
+    self.append_string_to_skribble_value("36")
+  }
+  fn 40(&self) -> String {
+    self.append_string_to_skribble_value("40")
+  }
+  fn 44(&self) -> String {
+    self.append_string_to_skribble_value("44")
+  }
+  fn 48(&self) -> String {
+    self.append_string_to_skribble_value("48")
+  }
+  fn 52(&self) -> String {
+    self.append_string_to_skribble_value("52")
+  }
+  fn 56(&self) -> String {
+    self.append_string_to_skribble_value("56")
+  }
+  fn 60(&self) -> String {
+    self.append_string_to_skribble_value("60")
+  }
+  fn 64(&self) -> String {
+    self.append_string_to_skribble_value("64")
+  }
+  fn 72(&self) -> String {
+    self.append_string_to_skribble_value("72")
+  }
+  fn 80(&self) -> String {
+    self.append_string_to_skribble_value("80")
+  }
+  fn 96(&self) -> String {
+    self.append_string_to_skribble_value("96")
+  }
+  fn px(&self) -> String {
+    self.append_string_to_skribble_value("px")
+  }
+  fn 0_5(&self) -> String {
+    self.append_string_to_skribble_value("0.5")
+  }
+  fn 1_5(&self) -> String {
+    self.append_string_to_skribble_value("1.5")
+  }
+  fn 2_5(&self) -> String {
+    self.append_string_to_skribble_value("2.5")
+  }
+  fn 3_5(&self) -> String {
+    self.append_string_to_skribble_value("3.5")
+  }
+}
+pub trait ValueSetZIndex: SkribbleValue {
+  fn 0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  fn 1(&self) -> String {
+    self.append_string_to_skribble_value("1")
+  }
+  fn 2(&self) -> String {
+    self.append_string_to_skribble_value("2")
+  }
+  fn 3(&self) -> String {
+    self.append_string_to_skribble_value("3")
+  }
+  fn 4(&self) -> String {
+    self.append_string_to_skribble_value("4")
+  }
+  fn 5(&self) -> String {
+    self.append_string_to_skribble_value("5")
+  }
+  fn 10(&self) -> String {
+    self.append_string_to_skribble_value("10")
+  }
+  fn 20(&self) -> String {
+    self.append_string_to_skribble_value("20")
+  }
+  fn 30(&self) -> String {
+    self.append_string_to_skribble_value("30")
+  }
+  fn 40(&self) -> String {
+    self.append_string_to_skribble_value("40")
+  }
+  fn 50(&self) -> String {
+    self.append_string_to_skribble_value("50")
+  }
+  fn 60(&self) -> String {
+    self.append_string_to_skribble_value("60")
+  }
+  fn auto(&self) -> String {
+    self.append_string_to_skribble_value("auto")
+  }
+  fn 1(&self) -> String {
+    self.append_string_to_skribble_value("-1")
+  }
+  fn 2(&self) -> String {
+    self.append_string_to_skribble_value("-2")
+  }
+  fn 3(&self) -> String {
+    self.append_string_to_skribble_value("-3")
+  }
+  fn 5(&self) -> String {
+    self.append_string_to_skribble_value("-5")
+  }
+}
+pub trait ValueSetDirection: SkribbleValue {
+  fn ltr(&self) -> String {
+    self.append_string_to_skribble_value("ltr")
+  }
+  fn rtl(&self) -> String {
+    self.append_string_to_skribble_value("rtl")
+  }
+}
+pub trait ValueSetZoom: SkribbleValue {
+  fn 0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  fn 50(&self) -> String {
+    self.append_string_to_skribble_value("50")
+  }
+  fn 75(&self) -> String {
+    self.append_string_to_skribble_value("75")
+  }
+  fn 90(&self) -> String {
+    self.append_string_to_skribble_value("90")
+  }
+  fn 95(&self) -> String {
+    self.append_string_to_skribble_value("95")
+  }
+  fn 100(&self) -> String {
+    self.append_string_to_skribble_value("100")
+  }
+  fn 105(&self) -> String {
+    self.append_string_to_skribble_value("105")
+  }
+  fn 110(&self) -> String {
+    self.append_string_to_skribble_value("110")
+  }
+  fn 125(&self) -> String {
+    self.append_string_to_skribble_value("125")
+  }
+  fn 150(&self) -> String {
+    self.append_string_to_skribble_value("150")
+  }
+}
+pub trait ValueSetFonts: SkribbleValue {
+  fn sans(&self) -> String {
+    self.append_string_to_skribble_value("sans")
+  }
+  fn serif(&self) -> String {
+    self.append_string_to_skribble_value("serif")
+  }
+  fn mono(&self) -> String {
+    self.append_string_to_skribble_value("mono")
+  }
+}
+pub trait ValueSetSpinAnimation: SkribbleValue {
+  /// The spin animation.
+  fn spin(&self) -> String {
+    self.append_string_to_skribble_value("spin")
+  }
+}
+pub trait ValueSetPingAnimation: SkribbleValue {
+  /// The ping animation.
+  fn ping(&self) -> String {
+    self.append_string_to_skribble_value("ping")
+  }
+}
+pub trait ValueSetPulseAnimation: SkribbleValue {
+  /// The pulse animation.
+  fn pulse(&self) -> String {
+    self.append_string_to_skribble_value("pulse")
+  }
+}
+pub trait ValueSetBounceAnimation: SkribbleValue {
+  /// The bounce animation.
+  fn bounce(&self) -> String {
+    self.append_string_to_skribble_value("bounce")
+  }
+}
+pub trait ValueSetEnterAnimation: SkribbleValue {
+  /// The enter animation.
+  fn in(&self) -> String {
+    self.append_string_to_skribble_value("in")
+  }
+}
+pub trait ValueSetExitAnimation: SkribbleValue {
+  /// The exit animation.
+  fn out(&self) -> String {
+    self.append_string_to_skribble_value("out")
   }
 }
 impl MediaQueryDeviceCategories for SkribbleRoot {}
