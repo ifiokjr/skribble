@@ -116,7 +116,9 @@ mod tests {
 
     let mut runner = SkribbleRunner::new(config);
     let _ = runner.run();
-    let content = &runner.generate().unwrap().get(0).unwrap().content;
+    let result = runner.generate().unwrap();
+    let generated = result.get(0).unwrap();
+    let content = &generated.content;
     insta::assert_display_snapshot!(content);
   }
 }

@@ -31,5 +31,6 @@
   },
   "[rust]": {
     "editor.defaultFormatter": "dprint.dprint"
-  }
+  },
+  "rust-analyzer.checkOnSave.command": "clippy"
 }

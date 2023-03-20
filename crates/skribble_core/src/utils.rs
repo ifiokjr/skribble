@@ -3,7 +3,7 @@ use std::str::FromStr;
 use colorsys::ColorAlpha;
 use colorsys::Hsl;
 use colorsys::Rgb;
-use indexmap::IndexSet;
+
 use lazy_static::lazy_static;
 use regex::Regex;
 use typed_builder::TypedBuilder;

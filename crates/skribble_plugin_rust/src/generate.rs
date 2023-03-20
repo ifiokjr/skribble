@@ -176,7 +176,7 @@ pub(crate) fn generate_impl_skribble_value(name: impl AsRef<str>) -> String {
 
 pub(crate) fn generate_struct_implementations(
   struct_names_map: &IndexMap<String, usize>,
-  trait_names: &Vec<String>,
+  trait_names: &[String],
   sections: &mut Vec<String>,
 ) {
   let mut content = Vec::<String>::new();
