@@ -116,7 +116,7 @@ fn generate_parent_modifiers(
   struct_names_map.insert(PARENT_MODIFIER_STRUCT_NAME.into(), trait_names.len());
 }
 
-fn modifier_docs(values: &Vec<String>) -> String {
+fn modifier_docs(values: &[String]) -> String {
   let value = values.join(", ");
   format!("{value} {{\n  /* ... */\n}}")
 }
