@@ -1152,26 +1152,56 @@ impl SkribbleValue for ParentModifierChild {
 pub trait ParentModifier: SkribbleValue {
   /// This class modifier becomes active when when the text direction of any
   /// parent nodes is set to right to left.
+  ///
+  /// ```css
+  /// [dir=rtl] & {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn rtl(&self) -> ParentModifierChild {
     ParentModifierChild::from_ref(self.append_to_skribble_value("rtl"))
   }
   /// This class modifier becomes active when a parent group is hovered.
+  ///
+  /// ```css
+  /// .\$group:hover &, .group:hover &, [role='group']:hover & {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn group_hover(&self) -> ParentModifierChild {
     ParentModifierChild::from_ref(self.append_to_skribble_value("groupHover"))
   }
   /// This class modifier becomes active when a parent group is focused.
+  ///
+  /// ```css
+  /// .\$group:focus &, .group:focus &, [role='group']:focus & {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn group_focus(&self) -> ParentModifierChild {
     ParentModifierChild::from_ref(self.append_to_skribble_value("groupFocus"))
   }
   /// This class modifier becomes active when a parent group is active.
+  ///
+  /// ```css
+  /// .\$group:active &, .group:active &, [role='group']:active & {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn group_active(&self) -> ParentModifierChild {
     ParentModifierChild::from_ref(self.append_to_skribble_value("groupActive"))
   }
   /// This class modifier becomes active when a parent group is visited.
+  ///
+  /// ```css
+  /// .\$group:visited &, .group:visited &, [role='group']:visited & {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn group_visited(&self) -> ParentModifierChild {
     ParentModifierChild::from_ref(self.append_to_skribble_value("groupVisited"))
@@ -1191,6 +1221,12 @@ impl SkribbleValue for ModifierHoverGroupChild {
 }
 pub trait ModifierHoverGroup: SkribbleValue {
   /// This class modifier becomes active when the element is hovered.
+  ///
+  /// ```css
+  /// &:hover {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn hover(&self) -> ModifierHoverGroupChild {
     ModifierHoverGroupChild::from_ref(self.append_to_skribble_value("hover"))
@@ -1209,26 +1245,56 @@ impl SkribbleValue for ModifierActiveGroupChild {
   }
 }
 pub trait ModifierActiveGroup: SkribbleValue {
+  /// ```css
+  /// &:active {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn active(&self) -> ModifierActiveGroupChild {
     ModifierActiveGroupChild::from_ref(self.append_to_skribble_value("active"))
   }
+  /// ```css
+  /// &[aria-current=page] {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn active_link(&self) -> ModifierActiveGroupChild {
     ModifierActiveGroupChild::from_ref(self.append_to_skribble_value("activeLink"))
   }
+  /// ```css
+  /// &[aria-current=location] {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn active_location(&self) -> ModifierActiveGroupChild {
     ModifierActiveGroupChild::from_ref(self.append_to_skribble_value("activeLocation"))
   }
+  /// ```css
+  /// &[aria-current=date] {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn active_date(&self) -> ModifierActiveGroupChild {
     ModifierActiveGroupChild::from_ref(self.append_to_skribble_value("activeDate"))
   }
+  /// ```css
+  /// &[aria-current=time] {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn active_time(&self) -> ModifierActiveGroupChild {
     ModifierActiveGroupChild::from_ref(self.append_to_skribble_value("activeTime"))
   }
+  /// ```css
+  /// &[aria-current=step] {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn active_step(&self) -> ModifierActiveGroupChild {
     ModifierActiveGroupChild::from_ref(self.append_to_skribble_value("activeStep"))
@@ -1247,6 +1313,11 @@ impl SkribbleValue for ModifierFocusGroupChild {
   }
 }
 pub trait ModifierFocusGroup: SkribbleValue {
+  /// ```css
+  /// &:focus {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn focus(&self) -> ModifierFocusGroupChild {
     ModifierFocusGroupChild::from_ref(self.append_to_skribble_value("focus"))
@@ -1265,6 +1336,11 @@ impl SkribbleValue for ModifierFocusWithinGroupChild {
   }
 }
 pub trait ModifierFocusWithinGroup: SkribbleValue {
+  /// ```css
+  /// &:focus-within {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn focus_within(&self) -> ModifierFocusWithinGroupChild {
     ModifierFocusWithinGroupChild::from_ref(self.append_to_skribble_value("focusWithin"))
@@ -1283,6 +1359,11 @@ impl SkribbleValue for ModifierFocusVisibleGroupChild {
   }
 }
 pub trait ModifierFocusVisibleGroup: SkribbleValue {
+  /// ```css
+  /// &:focus-visible {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn focus_visible(&self) -> ModifierFocusVisibleGroupChild {
     ModifierFocusVisibleGroupChild::from_ref(self.append_to_skribble_value("focusVisible"))
@@ -1301,14 +1382,29 @@ impl SkribbleValue for ModifierEnabledGroupChild {
   }
 }
 pub trait ModifierEnabledGroup: SkribbleValue {
+  /// ```css
+  /// &[disabled], &[aria-disabled=true], &:disabled {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn disabled(&self) -> ModifierEnabledGroupChild {
     ModifierEnabledGroupChild::from_ref(self.append_to_skribble_value("disabled"))
   }
+  /// ```css
+  /// &[aria-disabled=false], &:disabled {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn not_disabled(&self) -> ModifierEnabledGroupChild {
     ModifierEnabledGroupChild::from_ref(self.append_to_skribble_value("notDisabled"))
   }
+  /// ```css
+  /// &:enabled {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn enabled(&self) -> ModifierEnabledGroupChild {
     ModifierEnabledGroupChild::from_ref(self.append_to_skribble_value("enabled"))
@@ -1327,6 +1423,11 @@ impl SkribbleValue for ModifierEmptyGroupChild {
   }
 }
 pub trait ModifierEmptyGroup: SkribbleValue {
+  /// ```css
+  /// &:empty {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn empty(&self) -> ModifierEmptyGroupChild {
     ModifierEmptyGroupChild::from_ref(self.append_to_skribble_value("empty"))
@@ -1345,14 +1446,29 @@ impl SkribbleValue for ModifierReadGroupChild {
   }
 }
 pub trait ModifierReadGroup: SkribbleValue {
+  /// ```css
+  /// &:read-write {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn read_write(&self) -> ModifierReadGroupChild {
     ModifierReadGroupChild::from_ref(self.append_to_skribble_value("readWrite"))
   }
+  /// ```css
+  /// &[aria-readonly=true], &[readonly], &:read-only {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn read_only(&self) -> ModifierReadGroupChild {
     ModifierReadGroupChild::from_ref(self.append_to_skribble_value("readOnly"))
   }
+  /// ```css
+  /// &[aria-readonly=false], &[readonly=false], &:not(:read-only) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn not_read_only(&self) -> ModifierReadGroupChild {
     ModifierReadGroupChild::from_ref(self.append_to_skribble_value("notReadOnly"))
@@ -1371,6 +1487,11 @@ impl SkribbleValue for ModifierExpandedGroupChild {
   }
 }
 pub trait ModifierExpandedGroup: SkribbleValue {
+  /// ```css
+  /// &[aria-expanded=true] {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn expanded(&self) -> ModifierExpandedGroupChild {
     ModifierExpandedGroupChild::from_ref(self.append_to_skribble_value("expanded"))
@@ -1389,14 +1510,29 @@ impl SkribbleValue for ModifierCheckedGroupChild {
   }
 }
 pub trait ModifierCheckedGroup: SkribbleValue {
+  /// ```css
+  /// &:indeterminate, &[aria-checked=mixed] {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn indeterminate(&self) -> ModifierCheckedGroupChild {
     ModifierCheckedGroupChild::from_ref(self.append_to_skribble_value("indeterminate"))
   }
+  /// ```css
+  /// &[aria-checked=true], &:checked {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn checked(&self) -> ModifierCheckedGroupChild {
     ModifierCheckedGroupChild::from_ref(self.append_to_skribble_value("checked"))
   }
+  /// ```css
+  /// &[aria-checked=false], &:not(:checked) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn unchecked(&self) -> ModifierCheckedGroupChild {
     ModifierCheckedGroupChild::from_ref(self.append_to_skribble_value("unchecked"))
@@ -1415,6 +1551,11 @@ impl SkribbleValue for ModifierGrabbedGroupChild {
   }
 }
 pub trait ModifierGrabbedGroup: SkribbleValue {
+  /// ```css
+  /// &[aria-grabbed=true] {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn grabbed(&self) -> ModifierGrabbedGroupChild {
     ModifierGrabbedGroupChild::from_ref(self.append_to_skribble_value("grabbed"))
@@ -1433,6 +1574,11 @@ impl SkribbleValue for ModifierPressedGroupChild {
   }
 }
 pub trait ModifierPressedGroup: SkribbleValue {
+  /// ```css
+  /// &[aria-pressed=true] {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn pressed(&self) -> ModifierPressedGroupChild {
     ModifierPressedGroupChild::from_ref(self.append_to_skribble_value("pressed"))
@@ -1451,6 +1597,11 @@ impl SkribbleValue for ModifierInvalidGrammarGroupChild {
   }
 }
 pub trait ModifierInvalidGrammarGroup: SkribbleValue {
+  /// ```css
+  /// &[aria-invalid=grammar] {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn invalid_grammar(&self) -> ModifierInvalidGrammarGroupChild {
     ModifierInvalidGrammarGroupChild::from_ref(self.append_to_skribble_value("invalidGrammar"))
@@ -1469,6 +1620,11 @@ impl SkribbleValue for ModifierInvalidSpellingGroupChild {
   }
 }
 pub trait ModifierInvalidSpellingGroup: SkribbleValue {
+  /// ```css
+  /// &[aria-invalid=spelling] {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn invalid_spelling(&self) -> ModifierInvalidSpellingGroupChild {
     ModifierInvalidSpellingGroupChild::from_ref(self.append_to_skribble_value("invalidSpelling"))
@@ -1487,10 +1643,20 @@ impl SkribbleValue for ModifierValidGroupChild {
   }
 }
 pub trait ModifierValidGroup: SkribbleValue {
+  /// ```css
+  /// &[aria-invalid=false], &:valid {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn valid(&self) -> ModifierValidGroupChild {
     ModifierValidGroupChild::from_ref(self.append_to_skribble_value("valid"))
   }
+  /// ```css
+  /// &[aria-invalid=true], &:invalid {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn invalid(&self) -> ModifierValidGroupChild {
     ModifierValidGroupChild::from_ref(self.append_to_skribble_value("invalid"))
@@ -1509,6 +1675,11 @@ impl SkribbleValue for ModifierLoadingGroupChild {
   }
 }
 pub trait ModifierLoadingGroup: SkribbleValue {
+  /// ```css
+  /// &[aria-busy=true] {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn loading(&self) -> ModifierLoadingGroupChild {
     ModifierLoadingGroupChild::from_ref(self.append_to_skribble_value("loading"))
@@ -1527,6 +1698,11 @@ impl SkribbleValue for ModifierSelectedGroupChild {
   }
 }
 pub trait ModifierSelectedGroup: SkribbleValue {
+  /// ```css
+  /// &[aria-selected=true] {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn selected(&self) -> ModifierSelectedGroupChild {
     ModifierSelectedGroupChild::from_ref(self.append_to_skribble_value("selected"))
@@ -1545,6 +1721,11 @@ impl SkribbleValue for ModifierHiddenGroupChild {
   }
 }
 pub trait ModifierHiddenGroup: SkribbleValue {
+  /// ```css
+  /// &[hidden] {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn hidden(&self) -> ModifierHiddenGroupChild {
     ModifierHiddenGroupChild::from_ref(self.append_to_skribble_value("hidden"))
@@ -1563,6 +1744,11 @@ impl SkribbleValue for ModifierAutofillGroupChild {
   }
 }
 pub trait ModifierAutofillGroup: SkribbleValue {
+  /// ```css
+  /// &:-webkit-autofill {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn autofill(&self) -> ModifierAutofillGroupChild {
     ModifierAutofillGroupChild::from_ref(self.append_to_skribble_value("autofill"))
@@ -1581,18 +1767,38 @@ impl SkribbleValue for ModifierEvenGroupChild {
   }
 }
 pub trait ModifierEvenGroup: SkribbleValue {
+  /// ```css
+  /// &:even {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn even(&self) -> ModifierEvenGroupChild {
     ModifierEvenGroupChild::from_ref(self.append_to_skribble_value("even"))
   }
+  /// ```css
+  /// &:odd {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn odd(&self) -> ModifierEvenGroupChild {
     ModifierEvenGroupChild::from_ref(self.append_to_skribble_value("odd"))
   }
+  /// ```css
+  /// &:nth-of-type(even) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn even_of_type(&self) -> ModifierEvenGroupChild {
     ModifierEvenGroupChild::from_ref(self.append_to_skribble_value("evenOfType"))
   }
+  /// ```css
+  /// &:nth-of-type(odd) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn odd_of_type(&self) -> ModifierEvenGroupChild {
     ModifierEvenGroupChild::from_ref(self.append_to_skribble_value("oddOfType"))
@@ -1611,18 +1817,38 @@ impl SkribbleValue for ModifierNodePositionGroupChild {
   }
 }
 pub trait ModifierNodePositionGroup: SkribbleValue {
+  /// ```css
+  /// &:first {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn first(&self) -> ModifierNodePositionGroupChild {
     ModifierNodePositionGroupChild::from_ref(self.append_to_skribble_value("first"))
   }
+  /// ```css
+  /// &:not(:first-child) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn not_first(&self) -> ModifierNodePositionGroupChild {
     ModifierNodePositionGroupChild::from_ref(self.append_to_skribble_value("notFirst"))
   }
+  /// ```css
+  /// &:last {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn last(&self) -> ModifierNodePositionGroupChild {
     ModifierNodePositionGroupChild::from_ref(self.append_to_skribble_value("last"))
   }
+  /// ```css
+  /// &:not(:last-child) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn not_last(&self) -> ModifierNodePositionGroupChild {
     ModifierNodePositionGroupChild::from_ref(self.append_to_skribble_value("notLast"))
@@ -1641,18 +1867,38 @@ impl SkribbleValue for ModifierNodeOfTypeGroupChild {
   }
 }
 pub trait ModifierNodeOfTypeGroup: SkribbleValue {
+  /// ```css
+  /// &:first-of-type {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn first_of_type(&self) -> ModifierNodeOfTypeGroupChild {
     ModifierNodeOfTypeGroupChild::from_ref(self.append_to_skribble_value("firstOfType"))
   }
+  /// ```css
+  /// &:not(:first-of-type) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn not_first_of_type(&self) -> ModifierNodeOfTypeGroupChild {
     ModifierNodeOfTypeGroupChild::from_ref(self.append_to_skribble_value("notFirstOfType"))
   }
+  /// ```css
+  /// &:last-of-type {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn last_of_type(&self) -> ModifierNodeOfTypeGroupChild {
     ModifierNodeOfTypeGroupChild::from_ref(self.append_to_skribble_value("lastOfType"))
   }
+  /// ```css
+  /// &:not(:last-of-type) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn not_last_of_type(&self) -> ModifierNodeOfTypeGroupChild {
     ModifierNodeOfTypeGroupChild::from_ref(self.append_to_skribble_value("notLastOfType"))
@@ -1671,6 +1917,11 @@ impl SkribbleValue for ModifierVisitedGroupChild {
   }
 }
 pub trait ModifierVisitedGroup: SkribbleValue {
+  /// ```css
+  /// &:visited {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn visited(&self) -> ModifierVisitedGroupChild {
     ModifierVisitedGroupChild::from_ref(self.append_to_skribble_value("visited"))
@@ -1689,6 +1940,11 @@ impl SkribbleValue for ModifierOptionalGroupChild {
   }
 }
 pub trait ModifierOptionalGroup: SkribbleValue {
+  /// ```css
+  /// &:optional {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn optional(&self) -> ModifierOptionalGroupChild {
     ModifierOptionalGroupChild::from_ref(self.append_to_skribble_value("optional"))
@@ -1707,6 +1963,11 @@ impl SkribbleValue for ModifierFullScreenGroupChild {
   }
 }
 pub trait ModifierFullScreenGroup: SkribbleValue {
+  /// ```css
+  /// &:fullscreen {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn full_screen(&self) -> ModifierFullScreenGroupChild {
     ModifierFullScreenGroupChild::from_ref(self.append_to_skribble_value("fullScreen"))
@@ -1725,6 +1986,11 @@ impl SkribbleValue for ModifierTargetGroupChild {
   }
 }
 pub trait ModifierTargetGroup: SkribbleValue {
+  /// ```css
+  /// &:target {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn target(&self) -> ModifierTargetGroupChild {
     ModifierTargetGroupChild::from_ref(self.append_to_skribble_value("target"))
@@ -1743,6 +2009,11 @@ impl SkribbleValue for ModifierPlaceholderShownGroupChild {
   }
 }
 pub trait ModifierPlaceholderShownGroup: SkribbleValue {
+  /// ```css
+  /// &:placeholder-shown {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn placeholder_shown(&self) -> ModifierPlaceholderShownGroupChild {
     ModifierPlaceholderShownGroupChild::from_ref(self.append_to_skribble_value("placeholderShown"))
@@ -1761,10 +2032,20 @@ impl SkribbleValue for ModifierRequiredGroupChild {
   }
 }
 pub trait ModifierRequiredGroup: SkribbleValue {
+  /// ```css
+  /// [aria-required=true], &:required {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn required(&self) -> ModifierRequiredGroupChild {
     ModifierRequiredGroupChild::from_ref(self.append_to_skribble_value("required"))
   }
+  /// ```css
+  /// [arira-required=false], &:not(:required) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn not_required(&self) -> ModifierRequiredGroupChild {
     ModifierRequiredGroupChild::from_ref(self.append_to_skribble_value("notRequired"))
@@ -1783,6 +2064,11 @@ impl SkribbleValue for ModifierDefaultGroupChild {
   }
 }
 pub trait ModifierDefaultGroup: SkribbleValue {
+  /// ```css
+  /// &:default {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn default(&self) -> ModifierDefaultGroupChild {
     ModifierDefaultGroupChild::from_ref(self.append_to_skribble_value("default"))
@@ -1801,10 +2087,20 @@ impl SkribbleValue for ModifierOnlyChildGroupChild {
   }
 }
 pub trait ModifierOnlyChildGroup: SkribbleValue {
+  /// ```css
+  /// &:only-child {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn only_child(&self) -> ModifierOnlyChildGroupChild {
     ModifierOnlyChildGroupChild::from_ref(self.append_to_skribble_value("onlyChild"))
   }
+  /// ```css
+  /// &:not(:only-child) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn not_only_child(&self) -> ModifierOnlyChildGroupChild {
     ModifierOnlyChildGroupChild::from_ref(self.append_to_skribble_value("notOnlyChild"))
@@ -1823,10 +2119,20 @@ impl SkribbleValue for ModifierOnlyGroupChild {
   }
 }
 pub trait ModifierOnlyGroup: SkribbleValue {
+  /// ```css
+  /// &:only-of-type {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn only_of_type(&self) -> ModifierOnlyGroupChild {
     ModifierOnlyGroupChild::from_ref(self.append_to_skribble_value("onlyOfType"))
   }
+  /// ```css
+  /// &:not(:only-of-type) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn not_only_of_type(&self) -> ModifierOnlyGroupChild {
     ModifierOnlyGroupChild::from_ref(self.append_to_skribble_value("notOnlyOfType"))
@@ -1845,6 +2151,11 @@ impl SkribbleValue for ModifierRootGroupChild {
   }
 }
 pub trait ModifierRootGroup: SkribbleValue {
+  /// ```css
+  /// &:root {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn root(&self) -> ModifierRootGroupChild {
     ModifierRootGroupChild::from_ref(self.append_to_skribble_value("root"))
@@ -1863,6 +2174,11 @@ impl SkribbleValue for ModifierLinkGroupChild {
   }
 }
 pub trait ModifierLinkGroup: SkribbleValue {
+  /// ```css
+  /// &:link {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn link(&self) -> ModifierLinkGroupChild {
     ModifierLinkGroupChild::from_ref(self.append_to_skribble_value("link"))
@@ -1881,26 +2197,56 @@ impl SkribbleValue for ModifierPseudoGroupChild {
   }
 }
 pub trait ModifierPseudoGroup: SkribbleValue {
+  /// ```css
+  /// &::placeholder {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn placeholder(&self) -> ModifierPseudoGroupChild {
     ModifierPseudoGroupChild::from_ref(self.append_to_skribble_value("placeholder"))
   }
+  /// ```css
+  /// &::selection {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn selection(&self) -> ModifierPseudoGroupChild {
     ModifierPseudoGroupChild::from_ref(self.append_to_skribble_value("selection"))
   }
+  /// ```css
+  /// &::first-letter {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn first_letter(&self) -> ModifierPseudoGroupChild {
     ModifierPseudoGroupChild::from_ref(self.append_to_skribble_value("firstLetter"))
   }
+  /// ```css
+  /// &::first-line {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn first_line(&self) -> ModifierPseudoGroupChild {
     ModifierPseudoGroupChild::from_ref(self.append_to_skribble_value("firstLine"))
   }
+  /// ```css
+  /// &::before {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn before(&self) -> ModifierPseudoGroupChild {
     ModifierPseudoGroupChild::from_ref(self.append_to_skribble_value("before"))
   }
+  /// ```css
+  /// &::after {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn after(&self) -> ModifierPseudoGroupChild {
     ModifierPseudoGroupChild::from_ref(self.append_to_skribble_value("after"))

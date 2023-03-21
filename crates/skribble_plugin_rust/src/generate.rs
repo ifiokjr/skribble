@@ -22,18 +22,20 @@ fn generate_media_queries(
 
     for (name, media_query) in map.iter() {
       let method_name = get_method_name(name, method_names);
-
-      if let Some(ref description) = media_query.description {
-        methods.push(wrap_indent(wrap_docs(description), 1));
-        methods.push(wrap_indent(wrap_docs("\n"), 1));
-      }
-      methods.push(wrap_indent(
+      let css_docs = wrap_indent(
         wrap_docs(wrap_in_code_block(
           media_query_docs(&media_query.query),
           "css",
         )),
         1,
-      ));
+      );
+
+      if let Some(ref description) = media_query.description {
+        methods.push(wrap_indent(wrap_docs(description), 1));
+        methods.push(wrap_indent(wrap_docs("\n"), 1));
+      }
+
+      methods.push(css_docs);
       methods.push(indent(
         format!("#[inline]\nfn {method_name}(&self) -> {struct_name} {{"),
         indent_style,
@@ -79,11 +81,17 @@ fn generate_parent_modifiers(
 
   for (name, modifier) in config.parent_modifiers.iter() {
     let method_name = get_method_name(name, method_names);
+    let css_docs = wrap_indent(
+      wrap_docs(wrap_in_code_block(modifier_docs(&modifier.values), "css")),
+      1,
+    );
 
     if let Some(ref description) = modifier.description {
       sections.push(wrap_indent(wrap_docs(description), 1));
+      sections.push(wrap_indent(wrap_docs("\n"), 1));
     }
 
+    sections.push(css_docs);
     sections.push(indent(
       format!("#[inline]\nfn {method_name}(&self) -> {PARENT_MODIFIER_STRUCT_NAME} {{"),
       indent_style,
@@ -108,6 +116,11 @@ fn generate_parent_modifiers(
   struct_names_map.insert(PARENT_MODIFIER_STRUCT_NAME.into(), trait_names.len());
 }
 
+fn modifier_docs(values: &Vec<String>) -> String {
+  let value = values.join(", ");
+  format!("{value} {{\n  /* ... */\n}}")
+}
+
 const PARENT_MODIFIER_TRAIT_NAME: &str = "ParentModifier";
 const PARENT_MODIFIER_STRUCT_NAME: &str = "ParentModifierChild";
 
@@ -130,11 +143,17 @@ fn generate_modifiers(
 
     for (name, modifier) in map.iter() {
       let method_name = get_method_name(name, method_names);
+      let css_docs = wrap_indent(
+        wrap_docs(wrap_in_code_block(modifier_docs(&modifier.values), "css")),
+        1,
+      );
 
       if let Some(ref description) = modifier.description {
         methods.push(wrap_indent(wrap_docs(description), 1));
+        methods.push(wrap_indent(wrap_docs("\n"), 1));
       }
 
+      methods.push(css_docs);
       methods.push(indent(
         format!("#[inline]\nfn {method_name}(&self) -> {struct_name} {{"),
         indent_style,
