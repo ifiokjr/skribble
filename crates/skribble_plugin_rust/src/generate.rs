@@ -3,7 +3,7 @@ use indexmap::IndexSet;
 
 use super::*;
 
-pub(crate) fn generate_media_queries(
+fn generate_media_queries(
   config: &MergedConfig,
   indent_style: IndentStyle,
   method_names: &mut IndexSet<String>,
@@ -53,7 +53,7 @@ pub(crate) fn generate_media_queries(
   }
 }
 
-pub(crate) fn generate_parent_modifiers(
+fn generate_parent_modifiers(
   config: &MergedConfig,
   indent_style: IndentStyle,
   method_names: &mut IndexSet<String>,
@@ -106,7 +106,7 @@ pub(crate) fn generate_parent_modifiers(
 const PARENT_MODIFIER_TRAIT_NAME: &str = "ParentModifier";
 const PARENT_MODIFIER_STRUCT_NAME: &str = "ParentModifierChild";
 
-pub(crate) fn generate_modifiers(
+fn generate_modifiers(
   config: &MergedConfig,
   indent_style: IndentStyle,
   method_names: &mut IndexSet<String>,
@@ -156,7 +156,7 @@ pub(crate) fn generate_modifiers(
   }
 }
 
-pub(crate) fn generate_value_sets(
+fn generate_value_sets(
   config: &MergedConfig,
   indent_style: IndentStyle,
   sections: &mut Vec<String>,
@@ -198,7 +198,7 @@ pub(crate) fn generate_value_sets(
   }
 }
 
-pub(crate) fn generate_named_classes(
+fn generate_named_classes(
   config: &MergedConfig,
   indent_style: IndentStyle,
   sections: &mut Vec<String>,
@@ -239,7 +239,7 @@ pub(crate) fn generate_named_classes(
 
 const ATOM_TRAIT_NAME: &str = "Atom";
 
-pub(crate) fn generate_atoms(
+fn generate_atoms(
   config: &MergedConfig,
   indent_style: IndentStyle,
   method_names: &mut IndexSet<String>,
@@ -309,11 +309,7 @@ pub(crate) fn generate_atoms(
   sections.push(trait_content.join("\n"));
 }
 
-pub(crate) fn generate_palette(
-  config: &MergedConfig,
-  indent_style: IndentStyle,
-  sections: &mut Vec<String>,
-) {
+fn generate_palette(config: &MergedConfig, indent_style: IndentStyle, sections: &mut Vec<String>) {
   sections.push("pub trait Palette: SkribbleValue {".into());
 
   for (name, _) in config.palette.iter() {
@@ -338,7 +334,7 @@ pub(crate) fn generate_palette(
   sections.push("}".into());
 }
 
-pub(crate) fn generate_css_variables(
+fn generate_css_variables(
   config: &MergedConfig,
   variable_prefix: impl AsRef<str>,
   indent_style: IndentStyle,
@@ -422,7 +418,7 @@ fn generate_impl_skribble_value(name: impl AsRef<str>) -> String {
   )
 }
 
-pub(crate) fn generate_struct_implementations(
+fn generate_struct_implementations(
   struct_names_map: &IndexMap<String, usize>,
   trait_names: &[String],
   sections: &mut Vec<String>,
@@ -537,7 +533,7 @@ mod private {
   }
 }"#;
 
-pub(crate) fn combine_sections_with_header(sections: Vec<String>) -> String {
+fn combine_sections_with_header(sections: Vec<String>) -> String {
   // let indent_style = IndentStyle::default();
   // let mut content = vec![];
   // content.push("pub use generated_skribble_module::sk;".into());
@@ -550,4 +546,64 @@ pub(crate) fn combine_sections_with_header(sections: Vec<String>) -> String {
 
   // content.join("\n")
   format!("{HEADER}\n{}", sections.join("\n"))
+}
+
+pub(crate) fn generate_file_contents(config: &MergedConfig, options: &Options) -> String {
+  let mut method_names: IndexSet<String> = indexset! {};
+  let indent_style = IndentStyle::default();
+  let mut sections = Vec::<String>::new();
+  let mut trait_names = vec![];
+  let mut struct_names_map: IndexMap<String, usize> = indexmap! { "SkribbleRoot".into() => 0 };
+
+  generate_css_variables(
+    config,
+    &options.variable_prefix,
+    indent_style,
+    &mut sections,
+  );
+
+  // media queries
+  generate_media_queries(
+    config,
+    indent_style,
+    &mut method_names,
+    &mut sections,
+    &mut struct_names_map,
+    &mut trait_names,
+  );
+
+  generate_parent_modifiers(
+    config,
+    indent_style,
+    &mut method_names,
+    &mut sections,
+    &mut struct_names_map,
+    &mut trait_names,
+  );
+
+  generate_modifiers(
+    config,
+    indent_style,
+    &mut method_names,
+    &mut sections,
+    &mut struct_names_map,
+    &mut trait_names,
+  );
+
+  generate_value_sets(config, indent_style, &mut sections);
+  generate_palette(config, indent_style, &mut sections);
+
+  generate_atoms(
+    config,
+    indent_style,
+    &mut method_names,
+    &mut sections,
+    &mut trait_names,
+  );
+
+  generate_named_classes(config, indent_style, &mut sections, &mut trait_names);
+
+  // Add the implementation for each of the structs.
+  generate_struct_implementations(&struct_names_map, &trait_names, &mut sections);
+  combine_sections_with_header(sections)
 }
