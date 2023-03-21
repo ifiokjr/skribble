@@ -59,7 +59,7 @@ impl RustPlugin {
     let indent_style = IndentStyle::default();
     let mut sections = Vec::<String>::new();
     let mut trait_names = vec![];
-    let mut struct_names_map: IndexMap<String, usize> = indexmap! {"SkribbleRoot".into() => 0};
+    let mut struct_names_map: IndexMap<String, usize> = indexmap! { "SkribbleRoot".into() => 0 };
 
     generate_css_variables(
       config,
@@ -106,6 +106,8 @@ impl RustPlugin {
       &mut sections,
       &mut trait_names,
     );
+
+    generate_named_classes(config, indent_style, &mut sections, &mut trait_names);
 
     // Add the implementation for each of the structs.
     generate_struct_implementations(&struct_names_map, &trait_names, &mut sections);

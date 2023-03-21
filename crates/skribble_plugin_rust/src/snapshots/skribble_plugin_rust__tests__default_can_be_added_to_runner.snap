@@ -2648,6 +2648,65 @@ pub trait Atom: SkribbleValue {
     AtomOpacity::from_ref(self.append_to_skribble_value("opacity"))
   }
 }
+pub trait NamedClasses: SkribbleValue {
+  fn group(&self) -> String {
+    self.append_string_to_skribble_value("group")
+  }
+  fn container(&self) -> String {
+    self.append_string_to_skribble_value("container")
+  }
+  fn italic(&self) -> String {
+    self.append_string_to_skribble_value("italic")
+  }
+  fn non_italic(&self) -> String {
+    self.append_string_to_skribble_value("nonItalic")
+  }
+  fn oblique(&self) -> String {
+    self.append_string_to_skribble_value("oblique")
+  }
+  fn antialiased(&self) -> String {
+    self.append_string_to_skribble_value("antialiased")
+  }
+  fn subpixel_antialiased(&self) -> String {
+    self.append_string_to_skribble_value("subpixelAntialiased")
+  }
+  fn block(&self) -> String {
+    self.append_string_to_skribble_value("block")
+  }
+  fn inline_block(&self) -> String {
+    self.append_string_to_skribble_value("inlineBlock")
+  }
+  fn inline(&self) -> String {
+    self.append_string_to_skribble_value("inline")
+  }
+  fn flow_root(&self) -> String {
+    self.append_string_to_skribble_value("flowRoot")
+  }
+  fn content(&self) -> String {
+    self.append_string_to_skribble_value("content")
+  }
+  fn hidden(&self) -> String {
+    self.append_string_to_skribble_value("hidden")
+  }
+  fn invisible(&self) -> String {
+    self.append_string_to_skribble_value("invisible")
+  }
+  fn visible(&self) -> String {
+    self.append_string_to_skribble_value("visible")
+  }
+  fn remove_filter(&self) -> String {
+    self.append_string_to_skribble_value("removeFilter")
+  }
+  fn remove_backdrop(&self) -> String {
+    self.append_string_to_skribble_value("removeBackdrop")
+  }
+  fn transform_gpu(&self) -> String {
+    self.append_string_to_skribble_value("transformGpu")
+  }
+  fn transform_cpu(&self) -> String {
+    self.append_string_to_skribble_value("transformCpu")
+  }
+}
 impl MediaQueryDeviceCategories for SkribbleRoot {}
 impl MediaQueryBreakpoints for SkribbleRoot {}
 impl MediaQueryOrientation for SkribbleRoot {}
@@ -2689,6 +2748,7 @@ impl ModifierRootGroup for SkribbleRoot {}
 impl ModifierLinkGroup for SkribbleRoot {}
 impl ModifierPseudoGroup for SkribbleRoot {}
 impl Atom for SkribbleRoot {}
+impl NamedClasses for SkribbleRoot {}
 impl MediaQueryBreakpoints for MediaQueryDeviceCategoriesChild {}
 impl MediaQueryOrientation for MediaQueryDeviceCategoriesChild {}
 impl MediaQueryMotion for MediaQueryDeviceCategoriesChild {}
@@ -2729,6 +2789,7 @@ impl ModifierRootGroup for MediaQueryDeviceCategoriesChild {}
 impl ModifierLinkGroup for MediaQueryDeviceCategoriesChild {}
 impl ModifierPseudoGroup for MediaQueryDeviceCategoriesChild {}
 impl Atom for MediaQueryDeviceCategoriesChild {}
+impl NamedClasses for MediaQueryDeviceCategoriesChild {}
 impl MediaQueryOrientation for MediaQueryBreakpointsChild {}
 impl MediaQueryMotion for MediaQueryBreakpointsChild {}
 impl MediaQueryDarkMode for MediaQueryBreakpointsChild {}
@@ -2768,6 +2829,7 @@ impl ModifierRootGroup for MediaQueryBreakpointsChild {}
 impl ModifierLinkGroup for MediaQueryBreakpointsChild {}
 impl ModifierPseudoGroup for MediaQueryBreakpointsChild {}
 impl Atom for MediaQueryBreakpointsChild {}
+impl NamedClasses for MediaQueryBreakpointsChild {}
 impl MediaQueryMotion for MediaQueryOrientationChild {}
 impl MediaQueryDarkMode for MediaQueryOrientationChild {}
 impl ParentModifier for MediaQueryOrientationChild {}
@@ -2806,6 +2868,7 @@ impl ModifierRootGroup for MediaQueryOrientationChild {}
 impl ModifierLinkGroup for MediaQueryOrientationChild {}
 impl ModifierPseudoGroup for MediaQueryOrientationChild {}
 impl Atom for MediaQueryOrientationChild {}
+impl NamedClasses for MediaQueryOrientationChild {}
 impl MediaQueryDarkMode for MediaQueryMotionChild {}
 impl ParentModifier for MediaQueryMotionChild {}
 impl ModifierHoverGroup for MediaQueryMotionChild {}
@@ -2843,6 +2906,7 @@ impl ModifierRootGroup for MediaQueryMotionChild {}
 impl ModifierLinkGroup for MediaQueryMotionChild {}
 impl ModifierPseudoGroup for MediaQueryMotionChild {}
 impl Atom for MediaQueryMotionChild {}
+impl NamedClasses for MediaQueryMotionChild {}
 impl ParentModifier for MediaQueryDarkModeChild {}
 impl ModifierHoverGroup for MediaQueryDarkModeChild {}
 impl ModifierActiveGroup for MediaQueryDarkModeChild {}
@@ -2879,6 +2943,7 @@ impl ModifierRootGroup for MediaQueryDarkModeChild {}
 impl ModifierLinkGroup for MediaQueryDarkModeChild {}
 impl ModifierPseudoGroup for MediaQueryDarkModeChild {}
 impl Atom for MediaQueryDarkModeChild {}
+impl NamedClasses for MediaQueryDarkModeChild {}
 impl ModifierHoverGroup for ParentModifierChild {}
 impl ModifierActiveGroup for ParentModifierChild {}
 impl ModifierFocusGroup for ParentModifierChild {}
@@ -2914,6 +2979,7 @@ impl ModifierRootGroup for ParentModifierChild {}
 impl ModifierLinkGroup for ParentModifierChild {}
 impl ModifierPseudoGroup for ParentModifierChild {}
 impl Atom for ParentModifierChild {}
+impl NamedClasses for ParentModifierChild {}
 impl ModifierActiveGroup for ModifierHoverGroupChild {}
 impl ModifierFocusGroup for ModifierHoverGroupChild {}
 impl ModifierFocusWithinGroup for ModifierHoverGroupChild {}
@@ -2948,6 +3014,7 @@ impl ModifierRootGroup for ModifierHoverGroupChild {}
 impl ModifierLinkGroup for ModifierHoverGroupChild {}
 impl ModifierPseudoGroup for ModifierHoverGroupChild {}
 impl Atom for ModifierHoverGroupChild {}
+impl NamedClasses for ModifierHoverGroupChild {}
 impl ModifierFocusGroup for ModifierActiveGroupChild {}
 impl ModifierFocusWithinGroup for ModifierActiveGroupChild {}
 impl ModifierFocusVisibleGroup for ModifierActiveGroupChild {}
@@ -2981,6 +3048,7 @@ impl ModifierRootGroup for ModifierActiveGroupChild {}
 impl ModifierLinkGroup for ModifierActiveGroupChild {}
 impl ModifierPseudoGroup for ModifierActiveGroupChild {}
 impl Atom for ModifierActiveGroupChild {}
+impl NamedClasses for ModifierActiveGroupChild {}
 impl ModifierFocusWithinGroup for ModifierFocusGroupChild {}
 impl ModifierFocusVisibleGroup for ModifierFocusGroupChild {}
 impl ModifierEnabledGroup for ModifierFocusGroupChild {}
@@ -3013,6 +3081,7 @@ impl ModifierRootGroup for ModifierFocusGroupChild {}
 impl ModifierLinkGroup for ModifierFocusGroupChild {}
 impl ModifierPseudoGroup for ModifierFocusGroupChild {}
 impl Atom for ModifierFocusGroupChild {}
+impl NamedClasses for ModifierFocusGroupChild {}
 impl ModifierFocusVisibleGroup for ModifierFocusWithinGroupChild {}
 impl ModifierEnabledGroup for ModifierFocusWithinGroupChild {}
 impl ModifierEmptyGroup for ModifierFocusWithinGroupChild {}
@@ -3044,6 +3113,7 @@ impl ModifierRootGroup for ModifierFocusWithinGroupChild {}
 impl ModifierLinkGroup for ModifierFocusWithinGroupChild {}
 impl ModifierPseudoGroup for ModifierFocusWithinGroupChild {}
 impl Atom for ModifierFocusWithinGroupChild {}
+impl NamedClasses for ModifierFocusWithinGroupChild {}
 impl ModifierEnabledGroup for ModifierFocusVisibleGroupChild {}
 impl ModifierEmptyGroup for ModifierFocusVisibleGroupChild {}
 impl ModifierReadGroup for ModifierFocusVisibleGroupChild {}
@@ -3074,6 +3144,7 @@ impl ModifierRootGroup for ModifierFocusVisibleGroupChild {}
 impl ModifierLinkGroup for ModifierFocusVisibleGroupChild {}
 impl ModifierPseudoGroup for ModifierFocusVisibleGroupChild {}
 impl Atom for ModifierFocusVisibleGroupChild {}
+impl NamedClasses for ModifierFocusVisibleGroupChild {}
 impl ModifierEmptyGroup for ModifierEnabledGroupChild {}
 impl ModifierReadGroup for ModifierEnabledGroupChild {}
 impl ModifierExpandedGroup for ModifierEnabledGroupChild {}
@@ -3103,6 +3174,7 @@ impl ModifierRootGroup for ModifierEnabledGroupChild {}
 impl ModifierLinkGroup for ModifierEnabledGroupChild {}
 impl ModifierPseudoGroup for ModifierEnabledGroupChild {}
 impl Atom for ModifierEnabledGroupChild {}
+impl NamedClasses for ModifierEnabledGroupChild {}
 impl ModifierReadGroup for ModifierEmptyGroupChild {}
 impl ModifierExpandedGroup for ModifierEmptyGroupChild {}
 impl ModifierCheckedGroup for ModifierEmptyGroupChild {}
@@ -3131,6 +3203,7 @@ impl ModifierRootGroup for ModifierEmptyGroupChild {}
 impl ModifierLinkGroup for ModifierEmptyGroupChild {}
 impl ModifierPseudoGroup for ModifierEmptyGroupChild {}
 impl Atom for ModifierEmptyGroupChild {}
+impl NamedClasses for ModifierEmptyGroupChild {}
 impl ModifierExpandedGroup for ModifierReadGroupChild {}
 impl ModifierCheckedGroup for ModifierReadGroupChild {}
 impl ModifierGrabbedGroup for ModifierReadGroupChild {}
@@ -3158,6 +3231,7 @@ impl ModifierRootGroup for ModifierReadGroupChild {}
 impl ModifierLinkGroup for ModifierReadGroupChild {}
 impl ModifierPseudoGroup for ModifierReadGroupChild {}
 impl Atom for ModifierReadGroupChild {}
+impl NamedClasses for ModifierReadGroupChild {}
 impl ModifierCheckedGroup for ModifierExpandedGroupChild {}
 impl ModifierGrabbedGroup for ModifierExpandedGroupChild {}
 impl ModifierPressedGroup for ModifierExpandedGroupChild {}
@@ -3184,6 +3258,7 @@ impl ModifierRootGroup for ModifierExpandedGroupChild {}
 impl ModifierLinkGroup for ModifierExpandedGroupChild {}
 impl ModifierPseudoGroup for ModifierExpandedGroupChild {}
 impl Atom for ModifierExpandedGroupChild {}
+impl NamedClasses for ModifierExpandedGroupChild {}
 impl ModifierGrabbedGroup for ModifierCheckedGroupChild {}
 impl ModifierPressedGroup for ModifierCheckedGroupChild {}
 impl ModifierInvalidGrammarGroup for ModifierCheckedGroupChild {}
@@ -3209,6 +3284,7 @@ impl ModifierRootGroup for ModifierCheckedGroupChild {}
 impl ModifierLinkGroup for ModifierCheckedGroupChild {}
 impl ModifierPseudoGroup for ModifierCheckedGroupChild {}
 impl Atom for ModifierCheckedGroupChild {}
+impl NamedClasses for ModifierCheckedGroupChild {}
 impl ModifierPressedGroup for ModifierGrabbedGroupChild {}
 impl ModifierInvalidGrammarGroup for ModifierGrabbedGroupChild {}
 impl ModifierInvalidSpellingGroup for ModifierGrabbedGroupChild {}
@@ -3233,6 +3309,7 @@ impl ModifierRootGroup for ModifierGrabbedGroupChild {}
 impl ModifierLinkGroup for ModifierGrabbedGroupChild {}
 impl ModifierPseudoGroup for ModifierGrabbedGroupChild {}
 impl Atom for ModifierGrabbedGroupChild {}
+impl NamedClasses for ModifierGrabbedGroupChild {}
 impl ModifierInvalidGrammarGroup for ModifierPressedGroupChild {}
 impl ModifierInvalidSpellingGroup for ModifierPressedGroupChild {}
 impl ModifierValidGroup for ModifierPressedGroupChild {}
@@ -3256,6 +3333,7 @@ impl ModifierRootGroup for ModifierPressedGroupChild {}
 impl ModifierLinkGroup for ModifierPressedGroupChild {}
 impl ModifierPseudoGroup for ModifierPressedGroupChild {}
 impl Atom for ModifierPressedGroupChild {}
+impl NamedClasses for ModifierPressedGroupChild {}
 impl ModifierInvalidSpellingGroup for ModifierInvalidGrammarGroupChild {}
 impl ModifierValidGroup for ModifierInvalidGrammarGroupChild {}
 impl ModifierLoadingGroup for ModifierInvalidGrammarGroupChild {}
@@ -3278,6 +3356,7 @@ impl ModifierRootGroup for ModifierInvalidGrammarGroupChild {}
 impl ModifierLinkGroup for ModifierInvalidGrammarGroupChild {}
 impl ModifierPseudoGroup for ModifierInvalidGrammarGroupChild {}
 impl Atom for ModifierInvalidGrammarGroupChild {}
+impl NamedClasses for ModifierInvalidGrammarGroupChild {}
 impl ModifierValidGroup for ModifierInvalidSpellingGroupChild {}
 impl ModifierLoadingGroup for ModifierInvalidSpellingGroupChild {}
 impl ModifierSelectedGroup for ModifierInvalidSpellingGroupChild {}
@@ -3299,6 +3378,7 @@ impl ModifierRootGroup for ModifierInvalidSpellingGroupChild {}
 impl ModifierLinkGroup for ModifierInvalidSpellingGroupChild {}
 impl ModifierPseudoGroup for ModifierInvalidSpellingGroupChild {}
 impl Atom for ModifierInvalidSpellingGroupChild {}
+impl NamedClasses for ModifierInvalidSpellingGroupChild {}
 impl ModifierLoadingGroup for ModifierValidGroupChild {}
 impl ModifierSelectedGroup for ModifierValidGroupChild {}
 impl ModifierHiddenGroup for ModifierValidGroupChild {}
@@ -3319,6 +3399,7 @@ impl ModifierRootGroup for ModifierValidGroupChild {}
 impl ModifierLinkGroup for ModifierValidGroupChild {}
 impl ModifierPseudoGroup for ModifierValidGroupChild {}
 impl Atom for ModifierValidGroupChild {}
+impl NamedClasses for ModifierValidGroupChild {}
 impl ModifierSelectedGroup for ModifierLoadingGroupChild {}
 impl ModifierHiddenGroup for ModifierLoadingGroupChild {}
 impl ModifierAutofillGroup for ModifierLoadingGroupChild {}
@@ -3338,6 +3419,7 @@ impl ModifierRootGroup for ModifierLoadingGroupChild {}
 impl ModifierLinkGroup for ModifierLoadingGroupChild {}
 impl ModifierPseudoGroup for ModifierLoadingGroupChild {}
 impl Atom for ModifierLoadingGroupChild {}
+impl NamedClasses for ModifierLoadingGroupChild {}
 impl ModifierHiddenGroup for ModifierSelectedGroupChild {}
 impl ModifierAutofillGroup for ModifierSelectedGroupChild {}
 impl ModifierEvenGroup for ModifierSelectedGroupChild {}
@@ -3356,6 +3438,7 @@ impl ModifierRootGroup for ModifierSelectedGroupChild {}
 impl ModifierLinkGroup for ModifierSelectedGroupChild {}
 impl ModifierPseudoGroup for ModifierSelectedGroupChild {}
 impl Atom for ModifierSelectedGroupChild {}
+impl NamedClasses for ModifierSelectedGroupChild {}
 impl ModifierAutofillGroup for ModifierHiddenGroupChild {}
 impl ModifierEvenGroup for ModifierHiddenGroupChild {}
 impl ModifierNodePositionGroup for ModifierHiddenGroupChild {}
@@ -3373,6 +3456,7 @@ impl ModifierRootGroup for ModifierHiddenGroupChild {}
 impl ModifierLinkGroup for ModifierHiddenGroupChild {}
 impl ModifierPseudoGroup for ModifierHiddenGroupChild {}
 impl Atom for ModifierHiddenGroupChild {}
+impl NamedClasses for ModifierHiddenGroupChild {}
 impl ModifierEvenGroup for ModifierAutofillGroupChild {}
 impl ModifierNodePositionGroup for ModifierAutofillGroupChild {}
 impl ModifierNodeOfTypeGroup for ModifierAutofillGroupChild {}
@@ -3389,6 +3473,7 @@ impl ModifierRootGroup for ModifierAutofillGroupChild {}
 impl ModifierLinkGroup for ModifierAutofillGroupChild {}
 impl ModifierPseudoGroup for ModifierAutofillGroupChild {}
 impl Atom for ModifierAutofillGroupChild {}
+impl NamedClasses for ModifierAutofillGroupChild {}
 impl ModifierNodePositionGroup for ModifierEvenGroupChild {}
 impl ModifierNodeOfTypeGroup for ModifierEvenGroupChild {}
 impl ModifierVisitedGroup for ModifierEvenGroupChild {}
@@ -3404,6 +3489,7 @@ impl ModifierRootGroup for ModifierEvenGroupChild {}
 impl ModifierLinkGroup for ModifierEvenGroupChild {}
 impl ModifierPseudoGroup for ModifierEvenGroupChild {}
 impl Atom for ModifierEvenGroupChild {}
+impl NamedClasses for ModifierEvenGroupChild {}
 impl ModifierNodeOfTypeGroup for ModifierNodePositionGroupChild {}
 impl ModifierVisitedGroup for ModifierNodePositionGroupChild {}
 impl ModifierOptionalGroup for ModifierNodePositionGroupChild {}
@@ -3418,6 +3504,7 @@ impl ModifierRootGroup for ModifierNodePositionGroupChild {}
 impl ModifierLinkGroup for ModifierNodePositionGroupChild {}
 impl ModifierPseudoGroup for ModifierNodePositionGroupChild {}
 impl Atom for ModifierNodePositionGroupChild {}
+impl NamedClasses for ModifierNodePositionGroupChild {}
 impl ModifierVisitedGroup for ModifierNodeOfTypeGroupChild {}
 impl ModifierOptionalGroup for ModifierNodeOfTypeGroupChild {}
 impl ModifierFullScreenGroup for ModifierNodeOfTypeGroupChild {}
@@ -3431,6 +3518,7 @@ impl ModifierRootGroup for ModifierNodeOfTypeGroupChild {}
 impl ModifierLinkGroup for ModifierNodeOfTypeGroupChild {}
 impl ModifierPseudoGroup for ModifierNodeOfTypeGroupChild {}
 impl Atom for ModifierNodeOfTypeGroupChild {}
+impl NamedClasses for ModifierNodeOfTypeGroupChild {}
 impl ModifierOptionalGroup for ModifierVisitedGroupChild {}
 impl ModifierFullScreenGroup for ModifierVisitedGroupChild {}
 impl ModifierTargetGroup for ModifierVisitedGroupChild {}
@@ -3443,6 +3531,7 @@ impl ModifierRootGroup for ModifierVisitedGroupChild {}
 impl ModifierLinkGroup for ModifierVisitedGroupChild {}
 impl ModifierPseudoGroup for ModifierVisitedGroupChild {}
 impl Atom for ModifierVisitedGroupChild {}
+impl NamedClasses for ModifierVisitedGroupChild {}
 impl ModifierFullScreenGroup for ModifierOptionalGroupChild {}
 impl ModifierTargetGroup for ModifierOptionalGroupChild {}
 impl ModifierPlaceholderShownGroup for ModifierOptionalGroupChild {}
@@ -3454,6 +3543,7 @@ impl ModifierRootGroup for ModifierOptionalGroupChild {}
 impl ModifierLinkGroup for ModifierOptionalGroupChild {}
 impl ModifierPseudoGroup for ModifierOptionalGroupChild {}
 impl Atom for ModifierOptionalGroupChild {}
+impl NamedClasses for ModifierOptionalGroupChild {}
 impl ModifierTargetGroup for ModifierFullScreenGroupChild {}
 impl ModifierPlaceholderShownGroup for ModifierFullScreenGroupChild {}
 impl ModifierRequiredGroup for ModifierFullScreenGroupChild {}
@@ -3464,6 +3554,7 @@ impl ModifierRootGroup for ModifierFullScreenGroupChild {}
 impl ModifierLinkGroup for ModifierFullScreenGroupChild {}
 impl ModifierPseudoGroup for ModifierFullScreenGroupChild {}
 impl Atom for ModifierFullScreenGroupChild {}
+impl NamedClasses for ModifierFullScreenGroupChild {}
 impl ModifierPlaceholderShownGroup for ModifierTargetGroupChild {}
 impl ModifierRequiredGroup for ModifierTargetGroupChild {}
 impl ModifierDefaultGroup for ModifierTargetGroupChild {}
@@ -3473,6 +3564,7 @@ impl ModifierRootGroup for ModifierTargetGroupChild {}
 impl ModifierLinkGroup for ModifierTargetGroupChild {}
 impl ModifierPseudoGroup for ModifierTargetGroupChild {}
 impl Atom for ModifierTargetGroupChild {}
+impl NamedClasses for ModifierTargetGroupChild {}
 impl ModifierRequiredGroup for ModifierPlaceholderShownGroupChild {}
 impl ModifierDefaultGroup for ModifierPlaceholderShownGroupChild {}
 impl ModifierOnlyChildGroup for ModifierPlaceholderShownGroupChild {}
@@ -3481,6 +3573,7 @@ impl ModifierRootGroup for ModifierPlaceholderShownGroupChild {}
 impl ModifierLinkGroup for ModifierPlaceholderShownGroupChild {}
 impl ModifierPseudoGroup for ModifierPlaceholderShownGroupChild {}
 impl Atom for ModifierPlaceholderShownGroupChild {}
+impl NamedClasses for ModifierPlaceholderShownGroupChild {}
 impl ModifierDefaultGroup for ModifierRequiredGroupChild {}
 impl ModifierOnlyChildGroup for ModifierRequiredGroupChild {}
 impl ModifierOnlyGroup for ModifierRequiredGroupChild {}
@@ -3488,24 +3581,31 @@ impl ModifierRootGroup for ModifierRequiredGroupChild {}
 impl ModifierLinkGroup for ModifierRequiredGroupChild {}
 impl ModifierPseudoGroup for ModifierRequiredGroupChild {}
 impl Atom for ModifierRequiredGroupChild {}
+impl NamedClasses for ModifierRequiredGroupChild {}
 impl ModifierOnlyChildGroup for ModifierDefaultGroupChild {}
 impl ModifierOnlyGroup for ModifierDefaultGroupChild {}
 impl ModifierRootGroup for ModifierDefaultGroupChild {}
 impl ModifierLinkGroup for ModifierDefaultGroupChild {}
 impl ModifierPseudoGroup for ModifierDefaultGroupChild {}
 impl Atom for ModifierDefaultGroupChild {}
+impl NamedClasses for ModifierDefaultGroupChild {}
 impl ModifierOnlyGroup for ModifierOnlyChildGroupChild {}
 impl ModifierRootGroup for ModifierOnlyChildGroupChild {}
 impl ModifierLinkGroup for ModifierOnlyChildGroupChild {}
 impl ModifierPseudoGroup for ModifierOnlyChildGroupChild {}
 impl Atom for ModifierOnlyChildGroupChild {}
+impl NamedClasses for ModifierOnlyChildGroupChild {}
 impl ModifierRootGroup for ModifierOnlyGroupChild {}
 impl ModifierLinkGroup for ModifierOnlyGroupChild {}
 impl ModifierPseudoGroup for ModifierOnlyGroupChild {}
 impl Atom for ModifierOnlyGroupChild {}
+impl NamedClasses for ModifierOnlyGroupChild {}
 impl ModifierLinkGroup for ModifierRootGroupChild {}
 impl ModifierPseudoGroup for ModifierRootGroupChild {}
 impl Atom for ModifierRootGroupChild {}
+impl NamedClasses for ModifierRootGroupChild {}
 impl ModifierPseudoGroup for ModifierLinkGroupChild {}
 impl Atom for ModifierLinkGroupChild {}
+impl NamedClasses for ModifierLinkGroupChild {}
 impl Atom for ModifierPseudoGroupChild {}
+impl NamedClasses for ModifierPseudoGroupChild {}

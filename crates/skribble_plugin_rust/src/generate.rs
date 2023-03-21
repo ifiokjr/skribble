@@ -198,6 +198,45 @@ pub(crate) fn generate_value_sets(
   }
 }
 
+pub(crate) fn generate_named_classes(
+  config: &MergedConfig,
+  indent_style: IndentStyle,
+  sections: &mut Vec<String>,
+  trait_names: &mut Vec<String>,
+) {
+  sections.push("pub trait NamedClasses: SkribbleValue {".into());
+
+  for (name, class) in config.classes.iter() {
+    let method_name = name.to_snake_case();
+
+    if let Some(ref description) = class.description {
+      let description = description
+        .split('\n')
+        .collect::<Vec<&str>>()
+        .join("\n/// ");
+      sections.push(indent(format!("/// {description}"), indent_style));
+    }
+
+    sections.push(indent(
+      format!("fn {method_name}(&self) -> String {{"),
+      indent_style,
+    ));
+
+    sections.push(indent(
+      indent(
+        format!("self.append_string_to_skribble_value(\"{name}\")"),
+        indent_style,
+      ),
+      indent_style,
+    ));
+
+    sections.push(indent("}", indent_style));
+  }
+
+  trait_names.push("NamedClasses".into());
+  sections.push("}".into());
+}
+
 const ATOM_TRAIT_NAME: &str = "Atom";
 
 pub(crate) fn generate_atoms(

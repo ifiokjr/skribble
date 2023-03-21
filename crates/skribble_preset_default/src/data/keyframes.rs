@@ -20,7 +20,7 @@ lazy_static! {
       Keyframe::builder()
         .name("enter")
         .values(vec!["enterAnimation"])
-        .rules(indexmap!{
+        .rules(indexmap! {
           "from" => indexmap! {
             "opacity" => format!("var({enter_opacity}, 1)"),
             "transform" => format!("translate3d(var({enter_translate_x}, 0), var({enter_translate_y}, 0), 0) scale3d(var({enter_scale}, 1), var({enter_scale}, 1), var({enter_scale}, 1)) rotate(var({enter_rotate}, 0))")
@@ -51,19 +51,19 @@ lazy_static! {
       Keyframe::builder()
         .name("ping")
         .values(vec!["pingAnimation"])
-        .rules(indexmap!{ "75%, 100%" => indexmap! { "transform" => "scale(2)", "opacity" => "0" } })
+        .rules(indexmap! { "75%, 100%" => indexmap! { "transform" => "scale(2)", "opacity" => "0" } })
         .description("Manages the keyframes for the ping animation.")
         .build(),
       Keyframe::builder()
         .name("pulse")
         .values(vec!["pulseAnimation"])
         .description("Manages the keyframes for the pulse animation.")
-        .rules(indexmap!{ "0%, 100%" => indexmap! { "opacity" => "1" }, "50%" => indexmap! { "opacity" => "0.5" } })
+        .rules(indexmap! { "0%, 100%" => indexmap! { "opacity" => "1" }, "50%" => indexmap! { "opacity" => "0.5" } })
         .build(),
       Keyframe::builder()
         .name("bounce")
         .values(vec!["bounceAnimation"])
-        .rules(indexmap!{
+        .rules(indexmap! {
           "0%, 100%" => indexmap! {
             "transform" => "translateY(-25%)",
             "animationTimingFunction" => "cubic-bezier(0.8, 0, 1, 1)"
