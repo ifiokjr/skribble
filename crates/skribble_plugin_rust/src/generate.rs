@@ -24,11 +24,7 @@ fn generate_media_queries(
       let method_name = get_method_name(name, method_names);
 
       if let Some(ref description) = media_query.description {
-        let description = description
-          .split('\n')
-          .collect::<Vec<&str>>()
-          .join("\n/// ");
-        methods.push(indent(format!("/// {description}"), indent_style));
+        methods.push(wrap_indent(wrap_docs(description), 1));
       }
       methods.push(indent(
         format!("#[inline]\nfn {method_name}(&self) -> {struct_name} {{"),
@@ -72,11 +68,7 @@ fn generate_parent_modifiers(
     let method_name = get_method_name(name, method_names);
 
     if let Some(ref description) = modifier.description {
-      let description = description
-        .split('\n')
-        .collect::<Vec<&str>>()
-        .join("\n/// ");
-      sections.push(indent(format!("/// {description}"), indent_style));
+      sections.push(wrap_indent(wrap_docs(description), 1));
     }
 
     sections.push(indent(
@@ -127,12 +119,9 @@ fn generate_modifiers(
       let method_name = get_method_name(name, method_names);
 
       if let Some(ref description) = modifier.description {
-        let description = description
-          .split('\n')
-          .collect::<Vec<&str>>()
-          .join("\n/// ");
-        methods.push(indent(format!("/// {description}"), indent_style));
+        methods.push(wrap_indent(wrap_docs(description), 1));
       }
+
       methods.push(indent(
         format!("#[inline]\nfn {method_name}(&self) -> {struct_name} {{"),
         indent_style,
@@ -171,11 +160,7 @@ fn generate_value_sets(
       let method_name = safe_method_name(value_name);
 
       if let Some(ref description) = value_set.description {
-        let description = description
-          .split('\n')
-          .collect::<Vec<&str>>()
-          .join("\n/// ");
-        sections.push(indent(format!("/// {description}"), indent_style));
+        sections.push(wrap_indent(wrap_docs(description), 1));
       }
 
       sections.push(indent(
@@ -210,11 +195,7 @@ fn generate_named_classes(
     let method_name = safe_method_name(class_name);
 
     if let Some(ref description) = class.description {
-      let description = description
-        .split('\n')
-        .collect::<Vec<&str>>()
-        .join("\n/// ");
-      sections.push(indent(format!("/// {description}"), indent_style));
+      sections.push(wrap_indent(wrap_docs(description), 1));
     }
 
     sections.push(indent(
@@ -279,11 +260,7 @@ fn generate_atoms(
     }
 
     if let Some(ref description) = modifier.description {
-      let description = description
-        .split('\n')
-        .collect::<Vec<&str>>()
-        .join("\n/// ");
-      trait_content.push(indent(format!("/// {description}"), indent_style));
+      trait_content.push(wrap_indent(wrap_docs(description), 1));
     }
 
     trait_content.push(indent(
@@ -355,25 +332,42 @@ fn generate_css_variables(
 
   for (name, css_variable) in config.css_variables.iter() {
     let method_name = safe_method_name(name);
+    let variable_name = css_variable.get_variable(variable_prefix.as_ref());
+    let css_docs = wrap_indent(
+      wrap_docs(wrap_in_code_block(
+        css_property_syntax(&variable_name, &css_variable.syntax, &css_variable.value),
+        "css",
+      )),
+      1,
+    );
+
+    if let Some(ref description) = css_variable.description {
+      entries.push(wrap_indent(wrap_docs(description), 1));
+      entries.push(wrap_indent(wrap_docs("\n"), 1));
+    }
+
+    entries.push(css_docs.clone());
+
     entries.push(indent(
       format!("#[inline]\npub fn {method_name}(&self) -> String {{"),
       indent_style,
     ));
 
     entries.push(indent(
-      indent(
-        format!(
-          "\"{}\".into()",
-          css_variable.get_variable(variable_prefix.as_ref())
-        ),
-        indent_style,
-      ),
+      indent(format!("\"{variable_name}\".into()",), indent_style),
       indent_style,
     ));
 
     entries.push(indent("}", indent_style));
 
     if css_variable.syntax.is_color() {
+      if let Some(ref description) = css_variable.description {
+        colors.push(wrap_indent(wrap_docs(description), 1));
+        colors.push(wrap_indent(wrap_docs("\n"), 1));
+      }
+
+      colors.push(css_docs);
+
       colors.push(indent(
         format!("#[inline]\nfn {method_name}(&self) -> String {{"),
         indent_style,
@@ -393,6 +387,43 @@ fn generate_css_variables(
   colors.push("}".into());
   sections.push(entries.join("\n"));
   sections.push(colors.join("\n"));
+}
+
+fn wrap_indent(content: impl AsRef<str>, level: u8) -> String {
+  let mut result = String::new();
+  let indent_style = IndentStyle::default();
+  for _ in 0..level {
+    result = indent(&content, indent_style);
+  }
+
+  result
+}
+
+fn wrap_docs(content: impl AsRef<str>) -> String {
+  let mut result = vec![];
+  for line in content.as_ref().lines() {
+    result.push(format!("/// {line}"));
+  }
+
+  result.join("\n")
+}
+
+fn css_property_syntax(
+  variable_name: impl AsRef<str>,
+  syntax: &PropertySyntax,
+  initial_value: &Option<String>,
+) -> String {
+  let variable_name = variable_name.as_ref();
+  let default_initial_value = "/* */".into();
+  let initial_value = initial_value.as_ref().unwrap_or(&default_initial_value);
+  format!(
+    "@property {variable_name} {{\n  syntax: \"{syntax}\";\n  inherits: false;\n  initial-value: \
+     {initial_value};\n}}"
+  )
+}
+
+fn wrap_in_code_block(content: impl AsRef<str>, r#type: impl AsRef<str>) -> String {
+  format!("```{}\n{}\n```", r#type.as_ref(), content.as_ref(),)
 }
 
 fn get_value_set_trait_name(value_set_name: impl Into<String>) -> String {

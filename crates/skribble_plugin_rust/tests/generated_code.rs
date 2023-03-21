@@ -42,323 +42,883 @@ pub fn vars() -> CssVariables {
 }
 pub struct CssVariables;
 impl CssVariables {
+  /// The primary color. Useful for primary buttons.
+  ///
+  /// ```css
+  /// @property --sk-p {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #570df8;
+  /// }
+  /// ```
   #[inline]
   pub fn primary(&self) -> String {
     "--sk-p".into()
   }
 
+  /// The primary content color
+  ///
+  /// ```css
+  /// @property --sk-pc {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #ffffff;
+  /// }
+  /// ```
   #[inline]
   pub fn primary_content(&self) -> String {
     "--sk-pc".into()
   }
 
+  /// The secondary color. Useful for secondary buttons.
+  ///
+  /// ```css
+  /// @property --sk-s {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #f000b8;
+  /// }
+  /// ```
   #[inline]
   pub fn secondary(&self) -> String {
     "--sk-s".into()
   }
 
+  /// The secondary content color. Useful for text within secondary buttons.
+  ///
+  /// ```css
+  /// @property --sk-sc {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #ffffff;
+  /// }
+  /// ```
   #[inline]
   pub fn secondary_content(&self) -> String {
     "--sk-sc".into()
   }
 
+  /// Color for accents.
+  ///
+  /// ```css
+  /// @property --sk-a {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #37cdbe;
+  /// }
+  /// ```
   #[inline]
   pub fn accent(&self) -> String {
     "--sk-a".into()
   }
 
+  /// Color for content within accents.
+  ///
+  /// ```css
+  /// @property --sk-ac {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #163835;
+  /// }
+  /// ```
   #[inline]
   pub fn accent_content(&self) -> String {
     "--sk-ac".into()
   }
 
+  /// The neutral color.
+  ///
+  /// ```css
+  /// @property --sk-n {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #3d4451;
+  /// }
+  /// ```
   #[inline]
   pub fn neutral(&self) -> String {
     "--sk-n".into()
   }
 
+  /// The neutral content color.
+  ///
+  /// ```css
+  /// @property --sk-nc {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #ffffff;
+  /// }
+  /// ```
   #[inline]
   pub fn neutral_content(&self) -> String {
     "--sk-nc".into()
   }
 
+  /// The base color.
+  ///
+  /// ```css
+  /// @property --sk-b1 {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #ffffff;
+  /// }
+  /// ```
   #[inline]
   pub fn base100(&self) -> String {
     "--sk-b1".into()
   }
 
+  /// The secondary base color.
+  ///
+  /// ```css
+  /// @property --sk-b2 {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #F2F2F2;
+  /// }
+  /// ```
   #[inline]
   pub fn base200(&self) -> String {
     "--sk-b2".into()
   }
 
+  /// The tertiary base color.
+  ///
+  /// ```css
+  /// @property --sk-b3 {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #E5E6E6;
+  /// }
+  /// ```
   #[inline]
   pub fn base300(&self) -> String {
     "--sk-b3".into()
   }
 
+  /// The base content color. This is useful for text.
+  ///
+  /// ```css
+  /// @property --sk-bc {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #1f2937;
+  /// }
+  /// ```
   #[inline]
   pub fn base_content(&self) -> String {
     "--sk-bc".into()
   }
 
+  /// The info color. Useful for info buttons and alerts.
+  ///
+  /// ```css
+  /// @property --sk-in {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #0070F3;
+  /// }
+  /// ```
   #[inline]
   pub fn info(&self) -> String {
     "--sk-in".into()
   }
 
+  /// The info content color. Useful for text within info buttons and alerts.
+  ///
+  /// ```css
+  /// @property --sk-inc {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #ffffff;
+  /// }
+  /// ```
   #[inline]
   pub fn info_content(&self) -> String {
     "--sk-inc".into()
   }
 
+  /// The success color. Useful for success buttons and alerts.
+  ///
+  /// ```css
+  /// @property --sk-su {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #21CC51;
+  /// }
+  /// ```
   #[inline]
   pub fn success(&self) -> String {
     "--sk-su".into()
   }
 
+  /// The success content color. Useful for text within success buttons and
+  /// alerts.
+  ///
+  /// ```css
+  /// @property --sk-suc {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #ffffff;
+  /// }
+  /// ```
   #[inline]
   pub fn success_content(&self) -> String {
     "--sk-suc".into()
   }
 
+  /// The warning color. Useful for warning buttons and alerts.
+  ///
+  /// ```css
+  /// @property --sk-wa {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #FF6154;
+  /// }
+  /// ```
   #[inline]
   pub fn warning(&self) -> String {
     "--sk-wa".into()
   }
 
+  /// The warning content color. Useful for text within warning buttons and
+  /// alerts.
+  ///
+  /// ```css
+  /// @property --sk-wac {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #ffffff;
+  /// }
+  /// ```
   #[inline]
   pub fn warning_content(&self) -> String {
     "--sk-wac".into()
   }
 
+  /// The error color. Useful for error buttons and alerts.
+  ///
+  /// ```css
+  /// @property --sk-er {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #DE1C8D;
+  /// }
+  /// ```
   #[inline]
   pub fn error(&self) -> String {
     "--sk-er".into()
   }
 
+  /// The error content color. Useful for text within error buttons and alerts.
+  ///
+  /// ```css
+  /// @property --sk-erc {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #ffffff;
+  /// }
+  /// ```
   #[inline]
   pub fn error_content(&self) -> String {
     "--sk-erc".into()
   }
 
+  /// ```css
+  /// @property --sk-container-max-width {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: container;
+  /// }
+  /// ```
   #[inline]
   pub fn container_max_width(&self) -> String {
     "--sk-container-max-width".into()
   }
 
+  /// ```css
+  /// @property --sk-empty {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn empty(&self) -> String {
     "--sk-empty".into()
   }
 
+  /// ```css
+  /// @property --sk-filter-blur {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn filter_blur(&self) -> String {
     "--sk-filter-blur".into()
   }
 
+  /// ```css
+  /// @property --sk-filter-brightness {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn filter_brightness(&self) -> String {
     "--sk-filter-brightness".into()
   }
 
+  /// ```css
+  /// @property --sk-filter-contrast {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn filter_contrast(&self) -> String {
     "--sk-filter-contrast".into()
   }
 
+  /// ```css
+  /// @property --sk-filter-custom {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn filter_custom(&self) -> String {
     "--sk-filter-custom".into()
   }
 
+  /// ```css
+  /// @property --sk-filter-grayscale {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn filter_grayscale(&self) -> String {
     "--sk-filter-grayscale".into()
   }
 
+  /// ```css
+  /// @property --sk-filter-hue-rotate {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn filter_hue_rotate(&self) -> String {
     "--sk-filter-hue-rotate".into()
   }
 
+  /// ```css
+  /// @property --sk-filter-invert {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn filter_invert(&self) -> String {
     "--sk-filter-invert".into()
   }
 
+  /// ```css
+  /// @property --sk-filter-saturate {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn filter_saturate(&self) -> String {
     "--sk-filter-saturate".into()
   }
 
+  /// ```css
+  /// @property --sk-filter-sepia {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn filter_sepia(&self) -> String {
     "--sk-filter-sepia".into()
   }
 
+  /// ```css
+  /// @property --sk-filter-drop-shadow {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn filter_drop_shadow(&self) -> String {
     "--sk-filter-drop-shadow".into()
   }
 
+  /// ```css
+  /// @property --sk-group-nested-filter {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: var(__CSS_VARIABLE::filterBlur__) var(__CSS_VARIABLE::filterBrightness__) var(__CSS_VARIABLE::filterContrast__) var(__CSS_VARIABLE::filterGrayscale__) var(__CSS_VARIABLE::filterHueRotate__) var(__CSS_VARIABLE::filterInvert__) var(__CSS_VARIABLE::filterSaturate__) var(__CSS_VARIABLE::filterSepia__) var(__CSS_VARIABLE::filterDropShadow__) var(__CSS_VARIABLE::filterCustom__);
+  /// }
+  /// ```
   #[inline]
   pub fn group_nested_filter(&self) -> String {
     "--sk-group-nested-filter".into()
   }
 
+  /// ```css
+  /// @property --sk-backdrop-blur {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn backdrop_blur(&self) -> String {
     "--sk-backdrop-blur".into()
   }
 
+  /// ```css
+  /// @property --sk-backdrop-brightness {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn backdrop_brightness(&self) -> String {
     "--sk-backdrop-brightness".into()
   }
 
+  /// ```css
+  /// @property --sk-backdrop-contrast {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn backdrop_contrast(&self) -> String {
     "--sk-backdrop-contrast".into()
   }
 
+  /// ```css
+  /// @property --sk-backdrop-custom {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn backdrop_custom(&self) -> String {
     "--sk-backdrop-custom".into()
   }
 
+  /// ```css
+  /// @property --sk-backdrop-grayscale {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn backdrop_grayscale(&self) -> String {
     "--sk-backdrop-grayscale".into()
   }
 
+  /// ```css
+  /// @property --sk-backdrop-hue-rotate {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn backdrop_hue_rotate(&self) -> String {
     "--sk-backdrop-hue-rotate".into()
   }
 
+  /// ```css
+  /// @property --sk-backdrop-invert {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn backdrop_invert(&self) -> String {
     "--sk-backdrop-invert".into()
   }
 
+  /// ```css
+  /// @property --sk-backdrop-saturate {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn backdrop_saturate(&self) -> String {
     "--sk-backdrop-saturate".into()
   }
 
+  /// ```css
+  /// @property --sk-backdrop-sepia {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn backdrop_sepia(&self) -> String {
     "--sk-backdrop-sepia".into()
   }
 
+  /// ```css
+  /// @property --sk-backdrop-drop-shadow {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn backdrop_drop_shadow(&self) -> String {
     "--sk-backdrop-drop-shadow".into()
   }
 
+  /// ```css
+  /// @property --sk-group-nested-backdrop {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: var(__CSS_VARIABLE::backdropBlur__) var(__CSS_VARIABLE::backdropBrightness__) var(__CSS_VARIABLE::backdropContrast__) var(__CSS_VARIABLE::backdropGrayscale__) var(__CSS_VARIABLE::backdropHueRotate__) var(__CSS_VARIABLE::backdropInvert__) var(__CSS_VARIABLE::backdropSaturate__) var(__CSS_VARIABLE::backdropSepia__) var(__CSS_VARIABLE::backdropDropShadow__) var(__CSS_VARIABLE::backdropCustom__);
+  /// }
+  /// ```
   #[inline]
   pub fn group_nested_backdrop(&self) -> String {
     "--sk-group-nested-backdrop".into()
   }
 
+  /// ```css
+  /// @property --sk-default-transition-duration {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: 150ms;
+  /// }
+  /// ```
   #[inline]
   pub fn default_transition_duration(&self) -> String {
     "--sk-default-transition-duration".into()
   }
 
+  /// ```css
+  /// @property --sk-default-animation-duration {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: 1s;
+  /// }
+  /// ```
   #[inline]
   pub fn default_animation_duration(&self) -> String {
     "--sk-default-animation-duration".into()
   }
 
+  /// ```css
+  /// @property --sk-etx {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn enter_translate_x(&self) -> String {
     "--sk-etx".into()
   }
 
+  /// ```css
+  /// @property --sk-ety {
+  ///   syntax: "*";
+  ///   inherits: false;
+  ///   initial-value: /* */;
+  /// }
+  /// ```
   #[inline]
   pub fn enter_translate_y(&self) -> String {
     "--sk-ety".into()
   }
 }
 pub trait Color: SkribbleValue {
+  /// The primary color. Useful for primary buttons.
+  ///
+  /// ```css
+  /// @property --sk-p {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #570df8;
+  /// }
+  /// ```
   #[inline]
   fn primary(&self) -> String {
     self.append_string_to_skribble_value("primary")
   }
+  /// The primary content color
+  ///
+  /// ```css
+  /// @property --sk-pc {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #ffffff;
+  /// }
+  /// ```
   #[inline]
   fn primary_content(&self) -> String {
     self.append_string_to_skribble_value("primaryContent")
   }
+  /// The secondary color. Useful for secondary buttons.
+  ///
+  /// ```css
+  /// @property --sk-s {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #f000b8;
+  /// }
+  /// ```
   #[inline]
   fn secondary(&self) -> String {
     self.append_string_to_skribble_value("secondary")
   }
+  /// The secondary content color. Useful for text within secondary buttons.
+  ///
+  /// ```css
+  /// @property --sk-sc {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #ffffff;
+  /// }
+  /// ```
   #[inline]
   fn secondary_content(&self) -> String {
     self.append_string_to_skribble_value("secondaryContent")
   }
+  /// Color for accents.
+  ///
+  /// ```css
+  /// @property --sk-a {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #37cdbe;
+  /// }
+  /// ```
   #[inline]
   fn accent(&self) -> String {
     self.append_string_to_skribble_value("accent")
   }
+  /// Color for content within accents.
+  ///
+  /// ```css
+  /// @property --sk-ac {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #163835;
+  /// }
+  /// ```
   #[inline]
   fn accent_content(&self) -> String {
     self.append_string_to_skribble_value("accentContent")
   }
+  /// The neutral color.
+  ///
+  /// ```css
+  /// @property --sk-n {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #3d4451;
+  /// }
+  /// ```
   #[inline]
   fn neutral(&self) -> String {
     self.append_string_to_skribble_value("neutral")
   }
+  /// The neutral content color.
+  ///
+  /// ```css
+  /// @property --sk-nc {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #ffffff;
+  /// }
+  /// ```
   #[inline]
   fn neutral_content(&self) -> String {
     self.append_string_to_skribble_value("neutralContent")
   }
+  /// The base color.
+  ///
+  /// ```css
+  /// @property --sk-b1 {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #ffffff;
+  /// }
+  /// ```
   #[inline]
   fn base100(&self) -> String {
     self.append_string_to_skribble_value("base100")
   }
+  /// The secondary base color.
+  ///
+  /// ```css
+  /// @property --sk-b2 {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #F2F2F2;
+  /// }
+  /// ```
   #[inline]
   fn base200(&self) -> String {
     self.append_string_to_skribble_value("base200")
   }
+  /// The tertiary base color.
+  ///
+  /// ```css
+  /// @property --sk-b3 {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #E5E6E6;
+  /// }
+  /// ```
   #[inline]
   fn base300(&self) -> String {
     self.append_string_to_skribble_value("base300")
   }
+  /// The base content color. This is useful for text.
+  ///
+  /// ```css
+  /// @property --sk-bc {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #1f2937;
+  /// }
+  /// ```
   #[inline]
   fn base_content(&self) -> String {
     self.append_string_to_skribble_value("baseContent")
   }
+  /// The info color. Useful for info buttons and alerts.
+  ///
+  /// ```css
+  /// @property --sk-in {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #0070F3;
+  /// }
+  /// ```
   #[inline]
   fn info(&self) -> String {
     self.append_string_to_skribble_value("info")
   }
+  /// The info content color. Useful for text within info buttons and alerts.
+  ///
+  /// ```css
+  /// @property --sk-inc {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #ffffff;
+  /// }
+  /// ```
   #[inline]
   fn info_content(&self) -> String {
     self.append_string_to_skribble_value("infoContent")
   }
+  /// The success color. Useful for success buttons and alerts.
+  ///
+  /// ```css
+  /// @property --sk-su {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #21CC51;
+  /// }
+  /// ```
   #[inline]
   fn success(&self) -> String {
     self.append_string_to_skribble_value("success")
   }
+  /// The success content color. Useful for text within success buttons and
+  /// alerts.
+  ///
+  /// ```css
+  /// @property --sk-suc {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #ffffff;
+  /// }
+  /// ```
   #[inline]
   fn success_content(&self) -> String {
     self.append_string_to_skribble_value("successContent")
   }
+  /// The warning color. Useful for warning buttons and alerts.
+  ///
+  /// ```css
+  /// @property --sk-wa {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #FF6154;
+  /// }
+  /// ```
   #[inline]
   fn warning(&self) -> String {
     self.append_string_to_skribble_value("warning")
   }
+  /// The warning content color. Useful for text within warning buttons and
+  /// alerts.
+  ///
+  /// ```css
+  /// @property --sk-wac {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #ffffff;
+  /// }
+  /// ```
   #[inline]
   fn warning_content(&self) -> String {
     self.append_string_to_skribble_value("warningContent")
   }
+  /// The error color. Useful for error buttons and alerts.
+  ///
+  /// ```css
+  /// @property --sk-er {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #DE1C8D;
+  /// }
+  /// ```
   #[inline]
   fn error(&self) -> String {
     self.append_string_to_skribble_value("error")
   }
+  /// The error content color. Useful for text within error buttons and alerts.
+  ///
+  /// ```css
+  /// @property --sk-erc {
+  ///   syntax: "<color>";
+  ///   inherits: false;
+  ///   initial-value: #ffffff;
+  /// }
+  /// ```
   #[inline]
   fn error_content(&self) -> String {
     self.append_string_to_skribble_value("errorContent")
