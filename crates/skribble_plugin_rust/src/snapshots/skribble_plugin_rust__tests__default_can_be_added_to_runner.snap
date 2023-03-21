@@ -889,11 +889,23 @@ impl SkribbleValue for MediaQueryDeviceCategoriesChild {
 }
 pub trait MediaQueryDeviceCategories: SkribbleValue {
   /// The media query for devices with a screen.
+  ///
+  /// ```css
+  /// @media screen {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn screen(&self) -> MediaQueryDeviceCategoriesChild {
     MediaQueryDeviceCategoriesChild::from_ref(self.append_to_skribble_value("screen"))
   }
   /// The media query for devices with a printer.
+  ///
+  /// ```css
+  /// @media print {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn print(&self) -> MediaQueryDeviceCategoriesChild {
     MediaQueryDeviceCategoriesChild::from_ref(self.append_to_skribble_value("print"))
@@ -912,26 +924,56 @@ impl SkribbleValue for MediaQueryBreakpointsChild {
 }
 pub trait MediaQueryBreakpoints: SkribbleValue {
   /// The breakpoint for devices with screen size greater than tiny.
+  ///
+  /// ```css
+  /// @media (min-width: 640px) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn sm(&self) -> MediaQueryBreakpointsChild {
     MediaQueryBreakpointsChild::from_ref(self.append_to_skribble_value("sm"))
   }
   /// The breakpoint for devices screen size greater than medium
+  ///
+  /// ```css
+  /// @media (min-width: 768px) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn md(&self) -> MediaQueryBreakpointsChild {
     MediaQueryBreakpointsChild::from_ref(self.append_to_skribble_value("md"))
   }
   /// The breakpoint for devices screen size greater than large
+  ///
+  /// ```css
+  /// @media (min-width: 1024px) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn lg(&self) -> MediaQueryBreakpointsChild {
     MediaQueryBreakpointsChild::from_ref(self.append_to_skribble_value("lg"))
   }
   /// The breakpoint for devices screen size greater than extra large
+  ///
+  /// ```css
+  /// @media (min-width: 1280px) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn xl(&self) -> MediaQueryBreakpointsChild {
     MediaQueryBreakpointsChild::from_ref(self.append_to_skribble_value("xl"))
   }
   /// The breakpoint for devices screen size greater than xxl
+  ///
+  /// ```css
+  /// @media (min-width: 1536px) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn xxl(&self) -> MediaQueryBreakpointsChild {
     MediaQueryBreakpointsChild::from_ref(self.append_to_skribble_value("xxl"))
@@ -950,11 +992,23 @@ impl SkribbleValue for MediaQueryOrientationChild {
 }
 pub trait MediaQueryOrientation: SkribbleValue {
   /// The media query for devices with a portrait orientation.
+  ///
+  /// ```css
+  /// @media (orientation: portrait) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn portrait(&self) -> MediaQueryOrientationChild {
     MediaQueryOrientationChild::from_ref(self.append_to_skribble_value("portrait"))
   }
   /// The media query for devices with a landscape orientation.
+  ///
+  /// ```css
+  /// @media (orientation: landscape) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn landscape(&self) -> MediaQueryOrientationChild {
     MediaQueryOrientationChild::from_ref(self.append_to_skribble_value("landscape"))
@@ -973,11 +1027,23 @@ impl SkribbleValue for MediaQueryMotionChild {
 }
 pub trait MediaQueryMotion: SkribbleValue {
   /// The media query for devices with a reduced motion preference.
+  ///
+  /// ```css
+  /// @media (prefers-reduced-motion: reduce) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn motion_reduce(&self) -> MediaQueryMotionChild {
     MediaQueryMotionChild::from_ref(self.append_to_skribble_value("motionReduce"))
   }
   /// The media query for devices with a no preference motion preference.
+  ///
+  /// ```css
+  /// @media (prefers-reduced-motion: no-preference) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn motion_safe(&self) -> MediaQueryMotionChild {
     MediaQueryMotionChild::from_ref(self.append_to_skribble_value("motionSafe"))
@@ -996,11 +1062,23 @@ impl SkribbleValue for MediaQueryDarkModeChild {
 }
 pub trait MediaQueryDarkMode: SkribbleValue {
   /// The media query for devices with a dark color scheme.
+  ///
+  /// ```css
+  /// @media (prefers-color-scheme: dark) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn dark(&self) -> MediaQueryDarkModeChild {
     MediaQueryDarkModeChild::from_ref(self.append_to_skribble_value("dark"))
   }
   /// The media query for devices with a light color scheme.
+  ///
+  /// ```css
+  /// @media (prefers-color-scheme: light) {
+  ///   /* ... */
+  /// }
+  /// ```
   #[inline]
   fn light(&self) -> MediaQueryDarkModeChild {
     MediaQueryDarkModeChild::from_ref(self.append_to_skribble_value("light"))

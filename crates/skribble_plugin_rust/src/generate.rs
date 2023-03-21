@@ -25,7 +25,15 @@ fn generate_media_queries(
 
       if let Some(ref description) = media_query.description {
         methods.push(wrap_indent(wrap_docs(description), 1));
+        methods.push(wrap_indent(wrap_docs("\n"), 1));
       }
+      methods.push(wrap_indent(
+        wrap_docs(wrap_in_code_block(
+          media_query_docs(&media_query.query),
+          "css",
+        )),
+        1,
+      ));
       methods.push(indent(
         format!("#[inline]\nfn {method_name}(&self) -> {struct_name} {{"),
         indent_style,
@@ -47,6 +55,11 @@ fn generate_media_queries(
     struct_names_map.insert(struct_name, trait_names.len());
     sections.push(section.join("\n"));
   }
+}
+
+fn media_query_docs(query: impl AsRef<str>) -> String {
+  let query = query.as_ref();
+  format!("@media {query} {{\n  /* ... */\n}}")
 }
 
 fn generate_parent_modifiers(
