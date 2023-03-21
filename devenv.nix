@@ -18,6 +18,14 @@
 
   # Scripts
 
+  scripts."generate:all".exec = ''
+    set -e
+    generate:plugin:rust
+  '';
+  scripts."generate:plugin:rust".exec = ''
+    set -e
+    cargo run --example generate --package skribble_plugin_rust -- crates/skribble_plugin_rust/tests
+  '';
   scripts."build:all".exec = ''
     set -e
     cargo build

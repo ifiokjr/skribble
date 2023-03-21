@@ -31,7 +31,7 @@ pub(crate) fn generate_media_queries(
         methods.push(indent(format!("/// {description}"), indent_style));
       }
       methods.push(indent(
-        format!("fn {method_name}(&self) -> {struct_name} {{"),
+        format!("#[inline]\nfn {method_name}(&self) -> {struct_name} {{"),
         indent_style,
       ));
       methods.push(indent(
@@ -80,7 +80,7 @@ pub(crate) fn generate_parent_modifiers(
     }
 
     sections.push(indent(
-      format!("fn {method_name}(&self) -> {PARENT_MODIFIER_STRUCT_NAME} {{"),
+      format!("#[inline]\nfn {method_name}(&self) -> {PARENT_MODIFIER_STRUCT_NAME} {{"),
       indent_style,
     ));
 
@@ -134,7 +134,7 @@ pub(crate) fn generate_modifiers(
         methods.push(indent(format!("/// {description}"), indent_style));
       }
       methods.push(indent(
-        format!("fn {method_name}(&self) -> {struct_name} {{"),
+        format!("#[inline]\nfn {method_name}(&self) -> {struct_name} {{"),
         indent_style,
       ));
       methods.push(indent(
@@ -168,7 +168,7 @@ pub(crate) fn generate_value_sets(
     ));
 
     for (value_name, _) in value_set.values.iter() {
-      let method_name = value_name.to_snake_case();
+      let method_name = safe_method_name(value_name);
 
       if let Some(ref description) = value_set.description {
         let description = description
@@ -179,7 +179,7 @@ pub(crate) fn generate_value_sets(
       }
 
       sections.push(indent(
-        format!("fn {method_name}(&self) -> String {{"),
+        format!("#[inline]\nfn {method_name}(&self) -> String {{"),
         indent_style,
       ));
 
@@ -206,8 +206,8 @@ pub(crate) fn generate_named_classes(
 ) {
   sections.push("pub trait NamedClasses: SkribbleValue {".into());
 
-  for (name, class) in config.classes.iter() {
-    let method_name = name.to_snake_case();
+  for (class_name, class) in config.classes.iter() {
+    let method_name = safe_method_name(class_name);
 
     if let Some(ref description) = class.description {
       let description = description
@@ -218,13 +218,13 @@ pub(crate) fn generate_named_classes(
     }
 
     sections.push(indent(
-      format!("fn {method_name}(&self) -> String {{"),
+      format!("#[inline]\nfn {method_name}(&self) -> String {{"),
       indent_style,
     ));
 
     sections.push(indent(
       indent(
-        format!("self.append_string_to_skribble_value(\"{name}\")"),
+        format!("self.append_string_to_skribble_value(\"{class_name}\")"),
         indent_style,
       ),
       indent_style,
@@ -287,7 +287,7 @@ pub(crate) fn generate_atoms(
     }
 
     trait_content.push(indent(
-      format!("fn {method_name}(&self) -> {atom_struct_name} {{"),
+      format!("#[inline]\nfn {method_name}(&self) -> {atom_struct_name} {{"),
       indent_style,
     ));
 
@@ -317,10 +317,10 @@ pub(crate) fn generate_palette(
   sections.push("pub trait Palette: SkribbleValue {".into());
 
   for (name, _) in config.palette.iter() {
-    let method_name = name.to_snake_case();
+    let method_name = safe_method_name(name);
 
     sections.push(indent(
-      format!("fn {method_name}(&self) -> String {{"),
+      format!("#[inline]\nfn {method_name}(&self) -> String {{"),
       indent_style,
     ));
 
@@ -358,9 +358,9 @@ pub(crate) fn generate_css_variables(
   let mut colors = vec!["pub trait Color: SkribbleValue {".into()];
 
   for (name, css_variable) in config.css_variables.iter() {
-    let method_name = name.to_snake_case();
+    let method_name = safe_method_name(name);
     entries.push(indent(
-      format!("fn {method_name}(&self) -> String {{"),
+      format!("#[inline]\npub fn {method_name}(&self) -> String {{"),
       indent_style,
     ));
 
@@ -379,12 +379,12 @@ pub(crate) fn generate_css_variables(
 
     if css_variable.syntax.is_color() {
       colors.push(indent(
-        format!("fn {method_name}(&self) -> String {{"),
+        format!("#[inline]\nfn {method_name}(&self) -> String {{"),
         indent_style,
       ));
       colors.push(indent(
         indent(
-          "self.append_string_to_skribble_value(\"{name}\")",
+          format!("self.append_string_to_skribble_value(\"{name}\")"),
           indent_style,
         ),
         indent_style,
@@ -408,9 +408,11 @@ fn generate_impl_skribble_value(name: impl AsRef<str>) -> String {
     indoc!(
       "
       impl SkribbleValue for {} {{
+        #[inline]
         fn from_ref(value: impl AsRef<str>) -> Self {{
           Self(value.as_ref().to_string())
         }}
+        #[inline]
         fn get_skribble_value(&self) -> &String {{
           &self.0
         }}
@@ -442,8 +444,8 @@ fn generate_struct(name: impl AsRef<str>) -> String {
   format!("pub struct {name}(String);")
 }
 
-fn get_method_name(name: impl Into<String>, method_names: &mut IndexSet<String>) -> String {
-  let method_name = name.into().to_snake_case();
+fn get_method_name(name: impl AsRef<str>, method_names: &mut IndexSet<String>) -> String {
+  let method_name = safe_method_name(name);
   let mut index = 0;
   let mut current_method_name = method_name.clone();
   loop {
@@ -460,38 +462,93 @@ fn get_method_name(name: impl Into<String>, method_names: &mut IndexSet<String>)
   current_method_name
 }
 
+fn safe_method_name(name: impl AsRef<str>) -> String {
+  let name = name.as_ref();
+
+  let prefix = match name.chars().next() {
+    Some(first_char) if first_char.is_ascii_digit() => "n_",
+    Some(first_char) if !first_char.is_ascii_alphabetic() => {
+      match first_char {
+        '-' => "minus_",
+        '+' => "plus_",
+        _ => "__",
+      }
+    }
+    _ => "",
+  };
+
+  let method_name = format!("{prefix}{}", name.to_snake_case());
+
+  if RESERVED_WORDS.contains(&method_name.as_str()) {
+    return format!("r#{}", method_name);
+  }
+
+  if method_name.is_empty() {
+    return "__".into();
+  }
+
+  method_name
+}
+
+const RESERVED_WORDS: &[&str] = &[
+  "abstract", "alignof", "as", "become", "box", "break", "const", "continue", "crate", "do",
+  "else", "enum", "extern", "false", "final", "fn", "for", "if", "impl", "in", "let", "loop",
+  "macro", "match", "mod", "move", "mut", "offsetof", "override", "priv", "proc", "pub", "pure",
+  "ref", "return", "Self", "self", "sizeof", "static", "struct", "super", "trait", "true", "type",
+  "typeof", "unsafe", "unsized", "use", "virtual", "where", "while", "yield",
+];
+
 const HEADER: &str = r#"// This file was generated by skribble.
+#![allow(clippy::unused)]
+use private::SkribbleValue;
 pub fn sk() -> SkribbleRoot {
   SkribbleRoot::from_ref("")
 }
 pub struct SkribbleRoot(String);
 impl SkribbleValue for SkribbleRoot {
+  #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
   }
-
+  #[inline]
   fn get_skribble_value(&self) -> &String {
     &self.0
   }
 }
-pub trait SkribbleAtomValue {
-  fn from_ref(value: impl AsRef<str>) -> Self;
-  fn get_skribble_value(&self) -> &String;
-  fn append_to_skribble_value(&self, value: impl AsRef<str>) -> String {
-    format!("{}{}", self.get_skribble_value(), value.as_ref())
-  }
-}
-pub trait SkribbleValue {
-  fn from_ref(value: impl AsRef<str>) -> Self;
-  fn get_skribble_value(&self) -> &String;
-  fn append_to_skribble_value(&self, value: impl AsRef<str>) -> String {
-    format!("{}:{}", self.get_skribble_value(), value.as_ref())
-  }
-  fn append_string_to_skribble_value(&self, value: impl AsRef<str>) -> String {
-    format!("{}:${}", self.get_skribble_value(), value.as_ref())
+mod private {
+  #[doc(hidden)]
+  pub trait SkribbleValue {
+    fn from_ref(value: impl AsRef<str>) -> Self;
+    fn get_skribble_value(&self) -> &String;
+    #[inline]
+    fn append_to_skribble_value(&self, value: impl AsRef<str>) -> String {
+      let current_value = self.get_skribble_value();
+      let prefix = if current_value.is_empty() {
+        "".into()
+      } else {
+        format!("{current_value}:")
+      };
+
+      format!("{}{}", prefix, value.as_ref())
+    }
+    #[inline]
+    fn append_string_to_skribble_value(&self, value: impl AsRef<str>) -> String {
+      format!("{}:${}", self.get_skribble_value(), value.as_ref())
+    }
   }
 }"#;
 
 pub(crate) fn combine_sections_with_header(sections: Vec<String>) -> String {
+  // let indent_style = IndentStyle::default();
+  // let mut content = vec![];
+  // content.push("pub use generated_skribble_module::sk;".into());
+  // content.push("pub use generated_skribble_module::vars;".into());
+  // content.push("use generated_skribble_module::*;".into());
+  // content.push("mod generated_skribble_module {".into());
+  // content.push(indent(HEADER, indent_style));
+  // content.push(indent(sections.join("\n"), indent_style));
+  // content.push("}".into());
+
+  // content.join("\n")
   format!("{HEADER}\n{}", sections.join("\n"))
 }
