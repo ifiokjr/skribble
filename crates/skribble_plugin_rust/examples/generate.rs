@@ -7,7 +7,10 @@ use skribble_preset_default::PresetDefault;
 
 fn main() {
   let default_preset = PresetDefault::builder().build();
-  let rust_plugin = RustPlugin::builder().build();
+  let rust_plugin = RustPlugin::builder()
+    .formatter("dprint")
+    .formatter_args(["fmt".into(), "--stdin".into(), "file.rs".into()])
+    .build();
 
   let config: StyleConfig = StyleConfig::builder()
     .plugins(vec![

@@ -1,6 +1,9 @@
 #![deny(clippy::all)]
 #![deny(clippy::indexing_slicing)]
 
+use std::process::Command;
+use std::process::Stdio;
+
 use generate::*;
 use heck::ToPascalCase;
 use heck::ToSnakeCase;
@@ -36,11 +39,29 @@ impl Plugin for RustPlugin {
   }
 
   fn generate_code(&self, config: &MergedConfig, options: &Options) -> AnyResult<GeneratedFiles> {
+    let mut contents = self.generate_file_contents(config, options);
+
+    if let Some(ref formatter) = self.formatter {
+      let input = Command::new("echo")
+        .arg(&contents)
+        .stdout(Stdio::piped())
+        .spawn()?;
+
+      if let Some(stdout) = input.stdout {
+        let output = Command::new(formatter)
+          .args(&self.formatter_args)
+          .stdin(stdout)
+          .stdout(std::process::Stdio::piped())
+          .output()?;
+        contents = String::from_utf8(output.stdout)?;
+      }
+    }
+
     let mut files = GeneratedFiles::default();
     files.push(
       GeneratedFile::builder()
         .path("./src/skribble.rs")
-        .content(self.generate_file_contents(config, options))
+        .content(contents)
         .build(),
     );
 
