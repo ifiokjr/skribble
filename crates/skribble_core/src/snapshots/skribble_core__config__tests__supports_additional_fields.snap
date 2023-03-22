@@ -10,7 +10,6 @@ expression: config
       "keyframes": "append",
       "variables": "append",
       "mediaQueries": "append",
-      "parentModifiers": "append",
       "modifiers": "append",
       "rules": "append",
       "classes": "append",
@@ -24,13 +23,13 @@ expression: config
   "keyframes": [],
   "variables": [],
   "mediaQueries": [],
-  "parentModifiers": [],
   "modifiers": [],
   "atoms": [],
   "classes": [],
   "palette": {},
   "valueSets": [],
   "groups": [],
+  "parentModifiers": [],
   "notDefined": {},
   "extraStuff": {}
 }

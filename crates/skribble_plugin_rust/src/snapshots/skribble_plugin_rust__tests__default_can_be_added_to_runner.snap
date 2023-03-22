@@ -1084,8 +1084,8 @@ pub trait MediaQueryDarkMode: SkribbleValue {
     MediaQueryDarkModeChild::from_ref(self.append_to_skribble_value("light"))
   }
 }
-pub struct ParentModifierChild(String);
-impl SkribbleValue for ParentModifierChild {
+pub struct ModifierParentGroupChild(String);
+impl SkribbleValue for ModifierParentGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1095,7 +1095,7 @@ impl SkribbleValue for ParentModifierChild {
     &self.0
   }
 }
-pub trait ParentModifier: SkribbleValue {
+pub trait ModifierParentGroup: SkribbleValue {
   /// This class modifier becomes active when when the text direction of any parent nodes is set to right to left.
   ///
   /// ```css
@@ -1104,8 +1104,8 @@ pub trait ParentModifier: SkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn rtl(&self) -> ParentModifierChild {
-    ParentModifierChild::from_ref(self.append_to_skribble_value("rtl"))
+  fn rtl(&self) -> ModifierParentGroupChild {
+    ModifierParentGroupChild::from_ref(self.append_to_skribble_value("rtl"))
   }
   /// This class modifier becomes active when a parent group is hovered.
   ///
@@ -1115,8 +1115,8 @@ pub trait ParentModifier: SkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn group_hover(&self) -> ParentModifierChild {
-    ParentModifierChild::from_ref(self.append_to_skribble_value("groupHover"))
+  fn group_hover(&self) -> ModifierParentGroupChild {
+    ModifierParentGroupChild::from_ref(self.append_to_skribble_value("groupHover"))
   }
   /// This class modifier becomes active when a parent group is focused.
   ///
@@ -1126,8 +1126,8 @@ pub trait ParentModifier: SkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn group_focus(&self) -> ParentModifierChild {
-    ParentModifierChild::from_ref(self.append_to_skribble_value("groupFocus"))
+  fn group_focus(&self) -> ModifierParentGroupChild {
+    ModifierParentGroupChild::from_ref(self.append_to_skribble_value("groupFocus"))
   }
   /// This class modifier becomes active when a parent group is active.
   ///
@@ -1137,8 +1137,8 @@ pub trait ParentModifier: SkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn group_active(&self) -> ParentModifierChild {
-    ParentModifierChild::from_ref(self.append_to_skribble_value("groupActive"))
+  fn group_active(&self) -> ModifierParentGroupChild {
+    ModifierParentGroupChild::from_ref(self.append_to_skribble_value("groupActive"))
   }
   /// This class modifier becomes active when a parent group is visited.
   ///
@@ -1148,8 +1148,8 @@ pub trait ParentModifier: SkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn group_visited(&self) -> ParentModifierChild {
-    ParentModifierChild::from_ref(self.append_to_skribble_value("groupVisited"))
+  fn group_visited(&self) -> ModifierParentGroupChild {
+    ModifierParentGroupChild::from_ref(self.append_to_skribble_value("groupVisited"))
   }
 }
 pub struct ModifierHoverGroupChild(String);
@@ -4432,7 +4432,7 @@ impl MediaQueryBreakpoints for SkribbleRoot {}
 impl MediaQueryOrientation for SkribbleRoot {}
 impl MediaQueryMotion for SkribbleRoot {}
 impl MediaQueryDarkMode for SkribbleRoot {}
-impl ParentModifier for SkribbleRoot {}
+impl ModifierParentGroup for SkribbleRoot {}
 impl ModifierHoverGroup for SkribbleRoot {}
 impl ModifierActiveGroup for SkribbleRoot {}
 impl ModifierFocusGroup for SkribbleRoot {}
@@ -4473,7 +4473,7 @@ impl MediaQueryBreakpoints for MediaQueryDeviceCategoriesChild {}
 impl MediaQueryOrientation for MediaQueryDeviceCategoriesChild {}
 impl MediaQueryMotion for MediaQueryDeviceCategoriesChild {}
 impl MediaQueryDarkMode for MediaQueryDeviceCategoriesChild {}
-impl ParentModifier for MediaQueryDeviceCategoriesChild {}
+impl ModifierParentGroup for MediaQueryDeviceCategoriesChild {}
 impl ModifierHoverGroup for MediaQueryDeviceCategoriesChild {}
 impl ModifierActiveGroup for MediaQueryDeviceCategoriesChild {}
 impl ModifierFocusGroup for MediaQueryDeviceCategoriesChild {}
@@ -4513,7 +4513,7 @@ impl NamedClasses for MediaQueryDeviceCategoriesChild {}
 impl MediaQueryOrientation for MediaQueryBreakpointsChild {}
 impl MediaQueryMotion for MediaQueryBreakpointsChild {}
 impl MediaQueryDarkMode for MediaQueryBreakpointsChild {}
-impl ParentModifier for MediaQueryBreakpointsChild {}
+impl ModifierParentGroup for MediaQueryBreakpointsChild {}
 impl ModifierHoverGroup for MediaQueryBreakpointsChild {}
 impl ModifierActiveGroup for MediaQueryBreakpointsChild {}
 impl ModifierFocusGroup for MediaQueryBreakpointsChild {}
@@ -4552,7 +4552,7 @@ impl Atom for MediaQueryBreakpointsChild {}
 impl NamedClasses for MediaQueryBreakpointsChild {}
 impl MediaQueryMotion for MediaQueryOrientationChild {}
 impl MediaQueryDarkMode for MediaQueryOrientationChild {}
-impl ParentModifier for MediaQueryOrientationChild {}
+impl ModifierParentGroup for MediaQueryOrientationChild {}
 impl ModifierHoverGroup for MediaQueryOrientationChild {}
 impl ModifierActiveGroup for MediaQueryOrientationChild {}
 impl ModifierFocusGroup for MediaQueryOrientationChild {}
@@ -4590,7 +4590,7 @@ impl ModifierPseudoGroup for MediaQueryOrientationChild {}
 impl Atom for MediaQueryOrientationChild {}
 impl NamedClasses for MediaQueryOrientationChild {}
 impl MediaQueryDarkMode for MediaQueryMotionChild {}
-impl ParentModifier for MediaQueryMotionChild {}
+impl ModifierParentGroup for MediaQueryMotionChild {}
 impl ModifierHoverGroup for MediaQueryMotionChild {}
 impl ModifierActiveGroup for MediaQueryMotionChild {}
 impl ModifierFocusGroup for MediaQueryMotionChild {}
@@ -4627,7 +4627,7 @@ impl ModifierLinkGroup for MediaQueryMotionChild {}
 impl ModifierPseudoGroup for MediaQueryMotionChild {}
 impl Atom for MediaQueryMotionChild {}
 impl NamedClasses for MediaQueryMotionChild {}
-impl ParentModifier for MediaQueryDarkModeChild {}
+impl ModifierParentGroup for MediaQueryDarkModeChild {}
 impl ModifierHoverGroup for MediaQueryDarkModeChild {}
 impl ModifierActiveGroup for MediaQueryDarkModeChild {}
 impl ModifierFocusGroup for MediaQueryDarkModeChild {}
@@ -4664,42 +4664,42 @@ impl ModifierLinkGroup for MediaQueryDarkModeChild {}
 impl ModifierPseudoGroup for MediaQueryDarkModeChild {}
 impl Atom for MediaQueryDarkModeChild {}
 impl NamedClasses for MediaQueryDarkModeChild {}
-impl ModifierHoverGroup for ParentModifierChild {}
-impl ModifierActiveGroup for ParentModifierChild {}
-impl ModifierFocusGroup for ParentModifierChild {}
-impl ModifierFocusWithinGroup for ParentModifierChild {}
-impl ModifierFocusVisibleGroup for ParentModifierChild {}
-impl ModifierEnabledGroup for ParentModifierChild {}
-impl ModifierEmptyGroup for ParentModifierChild {}
-impl ModifierReadGroup for ParentModifierChild {}
-impl ModifierExpandedGroup for ParentModifierChild {}
-impl ModifierCheckedGroup for ParentModifierChild {}
-impl ModifierGrabbedGroup for ParentModifierChild {}
-impl ModifierPressedGroup for ParentModifierChild {}
-impl ModifierInvalidGrammarGroup for ParentModifierChild {}
-impl ModifierInvalidSpellingGroup for ParentModifierChild {}
-impl ModifierValidGroup for ParentModifierChild {}
-impl ModifierLoadingGroup for ParentModifierChild {}
-impl ModifierSelectedGroup for ParentModifierChild {}
-impl ModifierHiddenGroup for ParentModifierChild {}
-impl ModifierAutofillGroup for ParentModifierChild {}
-impl ModifierEvenGroup for ParentModifierChild {}
-impl ModifierNodePositionGroup for ParentModifierChild {}
-impl ModifierNodeOfTypeGroup for ParentModifierChild {}
-impl ModifierVisitedGroup for ParentModifierChild {}
-impl ModifierOptionalGroup for ParentModifierChild {}
-impl ModifierFullScreenGroup for ParentModifierChild {}
-impl ModifierTargetGroup for ParentModifierChild {}
-impl ModifierPlaceholderShownGroup for ParentModifierChild {}
-impl ModifierRequiredGroup for ParentModifierChild {}
-impl ModifierDefaultGroup for ParentModifierChild {}
-impl ModifierOnlyChildGroup for ParentModifierChild {}
-impl ModifierOnlyGroup for ParentModifierChild {}
-impl ModifierRootGroup for ParentModifierChild {}
-impl ModifierLinkGroup for ParentModifierChild {}
-impl ModifierPseudoGroup for ParentModifierChild {}
-impl Atom for ParentModifierChild {}
-impl NamedClasses for ParentModifierChild {}
+impl ModifierHoverGroup for ModifierParentGroupChild {}
+impl ModifierActiveGroup for ModifierParentGroupChild {}
+impl ModifierFocusGroup for ModifierParentGroupChild {}
+impl ModifierFocusWithinGroup for ModifierParentGroupChild {}
+impl ModifierFocusVisibleGroup for ModifierParentGroupChild {}
+impl ModifierEnabledGroup for ModifierParentGroupChild {}
+impl ModifierEmptyGroup for ModifierParentGroupChild {}
+impl ModifierReadGroup for ModifierParentGroupChild {}
+impl ModifierExpandedGroup for ModifierParentGroupChild {}
+impl ModifierCheckedGroup for ModifierParentGroupChild {}
+impl ModifierGrabbedGroup for ModifierParentGroupChild {}
+impl ModifierPressedGroup for ModifierParentGroupChild {}
+impl ModifierInvalidGrammarGroup for ModifierParentGroupChild {}
+impl ModifierInvalidSpellingGroup for ModifierParentGroupChild {}
+impl ModifierValidGroup for ModifierParentGroupChild {}
+impl ModifierLoadingGroup for ModifierParentGroupChild {}
+impl ModifierSelectedGroup for ModifierParentGroupChild {}
+impl ModifierHiddenGroup for ModifierParentGroupChild {}
+impl ModifierAutofillGroup for ModifierParentGroupChild {}
+impl ModifierEvenGroup for ModifierParentGroupChild {}
+impl ModifierNodePositionGroup for ModifierParentGroupChild {}
+impl ModifierNodeOfTypeGroup for ModifierParentGroupChild {}
+impl ModifierVisitedGroup for ModifierParentGroupChild {}
+impl ModifierOptionalGroup for ModifierParentGroupChild {}
+impl ModifierFullScreenGroup for ModifierParentGroupChild {}
+impl ModifierTargetGroup for ModifierParentGroupChild {}
+impl ModifierPlaceholderShownGroup for ModifierParentGroupChild {}
+impl ModifierRequiredGroup for ModifierParentGroupChild {}
+impl ModifierDefaultGroup for ModifierParentGroupChild {}
+impl ModifierOnlyChildGroup for ModifierParentGroupChild {}
+impl ModifierOnlyGroup for ModifierParentGroupChild {}
+impl ModifierRootGroup for ModifierParentGroupChild {}
+impl ModifierLinkGroup for ModifierParentGroupChild {}
+impl ModifierPseudoGroup for ModifierParentGroupChild {}
+impl Atom for ModifierParentGroupChild {}
+impl NamedClasses for ModifierParentGroupChild {}
 impl ModifierActiveGroup for ModifierHoverGroupChild {}
 impl ModifierFocusGroup for ModifierHoverGroupChild {}
 impl ModifierFocusWithinGroup for ModifierHoverGroupChild {}
