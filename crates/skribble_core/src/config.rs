@@ -34,10 +34,8 @@ pub struct StyleConfig {
   /// Setup the media queries.
   #[builder(default, setter(into))]
   pub media_queries: MediaQueries,
-  /// Modifiers are used to nest styles within a selector.
-  #[builder(default, setter(into))]
-  pub parent_modifiers: ParentModifiers,
-  /// Modifiers are used to nest styles within a selector.
+  /// Modifiers are used to nest styles within a selector. They can be parents
+  /// modifiers or child modifiers.
   #[builder(default, setter(into))]
   pub modifiers: Modifiers,
   /// Set up the style rules which determine the styles that each atom name will
@@ -92,7 +90,6 @@ impl StyleConfig {
       modifiers,
       options,
       palette,
-      parent_modifiers,
       plugins,
       value_sets,
       variables,
@@ -108,7 +105,6 @@ impl StyleConfig {
         media_queries,
         modifiers,
         palette,
-        parent_modifiers,
         value_sets,
         variables,
         additional_fields,
@@ -137,8 +133,6 @@ pub struct MergeRules {
   pub variables: MergeRule,
   #[builder(default, setter(into))]
   pub media_queries: MergeRule,
-  #[builder(default, setter(into))]
-  pub parent_modifiers: MergeRule,
   #[builder(default, setter(into))]
   pub modifiers: MergeRule,
   #[builder(default, setter(into))]
@@ -354,8 +348,8 @@ impl Keyframe {
       self.priority = other.priority;
     }
 
-    self.values.extend(other.values.clone());
-    self.rules.extend(other.rules.clone());
+    self.values.extend(other.values);
+    self.rules.extend(other.rules);
   }
 }
 
@@ -552,6 +546,19 @@ impl DerefMut for OptionalStringMap {
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
 pub struct MediaQueries(Vec<Group<MediaQuery>>);
 
+impl MediaQueries {
+  /// Extend an existing group or create a new one if it does not exist.
+  pub fn extend_group(&mut self, group: impl Into<Group<MediaQuery>>) {
+    let group = group.into();
+
+    if let Some(existing_group) = self.0.iter_mut().find(|g| g.name == group.name) {
+      existing_group.merge(group);
+    } else {
+      self.0.push(group);
+    }
+  }
+}
+
 impl IntoIterator for MediaQueries {
   type IntoIter = std::vec::IntoIter<Self::Item>;
   type Item = Group<MediaQuery>;
@@ -621,7 +628,7 @@ impl MediaQuery {
       self.priority = other.priority;
     }
 
-    self.query = other.query.clone();
+    self.query = other.query;
   }
 }
 
@@ -922,10 +929,6 @@ pub struct CssVariable {
   /// [PropertySyntax] is set to anything other than [PropertySyntaxValue::Any].
   #[builder(default, setter(into, strip_option))]
   pub value: Option<String>,
-  /// Define the value of the CSS variables different parent selector contexts.
-  /// Only parent modifiers defined in the configuration are allowed.
-  #[builder(default, setter(into, strip_option))]
-  pub parent_modifiers: Option<CssVariableSelectors>,
   /// Define the value of the CSS variables within different modifier contexts
   /// For example a variable can be a certain value when :hovered, :active and
   /// other inline pseudo states.
@@ -949,38 +952,29 @@ impl CssVariable {
       self.description = Some(description);
     }
 
-    self.variable = other.variable.clone();
-    self.syntax = other.syntax.clone();
+    self.variable = other.variable;
+    self.syntax = other.syntax;
 
-    if let Some(ref value) = other.value {
-      self.value = Some(value.clone());
+    if let Some(value) = other.value {
+      self.value = Some(value);
     }
 
-    if let Some(ref parent_modifiers) = other.parent_modifiers {
-      match self.parent_modifiers {
-        Some(ref mut original_parent_modifiers) => {
-          original_parent_modifiers.extend(parent_modifiers.clone());
-        }
-        None => self.parent_modifiers = Some(parent_modifiers.clone()),
-      };
-    }
-
-    if let Some(ref modifiers) = other.modifiers {
+    if let Some(modifiers) = other.modifiers {
       match self.modifiers {
         Some(ref mut original_modifiers) => {
-          original_modifiers.extend(modifiers.clone());
+          original_modifiers.extend(modifiers);
         }
 
-        None => self.modifiers = Some(modifiers.clone()),
+        None => self.modifiers = Some(modifiers),
       };
     }
 
-    if let Some(ref media_queries) = other.media_queries {
+    if let Some(media_queries) = other.media_queries {
       match self.media_queries {
         Some(ref mut original_media_queries) => {
-          original_media_queries.extend(media_queries.clone());
+          original_media_queries.extend(media_queries);
         }
-        None => self.media_queries = Some(media_queries.clone()),
+        None => self.media_queries = Some(media_queries),
       };
     }
   }
@@ -1179,47 +1173,6 @@ impl Display for PropertySyntaxValue {
 /// Create a palette for the configuration.
 pub type Palette = StringMap;
 
-/// This is the setup for the parent modifiers.
-#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
-pub struct ParentModifiers(Vec<Modifier>);
-
-impl IntoIterator for ParentModifiers {
-  type IntoIter = std::vec::IntoIter<Self::Item>;
-  type Item = Modifier;
-
-  fn into_iter(self) -> Self::IntoIter {
-    self.0.into_iter()
-  }
-}
-
-impl<V> FromIterator<V> for ParentModifiers
-where
-  V: Into<Modifier>,
-{
-  fn from_iter<T>(iter: T) -> Self
-  where
-    T: IntoIterator<Item = V>,
-  {
-    let parent_modifiers = iter.into_iter().map(|value| value.into()).collect();
-
-    Self(parent_modifiers)
-  }
-}
-
-impl Deref for ParentModifiers {
-  type Target = Vec<Modifier>;
-
-  fn deref(&self) -> &Self::Target {
-    &self.0
-  }
-}
-
-impl DerefMut for ParentModifiers {
-  fn deref_mut(&mut self) -> &mut Self::Target {
-    &mut self.0
-  }
-}
-
 #[derive(Clone, Debug, Deserialize, PartialEq, Serialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
 pub struct Modifier {
@@ -1257,10 +1210,8 @@ impl Modifier {
       self.priority = other.priority;
     }
 
-    self.values.extend(other.values.clone());
-    self
-      .additional_fields
-      .extend(other.additional_fields.clone());
+    self.values.extend(other.values);
+    self.additional_fields.extend(other.additional_fields);
   }
 }
 
@@ -1293,7 +1244,7 @@ impl<T: Clone> Group<T> {
       self.priority = other.priority;
     }
 
-    self.items.extend(other.items.clone());
+    self.items.extend(other.items);
   }
 }
 
@@ -1323,6 +1274,19 @@ impl<T: Clone> DerefMut for Group<T> {
 /// This is the setup for named modifiers.
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct Modifiers(Vec<Group<Modifier>>);
+
+impl Modifiers {
+  /// Extend an existing group or create a new one if it does not exist.
+  pub fn extend_group(&mut self, group: impl Into<Group<Modifier>>) {
+    let group = group.into();
+
+    if let Some(existing_group) = self.0.iter_mut().find(|g| g.name == group.name) {
+      existing_group.merge(group);
+    } else {
+      self.0.push(group);
+    }
+  }
+}
 
 impl IntoIterator for Modifiers {
   type IntoIter = std::vec::IntoIter<Self::Item>;
@@ -1480,10 +1444,8 @@ impl ValueSet {
       self.priority = other.priority;
     }
 
-    self.values.extend(other.values.clone());
-    self
-      .additional_fields
-      .extend(other.additional_fields.clone());
+    self.values.extend(other.values);
+    self.additional_fields.extend(other.additional_fields);
   }
 }
 
@@ -1635,7 +1597,7 @@ impl VariableGroup {
       self.priority = other.priority;
     }
 
-    self.styles.extend(other.styles.clone());
+    self.styles.extend(other.styles);
   }
 }
 
@@ -1823,7 +1785,7 @@ pub struct ColorSettings {
 impl ColorSettings {
   pub fn merge(&mut self, other: impl Into<Self>) {
     let other = other.into();
-    self.opacity = other.opacity.clone();
+    self.opacity = other.opacity;
     self.ignore_palette = other.ignore_palette;
     self.additional_fields.extend(other.additional_fields);
   }
@@ -1873,6 +1835,12 @@ impl<V: Into<PrioritizedString>> FromIterator<V> for ValueSetNames {
 
 impl<I: Into<PrioritizedString>> From<Vec<I>> for ValueSetNames {
   fn from(list: Vec<I>) -> Self {
+    Self::from_iter(list)
+  }
+}
+
+impl<I: Into<PrioritizedString>> From<IndexSet<I>> for ValueSetNames {
+  fn from(list: IndexSet<I>) -> Self {
     Self::from_iter(list)
   }
 }

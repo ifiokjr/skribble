@@ -64,65 +64,10 @@ fn media_query_docs(query: impl AsRef<str>) -> String {
   format!("@media {query} {{\n  /* ... */\n}}")
 }
 
-fn generate_parent_modifiers(
-  config: &MergedConfig,
-  indent_style: IndentStyle,
-  method_names: &mut IndexSet<String>,
-  sections: &mut Vec<String>,
-  struct_names_map: &mut IndexMap<String, usize>,
-  trait_names: &mut Vec<String>,
-) {
-  // parent modifiers
-  sections.push(generate_struct(PARENT_MODIFIER_STRUCT_NAME));
-  sections.push(generate_impl_skribble_value(PARENT_MODIFIER_STRUCT_NAME));
-  sections.push(format!(
-    "pub trait {PARENT_MODIFIER_TRAIT_NAME}: SkribbleValue {{"
-  ));
-
-  for (name, modifier) in config.parent_modifiers.iter() {
-    let method_name = get_method_name(name, method_names);
-    let css_docs = wrap_indent(
-      wrap_docs(wrap_in_code_block(modifier_docs(&modifier.values), "css")),
-      1,
-    );
-
-    if let Some(ref description) = modifier.description {
-      sections.push(wrap_indent(wrap_docs(description), 1));
-      sections.push(wrap_indent(wrap_docs("\n"), 1));
-    }
-
-    sections.push(css_docs);
-    sections.push(indent(
-      format!("#[inline]\nfn {method_name}(&self) -> {PARENT_MODIFIER_STRUCT_NAME} {{"),
-      indent_style,
-    ));
-
-    sections.push(indent(
-      indent(
-        format!(
-          "{PARENT_MODIFIER_STRUCT_NAME}::from_ref(self.append_to_skribble_value(\"{name}\"))"
-        ),
-        indent_style,
-      ),
-      indent_style,
-    ));
-
-    sections.push(indent("}", indent_style));
-  }
-
-  sections.push("}".into());
-
-  trait_names.push(PARENT_MODIFIER_TRAIT_NAME.into());
-  struct_names_map.insert(PARENT_MODIFIER_STRUCT_NAME.into(), trait_names.len());
-}
-
 fn modifier_docs(values: &[String]) -> String {
   let value = values.join(", ");
   format!("{value} {{\n  /* ... */\n}}")
 }
-
-const PARENT_MODIFIER_TRAIT_NAME: &str = "ParentModifier";
-const PARENT_MODIFIER_STRUCT_NAME: &str = "ParentModifierChild";
 
 fn generate_modifiers(
   config: &MergedConfig,
@@ -627,15 +572,6 @@ pub(crate) fn generate_file_contents(config: &MergedConfig, options: &Options) -
 
   // media queries
   generate_media_queries(
-    config,
-    indent_style,
-    &mut method_names,
-    &mut sections,
-    &mut struct_names_map,
-    &mut trait_names,
-  );
-
-  generate_parent_modifiers(
     config,
     indent_style,
     &mut method_names,

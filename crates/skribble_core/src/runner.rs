@@ -129,7 +129,6 @@ impl SkribbleRunner {
     let mut keyframes = IndexMap::<String, Keyframe>::new();
     let mut css_variables = IndexMap::<String, CssVariable>::new();
     let mut media_queries = IndexMap::<String, IndexMap<String, MediaQuery>>::new();
-    let mut parent_modifiers = IndexMap::<String, Modifier>::new();
     let mut modifiers = IndexMap::<String, IndexMap<String, Modifier>>::new();
     let mut atoms = IndexMap::<String, Atom>::new();
     let mut classes = IndexMap::<String, NamedClass>::new();
@@ -194,20 +193,6 @@ impl SkribbleRunner {
         }
         None => {
           media_queries.insert(group_name, group);
-        }
-      }
-    }
-
-    // parent_modifiers
-    for parent_modifier in wrapped_config.parent_modifiers.into_iter() {
-      let key = &parent_modifier.name;
-
-      match parent_modifiers.get_mut(key) {
-        Some(existing) => {
-          existing.merge(parent_modifier);
-        }
-        None => {
-          parent_modifiers.insert(key.clone(), parent_modifier);
         }
       }
     }
@@ -311,7 +296,6 @@ impl SkribbleRunner {
     // sort by priority
     keyframes.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
     css_variables.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
-    parent_modifiers.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
     atoms.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
     classes.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
     value_sets.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
@@ -322,7 +306,6 @@ impl SkribbleRunner {
         .keyframes(keyframes)
         .css_variables(css_variables)
         .media_queries(media_queries)
-        .parent_modifiers(parent_modifiers)
         .modifiers(modifiers)
         .atoms(atoms)
         .classes(classes)
@@ -336,12 +319,11 @@ impl SkribbleRunner {
 }
 
 /// The configuration after all plugins have been run.
-#[derive(Clone, Default, Deserialize, Serialize, TypedBuilder)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, TypedBuilder)]
 pub struct MergedConfig {
   pub keyframes: IndexMap<String, Keyframe>,
   pub css_variables: IndexMap<String, CssVariable>,
   pub media_queries: IndexMap<String, IndexMap<String, MediaQuery>>,
-  pub parent_modifiers: IndexMap<String, Modifier>,
   pub modifiers: IndexMap<String, IndexMap<String, Modifier>>,
   pub atoms: IndexMap<String, Atom>,
   pub classes: IndexMap<String, NamedClass>,

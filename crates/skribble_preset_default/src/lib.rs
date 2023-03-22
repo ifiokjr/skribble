@@ -34,7 +34,6 @@ impl Plugin for PresetDefault {
   fn mutate_config(&self, config: &mut WrappedPluginConfig, _: &Options) -> AnyEmptyResult {
     self.update_palette(&mut config.palette);
     self.update_media_queries(&mut config.media_queries);
-    self.update_parent_modifiers(&mut config.parent_modifiers);
     self.update_modifiers(&mut config.modifiers);
     self.update_variables(&mut config.variables);
     self.update_keyframes(&mut config.keyframes);
@@ -70,16 +69,12 @@ impl PresetDefault {
     palette.extend(self.palette.palette());
   }
 
-  fn update_parent_modifiers(&self, parent_modifiers: &mut ParentModifiers) {
-    if self.dark_mode == DarkMode::Class {
-      parent_modifiers.extend(DARK_PARENT_MODIFIERS.clone());
-    }
-
-    parent_modifiers.extend(PARENT_MODIFIERS.clone());
-  }
-
   fn update_modifiers(&self, modifiers: &mut Modifiers) {
     modifiers.extend(MODIFIERS.clone());
+
+    if self.dark_mode == DarkMode::Class {
+      modifiers.extend_group(DARK_PARENT_MODIFIERS.clone());
+    }
   }
 
   fn update_variables(&self, css_variables: &mut CssVariables) {

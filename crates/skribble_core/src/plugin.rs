@@ -63,7 +63,6 @@ pub struct WrappedPluginConfig {
   pub keyframes: Keyframes,
   pub variables: CssVariables,
   pub media_queries: MediaQueries,
-  pub parent_modifiers: ParentModifiers,
   pub modifiers: Modifiers,
   pub atoms: Atoms,
   pub classes: NamedClasses,
