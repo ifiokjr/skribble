@@ -2,6 +2,7 @@ use std::sync::Arc;
 use std::sync::Mutex;
 
 use indexmap::IndexMap;
+use indexmap::IndexSet;
 use serde::Deserialize;
 use serde::Serialize;
 use typed_builder::TypedBuilder;
@@ -301,6 +302,27 @@ impl SkribbleRunner {
     value_sets.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
     groups.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
 
+    let mut names = IndexMap::<String, IndexSet<String>>::default();
+    let keyframe_names = keyframes.keys().map(|key| key.clone()).collect();
+    let css_variable_names = css_variables.keys().map(|key| key.clone()).collect();
+    let atom_names = atoms.keys().map(|key| key.clone()).collect();
+    let class_names = classes.keys().map(|key| key.clone()).collect();
+    let media_query_names = media_queries
+      .iter()
+      .flat_map(|(_, query)| query.keys().map(|key| key.clone()))
+      .collect();
+    let modifier_names = modifiers
+      .iter()
+      .flat_map(|(_, query)| query.keys().map(|key| key.clone()))
+      .collect();
+
+    names.insert("keyframes".into(), keyframe_names);
+    names.insert("css_variables".into(), css_variable_names);
+    names.insert("atoms".into(), atom_names);
+    names.insert("classes".into(), class_names);
+    names.insert("media_queries".into(), media_query_names);
+    names.insert("modifiers".into(), modifier_names);
+
     self.merged_config = Some(
       MergedConfig::builder()
         .keyframes(keyframes)
@@ -313,6 +335,7 @@ impl SkribbleRunner {
         .value_sets(value_sets)
         .groups(groups)
         .additional_fields(additional_fields)
+        .names(names)
         .build(),
     );
   }
@@ -331,4 +354,68 @@ pub struct MergedConfig {
   pub value_sets: IndexMap<String, ValueSet>,
   pub groups: IndexMap<String, VariableGroup>,
   pub additional_fields: AdditionalFields,
+  #[builder(default)]
+  names: IndexMap<String, IndexSet<String>>,
+}
+
+impl MergedConfig {
+  pub fn has_media_query(&self, name: impl AsRef<str>) -> bool {
+    let name = name.as_ref().to_string();
+    self
+      .names
+      .get("media_queries")
+      .as_ref()
+      .map(|map| map.contains(&name))
+      .unwrap_or(false)
+  }
+
+  pub fn has_keyframe(&self, name: impl AsRef<str>) -> bool {
+    let name = name.as_ref().to_string();
+    self
+      .names
+      .get("keyframes")
+      .as_ref()
+      .map(|map| map.contains(&name))
+      .unwrap_or(false)
+  }
+
+  pub fn has_css_variable(&self, name: impl AsRef<str>) -> bool {
+    let name = name.as_ref().to_string();
+    self
+      .names
+      .get("css_variables")
+      .as_ref()
+      .map(|map| map.contains(&name))
+      .unwrap_or(false)
+  }
+
+  pub fn has_atom(&self, name: impl AsRef<str>) -> bool {
+    let name = name.as_ref().to_string();
+    self
+      .names
+      .get("atoms")
+      .as_ref()
+      .map(|map| map.contains(&name))
+      .unwrap_or(false)
+  }
+
+  pub fn has_class(&self, name: impl AsRef<str>) -> bool {
+    let name = name.as_ref().to_string();
+    self
+      .names
+      .get("classes")
+      .as_ref()
+      .map(|map| map.contains(&name))
+      .unwrap_or(false)
+  }
+
+  pub fn has_modifier(&self, name: impl AsRef<str>) -> bool {
+    let name = name.as_ref().to_string();
+    self
+      .names
+      .get("modifiers")
+      .as_ref()
+      .map(|map| map.contains(&name))
+      .unwrap_or(false)
+  }
 }
