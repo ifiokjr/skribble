@@ -5,7 +5,7 @@ use super::*;
 
 fn generate_media_queries(
   config: &MergedConfig,
-  indent_style: IndentStyle,
+
   method_names: &mut IndexSet<String>,
   sections: &mut Vec<String>,
   struct_names_map: &mut IndexMap<String, usize>,
@@ -36,18 +36,15 @@ fn generate_media_queries(
       }
 
       methods.push(css_docs);
-      methods.push(indent(
+      methods.push(wrap_indent(
         format!("#[inline]\nfn {method_name}(&self) -> {struct_name} {{"),
-        indent_style,
+        1,
       ));
-      methods.push(indent(
-        indent(
-          format!("{struct_name}::from_ref(self.append_to_skribble_value(\"{name}\"))"),
-          indent_style,
-        ),
-        indent_style,
+      methods.push(wrap_indent(
+        format!("{struct_name}::from_ref(self.append_to_skribble_value(\"{name}\"))"),
+        2,
       ));
-      methods.push(indent("}", indent_style));
+      methods.push(wrap_indent("}", 1));
     }
 
     methods.push("}".into());
@@ -71,7 +68,6 @@ fn modifier_docs(values: &[String]) -> String {
 
 fn generate_modifiers(
   config: &MergedConfig,
-  indent_style: IndentStyle,
   method_names: &mut IndexSet<String>,
   sections: &mut Vec<String>,
   struct_names_map: &mut IndexMap<String, usize>,
@@ -99,18 +95,15 @@ fn generate_modifiers(
       }
 
       methods.push(css_docs);
-      methods.push(indent(
+      methods.push(wrap_indent(
         format!("#[inline]\nfn {method_name}(&self) -> {struct_name} {{"),
-        indent_style,
+        1,
       ));
-      methods.push(indent(
-        indent(
-          format!("{struct_name}::from_ref(self.append_to_skribble_value(\"{name}\"))"),
-          indent_style,
-        ),
-        indent_style,
+      methods.push(wrap_indent(
+        format!("{struct_name}::from_ref(self.append_to_skribble_value(\"{name}\"))"),
+        2,
       ));
-      methods.push(indent("}", indent_style));
+      methods.push(wrap_indent("}", 1));
     }
 
     methods.push("}".into());
@@ -122,11 +115,66 @@ fn generate_modifiers(
   }
 }
 
-fn generate_value_sets(
-  config: &MergedConfig,
-  indent_style: IndentStyle,
-  sections: &mut Vec<String>,
-) {
+fn generate_keyframes(config: &MergedConfig, sections: &mut Vec<String>, name: impl AsRef<str>) {
+  let name = name.as_ref();
+
+  sections.push(format!("pub trait {name}: SkribbleValue {{"));
+
+  for (name, keyframe) in config.keyframes.iter() {
+    let method_name = safe_method_name(name);
+    let css_docs = wrap_indent(
+      wrap_docs(wrap_in_code_block(keyframe_docs(keyframe, config), "css")),
+      1,
+    );
+
+    if let Some(ref description) = keyframe.description {
+      sections.push(wrap_indent(wrap_docs(description), 1));
+      sections.push(wrap_indent(wrap_docs("\n"), 1));
+    }
+
+    sections.push(css_docs);
+
+    sections.push(wrap_indent(
+      format!("#[inline]\nfn {method_name}(&self) -> String {{"),
+      1,
+    ));
+
+    sections.push(wrap_indent(
+      format!("self.append_string_to_skribble_value(\"{name}\")"),
+      2,
+    ));
+
+    sections.push(wrap_indent("}", 1));
+  }
+
+  sections.push("}".into());
+}
+
+fn keyframe_docs(keyframe: &Keyframe, config: &MergedConfig) -> String {
+  let mut content = Vec::<String>::new();
+
+  content.push(format!("@keyframes {} {{", keyframe.name));
+
+  for (key, map) in keyframe.rules.iter() {
+    content.push(wrap_indent(format!("{key} {{"), 1));
+
+    for (name, value) in map.iter() {
+      let css = wrap_indent(
+        Placeholder::normalize(format!("{}: {};", name, value), config),
+        2,
+      );
+      content.push(css)
+    }
+
+    content.push(wrap_indent("}", 1));
+  }
+
+  content.push("}".into());
+
+  content.join("\n")
+}
+
+fn generate_value_sets(config: &MergedConfig, sections: &mut Vec<String>) {
   for (name, value_set) in config.value_sets.iter() {
     let value_set_trait_name = get_value_set_trait_name(name);
     sections.push(format!(
@@ -140,20 +188,17 @@ fn generate_value_sets(
         sections.push(wrap_indent(wrap_docs(description), 1));
       }
 
-      sections.push(indent(
+      sections.push(wrap_indent(
         format!("#[inline]\nfn {method_name}(&self) -> String {{"),
-        indent_style,
+        1,
       ));
 
-      sections.push(indent(
-        indent(
-          format!("self.append_string_to_skribble_value(\"{value_name}\")"),
-          indent_style,
-        ),
-        indent_style,
+      sections.push(wrap_indent(
+        format!("self.append_string_to_skribble_value(\"{value_name}\")"),
+        2,
       ));
 
-      sections.push(indent("}", indent_style));
+      sections.push(wrap_indent("}", 1));
     }
 
     sections.push("}".into());
@@ -162,7 +207,7 @@ fn generate_value_sets(
 
 fn generate_named_classes(
   config: &MergedConfig,
-  indent_style: IndentStyle,
+
   sections: &mut Vec<String>,
   trait_names: &mut Vec<String>,
 ) {
@@ -175,20 +220,17 @@ fn generate_named_classes(
       sections.push(wrap_indent(wrap_docs(description), 1));
     }
 
-    sections.push(indent(
+    sections.push(wrap_indent(
       format!("#[inline]\nfn {method_name}(&self) -> String {{"),
-      indent_style,
+      1,
     ));
 
-    sections.push(indent(
-      indent(
-        format!("self.append_string_to_skribble_value(\"{class_name}\")"),
-        indent_style,
-      ),
-      indent_style,
+    sections.push(wrap_indent(
+      format!("self.append_string_to_skribble_value(\"{class_name}\")"),
+      2,
     ));
 
-    sections.push(indent("}", indent_style));
+    sections.push(wrap_indent("}", 1));
   }
 
   trait_names.push("NamedClasses".into());
@@ -199,7 +241,7 @@ const ATOM_TRAIT_NAME: &str = "Atom";
 
 fn generate_atoms(
   config: &MergedConfig,
-  indent_style: IndentStyle,
+
   method_names: &mut IndexSet<String>,
   sections: &mut Vec<String>,
   trait_names: &mut Vec<String>,
@@ -234,26 +276,31 @@ fn generate_atoms(
           ));
         }
       }
+      LinkedValues::Keyframes => {
+        let keyframe_trait_name = get_keyframe_trait_name(&atom_struct_name);
+        generate_keyframes(config, sections, &keyframe_trait_name);
+
+        struct_content.push(format!(
+          "impl {keyframe_trait_name} for {atom_struct_name} {{}}",
+        ));
+      }
     }
 
     if let Some(ref description) = modifier.description {
       trait_content.push(wrap_indent(wrap_docs(description), 1));
     }
 
-    trait_content.push(indent(
+    trait_content.push(wrap_indent(
       format!("#[inline]\nfn {method_name}(&self) -> {atom_struct_name} {{"),
-      indent_style,
+      1,
     ));
 
-    trait_content.push(indent(
-      indent(
-        format!("{atom_struct_name}::from_ref(self.append_to_skribble_value(\"{name}\"))"),
-        indent_style,
-      ),
-      indent_style,
+    trait_content.push(wrap_indent(
+      format!("{atom_struct_name}::from_ref(self.append_to_skribble_value(\"{name}\"))"),
+      2,
     ));
 
-    trait_content.push(indent("}", indent_style));
+    trait_content.push(wrap_indent("}", 1));
   }
 
   trait_content.push("}".into());
@@ -263,26 +310,23 @@ fn generate_atoms(
   sections.push(trait_content.join("\n"));
 }
 
-fn generate_palette(config: &MergedConfig, indent_style: IndentStyle, sections: &mut Vec<String>) {
+fn generate_palette(config: &MergedConfig, sections: &mut Vec<String>) {
   sections.push("pub trait Palette: SkribbleValue {".into());
 
   for (name, _) in config.palette.iter() {
     let method_name = safe_method_name(name);
 
-    sections.push(indent(
+    sections.push(wrap_indent(
       format!("#[inline]\nfn {method_name}(&self) -> String {{"),
-      indent_style,
+      1,
     ));
 
-    sections.push(indent(
-      indent(
-        format!("self.append_string_to_skribble_value(\"{name}\")"),
-        indent_style,
-      ),
-      indent_style,
+    sections.push(wrap_indent(
+      format!("self.append_string_to_skribble_value(\"{name}\")"),
+      2,
     ));
 
-    sections.push(indent("}", indent_style));
+    sections.push(wrap_indent("}", 1));
   }
 
   sections.push("}".into());
@@ -291,7 +335,6 @@ fn generate_palette(config: &MergedConfig, indent_style: IndentStyle, sections: 
 fn generate_css_variables(
   config: &MergedConfig,
   variable_prefix: impl AsRef<str>,
-  indent_style: IndentStyle,
   sections: &mut Vec<String>,
 ) {
   let mut entries = vec![
@@ -312,7 +355,12 @@ fn generate_css_variables(
     let variable_name = css_variable.get_variable(variable_prefix.as_ref());
     let css_docs = wrap_indent(
       wrap_docs(wrap_in_code_block(
-        css_property_syntax(&variable_name, &css_variable.syntax, &css_variable.value),
+        css_property_docs(
+          &variable_name,
+          &css_variable.syntax,
+          &css_variable.value,
+          config,
+        ),
         "css",
       )),
       1,
@@ -325,17 +373,14 @@ fn generate_css_variables(
 
     entries.push(css_docs.clone());
 
-    entries.push(indent(
+    entries.push(wrap_indent(
       format!("#[inline]\npub fn {method_name}(&self) -> String {{"),
-      indent_style,
+      1,
     ));
 
-    entries.push(indent(
-      indent(format!("\"{variable_name}\".into()",), indent_style),
-      indent_style,
-    ));
+    entries.push(wrap_indent(format!("\"{variable_name}\".into()",), 2));
 
-    entries.push(indent("}", indent_style));
+    entries.push(wrap_indent("}", 1));
 
     if css_variable.syntax.is_color() {
       if let Some(ref description) = css_variable.description {
@@ -345,18 +390,15 @@ fn generate_css_variables(
 
       colors.push(css_docs);
 
-      colors.push(indent(
+      colors.push(wrap_indent(
         format!("#[inline]\nfn {method_name}(&self) -> String {{"),
-        indent_style,
+        1,
       ));
-      colors.push(indent(
-        indent(
-          format!("self.append_string_to_skribble_value(\"{name}\")"),
-          indent_style,
-        ),
-        indent_style,
+      colors.push(wrap_indent(
+        format!("self.append_string_to_skribble_value(\"{name}\")"),
+        2,
       ));
-      colors.push(indent("}", indent_style))
+      colors.push(wrap_indent("}", 1))
     }
   }
 
@@ -367,10 +409,11 @@ fn generate_css_variables(
 }
 
 fn wrap_indent(content: impl AsRef<str>, level: u8) -> String {
-  let mut result = String::new();
+  let mut result = content.as_ref().to_string();
   let indent_style = IndentStyle::default();
-  for _ in 0..level {
-    result = indent(&content, indent_style);
+
+  for _ in 1..=level {
+    result = indent(result, indent_style);
   }
 
   result
@@ -385,14 +428,18 @@ fn wrap_docs(content: impl AsRef<str>) -> String {
   result.join("\n")
 }
 
-fn css_property_syntax(
+fn css_property_docs(
   variable_name: impl AsRef<str>,
   syntax: &PropertySyntax,
   initial_value: &Option<String>,
+  config: &MergedConfig,
 ) -> String {
   let variable_name = variable_name.as_ref();
   let default_initial_value = "/* */".into();
-  let initial_value = initial_value.as_ref().unwrap_or(&default_initial_value);
+  let initial_value = Placeholder::normalize(
+    initial_value.as_ref().unwrap_or(&default_initial_value),
+    config,
+  );
   format!(
     "@property {variable_name} {{\n  syntax: \"{syntax}\";\n  inherits: false;\n  initial-value: \
      {initial_value};\n}}"
@@ -405,6 +452,10 @@ fn wrap_in_code_block(content: impl AsRef<str>, r#type: impl AsRef<str>) -> Stri
 
 fn get_value_set_trait_name(value_set_name: impl Into<String>) -> String {
   format!("ValueSet{}", value_set_name.into().to_pascal_case())
+}
+
+fn get_keyframe_trait_name(atom_name: impl Into<String>) -> String {
+  format!("KeyframeSet{}", atom_name.into().to_pascal_case())
 }
 
 fn generate_impl_skribble_value(name: impl AsRef<str>) -> String {
@@ -502,7 +553,8 @@ const RESERVED_WORDS: &[&str] = &[
   "typeof", "unsafe", "unsized", "use", "virtual", "where", "while", "yield",
 ];
 
-const HEADER: &str = r#"// This file was generated by skribble.
+const HEADER: &str = r#"#![allow(unused)]
+// This file was generated by skribble.
 use private::SkribbleValue;
 pub fn sk() -> SkribbleRoot {
   SkribbleRoot::from_ref("")
@@ -556,24 +608,17 @@ fn combine_sections_with_header(sections: Vec<String>) -> String {
   format!("{HEADER}\n{}", sections.join("\n"))
 }
 
-pub(crate) fn generate_file_contents(config: &MergedConfig, options: &Options) -> String {
+pub(crate) fn generate_file_contents(config: &MergedConfig) -> String {
   let mut method_names: IndexSet<String> = indexset! {};
-  let indent_style = IndentStyle::default();
   let mut sections = Vec::<String>::new();
   let mut trait_names = vec![];
   let mut struct_names_map: IndexMap<String, usize> = indexmap! { "SkribbleRoot".into() => 0 };
 
-  generate_css_variables(
-    config,
-    &options.variable_prefix,
-    indent_style,
-    &mut sections,
-  );
+  generate_css_variables(config, &config.options().variable_prefix, &mut sections);
 
   // media queries
   generate_media_queries(
     config,
-    indent_style,
     &mut method_names,
     &mut sections,
     &mut struct_names_map,
@@ -582,25 +627,18 @@ pub(crate) fn generate_file_contents(config: &MergedConfig, options: &Options) -
 
   generate_modifiers(
     config,
-    indent_style,
     &mut method_names,
     &mut sections,
     &mut struct_names_map,
     &mut trait_names,
   );
 
-  generate_value_sets(config, indent_style, &mut sections);
-  generate_palette(config, indent_style, &mut sections);
+  generate_value_sets(config, &mut sections);
+  generate_palette(config, &mut sections);
 
-  generate_atoms(
-    config,
-    indent_style,
-    &mut method_names,
-    &mut sections,
-    &mut trait_names,
-  );
+  generate_atoms(config, &mut method_names, &mut sections, &mut trait_names);
 
-  generate_named_classes(config, indent_style, &mut sections, &mut trait_names);
+  generate_named_classes(config, &mut sections, &mut trait_names);
 
   // Add the implementation for each of the structs.
   generate_struct_implementations(&struct_names_map, &trait_names, &mut sections);

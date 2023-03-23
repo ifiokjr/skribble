@@ -1,4 +1,4 @@
-pub mod generated_code;
+mod generated_code;
 use generated_code::*;
 use insta::assert_display_snapshot;
 

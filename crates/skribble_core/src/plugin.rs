@@ -30,7 +30,7 @@ pub trait Plugin {
   /// Generate code from the configuration. This is called after the config has
   /// been generated.
   #[allow(unused)]
-  fn generate_code(&self, config: &MergedConfig, options: &Options) -> AnyResult<GeneratedFiles> {
+  fn generate_code(&self, config: &MergedConfig) -> AnyResult<GeneratedFiles> {
     Ok(GeneratedFiles::default())
   }
 

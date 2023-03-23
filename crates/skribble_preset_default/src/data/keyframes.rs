@@ -19,7 +19,6 @@ lazy_static! {
     vec![
       Keyframe::builder()
         .name("enter")
-        .values(vec!["enterAnimation"])
         .rules(indexmap! {
           "from" => indexmap! {
             "opacity" => format!("var({enter_opacity}, 1)"),
@@ -30,7 +29,6 @@ lazy_static! {
         .build(),
       Keyframe::builder()
         .name("exit")
-        .values(vec!["exitAnimation"])
         .rules(indexmap! {
           "to" => indexmap! {
             "opacity" => format!("var({exit_opacity}, 1)"),
@@ -41,7 +39,6 @@ lazy_static! {
         .build(),
       Keyframe::builder()
         .name("spin")
-        .values(vec!["spinAnimation"])
         .rules(indexmap! {
           "from" => indexmap! { "transform" => "rotate(0deg)" },
           "to" => indexmap! { "transform" => "rotate(360deg)" }
@@ -50,19 +47,16 @@ lazy_static! {
         .build(),
       Keyframe::builder()
         .name("ping")
-        .values(vec!["pingAnimation"])
         .rules(indexmap! { "75%, 100%" => indexmap! { "transform" => "scale(2)", "opacity" => "0" } })
         .description("Manages the keyframes for the ping animation.")
         .build(),
       Keyframe::builder()
         .name("pulse")
-        .values(vec!["pulseAnimation"])
         .description("Manages the keyframes for the pulse animation.")
         .rules(indexmap! { "0%, 100%" => indexmap! { "opacity" => "1" }, "50%" => indexmap! { "opacity" => "0.5" } })
         .build(),
       Keyframe::builder()
         .name("bounce")
-        .values(vec!["bounceAnimation"])
         .rules(indexmap! {
           "0%, 100%" => indexmap! {
             "transform" => "translateY(-25%)",

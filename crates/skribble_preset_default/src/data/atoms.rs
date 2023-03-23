@@ -2,6 +2,7 @@ use indexmap::indexmap;
 use lazy_static::lazy_static;
 use skribble_core::Atom;
 use skribble_core::ColorSettings;
+use skribble_core::LinkedValues;
 use skribble_core::OptionalStringMap;
 use skribble_core::Placeholder;
 
@@ -42,11 +43,6 @@ lazy_static! {
       Atom::builder()
         .name("delay")
         .styles(indexmap! { "transition-delay" => none })
-        .values(vec!["durations"])
-        .build(),
-      Atom::builder()
-        .name("animate")
-        .styles(indexmap! { "animation" => none })
         .values(vec!["durations"])
         .build(),
       Atom::builder()
@@ -218,6 +214,11 @@ lazy_static! {
         .name("opacity")
         .values(vec!["opacity"])
         .styles(indexmap! { "opacity" => none })
+        .build(),
+      Atom::builder()
+        .name("animate")
+        .values(LinkedValues::Keyframes)
+        .styles(indexmap! { "animation-name" => none })
         .build(),
     ]
   };

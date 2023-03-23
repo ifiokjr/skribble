@@ -323,9 +323,6 @@ pub struct Keyframe {
   /// The priority of this items.
   #[builder(default, setter(into))]
   pub priority: Priority,
-  /// The values that are linked to this keyframe.
-  #[builder(default, setter(into))]
-  pub values: ValueSetNames,
   /// The rules for the specific keyframe.
   #[serde(flatten, default)]
   #[builder(default, setter(into))]
@@ -348,7 +345,6 @@ impl Keyframe {
       self.priority = other.priority;
     }
 
-    self.values.extend(other.values);
     self.rules.extend(other.rules);
   }
 }
@@ -743,7 +739,10 @@ pub enum LinkedValues {
   Color(ColorSettings),
   /// The [`ValueSet`] names that will be used to populate the names that can be
   /// used.
-  Values(ValueSetNames),
+  Values(NameSet),
+  /// The atom will be linked to all the `keyframes` that are available. This is
+  /// used to generate the `animate` class name.
+  Keyframes,
 }
 
 impl LinkedValues {
@@ -754,11 +753,13 @@ impl LinkedValues {
           color_settings.merge(other_color_settings);
         }
       }
-
       Self::Values(value_set) => {
         if let Self::Values(other_value_set) = other {
           value_set.merge(other_value_set);
         }
+      }
+      Self::Keyframes => {
+        *self = other;
       }
     }
   }
@@ -766,11 +767,11 @@ impl LinkedValues {
 
 impl Default for LinkedValues {
   fn default() -> Self {
-    Self::Values(ValueSetNames::default())
+    Self::Values(NameSet::default())
   }
 }
 
-impl<V: Into<ValueSetNames>> From<V> for LinkedValues {
+impl<V: Into<NameSet>> From<V> for LinkedValues {
   fn from(value: V) -> Self {
     Self::Values(value.into())
   }
@@ -1800,9 +1801,9 @@ impl<S: Into<String>> From<S> for ColorSettings {
 pub type PrioritizedString = Prioritized<String>;
 
 #[derive(Clone, Default, Debug, Deserialize, PartialEq, Serialize)]
-pub struct ValueSetNames(IndexSet<PrioritizedString>);
+pub struct NameSet(IndexSet<PrioritizedString>);
 
-impl ValueSetNames {
+impl NameSet {
   pub fn sort_by_priority(&mut self) {
     self.sort_by(|a, z| a.priority.cmp(&z.priority));
   }
@@ -1813,7 +1814,7 @@ impl ValueSetNames {
   }
 }
 
-impl IntoIterator for ValueSetNames {
+impl IntoIterator for NameSet {
   type IntoIter = indexmap::set::IntoIter<Self::Item>;
   type Item = PrioritizedString;
 
@@ -1822,7 +1823,7 @@ impl IntoIterator for ValueSetNames {
   }
 }
 
-impl<V: Into<PrioritizedString>> FromIterator<V> for ValueSetNames {
+impl<V: Into<PrioritizedString>> FromIterator<V> for NameSet {
   fn from_iter<T>(iter: T) -> Self
   where
     T: IntoIterator<Item = V>,
@@ -1833,19 +1834,19 @@ impl<V: Into<PrioritizedString>> FromIterator<V> for ValueSetNames {
   }
 }
 
-impl<I: Into<PrioritizedString>> From<Vec<I>> for ValueSetNames {
+impl<I: Into<PrioritizedString>> From<Vec<I>> for NameSet {
   fn from(list: Vec<I>) -> Self {
     Self::from_iter(list)
   }
 }
 
-impl<I: Into<PrioritizedString>> From<IndexSet<I>> for ValueSetNames {
+impl<I: Into<PrioritizedString>> From<IndexSet<I>> for NameSet {
   fn from(list: IndexSet<I>) -> Self {
     Self::from_iter(list)
   }
 }
 
-impl Deref for ValueSetNames {
+impl Deref for NameSet {
   type Target = IndexSet<PrioritizedString>;
 
   fn deref(&self) -> &Self::Target {
@@ -1853,7 +1854,7 @@ impl Deref for ValueSetNames {
   }
 }
 
-impl DerefMut for ValueSetNames {
+impl DerefMut for NameSet {
   fn deref_mut(&mut self) -> &mut Self::Target {
     &mut self.0
   }

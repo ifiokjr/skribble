@@ -36,8 +36,8 @@ impl Plugin for RustPlugin {
     "skribble_plugin_rust".into()
   }
 
-  fn generate_code(&self, config: &MergedConfig, options: &Options) -> AnyResult<GeneratedFiles> {
-    let mut contents = generate_file_contents(config, options);
+  fn generate_code(&self, config: &MergedConfig) -> AnyResult<GeneratedFiles> {
+    let mut contents = generate_file_contents(config);
 
     if let Some(ref formatter) = self.formatter {
       let input = Command::new("echo")
