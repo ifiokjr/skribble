@@ -5,6 +5,7 @@ expression: "StyleConfig::default()"
 {
   "options": {
     "charset": "utf-8",
+    "layer": "default",
     "colorFormat": "hsl",
     "mergeRules": {
       "keyframes": "append",
@@ -20,6 +21,7 @@ expression: "StyleConfig::default()"
     "useRegisteredProperties": false,
     "variablePrefix": "sk"
   },
+  "layers": [],
   "keyframes": [],
   "variables": [],
   "mediaQueries": [],

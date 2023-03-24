@@ -7,6 +7,7 @@ use serde::Serialize;
 use typed_builder::TypedBuilder;
 
 use crate::config::*;
+use crate::Class;
 use crate::MergedConfig;
 
 pub trait Plugin {
@@ -32,6 +33,13 @@ pub trait Plugin {
   #[allow(unused)]
   fn generate_code(&self, config: &MergedConfig) -> AnyResult<GeneratedFiles> {
     Ok(GeneratedFiles::default())
+  }
+
+  /// Each plugin can implement a custom scanner that feeds back classes from
+  /// the provided byte data.
+  #[allow(unused)]
+  fn scan_code(&self, file_path: PathBuf, bytes: Vec<u8>) -> AnyResult<Vec<Class>> {
+    Ok(vec![])
   }
 
   /// Set a readable name of the plugin. This is used for error messages and
@@ -60,6 +68,7 @@ pub type AnyResult<T> = Result<T, AnyError>;
 
 #[derive(Clone, Default)]
 pub struct WrappedPluginConfig {
+  pub layers: Layers,
   pub keyframes: Keyframes,
   pub variables: CssVariables,
   pub media_queries: MediaQueries,

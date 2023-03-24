@@ -15,7 +15,7 @@ lazy_static! {
     CssVariable::builder()
       .name("primaryContent")
       .variable("--pc")
-      .value("#ffffff")
+      .value(Placeholder::palette("white"))
       .description("The primary content color")
       .syntax(Color)
       .build(),
@@ -29,7 +29,7 @@ lazy_static! {
     CssVariable::builder()
       .name("secondaryContent")
       .variable("--sc")
-      .value("#ffffff")
+      .value(Placeholder::palette("white"))
       .description("The secondary content color. Useful for text within secondary buttons.")
       .syntax(Color)
       .build(),
@@ -57,14 +57,14 @@ lazy_static! {
     CssVariable::builder()
       .name("neutralContent")
       .variable("--nc")
-      .value("#ffffff")
+      .value(Placeholder::palette("white"))
       .description("The neutral content color.")
       .syntax(Color)
       .build(),
     CssVariable::builder()
       .name("base100")
       .variable("--b1")
-      .value("#ffffff")
+      .value(Placeholder::palette("white"))
       .description("The base color.")
       .syntax(Color)
       .build(),
@@ -99,7 +99,7 @@ lazy_static! {
     CssVariable::builder()
       .name("infoContent")
       .variable("--inc")
-      .value("#ffffff")
+      .value(Placeholder::palette("white"))
       .description("The info content color. Useful for text within info buttons and alerts.")
       .syntax(Color)
       .build(),
@@ -113,7 +113,7 @@ lazy_static! {
     CssVariable::builder()
       .name("successContent")
       .variable("--suc")
-      .value("#ffffff")
+      .value(Placeholder::palette("white"))
       .description("The success content color. Useful for text within success buttons and alerts.")
       .syntax(Color)
       .build(),
@@ -127,7 +127,7 @@ lazy_static! {
     CssVariable::builder()
       .name("warningContent")
       .variable("--wac")
-      .value("#ffffff")
+      .value(Placeholder::palette("white"))
       .description("The warning content color. Useful for text within warning buttons and alerts.")
       .syntax(Color)
       .build(),
@@ -141,7 +141,7 @@ lazy_static! {
     CssVariable::builder()
       .name("errorContent")
       .variable("--erc")
-      .value("#ffffff")
+      .value(Placeholder::palette("white"))
       .description("The error content color. Useful for text within error buttons and alerts.")
       .syntax(Color)
       .build(),

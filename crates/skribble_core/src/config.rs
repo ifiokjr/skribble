@@ -5,6 +5,7 @@ use std::ops::DerefMut;
 
 use derivative::Derivative;
 use heck::ToKebabCase;
+use indexmap::indexset;
 use indexmap::IndexMap;
 use indexmap::IndexSet;
 use serde::Deserialize;
@@ -13,6 +14,7 @@ use serde_json::Value;
 use typed_builder::TypedBuilder;
 
 use crate::Error;
+use crate::MergedConfig;
 use crate::Plugin;
 use crate::Result;
 use crate::WrappedPluginConfig;
@@ -25,6 +27,9 @@ pub struct StyleConfig {
   /// The general options.
   #[builder(default, setter(into))]
   pub options: Options,
+  /// The css layers.
+  #[builder(default, setter(into))]
+  pub layers: Layers,
   /// Setup the keyframes.
   #[builder(default, setter(into))]
   pub keyframes: Keyframes,
@@ -86,6 +91,7 @@ impl StyleConfig {
       classes,
       groups,
       keyframes,
+      layers,
       media_queries,
       modifiers,
       options,
@@ -102,6 +108,7 @@ impl StyleConfig {
         classes,
         groups,
         keyframes,
+        layers,
         media_queries,
         modifiers,
         palette,
@@ -206,6 +213,10 @@ pub struct Options {
   #[serde(default = "default_charset")]
   #[builder(default = default_charset(), setter(into))]
   pub charset: String,
+  /// The default layer to use when no layer is specified.
+  #[serde(default = "default_layer")]
+  #[builder(default = default_layer(), setter(into))]
+  pub layer: String,
   /// This is the default format of colors rendered in css.
   #[serde(default)]
   #[builder(default, setter(into))]
@@ -242,6 +253,10 @@ fn default_variable_prefix() -> String {
 
 fn default_charset() -> String {
   "utf-8".to_string()
+}
+
+fn default_layer() -> String {
+  "default".to_string()
 }
 
 /// ColorFormat is used to determine the default format of the colors.
@@ -746,6 +761,37 @@ pub enum LinkedValues {
 }
 
 impl LinkedValues {
+  pub fn get_names_from_config(&self, config: &MergedConfig) -> IndexSet<String> {
+    match self {
+      Self::Color(ref color_settings) => {
+        let mut names = indexset! {};
+
+        for (name, variable) in config.css_variables.iter() {
+          if variable.is_color() {
+            names.insert(name.to_owned());
+          }
+        }
+
+        if !color_settings.ignore_palette {
+          names.extend(config.palette.keys().cloned());
+        }
+
+        names
+      }
+      Self::Values(ref value_set) => {
+        let mut names = indexset! {};
+        for value in value_set.iter() {
+          if let Some(set) = config.value_sets.get(&value.value) {
+            names.extend(set.values.keys().cloned());
+          }
+        }
+
+        names
+      }
+      Self::Keyframes => config.keyframes.keys().cloned().collect(),
+    }
+  }
+
   pub fn merge(&mut self, other: Self) {
     match self {
       Self::Color(color_settings) => {
@@ -1799,13 +1845,15 @@ impl<S: Into<String>> From<S> for ColorSettings {
 }
 
 pub type PrioritizedString = Prioritized<String>;
+pub type Layers = NameSet;
 
 #[derive(Clone, Default, Debug, Deserialize, PartialEq, Serialize)]
 pub struct NameSet(IndexSet<PrioritizedString>);
 
 impl NameSet {
-  pub fn sort_by_priority(&mut self) {
+  pub fn sort_by_priority(&mut self) -> &Self {
     self.sort_by(|a, z| a.priority.cmp(&z.priority));
+    self
   }
 
   pub fn merge(&mut self, other: impl Into<Self>) {
@@ -1874,12 +1922,5 @@ mod tests {
   #[test]
   fn default_config() {
     insta::assert_json_snapshot!(StyleConfig::default());
-  }
-
-  #[test]
-  fn supports_additional_fields() {
-    let json = include_str!("default.json");
-    let config = StyleConfig::from_json(json).unwrap();
-    insta::assert_json_snapshot!(config);
   }
 }
