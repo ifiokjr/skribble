@@ -7,7 +7,6 @@ use serde::Deserialize;
 use serde::Serialize;
 use typed_builder::TypedBuilder;
 
-use crate::AdditionalFields;
 use crate::Atom;
 use crate::BoxedPlugin;
 use crate::CssVariable;
@@ -153,7 +152,6 @@ impl SkribbleRunner {
     let mut palette = StringMap::default();
     let mut value_sets = IndexMap::<String, ValueSet>::new();
     let mut groups = IndexMap::<String, VariableGroup>::new();
-    let mut additional_fields = AdditionalFields::default();
 
     // layers
     wrapped_config.layers.sort_by_priority();
@@ -314,10 +312,6 @@ impl SkribbleRunner {
       }
     }
 
-    // additional_fields
-    additional_fields.extend(wrapped_config.additional_fields);
-    additional_fields.extend(self.config.additional_fields.clone());
-
     // sort by priority
     keyframes.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
     css_variables.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
@@ -358,7 +352,6 @@ impl SkribbleRunner {
       .palette(palette)
       .value_sets(value_sets)
       .groups(groups)
-      .additional_fields(additional_fields)
       .names(names)
       ._options(self.options.clone())
       .build();
@@ -386,7 +379,6 @@ pub struct MergedConfig {
   pub palette: StringMap,
   pub value_sets: IndexMap<String, ValueSet>,
   pub groups: IndexMap<String, VariableGroup>,
-  pub additional_fields: AdditionalFields,
   #[builder(default)]
   pub names: IndexMap<String, IndexSet<String>>,
   #[serde(skip)]

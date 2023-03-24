@@ -12,5 +12,4 @@ pub struct WrappedPluginConfig {
   pub palette: Palette,
   pub value_sets: ValueSets,
   pub groups: VariableGroups,
-  pub additional_fields: AdditionalFields,
 }

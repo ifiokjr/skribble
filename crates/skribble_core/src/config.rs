@@ -10,7 +10,6 @@ use indexmap::IndexMap;
 use indexmap::IndexSet;
 use serde::Deserialize;
 use serde::Serialize;
-use serde_json::Value;
 use typed_builder::TypedBuilder;
 
 use crate::Error;
@@ -65,10 +64,6 @@ pub struct StyleConfig {
   #[serde(skip)]
   #[builder(default, setter(into))]
   pub plugins: Plugins,
-  /// Support additional fields for plugins.
-  #[serde(flatten, default)]
-  #[builder(default, setter(into))]
-  pub additional_fields: AdditionalFields,
 }
 
 impl Default for StyleConfig {
@@ -86,7 +81,6 @@ impl StyleConfig {
 
   pub(crate) fn into_wrapped_config(self) -> (Options, WrappedPluginConfig, Plugins) {
     let Self {
-      additional_fields,
       atoms,
       classes,
       groups,
@@ -114,7 +108,6 @@ impl StyleConfig {
         palette,
         value_sets,
         variables,
-        additional_fields,
       },
       plugins,
     )
@@ -235,10 +228,6 @@ pub struct Options {
   #[serde(default = "default_variable_prefix")]
   #[builder(default = default_variable_prefix(), setter(into))]
   pub variable_prefix: String,
-  /// Support additional fields for plugins.
-  #[serde(flatten, default)]
-  #[builder(default, setter(into))]
-  pub additional_fields: AdditionalFields,
 }
 
 impl Default for Options {
@@ -708,10 +697,6 @@ pub struct Atom {
   /// The names of the [`ValueSet`]s that will be used to generate the styles.
   #[builder(default, setter(into))]
   pub values: LinkedValues,
-  /// Support additional fields for plugins to add extra functionality.
-  #[serde(flatten, default)]
-  #[builder(default, setter(into))]
-  additional_fields: AdditionalFields,
 }
 
 impl Atom {
@@ -742,7 +727,6 @@ impl Atom {
 
     self.styles.extend(other.styles);
     self.values.merge(other.values);
-    self.additional_fields.extend(other.additional_fields);
   }
 }
 
@@ -1235,10 +1219,6 @@ pub struct Modifier {
   /// The priority for this item.
   #[builder(default, setter(into))]
   pub priority: Priority,
-  /// Support additional fields for plugins.
-  #[serde(flatten, default)]
-  #[builder(default, setter(into))]
-  additional_fields: AdditionalFields,
 }
 
 impl Modifier {
@@ -1258,7 +1238,6 @@ impl Modifier {
     }
 
     self.values.extend(other.values);
-    self.additional_fields.extend(other.additional_fields);
   }
 }
 
@@ -1372,47 +1351,6 @@ impl DerefMut for Modifiers {
   }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
-pub struct AdditionalFields(IndexMap<String, Value>);
-
-impl IntoIterator for AdditionalFields {
-  type IntoIter = indexmap::map::IntoIter<String, Value>;
-  type Item = (String, Value);
-
-  fn into_iter(self) -> Self::IntoIter {
-    self.0.into_iter()
-  }
-}
-
-impl<K, V> FromIterator<(K, V)> for AdditionalFields
-where
-  K: Into<String>,
-  V: Into<Value>,
-{
-  fn from_iter<T: IntoIterator<Item = (K, V)>>(iter: T) -> Self {
-    let additional_fields = iter
-      .into_iter()
-      .map(|(k, v)| (k.into(), v.into()))
-      .collect();
-
-    Self(additional_fields)
-  }
-}
-
-impl Deref for AdditionalFields {
-  type Target = IndexMap<String, Value>;
-
-  fn deref(&self) -> &Self::Target {
-    &self.0
-  }
-}
-
-impl DerefMut for AdditionalFields {
-  fn deref_mut(&mut self) -> &mut Self::Target {
-    &mut self.0
-  }
-}
-
 /// A set of values that referenced by .
 
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
@@ -1469,10 +1407,6 @@ pub struct ValueSet {
   /// The values for this set.
   #[builder(setter(into))]
   pub values: CssValues,
-  /// Support additional fields for plugins.
-  #[serde(flatten, default)]
-  #[builder(default, setter(into))]
-  pub additional_fields: AdditionalFields,
 }
 
 impl ValueSet {
@@ -1492,7 +1426,6 @@ impl ValueSet {
     }
 
     self.values.extend(other.values);
-    self.additional_fields.extend(other.additional_fields);
   }
 }
 
@@ -1823,10 +1756,6 @@ pub struct ColorSettings {
   #[serde(default)]
   #[builder(default, setter(into))]
   pub ignore_palette: bool,
-  /// Support additional fields for plugins to add extra functionality.
-  #[serde(flatten, default)]
-  #[builder(default, setter(into))]
-  pub additional_fields: AdditionalFields,
 }
 
 impl ColorSettings {
@@ -1834,7 +1763,6 @@ impl ColorSettings {
     let other = other.into();
     self.opacity = other.opacity;
     self.ignore_palette = other.ignore_palette;
-    self.additional_fields.extend(other.additional_fields);
   }
 }
 
