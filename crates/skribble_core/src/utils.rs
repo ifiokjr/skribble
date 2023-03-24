@@ -147,11 +147,11 @@ pub fn wrap_css_variable(value: impl AsRef<str>) -> String {
   }
 }
 
-fn is_match(entry: &DirEntry, glob_set: &GlobSet) -> bool {
+fn is_match(entry: &DirEntry, include_set: &GlobSet, exclude_set: &GlobSet) -> bool {
   entry
     .path()
     .to_str()
-    .map(|file_name| glob_set.is_match(file_name))
+    .map(|file_name| !exclude_set.is_match(file_name) && include_set.is_match(file_name))
     .unwrap_or(false)
 }
 
@@ -160,19 +160,28 @@ pub(crate) fn walk_directory(
   path: impl AsRef<Path>,
   glob_rules: &Vec<String>,
 ) -> AnyResult<Vec<DirEntry>> {
-  let mut builder = GlobSetBuilder::new();
+  let mut include_builder = GlobSetBuilder::new();
+  let mut exclude_builder = GlobSetBuilder::new();
+
   for rule in glob_rules {
+    if rule.starts_with('!') {
+      let glob = Glob::new(&rule[1..])?;
+      exclude_builder.add(glob);
+      continue;
+    }
+
     let glob = Glob::new(rule)?;
-    builder.add(glob);
+    include_builder.add(glob);
   }
 
-  let glob_set = builder.build()?;
+  let include_set = include_builder.build()?;
+  let exclude_set = exclude_builder.build()?;
 
   let entries = WalkDir::new(path)
     .into_iter()
     .filter_map(Result::ok)
     .filter(|entry| entry.file_type().is_file())
-    .filter(|entry| is_match(entry, &glob_set))
+    .filter(|entry| is_match(entry, &include_set, &exclude_set))
     .collect::<Vec<_>>();
 
   Ok(entries)

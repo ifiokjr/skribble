@@ -1,3 +1,5 @@
+use std::path::PathBuf;
+
 use serde::Deserialize;
 use serde::Serialize;
 use typed_builder::TypedBuilder;
@@ -9,13 +11,18 @@ use super::MergeRules;
 #[derive(Clone, Debug, Deserialize, PartialEq, Serialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
 pub struct Options {
+  /// The path to the output css file. If not specified then the output is set
+  /// to `skribble.css` in the current working directory.
+  #[serde(default = "default_css_output")]
+  #[builder(default = default_css_output(), setter(into))]
+  pub output: PathBuf,
   /// Root directory to use when resolving paths. If relative then it is
   /// relative to the CWD.
-  #[serde(default)]
-  #[builder(default, setter(into, strip_option))]
-  pub root: Option<String>,
+  #[serde(default = "default_root")]
+  #[builder(default = default_root(), setter(into))]
+  pub root: PathBuf,
   /// The globs to match the files, relative to the CWD. Under the hood this
-  /// uses `globset`.
+  /// uses `globset`.To exclude a pattern prefix it with `!`.
   #[serde(default = "default_globs")]
   #[builder(default = default_globs(), setter(into))]
   pub files: Vec<String>,
@@ -53,6 +60,14 @@ impl Default for Options {
   }
 }
 
+fn default_css_output() -> PathBuf {
+  PathBuf::from("skribble.css")
+}
+
+fn default_root() -> PathBuf {
+  PathBuf::from("./")
+}
+
 fn default_variable_prefix() -> String {
   "sk".into()
 }
@@ -66,5 +81,5 @@ fn default_layer() -> String {
 }
 
 fn default_globs() -> Vec<String> {
-  vec!["**/*".into()]
+  vec!["**".into()]
 }

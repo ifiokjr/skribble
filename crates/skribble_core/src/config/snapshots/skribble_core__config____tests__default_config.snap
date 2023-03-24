@@ -4,9 +4,10 @@ expression: "StyleConfig::default()"
 ---
 {
   "options": {
-    "root": null,
+    "output": "skribble.css",
+    "root": "./",
     "files": [
-      "**/*"
+      "**"
     ],
     "charset": "utf-8",
     "layer": "default",
