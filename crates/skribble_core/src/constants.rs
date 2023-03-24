@@ -2,7 +2,7 @@ use lazy_static::lazy_static;
 use regex::Captures;
 use regex::Regex;
 
-use crate::MergedConfig;
+use crate::RunnerConfig;
 
 pub const INDENTATION: u8 = 2;
 pub const ROOT_SELECTOR: &str = ":root";
@@ -37,7 +37,7 @@ impl Placeholder {
     Self::create(Self::CSS_VARIABLE, name)
   }
 
-  pub fn normalize(content: impl AsRef<str>, config: &MergedConfig) -> String {
+  pub fn normalize(content: impl AsRef<str>, config: &RunnerConfig) -> String {
     let content = CSS_VARIABLE_REGEX.replace_all(content.as_ref(), |caps: &Captures| {
       // value for an invalid match
       let invalid_regex = format!(

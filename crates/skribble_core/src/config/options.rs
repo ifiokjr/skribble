@@ -9,6 +9,16 @@ use super::MergeRules;
 #[derive(Clone, Debug, Deserialize, PartialEq, Serialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
 pub struct Options {
+  /// Root directory to use when resolving paths. If relative then it is
+  /// relative to the CWD.
+  #[serde(default)]
+  #[builder(default, setter(into, strip_option))]
+  pub root: Option<String>,
+  /// The globs to match the files, relative to the CWD. Under the hood this
+  /// uses `globset`.
+  #[serde(default = "default_globs")]
+  #[builder(default = default_globs(), setter(into))]
+  pub files: Vec<String>,
   /// The character encoding used in the style sheet
   #[serde(default = "default_charset")]
   #[builder(default = default_charset(), setter(into))]
@@ -44,13 +54,17 @@ impl Default for Options {
 }
 
 fn default_variable_prefix() -> String {
-  "sk".to_string()
+  "sk".into()
 }
 
 fn default_charset() -> String {
-  "utf-8".to_string()
+  "utf-8".into()
 }
 
 fn default_layer() -> String {
-  "default".to_string()
+  "default".into()
+}
+
+fn default_globs() -> Vec<String> {
+  vec!["**/*".into()]
 }

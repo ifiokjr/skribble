@@ -4,7 +4,7 @@ use indexmap::IndexSet;
 use super::*;
 
 fn generate_media_queries(
-  config: &MergedConfig,
+  config: &RunnerConfig,
 
   method_names: &mut IndexSet<String>,
   sections: &mut Vec<String>,
@@ -67,7 +67,7 @@ fn modifier_docs(values: &[String]) -> String {
 }
 
 fn generate_modifiers(
-  config: &MergedConfig,
+  config: &RunnerConfig,
   method_names: &mut IndexSet<String>,
   sections: &mut Vec<String>,
   struct_names_map: &mut IndexMap<String, usize>,
@@ -115,7 +115,7 @@ fn generate_modifiers(
   }
 }
 
-fn generate_keyframes(config: &MergedConfig, sections: &mut Vec<String>, name: impl AsRef<str>) {
+fn generate_keyframes(config: &RunnerConfig, sections: &mut Vec<String>, name: impl AsRef<str>) {
   let name = name.as_ref();
 
   sections.push(format!("pub trait {name}: SkribbleValue {{"));
@@ -150,7 +150,7 @@ fn generate_keyframes(config: &MergedConfig, sections: &mut Vec<String>, name: i
   sections.push("}".into());
 }
 
-fn keyframe_docs(keyframe: &Keyframe, config: &MergedConfig) -> String {
+fn keyframe_docs(keyframe: &Keyframe, config: &RunnerConfig) -> String {
   let mut content = Vec::<String>::new();
 
   content.push(format!("@keyframes {} {{", keyframe.name));
@@ -174,7 +174,7 @@ fn keyframe_docs(keyframe: &Keyframe, config: &MergedConfig) -> String {
   content.join("\n")
 }
 
-fn generate_value_sets(config: &MergedConfig, sections: &mut Vec<String>) {
+fn generate_value_sets(config: &RunnerConfig, sections: &mut Vec<String>) {
   for (name, value_set) in config.value_sets.iter() {
     let value_set_trait_name = get_value_set_trait_name(name);
     sections.push(format!(
@@ -206,7 +206,7 @@ fn generate_value_sets(config: &MergedConfig, sections: &mut Vec<String>) {
 }
 
 fn generate_named_classes(
-  config: &MergedConfig,
+  config: &RunnerConfig,
 
   sections: &mut Vec<String>,
   trait_names: &mut Vec<String>,
@@ -240,7 +240,7 @@ fn generate_named_classes(
 const ATOM_TRAIT_NAME: &str = "Atom";
 
 fn generate_atoms(
-  config: &MergedConfig,
+  config: &RunnerConfig,
 
   method_names: &mut IndexSet<String>,
   sections: &mut Vec<String>,
@@ -310,7 +310,7 @@ fn generate_atoms(
   sections.push(trait_content.join("\n"));
 }
 
-fn generate_palette(config: &MergedConfig, sections: &mut Vec<String>) {
+fn generate_palette(config: &RunnerConfig, sections: &mut Vec<String>) {
   sections.push("pub trait Palette: SkribbleValue {".into());
 
   for (name, _) in config.palette.iter() {
@@ -333,7 +333,7 @@ fn generate_palette(config: &MergedConfig, sections: &mut Vec<String>) {
 }
 
 fn generate_css_variables(
-  config: &MergedConfig,
+  config: &RunnerConfig,
   variable_prefix: impl AsRef<str>,
   sections: &mut Vec<String>,
 ) {
@@ -432,7 +432,7 @@ fn css_property_docs(
   variable_name: impl AsRef<str>,
   syntax: &PropertySyntax,
   initial_value: &Option<String>,
-  config: &MergedConfig,
+  config: &RunnerConfig,
 ) -> String {
   let variable_name = variable_name.as_ref();
   let default_initial_value = "/* */".into();
@@ -608,7 +608,7 @@ fn combine_sections_with_header(sections: Vec<String>) -> String {
   format!("{HEADER}\n{}", sections.join("\n"))
 }
 
-pub(crate) fn generate_file_contents(config: &MergedConfig) -> String {
+pub(crate) fn generate_file_contents(config: &RunnerConfig) -> String {
   let mut method_names: IndexSet<String> = indexset! {};
   let mut sections = Vec::<String>::new();
   let mut trait_names = vec![];

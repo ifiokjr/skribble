@@ -1,13 +1,20 @@
+use std::path::Path;
 use std::str::FromStr;
 
 use colorsys::ColorAlpha;
 use colorsys::Hsl;
 use colorsys::Rgb;
+use globset::Glob;
+use globset::GlobSet;
+use globset::GlobSetBuilder;
 use lazy_static::lazy_static;
 use regex::Regex;
 use typed_builder::TypedBuilder;
+use walkdir::DirEntry;
+use walkdir::WalkDir;
 
 use crate::constants::INDENTATION;
+use crate::AnyResult;
 use crate::Palette;
 
 lazy_static! {
@@ -138,4 +145,35 @@ pub fn wrap_css_variable(value: impl AsRef<str>) -> String {
   } else {
     format!("var({value})")
   }
+}
+
+fn is_match(entry: &DirEntry, glob_set: &GlobSet) -> bool {
+  entry
+    .path()
+    .to_str()
+    .map(|file_name| glob_set.is_match(file_name))
+    .unwrap_or(false)
+}
+
+/// Find all files in the given directory that match the given glob rules.
+pub(crate) fn walk_directory(
+  path: impl AsRef<Path>,
+  glob_rules: &Vec<String>,
+) -> AnyResult<Vec<DirEntry>> {
+  let mut builder = GlobSetBuilder::new();
+  for rule in glob_rules {
+    let glob = Glob::new(rule)?;
+    builder.add(glob);
+  }
+
+  let glob_set = builder.build()?;
+
+  let entries = WalkDir::new(path)
+    .into_iter()
+    .filter_map(Result::ok)
+    .filter(|entry| entry.file_type().is_file())
+    .filter(|entry| is_match(entry, &glob_set))
+    .collect::<Vec<_>>();
+
+  Ok(entries)
 }

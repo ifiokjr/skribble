@@ -1,7 +1,10 @@
+use serde::Deserialize;
+use serde::Serialize;
+
 use crate::config::*;
 
-#[derive(Clone, Default)]
-pub struct WrappedPluginConfig {
+#[derive(Clone, Default, Serialize, Deserialize)]
+pub struct PluginConfig {
   pub layers: Layers,
   pub keyframes: Keyframes,
   pub variables: CssVariables,

@@ -22,10 +22,10 @@ use super::Priority;
 use super::StringList;
 use super::StringMap;
 use crate::Error;
-use crate::MergedConfig;
 use crate::Plugin;
+use crate::PluginConfig;
 use crate::Result;
-use crate::WrappedPluginConfig;
+use crate::RunnerConfig;
 
 /// The style configuration which can also use the builder pattern.
 #[derive(Derivative, Deserialize, Serialize, TypedBuilder)]
@@ -88,7 +88,7 @@ impl StyleConfig {
     Ok(config)
   }
 
-  pub(crate) fn into_wrapped_config(self) -> (Options, WrappedPluginConfig, Plugins) {
+  pub(crate) fn into_wrapped_config(self) -> (Options, PluginConfig, Plugins) {
     let Self {
       atoms,
       classes,
@@ -106,7 +106,7 @@ impl StyleConfig {
 
     (
       options,
-      WrappedPluginConfig {
+      PluginConfig {
         atoms,
         classes,
         groups,
@@ -334,7 +334,7 @@ pub enum LinkedValues {
 }
 
 impl LinkedValues {
-  pub fn get_names_from_config(&self, config: &MergedConfig) -> IndexSet<String> {
+  pub fn get_names_from_config(&self, config: &RunnerConfig) -> IndexSet<String> {
     match self {
       Self::Color(ref color_settings) => {
         let mut names = indexset! {};

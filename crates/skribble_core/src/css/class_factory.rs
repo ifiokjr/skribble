@@ -6,7 +6,7 @@ use indexmap::IndexSet;
 use crate::Arguments;
 use crate::Class;
 use crate::ClassSize;
-use crate::MergedConfig;
+use crate::RunnerConfig;
 
 /// Skribble classes represent a css class.
 #[derive(Clone, Debug, Default)]
@@ -29,7 +29,7 @@ pub struct ClassFactory {
   /// expression.
   argument: Option<Arguments>,
   /// The finalized configuration which was used to create this class name.
-  config: Arc<MergedConfig>,
+  config: Arc<RunnerConfig>,
   /// Whether this class is valid or not.
   valid: Option<bool>,
   /// The score of this class. This is used to determine the order of the

@@ -1,0 +1,38 @@
+---
+source: crates/skribble_core/src/config/__tests.rs
+expression: "StyleConfig::default()"
+---
+{
+  "options": {
+    "root": null,
+    "files": [
+      "**/*"
+    ],
+    "charset": "utf-8",
+    "layer": "default",
+    "colorFormat": "hsl",
+    "mergeRules": {
+      "keyframes": "append",
+      "variables": "append",
+      "mediaQueries": "append",
+      "modifiers": "append",
+      "rules": "append",
+      "classes": "append",
+      "palette": "append",
+      "atoms": "append",
+      "groups": "append"
+    },
+    "useRegisteredProperties": false,
+    "variablePrefix": "sk"
+  },
+  "layers": [],
+  "keyframes": [],
+  "variables": [],
+  "mediaQueries": [],
+  "modifiers": [],
+  "atoms": [],
+  "classes": [],
+  "palette": {},
+  "valueSets": [],
+  "groups": []
+}

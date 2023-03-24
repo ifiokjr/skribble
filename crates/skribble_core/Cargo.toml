@@ -18,6 +18,7 @@ description = "Core features for the skribble atomic css library"
 colorsys = { workspace = true }
 derivative = { workspace = true }
 enum-ordinalize = { workspace = true }
+globset = { workspace = true }
 heck = { workspace = true }
 indexmap = { features = ["serde"], workspace = true }
 lazy_static = { workspace = true }
@@ -29,6 +30,7 @@ serde = { workspace = true }
 serde_json = { workspace = true }
 thiserror = { workspace = true }
 typed-builder = { workspace = true }
+walkdir = { workspace = true }
 
 [dev-dependencies]
 insta = { features = ["json"], workspace = true }

@@ -36,7 +36,7 @@ impl Plugin for RustPlugin {
     "skribble_plugin_rust".into()
   }
 
-  fn generate_code(&self, config: &MergedConfig) -> AnyResult<GeneratedFiles> {
+  fn generate_code(&self, config: &RunnerConfig) -> AnyResult<GeneratedFiles> {
     let mut contents = generate_file_contents(config);
 
     if let Some(ref formatter) = self.formatter {
