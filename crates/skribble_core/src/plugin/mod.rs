@@ -7,3 +7,6 @@ mod generated_files;
 mod plugin_trait;
 mod types;
 mod wrapped_plugin;
+
+#[cfg(test)]
+mod __tests;

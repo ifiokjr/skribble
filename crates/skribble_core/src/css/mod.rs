@@ -7,3 +7,6 @@ mod arguments;
 mod class;
 mod class_factory;
 mod class_size;
+
+#[cfg(test)]
+mod __tests;
