@@ -1,14 +1,11 @@
+use std::f32::consts::PI;
 use std::fmt::Display;
 use std::str::FromStr;
 
 use lazy_static::lazy_static;
 use palette::rgb::Rgba;
 use palette::Hsla;
-// use palette::Hwba;
-// use palette::Laba;
-// use palette::Lcha;
-// use palette::Oklaba;
-// use palette::Oklcha;
+use palette::RgbHue;
 use regex::Regex;
 use serde::Deserialize;
 use serde::Serialize;
@@ -25,8 +22,6 @@ pub enum ColorFormat {
   #[serde(rename = "hsl")]
   #[default]
   Hsl,
-  // #[serde(rename = "lch")]
-  // Lch,
 }
 
 impl ColorFormat {
@@ -54,7 +49,6 @@ impl AsRef<str> for ColorFormat {
       Self::Rgb => "rgb",
       Self::Hex => "hex",
       Self::Hsl => "hsl",
-      // Self::Lch => "lch",
     }
   }
 }
@@ -65,7 +59,6 @@ impl<T: Into<String>> From<T> for ColorFormat {
       "rgb" => Self::Rgb,
       "hex" => Self::Hex,
       "hsl" => Self::Hsl,
-      // "lch" => Self::Lch,
       _ => Self::Hsl,
     }
   }
@@ -75,11 +68,6 @@ impl<T: Into<String>> From<T> for ColorFormat {
 pub enum Color {
   Rgb(Rgba),
   Hsl(Hsla),
-  // Hwb(Hwba),
-  // Lch(Lcha),
-  // Oklch(Oklcha),
-  // Lab(Laba),
-  // Oklab(Oklaba),
 }
 
 impl Display for Color {
@@ -87,11 +75,6 @@ impl Display for Color {
     match self {
       Self::Rgb(ref rgba) => write!(f, "{}", rgb_to_string(rgba)),
       Self::Hsl(ref hsla) => write!(f, "{}", hsl_to_string(hsla)),
-      // Self::Hwb(hwba) => write!(f, "{}", "hwba"),
-      // Self::Lch(lcha) => write!(f, "{}", "lcha"),
-      // Self::Oklch(oklcha) => write!(f, "{}", "oklcha"),
-      // Self::Lab(laba) => write!(f, "{}", "laba"),
-      // Self::Oklab(oklaba) => write!(f, "{}", "oklaba"),
     }
   }
 }
@@ -112,6 +95,16 @@ impl FromStr for Color {
 
     match from_rgb_string(value) {
       Ok(rgba) => return Ok(Self::Rgb(rgba)),
+      Err(err) => {
+        match err {
+          ColorError::Invalid(_) => return Err(err),
+          _ => {}
+        }
+      }
+    };
+
+    match from_hsl_string(value) {
+      Ok(hsl) => return Ok(Self::Hsl(hsl)),
       Err(err) => {
         match err {
           ColorError::Invalid(_) => return Err(err),
@@ -144,6 +137,146 @@ pub enum ColorError {
 lazy_static! {
   static ref HEX_REGEX: Regex = Regex::new(r"^(?i)\s*#(?:(?P<r1>[a-f0-9])(?P<g1>[a-f0-9])(?P<b1>[a-f0-9])(?P<a1>[a-f0-9])?|(?P<r2>[a-f0-9]{2})(?P<g2>[a-f0-9]{2})(?P<b2>[a-f0-9]{2})(?P<a2>[a-f0-9]{2})?)\s*$").unwrap();
   static ref RGB_REGEX: Regex = Regex::new(r"(?i)\s*(?:rgb\(\s*(?P<r1>\d+(?:\.\d+)?)\s*(?P<g1>\d+(?:\.\d+)?)\s*(?P<b1>\d+(?:\.\d+)?)\s*(?:/\s*(?:(?P<a1>\d+(?:\.\d+)?|\.\d+)|(?P<pc1>\d+(?:\.\d+)?|\.\d+)%))?\s*\)|rgba\(\s*(?P<r2>\d+(?:\.\d+)?)\s*,\s*(?P<g2>\d+(?:\.\d+)?)\s*,\s*(?P<b2>\d+(?:\.\d+)?)\s*,\s*(?:(?P<a2>\d+(?:\.\d+)?|\.\d+)|(?P<pc2>\d+(?:\.\d+)?|\.\d+)%)?\s*\)|rgb\(\s*(?P<r3>\d+(?:\.\d+)?)\s*,\s*(?P<g3>\d+(?:\.\d+)?)\s*,\s*(?P<b3>\d+(?:\.\d+)?)\s*\))\s*").unwrap();
+  static ref HSL_REGEX: Regex = Regex::new(r"(?i)\s*(?:hsl\(\s*(?P<h1>\d+(?:\.\d+)?)(?P<u1>deg|grad|rad|turn)?\s*(?P<s1>\d+(?:\.\d+)?)%\s*(?P<l1>\d+(?:\.\d+)?)%\s*(?:/\s*(?:(?P<a1>\d+(?:\.\d+)?|\.\d+)|(?P<pc1>\d+(?:\.\d+)?|\.\d+)%))?\s*\)|hsla\(\s*(?P<h2>\d+(?:\.\d+)?)(?P<u2>deg|grad|rad|turn)?\s*,\s*(?P<s2>\d+(?:\.\d+)?)%\s*,\s*(?P<l2>\d+(?:\.\d+)?)%\s*,\s*(?:(?P<a2>\d+(?:\.\d+)?|\.\d+)|(?P<pc2>\d+(?:\.\d+)?|\.\d+)%)?\s*\)|hsl\(\s*(?P<h3>\d+(?:\.\d+)?)(?P<u3>deg|grad|rad|turn)?\s*,\s*(?P<s3>\d+(?:\.\d+)?)%\s*,\s*(?P<l3>\d+(?:\.\d+)?)%\s*\))\s*").unwrap();
+}
+
+fn from_hsl_string(value: &str) -> Result<Hsla, ColorError> {
+  match HSL_REGEX.captures(value) {
+    Some(capture) => {
+      if let Some((r, g, b)) = capture
+        .name("h1")
+        .zip(capture.name("s1"))
+        .zip(capture.name("l1"))
+        .map(|((h, s), l)| (h, s, l))
+      {
+        let hue = f32::from_str(r.as_str()).map_err(ColorError::from)?;
+        let saturation = f32::from_str(g.as_str())
+          .map_err(ColorError::from)?
+          .clamp(0.0, 100.0)
+          / 100.0;
+        let lightness = f32::from_str(b.as_str())
+          .map_err(ColorError::from)?
+          .clamp(0.0, 100.0)
+          / 100.0;
+
+        let unit = if let Some(unit) = capture.name("u1") {
+          unit.as_str()
+        } else {
+          "deg"
+        };
+
+        let hue = match unit {
+          "deg" => RgbHue::from_degrees(hue),
+          "grad" => RgbHue::from_radians(hue * PI / 200.0),
+          "rad" => RgbHue::from_radians(hue),
+          "turn" => RgbHue::from_degrees(hue * 360.0),
+          _ => return Err(ColorError::Invalid(format!("hue units: `{unit}`"))),
+        };
+
+        let alpha = if let Some(alpha) = capture.name("a1") {
+          f32::from_str(alpha.as_str())?.clamp(0.0, 1.0)
+        } else if let Some(percentage) = capture.name("pc1") {
+          f32::from_str(percentage.as_str())?.clamp(0.0, 100.0) / 100.0
+        } else {
+          1.0
+        };
+
+        return Ok(Hsla::new(hue, saturation, lightness, alpha));
+      }
+
+      if let Some((r, g, b)) = capture
+        .name("h2")
+        .zip(capture.name("s2"))
+        .zip(capture.name("l2"))
+        .map(|((h, s), l)| (h, s, l))
+      {
+        let hue = f32::from_str(r.as_str()).map_err(ColorError::from)?;
+        let saturation = f32::from_str(g.as_str())
+          .map_err(ColorError::from)?
+          .clamp(0.0, 100.0)
+          / 100.0;
+        let lightness = f32::from_str(b.as_str())
+          .map_err(ColorError::from)?
+          .clamp(0.0, 100.0)
+          / 100.0;
+
+        let unit = if let Some(unit) = capture.name("u2") {
+          unit.as_str()
+        } else {
+          "deg"
+        };
+
+        let hue = match unit {
+          "deg" => RgbHue::from_degrees(hue),
+          "grad" => RgbHue::from_radians(hue * PI / 200.0),
+          "rad" => RgbHue::from_radians(hue),
+          "turn" => RgbHue::from_degrees(hue * 360.0),
+          _ => return Err(ColorError::Invalid(format!("hue units: `{unit}`"))),
+        };
+
+        let alpha = if let Some(alpha) = capture.name("a2") {
+          f32::from_str(alpha.as_str())?.clamp(0.0, 1.0)
+        } else if let Some(percentage) = capture.name("pc2") {
+          f32::from_str(percentage.as_str())?.clamp(0.0, 100.0) / 100.0
+        } else {
+          1.0
+        };
+
+        return Ok(Hsla::new(hue, saturation, lightness, alpha));
+      }
+
+      if let Some((r, g, b)) = capture
+        .name("h3")
+        .zip(capture.name("s3"))
+        .zip(capture.name("l3"))
+        .map(|((h, s), l)| (h, s, l))
+      {
+        let hue = f32::from_str(r.as_str()).map_err(ColorError::from)?;
+        let saturation = f32::from_str(g.as_str())
+          .map_err(ColorError::from)?
+          .clamp(0.0, 100.0)
+          / 100.0;
+        let lightness = f32::from_str(b.as_str())
+          .map_err(ColorError::from)?
+          .clamp(0.0, 100.0)
+          / 100.0;
+
+        let unit = if let Some(unit) = capture.name("u3") {
+          unit.as_str()
+        } else {
+          "deg"
+        };
+
+        let hue = match unit {
+          "deg" => RgbHue::from_degrees(hue),
+          "grad" => RgbHue::from_radians(hue * PI / 200.0),
+          "rad" => RgbHue::from_radians(hue),
+          "turn" => RgbHue::from_degrees(hue * 360.0),
+          _ => return Err(ColorError::Invalid(format!("hue units: `{unit}`"))),
+        };
+
+        let alpha = if let Some(alpha) = capture.name("a3") {
+          f32::from_str(alpha.as_str())?.clamp(0.0, 1.0)
+        } else if let Some(percentage) = capture.name("pc3") {
+          f32::from_str(percentage.as_str())?.clamp(0.0, 100.0) / 100.0
+        } else {
+          1.0
+        };
+
+        return Ok(Hsla::new(hue, saturation, lightness, alpha));
+      }
+
+      Err(ColorError::Invalid("hsl".into()))
+    }
+
+    None => {
+      if value.trim().starts_with("hsl") {
+        return Err(ColorError::Invalid("hsl".into()));
+      } else {
+        Err(ColorError::Unknown)
+      }
+    }
+  }
 }
 
 fn from_rgb_string(value: &str) -> Result<Rgba, ColorError> {
@@ -332,10 +465,10 @@ fn hsl_to_string(hsla: &Hsla) -> String {
   let alpha = hsla.alpha;
 
   if alpha == 1.0 {
-    return format!("hsl({hue}deg, {saturation}%, {lightness}%)");
+    return format!("hsl({hue}, {saturation}%, {lightness}%)");
   }
 
-  format!("hsla({hue}deg, {saturation}%, {lightness}%, {alpha})",)
+  format!("hsla({hue}, {saturation}%, {lightness}%, {alpha})",)
 }
 
 #[cfg(test)]
@@ -457,5 +590,103 @@ mod test {
     let r = "rgb(100 2 41 / .50%)";
     let rgb: Color = r.parse().unwrap();
     insta::assert_display_snapshot!(rgb, @"rgba(100, 2, 41, 0.005)");
+  }
+
+  #[test]
+  fn invalid_rgb() {
+    let r = "rgba(100, 2 41 / 0.5)";
+    let error = r.parse::<Color>().unwrap_err();
+    insta::assert_debug_snapshot!(error, @r###"
+    Invalid(
+        "rgb",
+    )
+    "###);
+  }
+  #[test]
+  fn from_hsl() {
+    let r = "hsl(100, 50%, 50%)";
+    let hsl: Color = r.parse().unwrap();
+    insta::assert_display_snapshot!(hsl, @"hsl(100, 50%, 50%)");
+  }
+
+  #[test]
+  fn from_hsla() {
+    let r = "hsla(100, 50%, 50%, 0.5)";
+    let hsl: Color = r.parse().unwrap();
+    insta::assert_display_snapshot!(hsl, @"hsla(100, 50%, 50%, 0.5)");
+  }
+
+  #[test]
+  fn from_hsla_no_zero_in_alpha() {
+    let r = "hsla(100, 50%, 50%, .5)";
+    let hsl: Color = r.parse().unwrap();
+    insta::assert_display_snapshot!(hsl, @"hsla(100, 50%, 50%, 0.5)");
+  }
+
+  #[test]
+  fn from_hsla_no_zero_in_percentage() {
+    let r = "hsla(100, 50%, 50%, .5%)";
+    let hsl: Color = r.parse().unwrap();
+    insta::assert_display_snapshot!(hsl, @"hsla(100, 50%, 50%, 0.005)");
+  }
+
+  #[test]
+  fn from_hsla_percentage() {
+    let r = "hsla(100, 50%, 50%, 50%)";
+    let hsl: Color = r.parse().unwrap();
+    insta::assert_display_snapshot!(hsl, @"hsla(100, 50%, 50%, 0.5)");
+  }
+
+  #[test]
+  fn from_hsl_css() {
+    let r = "hsl(100 50% 50% / 0.5)";
+    let hsl: Color = r.parse().unwrap();
+    insta::assert_display_snapshot!(hsl, @"hsla(100, 50%, 50%, 0.5)");
+  }
+
+  #[test]
+  fn from_hsl_css_alpha1() {
+    let r = "hsl(100 50% 50% / 1)";
+    let hsl: Color = r.parse().unwrap();
+    insta::assert_display_snapshot!(hsl, @"hsl(100, 50%, 50%)");
+  }
+
+  #[test]
+  fn from_hsl_css_simple() {
+    let r = "hsl(100 50% 50%)";
+    let hsl: Color = r.parse().unwrap();
+    insta::assert_display_snapshot!(hsl, @"hsl(100, 50%, 50%)");
+  }
+
+  #[test]
+  fn from_hsl_css_percentage() {
+    let r = "hsl(100 50% 50% / 50%)";
+    let hsl: Color = r.parse().unwrap();
+    insta::assert_display_snapshot!(hsl, @"hsla(100, 50%, 50%, 0.5)");
+  }
+
+  #[test]
+  fn from_hsl_css_no_leading_zero_in_alpha() {
+    let r = "hsl(100 50% 50% / .50)";
+    let hsl: Color = r.parse().unwrap();
+    insta::assert_display_snapshot!(hsl, @"hsla(100, 50%, 50%, 0.5)");
+  }
+
+  #[test]
+  fn from_hsl_css_no_leading_zero_in_percentage() {
+    let r = "hsl(100 50% 50% / .50%)";
+    let hsl: Color = r.parse().unwrap();
+    insta::assert_display_snapshot!(hsl, @"hsla(100, 50%, 50%, 0.005)");
+  }
+
+  #[test]
+  fn invalid_hsl() {
+    let r = "hsl(100, 50% 50% / 0.5)";
+    let error = r.parse::<Color>().unwrap_err();
+    insta::assert_debug_snapshot!(error, @r###"
+    Invalid(
+        "hsl",
+    )
+    "###);
   }
 }
