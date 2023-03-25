@@ -22,8 +22,10 @@ use super::Priority;
 use super::StringList;
 use super::StringMap;
 use crate::Error;
+use crate::Placeholder;
 use crate::Plugin;
 use crate::PluginConfig;
+use crate::Prioritized;
 use crate::Result;
 use crate::RunnerConfig;
 
@@ -289,6 +291,33 @@ pub struct Atom {
 }
 
 impl Atom {
+  pub fn get_style_properties(
+    &self,
+    config: &RunnerConfig,
+    value_set_name: impl AsRef<str>,
+  ) -> Vec<String> {
+    let mut result = vec![];
+
+    match self.values {
+      LinkedValues::Values(ref set) => {
+        for Prioritized { value: key, .. } in set.iter() {
+          if let Some(css_value) = config
+            .value_sets
+            .get(key)
+            .and_then(|value_set| value_set.values.get(value_set_name.as_ref()))
+          {
+            result.extend(css_value.get_css(config, self));
+            break;
+          }
+        }
+      }
+      LinkedValues::Color(ref settings) => {}
+      LinkedValues::Keyframes => {}
+    };
+
+    result
+  }
+
   /// Add a value to the [`ValueSet`] that will be used to generate the builtin
   /// style variants.
   pub fn add_value_set<V: Into<PrioritizedString>>(&mut self, value: V) -> &Self {
@@ -606,6 +635,34 @@ impl CssVariable {
     let prefix = prefix.as_ref();
     let replacement = format!("--{prefix}-");
     self.variable.as_str().replacen("--", &replacement, 1)
+  }
+
+  pub fn get_opacity_variable(&self, prefix: impl AsRef<str>) -> String {
+    let prefix = prefix.as_ref();
+    let replacement = format!("--{prefix}-opacity-");
+    self.variable.as_str().replacen("--", &replacement, 1)
+  }
+
+  pub fn get_property_rule(&self, config: &RunnerConfig) -> String {
+    let options = config.options();
+    let prefix = &options.variable_prefix;
+    let syntax = &self.syntax;
+    let color_format = &options.color_format;
+    let variable_name = self.get_variable(prefix);
+    let initial_value = if self.is_color() {
+      "".into()
+    } else {
+      let default_initial_value = "/* */".into();
+      Placeholder::normalize(
+        self.value.as_ref().unwrap_or(&default_initial_value),
+        config,
+      )
+    };
+
+    format!(
+      "@property {variable_name} {{\n  syntax: {syntax};\n  inherits: false;\n  initial-value: \
+       {initial_value};\n}}"
+    )
   }
 
   /// Check whether this instance of [CssVariable] is a color.
@@ -1023,6 +1080,37 @@ pub enum CssValue {
   Object(StringMap),
 }
 
+impl CssValue {
+  pub fn get_css(&self, config: &RunnerConfig, atom: &Atom) -> Vec<String> {
+    let mut result = vec![];
+
+    match self {
+      Self::Value(value) => {
+        let value = Placeholder::normalize(value, config);
+
+        for (property, css_value) in atom.styles.iter() {
+          let property = Placeholder::normalize(property, config);
+          let css_value = css_value
+            .as_ref()
+            .map(|value| Placeholder::normalize(value, config))
+            .unwrap_or_else(|| value.clone());
+
+          result.push(format!("{}: {};", property, css_value));
+        }
+      }
+      Self::Object(map) => {
+        for (property, css_value) in map.iter() {
+          let property = Placeholder::normalize(property, config);
+          let css_value = Placeholder::normalize(css_value, config);
+          result.push(format!("{}: {};", property, css_value));
+        }
+      }
+    }
+
+    result
+  }
+}
+
 impl From<&str> for CssValue {
   fn from(value: &str) -> Self {
     Self::Value(value.into())
@@ -1222,6 +1310,38 @@ pub struct ColorSettings {
 }
 
 impl ColorSettings {
+  pub fn get_css(
+    &self,
+    config: &RunnerConfig,
+    atom: &Atom,
+    color_name: impl AsRef<str>,
+  ) -> Vec<String> {
+    let mut css = vec![];
+    let prefix = &config.options().variable_prefix;
+
+    for (name, variable) in config.css_variables.iter() {
+      if !variable.is_color() || color_name.as_ref() != name {
+        continue;
+      }
+
+      let variable_name = Placeholder::normalize(variable.get_variable(prefix), config);
+
+      for (property, css_value) in atom.styles.iter() {
+        let property = Placeholder::normalize(property, config);
+        let css_value = css_value
+          .as_ref()
+          .map(|value| Placeholder::normalize(value, config))
+          .unwrap_or_else(|| variable_name.clone());
+
+        css.push(format!("{}: {};", property, css_value));
+      }
+
+      break;
+    }
+
+    css
+  }
+
   pub fn merge(&mut self, other: impl Into<Self>) {
     let other = other.into();
     self.opacity = other.opacity;

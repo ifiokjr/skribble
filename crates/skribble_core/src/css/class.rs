@@ -9,6 +9,7 @@ use typed_builder::TypedBuilder;
 
 use crate::Arguments;
 use crate::ClassSize;
+use crate::RunnerConfig;
 
 pub trait SkribbleClass: Clone + Hash + Eq + Ord {
   fn data(&self) -> Class;
@@ -91,6 +92,18 @@ impl Class {
 
   pub fn get_argument(&self) -> Option<&Arguments> {
     self.argument.as_ref()
+  }
+
+  pub fn get_style_declaration(&self, config: &RunnerConfig) -> Vec<String> {
+    let mut style_declarations = vec![];
+
+    if let Some(atom) = self.get_atom().and_then(|atom| config.atoms.get(atom)) {
+      if let Some(value_set_name) = self.get_value_name() {
+        style_declarations.extend(atom.get_style_properties(config, value_set_name));
+      }
+    }
+
+    style_declarations
   }
 }
 
