@@ -86,8 +86,7 @@ impl Default for StyleConfig {
 
 impl StyleConfig {
   pub fn from_json(json: impl AsRef<str>) -> Result<Self> {
-    let config: Self =
-      serde_json::from_str(json.as_ref()).map_err(|source| Error::InvalidConfig { source })?;
+    let config: Self = serde_json::from_str(json.as_ref()).map_err(Error::InvalidConfig)?;
     Ok(config)
   }
 
@@ -126,11 +125,11 @@ impl StyleConfig {
   }
 
   pub fn to_json(&self) -> Result<String> {
-    serde_json::to_string(self).map_err(|source| Error::CouldNotSerializeConfig { source })
+    serde_json::to_string(self).map_err(Error::CouldNotSerializeConfig)
   }
 
   pub fn to_pretty_json(&self) -> Result<String> {
-    serde_json::to_string_pretty(self).map_err(|source| Error::CouldNotSerializeConfig { source })
+    serde_json::to_string_pretty(self).map_err(Error::CouldNotSerializeConfig)
   }
 }
 
@@ -681,8 +680,6 @@ impl CssVariable {
         config,
       )
     };
-
-    println!("{}: {}", variable_name, initial_value);
 
     property_rule.push(format!(
       "@property {variable_name} {{\n  syntax: {syntax};\n  inherits: false;\n  initial-value: \

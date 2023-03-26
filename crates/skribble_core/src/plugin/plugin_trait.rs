@@ -1,12 +1,12 @@
-use std::path::PathBuf;
+use std::path::Path;
 
 use crate::config::*;
-use crate::css::Class;
 use crate::plugin::AnyEmptyResult;
 use crate::plugin::AnyResult;
 use crate::plugin::GeneratedFiles;
 use crate::plugin::PluginConfig;
 use crate::runner::RunnerConfig;
+use crate::Classes;
 
 pub trait Plugin {
   /// Get the id of the plugin. This should be globally unique and can be the
@@ -36,8 +36,8 @@ pub trait Plugin {
   /// Each plugin can implement a custom scanner that feeds back classes from
   /// the provided byte data.
   #[allow(unused)]
-  fn scan_code(&self, file_path: PathBuf, bytes: Vec<u8>) -> AnyResult<Vec<Class>> {
-    Ok(vec![])
+  fn scan_code(&self, file_path: &Path, bytes: Vec<u8>) -> AnyResult<Classes> {
+    Ok(Classes::default())
   }
 
   /// Set a readable name of the plugin. This is used for error messages and

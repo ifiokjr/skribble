@@ -1,9 +1,12 @@
+use std::path::Path;
 use std::sync::Arc;
 use std::sync::Mutex;
 
 use super::generate_merged_config;
+use super::walk_directory;
 use super::RunnerConfig;
 use crate::BoxedPlugin;
+use crate::Classes;
 use crate::Error;
 use crate::GeneratedFiles;
 use crate::Options;
@@ -89,6 +92,36 @@ impl SkribbleRunner {
     }
 
     Ok(generated_files)
+  }
+
+  pub fn scan(&self, cwd: impl AsRef<Path>) -> Result<Classes> {
+    let Some(_) = self.merged_config else {
+      return Err(Error::RunnerNotSetup);
+    };
+
+    let entries = walk_directory(cwd, &self.options.files).map_err(Error::FileScanError)?;
+
+    let plugins = self.plugins.lock().unwrap();
+    let mut classes = Classes::default();
+
+    for entry in entries.iter() {
+      let path = entry.path();
+      let bytes = std::fs::read(entry.path())
+        .map_err(move |source| Error::FileReadError(path.to_path_buf(), source))?;
+      for boxed_plugin in plugins.iter() {
+        let plugin = boxed_plugin.as_ref();
+        let scanned = plugin.scan_code(path, bytes.clone()).map_err(|e| {
+          Error::PluginScanCodeError {
+            id: plugin.get_id(),
+            source: e,
+          }
+        })?;
+
+        classes.merge(scanned);
+      }
+    }
+
+    Ok(classes)
   }
 
   fn generate_plugin_config(&self) -> Result<PluginConfig> {

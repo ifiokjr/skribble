@@ -142,6 +142,18 @@ impl Classes {
   }
 }
 
+impl From<Vec<Class>> for Classes {
+  fn from(classes: Vec<Class>) -> Self {
+    Self(classes.into_iter().collect())
+  }
+}
+
+impl From<IndexSet<Class>> for Classes {
+  fn from(classes: IndexSet<Class>) -> Self {
+    Self(classes.into_iter().collect())
+  }
+}
+
 impl IntoIterator for Classes {
   type IntoIter = <IndexSet<Class> as IntoIterator>::IntoIter;
   type Item = Class;
