@@ -15,7 +15,6 @@ rust-version = { workspace = true }
 description = "Core features for the skribble atomic css library"
 
 [dependencies]
-colorsys = { workspace = true }
 derivative = { workspace = true }
 enum-ordinalize = { workspace = true }
 globset = { workspace = true }
