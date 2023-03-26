@@ -21,6 +21,7 @@ use super::PrioritizedString;
 use super::Priority;
 use super::StringList;
 use super::StringMap;
+use crate::Color;
 use crate::Error;
 use crate::Placeholder;
 use crate::Plugin;
@@ -291,31 +292,8 @@ pub struct Atom {
 }
 
 impl Atom {
-  pub fn get_style_properties(
-    &self,
-    config: &RunnerConfig,
-    value_set_name: impl AsRef<str>,
-  ) -> Vec<String> {
-    let mut result = vec![];
-
-    match self.values {
-      LinkedValues::Values(ref set) => {
-        for Prioritized { value: key, .. } in set.iter() {
-          if let Some(css_value) = config
-            .value_sets
-            .get(key)
-            .and_then(|value_set| value_set.values.get(value_set_name.as_ref()))
-          {
-            result.extend(css_value.get_css(config, self));
-            break;
-          }
-        }
-      }
-      LinkedValues::Color(ref _settings) => {}
-      LinkedValues::Keyframes => {}
-    };
-
-    result
+  pub fn get_style_properties(&self, config: &RunnerConfig, name: impl AsRef<str>) -> Vec<String> {
+    self.values.get_style_properties(config, self, name)
   }
 
   /// Add a value to the [`ValueSet`] that will be used to generate the builtin
@@ -408,6 +386,35 @@ impl LinkedValues {
       }
       Self::Keyframes => {
         *self = other;
+      }
+    }
+  }
+
+  pub fn get_style_properties(
+    &self,
+    config: &RunnerConfig,
+    atom: &Atom,
+    name: impl AsRef<str>,
+  ) -> Vec<String> {
+    match self {
+      Self::Values(ref set) => {
+        let mut result = vec![];
+        for Prioritized { value: key, .. } in set.iter() {
+          if let Some(css_value) = config
+            .value_sets
+            .get(key)
+            .and_then(|value_set| value_set.values.get(name.as_ref()))
+          {
+            result.extend(css_value.get_css(config, atom));
+            break;
+          }
+        }
+
+        result
+      }
+      Self::Color(ref settings) => settings.get_css(config, atom, name),
+      Self::Keyframes => {
+        vec![]
       }
     }
   }
@@ -627,9 +634,7 @@ impl CssVariable {
       };
     }
   }
-}
 
-impl CssVariable {
   #[inline]
   pub fn get_variable(&self, prefix: impl AsRef<str>) -> String {
     let prefix = prefix.as_ref();
@@ -641,6 +646,15 @@ impl CssVariable {
     let prefix = prefix.as_ref();
     let replacement = format!("--{prefix}-opacity-");
     self.variable.as_str().replacen("--", &replacement, 1)
+  }
+
+  pub fn get_default_opacity(&self) -> f32 {
+    self
+      .value
+      .as_ref()
+      .and_then(|value| value.parse::<Color>().ok())
+      .map(|color| color.alpha())
+      .unwrap_or(1.0)
   }
 
   pub fn get_property_rule(&self, config: &RunnerConfig) -> String {
@@ -1324,13 +1338,16 @@ impl ColorSettings {
         continue;
       }
 
-      let variable_name = Placeholder::normalize(variable.get_variable(prefix), config);
+      let variable_name = variable.get_variable(prefix);
+      let opacity_variable = Placeholder::normalize(variable.get_opacity_variable(prefix), config);
+      let default_opacity = variable.get_default_opacity();
+      css.push(format!("{opacity_variable}: {default_opacity};"));
 
       for (property, css_value) in atom.styles.iter() {
         let property = Placeholder::normalize(property, config);
         let css_value = css_value
           .as_ref()
-          .map(|value| Placeholder::normalize(value, config))
+          .map(|value| Placeholder::normalize_with_value(value, &variable_name, config))
           .unwrap_or_else(|| variable_name.clone());
 
         css.push(format!("{}: {};", property, css_value));
