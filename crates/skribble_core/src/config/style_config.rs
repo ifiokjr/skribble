@@ -311,7 +311,7 @@ impl Atom {
           }
         }
       }
-      LinkedValues::Color(ref settings) => {}
+      LinkedValues::Color(ref _settings) => {}
       LinkedValues::Keyframes => {}
     };
 
@@ -647,7 +647,7 @@ impl CssVariable {
     let options = config.options();
     let prefix = &options.variable_prefix;
     let syntax = &self.syntax;
-    let color_format = &options.color_format;
+    let _color_format = &options.color_format;
     let variable_name = self.get_variable(prefix);
     let initial_value = if self.is_color() {
       "".into()

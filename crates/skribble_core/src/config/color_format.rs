@@ -4,6 +4,7 @@ use std::str::FromStr;
 
 use lazy_static::lazy_static;
 use palette::rgb::Rgba;
+use palette::FromColor;
 use palette::Hsla;
 use palette::RgbHue;
 use regex::Regex;
@@ -11,43 +12,62 @@ use serde::Deserialize;
 use serde::Serialize;
 
 use crate::CssVariable;
+use crate::Error;
+use crate::Placeholder;
+use crate::RunnerConfig;
 
 /// ColorFormat is used to determine the default format of the colors.
 #[derive(Clone, Copy, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub enum ColorFormat {
   #[serde(rename = "rgb")]
   Rgb,
-  #[serde(rename = "hex")]
-  Hex,
   #[serde(rename = "hsl")]
   #[default]
   Hsl,
 }
 
 impl ColorFormat {
-  pub fn get_format(color: impl AsRef<str>) -> Option<Self> {
-    // let color = color.as_ref();
-
-    // if let Ok(_a) = color.parse::<Hsl>() {
-    //   Some(Self::Hsl)
-    // } else if let Ok(_a) = color.parse::<Rgb>() {
-    //   Some(Self::Rgb)
-    // } else {
-    //   None
-    // }
-
-    None
-  }
-
   /// Doesn't currently check if this is a color.
-  pub fn get_color_value_with_opacity(&self, css_variable: CssVariable) {}
+  pub fn get_color_value_with_opacity(
+    &self,
+    config: &RunnerConfig,
+    css_variable: &CssVariable,
+  ) -> crate::Result<String> {
+    let prefix = &config.options().variable_prefix;
+    let initial_value = css_variable
+      .value
+      .as_ref()
+      .map(|value| Placeholder::normalize(value, config))
+      .ok_or(Error::InvalidCssVariable(css_variable.name.clone()))?;
+    let opacity_variable = css_variable.get_opacity_variable(prefix);
+
+    match self {
+      Self::Rgb => {
+        let color = initial_value
+          .parse::<Color>()
+          .map_err(Error::from)?
+          .into_rgb()
+          .to_string_with_opacity(opacity_variable);
+
+        Ok(color)
+      }
+      Self::Hsl => {
+        let color = initial_value
+          .parse::<Color>()
+          .map_err(Error::from)?
+          .into_hsl()
+          .to_string_with_opacity(opacity_variable);
+
+        Ok(color)
+      }
+    }
+  }
 }
 
 impl AsRef<str> for ColorFormat {
   fn as_ref(&self) -> &str {
     match self {
       Self::Rgb => "rgb",
-      Self::Hex => "hex",
       Self::Hsl => "hsl",
     }
   }
@@ -57,7 +77,6 @@ impl<T: Into<String>> From<T> for ColorFormat {
   fn from(value: T) -> Self {
     match value.into().as_str() {
       "rgb" => Self::Rgb,
-      "hex" => Self::Hex,
       "hsl" => Self::Hsl,
       _ => Self::Hsl,
     }
@@ -70,11 +89,38 @@ pub enum Color {
   Hsl(Hsla),
 }
 
+impl Color {
+  /// Returns the color as an RGB value.
+  pub fn into_rgb(self) -> Self {
+    match self {
+      Self::Rgb(_) => self,
+      Self::Hsl(hsla) => Self::Rgb(Rgba::from_color(hsla)),
+    }
+  }
+
+  /// Returns the color as an HSL value.
+  pub fn into_hsl(self) -> Self {
+    match self {
+      Self::Rgb(rgb) => Self::Hsl(Hsla::from_color(rgb)),
+      Self::Hsl(_) => self,
+    }
+  }
+
+  pub fn to_string_with_opacity(&self, opacity_variable: impl AsRef<str>) -> String {
+    let opacity_variable = opacity_variable.as_ref();
+
+    match self {
+      Self::Rgb(ref rgba) => rgb_to_string(rgba, Some(opacity_variable)),
+      Self::Hsl(ref hsla) => hsl_to_string(hsla, Some(opacity_variable)),
+    }
+  }
+}
+
 impl Display for Color {
   fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
     match self {
-      Self::Rgb(ref rgba) => write!(f, "{}", rgb_to_string(rgba)),
-      Self::Hsl(ref hsla) => write!(f, "{}", hsl_to_string(hsla)),
+      Self::Rgb(ref rgba) => write!(f, "{}", rgb_to_string::<String>(rgba, None)),
+      Self::Hsl(ref hsla) => write!(f, "{}", hsl_to_string::<String>(hsla, None)),
     }
   }
 }
@@ -113,11 +159,9 @@ impl FromStr for Color {
       }
     };
 
-    return Err(ColorError::Unknown);
+    Err(ColorError::Unknown)
   }
 }
-
-impl Color {}
 
 #[derive(thiserror::Error, Debug)]
 pub enum ColorError {
@@ -271,7 +315,7 @@ fn from_hsl_string(value: &str) -> Result<Hsla, ColorError> {
 
     None => {
       if value.trim().starts_with("hsl") {
-        return Err(ColorError::Invalid("hsl".into()));
+        Err(ColorError::Invalid("hsl".into()))
       } else {
         Err(ColorError::Unknown)
       }
@@ -306,9 +350,9 @@ fn from_rgb_string(value: &str) -> Result<Rgba, ColorError> {
           1.0
         };
 
-        let red = (red as f32) / 255.0;
-        let green = (green as f32) / 255.0;
-        let blue = (blue as f32) / 255.0;
+        let red = red / 255.0;
+        let green = green / 255.0;
+        let blue = blue / 255.0;
 
         return Ok(Rgba::new(red, green, blue, alpha));
       }
@@ -337,9 +381,9 @@ fn from_rgb_string(value: &str) -> Result<Rgba, ColorError> {
           1.0
         };
 
-        let red = (red as f32) / 255.0;
-        let green = (green as f32) / 255.0;
-        let blue = (blue as f32) / 255.0;
+        let red = red / 255.0;
+        let green = green / 255.0;
+        let blue = blue / 255.0;
 
         return Ok(Rgba::new(red, green, blue, alpha));
       }
@@ -360,9 +404,9 @@ fn from_rgb_string(value: &str) -> Result<Rgba, ColorError> {
           .map_err(ColorError::from)?
           .clamp(0.0, 255.0);
 
-        let red = (red as f32) / 255.0;
-        let green = (green as f32) / 255.0;
-        let blue = (blue as f32) / 255.0;
+        let red = red / 255.0;
+        let green = green / 255.0;
+        let blue = blue / 255.0;
 
         return Ok(Rgba::new(red, green, blue, 1.0));
       }
@@ -372,7 +416,7 @@ fn from_rgb_string(value: &str) -> Result<Rgba, ColorError> {
 
     None => {
       if value.trim().starts_with("rgb") {
-        return Err(ColorError::Invalid("rgb".into()));
+        Err(ColorError::Invalid("rgb".into()))
       } else {
         Err(ColorError::Unknown)
       }
@@ -436,8 +480,8 @@ fn from_hex_string(value: &str) -> Result<Rgba, ColorError> {
       Err(ColorError::Invalid("hex".into()))
     }
     None => {
-      if value.trim().starts_with("#") {
-        return Err(ColorError::Invalid("hex".into()));
+      if value.trim().starts_with('#') {
+        Err(ColorError::Invalid("hex".into()))
       } else {
         Err(ColorError::Unknown)
       }
@@ -445,26 +489,32 @@ fn from_hex_string(value: &str) -> Result<Rgba, ColorError> {
   }
 }
 
-fn rgb_to_string(rgba: &Rgba) -> String {
+fn rgb_to_string<T: AsRef<str>>(rgba: &Rgba, opacity: Option<T>) -> String {
+  let is_alpha = opacity.is_some() || rgba.alpha != 1.0;
   let red = (rgba.red * 255.0) as u8;
   let green = (rgba.green * 255.0) as u8;
   let blue = (rgba.blue * 255.0) as u8;
-  let alpha = rgba.alpha;
+  let alpha = opacity
+    .map(|v| v.as_ref().to_string())
+    .unwrap_or(rgba.alpha.to_string());
 
-  if alpha == 1.0 {
+  if !is_alpha {
     return format!("rgb({red}, {green}, {blue})");
   }
 
   format!("rgba({red}, {green}, {blue}, {alpha})",)
 }
 
-fn hsl_to_string(hsla: &Hsla) -> String {
+fn hsl_to_string<T: AsRef<str>>(hsla: &Hsla, opacity: Option<T>) -> String {
+  let is_alpha = opacity.is_some() || hsla.alpha != 1.0;
   let hue = hsla.hue.to_positive_degrees();
   let saturation = hsla.saturation * 100.0;
   let lightness = hsla.lightness * 100.0;
-  let alpha = hsla.alpha;
+  let alpha = opacity
+    .map(|v| v.as_ref().to_string())
+    .unwrap_or(hsla.alpha.to_string());
 
-  if alpha == 1.0 {
+  if !is_alpha {
     return format!("hsl({hue}, {saturation}%, {lightness}%)");
   }
 

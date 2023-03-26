@@ -1,3 +1,5 @@
+use crate::ColorError;
+
 pub type Result<T> = core::result::Result<T, Error>;
 
 // Prevents a breaking change when adding a new error type
@@ -49,4 +51,10 @@ pub enum Error {
      `generate()`"
   )]
   RunnerNotSetup,
+
+  #[error("color conversion error")]
+  Color(#[from] ColorError),
+
+  #[error("no initial color value was provided for css variable `{0}")]
+  InvalidCssVariable(String),
 }
