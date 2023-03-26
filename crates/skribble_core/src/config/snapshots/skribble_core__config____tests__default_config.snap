@@ -24,7 +24,8 @@ expression: "StyleConfig::default()"
       "groups": "append"
     },
     "useRegisteredProperties": false,
-    "variablePrefix": "sk"
+    "variablePrefix": "sk",
+    "defaultColor": "#000000"
   },
   "layers": [],
   "keyframes": [],

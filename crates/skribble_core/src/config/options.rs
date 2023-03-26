@@ -52,6 +52,10 @@ pub struct Options {
   #[serde(default = "default_variable_prefix")]
   #[builder(default = default_variable_prefix(), setter(into))]
   pub variable_prefix: String,
+  /// The default color value to use when no color is specified.
+  #[serde(default = "default_hex_color")]
+  #[builder(default = default_hex_color(), setter(into))]
+  pub default_color: String,
 }
 
 impl Default for Options {
@@ -82,4 +86,8 @@ fn default_layer() -> String {
 
 fn default_globs() -> Vec<String> {
   vec!["**".into()]
+}
+
+fn default_hex_color() -> String {
+  "#000000".into()
 }
