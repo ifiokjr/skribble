@@ -11,6 +11,7 @@ use regex::Regex;
 use serde::Deserialize;
 use serde::Serialize;
 
+use crate::css_variable_var;
 use crate::CssVariable;
 use crate::Error;
 use crate::Placeholder;
@@ -47,7 +48,7 @@ impl ColorFormat {
           .parse::<Color>()
           .map_err(Error::from)?
           .into_rgb()
-          .to_string_with_opacity(opacity_variable);
+          .to_string_with_opacity(css_variable_var(opacity_variable));
 
         Ok(color)
       }
@@ -56,7 +57,7 @@ impl ColorFormat {
           .parse::<Color>()
           .map_err(Error::from)?
           .into_hsl()
-          .to_string_with_opacity(opacity_variable);
+          .to_string_with_opacity(css_variable_var(opacity_variable));
 
         Ok(color)
       }
@@ -473,8 +474,6 @@ fn from_hex_string(value: &str) -> Result<Rgba, ColorError> {
         } else {
           255
         };
-
-        println!("ALPHA!! {alpha}");
 
         let red = (red as f32) / 255.0;
         let green = (green as f32) / 255.0;

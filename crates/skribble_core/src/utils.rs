@@ -1,6 +1,5 @@
 use std::path::Path;
 
-
 use globset::Glob;
 use globset::GlobSet;
 use globset::GlobSetBuilder;
@@ -12,7 +11,6 @@ use walkdir::WalkDir;
 
 use crate::constants::INDENTATION;
 use crate::AnyResult;
-
 
 lazy_static! {
   static ref ESCAPE_CSS_STRING_REGEX: Regex =
@@ -76,6 +74,21 @@ pub fn indent(content: impl AsRef<str>, style: IndentStyle) -> String {
   }
 
   result.trim_end().to_string()
+}
+
+pub fn wrap_indent(content: impl AsRef<str>, level: u8) -> String {
+  let mut result = content.as_ref().to_string();
+  let indent_style = IndentStyle::default();
+
+  for _ in 1..=level {
+    result = indent(result, indent_style);
+  }
+
+  result
+}
+
+pub fn css_variable_var(value: impl AsRef<str>) -> String {
+  format!("var({})", value.as_ref())
 }
 
 /// Wrap the opacity value in `var()` if not already done in the config.

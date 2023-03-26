@@ -12,7 +12,11 @@ use indexmap::indexset;
 use indoc::indoc;
 use serde::Deserialize;
 use serde::Serialize;
-use skribble_core::*;
+use skribble_core::AnyResult;
+use skribble_core::GeneratedFile;
+use skribble_core::GeneratedFiles;
+use skribble_core::Plugin;
+use skribble_core::RunnerConfig;
 use typed_builder::TypedBuilder;
 
 mod generate;
@@ -37,7 +41,7 @@ impl Plugin for RustPlugin {
   }
 
   fn generate_code(&self, config: &RunnerConfig) -> AnyResult<GeneratedFiles> {
-    let mut contents = generate_file_contents(config);
+    let mut contents = generate_file_contents(config)?;
 
     if let Some(ref formatter) = self.formatter {
       let input = Command::new("echo")

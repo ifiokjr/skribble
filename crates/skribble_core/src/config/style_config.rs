@@ -657,14 +657,23 @@ impl CssVariable {
       .unwrap_or(1.0)
   }
 
-  pub fn get_property_rule(&self, config: &RunnerConfig) -> String {
+  pub fn get_property_rule(&self, config: &RunnerConfig) -> Result<String> {
+    let mut property_rule = vec![];
     let options = config.options();
     let prefix = &options.variable_prefix;
     let syntax = &self.syntax;
     let _color_format = &options.color_format;
     let variable_name = self.get_variable(prefix);
     let initial_value = if self.is_color() {
-      "".into()
+      let opacity_variable = self.get_opacity_variable(prefix);
+      let alpha = self.get_default_opacity();
+      property_rule.push(format!(
+        "@property {opacity_variable} {{\n  syntax: \"<number>\";\n  inherits: false;\n  \
+         initial-value: {alpha};\n}}"
+      ));
+      options
+        .color_format
+        .get_color_value_with_opacity(config, self)?
     } else {
       let default_initial_value = "/* */".into();
       Placeholder::normalize(
@@ -673,10 +682,14 @@ impl CssVariable {
       )
     };
 
-    format!(
+    println!("{}: {}", variable_name, initial_value);
+
+    property_rule.push(format!(
       "@property {variable_name} {{\n  syntax: {syntax};\n  inherits: false;\n  initial-value: \
        {initial_value};\n}}"
-    )
+    ));
+
+    Ok(property_rule.join("\n"))
   }
 
   /// Check whether this instance of [CssVariable] is a color.

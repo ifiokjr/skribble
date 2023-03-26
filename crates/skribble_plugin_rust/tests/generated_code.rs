@@ -46,10 +46,15 @@ impl CssVariables {
   /// The primary color. Useful for primary buttons.
   ///
   /// ```css
-  /// @property --sk-p {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-p {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #570df8;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-p {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(258.89362, 94.37751%, 51.17647%, var(--sk-opacity-p));
   /// }
   /// ```
   #[inline]
@@ -60,10 +65,15 @@ impl CssVariables {
   /// The primary content color
   ///
   /// ```css
-  /// @property --sk-pc {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-pc {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #ffffff;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-pc {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-pc));
   /// }
   /// ```
   #[inline]
@@ -74,10 +84,15 @@ impl CssVariables {
   /// The secondary color. Useful for secondary buttons.
   ///
   /// ```css
-  /// @property --sk-s {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-s {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #f000b8;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-s {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(314, 100%, 47.058823%, var(--sk-opacity-s));
   /// }
   /// ```
   #[inline]
@@ -88,10 +103,15 @@ impl CssVariables {
   /// The secondary content color. Useful for text within secondary buttons.
   ///
   /// ```css
-  /// @property --sk-sc {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-sc {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #ffffff;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-sc {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-sc));
   /// }
   /// ```
   #[inline]
@@ -102,10 +122,15 @@ impl CssVariables {
   /// Color for accents.
   ///
   /// ```css
-  /// @property --sk-a {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-a {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #37cdbe;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-a {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(174, 60.000008%, 50.980396%, var(--sk-opacity-a));
   /// }
   /// ```
   #[inline]
@@ -116,10 +141,15 @@ impl CssVariables {
   /// Color for content within accents.
   ///
   /// ```css
-  /// @property --sk-ac {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-ac {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #163835;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-ac {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(174.70587, 43.589737%, 15.294118%, var(--sk-opacity-ac));
   /// }
   /// ```
   #[inline]
@@ -130,10 +160,15 @@ impl CssVariables {
   /// The neutral color.
   ///
   /// ```css
-  /// @property --sk-n {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-n {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #3d4451;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-n {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(218.99998, 14.084508%, 27.843138%, var(--sk-opacity-n));
   /// }
   /// ```
   #[inline]
@@ -144,10 +179,15 @@ impl CssVariables {
   /// The neutral content color.
   ///
   /// ```css
-  /// @property --sk-nc {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-nc {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #ffffff;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-nc {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-nc));
   /// }
   /// ```
   #[inline]
@@ -158,10 +198,15 @@ impl CssVariables {
   /// The base color.
   ///
   /// ```css
-  /// @property --sk-b1 {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-b1 {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #ffffff;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-b1 {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-b1));
   /// }
   /// ```
   #[inline]
@@ -172,10 +217,15 @@ impl CssVariables {
   /// The secondary base color.
   ///
   /// ```css
-  /// @property --sk-b2 {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-b2 {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #F2F2F2;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-b2 {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(0, 0%, 94.90196%, var(--sk-opacity-b2));
   /// }
   /// ```
   #[inline]
@@ -186,10 +236,15 @@ impl CssVariables {
   /// The tertiary base color.
   ///
   /// ```css
-  /// @property --sk-b3 {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-b3 {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #E5E6E6;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-b3 {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(180, 1.9607836%, 90%, var(--sk-opacity-b3));
   /// }
   /// ```
   #[inline]
@@ -200,10 +255,15 @@ impl CssVariables {
   /// The base content color. This is useful for text.
   ///
   /// ```css
-  /// @property --sk-bc {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-bc {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #1f2937;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-bc {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(215, 27.906975%, 16.862745%, var(--sk-opacity-bc));
   /// }
   /// ```
   #[inline]
@@ -214,10 +274,15 @@ impl CssVariables {
   /// The info color. Useful for info buttons and alerts.
   ///
   /// ```css
-  /// @property --sk-in {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-in {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #0070F3;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-in {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(212.34569, 100%, 47.64706%, var(--sk-opacity-in));
   /// }
   /// ```
   #[inline]
@@ -228,10 +293,15 @@ impl CssVariables {
   /// The info content color. Useful for text within info buttons and alerts.
   ///
   /// ```css
-  /// @property --sk-inc {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-inc {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #ffffff;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-inc {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-inc));
   /// }
   /// ```
   #[inline]
@@ -242,10 +312,15 @@ impl CssVariables {
   /// The success color. Useful for success buttons and alerts.
   ///
   /// ```css
-  /// @property --sk-su {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-su {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #21CC51;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-su {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(136.8421, 72.1519%, 46.47059%, var(--sk-opacity-su));
   /// }
   /// ```
   #[inline]
@@ -257,10 +332,15 @@ impl CssVariables {
   /// alerts.
   ///
   /// ```css
-  /// @property --sk-suc {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-suc {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #ffffff;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-suc {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-suc));
   /// }
   /// ```
   #[inline]
@@ -271,10 +351,15 @@ impl CssVariables {
   /// The warning color. Useful for warning buttons and alerts.
   ///
   /// ```css
-  /// @property --sk-wa {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-wa {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #FF6154;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-wa {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(4.5614033, 100%, 66.47059%, var(--sk-opacity-wa));
   /// }
   /// ```
   #[inline]
@@ -286,10 +371,15 @@ impl CssVariables {
   /// alerts.
   ///
   /// ```css
-  /// @property --sk-wac {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-wac {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #ffffff;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-wac {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-wac));
   /// }
   /// ```
   #[inline]
@@ -300,10 +390,15 @@ impl CssVariables {
   /// The error color. Useful for error buttons and alerts.
   ///
   /// ```css
-  /// @property --sk-er {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-er {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #DE1C8D;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-er {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(325.05154, 77.600006%, 49.019608%, var(--sk-opacity-er));
   /// }
   /// ```
   #[inline]
@@ -314,10 +409,15 @@ impl CssVariables {
   /// The error content color. Useful for text within error buttons and alerts.
   ///
   /// ```css
-  /// @property --sk-erc {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-erc {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #ffffff;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-erc {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-erc));
   /// }
   /// ```
   #[inline]
@@ -327,7 +427,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-container-max-width {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: container;
   /// }
@@ -339,7 +439,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-empty {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -351,7 +451,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-blur {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -363,7 +463,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-brightness {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -375,7 +475,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-contrast {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -387,7 +487,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-custom {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -399,7 +499,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-grayscale {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -411,7 +511,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-hue-rotate {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -423,7 +523,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-invert {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -435,7 +535,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-saturate {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -447,7 +547,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-sepia {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -459,7 +559,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-drop-shadow {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -471,7 +571,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-group-nested-filter {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
   /// }
@@ -483,7 +583,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-blur {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -495,7 +595,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-brightness {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -507,7 +607,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-contrast {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -519,7 +619,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-custom {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -531,7 +631,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-grayscale {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -543,7 +643,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-hue-rotate {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -555,7 +655,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-invert {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -567,7 +667,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-saturate {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -579,7 +679,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-sepia {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -591,7 +691,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-drop-shadow {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -603,7 +703,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-group-nested-backdrop {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
   /// }
@@ -615,7 +715,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-default-transition-duration {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: 150ms;
   /// }
@@ -627,7 +727,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-default-animation-duration {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: 1s;
   /// }
@@ -639,7 +739,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-etx {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -651,7 +751,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-ety {
-  ///   syntax: "*";
+  ///   syntax: *;
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -665,10 +765,15 @@ pub trait Color: SkribbleValue {
   /// The primary color. Useful for primary buttons.
   ///
   /// ```css
-  /// @property --sk-p {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-p {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #570df8;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-p {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(258.89362, 94.37751%, 51.17647%, var(--sk-opacity-p));
   /// }
   /// ```
   #[inline]
@@ -678,10 +783,15 @@ pub trait Color: SkribbleValue {
   /// The primary content color
   ///
   /// ```css
-  /// @property --sk-pc {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-pc {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #ffffff;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-pc {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-pc));
   /// }
   /// ```
   #[inline]
@@ -691,10 +801,15 @@ pub trait Color: SkribbleValue {
   /// The secondary color. Useful for secondary buttons.
   ///
   /// ```css
-  /// @property --sk-s {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-s {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #f000b8;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-s {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(314, 100%, 47.058823%, var(--sk-opacity-s));
   /// }
   /// ```
   #[inline]
@@ -704,10 +819,15 @@ pub trait Color: SkribbleValue {
   /// The secondary content color. Useful for text within secondary buttons.
   ///
   /// ```css
-  /// @property --sk-sc {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-sc {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #ffffff;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-sc {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-sc));
   /// }
   /// ```
   #[inline]
@@ -717,10 +837,15 @@ pub trait Color: SkribbleValue {
   /// Color for accents.
   ///
   /// ```css
-  /// @property --sk-a {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-a {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #37cdbe;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-a {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(174, 60.000008%, 50.980396%, var(--sk-opacity-a));
   /// }
   /// ```
   #[inline]
@@ -730,10 +855,15 @@ pub trait Color: SkribbleValue {
   /// Color for content within accents.
   ///
   /// ```css
-  /// @property --sk-ac {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-ac {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #163835;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-ac {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(174.70587, 43.589737%, 15.294118%, var(--sk-opacity-ac));
   /// }
   /// ```
   #[inline]
@@ -743,10 +873,15 @@ pub trait Color: SkribbleValue {
   /// The neutral color.
   ///
   /// ```css
-  /// @property --sk-n {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-n {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #3d4451;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-n {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(218.99998, 14.084508%, 27.843138%, var(--sk-opacity-n));
   /// }
   /// ```
   #[inline]
@@ -756,10 +891,15 @@ pub trait Color: SkribbleValue {
   /// The neutral content color.
   ///
   /// ```css
-  /// @property --sk-nc {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-nc {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #ffffff;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-nc {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-nc));
   /// }
   /// ```
   #[inline]
@@ -769,10 +909,15 @@ pub trait Color: SkribbleValue {
   /// The base color.
   ///
   /// ```css
-  /// @property --sk-b1 {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-b1 {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #ffffff;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-b1 {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-b1));
   /// }
   /// ```
   #[inline]
@@ -782,10 +927,15 @@ pub trait Color: SkribbleValue {
   /// The secondary base color.
   ///
   /// ```css
-  /// @property --sk-b2 {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-b2 {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #F2F2F2;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-b2 {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(0, 0%, 94.90196%, var(--sk-opacity-b2));
   /// }
   /// ```
   #[inline]
@@ -795,10 +945,15 @@ pub trait Color: SkribbleValue {
   /// The tertiary base color.
   ///
   /// ```css
-  /// @property --sk-b3 {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-b3 {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #E5E6E6;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-b3 {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(180, 1.9607836%, 90%, var(--sk-opacity-b3));
   /// }
   /// ```
   #[inline]
@@ -808,10 +963,15 @@ pub trait Color: SkribbleValue {
   /// The base content color. This is useful for text.
   ///
   /// ```css
-  /// @property --sk-bc {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-bc {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #1f2937;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-bc {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(215, 27.906975%, 16.862745%, var(--sk-opacity-bc));
   /// }
   /// ```
   #[inline]
@@ -821,10 +981,15 @@ pub trait Color: SkribbleValue {
   /// The info color. Useful for info buttons and alerts.
   ///
   /// ```css
-  /// @property --sk-in {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-in {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #0070F3;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-in {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(212.34569, 100%, 47.64706%, var(--sk-opacity-in));
   /// }
   /// ```
   #[inline]
@@ -834,10 +999,15 @@ pub trait Color: SkribbleValue {
   /// The info content color. Useful for text within info buttons and alerts.
   ///
   /// ```css
-  /// @property --sk-inc {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-inc {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #ffffff;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-inc {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-inc));
   /// }
   /// ```
   #[inline]
@@ -847,10 +1017,15 @@ pub trait Color: SkribbleValue {
   /// The success color. Useful for success buttons and alerts.
   ///
   /// ```css
-  /// @property --sk-su {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-su {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #21CC51;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-su {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(136.8421, 72.1519%, 46.47059%, var(--sk-opacity-su));
   /// }
   /// ```
   #[inline]
@@ -861,10 +1036,15 @@ pub trait Color: SkribbleValue {
   /// alerts.
   ///
   /// ```css
-  /// @property --sk-suc {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-suc {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #ffffff;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-suc {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-suc));
   /// }
   /// ```
   #[inline]
@@ -874,10 +1054,15 @@ pub trait Color: SkribbleValue {
   /// The warning color. Useful for warning buttons and alerts.
   ///
   /// ```css
-  /// @property --sk-wa {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-wa {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #FF6154;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-wa {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(4.5614033, 100%, 66.47059%, var(--sk-opacity-wa));
   /// }
   /// ```
   #[inline]
@@ -888,10 +1073,15 @@ pub trait Color: SkribbleValue {
   /// alerts.
   ///
   /// ```css
-  /// @property --sk-wac {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-wac {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #ffffff;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-wac {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-wac));
   /// }
   /// ```
   #[inline]
@@ -901,10 +1091,15 @@ pub trait Color: SkribbleValue {
   /// The error color. Useful for error buttons and alerts.
   ///
   /// ```css
-  /// @property --sk-er {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-er {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #DE1C8D;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-er {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(325.05154, 77.600006%, 49.019608%, var(--sk-opacity-er));
   /// }
   /// ```
   #[inline]
@@ -914,10 +1109,15 @@ pub trait Color: SkribbleValue {
   /// The error content color. Useful for text within error buttons and alerts.
   ///
   /// ```css
-  /// @property --sk-erc {
-  ///   syntax: "<color>";
+  /// @property --sk-opacity-erc {
+  ///   syntax: "<number>";
   ///   inherits: false;
-  ///   initial-value: #ffffff;
+  ///   initial-value: 1;
+  /// }
+  /// @property --sk-erc {
+  ///   syntax: <color>;
+  ///   inherits: false;
+  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-erc));
   /// }
   /// ```
   #[inline]

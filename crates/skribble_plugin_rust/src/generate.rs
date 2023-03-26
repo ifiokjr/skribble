@@ -1,7 +1,18 @@
 use indexmap::IndexMap;
 use indexmap::IndexSet;
+use skribble_core::wrap_indent;
+use skribble_core::AnyEmptyResult;
+use skribble_core::AnyResult;
+use skribble_core::Keyframe;
+use skribble_core::LinkedValues;
+use skribble_core::Placeholder;
 
-use super::*;
+use super::indexmap;
+use super::indexset;
+use super::indoc;
+use super::RunnerConfig;
+use super::ToPascalCase;
+use super::ToSnakeCase;
 
 fn generate_media_queries(
   config: &RunnerConfig,
@@ -336,7 +347,7 @@ fn generate_css_variables(
   config: &RunnerConfig,
   variable_prefix: impl AsRef<str>,
   sections: &mut Vec<String>,
-) {
+) -> AnyEmptyResult {
   let mut entries = vec![
     indoc!(
       "
@@ -355,12 +366,7 @@ fn generate_css_variables(
     let variable_name = css_variable.get_variable(variable_prefix.as_ref());
     let css_docs = wrap_indent(
       wrap_docs(wrap_in_code_block(
-        css_property_docs(
-          &variable_name,
-          &css_variable.syntax,
-          &css_variable.value,
-          config,
-        ),
+        css_variable.get_property_rule(config)?,
         "css",
       )),
       1,
@@ -406,17 +412,8 @@ fn generate_css_variables(
   colors.push("}".into());
   sections.push(entries.join("\n"));
   sections.push(colors.join("\n"));
-}
 
-fn wrap_indent(content: impl AsRef<str>, level: u8) -> String {
-  let mut result = content.as_ref().to_string();
-  let indent_style = IndentStyle::default();
-
-  for _ in 1..=level {
-    result = indent(result, indent_style);
-  }
-
-  result
+  Ok(())
 }
 
 fn wrap_docs(content: impl AsRef<str>) -> String {
@@ -426,24 +423,6 @@ fn wrap_docs(content: impl AsRef<str>) -> String {
   }
 
   result.join("\n")
-}
-
-fn css_property_docs(
-  variable_name: impl AsRef<str>,
-  syntax: &PropertySyntax,
-  initial_value: &Option<String>,
-  config: &RunnerConfig,
-) -> String {
-  let variable_name = variable_name.as_ref();
-  let default_initial_value = "/* */".into();
-  let initial_value = Placeholder::normalize(
-    initial_value.as_ref().unwrap_or(&default_initial_value),
-    config,
-  );
-  format!(
-    "@property {variable_name} {{\n  syntax: \"{syntax}\";\n  inherits: false;\n  initial-value: \
-     {initial_value};\n}}"
-  )
 }
 
 fn wrap_in_code_block(content: impl AsRef<str>, r#type: impl AsRef<str>) -> String {
@@ -594,29 +573,16 @@ mod private {
 }"#;
 
 fn combine_sections_with_header(sections: Vec<String>) -> String {
-  // let indent_style = IndentStyle::default();
-  // let mut content = vec![];
-  // content.push("pub use generated_skribble_module::sk;".into());
-  // content.push("pub use generated_skribble_module::vars;".into());
-  // content.push("use generated_skribble_module::*;".into());
-  // content.push("mod generated_skribble_module {".into());
-  // content.push(indent(HEADER, indent_style));
-  // content.push(indent(sections.join("\n"), indent_style));
-  // content.push("}".into());
-
-  // content.join("\n")
   format!("{HEADER}\n{}", sections.join("\n"))
 }
 
-pub(crate) fn generate_file_contents(config: &RunnerConfig) -> String {
+pub(crate) fn generate_file_contents(config: &RunnerConfig) -> AnyResult<String> {
   let mut method_names: IndexSet<String> = indexset! {};
   let mut sections = Vec::<String>::new();
   let mut trait_names = vec![];
   let mut struct_names_map: IndexMap<String, usize> = indexmap! { "SkribbleRoot".into() => 0 };
 
-  generate_css_variables(config, &config.options().variable_prefix, &mut sections);
-
-  // media queries
+  generate_css_variables(config, &config.options().variable_prefix, &mut sections)?;
   generate_media_queries(
     config,
     &mut method_names,
@@ -624,7 +590,6 @@ pub(crate) fn generate_file_contents(config: &RunnerConfig) -> String {
     &mut struct_names_map,
     &mut trait_names,
   );
-
   generate_modifiers(
     config,
     &mut method_names,
@@ -632,15 +597,11 @@ pub(crate) fn generate_file_contents(config: &RunnerConfig) -> String {
     &mut struct_names_map,
     &mut trait_names,
   );
-
   generate_value_sets(config, &mut sections);
   generate_palette(config, &mut sections);
-
   generate_atoms(config, &mut method_names, &mut sections, &mut trait_names);
-
   generate_named_classes(config, &mut sections, &mut trait_names);
-
-  // Add the implementation for each of the structs.
   generate_struct_implementations(&struct_names_map, &trait_names, &mut sections);
-  combine_sections_with_header(sections)
+
+  Ok(combine_sections_with_header(sections))
 }
