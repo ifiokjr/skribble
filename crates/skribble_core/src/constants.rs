@@ -16,6 +16,7 @@ lazy_static! {
       .unwrap();
   static ref PALETTE_REGEX: Regex =
     Regex::new(format!("(?m){}", Placeholder::palette("(?P<name>\\w[\\w\\d]+)")).as_str()).unwrap();
+  static ref VALUE: Regex = Regex::new(format!("(?m){}", Placeholder::value()).as_str()).unwrap();
 }
 
 pub struct Placeholder;
@@ -24,6 +25,7 @@ impl Placeholder {
   pub const CSS_VARIABLE: &str = "CSS_VARIABLE";
   pub const MODIFIER: &str = "MODIFIER";
   pub const PALETTE: &str = "PALETTE";
+  pub const VALUE: &str = "VALUE";
 
   pub fn create(namespace: &str, name: impl AsRef<str>) -> String {
     let name = name.as_ref();
@@ -98,6 +100,17 @@ impl Placeholder {
     content.to_string()
   }
 
+  /// Replaces all the value placeholders with the given value.
+  pub fn normalize_with_value(
+    content: impl AsRef<str>,
+    value: impl AsRef<str>,
+    config: &RunnerConfig,
+  ) -> String {
+    let content = VALUE.replace_all(content.as_ref(), value.as_ref());
+
+    Self::normalize(content, config)
+  }
+
   /// Generate a placeholder for the palette color by using the name. This
   /// inserts some text which will be replaced by the actual palette color
   /// when the code is generated.
@@ -107,5 +120,9 @@ impl Placeholder {
 
   pub fn modifier(name: impl AsRef<str>) -> String {
     Self::create(Self::MODIFIER, name)
+  }
+
+  pub fn value() -> String {
+    Self::create(Self::VALUE, "0")
   }
 }
