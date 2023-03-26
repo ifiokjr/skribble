@@ -114,6 +114,13 @@ impl Color {
       Self::Hsl(ref hsla) => hsl_to_string(hsla, Some(opacity_variable)),
     }
   }
+
+  pub fn alpha(&self) -> f32 {
+    match self {
+      Self::Rgb(ref rgba) => rgba.alpha,
+      Self::Hsl(ref hsla) => hsla.alpha,
+    }
+  }
 }
 
 impl Display for Color {
