@@ -1,3 +1,4 @@
+use std::fmt::Write;
 use std::ops::Deref;
 use std::ops::DerefMut;
 
@@ -7,6 +8,11 @@ use typed_builder::TypedBuilder;
 
 use super::NestedStringMap;
 use super::Priority;
+use crate::indent_writer;
+use crate::traits::ToSkribbleCss;
+use crate::AnyEmptyResult;
+use crate::Placeholder;
+use crate::RunnerConfig;
 
 /// This setups up the animation keyframes for the configuration. The names can
 /// be reference in the atoms.
@@ -81,5 +87,36 @@ impl Keyframe {
     }
 
     self.rules.extend(other.rules);
+  }
+}
+
+impl ToSkribbleCss for Keyframe {
+  fn write_skribble_css(&self, writer: &mut dyn Write, config: &RunnerConfig) -> AnyEmptyResult {
+    let name = &self.name;
+
+    writeln!(writer, "@keyframes {name} {{")?;
+
+    for (offset, map) in self.rules.iter() {
+      let mut offset_writer = indent_writer();
+      write!(offset_writer, "{offset} {{")?;
+
+      if !map.is_empty() {
+        writeln!(offset_writer)?;
+      }
+
+      for (property, css_value) in map.iter() {
+        let mut property_writer = indent_writer();
+        let property = Placeholder::normalize(property, config);
+        let css_value = Placeholder::normalize(css_value, config);
+        writeln!(property_writer, "{property}: {css_value};")?;
+        write!(offset_writer, "{}", property_writer.get_ref())?;
+      }
+
+      writeln!(offset_writer, "}}")?;
+      write!(writer, "{}", offset_writer.get_ref())?;
+    }
+
+    writeln!(writer, "}}")?;
+    Ok(())
   }
 }

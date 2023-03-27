@@ -19,6 +19,7 @@ derivative = { workspace = true }
 enum-ordinalize = { workspace = true }
 globset = { workspace = true }
 heck = { workspace = true }
+indent_write = { workspace = true }
 indexmap = { features = ["serde"], workspace = true }
 lazy_static = { workspace = true }
 lightningcss = { workspace = true }
@@ -26,6 +27,7 @@ palette = { workspace = true, features = ["serializing"] }
 parcel_sourcemap = { workspace = true }
 readonly = { workspace = true }
 regex = { workspace = true }
+rkyv = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
 thiserror = { workspace = true }

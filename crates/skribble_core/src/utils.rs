@@ -1,16 +1,9 @@
-
-
-
-
-
+use indent_write::fmt::IndentWriter;
 use lazy_static::lazy_static;
 use regex::Regex;
 use typed_builder::TypedBuilder;
 
-
-
 use crate::constants::INDENTATION;
-
 
 lazy_static! {
   static ref ESCAPE_CSS_STRING_REGEX: Regex =
@@ -48,7 +41,7 @@ pub enum IndentStyle {
 
 impl Default for IndentStyle {
   fn default() -> Self {
-    Self::Spaces(INDENTATION)
+    Self::Spaces(2)
   }
 }
 
@@ -85,6 +78,10 @@ pub fn wrap_indent(content: impl AsRef<str>, level: u8) -> String {
   }
 
   result
+}
+
+pub fn indent_writer<'i>() -> IndentWriter<'i, String> {
+  IndentWriter::new(INDENTATION, String::new())
 }
 
 pub fn css_variable_var(value: impl AsRef<str>) -> String {

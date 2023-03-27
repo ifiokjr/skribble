@@ -3,9 +3,8 @@ use indexmap::IndexSet;
 use skribble_core::wrap_indent;
 use skribble_core::AnyEmptyResult;
 use skribble_core::AnyResult;
-use skribble_core::Keyframe;
 use skribble_core::LinkedValues;
-use skribble_core::Placeholder;
+use skribble_core::ToSkribbleCss;
 
 use super::indexmap;
 use super::indexset;
@@ -126,7 +125,11 @@ fn generate_modifiers(
   }
 }
 
-fn generate_keyframes(config: &RunnerConfig, sections: &mut Vec<String>, name: impl AsRef<str>) {
+fn generate_keyframes(
+  config: &RunnerConfig,
+  sections: &mut Vec<String>,
+  name: impl AsRef<str>,
+) -> AnyEmptyResult {
   let name = name.as_ref();
 
   sections.push(format!("pub trait {name}: SkribbleValue {{"));
@@ -134,7 +137,7 @@ fn generate_keyframes(config: &RunnerConfig, sections: &mut Vec<String>, name: i
   for (name, keyframe) in config.keyframes.iter() {
     let method_name = safe_method_name(name);
     let css_docs = wrap_indent(
-      wrap_docs(wrap_in_code_block(keyframe_docs(keyframe, config), "css")),
+      wrap_docs(wrap_in_code_block(keyframe.to_skribble_css(config)?, "css")),
       1,
     );
 
@@ -159,30 +162,8 @@ fn generate_keyframes(config: &RunnerConfig, sections: &mut Vec<String>, name: i
   }
 
   sections.push("}".into());
-}
 
-fn keyframe_docs(keyframe: &Keyframe, config: &RunnerConfig) -> String {
-  let mut content = Vec::<String>::new();
-
-  content.push(format!("@keyframes {} {{", keyframe.name));
-
-  for (key, map) in keyframe.rules.iter() {
-    content.push(wrap_indent(format!("{key} {{"), 1));
-
-    for (name, value) in map.iter() {
-      let css = wrap_indent(
-        Placeholder::normalize(format!("{}: {};", name, value), config),
-        2,
-      );
-      content.push(css)
-    }
-
-    content.push(wrap_indent("}", 1));
-  }
-
-  content.push("}".into());
-
-  content.join("\n")
+  Ok(())
 }
 
 fn generate_value_sets(config: &RunnerConfig, sections: &mut Vec<String>) {
@@ -256,7 +237,7 @@ fn generate_atoms(
   method_names: &mut IndexSet<String>,
   sections: &mut Vec<String>,
   trait_names: &mut Vec<String>,
-) {
+) -> AnyEmptyResult {
   let mut struct_content = Vec::<String>::new();
   let mut trait_content = Vec::<String>::new();
 
@@ -289,7 +270,7 @@ fn generate_atoms(
       }
       LinkedValues::Keyframes => {
         let keyframe_trait_name = get_keyframe_trait_name(&atom_struct_name);
-        generate_keyframes(config, sections, &keyframe_trait_name);
+        generate_keyframes(config, sections, &keyframe_trait_name)?;
 
         struct_content.push(format!(
           "impl {keyframe_trait_name} for {atom_struct_name} {{}}",
@@ -319,6 +300,8 @@ fn generate_atoms(
   trait_names.push(ATOM_TRAIT_NAME.into());
   sections.push(struct_content.join("\n"));
   sections.push(trait_content.join("\n"));
+
+  Ok(())
 }
 
 fn generate_palette(config: &RunnerConfig, sections: &mut Vec<String>) {
@@ -426,7 +409,11 @@ fn wrap_docs(content: impl AsRef<str>) -> String {
 }
 
 fn wrap_in_code_block(content: impl AsRef<str>, r#type: impl AsRef<str>) -> String {
-  format!("```{}\n{}\n```", r#type.as_ref(), content.as_ref(),)
+  format!(
+    "```{}\n{}\n```",
+    r#type.as_ref(),
+    content.as_ref().trim_end(),
+  )
 }
 
 fn get_value_set_trait_name(value_set_name: impl Into<String>) -> String {
@@ -599,7 +586,7 @@ pub(crate) fn generate_file_contents(config: &RunnerConfig) -> AnyResult<String>
   );
   generate_value_sets(config, &mut sections);
   generate_palette(config, &mut sections);
-  generate_atoms(config, &mut method_names, &mut sections, &mut trait_names);
+  generate_atoms(config, &mut method_names, &mut sections, &mut trait_names)?;
   generate_named_classes(config, &mut sections, &mut trait_names);
   generate_struct_implementations(&struct_names_map, &trait_names, &mut sections);
 
