@@ -13,6 +13,7 @@ use serde::Deserialize;
 use serde::Serialize;
 use typed_builder::TypedBuilder;
 
+use crate::indent_writer;
 use crate::AnyEmptyResult;
 use crate::AnyResult;
 use crate::Arguments;
@@ -96,29 +97,17 @@ impl Class {
     self.argument.as_ref()
   }
 
-  pub fn get_style_declaration(&self, config: &RunnerConfig) -> Vec<String> {
-    let mut style_declarations = vec![];
-
-    if let Some(atom) = self.get_atom().and_then(|atom| config.atoms.get(atom)) {
-      if let Some(value_set_name) = self.get_value_name() {
-        style_declarations.extend(atom.get_style_properties(config, value_set_name));
-      }
-    }
-
-    style_declarations
-  }
-
+  /// Get the string representation of the selector for this `SkribbleClass`.
+  ///
+  /// - Convert `["sm", "focus", "text", "red"]` -> `"sm\:text-red:focus"`
+  /// - Convert `tokens: ["sm", "p"], argument: "100px"` -> `"sm\:p-\[100px\]"`
   pub fn selector(&self, config: &RunnerConfig) -> AnyResult<String> {
     let mut writer = String::new();
     self.write_selector(&mut writer, config)?;
     Ok(writer)
   }
 
-  /// Get the string representation of the selector for this `SkribbleClass`.
-  ///
-  /// - Convert `["sm", "focus", "text", "red"]` -> `"sm\:text-red:focus"`
-  /// - Convert `tokens: ["sm", "p"], argument: "100px"` -> `"sm\:p-\[100px\]"`
-  pub fn write_selector(&self, writer: &mut dyn Write, config: &RunnerConfig) -> AnyEmptyResult {
+  fn write_selector(&self, writer: &mut dyn Write, config: &RunnerConfig) -> AnyEmptyResult {
     let mut tokens = vec![];
 
     for media_query in self.media_queries.iter() {
@@ -172,6 +161,28 @@ impl Class {
     }
 
     write!(writer, "{}", selectors.join(", "))?;
+
+    Ok(())
+  }
+
+  fn write_css_properties(&self, writer: &mut dyn Write, config: &RunnerConfig) -> AnyEmptyResult {
+    if let Some(atom) = self.get_atom().and_then(|atom| config.atoms.get(atom)) {
+      if let Some(value_set_name) = self.get_value_name() {
+        atom.write_css_properties(writer, config, value_set_name)?;
+      }
+    }
+
+    Ok(())
+  }
+}
+
+impl ToSkribbleCss for Class {
+  fn write_skribble_css(&self, writer: &mut dyn Write, config: &RunnerConfig) -> AnyEmptyResult {
+    self.write_selector(writer, config)?;
+    writeln!(writer, " {{")?;
+    let mut indented = indent_writer();
+    self.write_css_properties(&mut indented, config)?;
+    writeln!(writer, "}}")?;
 
     Ok(())
   }

@@ -1,5 +1,6 @@
 use std::fmt::Display;
 use std::fmt::Formatter;
+use std::fmt::Write;
 use std::ops::Deref;
 use std::ops::DerefMut;
 
@@ -21,6 +22,7 @@ use super::PrioritizedString;
 use super::Priority;
 use super::StringList;
 use super::StringMap;
+use crate::AnyEmptyResult;
 use crate::Color;
 use crate::Error;
 use crate::Placeholder;
@@ -292,8 +294,16 @@ pub struct Atom {
 }
 
 impl Atom {
-  pub fn get_style_properties(&self, config: &RunnerConfig, name: impl AsRef<str>) -> Vec<String> {
-    self.values.get_style_properties(config, self, name)
+  pub fn write_css_properties(
+    &self,
+    writer: &mut dyn Write,
+    config: &RunnerConfig,
+    name: impl AsRef<str>,
+  ) -> AnyEmptyResult {
+    self
+      .values
+      .write_css_properties(writer, config, self, name)?;
+    Ok(())
   }
 
   /// Add a value to the [`ValueSet`] that will be used to generate the builtin
@@ -390,33 +400,33 @@ impl LinkedValues {
     }
   }
 
-  pub fn get_style_properties(
+  pub fn write_css_properties(
     &self,
+    writer: &mut dyn Write,
     config: &RunnerConfig,
     atom: &Atom,
     name: impl AsRef<str>,
-  ) -> Vec<String> {
+  ) -> AnyEmptyResult {
     match self {
       Self::Values(ref set) => {
-        let mut result = vec![];
         for Prioritized { value: key, .. } in set.iter() {
           if let Some(css_value) = config
             .value_sets
             .get(key)
             .and_then(|value_set| value_set.values.get(name.as_ref()))
           {
-            result.extend(css_value.get_css(config, atom));
+            css_value.write_css(writer, config, atom)?;
             break;
           }
         }
-
-        result
       }
-      Self::Color(ref settings) => settings.get_css(config, atom, name),
-      Self::Keyframes => {
-        vec![]
+      Self::Color(ref settings) => {
+        settings.write_css(writer, config, atom, name)?;
       }
+      Self::Keyframes => {}
     }
+
+    Ok(())
   }
 }
 
@@ -1106,9 +1116,12 @@ pub enum CssValue {
 }
 
 impl CssValue {
-  pub fn get_css(&self, config: &RunnerConfig, atom: &Atom) -> Vec<String> {
-    let mut result = vec![];
-
+  pub fn write_css(
+    &self,
+    writer: &mut dyn Write,
+    config: &RunnerConfig,
+    atom: &Atom,
+  ) -> AnyEmptyResult {
     match self {
       Self::Value(value) => {
         let value = Placeholder::normalize(value, config);
@@ -1120,19 +1133,19 @@ impl CssValue {
             .map(|value| Placeholder::normalize(value, config))
             .unwrap_or_else(|| value.clone());
 
-          result.push(format!("{}: {};", property, css_value));
+          writeln!(writer, "{property}: {css_value};")?;
         }
       }
       Self::Object(map) => {
         for (property, css_value) in map.iter() {
           let property = Placeholder::normalize(property, config);
           let css_value = Placeholder::normalize(css_value, config);
-          result.push(format!("{}: {};", property, css_value));
+          writeln!(writer, "{property}: {css_value};")?;
         }
       }
     }
 
-    result
+    Ok(())
   }
 }
 
@@ -1363,13 +1376,13 @@ pub struct ColorSettings {
 }
 
 impl ColorSettings {
-  pub fn get_css(
+  pub fn write_css(
     &self,
+    writer: &mut dyn Write,
     config: &RunnerConfig,
     atom: &Atom,
     color_name: impl AsRef<str>,
-  ) -> Vec<String> {
-    let mut css = vec![];
+  ) -> AnyEmptyResult {
     let prefix = &config.options().variable_prefix;
 
     for (name, variable) in config.css_variables.iter() {
@@ -1380,7 +1393,7 @@ impl ColorSettings {
       let variable_name = variable.get_variable(prefix);
       let opacity_variable = Placeholder::normalize(variable.get_opacity_variable(prefix), config);
       let default_opacity = variable.get_default_opacity();
-      css.push(format!("{opacity_variable}: {default_opacity};"));
+      writeln!(writer, "{opacity_variable}: {default_opacity};")?;
 
       for (property, css_value) in atom.styles.iter() {
         let property = Placeholder::normalize(property, config);
@@ -1389,13 +1402,13 @@ impl ColorSettings {
           .map(|value| Placeholder::normalize_with_value(value, &variable_name, config))
           .unwrap_or_else(|| variable_name.clone());
 
-        css.push(format!("{}: {};", property, css_value));
+        writeln!(writer, "{}: {};", property, css_value)?;
       }
 
       break;
     }
 
-    css
+    Ok(())
   }
 
   pub fn merge(&mut self, other: impl Into<Self>) {
