@@ -1,17 +1,24 @@
 use std::cmp::Ordering;
+use std::fmt::Write;
 use std::hash::Hash;
 use std::hash::Hasher;
 use std::ops::Deref;
 use std::ops::DerefMut;
 
+use heck::ToKebabCase;
+use indent_write::fmt::IndentWriter;
+use indexmap::indexset;
 use indexmap::IndexSet;
 use serde::Deserialize;
 use serde::Serialize;
 use typed_builder::TypedBuilder;
 
+use crate::AnyEmptyResult;
+use crate::AnyResult;
 use crate::Arguments;
 use crate::ClassSize;
 use crate::RunnerConfig;
+use crate::ToSkribbleCss;
 
 pub trait SkribbleClass: Clone + Hash + Eq + Ord {
   fn data(&self) -> Class;
@@ -21,9 +28,6 @@ pub trait SkribbleClass: Clone + Hash + Eq + Ord {
 #[derive(Clone, Debug, Default, Deserialize, Serialize, TypedBuilder, PartialEq, Eq)]
 #[serde(rename_all = "camelCase")]
 pub struct Class {
-  /// The selector for this class.
-  #[builder(setter(into))]
-  selector: String,
   /// The layer for this class.
   #[builder(setter(into))]
   layer: Option<String>,
@@ -62,10 +66,6 @@ impl Class {
     } else {
       None
     }
-  }
-
-  pub fn get_selector(&self) -> &str {
-    &self.selector
   }
 
   pub fn get_layer(&self) -> Option<&String> {
@@ -107,12 +107,92 @@ impl Class {
 
     style_declarations
   }
+
+  pub fn selector(&self, config: &RunnerConfig) -> AnyResult<String> {
+    let mut writer = String::new();
+    self.write_selector(&mut writer, config)?;
+    Ok(writer)
+  }
+
+  /// Get the string representation of the selector for this `SkribbleClass`.
+  ///
+  /// - Convert `["sm", "focus", "text", "red"]` -> `"sm\:text-red:focus"`
+  /// - Convert `tokens: ["sm", "p"], argument: "100px"` -> `"sm\:p-\[100px\]"`
+  pub fn write_selector(&self, writer: &mut dyn Write, config: &RunnerConfig) -> AnyEmptyResult {
+    let mut tokens = vec![];
+
+    for media_query in self.media_queries.iter() {
+      tokens.push(media_query.to_kebab_case());
+    }
+
+    for modifier in self.modifiers.iter() {
+      tokens.push(modifier.to_kebab_case());
+    }
+
+    if let Some(ref named_class) = self.named_class {
+      let name = named_class.to_kebab_case();
+      tokens.push(format!("\\${name}"));
+    }
+
+    if let Some(ref atom) = self.atom {
+      tokens.push(atom.to_kebab_case());
+    }
+
+    if let Some(ref value_name) = self.value_name {
+      let name = value_name.to_kebab_case();
+      tokens.push(format!("\\${name}"));
+    }
+
+    let mut selector = format!(".{}", tokens.join("\\:"));
+
+    // Append an argument if it exists.
+    if let Some(ref argument) = self.argument {
+      let prefix = if tokens.is_empty() { "" } else { "-" };
+      let argument = argument.to_string();
+      selector = format!("{selector}{prefix}[{argument}]");
+    };
+
+    let mut selectors = vec![selector];
+
+    // Handle modifiers.
+    for modifier in self.modifiers.iter() {
+      if let Some(modifiers) = config.modifiers.get(modifier) {
+        let mut new_selectors = vec![];
+
+        for modifier in modifiers.keys() {
+          for selector in &selectors {
+            new_selectors.push(modifier.replace('&', selector));
+          }
+        }
+
+        if !new_selectors.is_empty() {
+          selectors = new_selectors;
+        }
+      }
+    }
+
+    write!(writer, "{}", selectors.join(", "))?;
+
+    Ok(())
+  }
 }
 
 impl Hash for Class {
   fn hash<H: Hasher>(&self, state: &mut H) {
     self.layer.hash(state);
-    self.selector.hash(state);
+
+    for mq in self.media_queries.iter() {
+      mq.hash(state);
+    }
+
+    for mq in self.modifiers.iter() {
+      mq.hash(state);
+    }
+
+    self.atom.hash(state);
+    self.value_name.hash(state);
+    self.named_class.hash(state);
+    self.argument.hash(state);
   }
 }
 
@@ -139,6 +219,96 @@ impl Classes {
 
   pub fn sort_by_class(&mut self) {
     self.0.sort_by(|a, b| a.cmp(b));
+  }
+
+  fn write_keyframes(&self, writer: &mut dyn Write, config: &RunnerConfig) -> AnyEmptyResult {
+    let mut set = indexset! {};
+    for class in self.iter() {
+      let Some(keyframe) = class.get_keyframe() else {
+        continue;
+      };
+
+      if set.get(keyframe).is_some() {
+        continue;
+      }
+
+      set.insert(keyframe);
+
+      let keyframe = config
+        .keyframes
+        .get(keyframe)
+        .ok_or_else(|| format!("Keyframe {} not found", keyframe))?;
+
+      keyframe.write_skribble_css(writer, config)?;
+    }
+
+    Ok(())
+  }
+
+  fn write_layers_header(&self, writer: &mut dyn Write, config: &RunnerConfig) -> AnyEmptyResult {
+    let length = config.layers.len();
+
+    if length <= 0 {
+      return Ok(());
+    }
+
+    write!(writer, "@layer ")?;
+
+    for (index, layer) in config.layers.iter().enumerate() {
+      write!(writer, "{layer}")?;
+
+      if index + 1 < length {
+        write!(writer, ", ")?;
+      }
+    }
+
+    writeln!(writer, ";")?;
+
+    Ok(())
+  }
+
+  fn write_layer_css(
+    &self,
+    _writer: &mut dyn Write,
+    _config: &RunnerConfig,
+    layer: Option<&String>,
+  ) -> AnyEmptyResult {
+    let _classes: IndexSet<&Class> = self
+      .iter()
+      .filter(|class| class.get_layer() == layer)
+      .collect();
+
+    Ok(())
+  }
+}
+
+impl ToSkribbleCss for Classes {
+  fn write_skribble_css(&self, writer: &mut dyn Write, config: &RunnerConfig) -> AnyEmptyResult {
+    let options = config.options();
+
+    writeln!(writer, "/* Generated by Skribble */")?;
+    writeln!(writer, "@charset \"{}\";", options.charset)?;
+    self.write_layers_header(writer, config)?;
+    self.write_keyframes(writer, config)?;
+
+    for layer in config.layers.iter() {
+      write!(writer, "@layer {layer} {{")?;
+      let mut indented = IndentWriter::new("  ", String::new());
+
+      self.write_layer_css(
+        &mut indented,
+        config,
+        if layer == &options.layer {
+          None
+        } else {
+          Some(layer)
+        },
+      )?;
+      write!(writer, "{}", indented.get_ref())?;
+      writeln!(writer, "}}")?;
+    }
+
+    Ok(())
   }
 }
 

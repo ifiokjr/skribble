@@ -1,6 +1,5 @@
 use std::sync::Arc;
 
-use heck::ToKebabCase;
 use indexmap::IndexSet;
 
 use crate::Arguments;
@@ -49,7 +48,6 @@ impl ClassFactory {
     }
 
     let class = Class::builder()
-      .selector(self.selector())
       .media_queries(self.media_queries)
       .modifiers(self.modifiers)
       .score(self.score)
@@ -62,66 +60,6 @@ impl ClassFactory {
       .build();
 
     Some(class)
-  }
-
-  /// Get the string representation of the selector for this `SkribbleClass`.
-  ///
-  /// - Convert `["sm", "focus", "text", "red"]` -> `"sm\:text-red:focus"`
-  /// - Convert `tokens: ["sm", "p"], argument: "100px"` -> `"sm\:p-\[100px\]"`
-  pub fn selector(&self) -> String {
-    let mut tokens = vec![];
-
-    for media_query in self.media_queries.iter() {
-      tokens.push(media_query.to_kebab_case());
-    }
-
-    for modifier in self.modifiers.iter() {
-      tokens.push(modifier.to_kebab_case());
-    }
-
-    if let Some(ref named_class) = self.named_class {
-      let name = named_class.to_kebab_case();
-      tokens.push(format!("\\${name}"));
-    }
-
-    if let Some(ref atom) = self.atom {
-      tokens.push(atom.to_kebab_case());
-    }
-
-    if let Some(ref value_name) = self.value_name {
-      let name = value_name.to_kebab_case();
-      tokens.push(format!("\\${name}"));
-    }
-
-    let mut selector = format!(".{}", tokens.join("\\:"));
-
-    // Append an argument if it exists.
-    if let Some(ref argument) = self.argument {
-      let prefix = if tokens.is_empty() { "" } else { "-" };
-      let argument = argument.to_string();
-      selector = format!("{selector}{prefix}[{argument}]");
-    };
-
-    let mut selectors = vec![selector];
-
-    // Handle modifiers.
-    for modifier in self.modifiers.iter() {
-      if let Some(modifiers) = self.config.modifiers.get(modifier) {
-        let mut new_selectors = vec![];
-
-        for modifier in modifiers.keys() {
-          for selector in &selectors {
-            new_selectors.push(modifier.replace('&', selector));
-          }
-        }
-
-        if !new_selectors.is_empty() {
-          selectors = new_selectors;
-        }
-      }
-    }
-
-    selectors.join(", ")
   }
 
   /// Checks whether the class has been invalidated.

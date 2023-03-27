@@ -6,7 +6,7 @@ use serde::Serialize;
 
 use crate::escape_css_string;
 
-#[derive(Clone, Debug, Deserialize, Serialize, PartialEq, Eq)]
+#[derive(Clone, Debug, Deserialize, Serialize, PartialEq, Eq, Hash)]
 pub enum Arguments {
   /// A value argument.
   V(String),

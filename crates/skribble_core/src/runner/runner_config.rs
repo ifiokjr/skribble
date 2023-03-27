@@ -38,6 +38,22 @@ pub struct RunnerConfig {
 }
 
 impl RunnerConfig {
+  pub fn get_media_queries(&self) -> Vec<&MediaQuery> {
+    self
+      .media_queries
+      .values()
+      .flat_map(|map| map.values())
+      .collect()
+  }
+
+  pub fn get_modifiers(&self) -> Vec<&Modifier> {
+    self
+      .modifiers
+      .values()
+      .flat_map(|map| map.values())
+      .collect()
+  }
+
   pub fn has_media_query(&self, name: impl AsRef<str>) -> bool {
     let name = name.as_ref().to_string();
     self

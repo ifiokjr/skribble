@@ -1,5 +1,6 @@
 use std::sync::Arc;
 
+use indexmap::indexset;
 use indexmap::IndexMap;
 use indexmap::IndexSet;
 
@@ -33,7 +34,7 @@ pub(crate) fn generate_merged_config(
   plugin_config.classes.extend(config.classes.clone());
   plugin_config.layers.extend(config.layers.clone());
 
-  let mut layers = IndexSet::<String>::new();
+  let mut layers = indexset! { options.layer.clone() };
   let mut keyframes = IndexMap::<String, Keyframe>::new();
   let mut css_variables = IndexMap::<String, CssVariable>::new();
   let mut media_queries = IndexMap::<String, IndexMap<String, MediaQuery>>::new();
