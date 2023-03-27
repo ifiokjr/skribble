@@ -140,9 +140,8 @@ impl FromStr for Color {
     match from_hex_string(value) {
       Ok(rgba) => return Ok(Self::Rgb(rgba)),
       Err(err) => {
-        match err {
-          ColorError::Invalid(_) => return Err(err),
-          _ => {}
+        if let ColorError::Invalid(_) = err {
+          return Err(err);
         }
       }
     };
@@ -150,9 +149,8 @@ impl FromStr for Color {
     match from_rgb_string(value) {
       Ok(rgba) => return Ok(Self::Rgb(rgba)),
       Err(err) => {
-        match err {
-          ColorError::Invalid(_) => return Err(err),
-          _ => {}
+        if let ColorError::Invalid(_) = err {
+          return Err(err);
         }
       }
     };
@@ -160,9 +158,8 @@ impl FromStr for Color {
     match from_hsl_string(value) {
       Ok(hsl) => return Ok(Self::Hsl(hsl)),
       Err(err) => {
-        match err {
-          ColorError::Invalid(_) => return Err(err),
-          _ => {}
+        if let ColorError::Invalid(_) = err {
+          return Err(err);
         }
       }
     };

@@ -248,7 +248,7 @@ impl Classes {
   fn write_layers_header(&self, writer: &mut dyn Write, config: &RunnerConfig) -> AnyEmptyResult {
     let length = config.layers.len();
 
-    if length <= 0 {
+    if length == 0 {
       return Ok(());
     }
 

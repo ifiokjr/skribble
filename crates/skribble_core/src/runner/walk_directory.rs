@@ -25,8 +25,8 @@ pub(crate) fn walk_directory(
   let mut exclude_builder = GlobSetBuilder::new();
 
   for rule in glob_rules {
-    if rule.starts_with('!') {
-      let glob = Glob::new(&rule[1..])?;
+    if let Some(stripped) = rule.strip_prefix('!') {
+      let glob = Glob::new(stripped)?;
       exclude_builder.add(glob);
       continue;
     }
