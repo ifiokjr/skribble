@@ -1,5 +1,9 @@
 use std::path::Path;
 
+use serde::Deserialize;
+use serde::Serialize;
+use typed_builder::TypedBuilder;
+
 use crate::config::*;
 use crate::plugin::AnyEmptyResult;
 use crate::plugin::AnyResult;
@@ -8,10 +12,32 @@ use crate::plugin::PluginConfig;
 use crate::runner::RunnerConfig;
 use crate::Classes;
 
+/// Used to read the data for each plugin.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize, TypedBuilder)]
+pub struct PluginData {
+  /// Store the globs for files supported by the plugin. This is only relevant
+  /// if the plugin is scanning files.
+  #[serde(default)]
+  #[builder(default, setter(into))]
+  pub globs: Vec<String>,
+  /// Store the id of the plugin. This should be globally unique and if the
+  /// crate is published it should be the published crate name of the plugin.
+  #[builder(setter(into))]
+  pub id: String,
+  /// Store a readable name of the plugin. This is used for error messages and
+  #[serde(default)]
+  #[builder(default, setter(into, strip_option))]
+  pub name: Option<String>,
+  /// Store the markdown description of the plugin.
+  #[serde(default)]
+  #[builder(default, setter(into, strip_option))]
+  pub description: Option<String>,
+}
+
 pub trait Plugin {
   /// Get the id of the plugin. This should be globally unique and can be the
   /// published crate_name of the plugin.
-  fn get_id(&self) -> String;
+  fn get_data(&self) -> PluginData;
 
   #[allow(unused)]
   fn read_options(&mut self, options: &Options) -> AnyEmptyResult {
@@ -38,19 +64,6 @@ pub trait Plugin {
   #[allow(unused)]
   fn scan_code(&self, file_path: &Path, bytes: Vec<u8>) -> AnyResult<Classes> {
     Ok(Classes::default())
-  }
-
-  /// Set a readable name of the plugin. This is used for error messages and
-  /// serialization.
-  ///
-  /// It defaults to the id of the plugin.
-  fn get_name(&self) -> String {
-    self.get_id()
-  }
-
-  /// Get the markdown description of the plugin. Defaults to an empty string.
-  fn get_description(&self) -> String {
-    "".into()
   }
 }
 

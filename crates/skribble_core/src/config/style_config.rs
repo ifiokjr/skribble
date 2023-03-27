@@ -26,6 +26,7 @@ use crate::Error;
 use crate::Placeholder;
 use crate::Plugin;
 use crate::PluginConfig;
+use crate::PluginData;
 use crate::Prioritized;
 use crate::Result;
 use crate::RunnerConfig;
@@ -1231,6 +1232,30 @@ impl VariableGroup {
 pub struct Plugins(Vec<PluginContainer>);
 
 pub(crate) type BoxedPlugin = Box<dyn Plugin>;
+pub(crate) struct WrappedPlugin {
+  plugin: BoxedPlugin,
+  data: PluginData,
+}
+
+impl WrappedPlugin {
+  pub fn data(&self) -> &PluginData {
+    &self.data
+  }
+}
+
+impl Deref for WrappedPlugin {
+  type Target = BoxedPlugin;
+
+  fn deref(&self) -> &Self::Target {
+    &self.plugin
+  }
+}
+
+impl DerefMut for WrappedPlugin {
+  fn deref_mut(&mut self) -> &mut Self::Target {
+    &mut self.plugin
+  }
+}
 
 impl Plugins {
   /// Sort the plugins by priority and deduplicate them.
@@ -1239,7 +1264,7 @@ impl Plugins {
   }
 
   /// Remove the the container plugins.
-  pub(crate) fn extract_plugins(self) -> Vec<BoxedPlugin> {
+  pub(crate) fn extract_plugins(self) -> Vec<WrappedPlugin> {
     let mut plugins = vec![];
 
     for container in self.into_iter() {
@@ -1295,6 +1320,7 @@ pub struct PluginContainer {
   /// Get the default priority of this plugin which will be used to determine
   /// the order in which plugins are loaded. This can be overridden by the
   /// user.
+  #[serde(default)]
   #[builder(default, setter(into))]
   pub priority: Priority,
   /// The plugin.
@@ -1305,8 +1331,11 @@ pub struct PluginContainer {
 
 impl PluginContainer {
   /// Get the plugin.
-  pub fn extract_plugin(self) -> BoxedPlugin {
-    self.plugin
+  pub(crate) fn extract_plugin(self) -> WrappedPlugin {
+    WrappedPlugin {
+      data: self.plugin.get_data(),
+      plugin: self.plugin,
+    }
   }
 }
 

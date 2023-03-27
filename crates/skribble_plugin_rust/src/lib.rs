@@ -16,6 +16,7 @@ use skribble_core::AnyResult;
 use skribble_core::GeneratedFile;
 use skribble_core::GeneratedFiles;
 use skribble_core::Plugin;
+use skribble_core::PluginData;
 use skribble_core::RunnerConfig;
 use typed_builder::TypedBuilder;
 
@@ -36,8 +37,15 @@ pub struct RustPlugin {
 }
 
 impl Plugin for RustPlugin {
-  fn get_id(&self) -> String {
-    "skribble_plugin_rust".into()
+  fn get_data(&self) -> PluginData {
+    PluginData::builder()
+      .id("skribble_plugin_rust")
+      .name("Rust Plugin")
+      .globs(["**/*.rs".into()])
+      .description(
+        "This plugin provides support for generating rust code from your `skribble` configuration.",
+      )
+      .build()
   }
 
   fn generate_code(&self, config: &RunnerConfig) -> AnyResult<GeneratedFiles> {
@@ -68,11 +76,6 @@ impl Plugin for RustPlugin {
     );
 
     Ok(files)
-  }
-
-  fn get_description(&self) -> String {
-    "This plugin provides support for generating rust code from your `skribble` configuration."
-      .into()
   }
 }
 

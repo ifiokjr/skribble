@@ -5,7 +5,6 @@ use std::sync::Mutex;
 use super::generate_merged_config;
 use super::walk_directory;
 use super::RunnerConfig;
-use crate::BoxedPlugin;
 use crate::Classes;
 use crate::Error;
 use crate::GeneratedFiles;
@@ -13,11 +12,12 @@ use crate::Options;
 use crate::PluginConfig;
 use crate::Result;
 use crate::StyleConfig;
+use crate::WrappedPlugin;
 
 pub struct SkribbleRunner {
   options: Arc<Options>,
   config: Arc<PluginConfig>,
-  plugins: Arc<Mutex<Vec<BoxedPlugin>>>,
+  plugins: Arc<Mutex<Vec<WrappedPlugin>>>,
   merged_config: Option<RunnerConfig>,
 }
 
@@ -58,10 +58,10 @@ impl SkribbleRunner {
 
     for boxed_plugin in plugins.iter_mut() {
       let plugin = boxed_plugin.as_mut();
-      plugin.read_options(options).map_err(|e| {
+      plugin.read_options(options).map_err(|source| {
         Error::PluginReadConfigError {
-          id: plugin.get_id(),
-          source: e,
+          id: boxed_plugin.data().id.clone(),
+          source,
         }
       })?;
     }
@@ -81,10 +81,10 @@ impl SkribbleRunner {
 
     for boxed_plugin in plugins.iter() {
       let plugin = boxed_plugin.as_ref();
-      let generated = plugin.generate_code(config).map_err(|e| {
+      let generated = plugin.generate_code(config).map_err(|source| {
         Error::PluginGenerateCodeError {
-          id: plugin.get_id(),
-          source: e,
+          id: boxed_plugin.data().id.clone(),
+          source,
         }
       })?;
 
@@ -110,10 +110,10 @@ impl SkribbleRunner {
         .map_err(move |source| Error::FileReadError(path.to_path_buf(), source))?;
       for boxed_plugin in plugins.iter() {
         let plugin = boxed_plugin.as_ref();
-        let scanned = plugin.scan_code(path, bytes.clone()).map_err(|e| {
+        let scanned = plugin.scan_code(path, bytes.clone()).map_err(|source| {
           Error::PluginScanCodeError {
-            id: plugin.get_id(),
-            source: e,
+            id: boxed_plugin.data().id.clone(),
+            source,
           }
         })?;
 
@@ -132,10 +132,10 @@ impl SkribbleRunner {
       let plugin = boxed_plugin.as_ref();
       plugin
         .mutate_config(&mut plugin_config, &self.options)
-        .map_err(|e| {
+        .map_err(|source| {
           Error::PluginMutateConfigError {
-            id: plugin.get_id(),
-            source: e,
+            id: boxed_plugin.data().id.clone(),
+            source,
           }
         })?;
     }

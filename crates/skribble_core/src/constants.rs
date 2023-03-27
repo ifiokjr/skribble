@@ -4,7 +4,7 @@ use regex::Regex;
 
 use crate::RunnerConfig;
 
-pub const INDENTATION: u8 = 2;
+pub const INDENTATION: &str = "  ";
 pub const ROOT_SELECTOR: &str = ":root";
 
 lazy_static! {

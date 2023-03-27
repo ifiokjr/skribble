@@ -27,8 +27,15 @@ pub struct PresetDefault {
 }
 
 impl Plugin for PresetDefault {
-  fn get_id(&self) -> String {
-    "skribble_preset_default".into()
+  fn get_data(&self) -> PluginData {
+    PluginData::builder()
+      .id("skribble_preset_default")
+      .name("Default Preset")
+      .description(
+        "This plugin provides a default preset for Skribble which is similar to `tailwind`, \
+         `windi` and `unocss`.",
+      )
+      .build()
   }
 
   fn mutate_config(&self, config: &mut PluginConfig, _: &Options) -> AnyEmptyResult {
@@ -43,16 +50,6 @@ impl Plugin for PresetDefault {
     self.update_value_sets(&mut config.value_sets);
 
     Ok(())
-  }
-
-  fn get_name(&self) -> String {
-    self.get_id()
-  }
-
-  fn get_description(&self) -> String {
-    "This plugin provides a default preset for Skribble which is similar to `tailwind`, `windi` \
-     and `unocss`."
-      .into()
   }
 }
 
