@@ -420,8 +420,8 @@ impl LinkedValues {
     name: impl AsRef<str>,
   ) -> AnyEmptyResult {
     match self {
-      Self::Values(ref set) => {
-        for Prioritized { value: key, .. } in set.iter() {
+      Self::Values(ref value_set) => {
+        for Prioritized { value: key, .. } in value_set.iter() {
           if let Some(css_value) = config
             .value_sets
             .get(key)
@@ -432,10 +432,25 @@ impl LinkedValues {
           }
         }
       }
-      Self::Color(ref settings) => {
-        settings.write_css(writer, config, atom, name)?;
+      Self::Keyframes => {
+        for (keyframe_name, _keyframe) in config.keyframes.iter() {
+          if name.as_ref() != keyframe_name {
+            continue;
+          }
+
+          for (property, css_value) in atom.styles.iter() {
+            let property = Placeholder::normalize(property, config);
+            let css_value = css_value
+              .as_ref()
+              .map(|value| Placeholder::normalize_with_value(value, &keyframe_name, config))
+              .unwrap_or_else(|| keyframe_name.clone());
+
+            writeln!(writer, "{}: {};", property, css_value)?;
+          }
+
+          break;
+        }
       }
-      Self::Keyframes => {}
     }
 
     Ok(())
