@@ -153,6 +153,12 @@ impl MediaQueries {
   }
 }
 
+impl From<Vec<Group<MediaQuery>>> for MediaQueries {
+  fn from(breakpoints: Vec<Group<MediaQuery>>) -> Self {
+    Self(breakpoints)
+  }
+}
+
 impl IntoIterator for MediaQueries {
   type IntoIter = std::vec::IntoIter<Self::Item>;
   type Item = Group<MediaQuery>;

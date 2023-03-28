@@ -8,6 +8,7 @@ use std::ops::DerefMut;
 use heck::ToKebabCase;
 use indent_write::fmt::IndentWriter;
 use indexmap::indexset;
+use indexmap::IndexMap;
 use indexmap::IndexSet;
 use serde::Deserialize;
 use serde::Serialize;
@@ -17,13 +18,11 @@ use crate::indent_writer;
 use crate::AnyEmptyResult;
 use crate::AnyResult;
 use crate::Arguments;
+use crate::ClassFactory;
 use crate::ClassSize;
+use crate::Placeholder;
 use crate::RunnerConfig;
 use crate::ToSkribbleCss;
-
-pub trait SkribbleClass: Clone + Hash + Eq + Ord {
-  fn data(&self) -> Class;
-}
 
 /// These represent an atomic class and should be
 #[derive(Clone, Debug, Default, Deserialize, Serialize, TypedBuilder, PartialEq, Eq)]
@@ -75,6 +74,22 @@ impl Class {
 
   pub fn get_media_queries(&self) -> &IndexSet<String> {
     &self.media_queries
+  }
+
+  pub fn join_media_query(&self, config: &RunnerConfig) -> Option<String> {
+    if self.media_queries.is_empty() {
+      return None;
+    }
+
+    let queries = self
+      .media_queries
+      .iter()
+      .filter_map(|name| config.get_media_query(name))
+      .map(|media_query| media_query.query.clone())
+      .collect::<Vec<String>>()
+      .join(" and ");
+
+    Some(queries)
   }
 
   pub fn get_modifiers(&self) -> &IndexSet<String> {
@@ -224,13 +239,35 @@ impl Ord for Class {
 pub struct Classes(IndexSet<Class>);
 
 impl Classes {
+  pub fn insert_factory(&mut self, class_factory: ClassFactory) -> bool {
+    self.insert_optional(class_factory.into_class())
+  }
+
+  pub fn insert_factories(&mut self, class_factories: Vec<ClassFactory>) {
+    for class_factory in class_factories {
+      self.insert_factory(class_factory);
+    }
+  }
+
+  pub fn insert_optional(&mut self, class: Option<Class>) -> bool {
+    match class {
+      Some(class) => self.insert(class),
+      _ => false,
+    }
+  }
+
+  pub fn extend_optional(&mut self, classes: Option<Classes>) {
+    if let Some(classes) = classes {
+      self.extend(classes);
+    }
+  }
+
   pub fn merge(&mut self, other: impl Into<Self>) {
-    self.0.extend(other.into().0);
-    self.sort_by_class();
+    self.extend(other.into().0);
   }
 
   pub fn sort_by_class(&mut self) {
-    self.0.sort_by(|a, b| a.cmp(b));
+    self.sort_by(|a, b| a.cmp(b));
   }
 
   fn write_keyframes(&self, writer: &mut dyn Write, config: &RunnerConfig) -> AnyEmptyResult {
@@ -281,15 +318,48 @@ impl Classes {
 
   fn write_layer_css(
     &self,
-    _writer: &mut dyn Write,
-    _config: &RunnerConfig,
+    writer: &mut dyn Write,
+    config: &RunnerConfig,
     layer: Option<&String>,
   ) -> AnyEmptyResult {
-    let _classes: IndexSet<&Class> = self
-      .iter()
-      .filter(|class| class.get_layer() == layer)
-      .collect();
+    let mut media_query_classes = IndexMap::<Option<String>, Vec<&Class>>::new();
 
+    for class in self.iter().filter(|class| class.get_layer() == layer) {
+      let key = class.join_media_query(config);
+      match media_query_classes.get_mut(&key) {
+        Some(existing) => {
+          existing.push(class);
+        }
+        None => {
+          media_query_classes.insert(key, vec![class]);
+        }
+      }
+    }
+
+    for (media_query, classes) in media_query_classes.iter() {
+      if let Some(media_query) = media_query {
+        writeln!(writer, "@media {media_query} {{")?;
+        let mut child_writer = indent_writer();
+        self.write_media_query_css(&mut child_writer, config, classes)?;
+        write!(writer, "{}", child_writer.get_ref())?;
+        writeln!(writer, "}}")?;
+      } else {
+        self.write_media_query_css(writer, config, classes)?;
+      }
+    }
+
+    Ok(())
+  }
+
+  fn write_media_query_css(
+    &self,
+    writer: &mut dyn Write,
+    config: &RunnerConfig,
+    classes: &Vec<&Class>,
+  ) -> AnyEmptyResult {
+    for class in classes {
+      class.write_skribble_css(writer, config)?;
+    }
     Ok(())
   }
 }
@@ -304,7 +374,7 @@ impl ToSkribbleCss for Classes {
     self.write_keyframes(writer, config)?;
 
     for layer in config.layers.iter() {
-      write!(writer, "@layer {layer} {{")?;
+      writeln!(writer, "@layer {layer} {{")?;
       let mut indented = IndentWriter::new("  ", String::new());
 
       self.write_layer_css(

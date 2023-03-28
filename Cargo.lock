@@ -2406,7 +2406,6 @@ dependencies = [
  "rkyv",
  "serde",
  "serde_json",
- "skribble_preset_default",
  "thiserror",
  "typed-builder",
  "walkdir",

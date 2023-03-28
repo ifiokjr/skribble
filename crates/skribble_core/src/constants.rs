@@ -11,6 +11,9 @@ lazy_static! {
   static ref CSS_VARIABLE_REGEX: Regex =
     Regex::new(format!("(?m){}", Placeholder::variable("(?P<name>\\w[\\w\\d]+)")).as_str())
       .unwrap();
+  static ref MEDIA_QUERY_REGEX: Regex =
+    Regex::new(format!("(?m){}", Placeholder::media_query("(?P<name>\\w[\\w\\d]+)")).as_str())
+      .unwrap();
   static ref MODIFIER_REGEX: Regex =
     Regex::new(format!("(?m){}", Placeholder::modifier("(?P<name>\\w[\\w\\d]+)")).as_str())
       .unwrap();
@@ -23,6 +26,7 @@ pub struct Placeholder;
 
 impl Placeholder {
   pub const CSS_VARIABLE: &str = "CSS_VARIABLE";
+  pub const MEDIA_QUERY: &str = "MEDIA_QUERY";
   pub const MODIFIER: &str = "MODIFIER";
   pub const PALETTE: &str = "PALETTE";
   pub const VALUE: &str = "VALUE";
@@ -116,6 +120,10 @@ impl Placeholder {
   /// when the code is generated.
   pub fn palette(name: impl AsRef<str>) -> String {
     Self::create(Self::PALETTE, name)
+  }
+
+  pub fn media_query(name: impl AsRef<str>) -> String {
+    Self::create(Self::MEDIA_QUERY, name)
   }
 
   pub fn modifier(name: impl AsRef<str>) -> String {

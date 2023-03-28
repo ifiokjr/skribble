@@ -36,4 +36,3 @@ walkdir = { workspace = true }
 
 [dev-dependencies]
 insta = { features = ["json"], workspace = true }
-skribble_preset_default = { workspace = true }

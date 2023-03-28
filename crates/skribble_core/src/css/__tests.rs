@@ -3,6 +3,9 @@ use indexmap::indexmap;
 use crate::AnyEmptyResult;
 use crate::Atom;
 use crate::ClassFactory;
+use crate::Classes;
+use crate::Group;
+use crate::MediaQuery;
 use crate::SkribbleRunner;
 use crate::StyleConfig;
 use crate::ToSkribbleCss;
@@ -12,14 +15,30 @@ use crate::ValueSet;
 fn class_selector() -> AnyEmptyResult {
   let mut runner = SkribbleRunner::new(create_config());
   let runner_config = runner.initialize()?;
-  let mut factory = ClassFactory::new(runner_config);
-  factory.add_token("pt").add_token("0");
+  let factory = ClassFactory::class(runner_config, &["pt", "0"]);
   let class = factory.into_class().unwrap();
   insta::assert_display_snapshot!(class.to_skribble_css(&runner_config)?, @r###"
   .pt\:\$0 {
     padding-top: 0px;
   }
   "###);
+
+  Ok(())
+}
+
+#[test]
+fn classes_css() -> AnyEmptyResult {
+  let mut runner = SkribbleRunner::new(create_config());
+  let runner_config = runner.initialize()?;
+  let mut classes = Classes::default();
+  classes.insert_factories(vec![
+    ClassFactory::class(runner_config, &["pt", "0"]),
+    ClassFactory::class(runner_config, &["sm", "pt", "10"]),
+    ClassFactory::class(runner_config, &["md", "pt", "px"]),
+    ClassFactory::class(runner_config, &["screen", "lg", "pt", "px"]),
+  ]);
+
+  insta::assert_display_snapshot!(classes.to_skribble_css(&runner_config)?);
 
   Ok(())
 }
@@ -31,6 +50,55 @@ fn create_config() -> StyleConfig {
         .name("pt")
         .values(vec!["spacing"])
         .styles(indexmap! { "padding-top" => None as Option<String> })
+        .build(),
+    ])
+    .media_queries(vec![
+      Group::builder()
+        .name("deviceCategories")
+        .description("The device categories for the media query.")
+        .items(vec![
+          MediaQuery::builder()
+            .name("screen")
+            .query("screen")
+            .description("The media query for devices with a screen.")
+            .build(),
+          MediaQuery::builder()
+            .name("print")
+            .query("print")
+            .description("The media query for devices with a printer.")
+            .build(),
+        ])
+        .build(),
+      Group::builder()
+        .name("breakpoints")
+        .description("The breakpoints for the application.")
+        .items(vec![
+          MediaQuery::builder()
+            .name("sm")
+            .query("(min-width: 640px)")
+            .description("The breakpoint for devices with screen size greater than tiny.")
+            .build(),
+          MediaQuery::builder()
+            .name("md")
+            .query("(min-width: 768px)")
+            .description("The breakpoint for devices screen size greater than medium")
+            .build(),
+          MediaQuery::builder()
+            .name("lg")
+            .query("(min-width: 1024px)")
+            .description("The breakpoint for devices screen size greater than large")
+            .build(),
+          MediaQuery::builder()
+            .name("xl")
+            .query("(min-width: 1280px)")
+            .description("The breakpoint for devices screen size greater than extra large")
+            .build(),
+          MediaQuery::builder()
+            .name("xxl")
+            .query("(min-width: 1536px)")
+            .description("The breakpoint for devices screen size greater than xxl")
+            .build(),
+        ])
         .build(),
     ])
     .value_sets(vec![

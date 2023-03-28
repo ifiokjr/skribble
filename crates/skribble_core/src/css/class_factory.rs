@@ -54,6 +54,15 @@ impl<'config> ClassFactory<'config> {
     }
   }
 
+  pub fn class<T: AsRef<str>>(config: &'config RunnerConfig, tokens: &[T]) -> Self {
+    let mut factory = Self::new(config);
+    for token in tokens {
+      factory.add_token(token);
+    }
+
+    factory
+  }
+
   /// Create a new class from this factory. It will return none if the class is
   /// not valid.
   pub fn into_class(self) -> Option<Class> {
