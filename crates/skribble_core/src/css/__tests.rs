@@ -17,7 +17,7 @@ fn class_selector() -> AnyEmptyResult {
   let runner_config = runner.initialize()?;
   let factory = ClassFactory::class(runner_config, &["pt", "0"]);
   let class = factory.into_class().unwrap();
-  insta::assert_display_snapshot!(class.to_skribble_css(&runner_config)?, @r###"
+  insta::assert_display_snapshot!(class.to_skribble_css(runner_config)?, @r###"
   .pt\:\$0 {
     padding-top: 0px;
   }
@@ -38,7 +38,7 @@ fn classes_css() -> AnyEmptyResult {
     ClassFactory::class(runner_config, &["screen", "lg", "pt", "px"]),
   ]);
 
-  insta::assert_display_snapshot!(classes.to_skribble_css(&runner_config)?);
+  insta::assert_display_snapshot!(classes.to_skribble_css(runner_config)?);
 
   Ok(())
 }

@@ -20,7 +20,6 @@ use crate::AnyResult;
 use crate::Arguments;
 use crate::ClassFactory;
 use crate::ClassSize;
-use crate::Placeholder;
 use crate::RunnerConfig;
 use crate::ToSkribbleCss;
 

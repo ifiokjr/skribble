@@ -47,13 +47,10 @@ impl RunnerConfig {
   }
 
   pub fn get_media_query(&self, name: impl AsRef<str>) -> Option<&MediaQuery> {
-    for media_query in self.get_media_queries() {
-      if media_query.name == name.as_ref() {
-        return Some(media_query);
-      }
-    }
-
-    None
+    self
+      .get_media_queries()
+      .into_iter()
+      .find(|&media_query| media_query.name == name.as_ref())
   }
 
   pub fn get_modifiers(&self) -> Vec<&Modifier> {
