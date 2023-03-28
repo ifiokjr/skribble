@@ -10,7 +10,7 @@ expression: "StyleConfig::default()"
       "**"
     ],
     "charset": "utf-8",
-    "layer": "default",
+    "defaultLayer": "default",
     "colorFormat": "hsl",
     "mergeRules": {
       "keyframes": "append",
