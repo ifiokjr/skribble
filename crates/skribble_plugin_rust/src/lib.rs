@@ -99,7 +99,7 @@ mod tests {
       .build();
 
     let mut runner = SkribbleRunner::new(config);
-    let _ = runner.run();
+    let _ = runner.initialize();
     let result = runner.generate().unwrap();
     let generated = result.get(0).unwrap();
     let content = &generated.content;

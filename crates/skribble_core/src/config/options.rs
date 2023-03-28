@@ -31,9 +31,9 @@ pub struct Options {
   #[builder(default = default_charset(), setter(into))]
   pub charset: String,
   /// The default layer to use when no layer is specified.
-  #[serde(default = "default_layer")]
-  #[builder(default = default_layer(), setter(into))]
-  pub layer: String,
+  #[serde(default = "default_first_layer")]
+  #[builder(default = default_first_layer(), setter(into))]
+  pub default_layer: String,
   /// This is the default format of colors rendered in css.
   #[serde(default)]
   #[builder(default, setter(into))]
@@ -80,7 +80,7 @@ fn default_charset() -> String {
   "utf-8".into()
 }
 
-fn default_layer() -> String {
+fn default_first_layer() -> String {
   "default".into()
 }
 

@@ -16,9 +16,9 @@ use crate::WrappedPlugin;
 
 pub struct SkribbleRunner {
   options: Arc<Options>,
-  config: Arc<PluginConfig>,
+  base_config: Arc<PluginConfig>,
   plugins: Arc<Mutex<Vec<WrappedPlugin>>>,
-  merged_config: Option<RunnerConfig>,
+  config: Option<RunnerConfig>,
 }
 
 impl SkribbleRunner {
@@ -33,22 +33,20 @@ impl SkribbleRunner {
 
     Self {
       options,
-      config,
+      base_config: config,
       plugins,
-      merged_config: None,
+      config: None,
     }
   }
 
   /// Run the plugins to mutate the config and get the transformed config which
   /// is used.
-  pub fn run(&mut self) -> Result<()> {
+  pub fn initialize(&mut self) -> Result<&RunnerConfig> {
     self.provide_options_to_plugins()?;
     let config_from_plugins = self.generate_plugin_config()?;
     self.merge(config_from_plugins);
 
-    // TODO ignoring options around how the config should be extended for now.
-
-    Ok(())
+    self.config.as_ref().ok_or(Error::RunnerNotSetup)
   }
 
   /// Provide options to the plugins.
@@ -72,7 +70,7 @@ impl SkribbleRunner {
   /// Run the generate functions on all plugins with the provided merged
   /// configuration.
   pub fn generate(&self) -> Result<GeneratedFiles> {
-    let Some(ref config) = self.merged_config else {
+    let Some(ref config) = self.config else {
       return Err(Error::RunnerNotSetup);
     };
 
@@ -95,7 +93,7 @@ impl SkribbleRunner {
   }
 
   pub fn scan(&self, cwd: impl AsRef<Path>) -> Result<Classes> {
-    let Some(_) = self.merged_config else {
+    let Some(_) = self.config else {
       return Err(Error::RunnerNotSetup);
     };
 
@@ -144,10 +142,8 @@ impl SkribbleRunner {
   }
 
   fn merge(&mut self, plugin_config: PluginConfig) {
-    self.merged_config = Some(generate_merged_config(
-      plugin_config,
-      self.options.clone(),
-      &self.config,
-    ));
+    let config = generate_merged_config(plugin_config, self.options.clone(), &self.base_config);
+
+    self.config = Some(config);
   }
 }

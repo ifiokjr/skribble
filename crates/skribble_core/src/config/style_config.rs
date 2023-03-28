@@ -238,6 +238,12 @@ impl MediaQuery {
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
 pub struct Atoms(Vec<Atom>);
 
+impl From<Vec<Atom>> for Atoms {
+  fn from(value: Vec<Atom>) -> Self {
+    Self(value)
+  }
+}
+
 impl IntoIterator for Atoms {
   type IntoIter = std::vec::IntoIter<Self::Item>;
   type Item = Atom;
@@ -980,6 +986,12 @@ impl DerefMut for Modifiers {
 
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct ValueSets(Vec<ValueSet>);
+
+impl From<Vec<ValueSet>> for ValueSets {
+  fn from(value: Vec<ValueSet>) -> Self {
+    Self(value)
+  }
+}
 
 impl IntoIterator for ValueSets {
   type IntoIter = std::vec::IntoIter<Self::Item>;

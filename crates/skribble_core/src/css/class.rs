@@ -182,6 +182,7 @@ impl ToSkribbleCss for Class {
     writeln!(writer, " {{")?;
     let mut indented = indent_writer();
     self.write_css_properties(&mut indented, config)?;
+    write!(writer, "{}", indented.get_ref())?;
     writeln!(writer, "}}")?;
 
     Ok(())
@@ -309,7 +310,7 @@ impl ToSkribbleCss for Classes {
       self.write_layer_css(
         &mut indented,
         config,
-        if layer == &options.layer {
+        if layer == &options.default_layer {
           None
         } else {
           Some(layer)

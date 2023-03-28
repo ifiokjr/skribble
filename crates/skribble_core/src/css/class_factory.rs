@@ -1,5 +1,3 @@
-use std::sync::Arc;
-
 use indexmap::IndexSet;
 
 use crate::Arguments;
@@ -8,8 +6,8 @@ use crate::ClassSize;
 use crate::RunnerConfig;
 
 /// Skribble classes represent a css class.
-#[derive(Clone, Debug, Default)]
-pub struct ClassFactory {
+#[derive(Clone, Debug)]
+pub struct ClassFactory<'config> {
   /// The layer to be used for this class. If left empty the default layer will
   /// be used.
   layer: Option<String>,
@@ -28,7 +26,7 @@ pub struct ClassFactory {
   /// expression.
   argument: Option<Arguments>,
   /// The finalized configuration which was used to create this class name.
-  config: Arc<RunnerConfig>,
+  config: &'config RunnerConfig,
   /// Whether this class is valid or not.
   valid: Option<bool>,
   /// The score of this class. This is used to determine the order of the
@@ -39,7 +37,23 @@ pub struct ClassFactory {
   keyframe: bool,
 }
 
-impl ClassFactory {
+impl<'config> ClassFactory<'config> {
+  pub fn new(config: &'config RunnerConfig) -> Self {
+    Self {
+      layer: None,
+      media_queries: IndexSet::new(),
+      modifiers: IndexSet::new(),
+      atom: None,
+      value_name: None,
+      named_class: None,
+      argument: None,
+      config,
+      valid: None,
+      score: ClassSize::default(),
+      keyframe: false,
+    }
+  }
+
   /// Create a new class from this factory. It will return none if the class is
   /// not valid.
   pub fn into_class(self) -> Option<Class> {
@@ -81,7 +95,7 @@ impl ClassFactory {
     self.valid.is_some()
   }
 
-  pub fn add_token(&mut self, token: impl AsRef<str>) -> &Self {
+  pub fn add_token(&mut self, token: impl AsRef<str>) -> &mut Self {
     if self.is_locked() {
       return self;
     }
@@ -97,6 +111,7 @@ impl ClassFactory {
       } else {
         self.value_name = Some(token.as_ref().to_string());
         self.score.value_name = index.checked_add(1).unwrap_or(index);
+        self.valid = Some(true);
       }
     }
     // layer.
@@ -149,6 +164,7 @@ impl ClassFactory {
       } else {
         self.named_class = Some(token.as_ref().to_string());
         self.score.named_class = index.checked_add(1).unwrap_or(index);
+        self.valid = Some(true);
       }
     }
     // invalid value received.

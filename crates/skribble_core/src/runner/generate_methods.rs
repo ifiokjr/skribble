@@ -30,11 +30,12 @@ pub(crate) fn generate_merged_config(
     .media_queries
     .extend(config.media_queries.clone());
   plugin_config.modifiers.extend(config.modifiers.clone());
+  plugin_config.value_sets.extend(config.value_sets.clone());
   plugin_config.atoms.extend(config.atoms.clone());
   plugin_config.classes.extend(config.classes.clone());
   plugin_config.layers.extend(config.layers.clone());
 
-  let mut layers = indexset! { options.layer.clone() };
+  let mut layers = indexset! { options.default_layer.clone() };
   let mut keyframes = IndexMap::<String, Keyframe>::new();
   let mut css_variables = IndexMap::<String, CssVariable>::new();
   let mut media_queries = IndexMap::<String, IndexMap<String, MediaQuery>>::new();
@@ -251,5 +252,6 @@ pub(crate) fn generate_merged_config(
     let atom_names = atom.values.get_names_from_config(&merged_config);
     merged_config.names.insert(name_atom_name, atom_names);
   }
+
   merged_config
 }
