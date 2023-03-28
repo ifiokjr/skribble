@@ -56,6 +56,9 @@
     set -e
     cargo clippy
   '';
+  scripts."snapshot:review".exec = ''
+    cargo insta review
+  '';
   scripts."test:snapshot".exec = ''
     cargo nextest run
     cargo insta accept
