@@ -52,7 +52,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-p {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(258.89362, 94.37751%, 51.17647%, var(--sk-opacity-p));
   /// }
@@ -71,7 +71,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-pc {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-pc));
   /// }
@@ -90,7 +90,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-s {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(314, 100%, 47.058823%, var(--sk-opacity-s));
   /// }
@@ -109,7 +109,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-sc {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-sc));
   /// }
@@ -128,7 +128,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-a {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(174, 60.000008%, 50.980396%, var(--sk-opacity-a));
   /// }
@@ -147,7 +147,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-ac {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(174.70587, 43.589737%, 15.294118%, var(--sk-opacity-ac));
   /// }
@@ -166,7 +166,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-n {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(218.99998, 14.084508%, 27.843138%, var(--sk-opacity-n));
   /// }
@@ -185,7 +185,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-nc {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-nc));
   /// }
@@ -204,7 +204,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-b1 {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-b1));
   /// }
@@ -223,7 +223,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-b2 {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(0, 0%, 94.90196%, var(--sk-opacity-b2));
   /// }
@@ -242,7 +242,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-b3 {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(180, 1.9607836%, 90%, var(--sk-opacity-b3));
   /// }
@@ -261,7 +261,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-bc {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(215, 27.906975%, 16.862745%, var(--sk-opacity-bc));
   /// }
@@ -280,7 +280,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-in {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(212.34569, 100%, 47.64706%, var(--sk-opacity-in));
   /// }
@@ -299,7 +299,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-inc {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-inc));
   /// }
@@ -318,7 +318,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-su {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(136.8421, 72.1519%, 46.47059%, var(--sk-opacity-su));
   /// }
@@ -338,7 +338,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-suc {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-suc));
   /// }
@@ -357,7 +357,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-wa {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(4.5614033, 100%, 66.47059%, var(--sk-opacity-wa));
   /// }
@@ -377,7 +377,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-wac {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-wac));
   /// }
@@ -396,7 +396,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-er {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(325.05154, 77.600006%, 49.019608%, var(--sk-opacity-er));
   /// }
@@ -415,7 +415,7 @@ impl CssVariables {
   ///   initial-value: 1;
   /// }
   /// @property --sk-erc {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-erc));
   /// }
@@ -427,7 +427,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-container-max-width {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: container;
   /// }
@@ -439,7 +439,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-empty {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -451,7 +451,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-blur {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -463,7 +463,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-brightness {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -475,7 +475,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-contrast {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -487,7 +487,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-custom {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -499,7 +499,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-grayscale {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -511,7 +511,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-hue-rotate {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -523,7 +523,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-invert {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -535,7 +535,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-saturate {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -547,7 +547,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-sepia {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -559,7 +559,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-filter-drop-shadow {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -571,7 +571,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-group-nested-filter {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
   /// }
@@ -583,7 +583,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-blur {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -595,7 +595,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-brightness {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -607,7 +607,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-contrast {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -619,7 +619,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-custom {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -631,7 +631,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-grayscale {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -643,7 +643,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-hue-rotate {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -655,7 +655,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-invert {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -667,7 +667,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-saturate {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -679,7 +679,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-sepia {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -691,7 +691,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-backdrop-drop-shadow {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -703,7 +703,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-group-nested-backdrop {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
   /// }
@@ -715,7 +715,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-default-transition-duration {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: 150ms;
   /// }
@@ -727,7 +727,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-default-animation-duration {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: 1s;
   /// }
@@ -739,7 +739,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-etx {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -751,7 +751,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-ety {
-  ///   syntax: *;
+  ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: /* */;
   /// }
@@ -771,7 +771,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-p {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(258.89362, 94.37751%, 51.17647%, var(--sk-opacity-p));
   /// }
@@ -789,7 +789,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-pc {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-pc));
   /// }
@@ -807,7 +807,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-s {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(314, 100%, 47.058823%, var(--sk-opacity-s));
   /// }
@@ -825,7 +825,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-sc {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-sc));
   /// }
@@ -843,7 +843,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-a {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(174, 60.000008%, 50.980396%, var(--sk-opacity-a));
   /// }
@@ -861,7 +861,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-ac {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(174.70587, 43.589737%, 15.294118%, var(--sk-opacity-ac));
   /// }
@@ -879,7 +879,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-n {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(218.99998, 14.084508%, 27.843138%, var(--sk-opacity-n));
   /// }
@@ -897,7 +897,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-nc {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-nc));
   /// }
@@ -915,7 +915,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-b1 {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-b1));
   /// }
@@ -933,7 +933,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-b2 {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(0, 0%, 94.90196%, var(--sk-opacity-b2));
   /// }
@@ -951,7 +951,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-b3 {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(180, 1.9607836%, 90%, var(--sk-opacity-b3));
   /// }
@@ -969,7 +969,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-bc {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(215, 27.906975%, 16.862745%, var(--sk-opacity-bc));
   /// }
@@ -987,7 +987,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-in {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(212.34569, 100%, 47.64706%, var(--sk-opacity-in));
   /// }
@@ -1005,7 +1005,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-inc {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-inc));
   /// }
@@ -1023,7 +1023,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-su {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(136.8421, 72.1519%, 46.47059%, var(--sk-opacity-su));
   /// }
@@ -1042,7 +1042,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-suc {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-suc));
   /// }
@@ -1060,7 +1060,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-wa {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(4.5614033, 100%, 66.47059%, var(--sk-opacity-wa));
   /// }
@@ -1079,7 +1079,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-wac {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-wac));
   /// }
@@ -1097,7 +1097,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-er {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(325.05154, 77.600006%, 49.019608%, var(--sk-opacity-er));
   /// }
@@ -1115,7 +1115,7 @@ pub trait Color: SkribbleValue {
   ///   initial-value: 1;
   /// }
   /// @property --sk-erc {
-  ///   syntax: <color>;
+  ///   syntax: "<color>";
   ///   inherits: false;
   ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-erc));
   /// }

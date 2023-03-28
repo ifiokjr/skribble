@@ -2869,18 +2869,10 @@ RunnerConfig {
             ),
             styles: OptionalStringMap(
                 {
-                    "__:CSS_VARIABLE::bgOpacity:__": Some(
-                        "1",
-                    ),
                     "color": None,
                 },
             ),
-            values: Color(
-                ColorSettings {
-                    opacity: "bgOpacity",
-                    ignore_palette: false,
-                },
-            ),
+            values: Color,
         },
         "bgOpacity": Atom {
             name: "bgOpacity",
@@ -5604,6 +5596,7 @@ RunnerConfig {
         },
         use_registered_properties: false,
         variable_prefix: "sk",
+        opacity_prefix: "opacity",
         default_color: "#000000",
     },
 }
