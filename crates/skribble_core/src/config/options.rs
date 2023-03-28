@@ -52,6 +52,10 @@ pub struct Options {
   #[serde(default = "default_variable_prefix")]
   #[builder(default = default_variable_prefix(), setter(into))]
   pub variable_prefix: String,
+  /// Set the prefix that the opacity for color variables should use.
+  #[serde(default = "default_opacity_prefix")]
+  #[builder(default = default_opacity_prefix(), setter(into))]
+  pub opacity_prefix: String,
   /// The default color value to use when no color is specified.
   #[serde(default = "default_hex_color")]
   #[builder(default = default_hex_color(), setter(into))]
@@ -74,6 +78,10 @@ fn default_root() -> PathBuf {
 
 fn default_variable_prefix() -> String {
   "sk".into()
+}
+
+fn default_opacity_prefix() -> String {
+  "opacity".into()
 }
 
 fn default_charset() -> String {

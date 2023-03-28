@@ -4,8 +4,12 @@ use crate::AnyEmptyResult;
 use crate::Atom;
 use crate::ClassFactory;
 use crate::Classes;
+use crate::CssVariable;
 use crate::Group;
+use crate::Keyframe;
+use crate::LinkedValues;
 use crate::MediaQuery;
+use crate::PropertySyntaxValue;
 use crate::SkribbleRunner;
 use crate::StyleConfig;
 use crate::ToSkribbleCss;
@@ -17,11 +21,7 @@ fn class_selector() -> AnyEmptyResult {
   let runner_config = runner.initialize()?;
   let factory = ClassFactory::class(runner_config, &["pt", "0"]);
   let class = factory.into_class().unwrap();
-  insta::assert_display_snapshot!(class.to_skribble_css(runner_config)?, @r###"
-  .pt\:\$0 {
-    padding-top: 0px;
-  }
-  "###);
+  insta::assert_display_snapshot!(class.to_skribble_css(runner_config)?);
 
   Ok(())
 }
@@ -37,7 +37,36 @@ fn classes_css() -> AnyEmptyResult {
     ClassFactory::class(runner_config, &["md", "pt", "px"]),
     ClassFactory::class(runner_config, &["screen", "lg", "pt", "px"]),
   ]);
+  classes.sort_by_class();
+  insta::assert_display_snapshot!(classes.to_skribble_css(runner_config)?);
+  Ok(())
+}
 
+#[test]
+fn classes_with_color_properties() -> AnyEmptyResult {
+  let mut runner = SkribbleRunner::new(create_config());
+  let runner_config = runner.initialize()?;
+  let mut classes = Classes::default();
+  classes.insert_factories(vec![
+    ClassFactory::class(runner_config, &["bg", "secondary"]),
+    ClassFactory::class(runner_config, &["sm", "bg", "primary"]),
+  ]);
+  classes.sort_by_class();
+  insta::assert_display_snapshot!(classes.to_skribble_css(runner_config)?);
+
+  Ok(())
+}
+
+#[test]
+fn classes_with_keyframes() -> AnyEmptyResult {
+  let mut runner = SkribbleRunner::new(create_config());
+  let runner_config = runner.initialize()?;
+  let mut classes = Classes::default();
+  classes.insert_factories(vec![
+    ClassFactory::class(runner_config, &["animate", "spin"]),
+    ClassFactory::class(runner_config, &["screen", "animate", "spin"]),
+  ]);
+  classes.sort_by_class();
   insta::assert_display_snapshot!(classes.to_skribble_css(runner_config)?);
 
   Ok(())
@@ -45,11 +74,30 @@ fn classes_css() -> AnyEmptyResult {
 
 fn create_config() -> StyleConfig {
   StyleConfig::builder()
+    .keyframes(vec![
+      Keyframe::builder()
+        .name("spin")
+        .rules(indexmap! {
+          "from" => indexmap! { "transform" => "rotate(0deg)" },
+          "to" => indexmap! { "transform" => "rotate(360deg)" }
+        })
+        .build(),
+    ])
     .atoms(vec![
+      Atom::builder()
+        .name("bg")
+        .values(LinkedValues::Color)
+        .styles(indexmap! { "color" => None as Option<String> })
+        .build(),
       Atom::builder()
         .name("pt")
         .values(vec!["spacing"])
         .styles(indexmap! { "padding-top" => None as Option<String> })
+        .build(),
+      Atom::builder()
+        .name("animate")
+        .values(LinkedValues::Keyframes)
+        .styles(indexmap! { "animation-name" => None as Option<String> })
         .build(),
     ])
     .media_queries(vec![
@@ -143,6 +191,21 @@ fn create_config() -> StyleConfig {
         })
         .build(),
     ])
-    .plugins(vec![])
+    .variables(vec![
+      CssVariable::builder()
+        .name("primary")
+        .variable("--p")
+        .value("#570df8")
+        .description("The primary color. Useful for primary buttons.")
+        .syntax(PropertySyntaxValue::Color)
+        .build(),
+      CssVariable::builder()
+        .name("secondary")
+        .variable("--s")
+        .value("#f000b8")
+        .description("The secondary color. Useful for secondary buttons.")
+        .syntax(PropertySyntaxValue::Color)
+        .build(),
+    ])
     .build()
 }

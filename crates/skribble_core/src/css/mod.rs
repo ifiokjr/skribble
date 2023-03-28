@@ -1,12 +1,14 @@
 pub use arguments::*;
 pub use class::*;
-pub use class_factory::*;
-pub use class_size::*;
+pub use classes::*;
+pub use factory::*;
+pub use size::*;
 
 mod arguments;
 mod class;
-mod class_factory;
-mod class_size;
+mod classes;
+mod factory;
+mod size;
 
 #[cfg(test)]
 mod __tests;

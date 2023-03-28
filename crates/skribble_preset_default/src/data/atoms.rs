@@ -1,7 +1,6 @@
 use indexmap::indexmap;
 use lazy_static::lazy_static;
 use skribble_core::Atom;
-use skribble_core::ColorSettings;
 use skribble_core::LinkedValues;
 use skribble_core::OptionalStringMap;
 use skribble_core::Placeholder;
@@ -202,8 +201,8 @@ lazy_static! {
         .build(),
       Atom::builder()
         .name("bg")
-        .values(ColorSettings::builder().opacity("bgOpacity").build())
-        .styles(indexmap! { bg_opacity.as_str() => Some("1"), "color" => None })
+        .values(LinkedValues::Color)
+        .styles(indexmap! { "color" => none })
         .build(),
       Atom::builder()
         .name("bgOpacity")

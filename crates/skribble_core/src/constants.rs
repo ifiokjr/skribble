@@ -1,3 +1,4 @@
+use indexmap::IndexSet;
 use lazy_static::lazy_static;
 use regex::Captures;
 use regex::Regex;
@@ -36,13 +37,6 @@ impl Placeholder {
     format!("__:{namespace}::{name}:__")
   }
 
-  /// Generate a placeholder for the variable by using the name. This inserts
-  /// some text which will be replaced by the actual variable name when the code
-  /// is generated.
-  pub fn variable(name: impl AsRef<str>) -> String {
-    Self::create(Self::CSS_VARIABLE, name)
-  }
-
   pub fn normalize(content: impl AsRef<str>, config: &RunnerConfig) -> String {
     let content = CSS_VARIABLE_REGEX.replace_all(content.as_ref(), |caps: &Captures| {
       // value for an invalid match
@@ -62,7 +56,7 @@ impl Placeholder {
         return invalid_regex;
       };
 
-      name.get_variable(&config.options().variable_prefix)
+      name.get_variable(config.options())
     });
 
     let content = PALETTE_REGEX.replace_all(&content, |caps: &Captures| {
@@ -113,6 +107,24 @@ impl Placeholder {
     let content = VALUE.replace_all(content.as_ref(), value.as_ref());
 
     Self::normalize(content, config)
+  }
+
+  /// Generate a placeholder for the variable by using the name. This inserts
+  /// some text which will be replaced by the actual variable name when the code
+  /// is generated.
+  pub fn variable(name: impl AsRef<str>) -> String {
+    Self::create(Self::CSS_VARIABLE, name)
+  }
+
+  /// Extract all the variables from the given content.
+  pub fn collect_css_variables(content: impl AsRef<str>, css_variable: &mut IndexSet<String>) {
+    for caps in CSS_VARIABLE_REGEX.captures_iter(content.as_ref()) {
+      let Some(name) = caps.name("name") else {
+        continue;
+      };
+
+      css_variable.insert(name.as_str().to_owned());
+    }
   }
 
   /// Generate a placeholder for the palette color by using the name. This

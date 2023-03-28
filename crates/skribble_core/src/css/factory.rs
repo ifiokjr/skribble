@@ -70,6 +70,24 @@ impl<'config> ClassFactory<'config> {
       return None;
     }
 
+    let mut css_variables = IndexSet::new();
+
+    if let Some(atom) = self
+      .atom
+      .as_ref()
+      .and_then(|name| self.config.atoms.get(name))
+    {
+      atom.collect_css_variables(self.config, self.value_name.as_ref(), &mut css_variables)
+    }
+
+    if let Some(named_class) = self
+      .named_class
+      .as_ref()
+      .and_then(|name| self.config.classes.get(name))
+    {
+      named_class.collect_css_variables(&mut css_variables)
+    }
+
     let class = Class::builder()
       .media_queries(self.media_queries)
       .modifiers(self.modifiers)
@@ -80,6 +98,7 @@ impl<'config> ClassFactory<'config> {
       .named_class(self.named_class)
       .argument(self.argument)
       .keyframe(self.keyframe)
+      .css_variables(css_variables)
       .build();
 
     Some(class)

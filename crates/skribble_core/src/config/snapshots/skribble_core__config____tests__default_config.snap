@@ -25,6 +25,7 @@ expression: "StyleConfig::default()"
     },
     "useRegisteredProperties": false,
     "variablePrefix": "sk",
+    "opacityPrefix": "opacity",
     "defaultColor": "#000000"
   },
   "layers": [],

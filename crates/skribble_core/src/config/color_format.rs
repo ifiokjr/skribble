@@ -34,13 +34,12 @@ impl ColorFormat {
     config: &RunnerConfig,
     css_variable: &CssVariable,
   ) -> crate::Result<String> {
-    let prefix = &config.options().variable_prefix;
     let initial_value = css_variable
       .value
       .as_ref()
       .map(|value| Placeholder::normalize(value, config))
       .ok_or(Error::InvalidCssVariable(css_variable.name.clone()))?;
-    let opacity_variable = css_variable.get_opacity_variable(prefix);
+    let opacity_variable = css_variable.get_opacity_variable(config.options());
 
     match self {
       Self::Rgb => {

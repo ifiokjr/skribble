@@ -22,6 +22,7 @@ use super::PrioritizedString;
 use super::Priority;
 use super::StringList;
 use super::StringMap;
+use crate::indent_writer;
 use crate::AnyEmptyResult;
 use crate::Color;
 use crate::Error;
@@ -346,17 +347,38 @@ impl Atom {
     self.styles.extend(other.styles);
     self.values.merge(other.values);
   }
+
+  pub fn collect_css_variables(
+    &self,
+    config: &RunnerConfig,
+    name: Option<&String>,
+    css_variables: &mut IndexSet<String>,
+  ) {
+    if let Some(name) = name {
+      self
+        .values
+        .collect_css_variables(config, name, css_variables);
+    }
+
+    for (key, value) in self.styles.iter() {
+      Placeholder::collect_css_variables(key, css_variables);
+
+      if let Some(ref content) = value {
+        Placeholder::collect_css_variables(content, css_variables);
+      }
+    }
+  }
 }
 
 #[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
 #[serde(rename_all = "camelCase", tag = "type")]
 pub enum LinkedValues {
-  /// The atom will be linked to colors and the settings determine how the link
-  /// is made.
-  Color(ColorSettings),
   /// The [`ValueSet`] names that will be used to populate the names that can be
   /// used.
   Values(NameSet),
+  /// The atom will be linked to colors and the settings determine how the link
+  /// is made.
+  Color,
   /// The atom will be linked to all the `keyframes` that are available. This is
   /// used to generate the `animate` class name.
   Keyframes,
@@ -365,21 +387,6 @@ pub enum LinkedValues {
 impl LinkedValues {
   pub fn get_names_from_config(&self, config: &RunnerConfig) -> IndexSet<String> {
     match self {
-      Self::Color(ref color_settings) => {
-        let mut names = indexset! {};
-
-        for (name, variable) in config.css_variables.iter() {
-          if variable.is_color() {
-            names.insert(name.to_owned());
-          }
-        }
-
-        if !color_settings.ignore_palette {
-          names.extend(config.palette.keys().cloned());
-        }
-
-        names
-      }
       Self::Values(ref value_set) => {
         let mut names = indexset! {};
         for value in value_set.iter() {
@@ -390,21 +397,31 @@ impl LinkedValues {
 
         names
       }
+      Self::Color => {
+        let mut names = indexset! {};
+
+        for (name, variable) in config.css_variables.iter() {
+          if variable.is_color() {
+            names.insert(name.to_owned());
+          }
+        }
+        names.extend(config.palette.keys().cloned());
+
+        names
+      }
       Self::Keyframes => config.keyframes.keys().cloned().collect(),
     }
   }
 
   pub fn merge(&mut self, other: Self) {
     match self {
-      Self::Color(color_settings) => {
-        if let Self::Color(other_color_settings) = other {
-          color_settings.merge(other_color_settings);
-        }
-      }
       Self::Values(value_set) => {
         if let Self::Values(other_value_set) = other {
           value_set.merge(other_value_set);
         }
+      }
+      Self::Color => {
+        *self = other;
       }
       Self::Keyframes => {
         *self = other;
@@ -432,6 +449,31 @@ impl LinkedValues {
           }
         }
       }
+      Self::Color => {
+        for (color_name, variable) in config.css_variables.iter() {
+          if !variable.is_color() || name.as_ref() != color_name {
+            continue;
+          }
+
+          let variable_name = variable.get_variable(config.options());
+          let opacity_variable =
+            Placeholder::normalize(variable.get_opacity_variable(config.options()), config);
+          let default_opacity = variable.get_default_opacity();
+          writeln!(writer, "{opacity_variable}: {default_opacity};")?;
+
+          for (property, css_value) in atom.styles.iter() {
+            let property = Placeholder::normalize(property, config);
+            let css_value = css_value
+              .as_ref()
+              .map(|value| Placeholder::normalize_with_value(value, &variable_name, config))
+              .unwrap_or_else(|| variable_name.clone());
+
+            writeln!(writer, "{}: {};", property, css_value)?;
+          }
+
+          break;
+        }
+      }
       Self::Keyframes => {
         for (keyframe_name, _keyframe) in config.keyframes.iter() {
           if name.as_ref() != keyframe_name {
@@ -442,7 +484,7 @@ impl LinkedValues {
             let property = Placeholder::normalize(property, config);
             let css_value = css_value
               .as_ref()
-              .map(|value| Placeholder::normalize_with_value(value, &keyframe_name, config))
+              .map(|value| Placeholder::normalize_with_value(value, keyframe_name, config))
               .unwrap_or_else(|| keyframe_name.clone());
 
             writeln!(writer, "{}: {};", property, css_value)?;
@@ -455,6 +497,41 @@ impl LinkedValues {
 
     Ok(())
   }
+
+  pub fn collect_css_variables(
+    &self,
+    config: &RunnerConfig,
+    name: impl AsRef<str>,
+    css_variables: &mut IndexSet<String>,
+  ) {
+    match self {
+      Self::Values(ref value_set) => {
+        for Prioritized { value: key, .. } in value_set.iter() {
+          if let Some(css_value) = config
+            .value_sets
+            .get(key)
+            .and_then(|value_set| value_set.values.get(name.as_ref()))
+          {
+            css_value.collect_css_variables(css_variables);
+            break;
+          }
+        }
+      }
+      Self::Color => {
+        css_variables.insert(name.as_ref().to_owned());
+      }
+      Self::Keyframes => {
+        for (keyframe_name, keyframe) in config.keyframes.iter() {
+          if name.as_ref() != keyframe_name {
+            continue;
+          }
+
+          keyframe.collect_css_variables(css_variables);
+          break;
+        }
+      }
+    }
+  }
 }
 
 impl Default for LinkedValues {
@@ -466,12 +543,6 @@ impl Default for LinkedValues {
 impl<V: Into<NameSet>> From<V> for LinkedValues {
   fn from(value: V) -> Self {
     Self::Values(value.into())
-  }
-}
-
-impl From<ColorSettings> for LinkedValues {
-  fn from(value: ColorSettings) -> Self {
-    Self::Color(value)
   }
 }
 
@@ -549,11 +620,24 @@ impl NamedClass {
 
     self.styles.extend(other.styles);
   }
+
+  pub fn collect_css_variables(&self, css_variables: &mut IndexSet<String>) {
+    for (property, css_value) in self.styles.iter() {
+      Placeholder::collect_css_variables(property, css_variables);
+      Placeholder::collect_css_variables(css_value, css_variables);
+    }
+  }
 }
 
 /// Create CSS variables from a list of atoms.
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
 pub struct CssVariables(Vec<CssVariable>);
+
+impl<T: Into<CssVariable>> From<Vec<T>> for CssVariables {
+  fn from(variables: Vec<T>) -> Self {
+    Self::from_iter(variables)
+  }
+}
 
 impl IntoIterator for CssVariables {
   type IntoIter = std::vec::IntoIter<Self::Item>;
@@ -673,15 +757,16 @@ impl CssVariable {
   }
 
   #[inline]
-  pub fn get_variable(&self, prefix: impl AsRef<str>) -> String {
-    let prefix = prefix.as_ref();
+  pub fn get_variable(&self, options: &Options) -> String {
+    let prefix = &options.variable_prefix;
     let replacement = format!("--{prefix}-");
     self.variable.as_str().replacen("--", &replacement, 1)
   }
 
-  pub fn get_opacity_variable(&self, prefix: impl AsRef<str>) -> String {
-    let prefix = prefix.as_ref();
-    let replacement = format!("--{prefix}-opacity-");
+  pub fn get_opacity_variable(&self, options: &Options) -> String {
+    let prefix = &options.variable_prefix;
+    let opacity_prefix = &options.opacity_prefix;
+    let replacement = format!("--{prefix}-{opacity_prefix}-");
     self.variable.as_str().replacen("--", &replacement, 1)
   }
 
@@ -694,20 +779,26 @@ impl CssVariable {
       .unwrap_or(1.0)
   }
 
-  pub fn get_property_rule(&self, config: &RunnerConfig) -> Result<String> {
-    let mut property_rule = vec![];
+  pub fn write_property_rule(
+    &self,
+    writer: &mut dyn Write,
+    config: &RunnerConfig,
+  ) -> AnyEmptyResult {
     let options = config.options();
-    let prefix = &options.variable_prefix;
     let syntax = &self.syntax;
     let _color_format = &options.color_format;
-    let variable_name = self.get_variable(prefix);
+    let variable_name = self.get_variable(options);
     let initial_value = if self.is_color() {
-      let opacity_variable = self.get_opacity_variable(prefix);
+      let opacity_variable = self.get_opacity_variable(options);
       let alpha = self.get_default_opacity();
-      property_rule.push(format!(
-        "@property {opacity_variable} {{\n  syntax: \"<number>\";\n  inherits: false;\n  \
-         initial-value: {alpha};\n}}"
-      ));
+      writeln!(writer, "@property {opacity_variable} {{")?;
+      let mut indented_writer = indent_writer();
+      writeln!(indented_writer, "syntax: \"<number>\";")?;
+      writeln!(indented_writer, "inherits: false;")?;
+      writeln!(indented_writer, "initial-value: {alpha};")?;
+      write!(writer, "{}", indented_writer.get_ref())?;
+      writeln!(writer, "}}")?;
+
       options
         .color_format
         .get_color_value_with_opacity(config, self)?
@@ -719,12 +810,15 @@ impl CssVariable {
       )
     };
 
-    property_rule.push(format!(
-      "@property {variable_name} {{\n  syntax: {syntax};\n  inherits: false;\n  initial-value: \
-       {initial_value};\n}}"
-    ));
+    writeln!(writer, "@property {variable_name} {{")?;
+    let mut indented_writer = indent_writer();
+    writeln!(indented_writer, "syntax: \"{syntax}\";")?;
+    writeln!(indented_writer, "inherits: false;")?;
+    writeln!(indented_writer, "initial-value: {initial_value};")?;
+    write!(writer, "{}", indented_writer.get_ref())?;
+    writeln!(writer, "}}")?;
 
-    Ok(property_rule.join("\n"))
+    Ok(())
   }
 
   /// Check whether this instance of [CssVariable] is a color.
@@ -1008,9 +1102,9 @@ impl DerefMut for Modifiers {
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct ValueSets(Vec<ValueSet>);
 
-impl From<Vec<ValueSet>> for ValueSets {
-  fn from(value: Vec<ValueSet>) -> Self {
-    Self(value)
+impl<T: Into<ValueSet>> From<Vec<T>> for ValueSets {
+  fn from(value_sets: Vec<T>) -> Self {
+    Self::from_iter(value_sets)
   }
 }
 
@@ -1180,6 +1274,19 @@ impl CssValue {
 
     Ok(())
   }
+
+  pub fn collect_css_variables(&self, css_variables: &mut IndexSet<String>) {
+    match self {
+      Self::Value(value) => {
+        Placeholder::collect_css_variables(value, css_variables);
+      }
+      Self::Object(map) => {
+        for value in map.values() {
+          Placeholder::collect_css_variables(value, css_variables);
+        }
+      }
+    };
+  }
 }
 
 impl From<&str> for CssValue {
@@ -1341,8 +1448,8 @@ impl<V: Into<PluginContainer>> FromIterator<V> for Plugins {
   }
 }
 
-impl From<Vec<PluginContainer>> for Plugins {
-  fn from(plugins: Vec<PluginContainer>) -> Self {
+impl<T: Into<PluginContainer>> From<Vec<T>> for Plugins {
+  fn from(plugins: Vec<T>) -> Self {
     Self::from_iter(plugins)
   }
 }
@@ -1391,69 +1498,6 @@ impl<P: Plugin + 'static> From<P> for PluginContainer {
       priority: Default::default(),
       plugin: Box::new(plugin),
     }
-  }
-}
-
-/// The color atom.
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize, TypedBuilder)]
-#[serde(rename_all = "camelCase")]
-pub struct ColorSettings {
-  #[builder(setter(into))]
-  /// The name of the CSS Variable which is used to set the color opacity.
-  pub opacity: String,
-  /// When set to true the color palette will not be available for the atom
-  /// property which is using colors.
-  #[serde(default)]
-  #[builder(default, setter(into))]
-  pub ignore_palette: bool,
-}
-
-impl ColorSettings {
-  pub fn write_css(
-    &self,
-    writer: &mut dyn Write,
-    config: &RunnerConfig,
-    atom: &Atom,
-    color_name: impl AsRef<str>,
-  ) -> AnyEmptyResult {
-    let prefix = &config.options().variable_prefix;
-
-    for (name, variable) in config.css_variables.iter() {
-      if !variable.is_color() || color_name.as_ref() != name {
-        continue;
-      }
-
-      let variable_name = variable.get_variable(prefix);
-      let opacity_variable = Placeholder::normalize(variable.get_opacity_variable(prefix), config);
-      let default_opacity = variable.get_default_opacity();
-      writeln!(writer, "{opacity_variable}: {default_opacity};")?;
-
-      for (property, css_value) in atom.styles.iter() {
-        let property = Placeholder::normalize(property, config);
-        let css_value = css_value
-          .as_ref()
-          .map(|value| Placeholder::normalize_with_value(value, &variable_name, config))
-          .unwrap_or_else(|| variable_name.clone());
-
-        writeln!(writer, "{}: {};", property, css_value)?;
-      }
-
-      break;
-    }
-
-    Ok(())
-  }
-
-  pub fn merge(&mut self, other: impl Into<Self>) {
-    let other = other.into();
-    self.opacity = other.opacity;
-    self.ignore_palette = other.ignore_palette;
-  }
-}
-
-impl<S: Into<String>> From<S> for ColorSettings {
-  fn from(opacity: S) -> Self {
-    Self::builder().opacity(opacity).build()
   }
 }
 
@@ -1519,6 +1563,3 @@ impl DerefMut for NameSet {
     &mut self.0
   }
 }
-
-#[cfg(test)]
-mod tests {}

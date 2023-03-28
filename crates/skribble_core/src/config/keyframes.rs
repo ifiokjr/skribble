@@ -2,6 +2,7 @@ use std::fmt::Write;
 use std::ops::Deref;
 use std::ops::DerefMut;
 
+use indexmap::IndexSet;
 use serde::Deserialize;
 use serde::Serialize;
 use typed_builder::TypedBuilder;
@@ -18,6 +19,12 @@ use crate::RunnerConfig;
 /// be reference in the atoms.
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct Keyframes(Vec<Keyframe>);
+
+impl<T: Into<Keyframe>> From<Vec<T>> for Keyframes {
+  fn from(keyframes: Vec<T>) -> Self {
+    Self::from_iter(keyframes)
+  }
+}
 
 impl IntoIterator for Keyframes {
   type IntoIter = std::vec::IntoIter<Self::Item>;
@@ -87,6 +94,15 @@ impl Keyframe {
     }
 
     self.rules.extend(other.rules);
+  }
+
+  pub fn collect_css_variables(&self, css_variables: &mut IndexSet<String>) {
+    for map in self.rules.values() {
+      for (property, css_value) in map.iter() {
+        Placeholder::collect_css_variables(property, css_variables);
+        Placeholder::collect_css_variables(css_value, css_variables);
+      }
+    }
   }
 }
 

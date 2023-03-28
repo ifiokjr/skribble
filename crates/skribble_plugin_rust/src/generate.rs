@@ -252,12 +252,9 @@ fn generate_atoms(
     struct_content.push(generate_impl_skribble_value(&atom_struct_name));
 
     match modifier.values {
-      LinkedValues::Color(ref color) => {
+      LinkedValues::Color => {
         struct_content.push(format!("impl Color for {atom_struct_name} {{}}"));
-
-        if !color.ignore_palette {
-          struct_content.push(format!("impl Palette for {atom_struct_name} {{}}"));
-        }
+        struct_content.push(format!("impl Palette for {atom_struct_name} {{}}"));
       }
       LinkedValues::Values(ref value_set) => {
         for value_set_name in value_set.iter() {
@@ -326,11 +323,7 @@ fn generate_palette(config: &RunnerConfig, sections: &mut Vec<String>) {
   sections.push("}".into());
 }
 
-fn generate_css_variables(
-  config: &RunnerConfig,
-  variable_prefix: impl AsRef<str>,
-  sections: &mut Vec<String>,
-) -> AnyEmptyResult {
+fn generate_css_variables(config: &RunnerConfig, sections: &mut Vec<String>) -> AnyEmptyResult {
   let mut entries = vec![
     indoc!(
       "
@@ -346,14 +339,10 @@ fn generate_css_variables(
 
   for (name, css_variable) in config.css_variables.iter() {
     let method_name = safe_method_name(name);
-    let variable_name = css_variable.get_variable(variable_prefix.as_ref());
-    let css_docs = wrap_indent(
-      wrap_docs(wrap_in_code_block(
-        css_variable.get_property_rule(config)?,
-        "css",
-      )),
-      1,
-    );
+    let variable_name = css_variable.get_variable(config.options());
+    let mut property_rule = String::new();
+    css_variable.write_property_rule(&mut property_rule, config)?;
+    let css_docs = wrap_indent(wrap_docs(wrap_in_code_block(property_rule, "css")), 1);
 
     if let Some(ref description) = css_variable.description {
       entries.push(wrap_indent(wrap_docs(description), 1));
@@ -569,7 +558,7 @@ pub(crate) fn generate_file_contents(config: &RunnerConfig) -> AnyResult<String>
   let mut trait_names = vec![];
   let mut struct_names_map: IndexMap<String, usize> = indexmap! { "SkribbleRoot".into() => 0 };
 
-  generate_css_variables(config, &config.options().variable_prefix, &mut sections)?;
+  generate_css_variables(config, &mut sections)?;
   generate_media_queries(
     config,
     &mut method_names,
