@@ -2435,6 +2435,7 @@ version = "0.0.0"
 dependencies = [
  "heck",
  "indexmap",
+ "insta",
  "lazy_static",
  "serde",
  "skribble_core",

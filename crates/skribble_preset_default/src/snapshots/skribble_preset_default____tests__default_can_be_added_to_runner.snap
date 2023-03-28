@@ -1,0 +1,5609 @@
+---
+source: crates/skribble_preset_default/src/__tests.rs
+expression: runner_config
+---
+RunnerConfig {
+    layers: {
+        "default",
+    },
+    keyframes: {
+        "enter": Keyframe {
+            name: "enter",
+            description: Some(
+                "Manages the keyframes for the entry animation",
+            ),
+            priority: Priority(
+                150,
+            ),
+            rules: NestedStringMap(
+                {
+                    "from": StringMap(
+                        {
+                            "opacity": "var(__:CSS_VARIABLE::enterOpacity:__, 1)",
+                            "transform": "translate3d(var(__:CSS_VARIABLE::enterTranslateX:__, 0), var(__:CSS_VARIABLE::enterTranslateY:__, 0), 0) scale3d(var(__:CSS_VARIABLE::enterScale:__, 1), var(__:CSS_VARIABLE::enterScale:__, 1), var(__:CSS_VARIABLE::enterScale:__, 1)) rotate(var(__:CSS_VARIABLE::enterRotate:__, 0))",
+                        },
+                    ),
+                },
+            ),
+        },
+        "exit": Keyframe {
+            name: "exit",
+            description: Some(
+                "Manages the keyframes for the exit animation.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            rules: NestedStringMap(
+                {
+                    "to": StringMap(
+                        {
+                            "opacity": "var(__:CSS_VARIABLE::exitOpacity:__, 1)",
+                            "transform": "translate3d(var(__:CSS_VARIABLE::exitTranslateX:__, 0), var(__:CSS_VARIABLE::exitTranslateY:__, 0), 0) scale3d(var(__:CSS_VARIABLE::exitScale:__, 1), var(__:CSS_VARIABLE::exitScale:__, 1), var(__:CSS_VARIABLE::exitScale:__, 1)) rotate(var(__:CSS_VARIABLE::exitRotate:__, 0))",
+                        },
+                    ),
+                },
+            ),
+        },
+        "spin": Keyframe {
+            name: "spin",
+            description: Some(
+                "Manages the keyframes for the spin animation.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            rules: NestedStringMap(
+                {
+                    "from": StringMap(
+                        {
+                            "transform": "rotate(0deg)",
+                        },
+                    ),
+                    "to": StringMap(
+                        {
+                            "transform": "rotate(360deg)",
+                        },
+                    ),
+                },
+            ),
+        },
+        "ping": Keyframe {
+            name: "ping",
+            description: Some(
+                "Manages the keyframes for the ping animation.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            rules: NestedStringMap(
+                {
+                    "75%, 100%": StringMap(
+                        {
+                            "transform": "scale(2)",
+                            "opacity": "0",
+                        },
+                    ),
+                },
+            ),
+        },
+        "pulse": Keyframe {
+            name: "pulse",
+            description: Some(
+                "Manages the keyframes for the pulse animation.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            rules: NestedStringMap(
+                {
+                    "0%, 100%": StringMap(
+                        {
+                            "opacity": "1",
+                        },
+                    ),
+                    "50%": StringMap(
+                        {
+                            "opacity": "0.5",
+                        },
+                    ),
+                },
+            ),
+        },
+        "bounce": Keyframe {
+            name: "bounce",
+            description: Some(
+                "Manages the keyframes for the bounce animation.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            rules: NestedStringMap(
+                {
+                    "0%, 100%": StringMap(
+                        {
+                            "transform": "translateY(-25%)",
+                            "animationTimingFunction": "cubic-bezier(0.8, 0, 1, 1)",
+                        },
+                    ),
+                    "50%": StringMap(
+                        {
+                            "transform": "translateY(0)",
+                            "animationTimingFunction": "cubic-bezier(0, 0, 0.2, 1)",
+                        },
+                    ),
+                },
+            ),
+        },
+    },
+    css_variables: {
+        "primary": CssVariable {
+            name: "primary",
+            description: Some(
+                "The primary color. Useful for primary buttons.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--p",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "#570df8",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "primaryContent": CssVariable {
+            name: "primaryContent",
+            description: Some(
+                "The primary content color",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--pc",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "__:PALETTE::white:__",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "secondary": CssVariable {
+            name: "secondary",
+            description: Some(
+                "The secondary color. Useful for secondary buttons.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--s",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "#f000b8",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "secondaryContent": CssVariable {
+            name: "secondaryContent",
+            description: Some(
+                "The secondary content color. Useful for text within secondary buttons.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--sc",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "__:PALETTE::white:__",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "accent": CssVariable {
+            name: "accent",
+            description: Some(
+                "Color for accents.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--a",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "#37cdbe",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "accentContent": CssVariable {
+            name: "accentContent",
+            description: Some(
+                "Color for content within accents.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--ac",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "#163835",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "neutral": CssVariable {
+            name: "neutral",
+            description: Some(
+                "The neutral color.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--n",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "#3d4451",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "neutralContent": CssVariable {
+            name: "neutralContent",
+            description: Some(
+                "The neutral content color.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--nc",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "__:PALETTE::white:__",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "base100": CssVariable {
+            name: "base100",
+            description: Some(
+                "The base color.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--b1",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "__:PALETTE::white:__",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "base200": CssVariable {
+            name: "base200",
+            description: Some(
+                "The secondary base color.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--b2",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "#F2F2F2",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "base300": CssVariable {
+            name: "base300",
+            description: Some(
+                "The tertiary base color.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--b3",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "#E5E6E6",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "baseContent": CssVariable {
+            name: "baseContent",
+            description: Some(
+                "The base content color. This is useful for text.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--bc",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "#1f2937",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "info": CssVariable {
+            name: "info",
+            description: Some(
+                "The info color. Useful for info buttons and alerts.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--in",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "#0070F3",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "infoContent": CssVariable {
+            name: "infoContent",
+            description: Some(
+                "The info content color. Useful for text within info buttons and alerts.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--inc",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "__:PALETTE::white:__",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "success": CssVariable {
+            name: "success",
+            description: Some(
+                "The success color. Useful for success buttons and alerts.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--su",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "#21CC51",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "successContent": CssVariable {
+            name: "successContent",
+            description: Some(
+                "The success content color. Useful for text within success buttons and alerts.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--suc",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "__:PALETTE::white:__",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "warning": CssVariable {
+            name: "warning",
+            description: Some(
+                "The warning color. Useful for warning buttons and alerts.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--wa",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "#FF6154",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "warningContent": CssVariable {
+            name: "warningContent",
+            description: Some(
+                "The warning content color. Useful for text within warning buttons and alerts.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--wac",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "__:PALETTE::white:__",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "error": CssVariable {
+            name: "error",
+            description: Some(
+                "The error color. Useful for error buttons and alerts.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--er",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "#DE1C8D",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "errorContent": CssVariable {
+            name: "errorContent",
+            description: Some(
+                "The error content color. Useful for text within error buttons and alerts.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            variable: "--erc",
+            syntax: Value(
+                Color,
+            ),
+            value: Some(
+                "__:PALETTE::white:__",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "containerMaxWidth": CssVariable {
+            name: "containerMaxWidth",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--container-max-width",
+            syntax: Value(
+                Any,
+            ),
+            value: Some(
+                "container",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "empty": CssVariable {
+            name: "empty",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--empty",
+            syntax: Value(
+                Any,
+            ),
+            value: Some(
+                "/* */",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "filterBlur": CssVariable {
+            name: "filterBlur",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--filter-blur",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "filterBrightness": CssVariable {
+            name: "filterBrightness",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--filter-brightness",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "filterContrast": CssVariable {
+            name: "filterContrast",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--filter-contrast",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "filterCustom": CssVariable {
+            name: "filterCustom",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--filter-custom",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "filterGrayscale": CssVariable {
+            name: "filterGrayscale",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--filter-grayscale",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "filterHueRotate": CssVariable {
+            name: "filterHueRotate",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--filter-hue-rotate",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "filterInvert": CssVariable {
+            name: "filterInvert",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--filter-invert",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "filterSaturate": CssVariable {
+            name: "filterSaturate",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--filter-saturate",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "filterSepia": CssVariable {
+            name: "filterSepia",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--filter-sepia",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "filterDropShadow": CssVariable {
+            name: "filterDropShadow",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--filter-drop-shadow",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "groupNestedFilter": CssVariable {
+            name: "groupNestedFilter",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--group-nested-filter",
+            syntax: Value(
+                Any,
+            ),
+            value: Some(
+                "var(__:CSS_VARIABLE::filterBlur:__) var(__:CSS_VARIABLE::filterBrightness:__) var(__:CSS_VARIABLE::filterContrast:__) var(__:CSS_VARIABLE::filterGrayscale:__) var(__:CSS_VARIABLE::filterHueRotate:__) var(__:CSS_VARIABLE::filterInvert:__) var(__:CSS_VARIABLE::filterSaturate:__) var(__:CSS_VARIABLE::filterSepia:__) var(__:CSS_VARIABLE::filterDropShadow:__) var(__:CSS_VARIABLE::filterCustom:__)",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "backdropBlur": CssVariable {
+            name: "backdropBlur",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--backdrop-blur",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "backdropBrightness": CssVariable {
+            name: "backdropBrightness",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--backdrop-brightness",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "backdropContrast": CssVariable {
+            name: "backdropContrast",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--backdrop-contrast",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "backdropCustom": CssVariable {
+            name: "backdropCustom",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--backdrop-custom",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "backdropGrayscale": CssVariable {
+            name: "backdropGrayscale",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--backdrop-grayscale",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "backdropHueRotate": CssVariable {
+            name: "backdropHueRotate",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--backdrop-hue-rotate",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "backdropInvert": CssVariable {
+            name: "backdropInvert",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--backdrop-invert",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "backdropSaturate": CssVariable {
+            name: "backdropSaturate",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--backdrop-saturate",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "backdropSepia": CssVariable {
+            name: "backdropSepia",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--backdrop-sepia",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "backdropDropShadow": CssVariable {
+            name: "backdropDropShadow",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--backdrop-drop-shadow",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "groupNestedBackdrop": CssVariable {
+            name: "groupNestedBackdrop",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--group-nested-backdrop",
+            syntax: Value(
+                Any,
+            ),
+            value: Some(
+                "var(__:CSS_VARIABLE::backdropBlur:__) var(__:CSS_VARIABLE::backdropBrightness:__) var(__:CSS_VARIABLE::backdropContrast:__) var(__:CSS_VARIABLE::backdropGrayscale:__) var(__:CSS_VARIABLE::backdropHueRotate:__) var(__:CSS_VARIABLE::backdropInvert:__) var(__:CSS_VARIABLE::backdropSaturate:__) var(__:CSS_VARIABLE::backdropSepia:__) var(__:CSS_VARIABLE::backdropDropShadow:__) var(__:CSS_VARIABLE::backdropCustom:__)",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "defaultTransitionDuration": CssVariable {
+            name: "defaultTransitionDuration",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--default-transition-duration",
+            syntax: Value(
+                Any,
+            ),
+            value: Some(
+                "150ms",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "defaultAnimationDuration": CssVariable {
+            name: "defaultAnimationDuration",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--default-animation-duration",
+            syntax: Value(
+                Any,
+            ),
+            value: Some(
+                "1s",
+            ),
+            modifiers: None,
+            media_queries: None,
+        },
+        "enterTranslateX": CssVariable {
+            name: "enterTranslateX",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--etx",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+        "enterTranslateY": CssVariable {
+            name: "enterTranslateY",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            variable: "--ety",
+            syntax: Value(
+                Any,
+            ),
+            value: None,
+            modifiers: None,
+            media_queries: None,
+        },
+    },
+    media_queries: {
+        "deviceCategories": {
+            "screen": MediaQuery {
+                name: "screen",
+                query: "screen",
+                description: Some(
+                    "The media query for devices with a screen.",
+                ),
+                priority: Priority(
+                    150,
+                ),
+            },
+            "print": MediaQuery {
+                name: "print",
+                query: "print",
+                description: Some(
+                    "The media query for devices with a printer.",
+                ),
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "breakpoints": {
+            "sm": MediaQuery {
+                name: "sm",
+                query: "(min-width: 640px)",
+                description: Some(
+                    "The breakpoint for devices with screen size greater than tiny.",
+                ),
+                priority: Priority(
+                    150,
+                ),
+            },
+            "md": MediaQuery {
+                name: "md",
+                query: "(min-width: 768px)",
+                description: Some(
+                    "The breakpoint for devices screen size greater than medium",
+                ),
+                priority: Priority(
+                    150,
+                ),
+            },
+            "lg": MediaQuery {
+                name: "lg",
+                query: "(min-width: 1024px)",
+                description: Some(
+                    "The breakpoint for devices screen size greater than large",
+                ),
+                priority: Priority(
+                    150,
+                ),
+            },
+            "xl": MediaQuery {
+                name: "xl",
+                query: "(min-width: 1280px)",
+                description: Some(
+                    "The breakpoint for devices screen size greater than extra large",
+                ),
+                priority: Priority(
+                    150,
+                ),
+            },
+            "xxl": MediaQuery {
+                name: "xxl",
+                query: "(min-width: 1536px)",
+                description: Some(
+                    "The breakpoint for devices screen size greater than xxl",
+                ),
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "orientation": {
+            "portrait": MediaQuery {
+                name: "portrait",
+                query: "(orientation: portrait)",
+                description: Some(
+                    "The media query for devices with a portrait orientation.",
+                ),
+                priority: Priority(
+                    150,
+                ),
+            },
+            "landscape": MediaQuery {
+                name: "landscape",
+                query: "(orientation: landscape)",
+                description: Some(
+                    "The media query for devices with a landscape orientation.",
+                ),
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "motion": {
+            "motionReduce": MediaQuery {
+                name: "motionReduce",
+                query: "(prefers-reduced-motion: reduce)",
+                description: Some(
+                    "The media query for devices with a reduced motion preference.",
+                ),
+                priority: Priority(
+                    150,
+                ),
+            },
+            "motionSafe": MediaQuery {
+                name: "motionSafe",
+                query: "(prefers-reduced-motion: no-preference)",
+                description: Some(
+                    "The media query for devices with a no preference motion preference.",
+                ),
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "darkMode": {
+            "dark": MediaQuery {
+                name: "dark",
+                query: "(prefers-color-scheme: dark)",
+                description: Some(
+                    "The media query for devices with a dark color scheme.",
+                ),
+                priority: Priority(
+                    150,
+                ),
+            },
+            "light": MediaQuery {
+                name: "light",
+                query: "(prefers-color-scheme: light)",
+                description: Some(
+                    "The media query for devices with a light color scheme.",
+                ),
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+    },
+    modifiers: {
+        "parentGroup": {
+            "rtl": Modifier {
+                name: "rtl",
+                values: StringList(
+                    [
+                        "[dir=rtl] &",
+                    ],
+                ),
+                description: Some(
+                    "This class modifier becomes active when when the text direction of any parent nodes is set to right to left.",
+                ),
+                priority: Priority(
+                    150,
+                ),
+            },
+            "groupHover": Modifier {
+                name: "groupHover",
+                values: StringList(
+                    [
+                        ".\\$group:hover &",
+                        ".group:hover &",
+                        "[role='group']:hover &",
+                    ],
+                ),
+                description: Some(
+                    "This class modifier becomes active when a parent group is hovered.",
+                ),
+                priority: Priority(
+                    150,
+                ),
+            },
+            "groupFocus": Modifier {
+                name: "groupFocus",
+                values: StringList(
+                    [
+                        ".\\$group:focus &",
+                        ".group:focus &",
+                        "[role='group']:focus &",
+                    ],
+                ),
+                description: Some(
+                    "This class modifier becomes active when a parent group is focused.",
+                ),
+                priority: Priority(
+                    150,
+                ),
+            },
+            "groupActive": Modifier {
+                name: "groupActive",
+                values: StringList(
+                    [
+                        ".\\$group:active &",
+                        ".group:active &",
+                        "[role='group']:active &",
+                    ],
+                ),
+                description: Some(
+                    "This class modifier becomes active when a parent group is active.",
+                ),
+                priority: Priority(
+                    150,
+                ),
+            },
+            "groupVisited": Modifier {
+                name: "groupVisited",
+                values: StringList(
+                    [
+                        ".\\$group:visited &",
+                        ".group:visited &",
+                        "[role='group']:visited &",
+                    ],
+                ),
+                description: Some(
+                    "This class modifier becomes active when a parent group is visited.",
+                ),
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "hoverGroup": {
+            "hover": Modifier {
+                name: "hover",
+                values: StringList(
+                    [
+                        "&:hover",
+                    ],
+                ),
+                description: Some(
+                    "This class modifier becomes active when the element is hovered.",
+                ),
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "activeGroup": {
+            "active": Modifier {
+                name: "active",
+                values: StringList(
+                    [
+                        "&:active",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "activeLink": Modifier {
+                name: "activeLink",
+                values: StringList(
+                    [
+                        "&[aria-current=page]",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "activeLocation": Modifier {
+                name: "activeLocation",
+                values: StringList(
+                    [
+                        "&[aria-current=location]",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "activeDate": Modifier {
+                name: "activeDate",
+                values: StringList(
+                    [
+                        "&[aria-current=date]",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "activeTime": Modifier {
+                name: "activeTime",
+                values: StringList(
+                    [
+                        "&[aria-current=time]",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "activeStep": Modifier {
+                name: "activeStep",
+                values: StringList(
+                    [
+                        "&[aria-current=step]",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "focusGroup": {
+            "focus": Modifier {
+                name: "focus",
+                values: StringList(
+                    [
+                        "&:focus",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "focusWithinGroup": {
+            "focusWithin": Modifier {
+                name: "focusWithin",
+                values: StringList(
+                    [
+                        "&:focus-within",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "focusVisibleGroup": {
+            "focusVisible": Modifier {
+                name: "focusVisible",
+                values: StringList(
+                    [
+                        "&:focus-visible",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "enabledGroup": {
+            "disabled": Modifier {
+                name: "disabled",
+                values: StringList(
+                    [
+                        "&[disabled]",
+                        "&[aria-disabled=true]",
+                        "&:disabled",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "notDisabled": Modifier {
+                name: "notDisabled",
+                values: StringList(
+                    [
+                        "&[aria-disabled=false]",
+                        "&:disabled",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "enabled": Modifier {
+                name: "enabled",
+                values: StringList(
+                    [
+                        "&:enabled",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "emptyGroup": {
+            "empty": Modifier {
+                name: "empty",
+                values: StringList(
+                    [
+                        "&:empty",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "readGroup": {
+            "readWrite": Modifier {
+                name: "readWrite",
+                values: StringList(
+                    [
+                        "&:read-write",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "readOnly": Modifier {
+                name: "readOnly",
+                values: StringList(
+                    [
+                        "&[aria-readonly=true]",
+                        "&[readonly]",
+                        "&:read-only",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "notReadOnly": Modifier {
+                name: "notReadOnly",
+                values: StringList(
+                    [
+                        "&[aria-readonly=false]",
+                        "&[readonly=false]",
+                        "&:not(:read-only)",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "expandedGroup": {
+            "expanded": Modifier {
+                name: "expanded",
+                values: StringList(
+                    [
+                        "&[aria-expanded=true]",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "checkedGroup": {
+            "indeterminate": Modifier {
+                name: "indeterminate",
+                values: StringList(
+                    [
+                        "&:indeterminate",
+                        "&[aria-checked=mixed]",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "checked": Modifier {
+                name: "checked",
+                values: StringList(
+                    [
+                        "&[aria-checked=true]",
+                        "&:checked",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "unchecked": Modifier {
+                name: "unchecked",
+                values: StringList(
+                    [
+                        "&[aria-checked=false]",
+                        "&:not(:checked)",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "grabbedGroup": {
+            "grabbed": Modifier {
+                name: "grabbed",
+                values: StringList(
+                    [
+                        "&[aria-grabbed=true]",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "pressedGroup": {
+            "pressed": Modifier {
+                name: "pressed",
+                values: StringList(
+                    [
+                        "&[aria-pressed=true]",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "invalidGrammarGroup": {
+            "invalidGrammar": Modifier {
+                name: "invalidGrammar",
+                values: StringList(
+                    [
+                        "&[aria-invalid=grammar]",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "invalidSpellingGroup": {
+            "invalidSpelling": Modifier {
+                name: "invalidSpelling",
+                values: StringList(
+                    [
+                        "&[aria-invalid=spelling]",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "validGroup": {
+            "valid": Modifier {
+                name: "valid",
+                values: StringList(
+                    [
+                        "&[aria-invalid=false]",
+                        "&:valid",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "invalid": Modifier {
+                name: "invalid",
+                values: StringList(
+                    [
+                        "&[aria-invalid=true]",
+                        "&:invalid",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "loadingGroup": {
+            "loading": Modifier {
+                name: "loading",
+                values: StringList(
+                    [
+                        "&[aria-busy=true]",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "selectedGroup": {
+            "selected": Modifier {
+                name: "selected",
+                values: StringList(
+                    [
+                        "&[aria-selected=true]",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "hiddenGroup": {
+            "hidden": Modifier {
+                name: "hidden",
+                values: StringList(
+                    [
+                        "&[hidden]",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "autofillGroup": {
+            "autofill": Modifier {
+                name: "autofill",
+                values: StringList(
+                    [
+                        "&:-webkit-autofill",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "evenGroup": {
+            "even": Modifier {
+                name: "even",
+                values: StringList(
+                    [
+                        "&:even",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "odd": Modifier {
+                name: "odd",
+                values: StringList(
+                    [
+                        "&:odd",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "evenOfType": Modifier {
+                name: "evenOfType",
+                values: StringList(
+                    [
+                        "&:nth-of-type(even)",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "oddOfType": Modifier {
+                name: "oddOfType",
+                values: StringList(
+                    [
+                        "&:nth-of-type(odd)",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "nodePositionGroup": {
+            "first": Modifier {
+                name: "first",
+                values: StringList(
+                    [
+                        "&:first",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "notFirst": Modifier {
+                name: "notFirst",
+                values: StringList(
+                    [
+                        "&:not(:first-child)",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "last": Modifier {
+                name: "last",
+                values: StringList(
+                    [
+                        "&:last",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "notLast": Modifier {
+                name: "notLast",
+                values: StringList(
+                    [
+                        "&:not(:last-child)",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "nodeOfTypeGroup": {
+            "firstOfType": Modifier {
+                name: "firstOfType",
+                values: StringList(
+                    [
+                        "&:first-of-type",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "notFirstOfType": Modifier {
+                name: "notFirstOfType",
+                values: StringList(
+                    [
+                        "&:not(:first-of-type)",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "lastOfType": Modifier {
+                name: "lastOfType",
+                values: StringList(
+                    [
+                        "&:last-of-type",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "notLastOfType": Modifier {
+                name: "notLastOfType",
+                values: StringList(
+                    [
+                        "&:not(:last-of-type)",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "visitedGroup": {
+            "visited": Modifier {
+                name: "visited",
+                values: StringList(
+                    [
+                        "&:visited",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "optionalGroup": {
+            "optional": Modifier {
+                name: "optional",
+                values: StringList(
+                    [
+                        "&:optional",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "fullScreenGroup": {
+            "fullScreen": Modifier {
+                name: "fullScreen",
+                values: StringList(
+                    [
+                        "&:fullscreen",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "targetGroup": {
+            "target": Modifier {
+                name: "target",
+                values: StringList(
+                    [
+                        "&:target",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "placeholderShownGroup": {
+            "placeholderShown": Modifier {
+                name: "placeholderShown",
+                values: StringList(
+                    [
+                        "&:placeholder-shown",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "requiredGroup": {
+            "required": Modifier {
+                name: "required",
+                values: StringList(
+                    [
+                        "[aria-required=true]",
+                        "&:required",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "notRequired": Modifier {
+                name: "notRequired",
+                values: StringList(
+                    [
+                        "[arira-required=false]",
+                        "&:not(:required)",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "defaultGroup": {
+            "default": Modifier {
+                name: "default",
+                values: StringList(
+                    [
+                        "&:default",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "onlyChildGroup": {
+            "onlyChild": Modifier {
+                name: "onlyChild",
+                values: StringList(
+                    [
+                        "&:only-child",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "notOnlyChild": Modifier {
+                name: "notOnlyChild",
+                values: StringList(
+                    [
+                        "&:not(:only-child)",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "onlyGroup": {
+            "onlyOfType": Modifier {
+                name: "onlyOfType",
+                values: StringList(
+                    [
+                        "&:only-of-type",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "notOnlyOfType": Modifier {
+                name: "notOnlyOfType",
+                values: StringList(
+                    [
+                        "&:not(:only-of-type)",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "rootGroup": {
+            "root": Modifier {
+                name: "root",
+                values: StringList(
+                    [
+                        "&:root",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "linkGroup": {
+            "link": Modifier {
+                name: "link",
+                values: StringList(
+                    [
+                        "&:link",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+        "pseudoGroup": {
+            "placeholder": Modifier {
+                name: "placeholder",
+                values: StringList(
+                    [
+                        "&::placeholder",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "selection": Modifier {
+                name: "selection",
+                values: StringList(
+                    [
+                        "&::selection",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "firstLetter": Modifier {
+                name: "firstLetter",
+                values: StringList(
+                    [
+                        "&::first-letter",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "firstLine": Modifier {
+                name: "firstLine",
+                values: StringList(
+                    [
+                        "&::first-line",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "before": Modifier {
+                name: "before",
+                values: StringList(
+                    [
+                        "&::before",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+            "after": Modifier {
+                name: "after",
+                values: StringList(
+                    [
+                        "&::after",
+                    ],
+                ),
+                description: None,
+                priority: Priority(
+                    150,
+                ),
+            },
+        },
+    },
+    atoms: {
+        "sr": Atom {
+            name: "sr",
+            description: Some(
+                "Screen reader only",
+            ),
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {},
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "screenReader",
+                        },
+                    },
+                ),
+            ),
+        },
+        "transition": Atom {
+            name: "transition",
+            description: Some(
+                "A class to apply transition effects.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "transition": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "transitions",
+                        },
+                    },
+                ),
+            ),
+        },
+        "transitionProperty": Atom {
+            name: "transitionProperty",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "transition-property": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "transitionProperties",
+                        },
+                    },
+                ),
+            ),
+        },
+        "duration": Atom {
+            name: "duration",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "transition-duration": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "durations",
+                        },
+                    },
+                ),
+            ),
+        },
+        "ease": Atom {
+            name: "ease",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "transition-timing-function": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "easing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "delay": Atom {
+            name: "delay",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "transition-delay": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "durations",
+                        },
+                    },
+                ),
+            ),
+        },
+        "animationDuration": Atom {
+            name: "animationDuration",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "animation-duration": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "durations",
+                        },
+                    },
+                ),
+            ),
+        },
+        "animationEasing": Atom {
+            name: "animationEasing",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "animation-timing-function": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "easing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "animationDelay": Atom {
+            name: "animationDelay",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "animation-delay": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "durations",
+                        },
+                    },
+                ),
+            ),
+        },
+        "animationRepeat": Atom {
+            name: "animationRepeat",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "animation-iteration-count": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "animationRepetitions",
+                        },
+                    },
+                ),
+            ),
+        },
+        "animationDirection": Atom {
+            name: "animationDirection",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "animation-direction": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "animationDirection",
+                        },
+                    },
+                ),
+            ),
+        },
+        "animationFillMode": Atom {
+            name: "animationFillMode",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "animation-fill-mode": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "animationFillMode",
+                        },
+                    },
+                ),
+            ),
+        },
+        "animationState": Atom {
+            name: "animationState",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "animation-play-state": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "animationState",
+                        },
+                    },
+                ),
+            ),
+        },
+        "zoom": Atom {
+            name: "zoom",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "__:CSS_VARIABLE::enterScale:__": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "zoom",
+                        },
+                    },
+                ),
+            ),
+        },
+        "font": Atom {
+            name: "font",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "font-family": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "fonts",
+                        },
+                    },
+                ),
+            ),
+        },
+        "p": Atom {
+            name: "p",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "padding": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "py": Atom {
+            name: "py",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "padding-top": None,
+                    "padding-bottom": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "px": Atom {
+            name: "px",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "padding-right": None,
+                    "padding-left": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "pt": Atom {
+            name: "pt",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "padding-top": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "pr": Atom {
+            name: "pr",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "padding-right": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "pb": Atom {
+            name: "pb",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "padding-bottom": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "pl": Atom {
+            name: "pl",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "padding-left": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "pbl": Atom {
+            name: "pbl",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "padding-block": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "pbls": Atom {
+            name: "pbls",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "padding-block-start": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "pble": Atom {
+            name: "pble",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "padding-block-end": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "pin": Atom {
+            name: "pin",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "padding-inline": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "pins": Atom {
+            name: "pins",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "padding-inline-start": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "pine": Atom {
+            name: "pine",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "padding-inline-end": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "m": Atom {
+            name: "m",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "margin": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "my": Atom {
+            name: "my",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "margin-top": None,
+                    "margin-bottom": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "mx": Atom {
+            name: "mx",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "margin-right": None,
+                    "margin-left": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "mt": Atom {
+            name: "mt",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "margin-top": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "mr": Atom {
+            name: "mr",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "margin-right": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "mb": Atom {
+            name: "mb",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "margin-bottom": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "ml": Atom {
+            name: "ml",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "margin-left": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "spacing",
+                        },
+                    },
+                ),
+            ),
+        },
+        "z": Atom {
+            name: "z",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "z-index": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "zIndex",
+                        },
+                    },
+                ),
+            ),
+        },
+        "dir": Atom {
+            name: "dir",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "direction": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "direction",
+                        },
+                    },
+                ),
+            ),
+        },
+        "bg": Atom {
+            name: "bg",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "__:CSS_VARIABLE::bgOpacity:__": Some(
+                        "1",
+                    ),
+                    "color": None,
+                },
+            ),
+            values: Color(
+                ColorSettings {
+                    opacity: "bgOpacity",
+                    ignore_palette: false,
+                },
+            ),
+        },
+        "bgOpacity": Atom {
+            name: "bgOpacity",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "__:CSS_VARIABLE::bgOpacity:__": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "opacity",
+                        },
+                    },
+                ),
+            ),
+        },
+        "opacity": Atom {
+            name: "opacity",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "opacity": None,
+                },
+            ),
+            values: Values(
+                NameSet(
+                    {
+                        Prioritized {
+                            priority: Priority(
+                                150,
+                            ),
+                            value: "opacity",
+                        },
+                    },
+                ),
+            ),
+        },
+        "animate": Atom {
+            name: "animate",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: OptionalStringMap(
+                {
+                    "animation-name": None,
+                },
+            ),
+            values: Keyframes,
+        },
+    },
+    classes: {
+        "group": NamedClass {
+            name: "group",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {},
+            ),
+        },
+        "container": NamedClass {
+            name: "container",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "width": "100%",
+                    "max-width": "var({container_max_width})",
+                },
+            ),
+        },
+        "italic": NamedClass {
+            name: "italic",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "font-style": "italic",
+                },
+            ),
+        },
+        "nonItalic": NamedClass {
+            name: "nonItalic",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "font-style": "normal",
+                },
+            ),
+        },
+        "oblique": NamedClass {
+            name: "oblique",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "font-style": "oblique -10deg",
+                },
+            ),
+        },
+        "antialiased": NamedClass {
+            name: "antialiased",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "-webkit-font-smoothing": "antialiased",
+                    "-moz-osx-font-smoothing": "grayscale",
+                },
+            ),
+        },
+        "subpixelAntialiased": NamedClass {
+            name: "subpixelAntialiased",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "-webkit-font-smoothing": "auto",
+                    "-moz-osx-font-smoothing": "auto",
+                },
+            ),
+        },
+        "block": NamedClass {
+            name: "block",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "display": "block",
+                },
+            ),
+        },
+        "inlineBlock": NamedClass {
+            name: "inlineBlock",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "display": "inline-block",
+                },
+            ),
+        },
+        "inline": NamedClass {
+            name: "inline",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "display": "inline",
+                },
+            ),
+        },
+        "flowRoot": NamedClass {
+            name: "flowRoot",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "display": "flow-root",
+                },
+            ),
+        },
+        "content": NamedClass {
+            name: "content",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "display": "content",
+                },
+            ),
+        },
+        "hidden": NamedClass {
+            name: "hidden",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "display": "hidden",
+                },
+            ),
+        },
+        "invisible": NamedClass {
+            name: "invisible",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "visibility": "hidden",
+                },
+            ),
+        },
+        "visible": NamedClass {
+            name: "visible",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "visibility": "visible",
+                },
+            ),
+        },
+        "removeFilter": NamedClass {
+            name: "removeFilter",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "__:CSS_VARIABLE::groupNestedFilter:__": "none",
+                },
+            ),
+        },
+        "removeBackdrop": NamedClass {
+            name: "removeBackdrop",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "__:CSS_VARIABLE::groupNestedBackdrop:__": "none",
+                },
+            ),
+        },
+        "transformGpu": NamedClass {
+            name: "transformGpu",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "__:CSS_VARIABLE::groupNestedTransform:__": "var(__:CSS_VARIABLE::groupNestedTransformGpu:__)",
+                },
+            ),
+        },
+        "transformCpu": NamedClass {
+            name: "transformCpu",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "__:CSS_VARIABLE::groupNestedTransform:__": "var(__:CSS_VARIABLE::groupNestedTransformCpu:__)",
+                },
+            ),
+        },
+    },
+    palette: StringMap(
+        {
+            "inherit": "inherit",
+            "current": "currentColor",
+            "transparent": "transparent",
+            "black": "#000000",
+            "white": "#ffffff",
+            "slate50": "#f8fafc",
+            "slate100": "#f1f5f9",
+            "slate200": "#e2e8f0",
+            "slate300": "#cbd5e1",
+            "slate400": "#94a3b8",
+            "slate500": "#64748b",
+            "slate600": "#475569",
+            "slate700": "#334155",
+            "slate800": "#1e293b",
+            "slate900": "#0f172a",
+            "gray50": "#f9fafb",
+            "gray100": "#f3f4f6",
+            "gray200": "#e5e7eb",
+            "gray300": "#d1d5db",
+            "gray400": "#9ca3af",
+            "gray500": "#6b7280",
+            "gray600": "#4b5563",
+            "gray700": "#374151",
+            "gray800": "#1f2937",
+            "gray900": "#111827",
+            "zinc50": "#fafafa",
+            "zinc100": "#f4f4f5",
+            "zinc200": "#e4e4e7",
+            "zinc300": "#d4d4d8",
+            "zinc400": "#a1a1aa",
+            "zinc500": "#71717a",
+            "zinc600": "#52525b",
+            "zinc700": "#3f3f46",
+            "zinc800": "#27272a",
+            "zinc900": "#18181b",
+            "neutral50": "#fafafa",
+            "neutral100": "#f5f5f5",
+            "neutral200": "#e5e5e5",
+            "neutral300": "#d4d4d4",
+            "neutral400": "#a3a3a3",
+            "neutral500": "#737373",
+            "neutral600": "#525252",
+            "neutral700": "#404040",
+            "neutral800": "#262626",
+            "neutral900": "#171717",
+            "stone50": "#fafaf9",
+            "stone100": "#f5f5f4",
+            "stone200": "#e7e5e4",
+            "stone300": "#d6d3d1",
+            "stone400": "#a8a29e",
+            "stone500": "#78716c",
+            "stone600": "#57534e",
+            "stone700": "#44403c",
+            "stone800": "#292524",
+            "stone900": "#1c1917",
+            "red50": "#fef2f2",
+            "red100": "#fee2e2",
+            "red200": "#fecaca",
+            "red300": "#fca5a5",
+            "red400": "#f87171",
+            "red500": "#ef4444",
+            "red600": "#dc2626",
+            "red700": "#b91c1c",
+            "red800": "#991b1b",
+            "red900": "#7f1d1d",
+            "orange50": "#fff7ed",
+            "orange100": "#ffedd5",
+            "orange200": "#fed7aa",
+            "orange300": "#fdba74",
+            "orange400": "#fb923c",
+            "orange500": "#f97316",
+            "orange600": "#ea580c",
+            "orange700": "#c2410c",
+            "orange800": "#9a3412",
+            "orange900": "#7c2d12",
+            "amber50": "#fffbeb",
+            "amber100": "#fef3c7",
+            "amber200": "#fde68a",
+            "amber300": "#fcd34d",
+            "amber400": "#fbbf24",
+            "amber500": "#f59e0b",
+            "amber600": "#d97706",
+            "amber700": "#b45309",
+            "amber800": "#92400e",
+            "amber900": "#78350f",
+            "yellow50": "#fefce8",
+            "yellow100": "#fef9c3",
+            "yellow200": "#fef08a",
+            "yellow300": "#fde047",
+            "yellow400": "#facc15",
+            "yellow500": "#eab308",
+            "yellow600": "#ca8a04",
+            "yellow700": "#a16207",
+            "yellow800": "#854d0e",
+            "yellow900": "#713f12",
+            "lime50": "#f7fee7",
+            "lime100": "#ecfccb",
+            "lime200": "#d9f99d",
+            "lime300": "#bef264",
+            "lime400": "#a3e635",
+            "lime500": "#84cc16",
+            "lime600": "#65a30d",
+            "lime700": "#4d7c0f",
+            "lime800": "#3f6212",
+            "lime900": "#365314",
+            "green50": "#f0fdf4",
+            "green100": "#dcfce7",
+            "green200": "#bbf7d0",
+            "green300": "#86efac",
+            "green400": "#4ade80",
+            "green500": "#22c55e",
+            "green600": "#16a34a",
+            "green700": "#15803d",
+            "green800": "#166534",
+            "green900": "#14532d",
+            "emerald50": "#ecfdf5",
+            "emerald100": "#d1fae5",
+            "emerald200": "#a7f3d0",
+            "emerald300": "#6ee7b7",
+            "emerald400": "#34d399",
+            "emerald500": "#10b981",
+            "emerald600": "#059669",
+            "emerald700": "#047857",
+            "emerald800": "#065f46",
+            "emerald900": "#064e3b",
+            "teal50": "#f0fdfa",
+            "teal100": "#ccfbf1",
+            "teal200": "#99f6e4",
+            "teal300": "#5eead4",
+            "teal400": "#2dd4bf",
+            "teal500": "#14b8a6",
+            "teal600": "#0d9488",
+            "teal700": "#0f766e",
+            "teal800": "#115e59",
+            "teal900": "#134e4a",
+            "cyan50": "#ecfeff",
+            "cyan100": "#cffafe",
+            "cyan200": "#a5f3fc",
+            "cyan300": "#67e8f9",
+            "cyan400": "#22d3ee",
+            "cyan500": "#06b6d4",
+            "cyan600": "#0891b2",
+            "cyan700": "#0e7490",
+            "cyan800": "#155e75",
+            "cyan900": "#164e63",
+            "sky50": "#f0f9ff",
+            "sky100": "#e0f2fe",
+            "sky200": "#bae6fd",
+            "sky300": "#7dd3fc",
+            "sky400": "#38bdf8",
+            "sky500": "#0ea5e9",
+            "sky600": "#0284c7",
+            "sky700": "#0369a1",
+            "sky800": "#075985",
+            "sky900": "#0c4a6e",
+            "blue50": "#eff6ff",
+            "blue100": "#dbeafe",
+            "blue200": "#bfdbfe",
+            "blue300": "#93c5fd",
+            "blue400": "#60a5fa",
+            "blue500": "#3b82f6",
+            "blue600": "#2563eb",
+            "blue700": "#1d4ed8",
+            "blue800": "#1e40af",
+            "blue900": "#1e3a8a",
+            "indigo50": "#eef2ff",
+            "indigo100": "#e0e7ff",
+            "indigo200": "#c7d2fe",
+            "indigo300": "#a5b4fc",
+            "indigo400": "#818cf8",
+            "indigo500": "#6366f1",
+            "indigo600": "#4f46e5",
+            "indigo700": "#4338ca",
+            "indigo800": "#3730a3",
+            "indigo900": "#312e81",
+            "violet50": "#f5f3ff",
+            "violet100": "#ede9fe",
+            "violet200": "#ddd6fe",
+            "violet300": "#c4b5fd",
+            "violet400": "#a78bfa",
+            "violet500": "#8b5cf6",
+            "violet600": "#7c3aed",
+            "violet700": "#6d28d9",
+            "violet800": "#5b21b6",
+            "violet900": "#4c1d95",
+            "purple50": "#faf5ff",
+            "purple100": "#f3e8ff",
+            "purple200": "#e9d5ff",
+            "purple300": "#d8b4fe",
+            "purple400": "#c084fc",
+            "purple500": "#a855f7",
+            "purple600": "#9333ea",
+            "purple700": "#7e22ce",
+            "purple800": "#6b21a8",
+            "purple900": "#581c87",
+            "fuchsia50": "#fdf4ff",
+            "fuchsia100": "#fae8ff",
+            "fuchsia200": "#f5d0fe",
+            "fuchsia300": "#f0abfc",
+            "fuchsia400": "#e879f9",
+            "fuchsia500": "#d946ef",
+            "fuchsia600": "#c026d3",
+            "fuchsia700": "#a21caf",
+            "fuchsia800": "#86198f",
+            "fuchsia900": "#701a75",
+            "pink50": "#fdf2f8",
+            "pink100": "#fce7f3",
+            "pink200": "#fbcfe8",
+            "pink300": "#f9a8d4",
+            "pink400": "#f472b6",
+            "pink500": "#ec4899",
+            "pink600": "#db2777",
+            "pink700": "#be185d",
+            "pink800": "#9d174d",
+            "pink900": "#831843",
+            "rose50": "#fff1f2",
+            "rose100": "#ffe4e6",
+            "rose200": "#fecdd3",
+            "rose300": "#fda4af",
+            "rose400": "#fb7185",
+            "rose500": "#f43f5e",
+            "rose600": "#e11d48",
+            "rose700": "#be123c",
+            "rose800": "#9f1239",
+            "rose900": "#881337",
+        },
+    ),
+    value_sets: {
+        "screenReader": ValueSet {
+            name: "screenReader",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "only": Object(
+                        StringMap(
+                            {
+                                "position": "absolute",
+                                "width": "1px",
+                                "height": "1px",
+                                "padding": "0",
+                                "margin": "-1px",
+                                "overflow": "hidden",
+                                "clip": "rect(0, 0, 0, 0)",
+                                "whiteSpace": "nowrap",
+                                "borderWidth": "0",
+                            },
+                        ),
+                    ),
+                    "exclude": Object(
+                        StringMap(
+                            {
+                                "position": "static",
+                                "width": "auto",
+                                "height": "auto",
+                                "padding": "0",
+                                "margin": "0",
+                                "overflow": "visible",
+                                "clip": "auto",
+                                "whiteSpace": "normal",
+                            },
+                        ),
+                    ),
+                },
+            ),
+        },
+        "transitions": ValueSet {
+            name: "transitions",
+            description: Some(
+                "The built-in transition class values.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "": Object(
+                        StringMap(
+                            {
+                                "transition-property": "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
+                                "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)",
+                                "transition-duration": "var(--default-transition-duration)",
+                            },
+                        ),
+                    ),
+                    "none": Object(
+                        StringMap(
+                            {
+                                "transitionProperty": "none",
+                            },
+                        ),
+                    ),
+                    "all": Object(
+                        StringMap(
+                            {
+                                "transition-property": "all",
+                                "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)",
+                                "transition-duration": "var(--default-transition-duration)",
+                            },
+                        ),
+                    ),
+                    "colors": Object(
+                        StringMap(
+                            {
+                                "transition-property": "color, background-color, border-color, text-decoration-color, fill, stroke",
+                                "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)",
+                                "transition-duration": "var(--default-transition-duration)",
+                            },
+                        ),
+                    ),
+                    "opacity": Object(
+                        StringMap(
+                            {
+                                "transition-property": "opacity",
+                                "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)",
+                                "transition-duration": "var(--default-transition-duration)",
+                            },
+                        ),
+                    ),
+                    "shadow": Object(
+                        StringMap(
+                            {
+                                "transition-property": "box-shadow",
+                                "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)",
+                                "transition-duration": "var(--default-transition-duration)",
+                            },
+                        ),
+                    ),
+                    "transform": Object(
+                        StringMap(
+                            {
+                                "transition-property": "transform",
+                                "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)",
+                                "transition-duration": "var(--default-transition-duration)",
+                            },
+                        ),
+                    ),
+                },
+            ),
+        },
+        "transitionProperties": ValueSet {
+            name: "transitionProperties",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "": Value(
+                        "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
+                    ),
+                    "none": Value(
+                        "none",
+                    ),
+                    "all": Value(
+                        "all",
+                    ),
+                    "colors": Value(
+                        "color, background-color, border-color, text-decoration-color, fill, stroke",
+                    ),
+                    "opacity": Value(
+                        "opacity",
+                    ),
+                    "shadow": Value(
+                        "box-shadow",
+                    ),
+                    "transform": Value(
+                        "transform",
+                    ),
+                },
+            ),
+        },
+        "durations": ValueSet {
+            name: "durations",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "0": Value(
+                        "0ms",
+                    ),
+                    "75": Value(
+                        "75ms",
+                    ),
+                    "100": Value(
+                        "100ms",
+                    ),
+                    "150": Value(
+                        "150ms",
+                    ),
+                    "200": Value(
+                        "200ms",
+                    ),
+                    "300": Value(
+                        "300ms",
+                    ),
+                    "500": Value(
+                        "500ms",
+                    ),
+                    "700": Value(
+                        "700ms",
+                    ),
+                    "1000": Value(
+                        "1000ms",
+                    ),
+                    "1500": Value(
+                        "1500ms",
+                    ),
+                    "2000": Value(
+                        "2000ms",
+                    ),
+                },
+            ),
+        },
+        "easing": ValueSet {
+            name: "easing",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "linear": Value(
+                        "linear",
+                    ),
+                    "in": Value(
+                        "cubic-bezier(0.4, 0, 1, 1)",
+                    ),
+                    "out": Value(
+                        "cubic-bezier(0, 0, 0.2, 1)",
+                    ),
+                    "inOut": Value(
+                        "cubic-bezier(0.4, 0, 0.2, 1)",
+                    ),
+                },
+            ),
+        },
+        "animationRepetitions": ValueSet {
+            name: "animationRepetitions",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "0": Value(
+                        "0",
+                    ),
+                    "0.5": Value(
+                        "0.5",
+                    ),
+                    "1": Value(
+                        "1",
+                    ),
+                    "2": Value(
+                        "2",
+                    ),
+                    "3": Value(
+                        "3",
+                    ),
+                    "infinite": Value(
+                        "infinite",
+                    ),
+                    "in": Value(
+                        "cubic-bezier(0.4, 0, 1, 1)",
+                    ),
+                    "out": Value(
+                        "cubic-bezier(0, 0, 0.2, 1)",
+                    ),
+                    "inOut": Value(
+                        "cubic-bezier(0.4, 0, 0.2, 1)",
+                    ),
+                },
+            ),
+        },
+        "animationDirection": ValueSet {
+            name: "animationDirection",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "normal": Value(
+                        "normal",
+                    ),
+                    "reverse": Value(
+                        "reverse",
+                    ),
+                    "alt": Value(
+                        "alternate",
+                    ),
+                    "altReverse": Value(
+                        "alternate-reverse",
+                    ),
+                },
+            ),
+        },
+        "animationFillMode": ValueSet {
+            name: "animationFillMode",
+            description: Some(
+                "These are the default animation fill mode values.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "none": Value(
+                        "none",
+                    ),
+                    "forwards": Value(
+                        "forwards",
+                    ),
+                    "backwards": Value(
+                        "backwards",
+                    ),
+                    "both": Value(
+                        "both",
+                    ),
+                },
+            ),
+        },
+        "animationState": ValueSet {
+            name: "animationState",
+            description: Some(
+                "These are the default animation state values.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "running": Value(
+                        "running",
+                    ),
+                    "paused": Value(
+                        "paused",
+                    ),
+                },
+            ),
+        },
+        "opacity": ValueSet {
+            name: "opacity",
+            description: Some(
+                "These are the default opacity values.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "0": Value(
+                        "0",
+                    ),
+                    "5": Value(
+                        "5",
+                    ),
+                    "10": Value(
+                        "10",
+                    ),
+                    "20": Value(
+                        "20",
+                    ),
+                    "30": Value(
+                        "30",
+                    ),
+                    "40": Value(
+                        "40",
+                    ),
+                    "50": Value(
+                        "50",
+                    ),
+                    "60": Value(
+                        "60",
+                    ),
+                    "70": Value(
+                        "70",
+                    ),
+                    "75": Value(
+                        "75",
+                    ),
+                    "80": Value(
+                        "80",
+                    ),
+                    "90": Value(
+                        "90",
+                    ),
+                    "95": Value(
+                        "95",
+                    ),
+                    "100": Value(
+                        "100",
+                    ),
+                },
+            ),
+        },
+        "spacing": ValueSet {
+            name: "spacing",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "0": Value(
+                        "0px",
+                    ),
+                    "1": Value(
+                        "0.25rem",
+                    ),
+                    "2": Value(
+                        "0.5rem",
+                    ),
+                    "3": Value(
+                        "0.75rem",
+                    ),
+                    "4": Value(
+                        "1rem",
+                    ),
+                    "5": Value(
+                        "1.25rem",
+                    ),
+                    "6": Value(
+                        "1.5rem",
+                    ),
+                    "7": Value(
+                        "1.75rem",
+                    ),
+                    "8": Value(
+                        "2rem",
+                    ),
+                    "9": Value(
+                        "2.25rem",
+                    ),
+                    "10": Value(
+                        "2.5rem",
+                    ),
+                    "11": Value(
+                        "2.75rem",
+                    ),
+                    "12": Value(
+                        "3rem",
+                    ),
+                    "14": Value(
+                        "3.5rem",
+                    ),
+                    "16": Value(
+                        "4rem",
+                    ),
+                    "20": Value(
+                        "5rem",
+                    ),
+                    "24": Value(
+                        "6rem",
+                    ),
+                    "28": Value(
+                        "7rem",
+                    ),
+                    "32": Value(
+                        "8rem",
+                    ),
+                    "36": Value(
+                        "9rem",
+                    ),
+                    "40": Value(
+                        "10rem",
+                    ),
+                    "44": Value(
+                        "11rem",
+                    ),
+                    "48": Value(
+                        "12rem",
+                    ),
+                    "52": Value(
+                        "13rem",
+                    ),
+                    "56": Value(
+                        "14rem",
+                    ),
+                    "60": Value(
+                        "15rem",
+                    ),
+                    "64": Value(
+                        "16rem",
+                    ),
+                    "72": Value(
+                        "18rem",
+                    ),
+                    "80": Value(
+                        "20rem",
+                    ),
+                    "96": Value(
+                        "24rem",
+                    ),
+                    "px": Value(
+                        "1px",
+                    ),
+                    "0.5": Value(
+                        "0.125rem",
+                    ),
+                    "1.5": Value(
+                        "0.375rem",
+                    ),
+                    "2.5": Value(
+                        "0.625rem",
+                    ),
+                    "3.5": Value(
+                        "0.875rem",
+                    ),
+                },
+            ),
+        },
+        "zIndex": ValueSet {
+            name: "zIndex",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "0": Value(
+                        "0",
+                    ),
+                    "1": Value(
+                        "1",
+                    ),
+                    "2": Value(
+                        "2",
+                    ),
+                    "3": Value(
+                        "3",
+                    ),
+                    "4": Value(
+                        "4",
+                    ),
+                    "5": Value(
+                        "5",
+                    ),
+                    "10": Value(
+                        "10",
+                    ),
+                    "20": Value(
+                        "20",
+                    ),
+                    "30": Value(
+                        "30",
+                    ),
+                    "40": Value(
+                        "40",
+                    ),
+                    "50": Value(
+                        "50",
+                    ),
+                    "60": Value(
+                        "60",
+                    ),
+                    "auto": Value(
+                        "auto",
+                    ),
+                    "-1": Value(
+                        "-1",
+                    ),
+                    "-2": Value(
+                        "-2",
+                    ),
+                    "-3": Value(
+                        "-3",
+                    ),
+                    "-5": Value(
+                        "-5",
+                    ),
+                },
+            ),
+        },
+        "direction": ValueSet {
+            name: "direction",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "ltr": Value(
+                        "ltr",
+                    ),
+                    "rtl": Value(
+                        "rtl",
+                    ),
+                },
+            ),
+        },
+        "zoom": ValueSet {
+            name: "zoom",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "0": Value(
+                        "0",
+                    ),
+                    "50": Value(
+                        ".5",
+                    ),
+                    "75": Value(
+                        ".75",
+                    ),
+                    "90": Value(
+                        ".9",
+                    ),
+                    "95": Value(
+                        ".95",
+                    ),
+                    "100": Value(
+                        "1",
+                    ),
+                    "105": Value(
+                        "1.05",
+                    ),
+                    "110": Value(
+                        "1.1",
+                    ),
+                    "125": Value(
+                        "1.25",
+                    ),
+                    "150": Value(
+                        "1.5",
+                    ),
+                },
+            ),
+        },
+        "fonts": ValueSet {
+            name: "fonts",
+            description: None,
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "sans": Value(
+                        "ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
+                    ),
+                    "serif": Value(
+                        "ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif",
+                    ),
+                    "mono": Value(
+                        "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
+                    ),
+                },
+            ),
+        },
+        "spinAnimation": ValueSet {
+            name: "spinAnimation",
+            description: Some(
+                "The spin animation.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "spin": Value(
+                        "spin var(__:CSS_VARIABLE::defaultAnimationDuration:__) linear infinite",
+                    ),
+                },
+            ),
+        },
+        "pingAnimation": ValueSet {
+            name: "pingAnimation",
+            description: Some(
+                "The ping animation.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "ping": Value(
+                        "ping var(__:CSS_VARIABLE::defaultAnimationDuration:__) cubic-bezier(0, 0, 0.2, 1) infinite",
+                    ),
+                },
+            ),
+        },
+        "pulseAnimation": ValueSet {
+            name: "pulseAnimation",
+            description: Some(
+                "The pulse animation.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "pulse": Value(
+                        "pulse calc(2 * var(__:CSS_VARIABLE::defaultAnimationDuration:__)) cubic-bezier(0.4, 0, 0.6, 1) infinite",
+                    ),
+                },
+            ),
+        },
+        "bounceAnimation": ValueSet {
+            name: "bounceAnimation",
+            description: Some(
+                "The bounce animation.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "bounce": Value(
+                        "bounce var(__:CSS_VARIABLE::defaultAnimationDuration:__) infinite",
+                    ),
+                },
+            ),
+        },
+        "enterAnimation": ValueSet {
+            name: "enterAnimation",
+            description: Some(
+                "The enter animation.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "in": Object(
+                        StringMap(
+                            {
+                                "animation": "enter var(__:CSS_VARIABLE::defaultAnimationDuration:__)",
+                                "__:CSS_VARIABLE::enterOpacity:__": "initial",
+                                "__:CSS_VARIABLE::enterScale:__": "initial",
+                                "__:CSS_VARIABLE::enterRotate:__": "initial",
+                                "__:CSS_VARIABLE::enterTranslateX:__": "initial",
+                                "__:CSS_VARIABLE::enterTranslateY:__": "initial",
+                            },
+                        ),
+                    ),
+                },
+            ),
+        },
+        "exitAnimation": ValueSet {
+            name: "exitAnimation",
+            description: Some(
+                "The exit animation.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            values: CssValues(
+                {
+                    "out": Object(
+                        StringMap(
+                            {
+                                "animation": "exit var(__:CSS_VARIABLE::defaultAnimationDuration:__)",
+                                "__:CSS_VARIABLE::exitOpacity:__": "initial",
+                                "__:CSS_VARIABLE::exitScale:__": "initial",
+                                "__:CSS_VARIABLE::exitRotate:__": "initial",
+                                "__:CSS_VARIABLE::exitTranslateX:__": "initial",
+                                "__:CSS_VARIABLE::exitTranslateY:__": "initial",
+                            },
+                        ),
+                    ),
+                },
+            ),
+        },
+    },
+    groups: {
+        "transform": VariableGroup {
+            name: "transform",
+            description: Some(
+                "This class makes it possible to use the transform utilities.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "transform": "var(__:CSS_VARIABLE::groupNestedTransform:__)",
+                },
+            ),
+        },
+        "filter": VariableGroup {
+            name: "filter",
+            description: Some(
+                "This class makes it possible to use the filter utilities.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "filter": "var(__:CSS_VARIABLE::groupNestedFilter:__)",
+                },
+            ),
+        },
+        "backdrop": VariableGroup {
+            name: "backdrop",
+            description: Some(
+                "This class makes it possible to use the backdrop filter utilities.",
+            ),
+            priority: Priority(
+                150,
+            ),
+            styles: StringMap(
+                {
+                    "backdrop-filter": "var(__:CSS_VARIABLE::groupNestedBackdrop:__)",
+                },
+            ),
+        },
+    },
+    names: {
+        "keyframes": {
+            "enter",
+            "exit",
+            "spin",
+            "ping",
+            "pulse",
+            "bounce",
+        },
+        "css_variables": {
+            "primary",
+            "primaryContent",
+            "secondary",
+            "secondaryContent",
+            "accent",
+            "accentContent",
+            "neutral",
+            "neutralContent",
+            "base100",
+            "base200",
+            "base300",
+            "baseContent",
+            "info",
+            "infoContent",
+            "success",
+            "successContent",
+            "warning",
+            "warningContent",
+            "error",
+            "errorContent",
+            "containerMaxWidth",
+            "empty",
+            "filterBlur",
+            "filterBrightness",
+            "filterContrast",
+            "filterCustom",
+            "filterGrayscale",
+            "filterHueRotate",
+            "filterInvert",
+            "filterSaturate",
+            "filterSepia",
+            "filterDropShadow",
+            "groupNestedFilter",
+            "backdropBlur",
+            "backdropBrightness",
+            "backdropContrast",
+            "backdropCustom",
+            "backdropGrayscale",
+            "backdropHueRotate",
+            "backdropInvert",
+            "backdropSaturate",
+            "backdropSepia",
+            "backdropDropShadow",
+            "groupNestedBackdrop",
+            "defaultTransitionDuration",
+            "defaultAnimationDuration",
+            "enterTranslateX",
+            "enterTranslateY",
+        },
+        "atoms": {
+            "sr",
+            "transition",
+            "transitionProperty",
+            "duration",
+            "ease",
+            "delay",
+            "animationDuration",
+            "animationEasing",
+            "animationDelay",
+            "animationRepeat",
+            "animationDirection",
+            "animationFillMode",
+            "animationState",
+            "zoom",
+            "font",
+            "p",
+            "py",
+            "px",
+            "pt",
+            "pr",
+            "pb",
+            "pl",
+            "pbl",
+            "pbls",
+            "pble",
+            "pin",
+            "pins",
+            "pine",
+            "m",
+            "my",
+            "mx",
+            "mt",
+            "mr",
+            "mb",
+            "ml",
+            "z",
+            "dir",
+            "bg",
+            "bgOpacity",
+            "opacity",
+            "animate",
+        },
+        "classes": {
+            "group",
+            "container",
+            "italic",
+            "nonItalic",
+            "oblique",
+            "antialiased",
+            "subpixelAntialiased",
+            "block",
+            "inlineBlock",
+            "inline",
+            "flowRoot",
+            "content",
+            "hidden",
+            "invisible",
+            "visible",
+            "removeFilter",
+            "removeBackdrop",
+            "transformGpu",
+            "transformCpu",
+        },
+        "media_queries": {
+            "screen",
+            "print",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+            "xxl",
+            "portrait",
+            "landscape",
+            "motionReduce",
+            "motionSafe",
+            "dark",
+            "light",
+        },
+        "modifiers": {
+            "rtl",
+            "groupHover",
+            "groupFocus",
+            "groupActive",
+            "groupVisited",
+            "hover",
+            "active",
+            "activeLink",
+            "activeLocation",
+            "activeDate",
+            "activeTime",
+            "activeStep",
+            "focus",
+            "focusWithin",
+            "focusVisible",
+            "disabled",
+            "notDisabled",
+            "enabled",
+            "empty",
+            "readWrite",
+            "readOnly",
+            "notReadOnly",
+            "expanded",
+            "indeterminate",
+            "checked",
+            "unchecked",
+            "grabbed",
+            "pressed",
+            "invalidGrammar",
+            "invalidSpelling",
+            "valid",
+            "invalid",
+            "loading",
+            "selected",
+            "hidden",
+            "autofill",
+            "even",
+            "odd",
+            "evenOfType",
+            "oddOfType",
+            "first",
+            "notFirst",
+            "last",
+            "notLast",
+            "firstOfType",
+            "notFirstOfType",
+            "lastOfType",
+            "notLastOfType",
+            "visited",
+            "optional",
+            "fullScreen",
+            "target",
+            "placeholderShown",
+            "required",
+            "notRequired",
+            "default",
+            "onlyChild",
+            "notOnlyChild",
+            "onlyOfType",
+            "notOnlyOfType",
+            "root",
+            "link",
+            "placeholder",
+            "selection",
+            "firstLetter",
+            "firstLine",
+            "before",
+            "after",
+        },
+        "atom:sr": {
+            "only",
+            "exclude",
+        },
+        "atom:transition": {
+            "",
+            "none",
+            "all",
+            "colors",
+            "opacity",
+            "shadow",
+            "transform",
+        },
+        "atom:transitionProperty": {
+            "",
+            "none",
+            "all",
+            "colors",
+            "opacity",
+            "shadow",
+            "transform",
+        },
+        "atom:duration": {
+            "0",
+            "75",
+            "100",
+            "150",
+            "200",
+            "300",
+            "500",
+            "700",
+            "1000",
+            "1500",
+            "2000",
+        },
+        "atom:ease": {
+            "linear",
+            "in",
+            "out",
+            "inOut",
+        },
+        "atom:delay": {
+            "0",
+            "75",
+            "100",
+            "150",
+            "200",
+            "300",
+            "500",
+            "700",
+            "1000",
+            "1500",
+            "2000",
+        },
+        "atom:animationDuration": {
+            "0",
+            "75",
+            "100",
+            "150",
+            "200",
+            "300",
+            "500",
+            "700",
+            "1000",
+            "1500",
+            "2000",
+        },
+        "atom:animationEasing": {
+            "linear",
+            "in",
+            "out",
+            "inOut",
+        },
+        "atom:animationDelay": {
+            "0",
+            "75",
+            "100",
+            "150",
+            "200",
+            "300",
+            "500",
+            "700",
+            "1000",
+            "1500",
+            "2000",
+        },
+        "atom:animationRepeat": {
+            "0",
+            "0.5",
+            "1",
+            "2",
+            "3",
+            "infinite",
+            "in",
+            "out",
+            "inOut",
+        },
+        "atom:animationDirection": {
+            "normal",
+            "reverse",
+            "alt",
+            "altReverse",
+        },
+        "atom:animationFillMode": {
+            "none",
+            "forwards",
+            "backwards",
+            "both",
+        },
+        "atom:animationState": {
+            "running",
+            "paused",
+        },
+        "atom:zoom": {
+            "0",
+            "50",
+            "75",
+            "90",
+            "95",
+            "100",
+            "105",
+            "110",
+            "125",
+            "150",
+        },
+        "atom:font": {
+            "sans",
+            "serif",
+            "mono",
+        },
+        "atom:p": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:py": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:px": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:pt": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:pr": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:pb": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:pl": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:pbl": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:pbls": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:pble": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:pin": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:pins": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:pine": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:m": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:my": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:mx": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:mt": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:mr": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:mb": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:ml": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "14",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "36",
+            "40",
+            "44",
+            "48",
+            "52",
+            "56",
+            "60",
+            "64",
+            "72",
+            "80",
+            "96",
+            "px",
+            "0.5",
+            "1.5",
+            "2.5",
+            "3.5",
+        },
+        "atom:z": {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "10",
+            "20",
+            "30",
+            "40",
+            "50",
+            "60",
+            "auto",
+            "-1",
+            "-2",
+            "-3",
+            "-5",
+        },
+        "atom:dir": {
+            "ltr",
+            "rtl",
+        },
+        "atom:bg": {
+            "primary",
+            "primaryContent",
+            "secondary",
+            "secondaryContent",
+            "accent",
+            "accentContent",
+            "neutral",
+            "neutralContent",
+            "base100",
+            "base200",
+            "base300",
+            "baseContent",
+            "info",
+            "infoContent",
+            "success",
+            "successContent",
+            "warning",
+            "warningContent",
+            "error",
+            "errorContent",
+            "inherit",
+            "current",
+            "transparent",
+            "black",
+            "white",
+            "slate50",
+            "slate100",
+            "slate200",
+            "slate300",
+            "slate400",
+            "slate500",
+            "slate600",
+            "slate700",
+            "slate800",
+            "slate900",
+            "gray50",
+            "gray100",
+            "gray200",
+            "gray300",
+            "gray400",
+            "gray500",
+            "gray600",
+            "gray700",
+            "gray800",
+            "gray900",
+            "zinc50",
+            "zinc100",
+            "zinc200",
+            "zinc300",
+            "zinc400",
+            "zinc500",
+            "zinc600",
+            "zinc700",
+            "zinc800",
+            "zinc900",
+            "neutral50",
+            "neutral100",
+            "neutral200",
+            "neutral300",
+            "neutral400",
+            "neutral500",
+            "neutral600",
+            "neutral700",
+            "neutral800",
+            "neutral900",
+            "stone50",
+            "stone100",
+            "stone200",
+            "stone300",
+            "stone400",
+            "stone500",
+            "stone600",
+            "stone700",
+            "stone800",
+            "stone900",
+            "red50",
+            "red100",
+            "red200",
+            "red300",
+            "red400",
+            "red500",
+            "red600",
+            "red700",
+            "red800",
+            "red900",
+            "orange50",
+            "orange100",
+            "orange200",
+            "orange300",
+            "orange400",
+            "orange500",
+            "orange600",
+            "orange700",
+            "orange800",
+            "orange900",
+            "amber50",
+            "amber100",
+            "amber200",
+            "amber300",
+            "amber400",
+            "amber500",
+            "amber600",
+            "amber700",
+            "amber800",
+            "amber900",
+            "yellow50",
+            "yellow100",
+            "yellow200",
+            "yellow300",
+            "yellow400",
+            "yellow500",
+            "yellow600",
+            "yellow700",
+            "yellow800",
+            "yellow900",
+            "lime50",
+            "lime100",
+            "lime200",
+            "lime300",
+            "lime400",
+            "lime500",
+            "lime600",
+            "lime700",
+            "lime800",
+            "lime900",
+            "green50",
+            "green100",
+            "green200",
+            "green300",
+            "green400",
+            "green500",
+            "green600",
+            "green700",
+            "green800",
+            "green900",
+            "emerald50",
+            "emerald100",
+            "emerald200",
+            "emerald300",
+            "emerald400",
+            "emerald500",
+            "emerald600",
+            "emerald700",
+            "emerald800",
+            "emerald900",
+            "teal50",
+            "teal100",
+            "teal200",
+            "teal300",
+            "teal400",
+            "teal500",
+            "teal600",
+            "teal700",
+            "teal800",
+            "teal900",
+            "cyan50",
+            "cyan100",
+            "cyan200",
+            "cyan300",
+            "cyan400",
+            "cyan500",
+            "cyan600",
+            "cyan700",
+            "cyan800",
+            "cyan900",
+            "sky50",
+            "sky100",
+            "sky200",
+            "sky300",
+            "sky400",
+            "sky500",
+            "sky600",
+            "sky700",
+            "sky800",
+            "sky900",
+            "blue50",
+            "blue100",
+            "blue200",
+            "blue300",
+            "blue400",
+            "blue500",
+            "blue600",
+            "blue700",
+            "blue800",
+            "blue900",
+            "indigo50",
+            "indigo100",
+            "indigo200",
+            "indigo300",
+            "indigo400",
+            "indigo500",
+            "indigo600",
+            "indigo700",
+            "indigo800",
+            "indigo900",
+            "violet50",
+            "violet100",
+            "violet200",
+            "violet300",
+            "violet400",
+            "violet500",
+            "violet600",
+            "violet700",
+            "violet800",
+            "violet900",
+            "purple50",
+            "purple100",
+            "purple200",
+            "purple300",
+            "purple400",
+            "purple500",
+            "purple600",
+            "purple700",
+            "purple800",
+            "purple900",
+            "fuchsia50",
+            "fuchsia100",
+            "fuchsia200",
+            "fuchsia300",
+            "fuchsia400",
+            "fuchsia500",
+            "fuchsia600",
+            "fuchsia700",
+            "fuchsia800",
+            "fuchsia900",
+            "pink50",
+            "pink100",
+            "pink200",
+            "pink300",
+            "pink400",
+            "pink500",
+            "pink600",
+            "pink700",
+            "pink800",
+            "pink900",
+            "rose50",
+            "rose100",
+            "rose200",
+            "rose300",
+            "rose400",
+            "rose500",
+            "rose600",
+            "rose700",
+            "rose800",
+            "rose900",
+        },
+        "atom:bgOpacity": {
+            "0",
+            "5",
+            "10",
+            "20",
+            "30",
+            "40",
+            "50",
+            "60",
+            "70",
+            "75",
+            "80",
+            "90",
+            "95",
+            "100",
+        },
+        "atom:opacity": {
+            "0",
+            "5",
+            "10",
+            "20",
+            "30",
+            "40",
+            "50",
+            "60",
+            "70",
+            "75",
+            "80",
+            "90",
+            "95",
+            "100",
+        },
+        "atom:animate": {
+            "enter",
+            "exit",
+            "spin",
+            "ping",
+            "pulse",
+            "bounce",
+        },
+    },
+    _options: Options {
+        output: "skribble.css",
+        root: "./",
+        files: [
+            "**",
+        ],
+        charset: "utf-8",
+        default_layer: "default",
+        color_format: Hsl,
+        merge_rules: MergeRules {
+            keyframes: Append,
+            variables: Append,
+            media_queries: Append,
+            modifiers: Append,
+            rules: Append,
+            classes: Append,
+            palette: Append,
+            atoms: Append,
+            groups: Append,
+        },
+        use_registered_properties: false,
+        variable_prefix: "sk",
+        default_color: "#000000",
+    },
+}

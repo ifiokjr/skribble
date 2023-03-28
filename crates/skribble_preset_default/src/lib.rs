@@ -105,20 +105,4 @@ impl PresetDefault {
 }
 
 #[cfg(test)]
-mod tests {
-  use skribble_core::*;
-
-  use super::*;
-
-  #[test]
-  fn default_can_be_added_to_runner() {
-    let plugin = PresetDefault::builder().build();
-
-    let config: StyleConfig = StyleConfig::builder()
-      .plugins(vec![PluginContainer::from(plugin)])
-      .build();
-
-    let mut runner = SkribbleRunner::new(config);
-    let _ = runner.run();
-  }
-}
+mod __tests;

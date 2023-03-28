@@ -20,3 +20,6 @@ lazy_static = { workspace = true }
 serde = { workspace = true }
 skribble_core = { workspace = true }
 typed-builder = { workspace = true }
+
+[dev-dependencies]
+insta = { workspace = true }
