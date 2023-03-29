@@ -17,15 +17,27 @@ use regex::Regex;
 )]
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum Color {
+  Hex(Rgba),
   Rgb(Rgba),
   Hsl(Hsla),
   Hwb(Hwba),
 }
 
 impl Color {
+  /// Returns the color as a HEX value.
+  pub fn into_hex(self) -> Self {
+    match self {
+      Self::Hex(_) => self,
+      Self::Rgb(rgba) => Self::Rgb(rgba),
+      Self::Hsl(hsla) => Self::Rgb(Rgba::from_color(hsla)),
+      Self::Hwb(hwba) => Self::Rgb(Rgba::from_color(hwba)),
+    }
+  }
+
   /// Returns the color as an RGB value.
   pub fn into_rgb(self) -> Self {
     match self {
+      Self::Hex(rgba) => Self::Hex(rgba),
       Self::Rgb(_) => self,
       Self::Hsl(hsla) => Self::Rgb(Rgba::from_color(hsla)),
       Self::Hwb(hwba) => Self::Rgb(Rgba::from_color(hwba)),
@@ -35,6 +47,7 @@ impl Color {
   /// Returns the color as an HSL value.
   pub fn into_hsl(self) -> Self {
     match self {
+      Self::Hex(rgb) => Self::Hsl(Hsla::from_color(rgb)),
       Self::Rgb(rgb) => Self::Hsl(Hsla::from_color(rgb)),
       Self::Hsl(_) => self,
       Self::Hwb(hwba) => Self::Hsl(Hsla::from_color(hwba)),
@@ -44,6 +57,7 @@ impl Color {
   /// Returns the color as an HWB value.
   pub fn into_hwb(self) -> Self {
     match self {
+      Self::Hex(rgb) => Self::Hwb(Hwba::from_color(rgb)),
       Self::Rgb(rgb) => Self::Hwb(Hwba::from_color(rgb)),
       Self::Hsl(hsla) => Self::Hwb(Hwba::from_color(hsla)),
       Self::Hwb(_) => self,
@@ -54,6 +68,7 @@ impl Color {
     let opacity_variable = opacity_variable.as_ref();
 
     match self {
+      Self::Hex(ref rgba) => hex_to_css(rgba, Some(opacity_variable)),
       Self::Rgb(ref rgba) => rgb_to_css(rgba, Some(opacity_variable)),
       Self::Hsl(ref hsla) => hsl_to_css(hsla, Some(opacity_variable)),
       Self::Hwb(ref hwba) => hwb_to_css(hwba, Some(opacity_variable)),
@@ -62,6 +77,7 @@ impl Color {
 
   pub fn alpha(&self) -> f32 {
     match self {
+      Self::Hex(ref rgba) => rgba.alpha,
       Self::Rgb(ref rgba) => rgba.alpha,
       Self::Hsl(ref hsla) => hsla.alpha,
       Self::Hwb(ref hwba) => hwba.alpha,
@@ -72,6 +88,7 @@ impl Color {
 impl Display for Color {
   fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
     match self {
+      Self::Hex(ref rgba) => write!(f, "{}", hex_to_css::<String>(rgba, None)),
       Self::Rgb(ref rgba) => write!(f, "{}", rgb_to_css::<String>(rgba, None)),
       Self::Hsl(ref hsla) => write!(f, "{}", hsl_to_css::<String>(hsla, None)),
       Self::Hwb(ref hwba) => write!(f, "{}", hwb_to_css::<String>(hwba, None)),
@@ -84,7 +101,7 @@ impl FromStr for Color {
 
   fn from_str(value: &str) -> Result<Self, Self::Err> {
     match from_hex_string(value) {
-      Ok(rgba) => return Ok(Self::Rgb(rgba)),
+      Ok(rgba) => return Ok(Self::Hex(rgba)),
       Err(err) => {
         if let ColorError::Invalid(_) = err {
           return Err(err);
@@ -522,7 +539,26 @@ fn rgb_to_css<T: AsRef<str>>(rgba: &Rgba, opacity: Option<T>) -> String {
   format!("rgb({red} {green} {blue} / {alpha})")
 }
 
-fn hsl_to_string<T: AsRef<str>>(hsla: &Hsla, opacity: Option<T>) -> String {
+fn hex_to_css<T: AsRef<str>>(rgba: &Rgba, opacity: Option<T>) -> String {
+  let opacity_is_some = opacity.is_some();
+  let is_alpha = opacity_is_some || rgba.alpha != 1.0;
+  let red = (rgba.red * 255.0) as u8;
+  let green = (rgba.green * 255.0) as u8;
+  let blue = (rgba.blue * 255.0) as u8;
+  let alpha = opacity
+    .map(|v| v.as_ref().to_string())
+    .unwrap_or(rgba.alpha.to_string());
+
+  if !is_alpha {
+    format!("#{red:x}{green:x}{blue:x}")
+  } else if opacity_is_some {
+    // No way to specify alpha channel as a variable in hex
+    format!("rgb({red} {green} {blue} / {alpha})")
+  } else {
+    let alpha = (rgba.alpha * 255.0) as u8;
+    format!("#{red:x}{green:x}{blue:x}{alpha:x}")
+  }
+}
 
 fn hsl_to_css<T: AsRef<str>>(hsla: &Hsla, opacity: Option<T>) -> String {
   let is_alpha = opacity.is_some() || hsla.alpha != 1.0;

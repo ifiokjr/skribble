@@ -4,28 +4,28 @@ use crate::Color;
 fn from_hex_3() {
   let r = "#fff";
   let rgb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(rgb, @"rgb(255 255 255)");
+  insta::assert_display_snapshot!(rgb, @"#ffffff");
 }
 
 #[test]
 fn from_hex_4() {
   let r = "#fff6";
   let rgb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(rgb, @"rgb(255 255 255 / 0.4)");
+  insta::assert_display_snapshot!(rgb, @"#ffffff66");
 }
 
 #[test]
 fn from_hex_6() {
   let r = "#b1ffb0";
   let rgb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(rgb, @"rgb(177 255 176)");
+  insta::assert_display_snapshot!(rgb, @"#b1ffb0");
 }
 
 #[test]
 fn from_hex_8() {
   let r = "#b1ffb0b7";
   let rgb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(rgb, @"rgb(177 255 176 / 0.7176471)");
+  insta::assert_display_snapshot!(rgb, @"#b1ffb0b7");
 }
 
 #[test]
