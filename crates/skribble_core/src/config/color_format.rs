@@ -11,11 +11,15 @@ use crate::RunnerConfig;
 /// ColorFormat is used to determine the default format of the colors.
 #[derive(Clone, Copy, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub enum ColorFormat {
+  #[serde(rename = "hex")]
+  Hex,
   #[serde(rename = "rgb")]
   Rgb,
   #[serde(rename = "hsl")]
   #[default]
   Hsl,
+  #[serde(rename = "hwb")]
+  Hwb,
 }
 
 impl ColorFormat {
@@ -38,6 +42,15 @@ impl ColorFormat {
     let opacity_variable = css_variable.get_opacity_variable(config.options());
 
     match self {
+      Self::Hex => {
+        let color = initial_value
+          .parse::<Color>()
+          .map_err(Error::from)?
+          .into_hex()
+          .to_string_with_opacity(wrap_css_variable(opacity_variable, None));
+
+        Ok(color)
+      }
       Self::Rgb => {
         let color = initial_value
           .parse::<Color>()
@@ -56,6 +69,15 @@ impl ColorFormat {
 
         Ok(color)
       }
+      Self::Hwb => {
+        let color = initial_value
+          .parse::<Color>()
+          .map_err(Error::from)?
+          .into_hwb()
+          .to_string_with_opacity(wrap_css_variable(opacity_variable, None));
+
+        Ok(color)
+      }
     }
   }
 }
@@ -63,8 +85,10 @@ impl ColorFormat {
 impl AsRef<str> for ColorFormat {
   fn as_ref(&self) -> &str {
     match self {
+      Self::Hex => "hex",
       Self::Rgb => "rgb",
       Self::Hsl => "hsl",
+      Self::Hwb => "hwb",
     }
   }
 }
@@ -72,8 +96,10 @@ impl AsRef<str> for ColorFormat {
 impl<T: Into<String>> From<T> for ColorFormat {
   fn from(value: T) -> Self {
     match value.into().as_str() {
+      "hex" => Self::Hex,
       "rgb" => Self::Rgb,
       "hsl" => Self::Hsl,
+      "hwb" => Self::Hwb,
       _ => Self::Hsl,
     }
   }
