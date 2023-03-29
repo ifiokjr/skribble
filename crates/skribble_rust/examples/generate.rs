@@ -2,8 +2,8 @@ use std::env;
 use std::fs;
 
 use skribble_core::*;
-use skribble_plugin_rust::RustPlugin;
-use skribble_preset_default::PresetDefault;
+use skribble_preset::PresetDefault;
+use skribble_rust::RustPlugin;
 
 fn main() {
   let default_preset = PresetDefault::builder().build();

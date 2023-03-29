@@ -29,7 +29,7 @@ pub struct PresetDefault {
 impl Plugin for PresetDefault {
   fn get_data(&self) -> PluginData {
     PluginData::builder()
-      .id("skribble_preset_default")
+      .id("skribble_preset")
       .name("Default Preset")
       .description(
         "This plugin provides a default preset for Skribble which is similar to `tailwind`, \

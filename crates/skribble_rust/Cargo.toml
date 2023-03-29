@@ -1,25 +1,29 @@
 [package]
-name = "skribble_preset_default"
+name = "skribble_rust"
 version = { workspace = true }
 authors = { workspace = true }
-documentation = "https://docs.rs/skribble_preset_default"
+categories = { workspace = true }
+documentation = "https://docs.rs/skribble_rust"
 edition = { workspace = true }
 homepage = { workspace = true }
 include = ["src/**/*.rs", "Cargo.toml", "readme.md"]
-keywords = ["build", "atomic", "css", "preset", "skribble"]
+keywords = ["build", "atomic", "css", "preset", "skribble", "rust"]
 license = { workspace = true }
 readme = "readme.md"
 repository = { workspace = true }
 rust-version = { workspace = true }
-description = "This plugin provides a default preset for Skribble which is similar to `tailwind`, `windi` and `unocss`."
+description = "This plugin provides support for generating rust code from your `skribble` configuration."
 
 [dependencies]
 heck = { workspace = true }
 indexmap = { workspace = true }
+indoc = { workspace = true }
 lazy_static = { workspace = true }
 serde = { workspace = true }
 skribble_core = { workspace = true }
+syn = { workspace = true, features = ["full"] }
 typed-builder = { workspace = true }
 
 [dev-dependencies]
 insta = { workspace = true }
+skribble_preset = { workspace = true }

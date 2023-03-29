@@ -39,7 +39,7 @@ pub struct RustPlugin {
 impl Plugin for RustPlugin {
   fn get_data(&self) -> PluginData {
     PluginData::builder()
-      .id("skribble_plugin_rust")
+      .id("skribble_rust")
       .name("Rust Plugin")
       .globs(["**/*.rs".into()])
       .description(

@@ -1,5 +1,5 @@
 use skribble_core::*;
-use skribble_preset_default::PresetDefault;
+use skribble_preset::PresetDefault;
 
 use super::*;
 

@@ -1064,7 +1064,20 @@ dependencies = [
 ]
 
 [[package]]
-name = "skribble_plugin_rust"
+name = "skribble_preset"
+version = "0.0.0"
+dependencies = [
+ "heck",
+ "indexmap",
+ "insta",
+ "lazy_static",
+ "serde",
+ "skribble_core",
+ "typed-builder",
+]
+
+[[package]]
+name = "skribble_rust"
 version = "0.0.0"
 dependencies = [
  "heck",
@@ -1074,21 +1087,8 @@ dependencies = [
  "lazy_static",
  "serde",
  "skribble_core",
- "skribble_preset_default",
+ "skribble_preset",
  "syn 2.0.11",
- "typed-builder",
-]
-
-[[package]]
-name = "skribble_preset_default"
-version = "0.0.0"
-dependencies = [
- "heck",
- "indexmap",
- "insta",
- "lazy_static",
- "serde",
- "skribble_core",
  "typed-builder",
 ]
 
