@@ -814,11 +814,13 @@ impl CssVariable {
     let variable_name = self.get_variable(options);
 
     for (query, selector_map) in self.media_queries.iter() {
+      println!("QUERY: {:?}", query);
       let query = if query.is_empty() {
         None
       } else {
-        Some(Placeholder::normalize(query, config))
+        Some(Placeholder::normalize_media_query(query, config))
       };
+      println!("NORMALIZED QUERY: {:?}", query);
 
       for (selector_name, variable_value) in selector_map.iter() {
         let selector = if selector_name.is_empty() {

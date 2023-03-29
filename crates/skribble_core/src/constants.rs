@@ -38,64 +38,93 @@ impl Placeholder {
   }
 
   pub fn normalize(content: impl AsRef<str>, config: &RunnerConfig) -> String {
-    let content = CSS_VARIABLE_REGEX.replace_all(content.as_ref(), |caps: &Captures| {
-      // value for an invalid match
-      let invalid_regex = format!(
-        "--{}-invalid-css-variable",
-        config.options().variable_prefix
-      );
+    let content = Self::normalize_css_variables(content, config);
+    let content = Self::normalize_palette(content, config);
+    let content = Self::normalize_media_query(content, config);
 
-      // get the name from the capture group
-      let Some(name) = caps.name("name") else {
+    Self::normalize_modifiers(content, config)
+  }
+
+  pub fn normalize_css_variables(content: impl AsRef<str>, config: &RunnerConfig) -> String {
+    CSS_VARIABLE_REGEX
+      .replace_all(content.as_ref(), |caps: &Captures| {
+        // value for an invalid match
+        let invalid_regex = format!(
+          "--{}-invalid-css-variable",
+          config.options().variable_prefix
+        );
+
+        // get the name from the capture group
+        let Some(name) = caps.name("name") else {
         return invalid_regex;
       };
 
-      let name = name.as_str();
+        let name = name.as_str();
 
-      let Some(name) = config.css_variables.get(name) else {
+        let Some(name) = config.css_variables.get(name) else {
         return invalid_regex;
       };
 
-      name.get_variable(config.options())
-    });
+        name.get_variable(config.options())
+      })
+      .to_string()
+  }
 
-    let content = PALETTE_REGEX.replace_all(&content, |caps: &Captures| {
-      // value for an invalid match
-      let default_value = "#000000".into();
+  pub fn normalize_palette(content: impl AsRef<str>, config: &RunnerConfig) -> String {
+    PALETTE_REGEX
+      .replace_all(content.as_ref(), |caps: &Captures| {
+        // value for an invalid match
+        let default_value = "#000000".into();
 
-      // get the name from the capture group
-      let Some(name) = caps.name("name") else {
+        // get the name from the capture group
+        let Some(name) = caps.name("name") else {
         return default_value;
       };
 
-      let name = name.as_str();
+        let name = name.as_str();
 
-      let Some(value) = config.palette.get(name) else {
+        let Some(value) = config.palette.get(name) else {
         return default_value;
       };
 
-      value.to_owned()
-    });
+        value.to_owned()
+      })
+      .to_string()
+  }
 
-    let content = MODIFIER_REGEX.replace_all(&content, |caps: &Captures| {
-      let Some(name) = caps.name("name") else {
+  pub fn normalize_modifiers(content: impl AsRef<str>, config: &RunnerConfig) -> String {
+    MODIFIER_REGEX
+      .replace_all(content.as_ref(), |caps: &Captures| {
+        let Some(name) = caps.name("name") else {
         return String::new();
       };
 
-      let name = name.as_str();
+        let name = name.as_str();
 
-      let Some(group) = config.modifiers.get(name) else {
+        let Some(modifier) = config.get_modifier(name) else {
         return String::new();
       };
 
-      let Some(modifier) = group.get(name) else {
+        modifier.values.join(", ")
+      })
+      .to_string()
+  }
+
+  pub fn normalize_media_query(content: impl AsRef<str>, config: &RunnerConfig) -> String {
+    MEDIA_QUERY_REGEX
+      .replace_all(content.as_ref(), |caps: &Captures| {
+        let Some(name) = caps.name("name") else {
         return String::new();
       };
 
-      modifier.values.join(", ")
-    });
+        let name = name.as_str();
+        let Some(media_query) = config.get_media_query(name) else {
+        return String::new();
+      };
 
-    content.to_string()
+        media_query.query.clone()
+      })
+      .to_string()
   }
 
   /// Replaces all the value placeholders with the given value.

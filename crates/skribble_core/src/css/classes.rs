@@ -1,3 +1,4 @@
+use std::cmp::Ordering;
 use std::fmt::Write;
 use std::ops::Deref;
 use std::ops::DerefMut;
@@ -187,15 +188,36 @@ impl Classes {
       }
     }
 
-    for (media_query, classes) in media_query_classes.iter() {
+    media_query_text.sort_by(|a, _, z, _| {
+      let Some(a) = a else {
+        return Ordering::Less;
+      };
+
+      let Some(z) = z else {
+        return Ordering::Greater;
+      };
+
+      let a_pos = config
+        .get_media_queries()
+        .iter()
+        .position(|query| &query.query == a);
+      let z_pos = config
+        .get_media_queries()
+        .iter()
+        .position(|query| &query.query == z);
+
+      a_pos.cmp(&z_pos)
+    });
+
+    for (media_query, content) in media_query_text.iter() {
       if let Some(media_query) = media_query {
         writeln!(writer, "@media {media_query} {{")?;
         let mut child_writer = indent_writer();
-        self.write_media_query_css(&mut child_writer, config, classes)?;
+        write!(&mut child_writer, "{}", content)?;
         write!(writer, "{}", child_writer.get_ref())?;
         writeln!(writer, "}}")?;
       } else {
-        self.write_media_query_css(writer, config, classes)?;
+        write!(writer, "{}", content)?;
       }
     }
 

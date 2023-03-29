@@ -61,6 +61,13 @@ impl RunnerConfig {
       .collect()
   }
 
+  pub fn get_modifier(&self, name: impl AsRef<str>) -> Option<&Modifier> {
+    self
+      .get_modifiers()
+      .into_iter()
+      .find(|&modifier| modifier.name == name.as_ref())
+  }
+
   pub fn has_media_query(&self, name: impl AsRef<str>) -> bool {
     let name = name.as_ref().to_string();
     self

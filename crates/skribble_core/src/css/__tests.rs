@@ -9,6 +9,7 @@ use crate::Group;
 use crate::Keyframe;
 use crate::LinkedValues;
 use crate::MediaQuery;
+use crate::Placeholder;
 use crate::PropertySyntaxValue;
 use crate::SkribbleRunner;
 use crate::StyleConfig;
@@ -148,6 +149,22 @@ fn create_config() -> StyleConfig {
             .build(),
         ])
         .build(),
+      Group::builder()
+        .name("darkMode")
+        .description("The dark mode media query.")
+        .items(vec![
+          MediaQuery::builder()
+            .name("dark")
+            .query("(prefers-color-scheme: dark)")
+            .description("The media query for devices with a dark color scheme.")
+            .build(),
+          MediaQuery::builder()
+            .name("light")
+            .query("(prefers-color-scheme: light)")
+            .description("The media query for devices with a light color scheme.")
+            .build(),
+        ])
+        .build(),
     ])
     .value_sets(vec![
       ValueSet::builder()
@@ -205,6 +222,10 @@ fn create_config() -> StyleConfig {
         .value("#f000b8")
         .description("The secondary color. Useful for secondary buttons.")
         .syntax(PropertySyntaxValue::Color)
+        .media_queries(indexmap! {
+          Placeholder::media_query("print") => indexmap! { "" => "#0000b8", ".dark" => "#ff00ff" },
+          Placeholder::media_query("dark") => indexmap! { "" => "#ffffee" },
+        })
         .build(),
     ])
     .build()

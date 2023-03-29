@@ -30,10 +30,26 @@ expression: classes.to_skribble_css(runner_config)?
     --sk-opacity-s: 1;
     color: --sk-s;
   }
+  @media print {
+    :root {
+      --sk-opacity-s: 1;
+      --sk-s: hsla(240, 100%, 36.078434%, var(--sk-opacity-s));
+    }
+    .dark {
+      --sk-opacity-s: 1;
+      --sk-s: hsla(300, 100%, 50%, var(--sk-opacity-s));
+    }
+  }
   @media (min-width: 640px) {
     .sm\:bg\:\$primary {
       --sk-opacity-p: 1;
       color: --sk-p;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --sk-opacity-s: 1;
+      --sk-s: hsla(60, 100%, 96.66667%, var(--sk-opacity-s));
     }
   }
 }

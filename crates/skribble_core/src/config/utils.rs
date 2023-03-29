@@ -11,6 +11,12 @@ use serde::Serialize;
 #[serde(rename_all = "camelCase")]
 pub struct StringMap(IndexMap<String, String>);
 
+impl<K: Into<String>, V: Into<String>> From<IndexMap<K, V>> for StringMap {
+  fn from(value: IndexMap<K, V>) -> Self {
+    Self::from_iter(value)
+  }
+}
+
 impl IntoIterator for StringMap {
   type IntoIter = indexmap::map::IntoIter<String, String>;
   type Item = (String, String);
@@ -35,12 +41,6 @@ where
   }
 }
 
-impl<K: Into<String>, V: Into<String>> From<IndexMap<K, V>> for StringMap {
-  fn from(value: IndexMap<K, V>) -> Self {
-    Self::from_iter(value)
-  }
-}
-
 impl Deref for StringMap {
   type Target = IndexMap<String, String>;
 
@@ -57,6 +57,12 @@ impl DerefMut for StringMap {
 
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub struct NestedStringMap(IndexMap<String, StringMap>);
+
+impl<K: Into<String>, V: Into<StringMap>> From<IndexMap<K, V>> for NestedStringMap {
+  fn from(value: IndexMap<K, V>) -> Self {
+    Self::from_iter(value)
+  }
+}
 
 impl IntoIterator for NestedStringMap {
   type IntoIter = indexmap::map::IntoIter<String, StringMap>;
@@ -75,12 +81,6 @@ impl<K: Into<String>, V: Into<StringMap>> FromIterator<(K, V)> for NestedStringM
       .collect();
 
     Self(map)
-  }
-}
-
-impl<K: Into<String>, V: Into<StringMap>> From<IndexMap<K, V>> for NestedStringMap {
-  fn from(value: IndexMap<K, V>) -> Self {
-    Self::from_iter(value)
   }
 }
 
