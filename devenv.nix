@@ -3,18 +3,12 @@
 {
   packages = [
     pkgs.cargo-insta
-    pkgs.cargo-make
-    pkgs.cargo-tarpaulin
     pkgs.cargo-nextest
-    pkgs.cargo-workspaces
     pkgs.deno
     pkgs.dprint
     pkgs.mdbook
     pkgs.rustup
   ];
-
-  difftastic.enable = true;
-  devcontainer.enable = true;
 
   # Scripts
 

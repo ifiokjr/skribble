@@ -20,6 +20,7 @@ use crate::ToSkribbleCss;
 /// These represent an atomic class and should be
 #[derive(Clone, Debug, Default, Deserialize, Serialize, TypedBuilder, PartialEq, Eq)]
 #[serde(rename_all = "camelCase")]
+#[readonly::make]
 pub struct Class {
   /// The layer for this class.
   #[builder(setter(into))]

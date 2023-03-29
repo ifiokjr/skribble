@@ -19,7 +19,6 @@ heck = { workspace = true }
 indexmap = { workspace = true }
 indoc = { workspace = true }
 lazy_static = { workspace = true }
-quote = { workspace = true }
 serde = { workspace = true }
 skribble_core = { workspace = true }
 syn = { workspace = true, features = ["full"] }
