@@ -433,10 +433,10 @@ fn rgb_to_string<T: AsRef<str>>(rgba: &Rgba, opacity: Option<T>) -> String {
     .unwrap_or(rgba.alpha.to_string());
 
   if !is_alpha {
-    return format!("rgb({red}, {green}, {blue})");
+    return format!("rgb({red} {green} {blue})");
   }
 
-  format!("rgba({red}, {green}, {blue}, {alpha})",)
+  format!("rgb({red} {green} {blue} / {alpha})")
 }
 
 fn hsl_to_string<T: AsRef<str>>(hsla: &Hsla, opacity: Option<T>) -> String {
@@ -449,10 +449,10 @@ fn hsl_to_string<T: AsRef<str>>(hsla: &Hsla, opacity: Option<T>) -> String {
     .unwrap_or(hsla.alpha.to_string());
 
   if !is_alpha {
-    return format!("hsl({hue}, {saturation}%, {lightness}%)");
+    return format!("hsl({hue} {saturation}% {lightness}%)");
   }
 
-  format!("hsla({hue}, {saturation}%, {lightness}%, {alpha})",)
+  format!("hsl({hue} {saturation}% {lightness}% / {alpha})")
 }
 
 #[cfg(test)]

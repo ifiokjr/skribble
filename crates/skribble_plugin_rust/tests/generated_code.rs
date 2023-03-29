@@ -54,7 +54,7 @@ impl CssVariables {
   /// @property --sk-p {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(258.89362, 94.37751%, 51.17647%, var(--sk-opacity-p));
+  ///   initial-value: hsl(258.89362 94.37751% 51.17647% / var(--sk-opacity-p));
   /// }
   /// ```
   #[inline]
@@ -73,7 +73,7 @@ impl CssVariables {
   /// @property --sk-pc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-pc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-pc));
   /// }
   /// ```
   #[inline]
@@ -92,7 +92,7 @@ impl CssVariables {
   /// @property --sk-s {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(314, 100%, 47.058823%, var(--sk-opacity-s));
+  ///   initial-value: hsl(314 100% 47.058823% / var(--sk-opacity-s));
   /// }
   /// ```
   #[inline]
@@ -111,7 +111,7 @@ impl CssVariables {
   /// @property --sk-sc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-sc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-sc));
   /// }
   /// ```
   #[inline]
@@ -130,7 +130,7 @@ impl CssVariables {
   /// @property --sk-a {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(174, 60.000008%, 50.980396%, var(--sk-opacity-a));
+  ///   initial-value: hsl(174 60.000008% 50.980396% / var(--sk-opacity-a));
   /// }
   /// ```
   #[inline]
@@ -149,7 +149,7 @@ impl CssVariables {
   /// @property --sk-ac {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(174.70587, 43.589737%, 15.294118%, var(--sk-opacity-ac));
+  ///   initial-value: hsl(174.70587 43.589737% 15.294118% / var(--sk-opacity-ac));
   /// }
   /// ```
   #[inline]
@@ -168,7 +168,7 @@ impl CssVariables {
   /// @property --sk-n {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(218.99998, 14.084508%, 27.843138%, var(--sk-opacity-n));
+  ///   initial-value: hsl(218.99998 14.084508% 27.843138% / var(--sk-opacity-n));
   /// }
   /// ```
   #[inline]
@@ -187,7 +187,7 @@ impl CssVariables {
   /// @property --sk-nc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-nc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-nc));
   /// }
   /// ```
   #[inline]
@@ -206,7 +206,7 @@ impl CssVariables {
   /// @property --sk-b1 {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-b1));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-b1));
   /// }
   /// ```
   #[inline]
@@ -225,7 +225,7 @@ impl CssVariables {
   /// @property --sk-b2 {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 94.90196%, var(--sk-opacity-b2));
+  ///   initial-value: hsl(0 0% 94.90196% / var(--sk-opacity-b2));
   /// }
   /// ```
   #[inline]
@@ -244,7 +244,7 @@ impl CssVariables {
   /// @property --sk-b3 {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(180, 1.9607836%, 90%, var(--sk-opacity-b3));
+  ///   initial-value: hsl(180 1.9607836% 90% / var(--sk-opacity-b3));
   /// }
   /// ```
   #[inline]
@@ -263,7 +263,7 @@ impl CssVariables {
   /// @property --sk-bc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(215, 27.906975%, 16.862745%, var(--sk-opacity-bc));
+  ///   initial-value: hsl(215 27.906975% 16.862745% / var(--sk-opacity-bc));
   /// }
   /// ```
   #[inline]
@@ -282,7 +282,7 @@ impl CssVariables {
   /// @property --sk-in {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(212.34569, 100%, 47.64706%, var(--sk-opacity-in));
+  ///   initial-value: hsl(212.34569 100% 47.64706% / var(--sk-opacity-in));
   /// }
   /// ```
   #[inline]
@@ -301,7 +301,7 @@ impl CssVariables {
   /// @property --sk-inc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-inc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-inc));
   /// }
   /// ```
   #[inline]
@@ -320,7 +320,7 @@ impl CssVariables {
   /// @property --sk-su {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(136.8421, 72.1519%, 46.47059%, var(--sk-opacity-su));
+  ///   initial-value: hsl(136.8421 72.1519% 46.47059% / var(--sk-opacity-su));
   /// }
   /// ```
   #[inline]
@@ -340,7 +340,7 @@ impl CssVariables {
   /// @property --sk-suc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-suc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-suc));
   /// }
   /// ```
   #[inline]
@@ -359,7 +359,7 @@ impl CssVariables {
   /// @property --sk-wa {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(4.5614033, 100%, 66.47059%, var(--sk-opacity-wa));
+  ///   initial-value: hsl(4.5614033 100% 66.47059% / var(--sk-opacity-wa));
   /// }
   /// ```
   #[inline]
@@ -379,7 +379,7 @@ impl CssVariables {
   /// @property --sk-wac {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-wac));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-wac));
   /// }
   /// ```
   #[inline]
@@ -398,7 +398,7 @@ impl CssVariables {
   /// @property --sk-er {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(325.05154, 77.600006%, 49.019608%, var(--sk-opacity-er));
+  ///   initial-value: hsl(325.05154 77.600006% 49.019608% / var(--sk-opacity-er));
   /// }
   /// ```
   #[inline]
@@ -417,7 +417,7 @@ impl CssVariables {
   /// @property --sk-erc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-erc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-erc));
   /// }
   /// ```
   #[inline]
@@ -428,7 +428,7 @@ impl CssVariables {
   /// ```css
   /// @property --sk-cmw {
   ///   syntax: "*";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: inherit;
   /// }
   /// ```
@@ -702,7 +702,7 @@ impl CssVariables {
   }
 
   /// ```css
-  /// @property --sk-group-nested-backdrop {
+  /// @property --sk-gnb {
   ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
@@ -710,12 +710,12 @@ impl CssVariables {
   /// ```
   #[inline]
   pub fn group_nested_backdrop(&self) -> String {
-    "--sk-group-nested-backdrop".into()
+    "--sk-gnb".into()
   }
 
   /// ```css
   /// @property --sk-default-transition-duration {
-  ///   syntax: "*";
+  ///   syntax: "<time>";
   ///   inherits: false;
   ///   initial-value: 150ms;
   /// }
@@ -727,7 +727,7 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-default-animation-duration {
-  ///   syntax: "*";
+  ///   syntax: "<time>";
   ///   inherits: false;
   ///   initial-value: 1s;
   /// }
@@ -739,9 +739,9 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-etx {
-  ///   syntax: "*";
+  ///   syntax: "<length-percentage>";
   ///   inherits: false;
-  ///   initial-value: /* */;
+  ///   initial-value: 0;
   /// }
   /// ```
   #[inline]
@@ -751,9 +751,9 @@ impl CssVariables {
 
   /// ```css
   /// @property --sk-ety {
-  ///   syntax: "*";
+  ///   syntax: "<length-percentage>";
   ///   inherits: false;
-  ///   initial-value: /* */;
+  ///   initial-value: 0;
   /// }
   /// ```
   #[inline]
@@ -773,7 +773,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-p {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(258.89362, 94.37751%, 51.17647%, var(--sk-opacity-p));
+  ///   initial-value: hsl(258.89362 94.37751% 51.17647% / var(--sk-opacity-p));
   /// }
   /// ```
   #[inline]
@@ -791,7 +791,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-pc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-pc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-pc));
   /// }
   /// ```
   #[inline]
@@ -809,7 +809,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-s {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(314, 100%, 47.058823%, var(--sk-opacity-s));
+  ///   initial-value: hsl(314 100% 47.058823% / var(--sk-opacity-s));
   /// }
   /// ```
   #[inline]
@@ -827,7 +827,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-sc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-sc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-sc));
   /// }
   /// ```
   #[inline]
@@ -845,7 +845,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-a {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(174, 60.000008%, 50.980396%, var(--sk-opacity-a));
+  ///   initial-value: hsl(174 60.000008% 50.980396% / var(--sk-opacity-a));
   /// }
   /// ```
   #[inline]
@@ -863,7 +863,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-ac {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(174.70587, 43.589737%, 15.294118%, var(--sk-opacity-ac));
+  ///   initial-value: hsl(174.70587 43.589737% 15.294118% / var(--sk-opacity-ac));
   /// }
   /// ```
   #[inline]
@@ -881,7 +881,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-n {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(218.99998, 14.084508%, 27.843138%, var(--sk-opacity-n));
+  ///   initial-value: hsl(218.99998 14.084508% 27.843138% / var(--sk-opacity-n));
   /// }
   /// ```
   #[inline]
@@ -899,7 +899,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-nc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-nc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-nc));
   /// }
   /// ```
   #[inline]
@@ -917,7 +917,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-b1 {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-b1));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-b1));
   /// }
   /// ```
   #[inline]
@@ -935,7 +935,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-b2 {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 94.90196%, var(--sk-opacity-b2));
+  ///   initial-value: hsl(0 0% 94.90196% / var(--sk-opacity-b2));
   /// }
   /// ```
   #[inline]
@@ -953,7 +953,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-b3 {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(180, 1.9607836%, 90%, var(--sk-opacity-b3));
+  ///   initial-value: hsl(180 1.9607836% 90% / var(--sk-opacity-b3));
   /// }
   /// ```
   #[inline]
@@ -971,7 +971,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-bc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(215, 27.906975%, 16.862745%, var(--sk-opacity-bc));
+  ///   initial-value: hsl(215 27.906975% 16.862745% / var(--sk-opacity-bc));
   /// }
   /// ```
   #[inline]
@@ -989,7 +989,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-in {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(212.34569, 100%, 47.64706%, var(--sk-opacity-in));
+  ///   initial-value: hsl(212.34569 100% 47.64706% / var(--sk-opacity-in));
   /// }
   /// ```
   #[inline]
@@ -1007,7 +1007,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-inc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-inc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-inc));
   /// }
   /// ```
   #[inline]
@@ -1025,7 +1025,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-su {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(136.8421, 72.1519%, 46.47059%, var(--sk-opacity-su));
+  ///   initial-value: hsl(136.8421 72.1519% 46.47059% / var(--sk-opacity-su));
   /// }
   /// ```
   #[inline]
@@ -1044,7 +1044,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-suc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-suc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-suc));
   /// }
   /// ```
   #[inline]
@@ -1062,7 +1062,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-wa {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(4.5614033, 100%, 66.47059%, var(--sk-opacity-wa));
+  ///   initial-value: hsl(4.5614033 100% 66.47059% / var(--sk-opacity-wa));
   /// }
   /// ```
   #[inline]
@@ -1081,7 +1081,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-wac {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-wac));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-wac));
   /// }
   /// ```
   #[inline]
@@ -1099,7 +1099,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-er {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(325.05154, 77.600006%, 49.019608%, var(--sk-opacity-er));
+  ///   initial-value: hsl(325.05154 77.600006% 49.019608% / var(--sk-opacity-er));
   /// }
   /// ```
   #[inline]
@@ -1117,7 +1117,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-erc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-erc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-erc));
   /// }
   /// ```
   #[inline]
@@ -3985,7 +3985,7 @@ pub trait KeyframeSetAtomAnimate: SkribbleValue {
   /// @keyframes enter {
   ///   from {
   ///     opacity: var(--sk-invalid-css-variable, 1);
-  ///     transform: translate3d(var(--sk-etx, 0), var(--sk-ety, 0), 0) scale3d(var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1)) rotate(var(--sk-invalid-css-variable, 0));
+  ///     transform: translate3d(var(--sk-etx, 0), var(--sk-ety, 0), 0) scale3d(var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1)) rotate(var(--sk-invalid-css-variable, 0deg));
   ///   }
   /// }
   /// ```
@@ -3999,7 +3999,7 @@ pub trait KeyframeSetAtomAnimate: SkribbleValue {
   /// @keyframes exit {
   ///   to {
   ///     opacity: var(--sk-invalid-css-variable, 1);
-  ///     transform: translate3d(var(--sk-invalid-css-variable, 0), var(--sk-invalid-css-variable, 0), 0) scale3d(var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1)) rotate(var(--sk-invalid-css-variable, 0));
+  ///     transform: translate3d(var(--sk-invalid-css-variable, 0), var(--sk-invalid-css-variable, 0), 0) scale3d(var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1)) rotate(var(--sk-invalid-css-variable, 0deg));
   ///   }
   /// }
   /// ```

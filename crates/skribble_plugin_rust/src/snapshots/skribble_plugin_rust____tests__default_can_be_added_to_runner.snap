@@ -57,7 +57,7 @@ impl CssVariables {
   /// @property --sk-p {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(258.89362, 94.37751%, 51.17647%, var(--sk-opacity-p));
+  ///   initial-value: hsl(258.89362 94.37751% 51.17647% / var(--sk-opacity-p));
   /// }
   /// ```
   #[inline]
@@ -75,7 +75,7 @@ impl CssVariables {
   /// @property --sk-pc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-pc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-pc));
   /// }
   /// ```
   #[inline]
@@ -93,7 +93,7 @@ impl CssVariables {
   /// @property --sk-s {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(314, 100%, 47.058823%, var(--sk-opacity-s));
+  ///   initial-value: hsl(314 100% 47.058823% / var(--sk-opacity-s));
   /// }
   /// ```
   #[inline]
@@ -111,7 +111,7 @@ impl CssVariables {
   /// @property --sk-sc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-sc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-sc));
   /// }
   /// ```
   #[inline]
@@ -129,7 +129,7 @@ impl CssVariables {
   /// @property --sk-a {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(174, 60.000008%, 50.980396%, var(--sk-opacity-a));
+  ///   initial-value: hsl(174 60.000008% 50.980396% / var(--sk-opacity-a));
   /// }
   /// ```
   #[inline]
@@ -147,7 +147,7 @@ impl CssVariables {
   /// @property --sk-ac {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(174.70587, 43.589737%, 15.294118%, var(--sk-opacity-ac));
+  ///   initial-value: hsl(174.70587 43.589737% 15.294118% / var(--sk-opacity-ac));
   /// }
   /// ```
   #[inline]
@@ -165,7 +165,7 @@ impl CssVariables {
   /// @property --sk-n {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(218.99998, 14.084508%, 27.843138%, var(--sk-opacity-n));
+  ///   initial-value: hsl(218.99998 14.084508% 27.843138% / var(--sk-opacity-n));
   /// }
   /// ```
   #[inline]
@@ -183,7 +183,7 @@ impl CssVariables {
   /// @property --sk-nc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-nc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-nc));
   /// }
   /// ```
   #[inline]
@@ -201,7 +201,7 @@ impl CssVariables {
   /// @property --sk-b1 {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-b1));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-b1));
   /// }
   /// ```
   #[inline]
@@ -219,7 +219,7 @@ impl CssVariables {
   /// @property --sk-b2 {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 94.90196%, var(--sk-opacity-b2));
+  ///   initial-value: hsl(0 0% 94.90196% / var(--sk-opacity-b2));
   /// }
   /// ```
   #[inline]
@@ -237,7 +237,7 @@ impl CssVariables {
   /// @property --sk-b3 {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(180, 1.9607836%, 90%, var(--sk-opacity-b3));
+  ///   initial-value: hsl(180 1.9607836% 90% / var(--sk-opacity-b3));
   /// }
   /// ```
   #[inline]
@@ -255,7 +255,7 @@ impl CssVariables {
   /// @property --sk-bc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(215, 27.906975%, 16.862745%, var(--sk-opacity-bc));
+  ///   initial-value: hsl(215 27.906975% 16.862745% / var(--sk-opacity-bc));
   /// }
   /// ```
   #[inline]
@@ -273,7 +273,7 @@ impl CssVariables {
   /// @property --sk-in {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(212.34569, 100%, 47.64706%, var(--sk-opacity-in));
+  ///   initial-value: hsl(212.34569 100% 47.64706% / var(--sk-opacity-in));
   /// }
   /// ```
   #[inline]
@@ -291,7 +291,7 @@ impl CssVariables {
   /// @property --sk-inc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-inc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-inc));
   /// }
   /// ```
   #[inline]
@@ -309,7 +309,7 @@ impl CssVariables {
   /// @property --sk-su {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(136.8421, 72.1519%, 46.47059%, var(--sk-opacity-su));
+  ///   initial-value: hsl(136.8421 72.1519% 46.47059% / var(--sk-opacity-su));
   /// }
   /// ```
   #[inline]
@@ -327,7 +327,7 @@ impl CssVariables {
   /// @property --sk-suc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-suc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-suc));
   /// }
   /// ```
   #[inline]
@@ -345,7 +345,7 @@ impl CssVariables {
   /// @property --sk-wa {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(4.5614033, 100%, 66.47059%, var(--sk-opacity-wa));
+  ///   initial-value: hsl(4.5614033 100% 66.47059% / var(--sk-opacity-wa));
   /// }
   /// ```
   #[inline]
@@ -363,7 +363,7 @@ impl CssVariables {
   /// @property --sk-wac {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-wac));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-wac));
   /// }
   /// ```
   #[inline]
@@ -381,7 +381,7 @@ impl CssVariables {
   /// @property --sk-er {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(325.05154, 77.600006%, 49.019608%, var(--sk-opacity-er));
+  ///   initial-value: hsl(325.05154 77.600006% 49.019608% / var(--sk-opacity-er));
   /// }
   /// ```
   #[inline]
@@ -399,7 +399,7 @@ impl CssVariables {
   /// @property --sk-erc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-erc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-erc));
   /// }
   /// ```
   #[inline]
@@ -727,7 +727,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-p {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(258.89362, 94.37751%, 51.17647%, var(--sk-opacity-p));
+  ///   initial-value: hsl(258.89362 94.37751% 51.17647% / var(--sk-opacity-p));
   /// }
   /// ```
   #[inline]
@@ -745,7 +745,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-pc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-pc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-pc));
   /// }
   /// ```
   #[inline]
@@ -763,7 +763,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-s {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(314, 100%, 47.058823%, var(--sk-opacity-s));
+  ///   initial-value: hsl(314 100% 47.058823% / var(--sk-opacity-s));
   /// }
   /// ```
   #[inline]
@@ -781,7 +781,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-sc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-sc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-sc));
   /// }
   /// ```
   #[inline]
@@ -799,7 +799,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-a {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(174, 60.000008%, 50.980396%, var(--sk-opacity-a));
+  ///   initial-value: hsl(174 60.000008% 50.980396% / var(--sk-opacity-a));
   /// }
   /// ```
   #[inline]
@@ -817,7 +817,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-ac {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(174.70587, 43.589737%, 15.294118%, var(--sk-opacity-ac));
+  ///   initial-value: hsl(174.70587 43.589737% 15.294118% / var(--sk-opacity-ac));
   /// }
   /// ```
   #[inline]
@@ -835,7 +835,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-n {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(218.99998, 14.084508%, 27.843138%, var(--sk-opacity-n));
+  ///   initial-value: hsl(218.99998 14.084508% 27.843138% / var(--sk-opacity-n));
   /// }
   /// ```
   #[inline]
@@ -853,7 +853,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-nc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-nc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-nc));
   /// }
   /// ```
   #[inline]
@@ -871,7 +871,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-b1 {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-b1));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-b1));
   /// }
   /// ```
   #[inline]
@@ -889,7 +889,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-b2 {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 94.90196%, var(--sk-opacity-b2));
+  ///   initial-value: hsl(0 0% 94.90196% / var(--sk-opacity-b2));
   /// }
   /// ```
   #[inline]
@@ -907,7 +907,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-b3 {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(180, 1.9607836%, 90%, var(--sk-opacity-b3));
+  ///   initial-value: hsl(180 1.9607836% 90% / var(--sk-opacity-b3));
   /// }
   /// ```
   #[inline]
@@ -925,7 +925,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-bc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(215, 27.906975%, 16.862745%, var(--sk-opacity-bc));
+  ///   initial-value: hsl(215 27.906975% 16.862745% / var(--sk-opacity-bc));
   /// }
   /// ```
   #[inline]
@@ -943,7 +943,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-in {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(212.34569, 100%, 47.64706%, var(--sk-opacity-in));
+  ///   initial-value: hsl(212.34569 100% 47.64706% / var(--sk-opacity-in));
   /// }
   /// ```
   #[inline]
@@ -961,7 +961,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-inc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-inc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-inc));
   /// }
   /// ```
   #[inline]
@@ -979,7 +979,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-su {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(136.8421, 72.1519%, 46.47059%, var(--sk-opacity-su));
+  ///   initial-value: hsl(136.8421 72.1519% 46.47059% / var(--sk-opacity-su));
   /// }
   /// ```
   #[inline]
@@ -997,7 +997,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-suc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-suc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-suc));
   /// }
   /// ```
   #[inline]
@@ -1015,7 +1015,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-wa {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(4.5614033, 100%, 66.47059%, var(--sk-opacity-wa));
+  ///   initial-value: hsl(4.5614033 100% 66.47059% / var(--sk-opacity-wa));
   /// }
   /// ```
   #[inline]
@@ -1033,7 +1033,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-wac {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-wac));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-wac));
   /// }
   /// ```
   #[inline]
@@ -1051,7 +1051,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-er {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(325.05154, 77.600006%, 49.019608%, var(--sk-opacity-er));
+  ///   initial-value: hsl(325.05154 77.600006% 49.019608% / var(--sk-opacity-er));
   /// }
   /// ```
   #[inline]
@@ -1069,7 +1069,7 @@ pub trait Color: SkribbleValue {
   /// @property --sk-erc {
   ///   syntax: "<color>";
   ///   inherits: false;
-  ///   initial-value: hsla(0, 0%, 100%, var(--sk-opacity-erc));
+  ///   initial-value: hsl(0 0% 100% / var(--sk-opacity-erc));
   /// }
   /// ```
   #[inline]

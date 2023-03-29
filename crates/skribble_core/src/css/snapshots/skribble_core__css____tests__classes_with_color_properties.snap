@@ -13,7 +13,7 @@ expression: classes.to_skribble_css(runner_config)?
 @property --sk-s {
   syntax: "<color>";
   inherits: true;
-  initial-value: hsla(314, 100%, 47.058823%, var(--sk-opacity-s));
+  initial-value: hsl(314 100% 47.058823% / var(--sk-opacity-s));
 }
 @property --sk-opacity-p {
   syntax: "<number>";
@@ -23,7 +23,7 @@ expression: classes.to_skribble_css(runner_config)?
 @property --sk-p {
   syntax: "<color>";
   inherits: false;
-  initial-value: hsla(258.89362, 94.37751%, 51.17647%, var(--sk-opacity-p));
+  initial-value: hsl(258.89362 94.37751% 51.17647% / var(--sk-opacity-p));
 }
 @layer default {
   .bg\:\$secondary {
@@ -33,11 +33,11 @@ expression: classes.to_skribble_css(runner_config)?
   @media print {
     :root {
       --sk-opacity-s: 1;
-      --sk-s: hsla(240, 100%, 36.078434%, var(--sk-opacity-s));
+      --sk-s: hsl(240 100% 36.078434% / var(--sk-opacity-s));
     }
     .dark {
       --sk-opacity-s: 1;
-      --sk-s: hsla(300, 100%, 50%, var(--sk-opacity-s));
+      --sk-s: hsl(300 100% 50% / var(--sk-opacity-s));
     }
   }
   @media (min-width: 640px) {
@@ -49,7 +49,7 @@ expression: classes.to_skribble_css(runner_config)?
   @media (prefers-color-scheme: dark) {
     :root {
       --sk-opacity-s: 1;
-      --sk-s: hsla(60, 100%, 96.66667%, var(--sk-opacity-s));
+      --sk-s: hsl(60 100% 96.66667% / var(--sk-opacity-s));
     }
   }
 }
