@@ -6,6 +6,7 @@ use lazy_static::lazy_static;
 use palette::rgb::Rgba;
 use palette::FromColor;
 use palette::Hsla;
+use palette::Hwba;
 use palette::RgbHue;
 use regex::Regex;
 
@@ -18,6 +19,7 @@ use regex::Regex;
 pub enum Color {
   Rgb(Rgba),
   Hsl(Hsla),
+  Hwb(Hwba),
 }
 
 impl Color {
@@ -26,6 +28,7 @@ impl Color {
     match self {
       Self::Rgb(_) => self,
       Self::Hsl(hsla) => Self::Rgb(Rgba::from_color(hsla)),
+      Self::Hwb(hwba) => Self::Rgb(Rgba::from_color(hwba)),
     }
   }
 
@@ -34,6 +37,16 @@ impl Color {
     match self {
       Self::Rgb(rgb) => Self::Hsl(Hsla::from_color(rgb)),
       Self::Hsl(_) => self,
+      Self::Hwb(hwba) => Self::Hsl(Hsla::from_color(hwba)),
+    }
+  }
+
+  /// Returns the color as an HWB value.
+  pub fn into_hwb(self) -> Self {
+    match self {
+      Self::Rgb(rgb) => Self::Hwb(Hwba::from_color(rgb)),
+      Self::Hsl(hsla) => Self::Hwb(Hwba::from_color(hsla)),
+      Self::Hwb(_) => self,
     }
   }
 
@@ -41,8 +54,9 @@ impl Color {
     let opacity_variable = opacity_variable.as_ref();
 
     match self {
-      Self::Rgb(ref rgba) => rgb_to_string(rgba, Some(opacity_variable)),
-      Self::Hsl(ref hsla) => hsl_to_string(hsla, Some(opacity_variable)),
+      Self::Rgb(ref rgba) => rgb_to_css(rgba, Some(opacity_variable)),
+      Self::Hsl(ref hsla) => hsl_to_css(hsla, Some(opacity_variable)),
+      Self::Hwb(ref hwba) => hwb_to_css(hwba, Some(opacity_variable)),
     }
   }
 
@@ -50,6 +64,7 @@ impl Color {
     match self {
       Self::Rgb(ref rgba) => rgba.alpha,
       Self::Hsl(ref hsla) => hsla.alpha,
+      Self::Hwb(ref hwba) => hwba.alpha,
     }
   }
 }
@@ -57,8 +72,9 @@ impl Color {
 impl Display for Color {
   fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
     match self {
-      Self::Rgb(ref rgba) => write!(f, "{}", rgb_to_string::<String>(rgba, None)),
-      Self::Hsl(ref hsla) => write!(f, "{}", hsl_to_string::<String>(hsla, None)),
+      Self::Rgb(ref rgba) => write!(f, "{}", rgb_to_css::<String>(rgba, None)),
+      Self::Hsl(ref hsla) => write!(f, "{}", hsl_to_css::<String>(hsla, None)),
+      Self::Hwb(ref hwba) => write!(f, "{}", hwb_to_css::<String>(hwba, None)),
     }
   }
 }
@@ -86,7 +102,16 @@ impl FromStr for Color {
     };
 
     match from_hsl_string(value) {
-      Ok(hsl) => return Ok(Self::Hsl(hsl)),
+      Ok(hsla) => return Ok(Self::Hsl(hsla)),
+      Err(err) => {
+        if let ColorError::Invalid(_) = err {
+          return Err(err);
+        }
+      }
+    };
+
+    match from_hwb_string(value) {
+      Ok(hwba) => return Ok(Self::Hwb(hwba)),
       Err(err) => {
         if let ColorError::Invalid(_) = err {
           return Err(err);
@@ -118,6 +143,64 @@ lazy_static! {
   static ref HEX_REGEX: Regex = Regex::new(r"^(?i)\s*#(?:(?P<r1>[a-f0-9])(?P<g1>[a-f0-9])(?P<b1>[a-f0-9])(?P<a1>[a-f0-9])?|(?P<r2>[a-f0-9]{2})(?P<g2>[a-f0-9]{2})(?P<b2>[a-f0-9]{2})(?P<a2>[a-f0-9]{2})?)\s*$").unwrap();
   static ref RGB_REGEX: Regex = Regex::new(r"(?i)\s*(?:rgb\(\s*(?P<r1>\d+(?:\.\d+)?)\s*(?P<g1>\d+(?:\.\d+)?)\s*(?P<b1>\d+(?:\.\d+)?)\s*(?:/\s*(?:(?P<a1>\d+(?:\.\d+)?|\.\d+)|(?P<pc1>\d+(?:\.\d+)?|\.\d+)%))?\s*\)|rgba\(\s*(?P<r2>\d+(?:\.\d+)?)\s*,\s*(?P<g2>\d+(?:\.\d+)?)\s*,\s*(?P<b2>\d+(?:\.\d+)?)\s*,\s*(?:(?P<a2>\d+(?:\.\d+)?|\.\d+)|(?P<pc2>\d+(?:\.\d+)?|\.\d+)%)?\s*\)|rgb\(\s*(?P<r3>\d+(?:\.\d+)?)\s*,\s*(?P<g3>\d+(?:\.\d+)?)\s*,\s*(?P<b3>\d+(?:\.\d+)?)\s*\))\s*").unwrap();
   static ref HSL_REGEX: Regex = Regex::new(r"(?i)\s*(?:hsl\(\s*(?P<h1>\d+(?:\.\d+)?)(?P<u1>deg|grad|rad|turn)?\s*(?P<s1>\d+(?:\.\d+)?)%\s*(?P<l1>\d+(?:\.\d+)?)%\s*(?:/\s*(?:(?P<a1>\d+(?:\.\d+)?|\.\d+)|(?P<pc1>\d+(?:\.\d+)?|\.\d+)%))?\s*\)|hsla\(\s*(?P<h2>\d+(?:\.\d+)?)(?P<u2>deg|grad|rad|turn)?\s*,\s*(?P<s2>\d+(?:\.\d+)?)%\s*,\s*(?P<l2>\d+(?:\.\d+)?)%\s*,\s*(?:(?P<a2>\d+(?:\.\d+)?|\.\d+)|(?P<pc2>\d+(?:\.\d+)?|\.\d+)%)?\s*\)|hsl\(\s*(?P<h3>\d+(?:\.\d+)?)(?P<u3>deg|grad|rad|turn)?\s*,\s*(?P<s3>\d+(?:\.\d+)?)%\s*,\s*(?P<l3>\d+(?:\.\d+)?)%\s*\))\s*").unwrap();
+  static ref HWB_REGEX: Regex = Regex::new(r"(?i)\s*hwb\(\s*(?P<h>\d+(?:\.\d+)?)(?P<u>deg|grad|rad|turn)?\s*(?P<w>\d+(?:\.\d+)?)%\s*(?P<b>\d+(?:\.\d+)?)%\s*(?:/\s*(?:(?P<a>\d+(?:\.\d+)?|\.\d+)|(?P<pc>\d+(?:\.\d+)?|\.\d+)%))?\s*\)\s*").unwrap();
+}
+
+fn from_hwb_string(value: &str) -> Result<Hwba, ColorError> {
+  match HWB_REGEX.captures(value) {
+    Some(capture) => {
+      if let Some((r, g, b)) = capture
+        .name("h")
+        .zip(capture.name("w"))
+        .zip(capture.name("b"))
+        .map(|((h, w), b)| (h, w, b))
+      {
+        let hue = f32::from_str(r.as_str()).map_err(ColorError::from)?;
+        let whiteness = f32::from_str(g.as_str())
+          .map_err(ColorError::from)?
+          .clamp(0.0, 100.0)
+          / 100.0;
+        let blackness = f32::from_str(b.as_str())
+          .map_err(ColorError::from)?
+          .clamp(0.0, 100.0)
+          / 100.0;
+
+        let unit = if let Some(unit) = capture.name("u") {
+          unit.as_str()
+        } else {
+          "deg"
+        };
+
+        let hue = match unit {
+          "deg" => RgbHue::from_degrees(hue),
+          "grad" => RgbHue::from_radians(hue * PI / 200.0),
+          "rad" => RgbHue::from_radians(hue),
+          "turn" => RgbHue::from_degrees(hue * 360.0),
+          _ => return Err(ColorError::Invalid(format!("hue units: `{unit}`"))),
+        };
+
+        let alpha = if let Some(alpha) = capture.name("a") {
+          f32::from_str(alpha.as_str())?.clamp(0.0, 1.0)
+        } else if let Some(percentage) = capture.name("pc") {
+          f32::from_str(percentage.as_str())?.clamp(0.0, 100.0) / 100.0
+        } else {
+          1.0
+        };
+
+        return Ok(Hwba::new(hue, whiteness, blackness, alpha));
+      }
+
+      Err(ColorError::Invalid("hwb".into()))
+    }
+
+    None => {
+      if value.trim().starts_with("hwb") {
+        Err(ColorError::Invalid("hwb".into()))
+      } else {
+        Err(ColorError::Unknown)
+      }
+    }
+  }
 }
 
 fn from_hsl_string(value: &str) -> Result<Hsla, ColorError> {
@@ -423,7 +506,7 @@ fn from_hex_string(value: &str) -> Result<Rgba, ColorError> {
   }
 }
 
-fn rgb_to_string<T: AsRef<str>>(rgba: &Rgba, opacity: Option<T>) -> String {
+fn rgb_to_css<T: AsRef<str>>(rgba: &Rgba, opacity: Option<T>) -> String {
   let is_alpha = opacity.is_some() || rgba.alpha != 1.0;
   let red = (rgba.red * 255.0) as u8;
   let green = (rgba.green * 255.0) as u8;
@@ -440,6 +523,8 @@ fn rgb_to_string<T: AsRef<str>>(rgba: &Rgba, opacity: Option<T>) -> String {
 }
 
 fn hsl_to_string<T: AsRef<str>>(hsla: &Hsla, opacity: Option<T>) -> String {
+
+fn hsl_to_css<T: AsRef<str>>(hsla: &Hsla, opacity: Option<T>) -> String {
   let is_alpha = opacity.is_some() || hsla.alpha != 1.0;
   let hue = hsla.hue.to_positive_degrees();
   let saturation = hsla.saturation * 100.0;
@@ -453,6 +538,22 @@ fn hsl_to_string<T: AsRef<str>>(hsla: &Hsla, opacity: Option<T>) -> String {
   }
 
   format!("hsl({hue} {saturation}% {lightness}% / {alpha})")
+}
+
+fn hwb_to_css<T: AsRef<str>>(hwba: &Hwba, opacity: Option<T>) -> String {
+  let is_alpha = opacity.is_some() || hwba.alpha != 1.0;
+  let hue = hwba.hue.to_positive_degrees();
+  let whiteness = hwba.whiteness * 100.0;
+  let blackness = hwba.blackness * 100.0;
+  let alpha = opacity
+    .map(|v| v.as_ref().to_string())
+    .unwrap_or(hwba.alpha.to_string());
+
+  if !is_alpha {
+    return format!("hwb({hue} {whiteness}% {blackness}%)");
+  }
+
+  format!("hwb({hue} {whiteness}% {blackness}% / {alpha})")
 }
 
 #[cfg(test)]

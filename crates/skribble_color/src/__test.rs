@@ -126,6 +126,7 @@ fn invalid_rgb() {
     )
     "###);
 }
+
 #[test]
 fn from_hsl() {
   let r = "hsl(100, 50%, 50%)";
@@ -212,4 +213,18 @@ fn invalid_hsl() {
         "hsl",
     )
     "###);
+}
+
+#[test]
+fn from_hwb() {
+  let r = "hwb(100 50% 50%)";
+  let hwb: Color = r.parse().unwrap();
+  insta::assert_display_snapshot!(hwb, @"hwb(100 50% 50%)");
+}
+
+#[test]
+fn from_hwb_alpha() {
+  let r = "hwb(100 50% 50% / 10%)";
+  let hwb: Color = r.parse().unwrap();
+  insta::assert_display_snapshot!(hwb, @"hwb(100 50% 50% / 0.1)");
 }
