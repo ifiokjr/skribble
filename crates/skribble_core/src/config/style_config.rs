@@ -780,13 +780,14 @@ impl CssVariable {
     let syntax = &self.syntax;
     let _color_format = &options.color_format;
     let variable_name = self.get_variable(options);
+    let inherits = !self.media_queries.is_empty();
     let initial_value = if self.is_color() {
       let opacity_variable = self.get_opacity_variable(options);
       let alpha = self.get_default_opacity(None);
       writeln!(writer, "@property {opacity_variable} {{")?;
       let mut indented_writer = indent_writer();
       writeln!(indented_writer, "syntax: \"<number>\";")?;
-      writeln!(indented_writer, "inherits: false;")?;
+      writeln!(indented_writer, "inherits: {inherits};")?;
       writeln!(indented_writer, "initial-value: {alpha};")?;
       write!(writer, "{}", indented_writer.get_ref())?;
       writeln!(writer, "}}")?;
@@ -805,7 +806,7 @@ impl CssVariable {
     writeln!(writer, "@property {variable_name} {{")?;
     let mut indented_writer = indent_writer();
     writeln!(indented_writer, "syntax: \"{syntax}\";")?;
-    writeln!(indented_writer, "inherits: false;")?;
+    writeln!(indented_writer, "inherits: {inherits};")?;
     writeln!(indented_writer, "initial-value: {initial_value};")?;
     write!(writer, "{}", indented_writer.get_ref())?;
     writeln!(writer, "}}")?;

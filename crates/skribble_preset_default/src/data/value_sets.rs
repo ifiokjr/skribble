@@ -272,7 +272,8 @@ lazy_static! {
     ]
   };
   pub(crate) static ref ANIMATION_VALUE_SETS: Vec<ValueSet> = {
-    let default_animation_duration = Placeholder::variable("defaultAnimationDuration");
+    let default_animation_duration =
+      Placeholder::wrapped_variable("defaultAnimationDuration", None);
     let enter_opacity = Placeholder::variable("enterOpacity");
     let enter_scale = Placeholder::variable("enterScale");
     let enter_rotate = Placeholder::variable("enterRotate");
@@ -287,29 +288,29 @@ lazy_static! {
     vec![
       ValueSet::builder()
         .name("spinAnimation")
-        .values(indexmap! { "spin".to_string() => format!("spin var({default_animation_duration}) linear infinite") })
+        .values(indexmap! { "spin".to_string() => format!("spin {default_animation_duration} linear infinite") })
         .description("The spin animation.")
         .build(),
       ValueSet::builder()
         .name("pingAnimation")
-        .values(indexmap! { "ping".to_string() => format!("ping var({default_animation_duration}) cubic-bezier(0, 0, 0.2, 1) infinite") })
+        .values(indexmap! { "ping".to_string() => format!("ping {default_animation_duration} cubic-bezier(0, 0, 0.2, 1) infinite") })
         .description("The ping animation.")
         .build(),
       ValueSet::builder()
         .name("pulseAnimation")
-        .values(indexmap! { "pulse".to_string() => format!("pulse calc(2 * var({default_animation_duration})) cubic-bezier(0.4, 0, 0.6, 1) infinite") })
+        .values(indexmap! { "pulse".to_string() => format!("pulse calc(2 * {default_animation_duration}) cubic-bezier(0.4, 0, 0.6, 1) infinite") })
         .description("The pulse animation.")
         .build(),
       ValueSet::builder()
         .name("bounceAnimation")
-        .values(indexmap! { "bounce".to_string() => format!("bounce var({default_animation_duration}) infinite") })
+        .values(indexmap! { "bounce".to_string() => format!("bounce {default_animation_duration} infinite") })
         .description("The bounce animation.")
         .build(),
       ValueSet::builder()
         .name("enterAnimation")
         .values(indexmap! {
           "in".to_string() => indexmap! {
-            "animation".to_string() => format!("enter var({default_animation_duration})"),
+            "animation".to_string() => format!("enter {default_animation_duration}"),
             enter_opacity => "initial".to_string(),
             enter_scale => "initial".to_string(),
             enter_rotate => "initial".to_string(),
@@ -323,7 +324,7 @@ lazy_static! {
         .name("exitAnimation")
         .values(indexmap! {
           "out".to_string() => indexmap! {
-            "animation".to_string() => format!("exit var({default_animation_duration})"),
+            "animation".to_string() => format!("exit {default_animation_duration}"),
             exit_opacity => "initial".to_string(),
             exit_scale => "initial".to_string(),
             exit_rotate => "initial".to_string(),

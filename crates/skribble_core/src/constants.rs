@@ -3,6 +3,7 @@ use lazy_static::lazy_static;
 use regex::Captures;
 use regex::Regex;
 
+use crate::wrap_css_variable;
 use crate::RunnerConfig;
 
 pub const INDENTATION: &str = "  ";
@@ -145,8 +146,8 @@ impl Placeholder {
     Self::create(Self::CSS_VARIABLE, name)
   }
 
-  pub fn wrapped_variable(name: impl AsRef<str>) -> String {
-    format!("var({})", Self::variable(name))
+  pub fn wrapped_variable(name: impl AsRef<str>, default: Option<String>) -> String {
+    wrap_css_variable(Self::variable(name), default)
   }
 
   /// Extract all the variables from the given content.

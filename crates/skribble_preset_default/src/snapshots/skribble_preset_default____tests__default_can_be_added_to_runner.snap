@@ -20,7 +20,7 @@ RunnerConfig {
                     "from": StringMap(
                         {
                             "opacity": "var(__:CSS_VARIABLE::enterOpacity:__, 1)",
-                            "transform": "translate3d(var(__:CSS_VARIABLE::enterTranslateX:__, 0), var(__:CSS_VARIABLE::enterTranslateY:__, 0), 0) scale3d(var(__:CSS_VARIABLE::enterScale:__, 1), var(__:CSS_VARIABLE::enterScale:__, 1), var(__:CSS_VARIABLE::enterScale:__, 1)) rotate(var(__:CSS_VARIABLE::enterRotate:__, 0))",
+                            "transform": "translate3d(var(__:CSS_VARIABLE::enterTranslateX:__, 0), var(__:CSS_VARIABLE::enterTranslateY:__, 0), 0) scale3d(var(__:CSS_VARIABLE::enterScale:__, 1), var(__:CSS_VARIABLE::enterScale:__, 1), var(__:CSS_VARIABLE::enterScale:__, 1)) rotate(var(__:CSS_VARIABLE::enterRotate:__, 0deg))",
                         },
                     ),
                 },
@@ -39,7 +39,7 @@ RunnerConfig {
                     "to": StringMap(
                         {
                             "opacity": "var(__:CSS_VARIABLE::exitOpacity:__, 1)",
-                            "transform": "translate3d(var(__:CSS_VARIABLE::exitTranslateX:__, 0), var(__:CSS_VARIABLE::exitTranslateY:__, 0), 0) scale3d(var(__:CSS_VARIABLE::exitScale:__, 1), var(__:CSS_VARIABLE::exitScale:__, 1), var(__:CSS_VARIABLE::exitScale:__, 1)) rotate(var(__:CSS_VARIABLE::exitRotate:__, 0))",
+                            "transform": "translate3d(var(__:CSS_VARIABLE::exitTranslateX:__, 0), var(__:CSS_VARIABLE::exitTranslateY:__, 0), 0) scale3d(var(__:CSS_VARIABLE::exitScale:__, 1), var(__:CSS_VARIABLE::exitScale:__, 1), var(__:CSS_VARIABLE::exitScale:__, 1)) rotate(var(__:CSS_VARIABLE::exitRotate:__, 0deg))",
                         },
                     ),
                 },
@@ -900,7 +900,7 @@ RunnerConfig {
             priority: Priority(
                 150,
             ),
-            variable: "--group-nested-backdrop",
+            variable: "--gnb",
             syntax: Value(
                 Any,
             ),
@@ -919,7 +919,7 @@ RunnerConfig {
             ),
             variable: "--default-transition-duration",
             syntax: Value(
-                Any,
+                Time,
             ),
             value: Some(
                 "150ms",
@@ -936,7 +936,7 @@ RunnerConfig {
             ),
             variable: "--default-animation-duration",
             syntax: Value(
-                Any,
+                Time,
             ),
             value: Some(
                 "1s",
@@ -953,9 +953,11 @@ RunnerConfig {
             ),
             variable: "--etx",
             syntax: Value(
-                Any,
+                LengthPercentage,
             ),
-            value: None,
+            value: Some(
+                "0",
+            ),
             media_queries: NestedStringMap(
                 {},
             ),
@@ -968,9 +970,11 @@ RunnerConfig {
             ),
             variable: "--ety",
             syntax: Value(
-                Any,
+                LengthPercentage,
             ),
-            value: None,
+            value: Some(
+                "0",
+            ),
             media_queries: NestedStringMap(
                 {},
             ),

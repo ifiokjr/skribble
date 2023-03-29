@@ -5,24 +5,24 @@ use skribble_core::Placeholder;
 
 lazy_static! {
   pub(crate) static ref KEYFRAMES: Vec<Keyframe> = {
-    let enter_opacity = Placeholder::variable("enterOpacity");
-    let enter_translate_x = Placeholder::variable("enterTranslateX");
-    let enter_translate_y = Placeholder::variable("enterTranslateY");
-    let enter_scale = Placeholder::variable("enterScale");
-    let enter_rotate = Placeholder::variable("enterRotate");
-    let exit_opacity = Placeholder::variable("exitOpacity");
-    let exit_translate_x = Placeholder::variable("exitTranslateX");
-    let exit_translate_y = Placeholder::variable("exitTranslateY");
-    let exit_scale = Placeholder::variable("exitScale");
-    let exit_rotate = Placeholder::variable("exitRotate");
+    let enter_opacity = Placeholder::wrapped_variable("enterOpacity", Some("1".into()));
+    let enter_translate_x = Placeholder::wrapped_variable("enterTranslateX", Some("0".into()));
+    let enter_translate_y = Placeholder::wrapped_variable("enterTranslateY", Some("0".into()));
+    let enter_scale = Placeholder::wrapped_variable("enterScale", Some("1".into()));
+    let enter_rotate = Placeholder::wrapped_variable("enterRotate", Some("0deg".into()));
+    let exit_opacity = Placeholder::wrapped_variable("exitOpacity", Some("1".into()));
+    let exit_translate_x = Placeholder::wrapped_variable("exitTranslateX", Some("0".into()));
+    let exit_translate_y = Placeholder::wrapped_variable("exitTranslateY", Some("0".into()));
+    let exit_scale = Placeholder::wrapped_variable("exitScale", Some("1".into()));
+    let exit_rotate = Placeholder::wrapped_variable("exitRotate", Some("0deg".into()));
 
     vec![
       Keyframe::builder()
         .name("enter")
         .rules(indexmap! {
           "from" => indexmap! {
-            "opacity" => format!("var({enter_opacity}, 1)"),
-            "transform" => format!("translate3d(var({enter_translate_x}, 0), var({enter_translate_y}, 0), 0) scale3d(var({enter_scale}, 1), var({enter_scale}, 1), var({enter_scale}, 1)) rotate(var({enter_rotate}, 0))")
+            "opacity" => enter_opacity.into(),
+            "transform" => format!("translate3d({enter_translate_x}, {enter_translate_y}, 0) scale3d({enter_scale}, {enter_scale}, {enter_scale}) rotate({enter_rotate})")
           }
         })
         .description("Manages the keyframes for the entry animation")
@@ -31,8 +31,8 @@ lazy_static! {
         .name("exit")
         .rules(indexmap! {
           "to" => indexmap! {
-            "opacity" => format!("var({exit_opacity}, 1)"),
-            "transform" => format!("translate3d(var({exit_translate_x}, 0), var({exit_translate_y}, 0), 0) scale3d(var({exit_scale}, 1), var({exit_scale}, 1), var({exit_scale}, 1)) rotate(var({exit_rotate}, 0))")
+            "opacity" => exit_opacity.into(),
+            "transform" => format!("translate3d({exit_translate_x}, {exit_translate_y}, 0) scale3d({exit_scale}, {exit_scale}, {exit_scale}) rotate({exit_rotate})")
           }
         })
         .description("Manages the keyframes for the exit animation.")

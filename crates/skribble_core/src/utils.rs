@@ -84,15 +84,11 @@ pub fn indent_writer<'i>() -> IndentWriter<'i, String> {
   IndentWriter::new(INDENTATION, String::new())
 }
 
-pub fn css_variable_var(value: impl AsRef<str>) -> String {
-  format!("var({})", value.as_ref())
-}
-
-/// Wrap the opacity value in `var()` if not already done in the config.
-pub fn wrap_css_variable(value: impl AsRef<str>) -> String {
+pub fn wrap_css_variable(value: impl AsRef<str>, default: Option<String>) -> String {
   let value = value.as_ref();
-  if value.starts_with("var(") && value.ends_with(')') {
-    value.to_owned()
+
+  if let Some(default) = default {
+    return format!("var({value}, {default})");
   } else {
     format!("var({value})")
   }

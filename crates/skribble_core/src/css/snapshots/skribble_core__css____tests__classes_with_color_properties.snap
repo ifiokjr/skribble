@@ -7,12 +7,12 @@ expression: classes.to_skribble_css(runner_config)?
 @layer default;
 @property --sk-opacity-s {
   syntax: "<number>";
-  inherits: false;
+  inherits: true;
   initial-value: 1;
 }
 @property --sk-s {
   syntax: "<color>";
-  inherits: false;
+  inherits: true;
   initial-value: hsla(314, 100%, 47.058823%, var(--sk-opacity-s));
 }
 @property --sk-opacity-p {

@@ -82,7 +82,7 @@ lazy_static! {
       Atom::builder()
         .name("zoom")
         .values(vec!["zoom"])
-        .styles(indexmap! {enter_scale.as_str() => none })
+        .styles(indexmap! {enter_scale => none })
         .build(),
       Atom::builder()
         .name("font")
@@ -207,7 +207,7 @@ lazy_static! {
       Atom::builder()
         .name("bgOpacity")
         .values(vec!["opacity"])
-        .styles(indexmap! { bg_opacity.as_str() => none })
+        .styles(indexmap! { bg_opacity => none })
         .build(),
       Atom::builder()
         .name("opacity")

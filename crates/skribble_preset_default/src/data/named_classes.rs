@@ -11,7 +11,7 @@ lazy_static! {
     let group_nested_transform_gpu = Placeholder::variable("groupNestedTransformGpu");
     let group_nested_transform = Placeholder::variable("groupNestedTransform");
     let group_nested_transform_cpu = Placeholder::variable("groupNestedTransformCpu");
-    let contained_max_width = Placeholder::wrapped_variable("containedMaxWidth");
+    let contained_max_width = Placeholder::wrapped_variable("containedMaxWidth", None);
 
     vec![
       NamedClass::builder()

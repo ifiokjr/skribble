@@ -409,7 +409,7 @@ impl CssVariables {
   /// ```css
   /// @property --sk-cmw {
   ///   syntax: "*";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: inherit;
   /// }
   /// ```
@@ -660,7 +660,7 @@ impl CssVariables {
     "--sk-backdrop-drop-shadow".into()
   }
   /// ```css
-  /// @property --sk-group-nested-backdrop {
+  /// @property --sk-gnb {
   ///   syntax: "*";
   ///   inherits: false;
   ///   initial-value: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
@@ -668,11 +668,11 @@ impl CssVariables {
   /// ```
   #[inline]
   pub fn group_nested_backdrop(&self) -> String {
-    "--sk-group-nested-backdrop".into()
+    "--sk-gnb".into()
   }
   /// ```css
   /// @property --sk-default-transition-duration {
-  ///   syntax: "*";
+  ///   syntax: "<time>";
   ///   inherits: false;
   ///   initial-value: 150ms;
   /// }
@@ -683,7 +683,7 @@ impl CssVariables {
   }
   /// ```css
   /// @property --sk-default-animation-duration {
-  ///   syntax: "*";
+  ///   syntax: "<time>";
   ///   inherits: false;
   ///   initial-value: 1s;
   /// }
@@ -694,9 +694,9 @@ impl CssVariables {
   }
   /// ```css
   /// @property --sk-etx {
-  ///   syntax: "*";
+  ///   syntax: "<length-percentage>";
   ///   inherits: false;
-  ///   initial-value: /* */;
+  ///   initial-value: 0;
   /// }
   /// ```
   #[inline]
@@ -705,9 +705,9 @@ impl CssVariables {
   }
   /// ```css
   /// @property --sk-ety {
-  ///   syntax: "*";
+  ///   syntax: "<length-percentage>";
   ///   inherits: false;
-  ///   initial-value: /* */;
+  ///   initial-value: 0;
   /// }
   /// ```
   #[inline]
@@ -3896,7 +3896,7 @@ pub trait KeyframeSetAtomAnimate: SkribbleValue {
   /// @keyframes enter {
   ///   from {
   ///     opacity: var(--sk-invalid-css-variable, 1);
-  ///     transform: translate3d(var(--sk-etx, 0), var(--sk-ety, 0), 0) scale3d(var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1)) rotate(var(--sk-invalid-css-variable, 0));
+  ///     transform: translate3d(var(--sk-etx, 0), var(--sk-ety, 0), 0) scale3d(var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1)) rotate(var(--sk-invalid-css-variable, 0deg));
   ///   }
   /// }
   /// ```
@@ -3910,7 +3910,7 @@ pub trait KeyframeSetAtomAnimate: SkribbleValue {
   /// @keyframes exit {
   ///   to {
   ///     opacity: var(--sk-invalid-css-variable, 1);
-  ///     transform: translate3d(var(--sk-invalid-css-variable, 0), var(--sk-invalid-css-variable, 0), 0) scale3d(var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1)) rotate(var(--sk-invalid-css-variable, 0));
+  ///     transform: translate3d(var(--sk-invalid-css-variable, 0), var(--sk-invalid-css-variable, 0), 0) scale3d(var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1)) rotate(var(--sk-invalid-css-variable, 0deg));
   ///   }
   /// }
   /// ```

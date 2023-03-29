@@ -2,6 +2,7 @@ use lazy_static::lazy_static;
 use skribble_core::map;
 use skribble_core::CssVariable;
 use skribble_core::Placeholder;
+use skribble_core::PropertySyntaxValue;
 use skribble_core::PropertySyntaxValue::Color;
 
 lazy_static! {
@@ -209,21 +210,20 @@ lazy_static! {
       .name("groupNestedFilter")
       .variable("--group-nested-filter")
       .value({
-        let filter_blur = Placeholder::variable("filterBlur");
-        let filter_brightness = Placeholder::variable("filterBrightness");
-        let filter_contrast = Placeholder::variable("filterContrast");
-        let filter_grayscale = Placeholder::variable("filterGrayscale");
-        let filter_hue_rotate = Placeholder::variable("filterHueRotate");
-        let filter_invert = Placeholder::variable("filterInvert");
-        let filter_saturate = Placeholder::variable("filterSaturate");
-        let filter_sepia = Placeholder::variable("filterSepia");
-        let filter_drop_shadow = Placeholder::variable("filterDropShadow");
-        let filter_custom = Placeholder::variable("filterCustom");
+        let filter_blur = Placeholder::wrapped_variable("filterBlur", None);
+        let filter_brightness = Placeholder::wrapped_variable("filterBrightness", None);
+        let filter_contrast = Placeholder::wrapped_variable("filterContrast", None);
+        let filter_grayscale = Placeholder::wrapped_variable("filterGrayscale", None);
+        let filter_hue_rotate = Placeholder::wrapped_variable("filterHueRotate", None);
+        let filter_invert = Placeholder::wrapped_variable("filterInvert", None);
+        let filter_saturate = Placeholder::wrapped_variable("filterSaturate", None);
+        let filter_sepia = Placeholder::wrapped_variable("filterSepia", None);
+        let filter_drop_shadow = Placeholder::wrapped_variable("filterDropShadow", None);
+        let filter_custom = Placeholder::wrapped_variable("filterCustom", None);
         format!(
-          "var({filter_blur}) var({filter_brightness}) var({filter_contrast}) \
-           var({filter_grayscale}) var({filter_hue_rotate}) var({filter_invert}) \
-           var({filter_saturate}) var({filter_sepia}) var({filter_drop_shadow}) \
-           var({filter_custom})",
+          "{filter_blur} {filter_brightness} {filter_contrast} {filter_grayscale} \
+           {filter_hue_rotate} {filter_invert} {filter_saturate} {filter_sepia} \
+           {filter_drop_shadow} {filter_custom}",
         )
       })
       .build(),
@@ -269,43 +269,48 @@ lazy_static! {
       .build(),
     CssVariable::builder()
       .name("groupNestedBackdrop")
-      .variable("--group-nested-backdrop")
+      .variable("--gnb")
       .value({
-        let backdrop_blur = Placeholder::variable("backdropBlur");
-        let backdrop_brightness = Placeholder::variable("backdropBrightness");
-        let backdrop_contrast = Placeholder::variable("backdropContrast");
-        let backdrop_grayscale = Placeholder::variable("backdropGrayscale");
-        let backdrop_hue_rotate = Placeholder::variable("backdropHueRotate");
-        let backdrop_invert = Placeholder::variable("backdropInvert");
-        let backdrop_saturate = Placeholder::variable("backdropSaturate");
-        let backdrop_sepia = Placeholder::variable("backdropSepia");
-        let backdrop_drop_shadow = Placeholder::variable("backdropDropShadow");
-        let backdrop_custom = Placeholder::variable("backdropCustom");
+        let backdrop_blur = Placeholder::wrapped_variable("backdropBlur", None);
+        let backdrop_brightness = Placeholder::wrapped_variable("backdropBrightness", None);
+        let backdrop_contrast = Placeholder::wrapped_variable("backdropContrast", None);
+        let backdrop_grayscale = Placeholder::wrapped_variable("backdropGrayscale", None);
+        let backdrop_hue_rotate = Placeholder::wrapped_variable("backdropHueRotate", None);
+        let backdrop_invert = Placeholder::wrapped_variable("backdropInvert", None);
+        let backdrop_saturate = Placeholder::wrapped_variable("backdropSaturate", None);
+        let backdrop_sepia = Placeholder::wrapped_variable("backdropSepia", None);
+        let backdrop_drop_shadow = Placeholder::wrapped_variable("backdropDropShadow", None);
+        let backdrop_custom = Placeholder::wrapped_variable("backdropCustom", None);
         format!(
-          "var({backdrop_blur}) var({backdrop_brightness}) var({backdrop_contrast}) \
-           var({backdrop_grayscale}) var({backdrop_hue_rotate}) var({backdrop_invert}) \
-           var({backdrop_saturate}) var({backdrop_sepia}) var({backdrop_drop_shadow}) \
-           var({backdrop_custom})",
+          "{backdrop_blur} {backdrop_brightness} {backdrop_contrast} {backdrop_grayscale} \
+           {backdrop_hue_rotate} {backdrop_invert} {backdrop_saturate} {backdrop_sepia} \
+           {backdrop_drop_shadow} {backdrop_custom}",
         )
       })
       .build(),
     CssVariable::builder()
       .name("defaultTransitionDuration")
       .variable("--default-transition-duration")
-      .value("150ms",)
+      .syntax(PropertySyntaxValue::Time)
+      .value("150ms")
       .build(),
     CssVariable::builder()
       .name("defaultAnimationDuration")
       .variable("--default-animation-duration")
+      .syntax(PropertySyntaxValue::Time)
       .value("1s")
       .build(),
     CssVariable::builder()
       .name("enterTranslateX")
       .variable("--etx")
+      .syntax(PropertySyntaxValue::LengthPercentage)
+      .value("0")
       .build(),
     CssVariable::builder()
       .name("enterTranslateY")
       .variable("--ety")
+      .syntax(PropertySyntaxValue::LengthPercentage)
+      .value("0")
       .build(),
   ];
 }

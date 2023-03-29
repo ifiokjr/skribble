@@ -7,7 +7,7 @@ expression: classes.to_skribble_css(runner_config)?
 @layer default;
 @property --sk-cmw {
   syntax: "*";
-  inherits: false;
+  inherits: true;
   initial-value: inherit;
 }
 @layer default {

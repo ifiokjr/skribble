@@ -11,7 +11,7 @@ use regex::Regex;
 use serde::Deserialize;
 use serde::Serialize;
 
-use crate::css_variable_var;
+use crate::wrap_css_variable;
 use crate::CssVariable;
 use crate::Error;
 use crate::Placeholder;
@@ -52,7 +52,7 @@ impl ColorFormat {
           .parse::<Color>()
           .map_err(Error::from)?
           .into_rgb()
-          .to_string_with_opacity(css_variable_var(opacity_variable));
+          .to_string_with_opacity(wrap_css_variable(opacity_variable, None));
 
         Ok(color)
       }
@@ -61,7 +61,7 @@ impl ColorFormat {
           .parse::<Color>()
           .map_err(Error::from)?
           .into_hsl()
-          .to_string_with_opacity(css_variable_var(opacity_variable));
+          .to_string_with_opacity(wrap_css_variable(opacity_variable, None));
 
         Ok(color)
       }
