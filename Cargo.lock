@@ -1032,6 +1032,14 @@ dependencies = [
 [[package]]
 name = "skribble_color"
 version = "0.0.0"
+dependencies = [
+ "insta",
+ "lazy_static",
+ "palette",
+ "regex",
+ "serde",
+ "thiserror",
+]
 
 [[package]]
 name = "skribble_core"
@@ -1045,11 +1053,11 @@ dependencies = [
  "insta",
  "lazy_static",
  "lightningcss",
- "palette",
  "readonly",
  "regex",
  "serde",
  "serde_json",
+ "skribble_color",
  "thiserror",
  "typed-builder",
  "walkdir",

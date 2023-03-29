@@ -22,11 +22,11 @@ indent_write = { workspace = true }
 indexmap = { features = ["serde"], workspace = true }
 lazy_static = { workspace = true }
 lightningcss = { workspace = true }
-palette = { workspace = true, features = ["serializing"] }
 readonly = { workspace = true }
 regex = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
+skribble_color = { workspace = true, features = ["serde"] }
 thiserror = { workspace = true }
 typed-builder = { workspace = true }
 walkdir = { workspace = true }

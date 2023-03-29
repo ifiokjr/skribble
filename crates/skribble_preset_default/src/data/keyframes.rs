@@ -21,7 +21,7 @@ lazy_static! {
         .name("enter")
         .rules(indexmap! {
           "from" => indexmap! {
-            "opacity" => enter_opacity.into(),
+            "opacity" => enter_opacity,
             "transform" => format!("translate3d({enter_translate_x}, {enter_translate_y}, 0) scale3d({enter_scale}, {enter_scale}, {enter_scale}) rotate({enter_rotate})")
           }
         })
@@ -31,7 +31,7 @@ lazy_static! {
         .name("exit")
         .rules(indexmap! {
           "to" => indexmap! {
-            "opacity" => exit_opacity.into(),
+            "opacity" => exit_opacity,
             "transform" => format!("translate3d({exit_translate_x}, {exit_translate_y}, 0) scale3d({exit_scale}, {exit_scale}, {exit_scale}) rotate({exit_rotate})")
           }
         })

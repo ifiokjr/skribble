@@ -88,7 +88,7 @@ pub fn wrap_css_variable(value: impl AsRef<str>, default: Option<String>) -> Str
   let value = value.as_ref();
 
   if let Some(default) = default {
-    return format!("var({value}, {default})");
+    format!("var({value}, {default})")
   } else {
     format!("var({value})")
   }

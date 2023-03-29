@@ -11,6 +11,7 @@ use indexmap::IndexMap;
 use indexmap::IndexSet;
 use serde::Deserialize;
 use serde::Serialize;
+use skribble_color::Color;
 use typed_builder::TypedBuilder;
 
 use super::Group;
@@ -24,7 +25,6 @@ use super::StringList;
 use super::StringMap;
 use crate::indent_writer;
 use crate::AnyEmptyResult;
-use crate::Color;
 use crate::Error;
 use crate::Placeholder;
 use crate::Plugin;

@@ -1,0 +1,25 @@
+[package]
+name = "skribble_color"
+version = { workspace = true }
+authors = ["Ifiok Jr. <ifiokotung@gmail.com>"]
+categories = { workspace = true }
+documentation = "https://docs.rs/skribble_color"
+edition = { workspace = true }
+homepage = { workspace = true }
+include = ["src/**/*.rs", "Cargo.toml", "readme.md"]
+keywords = ["build", "atomic", "css"]
+license = { workspace = true }
+readme = "readme.md"
+repository = { workspace = true }
+rust-version = { workspace = true }
+description = "convert between different supported css color formats using the palette crate"
+
+[dependencies]
+lazy_static = { workspace = true }
+palette = { workspace = true, features = ["serializing"] }
+regex = { workspace = true }
+serde = { workspace = true, optional = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+insta = { features = ["json"], workspace = true }

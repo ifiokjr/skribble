@@ -1,7 +1,8 @@
 use std::path::PathBuf;
 
+use skribble_color::ColorError;
+
 use crate::AnyError;
-use crate::ColorError;
 
 pub type Result<T> = core::result::Result<T, Error>;
 
