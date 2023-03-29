@@ -1,4 +1,5 @@
 use lazy_static::lazy_static;
+use skribble_core::map;
 use skribble_core::CssVariable;
 use skribble_core::Placeholder;
 use skribble_core::PropertySyntaxValue::Color;
@@ -148,9 +149,16 @@ lazy_static! {
   ];
   pub(crate) static ref CSS_VARIABLES: Vec<CssVariable> = vec![
     CssVariable::builder()
-      .name("containerMaxWidth")
-      .variable("--container-max-width")
-      .value("container",)
+      .name("containedMaxWidth")
+      .variable("--cmw")
+      .value("inherit")
+      .media_queries(map! {
+        Placeholder::media_query("sm") => map! { "" => "640px" },
+        Placeholder::media_query("md") => map! { "" => "768px" },
+        Placeholder::media_query("lg") => map! { "" => "1024px" },
+        Placeholder::media_query("xl") => map! { "" => "1280px" },
+        Placeholder::media_query("xxl") => map! { "" => "1536px" },
+      })
       .build(),
     CssVariable::builder()
       .name("empty")

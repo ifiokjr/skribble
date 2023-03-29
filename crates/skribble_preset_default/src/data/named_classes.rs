@@ -11,6 +11,7 @@ lazy_static! {
     let group_nested_transform_gpu = Placeholder::variable("groupNestedTransformGpu");
     let group_nested_transform = Placeholder::variable("groupNestedTransform");
     let group_nested_transform_cpu = Placeholder::variable("groupNestedTransformCpu");
+    let contained_max_width = Placeholder::wrapped_variable("containedMaxWidth");
 
     vec![
       NamedClass::builder()
@@ -18,10 +19,10 @@ lazy_static! {
         .styles(StringMap::default())
         .build(),
       NamedClass::builder()
-        .name("container")
+        .name("contained")
         .styles(indexmap! {
-         "width" => "100%",
-         "max-width" => "var({container_max_width})",
+         "width" => "100%".into(),
+         "max-width" => contained_max_width,
         })
         .build(),
       NamedClass::builder()
@@ -92,15 +93,11 @@ lazy_static! {
         .build(),
       NamedClass::builder()
         .name("transformGpu")
-        .styles(
-          indexmap! { &group_nested_transform => format!("var({group_nested_transform_gpu})") },
-        )
+        .styles(indexmap! { &group_nested_transform => group_nested_transform_gpu })
         .build(),
       NamedClass::builder()
         .name("transformCpu")
-        .styles(
-          indexmap! { &group_nested_transform => format!("var({group_nested_transform_cpu})") },
-        )
+        .styles(indexmap! { &group_nested_transform => group_nested_transform_cpu })
         .build(),
     ]
   };

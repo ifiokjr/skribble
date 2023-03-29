@@ -145,6 +145,10 @@ impl Placeholder {
     Self::create(Self::CSS_VARIABLE, name)
   }
 
+  pub fn wrapped_variable(name: impl AsRef<str>) -> String {
+    format!("var({})", Self::variable(name))
+  }
+
   /// Extract all the variables from the given content.
   pub fn collect_css_variables(content: impl AsRef<str>, css_variable: &mut IndexSet<String>) {
     for caps in CSS_VARIABLE_REGEX.captures_iter(content.as_ref()) {

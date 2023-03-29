@@ -517,21 +517,47 @@ RunnerConfig {
                 {},
             ),
         },
-        "containerMaxWidth": CssVariable {
-            name: "containerMaxWidth",
+        "containedMaxWidth": CssVariable {
+            name: "containedMaxWidth",
             description: None,
             priority: Priority(
                 150,
             ),
-            variable: "--container-max-width",
+            variable: "--cmw",
             syntax: Value(
                 Any,
             ),
             value: Some(
-                "container",
+                "inherit",
             ),
             media_queries: NestedStringMap(
-                {},
+                {
+                    "__:MEDIA_QUERY::sm:__": StringMap(
+                        {
+                            "": "640px",
+                        },
+                    ),
+                    "__:MEDIA_QUERY::md:__": StringMap(
+                        {
+                            "": "768px",
+                        },
+                    ),
+                    "__:MEDIA_QUERY::lg:__": StringMap(
+                        {
+                            "": "1024px",
+                        },
+                    ),
+                    "__:MEDIA_QUERY::xl:__": StringMap(
+                        {
+                            "": "1280px",
+                        },
+                    ),
+                    "__:MEDIA_QUERY::xxl:__": StringMap(
+                        {
+                            "": "1536px",
+                        },
+                    ),
+                },
             ),
         },
         "empty": CssVariable {
@@ -2995,8 +3021,8 @@ RunnerConfig {
                 {},
             ),
         },
-        "container": NamedClass {
-            name: "container",
+        "contained": NamedClass {
+            name: "contained",
             description: None,
             priority: Priority(
                 150,
@@ -3004,7 +3030,7 @@ RunnerConfig {
             styles: StringMap(
                 {
                     "width": "100%",
-                    "max-width": "var({container_max_width})",
+                    "max-width": "var(__:CSS_VARIABLE::containedMaxWidth:__)",
                 },
             ),
         },
@@ -3198,7 +3224,7 @@ RunnerConfig {
             ),
             styles: StringMap(
                 {
-                    "__:CSS_VARIABLE::groupNestedTransform:__": "var(__:CSS_VARIABLE::groupNestedTransformGpu:__)",
+                    "__:CSS_VARIABLE::groupNestedTransform:__": "__:CSS_VARIABLE::groupNestedTransformGpu:__",
                 },
             ),
         },
@@ -3210,7 +3236,7 @@ RunnerConfig {
             ),
             styles: StringMap(
                 {
-                    "__:CSS_VARIABLE::groupNestedTransform:__": "var(__:CSS_VARIABLE::groupNestedTransformCpu:__)",
+                    "__:CSS_VARIABLE::groupNestedTransform:__": "__:CSS_VARIABLE::groupNestedTransformCpu:__",
                 },
             ),
         },
@@ -4263,7 +4289,7 @@ RunnerConfig {
             "warningContent",
             "error",
             "errorContent",
-            "containerMaxWidth",
+            "containedMaxWidth",
             "empty",
             "filterBlur",
             "filterBrightness",
@@ -4337,7 +4363,7 @@ RunnerConfig {
         },
         "classes": {
             "group",
-            "container",
+            "contained",
             "italic",
             "nonItalic",
             "oblique",

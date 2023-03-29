@@ -426,15 +426,15 @@ impl CssVariables {
   }
 
   /// ```css
-  /// @property --sk-container-max-width {
+  /// @property --sk-cmw {
   ///   syntax: "*";
   ///   inherits: false;
-  ///   initial-value: container;
+  ///   initial-value: inherit;
   /// }
   /// ```
   #[inline]
-  pub fn container_max_width(&self) -> String {
-    "--sk-container-max-width".into()
+  pub fn contained_max_width(&self) -> String {
+    "--sk-cmw".into()
   }
 
   /// ```css
@@ -4780,8 +4780,8 @@ pub trait NamedClasses: SkribbleValue {
     self.append_string_to_skribble_value("group")
   }
   #[inline]
-  fn container(&self) -> String {
-    self.append_string_to_skribble_value("container")
+  fn contained(&self) -> String {
+    self.append_string_to_skribble_value("contained")
   }
   #[inline]
   fn italic(&self) -> String {

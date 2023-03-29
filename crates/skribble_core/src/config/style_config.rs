@@ -621,6 +621,20 @@ impl NamedClass {
     self.styles.extend(other.styles);
   }
 
+  pub fn write_css_properties(
+    &self,
+    writer: &mut dyn Write,
+    config: &RunnerConfig,
+  ) -> AnyEmptyResult {
+    for (property, css_value) in self.styles.iter() {
+      let property = Placeholder::normalize(property, config);
+      let css_value = Placeholder::normalize(css_value, config);
+      writeln!(writer, "{}: {};", property, css_value)?;
+    }
+
+    Ok(())
+  }
+
   pub fn collect_css_variables(&self, css_variables: &mut IndexSet<String>) {
     for (property, css_value) in self.styles.iter() {
       Placeholder::collect_css_variables(property, css_variables);

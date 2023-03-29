@@ -188,6 +188,13 @@ impl Class {
       }
     }
 
+    if let Some(named_class) = self
+      .get_named_class()
+      .and_then(|name| config.classes.get(name))
+    {
+      named_class.write_css_properties(writer, config)?;
+    }
+
     Ok(())
   }
 }
