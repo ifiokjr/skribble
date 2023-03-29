@@ -4,6 +4,9 @@ inputs:
   github-token:
     description: Provide a github token
     required: true
+  nix-cache:
+    description: The location of the nix cache
+    required: true
 
 runs:
   using: composite
@@ -22,8 +25,8 @@ runs:
         github_access_token: ${{ inputs.github-token }}
 
     - name: import nix store cache
-      if: "steps.nix-cache.outputs.cache-hit == 'true'"
-      run: "nix-store --import < /tmp/nixcache"
+      if: steps.nix-cache.outputs.cache-hit == 'true'
+      run: nix-store --import < ${{ inputs.nix-cache }}
       shell: bash
 
     - name: enable cachix
@@ -46,6 +49,6 @@ runs:
       shell: bash
 
     - name: export nix store cache
-      if: "steps.nix-cache.outputs.cache-hit != 'true'"
-      run: "nix-store --export $(find /nix/store -maxdepth 1 -name '*-*')> /tmp/nixcache"
+      if: steps.nix-cache.outputs.cache-hit != 'true'
+      run: nix-store --export $(find /nix/store -maxdepth 1 -name '*-*')> ${{ inputs.nix-cache }}
       shell: bash
