@@ -152,8 +152,9 @@ RunnerConfig {
             value: Some(
                 "#570df8",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "primaryContent": CssVariable {
             name: "primaryContent",
@@ -170,8 +171,9 @@ RunnerConfig {
             value: Some(
                 "__:PALETTE::white:__",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "secondary": CssVariable {
             name: "secondary",
@@ -188,8 +190,9 @@ RunnerConfig {
             value: Some(
                 "#f000b8",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "secondaryContent": CssVariable {
             name: "secondaryContent",
@@ -206,8 +209,9 @@ RunnerConfig {
             value: Some(
                 "__:PALETTE::white:__",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "accent": CssVariable {
             name: "accent",
@@ -224,8 +228,9 @@ RunnerConfig {
             value: Some(
                 "#37cdbe",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "accentContent": CssVariable {
             name: "accentContent",
@@ -242,8 +247,9 @@ RunnerConfig {
             value: Some(
                 "#163835",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "neutral": CssVariable {
             name: "neutral",
@@ -260,8 +266,9 @@ RunnerConfig {
             value: Some(
                 "#3d4451",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "neutralContent": CssVariable {
             name: "neutralContent",
@@ -278,8 +285,9 @@ RunnerConfig {
             value: Some(
                 "__:PALETTE::white:__",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "base100": CssVariable {
             name: "base100",
@@ -296,8 +304,9 @@ RunnerConfig {
             value: Some(
                 "__:PALETTE::white:__",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "base200": CssVariable {
             name: "base200",
@@ -314,8 +323,9 @@ RunnerConfig {
             value: Some(
                 "#F2F2F2",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "base300": CssVariable {
             name: "base300",
@@ -332,8 +342,9 @@ RunnerConfig {
             value: Some(
                 "#E5E6E6",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "baseContent": CssVariable {
             name: "baseContent",
@@ -350,8 +361,9 @@ RunnerConfig {
             value: Some(
                 "#1f2937",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "info": CssVariable {
             name: "info",
@@ -368,8 +380,9 @@ RunnerConfig {
             value: Some(
                 "#0070F3",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "infoContent": CssVariable {
             name: "infoContent",
@@ -386,8 +399,9 @@ RunnerConfig {
             value: Some(
                 "__:PALETTE::white:__",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "success": CssVariable {
             name: "success",
@@ -404,8 +418,9 @@ RunnerConfig {
             value: Some(
                 "#21CC51",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "successContent": CssVariable {
             name: "successContent",
@@ -422,8 +437,9 @@ RunnerConfig {
             value: Some(
                 "__:PALETTE::white:__",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "warning": CssVariable {
             name: "warning",
@@ -440,8 +456,9 @@ RunnerConfig {
             value: Some(
                 "#FF6154",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "warningContent": CssVariable {
             name: "warningContent",
@@ -458,8 +475,9 @@ RunnerConfig {
             value: Some(
                 "__:PALETTE::white:__",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "error": CssVariable {
             name: "error",
@@ -476,8 +494,9 @@ RunnerConfig {
             value: Some(
                 "#DE1C8D",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "errorContent": CssVariable {
             name: "errorContent",
@@ -494,8 +513,9 @@ RunnerConfig {
             value: Some(
                 "__:PALETTE::white:__",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "containerMaxWidth": CssVariable {
             name: "containerMaxWidth",
@@ -510,8 +530,9 @@ RunnerConfig {
             value: Some(
                 "container",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "empty": CssVariable {
             name: "empty",
@@ -526,8 +547,9 @@ RunnerConfig {
             value: Some(
                 "/* */",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "filterBlur": CssVariable {
             name: "filterBlur",
@@ -540,8 +562,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "filterBrightness": CssVariable {
             name: "filterBrightness",
@@ -554,8 +577,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "filterContrast": CssVariable {
             name: "filterContrast",
@@ -568,8 +592,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "filterCustom": CssVariable {
             name: "filterCustom",
@@ -582,8 +607,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "filterGrayscale": CssVariable {
             name: "filterGrayscale",
@@ -596,8 +622,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "filterHueRotate": CssVariable {
             name: "filterHueRotate",
@@ -610,8 +637,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "filterInvert": CssVariable {
             name: "filterInvert",
@@ -624,8 +652,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "filterSaturate": CssVariable {
             name: "filterSaturate",
@@ -638,8 +667,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "filterSepia": CssVariable {
             name: "filterSepia",
@@ -652,8 +682,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "filterDropShadow": CssVariable {
             name: "filterDropShadow",
@@ -666,8 +697,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "groupNestedFilter": CssVariable {
             name: "groupNestedFilter",
@@ -682,8 +714,9 @@ RunnerConfig {
             value: Some(
                 "var(__:CSS_VARIABLE::filterBlur:__) var(__:CSS_VARIABLE::filterBrightness:__) var(__:CSS_VARIABLE::filterContrast:__) var(__:CSS_VARIABLE::filterGrayscale:__) var(__:CSS_VARIABLE::filterHueRotate:__) var(__:CSS_VARIABLE::filterInvert:__) var(__:CSS_VARIABLE::filterSaturate:__) var(__:CSS_VARIABLE::filterSepia:__) var(__:CSS_VARIABLE::filterDropShadow:__) var(__:CSS_VARIABLE::filterCustom:__)",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "backdropBlur": CssVariable {
             name: "backdropBlur",
@@ -696,8 +729,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "backdropBrightness": CssVariable {
             name: "backdropBrightness",
@@ -710,8 +744,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "backdropContrast": CssVariable {
             name: "backdropContrast",
@@ -724,8 +759,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "backdropCustom": CssVariable {
             name: "backdropCustom",
@@ -738,8 +774,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "backdropGrayscale": CssVariable {
             name: "backdropGrayscale",
@@ -752,8 +789,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "backdropHueRotate": CssVariable {
             name: "backdropHueRotate",
@@ -766,8 +804,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "backdropInvert": CssVariable {
             name: "backdropInvert",
@@ -780,8 +819,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "backdropSaturate": CssVariable {
             name: "backdropSaturate",
@@ -794,8 +834,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "backdropSepia": CssVariable {
             name: "backdropSepia",
@@ -808,8 +849,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "backdropDropShadow": CssVariable {
             name: "backdropDropShadow",
@@ -822,8 +864,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "groupNestedBackdrop": CssVariable {
             name: "groupNestedBackdrop",
@@ -838,8 +881,9 @@ RunnerConfig {
             value: Some(
                 "var(__:CSS_VARIABLE::backdropBlur:__) var(__:CSS_VARIABLE::backdropBrightness:__) var(__:CSS_VARIABLE::backdropContrast:__) var(__:CSS_VARIABLE::backdropGrayscale:__) var(__:CSS_VARIABLE::backdropHueRotate:__) var(__:CSS_VARIABLE::backdropInvert:__) var(__:CSS_VARIABLE::backdropSaturate:__) var(__:CSS_VARIABLE::backdropSepia:__) var(__:CSS_VARIABLE::backdropDropShadow:__) var(__:CSS_VARIABLE::backdropCustom:__)",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "defaultTransitionDuration": CssVariable {
             name: "defaultTransitionDuration",
@@ -854,8 +898,9 @@ RunnerConfig {
             value: Some(
                 "150ms",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "defaultAnimationDuration": CssVariable {
             name: "defaultAnimationDuration",
@@ -870,8 +915,9 @@ RunnerConfig {
             value: Some(
                 "1s",
             ),
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "enterTranslateX": CssVariable {
             name: "enterTranslateX",
@@ -884,8 +930,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
         "enterTranslateY": CssVariable {
             name: "enterTranslateY",
@@ -898,8 +945,9 @@ RunnerConfig {
                 Any,
             ),
             value: None,
-            modifiers: None,
-            media_queries: None,
+            media_queries: NestedStringMap(
+                {},
+            ),
         },
     },
     media_queries: {

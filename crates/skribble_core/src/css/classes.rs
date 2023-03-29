@@ -14,6 +14,7 @@ use crate::indent_writer;
 use crate::AnyEmptyResult;
 use crate::ClassFactory;
 use crate::RunnerConfig;
+use crate::StringMap;
 use crate::ToSkribbleCss;
 
 #[derive(Clone, Debug, Default, Deserialize, Serialize, PartialEq, Eq)]
@@ -128,6 +129,37 @@ impl Classes {
     layer: Option<&String>,
   ) -> AnyEmptyResult {
     let mut media_query_classes = IndexMap::<Option<String>, Vec<&Class>>::new();
+    let mut media_query_variables = IndexMap::<Option<String>, StringMap>::new();
+    let mut media_query_text = IndexMap::<Option<String>, String>::new();
+    let mut css_variables = indexset! {};
+
+    for class in self.iter().filter(|class| class.get_layer() == layer) {
+      class.collect_css_variables(&mut css_variables);
+    }
+
+    for value in css_variables
+      .iter()
+      .map(|name| config.css_variables.get(name))
+    {
+      let Some(css_variable) = value else {
+        continue;
+      };
+
+      css_variable.extend_media_query_dictionary(config, &mut media_query_variables)?;
+    }
+
+    for (media_query, selector_map) in media_query_variables.iter() {
+      match media_query_text.get_mut(media_query) {
+        Some(content) => {
+          write_css_variable_selector_map(content, selector_map)?;
+        }
+        None => {
+          let mut content = String::new();
+          write_css_variable_selector_map(&mut content, selector_map)?;
+          media_query_text.insert(media_query.clone(), content);
+        }
+      }
+    }
 
     for class in self.iter().filter(|class| class.get_layer() == layer) {
       let key = class.join_media_query(config);
@@ -138,6 +170,19 @@ impl Classes {
         }
         None => {
           media_query_classes.insert(key, vec![class]);
+        }
+      }
+    }
+
+    for (media_query, classes) in media_query_classes.iter() {
+      match media_query_text.get_mut(media_query) {
+        Some(content) => {
+          self.write_media_query_css(content, config, classes)?;
+        }
+        None => {
+          let mut content = String::new();
+          self.write_media_query_css(&mut content, config, classes)?;
+          media_query_text.insert(media_query.clone(), content);
         }
       }
     }
@@ -168,6 +213,21 @@ impl Classes {
     }
     Ok(())
   }
+}
+
+fn write_css_variable_selector_map(
+  writer: &mut dyn Write,
+  selector_map: &StringMap,
+) -> AnyEmptyResult {
+  for (selector, properties) in selector_map.iter() {
+    writeln!(writer, "{} {{", selector)?;
+    let mut indented_writer = indent_writer();
+    write!(indented_writer, "{}", properties)?;
+    write!(writer, "{}", indented_writer.get_ref())?;
+    writeln!(writer, "}}")?;
+  }
+
+  Ok(())
 }
 
 impl ToSkribbleCss for Classes {

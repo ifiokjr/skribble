@@ -458,7 +458,7 @@ impl LinkedValues {
           let variable_name = variable.get_variable(config.options());
           let opacity_variable =
             Placeholder::normalize(variable.get_opacity_variable(config.options()), config);
-          let default_opacity = variable.get_default_opacity();
+          let default_opacity = variable.get_default_opacity(None);
           writeln!(writer, "{opacity_variable}: {default_opacity};")?;
 
           for (property, css_value) in atom.styles.iter() {
@@ -706,15 +706,11 @@ pub struct CssVariable {
   /// [PropertySyntax] is set to anything other than [PropertySyntaxValue::Any].
   #[builder(default, setter(into, strip_option))]
   pub value: Option<String>,
-  /// Define the value of the CSS variables within different modifier contexts
-  /// For example a variable can be a certain value when :hovered, :active and
-  /// other inline pseudo states.
-  #[builder(default, setter(into, strip_option))]
-  pub modifiers: Option<CssVariableSelectors>,
   /// Define the value of the CSS variable under different nested media query
   /// situations.
-  #[builder(default, setter(into, strip_option))]
-  pub media_queries: Option<NestedCssVariableSelectors>,
+  #[serde(default)]
+  #[builder(default, setter(into))]
+  pub media_queries: NestedCssVariableSelectors,
 }
 
 impl CssVariable {
@@ -736,24 +732,7 @@ impl CssVariable {
       self.value = Some(value);
     }
 
-    if let Some(modifiers) = other.modifiers {
-      match self.modifiers {
-        Some(ref mut original_modifiers) => {
-          original_modifiers.extend(modifiers);
-        }
-
-        None => self.modifiers = Some(modifiers),
-      };
-    }
-
-    if let Some(media_queries) = other.media_queries {
-      match self.media_queries {
-        Some(ref mut original_media_queries) => {
-          original_media_queries.extend(media_queries);
-        }
-        None => self.media_queries = Some(media_queries),
-      };
-    }
+    self.media_queries.extend(other.media_queries);
   }
 
   #[inline]
@@ -770,10 +749,9 @@ impl CssVariable {
     self.variable.as_str().replacen("--", &replacement, 1)
   }
 
-  pub fn get_default_opacity(&self) -> f32 {
-    self
-      .value
-      .as_ref()
+  pub fn get_default_opacity(&self, value: Option<&String>) -> f32 {
+    value
+      .or(self.value.as_ref())
       .and_then(|value| value.parse::<Color>().ok())
       .map(|color| color.alpha())
       .unwrap_or(1.0)
@@ -790,7 +768,7 @@ impl CssVariable {
     let variable_name = self.get_variable(options);
     let initial_value = if self.is_color() {
       let opacity_variable = self.get_opacity_variable(options);
-      let alpha = self.get_default_opacity();
+      let alpha = self.get_default_opacity(None);
       writeln!(writer, "@property {opacity_variable} {{")?;
       let mut indented_writer = indent_writer();
       writeln!(indented_writer, "syntax: \"<number>\";")?;
@@ -801,7 +779,7 @@ impl CssVariable {
 
       options
         .color_format
-        .get_color_value_with_opacity(config, self)?
+        .get_color_value_with_opacity(config, self, None)?
     } else {
       let default_initial_value = "/* */".into();
       Placeholder::normalize(
@@ -825,6 +803,79 @@ impl CssVariable {
   #[inline]
   pub fn is_color(&self) -> bool {
     self.syntax.is_color()
+  }
+
+  pub fn extend_media_query_dictionary(
+    &self,
+    config: &RunnerConfig,
+    dictionary: &mut IndexMap<Option<String>, StringMap>,
+  ) -> AnyEmptyResult {
+    let options = config.options();
+    let variable_name = self.get_variable(options);
+
+    for (query, selector_map) in self.media_queries.iter() {
+      let query = if query.is_empty() {
+        None
+      } else {
+        Some(Placeholder::normalize(query, config))
+      };
+
+      for (selector_name, variable_value) in selector_map.iter() {
+        let selector = if selector_name.is_empty() {
+          ":root".into()
+        } else {
+          Placeholder::normalize(selector_name, config)
+        };
+
+        match dictionary.get_mut(&query) {
+          Some(map) => {
+            match map.get_mut(&selector) {
+              Some(writer) => {
+                self.write_media_query_css(writer, config, &variable_name, variable_value)?;
+              }
+              None => {
+                let mut writer = String::new();
+                self.write_media_query_css(&mut writer, config, &variable_name, variable_value)?;
+                map.insert(selector, writer);
+              }
+            }
+          }
+          None => {
+            let mut map = StringMap::default();
+            let mut writer = String::new();
+
+            self.write_media_query_css(&mut writer, config, &variable_name, variable_value)?;
+            map.insert(selector, writer);
+            dictionary.insert(query.clone(), map);
+          }
+        }
+      }
+    }
+
+    Ok(())
+  }
+
+  fn write_media_query_css(
+    &self,
+    writer: &mut dyn Write,
+    config: &RunnerConfig,
+    variable_name: &String,
+    variable_value: &String,
+  ) -> AnyEmptyResult {
+    if self.is_color() {
+      let options = config.options();
+      let opacity_variable = self.get_opacity_variable(options);
+      let alpha = self.get_default_opacity(Some(variable_value));
+      let variable_value =
+        options
+          .color_format
+          .get_color_value_with_opacity(config, self, Some(variable_value))?;
+      writeln!(writer, "{opacity_variable}: {alpha};")?;
+      writeln!(writer, "{variable_name}: {variable_value};")?;
+    } else {
+      writeln!(writer, "{variable_name}: {variable_value};")?;
+    }
+    Ok(())
   }
 }
 
