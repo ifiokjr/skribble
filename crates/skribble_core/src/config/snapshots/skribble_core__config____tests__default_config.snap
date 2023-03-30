@@ -36,6 +36,5 @@ expression: "StyleConfig::default()"
   "atoms": [],
   "classes": [],
   "palette": {},
-  "valueSets": [],
-  "groups": []
+  "valueSets": []
 }

@@ -16,7 +16,6 @@ use crate::NamedClass;
 use crate::Options;
 use crate::StringMap;
 use crate::ValueSet;
-use crate::VariableGroup;
 
 /// The configuration after all plugins have been run.
 #[derive(Clone, Debug, Default, Deserialize, Serialize, TypedBuilder)]
@@ -30,7 +29,6 @@ pub struct RunnerConfig {
   pub classes: IndexMap<String, NamedClass>,
   pub palette: StringMap,
   pub value_sets: IndexMap<String, ValueSet>,
-  pub groups: IndexMap<String, VariableGroup>,
   #[builder(default)]
   pub names: IndexMap<String, IndexSet<String>>,
   #[serde(skip)]

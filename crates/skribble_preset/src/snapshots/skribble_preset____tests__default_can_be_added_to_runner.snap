@@ -4219,50 +4219,6 @@ RunnerConfig {
             ),
         },
     },
-    groups: {
-        "transform": VariableGroup {
-            name: "transform",
-            description: Some(
-                "This class makes it possible to use the transform utilities.",
-            ),
-            priority: Priority(
-                150,
-            ),
-            styles: StringMap(
-                {
-                    "transform": "var(__:CSS_VARIABLE::groupNestedTransform:__)",
-                },
-            ),
-        },
-        "filter": VariableGroup {
-            name: "filter",
-            description: Some(
-                "This class makes it possible to use the filter utilities.",
-            ),
-            priority: Priority(
-                150,
-            ),
-            styles: StringMap(
-                {
-                    "filter": "var(__:CSS_VARIABLE::groupNestedFilter:__)",
-                },
-            ),
-        },
-        "backdrop": VariableGroup {
-            name: "backdrop",
-            description: Some(
-                "This class makes it possible to use the backdrop filter utilities.",
-            ),
-            priority: Priority(
-                150,
-            ),
-            styles: StringMap(
-                {
-                    "backdrop-filter": "var(__:CSS_VARIABLE::groupNestedBackdrop:__)",
-                },
-            ),
-        },
-    },
     names: {
         "keyframes": {
             "enter",

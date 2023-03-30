@@ -14,5 +14,4 @@ pub struct PluginConfig {
   pub classes: NamedClasses,
   pub palette: Palette,
   pub value_sets: ValueSets,
-  pub groups: VariableGroups,
 }

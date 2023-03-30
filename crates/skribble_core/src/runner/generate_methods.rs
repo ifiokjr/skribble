@@ -16,7 +16,6 @@ use crate::Options;
 use crate::PluginConfig;
 use crate::StringMap;
 use crate::ValueSet;
-use crate::VariableGroup;
 
 pub(crate) fn generate_merged_config(
   mut plugin_config: PluginConfig,
@@ -44,7 +43,6 @@ pub(crate) fn generate_merged_config(
   let mut classes = IndexMap::<String, NamedClass>::new();
   let mut palette = StringMap::default();
   let mut value_sets = IndexMap::<String, ValueSet>::new();
-  let mut groups = IndexMap::<String, VariableGroup>::new();
 
   // layers
   plugin_config.layers.sort_by_priority();
@@ -189,27 +187,12 @@ pub(crate) fn generate_merged_config(
     }
   }
 
-  // groups
-  for group in plugin_config.groups.into_iter() {
-    let key = &group.name;
-
-    match groups.get_mut(key) {
-      Some(existing) => {
-        existing.merge(group);
-      }
-      None => {
-        groups.insert(key.clone(), group);
-      }
-    }
-  }
-
   // sort by priority
   keyframes.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
   css_variables.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
   atoms.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
   classes.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
   value_sets.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
-  groups.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
 
   let mut names = IndexMap::<String, IndexSet<String>>::default();
   let keyframe_names = keyframes.keys().cloned().collect();
@@ -242,7 +225,6 @@ pub(crate) fn generate_merged_config(
     .classes(classes)
     .palette(palette)
     .value_sets(value_sets)
-    .groups(groups)
     .names(names)
     ._options(options)
     .build();

@@ -71,9 +71,6 @@ pub struct StyleConfig {
   /// The atoms which provide the values.
   #[builder(default, setter(into))]
   pub value_sets: ValueSets,
-  /// Groups which are usually used to activate a set of css variables.
-  #[builder(default, setter(into))]
-  pub groups: VariableGroups,
   /// The plugins which can be used to add new functionality and extend the
   /// configuration.
   #[derivative(Debug = "ignore")]
@@ -98,7 +95,6 @@ impl StyleConfig {
     let Self {
       atoms,
       classes,
-      groups,
       keyframes,
       layers,
       media_queries,
@@ -115,7 +111,6 @@ impl StyleConfig {
       PluginConfig {
         atoms,
         classes,
-        groups,
         keyframes,
         layers,
         media_queries,
@@ -1274,65 +1269,6 @@ impl From<String> for CssValue {
 impl<V: Into<StringMap>> From<V> for CssValue {
   fn from(map: V) -> Self {
     Self::Object(map.into())
-  }
-}
-
-#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize, Deref, DerefMut)]
-pub struct VariableGroups(Vec<VariableGroup>);
-
-impl IntoIterator for VariableGroups {
-  type IntoIter = std::vec::IntoIter<Self::Item>;
-  type Item = VariableGroup;
-
-  fn into_iter(self) -> Self::IntoIter {
-    self.0.into_iter()
-  }
-}
-
-impl<V: Into<VariableGroup>> FromIterator<V> for VariableGroups {
-  fn from_iter<T>(iter: T) -> Self
-  where
-    T: IntoIterator<Item = V>,
-  {
-    let groups = iter.into_iter().map(|v| v.into()).collect();
-
-    Self(groups)
-  }
-}
-
-#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize, TypedBuilder)]
-pub struct VariableGroup {
-  /// The name of the group.
-  #[builder(setter(into))]
-  pub name: String,
-  /// The description of the group.
-  #[builder(default, setter(into, strip_option))]
-  pub description: Option<String>,
-  /// The priority of this items.
-  #[builder(default, setter(into))]
-  pub priority: Priority,
-  /// The styles for the specific class.
-  #[builder(setter(into))]
-  pub styles: StringMap,
-}
-
-impl VariableGroup {
-  pub fn merge(&mut self, other: impl Into<Self>) {
-    let other = other.into();
-
-    if self.name != other.name {
-      panic!("Cannot merge groups with different names");
-    }
-
-    if let Some(description) = other.description {
-      self.description = Some(description);
-    }
-
-    if other.priority < self.priority {
-      self.priority = other.priority;
-    }
-
-    self.styles.extend(other.styles);
   }
 }
 

@@ -38,14 +38,13 @@ impl Plugin for PresetDefault {
       .build()
   }
 
-  fn mutate_config(&self, config: &mut PluginConfig, _: &Options) -> AnyEmptyResult {
+  fn mutate_config(&self, config: &mut PluginConfig, _options: &Options) -> AnyEmptyResult {
     self.update_palette(&mut config.palette);
     self.update_media_queries(&mut config.media_queries);
     self.update_modifiers(&mut config.modifiers);
     self.update_variables(&mut config.variables);
     self.update_keyframes(&mut config.keyframes);
     self.update_atoms(&mut config.atoms);
-    self.update_groups(&mut config.groups);
     self.update_named_classes(&mut config.classes);
     self.update_value_sets(&mut config.value_sets);
 
@@ -88,10 +87,6 @@ impl PresetDefault {
 
   fn update_atoms(&self, atoms: &mut Atoms) {
     atoms.extend(ATOMS.clone());
-  }
-
-  fn update_groups(&self, groups: &mut VariableGroups) {
-    groups.extend(GROUPS.clone());
   }
 
   fn update_named_classes(&self, named_classes: &mut NamedClasses) {
