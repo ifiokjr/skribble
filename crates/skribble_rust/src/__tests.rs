@@ -18,7 +18,7 @@ fn default_can_be_added_to_runner() {
   let mut runner = SkribbleRunner::new(config);
   let _ = runner.initialize();
   let result = runner.generate().unwrap();
-  let generated = result.get(0).unwrap();
+  let generated = result.first().unwrap();
   let content = &generated.content;
   insta::assert_display_snapshot!(content);
 }

@@ -1,8 +1,8 @@
 use std::cmp::Ordering;
 use std::fmt::Write;
-use std::ops::Deref;
-use std::ops::DerefMut;
 
+use derive_more::Deref;
+use derive_more::DerefMut;
 use indent_write::fmt::IndentWriter;
 use indexmap::indexset;
 use indexmap::IndexMap;
@@ -18,7 +18,7 @@ use crate::RunnerConfig;
 use crate::StringMap;
 use crate::ToSkribbleCss;
 
-#[derive(Clone, Debug, Default, Deserialize, Serialize, PartialEq, Eq)]
+#[derive(Clone, Debug, Default, Deserialize, Serialize, PartialEq, Eq, Deref, DerefMut)]
 pub struct Classes(IndexSet<Class>);
 
 impl Classes {
@@ -307,19 +307,5 @@ impl IntoIterator for Classes {
 impl FromIterator<Class> for Classes {
   fn from_iter<T: IntoIterator<Item = Class>>(iter: T) -> Self {
     Self(iter.into_iter().collect())
-  }
-}
-
-impl Deref for Classes {
-  type Target = IndexSet<Class>;
-
-  fn deref(&self) -> &Self::Target {
-    &self.0
-  }
-}
-
-impl DerefMut for Classes {
-  fn deref_mut(&mut self) -> &mut Self::Target {
-    &mut self.0
   }
 }

@@ -16,6 +16,7 @@ description = "Core features for the skribble atomic css library"
 
 [dependencies]
 derivative = { workspace = true }
+derive_more = { workspace = true }
 globset = { workspace = true }
 heck = { workspace = true }
 indent_write = { workspace = true }

@@ -22,7 +22,7 @@ fn main() {
   let mut runner = SkribbleRunner::new(config);
   let _ = runner.initialize();
   let result = runner.generate().unwrap();
-  let generated = result.get(0).unwrap();
+  let generated = result.first().unwrap();
   let content = &generated.content;
 
   let current_dir = env::current_dir().unwrap();

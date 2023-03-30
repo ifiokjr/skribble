@@ -1,10 +1,10 @@
 use std::fmt::Display;
 use std::fmt::Formatter;
 use std::fmt::Write;
-use std::ops::Deref;
-use std::ops::DerefMut;
 
 use derivative::Derivative;
+use derive_more::Deref;
+use derive_more::DerefMut;
 use heck::ToKebabCase;
 use indexmap::indexset;
 use indexmap::IndexMap;
@@ -138,7 +138,7 @@ impl StyleConfig {
 }
 
 /// Media queries can should be defined as a map of names to their css queries.
-#[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize, Deref, DerefMut)]
 pub struct MediaQueries(Vec<Group<MediaQuery>>);
 
 impl MediaQueries {
@@ -179,20 +179,6 @@ where
   {
     let breakpoints = iter.into_iter().map(|value| value.into()).collect();
     Self(breakpoints)
-  }
-}
-
-impl Deref for MediaQueries {
-  type Target = Vec<Group<MediaQuery>>;
-
-  fn deref(&self) -> &Self::Target {
-    &self.0
-  }
-}
-
-impl DerefMut for MediaQueries {
-  fn deref_mut(&mut self) -> &mut Self::Target {
-    &mut self.0
   }
 }
 
@@ -242,7 +228,7 @@ impl MediaQuery {
 /// Each of the style rules above maps an atomic style name to a list of CSS
 /// properties that it controls. The styles rules are later connected with
 /// `Atoms` which are passed to each individual style rule.
-#[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize, Deref, DerefMut)]
 pub struct Atoms(Vec<Atom>);
 
 impl From<Vec<Atom>> for Atoms {
@@ -268,20 +254,6 @@ where
     let rules = iter.into_iter().map(|value| value.into()).collect();
 
     Self(rules)
-  }
-}
-
-impl Deref for Atoms {
-  type Target = Vec<Atom>;
-
-  fn deref(&self) -> &Self::Target {
-    &self.0
-  }
-}
-
-impl DerefMut for Atoms {
-  fn deref_mut(&mut self) -> &mut Self::Target {
-    &mut self.0
   }
 }
 
@@ -547,7 +519,7 @@ impl<V: Into<NameSet>> From<V> for LinkedValues {
 }
 
 /// The named classes with their own defined values.
-#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize, Deref, DerefMut)]
 pub struct NamedClasses(Vec<NamedClass>);
 
 impl IntoIterator for NamedClasses {
@@ -567,20 +539,6 @@ where
     let classes = iter.into_iter().map(|value| value.into()).collect();
 
     Self(classes)
-  }
-}
-
-impl Deref for NamedClasses {
-  type Target = Vec<NamedClass>;
-
-  fn deref(&self) -> &Self::Target {
-    &self.0
-  }
-}
-
-impl DerefMut for NamedClasses {
-  fn deref_mut(&mut self) -> &mut Self::Target {
-    &mut self.0
   }
 }
 
@@ -644,7 +602,7 @@ impl NamedClass {
 }
 
 /// Create CSS variables from a list of atoms.
-#[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize, Deref, DerefMut)]
 pub struct CssVariables(Vec<CssVariable>);
 
 impl<T: Into<CssVariable>> From<Vec<T>> for CssVariables {
@@ -673,20 +631,6 @@ where
     let css_variables = iter.into_iter().map(|v| v.into()).collect();
 
     Self(css_variables)
-  }
-}
-
-impl Deref for CssVariables {
-  type Target = Vec<CssVariable>;
-
-  fn deref(&self) -> &Self::Target {
-    &self.0
-  }
-}
-
-impl DerefMut for CssVariables {
-  fn deref_mut(&mut self) -> &mut Self::Target {
-    &mut self.0
   }
 }
 
@@ -1112,7 +1056,7 @@ impl Modifier {
 }
 
 /// This is the setup for named modifiers.
-#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize, Deref, DerefMut)]
 pub struct Modifiers(Vec<Group<Modifier>>);
 
 impl Modifiers {
@@ -1151,23 +1095,9 @@ where
   }
 }
 
-impl Deref for Modifiers {
-  type Target = Vec<Group<Modifier>>;
-
-  fn deref(&self) -> &Self::Target {
-    &self.0
-  }
-}
-
-impl DerefMut for Modifiers {
-  fn deref_mut(&mut self) -> &mut Self::Target {
-    &mut self.0
-  }
-}
-
 /// A set of values that referenced by .
 
-#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize, Deref, DerefMut)]
 pub struct ValueSets(Vec<ValueSet>);
 
 impl<T: Into<ValueSet>> From<Vec<T>> for ValueSets {
@@ -1196,20 +1126,6 @@ where
     let atoms = iter.into_iter().map(|v| v.into()).collect();
 
     Self(atoms)
-  }
-}
-
-impl Deref for ValueSets {
-  type Target = Vec<ValueSet>;
-
-  fn deref(&self) -> &Self::Target {
-    &self.0
-  }
-}
-
-impl DerefMut for ValueSets {
-  fn deref_mut(&mut self) -> &mut Self::Target {
-    &mut self.0
   }
 }
 
@@ -1250,7 +1166,7 @@ impl ValueSet {
 }
 
 /// Values for the value atom.
-#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize, Deref, DerefMut)]
 pub struct CssValues(IndexMap<String, CssValue>);
 
 impl IntoIterator for CssValues {
@@ -1283,20 +1199,6 @@ where
 impl<K: Into<String>, V: Into<CssValue>> From<IndexMap<K, V>> for CssValues {
   fn from(values: IndexMap<K, V>) -> Self {
     Self::from_iter(values)
-  }
-}
-
-impl Deref for CssValues {
-  type Target = IndexMap<String, CssValue>;
-
-  fn deref(&self) -> &Self::Target {
-    &self.0
-  }
-}
-
-impl DerefMut for CssValues {
-  fn deref_mut(&mut self) -> &mut Self::Target {
-    &mut self.0
   }
 }
 
@@ -1375,7 +1277,7 @@ impl<V: Into<StringMap>> From<V> for CssValue {
   }
 }
 
-#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize, Deref, DerefMut)]
 pub struct VariableGroups(Vec<VariableGroup>);
 
 impl IntoIterator for VariableGroups {
@@ -1395,20 +1297,6 @@ impl<V: Into<VariableGroup>> FromIterator<V> for VariableGroups {
     let groups = iter.into_iter().map(|v| v.into()).collect();
 
     Self(groups)
-  }
-}
-
-impl Deref for VariableGroups {
-  type Target = Vec<VariableGroup>;
-
-  fn deref(&self) -> &Self::Target {
-    &self.0
-  }
-}
-
-impl DerefMut for VariableGroups {
-  fn deref_mut(&mut self) -> &mut Self::Target {
-    &mut self.0
   }
 }
 
@@ -1448,12 +1336,11 @@ impl VariableGroup {
   }
 }
 
-/// A map of string values.
-#[derive(Default)]
-pub struct Plugins(Vec<PluginContainer>);
-
 pub(crate) type BoxedPlugin = Box<dyn Plugin>;
+#[derive(Deref, DerefMut)]
 pub(crate) struct WrappedPlugin {
+  #[deref(forward)]
+  #[deref_mut(forward)]
   plugin: BoxedPlugin,
   data: PluginData,
 }
@@ -1464,19 +1351,9 @@ impl WrappedPlugin {
   }
 }
 
-impl Deref for WrappedPlugin {
-  type Target = BoxedPlugin;
-
-  fn deref(&self) -> &Self::Target {
-    &self.plugin
-  }
-}
-
-impl DerefMut for WrappedPlugin {
-  fn deref_mut(&mut self) -> &mut Self::Target {
-    &mut self.plugin
-  }
-}
+/// A map of string values.
+#[derive(Default, Deref, DerefMut)]
+pub struct Plugins(Vec<PluginContainer>);
 
 impl Plugins {
   /// Sort the plugins by priority and deduplicate them.
@@ -1522,20 +1399,6 @@ impl<T: Into<PluginContainer>> From<Vec<T>> for Plugins {
   }
 }
 
-impl Deref for Plugins {
-  type Target = Vec<PluginContainer>;
-
-  fn deref(&self) -> &Self::Target {
-    &self.0
-  }
-}
-
-impl DerefMut for Plugins {
-  fn deref_mut(&mut self) -> &mut Self::Target {
-    &mut self.0
-  }
-}
-
 #[derive(Serialize, TypedBuilder)]
 pub struct PluginContainer {
   /// Get the default priority of this plugin which will be used to determine
@@ -1571,7 +1434,7 @@ impl<P: Plugin + 'static> From<P> for PluginContainer {
 
 pub type Layers = NameSet;
 
-#[derive(Clone, Default, Debug, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Default, Debug, Deserialize, PartialEq, Serialize, Deref, DerefMut)]
 pub struct NameSet(IndexSet<PrioritizedString>);
 
 impl NameSet {
@@ -1615,19 +1478,5 @@ impl<I: Into<PrioritizedString>> From<Vec<I>> for NameSet {
 impl<I: Into<PrioritizedString>> From<IndexSet<I>> for NameSet {
   fn from(list: IndexSet<I>) -> Self {
     Self::from_iter(list)
-  }
-}
-
-impl Deref for NameSet {
-  type Target = IndexSet<PrioritizedString>;
-
-  fn deref(&self) -> &Self::Target {
-    &self.0
-  }
-}
-
-impl DerefMut for NameSet {
-  fn deref_mut(&mut self) -> &mut Self::Target {
-    &mut self.0
   }
 }

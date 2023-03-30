@@ -5,6 +5,7 @@ resolver = "2"
 
 [workspace.dependencies]
 derivative = "2"
+derive_more = "0.99"
 globset = "0.4"
 heck = "0.4"
 indent_write = "2"

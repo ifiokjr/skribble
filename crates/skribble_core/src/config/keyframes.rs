@@ -1,7 +1,7 @@
 use std::fmt::Write;
-use std::ops::Deref;
-use std::ops::DerefMut;
 
+use derive_more::Deref;
+use derive_more::DerefMut;
 use indexmap::IndexSet;
 use serde::Deserialize;
 use serde::Serialize;
@@ -17,7 +17,7 @@ use crate::RunnerConfig;
 
 /// This setups up the animation keyframes for the configuration. The names can
 /// be reference in the atoms.
-#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize, Deref, DerefMut)]
 pub struct Keyframes(Vec<Keyframe>);
 
 impl<T: Into<Keyframe>> From<Vec<T>> for Keyframes {
@@ -41,20 +41,6 @@ where
 {
   fn from_iter<T: IntoIterator<Item = V>>(iter: T) -> Self {
     Self(iter.into_iter().map(|value| value.into()).collect())
-  }
-}
-
-impl Deref for Keyframes {
-  type Target = Vec<Keyframe>;
-
-  fn deref(&self) -> &Self::Target {
-    &self.0
-  }
-}
-
-impl DerefMut for Keyframes {
-  fn deref_mut(&mut self) -> &mut Self::Target {
-    &mut self.0
   }
 }
 

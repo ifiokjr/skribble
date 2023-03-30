@@ -54,11 +54,10 @@ impl SkribbleRunner {
     let options = self.options.as_ref();
     let mut plugins = self.plugins.lock().unwrap();
 
-    for boxed_plugin in plugins.iter_mut() {
-      let plugin = boxed_plugin.as_mut();
+    for plugin in plugins.iter_mut() {
       plugin.read_options(options).map_err(|source| {
         Error::PluginReadConfigError {
-          id: boxed_plugin.data().id.clone(),
+          id: plugin.data().id.clone(),
           source,
         }
       })?;
@@ -77,11 +76,10 @@ impl SkribbleRunner {
     let plugins = self.plugins.lock().unwrap();
     let mut generated_files = GeneratedFiles::default();
 
-    for boxed_plugin in plugins.iter() {
-      let plugin = boxed_plugin.as_ref();
+    for plugin in plugins.iter() {
       let generated = plugin.generate_code(config).map_err(|source| {
         Error::PluginGenerateCodeError {
-          id: boxed_plugin.data().id.clone(),
+          id: plugin.data().id.clone(),
           source,
         }
       })?;
@@ -106,11 +104,10 @@ impl SkribbleRunner {
       let path = entry.path();
       let bytes = std::fs::read(entry.path())
         .map_err(move |source| Error::FileReadError(path.to_path_buf(), source))?;
-      for boxed_plugin in plugins.iter() {
-        let plugin = boxed_plugin.as_ref();
+      for plugin in plugins.iter() {
         let scanned = plugin.scan_code(path, bytes.clone()).map_err(|source| {
           Error::PluginScanCodeError {
-            id: boxed_plugin.data().id.clone(),
+            id: plugin.data().id.clone(),
             source,
           }
         })?;
@@ -126,13 +123,12 @@ impl SkribbleRunner {
     let mut plugin_config = PluginConfig::default();
     let plugins = self.plugins.lock().unwrap();
 
-    for boxed_plugin in plugins.iter() {
-      let plugin = boxed_plugin.as_ref();
+    for plugin in plugins.iter() {
       plugin
         .mutate_config(&mut plugin_config, &self.options)
         .map_err(|source| {
           Error::PluginMutateConfigError {
-            id: boxed_plugin.data().id.clone(),
+            id: plugin.data().id.clone(),
             source,
           }
         })?;
