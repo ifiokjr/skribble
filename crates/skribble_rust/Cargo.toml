@@ -19,9 +19,10 @@ heck = { workspace = true }
 indexmap = { workspace = true }
 indoc = { workspace = true }
 lazy_static = { workspace = true }
+readonly = { workspace = true }
 serde = { workspace = true }
 skribble_core = { workspace = true }
-syn = { workspace = true, features = ["full"] }
+syn = { workspace = true, features = ["full", "visit", "extra-traits"] }
 typed-builder = { workspace = true }
 
 [dev-dependencies]

@@ -62,7 +62,12 @@ pub trait Plugin {
   /// Each plugin can implement a custom scanner that feeds back classes from
   /// the provided byte data.
   #[allow(unused)]
-  fn scan_code(&self, file_path: &Path, bytes: Vec<u8>) -> AnyResult<Classes> {
+  fn scan_code(
+    &self,
+    config: &RunnerConfig,
+    file_path: &Path,
+    bytes: Vec<u8>,
+  ) -> AnyResult<Classes> {
     Ok(Classes::default())
   }
 }

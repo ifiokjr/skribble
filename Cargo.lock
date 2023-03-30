@@ -1120,6 +1120,7 @@ dependencies = [
  "indoc",
  "insta",
  "lazy_static",
+ "readonly",
  "serde",
  "skribble_core",
  "skribble_preset",

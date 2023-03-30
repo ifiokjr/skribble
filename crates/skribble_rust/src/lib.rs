@@ -1,6 +1,7 @@
 #![deny(clippy::all)]
 #![deny(clippy::indexing_slicing)]
 
+use std::path::Path;
 use std::process::Command;
 use std::process::Stdio;
 
@@ -10,9 +11,11 @@ use heck::ToSnakeCase;
 use indexmap::indexmap;
 use indexmap::indexset;
 use indoc::indoc;
+use scan::scan;
 use serde::Deserialize;
 use serde::Serialize;
 use skribble_core::AnyResult;
+use skribble_core::Classes;
 use skribble_core::GeneratedFile;
 use skribble_core::GeneratedFiles;
 use skribble_core::Plugin;
@@ -21,6 +24,7 @@ use skribble_core::RunnerConfig;
 use typed_builder::TypedBuilder;
 
 mod generate;
+mod scan;
 
 /// This plugin generates `rust` code from the configuration.
 #[derive(Debug, Clone, Default, Deserialize, TypedBuilder, Serialize)]
@@ -68,7 +72,7 @@ impl Plugin for RustPlugin {
     }
 
     let mut files = GeneratedFiles::default();
-    files.push(
+    files.insert(
       GeneratedFile::builder()
         .path("./src/skribble.rs")
         .content(contents)
@@ -76,6 +80,15 @@ impl Plugin for RustPlugin {
     );
 
     Ok(files)
+  }
+
+  fn scan_code(
+    &self,
+    config: &RunnerConfig,
+    file_path: &Path,
+    bytes: Vec<u8>,
+  ) -> AnyResult<Classes> {
+    scan(config, file_path, bytes)
   }
 }
 

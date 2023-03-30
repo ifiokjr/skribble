@@ -91,7 +91,7 @@ impl SkribbleRunner {
   }
 
   pub fn scan(&self, cwd: impl AsRef<Path>) -> Result<Classes> {
-    let Some(_) = self.config else {
+    let Some(ref config) = self.config else {
       return Err(Error::RunnerNotSetup);
     };
 
@@ -105,12 +105,14 @@ impl SkribbleRunner {
       let bytes = std::fs::read(entry.path())
         .map_err(move |source| Error::FileReadError(path.to_path_buf(), source))?;
       for plugin in plugins.iter() {
-        let scanned = plugin.scan_code(path, bytes.clone()).map_err(|source| {
-          Error::PluginScanCodeError {
-            id: plugin.data().id.clone(),
-            source,
-          }
-        })?;
+        let scanned = plugin
+          .scan_code(config, path, bytes.clone())
+          .map_err(|source| {
+            Error::PluginScanCodeError {
+              id: plugin.data().id.clone(),
+              source,
+            }
+          })?;
 
         classes.merge(scanned);
       }
