@@ -44,24 +44,8 @@ impl<'config> ScanVisitor<'config> {
       _ => {}
     }
   }
-}
 
-impl<'ast, 'config> Visit<'ast> for ScanVisitor<'config> {
-  fn visit_item_fn(&mut self, node: &'ast syn::ItemFn) {
-    // Recursively visit any nested items
-    visit::visit_item_fn(self, node);
-  }
-
-  fn visit_expr_method_call(&mut self, node: &'ast syn::ExprMethodCall) {
-    let mut tokens = vec![node.method.to_string()];
-    println!("Expression: {:#?}", node);
-    // println!("ParentToken: {:#?}", node.paren_token);
-    // find out if the root of this method call is the `sk` function
-    self.visit_receiver(node.receiver.as_ref(), &mut tokens);
-
-    println!("{:#?}", tokens);
-    // let method = node.method.to_string();
-    // println!("Method: {}", method);
+  fn update_with_tokens(&mut self, tokens: Vec<String>) {
     if tokens.first() != Some(&"sk".to_string()) {
       return;
     }
@@ -72,6 +56,29 @@ impl<'ast, 'config> Visit<'ast> for ScanVisitor<'config> {
     }
 
     self.classes.insert_factory(factory);
+  }
+}
+
+impl<'ast, 'config> Visit<'ast> for ScanVisitor<'config> {
+  fn visit_item_fn(&mut self, node: &'ast syn::ItemFn) {
+    // Recursively visit any nested items
+    visit::visit_item_fn(self, node);
+  }
+
+  fn visit_expr_method_call(&mut self, node: &'ast syn::ExprMethodCall) {
+    let mut tokens = vec![node.method.to_string()];
+    self.visit_receiver(node.receiver.as_ref(), &mut tokens);
+    self.update_with_tokens(tokens);
+  }
+
+  fn visit_expr_field(&mut self, node: &'ast syn::ExprField) {
+    let syn::Member::Named(ref ident) = node.member else {
+      return;
+    };
+
+    let mut tokens = vec![ident.to_string()];
+    self.visit_receiver(node.base.as_ref(), &mut tokens);
+    self.update_with_tokens(tokens);
   }
 }
 
@@ -128,6 +135,32 @@ mod tests {
           let another_one = sk().md().p().px();
           let contained = sk().contained();
         }
+      }
+    "#;
+    let classes = scan(config, "", code.to_vec())?;
+
+    insta::assert_display_snapshot!(classes.to_skribble_css(config)?);
+
+    Ok(())
+  }
+
+  #[test]
+  fn can_scan_field() -> AnyEmptyResult {
+    let default_preset = PresetDefault::builder().build();
+    let rust_plugin = RustPlugin::builder().build();
+
+    let config: StyleConfig = StyleConfig::builder()
+      .plugins(vec![
+        PluginContainer::from(default_preset),
+        PluginContainer::from(rust_plugin),
+      ])
+      .build();
+
+    let mut runner = SkribbleRunner::new(config);
+    let config = runner.initialize()?;
+    let code = br#"
+      pub fn foo() {
+        let something = sk().p().px;
       }
     "#;
     let classes = scan(config, "", code.to_vec())?;
