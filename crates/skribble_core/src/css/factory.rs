@@ -54,8 +54,26 @@ impl<'config> ClassFactory<'config> {
     }
   }
 
-  pub fn class<T: AsRef<str>>(config: &'config RunnerConfig, tokens: &[T]) -> Self {
+  /// Create a class factory from the provided string.
+  pub fn from_string(config: &'config RunnerConfig, string: impl AsRef<str>) -> Self {
+    let string = string.as_ref().trim();
     let mut factory = Self::new(config);
+
+    for token in string.split(':') {
+      if !token.starts_with('$') {
+        factory.add_token(token);
+      } else if let Some(value) = token.get(1..) {
+        println!("OTHER token: {}", value);
+        factory.add_token(value);
+      }
+    }
+
+    factory
+  }
+
+  pub fn from_tokens<T: AsRef<str>>(config: &'config RunnerConfig, tokens: &[T]) -> Self {
+    let mut factory = Self::new(config);
+
     for token in tokens {
       factory.add_token(token);
     }

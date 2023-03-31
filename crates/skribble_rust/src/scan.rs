@@ -22,37 +22,17 @@ impl<'config> ScanVisitor<'config> {
     }
   }
 
-  fn visit_receiver(&mut self, node: &syn::Expr, tokens: &mut Vec<String>) {
-    match node {
-      syn::Expr::MethodCall(method) => {
-        tokens.insert(0, method.method.to_string());
-        self.visit_receiver(method.receiver.as_ref(), tokens);
-      }
-      syn::Expr::Call(call) => {
-        self.visit_receiver(call.func.as_ref(), tokens);
-      }
-      syn::Expr::Path(path) => {
-        if let Some(path) = path
-          .path
-          .segments
-          .last()
-          .map(|segment| segment.ident.to_string())
-        {
-          tokens.insert(0, path);
-        }
-      }
-      _ => {}
-    }
-  }
-
   fn update_with_tokens(&mut self, tokens: Vec<String>) {
     if tokens.first() != Some(&"sk".to_string()) {
       return;
     }
 
     let mut factory = ClassFactory::new(self.config);
-    for token in tokens[1..].iter() {
-      factory.add_token(token);
+
+    if let Some(tokens) = tokens.get(1..) {
+      for token in tokens {
+        factory.add_token(token);
+      }
     }
 
     self.classes.insert_factory(factory);
@@ -67,7 +47,7 @@ impl<'ast, 'config> Visit<'ast> for ScanVisitor<'config> {
 
   fn visit_expr_method_call(&mut self, node: &'ast syn::ExprMethodCall) {
     let mut tokens = vec![node.method.to_string()];
-    self.visit_receiver(node.receiver.as_ref(), &mut tokens);
+    read_tokens_from_expression(node.receiver.as_ref(), &mut tokens);
     self.update_with_tokens(tokens);
   }
 
@@ -77,8 +57,31 @@ impl<'ast, 'config> Visit<'ast> for ScanVisitor<'config> {
     };
 
     let mut tokens = vec![ident.to_string()];
-    self.visit_receiver(node.base.as_ref(), &mut tokens);
+    read_tokens_from_expression(node.base.as_ref(), &mut tokens);
     self.update_with_tokens(tokens);
+  }
+}
+
+fn read_tokens_from_expression(node: &syn::Expr, tokens: &mut Vec<String>) {
+  match node {
+    syn::Expr::MethodCall(method) => {
+      tokens.insert(0, method.method.to_string());
+      read_tokens_from_expression(method.receiver.as_ref(), tokens);
+    }
+    syn::Expr::Call(call) => {
+      read_tokens_from_expression(call.func.as_ref(), tokens);
+    }
+    syn::Expr::Path(path) => {
+      if let Some(path) = path
+        .path
+        .segments
+        .last()
+        .map(|segment| segment.ident.to_string())
+      {
+        tokens.insert(0, path);
+      }
+    }
+    _ => {}
   }
 }
 

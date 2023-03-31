@@ -26,8 +26,8 @@ fn contained() -> AnyEmptyResult {
   let runner_config = runner.initialize()?;
   let mut classes = Classes::default();
   classes.insert_factories(vec![
-    ClassFactory::class(runner_config, &["contained"]),
-    ClassFactory::class(runner_config, &["lg", "contained"]),
+    ClassFactory::from_tokens(runner_config, &["contained"]),
+    ClassFactory::from_tokens(runner_config, &["lg", "contained"]),
   ]);
   classes.sort_by_class();
 

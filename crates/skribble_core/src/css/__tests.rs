@@ -20,7 +20,7 @@ use crate::ValueSet;
 fn class_selector() -> AnyEmptyResult {
   let mut runner = SkribbleRunner::new(create_config());
   let runner_config = runner.initialize()?;
-  let factory = ClassFactory::class(runner_config, &["pt", "0"]);
+  let factory = ClassFactory::from_string(runner_config, "pt:$0");
   let class = factory.into_class().unwrap();
   insta::assert_display_snapshot!(class.to_skribble_css(runner_config)?);
 
@@ -33,10 +33,10 @@ fn classes_css() -> AnyEmptyResult {
   let runner_config = runner.initialize()?;
   let mut classes = Classes::default();
   classes.insert_factories(vec![
-    ClassFactory::class(runner_config, &["pt", "0"]),
-    ClassFactory::class(runner_config, &["sm", "pt", "10"]),
-    ClassFactory::class(runner_config, &["md", "pt", "px"]),
-    ClassFactory::class(runner_config, &["screen", "lg", "pt", "px"]),
+    ClassFactory::from_string(runner_config, "pt:$0"),
+    ClassFactory::from_string(runner_config, "sm:pt:$10"),
+    ClassFactory::from_string(runner_config, "md:pt:$px"),
+    ClassFactory::from_string(runner_config, "screen:lg:pt:$px"),
   ]);
   classes.sort_by_class();
   insta::assert_display_snapshot!(classes.to_skribble_css(runner_config)?);
@@ -49,8 +49,8 @@ fn classes_with_color_properties() -> AnyEmptyResult {
   let runner_config = runner.initialize()?;
   let mut classes = Classes::default();
   classes.insert_factories(vec![
-    ClassFactory::class(runner_config, &["bg", "secondary"]),
-    ClassFactory::class(runner_config, &["sm", "bg", "primary"]),
+    ClassFactory::from_string(runner_config, "bg:$secondary"),
+    ClassFactory::from_string(runner_config, "sm:bg:$primary"),
   ]);
   classes.sort_by_class();
   insta::assert_display_snapshot!(classes.to_skribble_css(runner_config)?);
@@ -64,8 +64,8 @@ fn classes_with_keyframes() -> AnyEmptyResult {
   let runner_config = runner.initialize()?;
   let mut classes = Classes::default();
   classes.insert_factories(vec![
-    ClassFactory::class(runner_config, &["animate", "spin"]),
-    ClassFactory::class(runner_config, &["screen", "animate", "spin"]),
+    ClassFactory::from_string(runner_config, "animate:$spin"),
+    ClassFactory::from_string(runner_config, "screen:animate:$spin"),
   ]);
   classes.sort_by_class();
   insta::assert_display_snapshot!(classes.to_skribble_css(runner_config)?);
