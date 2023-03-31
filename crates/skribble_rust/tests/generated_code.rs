@@ -3138,6 +3138,10 @@ pub trait Palette: SkribbleValue {
     self.append_string_to_skribble_value("slate900")
   }
   #[inline]
+  fn slate950(&self) -> String {
+    self.append_string_to_skribble_value("slate950")
+  }
+  #[inline]
   fn gray50(&self) -> String {
     self.append_string_to_skribble_value("gray50")
   }
@@ -3176,6 +3180,10 @@ pub trait Palette: SkribbleValue {
   #[inline]
   fn gray900(&self) -> String {
     self.append_string_to_skribble_value("gray900")
+  }
+  #[inline]
+  fn gray950(&self) -> String {
+    self.append_string_to_skribble_value("gray950")
   }
   #[inline]
   fn zinc50(&self) -> String {
@@ -3218,6 +3226,10 @@ pub trait Palette: SkribbleValue {
     self.append_string_to_skribble_value("zinc900")
   }
   #[inline]
+  fn zinc950(&self) -> String {
+    self.append_string_to_skribble_value("zinc950")
+  }
+  #[inline]
   fn neutral50(&self) -> String {
     self.append_string_to_skribble_value("neutral50")
   }
@@ -3256,6 +3268,10 @@ pub trait Palette: SkribbleValue {
   #[inline]
   fn neutral900(&self) -> String {
     self.append_string_to_skribble_value("neutral900")
+  }
+  #[inline]
+  fn neutral950(&self) -> String {
+    self.append_string_to_skribble_value("neutral950")
   }
   #[inline]
   fn stone50(&self) -> String {
@@ -3298,6 +3314,10 @@ pub trait Palette: SkribbleValue {
     self.append_string_to_skribble_value("stone900")
   }
   #[inline]
+  fn stone950(&self) -> String {
+    self.append_string_to_skribble_value("stone950")
+  }
+  #[inline]
   fn red50(&self) -> String {
     self.append_string_to_skribble_value("red50")
   }
@@ -3336,6 +3356,10 @@ pub trait Palette: SkribbleValue {
   #[inline]
   fn red900(&self) -> String {
     self.append_string_to_skribble_value("red900")
+  }
+  #[inline]
+  fn red950(&self) -> String {
+    self.append_string_to_skribble_value("red950")
   }
   #[inline]
   fn orange50(&self) -> String {
@@ -3378,6 +3402,10 @@ pub trait Palette: SkribbleValue {
     self.append_string_to_skribble_value("orange900")
   }
   #[inline]
+  fn orange950(&self) -> String {
+    self.append_string_to_skribble_value("orange950")
+  }
+  #[inline]
   fn amber50(&self) -> String {
     self.append_string_to_skribble_value("amber50")
   }
@@ -3416,6 +3444,10 @@ pub trait Palette: SkribbleValue {
   #[inline]
   fn amber900(&self) -> String {
     self.append_string_to_skribble_value("amber900")
+  }
+  #[inline]
+  fn amber950(&self) -> String {
+    self.append_string_to_skribble_value("amber950")
   }
   #[inline]
   fn yellow50(&self) -> String {
@@ -3458,6 +3490,10 @@ pub trait Palette: SkribbleValue {
     self.append_string_to_skribble_value("yellow900")
   }
   #[inline]
+  fn yellow950(&self) -> String {
+    self.append_string_to_skribble_value("yellow950")
+  }
+  #[inline]
   fn lime50(&self) -> String {
     self.append_string_to_skribble_value("lime50")
   }
@@ -3496,6 +3532,10 @@ pub trait Palette: SkribbleValue {
   #[inline]
   fn lime900(&self) -> String {
     self.append_string_to_skribble_value("lime900")
+  }
+  #[inline]
+  fn lime950(&self) -> String {
+    self.append_string_to_skribble_value("lime950")
   }
   #[inline]
   fn green50(&self) -> String {
@@ -3538,6 +3578,10 @@ pub trait Palette: SkribbleValue {
     self.append_string_to_skribble_value("green900")
   }
   #[inline]
+  fn green950(&self) -> String {
+    self.append_string_to_skribble_value("green950")
+  }
+  #[inline]
   fn emerald50(&self) -> String {
     self.append_string_to_skribble_value("emerald50")
   }
@@ -3576,6 +3620,10 @@ pub trait Palette: SkribbleValue {
   #[inline]
   fn emerald900(&self) -> String {
     self.append_string_to_skribble_value("emerald900")
+  }
+  #[inline]
+  fn emerald950(&self) -> String {
+    self.append_string_to_skribble_value("emerald950")
   }
   #[inline]
   fn teal50(&self) -> String {
@@ -3618,6 +3666,10 @@ pub trait Palette: SkribbleValue {
     self.append_string_to_skribble_value("teal900")
   }
   #[inline]
+  fn teal950(&self) -> String {
+    self.append_string_to_skribble_value("teal950")
+  }
+  #[inline]
   fn cyan50(&self) -> String {
     self.append_string_to_skribble_value("cyan50")
   }
@@ -3656,6 +3708,10 @@ pub trait Palette: SkribbleValue {
   #[inline]
   fn cyan900(&self) -> String {
     self.append_string_to_skribble_value("cyan900")
+  }
+  #[inline]
+  fn cyan950(&self) -> String {
+    self.append_string_to_skribble_value("cyan950")
   }
   #[inline]
   fn sky50(&self) -> String {
@@ -3698,6 +3754,10 @@ pub trait Palette: SkribbleValue {
     self.append_string_to_skribble_value("sky900")
   }
   #[inline]
+  fn sky950(&self) -> String {
+    self.append_string_to_skribble_value("sky950")
+  }
+  #[inline]
   fn blue50(&self) -> String {
     self.append_string_to_skribble_value("blue50")
   }
@@ -3736,6 +3796,10 @@ pub trait Palette: SkribbleValue {
   #[inline]
   fn blue900(&self) -> String {
     self.append_string_to_skribble_value("blue900")
+  }
+  #[inline]
+  fn blue950(&self) -> String {
+    self.append_string_to_skribble_value("blue950")
   }
   #[inline]
   fn indigo50(&self) -> String {
@@ -3778,6 +3842,10 @@ pub trait Palette: SkribbleValue {
     self.append_string_to_skribble_value("indigo900")
   }
   #[inline]
+  fn indigo950(&self) -> String {
+    self.append_string_to_skribble_value("indigo950")
+  }
+  #[inline]
   fn violet50(&self) -> String {
     self.append_string_to_skribble_value("violet50")
   }
@@ -3816,6 +3884,10 @@ pub trait Palette: SkribbleValue {
   #[inline]
   fn violet900(&self) -> String {
     self.append_string_to_skribble_value("violet900")
+  }
+  #[inline]
+  fn violet950(&self) -> String {
+    self.append_string_to_skribble_value("violet950")
   }
   #[inline]
   fn purple50(&self) -> String {
@@ -3858,6 +3930,10 @@ pub trait Palette: SkribbleValue {
     self.append_string_to_skribble_value("purple900")
   }
   #[inline]
+  fn purple950(&self) -> String {
+    self.append_string_to_skribble_value("purple950")
+  }
+  #[inline]
   fn fuchsia50(&self) -> String {
     self.append_string_to_skribble_value("fuchsia50")
   }
@@ -3896,6 +3972,10 @@ pub trait Palette: SkribbleValue {
   #[inline]
   fn fuchsia900(&self) -> String {
     self.append_string_to_skribble_value("fuchsia900")
+  }
+  #[inline]
+  fn fuchsia950(&self) -> String {
+    self.append_string_to_skribble_value("fuchsia950")
   }
   #[inline]
   fn pink50(&self) -> String {
@@ -3938,6 +4018,10 @@ pub trait Palette: SkribbleValue {
     self.append_string_to_skribble_value("pink900")
   }
   #[inline]
+  fn pink950(&self) -> String {
+    self.append_string_to_skribble_value("pink950")
+  }
+  #[inline]
   fn rose50(&self) -> String {
     self.append_string_to_skribble_value("rose50")
   }
@@ -3976,6 +4060,10 @@ pub trait Palette: SkribbleValue {
   #[inline]
   fn rose900(&self) -> String {
     self.append_string_to_skribble_value("rose900")
+  }
+  #[inline]
+  fn rose950(&self) -> String {
+    self.append_string_to_skribble_value("rose950")
   }
 }
 pub trait KeyframeSetAtomAnimate: SkribbleValue {
