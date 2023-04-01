@@ -38,7 +38,7 @@ impl Plugin for PresetDefault {
       .build()
   }
 
-  fn mutate_config(&self, config: &mut PluginConfig, _options: &Options) -> AnyEmptyResult {
+  fn mutate_config(&mut self, config: &mut PluginConfig, _options: &Options) -> AnyEmptyResult {
     self.update_palette(&mut config.palette);
     self.update_media_queries(&mut config.media_queries);
     self.update_modifiers(&mut config.modifiers);

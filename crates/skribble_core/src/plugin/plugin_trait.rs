@@ -48,14 +48,14 @@ pub trait Plugin {
   /// the original configuration but created at the start just for the
   /// plugins. It will be merged into the [`StyleConfig`].
   #[allow(unused)]
-  fn mutate_config(&self, config: &mut PluginConfig, options: &Options) -> AnyEmptyResult {
+  fn mutate_config(&mut self, config: &mut PluginConfig, options: &Options) -> AnyEmptyResult {
     Ok(())
   }
 
   /// Generate code from the configuration. This is called after the config
   /// has been generated.
   #[allow(unused)]
-  fn generate_code(&self, config: &RunnerConfig) -> AnyResult<GeneratedFiles> {
+  fn generate_code(&mut self, config: &RunnerConfig) -> AnyResult<GeneratedFiles> {
     Ok(GeneratedFiles::default())
   }
 
@@ -63,7 +63,7 @@ pub trait Plugin {
   /// the provided byte data.
   #[allow(unused)]
   fn scan_code(
-    &self,
+    &mut self,
     config: &RunnerConfig,
     file_path: &Path,
     bytes: Vec<u8>,

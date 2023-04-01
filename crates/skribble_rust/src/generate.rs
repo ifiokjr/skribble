@@ -1,26 +1,24 @@
+use indexmap::indexmap;
 use indexmap::IndexMap;
-use indexmap::IndexSet;
 use skribble_core::wrap_indent;
 use skribble_core::AnyEmptyResult;
 use skribble_core::AnyResult;
 use skribble_core::LinkedValues;
 use skribble_core::ToSkribbleCss;
 
-use super::indexmap;
-use super::indexset;
 use super::indoc;
 use super::RunnerConfig;
 use super::ToPascalCase;
 use super::ToSnakeCase;
+use crate::error::Error;
 
 fn generate_media_queries(
   config: &RunnerConfig,
-
-  method_names: &mut IndexSet<String>,
+  method_names: &mut IndexMap<String, String>,
   sections: &mut Vec<String>,
   struct_names_map: &mut IndexMap<String, usize>,
   trait_names: &mut Vec<String>,
-) {
+) -> AnyEmptyResult {
   for (key, map) in config.media_queries.iter() {
     let mut section = Vec::<String>::new();
     let trait_name = format!("MediaQuery{}", key.to_pascal_case());
@@ -31,7 +29,7 @@ fn generate_media_queries(
     let mut methods = vec![format!("pub trait {trait_name}: SkribbleValue {{")];
 
     for (name, media_query) in map.iter() {
-      let method_name = get_method_name(name, method_names);
+      let method_name = get_method_name(name, method_names)?;
       let css_docs = wrap_indent(
         wrap_docs(wrap_in_code_block(
           media_query_docs(&media_query.query),
@@ -64,6 +62,8 @@ fn generate_media_queries(
     struct_names_map.insert(struct_name, trait_names.len());
     sections.push(section.join("\n"));
   }
+
+  Ok(())
 }
 
 fn media_query_docs(query: impl AsRef<str>) -> String {
@@ -78,11 +78,11 @@ fn modifier_docs(values: &[String]) -> String {
 
 fn generate_modifiers(
   config: &RunnerConfig,
-  method_names: &mut IndexSet<String>,
+  method_names: &mut IndexMap<String, String>,
   sections: &mut Vec<String>,
   struct_names_map: &mut IndexMap<String, usize>,
   trait_names: &mut Vec<String>,
-) {
+) -> AnyEmptyResult {
   for (key, map) in config.modifiers.iter() {
     let mut section = Vec::<String>::new();
     let trait_name = format!("Modifier{}", key.to_pascal_case());
@@ -93,7 +93,7 @@ fn generate_modifiers(
     let mut methods = vec![format!("pub trait {trait_name}: SkribbleValue {{")];
 
     for (name, modifier) in map.iter() {
-      let method_name = get_method_name(name, method_names);
+      let method_name = get_method_name(name, method_names)?;
       let css_docs = wrap_indent(
         wrap_docs(wrap_in_code_block(modifier_docs(&modifier.values), "css")),
         1,
@@ -123,10 +123,13 @@ fn generate_modifiers(
     struct_names_map.insert(struct_name, trait_names.len());
     sections.push(section.join("\n"));
   }
+
+  Ok(())
 }
 
 fn generate_keyframes(
   config: &RunnerConfig,
+  method_names: &mut IndexMap<String, String>,
   sections: &mut Vec<String>,
   name: impl AsRef<str>,
 ) -> AnyEmptyResult {
@@ -135,7 +138,7 @@ fn generate_keyframes(
   sections.push(format!("pub trait {name}: SkribbleValue {{"));
 
   for (name, keyframe) in config.keyframes.iter() {
-    let method_name = safe_method_name(name);
+    let method_name = get_method_name(name, method_names)?;
     let css_docs = wrap_indent(
       wrap_docs(wrap_in_code_block(keyframe.to_skribble_css(config)?, "css")),
       1,
@@ -166,7 +169,11 @@ fn generate_keyframes(
   Ok(())
 }
 
-fn generate_value_sets(config: &RunnerConfig, sections: &mut Vec<String>) {
+fn generate_value_sets(
+  config: &RunnerConfig,
+  method_names: &mut IndexMap<String, String>,
+  sections: &mut Vec<String>,
+) -> AnyEmptyResult {
   for (name, value_set) in config.value_sets.iter() {
     let value_set_trait_name = get_value_set_trait_name(name);
     sections.push(format!(
@@ -174,7 +181,7 @@ fn generate_value_sets(config: &RunnerConfig, sections: &mut Vec<String>) {
     ));
 
     for (value_name, _) in value_set.values.iter() {
-      let method_name = safe_method_name(value_name);
+      let method_name = get_method_name(value_name, method_names)?;
 
       if let Some(ref description) = value_set.description {
         sections.push(wrap_indent(wrap_docs(description), 1));
@@ -195,18 +202,20 @@ fn generate_value_sets(config: &RunnerConfig, sections: &mut Vec<String>) {
 
     sections.push("}".into());
   }
+
+  Ok(())
 }
 
 fn generate_named_classes(
   config: &RunnerConfig,
-
+  method_names: &mut IndexMap<String, String>,
   sections: &mut Vec<String>,
   trait_names: &mut Vec<String>,
-) {
+) -> AnyEmptyResult {
   sections.push("pub trait NamedClasses: SkribbleValue {".into());
 
   for (class_name, class) in config.classes.iter() {
-    let method_name = safe_method_name(class_name);
+    let method_name = get_method_name(class_name, method_names)?;
 
     if let Some(ref description) = class.description {
       sections.push(wrap_indent(wrap_docs(description), 1));
@@ -227,14 +236,15 @@ fn generate_named_classes(
 
   trait_names.push("NamedClasses".into());
   sections.push("}".into());
+
+  Ok(())
 }
 
 const ATOM_TRAIT_NAME: &str = "Atom";
 
 fn generate_atoms(
   config: &RunnerConfig,
-
-  method_names: &mut IndexSet<String>,
+  method_names: &mut IndexMap<String, String>,
   sections: &mut Vec<String>,
   trait_names: &mut Vec<String>,
 ) -> AnyEmptyResult {
@@ -245,7 +255,7 @@ fn generate_atoms(
   trait_content.push(format!("pub trait {ATOM_TRAIT_NAME}: SkribbleValue {{"));
 
   for (name, modifier) in config.atoms.iter() {
-    let method_name = get_method_name(name, method_names);
+    let method_name = get_method_name(name, method_names)?;
     let atom_struct_name = format!("Atom{}", name.to_pascal_case());
 
     struct_content.push(generate_struct(&atom_struct_name));
@@ -267,7 +277,7 @@ fn generate_atoms(
       }
       LinkedValues::Keyframes => {
         let keyframe_trait_name = get_keyframe_trait_name(&atom_struct_name);
-        generate_keyframes(config, sections, &keyframe_trait_name)?;
+        generate_keyframes(config, method_names, sections, &keyframe_trait_name)?;
 
         struct_content.push(format!(
           "impl {keyframe_trait_name} for {atom_struct_name} {{}}",
@@ -301,11 +311,15 @@ fn generate_atoms(
   Ok(())
 }
 
-fn generate_palette(config: &RunnerConfig, sections: &mut Vec<String>) {
+fn generate_palette(
+  config: &RunnerConfig,
+  method_names: &mut IndexMap<String, String>,
+  sections: &mut Vec<String>,
+) -> AnyEmptyResult {
   sections.push("pub trait Palette: SkribbleValue {".into());
 
   for (name, _) in config.palette.iter() {
-    let method_name = safe_method_name(name);
+    let method_name = get_method_name(name, method_names)?;
 
     sections.push(wrap_indent(
       format!("#[inline]\nfn {method_name}(&self) -> String {{"),
@@ -321,9 +335,15 @@ fn generate_palette(config: &RunnerConfig, sections: &mut Vec<String>) {
   }
 
   sections.push("}".into());
+
+  Ok(())
 }
 
-fn generate_css_variables(config: &RunnerConfig, sections: &mut Vec<String>) -> AnyEmptyResult {
+fn generate_css_variables(
+  config: &RunnerConfig,
+  method_names: &mut IndexMap<String, String>,
+  sections: &mut Vec<String>,
+) -> AnyEmptyResult {
   let mut entries = vec![
     indoc!(
       "
@@ -338,7 +358,7 @@ fn generate_css_variables(config: &RunnerConfig, sections: &mut Vec<String>) -> 
   let mut colors = vec!["pub trait Color: SkribbleValue {".into()];
 
   for (name, css_variable) in config.css_variables.iter() {
-    let method_name = safe_method_name(name);
+    let method_name = get_method_name(name, method_names)?;
     let variable_name = css_variable.get_variable(config.options());
     let mut property_rule = String::new();
     css_variable.write_property_rule(&mut property_rule, config)?;
@@ -454,34 +474,40 @@ fn generate_struct(name: impl AsRef<str>) -> String {
   format!("pub struct {name}(String);")
 }
 
-fn get_method_name(name: impl AsRef<str>, method_names: &mut IndexSet<String>) -> String {
-  let method_name = safe_method_name(name);
+fn get_method_name(
+  name: impl AsRef<str>,
+  method_names: &mut IndexMap<String, String>,
+) -> AnyResult<String> {
+  let method_name = safe_method_name(&name)?;
   let mut index = 0;
   let mut current_method_name = method_name.clone();
+
   loop {
-    if method_names.contains(&current_method_name) {
+    if method_names.contains_key(&current_method_name) {
       index += 1;
-      current_method_name = format!("{}{}", method_name, index);
+      current_method_name = format!("{}_{}", method_name, index);
       continue;
     }
 
-    method_names.insert(current_method_name.clone());
+    method_names.insert(current_method_name.clone(), name.as_ref().to_string());
     break;
   }
 
-  current_method_name
+  Ok(current_method_name)
 }
 
-fn safe_method_name(name: impl AsRef<str>) -> String {
+fn safe_method_name(name: impl AsRef<str>) -> Result<String, Error> {
   let name = name.as_ref();
 
   let prefix = match name.chars().next() {
-    Some(first_char) if first_char.is_ascii_digit() => "n_",
+    Some(first_char) if first_char.is_ascii_digit() => "n__",
     Some(first_char) if !first_char.is_ascii_alphabetic() => {
       match first_char {
-        '-' => "minus_",
-        '+' => "plus_",
-        _ => "__",
+        '_' => "u__",
+        '-' => "m__",
+        '+' => "p__",
+        '.' => "d__",
+        _ => return Err(Error::InvalidMethodName(name.to_string())),
       }
     }
     _ => "",
@@ -490,14 +516,14 @@ fn safe_method_name(name: impl AsRef<str>) -> String {
   let method_name = format!("{prefix}{}", name.to_snake_case());
 
   if RESERVED_WORDS.contains(&method_name.as_str()) {
-    return format!("r#{}", method_name);
+    return Ok(format!("r#{}", method_name));
   }
 
   if method_name.is_empty() {
-    return "__".into();
+    return Ok("__".into());
   }
 
-  method_name
+  Ok(method_name)
 }
 
 const RESERVED_WORDS: &[&str] = &[
@@ -552,32 +578,34 @@ fn combine_sections_with_header(sections: Vec<String>) -> String {
   format!("{HEADER}\n{}", sections.join("\n"))
 }
 
-pub(crate) fn generate_file_contents(config: &RunnerConfig) -> AnyResult<String> {
-  let mut method_names: IndexSet<String> = indexset! {};
+pub(crate) fn generate_file_contents(
+  config: &RunnerConfig,
+) -> AnyResult<(String, IndexMap<String, String>)> {
+  let mut method_names = IndexMap::<String, String>::new();
   let mut sections = Vec::<String>::new();
   let mut trait_names = vec![];
   let mut struct_names_map: IndexMap<String, usize> = indexmap! { "SkribbleRoot".into() => 0 };
 
-  generate_css_variables(config, &mut sections)?;
+  generate_css_variables(config, &mut method_names, &mut sections)?;
   generate_media_queries(
     config,
     &mut method_names,
     &mut sections,
     &mut struct_names_map,
     &mut trait_names,
-  );
+  )?;
   generate_modifiers(
     config,
     &mut method_names,
     &mut sections,
     &mut struct_names_map,
     &mut trait_names,
-  );
-  generate_value_sets(config, &mut sections);
-  generate_palette(config, &mut sections);
+  )?;
+  generate_value_sets(config, &mut method_names, &mut sections)?;
+  generate_palette(config, &mut method_names, &mut sections)?;
   generate_atoms(config, &mut method_names, &mut sections, &mut trait_names)?;
-  generate_named_classes(config, &mut sections, &mut trait_names);
+  generate_named_classes(config, &mut method_names, &mut sections, &mut trait_names)?;
   generate_struct_implementations(&struct_names_map, &trait_names, &mut sections);
 
-  Ok(combine_sections_with_header(sections))
+  Ok((combine_sections_with_header(sections), method_names))
 }

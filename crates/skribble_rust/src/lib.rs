@@ -8,8 +8,7 @@ use std::process::Stdio;
 use generate::generate_file_contents;
 use heck::ToPascalCase;
 use heck::ToSnakeCase;
-use indexmap::indexmap;
-use indexmap::indexset;
+use indexmap::IndexMap;
 use indoc::indoc;
 use scan::scan;
 use serde::Deserialize;
@@ -23,6 +22,7 @@ use skribble_core::PluginData;
 use skribble_core::RunnerConfig;
 use typed_builder::TypedBuilder;
 
+mod error;
 mod generate;
 mod scan;
 
@@ -33,11 +33,15 @@ pub struct RustPlugin {
   /// e.g. `dprint`
   #[builder(default, setter(into, strip_option))]
   pub formatter: Option<String>,
-
   /// The formatter arguments.
   /// e.g. `["fmt", "--stdin", "file.rs"]`
   #[builder(default, setter(into))]
   pub formatter_args: Vec<String>,
+  /// The method names used in the generated code. This is also used to remap
+  /// method names to the stored names.
+  #[builder(default, setter(skip))]
+  #[serde(skip)]
+  method_names: IndexMap<String, String>,
 }
 
 impl Plugin for RustPlugin {
@@ -52,8 +56,9 @@ impl Plugin for RustPlugin {
       .build()
   }
 
-  fn generate_code(&self, config: &RunnerConfig) -> AnyResult<GeneratedFiles> {
-    let mut contents = generate_file_contents(config)?;
+  fn generate_code(&mut self, config: &RunnerConfig) -> AnyResult<GeneratedFiles> {
+    let (mut contents, method_names) = generate_file_contents(config)?;
+    self.method_names = method_names;
 
     if let Some(ref formatter) = self.formatter {
       let input = Command::new("echo")
@@ -83,7 +88,7 @@ impl Plugin for RustPlugin {
   }
 
   fn scan_code(
-    &self,
+    &mut self,
     config: &RunnerConfig,
     file_path: &Path,
     bytes: Vec<u8>,

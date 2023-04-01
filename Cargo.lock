@@ -1125,6 +1125,7 @@ dependencies = [
  "skribble_core",
  "skribble_preset",
  "syn 2.0.11",
+ "thiserror",
  "typed-builder",
 ]
 

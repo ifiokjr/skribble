@@ -73,10 +73,10 @@ impl SkribbleRunner {
       return Err(Error::RunnerNotSetup);
     };
 
-    let plugins = self.plugins.lock().unwrap();
+    let mut plugins = self.plugins.lock().unwrap();
     let mut generated_files = GeneratedFiles::default();
 
-    for plugin in plugins.iter() {
+    for plugin in plugins.iter_mut() {
       let generated = plugin.generate_code(config).map_err(|source| {
         Error::PluginGenerateCodeError {
           id: plugin.data().id.clone(),
@@ -97,14 +97,14 @@ impl SkribbleRunner {
 
     let entries = walk_directory(cwd, &self.options.files).map_err(Error::FileScanError)?;
 
-    let plugins = self.plugins.lock().unwrap();
+    let mut plugins = self.plugins.lock().unwrap();
     let mut classes = Classes::default();
 
     for entry in entries.iter() {
       let path = entry.path();
       let bytes = std::fs::read(entry.path())
         .map_err(move |source| Error::FileReadError(path.to_path_buf(), source))?;
-      for plugin in plugins.iter() {
+      for plugin in plugins.iter_mut() {
         let scanned = plugin
           .scan_code(config, path, bytes.clone())
           .map_err(|source| {
@@ -123,9 +123,9 @@ impl SkribbleRunner {
 
   fn generate_plugin_config(&self) -> Result<PluginConfig> {
     let mut plugin_config = PluginConfig::default();
-    let plugins = self.plugins.lock().unwrap();
+    let mut plugins = self.plugins.lock().unwrap();
 
-    for plugin in plugins.iter() {
+    for plugin in plugins.iter_mut() {
       plugin
         .mutate_config(&mut plugin_config, &self.options)
         .map_err(|source| {

@@ -23,6 +23,7 @@ readonly = { workspace = true }
 serde = { workspace = true }
 skribble_core = { workspace = true }
 syn = { workspace = true, features = ["full", "visit", "extra-traits"] }
+thiserror = { workspace = true }
 typed-builder = { workspace = true }
 
 [dev-dependencies]
