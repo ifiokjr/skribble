@@ -500,13 +500,13 @@ fn safe_method_name(name: impl AsRef<str>) -> Result<String, Error> {
   let name = name.as_ref();
 
   let prefix = match name.chars().next() {
-    Some(first_char) if first_char.is_ascii_digit() => "n__",
+    Some(first_char) if first_char.is_ascii_digit() => "n_",
     Some(first_char) if !first_char.is_ascii_alphabetic() => {
       match first_char {
-        '_' => "u__",
-        '-' => "m__",
-        '+' => "p__",
-        '.' => "d__",
+        '_' => "u_",
+        '-' => "m_",
+        '+' => "p_",
+        '.' => "d_",
         _ => return Err(Error::InvalidMethodName(name.to_string())),
       }
     }

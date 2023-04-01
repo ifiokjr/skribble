@@ -2532,47 +2532,47 @@ pub trait ValueSetTransitionProperties: SkribbleValue {
 }
 pub trait ValueSetDurations: SkribbleValue {
   #[inline]
-  fn n__0(&self) -> String {
+  fn n_0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
   #[inline]
-  fn n__75(&self) -> String {
+  fn n_75(&self) -> String {
     self.append_string_to_skribble_value("75")
   }
   #[inline]
-  fn n__100(&self) -> String {
+  fn n_100(&self) -> String {
     self.append_string_to_skribble_value("100")
   }
   #[inline]
-  fn n__150(&self) -> String {
+  fn n_150(&self) -> String {
     self.append_string_to_skribble_value("150")
   }
   #[inline]
-  fn n__200(&self) -> String {
+  fn n_200(&self) -> String {
     self.append_string_to_skribble_value("200")
   }
   #[inline]
-  fn n__300(&self) -> String {
+  fn n_300(&self) -> String {
     self.append_string_to_skribble_value("300")
   }
   #[inline]
-  fn n__500(&self) -> String {
+  fn n_500(&self) -> String {
     self.append_string_to_skribble_value("500")
   }
   #[inline]
-  fn n__700(&self) -> String {
+  fn n_700(&self) -> String {
     self.append_string_to_skribble_value("700")
   }
   #[inline]
-  fn n__1000(&self) -> String {
+  fn n_1000(&self) -> String {
     self.append_string_to_skribble_value("1000")
   }
   #[inline]
-  fn n__1500(&self) -> String {
+  fn n_1500(&self) -> String {
     self.append_string_to_skribble_value("1500")
   }
   #[inline]
-  fn n__2000(&self) -> String {
+  fn n_2000(&self) -> String {
     self.append_string_to_skribble_value("2000")
   }
 }
@@ -2596,23 +2596,23 @@ pub trait ValueSetEasing: SkribbleValue {
 }
 pub trait ValueSetAnimationRepetitions: SkribbleValue {
   #[inline]
-  fn n__0_1(&self) -> String {
+  fn n_0_1(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
   #[inline]
-  fn n__0_5(&self) -> String {
+  fn n_0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
   #[inline]
-  fn n__1(&self) -> String {
+  fn n_1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
   #[inline]
-  fn n__2(&self) -> String {
+  fn n_2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
   #[inline]
-  fn n__3(&self) -> String {
+  fn n_3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
   #[inline]
@@ -2687,194 +2687,194 @@ pub trait ValueSetAnimationState: SkribbleValue {
 pub trait ValueSetOpacity: SkribbleValue {
   /// These are the default opacity values.
   #[inline]
-  fn n__0_2(&self) -> String {
+  fn n_0_2(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
   /// These are the default opacity values.
   #[inline]
-  fn n__5(&self) -> String {
+  fn n_5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
   /// These are the default opacity values.
   #[inline]
-  fn n__10(&self) -> String {
+  fn n_10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
   /// These are the default opacity values.
   #[inline]
-  fn n__20(&self) -> String {
+  fn n_20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
   /// These are the default opacity values.
   #[inline]
-  fn n__30(&self) -> String {
+  fn n_30(&self) -> String {
     self.append_string_to_skribble_value("30")
   }
   /// These are the default opacity values.
   #[inline]
-  fn n__40(&self) -> String {
+  fn n_40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
   /// These are the default opacity values.
   #[inline]
-  fn n__50(&self) -> String {
+  fn n_50(&self) -> String {
     self.append_string_to_skribble_value("50")
   }
   /// These are the default opacity values.
   #[inline]
-  fn n__60(&self) -> String {
+  fn n_60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
   /// These are the default opacity values.
   #[inline]
-  fn n__70(&self) -> String {
+  fn n_70(&self) -> String {
     self.append_string_to_skribble_value("70")
   }
   /// These are the default opacity values.
   #[inline]
-  fn n__75_1(&self) -> String {
+  fn n_75_1(&self) -> String {
     self.append_string_to_skribble_value("75")
   }
   /// These are the default opacity values.
   #[inline]
-  fn n__80(&self) -> String {
+  fn n_80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
   /// These are the default opacity values.
   #[inline]
-  fn n__90(&self) -> String {
+  fn n_90(&self) -> String {
     self.append_string_to_skribble_value("90")
   }
   /// These are the default opacity values.
   #[inline]
-  fn n__95(&self) -> String {
+  fn n_95(&self) -> String {
     self.append_string_to_skribble_value("95")
   }
   /// These are the default opacity values.
   #[inline]
-  fn n__100_1(&self) -> String {
+  fn n_100_1(&self) -> String {
     self.append_string_to_skribble_value("100")
   }
 }
 pub trait ValueSetSpacing: SkribbleValue {
   #[inline]
-  fn n__0_3(&self) -> String {
+  fn n_0_3(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
   #[inline]
-  fn n__1_1(&self) -> String {
+  fn n_1_1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
   #[inline]
-  fn n__2_1(&self) -> String {
+  fn n_2_1(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
   #[inline]
-  fn n__3_1(&self) -> String {
+  fn n_3_1(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
   #[inline]
-  fn n__4(&self) -> String {
+  fn n_4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
   #[inline]
-  fn n__5_1(&self) -> String {
+  fn n_5_1(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
   #[inline]
-  fn n__6(&self) -> String {
+  fn n_6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
   #[inline]
-  fn n__7(&self) -> String {
+  fn n_7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
   #[inline]
-  fn n__8(&self) -> String {
+  fn n_8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
   #[inline]
-  fn n__9(&self) -> String {
+  fn n_9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
   #[inline]
-  fn n__10_1(&self) -> String {
+  fn n_10_1(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
   #[inline]
-  fn n__11(&self) -> String {
+  fn n_11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
   #[inline]
-  fn n__12(&self) -> String {
+  fn n_12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
   #[inline]
-  fn n__14(&self) -> String {
+  fn n_14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
   #[inline]
-  fn n__16(&self) -> String {
+  fn n_16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
   #[inline]
-  fn n__20_1(&self) -> String {
+  fn n_20_1(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
   #[inline]
-  fn n__24(&self) -> String {
+  fn n_24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
   #[inline]
-  fn n__28(&self) -> String {
+  fn n_28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
   #[inline]
-  fn n__32(&self) -> String {
+  fn n_32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
   #[inline]
-  fn n__36(&self) -> String {
+  fn n_36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
   #[inline]
-  fn n__40_1(&self) -> String {
+  fn n_40_1(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
   #[inline]
-  fn n__44(&self) -> String {
+  fn n_44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
   #[inline]
-  fn n__48(&self) -> String {
+  fn n_48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
   #[inline]
-  fn n__52(&self) -> String {
+  fn n_52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
   #[inline]
-  fn n__56(&self) -> String {
+  fn n_56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
   #[inline]
-  fn n__60_1(&self) -> String {
+  fn n_60_1(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
   #[inline]
-  fn n__64(&self) -> String {
+  fn n_64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
   #[inline]
-  fn n__72(&self) -> String {
+  fn n_72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
   #[inline]
-  fn n__80_1(&self) -> String {
+  fn n_80_1(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
   #[inline]
-  fn n__96(&self) -> String {
+  fn n_96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
   #[inline]
@@ -2882,69 +2882,69 @@ pub trait ValueSetSpacing: SkribbleValue {
     self.append_string_to_skribble_value("px")
   }
   #[inline]
-  fn n__0_5_1(&self) -> String {
+  fn n_0_5_1(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
   #[inline]
-  fn n__1_5(&self) -> String {
+  fn n_1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
   #[inline]
-  fn n__2_5(&self) -> String {
+  fn n_2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
   #[inline]
-  fn n__3_5(&self) -> String {
+  fn n_3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
   }
 }
 pub trait ValueSetZIndex: SkribbleValue {
   #[inline]
-  fn n__0_4(&self) -> String {
+  fn n_0_4(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
   #[inline]
-  fn n__1_2(&self) -> String {
+  fn n_1_2(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
   #[inline]
-  fn n__2_2(&self) -> String {
+  fn n_2_2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
   #[inline]
-  fn n__3_2(&self) -> String {
+  fn n_3_2(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
   #[inline]
-  fn n__4_1(&self) -> String {
+  fn n_4_1(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
   #[inline]
-  fn n__5_2(&self) -> String {
+  fn n_5_2(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
   #[inline]
-  fn n__10_2(&self) -> String {
+  fn n_10_2(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
   #[inline]
-  fn n__20_2(&self) -> String {
+  fn n_20_2(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
   #[inline]
-  fn n__30_1(&self) -> String {
+  fn n_30_1(&self) -> String {
     self.append_string_to_skribble_value("30")
   }
   #[inline]
-  fn n__40_2(&self) -> String {
+  fn n_40_2(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
   #[inline]
-  fn n__50_1(&self) -> String {
+  fn n_50_1(&self) -> String {
     self.append_string_to_skribble_value("50")
   }
   #[inline]
-  fn n__60_2(&self) -> String {
+  fn n_60_2(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
   #[inline]
@@ -2952,19 +2952,19 @@ pub trait ValueSetZIndex: SkribbleValue {
     self.append_string_to_skribble_value("auto")
   }
   #[inline]
-  fn m__1(&self) -> String {
+  fn m_1(&self) -> String {
     self.append_string_to_skribble_value("-1")
   }
   #[inline]
-  fn m__2(&self) -> String {
+  fn m_2(&self) -> String {
     self.append_string_to_skribble_value("-2")
   }
   #[inline]
-  fn m__3(&self) -> String {
+  fn m_3(&self) -> String {
     self.append_string_to_skribble_value("-3")
   }
   #[inline]
-  fn m__5(&self) -> String {
+  fn m_5(&self) -> String {
     self.append_string_to_skribble_value("-5")
   }
 }
@@ -2980,43 +2980,43 @@ pub trait ValueSetDirection: SkribbleValue {
 }
 pub trait ValueSetZoom: SkribbleValue {
   #[inline]
-  fn n__0_6(&self) -> String {
+  fn n_0_6(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
   #[inline]
-  fn n__50_2(&self) -> String {
+  fn n_50_2(&self) -> String {
     self.append_string_to_skribble_value("50")
   }
   #[inline]
-  fn n__75_2(&self) -> String {
+  fn n_75_2(&self) -> String {
     self.append_string_to_skribble_value("75")
   }
   #[inline]
-  fn n__90_1(&self) -> String {
+  fn n_90_1(&self) -> String {
     self.append_string_to_skribble_value("90")
   }
   #[inline]
-  fn n__95_1(&self) -> String {
+  fn n_95_1(&self) -> String {
     self.append_string_to_skribble_value("95")
   }
   #[inline]
-  fn n__100_2(&self) -> String {
+  fn n_100_2(&self) -> String {
     self.append_string_to_skribble_value("100")
   }
   #[inline]
-  fn n__105(&self) -> String {
+  fn n_105(&self) -> String {
     self.append_string_to_skribble_value("105")
   }
   #[inline]
-  fn n__110(&self) -> String {
+  fn n_110(&self) -> String {
     self.append_string_to_skribble_value("110")
   }
   #[inline]
-  fn n__125(&self) -> String {
+  fn n_125(&self) -> String {
     self.append_string_to_skribble_value("125")
   }
   #[inline]
-  fn n__150_1(&self) -> String {
+  fn n_150_1(&self) -> String {
     self.append_string_to_skribble_value("150")
   }
 }
