@@ -3,7 +3,6 @@ use std::fmt::Write;
 use std::hash::Hash;
 use std::hash::Hasher;
 
-use heck::ToKebabCase;
 use indexmap::IndexSet;
 use serde::Deserialize;
 use serde::Serialize;
@@ -127,25 +126,23 @@ impl Class {
     let mut tokens = vec![];
 
     for media_query in self.media_queries.iter() {
-      tokens.push(media_query.to_kebab_case());
+      tokens.push(media_query.clone());
     }
 
     for modifier in self.modifiers.iter() {
-      tokens.push(modifier.to_kebab_case());
+      tokens.push(modifier.clone());
     }
 
     if let Some(ref named_class) = self.named_class {
-      let name = named_class.to_kebab_case();
-      tokens.push(format!("\\${name}"));
+      tokens.push(format!("\\${named_class}"));
     }
 
     if let Some(ref atom) = self.atom {
-      tokens.push(atom.to_kebab_case());
+      tokens.push(atom.clone());
     }
 
     if let Some(ref value_name) = self.value_name {
-      let name = value_name.to_kebab_case();
-      tokens.push(format!("\\${name}"));
+      tokens.push(format!("\\${value_name}"));
     }
 
     let mut selector = format!(".{}", tokens.join("\\:"));
