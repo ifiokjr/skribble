@@ -8,6 +8,7 @@ use serde::Deserialize;
 use serde::Serialize;
 use typed_builder::TypedBuilder;
 
+use crate::format_css_string;
 use crate::indent_writer;
 use crate::AnyEmptyResult;
 use crate::AnyResult;
@@ -126,23 +127,25 @@ impl Class {
     let mut tokens = vec![];
 
     for media_query in self.media_queries.iter() {
-      tokens.push(media_query.clone());
+      tokens.push(format_css_string(media_query));
     }
 
     for modifier in self.modifiers.iter() {
-      tokens.push(modifier.clone());
+      tokens.push(format_css_string(modifier));
     }
 
     if let Some(ref named_class) = self.named_class {
-      tokens.push(format!("\\${named_class}"));
+      let name = format_css_string(named_class);
+      tokens.push(format!("\\${name}"));
     }
 
     if let Some(ref atom) = self.atom {
-      tokens.push(atom.clone());
+      tokens.push(format_css_string(atom));
     }
 
     if let Some(ref value_name) = self.value_name {
-      tokens.push(format!("\\${value_name}"));
+      let name = format_css_string(value_name);
+      tokens.push(format!("\\${name}"));
     }
 
     let mut selector = format!(".{}", tokens.join("\\:"));

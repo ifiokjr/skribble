@@ -2,7 +2,6 @@ use std::fmt::Write;
 
 use derive_more::Deref;
 use derive_more::DerefMut;
-use heck::ToKebabCase;
 use indexmap::IndexMap;
 use serde::Deserialize;
 use serde::Serialize;
@@ -14,6 +13,7 @@ use super::Options;
 use super::Priority;
 use super::PropertySyntax;
 use super::StringMap;
+use crate::format_css_string;
 use crate::indent_writer;
 use crate::AnyEmptyResult;
 use crate::Placeholder;
@@ -262,7 +262,7 @@ impl<T: Into<String>> From<T> for CssVariable {
   #[inline]
   fn from(name: T) -> Self {
     let name: String = name.into();
-    let variable: String = format!("--{}", name.to_kebab_case());
+    let variable: String = format!("--{}", format_css_string(&name));
     CssVariable::builder().name(name).variable(variable).build()
   }
 }

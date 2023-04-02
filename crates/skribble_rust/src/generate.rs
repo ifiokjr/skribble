@@ -1,8 +1,13 @@
+use std::fmt::Write;
+
 use indexmap::indexmap;
 use indexmap::IndexMap;
+use skribble_core::format_css_string;
+use skribble_core::indent_writer;
 use skribble_core::wrap_indent;
 use skribble_core::AnyEmptyResult;
 use skribble_core::AnyResult;
+use skribble_core::Atom;
 use skribble_core::LinkedValues;
 use skribble_core::Prioritized;
 use skribble_core::ToSkribbleCss;
@@ -217,14 +222,14 @@ fn generate_atoms(
     "pub trait {ATOM_TRAIT_NAME}: GeneratedSkribbleValue {{"
   ));
 
-  for (name, modifier) in config.atoms.iter() {
+  for (name, atom) in config.atoms.iter() {
     let method_name = get_method_name(name, GLOBAL_PREFIX, method_names)?;
     let atom_struct_name = format!("GeneratedAtom{}", name.to_pascal_case());
 
     struct_content.push(generate_struct(&atom_struct_name));
     struct_content.push(generate_impl_skribble_value(&atom_struct_name));
 
-    match modifier.values {
+    match atom.values {
       LinkedValues::Color => {
         struct_content.push(format!(
           "impl {COLOR_TRAIT_NAME} for {atom_struct_name} {{}}"
@@ -238,11 +243,11 @@ fn generate_atoms(
       LinkedValues::Values(ref value_sets) => {
         let value_set_trait_name = get_value_set_trait_name(name);
         generate_atom_value_sets(
+          config,
+          atom,
+          value_sets,
           &value_set_trait_name,
           &mut struct_content,
-          value_sets,
-          config,
-          name,
           method_names,
         )?;
 
@@ -252,7 +257,7 @@ fn generate_atoms(
       }
     }
 
-    if let Some(ref description) = modifier.description {
+    if let Some(ref description) = atom.description {
       trait_content.push(wrap_indent(wrap_docs(description), 1));
     }
 
@@ -279,24 +284,42 @@ fn generate_atoms(
 }
 
 fn generate_atom_value_sets(
+  config: &RunnerConfig,
+  atom: &Atom,
+  value_sets: &skribble_core::NameSet,
   value_set_trait_name: impl AsRef<str>,
   struct_content: &mut Vec<String>,
-  value_sets: &skribble_core::NameSet,
-  config: &RunnerConfig,
-  atom_name: impl AsRef<str>,
   method_names: &mut IndexMap<String, String>,
 ) -> AnyEmptyResult {
   let value_set_trait_name = value_set_trait_name.as_ref();
+  let atom_name = &atom.name;
+
   struct_content.push(format!(
     "pub trait {value_set_trait_name}: GeneratedSkribbleValue {{"
   ));
+
   for Prioritized { value, .. } in value_sets.iter() {
     let Some(value_set) = config.value_sets.get(value) else {
         continue;
       };
 
     for (value_name, _) in value_set.values.iter() {
-      let method_name = get_method_name(value_name, &atom_name, method_names)?;
+      let method_name = get_method_name(value_name, atom_name, method_names)?;
+      let mut css = String::new();
+      let mut css_properties = indent_writer();
+      let css_name = format_css_string(atom_name);
+      let css_suffix = if value_name.is_empty() {
+        "".into()
+      } else {
+        format!(r"\:\${}", format_css_string(value_name))
+      };
+      writeln!(css, ".{css_name}{css_suffix} {{")?;
+      atom.write_css_properties(&mut css_properties, config, value_name)?;
+      write!(css, "{}", css_properties.get_ref())?;
+      writeln!(css, "}}")?;
+
+      let css_docs = wrap_indent(wrap_docs(wrap_in_code_block(css, "css")), 1);
+      struct_content.push(css_docs);
 
       struct_content.push(wrap_indent(
         format!("#[inline]\nfn {method_name}(&self) -> String {{"),

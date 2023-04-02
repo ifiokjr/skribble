@@ -3458,10 +3458,35 @@ impl GeneratedSkribbleValue for GeneratedAtomSr {
   }
 }
 pub trait GeneratedValueSetSr: GeneratedSkribbleValue {
+  /// ```css
+  /// .sr\:\$only {
+  ///   position: absolute;
+  ///   width: 1px;
+  ///   height: 1px;
+  ///   padding: 0;
+  ///   margin: -1px;
+  ///   overflow: hidden;
+  ///   clip: rect(0, 0, 0, 0);
+  ///   whiteSpace: nowrap;
+  ///   borderWidth: 0;
+  /// }
+  /// ```
   #[inline]
   fn only(&self) -> String {
     self.append_string_to_skribble_value("only")
   }
+  /// ```css
+  /// .sr\:\$exclude {
+  ///   position: static;
+  ///   width: auto;
+  ///   height: auto;
+  ///   padding: 0;
+  ///   margin: 0;
+  ///   overflow: visible;
+  ///   clip: auto;
+  ///   whiteSpace: normal;
+  /// }
+  /// ```
   #[inline]
   fn exclude(&self) -> String {
     self.append_string_to_skribble_value("exclude")
@@ -3480,30 +3505,77 @@ impl GeneratedSkribbleValue for GeneratedAtomTransition {
   }
 }
 pub trait GeneratedValueSetTransition: GeneratedSkribbleValue {
+  /// ```css
+  /// .transition {
+  ///   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  ///   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  ///   transition-duration: var(--default-transition-duration);
+  /// }
+  /// ```
   #[inline]
   fn __(&self) -> String {
     self.append_string_to_skribble_value("")
   }
+  /// ```css
+  /// .transition\:\$none {
+  ///   transitionProperty: none;
+  /// }
+  /// ```
   #[inline]
   fn none(&self) -> String {
     self.append_string_to_skribble_value("none")
   }
+  /// ```css
+  /// .transition\:\$all {
+  ///   transition-property: all;
+  ///   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  ///   transition-duration: var(--default-transition-duration);
+  /// }
+  /// ```
   #[inline]
   fn all(&self) -> String {
     self.append_string_to_skribble_value("all")
   }
+  /// ```css
+  /// .transition\:\$colors {
+  ///   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  ///   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  ///   transition-duration: var(--default-transition-duration);
+  /// }
+  /// ```
   #[inline]
   fn colors(&self) -> String {
     self.append_string_to_skribble_value("colors")
   }
+  /// ```css
+  /// .transition\:\$opacity {
+  ///   transition-property: opacity;
+  ///   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  ///   transition-duration: var(--default-transition-duration);
+  /// }
+  /// ```
   #[inline]
   fn opacity(&self) -> String {
     self.append_string_to_skribble_value("opacity")
   }
+  /// ```css
+  /// .transition\:\$shadow {
+  ///   transition-property: box-shadow;
+  ///   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  ///   transition-duration: var(--default-transition-duration);
+  /// }
+  /// ```
   #[inline]
   fn shadow(&self) -> String {
     self.append_string_to_skribble_value("shadow")
   }
+  /// ```css
+  /// .transition\:\$transform {
+  ///   transition-property: transform;
+  ///   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  ///   transition-duration: var(--default-transition-duration);
+  /// }
+  /// ```
   #[inline]
   fn transform(&self) -> String {
     self.append_string_to_skribble_value("transform")
@@ -3522,30 +3594,65 @@ impl GeneratedSkribbleValue for GeneratedAtomTransitionProperty {
   }
 }
 pub trait GeneratedValueSetTransitionProperty: GeneratedSkribbleValue {
+  /// ```css
+  /// .transition-property {
+  ///   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  /// }
+  /// ```
   #[inline]
   fn __(&self) -> String {
     self.append_string_to_skribble_value("")
   }
+  /// ```css
+  /// .transition-property\:\$none {
+  ///   transition-property: none;
+  /// }
+  /// ```
   #[inline]
   fn none(&self) -> String {
     self.append_string_to_skribble_value("none")
   }
+  /// ```css
+  /// .transition-property\:\$all {
+  ///   transition-property: all;
+  /// }
+  /// ```
   #[inline]
   fn all(&self) -> String {
     self.append_string_to_skribble_value("all")
   }
+  /// ```css
+  /// .transition-property\:\$colors {
+  ///   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  /// }
+  /// ```
   #[inline]
   fn colors(&self) -> String {
     self.append_string_to_skribble_value("colors")
   }
+  /// ```css
+  /// .transition-property\:\$opacity {
+  ///   transition-property: opacity;
+  /// }
+  /// ```
   #[inline]
   fn opacity(&self) -> String {
     self.append_string_to_skribble_value("opacity")
   }
+  /// ```css
+  /// .transition-property\:\$shadow {
+  ///   transition-property: box-shadow;
+  /// }
+  /// ```
   #[inline]
   fn shadow(&self) -> String {
     self.append_string_to_skribble_value("shadow")
   }
+  /// ```css
+  /// .transition-property\:\$transform {
+  ///   transition-property: transform;
+  /// }
+  /// ```
   #[inline]
   fn transform(&self) -> String {
     self.append_string_to_skribble_value("transform")
@@ -3564,46 +3671,101 @@ impl GeneratedSkribbleValue for GeneratedAtomDuration {
   }
 }
 pub trait GeneratedValueSetDuration: GeneratedSkribbleValue {
+  /// ```css
+  /// .duration\:\$0 {
+  ///   transition-duration: 0ms;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .duration\:\$75 {
+  ///   transition-duration: 75ms;
+  /// }
+  /// ```
   #[inline]
   fn n75(&self) -> String {
     self.append_string_to_skribble_value("75")
   }
+  /// ```css
+  /// .duration\:\$100 {
+  ///   transition-duration: 100ms;
+  /// }
+  /// ```
   #[inline]
   fn n100(&self) -> String {
     self.append_string_to_skribble_value("100")
   }
+  /// ```css
+  /// .duration\:\$150 {
+  ///   transition-duration: 150ms;
+  /// }
+  /// ```
   #[inline]
   fn n150(&self) -> String {
     self.append_string_to_skribble_value("150")
   }
+  /// ```css
+  /// .duration\:\$200 {
+  ///   transition-duration: 200ms;
+  /// }
+  /// ```
   #[inline]
   fn n200(&self) -> String {
     self.append_string_to_skribble_value("200")
   }
+  /// ```css
+  /// .duration\:\$300 {
+  ///   transition-duration: 300ms;
+  /// }
+  /// ```
   #[inline]
   fn n300(&self) -> String {
     self.append_string_to_skribble_value("300")
   }
+  /// ```css
+  /// .duration\:\$500 {
+  ///   transition-duration: 500ms;
+  /// }
+  /// ```
   #[inline]
   fn n500(&self) -> String {
     self.append_string_to_skribble_value("500")
   }
+  /// ```css
+  /// .duration\:\$700 {
+  ///   transition-duration: 700ms;
+  /// }
+  /// ```
   #[inline]
   fn n700(&self) -> String {
     self.append_string_to_skribble_value("700")
   }
+  /// ```css
+  /// .duration\:\$1000 {
+  ///   transition-duration: 1000ms;
+  /// }
+  /// ```
   #[inline]
   fn n1000(&self) -> String {
     self.append_string_to_skribble_value("1000")
   }
+  /// ```css
+  /// .duration\:\$1500 {
+  ///   transition-duration: 1500ms;
+  /// }
+  /// ```
   #[inline]
   fn n1500(&self) -> String {
     self.append_string_to_skribble_value("1500")
   }
+  /// ```css
+  /// .duration\:\$2000 {
+  ///   transition-duration: 2000ms;
+  /// }
+  /// ```
   #[inline]
   fn n2000(&self) -> String {
     self.append_string_to_skribble_value("2000")
@@ -3622,18 +3784,38 @@ impl GeneratedSkribbleValue for GeneratedAtomEase {
   }
 }
 pub trait GeneratedValueSetEase: GeneratedSkribbleValue {
+  /// ```css
+  /// .ease\:\$linear {
+  ///   transition-timing-function: linear;
+  /// }
+  /// ```
   #[inline]
   fn linear(&self) -> String {
     self.append_string_to_skribble_value("linear")
   }
+  /// ```css
+  /// .ease\:\$in {
+  ///   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  /// }
+  /// ```
   #[inline]
   fn r#in(&self) -> String {
     self.append_string_to_skribble_value("in")
   }
+  /// ```css
+  /// .ease\:\$out {
+  ///   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  /// }
+  /// ```
   #[inline]
   fn out(&self) -> String {
     self.append_string_to_skribble_value("out")
   }
+  /// ```css
+  /// .ease\:\$in-out {
+  ///   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  /// }
+  /// ```
   #[inline]
   fn in_out(&self) -> String {
     self.append_string_to_skribble_value("inOut")
@@ -3652,46 +3834,101 @@ impl GeneratedSkribbleValue for GeneratedAtomDelay {
   }
 }
 pub trait GeneratedValueSetDelay: GeneratedSkribbleValue {
+  /// ```css
+  /// .delay\:\$0 {
+  ///   transition-delay: 0ms;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .delay\:\$75 {
+  ///   transition-delay: 75ms;
+  /// }
+  /// ```
   #[inline]
   fn n75(&self) -> String {
     self.append_string_to_skribble_value("75")
   }
+  /// ```css
+  /// .delay\:\$100 {
+  ///   transition-delay: 100ms;
+  /// }
+  /// ```
   #[inline]
   fn n100(&self) -> String {
     self.append_string_to_skribble_value("100")
   }
+  /// ```css
+  /// .delay\:\$150 {
+  ///   transition-delay: 150ms;
+  /// }
+  /// ```
   #[inline]
   fn n150(&self) -> String {
     self.append_string_to_skribble_value("150")
   }
+  /// ```css
+  /// .delay\:\$200 {
+  ///   transition-delay: 200ms;
+  /// }
+  /// ```
   #[inline]
   fn n200(&self) -> String {
     self.append_string_to_skribble_value("200")
   }
+  /// ```css
+  /// .delay\:\$300 {
+  ///   transition-delay: 300ms;
+  /// }
+  /// ```
   #[inline]
   fn n300(&self) -> String {
     self.append_string_to_skribble_value("300")
   }
+  /// ```css
+  /// .delay\:\$500 {
+  ///   transition-delay: 500ms;
+  /// }
+  /// ```
   #[inline]
   fn n500(&self) -> String {
     self.append_string_to_skribble_value("500")
   }
+  /// ```css
+  /// .delay\:\$700 {
+  ///   transition-delay: 700ms;
+  /// }
+  /// ```
   #[inline]
   fn n700(&self) -> String {
     self.append_string_to_skribble_value("700")
   }
+  /// ```css
+  /// .delay\:\$1000 {
+  ///   transition-delay: 1000ms;
+  /// }
+  /// ```
   #[inline]
   fn n1000(&self) -> String {
     self.append_string_to_skribble_value("1000")
   }
+  /// ```css
+  /// .delay\:\$1500 {
+  ///   transition-delay: 1500ms;
+  /// }
+  /// ```
   #[inline]
   fn n1500(&self) -> String {
     self.append_string_to_skribble_value("1500")
   }
+  /// ```css
+  /// .delay\:\$2000 {
+  ///   transition-delay: 2000ms;
+  /// }
+  /// ```
   #[inline]
   fn n2000(&self) -> String {
     self.append_string_to_skribble_value("2000")
@@ -3710,46 +3947,101 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimationDuration {
   }
 }
 pub trait GeneratedValueSetAnimationDuration: GeneratedSkribbleValue {
+  /// ```css
+  /// .animation-duration\:\$0 {
+  ///   animation-duration: 0ms;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .animation-duration\:\$75 {
+  ///   animation-duration: 75ms;
+  /// }
+  /// ```
   #[inline]
   fn n75(&self) -> String {
     self.append_string_to_skribble_value("75")
   }
+  /// ```css
+  /// .animation-duration\:\$100 {
+  ///   animation-duration: 100ms;
+  /// }
+  /// ```
   #[inline]
   fn n100(&self) -> String {
     self.append_string_to_skribble_value("100")
   }
+  /// ```css
+  /// .animation-duration\:\$150 {
+  ///   animation-duration: 150ms;
+  /// }
+  /// ```
   #[inline]
   fn n150(&self) -> String {
     self.append_string_to_skribble_value("150")
   }
+  /// ```css
+  /// .animation-duration\:\$200 {
+  ///   animation-duration: 200ms;
+  /// }
+  /// ```
   #[inline]
   fn n200(&self) -> String {
     self.append_string_to_skribble_value("200")
   }
+  /// ```css
+  /// .animation-duration\:\$300 {
+  ///   animation-duration: 300ms;
+  /// }
+  /// ```
   #[inline]
   fn n300(&self) -> String {
     self.append_string_to_skribble_value("300")
   }
+  /// ```css
+  /// .animation-duration\:\$500 {
+  ///   animation-duration: 500ms;
+  /// }
+  /// ```
   #[inline]
   fn n500(&self) -> String {
     self.append_string_to_skribble_value("500")
   }
+  /// ```css
+  /// .animation-duration\:\$700 {
+  ///   animation-duration: 700ms;
+  /// }
+  /// ```
   #[inline]
   fn n700(&self) -> String {
     self.append_string_to_skribble_value("700")
   }
+  /// ```css
+  /// .animation-duration\:\$1000 {
+  ///   animation-duration: 1000ms;
+  /// }
+  /// ```
   #[inline]
   fn n1000(&self) -> String {
     self.append_string_to_skribble_value("1000")
   }
+  /// ```css
+  /// .animation-duration\:\$1500 {
+  ///   animation-duration: 1500ms;
+  /// }
+  /// ```
   #[inline]
   fn n1500(&self) -> String {
     self.append_string_to_skribble_value("1500")
   }
+  /// ```css
+  /// .animation-duration\:\$2000 {
+  ///   animation-duration: 2000ms;
+  /// }
+  /// ```
   #[inline]
   fn n2000(&self) -> String {
     self.append_string_to_skribble_value("2000")
@@ -3768,18 +4060,38 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimationEasing {
   }
 }
 pub trait GeneratedValueSetAnimationEasing: GeneratedSkribbleValue {
+  /// ```css
+  /// .animation-easing\:\$linear {
+  ///   animation-timing-function: linear;
+  /// }
+  /// ```
   #[inline]
   fn linear(&self) -> String {
     self.append_string_to_skribble_value("linear")
   }
+  /// ```css
+  /// .animation-easing\:\$in {
+  ///   animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  /// }
+  /// ```
   #[inline]
   fn r#in(&self) -> String {
     self.append_string_to_skribble_value("in")
   }
+  /// ```css
+  /// .animation-easing\:\$out {
+  ///   animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  /// }
+  /// ```
   #[inline]
   fn out(&self) -> String {
     self.append_string_to_skribble_value("out")
   }
+  /// ```css
+  /// .animation-easing\:\$in-out {
+  ///   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  /// }
+  /// ```
   #[inline]
   fn in_out(&self) -> String {
     self.append_string_to_skribble_value("inOut")
@@ -3798,46 +4110,101 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimationDelay {
   }
 }
 pub trait GeneratedValueSetAnimationDelay: GeneratedSkribbleValue {
+  /// ```css
+  /// .animation-delay\:\$0 {
+  ///   animation-delay: 0ms;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .animation-delay\:\$75 {
+  ///   animation-delay: 75ms;
+  /// }
+  /// ```
   #[inline]
   fn n75(&self) -> String {
     self.append_string_to_skribble_value("75")
   }
+  /// ```css
+  /// .animation-delay\:\$100 {
+  ///   animation-delay: 100ms;
+  /// }
+  /// ```
   #[inline]
   fn n100(&self) -> String {
     self.append_string_to_skribble_value("100")
   }
+  /// ```css
+  /// .animation-delay\:\$150 {
+  ///   animation-delay: 150ms;
+  /// }
+  /// ```
   #[inline]
   fn n150(&self) -> String {
     self.append_string_to_skribble_value("150")
   }
+  /// ```css
+  /// .animation-delay\:\$200 {
+  ///   animation-delay: 200ms;
+  /// }
+  /// ```
   #[inline]
   fn n200(&self) -> String {
     self.append_string_to_skribble_value("200")
   }
+  /// ```css
+  /// .animation-delay\:\$300 {
+  ///   animation-delay: 300ms;
+  /// }
+  /// ```
   #[inline]
   fn n300(&self) -> String {
     self.append_string_to_skribble_value("300")
   }
+  /// ```css
+  /// .animation-delay\:\$500 {
+  ///   animation-delay: 500ms;
+  /// }
+  /// ```
   #[inline]
   fn n500(&self) -> String {
     self.append_string_to_skribble_value("500")
   }
+  /// ```css
+  /// .animation-delay\:\$700 {
+  ///   animation-delay: 700ms;
+  /// }
+  /// ```
   #[inline]
   fn n700(&self) -> String {
     self.append_string_to_skribble_value("700")
   }
+  /// ```css
+  /// .animation-delay\:\$1000 {
+  ///   animation-delay: 1000ms;
+  /// }
+  /// ```
   #[inline]
   fn n1000(&self) -> String {
     self.append_string_to_skribble_value("1000")
   }
+  /// ```css
+  /// .animation-delay\:\$1500 {
+  ///   animation-delay: 1500ms;
+  /// }
+  /// ```
   #[inline]
   fn n1500(&self) -> String {
     self.append_string_to_skribble_value("1500")
   }
+  /// ```css
+  /// .animation-delay\:\$2000 {
+  ///   animation-delay: 2000ms;
+  /// }
+  /// ```
   #[inline]
   fn n2000(&self) -> String {
     self.append_string_to_skribble_value("2000")
@@ -3856,38 +4223,83 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimationRepeat {
   }
 }
 pub trait GeneratedValueSetAnimationRepeat: GeneratedSkribbleValue {
+  /// ```css
+  /// .animation-repeat\:\$0 {
+  ///   animation-iteration-count: 0;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .animation-repeat\:\$0\.5 {
+  ///   animation-iteration-count: 0.5;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .animation-repeat\:\$1 {
+  ///   animation-iteration-count: 1;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .animation-repeat\:\$2 {
+  ///   animation-iteration-count: 2;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .animation-repeat\:\$3 {
+  ///   animation-iteration-count: 3;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .animation-repeat\:\$infinite {
+  ///   animation-iteration-count: infinite;
+  /// }
+  /// ```
   #[inline]
   fn infinite(&self) -> String {
     self.append_string_to_skribble_value("infinite")
   }
+  /// ```css
+  /// .animation-repeat\:\$in {
+  ///   animation-iteration-count: cubic-bezier(0.4, 0, 1, 1);
+  /// }
+  /// ```
   #[inline]
   fn r#in(&self) -> String {
     self.append_string_to_skribble_value("in")
   }
+  /// ```css
+  /// .animation-repeat\:\$out {
+  ///   animation-iteration-count: cubic-bezier(0, 0, 0.2, 1);
+  /// }
+  /// ```
   #[inline]
   fn out(&self) -> String {
     self.append_string_to_skribble_value("out")
   }
+  /// ```css
+  /// .animation-repeat\:\$in-out {
+  ///   animation-iteration-count: cubic-bezier(0.4, 0, 0.2, 1);
+  /// }
+  /// ```
   #[inline]
   fn in_out(&self) -> String {
     self.append_string_to_skribble_value("inOut")
@@ -3906,18 +4318,38 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimationDirection {
   }
 }
 pub trait GeneratedValueSetAnimationDirection: GeneratedSkribbleValue {
+  /// ```css
+  /// .animation-direction\:\$normal {
+  ///   animation-direction: normal;
+  /// }
+  /// ```
   #[inline]
   fn normal(&self) -> String {
     self.append_string_to_skribble_value("normal")
   }
+  /// ```css
+  /// .animation-direction\:\$reverse {
+  ///   animation-direction: reverse;
+  /// }
+  /// ```
   #[inline]
   fn reverse(&self) -> String {
     self.append_string_to_skribble_value("reverse")
   }
+  /// ```css
+  /// .animation-direction\:\$alt {
+  ///   animation-direction: alternate;
+  /// }
+  /// ```
   #[inline]
   fn alt(&self) -> String {
     self.append_string_to_skribble_value("alt")
   }
+  /// ```css
+  /// .animation-direction\:\$alt-reverse {
+  ///   animation-direction: alternate-reverse;
+  /// }
+  /// ```
   #[inline]
   fn alt_reverse(&self) -> String {
     self.append_string_to_skribble_value("altReverse")
@@ -3936,18 +4368,38 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimationFillMode {
   }
 }
 pub trait GeneratedValueSetAnimationFillMode: GeneratedSkribbleValue {
+  /// ```css
+  /// .animation-fill-mode\:\$none {
+  ///   animation-fill-mode: none;
+  /// }
+  /// ```
   #[inline]
   fn none(&self) -> String {
     self.append_string_to_skribble_value("none")
   }
+  /// ```css
+  /// .animation-fill-mode\:\$forwards {
+  ///   animation-fill-mode: forwards;
+  /// }
+  /// ```
   #[inline]
   fn forwards(&self) -> String {
     self.append_string_to_skribble_value("forwards")
   }
+  /// ```css
+  /// .animation-fill-mode\:\$backwards {
+  ///   animation-fill-mode: backwards;
+  /// }
+  /// ```
   #[inline]
   fn backwards(&self) -> String {
     self.append_string_to_skribble_value("backwards")
   }
+  /// ```css
+  /// .animation-fill-mode\:\$both {
+  ///   animation-fill-mode: both;
+  /// }
+  /// ```
   #[inline]
   fn both(&self) -> String {
     self.append_string_to_skribble_value("both")
@@ -3966,10 +4418,20 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimationState {
   }
 }
 pub trait GeneratedValueSetAnimationState: GeneratedSkribbleValue {
+  /// ```css
+  /// .animation-state\:\$running {
+  ///   animation-play-state: running;
+  /// }
+  /// ```
   #[inline]
   fn running(&self) -> String {
     self.append_string_to_skribble_value("running")
   }
+  /// ```css
+  /// .animation-state\:\$paused {
+  ///   animation-play-state: paused;
+  /// }
+  /// ```
   #[inline]
   fn paused(&self) -> String {
     self.append_string_to_skribble_value("paused")
@@ -3988,42 +4450,92 @@ impl GeneratedSkribbleValue for GeneratedAtomZoom {
   }
 }
 pub trait GeneratedValueSetZoom: GeneratedSkribbleValue {
+  /// ```css
+  /// .zoom\:\$0 {
+  ///   --sk-invalid-css-variable: 0;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .zoom\:\$50 {
+  ///   --sk-invalid-css-variable: .5;
+  /// }
+  /// ```
   #[inline]
   fn n50(&self) -> String {
     self.append_string_to_skribble_value("50")
   }
+  /// ```css
+  /// .zoom\:\$75 {
+  ///   --sk-invalid-css-variable: .75;
+  /// }
+  /// ```
   #[inline]
   fn n75(&self) -> String {
     self.append_string_to_skribble_value("75")
   }
+  /// ```css
+  /// .zoom\:\$90 {
+  ///   --sk-invalid-css-variable: .9;
+  /// }
+  /// ```
   #[inline]
   fn n90(&self) -> String {
     self.append_string_to_skribble_value("90")
   }
+  /// ```css
+  /// .zoom\:\$95 {
+  ///   --sk-invalid-css-variable: .95;
+  /// }
+  /// ```
   #[inline]
   fn n95(&self) -> String {
     self.append_string_to_skribble_value("95")
   }
+  /// ```css
+  /// .zoom\:\$100 {
+  ///   --sk-invalid-css-variable: 1;
+  /// }
+  /// ```
   #[inline]
   fn n100(&self) -> String {
     self.append_string_to_skribble_value("100")
   }
+  /// ```css
+  /// .zoom\:\$105 {
+  ///   --sk-invalid-css-variable: 1.05;
+  /// }
+  /// ```
   #[inline]
   fn n105(&self) -> String {
     self.append_string_to_skribble_value("105")
   }
+  /// ```css
+  /// .zoom\:\$110 {
+  ///   --sk-invalid-css-variable: 1.1;
+  /// }
+  /// ```
   #[inline]
   fn n110(&self) -> String {
     self.append_string_to_skribble_value("110")
   }
+  /// ```css
+  /// .zoom\:\$125 {
+  ///   --sk-invalid-css-variable: 1.25;
+  /// }
+  /// ```
   #[inline]
   fn n125(&self) -> String {
     self.append_string_to_skribble_value("125")
   }
+  /// ```css
+  /// .zoom\:\$150 {
+  ///   --sk-invalid-css-variable: 1.5;
+  /// }
+  /// ```
   #[inline]
   fn n150(&self) -> String {
     self.append_string_to_skribble_value("150")
@@ -4042,14 +4554,29 @@ impl GeneratedSkribbleValue for GeneratedAtomFont {
   }
 }
 pub trait GeneratedValueSetFont: GeneratedSkribbleValue {
+  /// ```css
+  /// .font\:\$sans {
+  ///   font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  /// }
+  /// ```
   #[inline]
   fn sans(&self) -> String {
     self.append_string_to_skribble_value("sans")
   }
+  /// ```css
+  /// .font\:\$serif {
+  ///   font-family: ui-serif,Georgia,Cambria,"Times New Roman",Times,serif;
+  /// }
+  /// ```
   #[inline]
   fn serif(&self) -> String {
     self.append_string_to_skribble_value("serif")
   }
+  /// ```css
+  /// .font\:\$mono {
+  ///   font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  /// }
+  /// ```
   #[inline]
   fn mono(&self) -> String {
     self.append_string_to_skribble_value("mono")
@@ -4068,142 +4595,317 @@ impl GeneratedSkribbleValue for GeneratedAtomP {
   }
 }
 pub trait GeneratedValueSetP: GeneratedSkribbleValue {
+  /// ```css
+  /// .p\:\$0 {
+  ///   padding: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .p\:\$1 {
+  ///   padding: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .p\:\$2 {
+  ///   padding: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .p\:\$3 {
+  ///   padding: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .p\:\$4 {
+  ///   padding: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .p\:\$5 {
+  ///   padding: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .p\:\$6 {
+  ///   padding: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .p\:\$7 {
+  ///   padding: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .p\:\$8 {
+  ///   padding: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .p\:\$9 {
+  ///   padding: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .p\:\$10 {
+  ///   padding: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .p\:\$11 {
+  ///   padding: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .p\:\$12 {
+  ///   padding: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .p\:\$14 {
+  ///   padding: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .p\:\$16 {
+  ///   padding: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .p\:\$20 {
+  ///   padding: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .p\:\$24 {
+  ///   padding: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .p\:\$28 {
+  ///   padding: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .p\:\$32 {
+  ///   padding: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .p\:\$36 {
+  ///   padding: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .p\:\$40 {
+  ///   padding: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .p\:\$44 {
+  ///   padding: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .p\:\$48 {
+  ///   padding: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .p\:\$52 {
+  ///   padding: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .p\:\$56 {
+  ///   padding: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .p\:\$60 {
+  ///   padding: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .p\:\$64 {
+  ///   padding: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .p\:\$72 {
+  ///   padding: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .p\:\$80 {
+  ///   padding: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .p\:\$96 {
+  ///   padding: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .p\:\$px {
+  ///   padding: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .p\:\$0\.5 {
+  ///   padding: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .p\:\$1\.5 {
+  ///   padding: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .p\:\$2\.5 {
+  ///   padding: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .p\:\$3\.5 {
+  ///   padding: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -4222,142 +4924,352 @@ impl GeneratedSkribbleValue for GeneratedAtomPy {
   }
 }
 pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
+  /// ```css
+  /// .py\:\$0 {
+  ///   padding-top: 0px;
+  ///   padding-bottom: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .py\:\$1 {
+  ///   padding-top: 0.25rem;
+  ///   padding-bottom: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .py\:\$2 {
+  ///   padding-top: 0.5rem;
+  ///   padding-bottom: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .py\:\$3 {
+  ///   padding-top: 0.75rem;
+  ///   padding-bottom: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .py\:\$4 {
+  ///   padding-top: 1rem;
+  ///   padding-bottom: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .py\:\$5 {
+  ///   padding-top: 1.25rem;
+  ///   padding-bottom: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .py\:\$6 {
+  ///   padding-top: 1.5rem;
+  ///   padding-bottom: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .py\:\$7 {
+  ///   padding-top: 1.75rem;
+  ///   padding-bottom: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .py\:\$8 {
+  ///   padding-top: 2rem;
+  ///   padding-bottom: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .py\:\$9 {
+  ///   padding-top: 2.25rem;
+  ///   padding-bottom: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .py\:\$10 {
+  ///   padding-top: 2.5rem;
+  ///   padding-bottom: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .py\:\$11 {
+  ///   padding-top: 2.75rem;
+  ///   padding-bottom: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .py\:\$12 {
+  ///   padding-top: 3rem;
+  ///   padding-bottom: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .py\:\$14 {
+  ///   padding-top: 3.5rem;
+  ///   padding-bottom: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .py\:\$16 {
+  ///   padding-top: 4rem;
+  ///   padding-bottom: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .py\:\$20 {
+  ///   padding-top: 5rem;
+  ///   padding-bottom: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .py\:\$24 {
+  ///   padding-top: 6rem;
+  ///   padding-bottom: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .py\:\$28 {
+  ///   padding-top: 7rem;
+  ///   padding-bottom: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .py\:\$32 {
+  ///   padding-top: 8rem;
+  ///   padding-bottom: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .py\:\$36 {
+  ///   padding-top: 9rem;
+  ///   padding-bottom: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .py\:\$40 {
+  ///   padding-top: 10rem;
+  ///   padding-bottom: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .py\:\$44 {
+  ///   padding-top: 11rem;
+  ///   padding-bottom: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .py\:\$48 {
+  ///   padding-top: 12rem;
+  ///   padding-bottom: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .py\:\$52 {
+  ///   padding-top: 13rem;
+  ///   padding-bottom: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .py\:\$56 {
+  ///   padding-top: 14rem;
+  ///   padding-bottom: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .py\:\$60 {
+  ///   padding-top: 15rem;
+  ///   padding-bottom: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .py\:\$64 {
+  ///   padding-top: 16rem;
+  ///   padding-bottom: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .py\:\$72 {
+  ///   padding-top: 18rem;
+  ///   padding-bottom: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .py\:\$80 {
+  ///   padding-top: 20rem;
+  ///   padding-bottom: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .py\:\$96 {
+  ///   padding-top: 24rem;
+  ///   padding-bottom: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .py\:\$px {
+  ///   padding-top: 1px;
+  ///   padding-bottom: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .py\:\$0\.5 {
+  ///   padding-top: 0.125rem;
+  ///   padding-bottom: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .py\:\$1\.5 {
+  ///   padding-top: 0.375rem;
+  ///   padding-bottom: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .py\:\$2\.5 {
+  ///   padding-top: 0.625rem;
+  ///   padding-bottom: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .py\:\$3\.5 {
+  ///   padding-top: 0.875rem;
+  ///   padding-bottom: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -4376,142 +5288,352 @@ impl GeneratedSkribbleValue for GeneratedAtomPx {
   }
 }
 pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
+  /// ```css
+  /// .px\:\$0 {
+  ///   padding-right: 0px;
+  ///   padding-left: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .px\:\$1 {
+  ///   padding-right: 0.25rem;
+  ///   padding-left: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .px\:\$2 {
+  ///   padding-right: 0.5rem;
+  ///   padding-left: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .px\:\$3 {
+  ///   padding-right: 0.75rem;
+  ///   padding-left: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .px\:\$4 {
+  ///   padding-right: 1rem;
+  ///   padding-left: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .px\:\$5 {
+  ///   padding-right: 1.25rem;
+  ///   padding-left: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .px\:\$6 {
+  ///   padding-right: 1.5rem;
+  ///   padding-left: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .px\:\$7 {
+  ///   padding-right: 1.75rem;
+  ///   padding-left: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .px\:\$8 {
+  ///   padding-right: 2rem;
+  ///   padding-left: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .px\:\$9 {
+  ///   padding-right: 2.25rem;
+  ///   padding-left: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .px\:\$10 {
+  ///   padding-right: 2.5rem;
+  ///   padding-left: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .px\:\$11 {
+  ///   padding-right: 2.75rem;
+  ///   padding-left: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .px\:\$12 {
+  ///   padding-right: 3rem;
+  ///   padding-left: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .px\:\$14 {
+  ///   padding-right: 3.5rem;
+  ///   padding-left: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .px\:\$16 {
+  ///   padding-right: 4rem;
+  ///   padding-left: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .px\:\$20 {
+  ///   padding-right: 5rem;
+  ///   padding-left: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .px\:\$24 {
+  ///   padding-right: 6rem;
+  ///   padding-left: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .px\:\$28 {
+  ///   padding-right: 7rem;
+  ///   padding-left: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .px\:\$32 {
+  ///   padding-right: 8rem;
+  ///   padding-left: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .px\:\$36 {
+  ///   padding-right: 9rem;
+  ///   padding-left: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .px\:\$40 {
+  ///   padding-right: 10rem;
+  ///   padding-left: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .px\:\$44 {
+  ///   padding-right: 11rem;
+  ///   padding-left: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .px\:\$48 {
+  ///   padding-right: 12rem;
+  ///   padding-left: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .px\:\$52 {
+  ///   padding-right: 13rem;
+  ///   padding-left: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .px\:\$56 {
+  ///   padding-right: 14rem;
+  ///   padding-left: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .px\:\$60 {
+  ///   padding-right: 15rem;
+  ///   padding-left: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .px\:\$64 {
+  ///   padding-right: 16rem;
+  ///   padding-left: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .px\:\$72 {
+  ///   padding-right: 18rem;
+  ///   padding-left: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .px\:\$80 {
+  ///   padding-right: 20rem;
+  ///   padding-left: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .px\:\$96 {
+  ///   padding-right: 24rem;
+  ///   padding-left: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .px\:\$px {
+  ///   padding-right: 1px;
+  ///   padding-left: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .px\:\$0\.5 {
+  ///   padding-right: 0.125rem;
+  ///   padding-left: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .px\:\$1\.5 {
+  ///   padding-right: 0.375rem;
+  ///   padding-left: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .px\:\$2\.5 {
+  ///   padding-right: 0.625rem;
+  ///   padding-left: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .px\:\$3\.5 {
+  ///   padding-right: 0.875rem;
+  ///   padding-left: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -4530,142 +5652,317 @@ impl GeneratedSkribbleValue for GeneratedAtomPt {
   }
 }
 pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
+  /// ```css
+  /// .pt\:\$0 {
+  ///   padding-top: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .pt\:\$1 {
+  ///   padding-top: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .pt\:\$2 {
+  ///   padding-top: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .pt\:\$3 {
+  ///   padding-top: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .pt\:\$4 {
+  ///   padding-top: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .pt\:\$5 {
+  ///   padding-top: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .pt\:\$6 {
+  ///   padding-top: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .pt\:\$7 {
+  ///   padding-top: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .pt\:\$8 {
+  ///   padding-top: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .pt\:\$9 {
+  ///   padding-top: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .pt\:\$10 {
+  ///   padding-top: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .pt\:\$11 {
+  ///   padding-top: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .pt\:\$12 {
+  ///   padding-top: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .pt\:\$14 {
+  ///   padding-top: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .pt\:\$16 {
+  ///   padding-top: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .pt\:\$20 {
+  ///   padding-top: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .pt\:\$24 {
+  ///   padding-top: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .pt\:\$28 {
+  ///   padding-top: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .pt\:\$32 {
+  ///   padding-top: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .pt\:\$36 {
+  ///   padding-top: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .pt\:\$40 {
+  ///   padding-top: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .pt\:\$44 {
+  ///   padding-top: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .pt\:\$48 {
+  ///   padding-top: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .pt\:\$52 {
+  ///   padding-top: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .pt\:\$56 {
+  ///   padding-top: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .pt\:\$60 {
+  ///   padding-top: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .pt\:\$64 {
+  ///   padding-top: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .pt\:\$72 {
+  ///   padding-top: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .pt\:\$80 {
+  ///   padding-top: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .pt\:\$96 {
+  ///   padding-top: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .pt\:\$px {
+  ///   padding-top: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .pt\:\$0\.5 {
+  ///   padding-top: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .pt\:\$1\.5 {
+  ///   padding-top: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .pt\:\$2\.5 {
+  ///   padding-top: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .pt\:\$3\.5 {
+  ///   padding-top: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -4684,142 +5981,317 @@ impl GeneratedSkribbleValue for GeneratedAtomPr {
   }
 }
 pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
+  /// ```css
+  /// .pr\:\$0 {
+  ///   padding-right: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .pr\:\$1 {
+  ///   padding-right: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .pr\:\$2 {
+  ///   padding-right: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .pr\:\$3 {
+  ///   padding-right: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .pr\:\$4 {
+  ///   padding-right: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .pr\:\$5 {
+  ///   padding-right: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .pr\:\$6 {
+  ///   padding-right: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .pr\:\$7 {
+  ///   padding-right: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .pr\:\$8 {
+  ///   padding-right: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .pr\:\$9 {
+  ///   padding-right: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .pr\:\$10 {
+  ///   padding-right: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .pr\:\$11 {
+  ///   padding-right: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .pr\:\$12 {
+  ///   padding-right: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .pr\:\$14 {
+  ///   padding-right: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .pr\:\$16 {
+  ///   padding-right: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .pr\:\$20 {
+  ///   padding-right: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .pr\:\$24 {
+  ///   padding-right: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .pr\:\$28 {
+  ///   padding-right: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .pr\:\$32 {
+  ///   padding-right: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .pr\:\$36 {
+  ///   padding-right: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .pr\:\$40 {
+  ///   padding-right: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .pr\:\$44 {
+  ///   padding-right: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .pr\:\$48 {
+  ///   padding-right: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .pr\:\$52 {
+  ///   padding-right: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .pr\:\$56 {
+  ///   padding-right: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .pr\:\$60 {
+  ///   padding-right: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .pr\:\$64 {
+  ///   padding-right: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .pr\:\$72 {
+  ///   padding-right: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .pr\:\$80 {
+  ///   padding-right: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .pr\:\$96 {
+  ///   padding-right: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .pr\:\$px {
+  ///   padding-right: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .pr\:\$0\.5 {
+  ///   padding-right: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .pr\:\$1\.5 {
+  ///   padding-right: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .pr\:\$2\.5 {
+  ///   padding-right: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .pr\:\$3\.5 {
+  ///   padding-right: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -4838,142 +6310,317 @@ impl GeneratedSkribbleValue for GeneratedAtomPb {
   }
 }
 pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
+  /// ```css
+  /// .pb\:\$0 {
+  ///   padding-bottom: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .pb\:\$1 {
+  ///   padding-bottom: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .pb\:\$2 {
+  ///   padding-bottom: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .pb\:\$3 {
+  ///   padding-bottom: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .pb\:\$4 {
+  ///   padding-bottom: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .pb\:\$5 {
+  ///   padding-bottom: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .pb\:\$6 {
+  ///   padding-bottom: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .pb\:\$7 {
+  ///   padding-bottom: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .pb\:\$8 {
+  ///   padding-bottom: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .pb\:\$9 {
+  ///   padding-bottom: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .pb\:\$10 {
+  ///   padding-bottom: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .pb\:\$11 {
+  ///   padding-bottom: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .pb\:\$12 {
+  ///   padding-bottom: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .pb\:\$14 {
+  ///   padding-bottom: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .pb\:\$16 {
+  ///   padding-bottom: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .pb\:\$20 {
+  ///   padding-bottom: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .pb\:\$24 {
+  ///   padding-bottom: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .pb\:\$28 {
+  ///   padding-bottom: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .pb\:\$32 {
+  ///   padding-bottom: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .pb\:\$36 {
+  ///   padding-bottom: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .pb\:\$40 {
+  ///   padding-bottom: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .pb\:\$44 {
+  ///   padding-bottom: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .pb\:\$48 {
+  ///   padding-bottom: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .pb\:\$52 {
+  ///   padding-bottom: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .pb\:\$56 {
+  ///   padding-bottom: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .pb\:\$60 {
+  ///   padding-bottom: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .pb\:\$64 {
+  ///   padding-bottom: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .pb\:\$72 {
+  ///   padding-bottom: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .pb\:\$80 {
+  ///   padding-bottom: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .pb\:\$96 {
+  ///   padding-bottom: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .pb\:\$px {
+  ///   padding-bottom: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .pb\:\$0\.5 {
+  ///   padding-bottom: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .pb\:\$1\.5 {
+  ///   padding-bottom: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .pb\:\$2\.5 {
+  ///   padding-bottom: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .pb\:\$3\.5 {
+  ///   padding-bottom: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -4992,142 +6639,317 @@ impl GeneratedSkribbleValue for GeneratedAtomPl {
   }
 }
 pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
+  /// ```css
+  /// .pl\:\$0 {
+  ///   padding-left: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .pl\:\$1 {
+  ///   padding-left: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .pl\:\$2 {
+  ///   padding-left: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .pl\:\$3 {
+  ///   padding-left: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .pl\:\$4 {
+  ///   padding-left: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .pl\:\$5 {
+  ///   padding-left: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .pl\:\$6 {
+  ///   padding-left: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .pl\:\$7 {
+  ///   padding-left: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .pl\:\$8 {
+  ///   padding-left: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .pl\:\$9 {
+  ///   padding-left: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .pl\:\$10 {
+  ///   padding-left: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .pl\:\$11 {
+  ///   padding-left: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .pl\:\$12 {
+  ///   padding-left: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .pl\:\$14 {
+  ///   padding-left: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .pl\:\$16 {
+  ///   padding-left: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .pl\:\$20 {
+  ///   padding-left: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .pl\:\$24 {
+  ///   padding-left: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .pl\:\$28 {
+  ///   padding-left: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .pl\:\$32 {
+  ///   padding-left: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .pl\:\$36 {
+  ///   padding-left: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .pl\:\$40 {
+  ///   padding-left: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .pl\:\$44 {
+  ///   padding-left: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .pl\:\$48 {
+  ///   padding-left: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .pl\:\$52 {
+  ///   padding-left: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .pl\:\$56 {
+  ///   padding-left: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .pl\:\$60 {
+  ///   padding-left: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .pl\:\$64 {
+  ///   padding-left: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .pl\:\$72 {
+  ///   padding-left: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .pl\:\$80 {
+  ///   padding-left: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .pl\:\$96 {
+  ///   padding-left: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .pl\:\$px {
+  ///   padding-left: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .pl\:\$0\.5 {
+  ///   padding-left: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .pl\:\$1\.5 {
+  ///   padding-left: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .pl\:\$2\.5 {
+  ///   padding-left: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .pl\:\$3\.5 {
+  ///   padding-left: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -5146,142 +6968,317 @@ impl GeneratedSkribbleValue for GeneratedAtomPbl {
   }
 }
 pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
+  /// ```css
+  /// .pbl\:\$0 {
+  ///   padding-block: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .pbl\:\$1 {
+  ///   padding-block: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .pbl\:\$2 {
+  ///   padding-block: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .pbl\:\$3 {
+  ///   padding-block: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .pbl\:\$4 {
+  ///   padding-block: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .pbl\:\$5 {
+  ///   padding-block: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .pbl\:\$6 {
+  ///   padding-block: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .pbl\:\$7 {
+  ///   padding-block: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .pbl\:\$8 {
+  ///   padding-block: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .pbl\:\$9 {
+  ///   padding-block: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .pbl\:\$10 {
+  ///   padding-block: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .pbl\:\$11 {
+  ///   padding-block: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .pbl\:\$12 {
+  ///   padding-block: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .pbl\:\$14 {
+  ///   padding-block: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .pbl\:\$16 {
+  ///   padding-block: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .pbl\:\$20 {
+  ///   padding-block: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .pbl\:\$24 {
+  ///   padding-block: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .pbl\:\$28 {
+  ///   padding-block: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .pbl\:\$32 {
+  ///   padding-block: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .pbl\:\$36 {
+  ///   padding-block: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .pbl\:\$40 {
+  ///   padding-block: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .pbl\:\$44 {
+  ///   padding-block: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .pbl\:\$48 {
+  ///   padding-block: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .pbl\:\$52 {
+  ///   padding-block: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .pbl\:\$56 {
+  ///   padding-block: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .pbl\:\$60 {
+  ///   padding-block: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .pbl\:\$64 {
+  ///   padding-block: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .pbl\:\$72 {
+  ///   padding-block: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .pbl\:\$80 {
+  ///   padding-block: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .pbl\:\$96 {
+  ///   padding-block: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .pbl\:\$px {
+  ///   padding-block: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .pbl\:\$0\.5 {
+  ///   padding-block: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .pbl\:\$1\.5 {
+  ///   padding-block: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .pbl\:\$2\.5 {
+  ///   padding-block: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .pbl\:\$3\.5 {
+  ///   padding-block: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -5300,142 +7297,317 @@ impl GeneratedSkribbleValue for GeneratedAtomPbls {
   }
 }
 pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
+  /// ```css
+  /// .pbls\:\$0 {
+  ///   padding-block-start: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .pbls\:\$1 {
+  ///   padding-block-start: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .pbls\:\$2 {
+  ///   padding-block-start: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .pbls\:\$3 {
+  ///   padding-block-start: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .pbls\:\$4 {
+  ///   padding-block-start: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .pbls\:\$5 {
+  ///   padding-block-start: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .pbls\:\$6 {
+  ///   padding-block-start: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .pbls\:\$7 {
+  ///   padding-block-start: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .pbls\:\$8 {
+  ///   padding-block-start: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .pbls\:\$9 {
+  ///   padding-block-start: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .pbls\:\$10 {
+  ///   padding-block-start: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .pbls\:\$11 {
+  ///   padding-block-start: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .pbls\:\$12 {
+  ///   padding-block-start: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .pbls\:\$14 {
+  ///   padding-block-start: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .pbls\:\$16 {
+  ///   padding-block-start: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .pbls\:\$20 {
+  ///   padding-block-start: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .pbls\:\$24 {
+  ///   padding-block-start: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .pbls\:\$28 {
+  ///   padding-block-start: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .pbls\:\$32 {
+  ///   padding-block-start: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .pbls\:\$36 {
+  ///   padding-block-start: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .pbls\:\$40 {
+  ///   padding-block-start: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .pbls\:\$44 {
+  ///   padding-block-start: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .pbls\:\$48 {
+  ///   padding-block-start: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .pbls\:\$52 {
+  ///   padding-block-start: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .pbls\:\$56 {
+  ///   padding-block-start: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .pbls\:\$60 {
+  ///   padding-block-start: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .pbls\:\$64 {
+  ///   padding-block-start: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .pbls\:\$72 {
+  ///   padding-block-start: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .pbls\:\$80 {
+  ///   padding-block-start: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .pbls\:\$96 {
+  ///   padding-block-start: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .pbls\:\$px {
+  ///   padding-block-start: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .pbls\:\$0\.5 {
+  ///   padding-block-start: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .pbls\:\$1\.5 {
+  ///   padding-block-start: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .pbls\:\$2\.5 {
+  ///   padding-block-start: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .pbls\:\$3\.5 {
+  ///   padding-block-start: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -5454,142 +7626,317 @@ impl GeneratedSkribbleValue for GeneratedAtomPble {
   }
 }
 pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
+  /// ```css
+  /// .pble\:\$0 {
+  ///   padding-block-end: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .pble\:\$1 {
+  ///   padding-block-end: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .pble\:\$2 {
+  ///   padding-block-end: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .pble\:\$3 {
+  ///   padding-block-end: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .pble\:\$4 {
+  ///   padding-block-end: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .pble\:\$5 {
+  ///   padding-block-end: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .pble\:\$6 {
+  ///   padding-block-end: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .pble\:\$7 {
+  ///   padding-block-end: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .pble\:\$8 {
+  ///   padding-block-end: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .pble\:\$9 {
+  ///   padding-block-end: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .pble\:\$10 {
+  ///   padding-block-end: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .pble\:\$11 {
+  ///   padding-block-end: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .pble\:\$12 {
+  ///   padding-block-end: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .pble\:\$14 {
+  ///   padding-block-end: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .pble\:\$16 {
+  ///   padding-block-end: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .pble\:\$20 {
+  ///   padding-block-end: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .pble\:\$24 {
+  ///   padding-block-end: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .pble\:\$28 {
+  ///   padding-block-end: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .pble\:\$32 {
+  ///   padding-block-end: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .pble\:\$36 {
+  ///   padding-block-end: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .pble\:\$40 {
+  ///   padding-block-end: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .pble\:\$44 {
+  ///   padding-block-end: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .pble\:\$48 {
+  ///   padding-block-end: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .pble\:\$52 {
+  ///   padding-block-end: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .pble\:\$56 {
+  ///   padding-block-end: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .pble\:\$60 {
+  ///   padding-block-end: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .pble\:\$64 {
+  ///   padding-block-end: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .pble\:\$72 {
+  ///   padding-block-end: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .pble\:\$80 {
+  ///   padding-block-end: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .pble\:\$96 {
+  ///   padding-block-end: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .pble\:\$px {
+  ///   padding-block-end: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .pble\:\$0\.5 {
+  ///   padding-block-end: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .pble\:\$1\.5 {
+  ///   padding-block-end: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .pble\:\$2\.5 {
+  ///   padding-block-end: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .pble\:\$3\.5 {
+  ///   padding-block-end: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -5608,142 +7955,317 @@ impl GeneratedSkribbleValue for GeneratedAtomPin {
   }
 }
 pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
+  /// ```css
+  /// .pin\:\$0 {
+  ///   padding-inline: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .pin\:\$1 {
+  ///   padding-inline: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .pin\:\$2 {
+  ///   padding-inline: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .pin\:\$3 {
+  ///   padding-inline: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .pin\:\$4 {
+  ///   padding-inline: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .pin\:\$5 {
+  ///   padding-inline: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .pin\:\$6 {
+  ///   padding-inline: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .pin\:\$7 {
+  ///   padding-inline: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .pin\:\$8 {
+  ///   padding-inline: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .pin\:\$9 {
+  ///   padding-inline: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .pin\:\$10 {
+  ///   padding-inline: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .pin\:\$11 {
+  ///   padding-inline: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .pin\:\$12 {
+  ///   padding-inline: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .pin\:\$14 {
+  ///   padding-inline: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .pin\:\$16 {
+  ///   padding-inline: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .pin\:\$20 {
+  ///   padding-inline: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .pin\:\$24 {
+  ///   padding-inline: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .pin\:\$28 {
+  ///   padding-inline: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .pin\:\$32 {
+  ///   padding-inline: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .pin\:\$36 {
+  ///   padding-inline: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .pin\:\$40 {
+  ///   padding-inline: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .pin\:\$44 {
+  ///   padding-inline: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .pin\:\$48 {
+  ///   padding-inline: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .pin\:\$52 {
+  ///   padding-inline: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .pin\:\$56 {
+  ///   padding-inline: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .pin\:\$60 {
+  ///   padding-inline: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .pin\:\$64 {
+  ///   padding-inline: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .pin\:\$72 {
+  ///   padding-inline: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .pin\:\$80 {
+  ///   padding-inline: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .pin\:\$96 {
+  ///   padding-inline: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .pin\:\$px {
+  ///   padding-inline: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .pin\:\$0\.5 {
+  ///   padding-inline: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .pin\:\$1\.5 {
+  ///   padding-inline: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .pin\:\$2\.5 {
+  ///   padding-inline: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .pin\:\$3\.5 {
+  ///   padding-inline: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -5762,142 +8284,317 @@ impl GeneratedSkribbleValue for GeneratedAtomPins {
   }
 }
 pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
+  /// ```css
+  /// .pins\:\$0 {
+  ///   padding-inline-start: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .pins\:\$1 {
+  ///   padding-inline-start: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .pins\:\$2 {
+  ///   padding-inline-start: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .pins\:\$3 {
+  ///   padding-inline-start: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .pins\:\$4 {
+  ///   padding-inline-start: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .pins\:\$5 {
+  ///   padding-inline-start: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .pins\:\$6 {
+  ///   padding-inline-start: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .pins\:\$7 {
+  ///   padding-inline-start: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .pins\:\$8 {
+  ///   padding-inline-start: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .pins\:\$9 {
+  ///   padding-inline-start: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .pins\:\$10 {
+  ///   padding-inline-start: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .pins\:\$11 {
+  ///   padding-inline-start: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .pins\:\$12 {
+  ///   padding-inline-start: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .pins\:\$14 {
+  ///   padding-inline-start: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .pins\:\$16 {
+  ///   padding-inline-start: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .pins\:\$20 {
+  ///   padding-inline-start: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .pins\:\$24 {
+  ///   padding-inline-start: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .pins\:\$28 {
+  ///   padding-inline-start: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .pins\:\$32 {
+  ///   padding-inline-start: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .pins\:\$36 {
+  ///   padding-inline-start: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .pins\:\$40 {
+  ///   padding-inline-start: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .pins\:\$44 {
+  ///   padding-inline-start: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .pins\:\$48 {
+  ///   padding-inline-start: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .pins\:\$52 {
+  ///   padding-inline-start: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .pins\:\$56 {
+  ///   padding-inline-start: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .pins\:\$60 {
+  ///   padding-inline-start: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .pins\:\$64 {
+  ///   padding-inline-start: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .pins\:\$72 {
+  ///   padding-inline-start: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .pins\:\$80 {
+  ///   padding-inline-start: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .pins\:\$96 {
+  ///   padding-inline-start: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .pins\:\$px {
+  ///   padding-inline-start: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .pins\:\$0\.5 {
+  ///   padding-inline-start: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .pins\:\$1\.5 {
+  ///   padding-inline-start: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .pins\:\$2\.5 {
+  ///   padding-inline-start: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .pins\:\$3\.5 {
+  ///   padding-inline-start: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -5916,142 +8613,317 @@ impl GeneratedSkribbleValue for GeneratedAtomPine {
   }
 }
 pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
+  /// ```css
+  /// .pine\:\$0 {
+  ///   padding-inline-end: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .pine\:\$1 {
+  ///   padding-inline-end: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .pine\:\$2 {
+  ///   padding-inline-end: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .pine\:\$3 {
+  ///   padding-inline-end: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .pine\:\$4 {
+  ///   padding-inline-end: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .pine\:\$5 {
+  ///   padding-inline-end: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .pine\:\$6 {
+  ///   padding-inline-end: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .pine\:\$7 {
+  ///   padding-inline-end: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .pine\:\$8 {
+  ///   padding-inline-end: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .pine\:\$9 {
+  ///   padding-inline-end: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .pine\:\$10 {
+  ///   padding-inline-end: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .pine\:\$11 {
+  ///   padding-inline-end: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .pine\:\$12 {
+  ///   padding-inline-end: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .pine\:\$14 {
+  ///   padding-inline-end: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .pine\:\$16 {
+  ///   padding-inline-end: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .pine\:\$20 {
+  ///   padding-inline-end: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .pine\:\$24 {
+  ///   padding-inline-end: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .pine\:\$28 {
+  ///   padding-inline-end: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .pine\:\$32 {
+  ///   padding-inline-end: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .pine\:\$36 {
+  ///   padding-inline-end: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .pine\:\$40 {
+  ///   padding-inline-end: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .pine\:\$44 {
+  ///   padding-inline-end: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .pine\:\$48 {
+  ///   padding-inline-end: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .pine\:\$52 {
+  ///   padding-inline-end: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .pine\:\$56 {
+  ///   padding-inline-end: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .pine\:\$60 {
+  ///   padding-inline-end: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .pine\:\$64 {
+  ///   padding-inline-end: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .pine\:\$72 {
+  ///   padding-inline-end: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .pine\:\$80 {
+  ///   padding-inline-end: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .pine\:\$96 {
+  ///   padding-inline-end: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .pine\:\$px {
+  ///   padding-inline-end: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .pine\:\$0\.5 {
+  ///   padding-inline-end: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .pine\:\$1\.5 {
+  ///   padding-inline-end: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .pine\:\$2\.5 {
+  ///   padding-inline-end: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .pine\:\$3\.5 {
+  ///   padding-inline-end: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -6070,142 +8942,317 @@ impl GeneratedSkribbleValue for GeneratedAtomM {
   }
 }
 pub trait GeneratedValueSetM: GeneratedSkribbleValue {
+  /// ```css
+  /// .m\:\$0 {
+  ///   margin: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .m\:\$1 {
+  ///   margin: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .m\:\$2 {
+  ///   margin: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .m\:\$3 {
+  ///   margin: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .m\:\$4 {
+  ///   margin: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .m\:\$5 {
+  ///   margin: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .m\:\$6 {
+  ///   margin: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .m\:\$7 {
+  ///   margin: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .m\:\$8 {
+  ///   margin: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .m\:\$9 {
+  ///   margin: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .m\:\$10 {
+  ///   margin: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .m\:\$11 {
+  ///   margin: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .m\:\$12 {
+  ///   margin: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .m\:\$14 {
+  ///   margin: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .m\:\$16 {
+  ///   margin: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .m\:\$20 {
+  ///   margin: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .m\:\$24 {
+  ///   margin: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .m\:\$28 {
+  ///   margin: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .m\:\$32 {
+  ///   margin: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .m\:\$36 {
+  ///   margin: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .m\:\$40 {
+  ///   margin: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .m\:\$44 {
+  ///   margin: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .m\:\$48 {
+  ///   margin: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .m\:\$52 {
+  ///   margin: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .m\:\$56 {
+  ///   margin: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .m\:\$60 {
+  ///   margin: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .m\:\$64 {
+  ///   margin: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .m\:\$72 {
+  ///   margin: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .m\:\$80 {
+  ///   margin: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .m\:\$96 {
+  ///   margin: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .m\:\$px {
+  ///   margin: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .m\:\$0\.5 {
+  ///   margin: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .m\:\$1\.5 {
+  ///   margin: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .m\:\$2\.5 {
+  ///   margin: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .m\:\$3\.5 {
+  ///   margin: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -6224,142 +9271,352 @@ impl GeneratedSkribbleValue for GeneratedAtomMy {
   }
 }
 pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
+  /// ```css
+  /// .my\:\$0 {
+  ///   margin-top: 0px;
+  ///   margin-bottom: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .my\:\$1 {
+  ///   margin-top: 0.25rem;
+  ///   margin-bottom: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .my\:\$2 {
+  ///   margin-top: 0.5rem;
+  ///   margin-bottom: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .my\:\$3 {
+  ///   margin-top: 0.75rem;
+  ///   margin-bottom: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .my\:\$4 {
+  ///   margin-top: 1rem;
+  ///   margin-bottom: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .my\:\$5 {
+  ///   margin-top: 1.25rem;
+  ///   margin-bottom: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .my\:\$6 {
+  ///   margin-top: 1.5rem;
+  ///   margin-bottom: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .my\:\$7 {
+  ///   margin-top: 1.75rem;
+  ///   margin-bottom: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .my\:\$8 {
+  ///   margin-top: 2rem;
+  ///   margin-bottom: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .my\:\$9 {
+  ///   margin-top: 2.25rem;
+  ///   margin-bottom: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .my\:\$10 {
+  ///   margin-top: 2.5rem;
+  ///   margin-bottom: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .my\:\$11 {
+  ///   margin-top: 2.75rem;
+  ///   margin-bottom: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .my\:\$12 {
+  ///   margin-top: 3rem;
+  ///   margin-bottom: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .my\:\$14 {
+  ///   margin-top: 3.5rem;
+  ///   margin-bottom: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .my\:\$16 {
+  ///   margin-top: 4rem;
+  ///   margin-bottom: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .my\:\$20 {
+  ///   margin-top: 5rem;
+  ///   margin-bottom: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .my\:\$24 {
+  ///   margin-top: 6rem;
+  ///   margin-bottom: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .my\:\$28 {
+  ///   margin-top: 7rem;
+  ///   margin-bottom: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .my\:\$32 {
+  ///   margin-top: 8rem;
+  ///   margin-bottom: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .my\:\$36 {
+  ///   margin-top: 9rem;
+  ///   margin-bottom: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .my\:\$40 {
+  ///   margin-top: 10rem;
+  ///   margin-bottom: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .my\:\$44 {
+  ///   margin-top: 11rem;
+  ///   margin-bottom: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .my\:\$48 {
+  ///   margin-top: 12rem;
+  ///   margin-bottom: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .my\:\$52 {
+  ///   margin-top: 13rem;
+  ///   margin-bottom: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .my\:\$56 {
+  ///   margin-top: 14rem;
+  ///   margin-bottom: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .my\:\$60 {
+  ///   margin-top: 15rem;
+  ///   margin-bottom: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .my\:\$64 {
+  ///   margin-top: 16rem;
+  ///   margin-bottom: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .my\:\$72 {
+  ///   margin-top: 18rem;
+  ///   margin-bottom: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .my\:\$80 {
+  ///   margin-top: 20rem;
+  ///   margin-bottom: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .my\:\$96 {
+  ///   margin-top: 24rem;
+  ///   margin-bottom: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .my\:\$px {
+  ///   margin-top: 1px;
+  ///   margin-bottom: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .my\:\$0\.5 {
+  ///   margin-top: 0.125rem;
+  ///   margin-bottom: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .my\:\$1\.5 {
+  ///   margin-top: 0.375rem;
+  ///   margin-bottom: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .my\:\$2\.5 {
+  ///   margin-top: 0.625rem;
+  ///   margin-bottom: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .my\:\$3\.5 {
+  ///   margin-top: 0.875rem;
+  ///   margin-bottom: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -6378,142 +9635,352 @@ impl GeneratedSkribbleValue for GeneratedAtomMx {
   }
 }
 pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
+  /// ```css
+  /// .mx\:\$0 {
+  ///   margin-right: 0px;
+  ///   margin-left: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .mx\:\$1 {
+  ///   margin-right: 0.25rem;
+  ///   margin-left: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .mx\:\$2 {
+  ///   margin-right: 0.5rem;
+  ///   margin-left: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .mx\:\$3 {
+  ///   margin-right: 0.75rem;
+  ///   margin-left: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .mx\:\$4 {
+  ///   margin-right: 1rem;
+  ///   margin-left: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .mx\:\$5 {
+  ///   margin-right: 1.25rem;
+  ///   margin-left: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .mx\:\$6 {
+  ///   margin-right: 1.5rem;
+  ///   margin-left: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .mx\:\$7 {
+  ///   margin-right: 1.75rem;
+  ///   margin-left: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .mx\:\$8 {
+  ///   margin-right: 2rem;
+  ///   margin-left: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .mx\:\$9 {
+  ///   margin-right: 2.25rem;
+  ///   margin-left: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .mx\:\$10 {
+  ///   margin-right: 2.5rem;
+  ///   margin-left: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .mx\:\$11 {
+  ///   margin-right: 2.75rem;
+  ///   margin-left: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .mx\:\$12 {
+  ///   margin-right: 3rem;
+  ///   margin-left: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .mx\:\$14 {
+  ///   margin-right: 3.5rem;
+  ///   margin-left: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .mx\:\$16 {
+  ///   margin-right: 4rem;
+  ///   margin-left: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .mx\:\$20 {
+  ///   margin-right: 5rem;
+  ///   margin-left: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .mx\:\$24 {
+  ///   margin-right: 6rem;
+  ///   margin-left: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .mx\:\$28 {
+  ///   margin-right: 7rem;
+  ///   margin-left: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .mx\:\$32 {
+  ///   margin-right: 8rem;
+  ///   margin-left: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .mx\:\$36 {
+  ///   margin-right: 9rem;
+  ///   margin-left: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .mx\:\$40 {
+  ///   margin-right: 10rem;
+  ///   margin-left: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .mx\:\$44 {
+  ///   margin-right: 11rem;
+  ///   margin-left: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .mx\:\$48 {
+  ///   margin-right: 12rem;
+  ///   margin-left: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .mx\:\$52 {
+  ///   margin-right: 13rem;
+  ///   margin-left: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .mx\:\$56 {
+  ///   margin-right: 14rem;
+  ///   margin-left: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .mx\:\$60 {
+  ///   margin-right: 15rem;
+  ///   margin-left: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .mx\:\$64 {
+  ///   margin-right: 16rem;
+  ///   margin-left: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .mx\:\$72 {
+  ///   margin-right: 18rem;
+  ///   margin-left: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .mx\:\$80 {
+  ///   margin-right: 20rem;
+  ///   margin-left: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .mx\:\$96 {
+  ///   margin-right: 24rem;
+  ///   margin-left: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .mx\:\$px {
+  ///   margin-right: 1px;
+  ///   margin-left: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .mx\:\$0\.5 {
+  ///   margin-right: 0.125rem;
+  ///   margin-left: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .mx\:\$1\.5 {
+  ///   margin-right: 0.375rem;
+  ///   margin-left: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .mx\:\$2\.5 {
+  ///   margin-right: 0.625rem;
+  ///   margin-left: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .mx\:\$3\.5 {
+  ///   margin-right: 0.875rem;
+  ///   margin-left: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -6532,142 +9999,317 @@ impl GeneratedSkribbleValue for GeneratedAtomMt {
   }
 }
 pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
+  /// ```css
+  /// .mt\:\$0 {
+  ///   margin-top: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .mt\:\$1 {
+  ///   margin-top: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .mt\:\$2 {
+  ///   margin-top: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .mt\:\$3 {
+  ///   margin-top: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .mt\:\$4 {
+  ///   margin-top: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .mt\:\$5 {
+  ///   margin-top: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .mt\:\$6 {
+  ///   margin-top: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .mt\:\$7 {
+  ///   margin-top: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .mt\:\$8 {
+  ///   margin-top: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .mt\:\$9 {
+  ///   margin-top: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .mt\:\$10 {
+  ///   margin-top: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .mt\:\$11 {
+  ///   margin-top: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .mt\:\$12 {
+  ///   margin-top: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .mt\:\$14 {
+  ///   margin-top: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .mt\:\$16 {
+  ///   margin-top: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .mt\:\$20 {
+  ///   margin-top: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .mt\:\$24 {
+  ///   margin-top: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .mt\:\$28 {
+  ///   margin-top: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .mt\:\$32 {
+  ///   margin-top: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .mt\:\$36 {
+  ///   margin-top: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .mt\:\$40 {
+  ///   margin-top: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .mt\:\$44 {
+  ///   margin-top: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .mt\:\$48 {
+  ///   margin-top: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .mt\:\$52 {
+  ///   margin-top: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .mt\:\$56 {
+  ///   margin-top: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .mt\:\$60 {
+  ///   margin-top: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .mt\:\$64 {
+  ///   margin-top: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .mt\:\$72 {
+  ///   margin-top: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .mt\:\$80 {
+  ///   margin-top: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .mt\:\$96 {
+  ///   margin-top: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .mt\:\$px {
+  ///   margin-top: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .mt\:\$0\.5 {
+  ///   margin-top: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .mt\:\$1\.5 {
+  ///   margin-top: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .mt\:\$2\.5 {
+  ///   margin-top: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .mt\:\$3\.5 {
+  ///   margin-top: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -6686,142 +10328,317 @@ impl GeneratedSkribbleValue for GeneratedAtomMr {
   }
 }
 pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
+  /// ```css
+  /// .mr\:\$0 {
+  ///   margin-right: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .mr\:\$1 {
+  ///   margin-right: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .mr\:\$2 {
+  ///   margin-right: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .mr\:\$3 {
+  ///   margin-right: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .mr\:\$4 {
+  ///   margin-right: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .mr\:\$5 {
+  ///   margin-right: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .mr\:\$6 {
+  ///   margin-right: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .mr\:\$7 {
+  ///   margin-right: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .mr\:\$8 {
+  ///   margin-right: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .mr\:\$9 {
+  ///   margin-right: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .mr\:\$10 {
+  ///   margin-right: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .mr\:\$11 {
+  ///   margin-right: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .mr\:\$12 {
+  ///   margin-right: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .mr\:\$14 {
+  ///   margin-right: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .mr\:\$16 {
+  ///   margin-right: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .mr\:\$20 {
+  ///   margin-right: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .mr\:\$24 {
+  ///   margin-right: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .mr\:\$28 {
+  ///   margin-right: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .mr\:\$32 {
+  ///   margin-right: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .mr\:\$36 {
+  ///   margin-right: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .mr\:\$40 {
+  ///   margin-right: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .mr\:\$44 {
+  ///   margin-right: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .mr\:\$48 {
+  ///   margin-right: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .mr\:\$52 {
+  ///   margin-right: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .mr\:\$56 {
+  ///   margin-right: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .mr\:\$60 {
+  ///   margin-right: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .mr\:\$64 {
+  ///   margin-right: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .mr\:\$72 {
+  ///   margin-right: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .mr\:\$80 {
+  ///   margin-right: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .mr\:\$96 {
+  ///   margin-right: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .mr\:\$px {
+  ///   margin-right: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .mr\:\$0\.5 {
+  ///   margin-right: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .mr\:\$1\.5 {
+  ///   margin-right: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .mr\:\$2\.5 {
+  ///   margin-right: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .mr\:\$3\.5 {
+  ///   margin-right: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -6840,142 +10657,317 @@ impl GeneratedSkribbleValue for GeneratedAtomMb {
   }
 }
 pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
+  /// ```css
+  /// .mb\:\$0 {
+  ///   margin-bottom: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .mb\:\$1 {
+  ///   margin-bottom: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .mb\:\$2 {
+  ///   margin-bottom: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .mb\:\$3 {
+  ///   margin-bottom: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .mb\:\$4 {
+  ///   margin-bottom: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .mb\:\$5 {
+  ///   margin-bottom: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .mb\:\$6 {
+  ///   margin-bottom: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .mb\:\$7 {
+  ///   margin-bottom: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .mb\:\$8 {
+  ///   margin-bottom: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .mb\:\$9 {
+  ///   margin-bottom: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .mb\:\$10 {
+  ///   margin-bottom: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .mb\:\$11 {
+  ///   margin-bottom: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .mb\:\$12 {
+  ///   margin-bottom: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .mb\:\$14 {
+  ///   margin-bottom: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .mb\:\$16 {
+  ///   margin-bottom: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .mb\:\$20 {
+  ///   margin-bottom: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .mb\:\$24 {
+  ///   margin-bottom: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .mb\:\$28 {
+  ///   margin-bottom: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .mb\:\$32 {
+  ///   margin-bottom: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .mb\:\$36 {
+  ///   margin-bottom: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .mb\:\$40 {
+  ///   margin-bottom: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .mb\:\$44 {
+  ///   margin-bottom: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .mb\:\$48 {
+  ///   margin-bottom: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .mb\:\$52 {
+  ///   margin-bottom: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .mb\:\$56 {
+  ///   margin-bottom: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .mb\:\$60 {
+  ///   margin-bottom: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .mb\:\$64 {
+  ///   margin-bottom: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .mb\:\$72 {
+  ///   margin-bottom: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .mb\:\$80 {
+  ///   margin-bottom: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .mb\:\$96 {
+  ///   margin-bottom: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .mb\:\$px {
+  ///   margin-bottom: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .mb\:\$0\.5 {
+  ///   margin-bottom: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .mb\:\$1\.5 {
+  ///   margin-bottom: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .mb\:\$2\.5 {
+  ///   margin-bottom: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .mb\:\$3\.5 {
+  ///   margin-bottom: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -6994,142 +10986,317 @@ impl GeneratedSkribbleValue for GeneratedAtomMl {
   }
 }
 pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
+  /// ```css
+  /// .ml\:\$0 {
+  ///   margin-left: 0px;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .ml\:\$1 {
+  ///   margin-left: 0.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .ml\:\$2 {
+  ///   margin-left: 0.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .ml\:\$3 {
+  ///   margin-left: 0.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .ml\:\$4 {
+  ///   margin-left: 1rem;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .ml\:\$5 {
+  ///   margin-left: 1.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .ml\:\$6 {
+  ///   margin-left: 1.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n6(&self) -> String {
     self.append_string_to_skribble_value("6")
   }
+  /// ```css
+  /// .ml\:\$7 {
+  ///   margin-left: 1.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n7(&self) -> String {
     self.append_string_to_skribble_value("7")
   }
+  /// ```css
+  /// .ml\:\$8 {
+  ///   margin-left: 2rem;
+  /// }
+  /// ```
   #[inline]
   fn n8(&self) -> String {
     self.append_string_to_skribble_value("8")
   }
+  /// ```css
+  /// .ml\:\$9 {
+  ///   margin-left: 2.25rem;
+  /// }
+  /// ```
   #[inline]
   fn n9(&self) -> String {
     self.append_string_to_skribble_value("9")
   }
+  /// ```css
+  /// .ml\:\$10 {
+  ///   margin-left: 2.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .ml\:\$11 {
+  ///   margin-left: 2.75rem;
+  /// }
+  /// ```
   #[inline]
   fn n11(&self) -> String {
     self.append_string_to_skribble_value("11")
   }
+  /// ```css
+  /// .ml\:\$12 {
+  ///   margin-left: 3rem;
+  /// }
+  /// ```
   #[inline]
   fn n12(&self) -> String {
     self.append_string_to_skribble_value("12")
   }
+  /// ```css
+  /// .ml\:\$14 {
+  ///   margin-left: 3.5rem;
+  /// }
+  /// ```
   #[inline]
   fn n14(&self) -> String {
     self.append_string_to_skribble_value("14")
   }
+  /// ```css
+  /// .ml\:\$16 {
+  ///   margin-left: 4rem;
+  /// }
+  /// ```
   #[inline]
   fn n16(&self) -> String {
     self.append_string_to_skribble_value("16")
   }
+  /// ```css
+  /// .ml\:\$20 {
+  ///   margin-left: 5rem;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .ml\:\$24 {
+  ///   margin-left: 6rem;
+  /// }
+  /// ```
   #[inline]
   fn n24(&self) -> String {
     self.append_string_to_skribble_value("24")
   }
+  /// ```css
+  /// .ml\:\$28 {
+  ///   margin-left: 7rem;
+  /// }
+  /// ```
   #[inline]
   fn n28(&self) -> String {
     self.append_string_to_skribble_value("28")
   }
+  /// ```css
+  /// .ml\:\$32 {
+  ///   margin-left: 8rem;
+  /// }
+  /// ```
   #[inline]
   fn n32(&self) -> String {
     self.append_string_to_skribble_value("32")
   }
+  /// ```css
+  /// .ml\:\$36 {
+  ///   margin-left: 9rem;
+  /// }
+  /// ```
   #[inline]
   fn n36(&self) -> String {
     self.append_string_to_skribble_value("36")
   }
+  /// ```css
+  /// .ml\:\$40 {
+  ///   margin-left: 10rem;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .ml\:\$44 {
+  ///   margin-left: 11rem;
+  /// }
+  /// ```
   #[inline]
   fn n44(&self) -> String {
     self.append_string_to_skribble_value("44")
   }
+  /// ```css
+  /// .ml\:\$48 {
+  ///   margin-left: 12rem;
+  /// }
+  /// ```
   #[inline]
   fn n48(&self) -> String {
     self.append_string_to_skribble_value("48")
   }
+  /// ```css
+  /// .ml\:\$52 {
+  ///   margin-left: 13rem;
+  /// }
+  /// ```
   #[inline]
   fn n52(&self) -> String {
     self.append_string_to_skribble_value("52")
   }
+  /// ```css
+  /// .ml\:\$56 {
+  ///   margin-left: 14rem;
+  /// }
+  /// ```
   #[inline]
   fn n56(&self) -> String {
     self.append_string_to_skribble_value("56")
   }
+  /// ```css
+  /// .ml\:\$60 {
+  ///   margin-left: 15rem;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .ml\:\$64 {
+  ///   margin-left: 16rem;
+  /// }
+  /// ```
   #[inline]
   fn n64(&self) -> String {
     self.append_string_to_skribble_value("64")
   }
+  /// ```css
+  /// .ml\:\$72 {
+  ///   margin-left: 18rem;
+  /// }
+  /// ```
   #[inline]
   fn n72(&self) -> String {
     self.append_string_to_skribble_value("72")
   }
+  /// ```css
+  /// .ml\:\$80 {
+  ///   margin-left: 20rem;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .ml\:\$96 {
+  ///   margin-left: 24rem;
+  /// }
+  /// ```
   #[inline]
   fn n96(&self) -> String {
     self.append_string_to_skribble_value("96")
   }
+  /// ```css
+  /// .ml\:\$px {
+  ///   margin-left: 1px;
+  /// }
+  /// ```
   #[inline]
   fn px(&self) -> String {
     self.append_string_to_skribble_value("px")
   }
+  /// ```css
+  /// .ml\:\$0\.5 {
+  ///   margin-left: 0.125rem;
+  /// }
+  /// ```
   #[inline]
   fn n0_5(&self) -> String {
     self.append_string_to_skribble_value("0.5")
   }
+  /// ```css
+  /// .ml\:\$1\.5 {
+  ///   margin-left: 0.375rem;
+  /// }
+  /// ```
   #[inline]
   fn n1_5(&self) -> String {
     self.append_string_to_skribble_value("1.5")
   }
+  /// ```css
+  /// .ml\:\$2\.5 {
+  ///   margin-left: 0.625rem;
+  /// }
+  /// ```
   #[inline]
   fn n2_5(&self) -> String {
     self.append_string_to_skribble_value("2.5")
   }
+  /// ```css
+  /// .ml\:\$3\.5 {
+  ///   margin-left: 0.875rem;
+  /// }
+  /// ```
   #[inline]
   fn n3_5(&self) -> String {
     self.append_string_to_skribble_value("3.5")
@@ -7148,70 +11315,155 @@ impl GeneratedSkribbleValue for GeneratedAtomZ {
   }
 }
 pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
+  /// ```css
+  /// .z\:\$0 {
+  ///   z-index: 0;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .z\:\$1 {
+  ///   z-index: 1;
+  /// }
+  /// ```
   #[inline]
   fn n1(&self) -> String {
     self.append_string_to_skribble_value("1")
   }
+  /// ```css
+  /// .z\:\$2 {
+  ///   z-index: 2;
+  /// }
+  /// ```
   #[inline]
   fn n2(&self) -> String {
     self.append_string_to_skribble_value("2")
   }
+  /// ```css
+  /// .z\:\$3 {
+  ///   z-index: 3;
+  /// }
+  /// ```
   #[inline]
   fn n3(&self) -> String {
     self.append_string_to_skribble_value("3")
   }
+  /// ```css
+  /// .z\:\$4 {
+  ///   z-index: 4;
+  /// }
+  /// ```
   #[inline]
   fn n4(&self) -> String {
     self.append_string_to_skribble_value("4")
   }
+  /// ```css
+  /// .z\:\$5 {
+  ///   z-index: 5;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .z\:\$10 {
+  ///   z-index: 10;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .z\:\$20 {
+  ///   z-index: 20;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .z\:\$30 {
+  ///   z-index: 30;
+  /// }
+  /// ```
   #[inline]
   fn n30(&self) -> String {
     self.append_string_to_skribble_value("30")
   }
+  /// ```css
+  /// .z\:\$40 {
+  ///   z-index: 40;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .z\:\$50 {
+  ///   z-index: 50;
+  /// }
+  /// ```
   #[inline]
   fn n50(&self) -> String {
     self.append_string_to_skribble_value("50")
   }
+  /// ```css
+  /// .z\:\$60 {
+  ///   z-index: 60;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .z\:\$auto {
+  ///   z-index: auto;
+  /// }
+  /// ```
   #[inline]
   fn auto(&self) -> String {
     self.append_string_to_skribble_value("auto")
   }
+  /// ```css
+  /// .z\:\$1 {
+  ///   z-index: -1;
+  /// }
+  /// ```
   #[inline]
   fn m1(&self) -> String {
     self.append_string_to_skribble_value("-1")
   }
+  /// ```css
+  /// .z\:\$2 {
+  ///   z-index: -2;
+  /// }
+  /// ```
   #[inline]
   fn m2(&self) -> String {
     self.append_string_to_skribble_value("-2")
   }
+  /// ```css
+  /// .z\:\$3 {
+  ///   z-index: -3;
+  /// }
+  /// ```
   #[inline]
   fn m3(&self) -> String {
     self.append_string_to_skribble_value("-3")
   }
+  /// ```css
+  /// .z\:\$5 {
+  ///   z-index: -5;
+  /// }
+  /// ```
   #[inline]
   fn m5(&self) -> String {
     self.append_string_to_skribble_value("-5")
@@ -7230,10 +11482,20 @@ impl GeneratedSkribbleValue for GeneratedAtomDir {
   }
 }
 pub trait GeneratedValueSetDir: GeneratedSkribbleValue {
+  /// ```css
+  /// .dir\:\$ltr {
+  ///   direction: ltr;
+  /// }
+  /// ```
   #[inline]
   fn ltr(&self) -> String {
     self.append_string_to_skribble_value("ltr")
   }
+  /// ```css
+  /// .dir\:\$rtl {
+  ///   direction: rtl;
+  /// }
+  /// ```
   #[inline]
   fn rtl(&self) -> String {
     self.append_string_to_skribble_value("rtl")
@@ -7264,58 +11526,128 @@ impl GeneratedSkribbleValue for GeneratedAtomBgOpacity {
   }
 }
 pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
+  /// ```css
+  /// .bg-opacity\:\$0 {
+  ///   --sk-invalid-css-variable: 0%;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .bg-opacity\:\$5 {
+  ///   --sk-invalid-css-variable: 5%;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .bg-opacity\:\$10 {
+  ///   --sk-invalid-css-variable: 10%;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .bg-opacity\:\$20 {
+  ///   --sk-invalid-css-variable: 20%;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .bg-opacity\:\$30 {
+  ///   --sk-invalid-css-variable: 30%;
+  /// }
+  /// ```
   #[inline]
   fn n30(&self) -> String {
     self.append_string_to_skribble_value("30")
   }
+  /// ```css
+  /// .bg-opacity\:\$40 {
+  ///   --sk-invalid-css-variable: 40%;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .bg-opacity\:\$50 {
+  ///   --sk-invalid-css-variable: 50%;
+  /// }
+  /// ```
   #[inline]
   fn n50(&self) -> String {
     self.append_string_to_skribble_value("50")
   }
+  /// ```css
+  /// .bg-opacity\:\$60 {
+  ///   --sk-invalid-css-variable: 60%;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .bg-opacity\:\$70 {
+  ///   --sk-invalid-css-variable: 70%;
+  /// }
+  /// ```
   #[inline]
   fn n70(&self) -> String {
     self.append_string_to_skribble_value("70")
   }
+  /// ```css
+  /// .bg-opacity\:\$75 {
+  ///   --sk-invalid-css-variable: 75%;
+  /// }
+  /// ```
   #[inline]
   fn n75(&self) -> String {
     self.append_string_to_skribble_value("75")
   }
+  /// ```css
+  /// .bg-opacity\:\$80 {
+  ///   --sk-invalid-css-variable: 80%;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .bg-opacity\:\$90 {
+  ///   --sk-invalid-css-variable: 90%;
+  /// }
+  /// ```
   #[inline]
   fn n90(&self) -> String {
     self.append_string_to_skribble_value("90")
   }
+  /// ```css
+  /// .bg-opacity\:\$95 {
+  ///   --sk-invalid-css-variable: 95%;
+  /// }
+  /// ```
   #[inline]
   fn n95(&self) -> String {
     self.append_string_to_skribble_value("95")
   }
+  /// ```css
+  /// .bg-opacity\:\$100 {
+  ///   --sk-invalid-css-variable: 100%;
+  /// }
+  /// ```
   #[inline]
   fn n100(&self) -> String {
     self.append_string_to_skribble_value("100")
@@ -7334,58 +11666,128 @@ impl GeneratedSkribbleValue for GeneratedAtomOpacity {
   }
 }
 pub trait GeneratedValueSetOpacity: GeneratedSkribbleValue {
+  /// ```css
+  /// .opacity\:\$0 {
+  ///   opacity: 0%;
+  /// }
+  /// ```
   #[inline]
   fn n0(&self) -> String {
     self.append_string_to_skribble_value("0")
   }
+  /// ```css
+  /// .opacity\:\$5 {
+  ///   opacity: 5%;
+  /// }
+  /// ```
   #[inline]
   fn n5(&self) -> String {
     self.append_string_to_skribble_value("5")
   }
+  /// ```css
+  /// .opacity\:\$10 {
+  ///   opacity: 10%;
+  /// }
+  /// ```
   #[inline]
   fn n10(&self) -> String {
     self.append_string_to_skribble_value("10")
   }
+  /// ```css
+  /// .opacity\:\$20 {
+  ///   opacity: 20%;
+  /// }
+  /// ```
   #[inline]
   fn n20(&self) -> String {
     self.append_string_to_skribble_value("20")
   }
+  /// ```css
+  /// .opacity\:\$30 {
+  ///   opacity: 30%;
+  /// }
+  /// ```
   #[inline]
   fn n30(&self) -> String {
     self.append_string_to_skribble_value("30")
   }
+  /// ```css
+  /// .opacity\:\$40 {
+  ///   opacity: 40%;
+  /// }
+  /// ```
   #[inline]
   fn n40(&self) -> String {
     self.append_string_to_skribble_value("40")
   }
+  /// ```css
+  /// .opacity\:\$50 {
+  ///   opacity: 50%;
+  /// }
+  /// ```
   #[inline]
   fn n50(&self) -> String {
     self.append_string_to_skribble_value("50")
   }
+  /// ```css
+  /// .opacity\:\$60 {
+  ///   opacity: 60%;
+  /// }
+  /// ```
   #[inline]
   fn n60(&self) -> String {
     self.append_string_to_skribble_value("60")
   }
+  /// ```css
+  /// .opacity\:\$70 {
+  ///   opacity: 70%;
+  /// }
+  /// ```
   #[inline]
   fn n70(&self) -> String {
     self.append_string_to_skribble_value("70")
   }
+  /// ```css
+  /// .opacity\:\$75 {
+  ///   opacity: 75%;
+  /// }
+  /// ```
   #[inline]
   fn n75(&self) -> String {
     self.append_string_to_skribble_value("75")
   }
+  /// ```css
+  /// .opacity\:\$80 {
+  ///   opacity: 80%;
+  /// }
+  /// ```
   #[inline]
   fn n80(&self) -> String {
     self.append_string_to_skribble_value("80")
   }
+  /// ```css
+  /// .opacity\:\$90 {
+  ///   opacity: 90%;
+  /// }
+  /// ```
   #[inline]
   fn n90(&self) -> String {
     self.append_string_to_skribble_value("90")
   }
+  /// ```css
+  /// .opacity\:\$95 {
+  ///   opacity: 95%;
+  /// }
+  /// ```
   #[inline]
   fn n95(&self) -> String {
     self.append_string_to_skribble_value("95")
   }
+  /// ```css
+  /// .opacity\:\$100 {
+  ///   opacity: 100%;
+  /// }
+  /// ```
   #[inline]
   fn n100(&self) -> String {
     self.append_string_to_skribble_value("100")
