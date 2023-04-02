@@ -4,6 +4,7 @@ use skribble_core::wrap_indent;
 use skribble_core::AnyEmptyResult;
 use skribble_core::AnyResult;
 use skribble_core::LinkedValues;
+use skribble_core::Prioritized;
 use skribble_core::ToSkribbleCss;
 
 use super::indoc;
@@ -26,10 +27,10 @@ fn generate_media_queries(
     section.push(generate_struct(&struct_name));
     section.push(generate_impl_skribble_value(&struct_name));
 
-    let mut methods = vec![format!("pub trait {trait_name}: SkribbleValue {{")];
+    let mut methods = vec![format!("pub trait {trait_name}: GeneratedSkribbleValue {{")];
 
     for (name, media_query) in map.iter() {
-      let method_name = get_method_name(name, method_names)?;
+      let method_name = get_method_name(name, GLOBAL_PREFIX, method_names)?;
       let css_docs = wrap_indent(
         wrap_docs(wrap_in_code_block(
           media_query_docs(&media_query.query),
@@ -90,10 +91,10 @@ fn generate_modifiers(
     section.push(generate_struct(&struct_name));
     section.push(generate_impl_skribble_value(&struct_name));
 
-    let mut methods = vec![format!("pub trait {trait_name}: SkribbleValue {{")];
+    let mut methods = vec![format!("pub trait {trait_name}: GeneratedSkribbleValue {{")];
 
     for (name, modifier) in map.iter() {
-      let method_name = get_method_name(name, method_names)?;
+      let method_name = get_method_name(name, GLOBAL_PREFIX, method_names)?;
       let css_docs = wrap_indent(
         wrap_docs(wrap_in_code_block(modifier_docs(&modifier.values), "css")),
         1,
@@ -131,14 +132,13 @@ fn generate_keyframes(
   config: &RunnerConfig,
   method_names: &mut IndexMap<String, String>,
   sections: &mut Vec<String>,
-  name: impl AsRef<str>,
 ) -> AnyEmptyResult {
-  let name = name.as_ref();
-
-  sections.push(format!("pub trait {name}: SkribbleValue {{"));
+  sections.push(format!(
+    "pub trait {KEYFRAME_TRAIT_NAME}: GeneratedSkribbleValue {{"
+  ));
 
   for (name, keyframe) in config.keyframes.iter() {
-    let method_name = get_method_name(name, method_names)?;
+    let method_name = get_method_name(name, KEYFRAMES_PREFIX, method_names)?;
     let css_docs = wrap_indent(
       wrap_docs(wrap_in_code_block(keyframe.to_skribble_css(config)?, "css")),
       1,
@@ -169,53 +169,16 @@ fn generate_keyframes(
   Ok(())
 }
 
-fn generate_value_sets(
-  config: &RunnerConfig,
-  method_names: &mut IndexMap<String, String>,
-  sections: &mut Vec<String>,
-) -> AnyEmptyResult {
-  for (name, value_set) in config.value_sets.iter() {
-    let value_set_trait_name = get_value_set_trait_name(name);
-    sections.push(format!(
-      "pub trait {value_set_trait_name}: SkribbleValue {{"
-    ));
-
-    for (value_name, _) in value_set.values.iter() {
-      let method_name = get_method_name(value_name, method_names)?;
-
-      if let Some(ref description) = value_set.description {
-        sections.push(wrap_indent(wrap_docs(description), 1));
-      }
-
-      sections.push(wrap_indent(
-        format!("#[inline]\nfn {method_name}(&self) -> String {{"),
-        1,
-      ));
-
-      sections.push(wrap_indent(
-        format!("self.append_string_to_skribble_value(\"{value_name}\")"),
-        2,
-      ));
-
-      sections.push(wrap_indent("}", 1));
-    }
-
-    sections.push("}".into());
-  }
-
-  Ok(())
-}
-
 fn generate_named_classes(
   config: &RunnerConfig,
   method_names: &mut IndexMap<String, String>,
   sections: &mut Vec<String>,
   trait_names: &mut Vec<String>,
 ) -> AnyEmptyResult {
-  sections.push("pub trait NamedClasses: SkribbleValue {".into());
+  sections.push("pub trait GeneratedNamedClasses: GeneratedSkribbleValue {".into());
 
   for (class_name, class) in config.classes.iter() {
-    let method_name = get_method_name(class_name, method_names)?;
+    let method_name = get_method_name(class_name, GLOBAL_PREFIX, method_names)?;
 
     if let Some(ref description) = class.description {
       sections.push(wrap_indent(wrap_docs(description), 1));
@@ -234,13 +197,11 @@ fn generate_named_classes(
     sections.push(wrap_indent("}", 1));
   }
 
-  trait_names.push("NamedClasses".into());
+  trait_names.push("GeneratedNamedClasses".into());
   sections.push("}".into());
 
   Ok(())
 }
-
-const ATOM_TRAIT_NAME: &str = "Atom";
 
 fn generate_atoms(
   config: &RunnerConfig,
@@ -252,35 +213,41 @@ fn generate_atoms(
   let mut trait_content = Vec::<String>::new();
 
   // parent modifiers
-  trait_content.push(format!("pub trait {ATOM_TRAIT_NAME}: SkribbleValue {{"));
+  trait_content.push(format!(
+    "pub trait {ATOM_TRAIT_NAME}: GeneratedSkribbleValue {{"
+  ));
 
   for (name, modifier) in config.atoms.iter() {
-    let method_name = get_method_name(name, method_names)?;
-    let atom_struct_name = format!("Atom{}", name.to_pascal_case());
+    let method_name = get_method_name(name, GLOBAL_PREFIX, method_names)?;
+    let atom_struct_name = format!("GeneratedAtom{}", name.to_pascal_case());
 
     struct_content.push(generate_struct(&atom_struct_name));
     struct_content.push(generate_impl_skribble_value(&atom_struct_name));
 
     match modifier.values {
       LinkedValues::Color => {
-        struct_content.push(format!("impl Color for {atom_struct_name} {{}}"));
-        struct_content.push(format!("impl Palette for {atom_struct_name} {{}}"));
-      }
-      LinkedValues::Values(ref value_set) => {
-        for value_set_name in value_set.iter() {
-          let value_set_trait_name = get_value_set_trait_name(&value_set_name.value);
-
-          struct_content.push(format!(
-            "impl {value_set_trait_name} for {atom_struct_name} {{}}",
-          ));
-        }
+        struct_content.push(format!(
+          "impl {COLOR_TRAIT_NAME} for {atom_struct_name} {{}}"
+        ));
       }
       LinkedValues::Keyframes => {
-        let keyframe_trait_name = get_keyframe_trait_name(&atom_struct_name);
-        generate_keyframes(config, method_names, sections, &keyframe_trait_name)?;
+        struct_content.push(format!(
+          "impl {KEYFRAME_TRAIT_NAME} for {atom_struct_name} {{}}",
+        ));
+      }
+      LinkedValues::Values(ref value_sets) => {
+        let value_set_trait_name = get_value_set_trait_name(name);
+        generate_atom_value_sets(
+          &value_set_trait_name,
+          &mut struct_content,
+          value_sets,
+          config,
+          name,
+          method_names,
+        )?;
 
         struct_content.push(format!(
-          "impl {keyframe_trait_name} for {atom_struct_name} {{}}",
+          "impl {value_set_trait_name} for {atom_struct_name} {{}}",
         ));
       }
     }
@@ -311,15 +278,82 @@ fn generate_atoms(
   Ok(())
 }
 
-fn generate_palette(
+fn generate_atom_value_sets(
+  value_set_trait_name: impl AsRef<str>,
+  struct_content: &mut Vec<String>,
+  value_sets: &skribble_core::NameSet,
+  config: &RunnerConfig,
+  atom_name: impl AsRef<str>,
+  method_names: &mut IndexMap<String, String>,
+) -> AnyEmptyResult {
+  let value_set_trait_name = value_set_trait_name.as_ref();
+  struct_content.push(format!(
+    "pub trait {value_set_trait_name}: GeneratedSkribbleValue {{"
+  ));
+  for Prioritized { value, .. } in value_sets.iter() {
+    let Some(value_set) = config.value_sets.get(value) else {
+        continue;
+      };
+
+    for (value_name, _) in value_set.values.iter() {
+      let method_name = get_method_name(value_name, &atom_name, method_names)?;
+
+      struct_content.push(wrap_indent(
+        format!("#[inline]\nfn {method_name}(&self) -> String {{"),
+        1,
+      ));
+
+      struct_content.push(wrap_indent(
+        format!("self.append_string_to_skribble_value(\"{value_name}\")"),
+        2,
+      ));
+
+      struct_content.push(wrap_indent("}", 1));
+    }
+  }
+  struct_content.push("}".into());
+  Ok(())
+}
+
+fn generate_colors(
   config: &RunnerConfig,
   method_names: &mut IndexMap<String, String>,
   sections: &mut Vec<String>,
 ) -> AnyEmptyResult {
-  sections.push("pub trait Palette: SkribbleValue {".into());
+  sections.push(format!(
+    "pub trait {COLOR_TRAIT_NAME}: GeneratedSkribbleValue {{"
+  ));
+
+  for (name, css_variable) in config.css_variables.iter() {
+    if !css_variable.is_color() {
+      continue;
+    }
+
+    let method_name = get_method_name(name, COLORS_PREFIX, method_names)?;
+    let mut property_rule = String::new();
+    css_variable.write_property_rule(&mut property_rule, config)?;
+    let css_docs = wrap_indent(wrap_docs(wrap_in_code_block(property_rule, "css")), 1);
+
+    if let Some(ref description) = css_variable.description {
+      sections.push(wrap_indent(wrap_docs(description), 1));
+      sections.push(wrap_indent(wrap_docs("\n"), 1));
+    }
+
+    sections.push(css_docs);
+
+    sections.push(wrap_indent(
+      format!("#[inline]\nfn {method_name}(&self) -> String {{"),
+      1,
+    ));
+    sections.push(wrap_indent(
+      format!("self.append_string_to_skribble_value(\"{name}\")"),
+      2,
+    ));
+    sections.push(wrap_indent("}", 1))
+  }
 
   for (name, _) in config.palette.iter() {
-    let method_name = get_method_name(name, method_names)?;
+    let method_name = get_method_name(name, COLORS_PREFIX, method_names)?;
 
     sections.push(wrap_indent(
       format!("#[inline]\nfn {method_name}(&self) -> String {{"),
@@ -347,18 +381,17 @@ fn generate_css_variables(
   let mut entries = vec![
     indoc!(
       "
-    pub fn vars() -> CssVariables {
-      CssVariables
+    pub fn vars() -> GeneratedCssVariables {
+      GeneratedCssVariables
     }
-    pub struct CssVariables;
-    impl CssVariables {"
+    pub struct GeneratedCssVariables;
+    impl GeneratedCssVariables {"
     )
     .into(),
   ];
-  let mut colors = vec!["pub trait Color: SkribbleValue {".into()];
 
   for (name, css_variable) in config.css_variables.iter() {
-    let method_name = get_method_name(name, method_names)?;
+    let method_name = get_method_name(name, VARIABLES_PREFIX, method_names)?;
     let variable_name = css_variable.get_variable(config.options());
     let mut property_rule = String::new();
     css_variable.write_property_rule(&mut property_rule, config)?;
@@ -379,31 +412,10 @@ fn generate_css_variables(
     entries.push(wrap_indent(format!("\"{variable_name}\".into()",), 2));
 
     entries.push(wrap_indent("}", 1));
-
-    if css_variable.syntax.is_color() {
-      if let Some(ref description) = css_variable.description {
-        colors.push(wrap_indent(wrap_docs(description), 1));
-        colors.push(wrap_indent(wrap_docs("\n"), 1));
-      }
-
-      colors.push(css_docs);
-
-      colors.push(wrap_indent(
-        format!("#[inline]\nfn {method_name}(&self) -> String {{"),
-        1,
-      ));
-      colors.push(wrap_indent(
-        format!("self.append_string_to_skribble_value(\"{name}\")"),
-        2,
-      ));
-      colors.push(wrap_indent("}", 1))
-    }
   }
 
   entries.push("}".into());
-  colors.push("}".into());
   sections.push(entries.join("\n"));
-  sections.push(colors.join("\n"));
 
   Ok(())
 }
@@ -426,18 +438,17 @@ fn wrap_in_code_block(content: impl AsRef<str>, r#type: impl AsRef<str>) -> Stri
 }
 
 fn get_value_set_trait_name(value_set_name: impl Into<String>) -> String {
-  format!("ValueSet{}", value_set_name.into().to_pascal_case())
-}
-
-fn get_keyframe_trait_name(atom_name: impl Into<String>) -> String {
-  format!("KeyframeSet{}", atom_name.into().to_pascal_case())
+  format!(
+    "GeneratedValueSet{}",
+    value_set_name.into().to_pascal_case()
+  )
 }
 
 fn generate_impl_skribble_value(name: impl AsRef<str>) -> String {
   format!(
     indoc!(
       "
-      impl SkribbleValue for {} {{
+      impl GeneratedSkribbleValue for {} {{
         #[inline]
         fn from_ref(value: impl AsRef<str>) -> Self {{
           Self(value.as_ref().to_string())
@@ -476,6 +487,7 @@ fn generate_struct(name: impl AsRef<str>) -> String {
 
 fn get_method_name(
   name: impl AsRef<str>,
+  prefix: impl AsRef<str>,
   method_names: &mut IndexMap<String, String>,
 ) -> AnyResult<String> {
   let method_name = safe_method_name(&name)?;
@@ -483,13 +495,14 @@ fn get_method_name(
   let mut current_method_name = method_name.clone();
 
   loop {
-    if method_names.contains_key(&current_method_name) {
+    let with_prefix = format!("{}:::{}", prefix.as_ref(), current_method_name);
+    if method_names.contains_key(&with_prefix) {
       index += 1;
       current_method_name = format!("{}_{}", method_name, index);
       continue;
     }
 
-    method_names.insert(current_method_name.clone(), name.as_ref().to_string());
+    method_names.insert(with_prefix, name.as_ref().to_string());
     break;
   }
 
@@ -500,13 +513,13 @@ fn safe_method_name(name: impl AsRef<str>) -> Result<String, Error> {
   let name = name.as_ref();
 
   let prefix = match name.chars().next() {
-    Some(first_char) if first_char.is_ascii_digit() => "n_",
+    Some(first_char) if first_char.is_ascii_digit() => "n",
     Some(first_char) if !first_char.is_ascii_alphabetic() => {
       match first_char {
-        '_' => "u_",
-        '-' => "m_",
-        '+' => "p_",
-        '.' => "d_",
+        '_' => "u",
+        '-' => "m",
+        '+' => "p",
+        '.' => "d",
         _ => return Err(Error::InvalidMethodName(name.to_string())),
       }
     }
@@ -533,15 +546,22 @@ const RESERVED_WORDS: &[&str] = &[
   "ref", "return", "Self", "self", "sizeof", "static", "struct", "super", "trait", "true", "type",
   "typeof", "unsafe", "unsized", "use", "virtual", "where", "while", "yield",
 ];
+const ATOM_TRAIT_NAME: &str = "GeneratedAtom";
+const KEYFRAME_TRAIT_NAME: &str = "GeneratedKeyframeSet";
+const COLOR_TRAIT_NAME: &str = "GeneratedColorSet";
+pub(crate) const GLOBAL_PREFIX: &str = "global";
+pub(crate) const COLORS_PREFIX: &str = "colors";
+pub(crate) const KEYFRAMES_PREFIX: &str = "keyframes";
+pub(crate) const VARIABLES_PREFIX: &str = "variables";
 
 const HEADER: &str = r#"#![allow(unused)]
 // This file was generated by skribble.
-use private::SkribbleValue;
-pub fn sk() -> SkribbleRoot {
-  SkribbleRoot::from_ref("")
+use private::GeneratedSkribbleValue;
+pub fn sk() -> GeneratedSkribbleRoot {
+  GeneratedSkribbleRoot::from_ref("")
 }
-pub struct SkribbleRoot(String);
-impl SkribbleValue for SkribbleRoot {
+pub struct GeneratedSkribbleRoot(String);
+impl GeneratedSkribbleValue for GeneratedSkribbleRoot {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -553,7 +573,7 @@ impl SkribbleValue for SkribbleRoot {
 }
 mod private {
   #[doc(hidden)]
-  pub trait SkribbleValue {
+  pub trait GeneratedSkribbleValue {
     fn from_ref(value: impl AsRef<str>) -> Self;
     fn get_skribble_value(&self) -> &String;
     #[inline]
@@ -582,9 +602,11 @@ pub(crate) fn generate_file_contents(
   config: &RunnerConfig,
 ) -> AnyResult<(String, IndexMap<String, String>)> {
   let mut method_names = IndexMap::<String, String>::new();
+
   let mut sections = Vec::<String>::new();
   let mut trait_names = vec![];
-  let mut struct_names_map: IndexMap<String, usize> = indexmap! { "SkribbleRoot".into() => 0 };
+  let mut struct_names_map: IndexMap<String, usize> =
+    indexmap! { "GeneratedSkribbleRoot".into() => 0 };
 
   generate_css_variables(config, &mut method_names, &mut sections)?;
   generate_media_queries(
@@ -601,8 +623,8 @@ pub(crate) fn generate_file_contents(
     &mut struct_names_map,
     &mut trait_names,
   )?;
-  generate_value_sets(config, &mut method_names, &mut sections)?;
-  generate_palette(config, &mut method_names, &mut sections)?;
+  generate_keyframes(config, &mut method_names, &mut sections)?;
+  generate_colors(config, &mut method_names, &mut sections)?;
   generate_atoms(config, &mut method_names, &mut sections, &mut trait_names)?;
   generate_named_classes(config, &mut method_names, &mut sections, &mut trait_names)?;
   generate_struct_implementations(&struct_names_map, &trait_names, &mut sections);

@@ -72,7 +72,13 @@ impl Plugin for RustPlugin {
           .stdin(stdout)
           .stdout(std::process::Stdio::piped())
           .output()?;
-        contents = String::from_utf8(output.stdout)?;
+        let result = String::from_utf8(output.stdout)?;
+
+        contents = if result.trim().is_empty() && !contents.trim().is_empty() {
+          contents
+        } else {
+          result
+        }
       }
     }
 

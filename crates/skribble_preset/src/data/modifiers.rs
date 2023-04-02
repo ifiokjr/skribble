@@ -244,8 +244,8 @@ lazy_static! {
       .name("hiddenGroup")
       .items(vec![
         Modifier::builder()
-          .name("hidden")
-          .values(vec!["&[hidden]"])
+          .name("ariaHidden")
+          .values(vec!["&[aria-hidden=true]"])
           .build()
       ])
       .build(),

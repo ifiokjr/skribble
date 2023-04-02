@@ -1600,11 +1600,11 @@ RunnerConfig {
             },
         },
         "hiddenGroup": {
-            "hidden": Modifier {
-                name: "hidden",
+            "ariaHidden": Modifier {
+                name: "ariaHidden",
                 values: StringList(
                     [
-                        "&[hidden]",
+                        "&[aria-hidden=true]",
                     ],
                 ),
                 description: None,
@@ -4414,7 +4414,7 @@ RunnerConfig {
             "invalid",
             "loading",
             "selected",
-            "hidden",
+            "ariaHidden",
             "autofill",
             "even",
             "odd",
