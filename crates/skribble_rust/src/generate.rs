@@ -338,7 +338,7 @@ fn generate_atom_value_sets(
   Ok(())
 }
 
-fn generate_colors(
+fn generate_atom_colors(
   config: &RunnerConfig,
   method_names: &mut IndexMap<String, String>,
   sections: &mut Vec<String>,
@@ -354,7 +354,7 @@ fn generate_colors(
 
     let method_name = get_method_name(name, COLORS_PREFIX, method_names)?;
     let mut property_rule = String::new();
-    css_variable.write_property_rule(&mut property_rule, config)?;
+    css_variable.write_property_rule(&mut property_rule, config, false)?;
     let css_docs = wrap_indent(wrap_docs(wrap_in_code_block(property_rule, "css")), 1);
 
     if let Some(ref description) = css_variable.description {
@@ -417,7 +417,7 @@ fn generate_css_variables(
     let method_name = get_method_name(name, VARIABLES_PREFIX, method_names)?;
     let variable_name = css_variable.get_variable(config.options());
     let mut property_rule = String::new();
-    css_variable.write_property_rule(&mut property_rule, config)?;
+    css_variable.write_property_rule(&mut property_rule, config, false)?;
     let css_docs = wrap_indent(wrap_docs(wrap_in_code_block(property_rule, "css")), 1);
 
     if let Some(ref description) = css_variable.description {
@@ -647,7 +647,7 @@ pub(crate) fn generate_file_contents(
     &mut trait_names,
   )?;
   generate_keyframes(config, &mut method_names, &mut sections)?;
-  generate_colors(config, &mut method_names, &mut sections)?;
+  generate_atom_colors(config, &mut method_names, &mut sections)?;
   generate_atoms(config, &mut method_names, &mut sections, &mut trait_names)?;
   generate_named_classes(config, &mut method_names, &mut sections, &mut trait_names)?;
   generate_struct_implementations(&struct_names_map, &trait_names, &mut sections);

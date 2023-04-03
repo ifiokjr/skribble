@@ -137,6 +137,7 @@ impl CssVariable {
     &self,
     writer: &mut dyn Write,
     config: &RunnerConfig,
+    with_opacity: bool,
   ) -> AnyEmptyResult {
     let options = config.options();
     let syntax = &self.syntax;
@@ -146,17 +147,20 @@ impl CssVariable {
     let initial_value = if self.is_color() {
       let opacity_variable = self.get_opacity_variable(options);
       let alpha = self.get_default_opacity(None);
-      writeln!(writer, "@property {opacity_variable} {{")?;
-      let mut indented_writer = indent_writer();
-      writeln!(indented_writer, "syntax: \"<number>\";")?;
-      writeln!(indented_writer, "inherits: {inherits};")?;
-      writeln!(indented_writer, "initial-value: {alpha};")?;
-      write!(writer, "{}", indented_writer.get_ref())?;
-      writeln!(writer, "}}")?;
-
-      options
-        .color_format
-        .get_color_value_with_opacity(config, self, None)?
+      if with_opacity {
+        writeln!(writer, "@property {opacity_variable} {{")?;
+        let mut indented_writer = indent_writer();
+        writeln!(indented_writer, "syntax: \"<number>\";")?;
+        writeln!(indented_writer, "inherits: {inherits};")?;
+        writeln!(indented_writer, "initial-value: {alpha};")?;
+        write!(writer, "{}", indented_writer.get_ref())?;
+        writeln!(writer, "}}")?;
+        options
+          .color_format
+          .get_color_value_with_opacity(config, self, None)?
+      } else {
+        options.color_format.get_color_value(config, self, None)?
+      }
     } else {
       let default_initial_value = "/* */".into();
       Placeholder::normalize(

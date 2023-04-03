@@ -24,6 +24,62 @@ pub enum ColorFormat {
 
 impl ColorFormat {
   /// Doesn't currently check if this is a color.
+  pub fn get_color_value(
+    &self,
+    config: &RunnerConfig,
+    css_variable: &CssVariable,
+    initial_value: Option<&String>,
+  ) -> crate::Result<String> {
+    let initial_value = if let Some(initial_value) = initial_value {
+      initial_value.clone()
+    } else {
+      css_variable
+        .value
+        .as_ref()
+        .map(|value| Placeholder::normalize(value, config))
+        .ok_or(Error::InvalidCssVariable(css_variable.name.clone()))?
+    };
+
+    match self {
+      Self::Hex => {
+        let color = initial_value
+          .parse::<Color>()
+          .map_err(Error::from)?
+          .into_hex()
+          .to_string();
+
+        Ok(color)
+      }
+      Self::Rgb => {
+        let color = initial_value
+          .parse::<Color>()
+          .map_err(Error::from)?
+          .into_rgb()
+          .to_string();
+
+        Ok(color)
+      }
+      Self::Hsl => {
+        let color = initial_value
+          .parse::<Color>()
+          .map_err(Error::from)?
+          .into_hsl()
+          .to_string();
+
+        Ok(color)
+      }
+      Self::Hwb => {
+        let color = initial_value
+          .parse::<Color>()
+          .map_err(Error::from)?
+          .into_hwb()
+          .to_string();
+
+        Ok(color)
+      }
+    }
+  }
+
   pub fn get_color_value_with_opacity(
     &self,
     config: &RunnerConfig,

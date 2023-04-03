@@ -93,7 +93,7 @@ impl Classes {
         continue;
       };
 
-      css_variable.write_property_rule(writer, config)?;
+      css_variable.write_property_rule(writer, config, true)?;
     }
 
     // TODO think about how to handle the nested css variables in media queries
