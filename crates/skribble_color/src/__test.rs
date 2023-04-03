@@ -228,3 +228,59 @@ fn from_hwb_alpha() {
   let hwb: Color = r.parse().unwrap();
   insta::assert_display_snapshot!(hwb, @"hwb(100 50% 50% / 0.1)");
 }
+
+#[test]
+fn from_lch() {
+  let r = "lch(29.2345% 44.2 27)";
+  let lch: Color = r.parse().unwrap();
+  insta::assert_display_snapshot!(lch, @"lch(29.2345% 44.2 27)");
+}
+
+#[test]
+fn from_lch_alpha() {
+  let r = "lch(52.2345% 72.2 56.2 / .5)";
+  let lch: Color = r.parse().unwrap();
+  insta::assert_display_snapshot!(lch, @"lch(52.2345% 72.2 56.2 / 0.5)");
+}
+
+#[test]
+fn from_oklch() {
+  let r = "oklch(29.2345% 44.2 27)";
+  let oklch: Color = r.parse().unwrap();
+  insta::assert_display_snapshot!(oklch, @"oklch(29.2345% 44.2 27)");
+}
+
+#[test]
+fn from_oklch_alpha() {
+  let r = "oklch(52.2345% 72.2 56.2 / .5)";
+  let oklch: Color = r.parse().unwrap();
+  insta::assert_display_snapshot!(oklch, @"oklch(52.2345% 72.2 56.2 / 0.5)");
+}
+
+#[test]
+fn from_lab() {
+  let r = "lab(29.2345% 39.3825 20.0664)";
+  let lab: Color = r.parse().unwrap();
+  insta::assert_display_snapshot!(lab, @"lab(29.2345% 39.3825 20.0664)");
+}
+
+#[test]
+fn from_lab_alpha() {
+  let r = "lab(52.2345% 40.1645 59.9971 / .5)";
+  let lab: Color = r.parse().unwrap();
+  insta::assert_display_snapshot!(lab, @"lab(52.2345% 40.1645 59.9971 / 0.5)");
+}
+
+#[test]
+fn from_oklab() {
+  let r = "oklab(29.2345% 39.3825 20.0664)";
+  let oklab: Color = r.parse().unwrap();
+  insta::assert_display_snapshot!(oklab, @"oklab(29.2345% 39.3825 20.0664)");
+}
+
+#[test]
+fn from_oklab_alpha() {
+  let r = "oklab(52.2345% 40.1645 59.9971 / .5)";
+  let oklab: Color = r.parse().unwrap();
+  insta::assert_display_snapshot!(oklab, @"oklab(52.2345% 40.1645 59.9971 / 0.5)");
+}

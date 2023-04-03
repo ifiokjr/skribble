@@ -20,6 +20,14 @@ pub enum ColorFormat {
   Hsl,
   #[serde(rename = "hwb")]
   Hwb,
+  #[serde(rename = "lch")]
+  Lch,
+  #[serde(rename = "oklch")]
+  Oklch,
+  #[serde(rename = "lab")]
+  Lab,
+  #[serde(rename = "oklab")]
+  Oklab,
 }
 
 impl ColorFormat {
@@ -73,6 +81,42 @@ impl ColorFormat {
           .parse::<Color>()
           .map_err(Error::from)?
           .into_hwb()
+          .to_string();
+
+        Ok(color)
+      }
+      Self::Lch => {
+        let color = initial_value
+          .parse::<Color>()
+          .map_err(Error::from)?
+          .into_lch()
+          .to_string();
+
+        Ok(color)
+      }
+      Self::Oklch => {
+        let color = initial_value
+          .parse::<Color>()
+          .map_err(Error::from)?
+          .into_oklch()
+          .to_string();
+
+        Ok(color)
+      }
+      Self::Lab => {
+        let color = initial_value
+          .parse::<Color>()
+          .map_err(Error::from)?
+          .into_lab()
+          .to_string();
+
+        Ok(color)
+      }
+      Self::Oklab => {
+        let color = initial_value
+          .parse::<Color>()
+          .map_err(Error::from)?
+          .into_oklab()
           .to_string();
 
         Ok(color)
@@ -134,6 +178,42 @@ impl ColorFormat {
 
         Ok(color)
       }
+      Self::Lch => {
+        let color = initial_value
+          .parse::<Color>()
+          .map_err(Error::from)?
+          .into_lch()
+          .to_string_with_opacity(wrap_css_variable(opacity_variable, None));
+
+        Ok(color)
+      }
+      Self::Oklch => {
+        let color = initial_value
+          .parse::<Color>()
+          .map_err(Error::from)?
+          .into_oklch()
+          .to_string_with_opacity(wrap_css_variable(opacity_variable, None));
+
+        Ok(color)
+      }
+      Self::Lab => {
+        let color = initial_value
+          .parse::<Color>()
+          .map_err(Error::from)?
+          .into_lab()
+          .to_string_with_opacity(wrap_css_variable(opacity_variable, None));
+
+        Ok(color)
+      }
+      Self::Oklab => {
+        let color = initial_value
+          .parse::<Color>()
+          .map_err(Error::from)?
+          .into_oklab()
+          .to_string_with_opacity(wrap_css_variable(opacity_variable, None));
+
+        Ok(color)
+      }
     }
   }
 }
@@ -145,6 +225,10 @@ impl AsRef<str> for ColorFormat {
       Self::Rgb => "rgb",
       Self::Hsl => "hsl",
       Self::Hwb => "hwb",
+      Self::Lch => "lch",
+      Self::Oklch => "oklch",
+      Self::Lab => "lab",
+      Self::Oklab => "oklab",
     }
   }
 }
@@ -156,6 +240,10 @@ impl<T: Into<String>> From<T> for ColorFormat {
       "rgb" => Self::Rgb,
       "hsl" => Self::Hsl,
       "hwb" => Self::Hwb,
+      "lch" => Self::Lch,
+      "oklch" => Self::Oklch,
+      "lab" => Self::Lab,
+      "oklab" => Self::Oklab,
       _ => Self::Hsl,
     }
   }
