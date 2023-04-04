@@ -68,7 +68,8 @@ fn classes_with_keyframes() -> AnyEmptyResult {
     ClassFactory::from_string(runner_config, "screen:animate:$spin"),
   ]);
   classes.sort_by_class();
-  insta::assert_display_snapshot!(classes.to_skribble_css(runner_config)?);
+  let css = classes.to_skribble_css(runner_config)?;
+  insta::assert_display_snapshot!(css);
 
   Ok(())
 }

@@ -60,6 +60,10 @@ pub struct Options {
   #[serde(default = "default_hex_color")]
   #[builder(default = default_hex_color(), setter(into))]
   pub default_color: String,
+  /// Whether to minify the generated stylesheet.
+  #[serde(default)]
+  #[builder(default)]
+  pub minify: bool,
 }
 
 impl Default for Options {

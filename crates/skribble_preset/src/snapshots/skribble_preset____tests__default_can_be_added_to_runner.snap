@@ -5676,5 +5676,6 @@ RunnerConfig {
         variable_prefix: "sk",
         opacity_prefix: "opacity",
         default_color: "#000000",
+        minify: false,
     },
 }
