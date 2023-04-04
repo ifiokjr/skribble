@@ -23,25 +23,25 @@ pub enum Error {
   PluginMutateConfigError {
     id: String,
     #[source]
-    source: Box<dyn std::error::Error>,
+    source: AnyError,
   },
   #[error("something went wrong with the plugin: `{id}` while reading options in `read_options`")]
   PluginReadConfigError {
     id: String,
     #[source]
-    source: Box<dyn std::error::Error>,
+    source: AnyError,
   },
   #[error("something went wrong with the plugin: `{id}` while generating code in `generate_code`")]
   PluginGenerateCodeError {
     id: String,
     #[source]
-    source: Box<dyn std::error::Error>,
+    source: AnyError,
   },
   #[error("something went wrong while generating css in the plugin: `{id}`")]
   PluginScanCodeError {
     id: String,
     #[source]
-    source: Box<dyn std::error::Error>,
+    source: AnyError,
   },
   #[error(
     "the runner has not generated the merged config yet, make sure to run `run()` before \
@@ -56,4 +56,8 @@ pub enum Error {
   FileScanError(#[source] AnyError),
   #[error("something went wrong while reading the file: `{0}`")]
   FileReadError(PathBuf, #[source] std::io::Error),
+  #[error("generating the css failed")]
+  GenerateCssError(#[source] AnyError),
+  #[error("generating the css with lightning css failed")]
+  LightningCssError,
 }

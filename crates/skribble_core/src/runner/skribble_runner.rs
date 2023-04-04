@@ -2,6 +2,12 @@ use std::path::Path;
 use std::sync::Arc;
 use std::sync::Mutex;
 
+use lightningcss::stylesheet::MinifyOptions;
+use lightningcss::stylesheet::ParserOptions;
+use lightningcss::stylesheet::PrinterOptions;
+use lightningcss::stylesheet::StyleSheet;
+use lightningcss::stylesheet::ToCssResult;
+
 use super::generate_merged_config;
 use super::walk_directory;
 use super::RunnerConfig;
@@ -12,6 +18,7 @@ use crate::Options;
 use crate::PluginConfig;
 use crate::Result;
 use crate::StyleConfig;
+use crate::ToSkribbleCss;
 use crate::WrappedPlugin;
 
 pub struct SkribbleRunner {
@@ -90,7 +97,7 @@ impl SkribbleRunner {
     Ok(generated_files)
   }
 
-  pub fn scan(&self, cwd: impl AsRef<Path>) -> Result<Classes> {
+  pub fn scan(&self, cwd: impl AsRef<Path>) -> Result<ToCssResult> {
     let Some(ref config) = self.config else {
       return Err(Error::RunnerNotSetup);
     };
@@ -117,8 +124,23 @@ impl SkribbleRunner {
         classes.merge(scanned);
       }
     }
+    let parser_options = ParserOptions::default();
+    let mut printer_options = PrinterOptions::default();
+    printer_options.minify = self.options.minify;
+    let css = classes
+      .to_skribble_css(config)
+      .map_err(Error::GenerateCssError)?;
+    let css_reference: &'static mut str = Box::leak(css.into_boxed_str());
+    let mut stylesheet =
+      StyleSheet::parse(css_reference, parser_options).map_err(|_| Error::LightningCssError)?;
+    stylesheet
+      .minify(MinifyOptions::default())
+      .map_err(|_| Error::LightningCssError)?;
+    let result = stylesheet
+      .to_css(printer_options)
+      .map_err(|_| Error::LightningCssError)?;
 
-    Ok(classes)
+    Ok(result)
   }
 
   fn generate_plugin_config(&self) -> Result<PluginConfig> {
