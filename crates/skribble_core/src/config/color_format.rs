@@ -8,9 +8,12 @@ use crate::Error;
 use crate::Placeholder;
 use crate::RunnerConfig;
 
-/// ColorFormat is used to determine the default format of the colors.
+/// ColorFormat is used to determine the default format of the colors. The
+/// integration with lightning css may cause this to be overridden in the
+/// generated css.
 #[derive(Clone, Copy, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub enum ColorFormat {
+  /// Produce the color in hex format.
   #[serde(rename = "hex")]
   Hex,
   #[serde(rename = "rgb")]

@@ -124,9 +124,14 @@ impl SkribbleRunner {
         classes.merge(scanned);
       }
     }
-    let parser_options = ParserOptions::default();
-    let mut printer_options = PrinterOptions::default();
-    printer_options.minify = self.options.minify;
+    let parser_options = ParserOptions {
+      filename: "skribble.css".into(),
+      ..Default::default()
+    };
+    let printer_options = PrinterOptions {
+      minify: self.options.minify,
+      ..Default::default()
+    };
     let css = classes
       .to_skribble_css(config)
       .map_err(Error::GenerateCssError)?;

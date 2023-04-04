@@ -1,21 +1,36 @@
+doc_comment::doctest!("../readme.md");
+
 use std::f32::consts::PI;
 use std::fmt::Display;
 use std::str::FromStr;
 
 use lazy_static::lazy_static;
-use palette::rgb::Rgba;
-use palette::FromColor;
-use palette::Hsla;
-use palette::Hwba;
-use palette::LabHue;
-use palette::Laba;
-use palette::Lcha;
-use palette::OklabHue;
-use palette::Oklaba;
-use palette::Oklcha;
-use palette::RgbHue;
+pub use palette; // Re-export palette
+pub use palette::rgb::Rgba;
+pub use palette::FromColor;
+pub use palette::Hsla;
+pub use palette::Hwba;
+pub use palette::LabHue;
+pub use palette::Laba;
+pub use palette::Lcha;
+pub use palette::OklabHue;
+pub use palette::Oklaba;
+pub use palette::Oklcha;
+pub use palette::RgbHue;
 use regex::Regex;
 
+/// This enum represents a color in any of the supported css color formats.
+///
+/// The currently supported formats are:
+///
+/// - `hex` which is a 6 digit hex value with an optional alpha channel
+/// - [`rgb`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/rgb)
+/// - [`hsl`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hsl)
+/// - [`hwb`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/hwb)
+/// - [`lch`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/lch)
+/// - [`oklch`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/oklch)
+/// - [`lab`](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/lab)
+/// - [`oklab`](https://bottosson.github.io/posts/oklab/)
 #[cfg_attr(
   feature = "serde",
   derive(::serde::Serialize, ::serde::Deserialize),
@@ -34,7 +49,8 @@ pub enum Color {
 }
 
 impl Color {
-  /// Returns the color as a HEX value.
+  /// Returns the color as a HEX value. Will remain unchanged if the color is
+  /// already in the HEX format.
   pub fn into_hex(self) -> Self {
     match self {
       Self::Hex(_) => self,
@@ -48,7 +64,8 @@ impl Color {
     }
   }
 
-  /// Returns the color as an RGB value.
+  /// Returns the color as an RGB value. Will remain unchanged if the color is
+  /// already in the RGB format.
   pub fn into_rgb(self) -> Self {
     match self {
       Self::Hex(rgba) => Self::Rgb(rgba),
@@ -62,7 +79,8 @@ impl Color {
     }
   }
 
-  /// Returns the color as an HSL value.
+  /// Returns the color as an HSL value. Will remain unchanged if the color is
+  /// already in the HSL format.
   pub fn into_hsl(self) -> Self {
     match self {
       Self::Hex(rgb) => Self::Hsl(Hsla::from_color(rgb)),
@@ -76,7 +94,8 @@ impl Color {
     }
   }
 
-  /// Returns the color as an HWB value.
+  /// Returns the color as an HWB value. Will remain unchanged if the color is
+  /// already in the HWB format.
   pub fn into_hwb(self) -> Self {
     match self {
       Self::Hex(rgb) => Self::Hwb(Hwba::from_color(rgb)),
@@ -90,6 +109,8 @@ impl Color {
     }
   }
 
+  /// Returns the color as an LCH value. Will remain unchanged if the color is
+  /// already in the LCH format.
   pub fn into_lch(self) -> Self {
     match self {
       Self::Hex(rgb) => Self::Lch(Lcha::from_color(rgb)),
@@ -103,6 +124,8 @@ impl Color {
     }
   }
 
+  /// Returns the color as an OKLCH value. Will remain unchanged if the color is
+  /// already in the OKLCH format.
   pub fn into_oklch(self) -> Self {
     match self {
       Self::Hex(rgb) => Self::Oklch(Oklcha::from_color(rgb)),
@@ -116,6 +139,8 @@ impl Color {
     }
   }
 
+  /// Returns the color as an LAB value. Will remain unchanged if the color is
+  /// already in the LAB format.
   pub fn into_lab(self) -> Self {
     match self {
       Self::Hex(rgb) => Self::Lab(Laba::from_color(rgb)),
@@ -129,6 +154,8 @@ impl Color {
     }
   }
 
+  /// Returns the color as an OKLAB value. Will remain unchanged if the color is
+  /// already in the OKLAB format.
   pub fn into_oklab(self) -> Self {
     match self {
       Self::Hex(rgb) => Self::Oklab(Oklaba::from_color(rgb)),
@@ -142,6 +169,152 @@ impl Color {
     }
   }
 
+  /// Get a reference to the inner hex value if the current color is in the hex
+  /// format.
+  pub fn get_hex(&self) -> Option<&Rgba> {
+    match self {
+      Self::Hex(ref rgba) => Some(rgba),
+      _ => None,
+    }
+  }
+
+  /// Get a mutable reference to the inner hex value if the current color is in
+  /// the hex format.
+  pub fn get_hex_mut(&mut self) -> Option<&mut Rgba> {
+    match self {
+      Self::Hex(ref mut rgba) => Some(rgba),
+      _ => None,
+    }
+  }
+
+  /// Get a reference to the inner rgb value if the current color is in the rgb
+  /// format.
+  pub fn get_rgb(&self) -> Option<&Rgba> {
+    match self {
+      Self::Rgb(ref rgba) => Some(rgba),
+      _ => None,
+    }
+  }
+
+  /// Get a mutable reference to the inner rgb value if the current color is in
+  /// the rgb format.
+  pub fn get_rgb_mut(&mut self) -> Option<&mut Rgba> {
+    match self {
+      Self::Rgb(ref mut rgba) => Some(rgba),
+      _ => None,
+    }
+  }
+
+  /// Get a reference to the inner hsl value if the current color is in the hsl
+  /// format.
+  pub fn get_hsl(&self) -> Option<&Hsla> {
+    match self {
+      Self::Hsl(ref hsla) => Some(hsla),
+      _ => None,
+    }
+  }
+
+  /// Get a mutable reference to the inner hsl value if the current color is in
+  /// the hsl format.
+  pub fn get_hsl_mut(&mut self) -> Option<&mut Hsla> {
+    match self {
+      Self::Hsl(ref mut hsla) => Some(hsla),
+      _ => None,
+    }
+  }
+
+  /// Get a reference to the inner hwb value if the current color is in the hwb
+  /// format.
+  pub fn get_hwb(&self) -> Option<&Hwba> {
+    match self {
+      Self::Hwb(ref hwba) => Some(hwba),
+      _ => None,
+    }
+  }
+
+  /// Get a mutable reference to the inner hwb value if the current color is in
+  /// the hwb format.
+  pub fn get_hwb_mut(&mut self) -> Option<&mut Hwba> {
+    match self {
+      Self::Hwb(ref mut hwba) => Some(hwba),
+      _ => None,
+    }
+  }
+
+  /// Get a reference to the inner lch value if the current color is in the lch
+  /// format.
+  pub fn get_lch(&self) -> Option<&Lcha> {
+    match self {
+      Self::Lch(ref lch) => Some(lch),
+      _ => None,
+    }
+  }
+
+  /// Get a mutable reference to the inner lch value if the current color is in
+  /// the lch format.
+  pub fn get_lch_mut(&mut self) -> Option<&mut Lcha> {
+    match self {
+      Self::Lch(ref mut lch) => Some(lch),
+      _ => None,
+    }
+  }
+
+  /// Get a reference to the inner oklch value if the current color is in the
+  /// oklch format.
+  pub fn get_oklch(&self) -> Option<&Oklcha> {
+    match self {
+      Self::Oklch(ref oklch) => Some(oklch),
+      _ => None,
+    }
+  }
+
+  /// Get a mutable reference to the inner oklch value if the current color is
+  /// in the oklch format.
+  pub fn get_oklch_mut(&mut self) -> Option<&mut Oklcha> {
+    match self {
+      Self::Oklch(ref mut oklch) => Some(oklch),
+      _ => None,
+    }
+  }
+
+  /// Get a reference to the inner lab value if the current color is in the lab
+  /// format.
+  pub fn get_lab(&self) -> Option<&Laba> {
+    match self {
+      Self::Lab(ref lab) => Some(lab),
+      _ => None,
+    }
+  }
+
+  /// Get a mutable reference to the inner lab value if the current color is in
+  /// the lab format.
+  pub fn get_lab_mut(&mut self) -> Option<&mut Laba> {
+    match self {
+      Self::Lab(ref mut lab) => Some(lab),
+      _ => None,
+    }
+  }
+
+  /// Get a reference to the inner oklab value if the current color is in the
+  /// oklab format.
+  pub fn get_oklab(&self) -> Option<&Oklaba> {
+    match self {
+      Self::Oklab(ref oklab) => Some(oklab),
+      _ => None,
+    }
+  }
+
+  /// Get a mutable reference to the inner oklab value if the current color is
+  /// in the oklab format.
+  pub fn get_oklab_mut(&mut self) -> Option<&mut Oklaba> {
+    match self {
+      Self::Oklab(ref mut oklab) => Some(oklab),
+      _ => None,
+    }
+  }
+
+  /// This is used in the `skribble_core` library to create a string value with
+  /// a custom opacity `css_variable`
   pub fn to_string_with_opacity(&self, opacity_variable: impl AsRef<str>) -> String {
     let opacity_variable = opacity_variable.as_ref();
 
@@ -157,6 +330,8 @@ impl Color {
     }
   }
 
+  /// Get the alpha value of the current color as an [`f32`] value between `0.0`
+  /// and `1.0`.
   pub fn alpha(&self) -> f32 {
     match self {
       Self::Hex(ref rgba) => rgba.alpha,

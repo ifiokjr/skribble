@@ -15,6 +15,7 @@ rust-version = { workspace = true }
 description = "convert between different supported css color formats using the palette crate"
 
 [dependencies]
+doc-comment = { workspace = true }
 lazy_static = { workspace = true }
 palette = { workspace = true, features = ["serializing"] }
 regex = { workspace = true }
