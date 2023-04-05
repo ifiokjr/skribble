@@ -37,6 +37,7 @@ impl Plugin for PresetDefault {
         "This plugin provides a default preset for Skribble which is similar to `tailwind`, \
          `windi` and `unocss`.",
       )
+      .version(crate_version!())
       .build()
   }
 

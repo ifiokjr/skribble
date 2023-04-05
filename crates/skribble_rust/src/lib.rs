@@ -15,6 +15,7 @@ use indoc::indoc;
 use scan::scan;
 use serde::Deserialize;
 use serde::Serialize;
+use skribble_core::crate_version;
 use skribble_core::AnyResult;
 use skribble_core::Classes;
 use skribble_core::GeneratedFile;
@@ -55,6 +56,7 @@ impl Plugin for RustPlugin {
       .description(
         "This plugin provides support for generating rust code from your `skribble` configuration.",
       )
+      .version(crate_version!())
       .build()
   }
 

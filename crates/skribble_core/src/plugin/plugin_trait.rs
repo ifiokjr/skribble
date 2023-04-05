@@ -32,6 +32,10 @@ pub struct PluginData {
   #[serde(default)]
   #[builder(default, setter(into, strip_option))]
   pub description: Option<String>,
+  /// Store the version of the plugin.
+  #[serde(default)]
+  #[builder(default, setter(into, strip_option))]
+  pub version: Option<String>,
 }
 
 pub trait Plugin {
