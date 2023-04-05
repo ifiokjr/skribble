@@ -1,3 +1,4 @@
+use std::hash::Hash;
 use std::path::Path;
 
 use serde::Deserialize;
@@ -13,7 +14,7 @@ use crate::runner::RunnerConfig;
 use crate::Classes;
 
 /// Used to read the data for each plugin.
-#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize, TypedBuilder)]
+#[derive(Debug, Clone, Serialize, Deserialize, TypedBuilder)]
 pub struct PluginData {
   /// Store the globs for files supported by the plugin. This is only relevant
   /// if the plugin is scanning files.
@@ -36,6 +37,21 @@ pub struct PluginData {
   #[serde(default)]
   #[builder(default, setter(into, strip_option))]
   pub version: Option<String>,
+}
+
+impl PartialEq for PluginData {
+  fn eq(&self, other: &Self) -> bool {
+    self.id == other.id && self.version == other.version
+  }
+}
+
+impl Eq for PluginData {}
+
+impl Hash for PluginData {
+  fn hash<H: std::hash::Hasher>(&self, state: &mut H) {
+    self.id.hash(state);
+    self.version.hash(state);
+  }
 }
 
 pub trait Plugin {

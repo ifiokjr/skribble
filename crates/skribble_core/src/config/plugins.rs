@@ -1,5 +1,9 @@
+use std::hash::Hash;
+use std::hash::Hasher;
+
 use derive_more::Deref;
 use derive_more::DerefMut;
+use indexmap::indexset;
 use serde::Serialize;
 use typed_builder::TypedBuilder;
 
@@ -14,6 +18,20 @@ pub(crate) struct WrappedPlugin {
   #[deref_mut(forward)]
   plugin: BoxedPlugin,
   data: PluginData,
+}
+
+impl PartialEq for WrappedPlugin {
+  fn eq(&self, other: &Self) -> bool {
+    self.data == other.data
+  }
+}
+
+impl Eq for WrappedPlugin {}
+
+impl Hash for WrappedPlugin {
+  fn hash<H: Hasher>(&self, state: &mut H) {
+    self.data.hash(state);
+  }
 }
 
 impl WrappedPlugin {
@@ -34,13 +52,13 @@ impl Plugins {
 
   /// Remove the the container plugins.
   pub(crate) fn extract_plugins(self) -> Vec<WrappedPlugin> {
-    let mut plugins = vec![];
+    let mut plugins = indexset![];
 
     for container in self.into_iter() {
-      plugins.push(container.extract_plugin());
+      plugins.insert(container.extract_plugin());
     }
 
-    plugins
+    plugins.into_iter().collect::<Vec<WrappedPlugin>>()
   }
 }
 
