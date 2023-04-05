@@ -15,6 +15,7 @@ rust-version = { workspace = true }
 description = "This plugin provides support for generating rust code from your `skribble` configuration."
 
 [dependencies]
+doc-comment = { workspace = true }
 heck = { workspace = true }
 indexmap = { workspace = true }
 indoc = { workspace = true }

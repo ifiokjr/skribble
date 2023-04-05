@@ -1,3 +1,6 @@
+#![deny(clippy::all)]
+#![forbid(clippy::indexing_slicing)]
+
 doc_comment::doctest!("../readme.md");
 
 use std::f32::consts::PI;

@@ -1,6 +1,8 @@
 #![deny(clippy::all)]
 #![deny(clippy::indexing_slicing)]
 
+doc_comment::doctest!("../readme.md");
+
 use std::path::Path;
 use std::process::Command;
 use std::process::Stdio;

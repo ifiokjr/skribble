@@ -1,6 +1,7 @@
 #![deny(clippy::all)]
 #![forbid(clippy::indexing_slicing)]
 
+doc_comment::doctest!("../readme.md");
 pub use config::*;
 pub use constants::*;
 pub use css::*;

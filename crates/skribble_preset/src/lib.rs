@@ -1,6 +1,8 @@
 #![deny(clippy::all)]
 #![forbid(clippy::indexing_slicing)]
 
+doc_comment::doctest!("../readme.md");
+
 use data::*;
 use enums::*;
 use serde::Deserialize;

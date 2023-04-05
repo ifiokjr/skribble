@@ -17,6 +17,7 @@ description = "Core features for the skribble atomic css library"
 [dependencies]
 derivative = { workspace = true }
 derive_more = { workspace = true }
+doc-comment = { workspace = true }
 globset = { workspace = true }
 heck = { workspace = true }
 indent_write = { workspace = true }
@@ -30,6 +31,7 @@ serde_json = { workspace = true }
 skribble_color = { workspace = true, features = ["serde"] }
 thiserror = { workspace = true }
 typed-builder = { workspace = true }
+vfs = { workspace = true }
 walkdir = { workspace = true }
 
 [dev-dependencies]

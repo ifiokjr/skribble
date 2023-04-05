@@ -14,6 +14,7 @@ rust-version = { workspace = true }
 description = "This plugin provides a default preset for Skribble which is similar to `tailwind`, `windi` and `unocss`."
 
 [dependencies]
+doc-comment = { workspace = true }
 heck = { workspace = true }
 indexmap = { workspace = true }
 lazy_static = { workspace = true }
