@@ -42,6 +42,7 @@ pub fn format_css_string(value: impl AsRef<str>) -> String {
 
     alpha.push(ch.to_string())
   }
+
   if !alpha.is_empty() {
     parts.push(alpha.join("").to_kebab_case());
     alpha.clear();

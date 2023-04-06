@@ -1,286 +1,88 @@
+use pretty_assertions::assert_eq;
+use rstest::*;
+
 use crate::Color;
+use crate::ColorError;
+use crate::ExtractedParams;
 
-#[test]
-fn from_hex_3() {
-  let r = "#fff";
-  let rgb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(rgb, @"#ffffff");
+#[rstest]
+#[case("20  , 20, 10, 10 ", ("20,20,10,10", true, false, true))]
+#[case("20 20   10 /  50", ("20,20,10,50", false, true, true))]
+#[case("20,20,10,10", ("20,20,10,10", true, false, true))]
+#[case("20,20,10", ("20,20,10", true, false, false))]
+#[case("20 20 10", ("20,20,10", false, false, false))]
+#[case("20 20 10/10", ("20,20,10,10", false, true, true))]
+fn valid_extracted_params(#[case] input: &str, #[case] expected: (&str, bool, bool, bool)) {
+  let extracted: ExtractedParams = input.into();
+  assert_eq!(extracted.params.join(","), expected.0);
+  assert_eq!(extracted.is_comma_separated(), expected.1);
+  assert_eq!(extracted.is_slash_separated(), expected.2);
+  assert_eq!(extracted.is_alpha(), expected.3);
+  assert_eq!(extracted.is_valid(), true);
 }
 
-#[test]
-fn from_hex_4() {
-  let r = "#fff6";
-  let rgb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(rgb, @"#ffffff66");
+#[rstest]
+#[case("20, 20 10 / 10")]
+#[case("20, 20, 10  10")]
+#[case("20,, 20, 10  10")]
+#[case("20, 20, 10, ")]
+#[case("20 20 10 // 10")]
+#[case("20 / 20 10 10")]
+#[case("20 20 10 10/")]
+fn invalid_extracted_params(#[case] input: &str) {
+  let extracted: ExtractedParams = input.into();
+  assert_eq!(extracted.is_valid(), false);
 }
 
-#[test]
-fn from_hex_6() {
-  let r = "#b1ffb0";
-  let rgb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(rgb, @"#b1ffb0");
+#[rstest]
+#[case("#fff", "#ffffff")]
+#[case("#fff6", "#ffffff66")]
+#[case("#b1ffb0", "#b1ffb0")]
+#[case("#b1ffb0b7", "#b1ffb0b7")]
+#[case("b1ffb0b7", "#b1ffb0b7")]
+#[case("rgb(100, 2, 41)", "rgb(100 2 41)")]
+#[case("rgb(100 2 41)", "rgb(100 2 41)")]
+#[case("rgb(100 2 41 / 0.5)", "rgb(100 2 41 / 0.5)")]
+#[case("rgb(100 2 41 / 50%)", "rgb(100 2 41 / 0.5)")]
+#[case("rgba(100, 2, 41, 0.5)", "rgb(100 2 41 / 0.5)")]
+#[case("rgba(100, 2, 41, .5)", "rgb(100 2 41 / 0.5)")]
+#[case("hsl(100, 50%, 50%)", "hsl(100 50% 50%)")]
+#[case("hsl(100 50% 50%)", "hsl(100 50% 50%)")]
+#[case("hsl(100 50% 50% / 0.5)", "hsl(100 50% 50% / 0.5)")]
+#[case("hsl(100 50% 50% / 50%)", "hsl(100 50% 50% / 0.5)")]
+#[case("hsla(100, 50%, 50%, 0.5)", "hsl(100 50% 50% / 0.5)")]
+#[case("hsla(100, 50%, 50%, .5)", "hsl(100 50% 50% / 0.5)")]
+#[case("hwb(100 50% 50%)", "hwb(100 50% 50%)")]
+#[case("hwb(100 50% 50% / 0.5)", "hwb(100 50% 50% / 0.5)")]
+#[case("hwb(100 50% 50% / 50%)", "hwb(100 50% 50% / 0.5)")]
+#[case("lch(61 53.12 259.4)", "lch(61% 35.413334% 259.4)")]
+#[case("lch(61 53.12 259.4 / 0.5)", "lch(61% 35.413334% 259.4 / 0.5)")]
+#[case("oklch(0.67 0.16 245.55)", "oklch(67% 39.999996% 245.55)")]
+#[case("oklch(0.67 0.16 245.55)", "oklch(67% 39.999996% 245.55)")]
+#[case("oklch(67% 0.16 245.55)", "oklch(67% 39.999996% 245.55)")]
+#[case("oklch(0.67 50% 245.55 / 0.79)", "oklch(67% 50% 245.55 / 0.79)")]
+#[case("lab(61 -9.8 -52.2)", "lab(61% -9.800003 -52.199997)")]
+#[case("lab(61 -9.8 -52.2 / 0.79)", "lab(61% -9.800003 -52.199997 / 0.79)")]
+#[case("lab(61 -9.8 -52.2 / 79%)", "lab(61% -9.800003 -52.199997 / 0.79)")]
+fn valid_colors(#[case] input: &str, #[case] expected: &str) {
+  let color: Color = input.parse().unwrap();
+  assert_eq!(color.to_string(), expected);
 }
 
-#[test]
-fn from_hex_8() {
-  let r = "#b1ffb0b7";
-  let rgb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(rgb, @"#b1ffb0b7");
-}
-
-#[test]
-fn invalid_hex() {
-  let r = "#1ffb0b7";
-  let error = r.parse::<Color>().unwrap_err();
-  insta::assert_debug_snapshot!(error, @r###"
-    Invalid(
-        "hex",
-    )
-    "###);
-}
-
-#[test]
-fn from_rgb() {
-  let r = "rgb(100, 2, 41)";
-  let rgb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(rgb, @"rgb(100 2 41)");
-}
-
-#[test]
-fn from_rgba() {
-  let r = "rgba(100, 2, 41, 0.5)";
-  let rgb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(rgb, @"rgb(100 2 41 / 0.5)");
-}
-
-#[test]
-fn from_rgba_no_zero_in_alpha() {
-  let r = "rgba(100, 2, 41, .5)";
-  let rgb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(rgb, @"rgb(100 2 41 / 0.5)");
-}
-
-#[test]
-fn from_rgba_no_zero_in_percentage() {
-  let r = "rgba(100, 2, 41, .5%)";
-  let rgb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(rgb, @"rgb(100 2 41 / 0.005)");
-}
-
-#[test]
-fn from_rgba_percentage() {
-  let r = "rgba(100, 2, 41, 50%)";
-  let rgb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(rgb, @"rgb(100 2 41 / 0.5)");
-}
-
-#[test]
-fn from_rgb_css() {
-  let r = "rgb(100 2 41 / 0.5)";
-  let rgb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(rgb, @"rgb(100 2 41 / 0.5)");
-}
-
-#[test]
-fn from_rgb_css_alpha1() {
-  let r = "rgb(100 2 41 / 1)";
-  let rgb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(rgb, @"rgb(100 2 41)");
-}
-
-#[test]
-fn from_rgb_css_simple() {
-  let r = "rgb(100 2 41)";
-  let rgb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(rgb, @"rgb(100 2 41)");
-}
-
-#[test]
-fn from_rgb_css_percentage() {
-  let r = "rgb(100 2 41 / 50%)";
-  let rgb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(rgb, @"rgb(100 2 41 / 0.5)");
-}
-
-#[test]
-fn from_rgb_css_no_leading_zero_in_alpha() {
-  let r = "rgb(100 2 41 / .50)";
-  let rgb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(rgb, @"rgb(100 2 41 / 0.5)");
-}
-
-#[test]
-fn from_rgb_css_no_leading_zero_in_percentage() {
-  let r = "rgb(100 2 41 / .50%)";
-  let rgb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(rgb, @"rgb(100 2 41 / 0.005)");
-}
-
-#[test]
-fn invalid_rgb() {
-  let r = "rgba(100, 2 41 / 0.5)";
-  let error = r.parse::<Color>().unwrap_err();
-  insta::assert_debug_snapshot!(error, @r###"
-    Invalid(
-        "rgb",
-    )
-    "###);
-}
-
-#[test]
-fn from_hsl() {
-  let r = "hsl(100, 50%, 50%)";
-  let hsl: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(hsl, @"hsl(100 50% 50%)");
-}
-
-#[test]
-fn from_hsla() {
-  let r = "hsla(100, 50%, 50%, 0.5)";
-  let hsl: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(hsl, @"hsl(100 50% 50% / 0.5)");
-}
-
-#[test]
-fn from_hsla_no_zero_in_alpha() {
-  let r = "hsla(100, 50%, 50%, .5)";
-  let hsl: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(hsl, @"hsl(100 50% 50% / 0.5)");
-}
-
-#[test]
-fn from_hsla_no_zero_in_percentage() {
-  let r = "hsla(100, 50%, 50%, .5%)";
-  let hsl: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(hsl, @"hsl(100 50% 50% / 0.005)");
-}
-
-#[test]
-fn from_hsla_percentage() {
-  let r = "hsla(100, 50%, 50%, 50%)";
-  let hsl: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(hsl, @"hsl(100 50% 50% / 0.5)");
-}
-
-#[test]
-fn from_hsl_css() {
-  let r = "hsl(100 50% 50% / 0.5)";
-  let hsl: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(hsl, @"hsl(100 50% 50% / 0.5)");
-}
-
-#[test]
-fn from_hsl_css_alpha1() {
-  let r = "hsl(100 50% 50% / 1)";
-  let hsl: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(hsl, @"hsl(100 50% 50%)");
-}
-
-#[test]
-fn from_hsl_css_simple() {
-  let r = "hsl(100 50% 50%)";
-  let hsl: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(hsl, @"hsl(100 50% 50%)");
-}
-
-#[test]
-fn from_hsl_css_percentage() {
-  let r = "hsl(100 50% 50% / 50%)";
-  let hsl: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(hsl, @"hsl(100 50% 50% / 0.5)");
-}
-
-#[test]
-fn from_hsl_css_no_leading_zero_in_alpha() {
-  let r = "hsl(100 50% 50% / .50)";
-  let hsl: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(hsl, @"hsl(100 50% 50% / 0.5)");
-}
-
-#[test]
-fn from_hsl_css_no_leading_zero_in_percentage() {
-  let r = "hsl(100 50% 50% / .50%)";
-  let hsl: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(hsl, @"hsl(100 50% 50% / 0.005)");
-}
-
-#[test]
-fn invalid_hsl() {
-  let r = "hsl(100, 50% 50% / 0.5)";
-  let error = r.parse::<Color>().unwrap_err();
-  insta::assert_debug_snapshot!(error, @r###"
-    Invalid(
-        "hsl",
-    )
-    "###);
-}
-
-#[test]
-fn from_hwb() {
-  let r = "hwb(100 50% 50%)";
-  let hwb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(hwb, @"hwb(100 50% 50%)");
-}
-
-#[test]
-fn from_hwb_alpha() {
-  let r = "hwb(100 50% 50% / 10%)";
-  let hwb: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(hwb, @"hwb(100 50% 50% / 0.1)");
-}
-
-#[test]
-fn from_lch() {
-  let r = "lch(29.2345% 44.2 27)";
-  let lch: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(lch, @"lch(29.2345% 44.2 27)");
-}
-
-#[test]
-fn from_lch_alpha() {
-  let r = "lch(52.2345% 72.2 56.2 / .5)";
-  let lch: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(lch, @"lch(52.2345% 72.2 56.2 / 0.5)");
-}
-
-#[test]
-fn from_oklch() {
-  let r = "oklch(29.2345% 44.2 27)";
-  let oklch: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(oklch, @"oklch(29.2345% 44.2 27)");
-}
-
-#[test]
-fn from_oklch_alpha() {
-  let r = "oklch(52.2345% 72.2 56.2 / .5)";
-  let oklch: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(oklch, @"oklch(52.2345% 72.2 56.2 / 0.5)");
-}
-
-#[test]
-fn from_lab() {
-  let r = "lab(29.2345% 39.3825 20.0664)";
-  let lab: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(lab, @"lab(29.2345% 39.3825 20.0664)");
-}
-
-#[test]
-fn from_lab_alpha() {
-  let r = "lab(52.2345% 40.1645 59.9971 / .5)";
-  let lab: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(lab, @"lab(52.2345% 40.1645 59.9971 / 0.5)");
-}
-
-#[test]
-fn from_oklab() {
-  let r = "oklab(29.2345% 39.3825 20.0664)";
-  let oklab: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(oklab, @"oklab(29.2345% 39.3825 20.0664)");
-}
-
-#[test]
-fn from_oklab_alpha() {
-  let r = "oklab(52.2345% 40.1645 59.9971 / .5)";
-  let oklab: Color = r.parse().unwrap();
-  insta::assert_display_snapshot!(oklab, @"oklab(52.2345% 40.1645 59.9971 / 0.5)");
+#[rstest]
+#[case("#1", ColorError::InvalidHex)]
+#[case("#1b", ColorError::InvalidHex)]
+#[case("#1b0b7", ColorError::InvalidHex)]
+#[case("#1ffb0b7", ColorError::InvalidHex)]
+#[case("#1fz", ColorError::InvalidHex)]
+#[case("#1ffb0b7a3", ColorError::InvalidHex)]
+#[case("b1ffb0b7a", ColorError::InvalidUnknown)]
+#[case("rgb(100, 2 41 / 0.5)", ColorError::InvalidRgb)]
+#[case("rgb(100px 2 41 / 0.5)", ColorError::InvalidRgb)]
+#[case("hsl(100px 50% 50% / 0.5)", ColorError::InvalidHsl)]
+#[case("hwb(100, 50%, 50%, 0.5)", ColorError::InvalidHwb)]
+#[case("hwb(100px 50% 50% / 0.5)", ColorError::InvalidHwb)]
+fn invalid_colors(#[case] input: &str, #[case] expected: ColorError) {
+  let color = input.parse::<Color>();
+  assert_eq!(color.unwrap_err(), expected);
 }
