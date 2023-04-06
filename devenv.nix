@@ -62,7 +62,7 @@
   scripts."snapshot:review".exec = ''
     cargo insta review
   '';
-  scripts."test:snapshot".exec = ''
+  scripts."snapshot:update".exec = ''
     cargo nextest run
     cargo insta accept
   '';

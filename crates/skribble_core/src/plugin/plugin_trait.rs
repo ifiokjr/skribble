@@ -1,5 +1,4 @@
 use std::hash::Hash;
-use std::path::Path;
 
 use serde::Deserialize;
 use serde::Serialize;
@@ -85,8 +84,8 @@ pub trait Plugin {
   fn scan_code(
     &mut self,
     config: &RunnerConfig,
-    file_path: &Path,
-    bytes: Vec<u8>,
+    file_path: &str,
+    contents: &str,
   ) -> AnyResult<Classes> {
     Ok(Classes::default())
   }

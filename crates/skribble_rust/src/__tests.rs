@@ -15,7 +15,7 @@ fn default_can_be_added_to_runner() {
     ])
     .build();
 
-  let mut runner = SkribbleRunner::new(config, "/");
+  let mut runner = SkribbleRunner::new(config, "/", None);
   let _ = runner.initialize();
   let result = runner.generate().unwrap();
   let generated = result.first().unwrap();

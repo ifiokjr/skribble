@@ -57,7 +57,9 @@ pub enum Error {
   #[error("something went wrong while scanning the files")]
   FileScanError(#[source] AnyError),
   #[error("something went wrong while reading the file: `{0}`")]
-  FileReadError(PathBuf, #[source] std::io::Error),
+  FileReadError(String),
+  #[error("something went wrong while writing the file: `{0}`")]
+  FileWriteError(PathBuf),
   #[error("generating the css failed")]
   GenerateCssError(#[source] AnyError),
   #[error("generating the css with lightning css failed")]

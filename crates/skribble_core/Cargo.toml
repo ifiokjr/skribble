@@ -32,7 +32,6 @@ skribble_color = { workspace = true, features = ["serde"] }
 thiserror = { workspace = true }
 typed-builder = { workspace = true }
 vfs = { workspace = true }
-walkdir = { workspace = true }
 
 [dev-dependencies]
 insta = { features = ["json"], workspace = true }

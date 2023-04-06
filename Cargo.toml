@@ -26,7 +26,6 @@ syn = "2"
 thiserror = "1"
 typed-builder = "0.14"
 vfs = "0.9"
-walkdir = "2"
 
 # Internal crates
 skribble = { path = "./crates/skribble", version = "0.0.0" }

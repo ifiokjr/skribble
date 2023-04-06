@@ -3,7 +3,6 @@
 
 doc_comment::doctest!("../readme.md");
 
-use std::path::Path;
 use std::process::Command;
 use std::process::Stdio;
 
@@ -100,10 +99,10 @@ impl Plugin for RustPlugin {
   fn scan_code(
     &mut self,
     config: &RunnerConfig,
-    file_path: &Path,
-    bytes: Vec<u8>,
+    file_path: &str,
+    content: &str,
   ) -> AnyResult<Classes> {
-    scan(config, file_path, bytes)
+    scan(config, file_path, content)
   }
 }
 

@@ -1,5 +1,3 @@
-use std::path::Path;
-
 use skribble_core::AnyResult;
 use skribble_core::ClassFactory;
 use skribble_core::Classes;
@@ -87,11 +85,11 @@ fn read_tokens_from_expression(node: &syn::Expr, tokens: &mut Vec<String>) {
 
 pub(crate) fn scan(
   config: &RunnerConfig,
-  _file_path: impl AsRef<Path>,
-  bytes: Vec<u8>,
+  _file_path: impl AsRef<str>,
+  content: impl AsRef<str>,
 ) -> AnyResult<Classes> {
   let mut visitor = ScanVisitor::new(config);
-  let syntax_tree: File = syn::parse_str(String::from_utf8(bytes)?.as_str())?;
+  let syntax_tree: File = syn::parse_str(content.as_ref())?;
 
   visitor.visit_file(&syntax_tree);
 
@@ -124,7 +122,7 @@ mod tests {
 
     let mut runner = SkribbleRunner::try_new(config)?;
     let config = runner.initialize()?;
-    let code = br#"
+    let code = r#"
       pub fn foo() {
         let something = sk().p().px();
       }
@@ -140,7 +138,7 @@ mod tests {
         }
       }
     "#;
-    let classes = scan(config, "", code.to_vec())?;
+    let classes = scan(config, "", code)?;
 
     insta::assert_display_snapshot!(classes.to_skribble_css(config)?);
 
@@ -161,12 +159,12 @@ mod tests {
 
     let mut runner = SkribbleRunner::try_new(config)?;
     let config = runner.initialize()?;
-    let code = br#"
+    let code = r#"
       pub fn foo() {
         let something = sk().p().px;
       }
     "#;
-    let classes = scan(config, "", code.to_vec())?;
+    let classes = scan(config, "", code)?;
 
     insta::assert_display_snapshot!(classes.to_skribble_css(config)?);
 

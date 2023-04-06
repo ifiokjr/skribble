@@ -3,24 +3,21 @@ use std::path::Path;
 use globset::Glob;
 use globset::GlobSet;
 use globset::GlobSetBuilder;
-use walkdir::DirEntry;
-use walkdir::WalkDir;
+use vfs::VfsPath;
 
 use crate::AnyResult;
 
-fn is_match(entry: &DirEntry, include_set: &GlobSet, exclude_set: &GlobSet) -> bool {
-  entry
-    .path()
-    .to_str()
-    .map(|file_name| !exclude_set.is_match(file_name) && include_set.is_match(file_name))
-    .unwrap_or(false)
+fn is_match(file_path: impl AsRef<str>, include_set: &GlobSet, exclude_set: &GlobSet) -> bool {
+  let file_path = file_path.as_ref();
+  !exclude_set.is_match(file_path) && include_set.is_match(file_path)
 }
 
 /// Find all files in the given directory that match the given glob rules.
 pub(crate) fn walk_directory(
-  path: impl AsRef<Path>,
+  fs: &VfsPath,
+  _path: impl AsRef<Path>,
   glob_rules: &Vec<String>,
-) -> AnyResult<Vec<DirEntry>> {
+) -> AnyResult<Vec<VfsPath>> {
   let mut include_builder = GlobSetBuilder::new();
   let mut exclude_builder = GlobSetBuilder::new();
 
@@ -38,12 +35,13 @@ pub(crate) fn walk_directory(
   let include_set = include_builder.build()?;
   let exclude_set = exclude_builder.build()?;
 
-  let entries = WalkDir::new(path)
-    .into_iter()
-    .filter_map(Result::ok)
-    .filter(|entry| entry.file_type().is_file())
-    .filter(|entry| is_match(entry, &include_set, &exclude_set))
+  let entries = fs
+    .walk_dir()?
+    .filter_map(|entry| entry.ok())
+    .filter(|entry| entry.is_file().unwrap_or(false))
+    .filter(|entry| is_match(entry.as_str(), &include_set, &exclude_set))
     .collect::<Vec<_>>();
+  // .filter(|entry| entry.)
 
   Ok(entries)
 }

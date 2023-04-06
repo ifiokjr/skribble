@@ -8,6 +8,8 @@ use lightningcss::stylesheet::ParserOptions;
 use lightningcss::stylesheet::PrinterOptions;
 use lightningcss::stylesheet::StyleSheet;
 use lightningcss::stylesheet::ToCssResult;
+use vfs::PhysicalFS;
+use vfs::VfsPath;
 
 use super::generate_merged_config;
 use super::walk_directory;
@@ -27,10 +29,20 @@ pub struct SkribbleRunner {
   base_config: Arc<PluginConfig>,
   plugins: Arc<Mutex<Vec<WrappedPlugin>>>,
   config: Option<RunnerConfig>,
+  fs: Arc<VfsPath>,
 }
 
 impl SkribbleRunner {
-  pub fn new(config: StyleConfig, cwd: impl AsRef<Path>) -> Self {
+  /// Create a new [`SkribbleRunner`].
+  ///
+  /// # Arguments
+  ///
+  /// * `config` - The configuration for the runner.
+  /// * `cwd` - The current working directory.
+  /// * `vfs` - The virtual file system to use. If `None` is provided, it
+  ///   defaults to the physical file system. This is mainly used for testing.
+  pub fn new(config: StyleConfig, cwd: impl AsRef<Path>, vfs: Option<VfsPath>) -> Self {
+    let cwd = cwd.as_ref();
     let (mut options, wrapped_config, mut plugins) = config.into_wrapped_config();
     options.root = options.root.join(cwd);
     let options = Arc::new(options);
@@ -39,12 +51,15 @@ impl SkribbleRunner {
     // Extract the plugins from the config and sort them by priority.
     plugins.sort_by_priority();
     let plugins = Arc::new(Mutex::new(plugins.extract_plugins()));
+    let vfs = vfs.unwrap_or_else(|| PhysicalFS::new(cwd).into());
+    let fs = Arc::new(vfs);
 
     Self {
       options,
       base_config: config,
       plugins,
       config: None,
+      fs,
     }
   }
 
@@ -52,7 +67,7 @@ impl SkribbleRunner {
   /// inferred.
   pub fn try_new(config: StyleConfig) -> Result<Self> {
     let cwd = current_dir().map_err(|_| Error::CwdLookupError)?;
-    Ok(Self::new(config, cwd))
+    Ok(Self::new(config, cwd, None))
   }
 
   pub fn get_options(&self) -> &Options {
@@ -117,18 +132,20 @@ impl SkribbleRunner {
 
     let cwd = &config.options().root;
 
-    let entries = walk_directory(cwd, &self.options.files).map_err(Error::FileScanError)?;
+    let entries =
+      walk_directory(self.fs.as_ref(), cwd, &self.options.files).map_err(Error::FileScanError)?;
 
     let mut plugins = self.plugins.lock().unwrap();
     let mut classes = Classes::default();
 
     for entry in entries.iter() {
-      let path = entry.path();
-      let bytes = std::fs::read(entry.path())
-        .map_err(move |source| Error::FileReadError(path.to_path_buf(), source))?;
+      let path = entry.as_str();
+      let contents = entry
+        .read_to_string()
+        .map_err(|_| Error::FileReadError(entry.as_str().to_string()))?;
       for plugin in plugins.iter_mut() {
         let scanned = plugin
-          .scan_code(config, path, bytes.clone())
+          .scan_code(config, path, &contents)
           .map_err(|source| {
             Error::PluginScanCodeError {
               id: plugin.data().id.clone(),
@@ -139,6 +156,7 @@ impl SkribbleRunner {
         classes.merge(scanned);
       }
     }
+
     let parser_options = ParserOptions {
       filename: "skribble.css".into(),
       ..Default::default()
@@ -185,5 +203,34 @@ impl SkribbleRunner {
     let config = generate_merged_config(plugin_config, self.options.clone(), &self.base_config);
 
     self.config = Some(config);
+  }
+
+  pub fn write_files(&self, files: &GeneratedFiles) -> Result<()> {
+    for file in files.iter() {
+      let entry = self
+        .fs
+        .join(file.path.to_string_lossy())
+        .map_err(|_| Error::FileWriteError(file.path.clone()))?;
+      let mut writer = entry
+        .create_file()
+        .map_err(|_| Error::FileWriteError(file.path.clone()))?;
+      write!(writer, "{}", file.content).map_err(|_| Error::FileWriteError(file.path.clone()))?;
+    }
+
+    Ok(())
+  }
+
+  pub fn write_css(&self, css: &ToCssResult) -> Result<()> {
+    let css_file = self.options.output.to_string_lossy();
+    let entry = self
+      .fs
+      .join(&css_file)
+      .map_err(|_| Error::FileWriteError(css_file.as_ref().into()))?;
+    let mut writer = entry
+      .create_file()
+      .map_err(|_| Error::FileWriteError(css_file.as_ref().into()))?;
+    write!(writer, "{}", css.code).map_err(|_| Error::FileWriteError(css_file.as_ref().into()))?;
+
+    Ok(())
   }
 }
