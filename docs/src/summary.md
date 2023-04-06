@@ -2,7 +2,7 @@
 
 [Introduction](./readme.md)
 
-# User Guide
+# Rust Guide
 
-- [Installation](guide/installation.md)
-- [Creating a project](guide/creating.md)
+- [Installation](rust/installation.md)
+- [Setup](rust/setup.md)

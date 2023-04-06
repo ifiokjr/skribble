@@ -5654,7 +5654,7 @@ RunnerConfig {
     },
     _options: Options {
         output: "skribble.css",
-        root: "./",
+        root: "/Users/ifiokjr/Developer/projects/skribble/crates/skribble_preset",
         files: [
             "**",
         ],

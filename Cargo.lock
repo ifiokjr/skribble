@@ -1238,6 +1238,8 @@ version = "0.0.0"
 dependencies = [
  "doc-comment",
  "skribble_core",
+ "skribble_preset",
+ "skribble_rust",
 ]
 
 [[package]]

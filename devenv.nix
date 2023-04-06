@@ -22,7 +22,16 @@
   '';
   scripts."build:all".exec = ''
     set -e
+    build:cargo
+    build:book
+  '';
+  scripts."build:cargo".exec = ''
+    set -e
     cargo build
+  '';
+  scripts."build:book".exec = ''
+    set -e
+    mdbook build docs
   '';
   scripts."fix:all".exec = ''
     set -e
@@ -59,8 +68,21 @@
   '';
   scripts."test:all".exec = ''
     set -e
+    test:cargo
+    test:docs
+    # test:book
+  '';
+  scripts."test:cargo".exec = ''
+    set -e
     cargo nextest run
+  '';
+  scripts."test:docs".exec = ''
+    set -e
     cargo test --doc
+  '';
+  scripts."test:book".exec = ''
+    set -e
+    mdbook test docs --library-path target/debug/deps
   '';
   scripts."setup:helix".exec = ''
     set -e

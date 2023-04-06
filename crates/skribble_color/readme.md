@@ -2,6 +2,10 @@
 
 > Parse supported css strings into the supported color types.
 
+<br />
+
+[![Crate][crate-image]][crate-link] [![Docs][docs-image]][docs-link] [![Status][ci-status-image]][ci-status-link] [![Unlicense][unlicense-image]][unlicense-link]
+
 ## Usage
 
 Add the following to your `Cargo.toml`:
@@ -13,8 +17,7 @@ skribble_color = "0.0.0"
 
 ### Color Conversions
 
-All the color types can be converted to each other, as shown below. Each color type has a builtin
-alpha channel.
+All the color types can be converted to each other, as shown below. Each color type has a builtin alpha channel.
 
 ```rust
 use skribble_color::Color;
@@ -76,3 +79,12 @@ let hwb: Color = "hwb(120 0% 0%)".parse().unwrap();
 assert_eq!(hwb.to_string(), "hwb(120 0% 0%)");
 assert_eq!(hwb, Color::hwb(120.0, 0.0, 0.0, 1.0));
 ```
+
+[crate-image]: https://img.shields.io/crates/v/skribble_color.svg
+[crate-link]: https://crates.io/crates/skribble_color
+[docs-image]: https://docs.rs/skribble_color/badge.svg
+[docs-link]: https://docs.rs/skribble_color
+[ci-status-image]: https://github.com/ifiokjr/skribble/workflows/ci/badge.svg
+[ci-status-link]: https://github.com/ifiokjr/skribble/actions?query=workflow:ci
+[unlicense-image]: https://img.shields.io/badge/license-Unlicence-blue.svg
+[unlicense-link]: https://opensource.org/license/unlicense
