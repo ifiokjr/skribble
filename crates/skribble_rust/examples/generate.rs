@@ -2,11 +2,11 @@ use std::env;
 use std::fs;
 
 use skribble_core::*;
-use skribble_preset::PresetDefault;
+use skribble_preset::PresetPlugin;
 use skribble_rust::RustPlugin;
 
 fn main() {
-  let default_preset = PresetDefault::builder().build();
+  let default_preset = PresetPlugin::builder().build();
   let rust_plugin = RustPlugin::builder()
     .formatter("dprint")
     .formatter_args(["fmt".into(), "--stdin".into(), "file.rs".into()])
@@ -19,7 +19,7 @@ fn main() {
     ])
     .build();
 
-  let mut runner = SkribbleRunner::new(config);
+  let mut runner = SkribbleRunner::try_new(config).unwrap();
   let _ = runner.initialize();
   let result = runner.generate().unwrap();
   let generated = result.first().unwrap();

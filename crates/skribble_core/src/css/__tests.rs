@@ -18,7 +18,7 @@ use crate::ValueSet;
 
 #[test]
 fn class_selector() -> AnyEmptyResult {
-  let mut runner = SkribbleRunner::new(create_config());
+  let mut runner = SkribbleRunner::try_new(create_config())?;
   let runner_config = runner.initialize()?;
   let factory = ClassFactory::from_string(runner_config, "pt:$0");
   let class = factory.into_class().unwrap();
@@ -29,7 +29,7 @@ fn class_selector() -> AnyEmptyResult {
 
 #[test]
 fn classes_css() -> AnyEmptyResult {
-  let mut runner = SkribbleRunner::new(create_config());
+  let mut runner = SkribbleRunner::try_new(create_config())?;
   let runner_config = runner.initialize()?;
   let mut classes = Classes::default();
   classes.insert_factories(vec![
@@ -45,7 +45,7 @@ fn classes_css() -> AnyEmptyResult {
 
 #[test]
 fn classes_with_color_properties() -> AnyEmptyResult {
-  let mut runner = SkribbleRunner::new(create_config());
+  let mut runner = SkribbleRunner::try_new(create_config())?;
   let runner_config = runner.initialize()?;
   let mut classes = Classes::default();
   classes.insert_factories(vec![
@@ -60,7 +60,7 @@ fn classes_with_color_properties() -> AnyEmptyResult {
 
 #[test]
 fn classes_with_keyframes() -> AnyEmptyResult {
-  let mut runner = SkribbleRunner::new(create_config());
+  let mut runner = SkribbleRunner::try_new(create_config())?;
   let runner_config = runner.initialize()?;
   let mut classes = Classes::default();
   classes.insert_factories(vec![

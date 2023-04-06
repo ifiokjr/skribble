@@ -17,3 +17,5 @@ description = "skribble is a fully typed atomic css compiler for rust, node, den
 [dependencies]
 doc-comment = { workspace = true }
 skribble_core = { workspace = true }
+skribble_preset = { workspace = true }
+skribble_rust = { workspace = true }

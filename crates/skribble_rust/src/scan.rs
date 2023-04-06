@@ -105,14 +105,14 @@ mod tests {
   use skribble_core::SkribbleRunner;
   use skribble_core::StyleConfig;
   use skribble_core::ToSkribbleCss;
-  use skribble_preset::PresetDefault;
+  use skribble_preset::PresetPlugin;
 
   use super::*;
   use crate::RustPlugin;
 
   #[test]
   fn can_scan_expressions() -> AnyEmptyResult {
-    let default_preset = PresetDefault::builder().build();
+    let default_preset = PresetPlugin::builder().build();
     let rust_plugin = RustPlugin::builder().build();
 
     let config: StyleConfig = StyleConfig::builder()
@@ -122,7 +122,7 @@ mod tests {
       ])
       .build();
 
-    let mut runner = SkribbleRunner::new(config);
+    let mut runner = SkribbleRunner::try_new(config)?;
     let config = runner.initialize()?;
     let code = br#"
       pub fn foo() {
@@ -149,7 +149,7 @@ mod tests {
 
   #[test]
   fn can_scan_field() -> AnyEmptyResult {
-    let default_preset = PresetDefault::builder().build();
+    let default_preset = PresetPlugin::builder().build();
     let rust_plugin = RustPlugin::builder().build();
 
     let config: StyleConfig = StyleConfig::builder()
@@ -159,7 +159,7 @@ mod tests {
       ])
       .build();
 
-    let mut runner = SkribbleRunner::new(config);
+    let mut runner = SkribbleRunner::try_new(config)?;
     let config = runner.initialize()?;
     let code = br#"
       pub fn foo() {

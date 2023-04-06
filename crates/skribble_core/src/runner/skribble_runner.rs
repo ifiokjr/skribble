@@ -1,3 +1,4 @@
+use std::env::current_dir;
 use std::path::Path;
 use std::sync::Arc;
 use std::sync::Mutex;
@@ -29,8 +30,9 @@ pub struct SkribbleRunner {
 }
 
 impl SkribbleRunner {
-  pub fn new(config: StyleConfig) -> Self {
-    let (options, wrapped_config, mut plugins) = config.into_wrapped_config();
+  pub fn new(config: StyleConfig, cwd: impl AsRef<Path>) -> Self {
+    let (mut options, wrapped_config, mut plugins) = config.into_wrapped_config();
+    options.root = options.root.join(cwd);
     let options = Arc::new(options);
     let config = Arc::new(wrapped_config);
 
@@ -44,6 +46,17 @@ impl SkribbleRunner {
       plugins,
       config: None,
     }
+  }
+
+  /// Create a new [`SkribbleRunner`] with the current directory automatically
+  /// inferred.
+  pub fn try_new(config: StyleConfig) -> Result<Self> {
+    let cwd = current_dir().map_err(|_| Error::CwdLookupError)?;
+    Ok(Self::new(config, cwd))
+  }
+
+  pub fn get_options(&self) -> &Options {
+    self.options.as_ref()
   }
 
   /// Run the plugins to mutate the config and get the transformed config which
@@ -97,10 +110,12 @@ impl SkribbleRunner {
     Ok(generated_files)
   }
 
-  pub fn scan(&self, cwd: impl AsRef<Path>) -> Result<ToCssResult> {
+  pub fn scan(&self) -> Result<ToCssResult> {
     let Some(ref config) = self.config else {
       return Err(Error::RunnerNotSetup);
     };
+
+    let cwd = &config.options().root;
 
     let entries = walk_directory(cwd, &self.options.files).map_err(Error::FileScanError)?;
 

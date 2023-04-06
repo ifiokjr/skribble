@@ -1150,8 +1150,8 @@ impl ExtractedParams {
     let length = self.params.len();
 
     !(self.is_comma_separated() && self.invalid_commas
-      || self.is_slash_separated() && self.invalid_slashes)
-      && !(self.is_comma_separated() && self.is_slash_separated())
+      || self.is_slash_separated() && self.invalid_slashes
+      || self.is_comma_separated() && self.is_slash_separated())
       && (length == 3 || length == 4)
   }
 

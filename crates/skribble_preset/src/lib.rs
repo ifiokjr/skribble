@@ -14,7 +14,7 @@ pub(crate) mod data;
 mod enums;
 
 #[derive(Debug, Clone, Default, Deserialize, TypedBuilder, Serialize)]
-pub struct PresetDefault {
+pub struct PresetPlugin {
   /// Choose the palette colors from either Tailwind or OpenColors.
   #[builder(default, setter(into))]
   pub palette: PaletteType,
@@ -28,11 +28,11 @@ pub struct PresetDefault {
   pub ignore_colors: bool,
 }
 
-impl Plugin for PresetDefault {
+impl Plugin for PresetPlugin {
   fn get_data(&self) -> PluginData {
     PluginData::builder()
       .id("skribble_preset")
-      .name("Default Preset")
+      .name("Preset Plugin")
       .description(
         "This plugin provides a default preset for Skribble which is similar to `tailwind`, \
          `windi` and `unocss`.",
@@ -55,7 +55,7 @@ impl Plugin for PresetDefault {
   }
 }
 
-impl PresetDefault {
+impl PresetPlugin {
   fn update_media_queries(&self, media_queries: &mut MediaQueries) {
     media_queries.extend(MEDIA_QUERIES.clone());
 

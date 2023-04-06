@@ -11,6 +11,8 @@ pub type Result<T> = core::result::Result<T, Error>;
 pub enum Error {
   #[error("an unknown skribble error has occurred, please create an issue on GitHub")]
   Unknown,
+  #[error("could not load the current working directory")]
+  CwdLookupError,
   /// An invalid configuration object was provided.
   #[error("invalid configuration object provided")]
   InvalidConfig(#[source] serde_json::Error),

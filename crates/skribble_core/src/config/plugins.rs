@@ -103,12 +103,20 @@ pub struct PluginContainer {
 }
 
 impl PluginContainer {
+  pub fn new(plugin: Box<dyn Plugin>, priority: Priority) -> Self {
+    Self { plugin, priority }
+  }
+
   /// Get the plugin.
   pub(crate) fn extract_plugin(self) -> WrappedPlugin {
     WrappedPlugin {
       data: self.plugin.get_data(),
       plugin: self.plugin,
     }
+  }
+
+  pub fn get_id(&self) -> String {
+    self.plugin.get_data().id
   }
 }
 

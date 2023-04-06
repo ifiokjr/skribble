@@ -1,11 +1,11 @@
 use skribble_core::*;
-use skribble_preset::PresetDefault;
+use skribble_preset::PresetPlugin;
 
 use super::*;
 
 #[test]
 fn default_can_be_added_to_runner() {
-  let default_preset = PresetDefault::builder().build();
+  let default_preset = PresetPlugin::builder().build();
   let rust_plugin = RustPlugin::builder().build();
 
   let config: StyleConfig = StyleConfig::builder()
@@ -15,7 +15,7 @@ fn default_can_be_added_to_runner() {
     ])
     .build();
 
-  let mut runner = SkribbleRunner::new(config);
+  let mut runner = SkribbleRunner::new(config, "/");
   let _ = runner.initialize();
   let result = runner.generate().unwrap();
   let generated = result.first().unwrap();

@@ -15,7 +15,10 @@ use super::Plugins;
 use super::StringMap;
 use super::ValueSets;
 use crate::Error;
+use crate::Plugin;
 use crate::PluginConfig;
+use crate::PluginContainer;
+use crate::Priority;
 use crate::Result;
 
 /// The style configuration which can also use the builder pattern.
@@ -113,6 +116,24 @@ impl StyleConfig {
 
   pub fn to_pretty_json(&self) -> Result<String> {
     serde_json::to_string_pretty(self).map_err(Error::CouldNotSerializeConfig)
+  }
+
+  pub fn add_plugin<P: Plugin + 'static, T: Into<Priority>>(
+    &mut self,
+    plugin: P,
+    priority: T,
+  ) -> &mut Self {
+    self
+      .plugins
+      .push(PluginContainer::new(Box::new(plugin), priority.into()));
+
+    self
+  }
+
+  pub fn remove_plugin(&mut self, id: impl AsRef<str>) -> &mut Self {
+    let id = id.as_ref();
+    self.plugins.retain(|container| container.get_id() != id);
+    self
   }
 }
 
