@@ -63,7 +63,6 @@ impl<'config> ClassFactory<'config> {
       if !token.starts_with('$') {
         factory.add_token(token);
       } else if let Some(value) = token.get(1..) {
-        println!("OTHER token: {}", value);
         factory.add_token(value);
       }
     }

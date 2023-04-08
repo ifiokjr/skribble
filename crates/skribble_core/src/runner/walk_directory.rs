@@ -1,5 +1,3 @@
-use std::path::Path;
-
 use globset::Glob;
 use globset::GlobSet;
 use globset::GlobSetBuilder;
@@ -13,11 +11,7 @@ fn is_match(file_path: impl AsRef<str>, include_set: &GlobSet, exclude_set: &Glo
 }
 
 /// Find all files in the given directory that match the given glob rules.
-pub(crate) fn walk_directory(
-  fs: &VfsPath,
-  _path: impl AsRef<Path>,
-  glob_rules: &Vec<String>,
-) -> AnyResult<Vec<VfsPath>> {
+pub(crate) fn walk_directory(fs: &VfsPath, glob_rules: &Vec<String>) -> AnyResult<Vec<VfsPath>> {
   let mut include_builder = GlobSetBuilder::new();
   let mut exclude_builder = GlobSetBuilder::new();
 

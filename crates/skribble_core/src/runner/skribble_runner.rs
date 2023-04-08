@@ -74,6 +74,14 @@ impl SkribbleRunner {
     self.options.as_ref()
   }
 
+  pub fn get_config(&self) -> Option<&RunnerConfig> {
+    self.config.as_ref()
+  }
+
+  pub fn get_root(&self) -> VfsPath {
+    self.fs.root()
+  }
+
   /// Run the plugins to mutate the config and get the transformed config which
   /// is used.
   pub fn initialize(&mut self) -> Result<&RunnerConfig> {
@@ -130,11 +138,8 @@ impl SkribbleRunner {
       return Err(Error::RunnerNotSetup);
     };
 
-    let cwd = &config.options().root;
-
     let entries =
-      walk_directory(self.fs.as_ref(), cwd, &self.options.files).map_err(Error::FileScanError)?;
-
+      walk_directory(self.fs.as_ref(), &self.options.files).map_err(Error::FileScanError)?;
     let mut plugins = self.plugins.lock().unwrap();
     let mut classes = Classes::default();
 
@@ -157,28 +162,10 @@ impl SkribbleRunner {
       }
     }
 
-    let parser_options = ParserOptions {
-      filename: "skribble.css".into(),
-      ..Default::default()
-    };
-    let printer_options = PrinterOptions {
-      minify: self.options.minify,
-      ..Default::default()
-    };
     let css = classes
       .to_skribble_css(config)
       .map_err(Error::GenerateCssError)?;
-    let css_reference: &'static mut str = Box::leak(css.into_boxed_str());
-    let mut stylesheet =
-      StyleSheet::parse(css_reference, parser_options).map_err(|_| Error::LightningCssError)?;
-    stylesheet
-      .minify(MinifyOptions::default())
-      .map_err(|_| Error::LightningCssError)?;
-    let result = stylesheet
-      .to_css(printer_options)
-      .map_err(|_| Error::LightningCssError)?;
-
-    Ok(result)
+    transform_css(&css, self.options.minify)
   }
 
   fn generate_plugin_config(&self) -> Result<PluginConfig> {
@@ -201,10 +188,10 @@ impl SkribbleRunner {
 
   fn merge(&mut self, plugin_config: PluginConfig) {
     let config = generate_merged_config(plugin_config, self.options.clone(), &self.base_config);
-
     self.config = Some(config);
   }
 
+  /// Write the generated files to the filesystem.
   pub fn write_files(&self, files: &GeneratedFiles) -> Result<()> {
     for file in files.iter() {
       let entry = self
@@ -220,6 +207,7 @@ impl SkribbleRunner {
     Ok(())
   }
 
+  /// Write the generated css to the filesystem.
   pub fn write_css(&self, css: &ToCssResult) -> Result<()> {
     let css_file = self.options.output.to_string_lossy();
     let entry = self
@@ -233,4 +221,29 @@ impl SkribbleRunner {
 
     Ok(())
   }
+}
+
+fn transform_css(css: &str, minify: bool) -> Result<ToCssResult> {
+  let parser_options = ParserOptions {
+    filename: "skribble.css".into(),
+    ..Default::default()
+  };
+  let printer_options = PrinterOptions {
+    minify,
+    ..Default::default()
+  };
+  let mut stylesheet = StyleSheet::parse(css, parser_options)
+    .map_err(|error| Error::LightningParserError(error.to_string()))?;
+
+  if minify {
+    stylesheet
+      .minify(MinifyOptions::default())
+      .map_err(Error::LightningMinifyError)?;
+  }
+
+  let result = stylesheet
+    .to_css(printer_options)
+    .map_err(Error::LightningPrinterError)?;
+
+  Ok(result)
 }

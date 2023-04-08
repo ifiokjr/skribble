@@ -1,5 +1,8 @@
 use std::path::PathBuf;
 
+use lightningcss::error::Error as LightningError;
+use lightningcss::error::MinifyErrorKind;
+use lightningcss::error::PrinterErrorKind;
 use skribble_color::ColorError;
 
 use crate::AnyError;
@@ -62,6 +65,10 @@ pub enum Error {
   FileWriteError(PathBuf),
   #[error("generating the css failed")]
   GenerateCssError(#[source] AnyError),
-  #[error("generating the css with lightning css failed")]
-  LightningCssError,
+  #[error("minifying the css with lightning css failed with error: {0}")]
+  LightningMinifyError(#[source] LightningError<MinifyErrorKind>),
+  #[error("generating the stylesheet with lightning css failed: {0}")]
+  LightningParserError(String),
+  #[error("printing the css with lightning css failed with error: {0}")]
+  LightningPrinterError(#[source] LightningError<PrinterErrorKind>),
 }
