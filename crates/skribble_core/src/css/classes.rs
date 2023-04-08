@@ -47,10 +47,11 @@ impl Classes {
 
   pub fn merge(&mut self, other: impl Into<Self>) {
     self.extend(other.into().0);
+    self.sort_by_class();
   }
 
   pub fn sort_by_class(&mut self) {
-    self.sort_by(|a, b| a.cmp(b));
+    self.sort_by(|a, z| a.cmp(z));
   }
 
   fn write_keyframes(&self, writer: &mut dyn Write, config: &RunnerConfig) -> AnyEmptyResult {
