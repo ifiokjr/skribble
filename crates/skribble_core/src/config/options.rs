@@ -90,11 +90,11 @@ fn default_variable_prefix() -> String {
 }
 
 fn default_opacity_prefix() -> String {
-  "opacity".into()
+  "op".into()
 }
 
 fn default_color_prefix() -> String {
-  "color".into()
+  "clr".into()
 }
 
 fn default_charset() -> String {

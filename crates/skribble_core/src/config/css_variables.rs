@@ -85,6 +85,11 @@ pub struct CssVariable {
   pub value: Option<String>,
   /// Define the value of the CSS variable under different nested media query
   /// situations.
+  ///
+  /// CSS Variable are not dynamic when nested. For example the variable
+  /// `--color: hsl(0, 0%, 0%, var(--color-opacity))` will not change when the
+  /// variable for `--color-opacity` changes. Bear this in mind when creating
+  /// these variables.
   #[serde(default)]
   #[builder(default, setter(into))]
   pub media_queries: NestedCssVariableSelectors,
@@ -168,9 +173,14 @@ impl CssVariable {
     let variable_name = self.get_variable(options);
     let inherits = !self.media_queries.is_empty() || self.value.is_some();
     let initial_value = if self.is_color() {
-      let opacity_variable = self.get_opacity_variable(options);
-      let alpha = self.get_default_opacity(None);
+      let normalized_color = options
+        .color_format
+        .get_normalized_color(config, self, None)?
+        .to_string();
       if with_opacity {
+        let opacity_variable = self.get_opacity_variable(options);
+        let alpha = self.get_default_opacity(None);
+
         writeln!(writer, "@property {opacity_variable} {{")?;
         let mut indented_writer = indent_writer();
         writeln!(indented_writer, "syntax: \"<number>\";")?;
@@ -178,11 +188,20 @@ impl CssVariable {
         writeln!(indented_writer, "initial-value: {alpha};")?;
         write!(writer, "{}", indented_writer.get_ref())?;
         writeln!(writer, "}}")?;
+
+        let color_variable = self.get_color_variable(options);
+        let color_parts = options.color_format.get_inner_color(&normalized_color)?;
+
+        writeln!(writer, "@property {color_variable} {{")?;
+        let mut indented_writer = indent_writer();
+        writeln!(indented_writer, "syntax: \"*\";")?;
+        writeln!(indented_writer, "inherits: {inherits};")?;
+        writeln!(indented_writer, "initial-value: {color_parts};")?;
+        write!(writer, "{}", indented_writer.get_ref())?;
+        writeln!(writer, "}}")?;
       }
-      options
-        .color_format
-        .get_normalized_color(config, self, None)?
-        .to_string()
+
+      normalized_color
     } else {
       let default_initial_value = "/* */".into();
       Placeholder::normalize(
@@ -315,13 +334,19 @@ impl CssVariable {
     if self.is_color() {
       let options = config.options();
       let opacity_variable = self.get_opacity_variable(options);
-      let wrapped_opacity_variable = self.get_wrapped_opacity_variable(options, None);
-      let alpha = self.get_default_opacity(Some(variable_value));
+      let opacity_value = self.get_default_opacity(Some(variable_value));
+      let color_variable = self.get_color_variable(options);
+      let inner_color_value = options.color_format.get_inner_color(
+        options
+          .color_format
+          .get_normalized_color(config, self, Some(variable_value))?
+          .to_string(),
+      )?;
       let variable_value = options
         .color_format
-        .get_normalized_color(config, self, Some(variable_value))?
-        .to_string_with_opacity(wrapped_opacity_variable);
-      writeln!(writer, "{opacity_variable}: {alpha};")?;
+        .get_color_with_parts_and_opacity(self, options);
+      writeln!(writer, "{opacity_variable}: {opacity_value};")?;
+      writeln!(writer, "{color_variable}: {inner_color_value};")?;
       writeln!(writer, "{variable_name}: {variable_value};")?;
     } else {
       writeln!(writer, "{variable_name}: {variable_value};")?;

@@ -53,8 +53,10 @@ pub enum Error {
      `generate()`"
   )]
   RunnerNotSetup,
-  #[error("color conversion error")]
+  #[error("color conversion error for color: {0}")]
   Color(#[from] ColorError),
+  #[error("could not parse inner color")]
+  InnerColor,
   #[error("no initial color value was provided for css variable `{0}")]
   InvalidCssVariable(String),
   #[error("something went wrong while scanning the files")]

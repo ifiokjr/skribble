@@ -4,22 +4,16 @@ expression: scanned.code
 ---
 @layer default;
 
-@property --sk-opacity-s {
+@property --sk-op-p {
   syntax: "<number>";
   inherits: true;
   initial-value: 1;
 }
 
-@property --sk-s {
-  syntax: "<color>";
+@property --sk-clr-p {
+  syntax: "*";
   inherits: true;
-  initial-value: #f000b8;
-}
-
-@property --sk-opacity-p {
-  syntax: "<number>";
-  inherits: true;
-  initial-value: 1;
+  initial-value: 258.894;
 }
 
 @property --sk-p {
@@ -28,22 +22,40 @@ expression: scanned.code
   initial-value: #570df8;
 }
 
+@property --sk-op-s {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1;
+}
+
+@property --sk-clr-s {
+  syntax: "*";
+  inherits: true;
+  initial-value: 314;
+}
+
+@property --sk-s {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #f000b8;
+}
+
 @layer default {
   :root {
-    --sk-opacity-s: 1;
-    --sk-s: hsl(314 100% 47.0588% / var(--sk-opacity-s));
-    --sk-opacity-p: 1;
-    --sk-p: hsl(258.894 94.3775% 51.1765% / var(--sk-opacity-p));
-  }
-
-  .bg\:\$secondary {
-    --sk-opacity-s: 1;
-    background-color: var(--sk-s);
+    --sk-op-p: 1;
+    --sk-clr-p: 258.894 94.3775% 51.1765%;
+    --sk-p: hsl(var(--sk-clr-p) / var(--sk-op-p));
+    --sk-op-s: 1;
+    --sk-clr-s: 314 100% 47.0588%;
+    --sk-s: hsl(var(--sk-clr-s) / var(--sk-op-s));
   }
 
   .bg\:\$primary {
-    --sk-opacity-p: 1;
-    background-color: var(--sk-p);
+    background-color: hsl(var(--sk-clr-p) / var(--sk-op-p));
+  }
+
+  .bg\:\$secondary {
+    background-color: hsl(var(--sk-clr-s) / var(--sk-op-s));
   }
 
   @media (min-width: 768px) {

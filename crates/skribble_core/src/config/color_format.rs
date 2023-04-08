@@ -4,6 +4,7 @@ use skribble_color::Color;
 
 use crate::CssVariable;
 use crate::Error;
+use crate::Options;
 use crate::Placeholder;
 use crate::Result;
 use crate::RunnerConfig;
@@ -13,6 +14,8 @@ use crate::RunnerConfig;
 /// generated css.
 #[derive(Clone, Copy, Debug, Default, Deserialize, PartialEq, Serialize)]
 pub enum ColorFormat {
+  #[serde(rename = "hex")]
+  Hex,
   #[serde(rename = "rgb")]
   Rgb,
   #[serde(rename = "hsl")]
@@ -35,6 +38,10 @@ impl ColorFormat {
     let value = value.as_ref();
 
     match self {
+      Self::Hex => {
+        let color = value.parse::<Color>().map_err(Error::from)?.into_hex();
+        Ok(color)
+      }
       Self::Rgb => {
         let color = value.parse::<Color>().map_err(Error::from)?.into_rgb();
         Ok(color)
@@ -84,11 +91,54 @@ impl ColorFormat {
 
     self.get_color(initial_value)
   }
+
+  /// Get the inner color of the color format.
+  ///
+  /// Go from `hsl(100 10% 40% / 0.9)` to `100 10% 40%`
+  pub fn get_inner_color(&self, value: impl AsRef<str>) -> Result<String> {
+    let value = value.as_ref();
+    let color = if self == &Self::Hex {
+      Self::Rgb.get_color(value)?.to_string()
+    } else {
+      self.get_color(value)?.to_string()
+    };
+
+    color
+      .split('/')
+      .next()
+      .and_then(|value| value.split('(').nth(1))
+      .and_then(|value| value.get(0..value.len() - 1))
+      .map(|value| value.trim().to_string())
+      .ok_or(Error::InnerColor)
+  }
+
+  /// Get the color value with the parts and opacity.
+  pub fn get_color_with_parts_and_opacity(
+    &self,
+    variable: &CssVariable,
+    options: &Options,
+  ) -> String {
+    let prefix = match self {
+      Self::Hex => "rgb",
+      Self::Rgb => "rgb",
+      Self::Hsl => "hsl",
+      Self::Hwb => "hwb",
+      Self::Lch => "lch",
+      Self::Oklch => "oklch",
+      Self::Lab => "lab",
+      Self::Oklab => "oklab",
+    };
+    let color = variable.get_wrapped_color_variable(options, None);
+    let opacity = variable.get_wrapped_opacity_variable(options, None);
+
+    format!("{}({} / {})", prefix, color, opacity)
+  }
 }
 
 impl AsRef<str> for ColorFormat {
   fn as_ref(&self) -> &str {
     match self {
+      Self::Hex => "hex",
       Self::Rgb => "rgb",
       Self::Hsl => "hsl",
       Self::Hwb => "hwb",

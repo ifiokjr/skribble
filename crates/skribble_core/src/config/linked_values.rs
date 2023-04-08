@@ -96,19 +96,21 @@ impl LinkedValues {
           if !variable.is_color() || name.as_ref() != color_name {
             continue;
           }
-
-          let wrapped_variable = variable.get_wrapped_variable(config.options(), None);
-          let opacity_variable =
-            Placeholder::normalize(variable.get_opacity_variable(config.options()), config);
-          let default_opacity = variable.get_default_opacity(None);
-          writeln!(writer, "{opacity_variable}: {default_opacity};")?;
+          let options = config.options();
+          let color_value = options
+            .color_format
+            .get_color_with_parts_and_opacity(variable, options);
+          // let opacity_variable =
+          //   Placeholder::normalize(variable.get_opacity_variable(config.options()),
+          // config); let default_opacity = variable.get_default_opacity(None);
+          // writeln!(writer, "{opacity_variable}: {default_opacity};")?;
 
           for (property, css_value) in atom.styles.iter() {
             let property = Placeholder::normalize(property, config);
             let css_value = css_value
               .as_ref()
-              .map(|value| Placeholder::normalize_with_value(value, &wrapped_variable, config))
-              .unwrap_or_else(|| wrapped_variable.clone());
+              .map(|value| Placeholder::normalize_with_value(value, &color_value, config))
+              .unwrap_or_else(|| color_value.clone());
 
             writeln!(writer, "{}: {};", property, css_value)?;
           }

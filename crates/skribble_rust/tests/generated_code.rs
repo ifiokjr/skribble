@@ -48,7 +48,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-p {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(258.89362 94.37751% 51.17647%);
   /// }
   /// ```
@@ -62,7 +62,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-pc {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(0 0% 100%);
   /// }
   /// ```
@@ -76,7 +76,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-s {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(314 100% 47.058823%);
   /// }
   /// ```
@@ -90,7 +90,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-sc {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(0 0% 100%);
   /// }
   /// ```
@@ -104,7 +104,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-a {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(174 60.000008% 50.980396%);
   /// }
   /// ```
@@ -118,7 +118,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-ac {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(174.70587 43.589737% 15.294118%);
   /// }
   /// ```
@@ -132,7 +132,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-n {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(218.99998 14.084508% 27.843138%);
   /// }
   /// ```
@@ -146,7 +146,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-nc {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(0 0% 100%);
   /// }
   /// ```
@@ -160,7 +160,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-b1 {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(0 0% 100%);
   /// }
   /// ```
@@ -174,7 +174,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-b2 {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(0 0% 94.90196%);
   /// }
   /// ```
@@ -188,7 +188,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-b3 {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(180 1.9607836% 90%);
   /// }
   /// ```
@@ -202,7 +202,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-bc {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(215 27.906975% 16.862745%);
   /// }
   /// ```
@@ -216,7 +216,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-in {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(212.34569 100% 47.64706%);
   /// }
   /// ```
@@ -230,7 +230,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-inc {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(0 0% 100%);
   /// }
   /// ```
@@ -244,7 +244,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-su {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(136.8421 72.1519% 46.47059%);
   /// }
   /// ```
@@ -259,7 +259,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-suc {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(0 0% 100%);
   /// }
   /// ```
@@ -273,7 +273,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-wa {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(4.5614033 100% 66.47059%);
   /// }
   /// ```
@@ -288,7 +288,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-wac {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(0 0% 100%);
   /// }
   /// ```
@@ -302,7 +302,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-er {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(325.05154 77.600006% 49.019608%);
   /// }
   /// ```
@@ -316,7 +316,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-erc {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(0 0% 100%);
   /// }
   /// ```
@@ -340,7 +340,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-empty {
   ///   syntax: "*";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: /* */;
   /// }
   /// ```
@@ -472,7 +472,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-group-nested-filter {
   ///   syntax: "*";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
   /// }
   /// ```
@@ -604,7 +604,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-gnb {
   ///   syntax: "*";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
   /// }
   /// ```
@@ -616,7 +616,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-default-transition-duration {
   ///   syntax: "<time>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: 150ms;
   /// }
   /// ```
@@ -628,7 +628,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-default-animation-duration {
   ///   syntax: "<time>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: 1s;
   /// }
   /// ```
@@ -640,7 +640,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-etx {
   ///   syntax: "<length-percentage>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: 0;
   /// }
   /// ```
@@ -652,7 +652,7 @@ impl GeneratedCssVariables {
   /// ```css
   /// @property --sk-ety {
   ///   syntax: "<length-percentage>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: 0;
   /// }
   /// ```
@@ -2089,7 +2089,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-p {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(258.89362 94.37751% 51.17647%);
   /// }
   /// ```
@@ -2102,7 +2102,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-pc {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(0 0% 100%);
   /// }
   /// ```
@@ -2115,7 +2115,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-s {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(314 100% 47.058823%);
   /// }
   /// ```
@@ -2128,7 +2128,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-sc {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(0 0% 100%);
   /// }
   /// ```
@@ -2141,7 +2141,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-a {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(174 60.000008% 50.980396%);
   /// }
   /// ```
@@ -2154,7 +2154,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-ac {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(174.70587 43.589737% 15.294118%);
   /// }
   /// ```
@@ -2167,7 +2167,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-n {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(218.99998 14.084508% 27.843138%);
   /// }
   /// ```
@@ -2180,7 +2180,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-nc {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(0 0% 100%);
   /// }
   /// ```
@@ -2193,7 +2193,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-b1 {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(0 0% 100%);
   /// }
   /// ```
@@ -2206,7 +2206,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-b2 {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(0 0% 94.90196%);
   /// }
   /// ```
@@ -2219,7 +2219,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-b3 {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(180 1.9607836% 90%);
   /// }
   /// ```
@@ -2232,7 +2232,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-bc {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(215 27.906975% 16.862745%);
   /// }
   /// ```
@@ -2245,7 +2245,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-in {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(212.34569 100% 47.64706%);
   /// }
   /// ```
@@ -2258,7 +2258,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-inc {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(0 0% 100%);
   /// }
   /// ```
@@ -2271,7 +2271,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-su {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(136.8421 72.1519% 46.47059%);
   /// }
   /// ```
@@ -2285,7 +2285,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-suc {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(0 0% 100%);
   /// }
   /// ```
@@ -2298,7 +2298,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-wa {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(4.5614033 100% 66.47059%);
   /// }
   /// ```
@@ -2312,7 +2312,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-wac {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(0 0% 100%);
   /// }
   /// ```
@@ -2325,7 +2325,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-er {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(325.05154 77.600006% 49.019608%);
   /// }
   /// ```
@@ -2338,7 +2338,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```css
   /// @property --sk-erc {
   ///   syntax: "<color>";
-  ///   inherits: false;
+  ///   inherits: true;
   ///   initial-value: hsl(0 0% 100%);
   /// }
   /// ```
