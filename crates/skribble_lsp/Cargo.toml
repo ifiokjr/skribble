@@ -1,0 +1,27 @@
+[package]
+name = "skribble_lsp"
+version = { workspace = true }
+authors = ["Ifiok Jr. <ifiokotung@gmail.com>"]
+categories = { workspace = true }
+documentation = "https://docs.rs/skribble_lsp"
+edition = { workspace = true }
+homepage = { workspace = true }
+include = ["src/**/*.rs", "Cargo.toml", "readme.md"]
+keywords = ["build", "atomic", "css"]
+license = { workspace = true }
+readme = "readme.md"
+repository = { workspace = true }
+rust-version = { workspace = true }
+description = "the language server for skribble"
+
+[dependencies]
+doc-comment = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+skribble = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
+tower-lsp = { workspace = true, features = ["proposed"] }
+
+[dev-dependencies]
+insta = { features = ["json"], workspace = true }
+pretty_assertions = { workspace = true }
+rstest = { workspace = true }
