@@ -1,4 +1,5 @@
 use indexmap::indexmap;
+use rstest::rstest;
 
 use crate::AnyEmptyResult;
 use crate::Atom;
@@ -15,6 +16,20 @@ use crate::SkribbleRunner;
 use crate::StyleConfig;
 use crate::ToSkribbleCss;
 use crate::ValueSet;
+
+#[rstest]
+#[case("pt:$0", "pt:$1")]
+#[case("sm:pt:$10", "md:pt:$10")]
+#[case("bg:$primary", "bg:$secondary")]
+fn class_order(#[case] a: &str, #[case] b: &str) -> AnyEmptyResult {
+  let mut runner = SkribbleRunner::try_new(create_config())?;
+  let config = runner.initialize()?;
+  let a = ClassFactory::from_string(config, a).into_class().unwrap();
+  let b = ClassFactory::from_string(config, b).into_class().unwrap();
+  assert!(a < b);
+
+  Ok(())
+}
 
 #[test]
 fn class_selector() -> AnyEmptyResult {
