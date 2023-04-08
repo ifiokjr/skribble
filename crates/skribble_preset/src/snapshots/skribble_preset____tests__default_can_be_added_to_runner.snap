@@ -2947,7 +2947,7 @@ RunnerConfig {
             ),
             styles: OptionalStringMap(
                 {
-                    "color": None,
+                    "background-color": None,
                 },
             ),
             values: Color,
@@ -5675,6 +5675,7 @@ RunnerConfig {
         use_registered_properties: false,
         variable_prefix: "sk",
         opacity_prefix: "opacity",
+        color_prefix: "color",
         default_color: "#000000",
         minify: false,
     },

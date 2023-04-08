@@ -202,7 +202,7 @@ lazy_static! {
       Atom::builder()
         .name("bg")
         .values(LinkedValues::Color)
-        .styles(indexmap! { "color" => none })
+        .styles(indexmap! { "background-color" => none })
         .build(),
       Atom::builder()
         .name("bgOpacity")

@@ -13,22 +13,26 @@ expression: classes.to_skribble_css(runner_config)?
 @property --sk-s {
   syntax: "<color>";
   inherits: true;
-  initial-value: hsl(314 100% 47.058823% / var(--sk-opacity-s));
+  initial-value: hsl(314 100% 47.058823%);
 }
 @property --sk-opacity-p {
   syntax: "<number>";
-  inherits: false;
+  inherits: true;
   initial-value: 1;
 }
 @property --sk-p {
   syntax: "<color>";
-  inherits: false;
-  initial-value: hsl(258.89362 94.37751% 51.17647% / var(--sk-opacity-p));
+  inherits: true;
+  initial-value: hsl(258.89362 94.37751% 51.17647%);
 }
 @layer default {
+  :root {
+    --sk-opacity-p: 1;
+    --sk-p: hsl(258.89362 94.37751% 51.17647% / var(--sk-opacity-p));
+  }
   .bg\:\$secondary {
     --sk-opacity-s: 1;
-    color: --sk-s;
+    color: var(--sk-s);
   }
   @media print {
     :root {
@@ -43,7 +47,7 @@ expression: classes.to_skribble_css(runner_config)?
   @media (min-width: 640px) {
     .sm\:bg\:\$primary {
       --sk-opacity-p: 1;
-      color: --sk-p;
+      color: var(--sk-p);
     }
   }
   @media (prefers-color-scheme: dark) {

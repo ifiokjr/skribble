@@ -26,6 +26,7 @@ expression: "StyleConfig::default()"
     "useRegisteredProperties": false,
     "variablePrefix": "sk",
     "opacityPrefix": "opacity",
+    "colorPrefix": "color",
     "defaultColor": "#000000",
     "minify": false
   },

@@ -15,6 +15,7 @@ use super::PropertySyntax;
 use super::StringMap;
 use crate::format_css_string;
 use crate::indent_writer;
+use crate::wrap_css_variable;
 use crate::AnyEmptyResult;
 use crate::Placeholder;
 use crate::RunnerConfig;
@@ -118,11 +119,33 @@ impl CssVariable {
     self.variable.as_str().replacen("--", &replacement, 1)
   }
 
+  pub fn get_wrapped_variable(&self, options: &Options, default: Option<String>) -> String {
+    let variable = self.get_variable(options);
+    wrap_css_variable(variable, default)
+  }
+
   pub fn get_opacity_variable(&self, options: &Options) -> String {
     let prefix = &options.variable_prefix;
     let opacity_prefix = &options.opacity_prefix;
     let replacement = format!("--{prefix}-{opacity_prefix}-");
     self.variable.as_str().replacen("--", &replacement, 1)
+  }
+
+  pub fn get_wrapped_opacity_variable(&self, options: &Options, default: Option<String>) -> String {
+    let variable = self.get_opacity_variable(options);
+    wrap_css_variable(variable, default)
+  }
+
+  pub fn get_color_variable(&self, options: &Options) -> String {
+    let prefix = &options.variable_prefix;
+    let color_prefix = &options.color_prefix;
+    let replacement = format!("--{prefix}-{color_prefix}-");
+    self.variable.as_str().replacen("--", &replacement, 1)
+  }
+
+  pub fn get_wrapped_color_variable(&self, options: &Options, default: Option<String>) -> String {
+    let variable = self.get_color_variable(options);
+    wrap_css_variable(variable, default)
   }
 
   pub fn get_default_opacity(&self, value: Option<&String>) -> f32 {
@@ -143,7 +166,7 @@ impl CssVariable {
     let syntax = &self.syntax;
     let _color_format = &options.color_format;
     let variable_name = self.get_variable(options);
-    let inherits = !self.media_queries.is_empty();
+    let inherits = !self.media_queries.is_empty() || self.value.is_some();
     let initial_value = if self.is_color() {
       let opacity_variable = self.get_opacity_variable(options);
       let alpha = self.get_default_opacity(None);
@@ -155,12 +178,11 @@ impl CssVariable {
         writeln!(indented_writer, "initial-value: {alpha};")?;
         write!(writer, "{}", indented_writer.get_ref())?;
         writeln!(writer, "}}")?;
-        options
-          .color_format
-          .get_color_value_with_opacity(config, self, None)?
-      } else {
-        options.color_format.get_color_value(config, self, None)?
       }
+      options
+        .color_format
+        .get_normalized_color(config, self, None)?
+        .to_string()
     } else {
       let default_initial_value = "/* */".into();
       Placeholder::normalize(
@@ -194,47 +216,92 @@ impl CssVariable {
     let options = config.options();
     let variable_name = self.get_variable(options);
 
+    if self.media_queries.is_empty() {
+      if let Some(ref initial_value) = self.value {
+        let selector_name = ":root".to_string();
+        self.extend_dictionary_for_selector(
+          config,
+          dictionary,
+          &variable_name,
+          &None,
+          &selector_name,
+          initial_value,
+        )?;
+      };
+    }
+
     for (query, selector_map) in self.media_queries.iter() {
-      println!("QUERY: {:?}", query);
       let query = if query.is_empty() {
         None
       } else {
         Some(Placeholder::normalize_media_query(query, config))
       };
-      println!("NORMALIZED QUERY: {:?}", query);
+
+      if query.is_none() {
+        if let Some(ref initial_value) = self.value {
+          let selector_name = ":root".to_string();
+          self.extend_dictionary_for_selector(
+            config,
+            dictionary,
+            &variable_name,
+            &query,
+            &selector_name,
+            initial_value,
+          )?;
+        };
+      }
 
       for (selector_name, variable_value) in selector_map.iter() {
-        let selector = if selector_name.is_empty() {
-          ":root".into()
-        } else {
-          Placeholder::normalize(selector_name, config)
-        };
-
-        match dictionary.get_mut(&query) {
-          Some(map) => {
-            match map.get_mut(&selector) {
-              Some(writer) => {
-                self.write_media_query_css(writer, config, &variable_name, variable_value)?;
-              }
-              None => {
-                let mut writer = String::new();
-                self.write_media_query_css(&mut writer, config, &variable_name, variable_value)?;
-                map.insert(selector, writer);
-              }
-            }
-          }
-          None => {
-            let mut map = StringMap::default();
-            let mut writer = String::new();
-
-            self.write_media_query_css(&mut writer, config, &variable_name, variable_value)?;
-            map.insert(selector, writer);
-            dictionary.insert(query.clone(), map);
-          }
-        }
+        self.extend_dictionary_for_selector(
+          config,
+          dictionary,
+          &variable_name,
+          &query,
+          selector_name,
+          variable_value,
+        )?;
       }
     }
 
+    Ok(())
+  }
+
+  fn extend_dictionary_for_selector(
+    &self,
+    config: &RunnerConfig,
+    dictionary: &mut IndexMap<Option<String>, StringMap>,
+    variable_name: &String,
+    query: &Option<String>,
+    selector_name: &String,
+    variable_value: &String,
+  ) -> AnyEmptyResult {
+    let selector = if selector_name.is_empty() {
+      ":root".into()
+    } else {
+      Placeholder::normalize(selector_name, config)
+    };
+    match dictionary.get_mut(query) {
+      Some(map) => {
+        match map.get_mut(&selector) {
+          Some(writer) => {
+            self.write_media_query_css(writer, config, variable_name, variable_value)?;
+          }
+          None => {
+            let mut writer = String::new();
+            self.write_media_query_css(&mut writer, config, variable_name, variable_value)?;
+            map.insert(selector, writer);
+          }
+        }
+      }
+      None => {
+        let mut map = StringMap::default();
+        let mut writer = String::new();
+
+        self.write_media_query_css(&mut writer, config, variable_name, variable_value)?;
+        map.insert(selector, writer);
+        dictionary.insert(query.clone(), map);
+      }
+    };
     Ok(())
   }
 
@@ -248,11 +315,12 @@ impl CssVariable {
     if self.is_color() {
       let options = config.options();
       let opacity_variable = self.get_opacity_variable(options);
+      let wrapped_opacity_variable = self.get_wrapped_opacity_variable(options, None);
       let alpha = self.get_default_opacity(Some(variable_value));
-      let variable_value =
-        options
-          .color_format
-          .get_color_value_with_opacity(config, self, Some(variable_value))?;
+      let variable_value = options
+        .color_format
+        .get_normalized_color(config, self, Some(variable_value))?
+        .to_string_with_opacity(wrapped_opacity_variable);
       writeln!(writer, "{opacity_variable}: {alpha};")?;
       writeln!(writer, "{variable_name}: {variable_value};")?;
     } else {

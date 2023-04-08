@@ -56,6 +56,11 @@ pub struct Options {
   #[serde(default = "default_opacity_prefix")]
   #[builder(default = default_opacity_prefix(), setter(into))]
   pub opacity_prefix: String,
+  /// Set the prefix that the color parts for color variables should use.
+  /// For hsl the colors parts would look like `314 100% 47.0588%`.
+  #[serde(default = "default_color_prefix")]
+  #[builder(default = default_color_prefix(), setter(into))]
+  pub color_prefix: String,
   /// The default color value to use when no color is specified.
   #[serde(default = "default_hex_color")]
   #[builder(default = default_hex_color(), setter(into))]
@@ -86,6 +91,10 @@ fn default_variable_prefix() -> String {
 
 fn default_opacity_prefix() -> String {
   "opacity".into()
+}
+
+fn default_color_prefix() -> String {
+  "color".into()
 }
 
 fn default_charset() -> String {

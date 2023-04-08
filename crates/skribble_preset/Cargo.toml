@@ -23,4 +23,6 @@ skribble_core = { workspace = true }
 typed-builder = { workspace = true }
 
 [dev-dependencies]
-insta = { workspace = true }
+insta = { features = ["json"], workspace = true }
+pretty_assertions = { workspace = true }
+rstest = { workspace = true }

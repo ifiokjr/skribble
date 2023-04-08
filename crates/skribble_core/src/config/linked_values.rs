@@ -97,7 +97,7 @@ impl LinkedValues {
             continue;
           }
 
-          let variable_name = variable.get_variable(config.options());
+          let wrapped_variable = variable.get_wrapped_variable(config.options(), None);
           let opacity_variable =
             Placeholder::normalize(variable.get_opacity_variable(config.options()), config);
           let default_opacity = variable.get_default_opacity(None);
@@ -107,8 +107,8 @@ impl LinkedValues {
             let property = Placeholder::normalize(property, config);
             let css_value = css_value
               .as_ref()
-              .map(|value| Placeholder::normalize_with_value(value, &variable_name, config))
-              .unwrap_or_else(|| variable_name.clone());
+              .map(|value| Placeholder::normalize_with_value(value, &wrapped_variable, config))
+              .unwrap_or_else(|| wrapped_variable.clone());
 
             writeln!(writer, "{}: {};", property, css_value)?;
           }
