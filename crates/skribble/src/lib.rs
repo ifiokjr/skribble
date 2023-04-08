@@ -3,7 +3,10 @@
 
 doc_comment::doctest!("../readme.md");
 
+use std::path::Path;
+
 pub use skribble_core as core;
+pub use skribble_core::vfs;
 pub use skribble_preset as preset;
 pub use skribble_rust as rust;
 
@@ -12,6 +15,7 @@ use crate::core::PluginContainer;
 pub use crate::core::Result;
 use crate::core::SkribbleRunner;
 use crate::core::StyleConfig;
+use crate::core::VfsPath;
 use crate::preset::PresetPlugin;
 use crate::rust::RustPlugin;
 
@@ -35,7 +39,7 @@ pub fn create_config() -> StyleConfig {
 }
 
 /// Generate the files that created by plugins and also the css files.
-pub fn run(config: StyleConfig) -> Result<SkribbleRunner> {
+pub fn run_with_config(config: StyleConfig) -> Result<SkribbleRunner> {
   let mut runner = SkribbleRunner::try_new(config)?;
   let _ = runner.initialize()?;
   let _generate_files = runner.generate()?; // Write the files to their destinations.
@@ -43,3 +47,27 @@ pub fn run(config: StyleConfig) -> Result<SkribbleRunner> {
 
   Ok(runner)
 }
+
+/// Generate the files that created by plugins and also the css files.
+///
+/// This is likely to change a lot in the future.
+pub fn run(
+  config: StyleConfig,
+  cwd: impl AsRef<Path>,
+  vfs: Option<VfsPath>,
+) -> Result<SkribbleRunner> {
+  let mut runner = SkribbleRunner::new(config, cwd, vfs);
+  let _ = runner.initialize()?;
+  let generate_files = runner.generate()?;
+  let css_result = runner.scan()?;
+
+  // Write the files to their destinations.
+  runner.write_files(&generate_files)?;
+  // Write the css file to the destination.
+  runner.write_css(&css_result)?;
+
+  Ok(runner)
+}
+
+#[cfg(test)]
+mod __tests;

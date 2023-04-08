@@ -2,6 +2,7 @@
 #![forbid(clippy::indexing_slicing)]
 
 doc_comment::doctest!("../readme.md");
+
 pub use config::*;
 pub use constants::*;
 pub use css::*;
@@ -13,6 +14,8 @@ pub use plugin::*;
 pub use runner::*;
 pub use traits::*;
 pub use utils::*;
+pub use vfs;
+pub use vfs::VfsPath;
 
 mod config;
 mod constants;
