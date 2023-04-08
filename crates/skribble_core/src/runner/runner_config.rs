@@ -8,12 +8,14 @@ use typed_builder::TypedBuilder;
 
 use crate::Atom;
 use crate::CssVariable;
+use crate::Error;
 use crate::Keyframe;
 use crate::LinkedValues;
 use crate::MediaQuery;
 use crate::Modifier;
 use crate::NamedClass;
 use crate::Options;
+use crate::Result;
 use crate::StringMap;
 use crate::ValueSet;
 
@@ -36,6 +38,10 @@ pub struct RunnerConfig {
 }
 
 impl RunnerConfig {
+  pub fn to_json(&self) -> Result<String> {
+    serde_json::to_string_pretty(self).map_err(Error::CouldNotSerializeConfig)
+  }
+
   pub fn get_media_queries(&self) -> Vec<&MediaQuery> {
     self
       .media_queries

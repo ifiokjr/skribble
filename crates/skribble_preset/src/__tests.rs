@@ -11,7 +11,7 @@ fn default_can_be_added_to_runner() -> AnyEmptyResult {
 
   let mut runner = SkribbleRunner::try_new(config)?;
   let runner_config = runner.initialize()?;
-  insta::assert_debug_snapshot!(runner_config);
+  insta::assert_json_snapshot!(runner_config);
 
   Ok(())
 }

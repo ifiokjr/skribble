@@ -13,7 +13,7 @@ use crate::Prioritized;
 use crate::RunnerConfig;
 
 #[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
-#[serde(rename_all = "camelCase", tag = "type")]
+#[serde(rename_all = "camelCase")]
 pub enum LinkedValues {
   /// The [`ValueSet`] names that will be used to populate the names that can be
   /// used.
