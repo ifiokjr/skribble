@@ -39,6 +39,7 @@ wasm-bindgen-test = "0.3"
 skribble = { path = "./crates/skribble", version = "0.0.0" }
 skribble_color = { path = "./crates/skribble_color", version = "0.0.0" }
 skribble_core = { path = "./crates/skribble_core", version = "0.0.0" }
+skribble_lsp = { path = "./crates/skribble_lsp", version = "0.0.0" }
 skribble_rust = { path = "./crates/skribble_rust", version = "0.0.0" }
 skribble_preset = { path = "./crates/skribble_preset", version = "0.0.0" }
 
