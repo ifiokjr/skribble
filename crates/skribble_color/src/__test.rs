@@ -22,13 +22,14 @@ fn valid_extracted_params(#[case] input: &str, #[case] expected: (&str, bool, bo
 }
 
 #[rstest]
-#[case("20, 20 10 / 10")]
-#[case("20, 20, 10  10")]
-#[case("20,, 20, 10  10")]
-#[case("20, 20, 10, ")]
-#[case("20 20 10 // 10")]
-#[case("20 / 20 10 10")]
-#[case("20 20 10 10/")]
+#[case::commas_and_slashes("20, 20 10 / 10")]
+#[case::missing_comma("20, 20, 10  10")]
+#[case::consecutive_commas("20,, 20, 10  10")]
+#[case::trailing_comma("20, 20, 10, ")]
+#[case::double_slash("20 20 10 // 10")]
+#[case::incorrect_slash_position("20 / 20 10 10")]
+#[case::trailing_slash("20 20 10 10/")]
+#[case::slash_with_no_content("20 20 10/ ")]
 fn invalid_extracted_params(#[case] input: &str) {
   let extracted: ExtractedParams = input.into();
   assert_eq!(extracted.is_valid(), false);

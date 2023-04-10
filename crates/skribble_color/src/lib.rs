@@ -1135,6 +1135,10 @@ impl<S: AsRef<str>> From<S> for ExtractedParams {
       invalid_commas = true;
     }
 
+    if slashes == 1 && params.len() != 4 {
+      invalid_slashes = true;
+    }
+
     Self {
       params,
       commas,
