@@ -1,5 +1,5 @@
-use pretty_assertions::assert_eq;
 use rstest::rstest;
+use similar_asserts::assert_eq;
 
 use super::*;
 use crate::AnyEmptyResult;

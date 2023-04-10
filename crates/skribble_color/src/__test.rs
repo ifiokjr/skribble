@@ -1,5 +1,5 @@
-use pretty_assertions::assert_eq;
 use rstest::*;
+use similar_asserts::assert_eq;
 
 use crate::Color;
 use crate::ColorError;

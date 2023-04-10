@@ -23,5 +23,5 @@ tower-lsp = { workspace = true, features = ["proposed"] }
 
 [dev-dependencies]
 insta = { features = ["json"], workspace = true }
-pretty_assertions = { workspace = true }
 rstest = { workspace = true }
+similar-asserts = { workspace = true }
