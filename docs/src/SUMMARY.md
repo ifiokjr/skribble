@@ -4,5 +4,5 @@
 
 # Rust Guide
 
-- [Installation](rust/installation.md)
-- [Setup](rust/setup.md)
+- [Installation](rust/01-installation.md)
+- [Setup](rust/02-setup.md)

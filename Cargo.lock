@@ -1390,6 +1390,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "skribble_book"
+version = "0.0.0"
+dependencies = [
+ "doc-comment",
+ "skribble",
+ "skribble_color",
+ "skribble_core",
+ "skribble_lsp",
+ "skribble_preset",
+ "skribble_rust",
+]
+
+[[package]]
 name = "skribble_color"
 version = "0.0.0"
 dependencies = [

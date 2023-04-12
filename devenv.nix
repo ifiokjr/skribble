@@ -70,7 +70,6 @@
     set -e
     test:cargo
     test:docs
-    # test:book
   '';
   scripts."test:cargo".exec = ''
     set -e
@@ -80,6 +79,7 @@
     set -e
     cargo test --doc
   '';
+  # This doesn't seem to work so I've used `doc-comment` instead
   scripts."test:book".exec = ''
     set -e
     mdbook test docs --library-path target/debug/deps

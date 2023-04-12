@@ -1,6 +1,6 @@
 [workspace]
-members = ["crates/*"]
-default-members = ["crates/*"]
+members = ["crates/*", "docs"]
+default-members = ["crates/*", "docs"]
 resolver = "2"
 
 [workspace.dependencies]
@@ -20,12 +20,13 @@ napi = "2"
 napi-build = "2"
 napi-derive = "2"
 palette = "0.6"
-similar-asserts = "1"
 readonly = "0.2"
 regex = "1"
 rstest = "0.17"
 serde = "1"
 serde_json = "1"
+similar-asserts = "1"
+skeptic = "0.13"
 syn = "2"
 thiserror = "1"
 tokio = "1"
