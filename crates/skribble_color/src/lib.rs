@@ -611,7 +611,7 @@ fn hex_to_css<T: AsRef<str>>(rgba: &Rgba, opacity: Option<T>) -> String {
 
 fn hsl_to_css<T: AsRef<str>>(hsla: &Hsla, opacity: Option<T>) -> String {
   let is_alpha = opacity.is_some() || hsla.alpha != 1.0;
-  let hue = hsla.hue.to_positive_degrees();
+  let hue = hsla.hue.into_positive_degrees();
   let saturation = hsla.saturation * 100.0;
   let lightness = hsla.lightness * 100.0;
   let alpha = opacity
@@ -627,7 +627,7 @@ fn hsl_to_css<T: AsRef<str>>(hsla: &Hsla, opacity: Option<T>) -> String {
 
 fn hwb_to_css<T: AsRef<str>>(hwba: &Hwba, opacity: Option<T>) -> String {
   let is_alpha = opacity.is_some() || hwba.alpha != 1.0;
-  let hue = hwba.hue.to_positive_degrees();
+  let hue = hwba.hue.into_positive_degrees();
   let whiteness = hwba.whiteness * 100.0;
   let blackness = hwba.blackness * 100.0;
   let alpha = opacity
@@ -651,7 +651,7 @@ fn lch_to_css<T: AsRef<str>>(lcha: &Lcha, opacity: Option<T>) -> String {
   let is_alpha = opacity.is_some() || lcha.alpha != 1.0;
   let lightness = lcha.l;
   let chroma = lcha.chroma / 150.0 * 100.0;
-  let hue = lcha.hue.to_positive_degrees();
+  let hue = lcha.hue.into_positive_degrees();
   let alpha = opacity
     .map(|v| v.as_ref().to_string())
     .unwrap_or(lcha.alpha.to_string());
@@ -667,7 +667,7 @@ fn oklch_to_css<T: AsRef<str>>(oklcha: &Oklcha, opacity: Option<T>) -> String {
   let is_alpha = opacity.is_some() || oklcha.alpha != 1.0;
   let lightness = oklcha.l * 100.0;
   let chroma = oklcha.chroma * 100.0;
-  let hue = oklcha.hue.to_positive_degrees();
+  let hue = oklcha.hue.into_positive_degrees();
   let alpha = opacity
     .map(|v| v.as_ref().to_string())
     .unwrap_or(oklcha.alpha.to_string());
