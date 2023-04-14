@@ -10,17 +10,33 @@ pub const INDENTATION: &str = "  ";
 pub const ROOT_SELECTOR: &str = ":root";
 
 lazy_static! {
-  static ref CSS_VARIABLE_REGEX: Regex =
-    Regex::new(format!("(?m){}", Placeholder::variable("(?P<name>\\w[\\w\\d]+)")).as_str())
-      .unwrap();
-  static ref MEDIA_QUERY_REGEX: Regex =
-    Regex::new(format!("(?m){}", Placeholder::media_query("(?P<name>\\w[\\w\\d]+)")).as_str())
-      .unwrap();
-  static ref MODIFIER_REGEX: Regex =
-    Regex::new(format!("(?m){}", Placeholder::modifier("(?P<name>\\w[\\w\\d]+)")).as_str())
-      .unwrap();
+  static ref CSS_VARIABLE_REGEX: Regex = Regex::new(
+    format!(
+      "(?m){}",
+      Placeholder::variable("(?P<name>\\w[a-zA-Z0-9-]+)")
+    )
+    .as_str()
+  )
+  .unwrap();
+  static ref MEDIA_QUERY_REGEX: Regex = Regex::new(
+    format!(
+      "(?m){}",
+      Placeholder::media_query("(?P<name>\\w[a-zA-Z0-9-]+)")
+    )
+    .as_str()
+  )
+  .unwrap();
+  static ref MODIFIER_REGEX: Regex = Regex::new(
+    format!(
+      "(?m){}",
+      Placeholder::modifier("(?P<name>\\w[a-zA-Z0-9-]+)")
+    )
+    .as_str()
+  )
+  .unwrap();
   static ref PALETTE_REGEX: Regex =
-    Regex::new(format!("(?m){}", Placeholder::palette("(?P<name>\\w[\\w\\d]+)")).as_str()).unwrap();
+    Regex::new(format!("(?m){}", Placeholder::palette("(?P<name>\\w[a-zA-Z0-9-]+)")).as_str())
+      .unwrap();
   static ref VALUE: Regex = Regex::new(format!("(?m){}", Placeholder::value()).as_str()).unwrap();
 }
 
@@ -57,14 +73,14 @@ impl Placeholder {
 
         // get the name from the capture group
         let Some(name) = caps.name("name") else {
-        return invalid_regex;
-      };
+          return invalid_regex;
+        };
 
         let name = name.as_str();
 
         let Some(name) = config.css_variables.get(name) else {
-        return invalid_regex;
-      };
+          return invalid_regex;
+        };
 
         name.get_variable(config.options())
       })

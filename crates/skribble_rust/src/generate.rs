@@ -455,7 +455,7 @@ fn generate_css_variables(
       entries.push(wrap_indent(wrap_docs("\n"), 1));
     }
 
-    entries.push(css_docs.clone());
+    entries.push(css_docs);
 
     entries.push(wrap_indent(
       format!("#[inline]\npub fn {method_name}(&self) -> String {{"),

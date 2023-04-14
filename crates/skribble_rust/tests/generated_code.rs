@@ -980,12 +980,12 @@ pub trait GeneratedMediaQueryMotion: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn motion_reduce(&self) -> GeneratedMediaQueryMotionChild {
-    GeneratedMediaQueryMotionChild::from_ref(self.append("motionReduce"))
+    GeneratedMediaQueryMotionChild::from_ref(self.append("motion-reduce"))
   }
   #[inline]
   fn motion_reduce_(&self, property: &'static str, value: &'static str) -> String {
     self.append(format!(
-      "motionReduce:[{}={}]",
+      "motion-reduce:[{}={}]",
       property.trim(),
       value.trim()
     ))
@@ -999,11 +999,15 @@ pub trait GeneratedMediaQueryMotion: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn motion_safe(&self) -> GeneratedMediaQueryMotionChild {
-    GeneratedMediaQueryMotionChild::from_ref(self.append("motionSafe"))
+    GeneratedMediaQueryMotionChild::from_ref(self.append("motion-safe"))
   }
   #[inline]
   fn motion_safe_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("motionSafe:[{}={}]", property.trim(), value.trim()))
+    self.append(format!(
+      "motion-safe:[{}={}]",
+      property.trim(),
+      value.trim()
+    ))
   }
 }
 pub struct GeneratedMediaQueryDarkModeChild(String);
@@ -1088,11 +1092,15 @@ pub trait GeneratedModifierParentGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn group_hover(&self) -> GeneratedModifierParentGroupChild {
-    GeneratedModifierParentGroupChild::from_ref(self.append("groupHover"))
+    GeneratedModifierParentGroupChild::from_ref(self.append("group-hover"))
   }
   #[inline]
   fn group_hover_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("groupHover:[{}={}]", property.trim(), value.trim()))
+    self.append(format!(
+      "group-hover:[{}={}]",
+      property.trim(),
+      value.trim()
+    ))
   }
   /// This class modifier becomes active when a parent group is focused.
   ///
@@ -1103,11 +1111,15 @@ pub trait GeneratedModifierParentGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn group_focus(&self) -> GeneratedModifierParentGroupChild {
-    GeneratedModifierParentGroupChild::from_ref(self.append("groupFocus"))
+    GeneratedModifierParentGroupChild::from_ref(self.append("group-focus"))
   }
   #[inline]
   fn group_focus_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("groupFocus:[{}={}]", property.trim(), value.trim()))
+    self.append(format!(
+      "group-focus:[{}={}]",
+      property.trim(),
+      value.trim()
+    ))
   }
   /// This class modifier becomes active when a parent group is active.
   ///
@@ -1118,12 +1130,12 @@ pub trait GeneratedModifierParentGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn group_active(&self) -> GeneratedModifierParentGroupChild {
-    GeneratedModifierParentGroupChild::from_ref(self.append("groupActive"))
+    GeneratedModifierParentGroupChild::from_ref(self.append("group-active"))
   }
   #[inline]
   fn group_active_(&self, property: &'static str, value: &'static str) -> String {
     self.append(format!(
-      "groupActive:[{}={}]",
+      "group-active:[{}={}]",
       property.trim(),
       value.trim()
     ))
@@ -1137,12 +1149,12 @@ pub trait GeneratedModifierParentGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn group_visited(&self) -> GeneratedModifierParentGroupChild {
-    GeneratedModifierParentGroupChild::from_ref(self.append("groupVisited"))
+    GeneratedModifierParentGroupChild::from_ref(self.append("group-visited"))
   }
   #[inline]
   fn group_visited_(&self, property: &'static str, value: &'static str) -> String {
     self.append(format!(
-      "groupVisited:[{}={}]",
+      "group-visited:[{}={}]",
       property.trim(),
       value.trim()
     ))
@@ -1210,11 +1222,15 @@ pub trait GeneratedModifierActiveGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn active_link(&self) -> GeneratedModifierActiveGroupChild {
-    GeneratedModifierActiveGroupChild::from_ref(self.append("activeLink"))
+    GeneratedModifierActiveGroupChild::from_ref(self.append("active-link"))
   }
   #[inline]
   fn active_link_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("activeLink:[{}={}]", property.trim(), value.trim()))
+    self.append(format!(
+      "active-link:[{}={}]",
+      property.trim(),
+      value.trim()
+    ))
   }
   /// ```css
   /// &[aria-current=location] {
@@ -1223,12 +1239,12 @@ pub trait GeneratedModifierActiveGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn active_location(&self) -> GeneratedModifierActiveGroupChild {
-    GeneratedModifierActiveGroupChild::from_ref(self.append("activeLocation"))
+    GeneratedModifierActiveGroupChild::from_ref(self.append("active-location"))
   }
   #[inline]
   fn active_location_(&self, property: &'static str, value: &'static str) -> String {
     self.append(format!(
-      "activeLocation:[{}={}]",
+      "active-location:[{}={}]",
       property.trim(),
       value.trim()
     ))
@@ -1240,11 +1256,15 @@ pub trait GeneratedModifierActiveGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn active_date(&self) -> GeneratedModifierActiveGroupChild {
-    GeneratedModifierActiveGroupChild::from_ref(self.append("activeDate"))
+    GeneratedModifierActiveGroupChild::from_ref(self.append("active-date"))
   }
   #[inline]
   fn active_date_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("activeDate:[{}={}]", property.trim(), value.trim()))
+    self.append(format!(
+      "active-date:[{}={}]",
+      property.trim(),
+      value.trim()
+    ))
   }
   /// ```css
   /// &[aria-current=time] {
@@ -1253,11 +1273,15 @@ pub trait GeneratedModifierActiveGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn active_time(&self) -> GeneratedModifierActiveGroupChild {
-    GeneratedModifierActiveGroupChild::from_ref(self.append("activeTime"))
+    GeneratedModifierActiveGroupChild::from_ref(self.append("active-time"))
   }
   #[inline]
   fn active_time_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("activeTime:[{}={}]", property.trim(), value.trim()))
+    self.append(format!(
+      "active-time:[{}={}]",
+      property.trim(),
+      value.trim()
+    ))
   }
   /// ```css
   /// &[aria-current=step] {
@@ -1266,11 +1290,15 @@ pub trait GeneratedModifierActiveGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn active_step(&self) -> GeneratedModifierActiveGroupChild {
-    GeneratedModifierActiveGroupChild::from_ref(self.append("activeStep"))
+    GeneratedModifierActiveGroupChild::from_ref(self.append("active-step"))
   }
   #[inline]
   fn active_step_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("activeStep:[{}={}]", property.trim(), value.trim()))
+    self.append(format!(
+      "active-step:[{}={}]",
+      property.trim(),
+      value.trim()
+    ))
   }
 }
 pub struct GeneratedModifierFocusGroupChild(String);
@@ -1320,12 +1348,12 @@ pub trait GeneratedModifierFocusWithinGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn focus_within(&self) -> GeneratedModifierFocusWithinGroupChild {
-    GeneratedModifierFocusWithinGroupChild::from_ref(self.append("focusWithin"))
+    GeneratedModifierFocusWithinGroupChild::from_ref(self.append("focus-within"))
   }
   #[inline]
   fn focus_within_(&self, property: &'static str, value: &'static str) -> String {
     self.append(format!(
-      "focusWithin:[{}={}]",
+      "focus-within:[{}={}]",
       property.trim(),
       value.trim()
     ))
@@ -1351,12 +1379,12 @@ pub trait GeneratedModifierFocusVisibleGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn focus_visible(&self) -> GeneratedModifierFocusVisibleGroupChild {
-    GeneratedModifierFocusVisibleGroupChild::from_ref(self.append("focusVisible"))
+    GeneratedModifierFocusVisibleGroupChild::from_ref(self.append("focus-visible"))
   }
   #[inline]
   fn focus_visible_(&self, property: &'static str, value: &'static str) -> String {
     self.append(format!(
-      "focusVisible:[{}={}]",
+      "focus-visible:[{}={}]",
       property.trim(),
       value.trim()
     ))
@@ -1395,12 +1423,12 @@ pub trait GeneratedModifierEnabledGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn not_disabled(&self) -> GeneratedModifierEnabledGroupChild {
-    GeneratedModifierEnabledGroupChild::from_ref(self.append("notDisabled"))
+    GeneratedModifierEnabledGroupChild::from_ref(self.append("not-disabled"))
   }
   #[inline]
   fn not_disabled_(&self, property: &'static str, value: &'static str) -> String {
     self.append(format!(
-      "notDisabled:[{}={}]",
+      "not-disabled:[{}={}]",
       property.trim(),
       value.trim()
     ))
@@ -1466,11 +1494,11 @@ pub trait GeneratedModifierReadGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn read_write(&self) -> GeneratedModifierReadGroupChild {
-    GeneratedModifierReadGroupChild::from_ref(self.append("readWrite"))
+    GeneratedModifierReadGroupChild::from_ref(self.append("read-write"))
   }
   #[inline]
   fn read_write_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("readWrite:[{}={}]", property.trim(), value.trim()))
+    self.append(format!("read-write:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &[aria-readonly=true], &[readonly], &:read-only {
@@ -1479,11 +1507,11 @@ pub trait GeneratedModifierReadGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn read_only(&self) -> GeneratedModifierReadGroupChild {
-    GeneratedModifierReadGroupChild::from_ref(self.append("readOnly"))
+    GeneratedModifierReadGroupChild::from_ref(self.append("read-only"))
   }
   #[inline]
   fn read_only_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("readOnly:[{}={}]", property.trim(), value.trim()))
+    self.append(format!("read-only:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &[aria-readonly=false], &[readonly=false], &:not(:read-only) {
@@ -1492,12 +1520,12 @@ pub trait GeneratedModifierReadGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn not_read_only(&self) -> GeneratedModifierReadGroupChild {
-    GeneratedModifierReadGroupChild::from_ref(self.append("notReadOnly"))
+    GeneratedModifierReadGroupChild::from_ref(self.append("not-read-only"))
   }
   #[inline]
   fn not_read_only_(&self, property: &'static str, value: &'static str) -> String {
     self.append(format!(
-      "notReadOnly:[{}={}]",
+      "not-read-only:[{}={}]",
       property.trim(),
       value.trim()
     ))
@@ -1661,12 +1689,12 @@ pub trait GeneratedModifierInvalidGrammarGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn invalid_grammar(&self) -> GeneratedModifierInvalidGrammarGroupChild {
-    GeneratedModifierInvalidGrammarGroupChild::from_ref(self.append("invalidGrammar"))
+    GeneratedModifierInvalidGrammarGroupChild::from_ref(self.append("invalid-grammar"))
   }
   #[inline]
   fn invalid_grammar_(&self, property: &'static str, value: &'static str) -> String {
     self.append(format!(
-      "invalidGrammar:[{}={}]",
+      "invalid-grammar:[{}={}]",
       property.trim(),
       value.trim()
     ))
@@ -1692,12 +1720,12 @@ pub trait GeneratedModifierInvalidSpellingGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn invalid_spelling(&self) -> GeneratedModifierInvalidSpellingGroupChild {
-    GeneratedModifierInvalidSpellingGroupChild::from_ref(self.append("invalidSpelling"))
+    GeneratedModifierInvalidSpellingGroupChild::from_ref(self.append("invalid-spelling"))
   }
   #[inline]
   fn invalid_spelling_(&self, property: &'static str, value: &'static str) -> String {
     self.append(format!(
-      "invalidSpelling:[{}={}]",
+      "invalid-spelling:[{}={}]",
       property.trim(),
       value.trim()
     ))
@@ -1817,11 +1845,15 @@ pub trait GeneratedModifierHiddenGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn aria_hidden(&self) -> GeneratedModifierHiddenGroupChild {
-    GeneratedModifierHiddenGroupChild::from_ref(self.append("ariaHidden"))
+    GeneratedModifierHiddenGroupChild::from_ref(self.append("aria-hidden"))
   }
   #[inline]
   fn aria_hidden_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("ariaHidden:[{}={}]", property.trim(), value.trim()))
+    self.append(format!(
+      "aria-hidden:[{}={}]",
+      property.trim(),
+      value.trim()
+    ))
   }
 }
 pub struct GeneratedModifierAutofillGroupChild(String);
@@ -1897,11 +1929,15 @@ pub trait GeneratedModifierEvenGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn even_of_type(&self) -> GeneratedModifierEvenGroupChild {
-    GeneratedModifierEvenGroupChild::from_ref(self.append("evenOfType"))
+    GeneratedModifierEvenGroupChild::from_ref(self.append("even-of-type"))
   }
   #[inline]
   fn even_of_type_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("evenOfType:[{}={}]", property.trim(), value.trim()))
+    self.append(format!(
+      "even-of-type:[{}={}]",
+      property.trim(),
+      value.trim()
+    ))
   }
   /// ```css
   /// &:nth-of-type(odd) {
@@ -1910,11 +1946,15 @@ pub trait GeneratedModifierEvenGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn odd_of_type(&self) -> GeneratedModifierEvenGroupChild {
-    GeneratedModifierEvenGroupChild::from_ref(self.append("oddOfType"))
+    GeneratedModifierEvenGroupChild::from_ref(self.append("odd-of-type"))
   }
   #[inline]
   fn odd_of_type_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("oddOfType:[{}={}]", property.trim(), value.trim()))
+    self.append(format!(
+      "odd-of-type:[{}={}]",
+      property.trim(),
+      value.trim()
+    ))
   }
 }
 pub struct GeneratedModifierNodePositionGroupChild(String);
@@ -1950,11 +1990,11 @@ pub trait GeneratedModifierNodePositionGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn not_first(&self) -> GeneratedModifierNodePositionGroupChild {
-    GeneratedModifierNodePositionGroupChild::from_ref(self.append("notFirst"))
+    GeneratedModifierNodePositionGroupChild::from_ref(self.append("not-first"))
   }
   #[inline]
   fn not_first_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("notFirst:[{}={}]", property.trim(), value.trim()))
+    self.append(format!("not-first:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &:last {
@@ -1976,11 +2016,11 @@ pub trait GeneratedModifierNodePositionGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn not_last(&self) -> GeneratedModifierNodePositionGroupChild {
-    GeneratedModifierNodePositionGroupChild::from_ref(self.append("notLast"))
+    GeneratedModifierNodePositionGroupChild::from_ref(self.append("not-last"))
   }
   #[inline]
   fn not_last_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("notLast:[{}={}]", property.trim(), value.trim()))
+    self.append(format!("not-last:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierNodeOfTypeGroupChild(String);
@@ -2003,12 +2043,12 @@ pub trait GeneratedModifierNodeOfTypeGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn first_of_type(&self) -> GeneratedModifierNodeOfTypeGroupChild {
-    GeneratedModifierNodeOfTypeGroupChild::from_ref(self.append("firstOfType"))
+    GeneratedModifierNodeOfTypeGroupChild::from_ref(self.append("first-of-type"))
   }
   #[inline]
   fn first_of_type_(&self, property: &'static str, value: &'static str) -> String {
     self.append(format!(
-      "firstOfType:[{}={}]",
+      "first-of-type:[{}={}]",
       property.trim(),
       value.trim()
     ))
@@ -2020,12 +2060,12 @@ pub trait GeneratedModifierNodeOfTypeGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn not_first_of_type(&self) -> GeneratedModifierNodeOfTypeGroupChild {
-    GeneratedModifierNodeOfTypeGroupChild::from_ref(self.append("notFirstOfType"))
+    GeneratedModifierNodeOfTypeGroupChild::from_ref(self.append("not-first-of-type"))
   }
   #[inline]
   fn not_first_of_type_(&self, property: &'static str, value: &'static str) -> String {
     self.append(format!(
-      "notFirstOfType:[{}={}]",
+      "not-first-of-type:[{}={}]",
       property.trim(),
       value.trim()
     ))
@@ -2037,11 +2077,15 @@ pub trait GeneratedModifierNodeOfTypeGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn last_of_type(&self) -> GeneratedModifierNodeOfTypeGroupChild {
-    GeneratedModifierNodeOfTypeGroupChild::from_ref(self.append("lastOfType"))
+    GeneratedModifierNodeOfTypeGroupChild::from_ref(self.append("last-of-type"))
   }
   #[inline]
   fn last_of_type_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("lastOfType:[{}={}]", property.trim(), value.trim()))
+    self.append(format!(
+      "last-of-type:[{}={}]",
+      property.trim(),
+      value.trim()
+    ))
   }
   /// ```css
   /// &:not(:last-of-type) {
@@ -2050,12 +2094,12 @@ pub trait GeneratedModifierNodeOfTypeGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn not_last_of_type(&self) -> GeneratedModifierNodeOfTypeGroupChild {
-    GeneratedModifierNodeOfTypeGroupChild::from_ref(self.append("notLastOfType"))
+    GeneratedModifierNodeOfTypeGroupChild::from_ref(self.append("not-last-of-type"))
   }
   #[inline]
   fn not_last_of_type_(&self, property: &'static str, value: &'static str) -> String {
     self.append(format!(
-      "notLastOfType:[{}={}]",
+      "not-last-of-type:[{}={}]",
       property.trim(),
       value.trim()
     ))
@@ -2135,11 +2179,15 @@ pub trait GeneratedModifierFullScreenGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn full_screen(&self) -> GeneratedModifierFullScreenGroupChild {
-    GeneratedModifierFullScreenGroupChild::from_ref(self.append("fullScreen"))
+    GeneratedModifierFullScreenGroupChild::from_ref(self.append("full-screen"))
   }
   #[inline]
   fn full_screen_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("fullScreen:[{}={}]", property.trim(), value.trim()))
+    self.append(format!(
+      "full-screen:[{}={}]",
+      property.trim(),
+      value.trim()
+    ))
   }
 }
 pub struct GeneratedModifierTargetGroupChild(String);
@@ -2189,12 +2237,12 @@ pub trait GeneratedModifierPlaceholderShownGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn placeholder_shown(&self) -> GeneratedModifierPlaceholderShownGroupChild {
-    GeneratedModifierPlaceholderShownGroupChild::from_ref(self.append("placeholderShown"))
+    GeneratedModifierPlaceholderShownGroupChild::from_ref(self.append("placeholder-shown"))
   }
   #[inline]
   fn placeholder_shown_(&self, property: &'static str, value: &'static str) -> String {
     self.append(format!(
-      "placeholderShown:[{}={}]",
+      "placeholder-shown:[{}={}]",
       property.trim(),
       value.trim()
     ))
@@ -2233,12 +2281,12 @@ pub trait GeneratedModifierRequiredGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn not_required(&self) -> GeneratedModifierRequiredGroupChild {
-    GeneratedModifierRequiredGroupChild::from_ref(self.append("notRequired"))
+    GeneratedModifierRequiredGroupChild::from_ref(self.append("not-required"))
   }
   #[inline]
   fn not_required_(&self, property: &'static str, value: &'static str) -> String {
     self.append(format!(
-      "notRequired:[{}={}]",
+      "not-required:[{}={}]",
       property.trim(),
       value.trim()
     ))
@@ -2291,11 +2339,11 @@ pub trait GeneratedModifierOnlyChildGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn only_child(&self) -> GeneratedModifierOnlyChildGroupChild {
-    GeneratedModifierOnlyChildGroupChild::from_ref(self.append("onlyChild"))
+    GeneratedModifierOnlyChildGroupChild::from_ref(self.append("only-child"))
   }
   #[inline]
   fn only_child_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("onlyChild:[{}={}]", property.trim(), value.trim()))
+    self.append(format!("only-child:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &:not(:only-child) {
@@ -2304,12 +2352,12 @@ pub trait GeneratedModifierOnlyChildGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn not_only_child(&self) -> GeneratedModifierOnlyChildGroupChild {
-    GeneratedModifierOnlyChildGroupChild::from_ref(self.append("notOnlyChild"))
+    GeneratedModifierOnlyChildGroupChild::from_ref(self.append("not-only-child"))
   }
   #[inline]
   fn not_only_child_(&self, property: &'static str, value: &'static str) -> String {
     self.append(format!(
-      "notOnlyChild:[{}={}]",
+      "not-only-child:[{}={}]",
       property.trim(),
       value.trim()
     ))
@@ -2335,11 +2383,15 @@ pub trait GeneratedModifierOnlyGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn only_of_type(&self) -> GeneratedModifierOnlyGroupChild {
-    GeneratedModifierOnlyGroupChild::from_ref(self.append("onlyOfType"))
+    GeneratedModifierOnlyGroupChild::from_ref(self.append("only-of-type"))
   }
   #[inline]
   fn only_of_type_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("onlyOfType:[{}={}]", property.trim(), value.trim()))
+    self.append(format!(
+      "only-of-type:[{}={}]",
+      property.trim(),
+      value.trim()
+    ))
   }
   /// ```css
   /// &:not(:only-of-type) {
@@ -2348,12 +2400,12 @@ pub trait GeneratedModifierOnlyGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn not_only_of_type(&self) -> GeneratedModifierOnlyGroupChild {
-    GeneratedModifierOnlyGroupChild::from_ref(self.append("notOnlyOfType"))
+    GeneratedModifierOnlyGroupChild::from_ref(self.append("not-only-of-type"))
   }
   #[inline]
   fn not_only_of_type_(&self, property: &'static str, value: &'static str) -> String {
     self.append(format!(
-      "notOnlyOfType:[{}={}]",
+      "not-only-of-type:[{}={}]",
       property.trim(),
       value.trim()
     ))
@@ -2463,12 +2515,12 @@ pub trait GeneratedModifierPseudoGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn first_letter(&self) -> GeneratedModifierPseudoGroupChild {
-    GeneratedModifierPseudoGroupChild::from_ref(self.append("firstLetter"))
+    GeneratedModifierPseudoGroupChild::from_ref(self.append("first-letter"))
   }
   #[inline]
   fn first_letter_(&self, property: &'static str, value: &'static str) -> String {
     self.append(format!(
-      "firstLetter:[{}={}]",
+      "first-letter:[{}={}]",
       property.trim(),
       value.trim()
     ))
@@ -2480,11 +2532,11 @@ pub trait GeneratedModifierPseudoGroup: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn first_line(&self) -> GeneratedModifierPseudoGroupChild {
-    GeneratedModifierPseudoGroupChild::from_ref(self.append("firstLine"))
+    GeneratedModifierPseudoGroupChild::from_ref(self.append("first-line"))
   }
   #[inline]
   fn first_line_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("firstLine:[{}={}]", property.trim(), value.trim()))
+    self.append(format!("first-line:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &::before {
@@ -2632,7 +2684,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn primary_content(&self) -> String {
-    self.append_value("primaryContent")
+    self.append_value("primary-content")
   }
   /// The secondary color. Useful for secondary buttons.
   ///
@@ -2658,7 +2710,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn secondary_content(&self) -> String {
-    self.append_value("secondaryContent")
+    self.append_value("secondary-content")
   }
   /// Color for accents.
   ///
@@ -2684,7 +2736,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn accent_content(&self) -> String {
-    self.append_value("accentContent")
+    self.append_value("accent-content")
   }
   /// The neutral color.
   ///
@@ -2710,7 +2762,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn neutral_content(&self) -> String {
-    self.append_value("neutralContent")
+    self.append_value("neutral-content")
   }
   /// The base color.
   ///
@@ -2762,7 +2814,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn base_content(&self) -> String {
-    self.append_value("baseContent")
+    self.append_value("base-content")
   }
   /// The info color. Useful for info buttons and alerts.
   ///
@@ -2788,7 +2840,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn info_content(&self) -> String {
-    self.append_value("infoContent")
+    self.append_value("info-content")
   }
   /// The success color. Useful for success buttons and alerts.
   ///
@@ -2815,7 +2867,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn success_content(&self) -> String {
-    self.append_value("successContent")
+    self.append_value("success-content")
   }
   /// The warning color. Useful for warning buttons and alerts.
   ///
@@ -2842,7 +2894,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn warning_content(&self) -> String {
-    self.append_value("warningContent")
+    self.append_value("warning-content")
   }
   /// The error color. Useful for error buttons and alerts.
   ///
@@ -2868,7 +2920,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn error_content(&self) -> String {
-    self.append_value("errorContent")
+    self.append_value("error-content")
   }
   #[inline]
   fn inherit(&self) -> String {
@@ -4230,7 +4282,7 @@ pub trait GeneratedValueSetEase: GeneratedSkribbleValue {
     self.append_value("out")
   }
   /// ```css
-  /// .ease\:\$in-out {
+  /// .ease\:\$inOut {
   ///   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   /// }
   /// ```
@@ -5206,7 +5258,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("third")
   }
   /// ```css
-  /// .slide-in-left\:\$two-thirds {
+  /// .slide-in-left\:\$twoThirds {
   ///   --sk-enter-tx: -66.666667%;
   /// }
   /// ```
@@ -5233,7 +5285,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-in-left\:\$three-quarters {
+  /// .slide-in-left\:\$threeQuarters {
   ///   --sk-enter-tx: -75%;
   /// }
   /// ```
@@ -5590,7 +5642,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("third")
   }
   /// ```css
-  /// .slide-in-right\:\$two-thirds {
+  /// .slide-in-right\:\$twoThirds {
   ///   --sk-enter-tx: 66.666667%;
   /// }
   /// ```
@@ -5617,7 +5669,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-in-right\:\$three-quarters {
+  /// .slide-in-right\:\$threeQuarters {
   ///   --sk-enter-tx: 75%;
   /// }
   /// ```
@@ -5974,7 +6026,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("third")
   }
   /// ```css
-  /// .slide-out-left\:\$two-thirds {
+  /// .slide-out-left\:\$twoThirds {
   ///   --sk-exit-tx: -66.666667%;
   /// }
   /// ```
@@ -6001,7 +6053,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-out-left\:\$three-quarters {
+  /// .slide-out-left\:\$threeQuarters {
   ///   --sk-exit-tx: -75%;
   /// }
   /// ```
@@ -6358,7 +6410,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("third")
   }
   /// ```css
-  /// .slide-out-right\:\$two-thirds {
+  /// .slide-out-right\:\$twoThirds {
   ///   --sk-exit-tx: 66.666667%;
   /// }
   /// ```
@@ -6385,7 +6437,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-out-right\:\$three-quarters {
+  /// .slide-out-right\:\$threeQuarters {
   ///   --sk-exit-tx: 75%;
   /// }
   /// ```
@@ -6742,7 +6794,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("third")
   }
   /// ```css
-  /// .slide-in-top\:\$two-thirds {
+  /// .slide-in-top\:\$twoThirds {
   ///   --sk-enter-ty: -66.666667%;
   /// }
   /// ```
@@ -6769,7 +6821,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-in-top\:\$three-quarters {
+  /// .slide-in-top\:\$threeQuarters {
   ///   --sk-enter-ty: -75%;
   /// }
   /// ```
@@ -7126,7 +7178,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("third")
   }
   /// ```css
-  /// .slide-in-bottom\:\$two-thirds {
+  /// .slide-in-bottom\:\$twoThirds {
   ///   --sk-enter-ty: 66.666667%;
   /// }
   /// ```
@@ -7153,7 +7205,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-in-bottom\:\$three-quarters {
+  /// .slide-in-bottom\:\$threeQuarters {
   ///   --sk-enter-ty: 75%;
   /// }
   /// ```
@@ -7510,7 +7562,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("third")
   }
   /// ```css
-  /// .slide-out-top\:\$two-thirds {
+  /// .slide-out-top\:\$twoThirds {
   ///   --sk-exit-ty: -66.666667%;
   /// }
   /// ```
@@ -7537,7 +7589,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-out-top\:\$three-quarters {
+  /// .slide-out-top\:\$threeQuarters {
   ///   --sk-exit-ty: -75%;
   /// }
   /// ```
@@ -7894,7 +7946,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("third")
   }
   /// ```css
-  /// .slide-out-bottom\:\$two-thirds {
+  /// .slide-out-bottom\:\$twoThirds {
   ///   --sk-exit-ty: 66.666667%;
   /// }
   /// ```
@@ -7921,7 +7973,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-out-bottom\:\$three-quarters {
+  /// .slide-out-bottom\:\$threeQuarters {
   ///   --sk-exit-ty: 75%;
   /// }
   /// ```
@@ -8316,7 +8368,7 @@ pub trait GeneratedValueSetAnimateEasing: GeneratedSkribbleValue {
     self.append_value("out")
   }
   /// ```css
-  /// .animate-easing\:\$in-out {
+  /// .animate-easing\:\$inOut {
   ///   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   /// }
   /// ```
@@ -8526,7 +8578,7 @@ pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
     self.append_value("out")
   }
   /// ```css
-  /// .animate-repeat\:\$in-out {
+  /// .animate-repeat\:\$inOut {
   ///   animation-iteration-count: cubic-bezier(0.4, 0, 0.2, 1);
   /// }
   /// ```
@@ -8577,7 +8629,7 @@ pub trait GeneratedValueSetAnimateDirection: GeneratedSkribbleValue {
     self.append_value("alt")
   }
   /// ```css
-  /// .animate-direction\:\$alt-reverse {
+  /// .animate-direction\:\$altReverse {
   ///   animation-direction: alternate-reverse;
   /// }
   /// ```
@@ -15689,7 +15741,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
     self.append_value("auto")
   }
   /// ```css
-  /// .z\:\$1 {
+  /// .z\:\$-1 {
   ///   z-index: -1;
   /// }
   /// ```
@@ -15698,7 +15750,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
     self.append_value("-1")
   }
   /// ```css
-  /// .z\:\$2 {
+  /// .z\:\$-2 {
   ///   z-index: -2;
   /// }
   /// ```
@@ -15707,7 +15759,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
     self.append_value("-2")
   }
   /// ```css
-  /// .z\:\$3 {
+  /// .z\:\$-3 {
   ///   z-index: -3;
   /// }
   /// ```
@@ -15716,7 +15768,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
     self.append_value("-3")
   }
   /// ```css
-  /// .z\:\$5 {
+  /// .z\:\$-5 {
   ///   z-index: -5;
   /// }
   /// ```
@@ -15772,147 +15824,6 @@ impl GeneratedSkribbleValue for GeneratedAtomBg {
   }
 }
 impl GeneratedColorSet for GeneratedAtomBg {}
-pub struct GeneratedAtomBgOpacity(String);
-impl GeneratedSkribbleValue for GeneratedAtomBgOpacity {
-  #[inline]
-  fn from_ref(value: impl AsRef<str>) -> Self {
-    Self(value.as_ref().to_string())
-  }
-
-  #[inline]
-  fn get_skribble_value(&self) -> &String {
-    &self.0
-  }
-}
-pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
-  /// ```css
-  /// .bg-opacity\:\$0 {
-  ///   --sk-invalid-css-variable: 0%;
-  /// }
-  /// ```
-  #[inline]
-  fn n0(&self) -> String {
-    self.append_value("0")
-  }
-  /// ```css
-  /// .bg-opacity\:\$5 {
-  ///   --sk-invalid-css-variable: 5%;
-  /// }
-  /// ```
-  #[inline]
-  fn n5(&self) -> String {
-    self.append_value("5")
-  }
-  /// ```css
-  /// .bg-opacity\:\$10 {
-  ///   --sk-invalid-css-variable: 10%;
-  /// }
-  /// ```
-  #[inline]
-  fn n10(&self) -> String {
-    self.append_value("10")
-  }
-  /// ```css
-  /// .bg-opacity\:\$20 {
-  ///   --sk-invalid-css-variable: 20%;
-  /// }
-  /// ```
-  #[inline]
-  fn n20(&self) -> String {
-    self.append_value("20")
-  }
-  /// ```css
-  /// .bg-opacity\:\$30 {
-  ///   --sk-invalid-css-variable: 30%;
-  /// }
-  /// ```
-  #[inline]
-  fn n30(&self) -> String {
-    self.append_value("30")
-  }
-  /// ```css
-  /// .bg-opacity\:\$40 {
-  ///   --sk-invalid-css-variable: 40%;
-  /// }
-  /// ```
-  #[inline]
-  fn n40(&self) -> String {
-    self.append_value("40")
-  }
-  /// ```css
-  /// .bg-opacity\:\$50 {
-  ///   --sk-invalid-css-variable: 50%;
-  /// }
-  /// ```
-  #[inline]
-  fn n50(&self) -> String {
-    self.append_value("50")
-  }
-  /// ```css
-  /// .bg-opacity\:\$60 {
-  ///   --sk-invalid-css-variable: 60%;
-  /// }
-  /// ```
-  #[inline]
-  fn n60(&self) -> String {
-    self.append_value("60")
-  }
-  /// ```css
-  /// .bg-opacity\:\$70 {
-  ///   --sk-invalid-css-variable: 70%;
-  /// }
-  /// ```
-  #[inline]
-  fn n70(&self) -> String {
-    self.append_value("70")
-  }
-  /// ```css
-  /// .bg-opacity\:\$75 {
-  ///   --sk-invalid-css-variable: 75%;
-  /// }
-  /// ```
-  #[inline]
-  fn n75(&self) -> String {
-    self.append_value("75")
-  }
-  /// ```css
-  /// .bg-opacity\:\$80 {
-  ///   --sk-invalid-css-variable: 80%;
-  /// }
-  /// ```
-  #[inline]
-  fn n80(&self) -> String {
-    self.append_value("80")
-  }
-  /// ```css
-  /// .bg-opacity\:\$90 {
-  ///   --sk-invalid-css-variable: 90%;
-  /// }
-  /// ```
-  #[inline]
-  fn n90(&self) -> String {
-    self.append_value("90")
-  }
-  /// ```css
-  /// .bg-opacity\:\$95 {
-  ///   --sk-invalid-css-variable: 95%;
-  /// }
-  /// ```
-  #[inline]
-  fn n95(&self) -> String {
-    self.append_value("95")
-  }
-  /// ```css
-  /// .bg-opacity\:\$100 {
-  ///   --sk-invalid-css-variable: 100%;
-  /// }
-  /// ```
-  #[inline]
-  fn n100(&self) -> String {
-    self.append_value("100")
-  }
-}
-impl GeneratedValueSetBgOpacity for GeneratedAtomBgOpacity {}
 pub struct GeneratedAtomOpacity(String);
 impl GeneratedSkribbleValue for GeneratedAtomOpacity {
   #[inline]
@@ -16075,11 +15986,11 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   }
   #[inline]
   fn transition_property(&self) -> GeneratedAtomTransitionProperty {
-    GeneratedAtomTransitionProperty::from_ref(self.append("transitionProperty"))
+    GeneratedAtomTransitionProperty::from_ref(self.append("transition-property"))
   }
   #[inline]
   fn transition_property_(&self, value: &'static str) -> String {
-    self.append(format!("transitionProperty:[{}]", value.trim()))
+    self.append(format!("transition-property:[{}]", value.trim()))
   }
   #[inline]
   fn duration(&self) -> GeneratedAtomDuration {
@@ -16117,197 +16028,197 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   /// element.
   #[inline]
   fn fade_in(&self) -> GeneratedAtomFadeIn {
-    GeneratedAtomFadeIn::from_ref(self.append("fadeIn"))
+    GeneratedAtomFadeIn::from_ref(self.append("fade-in"))
   }
   #[inline]
   fn fade_in_(&self, value: &'static str) -> String {
-    self.append(format!("fadeIn:[{}]", value.trim()))
+    self.append(format!("fade-in:[{}]", value.trim()))
   }
   /// Fade out an element. Requires the `animate:$out` class to be applied to
   /// the element.
   #[inline]
   fn fade_out(&self) -> GeneratedAtomFadeOut {
-    GeneratedAtomFadeOut::from_ref(self.append("fadeOut"))
+    GeneratedAtomFadeOut::from_ref(self.append("fade-out"))
   }
   #[inline]
   fn fade_out_(&self, value: &'static str) -> String {
-    self.append(format!("fadeOut:[{}]", value.trim()))
+    self.append(format!("fade-out:[{}]", value.trim()))
   }
   /// Rotate an element to enter. Requires the `animate:$in` class to be applied
   /// to the element.
   #[inline]
   fn spin_in(&self) -> GeneratedAtomSpinIn {
-    GeneratedAtomSpinIn::from_ref(self.append("spinIn"))
+    GeneratedAtomSpinIn::from_ref(self.append("spin-in"))
   }
   #[inline]
   fn spin_in_(&self, value: &'static str) -> String {
-    self.append(format!("spinIn:[{}]", value.trim()))
+    self.append(format!("spin-in:[{}]", value.trim()))
   }
   /// Rotate an element to exit. Requires the `animate:$out` class to be applied
   /// to the element.
   #[inline]
   fn spin_out(&self) -> GeneratedAtomSpinOut {
-    GeneratedAtomSpinOut::from_ref(self.append("spinOut"))
+    GeneratedAtomSpinOut::from_ref(self.append("spin-out"))
   }
   #[inline]
   fn spin_out_(&self, value: &'static str) -> String {
-    self.append(format!("spinOut:[{}]", value.trim()))
+    self.append(format!("spin-out:[{}]", value.trim()))
   }
   /// Entry animation from the left. Requires the `animate:$in` class to be
   /// applied to the element.
   #[inline]
   fn slide_in_left(&self) -> GeneratedAtomSlideInLeft {
-    GeneratedAtomSlideInLeft::from_ref(self.append("slideInLeft"))
+    GeneratedAtomSlideInLeft::from_ref(self.append("slide-in-left"))
   }
   #[inline]
   fn slide_in_left_(&self, value: &'static str) -> String {
-    self.append(format!("slideInLeft:[{}]", value.trim()))
+    self.append(format!("slide-in-left:[{}]", value.trim()))
   }
   /// Entry animation from the right. Requires the `animate:$in` class to be
   /// applied to the element.
   #[inline]
   fn slide_in_right(&self) -> GeneratedAtomSlideInRight {
-    GeneratedAtomSlideInRight::from_ref(self.append("slideInRight"))
+    GeneratedAtomSlideInRight::from_ref(self.append("slide-in-right"))
   }
   #[inline]
   fn slide_in_right_(&self, value: &'static str) -> String {
-    self.append(format!("slideInRight:[{}]", value.trim()))
+    self.append(format!("slide-in-right:[{}]", value.trim()))
   }
   /// Exit animation to the left. Requires the `animate:$out` class to be
   /// applied to the element.
   #[inline]
   fn slide_out_left(&self) -> GeneratedAtomSlideOutLeft {
-    GeneratedAtomSlideOutLeft::from_ref(self.append("slideOutLeft"))
+    GeneratedAtomSlideOutLeft::from_ref(self.append("slide-out-left"))
   }
   #[inline]
   fn slide_out_left_(&self, value: &'static str) -> String {
-    self.append(format!("slideOutLeft:[{}]", value.trim()))
+    self.append(format!("slide-out-left:[{}]", value.trim()))
   }
   /// Exit animation to the right. Requires the `animate:$out` class to be
   /// applied to the element.
   #[inline]
   fn slide_out_right(&self) -> GeneratedAtomSlideOutRight {
-    GeneratedAtomSlideOutRight::from_ref(self.append("slideOutRight"))
+    GeneratedAtomSlideOutRight::from_ref(self.append("slide-out-right"))
   }
   #[inline]
   fn slide_out_right_(&self, value: &'static str) -> String {
-    self.append(format!("slideOutRight:[{}]", value.trim()))
+    self.append(format!("slide-out-right:[{}]", value.trim()))
   }
   /// Entry animation from the top. Requires the `animate:$in` class to be
   /// applied to the element.
   #[inline]
   fn slide_in_top(&self) -> GeneratedAtomSlideInTop {
-    GeneratedAtomSlideInTop::from_ref(self.append("slideInTop"))
+    GeneratedAtomSlideInTop::from_ref(self.append("slide-in-top"))
   }
   #[inline]
   fn slide_in_top_(&self, value: &'static str) -> String {
-    self.append(format!("slideInTop:[{}]", value.trim()))
+    self.append(format!("slide-in-top:[{}]", value.trim()))
   }
   /// Entry animation from the bottom. Requires the `animate:$in` class to be
   /// applied to the element.
   #[inline]
   fn slide_in_bottom(&self) -> GeneratedAtomSlideInBottom {
-    GeneratedAtomSlideInBottom::from_ref(self.append("slideInBottom"))
+    GeneratedAtomSlideInBottom::from_ref(self.append("slide-in-bottom"))
   }
   #[inline]
   fn slide_in_bottom_(&self, value: &'static str) -> String {
-    self.append(format!("slideInBottom:[{}]", value.trim()))
+    self.append(format!("slide-in-bottom:[{}]", value.trim()))
   }
   /// Exit animation to the top. Requires the `animate:$out` class to be applied
   /// to the element.
   #[inline]
   fn slide_out_top(&self) -> GeneratedAtomSlideOutTop {
-    GeneratedAtomSlideOutTop::from_ref(self.append("slideOutTop"))
+    GeneratedAtomSlideOutTop::from_ref(self.append("slide-out-top"))
   }
   #[inline]
   fn slide_out_top_(&self, value: &'static str) -> String {
-    self.append(format!("slideOutTop:[{}]", value.trim()))
+    self.append(format!("slide-out-top:[{}]", value.trim()))
   }
   /// Exit animation to the bottom. Requires the `animate:$out` class to be
   /// applied to the element.
   #[inline]
   fn slide_out_bottom(&self) -> GeneratedAtomSlideOutBottom {
-    GeneratedAtomSlideOutBottom::from_ref(self.append("slideOutBottom"))
+    GeneratedAtomSlideOutBottom::from_ref(self.append("slide-out-bottom"))
   }
   #[inline]
   fn slide_out_bottom_(&self, value: &'static str) -> String {
-    self.append(format!("slideOutBottom:[{}]", value.trim()))
+    self.append(format!("slide-out-bottom:[{}]", value.trim()))
   }
   /// Entry animation from this zoom level. Requires the `animate:$in` class to
   /// be applied to the element.
   #[inline]
   fn zoom_in(&self) -> GeneratedAtomZoomIn {
-    GeneratedAtomZoomIn::from_ref(self.append("zoomIn"))
+    GeneratedAtomZoomIn::from_ref(self.append("zoom-in"))
   }
   #[inline]
   fn zoom_in_(&self, value: &'static str) -> String {
-    self.append(format!("zoomIn:[{}]", value.trim()))
+    self.append(format!("zoom-in:[{}]", value.trim()))
   }
   /// Exit animation from this zoom level. Requires the `animate:$out` class to
   /// be applied to the element.
   #[inline]
   fn zoom_out(&self) -> GeneratedAtomZoomOut {
-    GeneratedAtomZoomOut::from_ref(self.append("zoomOut"))
+    GeneratedAtomZoomOut::from_ref(self.append("zoom-out"))
   }
   #[inline]
   fn zoom_out_(&self, value: &'static str) -> String {
-    self.append(format!("zoomOut:[{}]", value.trim()))
+    self.append(format!("zoom-out:[{}]", value.trim()))
   }
   #[inline]
   fn animate_duration(&self) -> GeneratedAtomAnimateDuration {
-    GeneratedAtomAnimateDuration::from_ref(self.append("animateDuration"))
+    GeneratedAtomAnimateDuration::from_ref(self.append("animate-duration"))
   }
   #[inline]
   fn animate_duration_(&self, value: &'static str) -> String {
-    self.append(format!("animateDuration:[{}]", value.trim()))
+    self.append(format!("animate-duration:[{}]", value.trim()))
   }
   #[inline]
   fn animate_easing(&self) -> GeneratedAtomAnimateEasing {
-    GeneratedAtomAnimateEasing::from_ref(self.append("animateEasing"))
+    GeneratedAtomAnimateEasing::from_ref(self.append("animate-easing"))
   }
   #[inline]
   fn animate_easing_(&self, value: &'static str) -> String {
-    self.append(format!("animateEasing:[{}]", value.trim()))
+    self.append(format!("animate-easing:[{}]", value.trim()))
   }
   #[inline]
   fn animate_delay(&self) -> GeneratedAtomAnimateDelay {
-    GeneratedAtomAnimateDelay::from_ref(self.append("animateDelay"))
+    GeneratedAtomAnimateDelay::from_ref(self.append("animate-delay"))
   }
   #[inline]
   fn animate_delay_(&self, value: &'static str) -> String {
-    self.append(format!("animateDelay:[{}]", value.trim()))
+    self.append(format!("animate-delay:[{}]", value.trim()))
   }
   #[inline]
   fn animate_repeat(&self) -> GeneratedAtomAnimateRepeat {
-    GeneratedAtomAnimateRepeat::from_ref(self.append("animateRepeat"))
+    GeneratedAtomAnimateRepeat::from_ref(self.append("animate-repeat"))
   }
   #[inline]
   fn animate_repeat_(&self, value: &'static str) -> String {
-    self.append(format!("animateRepeat:[{}]", value.trim()))
+    self.append(format!("animate-repeat:[{}]", value.trim()))
   }
   #[inline]
   fn animate_direction(&self) -> GeneratedAtomAnimateDirection {
-    GeneratedAtomAnimateDirection::from_ref(self.append("animateDirection"))
+    GeneratedAtomAnimateDirection::from_ref(self.append("animate-direction"))
   }
   #[inline]
   fn animate_direction_(&self, value: &'static str) -> String {
-    self.append(format!("animateDirection:[{}]", value.trim()))
+    self.append(format!("animate-direction:[{}]", value.trim()))
   }
   #[inline]
   fn animate_fill_mode(&self) -> GeneratedAtomAnimateFillMode {
-    GeneratedAtomAnimateFillMode::from_ref(self.append("animateFillMode"))
+    GeneratedAtomAnimateFillMode::from_ref(self.append("animate-fill-mode"))
   }
   #[inline]
   fn animate_fill_mode_(&self, value: &'static str) -> String {
-    self.append(format!("animateFillMode:[{}]", value.trim()))
+    self.append(format!("animate-fill-mode:[{}]", value.trim()))
   }
   #[inline]
   fn animate_state(&self) -> GeneratedAtomAnimateState {
-    GeneratedAtomAnimateState::from_ref(self.append("animateState"))
+    GeneratedAtomAnimateState::from_ref(self.append("animate-state"))
   }
   #[inline]
   fn animate_state_(&self, value: &'static str) -> String {
-    self.append(format!("animateState:[{}]", value.trim()))
+    self.append(format!("animate-state:[{}]", value.trim()))
   }
   #[inline]
   fn zoom(&self) -> GeneratedAtomZoom {
@@ -16510,14 +16421,6 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
     self.append(format!("bg:[{}]", value.trim()))
   }
   #[inline]
-  fn bg_opacity(&self) -> GeneratedAtomBgOpacity {
-    GeneratedAtomBgOpacity::from_ref(self.append("bgOpacity"))
-  }
-  #[inline]
-  fn bg_opacity_(&self, value: &'static str) -> String {
-    self.append(format!("bgOpacity:[{}]", value.trim()))
-  }
-  #[inline]
   fn opacity(&self) -> GeneratedAtomOpacity {
     GeneratedAtomOpacity::from_ref(self.append("opacity"))
   }
@@ -16541,7 +16444,7 @@ pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   }
   #[inline]
   fn non_italic(&self) -> String {
-    self.append_value("nonItalic")
+    self.append_value("non-italic")
   }
   #[inline]
   fn oblique(&self) -> String {
@@ -16553,7 +16456,7 @@ pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   }
   #[inline]
   fn subpixel_antialiased(&self) -> String {
-    self.append_value("subpixelAntialiased")
+    self.append_value("subpixel-antialiased")
   }
   #[inline]
   fn block(&self) -> String {
@@ -16561,7 +16464,7 @@ pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   }
   #[inline]
   fn inline_block(&self) -> String {
-    self.append_value("inlineBlock")
+    self.append_value("inline-block")
   }
   #[inline]
   fn inline(&self) -> String {
@@ -16569,7 +16472,7 @@ pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   }
   #[inline]
   fn flow_root(&self) -> String {
-    self.append_value("flowRoot")
+    self.append_value("flow-root")
   }
   #[inline]
   fn content(&self) -> String {
@@ -16589,19 +16492,19 @@ pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   }
   #[inline]
   fn remove_filter(&self) -> String {
-    self.append_value("removeFilter")
+    self.append_value("remove-filter")
   }
   #[inline]
   fn remove_backdrop(&self) -> String {
-    self.append_value("removeBackdrop")
+    self.append_value("remove-backdrop")
   }
   #[inline]
   fn transform_gpu(&self) -> String {
-    self.append_value("transformGpu")
+    self.append_value("transform-gpu")
   }
   #[inline]
   fn transform_cpu(&self) -> String {
-    self.append_value("transformCpu")
+    self.append_value("transform-cpu")
   }
 }
 impl GeneratedMediaQueryDeviceCategories for GeneratedSkribbleRoot {}

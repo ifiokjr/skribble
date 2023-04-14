@@ -5,18 +5,18 @@ use skribble_core::Placeholder;
 
 lazy_static! {
   pub(crate) static ref KEYFRAMES: Vec<Keyframe> = {
-    let enter_opacity = Placeholder::wrapped_variable("enterOpacity", Some("1".into()));
-    let enter_translate_x = Placeholder::wrapped_variable("enterTranslateX", Some("0".into()));
-    let enter_translate_y = Placeholder::wrapped_variable("enterTranslateY", Some("0".into()));
-    let enter_scale_x = Placeholder::wrapped_variable("enterScaleX", Some("1".into()));
-    let enter_scale_y = Placeholder::wrapped_variable("enterScaleY", Some("1".into()));
-    let enter_rotate = Placeholder::wrapped_variable("enterRotate", Some("0deg".into()));
-    let exit_opacity = Placeholder::wrapped_variable("exitOpacity", Some("1".into()));
-    let exit_translate_x = Placeholder::wrapped_variable("exitTranslateX", Some("0".into()));
-    let exit_translate_y = Placeholder::wrapped_variable("exitTranslateY", Some("0".into()));
-    let exit_scale_x = Placeholder::wrapped_variable("exitScaleX", Some("1".into()));
-    let exit_scale_y = Placeholder::wrapped_variable("exitScaleY", Some("1".into()));
-    let exit_rotate = Placeholder::wrapped_variable("exitRotate", Some("0deg".into()));
+    let enter_opacity = Placeholder::wrapped_variable("enter-opacity", Some("1".into()));
+    let enter_translate_x = Placeholder::wrapped_variable("enter-translate-x", Some("0".into()));
+    let enter_translate_y = Placeholder::wrapped_variable("enter-translate-y", Some("0".into()));
+    let enter_scale_x = Placeholder::wrapped_variable("enter-scale-x", Some("1".into()));
+    let enter_scale_y = Placeholder::wrapped_variable("enter-scale-y", Some("1".into()));
+    let enter_rotate = Placeholder::wrapped_variable("enter-rotate", Some("0deg".into()));
+    let exit_opacity = Placeholder::wrapped_variable("exit-opacity", Some("1".into()));
+    let exit_translate_x = Placeholder::wrapped_variable("exit-translate-x", Some("0".into()));
+    let exit_translate_y = Placeholder::wrapped_variable("exit-translate-y", Some("0".into()));
+    let exit_scale_x = Placeholder::wrapped_variable("exit-scale-x", Some("1".into()));
+    let exit_scale_y = Placeholder::wrapped_variable("exit-scale-y", Some("1".into()));
+    let exit_rotate = Placeholder::wrapped_variable("exit-rotate", Some("0deg".into()));
 
     vec![
       Keyframe::builder()

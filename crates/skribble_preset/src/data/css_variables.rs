@@ -210,16 +210,16 @@ lazy_static! {
       .name("group-nested-filter")
       .variable("--group-nested-filter")
       .value({
-        let filter_blur = Placeholder::wrapped_variable("filterBlur", None);
-        let filter_brightness = Placeholder::wrapped_variable("filterBrightness", None);
-        let filter_contrast = Placeholder::wrapped_variable("filterContrast", None);
-        let filter_grayscale = Placeholder::wrapped_variable("filterGrayscale", None);
-        let filter_hue_rotate = Placeholder::wrapped_variable("filterHueRotate", None);
-        let filter_invert = Placeholder::wrapped_variable("filterInvert", None);
-        let filter_saturate = Placeholder::wrapped_variable("filterSaturate", None);
-        let filter_sepia = Placeholder::wrapped_variable("filterSepia", None);
-        let filter_drop_shadow = Placeholder::wrapped_variable("filterDropShadow", None);
-        let filter_custom = Placeholder::wrapped_variable("filterCustom", None);
+        let filter_blur = Placeholder::wrapped_variable("filter-blur", None);
+        let filter_brightness = Placeholder::wrapped_variable("filter-brightness", None);
+        let filter_contrast = Placeholder::wrapped_variable("filter-contrast", None);
+        let filter_grayscale = Placeholder::wrapped_variable("filter-grayscale", None);
+        let filter_hue_rotate = Placeholder::wrapped_variable("filter-hue-rotate", None);
+        let filter_invert = Placeholder::wrapped_variable("filter-invert", None);
+        let filter_saturate = Placeholder::wrapped_variable("filter-saturate", None);
+        let filter_sepia = Placeholder::wrapped_variable("filter-sepia", None);
+        let filter_drop_shadow = Placeholder::wrapped_variable("filter-drop-shadow", None);
+        let filter_custom = Placeholder::wrapped_variable("filter-custom", None);
         format!(
           "{filter_blur} {filter_brightness} {filter_contrast} {filter_grayscale} \
            {filter_hue_rotate} {filter_invert} {filter_saturate} {filter_sepia} \
@@ -271,16 +271,16 @@ lazy_static! {
       .name("group-nested-backdrop")
       .variable("--gnb")
       .value({
-        let backdrop_blur = Placeholder::wrapped_variable("backdropBlur", None);
-        let backdrop_brightness = Placeholder::wrapped_variable("backdropBrightness", None);
-        let backdrop_contrast = Placeholder::wrapped_variable("backdropContrast", None);
-        let backdrop_grayscale = Placeholder::wrapped_variable("backdropGrayscale", None);
-        let backdrop_hue_rotate = Placeholder::wrapped_variable("backdropHueRotate", None);
-        let backdrop_invert = Placeholder::wrapped_variable("backdropInvert", None);
-        let backdrop_saturate = Placeholder::wrapped_variable("backdropSaturate", None);
-        let backdrop_sepia = Placeholder::wrapped_variable("backdropSepia", None);
-        let backdrop_drop_shadow = Placeholder::wrapped_variable("backdropDropShadow", None);
-        let backdrop_custom = Placeholder::wrapped_variable("backdropCustom", None);
+        let backdrop_blur = Placeholder::wrapped_variable("backdrop-blur", None);
+        let backdrop_brightness = Placeholder::wrapped_variable("backdrop-brightness", None);
+        let backdrop_contrast = Placeholder::wrapped_variable("backdrop-contrast", None);
+        let backdrop_grayscale = Placeholder::wrapped_variable("backdrop-grayscale", None);
+        let backdrop_hue_rotate = Placeholder::wrapped_variable("backdrop-hue-rotate", None);
+        let backdrop_invert = Placeholder::wrapped_variable("backdrop-invert", None);
+        let backdrop_saturate = Placeholder::wrapped_variable("backdrop-saturate", None);
+        let backdrop_sepia = Placeholder::wrapped_variable("backdrop-sepia", None);
+        let backdrop_drop_shadow = Placeholder::wrapped_variable("backdrop-drop-shadow", None);
+        let backdrop_custom = Placeholder::wrapped_variable("backdrop-custom", None);
         format!(
           "{backdrop_blur} {backdrop_brightness} {backdrop_contrast} {backdrop_grayscale} \
            {backdrop_hue_rotate} {backdrop_invert} {backdrop_saturate} {backdrop_sepia} \

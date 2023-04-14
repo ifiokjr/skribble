@@ -12,8 +12,8 @@ expression: runner_config
       "description": "Manages the keyframes for the entry animation",
       "priority": 150,
       "from": {
-        "opacity": "var(__:CSS_VARIABLE::enterOpacity:__, 1)",
-        "transform": "translate3d(var(__:CSS_VARIABLE::enterTranslateX:__, 0), var(__:CSS_VARIABLE::enterTranslateY:__, 0), 0) scale3d(var(__:CSS_VARIABLE::enterScaleX:__, 1), var(__:CSS_VARIABLE::enterScaleY:__, 1), 1) rotate(var(__:CSS_VARIABLE::enterRotate:__, 0deg))"
+        "opacity": "var(__:CSS_VARIABLE::enter-opacity:__, 1)",
+        "transform": "translate3d(var(__:CSS_VARIABLE::enter-translate-x:__, 0), var(__:CSS_VARIABLE::enter-translate-y:__, 0), 0) scale3d(var(__:CSS_VARIABLE::enter-scale-x:__, 1), var(__:CSS_VARIABLE::enter-scale-y:__, 1), 1) rotate(var(__:CSS_VARIABLE::enter-rotate:__, 0deg))"
       }
     },
     "out": {
@@ -21,8 +21,8 @@ expression: runner_config
       "description": "Manages the keyframes for the exit animation.",
       "priority": 150,
       "to": {
-        "opacity": "var(__:CSS_VARIABLE::exitOpacity:__, 1)",
-        "transform": "translate3d(var(__:CSS_VARIABLE::exitTranslateX:__, 0), var(__:CSS_VARIABLE::exitTranslateY:__, 0), 0) scale3d(var(__:CSS_VARIABLE::exitScaleX:__, 1), var(__:CSS_VARIABLE::exitScaleY:__, 1), 1) rotate(var(__:CSS_VARIABLE::exitRotate:__, 0deg))"
+        "opacity": "var(__:CSS_VARIABLE::exit-opacity:__, 1)",
+        "transform": "translate3d(var(__:CSS_VARIABLE::exit-translate-x:__, 0), var(__:CSS_VARIABLE::exit-translate-y:__, 0), 0) scale3d(var(__:CSS_VARIABLE::exit-scale-x:__, 1), var(__:CSS_VARIABLE::exit-scale-y:__, 1), 1) rotate(var(__:CSS_VARIABLE::exit-rotate:__, 0deg))"
       }
     },
     "spin": {
@@ -80,8 +80,8 @@ expression: runner_config
       "value": "#570df8",
       "mediaQueries": {}
     },
-    "primaryContent": {
-      "name": "primaryContent",
+    "primary-content": {
+      "name": "primary-content",
       "description": "The primary content color",
       "priority": 150,
       "variable": "--pc",
@@ -98,8 +98,8 @@ expression: runner_config
       "value": "#f000b8",
       "mediaQueries": {}
     },
-    "secondaryContent": {
-      "name": "secondaryContent",
+    "secondary-content": {
+      "name": "secondary-content",
       "description": "The secondary content color. Useful for text within secondary buttons.",
       "priority": 150,
       "variable": "--sc",
@@ -116,8 +116,8 @@ expression: runner_config
       "value": "#37cdbe",
       "mediaQueries": {}
     },
-    "accentContent": {
-      "name": "accentContent",
+    "accent-content": {
+      "name": "accent-content",
       "description": "Color for content within accents.",
       "priority": 150,
       "variable": "--ac",
@@ -134,8 +134,8 @@ expression: runner_config
       "value": "#3d4451",
       "mediaQueries": {}
     },
-    "neutralContent": {
-      "name": "neutralContent",
+    "neutral-content": {
+      "name": "neutral-content",
       "description": "The neutral content color.",
       "priority": 150,
       "variable": "--nc",
@@ -170,8 +170,8 @@ expression: runner_config
       "value": "#E5E6E6",
       "mediaQueries": {}
     },
-    "baseContent": {
-      "name": "baseContent",
+    "base-content": {
+      "name": "base-content",
       "description": "The base content color. This is useful for text.",
       "priority": 150,
       "variable": "--bc",
@@ -188,8 +188,8 @@ expression: runner_config
       "value": "#0070F3",
       "mediaQueries": {}
     },
-    "infoContent": {
-      "name": "infoContent",
+    "info-content": {
+      "name": "info-content",
       "description": "The info content color. Useful for text within info buttons and alerts.",
       "priority": 150,
       "variable": "--inc",
@@ -206,8 +206,8 @@ expression: runner_config
       "value": "#21CC51",
       "mediaQueries": {}
     },
-    "successContent": {
-      "name": "successContent",
+    "success-content": {
+      "name": "success-content",
       "description": "The success content color. Useful for text within success buttons and alerts.",
       "priority": 150,
       "variable": "--suc",
@@ -224,8 +224,8 @@ expression: runner_config
       "value": "#FF6154",
       "mediaQueries": {}
     },
-    "warningContent": {
-      "name": "warningContent",
+    "warning-content": {
+      "name": "warning-content",
       "description": "The warning content color. Useful for text within warning buttons and alerts.",
       "priority": 150,
       "variable": "--wac",
@@ -242,8 +242,8 @@ expression: runner_config
       "value": "#DE1C8D",
       "mediaQueries": {}
     },
-    "errorContent": {
-      "name": "errorContent",
+    "error-content": {
+      "name": "error-content",
       "description": "The error content color. Useful for text within error buttons and alerts.",
       "priority": 150,
       "variable": "--erc",
@@ -251,8 +251,8 @@ expression: runner_config
       "value": "__:PALETTE::white:__",
       "mediaQueries": {}
     },
-    "containedMaxWidth": {
-      "name": "containedMaxWidth",
+    "contained-max-width": {
+      "name": "contained-max-width",
       "description": null,
       "priority": 150,
       "variable": "--cmw",
@@ -285,8 +285,8 @@ expression: runner_config
       "value": "/* */",
       "mediaQueries": {}
     },
-    "filterBlur": {
-      "name": "filterBlur",
+    "filter-blur": {
+      "name": "filter-blur",
       "description": null,
       "priority": 150,
       "variable": "--filter-blur",
@@ -294,8 +294,8 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "filterBrightness": {
-      "name": "filterBrightness",
+    "filter-brightness": {
+      "name": "filter-brightness",
       "description": null,
       "priority": 150,
       "variable": "--filter-brightness",
@@ -303,8 +303,8 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "filterContrast": {
-      "name": "filterContrast",
+    "filter-contrast": {
+      "name": "filter-contrast",
       "description": null,
       "priority": 150,
       "variable": "--filter-contrast",
@@ -312,8 +312,8 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "filterCustom": {
-      "name": "filterCustom",
+    "filter-custom": {
+      "name": "filter-custom",
       "description": null,
       "priority": 150,
       "variable": "--filter-custom",
@@ -321,8 +321,8 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "filterGrayscale": {
-      "name": "filterGrayscale",
+    "filter-grayscale": {
+      "name": "filter-grayscale",
       "description": null,
       "priority": 150,
       "variable": "--filter-grayscale",
@@ -330,8 +330,8 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "filterHueRotate": {
-      "name": "filterHueRotate",
+    "filter-hue-rotate": {
+      "name": "filter-hue-rotate",
       "description": null,
       "priority": 150,
       "variable": "--filter-hue-rotate",
@@ -339,8 +339,8 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "filterInvert": {
-      "name": "filterInvert",
+    "filter-invert": {
+      "name": "filter-invert",
       "description": null,
       "priority": 150,
       "variable": "--filter-invert",
@@ -348,8 +348,8 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "filterSaturate": {
-      "name": "filterSaturate",
+    "filter-saturate": {
+      "name": "filter-saturate",
       "description": null,
       "priority": 150,
       "variable": "--filter-saturate",
@@ -357,8 +357,8 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "filterSepia": {
-      "name": "filterSepia",
+    "filter-sepia": {
+      "name": "filter-sepia",
       "description": null,
       "priority": 150,
       "variable": "--filter-sepia",
@@ -366,8 +366,8 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "filterDropShadow": {
-      "name": "filterDropShadow",
+    "filter-drop-shadow": {
+      "name": "filter-drop-shadow",
       "description": null,
       "priority": 150,
       "variable": "--filter-drop-shadow",
@@ -375,17 +375,17 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "groupNestedFilter": {
-      "name": "groupNestedFilter",
+    "group-nested-filter": {
+      "name": "group-nested-filter",
       "description": null,
       "priority": 150,
       "variable": "--group-nested-filter",
       "syntax": "*",
-      "value": "var(__:CSS_VARIABLE::filterBlur:__) var(__:CSS_VARIABLE::filterBrightness:__) var(__:CSS_VARIABLE::filterContrast:__) var(__:CSS_VARIABLE::filterGrayscale:__) var(__:CSS_VARIABLE::filterHueRotate:__) var(__:CSS_VARIABLE::filterInvert:__) var(__:CSS_VARIABLE::filterSaturate:__) var(__:CSS_VARIABLE::filterSepia:__) var(__:CSS_VARIABLE::filterDropShadow:__) var(__:CSS_VARIABLE::filterCustom:__)",
+      "value": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)",
       "mediaQueries": {}
     },
-    "backdropBlur": {
-      "name": "backdropBlur",
+    "backdrop-blur": {
+      "name": "backdrop-blur",
       "description": null,
       "priority": 150,
       "variable": "--backdrop-blur",
@@ -393,8 +393,8 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "backdropBrightness": {
-      "name": "backdropBrightness",
+    "backdrop-brightness": {
+      "name": "backdrop-brightness",
       "description": null,
       "priority": 150,
       "variable": "--backdrop-brightness",
@@ -402,8 +402,8 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "backdropContrast": {
-      "name": "backdropContrast",
+    "backdrop-contrast": {
+      "name": "backdrop-contrast",
       "description": null,
       "priority": 150,
       "variable": "--backdrop-contrast",
@@ -411,8 +411,8 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "backdropCustom": {
-      "name": "backdropCustom",
+    "backdrop-custom": {
+      "name": "backdrop-custom",
       "description": null,
       "priority": 150,
       "variable": "--backdrop-custom",
@@ -420,8 +420,8 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "backdropGrayscale": {
-      "name": "backdropGrayscale",
+    "backdrop-grayscale": {
+      "name": "backdrop-grayscale",
       "description": null,
       "priority": 150,
       "variable": "--backdrop-grayscale",
@@ -429,8 +429,8 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "backdropHueRotate": {
-      "name": "backdropHueRotate",
+    "backdrop-hue-rotate": {
+      "name": "backdrop-hue-rotate",
       "description": null,
       "priority": 150,
       "variable": "--backdrop-hue-rotate",
@@ -438,8 +438,8 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "backdropInvert": {
-      "name": "backdropInvert",
+    "backdrop-invert": {
+      "name": "backdrop-invert",
       "description": null,
       "priority": 150,
       "variable": "--backdrop-invert",
@@ -447,8 +447,8 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "backdropSaturate": {
-      "name": "backdropSaturate",
+    "backdrop-saturate": {
+      "name": "backdrop-saturate",
       "description": null,
       "priority": 150,
       "variable": "--backdrop-saturate",
@@ -456,8 +456,8 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "backdropSepia": {
-      "name": "backdropSepia",
+    "backdrop-sepia": {
+      "name": "backdrop-sepia",
       "description": null,
       "priority": 150,
       "variable": "--backdrop-sepia",
@@ -465,8 +465,8 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "backdropDropShadow": {
-      "name": "backdropDropShadow",
+    "backdrop-drop-shadow": {
+      "name": "backdrop-drop-shadow",
       "description": null,
       "priority": 150,
       "variable": "--backdrop-drop-shadow",
@@ -474,17 +474,17 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "groupNestedBackdrop": {
-      "name": "groupNestedBackdrop",
+    "group-nested-backdrop": {
+      "name": "group-nested-backdrop",
       "description": null,
       "priority": 150,
       "variable": "--gnb",
       "syntax": "*",
-      "value": "var(__:CSS_VARIABLE::backdropBlur:__) var(__:CSS_VARIABLE::backdropBrightness:__) var(__:CSS_VARIABLE::backdropContrast:__) var(__:CSS_VARIABLE::backdropGrayscale:__) var(__:CSS_VARIABLE::backdropHueRotate:__) var(__:CSS_VARIABLE::backdropInvert:__) var(__:CSS_VARIABLE::backdropSaturate:__) var(__:CSS_VARIABLE::backdropSepia:__) var(__:CSS_VARIABLE::backdropDropShadow:__) var(__:CSS_VARIABLE::backdropCustom:__)",
+      "value": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)",
       "mediaQueries": {}
     },
-    "transitionDuration": {
-      "name": "transitionDuration",
+    "transition-duration": {
+      "name": "transition-duration",
       "description": null,
       "priority": 150,
       "variable": "--transition-duration",
@@ -492,8 +492,8 @@ expression: runner_config
       "value": "150ms",
       "mediaQueries": {}
     },
-    "animationDuration": {
-      "name": "animationDuration",
+    "animation-duration": {
+      "name": "animation-duration",
       "description": null,
       "priority": 150,
       "variable": "--animation-duration",
@@ -501,8 +501,8 @@ expression: runner_config
       "value": "1s",
       "mediaQueries": {}
     },
-    "enterOpacity": {
-      "name": "enterOpacity",
+    "enter-opacity": {
+      "name": "enter-opacity",
       "description": null,
       "priority": 150,
       "variable": "--enter-opacity",
@@ -513,8 +513,8 @@ expression: runner_config
       "value": "1",
       "mediaQueries": {}
     },
-    "enterTranslateX": {
-      "name": "enterTranslateX",
+    "enter-translate-x": {
+      "name": "enter-translate-x",
       "description": null,
       "priority": 150,
       "variable": "--enter-tx",
@@ -522,8 +522,8 @@ expression: runner_config
       "value": "0",
       "mediaQueries": {}
     },
-    "enterTranslateY": {
-      "name": "enterTranslateY",
+    "enter-translate-y": {
+      "name": "enter-translate-y",
       "description": null,
       "priority": 150,
       "variable": "--enter-ty",
@@ -531,8 +531,8 @@ expression: runner_config
       "value": "0",
       "mediaQueries": {}
     },
-    "enterScaleX": {
-      "name": "enterScaleX",
+    "enter-scale-x": {
+      "name": "enter-scale-x",
       "description": null,
       "priority": 150,
       "variable": "--enter-sx",
@@ -543,8 +543,8 @@ expression: runner_config
       "value": "1",
       "mediaQueries": {}
     },
-    "enterScaleY": {
-      "name": "enterScaleY",
+    "enter-scale-y": {
+      "name": "enter-scale-y",
       "description": null,
       "priority": 150,
       "variable": "--enter-sy",
@@ -555,8 +555,8 @@ expression: runner_config
       "value": "1",
       "mediaQueries": {}
     },
-    "enterRotate": {
-      "name": "enterRotate",
+    "enter-rotate": {
+      "name": "enter-rotate",
       "description": null,
       "priority": 150,
       "variable": "--enter-rotate",
@@ -564,8 +564,8 @@ expression: runner_config
       "value": "0",
       "mediaQueries": {}
     },
-    "exitOpacity": {
-      "name": "exitOpacity",
+    "exit-opacity": {
+      "name": "exit-opacity",
       "description": null,
       "priority": 150,
       "variable": "--exit-opacity",
@@ -576,8 +576,8 @@ expression: runner_config
       "value": "1",
       "mediaQueries": {}
     },
-    "exitTranslateX": {
-      "name": "exitTranslateX",
+    "exit-translate-x": {
+      "name": "exit-translate-x",
       "description": null,
       "priority": 150,
       "variable": "--exit-tx",
@@ -585,8 +585,8 @@ expression: runner_config
       "value": "0",
       "mediaQueries": {}
     },
-    "exitTranslateY": {
-      "name": "exitTranslateY",
+    "exit-translate-y": {
+      "name": "exit-translate-y",
       "description": null,
       "priority": 150,
       "variable": "--exit-ty",
@@ -594,8 +594,8 @@ expression: runner_config
       "value": "0",
       "mediaQueries": {}
     },
-    "exitScaleX": {
-      "name": "exitScaleX",
+    "exit-scale-x": {
+      "name": "exit-scale-x",
       "description": null,
       "priority": 150,
       "variable": "--exit-sx",
@@ -606,8 +606,8 @@ expression: runner_config
       "value": "1",
       "mediaQueries": {}
     },
-    "exitScaleY": {
-      "name": "exitScaleY",
+    "exit-scale-y": {
+      "name": "exit-scale-y",
       "description": null,
       "priority": 150,
       "variable": "--exit-sy",
@@ -618,8 +618,8 @@ expression: runner_config
       "value": "1",
       "mediaQueries": {}
     },
-    "exitRotate": {
-      "name": "exitRotate",
+    "exit-rotate": {
+      "name": "exit-rotate",
       "description": null,
       "priority": 150,
       "variable": "--exit-rotate",
@@ -629,7 +629,7 @@ expression: runner_config
     }
   },
   "media_queries": {
-    "deviceCategories": {
+    "device-categories": {
       "screen": {
         "name": "screen",
         "query": "screen",
@@ -690,20 +690,20 @@ expression: runner_config
       }
     },
     "motion": {
-      "motionReduce": {
-        "name": "motionReduce",
+      "motion-reduce": {
+        "name": "motion-reduce",
         "query": "(prefers-reduced-motion: reduce)",
         "description": "The media query for devices with a reduced motion preference.",
         "priority": 150
       },
-      "motionSafe": {
-        "name": "motionSafe",
+      "motion-safe": {
+        "name": "motion-safe",
         "query": "(prefers-reduced-motion: no-preference)",
         "description": "The media query for devices with a no preference motion preference.",
         "priority": 150
       }
     },
-    "darkMode": {
+    "dark-mode": {
       "dark": {
         "name": "dark",
         "query": "(prefers-color-scheme: dark)",
@@ -719,7 +719,7 @@ expression: runner_config
     }
   },
   "modifiers": {
-    "parentGroup": {
+    "parent-group": {
       "rtl": {
         "name": "rtl",
         "values": [
@@ -728,8 +728,8 @@ expression: runner_config
         "description": "This class modifier becomes active when when the text direction of any parent nodes is set to right to left.",
         "priority": 150
       },
-      "groupHover": {
-        "name": "groupHover",
+      "group-hover": {
+        "name": "group-hover",
         "values": [
           ".\\$group:hover &",
           ".group:hover &",
@@ -738,8 +738,8 @@ expression: runner_config
         "description": "This class modifier becomes active when a parent group is hovered.",
         "priority": 150
       },
-      "groupFocus": {
-        "name": "groupFocus",
+      "group-focus": {
+        "name": "group-focus",
         "values": [
           ".\\$group:focus &",
           ".group:focus &",
@@ -748,8 +748,8 @@ expression: runner_config
         "description": "This class modifier becomes active when a parent group is focused.",
         "priority": 150
       },
-      "groupActive": {
-        "name": "groupActive",
+      "group-active": {
+        "name": "group-active",
         "values": [
           ".\\$group:active &",
           ".group:active &",
@@ -758,8 +758,8 @@ expression: runner_config
         "description": "This class modifier becomes active when a parent group is active.",
         "priority": 150
       },
-      "groupVisited": {
-        "name": "groupVisited",
+      "group-visited": {
+        "name": "group-visited",
         "values": [
           ".\\$group:visited &",
           ".group:visited &",
@@ -769,7 +769,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "hoverGroup": {
+    "hover-group": {
       "hover": {
         "name": "hover",
         "values": [
@@ -779,7 +779,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "activeGroup": {
+    "active-group": {
       "active": {
         "name": "active",
         "values": [
@@ -788,40 +788,40 @@ expression: runner_config
         "description": null,
         "priority": 150
       },
-      "activeLink": {
-        "name": "activeLink",
+      "active-link": {
+        "name": "active-link",
         "values": [
           "&[aria-current=page]"
         ],
         "description": null,
         "priority": 150
       },
-      "activeLocation": {
-        "name": "activeLocation",
+      "active-location": {
+        "name": "active-location",
         "values": [
           "&[aria-current=location]"
         ],
         "description": null,
         "priority": 150
       },
-      "activeDate": {
-        "name": "activeDate",
+      "active-date": {
+        "name": "active-date",
         "values": [
           "&[aria-current=date]"
         ],
         "description": null,
         "priority": 150
       },
-      "activeTime": {
-        "name": "activeTime",
+      "active-time": {
+        "name": "active-time",
         "values": [
           "&[aria-current=time]"
         ],
         "description": null,
         "priority": 150
       },
-      "activeStep": {
-        "name": "activeStep",
+      "active-step": {
+        "name": "active-step",
         "values": [
           "&[aria-current=step]"
         ],
@@ -829,7 +829,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "focusGroup": {
+    "focus-group": {
       "focus": {
         "name": "focus",
         "values": [
@@ -839,9 +839,9 @@ expression: runner_config
         "priority": 150
       }
     },
-    "focusWithinGroup": {
-      "focusWithin": {
-        "name": "focusWithin",
+    "focus-within-group": {
+      "focus-within": {
+        "name": "focus-within",
         "values": [
           "&:focus-within"
         ],
@@ -849,9 +849,9 @@ expression: runner_config
         "priority": 150
       }
     },
-    "focusVisibleGroup": {
-      "focusVisible": {
-        "name": "focusVisible",
+    "focus-visible-group": {
+      "focus-visible": {
+        "name": "focus-visible",
         "values": [
           "&:focus-visible"
         ],
@@ -859,7 +859,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "enabledGroup": {
+    "enabled-group": {
       "disabled": {
         "name": "disabled",
         "values": [
@@ -870,8 +870,8 @@ expression: runner_config
         "description": null,
         "priority": 150
       },
-      "notDisabled": {
-        "name": "notDisabled",
+      "not-disabled": {
+        "name": "not-disabled",
         "values": [
           "&[aria-disabled=false]",
           "&:disabled"
@@ -888,7 +888,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "emptyGroup": {
+    "empty-group": {
       "empty": {
         "name": "empty",
         "values": [
@@ -898,17 +898,17 @@ expression: runner_config
         "priority": 150
       }
     },
-    "readGroup": {
-      "readWrite": {
-        "name": "readWrite",
+    "read-group": {
+      "read-write": {
+        "name": "read-write",
         "values": [
           "&:read-write"
         ],
         "description": null,
         "priority": 150
       },
-      "readOnly": {
-        "name": "readOnly",
+      "read-only": {
+        "name": "read-only",
         "values": [
           "&[aria-readonly=true]",
           "&[readonly]",
@@ -917,8 +917,8 @@ expression: runner_config
         "description": null,
         "priority": 150
       },
-      "notReadOnly": {
-        "name": "notReadOnly",
+      "not-read-only": {
+        "name": "not-read-only",
         "values": [
           "&[aria-readonly=false]",
           "&[readonly=false]",
@@ -928,7 +928,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "expandedGroup": {
+    "expanded-group": {
       "expanded": {
         "name": "expanded",
         "values": [
@@ -938,7 +938,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "checkedGroup": {
+    "checked-group": {
       "indeterminate": {
         "name": "indeterminate",
         "values": [
@@ -967,7 +967,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "grabbedGroup": {
+    "grabbed-group": {
       "grabbed": {
         "name": "grabbed",
         "values": [
@@ -977,7 +977,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "pressedGroup": {
+    "pressed-group": {
       "pressed": {
         "name": "pressed",
         "values": [
@@ -987,9 +987,9 @@ expression: runner_config
         "priority": 150
       }
     },
-    "invalidGrammarGroup": {
-      "invalidGrammar": {
-        "name": "invalidGrammar",
+    "invalid-grammar-group": {
+      "invalid-grammar": {
+        "name": "invalid-grammar",
         "values": [
           "&[aria-invalid=grammar]"
         ],
@@ -997,9 +997,9 @@ expression: runner_config
         "priority": 150
       }
     },
-    "invalidSpellingGroup": {
-      "invalidSpelling": {
-        "name": "invalidSpelling",
+    "invalid-spelling-group": {
+      "invalid-spelling": {
+        "name": "invalid-spelling",
         "values": [
           "&[aria-invalid=spelling]"
         ],
@@ -1007,7 +1007,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "validGroup": {
+    "valid-group": {
       "valid": {
         "name": "valid",
         "values": [
@@ -1027,7 +1027,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "loadingGroup": {
+    "loading-group": {
       "loading": {
         "name": "loading",
         "values": [
@@ -1037,7 +1037,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "selectedGroup": {
+    "selected-group": {
       "selected": {
         "name": "selected",
         "values": [
@@ -1047,9 +1047,9 @@ expression: runner_config
         "priority": 150
       }
     },
-    "hiddenGroup": {
-      "ariaHidden": {
-        "name": "ariaHidden",
+    "hidden-group": {
+      "aria-hidden": {
+        "name": "aria-hidden",
         "values": [
           "&[aria-hidden=true]"
         ],
@@ -1057,7 +1057,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "autofillGroup": {
+    "autofill-group": {
       "autofill": {
         "name": "autofill",
         "values": [
@@ -1067,7 +1067,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "evenGroup": {
+    "even-group": {
       "even": {
         "name": "even",
         "values": [
@@ -1084,16 +1084,16 @@ expression: runner_config
         "description": null,
         "priority": 150
       },
-      "evenOfType": {
-        "name": "evenOfType",
+      "even-of-type": {
+        "name": "even-of-type",
         "values": [
           "&:nth-of-type(even)"
         ],
         "description": null,
         "priority": 150
       },
-      "oddOfType": {
-        "name": "oddOfType",
+      "odd-of-type": {
+        "name": "odd-of-type",
         "values": [
           "&:nth-of-type(odd)"
         ],
@@ -1101,7 +1101,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "nodePositionGroup": {
+    "node-position-group": {
       "first": {
         "name": "first",
         "values": [
@@ -1110,8 +1110,8 @@ expression: runner_config
         "description": null,
         "priority": 150
       },
-      "notFirst": {
-        "name": "notFirst",
+      "not-first": {
+        "name": "not-first",
         "values": [
           "&:not(:first-child)"
         ],
@@ -1126,8 +1126,8 @@ expression: runner_config
         "description": null,
         "priority": 150
       },
-      "notLast": {
-        "name": "notLast",
+      "not-last": {
+        "name": "not-last",
         "values": [
           "&:not(:last-child)"
         ],
@@ -1135,33 +1135,33 @@ expression: runner_config
         "priority": 150
       }
     },
-    "nodeOfTypeGroup": {
-      "firstOfType": {
-        "name": "firstOfType",
+    "node-of-type-group": {
+      "first-of-type": {
+        "name": "first-of-type",
         "values": [
           "&:first-of-type"
         ],
         "description": null,
         "priority": 150
       },
-      "notFirstOfType": {
-        "name": "notFirstOfType",
+      "not-first-of-type": {
+        "name": "not-first-of-type",
         "values": [
           "&:not(:first-of-type)"
         ],
         "description": null,
         "priority": 150
       },
-      "lastOfType": {
-        "name": "lastOfType",
+      "last-of-type": {
+        "name": "last-of-type",
         "values": [
           "&:last-of-type"
         ],
         "description": null,
         "priority": 150
       },
-      "notLastOfType": {
-        "name": "notLastOfType",
+      "not-last-of-type": {
+        "name": "not-last-of-type",
         "values": [
           "&:not(:last-of-type)"
         ],
@@ -1169,7 +1169,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "visitedGroup": {
+    "visited-group": {
       "visited": {
         "name": "visited",
         "values": [
@@ -1179,7 +1179,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "optionalGroup": {
+    "optional-group": {
       "optional": {
         "name": "optional",
         "values": [
@@ -1189,9 +1189,9 @@ expression: runner_config
         "priority": 150
       }
     },
-    "fullScreenGroup": {
-      "fullScreen": {
-        "name": "fullScreen",
+    "full-screen-group": {
+      "full-screen": {
+        "name": "full-screen",
         "values": [
           "&:fullscreen"
         ],
@@ -1199,7 +1199,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "targetGroup": {
+    "target-group": {
       "target": {
         "name": "target",
         "values": [
@@ -1209,9 +1209,9 @@ expression: runner_config
         "priority": 150
       }
     },
-    "placeholderShownGroup": {
-      "placeholderShown": {
-        "name": "placeholderShown",
+    "placeholder-shown-group": {
+      "placeholder-shown": {
+        "name": "placeholder-shown",
         "values": [
           "&:placeholder-shown"
         ],
@@ -1219,7 +1219,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "requiredGroup": {
+    "required-group": {
       "required": {
         "name": "required",
         "values": [
@@ -1229,8 +1229,8 @@ expression: runner_config
         "description": null,
         "priority": 150
       },
-      "notRequired": {
-        "name": "notRequired",
+      "not-required": {
+        "name": "not-required",
         "values": [
           "[arira-required=false]",
           "&:not(:required)"
@@ -1239,7 +1239,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "defaultGroup": {
+    "default-group": {
       "default": {
         "name": "default",
         "values": [
@@ -1249,17 +1249,17 @@ expression: runner_config
         "priority": 150
       }
     },
-    "onlyChildGroup": {
-      "onlyChild": {
-        "name": "onlyChild",
+    "only-child-group": {
+      "only-child": {
+        "name": "only-child",
         "values": [
           "&:only-child"
         ],
         "description": null,
         "priority": 150
       },
-      "notOnlyChild": {
-        "name": "notOnlyChild",
+      "not-only-child": {
+        "name": "not-only-child",
         "values": [
           "&:not(:only-child)"
         ],
@@ -1267,17 +1267,17 @@ expression: runner_config
         "priority": 150
       }
     },
-    "onlyGroup": {
-      "onlyOfType": {
-        "name": "onlyOfType",
+    "only-group": {
+      "only-of-type": {
+        "name": "only-of-type",
         "values": [
           "&:only-of-type"
         ],
         "description": null,
         "priority": 150
       },
-      "notOnlyOfType": {
-        "name": "notOnlyOfType",
+      "not-only-of-type": {
+        "name": "not-only-of-type",
         "values": [
           "&:not(:only-of-type)"
         ],
@@ -1285,7 +1285,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "rootGroup": {
+    "root-group": {
       "root": {
         "name": "root",
         "values": [
@@ -1295,7 +1295,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "linkGroup": {
+    "link-group": {
       "link": {
         "name": "link",
         "values": [
@@ -1305,7 +1305,7 @@ expression: runner_config
         "priority": 150
       }
     },
-    "pseudoGroup": {
+    "pseudo-group": {
       "placeholder": {
         "name": "placeholder",
         "values": [
@@ -1322,16 +1322,16 @@ expression: runner_config
         "description": null,
         "priority": 150
       },
-      "firstLetter": {
-        "name": "firstLetter",
+      "first-letter": {
+        "name": "first-letter",
         "values": [
           "&::first-letter"
         ],
         "description": null,
         "priority": 150
       },
-      "firstLine": {
-        "name": "firstLine",
+      "first-line": {
+        "name": "first-line",
         "values": [
           "&::first-line"
         ],
@@ -1366,7 +1366,7 @@ expression: runner_config
         "values": [
           {
             "priority": 150,
-            "value": "screenReader"
+            "value": "screen-reader"
           }
         ]
       }
@@ -1387,8 +1387,8 @@ expression: runner_config
         ]
       }
     },
-    "transitionProperty": {
-      "name": "transitionProperty",
+    "transition-property": {
+      "name": "transition-property",
       "description": null,
       "priority": 150,
       "styles": {
@@ -1398,7 +1398,7 @@ expression: runner_config
         "values": [
           {
             "priority": 150,
-            "value": "transitionProperties"
+            "value": "transition-properties"
           }
         ]
       }
@@ -1457,16 +1457,16 @@ expression: runner_config
       "priority": 150,
       "styles": {
         "animation-name": null,
-        "animation-duration": "__:CSS_VARIABLE::animationDuration:__"
+        "animation-duration": "__:CSS_VARIABLE::animation-duration:__"
       },
       "values": "keyframes"
     },
-    "fadeIn": {
-      "name": "fadeIn",
+    "fade-in": {
+      "name": "fade-in",
       "description": "Fade in an element. Requires the `animate:$in` class to be applied to the element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::enterOpacity:__": null
+        "__:CSS_VARIABLE::enter-opacity:__": null
       },
       "values": {
         "values": [
@@ -1477,12 +1477,12 @@ expression: runner_config
         ]
       }
     },
-    "fadeOut": {
-      "name": "fadeOut",
+    "fade-out": {
+      "name": "fade-out",
       "description": "Fade out an element. Requires the `animate:$out` class to be applied to the element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::exitOpacity:__": null
+        "__:CSS_VARIABLE::exit-opacity:__": null
       },
       "values": {
         "values": [
@@ -1493,12 +1493,12 @@ expression: runner_config
         ]
       }
     },
-    "spinIn": {
-      "name": "spinIn",
+    "spin-in": {
+      "name": "spin-in",
       "description": "Rotate an element to enter. Requires the `animate:$in` class to be applied to the element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::enterRotate:__": null
+        "__:CSS_VARIABLE::enter-rotate:__": null
       },
       "values": {
         "values": [
@@ -1509,12 +1509,12 @@ expression: runner_config
         ]
       }
     },
-    "spinOut": {
-      "name": "spinOut",
+    "spin-out": {
+      "name": "spin-out",
       "description": "Rotate an element to exit. Requires the `animate:$out` class to be applied to the element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::exitRotate:__": null
+        "__:CSS_VARIABLE::exit-rotate:__": null
       },
       "values": {
         "values": [
@@ -1525,141 +1525,141 @@ expression: runner_config
         ]
       }
     },
-    "slideInLeft": {
-      "name": "slideInLeft",
+    "slide-in-left": {
+      "name": "slide-in-left",
       "description": "Entry animation from the left. Requires the `animate:$in` class to be applied to the element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::enterTranslateX:__": null
+        "__:CSS_VARIABLE::enter-translate-x:__": null
       },
       "values": {
         "values": [
           {
             "priority": 150,
-            "value": "negativeTranslation"
+            "value": "negative-translation"
           }
         ]
       }
     },
-    "slideInRight": {
-      "name": "slideInRight",
+    "slide-in-right": {
+      "name": "slide-in-right",
       "description": "Entry animation from the right. Requires the `animate:$in` class to be applied to the element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::enterTranslateX:__": null
+        "__:CSS_VARIABLE::enter-translate-x:__": null
       },
       "values": {
         "values": [
           {
             "priority": 150,
-            "value": "positiveTranslation"
+            "value": "positive-translation"
           }
         ]
       }
     },
-    "slideOutLeft": {
-      "name": "slideOutLeft",
+    "slide-out-left": {
+      "name": "slide-out-left",
       "description": "Exit animation to the left. Requires the `animate:$out` class to be applied to the element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::exitTranslateX:__": null
+        "__:CSS_VARIABLE::exit-translate-x:__": null
       },
       "values": {
         "values": [
           {
             "priority": 150,
-            "value": "negativeTranslation"
+            "value": "negative-translation"
           }
         ]
       }
     },
-    "slideOutRight": {
-      "name": "slideOutRight",
+    "slide-out-right": {
+      "name": "slide-out-right",
       "description": "Exit animation to the right. Requires the `animate:$out` class to be applied to the element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::exitTranslateX:__": null
+        "__:CSS_VARIABLE::exit-translate-x:__": null
       },
       "values": {
         "values": [
           {
             "priority": 150,
-            "value": "positiveTranslation"
+            "value": "positive-translation"
           }
         ]
       }
     },
-    "slideInTop": {
-      "name": "slideInTop",
+    "slide-in-top": {
+      "name": "slide-in-top",
       "description": "Entry animation from the top. Requires the `animate:$in` class to be applied to the element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::enterTranslateY:__": null
+        "__:CSS_VARIABLE::enter-translate-y:__": null
       },
       "values": {
         "values": [
           {
             "priority": 150,
-            "value": "negativeTranslation"
+            "value": "negative-translation"
           }
         ]
       }
     },
-    "slideInBottom": {
-      "name": "slideInBottom",
+    "slide-in-bottom": {
+      "name": "slide-in-bottom",
       "description": "Entry animation from the bottom. Requires the `animate:$in` class to be applied to the element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::enterTranslateY:__": null
+        "__:CSS_VARIABLE::enter-translate-y:__": null
       },
       "values": {
         "values": [
           {
             "priority": 150,
-            "value": "positiveTranslation"
+            "value": "positive-translation"
           }
         ]
       }
     },
-    "slideOutTop": {
-      "name": "slideOutTop",
+    "slide-out-top": {
+      "name": "slide-out-top",
       "description": "Exit animation to the top. Requires the `animate:$out` class to be applied to the element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::exitTranslateY:__": null
+        "__:CSS_VARIABLE::exit-translate-y:__": null
       },
       "values": {
         "values": [
           {
             "priority": 150,
-            "value": "negativeTranslation"
+            "value": "negative-translation"
           }
         ]
       }
     },
-    "slideOutBottom": {
-      "name": "slideOutBottom",
+    "slide-out-bottom": {
+      "name": "slide-out-bottom",
       "description": "Exit animation to the bottom. Requires the `animate:$out` class to be applied to the element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::exitTranslateY:__": null
+        "__:CSS_VARIABLE::exit-translate-y:__": null
       },
       "values": {
         "values": [
           {
             "priority": 150,
-            "value": "positiveTranslation"
+            "value": "positive-translation"
           }
         ]
       }
     },
-    "zoomIn": {
-      "name": "zoomIn",
+    "zoom-in": {
+      "name": "zoom-in",
       "description": "Entry animation from this zoom level. Requires the `animate:$in` class to be applied to the element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::enterScaleX:__": null,
-        "__:CSS_VARIABLE::enterScaleY:__": null
+        "__:CSS_VARIABLE::enter-scale-x:__": null,
+        "__:CSS_VARIABLE::enter-scale-y:__": null
       },
       "values": {
         "values": [
@@ -1670,13 +1670,13 @@ expression: runner_config
         ]
       }
     },
-    "zoomOut": {
-      "name": "zoomOut",
+    "zoom-out": {
+      "name": "zoom-out",
       "description": "Exit animation from this zoom level. Requires the `animate:$out` class to be applied to the element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::exitScaleX:__": null,
-        "__:CSS_VARIABLE::exitScaleY:__": null
+        "__:CSS_VARIABLE::exit-scale-x:__": null,
+        "__:CSS_VARIABLE::exit-scale-y:__": null
       },
       "values": {
         "values": [
@@ -1687,8 +1687,8 @@ expression: runner_config
         ]
       }
     },
-    "animateDuration": {
-      "name": "animateDuration",
+    "animate-duration": {
+      "name": "animate-duration",
       "description": null,
       "priority": 150,
       "styles": {
@@ -1703,8 +1703,8 @@ expression: runner_config
         ]
       }
     },
-    "animateEasing": {
-      "name": "animateEasing",
+    "animate-easing": {
+      "name": "animate-easing",
       "description": null,
       "priority": 150,
       "styles": {
@@ -1719,8 +1719,8 @@ expression: runner_config
         ]
       }
     },
-    "animateDelay": {
-      "name": "animateDelay",
+    "animate-delay": {
+      "name": "animate-delay",
       "description": null,
       "priority": 150,
       "styles": {
@@ -1735,8 +1735,8 @@ expression: runner_config
         ]
       }
     },
-    "animateRepeat": {
-      "name": "animateRepeat",
+    "animate-repeat": {
+      "name": "animate-repeat",
       "description": null,
       "priority": 150,
       "styles": {
@@ -1746,13 +1746,13 @@ expression: runner_config
         "values": [
           {
             "priority": 150,
-            "value": "animationRepetitions"
+            "value": "animation-repetitions"
           }
         ]
       }
     },
-    "animateDirection": {
-      "name": "animateDirection",
+    "animate-direction": {
+      "name": "animate-direction",
       "description": null,
       "priority": 150,
       "styles": {
@@ -1762,13 +1762,13 @@ expression: runner_config
         "values": [
           {
             "priority": 150,
-            "value": "animationDirection"
+            "value": "animation-direction"
           }
         ]
       }
     },
-    "animateFillMode": {
-      "name": "animateFillMode",
+    "animate-fill-mode": {
+      "name": "animate-fill-mode",
       "description": null,
       "priority": 150,
       "styles": {
@@ -1778,13 +1778,13 @@ expression: runner_config
         "values": [
           {
             "priority": 150,
-            "value": "animationFillMode"
+            "value": "animation-fill-mode"
           }
         ]
       }
     },
-    "animateState": {
-      "name": "animateState",
+    "animate-state": {
+      "name": "animate-state",
       "description": null,
       "priority": 150,
       "styles": {
@@ -1794,7 +1794,7 @@ expression: runner_config
         "values": [
           {
             "priority": 150,
-            "value": "animationState"
+            "value": "animation-state"
           }
         ]
       }
@@ -1804,7 +1804,7 @@ expression: runner_config
       "description": null,
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::enterScale:__": null
+        "__:CSS_VARIABLE::enter-scale:__": null
       },
       "values": {
         "values": [
@@ -2166,7 +2166,7 @@ expression: runner_config
         "values": [
           {
             "priority": 150,
-            "value": "zIndex"
+            "value": "z-index"
           }
         ]
       }
@@ -2195,22 +2195,6 @@ expression: runner_config
         "background-color": null
       },
       "values": "color"
-    },
-    "bgOpacity": {
-      "name": "bgOpacity",
-      "description": null,
-      "priority": 150,
-      "styles": {
-        "__:CSS_VARIABLE::bgOpacity:__": null
-      },
-      "values": {
-        "values": [
-          {
-            "priority": 150,
-            "value": "opacity"
-          }
-        ]
-      }
     },
     "opacity": {
       "name": "opacity",
@@ -2242,7 +2226,7 @@ expression: runner_config
       "priority": 150,
       "styles": {
         "width": "100%",
-        "max-width": "var(__:CSS_VARIABLE::containedMaxWidth:__)"
+        "max-width": "var(__:CSS_VARIABLE::contained-max-width:__)"
       }
     },
     "italic": {
@@ -2253,8 +2237,8 @@ expression: runner_config
         "font-style": "italic"
       }
     },
-    "nonItalic": {
-      "name": "nonItalic",
+    "non-italic": {
+      "name": "non-italic",
       "description": null,
       "priority": 150,
       "styles": {
@@ -2278,8 +2262,8 @@ expression: runner_config
         "-moz-osx-font-smoothing": "grayscale"
       }
     },
-    "subpixelAntialiased": {
-      "name": "subpixelAntialiased",
+    "subpixel-antialiased": {
+      "name": "subpixel-antialiased",
       "description": null,
       "priority": 150,
       "styles": {
@@ -2295,8 +2279,8 @@ expression: runner_config
         "display": "block"
       }
     },
-    "inlineBlock": {
-      "name": "inlineBlock",
+    "inline-block": {
+      "name": "inline-block",
       "description": null,
       "priority": 150,
       "styles": {
@@ -2311,8 +2295,8 @@ expression: runner_config
         "display": "inline"
       }
     },
-    "flowRoot": {
-      "name": "flowRoot",
+    "flow-root": {
+      "name": "flow-root",
       "description": null,
       "priority": 150,
       "styles": {
@@ -2351,36 +2335,36 @@ expression: runner_config
         "visibility": "visible"
       }
     },
-    "removeFilter": {
-      "name": "removeFilter",
+    "remove-filter": {
+      "name": "remove-filter",
       "description": null,
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::groupNestedFilter:__": "none"
+        "__:CSS_VARIABLE::group-nested-filter:__": "none"
       }
     },
-    "removeBackdrop": {
-      "name": "removeBackdrop",
+    "remove-backdrop": {
+      "name": "remove-backdrop",
       "description": null,
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::groupNestedBackdrop:__": "none"
+        "__:CSS_VARIABLE::group-nested-backdrop:__": "none"
       }
     },
-    "transformGpu": {
-      "name": "transformGpu",
+    "transform-gpu": {
+      "name": "transform-gpu",
       "description": null,
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::groupNestedTransform:__": "__:CSS_VARIABLE::groupNestedTransformGpu:__"
+        "__:CSS_VARIABLE::group-nested-transform:__": "__:CSS_VARIABLE::group-nested-transform-gpu:__"
       }
     },
-    "transformCpu": {
-      "name": "transformCpu",
+    "transform-cpu": {
+      "name": "transform-cpu",
       "description": null,
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::groupNestedTransform:__": "__:CSS_VARIABLE::groupNestedTransformCpu:__"
+        "__:CSS_VARIABLE::group-nested-transform:__": "__:CSS_VARIABLE::group-nested-transform-cpu:__"
       }
     }
   },
@@ -2634,8 +2618,8 @@ expression: runner_config
     "rose950": "#4c0519"
   },
   "value_sets": {
-    "screenReader": {
-      "name": "screenReader",
+    "screen-reader": {
+      "name": "screen-reader",
       "description": null,
       "priority": 150,
       "values": {
@@ -2702,8 +2686,8 @@ expression: runner_config
         }
       }
     },
-    "transitionProperties": {
-      "name": "transitionProperties",
+    "transition-properties": {
+      "name": "transition-properties",
       "description": null,
       "priority": 150,
       "values": {
@@ -2745,8 +2729,8 @@ expression: runner_config
         "inOut": "cubic-bezier(0.4, 0, 0.2, 1)"
       }
     },
-    "animationRepetitions": {
-      "name": "animationRepetitions",
+    "animation-repetitions": {
+      "name": "animation-repetitions",
       "description": null,
       "priority": 150,
       "values": {
@@ -2761,8 +2745,8 @@ expression: runner_config
         "inOut": "cubic-bezier(0.4, 0, 0.2, 1)"
       }
     },
-    "animationDirection": {
-      "name": "animationDirection",
+    "animation-direction": {
+      "name": "animation-direction",
       "description": null,
       "priority": 150,
       "values": {
@@ -2772,8 +2756,8 @@ expression: runner_config
         "altReverse": "alternate-reverse"
       }
     },
-    "animationFillMode": {
-      "name": "animationFillMode",
+    "animation-fill-mode": {
+      "name": "animation-fill-mode",
       "description": "These are the default animation fill mode values.",
       "priority": 150,
       "values": {
@@ -2783,8 +2767,8 @@ expression: runner_config
         "both": "both"
       }
     },
-    "animationState": {
-      "name": "animationState",
+    "animation-state": {
+      "name": "animation-state",
       "description": "These are the default animation state values.",
       "priority": 150,
       "values": {
@@ -2855,8 +2839,8 @@ expression: runner_config
         "3.5": "0.875rem"
       }
     },
-    "zIndex": {
-      "name": "zIndex",
+    "z-index": {
+      "name": "z-index",
       "description": null,
       "priority": 150,
       "values": {
@@ -2922,8 +2906,8 @@ expression: runner_config
         "180": "180deg"
       }
     },
-    "negativeTranslation": {
-      "name": "negativeTranslation",
+    "negative-translation": {
+      "name": "negative-translation",
       "description": null,
       "priority": 150,
       "values": {
@@ -2970,8 +2954,8 @@ expression: runner_config
         "threeQuarters": "-75%"
       }
     },
-    "positiveTranslation": {
-      "name": "positiveTranslation",
+    "positive-translation": {
+      "name": "positive-translation",
       "description": null,
       "priority": 150,
       "values": {
@@ -3040,93 +3024,93 @@ expression: runner_config
     ],
     "css_variables": [
       "primary",
-      "primaryContent",
+      "primary-content",
       "secondary",
-      "secondaryContent",
+      "secondary-content",
       "accent",
-      "accentContent",
+      "accent-content",
       "neutral",
-      "neutralContent",
+      "neutral-content",
       "base100",
       "base200",
       "base300",
-      "baseContent",
+      "base-content",
       "info",
-      "infoContent",
+      "info-content",
       "success",
-      "successContent",
+      "success-content",
       "warning",
-      "warningContent",
+      "warning-content",
       "error",
-      "errorContent",
-      "containedMaxWidth",
+      "error-content",
+      "contained-max-width",
       "empty",
-      "filterBlur",
-      "filterBrightness",
-      "filterContrast",
-      "filterCustom",
-      "filterGrayscale",
-      "filterHueRotate",
-      "filterInvert",
-      "filterSaturate",
-      "filterSepia",
-      "filterDropShadow",
-      "groupNestedFilter",
-      "backdropBlur",
-      "backdropBrightness",
-      "backdropContrast",
-      "backdropCustom",
-      "backdropGrayscale",
-      "backdropHueRotate",
-      "backdropInvert",
-      "backdropSaturate",
-      "backdropSepia",
-      "backdropDropShadow",
-      "groupNestedBackdrop",
-      "transitionDuration",
-      "animationDuration",
-      "enterOpacity",
-      "enterTranslateX",
-      "enterTranslateY",
-      "enterScaleX",
-      "enterScaleY",
-      "enterRotate",
-      "exitOpacity",
-      "exitTranslateX",
-      "exitTranslateY",
-      "exitScaleX",
-      "exitScaleY",
-      "exitRotate"
+      "filter-blur",
+      "filter-brightness",
+      "filter-contrast",
+      "filter-custom",
+      "filter-grayscale",
+      "filter-hue-rotate",
+      "filter-invert",
+      "filter-saturate",
+      "filter-sepia",
+      "filter-drop-shadow",
+      "group-nested-filter",
+      "backdrop-blur",
+      "backdrop-brightness",
+      "backdrop-contrast",
+      "backdrop-custom",
+      "backdrop-grayscale",
+      "backdrop-hue-rotate",
+      "backdrop-invert",
+      "backdrop-saturate",
+      "backdrop-sepia",
+      "backdrop-drop-shadow",
+      "group-nested-backdrop",
+      "transition-duration",
+      "animation-duration",
+      "enter-opacity",
+      "enter-translate-x",
+      "enter-translate-y",
+      "enter-scale-x",
+      "enter-scale-y",
+      "enter-rotate",
+      "exit-opacity",
+      "exit-translate-x",
+      "exit-translate-y",
+      "exit-scale-x",
+      "exit-scale-y",
+      "exit-rotate"
     ],
     "atoms": [
       "sr",
       "transition",
-      "transitionProperty",
+      "transition-property",
       "duration",
       "ease",
       "delay",
       "animate",
-      "fadeIn",
-      "fadeOut",
-      "spinIn",
-      "spinOut",
-      "slideInLeft",
-      "slideInRight",
-      "slideOutLeft",
-      "slideOutRight",
-      "slideInTop",
-      "slideInBottom",
-      "slideOutTop",
-      "slideOutBottom",
-      "zoomIn",
-      "zoomOut",
-      "animateDuration",
-      "animateEasing",
-      "animateDelay",
-      "animateRepeat",
-      "animateDirection",
-      "animateFillMode",
-      "animateState",
+      "fade-in",
+      "fade-out",
+      "spin-in",
+      "spin-out",
+      "slide-in-left",
+      "slide-in-right",
+      "slide-out-left",
+      "slide-out-right",
+      "slide-in-top",
+      "slide-in-bottom",
+      "slide-out-top",
+      "slide-out-bottom",
+      "zoom-in",
+      "zoom-out",
+      "animate-duration",
+      "animate-easing",
+      "animate-delay",
+      "animate-repeat",
+      "animate-direction",
+      "animate-fill-mode",
+      "animate-state",
       "zoom",
       "font",
       "p",
@@ -3152,29 +3136,28 @@ expression: runner_config
       "z",
       "dir",
       "bg",
-      "bgOpacity",
       "opacity"
     ],
     "classes": [
       "group",
       "contained",
       "italic",
-      "nonItalic",
+      "non-italic",
       "oblique",
       "antialiased",
-      "subpixelAntialiased",
+      "subpixel-antialiased",
       "block",
-      "inlineBlock",
+      "inline-block",
       "inline",
-      "flowRoot",
+      "flow-root",
       "content",
       "hidden",
       "invisible",
       "visible",
-      "removeFilter",
-      "removeBackdrop",
-      "transformGpu",
-      "transformCpu"
+      "remove-filter",
+      "remove-backdrop",
+      "transform-gpu",
+      "transform-cpu"
     ],
     "media_queries": [
       "screen",
@@ -3186,78 +3169,78 @@ expression: runner_config
       "xxl",
       "portrait",
       "landscape",
-      "motionReduce",
-      "motionSafe",
+      "motion-reduce",
+      "motion-safe",
       "dark",
       "light"
     ],
     "modifiers": [
       "rtl",
-      "groupHover",
-      "groupFocus",
-      "groupActive",
-      "groupVisited",
+      "group-hover",
+      "group-focus",
+      "group-active",
+      "group-visited",
       "hover",
       "active",
-      "activeLink",
-      "activeLocation",
-      "activeDate",
-      "activeTime",
-      "activeStep",
+      "active-link",
+      "active-location",
+      "active-date",
+      "active-time",
+      "active-step",
       "focus",
-      "focusWithin",
-      "focusVisible",
+      "focus-within",
+      "focus-visible",
       "disabled",
-      "notDisabled",
+      "not-disabled",
       "enabled",
       "empty",
-      "readWrite",
-      "readOnly",
-      "notReadOnly",
+      "read-write",
+      "read-only",
+      "not-read-only",
       "expanded",
       "indeterminate",
       "checked",
       "unchecked",
       "grabbed",
       "pressed",
-      "invalidGrammar",
-      "invalidSpelling",
+      "invalid-grammar",
+      "invalid-spelling",
       "valid",
       "invalid",
       "loading",
       "selected",
-      "ariaHidden",
+      "aria-hidden",
       "autofill",
       "even",
       "odd",
-      "evenOfType",
-      "oddOfType",
+      "even-of-type",
+      "odd-of-type",
       "first",
-      "notFirst",
+      "not-first",
       "last",
-      "notLast",
-      "firstOfType",
-      "notFirstOfType",
-      "lastOfType",
-      "notLastOfType",
+      "not-last",
+      "first-of-type",
+      "not-first-of-type",
+      "last-of-type",
+      "not-last-of-type",
       "visited",
       "optional",
-      "fullScreen",
+      "full-screen",
       "target",
-      "placeholderShown",
+      "placeholder-shown",
       "required",
-      "notRequired",
+      "not-required",
       "default",
-      "onlyChild",
-      "notOnlyChild",
-      "onlyOfType",
-      "notOnlyOfType",
+      "only-child",
+      "not-only-child",
+      "only-of-type",
+      "not-only-of-type",
       "root",
       "link",
       "placeholder",
       "selection",
-      "firstLetter",
-      "firstLine",
+      "first-letter",
+      "first-line",
       "before",
       "after"
     ],
@@ -3274,7 +3257,7 @@ expression: runner_config
       "shadow",
       "transform"
     ],
-    "atom:transitionProperty": [
+    "atom:transition-property": [
       "most",
       "none",
       "all",
@@ -3323,7 +3306,7 @@ expression: runner_config
       "pulse",
       "bounce"
     ],
-    "atom:fadeIn": [
+    "atom:fade-in": [
       "0",
       "5",
       "10",
@@ -3339,7 +3322,7 @@ expression: runner_config
       "95",
       "100"
     ],
-    "atom:fadeOut": [
+    "atom:fade-out": [
       "0",
       "5",
       "10",
@@ -3355,7 +3338,7 @@ expression: runner_config
       "95",
       "100"
     ],
-    "atom:spinIn": [
+    "atom:spin-in": [
       "0",
       "1",
       "2",
@@ -3367,7 +3350,7 @@ expression: runner_config
       "90",
       "180"
     ],
-    "atom:spinOut": [
+    "atom:spin-out": [
       "0",
       "1",
       "2",
@@ -3379,7 +3362,7 @@ expression: runner_config
       "90",
       "180"
     ],
-    "atom:slideInLeft": [
+    "atom:slide-in-left": [
       "full",
       "0",
       "px",
@@ -3422,7 +3405,7 @@ expression: runner_config
       "half",
       "threeQuarters"
     ],
-    "atom:slideInRight": [
+    "atom:slide-in-right": [
       "full",
       "0",
       "px",
@@ -3465,7 +3448,7 @@ expression: runner_config
       "half",
       "threeQuarters"
     ],
-    "atom:slideOutLeft": [
+    "atom:slide-out-left": [
       "full",
       "0",
       "px",
@@ -3508,7 +3491,7 @@ expression: runner_config
       "half",
       "threeQuarters"
     ],
-    "atom:slideOutRight": [
+    "atom:slide-out-right": [
       "full",
       "0",
       "px",
@@ -3551,7 +3534,7 @@ expression: runner_config
       "half",
       "threeQuarters"
     ],
-    "atom:slideInTop": [
+    "atom:slide-in-top": [
       "full",
       "0",
       "px",
@@ -3594,7 +3577,7 @@ expression: runner_config
       "half",
       "threeQuarters"
     ],
-    "atom:slideInBottom": [
+    "atom:slide-in-bottom": [
       "full",
       "0",
       "px",
@@ -3637,7 +3620,7 @@ expression: runner_config
       "half",
       "threeQuarters"
     ],
-    "atom:slideOutTop": [
+    "atom:slide-out-top": [
       "full",
       "0",
       "px",
@@ -3680,7 +3663,7 @@ expression: runner_config
       "half",
       "threeQuarters"
     ],
-    "atom:slideOutBottom": [
+    "atom:slide-out-bottom": [
       "full",
       "0",
       "px",
@@ -3723,7 +3706,7 @@ expression: runner_config
       "half",
       "threeQuarters"
     ],
-    "atom:zoomIn": [
+    "atom:zoom-in": [
       "0",
       "50",
       "75",
@@ -3735,7 +3718,7 @@ expression: runner_config
       "125",
       "150"
     ],
-    "atom:zoomOut": [
+    "atom:zoom-out": [
       "0",
       "50",
       "75",
@@ -3747,7 +3730,7 @@ expression: runner_config
       "125",
       "150"
     ],
-    "atom:animateDuration": [
+    "atom:animate-duration": [
       "0",
       "75",
       "100",
@@ -3760,13 +3743,13 @@ expression: runner_config
       "1500",
       "2000"
     ],
-    "atom:animateEasing": [
+    "atom:animate-easing": [
       "linear",
       "in",
       "out",
       "inOut"
     ],
-    "atom:animateDelay": [
+    "atom:animate-delay": [
       "0",
       "75",
       "100",
@@ -3779,7 +3762,7 @@ expression: runner_config
       "1500",
       "2000"
     ],
-    "atom:animateRepeat": [
+    "atom:animate-repeat": [
       "0",
       "0.5",
       "1",
@@ -3790,19 +3773,19 @@ expression: runner_config
       "out",
       "inOut"
     ],
-    "atom:animateDirection": [
+    "atom:animate-direction": [
       "normal",
       "reverse",
       "alt",
       "altReverse"
     ],
-    "atom:animateFillMode": [
+    "atom:animate-fill-mode": [
       "none",
       "forwards",
       "backwards",
       "both"
     ],
-    "atom:animateState": [
+    "atom:animate-state": [
       "running",
       "paused"
     ],
@@ -4588,25 +4571,25 @@ expression: runner_config
     ],
     "atom:bg": [
       "primary",
-      "primaryContent",
+      "primary-content",
       "secondary",
-      "secondaryContent",
+      "secondary-content",
       "accent",
-      "accentContent",
+      "accent-content",
       "neutral",
-      "neutralContent",
+      "neutral-content",
       "base100",
       "base200",
       "base300",
-      "baseContent",
+      "base-content",
       "info",
-      "infoContent",
+      "info-content",
       "success",
-      "successContent",
+      "success-content",
       "warning",
-      "warningContent",
+      "warning-content",
       "error",
-      "errorContent",
+      "error-content",
       "inherit",
       "current",
       "transparent",
@@ -4854,22 +4837,6 @@ expression: runner_config
       "rose800",
       "rose900",
       "rose950"
-    ],
-    "atom:bgOpacity": [
-      "0",
-      "5",
-      "10",
-      "20",
-      "30",
-      "40",
-      "50",
-      "60",
-      "70",
-      "75",
-      "80",
-      "90",
-      "95",
-      "100"
     ],
     "atom:opacity": [
       "0",

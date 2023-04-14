@@ -8,21 +8,20 @@ use skribble_core::Placeholder;
 lazy_static! {
   pub(crate) static ref ATOMS: Vec<Atom> = {
     let none: Option<&String> = None;
-    let enter_scale = Placeholder::variable("enterScale");
-    let bg_opacity = Placeholder::variable("bgOpacity");
-    let animation_duration = Placeholder::variable("animationDuration");
-    let enter_opacity = Placeholder::variable("enterOpacity");
-    let enter_translate_x = Placeholder::variable("enterTranslateX");
-    let enter_translate_y = Placeholder::variable("enterTranslateY");
-    let enter_scale_x = Placeholder::variable("enterScaleX");
-    let enter_scale_y = Placeholder::variable("enterScaleY");
-    let enter_rotate = Placeholder::variable("enterRotate");
-    let exit_opacity = Placeholder::variable("exitOpacity");
-    let exit_translate_x = Placeholder::variable("exitTranslateX");
-    let exit_translate_y = Placeholder::variable("exitTranslateY");
-    let exit_scale_x = Placeholder::variable("exitScaleX");
-    let exit_scale_y = Placeholder::variable("exitScaleY");
-    let exit_rotate = Placeholder::variable("exitRotate");
+    let enter_scale = Placeholder::variable("enter-scale");
+    let animation_duration = Placeholder::variable("animation-duration");
+    let enter_opacity = Placeholder::variable("enter-opacity");
+    let enter_translate_x = Placeholder::variable("enter-translate-x");
+    let enter_translate_y = Placeholder::variable("enter-translate-y");
+    let enter_scale_x = Placeholder::variable("enter-scale-x");
+    let enter_scale_y = Placeholder::variable("enter-scale-y");
+    let enter_rotate = Placeholder::variable("enter-rotate");
+    let exit_opacity = Placeholder::variable("exit-opacity");
+    let exit_translate_x = Placeholder::variable("exit-translate-x");
+    let exit_translate_y = Placeholder::variable("exit-translate-y");
+    let exit_scale_x = Placeholder::variable("exit-scale-x");
+    let exit_scale_y = Placeholder::variable("exit-scale-y");
+    let exit_rotate = Placeholder::variable("exit-rotate");
 
     vec![
       Atom::builder()
@@ -348,11 +347,6 @@ lazy_static! {
         .name("bg")
         .values(LinkedValues::Color)
         .styles(indexmap! { "background-color" => none })
-        .build(),
-      Atom::builder()
-        .name("bg-opacity")
-        .values(vec!["opacity"])
-        .styles(indexmap! { bg_opacity => none })
         .build(),
       Atom::builder()
         .name("opacity")
