@@ -1,28 +1,16 @@
 mod generated_code;
 use generated_code::*;
-use insta::assert_display_snapshot;
+use rstest::rstest;
+use similar_asserts::assert_eq;
 
-#[test]
-fn media_query_class_names() {
-  assert_display_snapshot!(sk().md().p().px(), @"md:p:$px");
-}
-
-#[test]
-fn parent_modifier_class_names() {
-  assert_display_snapshot!(sk().dark().p().px(), @"dark:p:$px");
-}
-
-#[test]
-fn atom_with_colors() {
-  assert_display_snapshot!(sk().bg().accent(), @"bg:$accent");
-}
-
-#[test]
-fn atom_with_palette() {
-  assert_display_snapshot!(sk().bg().red100(), @"bg:$red100");
-}
-
-#[test]
-fn variables() {
-  assert_display_snapshot!(vars().primary(), @"--sk-p");
+#[rstest]
+#[case(sk().md().p().px(), "md:p:$px")]
+#[case(sk().dark().p().px(), "dark:p:$px")]
+#[case(sk().bg().accent(), "bg:$accent")]
+#[case(sk().md().pt_("1px"), "md:pt:[1px]")]
+#[case(sk().p_("101px"), "p:[101px]")]
+#[case(sk().bg().red100(), "bg:$red100")]
+#[case(vars().primary(), "--sk-p")]
+fn generated_class_names(#[case] input: String, #[case] expected: &str) {
+  assert_eq!(input, expected);
 }

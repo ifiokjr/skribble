@@ -22,7 +22,7 @@ mod private {
     fn from_ref(value: impl AsRef<str>) -> Self;
     fn get_skribble_value(&self) -> &String;
     #[inline]
-    fn append_to_skribble_value(&self, value: impl AsRef<str>) -> String {
+    fn append(&self, value: impl AsRef<str>) -> String {
       let current_value = self.get_skribble_value();
       let prefix = if current_value.is_empty() {
         "".into()
@@ -33,7 +33,7 @@ mod private {
       format!("{}{}", prefix, value.as_ref())
     }
     #[inline]
-    fn append_string_to_skribble_value(&self, value: impl AsRef<str>) -> String {
+    fn append_value(&self, value: impl AsRef<str>) -> String {
       format!("{}:${}", self.get_skribble_value(), value.as_ref())
     }
   }
@@ -781,8 +781,8 @@ impl GeneratedCssVariables {
     "--sk-exit-rotate".into()
   }
 }
-pub struct MediaQueryDeviceCategoriesChild(String);
-impl GeneratedSkribbleValue for MediaQueryDeviceCategoriesChild {
+pub struct GeneratedMediaQueryDeviceCategoriesChild(String);
+impl GeneratedSkribbleValue for GeneratedMediaQueryDeviceCategoriesChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -793,7 +793,7 @@ impl GeneratedSkribbleValue for MediaQueryDeviceCategoriesChild {
     &self.0
   }
 }
-pub trait MediaQueryDeviceCategories: GeneratedSkribbleValue {
+pub trait GeneratedMediaQueryDeviceCategories: GeneratedSkribbleValue {
   /// The media query for devices with a screen.
   ///
   /// ```css
@@ -802,8 +802,8 @@ pub trait MediaQueryDeviceCategories: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn screen(&self) -> MediaQueryDeviceCategoriesChild {
-    MediaQueryDeviceCategoriesChild::from_ref(self.append_to_skribble_value("screen"))
+  fn screen(&self) -> GeneratedMediaQueryDeviceCategoriesChild {
+    GeneratedMediaQueryDeviceCategoriesChild::from_ref(self.append("screen"))
   }
   /// The media query for devices with a printer.
   ///
@@ -813,12 +813,12 @@ pub trait MediaQueryDeviceCategories: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn print(&self) -> MediaQueryDeviceCategoriesChild {
-    MediaQueryDeviceCategoriesChild::from_ref(self.append_to_skribble_value("print"))
+  fn print(&self) -> GeneratedMediaQueryDeviceCategoriesChild {
+    GeneratedMediaQueryDeviceCategoriesChild::from_ref(self.append("print"))
   }
 }
-pub struct MediaQueryBreakpointsChild(String);
-impl GeneratedSkribbleValue for MediaQueryBreakpointsChild {
+pub struct GeneratedMediaQueryBreakpointsChild(String);
+impl GeneratedSkribbleValue for GeneratedMediaQueryBreakpointsChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -829,7 +829,7 @@ impl GeneratedSkribbleValue for MediaQueryBreakpointsChild {
     &self.0
   }
 }
-pub trait MediaQueryBreakpoints: GeneratedSkribbleValue {
+pub trait GeneratedMediaQueryBreakpoints: GeneratedSkribbleValue {
   /// The breakpoint for devices with screen size greater than tiny.
   ///
   /// ```css
@@ -838,8 +838,8 @@ pub trait MediaQueryBreakpoints: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn sm(&self) -> MediaQueryBreakpointsChild {
-    MediaQueryBreakpointsChild::from_ref(self.append_to_skribble_value("sm"))
+  fn sm(&self) -> GeneratedMediaQueryBreakpointsChild {
+    GeneratedMediaQueryBreakpointsChild::from_ref(self.append("sm"))
   }
   /// The breakpoint for devices screen size greater than medium
   ///
@@ -849,8 +849,8 @@ pub trait MediaQueryBreakpoints: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn md(&self) -> MediaQueryBreakpointsChild {
-    MediaQueryBreakpointsChild::from_ref(self.append_to_skribble_value("md"))
+  fn md(&self) -> GeneratedMediaQueryBreakpointsChild {
+    GeneratedMediaQueryBreakpointsChild::from_ref(self.append("md"))
   }
   /// The breakpoint for devices screen size greater than large
   ///
@@ -860,8 +860,8 @@ pub trait MediaQueryBreakpoints: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn lg(&self) -> MediaQueryBreakpointsChild {
-    MediaQueryBreakpointsChild::from_ref(self.append_to_skribble_value("lg"))
+  fn lg(&self) -> GeneratedMediaQueryBreakpointsChild {
+    GeneratedMediaQueryBreakpointsChild::from_ref(self.append("lg"))
   }
   /// The breakpoint for devices screen size greater than extra large
   ///
@@ -871,8 +871,8 @@ pub trait MediaQueryBreakpoints: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn xl(&self) -> MediaQueryBreakpointsChild {
-    MediaQueryBreakpointsChild::from_ref(self.append_to_skribble_value("xl"))
+  fn xl(&self) -> GeneratedMediaQueryBreakpointsChild {
+    GeneratedMediaQueryBreakpointsChild::from_ref(self.append("xl"))
   }
   /// The breakpoint for devices screen size greater than xxl
   ///
@@ -882,12 +882,12 @@ pub trait MediaQueryBreakpoints: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn xxl(&self) -> MediaQueryBreakpointsChild {
-    MediaQueryBreakpointsChild::from_ref(self.append_to_skribble_value("xxl"))
+  fn xxl(&self) -> GeneratedMediaQueryBreakpointsChild {
+    GeneratedMediaQueryBreakpointsChild::from_ref(self.append("xxl"))
   }
 }
-pub struct MediaQueryOrientationChild(String);
-impl GeneratedSkribbleValue for MediaQueryOrientationChild {
+pub struct GeneratedMediaQueryOrientationChild(String);
+impl GeneratedSkribbleValue for GeneratedMediaQueryOrientationChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -898,7 +898,7 @@ impl GeneratedSkribbleValue for MediaQueryOrientationChild {
     &self.0
   }
 }
-pub trait MediaQueryOrientation: GeneratedSkribbleValue {
+pub trait GeneratedMediaQueryOrientation: GeneratedSkribbleValue {
   /// The media query for devices with a portrait orientation.
   ///
   /// ```css
@@ -907,8 +907,8 @@ pub trait MediaQueryOrientation: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn portrait(&self) -> MediaQueryOrientationChild {
-    MediaQueryOrientationChild::from_ref(self.append_to_skribble_value("portrait"))
+  fn portrait(&self) -> GeneratedMediaQueryOrientationChild {
+    GeneratedMediaQueryOrientationChild::from_ref(self.append("portrait"))
   }
   /// The media query for devices with a landscape orientation.
   ///
@@ -918,12 +918,12 @@ pub trait MediaQueryOrientation: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn landscape(&self) -> MediaQueryOrientationChild {
-    MediaQueryOrientationChild::from_ref(self.append_to_skribble_value("landscape"))
+  fn landscape(&self) -> GeneratedMediaQueryOrientationChild {
+    GeneratedMediaQueryOrientationChild::from_ref(self.append("landscape"))
   }
 }
-pub struct MediaQueryMotionChild(String);
-impl GeneratedSkribbleValue for MediaQueryMotionChild {
+pub struct GeneratedMediaQueryMotionChild(String);
+impl GeneratedSkribbleValue for GeneratedMediaQueryMotionChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -934,7 +934,7 @@ impl GeneratedSkribbleValue for MediaQueryMotionChild {
     &self.0
   }
 }
-pub trait MediaQueryMotion: GeneratedSkribbleValue {
+pub trait GeneratedMediaQueryMotion: GeneratedSkribbleValue {
   /// The media query for devices with a reduced motion preference.
   ///
   /// ```css
@@ -943,8 +943,8 @@ pub trait MediaQueryMotion: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn motion_reduce(&self) -> MediaQueryMotionChild {
-    MediaQueryMotionChild::from_ref(self.append_to_skribble_value("motionReduce"))
+  fn motion_reduce(&self) -> GeneratedMediaQueryMotionChild {
+    GeneratedMediaQueryMotionChild::from_ref(self.append("motionReduce"))
   }
   /// The media query for devices with a no preference motion preference.
   ///
@@ -954,12 +954,12 @@ pub trait MediaQueryMotion: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn motion_safe(&self) -> MediaQueryMotionChild {
-    MediaQueryMotionChild::from_ref(self.append_to_skribble_value("motionSafe"))
+  fn motion_safe(&self) -> GeneratedMediaQueryMotionChild {
+    GeneratedMediaQueryMotionChild::from_ref(self.append("motionSafe"))
   }
 }
-pub struct MediaQueryDarkModeChild(String);
-impl GeneratedSkribbleValue for MediaQueryDarkModeChild {
+pub struct GeneratedMediaQueryDarkModeChild(String);
+impl GeneratedSkribbleValue for GeneratedMediaQueryDarkModeChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -970,7 +970,7 @@ impl GeneratedSkribbleValue for MediaQueryDarkModeChild {
     &self.0
   }
 }
-pub trait MediaQueryDarkMode: GeneratedSkribbleValue {
+pub trait GeneratedMediaQueryDarkMode: GeneratedSkribbleValue {
   /// The media query for devices with a dark color scheme.
   ///
   /// ```css
@@ -979,8 +979,8 @@ pub trait MediaQueryDarkMode: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn dark(&self) -> MediaQueryDarkModeChild {
-    MediaQueryDarkModeChild::from_ref(self.append_to_skribble_value("dark"))
+  fn dark(&self) -> GeneratedMediaQueryDarkModeChild {
+    GeneratedMediaQueryDarkModeChild::from_ref(self.append("dark"))
   }
   /// The media query for devices with a light color scheme.
   ///
@@ -990,12 +990,12 @@ pub trait MediaQueryDarkMode: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn light(&self) -> MediaQueryDarkModeChild {
-    MediaQueryDarkModeChild::from_ref(self.append_to_skribble_value("light"))
+  fn light(&self) -> GeneratedMediaQueryDarkModeChild {
+    GeneratedMediaQueryDarkModeChild::from_ref(self.append("light"))
   }
 }
-pub struct ModifierParentGroupChild(String);
-impl GeneratedSkribbleValue for ModifierParentGroupChild {
+pub struct GeneratedModifierParentGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierParentGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1006,7 +1006,7 @@ impl GeneratedSkribbleValue for ModifierParentGroupChild {
     &self.0
   }
 }
-pub trait ModifierParentGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierParentGroup: GeneratedSkribbleValue {
   /// This class modifier becomes active when when the text direction of any
   /// parent nodes is set to right to left.
   ///
@@ -1016,8 +1016,8 @@ pub trait ModifierParentGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn rtl(&self) -> ModifierParentGroupChild {
-    ModifierParentGroupChild::from_ref(self.append_to_skribble_value("rtl"))
+  fn rtl(&self) -> GeneratedModifierParentGroupChild {
+    GeneratedModifierParentGroupChild::from_ref(self.append("rtl"))
   }
   /// This class modifier becomes active when a parent group is hovered.
   ///
@@ -1027,8 +1027,8 @@ pub trait ModifierParentGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn group_hover(&self) -> ModifierParentGroupChild {
-    ModifierParentGroupChild::from_ref(self.append_to_skribble_value("groupHover"))
+  fn group_hover(&self) -> GeneratedModifierParentGroupChild {
+    GeneratedModifierParentGroupChild::from_ref(self.append("groupHover"))
   }
   /// This class modifier becomes active when a parent group is focused.
   ///
@@ -1038,8 +1038,8 @@ pub trait ModifierParentGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn group_focus(&self) -> ModifierParentGroupChild {
-    ModifierParentGroupChild::from_ref(self.append_to_skribble_value("groupFocus"))
+  fn group_focus(&self) -> GeneratedModifierParentGroupChild {
+    GeneratedModifierParentGroupChild::from_ref(self.append("groupFocus"))
   }
   /// This class modifier becomes active when a parent group is active.
   ///
@@ -1049,8 +1049,8 @@ pub trait ModifierParentGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn group_active(&self) -> ModifierParentGroupChild {
-    ModifierParentGroupChild::from_ref(self.append_to_skribble_value("groupActive"))
+  fn group_active(&self) -> GeneratedModifierParentGroupChild {
+    GeneratedModifierParentGroupChild::from_ref(self.append("groupActive"))
   }
   /// This class modifier becomes active when a parent group is visited.
   ///
@@ -1060,12 +1060,12 @@ pub trait ModifierParentGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn group_visited(&self) -> ModifierParentGroupChild {
-    ModifierParentGroupChild::from_ref(self.append_to_skribble_value("groupVisited"))
+  fn group_visited(&self) -> GeneratedModifierParentGroupChild {
+    GeneratedModifierParentGroupChild::from_ref(self.append("groupVisited"))
   }
 }
-pub struct ModifierHoverGroupChild(String);
-impl GeneratedSkribbleValue for ModifierHoverGroupChild {
+pub struct GeneratedModifierHoverGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierHoverGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1076,7 +1076,7 @@ impl GeneratedSkribbleValue for ModifierHoverGroupChild {
     &self.0
   }
 }
-pub trait ModifierHoverGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierHoverGroup: GeneratedSkribbleValue {
   /// This class modifier becomes active when the element is hovered.
   ///
   /// ```css
@@ -1085,12 +1085,12 @@ pub trait ModifierHoverGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn hover(&self) -> ModifierHoverGroupChild {
-    ModifierHoverGroupChild::from_ref(self.append_to_skribble_value("hover"))
+  fn hover(&self) -> GeneratedModifierHoverGroupChild {
+    GeneratedModifierHoverGroupChild::from_ref(self.append("hover"))
   }
 }
-pub struct ModifierActiveGroupChild(String);
-impl GeneratedSkribbleValue for ModifierActiveGroupChild {
+pub struct GeneratedModifierActiveGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierActiveGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1101,15 +1101,15 @@ impl GeneratedSkribbleValue for ModifierActiveGroupChild {
     &self.0
   }
 }
-pub trait ModifierActiveGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierActiveGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:active {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn active(&self) -> ModifierActiveGroupChild {
-    ModifierActiveGroupChild::from_ref(self.append_to_skribble_value("active"))
+  fn active(&self) -> GeneratedModifierActiveGroupChild {
+    GeneratedModifierActiveGroupChild::from_ref(self.append("active"))
   }
   /// ```css
   /// &[aria-current=page] {
@@ -1117,8 +1117,8 @@ pub trait ModifierActiveGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn active_link(&self) -> ModifierActiveGroupChild {
-    ModifierActiveGroupChild::from_ref(self.append_to_skribble_value("activeLink"))
+  fn active_link(&self) -> GeneratedModifierActiveGroupChild {
+    GeneratedModifierActiveGroupChild::from_ref(self.append("activeLink"))
   }
   /// ```css
   /// &[aria-current=location] {
@@ -1126,8 +1126,8 @@ pub trait ModifierActiveGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn active_location(&self) -> ModifierActiveGroupChild {
-    ModifierActiveGroupChild::from_ref(self.append_to_skribble_value("activeLocation"))
+  fn active_location(&self) -> GeneratedModifierActiveGroupChild {
+    GeneratedModifierActiveGroupChild::from_ref(self.append("activeLocation"))
   }
   /// ```css
   /// &[aria-current=date] {
@@ -1135,8 +1135,8 @@ pub trait ModifierActiveGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn active_date(&self) -> ModifierActiveGroupChild {
-    ModifierActiveGroupChild::from_ref(self.append_to_skribble_value("activeDate"))
+  fn active_date(&self) -> GeneratedModifierActiveGroupChild {
+    GeneratedModifierActiveGroupChild::from_ref(self.append("activeDate"))
   }
   /// ```css
   /// &[aria-current=time] {
@@ -1144,8 +1144,8 @@ pub trait ModifierActiveGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn active_time(&self) -> ModifierActiveGroupChild {
-    ModifierActiveGroupChild::from_ref(self.append_to_skribble_value("activeTime"))
+  fn active_time(&self) -> GeneratedModifierActiveGroupChild {
+    GeneratedModifierActiveGroupChild::from_ref(self.append("activeTime"))
   }
   /// ```css
   /// &[aria-current=step] {
@@ -1153,12 +1153,12 @@ pub trait ModifierActiveGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn active_step(&self) -> ModifierActiveGroupChild {
-    ModifierActiveGroupChild::from_ref(self.append_to_skribble_value("activeStep"))
+  fn active_step(&self) -> GeneratedModifierActiveGroupChild {
+    GeneratedModifierActiveGroupChild::from_ref(self.append("activeStep"))
   }
 }
-pub struct ModifierFocusGroupChild(String);
-impl GeneratedSkribbleValue for ModifierFocusGroupChild {
+pub struct GeneratedModifierFocusGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierFocusGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1169,19 +1169,19 @@ impl GeneratedSkribbleValue for ModifierFocusGroupChild {
     &self.0
   }
 }
-pub trait ModifierFocusGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierFocusGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:focus {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn focus(&self) -> ModifierFocusGroupChild {
-    ModifierFocusGroupChild::from_ref(self.append_to_skribble_value("focus"))
+  fn focus(&self) -> GeneratedModifierFocusGroupChild {
+    GeneratedModifierFocusGroupChild::from_ref(self.append("focus"))
   }
 }
-pub struct ModifierFocusWithinGroupChild(String);
-impl GeneratedSkribbleValue for ModifierFocusWithinGroupChild {
+pub struct GeneratedModifierFocusWithinGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierFocusWithinGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1192,19 +1192,19 @@ impl GeneratedSkribbleValue for ModifierFocusWithinGroupChild {
     &self.0
   }
 }
-pub trait ModifierFocusWithinGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierFocusWithinGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:focus-within {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn focus_within(&self) -> ModifierFocusWithinGroupChild {
-    ModifierFocusWithinGroupChild::from_ref(self.append_to_skribble_value("focusWithin"))
+  fn focus_within(&self) -> GeneratedModifierFocusWithinGroupChild {
+    GeneratedModifierFocusWithinGroupChild::from_ref(self.append("focusWithin"))
   }
 }
-pub struct ModifierFocusVisibleGroupChild(String);
-impl GeneratedSkribbleValue for ModifierFocusVisibleGroupChild {
+pub struct GeneratedModifierFocusVisibleGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierFocusVisibleGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1215,19 +1215,19 @@ impl GeneratedSkribbleValue for ModifierFocusVisibleGroupChild {
     &self.0
   }
 }
-pub trait ModifierFocusVisibleGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierFocusVisibleGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:focus-visible {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn focus_visible(&self) -> ModifierFocusVisibleGroupChild {
-    ModifierFocusVisibleGroupChild::from_ref(self.append_to_skribble_value("focusVisible"))
+  fn focus_visible(&self) -> GeneratedModifierFocusVisibleGroupChild {
+    GeneratedModifierFocusVisibleGroupChild::from_ref(self.append("focusVisible"))
   }
 }
-pub struct ModifierEnabledGroupChild(String);
-impl GeneratedSkribbleValue for ModifierEnabledGroupChild {
+pub struct GeneratedModifierEnabledGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierEnabledGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1238,15 +1238,15 @@ impl GeneratedSkribbleValue for ModifierEnabledGroupChild {
     &self.0
   }
 }
-pub trait ModifierEnabledGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierEnabledGroup: GeneratedSkribbleValue {
   /// ```css
   /// &[disabled], &[aria-disabled=true], &:disabled {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn disabled(&self) -> ModifierEnabledGroupChild {
-    ModifierEnabledGroupChild::from_ref(self.append_to_skribble_value("disabled"))
+  fn disabled(&self) -> GeneratedModifierEnabledGroupChild {
+    GeneratedModifierEnabledGroupChild::from_ref(self.append("disabled"))
   }
   /// ```css
   /// &[aria-disabled=false], &:disabled {
@@ -1254,8 +1254,8 @@ pub trait ModifierEnabledGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn not_disabled(&self) -> ModifierEnabledGroupChild {
-    ModifierEnabledGroupChild::from_ref(self.append_to_skribble_value("notDisabled"))
+  fn not_disabled(&self) -> GeneratedModifierEnabledGroupChild {
+    GeneratedModifierEnabledGroupChild::from_ref(self.append("notDisabled"))
   }
   /// ```css
   /// &:enabled {
@@ -1263,12 +1263,12 @@ pub trait ModifierEnabledGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn enabled(&self) -> ModifierEnabledGroupChild {
-    ModifierEnabledGroupChild::from_ref(self.append_to_skribble_value("enabled"))
+  fn enabled(&self) -> GeneratedModifierEnabledGroupChild {
+    GeneratedModifierEnabledGroupChild::from_ref(self.append("enabled"))
   }
 }
-pub struct ModifierEmptyGroupChild(String);
-impl GeneratedSkribbleValue for ModifierEmptyGroupChild {
+pub struct GeneratedModifierEmptyGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierEmptyGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1279,19 +1279,19 @@ impl GeneratedSkribbleValue for ModifierEmptyGroupChild {
     &self.0
   }
 }
-pub trait ModifierEmptyGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierEmptyGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:empty {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn empty(&self) -> ModifierEmptyGroupChild {
-    ModifierEmptyGroupChild::from_ref(self.append_to_skribble_value("empty"))
+  fn empty(&self) -> GeneratedModifierEmptyGroupChild {
+    GeneratedModifierEmptyGroupChild::from_ref(self.append("empty"))
   }
 }
-pub struct ModifierReadGroupChild(String);
-impl GeneratedSkribbleValue for ModifierReadGroupChild {
+pub struct GeneratedModifierReadGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierReadGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1302,15 +1302,15 @@ impl GeneratedSkribbleValue for ModifierReadGroupChild {
     &self.0
   }
 }
-pub trait ModifierReadGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierReadGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:read-write {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn read_write(&self) -> ModifierReadGroupChild {
-    ModifierReadGroupChild::from_ref(self.append_to_skribble_value("readWrite"))
+  fn read_write(&self) -> GeneratedModifierReadGroupChild {
+    GeneratedModifierReadGroupChild::from_ref(self.append("readWrite"))
   }
   /// ```css
   /// &[aria-readonly=true], &[readonly], &:read-only {
@@ -1318,8 +1318,8 @@ pub trait ModifierReadGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn read_only(&self) -> ModifierReadGroupChild {
-    ModifierReadGroupChild::from_ref(self.append_to_skribble_value("readOnly"))
+  fn read_only(&self) -> GeneratedModifierReadGroupChild {
+    GeneratedModifierReadGroupChild::from_ref(self.append("readOnly"))
   }
   /// ```css
   /// &[aria-readonly=false], &[readonly=false], &:not(:read-only) {
@@ -1327,12 +1327,12 @@ pub trait ModifierReadGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn not_read_only(&self) -> ModifierReadGroupChild {
-    ModifierReadGroupChild::from_ref(self.append_to_skribble_value("notReadOnly"))
+  fn not_read_only(&self) -> GeneratedModifierReadGroupChild {
+    GeneratedModifierReadGroupChild::from_ref(self.append("notReadOnly"))
   }
 }
-pub struct ModifierExpandedGroupChild(String);
-impl GeneratedSkribbleValue for ModifierExpandedGroupChild {
+pub struct GeneratedModifierExpandedGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierExpandedGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1343,19 +1343,19 @@ impl GeneratedSkribbleValue for ModifierExpandedGroupChild {
     &self.0
   }
 }
-pub trait ModifierExpandedGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierExpandedGroup: GeneratedSkribbleValue {
   /// ```css
   /// &[aria-expanded=true] {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn expanded(&self) -> ModifierExpandedGroupChild {
-    ModifierExpandedGroupChild::from_ref(self.append_to_skribble_value("expanded"))
+  fn expanded(&self) -> GeneratedModifierExpandedGroupChild {
+    GeneratedModifierExpandedGroupChild::from_ref(self.append("expanded"))
   }
 }
-pub struct ModifierCheckedGroupChild(String);
-impl GeneratedSkribbleValue for ModifierCheckedGroupChild {
+pub struct GeneratedModifierCheckedGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierCheckedGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1366,15 +1366,15 @@ impl GeneratedSkribbleValue for ModifierCheckedGroupChild {
     &self.0
   }
 }
-pub trait ModifierCheckedGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierCheckedGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:indeterminate, &[aria-checked=mixed] {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn indeterminate(&self) -> ModifierCheckedGroupChild {
-    ModifierCheckedGroupChild::from_ref(self.append_to_skribble_value("indeterminate"))
+  fn indeterminate(&self) -> GeneratedModifierCheckedGroupChild {
+    GeneratedModifierCheckedGroupChild::from_ref(self.append("indeterminate"))
   }
   /// ```css
   /// &[aria-checked=true], &:checked {
@@ -1382,8 +1382,8 @@ pub trait ModifierCheckedGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn checked(&self) -> ModifierCheckedGroupChild {
-    ModifierCheckedGroupChild::from_ref(self.append_to_skribble_value("checked"))
+  fn checked(&self) -> GeneratedModifierCheckedGroupChild {
+    GeneratedModifierCheckedGroupChild::from_ref(self.append("checked"))
   }
   /// ```css
   /// &[aria-checked=false], &:not(:checked) {
@@ -1391,12 +1391,12 @@ pub trait ModifierCheckedGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn unchecked(&self) -> ModifierCheckedGroupChild {
-    ModifierCheckedGroupChild::from_ref(self.append_to_skribble_value("unchecked"))
+  fn unchecked(&self) -> GeneratedModifierCheckedGroupChild {
+    GeneratedModifierCheckedGroupChild::from_ref(self.append("unchecked"))
   }
 }
-pub struct ModifierGrabbedGroupChild(String);
-impl GeneratedSkribbleValue for ModifierGrabbedGroupChild {
+pub struct GeneratedModifierGrabbedGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierGrabbedGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1407,19 +1407,19 @@ impl GeneratedSkribbleValue for ModifierGrabbedGroupChild {
     &self.0
   }
 }
-pub trait ModifierGrabbedGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierGrabbedGroup: GeneratedSkribbleValue {
   /// ```css
   /// &[aria-grabbed=true] {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn grabbed(&self) -> ModifierGrabbedGroupChild {
-    ModifierGrabbedGroupChild::from_ref(self.append_to_skribble_value("grabbed"))
+  fn grabbed(&self) -> GeneratedModifierGrabbedGroupChild {
+    GeneratedModifierGrabbedGroupChild::from_ref(self.append("grabbed"))
   }
 }
-pub struct ModifierPressedGroupChild(String);
-impl GeneratedSkribbleValue for ModifierPressedGroupChild {
+pub struct GeneratedModifierPressedGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierPressedGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1430,19 +1430,19 @@ impl GeneratedSkribbleValue for ModifierPressedGroupChild {
     &self.0
   }
 }
-pub trait ModifierPressedGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierPressedGroup: GeneratedSkribbleValue {
   /// ```css
   /// &[aria-pressed=true] {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn pressed(&self) -> ModifierPressedGroupChild {
-    ModifierPressedGroupChild::from_ref(self.append_to_skribble_value("pressed"))
+  fn pressed(&self) -> GeneratedModifierPressedGroupChild {
+    GeneratedModifierPressedGroupChild::from_ref(self.append("pressed"))
   }
 }
-pub struct ModifierInvalidGrammarGroupChild(String);
-impl GeneratedSkribbleValue for ModifierInvalidGrammarGroupChild {
+pub struct GeneratedModifierInvalidGrammarGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierInvalidGrammarGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1453,19 +1453,19 @@ impl GeneratedSkribbleValue for ModifierInvalidGrammarGroupChild {
     &self.0
   }
 }
-pub trait ModifierInvalidGrammarGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierInvalidGrammarGroup: GeneratedSkribbleValue {
   /// ```css
   /// &[aria-invalid=grammar] {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn invalid_grammar(&self) -> ModifierInvalidGrammarGroupChild {
-    ModifierInvalidGrammarGroupChild::from_ref(self.append_to_skribble_value("invalidGrammar"))
+  fn invalid_grammar(&self) -> GeneratedModifierInvalidGrammarGroupChild {
+    GeneratedModifierInvalidGrammarGroupChild::from_ref(self.append("invalidGrammar"))
   }
 }
-pub struct ModifierInvalidSpellingGroupChild(String);
-impl GeneratedSkribbleValue for ModifierInvalidSpellingGroupChild {
+pub struct GeneratedModifierInvalidSpellingGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierInvalidSpellingGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1476,19 +1476,19 @@ impl GeneratedSkribbleValue for ModifierInvalidSpellingGroupChild {
     &self.0
   }
 }
-pub trait ModifierInvalidSpellingGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierInvalidSpellingGroup: GeneratedSkribbleValue {
   /// ```css
   /// &[aria-invalid=spelling] {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn invalid_spelling(&self) -> ModifierInvalidSpellingGroupChild {
-    ModifierInvalidSpellingGroupChild::from_ref(self.append_to_skribble_value("invalidSpelling"))
+  fn invalid_spelling(&self) -> GeneratedModifierInvalidSpellingGroupChild {
+    GeneratedModifierInvalidSpellingGroupChild::from_ref(self.append("invalidSpelling"))
   }
 }
-pub struct ModifierValidGroupChild(String);
-impl GeneratedSkribbleValue for ModifierValidGroupChild {
+pub struct GeneratedModifierValidGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierValidGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1499,15 +1499,15 @@ impl GeneratedSkribbleValue for ModifierValidGroupChild {
     &self.0
   }
 }
-pub trait ModifierValidGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierValidGroup: GeneratedSkribbleValue {
   /// ```css
   /// &[aria-invalid=false], &:valid {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn valid(&self) -> ModifierValidGroupChild {
-    ModifierValidGroupChild::from_ref(self.append_to_skribble_value("valid"))
+  fn valid(&self) -> GeneratedModifierValidGroupChild {
+    GeneratedModifierValidGroupChild::from_ref(self.append("valid"))
   }
   /// ```css
   /// &[aria-invalid=true], &:invalid {
@@ -1515,12 +1515,12 @@ pub trait ModifierValidGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn invalid(&self) -> ModifierValidGroupChild {
-    ModifierValidGroupChild::from_ref(self.append_to_skribble_value("invalid"))
+  fn invalid(&self) -> GeneratedModifierValidGroupChild {
+    GeneratedModifierValidGroupChild::from_ref(self.append("invalid"))
   }
 }
-pub struct ModifierLoadingGroupChild(String);
-impl GeneratedSkribbleValue for ModifierLoadingGroupChild {
+pub struct GeneratedModifierLoadingGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierLoadingGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1531,19 +1531,19 @@ impl GeneratedSkribbleValue for ModifierLoadingGroupChild {
     &self.0
   }
 }
-pub trait ModifierLoadingGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierLoadingGroup: GeneratedSkribbleValue {
   /// ```css
   /// &[aria-busy=true] {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn loading(&self) -> ModifierLoadingGroupChild {
-    ModifierLoadingGroupChild::from_ref(self.append_to_skribble_value("loading"))
+  fn loading(&self) -> GeneratedModifierLoadingGroupChild {
+    GeneratedModifierLoadingGroupChild::from_ref(self.append("loading"))
   }
 }
-pub struct ModifierSelectedGroupChild(String);
-impl GeneratedSkribbleValue for ModifierSelectedGroupChild {
+pub struct GeneratedModifierSelectedGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierSelectedGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1554,19 +1554,19 @@ impl GeneratedSkribbleValue for ModifierSelectedGroupChild {
     &self.0
   }
 }
-pub trait ModifierSelectedGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierSelectedGroup: GeneratedSkribbleValue {
   /// ```css
   /// &[aria-selected=true] {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn selected(&self) -> ModifierSelectedGroupChild {
-    ModifierSelectedGroupChild::from_ref(self.append_to_skribble_value("selected"))
+  fn selected(&self) -> GeneratedModifierSelectedGroupChild {
+    GeneratedModifierSelectedGroupChild::from_ref(self.append("selected"))
   }
 }
-pub struct ModifierHiddenGroupChild(String);
-impl GeneratedSkribbleValue for ModifierHiddenGroupChild {
+pub struct GeneratedModifierHiddenGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierHiddenGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1577,19 +1577,19 @@ impl GeneratedSkribbleValue for ModifierHiddenGroupChild {
     &self.0
   }
 }
-pub trait ModifierHiddenGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierHiddenGroup: GeneratedSkribbleValue {
   /// ```css
   /// &[aria-hidden=true] {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn aria_hidden(&self) -> ModifierHiddenGroupChild {
-    ModifierHiddenGroupChild::from_ref(self.append_to_skribble_value("ariaHidden"))
+  fn aria_hidden(&self) -> GeneratedModifierHiddenGroupChild {
+    GeneratedModifierHiddenGroupChild::from_ref(self.append("ariaHidden"))
   }
 }
-pub struct ModifierAutofillGroupChild(String);
-impl GeneratedSkribbleValue for ModifierAutofillGroupChild {
+pub struct GeneratedModifierAutofillGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierAutofillGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1600,19 +1600,19 @@ impl GeneratedSkribbleValue for ModifierAutofillGroupChild {
     &self.0
   }
 }
-pub trait ModifierAutofillGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierAutofillGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:-webkit-autofill {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn autofill(&self) -> ModifierAutofillGroupChild {
-    ModifierAutofillGroupChild::from_ref(self.append_to_skribble_value("autofill"))
+  fn autofill(&self) -> GeneratedModifierAutofillGroupChild {
+    GeneratedModifierAutofillGroupChild::from_ref(self.append("autofill"))
   }
 }
-pub struct ModifierEvenGroupChild(String);
-impl GeneratedSkribbleValue for ModifierEvenGroupChild {
+pub struct GeneratedModifierEvenGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierEvenGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1623,15 +1623,15 @@ impl GeneratedSkribbleValue for ModifierEvenGroupChild {
     &self.0
   }
 }
-pub trait ModifierEvenGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierEvenGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:even {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn even(&self) -> ModifierEvenGroupChild {
-    ModifierEvenGroupChild::from_ref(self.append_to_skribble_value("even"))
+  fn even(&self) -> GeneratedModifierEvenGroupChild {
+    GeneratedModifierEvenGroupChild::from_ref(self.append("even"))
   }
   /// ```css
   /// &:odd {
@@ -1639,8 +1639,8 @@ pub trait ModifierEvenGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn odd(&self) -> ModifierEvenGroupChild {
-    ModifierEvenGroupChild::from_ref(self.append_to_skribble_value("odd"))
+  fn odd(&self) -> GeneratedModifierEvenGroupChild {
+    GeneratedModifierEvenGroupChild::from_ref(self.append("odd"))
   }
   /// ```css
   /// &:nth-of-type(even) {
@@ -1648,8 +1648,8 @@ pub trait ModifierEvenGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn even_of_type(&self) -> ModifierEvenGroupChild {
-    ModifierEvenGroupChild::from_ref(self.append_to_skribble_value("evenOfType"))
+  fn even_of_type(&self) -> GeneratedModifierEvenGroupChild {
+    GeneratedModifierEvenGroupChild::from_ref(self.append("evenOfType"))
   }
   /// ```css
   /// &:nth-of-type(odd) {
@@ -1657,12 +1657,12 @@ pub trait ModifierEvenGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn odd_of_type(&self) -> ModifierEvenGroupChild {
-    ModifierEvenGroupChild::from_ref(self.append_to_skribble_value("oddOfType"))
+  fn odd_of_type(&self) -> GeneratedModifierEvenGroupChild {
+    GeneratedModifierEvenGroupChild::from_ref(self.append("oddOfType"))
   }
 }
-pub struct ModifierNodePositionGroupChild(String);
-impl GeneratedSkribbleValue for ModifierNodePositionGroupChild {
+pub struct GeneratedModifierNodePositionGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierNodePositionGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1673,15 +1673,15 @@ impl GeneratedSkribbleValue for ModifierNodePositionGroupChild {
     &self.0
   }
 }
-pub trait ModifierNodePositionGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierNodePositionGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:first {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn first(&self) -> ModifierNodePositionGroupChild {
-    ModifierNodePositionGroupChild::from_ref(self.append_to_skribble_value("first"))
+  fn first(&self) -> GeneratedModifierNodePositionGroupChild {
+    GeneratedModifierNodePositionGroupChild::from_ref(self.append("first"))
   }
   /// ```css
   /// &:not(:first-child) {
@@ -1689,8 +1689,8 @@ pub trait ModifierNodePositionGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn not_first(&self) -> ModifierNodePositionGroupChild {
-    ModifierNodePositionGroupChild::from_ref(self.append_to_skribble_value("notFirst"))
+  fn not_first(&self) -> GeneratedModifierNodePositionGroupChild {
+    GeneratedModifierNodePositionGroupChild::from_ref(self.append("notFirst"))
   }
   /// ```css
   /// &:last {
@@ -1698,8 +1698,8 @@ pub trait ModifierNodePositionGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn last(&self) -> ModifierNodePositionGroupChild {
-    ModifierNodePositionGroupChild::from_ref(self.append_to_skribble_value("last"))
+  fn last(&self) -> GeneratedModifierNodePositionGroupChild {
+    GeneratedModifierNodePositionGroupChild::from_ref(self.append("last"))
   }
   /// ```css
   /// &:not(:last-child) {
@@ -1707,12 +1707,12 @@ pub trait ModifierNodePositionGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn not_last(&self) -> ModifierNodePositionGroupChild {
-    ModifierNodePositionGroupChild::from_ref(self.append_to_skribble_value("notLast"))
+  fn not_last(&self) -> GeneratedModifierNodePositionGroupChild {
+    GeneratedModifierNodePositionGroupChild::from_ref(self.append("notLast"))
   }
 }
-pub struct ModifierNodeOfTypeGroupChild(String);
-impl GeneratedSkribbleValue for ModifierNodeOfTypeGroupChild {
+pub struct GeneratedModifierNodeOfTypeGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierNodeOfTypeGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1723,15 +1723,15 @@ impl GeneratedSkribbleValue for ModifierNodeOfTypeGroupChild {
     &self.0
   }
 }
-pub trait ModifierNodeOfTypeGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierNodeOfTypeGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:first-of-type {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn first_of_type(&self) -> ModifierNodeOfTypeGroupChild {
-    ModifierNodeOfTypeGroupChild::from_ref(self.append_to_skribble_value("firstOfType"))
+  fn first_of_type(&self) -> GeneratedModifierNodeOfTypeGroupChild {
+    GeneratedModifierNodeOfTypeGroupChild::from_ref(self.append("firstOfType"))
   }
   /// ```css
   /// &:not(:first-of-type) {
@@ -1739,8 +1739,8 @@ pub trait ModifierNodeOfTypeGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn not_first_of_type(&self) -> ModifierNodeOfTypeGroupChild {
-    ModifierNodeOfTypeGroupChild::from_ref(self.append_to_skribble_value("notFirstOfType"))
+  fn not_first_of_type(&self) -> GeneratedModifierNodeOfTypeGroupChild {
+    GeneratedModifierNodeOfTypeGroupChild::from_ref(self.append("notFirstOfType"))
   }
   /// ```css
   /// &:last-of-type {
@@ -1748,8 +1748,8 @@ pub trait ModifierNodeOfTypeGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn last_of_type(&self) -> ModifierNodeOfTypeGroupChild {
-    ModifierNodeOfTypeGroupChild::from_ref(self.append_to_skribble_value("lastOfType"))
+  fn last_of_type(&self) -> GeneratedModifierNodeOfTypeGroupChild {
+    GeneratedModifierNodeOfTypeGroupChild::from_ref(self.append("lastOfType"))
   }
   /// ```css
   /// &:not(:last-of-type) {
@@ -1757,12 +1757,12 @@ pub trait ModifierNodeOfTypeGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn not_last_of_type(&self) -> ModifierNodeOfTypeGroupChild {
-    ModifierNodeOfTypeGroupChild::from_ref(self.append_to_skribble_value("notLastOfType"))
+  fn not_last_of_type(&self) -> GeneratedModifierNodeOfTypeGroupChild {
+    GeneratedModifierNodeOfTypeGroupChild::from_ref(self.append("notLastOfType"))
   }
 }
-pub struct ModifierVisitedGroupChild(String);
-impl GeneratedSkribbleValue for ModifierVisitedGroupChild {
+pub struct GeneratedModifierVisitedGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierVisitedGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1773,19 +1773,19 @@ impl GeneratedSkribbleValue for ModifierVisitedGroupChild {
     &self.0
   }
 }
-pub trait ModifierVisitedGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierVisitedGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:visited {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn visited(&self) -> ModifierVisitedGroupChild {
-    ModifierVisitedGroupChild::from_ref(self.append_to_skribble_value("visited"))
+  fn visited(&self) -> GeneratedModifierVisitedGroupChild {
+    GeneratedModifierVisitedGroupChild::from_ref(self.append("visited"))
   }
 }
-pub struct ModifierOptionalGroupChild(String);
-impl GeneratedSkribbleValue for ModifierOptionalGroupChild {
+pub struct GeneratedModifierOptionalGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierOptionalGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1796,19 +1796,19 @@ impl GeneratedSkribbleValue for ModifierOptionalGroupChild {
     &self.0
   }
 }
-pub trait ModifierOptionalGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierOptionalGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:optional {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn optional(&self) -> ModifierOptionalGroupChild {
-    ModifierOptionalGroupChild::from_ref(self.append_to_skribble_value("optional"))
+  fn optional(&self) -> GeneratedModifierOptionalGroupChild {
+    GeneratedModifierOptionalGroupChild::from_ref(self.append("optional"))
   }
 }
-pub struct ModifierFullScreenGroupChild(String);
-impl GeneratedSkribbleValue for ModifierFullScreenGroupChild {
+pub struct GeneratedModifierFullScreenGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierFullScreenGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1819,19 +1819,19 @@ impl GeneratedSkribbleValue for ModifierFullScreenGroupChild {
     &self.0
   }
 }
-pub trait ModifierFullScreenGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierFullScreenGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:fullscreen {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn full_screen(&self) -> ModifierFullScreenGroupChild {
-    ModifierFullScreenGroupChild::from_ref(self.append_to_skribble_value("fullScreen"))
+  fn full_screen(&self) -> GeneratedModifierFullScreenGroupChild {
+    GeneratedModifierFullScreenGroupChild::from_ref(self.append("fullScreen"))
   }
 }
-pub struct ModifierTargetGroupChild(String);
-impl GeneratedSkribbleValue for ModifierTargetGroupChild {
+pub struct GeneratedModifierTargetGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierTargetGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1842,19 +1842,19 @@ impl GeneratedSkribbleValue for ModifierTargetGroupChild {
     &self.0
   }
 }
-pub trait ModifierTargetGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierTargetGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:target {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn target(&self) -> ModifierTargetGroupChild {
-    ModifierTargetGroupChild::from_ref(self.append_to_skribble_value("target"))
+  fn target(&self) -> GeneratedModifierTargetGroupChild {
+    GeneratedModifierTargetGroupChild::from_ref(self.append("target"))
   }
 }
-pub struct ModifierPlaceholderShownGroupChild(String);
-impl GeneratedSkribbleValue for ModifierPlaceholderShownGroupChild {
+pub struct GeneratedModifierPlaceholderShownGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierPlaceholderShownGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1865,19 +1865,19 @@ impl GeneratedSkribbleValue for ModifierPlaceholderShownGroupChild {
     &self.0
   }
 }
-pub trait ModifierPlaceholderShownGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierPlaceholderShownGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:placeholder-shown {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn placeholder_shown(&self) -> ModifierPlaceholderShownGroupChild {
-    ModifierPlaceholderShownGroupChild::from_ref(self.append_to_skribble_value("placeholderShown"))
+  fn placeholder_shown(&self) -> GeneratedModifierPlaceholderShownGroupChild {
+    GeneratedModifierPlaceholderShownGroupChild::from_ref(self.append("placeholderShown"))
   }
 }
-pub struct ModifierRequiredGroupChild(String);
-impl GeneratedSkribbleValue for ModifierRequiredGroupChild {
+pub struct GeneratedModifierRequiredGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierRequiredGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1888,15 +1888,15 @@ impl GeneratedSkribbleValue for ModifierRequiredGroupChild {
     &self.0
   }
 }
-pub trait ModifierRequiredGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierRequiredGroup: GeneratedSkribbleValue {
   /// ```css
   /// [aria-required=true], &:required {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn required(&self) -> ModifierRequiredGroupChild {
-    ModifierRequiredGroupChild::from_ref(self.append_to_skribble_value("required"))
+  fn required(&self) -> GeneratedModifierRequiredGroupChild {
+    GeneratedModifierRequiredGroupChild::from_ref(self.append("required"))
   }
   /// ```css
   /// [arira-required=false], &:not(:required) {
@@ -1904,12 +1904,12 @@ pub trait ModifierRequiredGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn not_required(&self) -> ModifierRequiredGroupChild {
-    ModifierRequiredGroupChild::from_ref(self.append_to_skribble_value("notRequired"))
+  fn not_required(&self) -> GeneratedModifierRequiredGroupChild {
+    GeneratedModifierRequiredGroupChild::from_ref(self.append("notRequired"))
   }
 }
-pub struct ModifierDefaultGroupChild(String);
-impl GeneratedSkribbleValue for ModifierDefaultGroupChild {
+pub struct GeneratedModifierDefaultGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierDefaultGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1920,19 +1920,19 @@ impl GeneratedSkribbleValue for ModifierDefaultGroupChild {
     &self.0
   }
 }
-pub trait ModifierDefaultGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierDefaultGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:default {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn default(&self) -> ModifierDefaultGroupChild {
-    ModifierDefaultGroupChild::from_ref(self.append_to_skribble_value("default"))
+  fn default(&self) -> GeneratedModifierDefaultGroupChild {
+    GeneratedModifierDefaultGroupChild::from_ref(self.append("default"))
   }
 }
-pub struct ModifierOnlyChildGroupChild(String);
-impl GeneratedSkribbleValue for ModifierOnlyChildGroupChild {
+pub struct GeneratedModifierOnlyChildGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierOnlyChildGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1943,15 +1943,15 @@ impl GeneratedSkribbleValue for ModifierOnlyChildGroupChild {
     &self.0
   }
 }
-pub trait ModifierOnlyChildGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierOnlyChildGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:only-child {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn only_child(&self) -> ModifierOnlyChildGroupChild {
-    ModifierOnlyChildGroupChild::from_ref(self.append_to_skribble_value("onlyChild"))
+  fn only_child(&self) -> GeneratedModifierOnlyChildGroupChild {
+    GeneratedModifierOnlyChildGroupChild::from_ref(self.append("onlyChild"))
   }
   /// ```css
   /// &:not(:only-child) {
@@ -1959,12 +1959,12 @@ pub trait ModifierOnlyChildGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn not_only_child(&self) -> ModifierOnlyChildGroupChild {
-    ModifierOnlyChildGroupChild::from_ref(self.append_to_skribble_value("notOnlyChild"))
+  fn not_only_child(&self) -> GeneratedModifierOnlyChildGroupChild {
+    GeneratedModifierOnlyChildGroupChild::from_ref(self.append("notOnlyChild"))
   }
 }
-pub struct ModifierOnlyGroupChild(String);
-impl GeneratedSkribbleValue for ModifierOnlyGroupChild {
+pub struct GeneratedModifierOnlyGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierOnlyGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -1975,15 +1975,15 @@ impl GeneratedSkribbleValue for ModifierOnlyGroupChild {
     &self.0
   }
 }
-pub trait ModifierOnlyGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierOnlyGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:only-of-type {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn only_of_type(&self) -> ModifierOnlyGroupChild {
-    ModifierOnlyGroupChild::from_ref(self.append_to_skribble_value("onlyOfType"))
+  fn only_of_type(&self) -> GeneratedModifierOnlyGroupChild {
+    GeneratedModifierOnlyGroupChild::from_ref(self.append("onlyOfType"))
   }
   /// ```css
   /// &:not(:only-of-type) {
@@ -1991,12 +1991,12 @@ pub trait ModifierOnlyGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn not_only_of_type(&self) -> ModifierOnlyGroupChild {
-    ModifierOnlyGroupChild::from_ref(self.append_to_skribble_value("notOnlyOfType"))
+  fn not_only_of_type(&self) -> GeneratedModifierOnlyGroupChild {
+    GeneratedModifierOnlyGroupChild::from_ref(self.append("notOnlyOfType"))
   }
 }
-pub struct ModifierRootGroupChild(String);
-impl GeneratedSkribbleValue for ModifierRootGroupChild {
+pub struct GeneratedModifierRootGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierRootGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -2007,19 +2007,19 @@ impl GeneratedSkribbleValue for ModifierRootGroupChild {
     &self.0
   }
 }
-pub trait ModifierRootGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierRootGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:root {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn root(&self) -> ModifierRootGroupChild {
-    ModifierRootGroupChild::from_ref(self.append_to_skribble_value("root"))
+  fn root(&self) -> GeneratedModifierRootGroupChild {
+    GeneratedModifierRootGroupChild::from_ref(self.append("root"))
   }
 }
-pub struct ModifierLinkGroupChild(String);
-impl GeneratedSkribbleValue for ModifierLinkGroupChild {
+pub struct GeneratedModifierLinkGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierLinkGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -2030,19 +2030,19 @@ impl GeneratedSkribbleValue for ModifierLinkGroupChild {
     &self.0
   }
 }
-pub trait ModifierLinkGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierLinkGroup: GeneratedSkribbleValue {
   /// ```css
   /// &:link {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn link(&self) -> ModifierLinkGroupChild {
-    ModifierLinkGroupChild::from_ref(self.append_to_skribble_value("link"))
+  fn link(&self) -> GeneratedModifierLinkGroupChild {
+    GeneratedModifierLinkGroupChild::from_ref(self.append("link"))
   }
 }
-pub struct ModifierPseudoGroupChild(String);
-impl GeneratedSkribbleValue for ModifierPseudoGroupChild {
+pub struct GeneratedModifierPseudoGroupChild(String);
+impl GeneratedSkribbleValue for GeneratedModifierPseudoGroupChild {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -2053,15 +2053,15 @@ impl GeneratedSkribbleValue for ModifierPseudoGroupChild {
     &self.0
   }
 }
-pub trait ModifierPseudoGroup: GeneratedSkribbleValue {
+pub trait GeneratedModifierPseudoGroup: GeneratedSkribbleValue {
   /// ```css
   /// &::placeholder {
   ///   /* ... */
   /// }
   /// ```
   #[inline]
-  fn placeholder(&self) -> ModifierPseudoGroupChild {
-    ModifierPseudoGroupChild::from_ref(self.append_to_skribble_value("placeholder"))
+  fn placeholder(&self) -> GeneratedModifierPseudoGroupChild {
+    GeneratedModifierPseudoGroupChild::from_ref(self.append("placeholder"))
   }
   /// ```css
   /// &::selection {
@@ -2069,8 +2069,8 @@ pub trait ModifierPseudoGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn selection(&self) -> ModifierPseudoGroupChild {
-    ModifierPseudoGroupChild::from_ref(self.append_to_skribble_value("selection"))
+  fn selection(&self) -> GeneratedModifierPseudoGroupChild {
+    GeneratedModifierPseudoGroupChild::from_ref(self.append("selection"))
   }
   /// ```css
   /// &::first-letter {
@@ -2078,8 +2078,8 @@ pub trait ModifierPseudoGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn first_letter(&self) -> ModifierPseudoGroupChild {
-    ModifierPseudoGroupChild::from_ref(self.append_to_skribble_value("firstLetter"))
+  fn first_letter(&self) -> GeneratedModifierPseudoGroupChild {
+    GeneratedModifierPseudoGroupChild::from_ref(self.append("firstLetter"))
   }
   /// ```css
   /// &::first-line {
@@ -2087,8 +2087,8 @@ pub trait ModifierPseudoGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn first_line(&self) -> ModifierPseudoGroupChild {
-    ModifierPseudoGroupChild::from_ref(self.append_to_skribble_value("firstLine"))
+  fn first_line(&self) -> GeneratedModifierPseudoGroupChild {
+    GeneratedModifierPseudoGroupChild::from_ref(self.append("firstLine"))
   }
   /// ```css
   /// &::before {
@@ -2096,8 +2096,8 @@ pub trait ModifierPseudoGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn before(&self) -> ModifierPseudoGroupChild {
-    ModifierPseudoGroupChild::from_ref(self.append_to_skribble_value("before"))
+  fn before(&self) -> GeneratedModifierPseudoGroupChild {
+    GeneratedModifierPseudoGroupChild::from_ref(self.append("before"))
   }
   /// ```css
   /// &::after {
@@ -2105,8 +2105,8 @@ pub trait ModifierPseudoGroup: GeneratedSkribbleValue {
   /// }
   /// ```
   #[inline]
-  fn after(&self) -> ModifierPseudoGroupChild {
-    ModifierPseudoGroupChild::from_ref(self.append_to_skribble_value("after"))
+  fn after(&self) -> GeneratedModifierPseudoGroupChild {
+    GeneratedModifierPseudoGroupChild::from_ref(self.append("after"))
   }
 }
 pub trait GeneratedKeyframeSet: GeneratedSkribbleValue {
@@ -2122,7 +2122,7 @@ pub trait GeneratedKeyframeSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn r#in(&self) -> String {
-    self.append_string_to_skribble_value("in")
+    self.append_value("in")
   }
   /// Manages the keyframes for the exit animation.
   ///
@@ -2136,7 +2136,7 @@ pub trait GeneratedKeyframeSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn out(&self) -> String {
-    self.append_string_to_skribble_value("out")
+    self.append_value("out")
   }
   /// Manages the keyframes for the spin animation.
   ///
@@ -2152,7 +2152,7 @@ pub trait GeneratedKeyframeSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn spin(&self) -> String {
-    self.append_string_to_skribble_value("spin")
+    self.append_value("spin")
   }
   /// Manages the keyframes for the ping animation.
   ///
@@ -2166,7 +2166,7 @@ pub trait GeneratedKeyframeSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn ping(&self) -> String {
-    self.append_string_to_skribble_value("ping")
+    self.append_value("ping")
   }
   /// Manages the keyframes for the pulse animation.
   ///
@@ -2182,7 +2182,7 @@ pub trait GeneratedKeyframeSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn pulse(&self) -> String {
-    self.append_string_to_skribble_value("pulse")
+    self.append_value("pulse")
   }
   /// Manages the keyframes for the bounce animation.
   ///
@@ -2200,7 +2200,7 @@ pub trait GeneratedKeyframeSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn bounce(&self) -> String {
-    self.append_string_to_skribble_value("bounce")
+    self.append_value("bounce")
   }
 }
 pub trait GeneratedColorSet: GeneratedSkribbleValue {
@@ -2215,7 +2215,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn primary(&self) -> String {
-    self.append_string_to_skribble_value("primary")
+    self.append_value("primary")
   }
   /// The primary content color
   ///
@@ -2228,7 +2228,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn primary_content(&self) -> String {
-    self.append_string_to_skribble_value("primaryContent")
+    self.append_value("primaryContent")
   }
   /// The secondary color. Useful for secondary buttons.
   ///
@@ -2241,7 +2241,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn secondary(&self) -> String {
-    self.append_string_to_skribble_value("secondary")
+    self.append_value("secondary")
   }
   /// The secondary content color. Useful for text within secondary buttons.
   ///
@@ -2254,7 +2254,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn secondary_content(&self) -> String {
-    self.append_string_to_skribble_value("secondaryContent")
+    self.append_value("secondaryContent")
   }
   /// Color for accents.
   ///
@@ -2267,7 +2267,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn accent(&self) -> String {
-    self.append_string_to_skribble_value("accent")
+    self.append_value("accent")
   }
   /// Color for content within accents.
   ///
@@ -2280,7 +2280,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn accent_content(&self) -> String {
-    self.append_string_to_skribble_value("accentContent")
+    self.append_value("accentContent")
   }
   /// The neutral color.
   ///
@@ -2293,7 +2293,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn neutral(&self) -> String {
-    self.append_string_to_skribble_value("neutral")
+    self.append_value("neutral")
   }
   /// The neutral content color.
   ///
@@ -2306,7 +2306,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn neutral_content(&self) -> String {
-    self.append_string_to_skribble_value("neutralContent")
+    self.append_value("neutralContent")
   }
   /// The base color.
   ///
@@ -2319,7 +2319,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn base100(&self) -> String {
-    self.append_string_to_skribble_value("base100")
+    self.append_value("base100")
   }
   /// The secondary base color.
   ///
@@ -2332,7 +2332,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn base200(&self) -> String {
-    self.append_string_to_skribble_value("base200")
+    self.append_value("base200")
   }
   /// The tertiary base color.
   ///
@@ -2345,7 +2345,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn base300(&self) -> String {
-    self.append_string_to_skribble_value("base300")
+    self.append_value("base300")
   }
   /// The base content color. This is useful for text.
   ///
@@ -2358,7 +2358,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn base_content(&self) -> String {
-    self.append_string_to_skribble_value("baseContent")
+    self.append_value("baseContent")
   }
   /// The info color. Useful for info buttons and alerts.
   ///
@@ -2371,7 +2371,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn info(&self) -> String {
-    self.append_string_to_skribble_value("info")
+    self.append_value("info")
   }
   /// The info content color. Useful for text within info buttons and alerts.
   ///
@@ -2384,7 +2384,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn info_content(&self) -> String {
-    self.append_string_to_skribble_value("infoContent")
+    self.append_value("infoContent")
   }
   /// The success color. Useful for success buttons and alerts.
   ///
@@ -2397,7 +2397,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn success(&self) -> String {
-    self.append_string_to_skribble_value("success")
+    self.append_value("success")
   }
   /// The success content color. Useful for text within success buttons and
   /// alerts.
@@ -2411,7 +2411,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn success_content(&self) -> String {
-    self.append_string_to_skribble_value("successContent")
+    self.append_value("successContent")
   }
   /// The warning color. Useful for warning buttons and alerts.
   ///
@@ -2424,7 +2424,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn warning(&self) -> String {
-    self.append_string_to_skribble_value("warning")
+    self.append_value("warning")
   }
   /// The warning content color. Useful for text within warning buttons and
   /// alerts.
@@ -2438,7 +2438,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn warning_content(&self) -> String {
-    self.append_string_to_skribble_value("warningContent")
+    self.append_value("warningContent")
   }
   /// The error color. Useful for error buttons and alerts.
   ///
@@ -2451,7 +2451,7 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn error(&self) -> String {
-    self.append_string_to_skribble_value("error")
+    self.append_value("error")
   }
   /// The error content color. Useful for text within error buttons and alerts.
   ///
@@ -2464,995 +2464,995 @@ pub trait GeneratedColorSet: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn error_content(&self) -> String {
-    self.append_string_to_skribble_value("errorContent")
+    self.append_value("errorContent")
   }
   #[inline]
   fn inherit(&self) -> String {
-    self.append_string_to_skribble_value("inherit")
+    self.append_value("inherit")
   }
   #[inline]
   fn current(&self) -> String {
-    self.append_string_to_skribble_value("current")
+    self.append_value("current")
   }
   #[inline]
   fn transparent(&self) -> String {
-    self.append_string_to_skribble_value("transparent")
+    self.append_value("transparent")
   }
   #[inline]
   fn black(&self) -> String {
-    self.append_string_to_skribble_value("black")
+    self.append_value("black")
   }
   #[inline]
   fn white(&self) -> String {
-    self.append_string_to_skribble_value("white")
+    self.append_value("white")
   }
   #[inline]
   fn slate50(&self) -> String {
-    self.append_string_to_skribble_value("slate50")
+    self.append_value("slate50")
   }
   #[inline]
   fn slate100(&self) -> String {
-    self.append_string_to_skribble_value("slate100")
+    self.append_value("slate100")
   }
   #[inline]
   fn slate200(&self) -> String {
-    self.append_string_to_skribble_value("slate200")
+    self.append_value("slate200")
   }
   #[inline]
   fn slate300(&self) -> String {
-    self.append_string_to_skribble_value("slate300")
+    self.append_value("slate300")
   }
   #[inline]
   fn slate400(&self) -> String {
-    self.append_string_to_skribble_value("slate400")
+    self.append_value("slate400")
   }
   #[inline]
   fn slate500(&self) -> String {
-    self.append_string_to_skribble_value("slate500")
+    self.append_value("slate500")
   }
   #[inline]
   fn slate600(&self) -> String {
-    self.append_string_to_skribble_value("slate600")
+    self.append_value("slate600")
   }
   #[inline]
   fn slate700(&self) -> String {
-    self.append_string_to_skribble_value("slate700")
+    self.append_value("slate700")
   }
   #[inline]
   fn slate800(&self) -> String {
-    self.append_string_to_skribble_value("slate800")
+    self.append_value("slate800")
   }
   #[inline]
   fn slate900(&self) -> String {
-    self.append_string_to_skribble_value("slate900")
+    self.append_value("slate900")
   }
   #[inline]
   fn slate950(&self) -> String {
-    self.append_string_to_skribble_value("slate950")
+    self.append_value("slate950")
   }
   #[inline]
   fn gray50(&self) -> String {
-    self.append_string_to_skribble_value("gray50")
+    self.append_value("gray50")
   }
   #[inline]
   fn gray100(&self) -> String {
-    self.append_string_to_skribble_value("gray100")
+    self.append_value("gray100")
   }
   #[inline]
   fn gray200(&self) -> String {
-    self.append_string_to_skribble_value("gray200")
+    self.append_value("gray200")
   }
   #[inline]
   fn gray300(&self) -> String {
-    self.append_string_to_skribble_value("gray300")
+    self.append_value("gray300")
   }
   #[inline]
   fn gray400(&self) -> String {
-    self.append_string_to_skribble_value("gray400")
+    self.append_value("gray400")
   }
   #[inline]
   fn gray500(&self) -> String {
-    self.append_string_to_skribble_value("gray500")
+    self.append_value("gray500")
   }
   #[inline]
   fn gray600(&self) -> String {
-    self.append_string_to_skribble_value("gray600")
+    self.append_value("gray600")
   }
   #[inline]
   fn gray700(&self) -> String {
-    self.append_string_to_skribble_value("gray700")
+    self.append_value("gray700")
   }
   #[inline]
   fn gray800(&self) -> String {
-    self.append_string_to_skribble_value("gray800")
+    self.append_value("gray800")
   }
   #[inline]
   fn gray900(&self) -> String {
-    self.append_string_to_skribble_value("gray900")
+    self.append_value("gray900")
   }
   #[inline]
   fn gray950(&self) -> String {
-    self.append_string_to_skribble_value("gray950")
+    self.append_value("gray950")
   }
   #[inline]
   fn zinc50(&self) -> String {
-    self.append_string_to_skribble_value("zinc50")
+    self.append_value("zinc50")
   }
   #[inline]
   fn zinc100(&self) -> String {
-    self.append_string_to_skribble_value("zinc100")
+    self.append_value("zinc100")
   }
   #[inline]
   fn zinc200(&self) -> String {
-    self.append_string_to_skribble_value("zinc200")
+    self.append_value("zinc200")
   }
   #[inline]
   fn zinc300(&self) -> String {
-    self.append_string_to_skribble_value("zinc300")
+    self.append_value("zinc300")
   }
   #[inline]
   fn zinc400(&self) -> String {
-    self.append_string_to_skribble_value("zinc400")
+    self.append_value("zinc400")
   }
   #[inline]
   fn zinc500(&self) -> String {
-    self.append_string_to_skribble_value("zinc500")
+    self.append_value("zinc500")
   }
   #[inline]
   fn zinc600(&self) -> String {
-    self.append_string_to_skribble_value("zinc600")
+    self.append_value("zinc600")
   }
   #[inline]
   fn zinc700(&self) -> String {
-    self.append_string_to_skribble_value("zinc700")
+    self.append_value("zinc700")
   }
   #[inline]
   fn zinc800(&self) -> String {
-    self.append_string_to_skribble_value("zinc800")
+    self.append_value("zinc800")
   }
   #[inline]
   fn zinc900(&self) -> String {
-    self.append_string_to_skribble_value("zinc900")
+    self.append_value("zinc900")
   }
   #[inline]
   fn zinc950(&self) -> String {
-    self.append_string_to_skribble_value("zinc950")
+    self.append_value("zinc950")
   }
   #[inline]
   fn neutral50(&self) -> String {
-    self.append_string_to_skribble_value("neutral50")
+    self.append_value("neutral50")
   }
   #[inline]
   fn neutral100(&self) -> String {
-    self.append_string_to_skribble_value("neutral100")
+    self.append_value("neutral100")
   }
   #[inline]
   fn neutral200(&self) -> String {
-    self.append_string_to_skribble_value("neutral200")
+    self.append_value("neutral200")
   }
   #[inline]
   fn neutral300(&self) -> String {
-    self.append_string_to_skribble_value("neutral300")
+    self.append_value("neutral300")
   }
   #[inline]
   fn neutral400(&self) -> String {
-    self.append_string_to_skribble_value("neutral400")
+    self.append_value("neutral400")
   }
   #[inline]
   fn neutral500(&self) -> String {
-    self.append_string_to_skribble_value("neutral500")
+    self.append_value("neutral500")
   }
   #[inline]
   fn neutral600(&self) -> String {
-    self.append_string_to_skribble_value("neutral600")
+    self.append_value("neutral600")
   }
   #[inline]
   fn neutral700(&self) -> String {
-    self.append_string_to_skribble_value("neutral700")
+    self.append_value("neutral700")
   }
   #[inline]
   fn neutral800(&self) -> String {
-    self.append_string_to_skribble_value("neutral800")
+    self.append_value("neutral800")
   }
   #[inline]
   fn neutral900(&self) -> String {
-    self.append_string_to_skribble_value("neutral900")
+    self.append_value("neutral900")
   }
   #[inline]
   fn neutral950(&self) -> String {
-    self.append_string_to_skribble_value("neutral950")
+    self.append_value("neutral950")
   }
   #[inline]
   fn stone50(&self) -> String {
-    self.append_string_to_skribble_value("stone50")
+    self.append_value("stone50")
   }
   #[inline]
   fn stone100(&self) -> String {
-    self.append_string_to_skribble_value("stone100")
+    self.append_value("stone100")
   }
   #[inline]
   fn stone200(&self) -> String {
-    self.append_string_to_skribble_value("stone200")
+    self.append_value("stone200")
   }
   #[inline]
   fn stone300(&self) -> String {
-    self.append_string_to_skribble_value("stone300")
+    self.append_value("stone300")
   }
   #[inline]
   fn stone400(&self) -> String {
-    self.append_string_to_skribble_value("stone400")
+    self.append_value("stone400")
   }
   #[inline]
   fn stone500(&self) -> String {
-    self.append_string_to_skribble_value("stone500")
+    self.append_value("stone500")
   }
   #[inline]
   fn stone600(&self) -> String {
-    self.append_string_to_skribble_value("stone600")
+    self.append_value("stone600")
   }
   #[inline]
   fn stone700(&self) -> String {
-    self.append_string_to_skribble_value("stone700")
+    self.append_value("stone700")
   }
   #[inline]
   fn stone800(&self) -> String {
-    self.append_string_to_skribble_value("stone800")
+    self.append_value("stone800")
   }
   #[inline]
   fn stone900(&self) -> String {
-    self.append_string_to_skribble_value("stone900")
+    self.append_value("stone900")
   }
   #[inline]
   fn stone950(&self) -> String {
-    self.append_string_to_skribble_value("stone950")
+    self.append_value("stone950")
   }
   #[inline]
   fn red50(&self) -> String {
-    self.append_string_to_skribble_value("red50")
+    self.append_value("red50")
   }
   #[inline]
   fn red100(&self) -> String {
-    self.append_string_to_skribble_value("red100")
+    self.append_value("red100")
   }
   #[inline]
   fn red200(&self) -> String {
-    self.append_string_to_skribble_value("red200")
+    self.append_value("red200")
   }
   #[inline]
   fn red300(&self) -> String {
-    self.append_string_to_skribble_value("red300")
+    self.append_value("red300")
   }
   #[inline]
   fn red400(&self) -> String {
-    self.append_string_to_skribble_value("red400")
+    self.append_value("red400")
   }
   #[inline]
   fn red500(&self) -> String {
-    self.append_string_to_skribble_value("red500")
+    self.append_value("red500")
   }
   #[inline]
   fn red600(&self) -> String {
-    self.append_string_to_skribble_value("red600")
+    self.append_value("red600")
   }
   #[inline]
   fn red700(&self) -> String {
-    self.append_string_to_skribble_value("red700")
+    self.append_value("red700")
   }
   #[inline]
   fn red800(&self) -> String {
-    self.append_string_to_skribble_value("red800")
+    self.append_value("red800")
   }
   #[inline]
   fn red900(&self) -> String {
-    self.append_string_to_skribble_value("red900")
+    self.append_value("red900")
   }
   #[inline]
   fn red950(&self) -> String {
-    self.append_string_to_skribble_value("red950")
+    self.append_value("red950")
   }
   #[inline]
   fn orange50(&self) -> String {
-    self.append_string_to_skribble_value("orange50")
+    self.append_value("orange50")
   }
   #[inline]
   fn orange100(&self) -> String {
-    self.append_string_to_skribble_value("orange100")
+    self.append_value("orange100")
   }
   #[inline]
   fn orange200(&self) -> String {
-    self.append_string_to_skribble_value("orange200")
+    self.append_value("orange200")
   }
   #[inline]
   fn orange300(&self) -> String {
-    self.append_string_to_skribble_value("orange300")
+    self.append_value("orange300")
   }
   #[inline]
   fn orange400(&self) -> String {
-    self.append_string_to_skribble_value("orange400")
+    self.append_value("orange400")
   }
   #[inline]
   fn orange500(&self) -> String {
-    self.append_string_to_skribble_value("orange500")
+    self.append_value("orange500")
   }
   #[inline]
   fn orange600(&self) -> String {
-    self.append_string_to_skribble_value("orange600")
+    self.append_value("orange600")
   }
   #[inline]
   fn orange700(&self) -> String {
-    self.append_string_to_skribble_value("orange700")
+    self.append_value("orange700")
   }
   #[inline]
   fn orange800(&self) -> String {
-    self.append_string_to_skribble_value("orange800")
+    self.append_value("orange800")
   }
   #[inline]
   fn orange900(&self) -> String {
-    self.append_string_to_skribble_value("orange900")
+    self.append_value("orange900")
   }
   #[inline]
   fn orange950(&self) -> String {
-    self.append_string_to_skribble_value("orange950")
+    self.append_value("orange950")
   }
   #[inline]
   fn amber50(&self) -> String {
-    self.append_string_to_skribble_value("amber50")
+    self.append_value("amber50")
   }
   #[inline]
   fn amber100(&self) -> String {
-    self.append_string_to_skribble_value("amber100")
+    self.append_value("amber100")
   }
   #[inline]
   fn amber200(&self) -> String {
-    self.append_string_to_skribble_value("amber200")
+    self.append_value("amber200")
   }
   #[inline]
   fn amber300(&self) -> String {
-    self.append_string_to_skribble_value("amber300")
+    self.append_value("amber300")
   }
   #[inline]
   fn amber400(&self) -> String {
-    self.append_string_to_skribble_value("amber400")
+    self.append_value("amber400")
   }
   #[inline]
   fn amber500(&self) -> String {
-    self.append_string_to_skribble_value("amber500")
+    self.append_value("amber500")
   }
   #[inline]
   fn amber600(&self) -> String {
-    self.append_string_to_skribble_value("amber600")
+    self.append_value("amber600")
   }
   #[inline]
   fn amber700(&self) -> String {
-    self.append_string_to_skribble_value("amber700")
+    self.append_value("amber700")
   }
   #[inline]
   fn amber800(&self) -> String {
-    self.append_string_to_skribble_value("amber800")
+    self.append_value("amber800")
   }
   #[inline]
   fn amber900(&self) -> String {
-    self.append_string_to_skribble_value("amber900")
+    self.append_value("amber900")
   }
   #[inline]
   fn amber950(&self) -> String {
-    self.append_string_to_skribble_value("amber950")
+    self.append_value("amber950")
   }
   #[inline]
   fn yellow50(&self) -> String {
-    self.append_string_to_skribble_value("yellow50")
+    self.append_value("yellow50")
   }
   #[inline]
   fn yellow100(&self) -> String {
-    self.append_string_to_skribble_value("yellow100")
+    self.append_value("yellow100")
   }
   #[inline]
   fn yellow200(&self) -> String {
-    self.append_string_to_skribble_value("yellow200")
+    self.append_value("yellow200")
   }
   #[inline]
   fn yellow300(&self) -> String {
-    self.append_string_to_skribble_value("yellow300")
+    self.append_value("yellow300")
   }
   #[inline]
   fn yellow400(&self) -> String {
-    self.append_string_to_skribble_value("yellow400")
+    self.append_value("yellow400")
   }
   #[inline]
   fn yellow500(&self) -> String {
-    self.append_string_to_skribble_value("yellow500")
+    self.append_value("yellow500")
   }
   #[inline]
   fn yellow600(&self) -> String {
-    self.append_string_to_skribble_value("yellow600")
+    self.append_value("yellow600")
   }
   #[inline]
   fn yellow700(&self) -> String {
-    self.append_string_to_skribble_value("yellow700")
+    self.append_value("yellow700")
   }
   #[inline]
   fn yellow800(&self) -> String {
-    self.append_string_to_skribble_value("yellow800")
+    self.append_value("yellow800")
   }
   #[inline]
   fn yellow900(&self) -> String {
-    self.append_string_to_skribble_value("yellow900")
+    self.append_value("yellow900")
   }
   #[inline]
   fn yellow950(&self) -> String {
-    self.append_string_to_skribble_value("yellow950")
+    self.append_value("yellow950")
   }
   #[inline]
   fn lime50(&self) -> String {
-    self.append_string_to_skribble_value("lime50")
+    self.append_value("lime50")
   }
   #[inline]
   fn lime100(&self) -> String {
-    self.append_string_to_skribble_value("lime100")
+    self.append_value("lime100")
   }
   #[inline]
   fn lime200(&self) -> String {
-    self.append_string_to_skribble_value("lime200")
+    self.append_value("lime200")
   }
   #[inline]
   fn lime300(&self) -> String {
-    self.append_string_to_skribble_value("lime300")
+    self.append_value("lime300")
   }
   #[inline]
   fn lime400(&self) -> String {
-    self.append_string_to_skribble_value("lime400")
+    self.append_value("lime400")
   }
   #[inline]
   fn lime500(&self) -> String {
-    self.append_string_to_skribble_value("lime500")
+    self.append_value("lime500")
   }
   #[inline]
   fn lime600(&self) -> String {
-    self.append_string_to_skribble_value("lime600")
+    self.append_value("lime600")
   }
   #[inline]
   fn lime700(&self) -> String {
-    self.append_string_to_skribble_value("lime700")
+    self.append_value("lime700")
   }
   #[inline]
   fn lime800(&self) -> String {
-    self.append_string_to_skribble_value("lime800")
+    self.append_value("lime800")
   }
   #[inline]
   fn lime900(&self) -> String {
-    self.append_string_to_skribble_value("lime900")
+    self.append_value("lime900")
   }
   #[inline]
   fn lime950(&self) -> String {
-    self.append_string_to_skribble_value("lime950")
+    self.append_value("lime950")
   }
   #[inline]
   fn green50(&self) -> String {
-    self.append_string_to_skribble_value("green50")
+    self.append_value("green50")
   }
   #[inline]
   fn green100(&self) -> String {
-    self.append_string_to_skribble_value("green100")
+    self.append_value("green100")
   }
   #[inline]
   fn green200(&self) -> String {
-    self.append_string_to_skribble_value("green200")
+    self.append_value("green200")
   }
   #[inline]
   fn green300(&self) -> String {
-    self.append_string_to_skribble_value("green300")
+    self.append_value("green300")
   }
   #[inline]
   fn green400(&self) -> String {
-    self.append_string_to_skribble_value("green400")
+    self.append_value("green400")
   }
   #[inline]
   fn green500(&self) -> String {
-    self.append_string_to_skribble_value("green500")
+    self.append_value("green500")
   }
   #[inline]
   fn green600(&self) -> String {
-    self.append_string_to_skribble_value("green600")
+    self.append_value("green600")
   }
   #[inline]
   fn green700(&self) -> String {
-    self.append_string_to_skribble_value("green700")
+    self.append_value("green700")
   }
   #[inline]
   fn green800(&self) -> String {
-    self.append_string_to_skribble_value("green800")
+    self.append_value("green800")
   }
   #[inline]
   fn green900(&self) -> String {
-    self.append_string_to_skribble_value("green900")
+    self.append_value("green900")
   }
   #[inline]
   fn green950(&self) -> String {
-    self.append_string_to_skribble_value("green950")
+    self.append_value("green950")
   }
   #[inline]
   fn emerald50(&self) -> String {
-    self.append_string_to_skribble_value("emerald50")
+    self.append_value("emerald50")
   }
   #[inline]
   fn emerald100(&self) -> String {
-    self.append_string_to_skribble_value("emerald100")
+    self.append_value("emerald100")
   }
   #[inline]
   fn emerald200(&self) -> String {
-    self.append_string_to_skribble_value("emerald200")
+    self.append_value("emerald200")
   }
   #[inline]
   fn emerald300(&self) -> String {
-    self.append_string_to_skribble_value("emerald300")
+    self.append_value("emerald300")
   }
   #[inline]
   fn emerald400(&self) -> String {
-    self.append_string_to_skribble_value("emerald400")
+    self.append_value("emerald400")
   }
   #[inline]
   fn emerald500(&self) -> String {
-    self.append_string_to_skribble_value("emerald500")
+    self.append_value("emerald500")
   }
   #[inline]
   fn emerald600(&self) -> String {
-    self.append_string_to_skribble_value("emerald600")
+    self.append_value("emerald600")
   }
   #[inline]
   fn emerald700(&self) -> String {
-    self.append_string_to_skribble_value("emerald700")
+    self.append_value("emerald700")
   }
   #[inline]
   fn emerald800(&self) -> String {
-    self.append_string_to_skribble_value("emerald800")
+    self.append_value("emerald800")
   }
   #[inline]
   fn emerald900(&self) -> String {
-    self.append_string_to_skribble_value("emerald900")
+    self.append_value("emerald900")
   }
   #[inline]
   fn emerald950(&self) -> String {
-    self.append_string_to_skribble_value("emerald950")
+    self.append_value("emerald950")
   }
   #[inline]
   fn teal50(&self) -> String {
-    self.append_string_to_skribble_value("teal50")
+    self.append_value("teal50")
   }
   #[inline]
   fn teal100(&self) -> String {
-    self.append_string_to_skribble_value("teal100")
+    self.append_value("teal100")
   }
   #[inline]
   fn teal200(&self) -> String {
-    self.append_string_to_skribble_value("teal200")
+    self.append_value("teal200")
   }
   #[inline]
   fn teal300(&self) -> String {
-    self.append_string_to_skribble_value("teal300")
+    self.append_value("teal300")
   }
   #[inline]
   fn teal400(&self) -> String {
-    self.append_string_to_skribble_value("teal400")
+    self.append_value("teal400")
   }
   #[inline]
   fn teal500(&self) -> String {
-    self.append_string_to_skribble_value("teal500")
+    self.append_value("teal500")
   }
   #[inline]
   fn teal600(&self) -> String {
-    self.append_string_to_skribble_value("teal600")
+    self.append_value("teal600")
   }
   #[inline]
   fn teal700(&self) -> String {
-    self.append_string_to_skribble_value("teal700")
+    self.append_value("teal700")
   }
   #[inline]
   fn teal800(&self) -> String {
-    self.append_string_to_skribble_value("teal800")
+    self.append_value("teal800")
   }
   #[inline]
   fn teal900(&self) -> String {
-    self.append_string_to_skribble_value("teal900")
+    self.append_value("teal900")
   }
   #[inline]
   fn teal950(&self) -> String {
-    self.append_string_to_skribble_value("teal950")
+    self.append_value("teal950")
   }
   #[inline]
   fn cyan50(&self) -> String {
-    self.append_string_to_skribble_value("cyan50")
+    self.append_value("cyan50")
   }
   #[inline]
   fn cyan100(&self) -> String {
-    self.append_string_to_skribble_value("cyan100")
+    self.append_value("cyan100")
   }
   #[inline]
   fn cyan200(&self) -> String {
-    self.append_string_to_skribble_value("cyan200")
+    self.append_value("cyan200")
   }
   #[inline]
   fn cyan300(&self) -> String {
-    self.append_string_to_skribble_value("cyan300")
+    self.append_value("cyan300")
   }
   #[inline]
   fn cyan400(&self) -> String {
-    self.append_string_to_skribble_value("cyan400")
+    self.append_value("cyan400")
   }
   #[inline]
   fn cyan500(&self) -> String {
-    self.append_string_to_skribble_value("cyan500")
+    self.append_value("cyan500")
   }
   #[inline]
   fn cyan600(&self) -> String {
-    self.append_string_to_skribble_value("cyan600")
+    self.append_value("cyan600")
   }
   #[inline]
   fn cyan700(&self) -> String {
-    self.append_string_to_skribble_value("cyan700")
+    self.append_value("cyan700")
   }
   #[inline]
   fn cyan800(&self) -> String {
-    self.append_string_to_skribble_value("cyan800")
+    self.append_value("cyan800")
   }
   #[inline]
   fn cyan900(&self) -> String {
-    self.append_string_to_skribble_value("cyan900")
+    self.append_value("cyan900")
   }
   #[inline]
   fn cyan950(&self) -> String {
-    self.append_string_to_skribble_value("cyan950")
+    self.append_value("cyan950")
   }
   #[inline]
   fn sky50(&self) -> String {
-    self.append_string_to_skribble_value("sky50")
+    self.append_value("sky50")
   }
   #[inline]
   fn sky100(&self) -> String {
-    self.append_string_to_skribble_value("sky100")
+    self.append_value("sky100")
   }
   #[inline]
   fn sky200(&self) -> String {
-    self.append_string_to_skribble_value("sky200")
+    self.append_value("sky200")
   }
   #[inline]
   fn sky300(&self) -> String {
-    self.append_string_to_skribble_value("sky300")
+    self.append_value("sky300")
   }
   #[inline]
   fn sky400(&self) -> String {
-    self.append_string_to_skribble_value("sky400")
+    self.append_value("sky400")
   }
   #[inline]
   fn sky500(&self) -> String {
-    self.append_string_to_skribble_value("sky500")
+    self.append_value("sky500")
   }
   #[inline]
   fn sky600(&self) -> String {
-    self.append_string_to_skribble_value("sky600")
+    self.append_value("sky600")
   }
   #[inline]
   fn sky700(&self) -> String {
-    self.append_string_to_skribble_value("sky700")
+    self.append_value("sky700")
   }
   #[inline]
   fn sky800(&self) -> String {
-    self.append_string_to_skribble_value("sky800")
+    self.append_value("sky800")
   }
   #[inline]
   fn sky900(&self) -> String {
-    self.append_string_to_skribble_value("sky900")
+    self.append_value("sky900")
   }
   #[inline]
   fn sky950(&self) -> String {
-    self.append_string_to_skribble_value("sky950")
+    self.append_value("sky950")
   }
   #[inline]
   fn blue50(&self) -> String {
-    self.append_string_to_skribble_value("blue50")
+    self.append_value("blue50")
   }
   #[inline]
   fn blue100(&self) -> String {
-    self.append_string_to_skribble_value("blue100")
+    self.append_value("blue100")
   }
   #[inline]
   fn blue200(&self) -> String {
-    self.append_string_to_skribble_value("blue200")
+    self.append_value("blue200")
   }
   #[inline]
   fn blue300(&self) -> String {
-    self.append_string_to_skribble_value("blue300")
+    self.append_value("blue300")
   }
   #[inline]
   fn blue400(&self) -> String {
-    self.append_string_to_skribble_value("blue400")
+    self.append_value("blue400")
   }
   #[inline]
   fn blue500(&self) -> String {
-    self.append_string_to_skribble_value("blue500")
+    self.append_value("blue500")
   }
   #[inline]
   fn blue600(&self) -> String {
-    self.append_string_to_skribble_value("blue600")
+    self.append_value("blue600")
   }
   #[inline]
   fn blue700(&self) -> String {
-    self.append_string_to_skribble_value("blue700")
+    self.append_value("blue700")
   }
   #[inline]
   fn blue800(&self) -> String {
-    self.append_string_to_skribble_value("blue800")
+    self.append_value("blue800")
   }
   #[inline]
   fn blue900(&self) -> String {
-    self.append_string_to_skribble_value("blue900")
+    self.append_value("blue900")
   }
   #[inline]
   fn blue950(&self) -> String {
-    self.append_string_to_skribble_value("blue950")
+    self.append_value("blue950")
   }
   #[inline]
   fn indigo50(&self) -> String {
-    self.append_string_to_skribble_value("indigo50")
+    self.append_value("indigo50")
   }
   #[inline]
   fn indigo100(&self) -> String {
-    self.append_string_to_skribble_value("indigo100")
+    self.append_value("indigo100")
   }
   #[inline]
   fn indigo200(&self) -> String {
-    self.append_string_to_skribble_value("indigo200")
+    self.append_value("indigo200")
   }
   #[inline]
   fn indigo300(&self) -> String {
-    self.append_string_to_skribble_value("indigo300")
+    self.append_value("indigo300")
   }
   #[inline]
   fn indigo400(&self) -> String {
-    self.append_string_to_skribble_value("indigo400")
+    self.append_value("indigo400")
   }
   #[inline]
   fn indigo500(&self) -> String {
-    self.append_string_to_skribble_value("indigo500")
+    self.append_value("indigo500")
   }
   #[inline]
   fn indigo600(&self) -> String {
-    self.append_string_to_skribble_value("indigo600")
+    self.append_value("indigo600")
   }
   #[inline]
   fn indigo700(&self) -> String {
-    self.append_string_to_skribble_value("indigo700")
+    self.append_value("indigo700")
   }
   #[inline]
   fn indigo800(&self) -> String {
-    self.append_string_to_skribble_value("indigo800")
+    self.append_value("indigo800")
   }
   #[inline]
   fn indigo900(&self) -> String {
-    self.append_string_to_skribble_value("indigo900")
+    self.append_value("indigo900")
   }
   #[inline]
   fn indigo950(&self) -> String {
-    self.append_string_to_skribble_value("indigo950")
+    self.append_value("indigo950")
   }
   #[inline]
   fn violet50(&self) -> String {
-    self.append_string_to_skribble_value("violet50")
+    self.append_value("violet50")
   }
   #[inline]
   fn violet100(&self) -> String {
-    self.append_string_to_skribble_value("violet100")
+    self.append_value("violet100")
   }
   #[inline]
   fn violet200(&self) -> String {
-    self.append_string_to_skribble_value("violet200")
+    self.append_value("violet200")
   }
   #[inline]
   fn violet300(&self) -> String {
-    self.append_string_to_skribble_value("violet300")
+    self.append_value("violet300")
   }
   #[inline]
   fn violet400(&self) -> String {
-    self.append_string_to_skribble_value("violet400")
+    self.append_value("violet400")
   }
   #[inline]
   fn violet500(&self) -> String {
-    self.append_string_to_skribble_value("violet500")
+    self.append_value("violet500")
   }
   #[inline]
   fn violet600(&self) -> String {
-    self.append_string_to_skribble_value("violet600")
+    self.append_value("violet600")
   }
   #[inline]
   fn violet700(&self) -> String {
-    self.append_string_to_skribble_value("violet700")
+    self.append_value("violet700")
   }
   #[inline]
   fn violet800(&self) -> String {
-    self.append_string_to_skribble_value("violet800")
+    self.append_value("violet800")
   }
   #[inline]
   fn violet900(&self) -> String {
-    self.append_string_to_skribble_value("violet900")
+    self.append_value("violet900")
   }
   #[inline]
   fn violet950(&self) -> String {
-    self.append_string_to_skribble_value("violet950")
+    self.append_value("violet950")
   }
   #[inline]
   fn purple50(&self) -> String {
-    self.append_string_to_skribble_value("purple50")
+    self.append_value("purple50")
   }
   #[inline]
   fn purple100(&self) -> String {
-    self.append_string_to_skribble_value("purple100")
+    self.append_value("purple100")
   }
   #[inline]
   fn purple200(&self) -> String {
-    self.append_string_to_skribble_value("purple200")
+    self.append_value("purple200")
   }
   #[inline]
   fn purple300(&self) -> String {
-    self.append_string_to_skribble_value("purple300")
+    self.append_value("purple300")
   }
   #[inline]
   fn purple400(&self) -> String {
-    self.append_string_to_skribble_value("purple400")
+    self.append_value("purple400")
   }
   #[inline]
   fn purple500(&self) -> String {
-    self.append_string_to_skribble_value("purple500")
+    self.append_value("purple500")
   }
   #[inline]
   fn purple600(&self) -> String {
-    self.append_string_to_skribble_value("purple600")
+    self.append_value("purple600")
   }
   #[inline]
   fn purple700(&self) -> String {
-    self.append_string_to_skribble_value("purple700")
+    self.append_value("purple700")
   }
   #[inline]
   fn purple800(&self) -> String {
-    self.append_string_to_skribble_value("purple800")
+    self.append_value("purple800")
   }
   #[inline]
   fn purple900(&self) -> String {
-    self.append_string_to_skribble_value("purple900")
+    self.append_value("purple900")
   }
   #[inline]
   fn purple950(&self) -> String {
-    self.append_string_to_skribble_value("purple950")
+    self.append_value("purple950")
   }
   #[inline]
   fn fuchsia50(&self) -> String {
-    self.append_string_to_skribble_value("fuchsia50")
+    self.append_value("fuchsia50")
   }
   #[inline]
   fn fuchsia100(&self) -> String {
-    self.append_string_to_skribble_value("fuchsia100")
+    self.append_value("fuchsia100")
   }
   #[inline]
   fn fuchsia200(&self) -> String {
-    self.append_string_to_skribble_value("fuchsia200")
+    self.append_value("fuchsia200")
   }
   #[inline]
   fn fuchsia300(&self) -> String {
-    self.append_string_to_skribble_value("fuchsia300")
+    self.append_value("fuchsia300")
   }
   #[inline]
   fn fuchsia400(&self) -> String {
-    self.append_string_to_skribble_value("fuchsia400")
+    self.append_value("fuchsia400")
   }
   #[inline]
   fn fuchsia500(&self) -> String {
-    self.append_string_to_skribble_value("fuchsia500")
+    self.append_value("fuchsia500")
   }
   #[inline]
   fn fuchsia600(&self) -> String {
-    self.append_string_to_skribble_value("fuchsia600")
+    self.append_value("fuchsia600")
   }
   #[inline]
   fn fuchsia700(&self) -> String {
-    self.append_string_to_skribble_value("fuchsia700")
+    self.append_value("fuchsia700")
   }
   #[inline]
   fn fuchsia800(&self) -> String {
-    self.append_string_to_skribble_value("fuchsia800")
+    self.append_value("fuchsia800")
   }
   #[inline]
   fn fuchsia900(&self) -> String {
-    self.append_string_to_skribble_value("fuchsia900")
+    self.append_value("fuchsia900")
   }
   #[inline]
   fn fuchsia950(&self) -> String {
-    self.append_string_to_skribble_value("fuchsia950")
+    self.append_value("fuchsia950")
   }
   #[inline]
   fn pink50(&self) -> String {
-    self.append_string_to_skribble_value("pink50")
+    self.append_value("pink50")
   }
   #[inline]
   fn pink100(&self) -> String {
-    self.append_string_to_skribble_value("pink100")
+    self.append_value("pink100")
   }
   #[inline]
   fn pink200(&self) -> String {
-    self.append_string_to_skribble_value("pink200")
+    self.append_value("pink200")
   }
   #[inline]
   fn pink300(&self) -> String {
-    self.append_string_to_skribble_value("pink300")
+    self.append_value("pink300")
   }
   #[inline]
   fn pink400(&self) -> String {
-    self.append_string_to_skribble_value("pink400")
+    self.append_value("pink400")
   }
   #[inline]
   fn pink500(&self) -> String {
-    self.append_string_to_skribble_value("pink500")
+    self.append_value("pink500")
   }
   #[inline]
   fn pink600(&self) -> String {
-    self.append_string_to_skribble_value("pink600")
+    self.append_value("pink600")
   }
   #[inline]
   fn pink700(&self) -> String {
-    self.append_string_to_skribble_value("pink700")
+    self.append_value("pink700")
   }
   #[inline]
   fn pink800(&self) -> String {
-    self.append_string_to_skribble_value("pink800")
+    self.append_value("pink800")
   }
   #[inline]
   fn pink900(&self) -> String {
-    self.append_string_to_skribble_value("pink900")
+    self.append_value("pink900")
   }
   #[inline]
   fn pink950(&self) -> String {
-    self.append_string_to_skribble_value("pink950")
+    self.append_value("pink950")
   }
   #[inline]
   fn rose50(&self) -> String {
-    self.append_string_to_skribble_value("rose50")
+    self.append_value("rose50")
   }
   #[inline]
   fn rose100(&self) -> String {
-    self.append_string_to_skribble_value("rose100")
+    self.append_value("rose100")
   }
   #[inline]
   fn rose200(&self) -> String {
-    self.append_string_to_skribble_value("rose200")
+    self.append_value("rose200")
   }
   #[inline]
   fn rose300(&self) -> String {
-    self.append_string_to_skribble_value("rose300")
+    self.append_value("rose300")
   }
   #[inline]
   fn rose400(&self) -> String {
-    self.append_string_to_skribble_value("rose400")
+    self.append_value("rose400")
   }
   #[inline]
   fn rose500(&self) -> String {
-    self.append_string_to_skribble_value("rose500")
+    self.append_value("rose500")
   }
   #[inline]
   fn rose600(&self) -> String {
-    self.append_string_to_skribble_value("rose600")
+    self.append_value("rose600")
   }
   #[inline]
   fn rose700(&self) -> String {
-    self.append_string_to_skribble_value("rose700")
+    self.append_value("rose700")
   }
   #[inline]
   fn rose800(&self) -> String {
-    self.append_string_to_skribble_value("rose800")
+    self.append_value("rose800")
   }
   #[inline]
   fn rose900(&self) -> String {
-    self.append_string_to_skribble_value("rose900")
+    self.append_value("rose900")
   }
   #[inline]
   fn rose950(&self) -> String {
-    self.append_string_to_skribble_value("rose950")
+    self.append_value("rose950")
   }
 }
 pub struct GeneratedAtomSr(String);
@@ -3483,7 +3483,7 @@ pub trait GeneratedValueSetSr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn only(&self) -> String {
-    self.append_string_to_skribble_value("only")
+    self.append_value("only")
   }
   /// ```css
   /// .sr\:\$exclude {
@@ -3499,7 +3499,7 @@ pub trait GeneratedValueSetSr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn exclude(&self) -> String {
-    self.append_string_to_skribble_value("exclude")
+    self.append_value("exclude")
   }
 }
 impl GeneratedValueSetSr for GeneratedAtomSr {}
@@ -3525,7 +3525,7 @@ pub trait GeneratedValueSetTransition: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn main(&self) -> String {
-    self.append_string_to_skribble_value("main")
+    self.append_value("main")
   }
   /// ```css
   /// .transition\:\$none {
@@ -3534,7 +3534,7 @@ pub trait GeneratedValueSetTransition: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn none(&self) -> String {
-    self.append_string_to_skribble_value("none")
+    self.append_value("none")
   }
   /// ```css
   /// .transition\:\$all {
@@ -3545,7 +3545,7 @@ pub trait GeneratedValueSetTransition: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn all(&self) -> String {
-    self.append_string_to_skribble_value("all")
+    self.append_value("all")
   }
   /// ```css
   /// .transition\:\$colors {
@@ -3556,7 +3556,7 @@ pub trait GeneratedValueSetTransition: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn colors(&self) -> String {
-    self.append_string_to_skribble_value("colors")
+    self.append_value("colors")
   }
   /// ```css
   /// .transition\:\$opacity {
@@ -3567,7 +3567,7 @@ pub trait GeneratedValueSetTransition: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn opacity(&self) -> String {
-    self.append_string_to_skribble_value("opacity")
+    self.append_value("opacity")
   }
   /// ```css
   /// .transition\:\$shadow {
@@ -3578,7 +3578,7 @@ pub trait GeneratedValueSetTransition: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn shadow(&self) -> String {
-    self.append_string_to_skribble_value("shadow")
+    self.append_value("shadow")
   }
   /// ```css
   /// .transition\:\$transform {
@@ -3589,7 +3589,7 @@ pub trait GeneratedValueSetTransition: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn transform(&self) -> String {
-    self.append_string_to_skribble_value("transform")
+    self.append_value("transform")
   }
 }
 impl GeneratedValueSetTransition for GeneratedAtomTransition {}
@@ -3613,7 +3613,7 @@ pub trait GeneratedValueSetTransitionProperty: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn most(&self) -> String {
-    self.append_string_to_skribble_value("most")
+    self.append_value("most")
   }
   /// ```css
   /// .transition-property\:\$none {
@@ -3622,7 +3622,7 @@ pub trait GeneratedValueSetTransitionProperty: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn none(&self) -> String {
-    self.append_string_to_skribble_value("none")
+    self.append_value("none")
   }
   /// ```css
   /// .transition-property\:\$all {
@@ -3631,7 +3631,7 @@ pub trait GeneratedValueSetTransitionProperty: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn all(&self) -> String {
-    self.append_string_to_skribble_value("all")
+    self.append_value("all")
   }
   /// ```css
   /// .transition-property\:\$colors {
@@ -3640,7 +3640,7 @@ pub trait GeneratedValueSetTransitionProperty: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn colors(&self) -> String {
-    self.append_string_to_skribble_value("colors")
+    self.append_value("colors")
   }
   /// ```css
   /// .transition-property\:\$opacity {
@@ -3649,7 +3649,7 @@ pub trait GeneratedValueSetTransitionProperty: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn opacity(&self) -> String {
-    self.append_string_to_skribble_value("opacity")
+    self.append_value("opacity")
   }
   /// ```css
   /// .transition-property\:\$shadow {
@@ -3658,7 +3658,7 @@ pub trait GeneratedValueSetTransitionProperty: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn shadow(&self) -> String {
-    self.append_string_to_skribble_value("shadow")
+    self.append_value("shadow")
   }
   /// ```css
   /// .transition-property\:\$transform {
@@ -3667,7 +3667,7 @@ pub trait GeneratedValueSetTransitionProperty: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn transform(&self) -> String {
-    self.append_string_to_skribble_value("transform")
+    self.append_value("transform")
   }
 }
 impl GeneratedValueSetTransitionProperty for GeneratedAtomTransitionProperty {}
@@ -3691,7 +3691,7 @@ pub trait GeneratedValueSetDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .duration\:\$75 {
@@ -3700,7 +3700,7 @@ pub trait GeneratedValueSetDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n75(&self) -> String {
-    self.append_string_to_skribble_value("75")
+    self.append_value("75")
   }
   /// ```css
   /// .duration\:\$100 {
@@ -3709,7 +3709,7 @@ pub trait GeneratedValueSetDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n100(&self) -> String {
-    self.append_string_to_skribble_value("100")
+    self.append_value("100")
   }
   /// ```css
   /// .duration\:\$150 {
@@ -3718,7 +3718,7 @@ pub trait GeneratedValueSetDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n150(&self) -> String {
-    self.append_string_to_skribble_value("150")
+    self.append_value("150")
   }
   /// ```css
   /// .duration\:\$200 {
@@ -3727,7 +3727,7 @@ pub trait GeneratedValueSetDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n200(&self) -> String {
-    self.append_string_to_skribble_value("200")
+    self.append_value("200")
   }
   /// ```css
   /// .duration\:\$300 {
@@ -3736,7 +3736,7 @@ pub trait GeneratedValueSetDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n300(&self) -> String {
-    self.append_string_to_skribble_value("300")
+    self.append_value("300")
   }
   /// ```css
   /// .duration\:\$500 {
@@ -3745,7 +3745,7 @@ pub trait GeneratedValueSetDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n500(&self) -> String {
-    self.append_string_to_skribble_value("500")
+    self.append_value("500")
   }
   /// ```css
   /// .duration\:\$700 {
@@ -3754,7 +3754,7 @@ pub trait GeneratedValueSetDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n700(&self) -> String {
-    self.append_string_to_skribble_value("700")
+    self.append_value("700")
   }
   /// ```css
   /// .duration\:\$1000 {
@@ -3763,7 +3763,7 @@ pub trait GeneratedValueSetDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1000(&self) -> String {
-    self.append_string_to_skribble_value("1000")
+    self.append_value("1000")
   }
   /// ```css
   /// .duration\:\$1500 {
@@ -3772,7 +3772,7 @@ pub trait GeneratedValueSetDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1500(&self) -> String {
-    self.append_string_to_skribble_value("1500")
+    self.append_value("1500")
   }
   /// ```css
   /// .duration\:\$2000 {
@@ -3781,7 +3781,7 @@ pub trait GeneratedValueSetDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2000(&self) -> String {
-    self.append_string_to_skribble_value("2000")
+    self.append_value("2000")
   }
 }
 impl GeneratedValueSetDuration for GeneratedAtomDuration {}
@@ -3805,7 +3805,7 @@ pub trait GeneratedValueSetEase: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn linear(&self) -> String {
-    self.append_string_to_skribble_value("linear")
+    self.append_value("linear")
   }
   /// ```css
   /// .ease\:\$in {
@@ -3814,7 +3814,7 @@ pub trait GeneratedValueSetEase: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn r#in(&self) -> String {
-    self.append_string_to_skribble_value("in")
+    self.append_value("in")
   }
   /// ```css
   /// .ease\:\$out {
@@ -3823,7 +3823,7 @@ pub trait GeneratedValueSetEase: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn out(&self) -> String {
-    self.append_string_to_skribble_value("out")
+    self.append_value("out")
   }
   /// ```css
   /// .ease\:\$in-out {
@@ -3832,7 +3832,7 @@ pub trait GeneratedValueSetEase: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn in_out(&self) -> String {
-    self.append_string_to_skribble_value("inOut")
+    self.append_value("inOut")
   }
 }
 impl GeneratedValueSetEase for GeneratedAtomEase {}
@@ -3856,7 +3856,7 @@ pub trait GeneratedValueSetDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .delay\:\$75 {
@@ -3865,7 +3865,7 @@ pub trait GeneratedValueSetDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n75(&self) -> String {
-    self.append_string_to_skribble_value("75")
+    self.append_value("75")
   }
   /// ```css
   /// .delay\:\$100 {
@@ -3874,7 +3874,7 @@ pub trait GeneratedValueSetDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n100(&self) -> String {
-    self.append_string_to_skribble_value("100")
+    self.append_value("100")
   }
   /// ```css
   /// .delay\:\$150 {
@@ -3883,7 +3883,7 @@ pub trait GeneratedValueSetDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n150(&self) -> String {
-    self.append_string_to_skribble_value("150")
+    self.append_value("150")
   }
   /// ```css
   /// .delay\:\$200 {
@@ -3892,7 +3892,7 @@ pub trait GeneratedValueSetDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n200(&self) -> String {
-    self.append_string_to_skribble_value("200")
+    self.append_value("200")
   }
   /// ```css
   /// .delay\:\$300 {
@@ -3901,7 +3901,7 @@ pub trait GeneratedValueSetDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n300(&self) -> String {
-    self.append_string_to_skribble_value("300")
+    self.append_value("300")
   }
   /// ```css
   /// .delay\:\$500 {
@@ -3910,7 +3910,7 @@ pub trait GeneratedValueSetDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n500(&self) -> String {
-    self.append_string_to_skribble_value("500")
+    self.append_value("500")
   }
   /// ```css
   /// .delay\:\$700 {
@@ -3919,7 +3919,7 @@ pub trait GeneratedValueSetDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n700(&self) -> String {
-    self.append_string_to_skribble_value("700")
+    self.append_value("700")
   }
   /// ```css
   /// .delay\:\$1000 {
@@ -3928,7 +3928,7 @@ pub trait GeneratedValueSetDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1000(&self) -> String {
-    self.append_string_to_skribble_value("1000")
+    self.append_value("1000")
   }
   /// ```css
   /// .delay\:\$1500 {
@@ -3937,7 +3937,7 @@ pub trait GeneratedValueSetDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1500(&self) -> String {
-    self.append_string_to_skribble_value("1500")
+    self.append_value("1500")
   }
   /// ```css
   /// .delay\:\$2000 {
@@ -3946,7 +3946,7 @@ pub trait GeneratedValueSetDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2000(&self) -> String {
-    self.append_string_to_skribble_value("2000")
+    self.append_value("2000")
   }
 }
 impl GeneratedValueSetDelay for GeneratedAtomDelay {}
@@ -3983,7 +3983,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .fade-in\:\$5 {
@@ -3992,7 +3992,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .fade-in\:\$10 {
@@ -4001,7 +4001,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .fade-in\:\$20 {
@@ -4010,7 +4010,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .fade-in\:\$30 {
@@ -4019,7 +4019,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n30(&self) -> String {
-    self.append_string_to_skribble_value("30")
+    self.append_value("30")
   }
   /// ```css
   /// .fade-in\:\$40 {
@@ -4028,7 +4028,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .fade-in\:\$50 {
@@ -4037,7 +4037,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n50(&self) -> String {
-    self.append_string_to_skribble_value("50")
+    self.append_value("50")
   }
   /// ```css
   /// .fade-in\:\$60 {
@@ -4046,7 +4046,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .fade-in\:\$70 {
@@ -4055,7 +4055,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n70(&self) -> String {
-    self.append_string_to_skribble_value("70")
+    self.append_value("70")
   }
   /// ```css
   /// .fade-in\:\$75 {
@@ -4064,7 +4064,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n75(&self) -> String {
-    self.append_string_to_skribble_value("75")
+    self.append_value("75")
   }
   /// ```css
   /// .fade-in\:\$80 {
@@ -4073,7 +4073,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .fade-in\:\$90 {
@@ -4082,7 +4082,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n90(&self) -> String {
-    self.append_string_to_skribble_value("90")
+    self.append_value("90")
   }
   /// ```css
   /// .fade-in\:\$95 {
@@ -4091,7 +4091,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n95(&self) -> String {
-    self.append_string_to_skribble_value("95")
+    self.append_value("95")
   }
   /// ```css
   /// .fade-in\:\$100 {
@@ -4100,7 +4100,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n100(&self) -> String {
-    self.append_string_to_skribble_value("100")
+    self.append_value("100")
   }
 }
 impl GeneratedValueSetFadeIn for GeneratedAtomFadeIn {}
@@ -4124,7 +4124,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .fade-out\:\$5 {
@@ -4133,7 +4133,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .fade-out\:\$10 {
@@ -4142,7 +4142,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .fade-out\:\$20 {
@@ -4151,7 +4151,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .fade-out\:\$30 {
@@ -4160,7 +4160,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n30(&self) -> String {
-    self.append_string_to_skribble_value("30")
+    self.append_value("30")
   }
   /// ```css
   /// .fade-out\:\$40 {
@@ -4169,7 +4169,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .fade-out\:\$50 {
@@ -4178,7 +4178,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n50(&self) -> String {
-    self.append_string_to_skribble_value("50")
+    self.append_value("50")
   }
   /// ```css
   /// .fade-out\:\$60 {
@@ -4187,7 +4187,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .fade-out\:\$70 {
@@ -4196,7 +4196,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n70(&self) -> String {
-    self.append_string_to_skribble_value("70")
+    self.append_value("70")
   }
   /// ```css
   /// .fade-out\:\$75 {
@@ -4205,7 +4205,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n75(&self) -> String {
-    self.append_string_to_skribble_value("75")
+    self.append_value("75")
   }
   /// ```css
   /// .fade-out\:\$80 {
@@ -4214,7 +4214,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .fade-out\:\$90 {
@@ -4223,7 +4223,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n90(&self) -> String {
-    self.append_string_to_skribble_value("90")
+    self.append_value("90")
   }
   /// ```css
   /// .fade-out\:\$95 {
@@ -4232,7 +4232,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n95(&self) -> String {
-    self.append_string_to_skribble_value("95")
+    self.append_value("95")
   }
   /// ```css
   /// .fade-out\:\$100 {
@@ -4241,7 +4241,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n100(&self) -> String {
-    self.append_string_to_skribble_value("100")
+    self.append_value("100")
   }
 }
 impl GeneratedValueSetFadeOut for GeneratedAtomFadeOut {}
@@ -4265,7 +4265,7 @@ pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .spin-in\:\$1 {
@@ -4274,7 +4274,7 @@ pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .spin-in\:\$2 {
@@ -4283,7 +4283,7 @@ pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .spin-in\:\$3 {
@@ -4292,7 +4292,7 @@ pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .spin-in\:\$6 {
@@ -4301,7 +4301,7 @@ pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .spin-in\:\$12 {
@@ -4310,7 +4310,7 @@ pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .spin-in\:\$30 {
@@ -4319,7 +4319,7 @@ pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n30(&self) -> String {
-    self.append_string_to_skribble_value("30")
+    self.append_value("30")
   }
   /// ```css
   /// .spin-in\:\$45 {
@@ -4328,7 +4328,7 @@ pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n45(&self) -> String {
-    self.append_string_to_skribble_value("45")
+    self.append_value("45")
   }
   /// ```css
   /// .spin-in\:\$90 {
@@ -4337,7 +4337,7 @@ pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n90(&self) -> String {
-    self.append_string_to_skribble_value("90")
+    self.append_value("90")
   }
   /// ```css
   /// .spin-in\:\$180 {
@@ -4346,7 +4346,7 @@ pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n180(&self) -> String {
-    self.append_string_to_skribble_value("180")
+    self.append_value("180")
   }
 }
 impl GeneratedValueSetSpinIn for GeneratedAtomSpinIn {}
@@ -4370,7 +4370,7 @@ pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .spin-out\:\$1 {
@@ -4379,7 +4379,7 @@ pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .spin-out\:\$2 {
@@ -4388,7 +4388,7 @@ pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .spin-out\:\$3 {
@@ -4397,7 +4397,7 @@ pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .spin-out\:\$6 {
@@ -4406,7 +4406,7 @@ pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .spin-out\:\$12 {
@@ -4415,7 +4415,7 @@ pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .spin-out\:\$30 {
@@ -4424,7 +4424,7 @@ pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n30(&self) -> String {
-    self.append_string_to_skribble_value("30")
+    self.append_value("30")
   }
   /// ```css
   /// .spin-out\:\$45 {
@@ -4433,7 +4433,7 @@ pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n45(&self) -> String {
-    self.append_string_to_skribble_value("45")
+    self.append_value("45")
   }
   /// ```css
   /// .spin-out\:\$90 {
@@ -4442,7 +4442,7 @@ pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n90(&self) -> String {
-    self.append_string_to_skribble_value("90")
+    self.append_value("90")
   }
   /// ```css
   /// .spin-out\:\$180 {
@@ -4451,7 +4451,7 @@ pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n180(&self) -> String {
-    self.append_string_to_skribble_value("180")
+    self.append_value("180")
   }
 }
 impl GeneratedValueSetSpinOut for GeneratedAtomSpinOut {}
@@ -4475,7 +4475,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn full(&self) -> String {
-    self.append_string_to_skribble_value("full")
+    self.append_value("full")
   }
   /// ```css
   /// .slide-in-left\:\$0 {
@@ -4484,7 +4484,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .slide-in-left\:\$px {
@@ -4493,7 +4493,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .slide-in-left\:\$0\.5 {
@@ -4502,7 +4502,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .slide-in-left\:\$1 {
@@ -4511,7 +4511,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .slide-in-left\:\$1\.5 {
@@ -4520,7 +4520,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .slide-in-left\:\$2 {
@@ -4529,7 +4529,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .slide-in-left\:\$2\.5 {
@@ -4538,7 +4538,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .slide-in-left\:\$3 {
@@ -4547,7 +4547,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .slide-in-left\:\$3\.5 {
@@ -4556,7 +4556,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
   /// ```css
   /// .slide-in-left\:\$4 {
@@ -4565,7 +4565,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .slide-in-left\:\$5 {
@@ -4574,7 +4574,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .slide-in-left\:\$6 {
@@ -4583,7 +4583,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .slide-in-left\:\$7 {
@@ -4592,7 +4592,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .slide-in-left\:\$8 {
@@ -4601,7 +4601,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .slide-in-left\:\$9 {
@@ -4610,7 +4610,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .slide-in-left\:\$10 {
@@ -4619,7 +4619,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .slide-in-left\:\$11 {
@@ -4628,7 +4628,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .slide-in-left\:\$12 {
@@ -4637,7 +4637,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .slide-in-left\:\$14 {
@@ -4646,7 +4646,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .slide-in-left\:\$16 {
@@ -4655,7 +4655,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .slide-in-left\:\$20 {
@@ -4664,7 +4664,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .slide-in-left\:\$24 {
@@ -4673,7 +4673,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .slide-in-left\:\$28 {
@@ -4682,7 +4682,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .slide-in-left\:\$32 {
@@ -4691,7 +4691,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .slide-in-left\:\$36 {
@@ -4700,7 +4700,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .slide-in-left\:\$40 {
@@ -4709,7 +4709,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .slide-in-left\:\$44 {
@@ -4718,7 +4718,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .slide-in-left\:\$48 {
@@ -4727,7 +4727,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .slide-in-left\:\$52 {
@@ -4736,7 +4736,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .slide-in-left\:\$56 {
@@ -4745,7 +4745,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .slide-in-left\:\$60 {
@@ -4754,7 +4754,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .slide-in-left\:\$64 {
@@ -4763,7 +4763,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .slide-in-left\:\$72 {
@@ -4772,7 +4772,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .slide-in-left\:\$80 {
@@ -4781,7 +4781,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .slide-in-left\:\$96 {
@@ -4790,7 +4790,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .slide-in-left\:\$third {
@@ -4799,7 +4799,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn third(&self) -> String {
-    self.append_string_to_skribble_value("third")
+    self.append_value("third")
   }
   /// ```css
   /// .slide-in-left\:\$two-thirds {
@@ -4808,7 +4808,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn two_thirds(&self) -> String {
-    self.append_string_to_skribble_value("twoThirds")
+    self.append_value("twoThirds")
   }
   /// ```css
   /// .slide-in-left\:\$quarter {
@@ -4817,7 +4817,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn quarter(&self) -> String {
-    self.append_string_to_skribble_value("quarter")
+    self.append_value("quarter")
   }
   /// ```css
   /// .slide-in-left\:\$half {
@@ -4826,7 +4826,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn half(&self) -> String {
-    self.append_string_to_skribble_value("half")
+    self.append_value("half")
   }
   /// ```css
   /// .slide-in-left\:\$three-quarters {
@@ -4835,7 +4835,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn three_quarters(&self) -> String {
-    self.append_string_to_skribble_value("threeQuarters")
+    self.append_value("threeQuarters")
   }
 }
 impl GeneratedValueSetSlideInLeft for GeneratedAtomSlideInLeft {}
@@ -4859,7 +4859,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn full(&self) -> String {
-    self.append_string_to_skribble_value("full")
+    self.append_value("full")
   }
   /// ```css
   /// .slide-in-right\:\$0 {
@@ -4868,7 +4868,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .slide-in-right\:\$px {
@@ -4877,7 +4877,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .slide-in-right\:\$0\.5 {
@@ -4886,7 +4886,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .slide-in-right\:\$1 {
@@ -4895,7 +4895,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .slide-in-right\:\$1\.5 {
@@ -4904,7 +4904,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .slide-in-right\:\$2 {
@@ -4913,7 +4913,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .slide-in-right\:\$2\.5 {
@@ -4922,7 +4922,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .slide-in-right\:\$3 {
@@ -4931,7 +4931,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .slide-in-right\:\$3\.5 {
@@ -4940,7 +4940,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
   /// ```css
   /// .slide-in-right\:\$4 {
@@ -4949,7 +4949,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .slide-in-right\:\$5 {
@@ -4958,7 +4958,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .slide-in-right\:\$6 {
@@ -4967,7 +4967,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .slide-in-right\:\$7 {
@@ -4976,7 +4976,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .slide-in-right\:\$8 {
@@ -4985,7 +4985,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .slide-in-right\:\$9 {
@@ -4994,7 +4994,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .slide-in-right\:\$10 {
@@ -5003,7 +5003,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .slide-in-right\:\$11 {
@@ -5012,7 +5012,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .slide-in-right\:\$12 {
@@ -5021,7 +5021,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .slide-in-right\:\$14 {
@@ -5030,7 +5030,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .slide-in-right\:\$16 {
@@ -5039,7 +5039,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .slide-in-right\:\$20 {
@@ -5048,7 +5048,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .slide-in-right\:\$24 {
@@ -5057,7 +5057,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .slide-in-right\:\$28 {
@@ -5066,7 +5066,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .slide-in-right\:\$32 {
@@ -5075,7 +5075,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .slide-in-right\:\$36 {
@@ -5084,7 +5084,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .slide-in-right\:\$40 {
@@ -5093,7 +5093,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .slide-in-right\:\$44 {
@@ -5102,7 +5102,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .slide-in-right\:\$48 {
@@ -5111,7 +5111,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .slide-in-right\:\$52 {
@@ -5120,7 +5120,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .slide-in-right\:\$56 {
@@ -5129,7 +5129,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .slide-in-right\:\$60 {
@@ -5138,7 +5138,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .slide-in-right\:\$64 {
@@ -5147,7 +5147,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .slide-in-right\:\$72 {
@@ -5156,7 +5156,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .slide-in-right\:\$80 {
@@ -5165,7 +5165,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .slide-in-right\:\$96 {
@@ -5174,7 +5174,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .slide-in-right\:\$third {
@@ -5183,7 +5183,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn third(&self) -> String {
-    self.append_string_to_skribble_value("third")
+    self.append_value("third")
   }
   /// ```css
   /// .slide-in-right\:\$two-thirds {
@@ -5192,7 +5192,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn two_thirds(&self) -> String {
-    self.append_string_to_skribble_value("twoThirds")
+    self.append_value("twoThirds")
   }
   /// ```css
   /// .slide-in-right\:\$quarter {
@@ -5201,7 +5201,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn quarter(&self) -> String {
-    self.append_string_to_skribble_value("quarter")
+    self.append_value("quarter")
   }
   /// ```css
   /// .slide-in-right\:\$half {
@@ -5210,7 +5210,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn half(&self) -> String {
-    self.append_string_to_skribble_value("half")
+    self.append_value("half")
   }
   /// ```css
   /// .slide-in-right\:\$three-quarters {
@@ -5219,7 +5219,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn three_quarters(&self) -> String {
-    self.append_string_to_skribble_value("threeQuarters")
+    self.append_value("threeQuarters")
   }
 }
 impl GeneratedValueSetSlideInRight for GeneratedAtomSlideInRight {}
@@ -5243,7 +5243,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn full(&self) -> String {
-    self.append_string_to_skribble_value("full")
+    self.append_value("full")
   }
   /// ```css
   /// .slide-out-left\:\$0 {
@@ -5252,7 +5252,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .slide-out-left\:\$px {
@@ -5261,7 +5261,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .slide-out-left\:\$0\.5 {
@@ -5270,7 +5270,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .slide-out-left\:\$1 {
@@ -5279,7 +5279,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .slide-out-left\:\$1\.5 {
@@ -5288,7 +5288,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .slide-out-left\:\$2 {
@@ -5297,7 +5297,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .slide-out-left\:\$2\.5 {
@@ -5306,7 +5306,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .slide-out-left\:\$3 {
@@ -5315,7 +5315,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .slide-out-left\:\$3\.5 {
@@ -5324,7 +5324,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
   /// ```css
   /// .slide-out-left\:\$4 {
@@ -5333,7 +5333,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .slide-out-left\:\$5 {
@@ -5342,7 +5342,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .slide-out-left\:\$6 {
@@ -5351,7 +5351,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .slide-out-left\:\$7 {
@@ -5360,7 +5360,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .slide-out-left\:\$8 {
@@ -5369,7 +5369,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .slide-out-left\:\$9 {
@@ -5378,7 +5378,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .slide-out-left\:\$10 {
@@ -5387,7 +5387,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .slide-out-left\:\$11 {
@@ -5396,7 +5396,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .slide-out-left\:\$12 {
@@ -5405,7 +5405,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .slide-out-left\:\$14 {
@@ -5414,7 +5414,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .slide-out-left\:\$16 {
@@ -5423,7 +5423,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .slide-out-left\:\$20 {
@@ -5432,7 +5432,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .slide-out-left\:\$24 {
@@ -5441,7 +5441,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .slide-out-left\:\$28 {
@@ -5450,7 +5450,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .slide-out-left\:\$32 {
@@ -5459,7 +5459,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .slide-out-left\:\$36 {
@@ -5468,7 +5468,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .slide-out-left\:\$40 {
@@ -5477,7 +5477,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .slide-out-left\:\$44 {
@@ -5486,7 +5486,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .slide-out-left\:\$48 {
@@ -5495,7 +5495,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .slide-out-left\:\$52 {
@@ -5504,7 +5504,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .slide-out-left\:\$56 {
@@ -5513,7 +5513,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .slide-out-left\:\$60 {
@@ -5522,7 +5522,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .slide-out-left\:\$64 {
@@ -5531,7 +5531,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .slide-out-left\:\$72 {
@@ -5540,7 +5540,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .slide-out-left\:\$80 {
@@ -5549,7 +5549,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .slide-out-left\:\$96 {
@@ -5558,7 +5558,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .slide-out-left\:\$third {
@@ -5567,7 +5567,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn third(&self) -> String {
-    self.append_string_to_skribble_value("third")
+    self.append_value("third")
   }
   /// ```css
   /// .slide-out-left\:\$two-thirds {
@@ -5576,7 +5576,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn two_thirds(&self) -> String {
-    self.append_string_to_skribble_value("twoThirds")
+    self.append_value("twoThirds")
   }
   /// ```css
   /// .slide-out-left\:\$quarter {
@@ -5585,7 +5585,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn quarter(&self) -> String {
-    self.append_string_to_skribble_value("quarter")
+    self.append_value("quarter")
   }
   /// ```css
   /// .slide-out-left\:\$half {
@@ -5594,7 +5594,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn half(&self) -> String {
-    self.append_string_to_skribble_value("half")
+    self.append_value("half")
   }
   /// ```css
   /// .slide-out-left\:\$three-quarters {
@@ -5603,7 +5603,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn three_quarters(&self) -> String {
-    self.append_string_to_skribble_value("threeQuarters")
+    self.append_value("threeQuarters")
   }
 }
 impl GeneratedValueSetSlideOutLeft for GeneratedAtomSlideOutLeft {}
@@ -5627,7 +5627,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn full(&self) -> String {
-    self.append_string_to_skribble_value("full")
+    self.append_value("full")
   }
   /// ```css
   /// .slide-out-right\:\$0 {
@@ -5636,7 +5636,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .slide-out-right\:\$px {
@@ -5645,7 +5645,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .slide-out-right\:\$0\.5 {
@@ -5654,7 +5654,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .slide-out-right\:\$1 {
@@ -5663,7 +5663,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .slide-out-right\:\$1\.5 {
@@ -5672,7 +5672,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .slide-out-right\:\$2 {
@@ -5681,7 +5681,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .slide-out-right\:\$2\.5 {
@@ -5690,7 +5690,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .slide-out-right\:\$3 {
@@ -5699,7 +5699,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .slide-out-right\:\$3\.5 {
@@ -5708,7 +5708,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
   /// ```css
   /// .slide-out-right\:\$4 {
@@ -5717,7 +5717,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .slide-out-right\:\$5 {
@@ -5726,7 +5726,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .slide-out-right\:\$6 {
@@ -5735,7 +5735,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .slide-out-right\:\$7 {
@@ -5744,7 +5744,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .slide-out-right\:\$8 {
@@ -5753,7 +5753,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .slide-out-right\:\$9 {
@@ -5762,7 +5762,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .slide-out-right\:\$10 {
@@ -5771,7 +5771,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .slide-out-right\:\$11 {
@@ -5780,7 +5780,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .slide-out-right\:\$12 {
@@ -5789,7 +5789,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .slide-out-right\:\$14 {
@@ -5798,7 +5798,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .slide-out-right\:\$16 {
@@ -5807,7 +5807,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .slide-out-right\:\$20 {
@@ -5816,7 +5816,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .slide-out-right\:\$24 {
@@ -5825,7 +5825,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .slide-out-right\:\$28 {
@@ -5834,7 +5834,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .slide-out-right\:\$32 {
@@ -5843,7 +5843,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .slide-out-right\:\$36 {
@@ -5852,7 +5852,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .slide-out-right\:\$40 {
@@ -5861,7 +5861,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .slide-out-right\:\$44 {
@@ -5870,7 +5870,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .slide-out-right\:\$48 {
@@ -5879,7 +5879,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .slide-out-right\:\$52 {
@@ -5888,7 +5888,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .slide-out-right\:\$56 {
@@ -5897,7 +5897,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .slide-out-right\:\$60 {
@@ -5906,7 +5906,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .slide-out-right\:\$64 {
@@ -5915,7 +5915,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .slide-out-right\:\$72 {
@@ -5924,7 +5924,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .slide-out-right\:\$80 {
@@ -5933,7 +5933,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .slide-out-right\:\$96 {
@@ -5942,7 +5942,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .slide-out-right\:\$third {
@@ -5951,7 +5951,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn third(&self) -> String {
-    self.append_string_to_skribble_value("third")
+    self.append_value("third")
   }
   /// ```css
   /// .slide-out-right\:\$two-thirds {
@@ -5960,7 +5960,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn two_thirds(&self) -> String {
-    self.append_string_to_skribble_value("twoThirds")
+    self.append_value("twoThirds")
   }
   /// ```css
   /// .slide-out-right\:\$quarter {
@@ -5969,7 +5969,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn quarter(&self) -> String {
-    self.append_string_to_skribble_value("quarter")
+    self.append_value("quarter")
   }
   /// ```css
   /// .slide-out-right\:\$half {
@@ -5978,7 +5978,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn half(&self) -> String {
-    self.append_string_to_skribble_value("half")
+    self.append_value("half")
   }
   /// ```css
   /// .slide-out-right\:\$three-quarters {
@@ -5987,7 +5987,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn three_quarters(&self) -> String {
-    self.append_string_to_skribble_value("threeQuarters")
+    self.append_value("threeQuarters")
   }
 }
 impl GeneratedValueSetSlideOutRight for GeneratedAtomSlideOutRight {}
@@ -6011,7 +6011,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn full(&self) -> String {
-    self.append_string_to_skribble_value("full")
+    self.append_value("full")
   }
   /// ```css
   /// .slide-in-top\:\$0 {
@@ -6020,7 +6020,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .slide-in-top\:\$px {
@@ -6029,7 +6029,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .slide-in-top\:\$0\.5 {
@@ -6038,7 +6038,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .slide-in-top\:\$1 {
@@ -6047,7 +6047,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .slide-in-top\:\$1\.5 {
@@ -6056,7 +6056,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .slide-in-top\:\$2 {
@@ -6065,7 +6065,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .slide-in-top\:\$2\.5 {
@@ -6074,7 +6074,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .slide-in-top\:\$3 {
@@ -6083,7 +6083,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .slide-in-top\:\$3\.5 {
@@ -6092,7 +6092,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
   /// ```css
   /// .slide-in-top\:\$4 {
@@ -6101,7 +6101,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .slide-in-top\:\$5 {
@@ -6110,7 +6110,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .slide-in-top\:\$6 {
@@ -6119,7 +6119,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .slide-in-top\:\$7 {
@@ -6128,7 +6128,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .slide-in-top\:\$8 {
@@ -6137,7 +6137,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .slide-in-top\:\$9 {
@@ -6146,7 +6146,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .slide-in-top\:\$10 {
@@ -6155,7 +6155,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .slide-in-top\:\$11 {
@@ -6164,7 +6164,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .slide-in-top\:\$12 {
@@ -6173,7 +6173,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .slide-in-top\:\$14 {
@@ -6182,7 +6182,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .slide-in-top\:\$16 {
@@ -6191,7 +6191,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .slide-in-top\:\$20 {
@@ -6200,7 +6200,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .slide-in-top\:\$24 {
@@ -6209,7 +6209,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .slide-in-top\:\$28 {
@@ -6218,7 +6218,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .slide-in-top\:\$32 {
@@ -6227,7 +6227,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .slide-in-top\:\$36 {
@@ -6236,7 +6236,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .slide-in-top\:\$40 {
@@ -6245,7 +6245,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .slide-in-top\:\$44 {
@@ -6254,7 +6254,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .slide-in-top\:\$48 {
@@ -6263,7 +6263,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .slide-in-top\:\$52 {
@@ -6272,7 +6272,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .slide-in-top\:\$56 {
@@ -6281,7 +6281,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .slide-in-top\:\$60 {
@@ -6290,7 +6290,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .slide-in-top\:\$64 {
@@ -6299,7 +6299,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .slide-in-top\:\$72 {
@@ -6308,7 +6308,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .slide-in-top\:\$80 {
@@ -6317,7 +6317,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .slide-in-top\:\$96 {
@@ -6326,7 +6326,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .slide-in-top\:\$third {
@@ -6335,7 +6335,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn third(&self) -> String {
-    self.append_string_to_skribble_value("third")
+    self.append_value("third")
   }
   /// ```css
   /// .slide-in-top\:\$two-thirds {
@@ -6344,7 +6344,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn two_thirds(&self) -> String {
-    self.append_string_to_skribble_value("twoThirds")
+    self.append_value("twoThirds")
   }
   /// ```css
   /// .slide-in-top\:\$quarter {
@@ -6353,7 +6353,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn quarter(&self) -> String {
-    self.append_string_to_skribble_value("quarter")
+    self.append_value("quarter")
   }
   /// ```css
   /// .slide-in-top\:\$half {
@@ -6362,7 +6362,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn half(&self) -> String {
-    self.append_string_to_skribble_value("half")
+    self.append_value("half")
   }
   /// ```css
   /// .slide-in-top\:\$three-quarters {
@@ -6371,7 +6371,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn three_quarters(&self) -> String {
-    self.append_string_to_skribble_value("threeQuarters")
+    self.append_value("threeQuarters")
   }
 }
 impl GeneratedValueSetSlideInTop for GeneratedAtomSlideInTop {}
@@ -6395,7 +6395,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn full(&self) -> String {
-    self.append_string_to_skribble_value("full")
+    self.append_value("full")
   }
   /// ```css
   /// .slide-in-bottom\:\$0 {
@@ -6404,7 +6404,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .slide-in-bottom\:\$px {
@@ -6413,7 +6413,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .slide-in-bottom\:\$0\.5 {
@@ -6422,7 +6422,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .slide-in-bottom\:\$1 {
@@ -6431,7 +6431,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .slide-in-bottom\:\$1\.5 {
@@ -6440,7 +6440,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .slide-in-bottom\:\$2 {
@@ -6449,7 +6449,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .slide-in-bottom\:\$2\.5 {
@@ -6458,7 +6458,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .slide-in-bottom\:\$3 {
@@ -6467,7 +6467,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .slide-in-bottom\:\$3\.5 {
@@ -6476,7 +6476,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
   /// ```css
   /// .slide-in-bottom\:\$4 {
@@ -6485,7 +6485,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .slide-in-bottom\:\$5 {
@@ -6494,7 +6494,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .slide-in-bottom\:\$6 {
@@ -6503,7 +6503,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .slide-in-bottom\:\$7 {
@@ -6512,7 +6512,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .slide-in-bottom\:\$8 {
@@ -6521,7 +6521,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .slide-in-bottom\:\$9 {
@@ -6530,7 +6530,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .slide-in-bottom\:\$10 {
@@ -6539,7 +6539,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .slide-in-bottom\:\$11 {
@@ -6548,7 +6548,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .slide-in-bottom\:\$12 {
@@ -6557,7 +6557,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .slide-in-bottom\:\$14 {
@@ -6566,7 +6566,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .slide-in-bottom\:\$16 {
@@ -6575,7 +6575,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .slide-in-bottom\:\$20 {
@@ -6584,7 +6584,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .slide-in-bottom\:\$24 {
@@ -6593,7 +6593,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .slide-in-bottom\:\$28 {
@@ -6602,7 +6602,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .slide-in-bottom\:\$32 {
@@ -6611,7 +6611,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .slide-in-bottom\:\$36 {
@@ -6620,7 +6620,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .slide-in-bottom\:\$40 {
@@ -6629,7 +6629,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .slide-in-bottom\:\$44 {
@@ -6638,7 +6638,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .slide-in-bottom\:\$48 {
@@ -6647,7 +6647,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .slide-in-bottom\:\$52 {
@@ -6656,7 +6656,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .slide-in-bottom\:\$56 {
@@ -6665,7 +6665,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .slide-in-bottom\:\$60 {
@@ -6674,7 +6674,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .slide-in-bottom\:\$64 {
@@ -6683,7 +6683,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .slide-in-bottom\:\$72 {
@@ -6692,7 +6692,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .slide-in-bottom\:\$80 {
@@ -6701,7 +6701,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .slide-in-bottom\:\$96 {
@@ -6710,7 +6710,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .slide-in-bottom\:\$third {
@@ -6719,7 +6719,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn third(&self) -> String {
-    self.append_string_to_skribble_value("third")
+    self.append_value("third")
   }
   /// ```css
   /// .slide-in-bottom\:\$two-thirds {
@@ -6728,7 +6728,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn two_thirds(&self) -> String {
-    self.append_string_to_skribble_value("twoThirds")
+    self.append_value("twoThirds")
   }
   /// ```css
   /// .slide-in-bottom\:\$quarter {
@@ -6737,7 +6737,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn quarter(&self) -> String {
-    self.append_string_to_skribble_value("quarter")
+    self.append_value("quarter")
   }
   /// ```css
   /// .slide-in-bottom\:\$half {
@@ -6746,7 +6746,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn half(&self) -> String {
-    self.append_string_to_skribble_value("half")
+    self.append_value("half")
   }
   /// ```css
   /// .slide-in-bottom\:\$three-quarters {
@@ -6755,7 +6755,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn three_quarters(&self) -> String {
-    self.append_string_to_skribble_value("threeQuarters")
+    self.append_value("threeQuarters")
   }
 }
 impl GeneratedValueSetSlideInBottom for GeneratedAtomSlideInBottom {}
@@ -6779,7 +6779,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn full(&self) -> String {
-    self.append_string_to_skribble_value("full")
+    self.append_value("full")
   }
   /// ```css
   /// .slide-out-top\:\$0 {
@@ -6788,7 +6788,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .slide-out-top\:\$px {
@@ -6797,7 +6797,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .slide-out-top\:\$0\.5 {
@@ -6806,7 +6806,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .slide-out-top\:\$1 {
@@ -6815,7 +6815,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .slide-out-top\:\$1\.5 {
@@ -6824,7 +6824,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .slide-out-top\:\$2 {
@@ -6833,7 +6833,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .slide-out-top\:\$2\.5 {
@@ -6842,7 +6842,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .slide-out-top\:\$3 {
@@ -6851,7 +6851,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .slide-out-top\:\$3\.5 {
@@ -6860,7 +6860,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
   /// ```css
   /// .slide-out-top\:\$4 {
@@ -6869,7 +6869,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .slide-out-top\:\$5 {
@@ -6878,7 +6878,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .slide-out-top\:\$6 {
@@ -6887,7 +6887,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .slide-out-top\:\$7 {
@@ -6896,7 +6896,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .slide-out-top\:\$8 {
@@ -6905,7 +6905,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .slide-out-top\:\$9 {
@@ -6914,7 +6914,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .slide-out-top\:\$10 {
@@ -6923,7 +6923,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .slide-out-top\:\$11 {
@@ -6932,7 +6932,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .slide-out-top\:\$12 {
@@ -6941,7 +6941,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .slide-out-top\:\$14 {
@@ -6950,7 +6950,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .slide-out-top\:\$16 {
@@ -6959,7 +6959,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .slide-out-top\:\$20 {
@@ -6968,7 +6968,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .slide-out-top\:\$24 {
@@ -6977,7 +6977,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .slide-out-top\:\$28 {
@@ -6986,7 +6986,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .slide-out-top\:\$32 {
@@ -6995,7 +6995,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .slide-out-top\:\$36 {
@@ -7004,7 +7004,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .slide-out-top\:\$40 {
@@ -7013,7 +7013,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .slide-out-top\:\$44 {
@@ -7022,7 +7022,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .slide-out-top\:\$48 {
@@ -7031,7 +7031,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .slide-out-top\:\$52 {
@@ -7040,7 +7040,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .slide-out-top\:\$56 {
@@ -7049,7 +7049,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .slide-out-top\:\$60 {
@@ -7058,7 +7058,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .slide-out-top\:\$64 {
@@ -7067,7 +7067,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .slide-out-top\:\$72 {
@@ -7076,7 +7076,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .slide-out-top\:\$80 {
@@ -7085,7 +7085,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .slide-out-top\:\$96 {
@@ -7094,7 +7094,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .slide-out-top\:\$third {
@@ -7103,7 +7103,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn third(&self) -> String {
-    self.append_string_to_skribble_value("third")
+    self.append_value("third")
   }
   /// ```css
   /// .slide-out-top\:\$two-thirds {
@@ -7112,7 +7112,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn two_thirds(&self) -> String {
-    self.append_string_to_skribble_value("twoThirds")
+    self.append_value("twoThirds")
   }
   /// ```css
   /// .slide-out-top\:\$quarter {
@@ -7121,7 +7121,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn quarter(&self) -> String {
-    self.append_string_to_skribble_value("quarter")
+    self.append_value("quarter")
   }
   /// ```css
   /// .slide-out-top\:\$half {
@@ -7130,7 +7130,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn half(&self) -> String {
-    self.append_string_to_skribble_value("half")
+    self.append_value("half")
   }
   /// ```css
   /// .slide-out-top\:\$three-quarters {
@@ -7139,7 +7139,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn three_quarters(&self) -> String {
-    self.append_string_to_skribble_value("threeQuarters")
+    self.append_value("threeQuarters")
   }
 }
 impl GeneratedValueSetSlideOutTop for GeneratedAtomSlideOutTop {}
@@ -7163,7 +7163,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn full(&self) -> String {
-    self.append_string_to_skribble_value("full")
+    self.append_value("full")
   }
   /// ```css
   /// .slide-out-bottom\:\$0 {
@@ -7172,7 +7172,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .slide-out-bottom\:\$px {
@@ -7181,7 +7181,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .slide-out-bottom\:\$0\.5 {
@@ -7190,7 +7190,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .slide-out-bottom\:\$1 {
@@ -7199,7 +7199,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .slide-out-bottom\:\$1\.5 {
@@ -7208,7 +7208,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .slide-out-bottom\:\$2 {
@@ -7217,7 +7217,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .slide-out-bottom\:\$2\.5 {
@@ -7226,7 +7226,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .slide-out-bottom\:\$3 {
@@ -7235,7 +7235,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .slide-out-bottom\:\$3\.5 {
@@ -7244,7 +7244,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
   /// ```css
   /// .slide-out-bottom\:\$4 {
@@ -7253,7 +7253,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .slide-out-bottom\:\$5 {
@@ -7262,7 +7262,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .slide-out-bottom\:\$6 {
@@ -7271,7 +7271,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .slide-out-bottom\:\$7 {
@@ -7280,7 +7280,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .slide-out-bottom\:\$8 {
@@ -7289,7 +7289,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .slide-out-bottom\:\$9 {
@@ -7298,7 +7298,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .slide-out-bottom\:\$10 {
@@ -7307,7 +7307,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .slide-out-bottom\:\$11 {
@@ -7316,7 +7316,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .slide-out-bottom\:\$12 {
@@ -7325,7 +7325,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .slide-out-bottom\:\$14 {
@@ -7334,7 +7334,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .slide-out-bottom\:\$16 {
@@ -7343,7 +7343,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .slide-out-bottom\:\$20 {
@@ -7352,7 +7352,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .slide-out-bottom\:\$24 {
@@ -7361,7 +7361,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .slide-out-bottom\:\$28 {
@@ -7370,7 +7370,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .slide-out-bottom\:\$32 {
@@ -7379,7 +7379,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .slide-out-bottom\:\$36 {
@@ -7388,7 +7388,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .slide-out-bottom\:\$40 {
@@ -7397,7 +7397,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .slide-out-bottom\:\$44 {
@@ -7406,7 +7406,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .slide-out-bottom\:\$48 {
@@ -7415,7 +7415,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .slide-out-bottom\:\$52 {
@@ -7424,7 +7424,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .slide-out-bottom\:\$56 {
@@ -7433,7 +7433,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .slide-out-bottom\:\$60 {
@@ -7442,7 +7442,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .slide-out-bottom\:\$64 {
@@ -7451,7 +7451,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .slide-out-bottom\:\$72 {
@@ -7460,7 +7460,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .slide-out-bottom\:\$80 {
@@ -7469,7 +7469,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .slide-out-bottom\:\$96 {
@@ -7478,7 +7478,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .slide-out-bottom\:\$third {
@@ -7487,7 +7487,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn third(&self) -> String {
-    self.append_string_to_skribble_value("third")
+    self.append_value("third")
   }
   /// ```css
   /// .slide-out-bottom\:\$two-thirds {
@@ -7496,7 +7496,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn two_thirds(&self) -> String {
-    self.append_string_to_skribble_value("twoThirds")
+    self.append_value("twoThirds")
   }
   /// ```css
   /// .slide-out-bottom\:\$quarter {
@@ -7505,7 +7505,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn quarter(&self) -> String {
-    self.append_string_to_skribble_value("quarter")
+    self.append_value("quarter")
   }
   /// ```css
   /// .slide-out-bottom\:\$half {
@@ -7514,7 +7514,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn half(&self) -> String {
-    self.append_string_to_skribble_value("half")
+    self.append_value("half")
   }
   /// ```css
   /// .slide-out-bottom\:\$three-quarters {
@@ -7523,7 +7523,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn three_quarters(&self) -> String {
-    self.append_string_to_skribble_value("threeQuarters")
+    self.append_value("threeQuarters")
   }
 }
 impl GeneratedValueSetSlideOutBottom for GeneratedAtomSlideOutBottom {}
@@ -7548,7 +7548,7 @@ pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .zoom-in\:\$50 {
@@ -7558,7 +7558,7 @@ pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n50(&self) -> String {
-    self.append_string_to_skribble_value("50")
+    self.append_value("50")
   }
   /// ```css
   /// .zoom-in\:\$75 {
@@ -7568,7 +7568,7 @@ pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n75(&self) -> String {
-    self.append_string_to_skribble_value("75")
+    self.append_value("75")
   }
   /// ```css
   /// .zoom-in\:\$90 {
@@ -7578,7 +7578,7 @@ pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n90(&self) -> String {
-    self.append_string_to_skribble_value("90")
+    self.append_value("90")
   }
   /// ```css
   /// .zoom-in\:\$95 {
@@ -7588,7 +7588,7 @@ pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n95(&self) -> String {
-    self.append_string_to_skribble_value("95")
+    self.append_value("95")
   }
   /// ```css
   /// .zoom-in\:\$100 {
@@ -7598,7 +7598,7 @@ pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n100(&self) -> String {
-    self.append_string_to_skribble_value("100")
+    self.append_value("100")
   }
   /// ```css
   /// .zoom-in\:\$105 {
@@ -7608,7 +7608,7 @@ pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n105(&self) -> String {
-    self.append_string_to_skribble_value("105")
+    self.append_value("105")
   }
   /// ```css
   /// .zoom-in\:\$110 {
@@ -7618,7 +7618,7 @@ pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n110(&self) -> String {
-    self.append_string_to_skribble_value("110")
+    self.append_value("110")
   }
   /// ```css
   /// .zoom-in\:\$125 {
@@ -7628,7 +7628,7 @@ pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n125(&self) -> String {
-    self.append_string_to_skribble_value("125")
+    self.append_value("125")
   }
   /// ```css
   /// .zoom-in\:\$150 {
@@ -7638,7 +7638,7 @@ pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n150(&self) -> String {
-    self.append_string_to_skribble_value("150")
+    self.append_value("150")
   }
 }
 impl GeneratedValueSetZoomIn for GeneratedAtomZoomIn {}
@@ -7663,7 +7663,7 @@ pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .zoom-out\:\$50 {
@@ -7673,7 +7673,7 @@ pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n50(&self) -> String {
-    self.append_string_to_skribble_value("50")
+    self.append_value("50")
   }
   /// ```css
   /// .zoom-out\:\$75 {
@@ -7683,7 +7683,7 @@ pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n75(&self) -> String {
-    self.append_string_to_skribble_value("75")
+    self.append_value("75")
   }
   /// ```css
   /// .zoom-out\:\$90 {
@@ -7693,7 +7693,7 @@ pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n90(&self) -> String {
-    self.append_string_to_skribble_value("90")
+    self.append_value("90")
   }
   /// ```css
   /// .zoom-out\:\$95 {
@@ -7703,7 +7703,7 @@ pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n95(&self) -> String {
-    self.append_string_to_skribble_value("95")
+    self.append_value("95")
   }
   /// ```css
   /// .zoom-out\:\$100 {
@@ -7713,7 +7713,7 @@ pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n100(&self) -> String {
-    self.append_string_to_skribble_value("100")
+    self.append_value("100")
   }
   /// ```css
   /// .zoom-out\:\$105 {
@@ -7723,7 +7723,7 @@ pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n105(&self) -> String {
-    self.append_string_to_skribble_value("105")
+    self.append_value("105")
   }
   /// ```css
   /// .zoom-out\:\$110 {
@@ -7733,7 +7733,7 @@ pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n110(&self) -> String {
-    self.append_string_to_skribble_value("110")
+    self.append_value("110")
   }
   /// ```css
   /// .zoom-out\:\$125 {
@@ -7743,7 +7743,7 @@ pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n125(&self) -> String {
-    self.append_string_to_skribble_value("125")
+    self.append_value("125")
   }
   /// ```css
   /// .zoom-out\:\$150 {
@@ -7753,7 +7753,7 @@ pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n150(&self) -> String {
-    self.append_string_to_skribble_value("150")
+    self.append_value("150")
   }
 }
 impl GeneratedValueSetZoomOut for GeneratedAtomZoomOut {}
@@ -7777,7 +7777,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .animate-duration\:\$75 {
@@ -7786,7 +7786,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n75(&self) -> String {
-    self.append_string_to_skribble_value("75")
+    self.append_value("75")
   }
   /// ```css
   /// .animate-duration\:\$100 {
@@ -7795,7 +7795,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n100(&self) -> String {
-    self.append_string_to_skribble_value("100")
+    self.append_value("100")
   }
   /// ```css
   /// .animate-duration\:\$150 {
@@ -7804,7 +7804,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n150(&self) -> String {
-    self.append_string_to_skribble_value("150")
+    self.append_value("150")
   }
   /// ```css
   /// .animate-duration\:\$200 {
@@ -7813,7 +7813,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n200(&self) -> String {
-    self.append_string_to_skribble_value("200")
+    self.append_value("200")
   }
   /// ```css
   /// .animate-duration\:\$300 {
@@ -7822,7 +7822,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n300(&self) -> String {
-    self.append_string_to_skribble_value("300")
+    self.append_value("300")
   }
   /// ```css
   /// .animate-duration\:\$500 {
@@ -7831,7 +7831,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n500(&self) -> String {
-    self.append_string_to_skribble_value("500")
+    self.append_value("500")
   }
   /// ```css
   /// .animate-duration\:\$700 {
@@ -7840,7 +7840,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n700(&self) -> String {
-    self.append_string_to_skribble_value("700")
+    self.append_value("700")
   }
   /// ```css
   /// .animate-duration\:\$1000 {
@@ -7849,7 +7849,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1000(&self) -> String {
-    self.append_string_to_skribble_value("1000")
+    self.append_value("1000")
   }
   /// ```css
   /// .animate-duration\:\$1500 {
@@ -7858,7 +7858,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1500(&self) -> String {
-    self.append_string_to_skribble_value("1500")
+    self.append_value("1500")
   }
   /// ```css
   /// .animate-duration\:\$2000 {
@@ -7867,7 +7867,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2000(&self) -> String {
-    self.append_string_to_skribble_value("2000")
+    self.append_value("2000")
   }
 }
 impl GeneratedValueSetAnimateDuration for GeneratedAtomAnimateDuration {}
@@ -7891,7 +7891,7 @@ pub trait GeneratedValueSetAnimateEasing: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn linear(&self) -> String {
-    self.append_string_to_skribble_value("linear")
+    self.append_value("linear")
   }
   /// ```css
   /// .animate-easing\:\$in {
@@ -7900,7 +7900,7 @@ pub trait GeneratedValueSetAnimateEasing: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn r#in(&self) -> String {
-    self.append_string_to_skribble_value("in")
+    self.append_value("in")
   }
   /// ```css
   /// .animate-easing\:\$out {
@@ -7909,7 +7909,7 @@ pub trait GeneratedValueSetAnimateEasing: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn out(&self) -> String {
-    self.append_string_to_skribble_value("out")
+    self.append_value("out")
   }
   /// ```css
   /// .animate-easing\:\$in-out {
@@ -7918,7 +7918,7 @@ pub trait GeneratedValueSetAnimateEasing: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn in_out(&self) -> String {
-    self.append_string_to_skribble_value("inOut")
+    self.append_value("inOut")
   }
 }
 impl GeneratedValueSetAnimateEasing for GeneratedAtomAnimateEasing {}
@@ -7942,7 +7942,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .animate-delay\:\$75 {
@@ -7951,7 +7951,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n75(&self) -> String {
-    self.append_string_to_skribble_value("75")
+    self.append_value("75")
   }
   /// ```css
   /// .animate-delay\:\$100 {
@@ -7960,7 +7960,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n100(&self) -> String {
-    self.append_string_to_skribble_value("100")
+    self.append_value("100")
   }
   /// ```css
   /// .animate-delay\:\$150 {
@@ -7969,7 +7969,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n150(&self) -> String {
-    self.append_string_to_skribble_value("150")
+    self.append_value("150")
   }
   /// ```css
   /// .animate-delay\:\$200 {
@@ -7978,7 +7978,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n200(&self) -> String {
-    self.append_string_to_skribble_value("200")
+    self.append_value("200")
   }
   /// ```css
   /// .animate-delay\:\$300 {
@@ -7987,7 +7987,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n300(&self) -> String {
-    self.append_string_to_skribble_value("300")
+    self.append_value("300")
   }
   /// ```css
   /// .animate-delay\:\$500 {
@@ -7996,7 +7996,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n500(&self) -> String {
-    self.append_string_to_skribble_value("500")
+    self.append_value("500")
   }
   /// ```css
   /// .animate-delay\:\$700 {
@@ -8005,7 +8005,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n700(&self) -> String {
-    self.append_string_to_skribble_value("700")
+    self.append_value("700")
   }
   /// ```css
   /// .animate-delay\:\$1000 {
@@ -8014,7 +8014,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1000(&self) -> String {
-    self.append_string_to_skribble_value("1000")
+    self.append_value("1000")
   }
   /// ```css
   /// .animate-delay\:\$1500 {
@@ -8023,7 +8023,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1500(&self) -> String {
-    self.append_string_to_skribble_value("1500")
+    self.append_value("1500")
   }
   /// ```css
   /// .animate-delay\:\$2000 {
@@ -8032,7 +8032,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2000(&self) -> String {
-    self.append_string_to_skribble_value("2000")
+    self.append_value("2000")
   }
 }
 impl GeneratedValueSetAnimateDelay for GeneratedAtomAnimateDelay {}
@@ -8056,7 +8056,7 @@ pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .animate-repeat\:\$0\.5 {
@@ -8065,7 +8065,7 @@ pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .animate-repeat\:\$1 {
@@ -8074,7 +8074,7 @@ pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .animate-repeat\:\$2 {
@@ -8083,7 +8083,7 @@ pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .animate-repeat\:\$3 {
@@ -8092,7 +8092,7 @@ pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .animate-repeat\:\$infinite {
@@ -8101,7 +8101,7 @@ pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn infinite(&self) -> String {
-    self.append_string_to_skribble_value("infinite")
+    self.append_value("infinite")
   }
   /// ```css
   /// .animate-repeat\:\$in {
@@ -8110,7 +8110,7 @@ pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn r#in(&self) -> String {
-    self.append_string_to_skribble_value("in")
+    self.append_value("in")
   }
   /// ```css
   /// .animate-repeat\:\$out {
@@ -8119,7 +8119,7 @@ pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn out(&self) -> String {
-    self.append_string_to_skribble_value("out")
+    self.append_value("out")
   }
   /// ```css
   /// .animate-repeat\:\$in-out {
@@ -8128,7 +8128,7 @@ pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn in_out(&self) -> String {
-    self.append_string_to_skribble_value("inOut")
+    self.append_value("inOut")
   }
 }
 impl GeneratedValueSetAnimateRepeat for GeneratedAtomAnimateRepeat {}
@@ -8152,7 +8152,7 @@ pub trait GeneratedValueSetAnimateDirection: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn normal(&self) -> String {
-    self.append_string_to_skribble_value("normal")
+    self.append_value("normal")
   }
   /// ```css
   /// .animate-direction\:\$reverse {
@@ -8161,7 +8161,7 @@ pub trait GeneratedValueSetAnimateDirection: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn reverse(&self) -> String {
-    self.append_string_to_skribble_value("reverse")
+    self.append_value("reverse")
   }
   /// ```css
   /// .animate-direction\:\$alt {
@@ -8170,7 +8170,7 @@ pub trait GeneratedValueSetAnimateDirection: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn alt(&self) -> String {
-    self.append_string_to_skribble_value("alt")
+    self.append_value("alt")
   }
   /// ```css
   /// .animate-direction\:\$alt-reverse {
@@ -8179,7 +8179,7 @@ pub trait GeneratedValueSetAnimateDirection: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn alt_reverse(&self) -> String {
-    self.append_string_to_skribble_value("altReverse")
+    self.append_value("altReverse")
   }
 }
 impl GeneratedValueSetAnimateDirection for GeneratedAtomAnimateDirection {}
@@ -8203,7 +8203,7 @@ pub trait GeneratedValueSetAnimateFillMode: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn none(&self) -> String {
-    self.append_string_to_skribble_value("none")
+    self.append_value("none")
   }
   /// ```css
   /// .animate-fill-mode\:\$forwards {
@@ -8212,7 +8212,7 @@ pub trait GeneratedValueSetAnimateFillMode: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn forwards(&self) -> String {
-    self.append_string_to_skribble_value("forwards")
+    self.append_value("forwards")
   }
   /// ```css
   /// .animate-fill-mode\:\$backwards {
@@ -8221,7 +8221,7 @@ pub trait GeneratedValueSetAnimateFillMode: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn backwards(&self) -> String {
-    self.append_string_to_skribble_value("backwards")
+    self.append_value("backwards")
   }
   /// ```css
   /// .animate-fill-mode\:\$both {
@@ -8230,7 +8230,7 @@ pub trait GeneratedValueSetAnimateFillMode: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn both(&self) -> String {
-    self.append_string_to_skribble_value("both")
+    self.append_value("both")
   }
 }
 impl GeneratedValueSetAnimateFillMode for GeneratedAtomAnimateFillMode {}
@@ -8254,7 +8254,7 @@ pub trait GeneratedValueSetAnimateState: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn running(&self) -> String {
-    self.append_string_to_skribble_value("running")
+    self.append_value("running")
   }
   /// ```css
   /// .animate-state\:\$paused {
@@ -8263,7 +8263,7 @@ pub trait GeneratedValueSetAnimateState: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn paused(&self) -> String {
-    self.append_string_to_skribble_value("paused")
+    self.append_value("paused")
   }
 }
 impl GeneratedValueSetAnimateState for GeneratedAtomAnimateState {}
@@ -8287,7 +8287,7 @@ pub trait GeneratedValueSetZoom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .zoom\:\$50 {
@@ -8296,7 +8296,7 @@ pub trait GeneratedValueSetZoom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n50(&self) -> String {
-    self.append_string_to_skribble_value("50")
+    self.append_value("50")
   }
   /// ```css
   /// .zoom\:\$75 {
@@ -8305,7 +8305,7 @@ pub trait GeneratedValueSetZoom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n75(&self) -> String {
-    self.append_string_to_skribble_value("75")
+    self.append_value("75")
   }
   /// ```css
   /// .zoom\:\$90 {
@@ -8314,7 +8314,7 @@ pub trait GeneratedValueSetZoom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n90(&self) -> String {
-    self.append_string_to_skribble_value("90")
+    self.append_value("90")
   }
   /// ```css
   /// .zoom\:\$95 {
@@ -8323,7 +8323,7 @@ pub trait GeneratedValueSetZoom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n95(&self) -> String {
-    self.append_string_to_skribble_value("95")
+    self.append_value("95")
   }
   /// ```css
   /// .zoom\:\$100 {
@@ -8332,7 +8332,7 @@ pub trait GeneratedValueSetZoom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n100(&self) -> String {
-    self.append_string_to_skribble_value("100")
+    self.append_value("100")
   }
   /// ```css
   /// .zoom\:\$105 {
@@ -8341,7 +8341,7 @@ pub trait GeneratedValueSetZoom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n105(&self) -> String {
-    self.append_string_to_skribble_value("105")
+    self.append_value("105")
   }
   /// ```css
   /// .zoom\:\$110 {
@@ -8350,7 +8350,7 @@ pub trait GeneratedValueSetZoom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n110(&self) -> String {
-    self.append_string_to_skribble_value("110")
+    self.append_value("110")
   }
   /// ```css
   /// .zoom\:\$125 {
@@ -8359,7 +8359,7 @@ pub trait GeneratedValueSetZoom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n125(&self) -> String {
-    self.append_string_to_skribble_value("125")
+    self.append_value("125")
   }
   /// ```css
   /// .zoom\:\$150 {
@@ -8368,7 +8368,7 @@ pub trait GeneratedValueSetZoom: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n150(&self) -> String {
-    self.append_string_to_skribble_value("150")
+    self.append_value("150")
   }
 }
 impl GeneratedValueSetZoom for GeneratedAtomZoom {}
@@ -8392,7 +8392,7 @@ pub trait GeneratedValueSetFont: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn sans(&self) -> String {
-    self.append_string_to_skribble_value("sans")
+    self.append_value("sans")
   }
   /// ```css
   /// .font\:\$serif {
@@ -8401,7 +8401,7 @@ pub trait GeneratedValueSetFont: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn serif(&self) -> String {
-    self.append_string_to_skribble_value("serif")
+    self.append_value("serif")
   }
   /// ```css
   /// .font\:\$mono {
@@ -8410,7 +8410,7 @@ pub trait GeneratedValueSetFont: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn mono(&self) -> String {
-    self.append_string_to_skribble_value("mono")
+    self.append_value("mono")
   }
 }
 impl GeneratedValueSetFont for GeneratedAtomFont {}
@@ -8434,7 +8434,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .p\:\$1 {
@@ -8443,7 +8443,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .p\:\$2 {
@@ -8452,7 +8452,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .p\:\$3 {
@@ -8461,7 +8461,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .p\:\$4 {
@@ -8470,7 +8470,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .p\:\$5 {
@@ -8479,7 +8479,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .p\:\$6 {
@@ -8488,7 +8488,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .p\:\$7 {
@@ -8497,7 +8497,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .p\:\$8 {
@@ -8506,7 +8506,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .p\:\$9 {
@@ -8515,7 +8515,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .p\:\$10 {
@@ -8524,7 +8524,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .p\:\$11 {
@@ -8533,7 +8533,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .p\:\$12 {
@@ -8542,7 +8542,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .p\:\$14 {
@@ -8551,7 +8551,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .p\:\$16 {
@@ -8560,7 +8560,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .p\:\$20 {
@@ -8569,7 +8569,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .p\:\$24 {
@@ -8578,7 +8578,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .p\:\$28 {
@@ -8587,7 +8587,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .p\:\$32 {
@@ -8596,7 +8596,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .p\:\$36 {
@@ -8605,7 +8605,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .p\:\$40 {
@@ -8614,7 +8614,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .p\:\$44 {
@@ -8623,7 +8623,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .p\:\$48 {
@@ -8632,7 +8632,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .p\:\$52 {
@@ -8641,7 +8641,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .p\:\$56 {
@@ -8650,7 +8650,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .p\:\$60 {
@@ -8659,7 +8659,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .p\:\$64 {
@@ -8668,7 +8668,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .p\:\$72 {
@@ -8677,7 +8677,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .p\:\$80 {
@@ -8686,7 +8686,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .p\:\$96 {
@@ -8695,7 +8695,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .p\:\$px {
@@ -8704,7 +8704,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .p\:\$0\.5 {
@@ -8713,7 +8713,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .p\:\$1\.5 {
@@ -8722,7 +8722,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .p\:\$2\.5 {
@@ -8731,7 +8731,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .p\:\$3\.5 {
@@ -8740,7 +8740,7 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetP for GeneratedAtomP {}
@@ -8765,7 +8765,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .py\:\$1 {
@@ -8775,7 +8775,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .py\:\$2 {
@@ -8785,7 +8785,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .py\:\$3 {
@@ -8795,7 +8795,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .py\:\$4 {
@@ -8805,7 +8805,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .py\:\$5 {
@@ -8815,7 +8815,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .py\:\$6 {
@@ -8825,7 +8825,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .py\:\$7 {
@@ -8835,7 +8835,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .py\:\$8 {
@@ -8845,7 +8845,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .py\:\$9 {
@@ -8855,7 +8855,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .py\:\$10 {
@@ -8865,7 +8865,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .py\:\$11 {
@@ -8875,7 +8875,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .py\:\$12 {
@@ -8885,7 +8885,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .py\:\$14 {
@@ -8895,7 +8895,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .py\:\$16 {
@@ -8905,7 +8905,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .py\:\$20 {
@@ -8915,7 +8915,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .py\:\$24 {
@@ -8925,7 +8925,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .py\:\$28 {
@@ -8935,7 +8935,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .py\:\$32 {
@@ -8945,7 +8945,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .py\:\$36 {
@@ -8955,7 +8955,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .py\:\$40 {
@@ -8965,7 +8965,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .py\:\$44 {
@@ -8975,7 +8975,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .py\:\$48 {
@@ -8985,7 +8985,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .py\:\$52 {
@@ -8995,7 +8995,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .py\:\$56 {
@@ -9005,7 +9005,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .py\:\$60 {
@@ -9015,7 +9015,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .py\:\$64 {
@@ -9025,7 +9025,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .py\:\$72 {
@@ -9035,7 +9035,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .py\:\$80 {
@@ -9045,7 +9045,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .py\:\$96 {
@@ -9055,7 +9055,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .py\:\$px {
@@ -9065,7 +9065,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .py\:\$0\.5 {
@@ -9075,7 +9075,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .py\:\$1\.5 {
@@ -9085,7 +9085,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .py\:\$2\.5 {
@@ -9095,7 +9095,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .py\:\$3\.5 {
@@ -9105,7 +9105,7 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetPy for GeneratedAtomPy {}
@@ -9130,7 +9130,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .px\:\$1 {
@@ -9140,7 +9140,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .px\:\$2 {
@@ -9150,7 +9150,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .px\:\$3 {
@@ -9160,7 +9160,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .px\:\$4 {
@@ -9170,7 +9170,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .px\:\$5 {
@@ -9180,7 +9180,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .px\:\$6 {
@@ -9190,7 +9190,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .px\:\$7 {
@@ -9200,7 +9200,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .px\:\$8 {
@@ -9210,7 +9210,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .px\:\$9 {
@@ -9220,7 +9220,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .px\:\$10 {
@@ -9230,7 +9230,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .px\:\$11 {
@@ -9240,7 +9240,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .px\:\$12 {
@@ -9250,7 +9250,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .px\:\$14 {
@@ -9260,7 +9260,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .px\:\$16 {
@@ -9270,7 +9270,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .px\:\$20 {
@@ -9280,7 +9280,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .px\:\$24 {
@@ -9290,7 +9290,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .px\:\$28 {
@@ -9300,7 +9300,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .px\:\$32 {
@@ -9310,7 +9310,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .px\:\$36 {
@@ -9320,7 +9320,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .px\:\$40 {
@@ -9330,7 +9330,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .px\:\$44 {
@@ -9340,7 +9340,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .px\:\$48 {
@@ -9350,7 +9350,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .px\:\$52 {
@@ -9360,7 +9360,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .px\:\$56 {
@@ -9370,7 +9370,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .px\:\$60 {
@@ -9380,7 +9380,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .px\:\$64 {
@@ -9390,7 +9390,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .px\:\$72 {
@@ -9400,7 +9400,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .px\:\$80 {
@@ -9410,7 +9410,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .px\:\$96 {
@@ -9420,7 +9420,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .px\:\$px {
@@ -9430,7 +9430,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .px\:\$0\.5 {
@@ -9440,7 +9440,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .px\:\$1\.5 {
@@ -9450,7 +9450,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .px\:\$2\.5 {
@@ -9460,7 +9460,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .px\:\$3\.5 {
@@ -9470,7 +9470,7 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetPx for GeneratedAtomPx {}
@@ -9494,7 +9494,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .pt\:\$1 {
@@ -9503,7 +9503,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .pt\:\$2 {
@@ -9512,7 +9512,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .pt\:\$3 {
@@ -9521,7 +9521,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .pt\:\$4 {
@@ -9530,7 +9530,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .pt\:\$5 {
@@ -9539,7 +9539,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .pt\:\$6 {
@@ -9548,7 +9548,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .pt\:\$7 {
@@ -9557,7 +9557,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .pt\:\$8 {
@@ -9566,7 +9566,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .pt\:\$9 {
@@ -9575,7 +9575,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .pt\:\$10 {
@@ -9584,7 +9584,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .pt\:\$11 {
@@ -9593,7 +9593,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .pt\:\$12 {
@@ -9602,7 +9602,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .pt\:\$14 {
@@ -9611,7 +9611,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .pt\:\$16 {
@@ -9620,7 +9620,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .pt\:\$20 {
@@ -9629,7 +9629,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .pt\:\$24 {
@@ -9638,7 +9638,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .pt\:\$28 {
@@ -9647,7 +9647,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .pt\:\$32 {
@@ -9656,7 +9656,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .pt\:\$36 {
@@ -9665,7 +9665,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .pt\:\$40 {
@@ -9674,7 +9674,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .pt\:\$44 {
@@ -9683,7 +9683,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .pt\:\$48 {
@@ -9692,7 +9692,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .pt\:\$52 {
@@ -9701,7 +9701,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .pt\:\$56 {
@@ -9710,7 +9710,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .pt\:\$60 {
@@ -9719,7 +9719,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .pt\:\$64 {
@@ -9728,7 +9728,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .pt\:\$72 {
@@ -9737,7 +9737,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .pt\:\$80 {
@@ -9746,7 +9746,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .pt\:\$96 {
@@ -9755,7 +9755,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .pt\:\$px {
@@ -9764,7 +9764,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .pt\:\$0\.5 {
@@ -9773,7 +9773,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .pt\:\$1\.5 {
@@ -9782,7 +9782,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .pt\:\$2\.5 {
@@ -9791,7 +9791,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .pt\:\$3\.5 {
@@ -9800,7 +9800,7 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetPt for GeneratedAtomPt {}
@@ -9824,7 +9824,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .pr\:\$1 {
@@ -9833,7 +9833,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .pr\:\$2 {
@@ -9842,7 +9842,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .pr\:\$3 {
@@ -9851,7 +9851,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .pr\:\$4 {
@@ -9860,7 +9860,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .pr\:\$5 {
@@ -9869,7 +9869,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .pr\:\$6 {
@@ -9878,7 +9878,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .pr\:\$7 {
@@ -9887,7 +9887,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .pr\:\$8 {
@@ -9896,7 +9896,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .pr\:\$9 {
@@ -9905,7 +9905,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .pr\:\$10 {
@@ -9914,7 +9914,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .pr\:\$11 {
@@ -9923,7 +9923,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .pr\:\$12 {
@@ -9932,7 +9932,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .pr\:\$14 {
@@ -9941,7 +9941,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .pr\:\$16 {
@@ -9950,7 +9950,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .pr\:\$20 {
@@ -9959,7 +9959,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .pr\:\$24 {
@@ -9968,7 +9968,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .pr\:\$28 {
@@ -9977,7 +9977,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .pr\:\$32 {
@@ -9986,7 +9986,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .pr\:\$36 {
@@ -9995,7 +9995,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .pr\:\$40 {
@@ -10004,7 +10004,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .pr\:\$44 {
@@ -10013,7 +10013,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .pr\:\$48 {
@@ -10022,7 +10022,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .pr\:\$52 {
@@ -10031,7 +10031,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .pr\:\$56 {
@@ -10040,7 +10040,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .pr\:\$60 {
@@ -10049,7 +10049,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .pr\:\$64 {
@@ -10058,7 +10058,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .pr\:\$72 {
@@ -10067,7 +10067,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .pr\:\$80 {
@@ -10076,7 +10076,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .pr\:\$96 {
@@ -10085,7 +10085,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .pr\:\$px {
@@ -10094,7 +10094,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .pr\:\$0\.5 {
@@ -10103,7 +10103,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .pr\:\$1\.5 {
@@ -10112,7 +10112,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .pr\:\$2\.5 {
@@ -10121,7 +10121,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .pr\:\$3\.5 {
@@ -10130,7 +10130,7 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetPr for GeneratedAtomPr {}
@@ -10154,7 +10154,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .pb\:\$1 {
@@ -10163,7 +10163,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .pb\:\$2 {
@@ -10172,7 +10172,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .pb\:\$3 {
@@ -10181,7 +10181,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .pb\:\$4 {
@@ -10190,7 +10190,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .pb\:\$5 {
@@ -10199,7 +10199,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .pb\:\$6 {
@@ -10208,7 +10208,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .pb\:\$7 {
@@ -10217,7 +10217,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .pb\:\$8 {
@@ -10226,7 +10226,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .pb\:\$9 {
@@ -10235,7 +10235,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .pb\:\$10 {
@@ -10244,7 +10244,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .pb\:\$11 {
@@ -10253,7 +10253,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .pb\:\$12 {
@@ -10262,7 +10262,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .pb\:\$14 {
@@ -10271,7 +10271,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .pb\:\$16 {
@@ -10280,7 +10280,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .pb\:\$20 {
@@ -10289,7 +10289,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .pb\:\$24 {
@@ -10298,7 +10298,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .pb\:\$28 {
@@ -10307,7 +10307,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .pb\:\$32 {
@@ -10316,7 +10316,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .pb\:\$36 {
@@ -10325,7 +10325,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .pb\:\$40 {
@@ -10334,7 +10334,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .pb\:\$44 {
@@ -10343,7 +10343,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .pb\:\$48 {
@@ -10352,7 +10352,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .pb\:\$52 {
@@ -10361,7 +10361,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .pb\:\$56 {
@@ -10370,7 +10370,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .pb\:\$60 {
@@ -10379,7 +10379,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .pb\:\$64 {
@@ -10388,7 +10388,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .pb\:\$72 {
@@ -10397,7 +10397,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .pb\:\$80 {
@@ -10406,7 +10406,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .pb\:\$96 {
@@ -10415,7 +10415,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .pb\:\$px {
@@ -10424,7 +10424,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .pb\:\$0\.5 {
@@ -10433,7 +10433,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .pb\:\$1\.5 {
@@ -10442,7 +10442,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .pb\:\$2\.5 {
@@ -10451,7 +10451,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .pb\:\$3\.5 {
@@ -10460,7 +10460,7 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetPb for GeneratedAtomPb {}
@@ -10484,7 +10484,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .pl\:\$1 {
@@ -10493,7 +10493,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .pl\:\$2 {
@@ -10502,7 +10502,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .pl\:\$3 {
@@ -10511,7 +10511,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .pl\:\$4 {
@@ -10520,7 +10520,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .pl\:\$5 {
@@ -10529,7 +10529,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .pl\:\$6 {
@@ -10538,7 +10538,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .pl\:\$7 {
@@ -10547,7 +10547,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .pl\:\$8 {
@@ -10556,7 +10556,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .pl\:\$9 {
@@ -10565,7 +10565,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .pl\:\$10 {
@@ -10574,7 +10574,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .pl\:\$11 {
@@ -10583,7 +10583,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .pl\:\$12 {
@@ -10592,7 +10592,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .pl\:\$14 {
@@ -10601,7 +10601,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .pl\:\$16 {
@@ -10610,7 +10610,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .pl\:\$20 {
@@ -10619,7 +10619,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .pl\:\$24 {
@@ -10628,7 +10628,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .pl\:\$28 {
@@ -10637,7 +10637,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .pl\:\$32 {
@@ -10646,7 +10646,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .pl\:\$36 {
@@ -10655,7 +10655,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .pl\:\$40 {
@@ -10664,7 +10664,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .pl\:\$44 {
@@ -10673,7 +10673,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .pl\:\$48 {
@@ -10682,7 +10682,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .pl\:\$52 {
@@ -10691,7 +10691,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .pl\:\$56 {
@@ -10700,7 +10700,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .pl\:\$60 {
@@ -10709,7 +10709,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .pl\:\$64 {
@@ -10718,7 +10718,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .pl\:\$72 {
@@ -10727,7 +10727,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .pl\:\$80 {
@@ -10736,7 +10736,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .pl\:\$96 {
@@ -10745,7 +10745,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .pl\:\$px {
@@ -10754,7 +10754,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .pl\:\$0\.5 {
@@ -10763,7 +10763,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .pl\:\$1\.5 {
@@ -10772,7 +10772,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .pl\:\$2\.5 {
@@ -10781,7 +10781,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .pl\:\$3\.5 {
@@ -10790,7 +10790,7 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetPl for GeneratedAtomPl {}
@@ -10814,7 +10814,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .pbl\:\$1 {
@@ -10823,7 +10823,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .pbl\:\$2 {
@@ -10832,7 +10832,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .pbl\:\$3 {
@@ -10841,7 +10841,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .pbl\:\$4 {
@@ -10850,7 +10850,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .pbl\:\$5 {
@@ -10859,7 +10859,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .pbl\:\$6 {
@@ -10868,7 +10868,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .pbl\:\$7 {
@@ -10877,7 +10877,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .pbl\:\$8 {
@@ -10886,7 +10886,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .pbl\:\$9 {
@@ -10895,7 +10895,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .pbl\:\$10 {
@@ -10904,7 +10904,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .pbl\:\$11 {
@@ -10913,7 +10913,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .pbl\:\$12 {
@@ -10922,7 +10922,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .pbl\:\$14 {
@@ -10931,7 +10931,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .pbl\:\$16 {
@@ -10940,7 +10940,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .pbl\:\$20 {
@@ -10949,7 +10949,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .pbl\:\$24 {
@@ -10958,7 +10958,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .pbl\:\$28 {
@@ -10967,7 +10967,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .pbl\:\$32 {
@@ -10976,7 +10976,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .pbl\:\$36 {
@@ -10985,7 +10985,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .pbl\:\$40 {
@@ -10994,7 +10994,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .pbl\:\$44 {
@@ -11003,7 +11003,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .pbl\:\$48 {
@@ -11012,7 +11012,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .pbl\:\$52 {
@@ -11021,7 +11021,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .pbl\:\$56 {
@@ -11030,7 +11030,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .pbl\:\$60 {
@@ -11039,7 +11039,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .pbl\:\$64 {
@@ -11048,7 +11048,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .pbl\:\$72 {
@@ -11057,7 +11057,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .pbl\:\$80 {
@@ -11066,7 +11066,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .pbl\:\$96 {
@@ -11075,7 +11075,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .pbl\:\$px {
@@ -11084,7 +11084,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .pbl\:\$0\.5 {
@@ -11093,7 +11093,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .pbl\:\$1\.5 {
@@ -11102,7 +11102,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .pbl\:\$2\.5 {
@@ -11111,7 +11111,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .pbl\:\$3\.5 {
@@ -11120,7 +11120,7 @@ pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetPbl for GeneratedAtomPbl {}
@@ -11144,7 +11144,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .pbls\:\$1 {
@@ -11153,7 +11153,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .pbls\:\$2 {
@@ -11162,7 +11162,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .pbls\:\$3 {
@@ -11171,7 +11171,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .pbls\:\$4 {
@@ -11180,7 +11180,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .pbls\:\$5 {
@@ -11189,7 +11189,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .pbls\:\$6 {
@@ -11198,7 +11198,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .pbls\:\$7 {
@@ -11207,7 +11207,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .pbls\:\$8 {
@@ -11216,7 +11216,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .pbls\:\$9 {
@@ -11225,7 +11225,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .pbls\:\$10 {
@@ -11234,7 +11234,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .pbls\:\$11 {
@@ -11243,7 +11243,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .pbls\:\$12 {
@@ -11252,7 +11252,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .pbls\:\$14 {
@@ -11261,7 +11261,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .pbls\:\$16 {
@@ -11270,7 +11270,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .pbls\:\$20 {
@@ -11279,7 +11279,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .pbls\:\$24 {
@@ -11288,7 +11288,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .pbls\:\$28 {
@@ -11297,7 +11297,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .pbls\:\$32 {
@@ -11306,7 +11306,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .pbls\:\$36 {
@@ -11315,7 +11315,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .pbls\:\$40 {
@@ -11324,7 +11324,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .pbls\:\$44 {
@@ -11333,7 +11333,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .pbls\:\$48 {
@@ -11342,7 +11342,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .pbls\:\$52 {
@@ -11351,7 +11351,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .pbls\:\$56 {
@@ -11360,7 +11360,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .pbls\:\$60 {
@@ -11369,7 +11369,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .pbls\:\$64 {
@@ -11378,7 +11378,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .pbls\:\$72 {
@@ -11387,7 +11387,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .pbls\:\$80 {
@@ -11396,7 +11396,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .pbls\:\$96 {
@@ -11405,7 +11405,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .pbls\:\$px {
@@ -11414,7 +11414,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .pbls\:\$0\.5 {
@@ -11423,7 +11423,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .pbls\:\$1\.5 {
@@ -11432,7 +11432,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .pbls\:\$2\.5 {
@@ -11441,7 +11441,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .pbls\:\$3\.5 {
@@ -11450,7 +11450,7 @@ pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetPbls for GeneratedAtomPbls {}
@@ -11474,7 +11474,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .pble\:\$1 {
@@ -11483,7 +11483,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .pble\:\$2 {
@@ -11492,7 +11492,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .pble\:\$3 {
@@ -11501,7 +11501,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .pble\:\$4 {
@@ -11510,7 +11510,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .pble\:\$5 {
@@ -11519,7 +11519,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .pble\:\$6 {
@@ -11528,7 +11528,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .pble\:\$7 {
@@ -11537,7 +11537,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .pble\:\$8 {
@@ -11546,7 +11546,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .pble\:\$9 {
@@ -11555,7 +11555,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .pble\:\$10 {
@@ -11564,7 +11564,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .pble\:\$11 {
@@ -11573,7 +11573,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .pble\:\$12 {
@@ -11582,7 +11582,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .pble\:\$14 {
@@ -11591,7 +11591,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .pble\:\$16 {
@@ -11600,7 +11600,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .pble\:\$20 {
@@ -11609,7 +11609,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .pble\:\$24 {
@@ -11618,7 +11618,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .pble\:\$28 {
@@ -11627,7 +11627,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .pble\:\$32 {
@@ -11636,7 +11636,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .pble\:\$36 {
@@ -11645,7 +11645,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .pble\:\$40 {
@@ -11654,7 +11654,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .pble\:\$44 {
@@ -11663,7 +11663,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .pble\:\$48 {
@@ -11672,7 +11672,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .pble\:\$52 {
@@ -11681,7 +11681,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .pble\:\$56 {
@@ -11690,7 +11690,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .pble\:\$60 {
@@ -11699,7 +11699,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .pble\:\$64 {
@@ -11708,7 +11708,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .pble\:\$72 {
@@ -11717,7 +11717,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .pble\:\$80 {
@@ -11726,7 +11726,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .pble\:\$96 {
@@ -11735,7 +11735,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .pble\:\$px {
@@ -11744,7 +11744,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .pble\:\$0\.5 {
@@ -11753,7 +11753,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .pble\:\$1\.5 {
@@ -11762,7 +11762,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .pble\:\$2\.5 {
@@ -11771,7 +11771,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .pble\:\$3\.5 {
@@ -11780,7 +11780,7 @@ pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetPble for GeneratedAtomPble {}
@@ -11804,7 +11804,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .pin\:\$1 {
@@ -11813,7 +11813,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .pin\:\$2 {
@@ -11822,7 +11822,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .pin\:\$3 {
@@ -11831,7 +11831,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .pin\:\$4 {
@@ -11840,7 +11840,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .pin\:\$5 {
@@ -11849,7 +11849,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .pin\:\$6 {
@@ -11858,7 +11858,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .pin\:\$7 {
@@ -11867,7 +11867,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .pin\:\$8 {
@@ -11876,7 +11876,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .pin\:\$9 {
@@ -11885,7 +11885,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .pin\:\$10 {
@@ -11894,7 +11894,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .pin\:\$11 {
@@ -11903,7 +11903,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .pin\:\$12 {
@@ -11912,7 +11912,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .pin\:\$14 {
@@ -11921,7 +11921,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .pin\:\$16 {
@@ -11930,7 +11930,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .pin\:\$20 {
@@ -11939,7 +11939,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .pin\:\$24 {
@@ -11948,7 +11948,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .pin\:\$28 {
@@ -11957,7 +11957,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .pin\:\$32 {
@@ -11966,7 +11966,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .pin\:\$36 {
@@ -11975,7 +11975,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .pin\:\$40 {
@@ -11984,7 +11984,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .pin\:\$44 {
@@ -11993,7 +11993,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .pin\:\$48 {
@@ -12002,7 +12002,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .pin\:\$52 {
@@ -12011,7 +12011,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .pin\:\$56 {
@@ -12020,7 +12020,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .pin\:\$60 {
@@ -12029,7 +12029,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .pin\:\$64 {
@@ -12038,7 +12038,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .pin\:\$72 {
@@ -12047,7 +12047,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .pin\:\$80 {
@@ -12056,7 +12056,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .pin\:\$96 {
@@ -12065,7 +12065,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .pin\:\$px {
@@ -12074,7 +12074,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .pin\:\$0\.5 {
@@ -12083,7 +12083,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .pin\:\$1\.5 {
@@ -12092,7 +12092,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .pin\:\$2\.5 {
@@ -12101,7 +12101,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .pin\:\$3\.5 {
@@ -12110,7 +12110,7 @@ pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetPin for GeneratedAtomPin {}
@@ -12134,7 +12134,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .pins\:\$1 {
@@ -12143,7 +12143,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .pins\:\$2 {
@@ -12152,7 +12152,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .pins\:\$3 {
@@ -12161,7 +12161,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .pins\:\$4 {
@@ -12170,7 +12170,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .pins\:\$5 {
@@ -12179,7 +12179,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .pins\:\$6 {
@@ -12188,7 +12188,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .pins\:\$7 {
@@ -12197,7 +12197,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .pins\:\$8 {
@@ -12206,7 +12206,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .pins\:\$9 {
@@ -12215,7 +12215,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .pins\:\$10 {
@@ -12224,7 +12224,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .pins\:\$11 {
@@ -12233,7 +12233,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .pins\:\$12 {
@@ -12242,7 +12242,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .pins\:\$14 {
@@ -12251,7 +12251,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .pins\:\$16 {
@@ -12260,7 +12260,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .pins\:\$20 {
@@ -12269,7 +12269,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .pins\:\$24 {
@@ -12278,7 +12278,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .pins\:\$28 {
@@ -12287,7 +12287,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .pins\:\$32 {
@@ -12296,7 +12296,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .pins\:\$36 {
@@ -12305,7 +12305,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .pins\:\$40 {
@@ -12314,7 +12314,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .pins\:\$44 {
@@ -12323,7 +12323,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .pins\:\$48 {
@@ -12332,7 +12332,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .pins\:\$52 {
@@ -12341,7 +12341,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .pins\:\$56 {
@@ -12350,7 +12350,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .pins\:\$60 {
@@ -12359,7 +12359,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .pins\:\$64 {
@@ -12368,7 +12368,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .pins\:\$72 {
@@ -12377,7 +12377,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .pins\:\$80 {
@@ -12386,7 +12386,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .pins\:\$96 {
@@ -12395,7 +12395,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .pins\:\$px {
@@ -12404,7 +12404,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .pins\:\$0\.5 {
@@ -12413,7 +12413,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .pins\:\$1\.5 {
@@ -12422,7 +12422,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .pins\:\$2\.5 {
@@ -12431,7 +12431,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .pins\:\$3\.5 {
@@ -12440,7 +12440,7 @@ pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetPins for GeneratedAtomPins {}
@@ -12464,7 +12464,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .pine\:\$1 {
@@ -12473,7 +12473,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .pine\:\$2 {
@@ -12482,7 +12482,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .pine\:\$3 {
@@ -12491,7 +12491,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .pine\:\$4 {
@@ -12500,7 +12500,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .pine\:\$5 {
@@ -12509,7 +12509,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .pine\:\$6 {
@@ -12518,7 +12518,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .pine\:\$7 {
@@ -12527,7 +12527,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .pine\:\$8 {
@@ -12536,7 +12536,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .pine\:\$9 {
@@ -12545,7 +12545,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .pine\:\$10 {
@@ -12554,7 +12554,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .pine\:\$11 {
@@ -12563,7 +12563,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .pine\:\$12 {
@@ -12572,7 +12572,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .pine\:\$14 {
@@ -12581,7 +12581,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .pine\:\$16 {
@@ -12590,7 +12590,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .pine\:\$20 {
@@ -12599,7 +12599,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .pine\:\$24 {
@@ -12608,7 +12608,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .pine\:\$28 {
@@ -12617,7 +12617,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .pine\:\$32 {
@@ -12626,7 +12626,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .pine\:\$36 {
@@ -12635,7 +12635,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .pine\:\$40 {
@@ -12644,7 +12644,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .pine\:\$44 {
@@ -12653,7 +12653,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .pine\:\$48 {
@@ -12662,7 +12662,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .pine\:\$52 {
@@ -12671,7 +12671,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .pine\:\$56 {
@@ -12680,7 +12680,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .pine\:\$60 {
@@ -12689,7 +12689,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .pine\:\$64 {
@@ -12698,7 +12698,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .pine\:\$72 {
@@ -12707,7 +12707,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .pine\:\$80 {
@@ -12716,7 +12716,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .pine\:\$96 {
@@ -12725,7 +12725,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .pine\:\$px {
@@ -12734,7 +12734,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .pine\:\$0\.5 {
@@ -12743,7 +12743,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .pine\:\$1\.5 {
@@ -12752,7 +12752,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .pine\:\$2\.5 {
@@ -12761,7 +12761,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .pine\:\$3\.5 {
@@ -12770,7 +12770,7 @@ pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetPine for GeneratedAtomPine {}
@@ -12794,7 +12794,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .m\:\$1 {
@@ -12803,7 +12803,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .m\:\$2 {
@@ -12812,7 +12812,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .m\:\$3 {
@@ -12821,7 +12821,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .m\:\$4 {
@@ -12830,7 +12830,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .m\:\$5 {
@@ -12839,7 +12839,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .m\:\$6 {
@@ -12848,7 +12848,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .m\:\$7 {
@@ -12857,7 +12857,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .m\:\$8 {
@@ -12866,7 +12866,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .m\:\$9 {
@@ -12875,7 +12875,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .m\:\$10 {
@@ -12884,7 +12884,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .m\:\$11 {
@@ -12893,7 +12893,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .m\:\$12 {
@@ -12902,7 +12902,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .m\:\$14 {
@@ -12911,7 +12911,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .m\:\$16 {
@@ -12920,7 +12920,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .m\:\$20 {
@@ -12929,7 +12929,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .m\:\$24 {
@@ -12938,7 +12938,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .m\:\$28 {
@@ -12947,7 +12947,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .m\:\$32 {
@@ -12956,7 +12956,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .m\:\$36 {
@@ -12965,7 +12965,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .m\:\$40 {
@@ -12974,7 +12974,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .m\:\$44 {
@@ -12983,7 +12983,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .m\:\$48 {
@@ -12992,7 +12992,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .m\:\$52 {
@@ -13001,7 +13001,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .m\:\$56 {
@@ -13010,7 +13010,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .m\:\$60 {
@@ -13019,7 +13019,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .m\:\$64 {
@@ -13028,7 +13028,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .m\:\$72 {
@@ -13037,7 +13037,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .m\:\$80 {
@@ -13046,7 +13046,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .m\:\$96 {
@@ -13055,7 +13055,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .m\:\$px {
@@ -13064,7 +13064,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .m\:\$0\.5 {
@@ -13073,7 +13073,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .m\:\$1\.5 {
@@ -13082,7 +13082,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .m\:\$2\.5 {
@@ -13091,7 +13091,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .m\:\$3\.5 {
@@ -13100,7 +13100,7 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetM for GeneratedAtomM {}
@@ -13125,7 +13125,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .my\:\$1 {
@@ -13135,7 +13135,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .my\:\$2 {
@@ -13145,7 +13145,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .my\:\$3 {
@@ -13155,7 +13155,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .my\:\$4 {
@@ -13165,7 +13165,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .my\:\$5 {
@@ -13175,7 +13175,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .my\:\$6 {
@@ -13185,7 +13185,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .my\:\$7 {
@@ -13195,7 +13195,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .my\:\$8 {
@@ -13205,7 +13205,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .my\:\$9 {
@@ -13215,7 +13215,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .my\:\$10 {
@@ -13225,7 +13225,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .my\:\$11 {
@@ -13235,7 +13235,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .my\:\$12 {
@@ -13245,7 +13245,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .my\:\$14 {
@@ -13255,7 +13255,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .my\:\$16 {
@@ -13265,7 +13265,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .my\:\$20 {
@@ -13275,7 +13275,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .my\:\$24 {
@@ -13285,7 +13285,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .my\:\$28 {
@@ -13295,7 +13295,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .my\:\$32 {
@@ -13305,7 +13305,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .my\:\$36 {
@@ -13315,7 +13315,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .my\:\$40 {
@@ -13325,7 +13325,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .my\:\$44 {
@@ -13335,7 +13335,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .my\:\$48 {
@@ -13345,7 +13345,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .my\:\$52 {
@@ -13355,7 +13355,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .my\:\$56 {
@@ -13365,7 +13365,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .my\:\$60 {
@@ -13375,7 +13375,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .my\:\$64 {
@@ -13385,7 +13385,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .my\:\$72 {
@@ -13395,7 +13395,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .my\:\$80 {
@@ -13405,7 +13405,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .my\:\$96 {
@@ -13415,7 +13415,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .my\:\$px {
@@ -13425,7 +13425,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .my\:\$0\.5 {
@@ -13435,7 +13435,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .my\:\$1\.5 {
@@ -13445,7 +13445,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .my\:\$2\.5 {
@@ -13455,7 +13455,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .my\:\$3\.5 {
@@ -13465,7 +13465,7 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetMy for GeneratedAtomMy {}
@@ -13490,7 +13490,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .mx\:\$1 {
@@ -13500,7 +13500,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .mx\:\$2 {
@@ -13510,7 +13510,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .mx\:\$3 {
@@ -13520,7 +13520,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .mx\:\$4 {
@@ -13530,7 +13530,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .mx\:\$5 {
@@ -13540,7 +13540,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .mx\:\$6 {
@@ -13550,7 +13550,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .mx\:\$7 {
@@ -13560,7 +13560,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .mx\:\$8 {
@@ -13570,7 +13570,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .mx\:\$9 {
@@ -13580,7 +13580,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .mx\:\$10 {
@@ -13590,7 +13590,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .mx\:\$11 {
@@ -13600,7 +13600,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .mx\:\$12 {
@@ -13610,7 +13610,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .mx\:\$14 {
@@ -13620,7 +13620,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .mx\:\$16 {
@@ -13630,7 +13630,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .mx\:\$20 {
@@ -13640,7 +13640,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .mx\:\$24 {
@@ -13650,7 +13650,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .mx\:\$28 {
@@ -13660,7 +13660,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .mx\:\$32 {
@@ -13670,7 +13670,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .mx\:\$36 {
@@ -13680,7 +13680,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .mx\:\$40 {
@@ -13690,7 +13690,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .mx\:\$44 {
@@ -13700,7 +13700,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .mx\:\$48 {
@@ -13710,7 +13710,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .mx\:\$52 {
@@ -13720,7 +13720,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .mx\:\$56 {
@@ -13730,7 +13730,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .mx\:\$60 {
@@ -13740,7 +13740,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .mx\:\$64 {
@@ -13750,7 +13750,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .mx\:\$72 {
@@ -13760,7 +13760,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .mx\:\$80 {
@@ -13770,7 +13770,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .mx\:\$96 {
@@ -13780,7 +13780,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .mx\:\$px {
@@ -13790,7 +13790,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .mx\:\$0\.5 {
@@ -13800,7 +13800,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .mx\:\$1\.5 {
@@ -13810,7 +13810,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .mx\:\$2\.5 {
@@ -13820,7 +13820,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .mx\:\$3\.5 {
@@ -13830,7 +13830,7 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetMx for GeneratedAtomMx {}
@@ -13854,7 +13854,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .mt\:\$1 {
@@ -13863,7 +13863,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .mt\:\$2 {
@@ -13872,7 +13872,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .mt\:\$3 {
@@ -13881,7 +13881,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .mt\:\$4 {
@@ -13890,7 +13890,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .mt\:\$5 {
@@ -13899,7 +13899,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .mt\:\$6 {
@@ -13908,7 +13908,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .mt\:\$7 {
@@ -13917,7 +13917,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .mt\:\$8 {
@@ -13926,7 +13926,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .mt\:\$9 {
@@ -13935,7 +13935,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .mt\:\$10 {
@@ -13944,7 +13944,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .mt\:\$11 {
@@ -13953,7 +13953,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .mt\:\$12 {
@@ -13962,7 +13962,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .mt\:\$14 {
@@ -13971,7 +13971,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .mt\:\$16 {
@@ -13980,7 +13980,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .mt\:\$20 {
@@ -13989,7 +13989,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .mt\:\$24 {
@@ -13998,7 +13998,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .mt\:\$28 {
@@ -14007,7 +14007,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .mt\:\$32 {
@@ -14016,7 +14016,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .mt\:\$36 {
@@ -14025,7 +14025,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .mt\:\$40 {
@@ -14034,7 +14034,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .mt\:\$44 {
@@ -14043,7 +14043,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .mt\:\$48 {
@@ -14052,7 +14052,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .mt\:\$52 {
@@ -14061,7 +14061,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .mt\:\$56 {
@@ -14070,7 +14070,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .mt\:\$60 {
@@ -14079,7 +14079,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .mt\:\$64 {
@@ -14088,7 +14088,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .mt\:\$72 {
@@ -14097,7 +14097,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .mt\:\$80 {
@@ -14106,7 +14106,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .mt\:\$96 {
@@ -14115,7 +14115,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .mt\:\$px {
@@ -14124,7 +14124,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .mt\:\$0\.5 {
@@ -14133,7 +14133,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .mt\:\$1\.5 {
@@ -14142,7 +14142,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .mt\:\$2\.5 {
@@ -14151,7 +14151,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .mt\:\$3\.5 {
@@ -14160,7 +14160,7 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetMt for GeneratedAtomMt {}
@@ -14184,7 +14184,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .mr\:\$1 {
@@ -14193,7 +14193,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .mr\:\$2 {
@@ -14202,7 +14202,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .mr\:\$3 {
@@ -14211,7 +14211,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .mr\:\$4 {
@@ -14220,7 +14220,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .mr\:\$5 {
@@ -14229,7 +14229,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .mr\:\$6 {
@@ -14238,7 +14238,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .mr\:\$7 {
@@ -14247,7 +14247,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .mr\:\$8 {
@@ -14256,7 +14256,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .mr\:\$9 {
@@ -14265,7 +14265,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .mr\:\$10 {
@@ -14274,7 +14274,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .mr\:\$11 {
@@ -14283,7 +14283,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .mr\:\$12 {
@@ -14292,7 +14292,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .mr\:\$14 {
@@ -14301,7 +14301,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .mr\:\$16 {
@@ -14310,7 +14310,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .mr\:\$20 {
@@ -14319,7 +14319,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .mr\:\$24 {
@@ -14328,7 +14328,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .mr\:\$28 {
@@ -14337,7 +14337,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .mr\:\$32 {
@@ -14346,7 +14346,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .mr\:\$36 {
@@ -14355,7 +14355,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .mr\:\$40 {
@@ -14364,7 +14364,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .mr\:\$44 {
@@ -14373,7 +14373,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .mr\:\$48 {
@@ -14382,7 +14382,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .mr\:\$52 {
@@ -14391,7 +14391,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .mr\:\$56 {
@@ -14400,7 +14400,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .mr\:\$60 {
@@ -14409,7 +14409,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .mr\:\$64 {
@@ -14418,7 +14418,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .mr\:\$72 {
@@ -14427,7 +14427,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .mr\:\$80 {
@@ -14436,7 +14436,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .mr\:\$96 {
@@ -14445,7 +14445,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .mr\:\$px {
@@ -14454,7 +14454,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .mr\:\$0\.5 {
@@ -14463,7 +14463,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .mr\:\$1\.5 {
@@ -14472,7 +14472,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .mr\:\$2\.5 {
@@ -14481,7 +14481,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .mr\:\$3\.5 {
@@ -14490,7 +14490,7 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetMr for GeneratedAtomMr {}
@@ -14514,7 +14514,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .mb\:\$1 {
@@ -14523,7 +14523,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .mb\:\$2 {
@@ -14532,7 +14532,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .mb\:\$3 {
@@ -14541,7 +14541,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .mb\:\$4 {
@@ -14550,7 +14550,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .mb\:\$5 {
@@ -14559,7 +14559,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .mb\:\$6 {
@@ -14568,7 +14568,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .mb\:\$7 {
@@ -14577,7 +14577,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .mb\:\$8 {
@@ -14586,7 +14586,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .mb\:\$9 {
@@ -14595,7 +14595,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .mb\:\$10 {
@@ -14604,7 +14604,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .mb\:\$11 {
@@ -14613,7 +14613,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .mb\:\$12 {
@@ -14622,7 +14622,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .mb\:\$14 {
@@ -14631,7 +14631,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .mb\:\$16 {
@@ -14640,7 +14640,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .mb\:\$20 {
@@ -14649,7 +14649,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .mb\:\$24 {
@@ -14658,7 +14658,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .mb\:\$28 {
@@ -14667,7 +14667,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .mb\:\$32 {
@@ -14676,7 +14676,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .mb\:\$36 {
@@ -14685,7 +14685,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .mb\:\$40 {
@@ -14694,7 +14694,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .mb\:\$44 {
@@ -14703,7 +14703,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .mb\:\$48 {
@@ -14712,7 +14712,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .mb\:\$52 {
@@ -14721,7 +14721,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .mb\:\$56 {
@@ -14730,7 +14730,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .mb\:\$60 {
@@ -14739,7 +14739,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .mb\:\$64 {
@@ -14748,7 +14748,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .mb\:\$72 {
@@ -14757,7 +14757,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .mb\:\$80 {
@@ -14766,7 +14766,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .mb\:\$96 {
@@ -14775,7 +14775,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .mb\:\$px {
@@ -14784,7 +14784,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .mb\:\$0\.5 {
@@ -14793,7 +14793,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .mb\:\$1\.5 {
@@ -14802,7 +14802,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .mb\:\$2\.5 {
@@ -14811,7 +14811,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .mb\:\$3\.5 {
@@ -14820,7 +14820,7 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetMb for GeneratedAtomMb {}
@@ -14844,7 +14844,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .ml\:\$1 {
@@ -14853,7 +14853,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .ml\:\$2 {
@@ -14862,7 +14862,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .ml\:\$3 {
@@ -14871,7 +14871,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .ml\:\$4 {
@@ -14880,7 +14880,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .ml\:\$5 {
@@ -14889,7 +14889,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .ml\:\$6 {
@@ -14898,7 +14898,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n6(&self) -> String {
-    self.append_string_to_skribble_value("6")
+    self.append_value("6")
   }
   /// ```css
   /// .ml\:\$7 {
@@ -14907,7 +14907,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n7(&self) -> String {
-    self.append_string_to_skribble_value("7")
+    self.append_value("7")
   }
   /// ```css
   /// .ml\:\$8 {
@@ -14916,7 +14916,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n8(&self) -> String {
-    self.append_string_to_skribble_value("8")
+    self.append_value("8")
   }
   /// ```css
   /// .ml\:\$9 {
@@ -14925,7 +14925,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n9(&self) -> String {
-    self.append_string_to_skribble_value("9")
+    self.append_value("9")
   }
   /// ```css
   /// .ml\:\$10 {
@@ -14934,7 +14934,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .ml\:\$11 {
@@ -14943,7 +14943,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n11(&self) -> String {
-    self.append_string_to_skribble_value("11")
+    self.append_value("11")
   }
   /// ```css
   /// .ml\:\$12 {
@@ -14952,7 +14952,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n12(&self) -> String {
-    self.append_string_to_skribble_value("12")
+    self.append_value("12")
   }
   /// ```css
   /// .ml\:\$14 {
@@ -14961,7 +14961,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n14(&self) -> String {
-    self.append_string_to_skribble_value("14")
+    self.append_value("14")
   }
   /// ```css
   /// .ml\:\$16 {
@@ -14970,7 +14970,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n16(&self) -> String {
-    self.append_string_to_skribble_value("16")
+    self.append_value("16")
   }
   /// ```css
   /// .ml\:\$20 {
@@ -14979,7 +14979,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .ml\:\$24 {
@@ -14988,7 +14988,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n24(&self) -> String {
-    self.append_string_to_skribble_value("24")
+    self.append_value("24")
   }
   /// ```css
   /// .ml\:\$28 {
@@ -14997,7 +14997,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n28(&self) -> String {
-    self.append_string_to_skribble_value("28")
+    self.append_value("28")
   }
   /// ```css
   /// .ml\:\$32 {
@@ -15006,7 +15006,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n32(&self) -> String {
-    self.append_string_to_skribble_value("32")
+    self.append_value("32")
   }
   /// ```css
   /// .ml\:\$36 {
@@ -15015,7 +15015,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n36(&self) -> String {
-    self.append_string_to_skribble_value("36")
+    self.append_value("36")
   }
   /// ```css
   /// .ml\:\$40 {
@@ -15024,7 +15024,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .ml\:\$44 {
@@ -15033,7 +15033,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n44(&self) -> String {
-    self.append_string_to_skribble_value("44")
+    self.append_value("44")
   }
   /// ```css
   /// .ml\:\$48 {
@@ -15042,7 +15042,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n48(&self) -> String {
-    self.append_string_to_skribble_value("48")
+    self.append_value("48")
   }
   /// ```css
   /// .ml\:\$52 {
@@ -15051,7 +15051,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n52(&self) -> String {
-    self.append_string_to_skribble_value("52")
+    self.append_value("52")
   }
   /// ```css
   /// .ml\:\$56 {
@@ -15060,7 +15060,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n56(&self) -> String {
-    self.append_string_to_skribble_value("56")
+    self.append_value("56")
   }
   /// ```css
   /// .ml\:\$60 {
@@ -15069,7 +15069,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .ml\:\$64 {
@@ -15078,7 +15078,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n64(&self) -> String {
-    self.append_string_to_skribble_value("64")
+    self.append_value("64")
   }
   /// ```css
   /// .ml\:\$72 {
@@ -15087,7 +15087,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n72(&self) -> String {
-    self.append_string_to_skribble_value("72")
+    self.append_value("72")
   }
   /// ```css
   /// .ml\:\$80 {
@@ -15096,7 +15096,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .ml\:\$96 {
@@ -15105,7 +15105,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n96(&self) -> String {
-    self.append_string_to_skribble_value("96")
+    self.append_value("96")
   }
   /// ```css
   /// .ml\:\$px {
@@ -15114,7 +15114,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn px(&self) -> String {
-    self.append_string_to_skribble_value("px")
+    self.append_value("px")
   }
   /// ```css
   /// .ml\:\$0\.5 {
@@ -15123,7 +15123,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0_5(&self) -> String {
-    self.append_string_to_skribble_value("0.5")
+    self.append_value("0.5")
   }
   /// ```css
   /// .ml\:\$1\.5 {
@@ -15132,7 +15132,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1_5(&self) -> String {
-    self.append_string_to_skribble_value("1.5")
+    self.append_value("1.5")
   }
   /// ```css
   /// .ml\:\$2\.5 {
@@ -15141,7 +15141,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2_5(&self) -> String {
-    self.append_string_to_skribble_value("2.5")
+    self.append_value("2.5")
   }
   /// ```css
   /// .ml\:\$3\.5 {
@@ -15150,7 +15150,7 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3_5(&self) -> String {
-    self.append_string_to_skribble_value("3.5")
+    self.append_value("3.5")
   }
 }
 impl GeneratedValueSetMl for GeneratedAtomMl {}
@@ -15174,7 +15174,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .z\:\$1 {
@@ -15183,7 +15183,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n1(&self) -> String {
-    self.append_string_to_skribble_value("1")
+    self.append_value("1")
   }
   /// ```css
   /// .z\:\$2 {
@@ -15192,7 +15192,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n2(&self) -> String {
-    self.append_string_to_skribble_value("2")
+    self.append_value("2")
   }
   /// ```css
   /// .z\:\$3 {
@@ -15201,7 +15201,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n3(&self) -> String {
-    self.append_string_to_skribble_value("3")
+    self.append_value("3")
   }
   /// ```css
   /// .z\:\$4 {
@@ -15210,7 +15210,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n4(&self) -> String {
-    self.append_string_to_skribble_value("4")
+    self.append_value("4")
   }
   /// ```css
   /// .z\:\$5 {
@@ -15219,7 +15219,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .z\:\$10 {
@@ -15228,7 +15228,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .z\:\$20 {
@@ -15237,7 +15237,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .z\:\$30 {
@@ -15246,7 +15246,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n30(&self) -> String {
-    self.append_string_to_skribble_value("30")
+    self.append_value("30")
   }
   /// ```css
   /// .z\:\$40 {
@@ -15255,7 +15255,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .z\:\$50 {
@@ -15264,7 +15264,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n50(&self) -> String {
-    self.append_string_to_skribble_value("50")
+    self.append_value("50")
   }
   /// ```css
   /// .z\:\$60 {
@@ -15273,7 +15273,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .z\:\$auto {
@@ -15282,7 +15282,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn auto(&self) -> String {
-    self.append_string_to_skribble_value("auto")
+    self.append_value("auto")
   }
   /// ```css
   /// .z\:\$1 {
@@ -15291,7 +15291,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn m1(&self) -> String {
-    self.append_string_to_skribble_value("-1")
+    self.append_value("-1")
   }
   /// ```css
   /// .z\:\$2 {
@@ -15300,7 +15300,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn m2(&self) -> String {
-    self.append_string_to_skribble_value("-2")
+    self.append_value("-2")
   }
   /// ```css
   /// .z\:\$3 {
@@ -15309,7 +15309,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn m3(&self) -> String {
-    self.append_string_to_skribble_value("-3")
+    self.append_value("-3")
   }
   /// ```css
   /// .z\:\$5 {
@@ -15318,7 +15318,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn m5(&self) -> String {
-    self.append_string_to_skribble_value("-5")
+    self.append_value("-5")
   }
 }
 impl GeneratedValueSetZ for GeneratedAtomZ {}
@@ -15342,7 +15342,7 @@ pub trait GeneratedValueSetDir: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn ltr(&self) -> String {
-    self.append_string_to_skribble_value("ltr")
+    self.append_value("ltr")
   }
   /// ```css
   /// .dir\:\$rtl {
@@ -15351,7 +15351,7 @@ pub trait GeneratedValueSetDir: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn rtl(&self) -> String {
-    self.append_string_to_skribble_value("rtl")
+    self.append_value("rtl")
   }
 }
 impl GeneratedValueSetDir for GeneratedAtomDir {}
@@ -15388,7 +15388,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .bg-opacity\:\$5 {
@@ -15397,7 +15397,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .bg-opacity\:\$10 {
@@ -15406,7 +15406,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .bg-opacity\:\$20 {
@@ -15415,7 +15415,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .bg-opacity\:\$30 {
@@ -15424,7 +15424,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n30(&self) -> String {
-    self.append_string_to_skribble_value("30")
+    self.append_value("30")
   }
   /// ```css
   /// .bg-opacity\:\$40 {
@@ -15433,7 +15433,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .bg-opacity\:\$50 {
@@ -15442,7 +15442,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n50(&self) -> String {
-    self.append_string_to_skribble_value("50")
+    self.append_value("50")
   }
   /// ```css
   /// .bg-opacity\:\$60 {
@@ -15451,7 +15451,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .bg-opacity\:\$70 {
@@ -15460,7 +15460,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n70(&self) -> String {
-    self.append_string_to_skribble_value("70")
+    self.append_value("70")
   }
   /// ```css
   /// .bg-opacity\:\$75 {
@@ -15469,7 +15469,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n75(&self) -> String {
-    self.append_string_to_skribble_value("75")
+    self.append_value("75")
   }
   /// ```css
   /// .bg-opacity\:\$80 {
@@ -15478,7 +15478,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .bg-opacity\:\$90 {
@@ -15487,7 +15487,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n90(&self) -> String {
-    self.append_string_to_skribble_value("90")
+    self.append_value("90")
   }
   /// ```css
   /// .bg-opacity\:\$95 {
@@ -15496,7 +15496,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n95(&self) -> String {
-    self.append_string_to_skribble_value("95")
+    self.append_value("95")
   }
   /// ```css
   /// .bg-opacity\:\$100 {
@@ -15505,7 +15505,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n100(&self) -> String {
-    self.append_string_to_skribble_value("100")
+    self.append_value("100")
   }
 }
 impl GeneratedValueSetBgOpacity for GeneratedAtomBgOpacity {}
@@ -15529,7 +15529,7 @@ pub trait GeneratedValueSetOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n0(&self) -> String {
-    self.append_string_to_skribble_value("0")
+    self.append_value("0")
   }
   /// ```css
   /// .opacity\:\$5 {
@@ -15538,7 +15538,7 @@ pub trait GeneratedValueSetOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n5(&self) -> String {
-    self.append_string_to_skribble_value("5")
+    self.append_value("5")
   }
   /// ```css
   /// .opacity\:\$10 {
@@ -15547,7 +15547,7 @@ pub trait GeneratedValueSetOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n10(&self) -> String {
-    self.append_string_to_skribble_value("10")
+    self.append_value("10")
   }
   /// ```css
   /// .opacity\:\$20 {
@@ -15556,7 +15556,7 @@ pub trait GeneratedValueSetOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n20(&self) -> String {
-    self.append_string_to_skribble_value("20")
+    self.append_value("20")
   }
   /// ```css
   /// .opacity\:\$30 {
@@ -15565,7 +15565,7 @@ pub trait GeneratedValueSetOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n30(&self) -> String {
-    self.append_string_to_skribble_value("30")
+    self.append_value("30")
   }
   /// ```css
   /// .opacity\:\$40 {
@@ -15574,7 +15574,7 @@ pub trait GeneratedValueSetOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n40(&self) -> String {
-    self.append_string_to_skribble_value("40")
+    self.append_value("40")
   }
   /// ```css
   /// .opacity\:\$50 {
@@ -15583,7 +15583,7 @@ pub trait GeneratedValueSetOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n50(&self) -> String {
-    self.append_string_to_skribble_value("50")
+    self.append_value("50")
   }
   /// ```css
   /// .opacity\:\$60 {
@@ -15592,7 +15592,7 @@ pub trait GeneratedValueSetOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n60(&self) -> String {
-    self.append_string_to_skribble_value("60")
+    self.append_value("60")
   }
   /// ```css
   /// .opacity\:\$70 {
@@ -15601,7 +15601,7 @@ pub trait GeneratedValueSetOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n70(&self) -> String {
-    self.append_string_to_skribble_value("70")
+    self.append_value("70")
   }
   /// ```css
   /// .opacity\:\$75 {
@@ -15610,7 +15610,7 @@ pub trait GeneratedValueSetOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n75(&self) -> String {
-    self.append_string_to_skribble_value("75")
+    self.append_value("75")
   }
   /// ```css
   /// .opacity\:\$80 {
@@ -15619,7 +15619,7 @@ pub trait GeneratedValueSetOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n80(&self) -> String {
-    self.append_string_to_skribble_value("80")
+    self.append_value("80")
   }
   /// ```css
   /// .opacity\:\$90 {
@@ -15628,7 +15628,7 @@ pub trait GeneratedValueSetOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n90(&self) -> String {
-    self.append_string_to_skribble_value("90")
+    self.append_value("90")
   }
   /// ```css
   /// .opacity\:\$95 {
@@ -15637,7 +15637,7 @@ pub trait GeneratedValueSetOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n95(&self) -> String {
-    self.append_string_to_skribble_value("95")
+    self.append_value("95")
   }
   /// ```css
   /// .opacity\:\$100 {
@@ -15646,7 +15646,7 @@ pub trait GeneratedValueSetOpacity: GeneratedSkribbleValue {
   /// ```
   #[inline]
   fn n100(&self) -> String {
-    self.append_string_to_skribble_value("100")
+    self.append_value("100")
   }
 }
 impl GeneratedValueSetOpacity for GeneratedAtomOpacity {}
@@ -15654,1231 +15654,1451 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   /// Screen reader only
   #[inline]
   fn sr(&self) -> GeneratedAtomSr {
-    GeneratedAtomSr::from_ref(self.append_to_skribble_value("sr"))
+    GeneratedAtomSr::from_ref(self.append("sr"))
+  }
+  #[inline]
+  fn sr_(&self, value: &'static str) -> String {
+    self.append(format!("sr:[{}]", value.trim()))
   }
   /// A class to apply transition effects.
   #[inline]
   fn transition(&self) -> GeneratedAtomTransition {
-    GeneratedAtomTransition::from_ref(self.append_to_skribble_value("transition"))
+    GeneratedAtomTransition::from_ref(self.append("transition"))
+  }
+  #[inline]
+  fn transition_(&self, value: &'static str) -> String {
+    self.append(format!("transition:[{}]", value.trim()))
   }
   #[inline]
   fn transition_property(&self) -> GeneratedAtomTransitionProperty {
-    GeneratedAtomTransitionProperty::from_ref(self.append_to_skribble_value("transitionProperty"))
+    GeneratedAtomTransitionProperty::from_ref(self.append("transitionProperty"))
+  }
+  #[inline]
+  fn transition_property_(&self, value: &'static str) -> String {
+    self.append(format!("transitionProperty:[{}]", value.trim()))
   }
   #[inline]
   fn duration(&self) -> GeneratedAtomDuration {
-    GeneratedAtomDuration::from_ref(self.append_to_skribble_value("duration"))
+    GeneratedAtomDuration::from_ref(self.append("duration"))
+  }
+  #[inline]
+  fn duration_(&self, value: &'static str) -> String {
+    self.append(format!("duration:[{}]", value.trim()))
   }
   #[inline]
   fn ease(&self) -> GeneratedAtomEase {
-    GeneratedAtomEase::from_ref(self.append_to_skribble_value("ease"))
+    GeneratedAtomEase::from_ref(self.append("ease"))
+  }
+  #[inline]
+  fn ease_(&self, value: &'static str) -> String {
+    self.append(format!("ease:[{}]", value.trim()))
   }
   #[inline]
   fn delay(&self) -> GeneratedAtomDelay {
-    GeneratedAtomDelay::from_ref(self.append_to_skribble_value("delay"))
+    GeneratedAtomDelay::from_ref(self.append("delay"))
+  }
+  #[inline]
+  fn delay_(&self, value: &'static str) -> String {
+    self.append(format!("delay:[{}]", value.trim()))
   }
   #[inline]
   fn animate(&self) -> GeneratedAtomAnimate {
-    GeneratedAtomAnimate::from_ref(self.append_to_skribble_value("animate"))
+    GeneratedAtomAnimate::from_ref(self.append("animate"))
+  }
+  #[inline]
+  fn animate_(&self, value: &'static str) -> String {
+    self.append(format!("animate:[{}]", value.trim()))
   }
   /// Fade in an element. Requires the `animate:$in` class to be applied to the
   /// element.
   #[inline]
   fn fade_in(&self) -> GeneratedAtomFadeIn {
-    GeneratedAtomFadeIn::from_ref(self.append_to_skribble_value("fadeIn"))
+    GeneratedAtomFadeIn::from_ref(self.append("fadeIn"))
+  }
+  #[inline]
+  fn fade_in_(&self, value: &'static str) -> String {
+    self.append(format!("fadeIn:[{}]", value.trim()))
   }
   /// Fade out an element. Requires the `animate:$out` class to be applied to
   /// the element.
   #[inline]
   fn fade_out(&self) -> GeneratedAtomFadeOut {
-    GeneratedAtomFadeOut::from_ref(self.append_to_skribble_value("fadeOut"))
+    GeneratedAtomFadeOut::from_ref(self.append("fadeOut"))
+  }
+  #[inline]
+  fn fade_out_(&self, value: &'static str) -> String {
+    self.append(format!("fadeOut:[{}]", value.trim()))
   }
   /// Rotate an element to enter. Requires the `animate:$in` class to be applied
   /// to the element.
   #[inline]
   fn spin_in(&self) -> GeneratedAtomSpinIn {
-    GeneratedAtomSpinIn::from_ref(self.append_to_skribble_value("spinIn"))
+    GeneratedAtomSpinIn::from_ref(self.append("spinIn"))
+  }
+  #[inline]
+  fn spin_in_(&self, value: &'static str) -> String {
+    self.append(format!("spinIn:[{}]", value.trim()))
   }
   /// Rotate an element to exit. Requires the `animate:$out` class to be applied
   /// to the element.
   #[inline]
   fn spin_out(&self) -> GeneratedAtomSpinOut {
-    GeneratedAtomSpinOut::from_ref(self.append_to_skribble_value("spinOut"))
+    GeneratedAtomSpinOut::from_ref(self.append("spinOut"))
+  }
+  #[inline]
+  fn spin_out_(&self, value: &'static str) -> String {
+    self.append(format!("spinOut:[{}]", value.trim()))
   }
   /// Entry animation from the left. Requires the `animate:$in` class to be
   /// applied to the element.
   #[inline]
   fn slide_in_left(&self) -> GeneratedAtomSlideInLeft {
-    GeneratedAtomSlideInLeft::from_ref(self.append_to_skribble_value("slideInLeft"))
+    GeneratedAtomSlideInLeft::from_ref(self.append("slideInLeft"))
+  }
+  #[inline]
+  fn slide_in_left_(&self, value: &'static str) -> String {
+    self.append(format!("slideInLeft:[{}]", value.trim()))
   }
   /// Entry animation from the right. Requires the `animate:$in` class to be
   /// applied to the element.
   #[inline]
   fn slide_in_right(&self) -> GeneratedAtomSlideInRight {
-    GeneratedAtomSlideInRight::from_ref(self.append_to_skribble_value("slideInRight"))
+    GeneratedAtomSlideInRight::from_ref(self.append("slideInRight"))
+  }
+  #[inline]
+  fn slide_in_right_(&self, value: &'static str) -> String {
+    self.append(format!("slideInRight:[{}]", value.trim()))
   }
   /// Exit animation to the left. Requires the `animate:$out` class to be
   /// applied to the element.
   #[inline]
   fn slide_out_left(&self) -> GeneratedAtomSlideOutLeft {
-    GeneratedAtomSlideOutLeft::from_ref(self.append_to_skribble_value("slideOutLeft"))
+    GeneratedAtomSlideOutLeft::from_ref(self.append("slideOutLeft"))
+  }
+  #[inline]
+  fn slide_out_left_(&self, value: &'static str) -> String {
+    self.append(format!("slideOutLeft:[{}]", value.trim()))
   }
   /// Exit animation to the right. Requires the `animate:$out` class to be
   /// applied to the element.
   #[inline]
   fn slide_out_right(&self) -> GeneratedAtomSlideOutRight {
-    GeneratedAtomSlideOutRight::from_ref(self.append_to_skribble_value("slideOutRight"))
+    GeneratedAtomSlideOutRight::from_ref(self.append("slideOutRight"))
+  }
+  #[inline]
+  fn slide_out_right_(&self, value: &'static str) -> String {
+    self.append(format!("slideOutRight:[{}]", value.trim()))
   }
   /// Entry animation from the top. Requires the `animate:$in` class to be
   /// applied to the element.
   #[inline]
   fn slide_in_top(&self) -> GeneratedAtomSlideInTop {
-    GeneratedAtomSlideInTop::from_ref(self.append_to_skribble_value("slideInTop"))
+    GeneratedAtomSlideInTop::from_ref(self.append("slideInTop"))
+  }
+  #[inline]
+  fn slide_in_top_(&self, value: &'static str) -> String {
+    self.append(format!("slideInTop:[{}]", value.trim()))
   }
   /// Entry animation from the bottom. Requires the `animate:$in` class to be
   /// applied to the element.
   #[inline]
   fn slide_in_bottom(&self) -> GeneratedAtomSlideInBottom {
-    GeneratedAtomSlideInBottom::from_ref(self.append_to_skribble_value("slideInBottom"))
+    GeneratedAtomSlideInBottom::from_ref(self.append("slideInBottom"))
+  }
+  #[inline]
+  fn slide_in_bottom_(&self, value: &'static str) -> String {
+    self.append(format!("slideInBottom:[{}]", value.trim()))
   }
   /// Exit animation to the top. Requires the `animate:$out` class to be applied
   /// to the element.
   #[inline]
   fn slide_out_top(&self) -> GeneratedAtomSlideOutTop {
-    GeneratedAtomSlideOutTop::from_ref(self.append_to_skribble_value("slideOutTop"))
+    GeneratedAtomSlideOutTop::from_ref(self.append("slideOutTop"))
+  }
+  #[inline]
+  fn slide_out_top_(&self, value: &'static str) -> String {
+    self.append(format!("slideOutTop:[{}]", value.trim()))
   }
   /// Exit animation to the bottom. Requires the `animate:$out` class to be
   /// applied to the element.
   #[inline]
   fn slide_out_bottom(&self) -> GeneratedAtomSlideOutBottom {
-    GeneratedAtomSlideOutBottom::from_ref(self.append_to_skribble_value("slideOutBottom"))
+    GeneratedAtomSlideOutBottom::from_ref(self.append("slideOutBottom"))
+  }
+  #[inline]
+  fn slide_out_bottom_(&self, value: &'static str) -> String {
+    self.append(format!("slideOutBottom:[{}]", value.trim()))
   }
   /// Entry animation from this zoom level. Requires the `animate:$in` class to
   /// be applied to the element.
   #[inline]
   fn zoom_in(&self) -> GeneratedAtomZoomIn {
-    GeneratedAtomZoomIn::from_ref(self.append_to_skribble_value("zoomIn"))
+    GeneratedAtomZoomIn::from_ref(self.append("zoomIn"))
+  }
+  #[inline]
+  fn zoom_in_(&self, value: &'static str) -> String {
+    self.append(format!("zoomIn:[{}]", value.trim()))
   }
   /// Exit animation from this zoom level. Requires the `animate:$out` class to
   /// be applied to the element.
   #[inline]
   fn zoom_out(&self) -> GeneratedAtomZoomOut {
-    GeneratedAtomZoomOut::from_ref(self.append_to_skribble_value("zoomOut"))
+    GeneratedAtomZoomOut::from_ref(self.append("zoomOut"))
+  }
+  #[inline]
+  fn zoom_out_(&self, value: &'static str) -> String {
+    self.append(format!("zoomOut:[{}]", value.trim()))
   }
   #[inline]
   fn animate_duration(&self) -> GeneratedAtomAnimateDuration {
-    GeneratedAtomAnimateDuration::from_ref(self.append_to_skribble_value("animateDuration"))
+    GeneratedAtomAnimateDuration::from_ref(self.append("animateDuration"))
+  }
+  #[inline]
+  fn animate_duration_(&self, value: &'static str) -> String {
+    self.append(format!("animateDuration:[{}]", value.trim()))
   }
   #[inline]
   fn animate_easing(&self) -> GeneratedAtomAnimateEasing {
-    GeneratedAtomAnimateEasing::from_ref(self.append_to_skribble_value("animateEasing"))
+    GeneratedAtomAnimateEasing::from_ref(self.append("animateEasing"))
+  }
+  #[inline]
+  fn animate_easing_(&self, value: &'static str) -> String {
+    self.append(format!("animateEasing:[{}]", value.trim()))
   }
   #[inline]
   fn animate_delay(&self) -> GeneratedAtomAnimateDelay {
-    GeneratedAtomAnimateDelay::from_ref(self.append_to_skribble_value("animateDelay"))
+    GeneratedAtomAnimateDelay::from_ref(self.append("animateDelay"))
+  }
+  #[inline]
+  fn animate_delay_(&self, value: &'static str) -> String {
+    self.append(format!("animateDelay:[{}]", value.trim()))
   }
   #[inline]
   fn animate_repeat(&self) -> GeneratedAtomAnimateRepeat {
-    GeneratedAtomAnimateRepeat::from_ref(self.append_to_skribble_value("animateRepeat"))
+    GeneratedAtomAnimateRepeat::from_ref(self.append("animateRepeat"))
+  }
+  #[inline]
+  fn animate_repeat_(&self, value: &'static str) -> String {
+    self.append(format!("animateRepeat:[{}]", value.trim()))
   }
   #[inline]
   fn animate_direction(&self) -> GeneratedAtomAnimateDirection {
-    GeneratedAtomAnimateDirection::from_ref(self.append_to_skribble_value("animateDirection"))
+    GeneratedAtomAnimateDirection::from_ref(self.append("animateDirection"))
+  }
+  #[inline]
+  fn animate_direction_(&self, value: &'static str) -> String {
+    self.append(format!("animateDirection:[{}]", value.trim()))
   }
   #[inline]
   fn animate_fill_mode(&self) -> GeneratedAtomAnimateFillMode {
-    GeneratedAtomAnimateFillMode::from_ref(self.append_to_skribble_value("animateFillMode"))
+    GeneratedAtomAnimateFillMode::from_ref(self.append("animateFillMode"))
+  }
+  #[inline]
+  fn animate_fill_mode_(&self, value: &'static str) -> String {
+    self.append(format!("animateFillMode:[{}]", value.trim()))
   }
   #[inline]
   fn animate_state(&self) -> GeneratedAtomAnimateState {
-    GeneratedAtomAnimateState::from_ref(self.append_to_skribble_value("animateState"))
+    GeneratedAtomAnimateState::from_ref(self.append("animateState"))
+  }
+  #[inline]
+  fn animate_state_(&self, value: &'static str) -> String {
+    self.append(format!("animateState:[{}]", value.trim()))
   }
   #[inline]
   fn zoom(&self) -> GeneratedAtomZoom {
-    GeneratedAtomZoom::from_ref(self.append_to_skribble_value("zoom"))
+    GeneratedAtomZoom::from_ref(self.append("zoom"))
+  }
+  #[inline]
+  fn zoom_(&self, value: &'static str) -> String {
+    self.append(format!("zoom:[{}]", value.trim()))
   }
   #[inline]
   fn font(&self) -> GeneratedAtomFont {
-    GeneratedAtomFont::from_ref(self.append_to_skribble_value("font"))
+    GeneratedAtomFont::from_ref(self.append("font"))
+  }
+  #[inline]
+  fn font_(&self, value: &'static str) -> String {
+    self.append(format!("font:[{}]", value.trim()))
   }
   #[inline]
   fn p(&self) -> GeneratedAtomP {
-    GeneratedAtomP::from_ref(self.append_to_skribble_value("p"))
+    GeneratedAtomP::from_ref(self.append("p"))
+  }
+  #[inline]
+  fn p_(&self, value: &'static str) -> String {
+    self.append(format!("p:[{}]", value.trim()))
   }
   #[inline]
   fn py(&self) -> GeneratedAtomPy {
-    GeneratedAtomPy::from_ref(self.append_to_skribble_value("py"))
+    GeneratedAtomPy::from_ref(self.append("py"))
+  }
+  #[inline]
+  fn py_(&self, value: &'static str) -> String {
+    self.append(format!("py:[{}]", value.trim()))
   }
   #[inline]
   fn px(&self) -> GeneratedAtomPx {
-    GeneratedAtomPx::from_ref(self.append_to_skribble_value("px"))
+    GeneratedAtomPx::from_ref(self.append("px"))
+  }
+  #[inline]
+  fn px_(&self, value: &'static str) -> String {
+    self.append(format!("px:[{}]", value.trim()))
   }
   #[inline]
   fn pt(&self) -> GeneratedAtomPt {
-    GeneratedAtomPt::from_ref(self.append_to_skribble_value("pt"))
+    GeneratedAtomPt::from_ref(self.append("pt"))
+  }
+  #[inline]
+  fn pt_(&self, value: &'static str) -> String {
+    self.append(format!("pt:[{}]", value.trim()))
   }
   #[inline]
   fn pr(&self) -> GeneratedAtomPr {
-    GeneratedAtomPr::from_ref(self.append_to_skribble_value("pr"))
+    GeneratedAtomPr::from_ref(self.append("pr"))
+  }
+  #[inline]
+  fn pr_(&self, value: &'static str) -> String {
+    self.append(format!("pr:[{}]", value.trim()))
   }
   #[inline]
   fn pb(&self) -> GeneratedAtomPb {
-    GeneratedAtomPb::from_ref(self.append_to_skribble_value("pb"))
+    GeneratedAtomPb::from_ref(self.append("pb"))
+  }
+  #[inline]
+  fn pb_(&self, value: &'static str) -> String {
+    self.append(format!("pb:[{}]", value.trim()))
   }
   #[inline]
   fn pl(&self) -> GeneratedAtomPl {
-    GeneratedAtomPl::from_ref(self.append_to_skribble_value("pl"))
+    GeneratedAtomPl::from_ref(self.append("pl"))
+  }
+  #[inline]
+  fn pl_(&self, value: &'static str) -> String {
+    self.append(format!("pl:[{}]", value.trim()))
   }
   #[inline]
   fn pbl(&self) -> GeneratedAtomPbl {
-    GeneratedAtomPbl::from_ref(self.append_to_skribble_value("pbl"))
+    GeneratedAtomPbl::from_ref(self.append("pbl"))
+  }
+  #[inline]
+  fn pbl_(&self, value: &'static str) -> String {
+    self.append(format!("pbl:[{}]", value.trim()))
   }
   #[inline]
   fn pbls(&self) -> GeneratedAtomPbls {
-    GeneratedAtomPbls::from_ref(self.append_to_skribble_value("pbls"))
+    GeneratedAtomPbls::from_ref(self.append("pbls"))
+  }
+  #[inline]
+  fn pbls_(&self, value: &'static str) -> String {
+    self.append(format!("pbls:[{}]", value.trim()))
   }
   #[inline]
   fn pble(&self) -> GeneratedAtomPble {
-    GeneratedAtomPble::from_ref(self.append_to_skribble_value("pble"))
+    GeneratedAtomPble::from_ref(self.append("pble"))
+  }
+  #[inline]
+  fn pble_(&self, value: &'static str) -> String {
+    self.append(format!("pble:[{}]", value.trim()))
   }
   #[inline]
   fn pin(&self) -> GeneratedAtomPin {
-    GeneratedAtomPin::from_ref(self.append_to_skribble_value("pin"))
+    GeneratedAtomPin::from_ref(self.append("pin"))
+  }
+  #[inline]
+  fn pin_(&self, value: &'static str) -> String {
+    self.append(format!("pin:[{}]", value.trim()))
   }
   #[inline]
   fn pins(&self) -> GeneratedAtomPins {
-    GeneratedAtomPins::from_ref(self.append_to_skribble_value("pins"))
+    GeneratedAtomPins::from_ref(self.append("pins"))
+  }
+  #[inline]
+  fn pins_(&self, value: &'static str) -> String {
+    self.append(format!("pins:[{}]", value.trim()))
   }
   #[inline]
   fn pine(&self) -> GeneratedAtomPine {
-    GeneratedAtomPine::from_ref(self.append_to_skribble_value("pine"))
+    GeneratedAtomPine::from_ref(self.append("pine"))
+  }
+  #[inline]
+  fn pine_(&self, value: &'static str) -> String {
+    self.append(format!("pine:[{}]", value.trim()))
   }
   #[inline]
   fn m(&self) -> GeneratedAtomM {
-    GeneratedAtomM::from_ref(self.append_to_skribble_value("m"))
+    GeneratedAtomM::from_ref(self.append("m"))
+  }
+  #[inline]
+  fn m_(&self, value: &'static str) -> String {
+    self.append(format!("m:[{}]", value.trim()))
   }
   #[inline]
   fn my(&self) -> GeneratedAtomMy {
-    GeneratedAtomMy::from_ref(self.append_to_skribble_value("my"))
+    GeneratedAtomMy::from_ref(self.append("my"))
+  }
+  #[inline]
+  fn my_(&self, value: &'static str) -> String {
+    self.append(format!("my:[{}]", value.trim()))
   }
   #[inline]
   fn mx(&self) -> GeneratedAtomMx {
-    GeneratedAtomMx::from_ref(self.append_to_skribble_value("mx"))
+    GeneratedAtomMx::from_ref(self.append("mx"))
+  }
+  #[inline]
+  fn mx_(&self, value: &'static str) -> String {
+    self.append(format!("mx:[{}]", value.trim()))
   }
   #[inline]
   fn mt(&self) -> GeneratedAtomMt {
-    GeneratedAtomMt::from_ref(self.append_to_skribble_value("mt"))
+    GeneratedAtomMt::from_ref(self.append("mt"))
+  }
+  #[inline]
+  fn mt_(&self, value: &'static str) -> String {
+    self.append(format!("mt:[{}]", value.trim()))
   }
   #[inline]
   fn mr(&self) -> GeneratedAtomMr {
-    GeneratedAtomMr::from_ref(self.append_to_skribble_value("mr"))
+    GeneratedAtomMr::from_ref(self.append("mr"))
+  }
+  #[inline]
+  fn mr_(&self, value: &'static str) -> String {
+    self.append(format!("mr:[{}]", value.trim()))
   }
   #[inline]
   fn mb(&self) -> GeneratedAtomMb {
-    GeneratedAtomMb::from_ref(self.append_to_skribble_value("mb"))
+    GeneratedAtomMb::from_ref(self.append("mb"))
+  }
+  #[inline]
+  fn mb_(&self, value: &'static str) -> String {
+    self.append(format!("mb:[{}]", value.trim()))
   }
   #[inline]
   fn ml(&self) -> GeneratedAtomMl {
-    GeneratedAtomMl::from_ref(self.append_to_skribble_value("ml"))
+    GeneratedAtomMl::from_ref(self.append("ml"))
+  }
+  #[inline]
+  fn ml_(&self, value: &'static str) -> String {
+    self.append(format!("ml:[{}]", value.trim()))
   }
   #[inline]
   fn z(&self) -> GeneratedAtomZ {
-    GeneratedAtomZ::from_ref(self.append_to_skribble_value("z"))
+    GeneratedAtomZ::from_ref(self.append("z"))
+  }
+  #[inline]
+  fn z_(&self, value: &'static str) -> String {
+    self.append(format!("z:[{}]", value.trim()))
   }
   #[inline]
   fn dir(&self) -> GeneratedAtomDir {
-    GeneratedAtomDir::from_ref(self.append_to_skribble_value("dir"))
+    GeneratedAtomDir::from_ref(self.append("dir"))
+  }
+  #[inline]
+  fn dir_(&self, value: &'static str) -> String {
+    self.append(format!("dir:[{}]", value.trim()))
   }
   #[inline]
   fn bg(&self) -> GeneratedAtomBg {
-    GeneratedAtomBg::from_ref(self.append_to_skribble_value("bg"))
+    GeneratedAtomBg::from_ref(self.append("bg"))
+  }
+  #[inline]
+  fn bg_(&self, value: &'static str) -> String {
+    self.append(format!("bg:[{}]", value.trim()))
   }
   #[inline]
   fn bg_opacity(&self) -> GeneratedAtomBgOpacity {
-    GeneratedAtomBgOpacity::from_ref(self.append_to_skribble_value("bgOpacity"))
+    GeneratedAtomBgOpacity::from_ref(self.append("bgOpacity"))
+  }
+  #[inline]
+  fn bg_opacity_(&self, value: &'static str) -> String {
+    self.append(format!("bgOpacity:[{}]", value.trim()))
   }
   #[inline]
   fn opacity(&self) -> GeneratedAtomOpacity {
-    GeneratedAtomOpacity::from_ref(self.append_to_skribble_value("opacity"))
+    GeneratedAtomOpacity::from_ref(self.append("opacity"))
+  }
+  #[inline]
+  fn opacity_(&self, value: &'static str) -> String {
+    self.append(format!("opacity:[{}]", value.trim()))
   }
 }
 pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   #[inline]
   fn group(&self) -> String {
-    self.append_string_to_skribble_value("group")
+    self.append_value("group")
   }
   #[inline]
   fn contained(&self) -> String {
-    self.append_string_to_skribble_value("contained")
+    self.append_value("contained")
   }
   #[inline]
   fn italic(&self) -> String {
-    self.append_string_to_skribble_value("italic")
+    self.append_value("italic")
   }
   #[inline]
   fn non_italic(&self) -> String {
-    self.append_string_to_skribble_value("nonItalic")
+    self.append_value("nonItalic")
   }
   #[inline]
   fn oblique(&self) -> String {
-    self.append_string_to_skribble_value("oblique")
+    self.append_value("oblique")
   }
   #[inline]
   fn antialiased(&self) -> String {
-    self.append_string_to_skribble_value("antialiased")
+    self.append_value("antialiased")
   }
   #[inline]
   fn subpixel_antialiased(&self) -> String {
-    self.append_string_to_skribble_value("subpixelAntialiased")
+    self.append_value("subpixelAntialiased")
   }
   #[inline]
   fn block(&self) -> String {
-    self.append_string_to_skribble_value("block")
+    self.append_value("block")
   }
   #[inline]
   fn inline_block(&self) -> String {
-    self.append_string_to_skribble_value("inlineBlock")
+    self.append_value("inlineBlock")
   }
   #[inline]
   fn inline(&self) -> String {
-    self.append_string_to_skribble_value("inline")
+    self.append_value("inline")
   }
   #[inline]
   fn flow_root(&self) -> String {
-    self.append_string_to_skribble_value("flowRoot")
+    self.append_value("flowRoot")
   }
   #[inline]
   fn content(&self) -> String {
-    self.append_string_to_skribble_value("content")
+    self.append_value("content")
   }
   #[inline]
   fn hidden(&self) -> String {
-    self.append_string_to_skribble_value("hidden")
+    self.append_value("hidden")
   }
   #[inline]
   fn invisible(&self) -> String {
-    self.append_string_to_skribble_value("invisible")
+    self.append_value("invisible")
   }
   #[inline]
   fn visible(&self) -> String {
-    self.append_string_to_skribble_value("visible")
+    self.append_value("visible")
   }
   #[inline]
   fn remove_filter(&self) -> String {
-    self.append_string_to_skribble_value("removeFilter")
+    self.append_value("removeFilter")
   }
   #[inline]
   fn remove_backdrop(&self) -> String {
-    self.append_string_to_skribble_value("removeBackdrop")
+    self.append_value("removeBackdrop")
   }
   #[inline]
   fn transform_gpu(&self) -> String {
-    self.append_string_to_skribble_value("transformGpu")
+    self.append_value("transformGpu")
   }
   #[inline]
   fn transform_cpu(&self) -> String {
-    self.append_string_to_skribble_value("transformCpu")
+    self.append_value("transformCpu")
   }
 }
-impl MediaQueryDeviceCategories for GeneratedSkribbleRoot {}
-impl MediaQueryBreakpoints for GeneratedSkribbleRoot {}
-impl MediaQueryOrientation for GeneratedSkribbleRoot {}
-impl MediaQueryMotion for GeneratedSkribbleRoot {}
-impl MediaQueryDarkMode for GeneratedSkribbleRoot {}
-impl ModifierParentGroup for GeneratedSkribbleRoot {}
-impl ModifierHoverGroup for GeneratedSkribbleRoot {}
-impl ModifierActiveGroup for GeneratedSkribbleRoot {}
-impl ModifierFocusGroup for GeneratedSkribbleRoot {}
-impl ModifierFocusWithinGroup for GeneratedSkribbleRoot {}
-impl ModifierFocusVisibleGroup for GeneratedSkribbleRoot {}
-impl ModifierEnabledGroup for GeneratedSkribbleRoot {}
-impl ModifierEmptyGroup for GeneratedSkribbleRoot {}
-impl ModifierReadGroup for GeneratedSkribbleRoot {}
-impl ModifierExpandedGroup for GeneratedSkribbleRoot {}
-impl ModifierCheckedGroup for GeneratedSkribbleRoot {}
-impl ModifierGrabbedGroup for GeneratedSkribbleRoot {}
-impl ModifierPressedGroup for GeneratedSkribbleRoot {}
-impl ModifierInvalidGrammarGroup for GeneratedSkribbleRoot {}
-impl ModifierInvalidSpellingGroup for GeneratedSkribbleRoot {}
-impl ModifierValidGroup for GeneratedSkribbleRoot {}
-impl ModifierLoadingGroup for GeneratedSkribbleRoot {}
-impl ModifierSelectedGroup for GeneratedSkribbleRoot {}
-impl ModifierHiddenGroup for GeneratedSkribbleRoot {}
-impl ModifierAutofillGroup for GeneratedSkribbleRoot {}
-impl ModifierEvenGroup for GeneratedSkribbleRoot {}
-impl ModifierNodePositionGroup for GeneratedSkribbleRoot {}
-impl ModifierNodeOfTypeGroup for GeneratedSkribbleRoot {}
-impl ModifierVisitedGroup for GeneratedSkribbleRoot {}
-impl ModifierOptionalGroup for GeneratedSkribbleRoot {}
-impl ModifierFullScreenGroup for GeneratedSkribbleRoot {}
-impl ModifierTargetGroup for GeneratedSkribbleRoot {}
-impl ModifierPlaceholderShownGroup for GeneratedSkribbleRoot {}
-impl ModifierRequiredGroup for GeneratedSkribbleRoot {}
-impl ModifierDefaultGroup for GeneratedSkribbleRoot {}
-impl ModifierOnlyChildGroup for GeneratedSkribbleRoot {}
-impl ModifierOnlyGroup for GeneratedSkribbleRoot {}
-impl ModifierRootGroup for GeneratedSkribbleRoot {}
-impl ModifierLinkGroup for GeneratedSkribbleRoot {}
-impl ModifierPseudoGroup for GeneratedSkribbleRoot {}
+impl GeneratedMediaQueryDeviceCategories for GeneratedSkribbleRoot {}
+impl GeneratedMediaQueryBreakpoints for GeneratedSkribbleRoot {}
+impl GeneratedMediaQueryOrientation for GeneratedSkribbleRoot {}
+impl GeneratedMediaQueryMotion for GeneratedSkribbleRoot {}
+impl GeneratedMediaQueryDarkMode for GeneratedSkribbleRoot {}
+impl GeneratedModifierParentGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierHoverGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierActiveGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierFocusGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierFocusWithinGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierFocusVisibleGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierEnabledGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierEmptyGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierReadGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierExpandedGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierCheckedGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierGrabbedGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierPressedGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierInvalidGrammarGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierValidGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierLoadingGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierSelectedGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierHiddenGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierAutofillGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierEvenGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierNodePositionGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierVisitedGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierOptionalGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierFullScreenGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierTargetGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierRequiredGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierDefaultGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierOnlyChildGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierOnlyGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierRootGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierLinkGroup for GeneratedSkribbleRoot {}
+impl GeneratedModifierPseudoGroup for GeneratedSkribbleRoot {}
 impl GeneratedAtom for GeneratedSkribbleRoot {}
 impl GeneratedNamedClasses for GeneratedSkribbleRoot {}
-impl MediaQueryBreakpoints for MediaQueryDeviceCategoriesChild {}
-impl MediaQueryOrientation for MediaQueryDeviceCategoriesChild {}
-impl MediaQueryMotion for MediaQueryDeviceCategoriesChild {}
-impl MediaQueryDarkMode for MediaQueryDeviceCategoriesChild {}
-impl ModifierParentGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierHoverGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierActiveGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierFocusGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierFocusWithinGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierFocusVisibleGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierEnabledGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierEmptyGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierReadGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierExpandedGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierCheckedGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierGrabbedGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierPressedGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierInvalidGrammarGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierInvalidSpellingGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierValidGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierLoadingGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierSelectedGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierHiddenGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierAutofillGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierEvenGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierNodePositionGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierNodeOfTypeGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierVisitedGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierOptionalGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierFullScreenGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierTargetGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierPlaceholderShownGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierRequiredGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierDefaultGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierOnlyChildGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierOnlyGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierRootGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierLinkGroup for MediaQueryDeviceCategoriesChild {}
-impl ModifierPseudoGroup for MediaQueryDeviceCategoriesChild {}
-impl GeneratedAtom for MediaQueryDeviceCategoriesChild {}
-impl GeneratedNamedClasses for MediaQueryDeviceCategoriesChild {}
-impl MediaQueryOrientation for MediaQueryBreakpointsChild {}
-impl MediaQueryMotion for MediaQueryBreakpointsChild {}
-impl MediaQueryDarkMode for MediaQueryBreakpointsChild {}
-impl ModifierParentGroup for MediaQueryBreakpointsChild {}
-impl ModifierHoverGroup for MediaQueryBreakpointsChild {}
-impl ModifierActiveGroup for MediaQueryBreakpointsChild {}
-impl ModifierFocusGroup for MediaQueryBreakpointsChild {}
-impl ModifierFocusWithinGroup for MediaQueryBreakpointsChild {}
-impl ModifierFocusVisibleGroup for MediaQueryBreakpointsChild {}
-impl ModifierEnabledGroup for MediaQueryBreakpointsChild {}
-impl ModifierEmptyGroup for MediaQueryBreakpointsChild {}
-impl ModifierReadGroup for MediaQueryBreakpointsChild {}
-impl ModifierExpandedGroup for MediaQueryBreakpointsChild {}
-impl ModifierCheckedGroup for MediaQueryBreakpointsChild {}
-impl ModifierGrabbedGroup for MediaQueryBreakpointsChild {}
-impl ModifierPressedGroup for MediaQueryBreakpointsChild {}
-impl ModifierInvalidGrammarGroup for MediaQueryBreakpointsChild {}
-impl ModifierInvalidSpellingGroup for MediaQueryBreakpointsChild {}
-impl ModifierValidGroup for MediaQueryBreakpointsChild {}
-impl ModifierLoadingGroup for MediaQueryBreakpointsChild {}
-impl ModifierSelectedGroup for MediaQueryBreakpointsChild {}
-impl ModifierHiddenGroup for MediaQueryBreakpointsChild {}
-impl ModifierAutofillGroup for MediaQueryBreakpointsChild {}
-impl ModifierEvenGroup for MediaQueryBreakpointsChild {}
-impl ModifierNodePositionGroup for MediaQueryBreakpointsChild {}
-impl ModifierNodeOfTypeGroup for MediaQueryBreakpointsChild {}
-impl ModifierVisitedGroup for MediaQueryBreakpointsChild {}
-impl ModifierOptionalGroup for MediaQueryBreakpointsChild {}
-impl ModifierFullScreenGroup for MediaQueryBreakpointsChild {}
-impl ModifierTargetGroup for MediaQueryBreakpointsChild {}
-impl ModifierPlaceholderShownGroup for MediaQueryBreakpointsChild {}
-impl ModifierRequiredGroup for MediaQueryBreakpointsChild {}
-impl ModifierDefaultGroup for MediaQueryBreakpointsChild {}
-impl ModifierOnlyChildGroup for MediaQueryBreakpointsChild {}
-impl ModifierOnlyGroup for MediaQueryBreakpointsChild {}
-impl ModifierRootGroup for MediaQueryBreakpointsChild {}
-impl ModifierLinkGroup for MediaQueryBreakpointsChild {}
-impl ModifierPseudoGroup for MediaQueryBreakpointsChild {}
-impl GeneratedAtom for MediaQueryBreakpointsChild {}
-impl GeneratedNamedClasses for MediaQueryBreakpointsChild {}
-impl MediaQueryMotion for MediaQueryOrientationChild {}
-impl MediaQueryDarkMode for MediaQueryOrientationChild {}
-impl ModifierParentGroup for MediaQueryOrientationChild {}
-impl ModifierHoverGroup for MediaQueryOrientationChild {}
-impl ModifierActiveGroup for MediaQueryOrientationChild {}
-impl ModifierFocusGroup for MediaQueryOrientationChild {}
-impl ModifierFocusWithinGroup for MediaQueryOrientationChild {}
-impl ModifierFocusVisibleGroup for MediaQueryOrientationChild {}
-impl ModifierEnabledGroup for MediaQueryOrientationChild {}
-impl ModifierEmptyGroup for MediaQueryOrientationChild {}
-impl ModifierReadGroup for MediaQueryOrientationChild {}
-impl ModifierExpandedGroup for MediaQueryOrientationChild {}
-impl ModifierCheckedGroup for MediaQueryOrientationChild {}
-impl ModifierGrabbedGroup for MediaQueryOrientationChild {}
-impl ModifierPressedGroup for MediaQueryOrientationChild {}
-impl ModifierInvalidGrammarGroup for MediaQueryOrientationChild {}
-impl ModifierInvalidSpellingGroup for MediaQueryOrientationChild {}
-impl ModifierValidGroup for MediaQueryOrientationChild {}
-impl ModifierLoadingGroup for MediaQueryOrientationChild {}
-impl ModifierSelectedGroup for MediaQueryOrientationChild {}
-impl ModifierHiddenGroup for MediaQueryOrientationChild {}
-impl ModifierAutofillGroup for MediaQueryOrientationChild {}
-impl ModifierEvenGroup for MediaQueryOrientationChild {}
-impl ModifierNodePositionGroup for MediaQueryOrientationChild {}
-impl ModifierNodeOfTypeGroup for MediaQueryOrientationChild {}
-impl ModifierVisitedGroup for MediaQueryOrientationChild {}
-impl ModifierOptionalGroup for MediaQueryOrientationChild {}
-impl ModifierFullScreenGroup for MediaQueryOrientationChild {}
-impl ModifierTargetGroup for MediaQueryOrientationChild {}
-impl ModifierPlaceholderShownGroup for MediaQueryOrientationChild {}
-impl ModifierRequiredGroup for MediaQueryOrientationChild {}
-impl ModifierDefaultGroup for MediaQueryOrientationChild {}
-impl ModifierOnlyChildGroup for MediaQueryOrientationChild {}
-impl ModifierOnlyGroup for MediaQueryOrientationChild {}
-impl ModifierRootGroup for MediaQueryOrientationChild {}
-impl ModifierLinkGroup for MediaQueryOrientationChild {}
-impl ModifierPseudoGroup for MediaQueryOrientationChild {}
-impl GeneratedAtom for MediaQueryOrientationChild {}
-impl GeneratedNamedClasses for MediaQueryOrientationChild {}
-impl MediaQueryDarkMode for MediaQueryMotionChild {}
-impl ModifierParentGroup for MediaQueryMotionChild {}
-impl ModifierHoverGroup for MediaQueryMotionChild {}
-impl ModifierActiveGroup for MediaQueryMotionChild {}
-impl ModifierFocusGroup for MediaQueryMotionChild {}
-impl ModifierFocusWithinGroup for MediaQueryMotionChild {}
-impl ModifierFocusVisibleGroup for MediaQueryMotionChild {}
-impl ModifierEnabledGroup for MediaQueryMotionChild {}
-impl ModifierEmptyGroup for MediaQueryMotionChild {}
-impl ModifierReadGroup for MediaQueryMotionChild {}
-impl ModifierExpandedGroup for MediaQueryMotionChild {}
-impl ModifierCheckedGroup for MediaQueryMotionChild {}
-impl ModifierGrabbedGroup for MediaQueryMotionChild {}
-impl ModifierPressedGroup for MediaQueryMotionChild {}
-impl ModifierInvalidGrammarGroup for MediaQueryMotionChild {}
-impl ModifierInvalidSpellingGroup for MediaQueryMotionChild {}
-impl ModifierValidGroup for MediaQueryMotionChild {}
-impl ModifierLoadingGroup for MediaQueryMotionChild {}
-impl ModifierSelectedGroup for MediaQueryMotionChild {}
-impl ModifierHiddenGroup for MediaQueryMotionChild {}
-impl ModifierAutofillGroup for MediaQueryMotionChild {}
-impl ModifierEvenGroup for MediaQueryMotionChild {}
-impl ModifierNodePositionGroup for MediaQueryMotionChild {}
-impl ModifierNodeOfTypeGroup for MediaQueryMotionChild {}
-impl ModifierVisitedGroup for MediaQueryMotionChild {}
-impl ModifierOptionalGroup for MediaQueryMotionChild {}
-impl ModifierFullScreenGroup for MediaQueryMotionChild {}
-impl ModifierTargetGroup for MediaQueryMotionChild {}
-impl ModifierPlaceholderShownGroup for MediaQueryMotionChild {}
-impl ModifierRequiredGroup for MediaQueryMotionChild {}
-impl ModifierDefaultGroup for MediaQueryMotionChild {}
-impl ModifierOnlyChildGroup for MediaQueryMotionChild {}
-impl ModifierOnlyGroup for MediaQueryMotionChild {}
-impl ModifierRootGroup for MediaQueryMotionChild {}
-impl ModifierLinkGroup for MediaQueryMotionChild {}
-impl ModifierPseudoGroup for MediaQueryMotionChild {}
-impl GeneratedAtom for MediaQueryMotionChild {}
-impl GeneratedNamedClasses for MediaQueryMotionChild {}
-impl ModifierParentGroup for MediaQueryDarkModeChild {}
-impl ModifierHoverGroup for MediaQueryDarkModeChild {}
-impl ModifierActiveGroup for MediaQueryDarkModeChild {}
-impl ModifierFocusGroup for MediaQueryDarkModeChild {}
-impl ModifierFocusWithinGroup for MediaQueryDarkModeChild {}
-impl ModifierFocusVisibleGroup for MediaQueryDarkModeChild {}
-impl ModifierEnabledGroup for MediaQueryDarkModeChild {}
-impl ModifierEmptyGroup for MediaQueryDarkModeChild {}
-impl ModifierReadGroup for MediaQueryDarkModeChild {}
-impl ModifierExpandedGroup for MediaQueryDarkModeChild {}
-impl ModifierCheckedGroup for MediaQueryDarkModeChild {}
-impl ModifierGrabbedGroup for MediaQueryDarkModeChild {}
-impl ModifierPressedGroup for MediaQueryDarkModeChild {}
-impl ModifierInvalidGrammarGroup for MediaQueryDarkModeChild {}
-impl ModifierInvalidSpellingGroup for MediaQueryDarkModeChild {}
-impl ModifierValidGroup for MediaQueryDarkModeChild {}
-impl ModifierLoadingGroup for MediaQueryDarkModeChild {}
-impl ModifierSelectedGroup for MediaQueryDarkModeChild {}
-impl ModifierHiddenGroup for MediaQueryDarkModeChild {}
-impl ModifierAutofillGroup for MediaQueryDarkModeChild {}
-impl ModifierEvenGroup for MediaQueryDarkModeChild {}
-impl ModifierNodePositionGroup for MediaQueryDarkModeChild {}
-impl ModifierNodeOfTypeGroup for MediaQueryDarkModeChild {}
-impl ModifierVisitedGroup for MediaQueryDarkModeChild {}
-impl ModifierOptionalGroup for MediaQueryDarkModeChild {}
-impl ModifierFullScreenGroup for MediaQueryDarkModeChild {}
-impl ModifierTargetGroup for MediaQueryDarkModeChild {}
-impl ModifierPlaceholderShownGroup for MediaQueryDarkModeChild {}
-impl ModifierRequiredGroup for MediaQueryDarkModeChild {}
-impl ModifierDefaultGroup for MediaQueryDarkModeChild {}
-impl ModifierOnlyChildGroup for MediaQueryDarkModeChild {}
-impl ModifierOnlyGroup for MediaQueryDarkModeChild {}
-impl ModifierRootGroup for MediaQueryDarkModeChild {}
-impl ModifierLinkGroup for MediaQueryDarkModeChild {}
-impl ModifierPseudoGroup for MediaQueryDarkModeChild {}
-impl GeneratedAtom for MediaQueryDarkModeChild {}
-impl GeneratedNamedClasses for MediaQueryDarkModeChild {}
-impl ModifierHoverGroup for ModifierParentGroupChild {}
-impl ModifierActiveGroup for ModifierParentGroupChild {}
-impl ModifierFocusGroup for ModifierParentGroupChild {}
-impl ModifierFocusWithinGroup for ModifierParentGroupChild {}
-impl ModifierFocusVisibleGroup for ModifierParentGroupChild {}
-impl ModifierEnabledGroup for ModifierParentGroupChild {}
-impl ModifierEmptyGroup for ModifierParentGroupChild {}
-impl ModifierReadGroup for ModifierParentGroupChild {}
-impl ModifierExpandedGroup for ModifierParentGroupChild {}
-impl ModifierCheckedGroup for ModifierParentGroupChild {}
-impl ModifierGrabbedGroup for ModifierParentGroupChild {}
-impl ModifierPressedGroup for ModifierParentGroupChild {}
-impl ModifierInvalidGrammarGroup for ModifierParentGroupChild {}
-impl ModifierInvalidSpellingGroup for ModifierParentGroupChild {}
-impl ModifierValidGroup for ModifierParentGroupChild {}
-impl ModifierLoadingGroup for ModifierParentGroupChild {}
-impl ModifierSelectedGroup for ModifierParentGroupChild {}
-impl ModifierHiddenGroup for ModifierParentGroupChild {}
-impl ModifierAutofillGroup for ModifierParentGroupChild {}
-impl ModifierEvenGroup for ModifierParentGroupChild {}
-impl ModifierNodePositionGroup for ModifierParentGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierParentGroupChild {}
-impl ModifierVisitedGroup for ModifierParentGroupChild {}
-impl ModifierOptionalGroup for ModifierParentGroupChild {}
-impl ModifierFullScreenGroup for ModifierParentGroupChild {}
-impl ModifierTargetGroup for ModifierParentGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierParentGroupChild {}
-impl ModifierRequiredGroup for ModifierParentGroupChild {}
-impl ModifierDefaultGroup for ModifierParentGroupChild {}
-impl ModifierOnlyChildGroup for ModifierParentGroupChild {}
-impl ModifierOnlyGroup for ModifierParentGroupChild {}
-impl ModifierRootGroup for ModifierParentGroupChild {}
-impl ModifierLinkGroup for ModifierParentGroupChild {}
-impl ModifierPseudoGroup for ModifierParentGroupChild {}
-impl GeneratedAtom for ModifierParentGroupChild {}
-impl GeneratedNamedClasses for ModifierParentGroupChild {}
-impl ModifierActiveGroup for ModifierHoverGroupChild {}
-impl ModifierFocusGroup for ModifierHoverGroupChild {}
-impl ModifierFocusWithinGroup for ModifierHoverGroupChild {}
-impl ModifierFocusVisibleGroup for ModifierHoverGroupChild {}
-impl ModifierEnabledGroup for ModifierHoverGroupChild {}
-impl ModifierEmptyGroup for ModifierHoverGroupChild {}
-impl ModifierReadGroup for ModifierHoverGroupChild {}
-impl ModifierExpandedGroup for ModifierHoverGroupChild {}
-impl ModifierCheckedGroup for ModifierHoverGroupChild {}
-impl ModifierGrabbedGroup for ModifierHoverGroupChild {}
-impl ModifierPressedGroup for ModifierHoverGroupChild {}
-impl ModifierInvalidGrammarGroup for ModifierHoverGroupChild {}
-impl ModifierInvalidSpellingGroup for ModifierHoverGroupChild {}
-impl ModifierValidGroup for ModifierHoverGroupChild {}
-impl ModifierLoadingGroup for ModifierHoverGroupChild {}
-impl ModifierSelectedGroup for ModifierHoverGroupChild {}
-impl ModifierHiddenGroup for ModifierHoverGroupChild {}
-impl ModifierAutofillGroup for ModifierHoverGroupChild {}
-impl ModifierEvenGroup for ModifierHoverGroupChild {}
-impl ModifierNodePositionGroup for ModifierHoverGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierHoverGroupChild {}
-impl ModifierVisitedGroup for ModifierHoverGroupChild {}
-impl ModifierOptionalGroup for ModifierHoverGroupChild {}
-impl ModifierFullScreenGroup for ModifierHoverGroupChild {}
-impl ModifierTargetGroup for ModifierHoverGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierHoverGroupChild {}
-impl ModifierRequiredGroup for ModifierHoverGroupChild {}
-impl ModifierDefaultGroup for ModifierHoverGroupChild {}
-impl ModifierOnlyChildGroup for ModifierHoverGroupChild {}
-impl ModifierOnlyGroup for ModifierHoverGroupChild {}
-impl ModifierRootGroup for ModifierHoverGroupChild {}
-impl ModifierLinkGroup for ModifierHoverGroupChild {}
-impl ModifierPseudoGroup for ModifierHoverGroupChild {}
-impl GeneratedAtom for ModifierHoverGroupChild {}
-impl GeneratedNamedClasses for ModifierHoverGroupChild {}
-impl ModifierFocusGroup for ModifierActiveGroupChild {}
-impl ModifierFocusWithinGroup for ModifierActiveGroupChild {}
-impl ModifierFocusVisibleGroup for ModifierActiveGroupChild {}
-impl ModifierEnabledGroup for ModifierActiveGroupChild {}
-impl ModifierEmptyGroup for ModifierActiveGroupChild {}
-impl ModifierReadGroup for ModifierActiveGroupChild {}
-impl ModifierExpandedGroup for ModifierActiveGroupChild {}
-impl ModifierCheckedGroup for ModifierActiveGroupChild {}
-impl ModifierGrabbedGroup for ModifierActiveGroupChild {}
-impl ModifierPressedGroup for ModifierActiveGroupChild {}
-impl ModifierInvalidGrammarGroup for ModifierActiveGroupChild {}
-impl ModifierInvalidSpellingGroup for ModifierActiveGroupChild {}
-impl ModifierValidGroup for ModifierActiveGroupChild {}
-impl ModifierLoadingGroup for ModifierActiveGroupChild {}
-impl ModifierSelectedGroup for ModifierActiveGroupChild {}
-impl ModifierHiddenGroup for ModifierActiveGroupChild {}
-impl ModifierAutofillGroup for ModifierActiveGroupChild {}
-impl ModifierEvenGroup for ModifierActiveGroupChild {}
-impl ModifierNodePositionGroup for ModifierActiveGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierActiveGroupChild {}
-impl ModifierVisitedGroup for ModifierActiveGroupChild {}
-impl ModifierOptionalGroup for ModifierActiveGroupChild {}
-impl ModifierFullScreenGroup for ModifierActiveGroupChild {}
-impl ModifierTargetGroup for ModifierActiveGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierActiveGroupChild {}
-impl ModifierRequiredGroup for ModifierActiveGroupChild {}
-impl ModifierDefaultGroup for ModifierActiveGroupChild {}
-impl ModifierOnlyChildGroup for ModifierActiveGroupChild {}
-impl ModifierOnlyGroup for ModifierActiveGroupChild {}
-impl ModifierRootGroup for ModifierActiveGroupChild {}
-impl ModifierLinkGroup for ModifierActiveGroupChild {}
-impl ModifierPseudoGroup for ModifierActiveGroupChild {}
-impl GeneratedAtom for ModifierActiveGroupChild {}
-impl GeneratedNamedClasses for ModifierActiveGroupChild {}
-impl ModifierFocusWithinGroup for ModifierFocusGroupChild {}
-impl ModifierFocusVisibleGroup for ModifierFocusGroupChild {}
-impl ModifierEnabledGroup for ModifierFocusGroupChild {}
-impl ModifierEmptyGroup for ModifierFocusGroupChild {}
-impl ModifierReadGroup for ModifierFocusGroupChild {}
-impl ModifierExpandedGroup for ModifierFocusGroupChild {}
-impl ModifierCheckedGroup for ModifierFocusGroupChild {}
-impl ModifierGrabbedGroup for ModifierFocusGroupChild {}
-impl ModifierPressedGroup for ModifierFocusGroupChild {}
-impl ModifierInvalidGrammarGroup for ModifierFocusGroupChild {}
-impl ModifierInvalidSpellingGroup for ModifierFocusGroupChild {}
-impl ModifierValidGroup for ModifierFocusGroupChild {}
-impl ModifierLoadingGroup for ModifierFocusGroupChild {}
-impl ModifierSelectedGroup for ModifierFocusGroupChild {}
-impl ModifierHiddenGroup for ModifierFocusGroupChild {}
-impl ModifierAutofillGroup for ModifierFocusGroupChild {}
-impl ModifierEvenGroup for ModifierFocusGroupChild {}
-impl ModifierNodePositionGroup for ModifierFocusGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierFocusGroupChild {}
-impl ModifierVisitedGroup for ModifierFocusGroupChild {}
-impl ModifierOptionalGroup for ModifierFocusGroupChild {}
-impl ModifierFullScreenGroup for ModifierFocusGroupChild {}
-impl ModifierTargetGroup for ModifierFocusGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierFocusGroupChild {}
-impl ModifierRequiredGroup for ModifierFocusGroupChild {}
-impl ModifierDefaultGroup for ModifierFocusGroupChild {}
-impl ModifierOnlyChildGroup for ModifierFocusGroupChild {}
-impl ModifierOnlyGroup for ModifierFocusGroupChild {}
-impl ModifierRootGroup for ModifierFocusGroupChild {}
-impl ModifierLinkGroup for ModifierFocusGroupChild {}
-impl ModifierPseudoGroup for ModifierFocusGroupChild {}
-impl GeneratedAtom for ModifierFocusGroupChild {}
-impl GeneratedNamedClasses for ModifierFocusGroupChild {}
-impl ModifierFocusVisibleGroup for ModifierFocusWithinGroupChild {}
-impl ModifierEnabledGroup for ModifierFocusWithinGroupChild {}
-impl ModifierEmptyGroup for ModifierFocusWithinGroupChild {}
-impl ModifierReadGroup for ModifierFocusWithinGroupChild {}
-impl ModifierExpandedGroup for ModifierFocusWithinGroupChild {}
-impl ModifierCheckedGroup for ModifierFocusWithinGroupChild {}
-impl ModifierGrabbedGroup for ModifierFocusWithinGroupChild {}
-impl ModifierPressedGroup for ModifierFocusWithinGroupChild {}
-impl ModifierInvalidGrammarGroup for ModifierFocusWithinGroupChild {}
-impl ModifierInvalidSpellingGroup for ModifierFocusWithinGroupChild {}
-impl ModifierValidGroup for ModifierFocusWithinGroupChild {}
-impl ModifierLoadingGroup for ModifierFocusWithinGroupChild {}
-impl ModifierSelectedGroup for ModifierFocusWithinGroupChild {}
-impl ModifierHiddenGroup for ModifierFocusWithinGroupChild {}
-impl ModifierAutofillGroup for ModifierFocusWithinGroupChild {}
-impl ModifierEvenGroup for ModifierFocusWithinGroupChild {}
-impl ModifierNodePositionGroup for ModifierFocusWithinGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierFocusWithinGroupChild {}
-impl ModifierVisitedGroup for ModifierFocusWithinGroupChild {}
-impl ModifierOptionalGroup for ModifierFocusWithinGroupChild {}
-impl ModifierFullScreenGroup for ModifierFocusWithinGroupChild {}
-impl ModifierTargetGroup for ModifierFocusWithinGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierFocusWithinGroupChild {}
-impl ModifierRequiredGroup for ModifierFocusWithinGroupChild {}
-impl ModifierDefaultGroup for ModifierFocusWithinGroupChild {}
-impl ModifierOnlyChildGroup for ModifierFocusWithinGroupChild {}
-impl ModifierOnlyGroup for ModifierFocusWithinGroupChild {}
-impl ModifierRootGroup for ModifierFocusWithinGroupChild {}
-impl ModifierLinkGroup for ModifierFocusWithinGroupChild {}
-impl ModifierPseudoGroup for ModifierFocusWithinGroupChild {}
-impl GeneratedAtom for ModifierFocusWithinGroupChild {}
-impl GeneratedNamedClasses for ModifierFocusWithinGroupChild {}
-impl ModifierEnabledGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierEmptyGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierReadGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierExpandedGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierCheckedGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierGrabbedGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierPressedGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierInvalidGrammarGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierInvalidSpellingGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierValidGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierLoadingGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierSelectedGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierHiddenGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierAutofillGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierEvenGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierNodePositionGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierVisitedGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierOptionalGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierFullScreenGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierTargetGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierRequiredGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierDefaultGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierOnlyChildGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierOnlyGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierRootGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierLinkGroup for ModifierFocusVisibleGroupChild {}
-impl ModifierPseudoGroup for ModifierFocusVisibleGroupChild {}
-impl GeneratedAtom for ModifierFocusVisibleGroupChild {}
-impl GeneratedNamedClasses for ModifierFocusVisibleGroupChild {}
-impl ModifierEmptyGroup for ModifierEnabledGroupChild {}
-impl ModifierReadGroup for ModifierEnabledGroupChild {}
-impl ModifierExpandedGroup for ModifierEnabledGroupChild {}
-impl ModifierCheckedGroup for ModifierEnabledGroupChild {}
-impl ModifierGrabbedGroup for ModifierEnabledGroupChild {}
-impl ModifierPressedGroup for ModifierEnabledGroupChild {}
-impl ModifierInvalidGrammarGroup for ModifierEnabledGroupChild {}
-impl ModifierInvalidSpellingGroup for ModifierEnabledGroupChild {}
-impl ModifierValidGroup for ModifierEnabledGroupChild {}
-impl ModifierLoadingGroup for ModifierEnabledGroupChild {}
-impl ModifierSelectedGroup for ModifierEnabledGroupChild {}
-impl ModifierHiddenGroup for ModifierEnabledGroupChild {}
-impl ModifierAutofillGroup for ModifierEnabledGroupChild {}
-impl ModifierEvenGroup for ModifierEnabledGroupChild {}
-impl ModifierNodePositionGroup for ModifierEnabledGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierEnabledGroupChild {}
-impl ModifierVisitedGroup for ModifierEnabledGroupChild {}
-impl ModifierOptionalGroup for ModifierEnabledGroupChild {}
-impl ModifierFullScreenGroup for ModifierEnabledGroupChild {}
-impl ModifierTargetGroup for ModifierEnabledGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierEnabledGroupChild {}
-impl ModifierRequiredGroup for ModifierEnabledGroupChild {}
-impl ModifierDefaultGroup for ModifierEnabledGroupChild {}
-impl ModifierOnlyChildGroup for ModifierEnabledGroupChild {}
-impl ModifierOnlyGroup for ModifierEnabledGroupChild {}
-impl ModifierRootGroup for ModifierEnabledGroupChild {}
-impl ModifierLinkGroup for ModifierEnabledGroupChild {}
-impl ModifierPseudoGroup for ModifierEnabledGroupChild {}
-impl GeneratedAtom for ModifierEnabledGroupChild {}
-impl GeneratedNamedClasses for ModifierEnabledGroupChild {}
-impl ModifierReadGroup for ModifierEmptyGroupChild {}
-impl ModifierExpandedGroup for ModifierEmptyGroupChild {}
-impl ModifierCheckedGroup for ModifierEmptyGroupChild {}
-impl ModifierGrabbedGroup for ModifierEmptyGroupChild {}
-impl ModifierPressedGroup for ModifierEmptyGroupChild {}
-impl ModifierInvalidGrammarGroup for ModifierEmptyGroupChild {}
-impl ModifierInvalidSpellingGroup for ModifierEmptyGroupChild {}
-impl ModifierValidGroup for ModifierEmptyGroupChild {}
-impl ModifierLoadingGroup for ModifierEmptyGroupChild {}
-impl ModifierSelectedGroup for ModifierEmptyGroupChild {}
-impl ModifierHiddenGroup for ModifierEmptyGroupChild {}
-impl ModifierAutofillGroup for ModifierEmptyGroupChild {}
-impl ModifierEvenGroup for ModifierEmptyGroupChild {}
-impl ModifierNodePositionGroup for ModifierEmptyGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierEmptyGroupChild {}
-impl ModifierVisitedGroup for ModifierEmptyGroupChild {}
-impl ModifierOptionalGroup for ModifierEmptyGroupChild {}
-impl ModifierFullScreenGroup for ModifierEmptyGroupChild {}
-impl ModifierTargetGroup for ModifierEmptyGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierEmptyGroupChild {}
-impl ModifierRequiredGroup for ModifierEmptyGroupChild {}
-impl ModifierDefaultGroup for ModifierEmptyGroupChild {}
-impl ModifierOnlyChildGroup for ModifierEmptyGroupChild {}
-impl ModifierOnlyGroup for ModifierEmptyGroupChild {}
-impl ModifierRootGroup for ModifierEmptyGroupChild {}
-impl ModifierLinkGroup for ModifierEmptyGroupChild {}
-impl ModifierPseudoGroup for ModifierEmptyGroupChild {}
-impl GeneratedAtom for ModifierEmptyGroupChild {}
-impl GeneratedNamedClasses for ModifierEmptyGroupChild {}
-impl ModifierExpandedGroup for ModifierReadGroupChild {}
-impl ModifierCheckedGroup for ModifierReadGroupChild {}
-impl ModifierGrabbedGroup for ModifierReadGroupChild {}
-impl ModifierPressedGroup for ModifierReadGroupChild {}
-impl ModifierInvalidGrammarGroup for ModifierReadGroupChild {}
-impl ModifierInvalidSpellingGroup for ModifierReadGroupChild {}
-impl ModifierValidGroup for ModifierReadGroupChild {}
-impl ModifierLoadingGroup for ModifierReadGroupChild {}
-impl ModifierSelectedGroup for ModifierReadGroupChild {}
-impl ModifierHiddenGroup for ModifierReadGroupChild {}
-impl ModifierAutofillGroup for ModifierReadGroupChild {}
-impl ModifierEvenGroup for ModifierReadGroupChild {}
-impl ModifierNodePositionGroup for ModifierReadGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierReadGroupChild {}
-impl ModifierVisitedGroup for ModifierReadGroupChild {}
-impl ModifierOptionalGroup for ModifierReadGroupChild {}
-impl ModifierFullScreenGroup for ModifierReadGroupChild {}
-impl ModifierTargetGroup for ModifierReadGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierReadGroupChild {}
-impl ModifierRequiredGroup for ModifierReadGroupChild {}
-impl ModifierDefaultGroup for ModifierReadGroupChild {}
-impl ModifierOnlyChildGroup for ModifierReadGroupChild {}
-impl ModifierOnlyGroup for ModifierReadGroupChild {}
-impl ModifierRootGroup for ModifierReadGroupChild {}
-impl ModifierLinkGroup for ModifierReadGroupChild {}
-impl ModifierPseudoGroup for ModifierReadGroupChild {}
-impl GeneratedAtom for ModifierReadGroupChild {}
-impl GeneratedNamedClasses for ModifierReadGroupChild {}
-impl ModifierCheckedGroup for ModifierExpandedGroupChild {}
-impl ModifierGrabbedGroup for ModifierExpandedGroupChild {}
-impl ModifierPressedGroup for ModifierExpandedGroupChild {}
-impl ModifierInvalidGrammarGroup for ModifierExpandedGroupChild {}
-impl ModifierInvalidSpellingGroup for ModifierExpandedGroupChild {}
-impl ModifierValidGroup for ModifierExpandedGroupChild {}
-impl ModifierLoadingGroup for ModifierExpandedGroupChild {}
-impl ModifierSelectedGroup for ModifierExpandedGroupChild {}
-impl ModifierHiddenGroup for ModifierExpandedGroupChild {}
-impl ModifierAutofillGroup for ModifierExpandedGroupChild {}
-impl ModifierEvenGroup for ModifierExpandedGroupChild {}
-impl ModifierNodePositionGroup for ModifierExpandedGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierExpandedGroupChild {}
-impl ModifierVisitedGroup for ModifierExpandedGroupChild {}
-impl ModifierOptionalGroup for ModifierExpandedGroupChild {}
-impl ModifierFullScreenGroup for ModifierExpandedGroupChild {}
-impl ModifierTargetGroup for ModifierExpandedGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierExpandedGroupChild {}
-impl ModifierRequiredGroup for ModifierExpandedGroupChild {}
-impl ModifierDefaultGroup for ModifierExpandedGroupChild {}
-impl ModifierOnlyChildGroup for ModifierExpandedGroupChild {}
-impl ModifierOnlyGroup for ModifierExpandedGroupChild {}
-impl ModifierRootGroup for ModifierExpandedGroupChild {}
-impl ModifierLinkGroup for ModifierExpandedGroupChild {}
-impl ModifierPseudoGroup for ModifierExpandedGroupChild {}
-impl GeneratedAtom for ModifierExpandedGroupChild {}
-impl GeneratedNamedClasses for ModifierExpandedGroupChild {}
-impl ModifierGrabbedGroup for ModifierCheckedGroupChild {}
-impl ModifierPressedGroup for ModifierCheckedGroupChild {}
-impl ModifierInvalidGrammarGroup for ModifierCheckedGroupChild {}
-impl ModifierInvalidSpellingGroup for ModifierCheckedGroupChild {}
-impl ModifierValidGroup for ModifierCheckedGroupChild {}
-impl ModifierLoadingGroup for ModifierCheckedGroupChild {}
-impl ModifierSelectedGroup for ModifierCheckedGroupChild {}
-impl ModifierHiddenGroup for ModifierCheckedGroupChild {}
-impl ModifierAutofillGroup for ModifierCheckedGroupChild {}
-impl ModifierEvenGroup for ModifierCheckedGroupChild {}
-impl ModifierNodePositionGroup for ModifierCheckedGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierCheckedGroupChild {}
-impl ModifierVisitedGroup for ModifierCheckedGroupChild {}
-impl ModifierOptionalGroup for ModifierCheckedGroupChild {}
-impl ModifierFullScreenGroup for ModifierCheckedGroupChild {}
-impl ModifierTargetGroup for ModifierCheckedGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierCheckedGroupChild {}
-impl ModifierRequiredGroup for ModifierCheckedGroupChild {}
-impl ModifierDefaultGroup for ModifierCheckedGroupChild {}
-impl ModifierOnlyChildGroup for ModifierCheckedGroupChild {}
-impl ModifierOnlyGroup for ModifierCheckedGroupChild {}
-impl ModifierRootGroup for ModifierCheckedGroupChild {}
-impl ModifierLinkGroup for ModifierCheckedGroupChild {}
-impl ModifierPseudoGroup for ModifierCheckedGroupChild {}
-impl GeneratedAtom for ModifierCheckedGroupChild {}
-impl GeneratedNamedClasses for ModifierCheckedGroupChild {}
-impl ModifierPressedGroup for ModifierGrabbedGroupChild {}
-impl ModifierInvalidGrammarGroup for ModifierGrabbedGroupChild {}
-impl ModifierInvalidSpellingGroup for ModifierGrabbedGroupChild {}
-impl ModifierValidGroup for ModifierGrabbedGroupChild {}
-impl ModifierLoadingGroup for ModifierGrabbedGroupChild {}
-impl ModifierSelectedGroup for ModifierGrabbedGroupChild {}
-impl ModifierHiddenGroup for ModifierGrabbedGroupChild {}
-impl ModifierAutofillGroup for ModifierGrabbedGroupChild {}
-impl ModifierEvenGroup for ModifierGrabbedGroupChild {}
-impl ModifierNodePositionGroup for ModifierGrabbedGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierGrabbedGroupChild {}
-impl ModifierVisitedGroup for ModifierGrabbedGroupChild {}
-impl ModifierOptionalGroup for ModifierGrabbedGroupChild {}
-impl ModifierFullScreenGroup for ModifierGrabbedGroupChild {}
-impl ModifierTargetGroup for ModifierGrabbedGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierGrabbedGroupChild {}
-impl ModifierRequiredGroup for ModifierGrabbedGroupChild {}
-impl ModifierDefaultGroup for ModifierGrabbedGroupChild {}
-impl ModifierOnlyChildGroup for ModifierGrabbedGroupChild {}
-impl ModifierOnlyGroup for ModifierGrabbedGroupChild {}
-impl ModifierRootGroup for ModifierGrabbedGroupChild {}
-impl ModifierLinkGroup for ModifierGrabbedGroupChild {}
-impl ModifierPseudoGroup for ModifierGrabbedGroupChild {}
-impl GeneratedAtom for ModifierGrabbedGroupChild {}
-impl GeneratedNamedClasses for ModifierGrabbedGroupChild {}
-impl ModifierInvalidGrammarGroup for ModifierPressedGroupChild {}
-impl ModifierInvalidSpellingGroup for ModifierPressedGroupChild {}
-impl ModifierValidGroup for ModifierPressedGroupChild {}
-impl ModifierLoadingGroup for ModifierPressedGroupChild {}
-impl ModifierSelectedGroup for ModifierPressedGroupChild {}
-impl ModifierHiddenGroup for ModifierPressedGroupChild {}
-impl ModifierAutofillGroup for ModifierPressedGroupChild {}
-impl ModifierEvenGroup for ModifierPressedGroupChild {}
-impl ModifierNodePositionGroup for ModifierPressedGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierPressedGroupChild {}
-impl ModifierVisitedGroup for ModifierPressedGroupChild {}
-impl ModifierOptionalGroup for ModifierPressedGroupChild {}
-impl ModifierFullScreenGroup for ModifierPressedGroupChild {}
-impl ModifierTargetGroup for ModifierPressedGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierPressedGroupChild {}
-impl ModifierRequiredGroup for ModifierPressedGroupChild {}
-impl ModifierDefaultGroup for ModifierPressedGroupChild {}
-impl ModifierOnlyChildGroup for ModifierPressedGroupChild {}
-impl ModifierOnlyGroup for ModifierPressedGroupChild {}
-impl ModifierRootGroup for ModifierPressedGroupChild {}
-impl ModifierLinkGroup for ModifierPressedGroupChild {}
-impl ModifierPseudoGroup for ModifierPressedGroupChild {}
-impl GeneratedAtom for ModifierPressedGroupChild {}
-impl GeneratedNamedClasses for ModifierPressedGroupChild {}
-impl ModifierInvalidSpellingGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierValidGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierLoadingGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierSelectedGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierHiddenGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierAutofillGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierEvenGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierNodePositionGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierVisitedGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierOptionalGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierFullScreenGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierTargetGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierRequiredGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierDefaultGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierOnlyChildGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierOnlyGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierRootGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierLinkGroup for ModifierInvalidGrammarGroupChild {}
-impl ModifierPseudoGroup for ModifierInvalidGrammarGroupChild {}
-impl GeneratedAtom for ModifierInvalidGrammarGroupChild {}
-impl GeneratedNamedClasses for ModifierInvalidGrammarGroupChild {}
-impl ModifierValidGroup for ModifierInvalidSpellingGroupChild {}
-impl ModifierLoadingGroup for ModifierInvalidSpellingGroupChild {}
-impl ModifierSelectedGroup for ModifierInvalidSpellingGroupChild {}
-impl ModifierHiddenGroup for ModifierInvalidSpellingGroupChild {}
-impl ModifierAutofillGroup for ModifierInvalidSpellingGroupChild {}
-impl ModifierEvenGroup for ModifierInvalidSpellingGroupChild {}
-impl ModifierNodePositionGroup for ModifierInvalidSpellingGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierInvalidSpellingGroupChild {}
-impl ModifierVisitedGroup for ModifierInvalidSpellingGroupChild {}
-impl ModifierOptionalGroup for ModifierInvalidSpellingGroupChild {}
-impl ModifierFullScreenGroup for ModifierInvalidSpellingGroupChild {}
-impl ModifierTargetGroup for ModifierInvalidSpellingGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierInvalidSpellingGroupChild {}
-impl ModifierRequiredGroup for ModifierInvalidSpellingGroupChild {}
-impl ModifierDefaultGroup for ModifierInvalidSpellingGroupChild {}
-impl ModifierOnlyChildGroup for ModifierInvalidSpellingGroupChild {}
-impl ModifierOnlyGroup for ModifierInvalidSpellingGroupChild {}
-impl ModifierRootGroup for ModifierInvalidSpellingGroupChild {}
-impl ModifierLinkGroup for ModifierInvalidSpellingGroupChild {}
-impl ModifierPseudoGroup for ModifierInvalidSpellingGroupChild {}
-impl GeneratedAtom for ModifierInvalidSpellingGroupChild {}
-impl GeneratedNamedClasses for ModifierInvalidSpellingGroupChild {}
-impl ModifierLoadingGroup for ModifierValidGroupChild {}
-impl ModifierSelectedGroup for ModifierValidGroupChild {}
-impl ModifierHiddenGroup for ModifierValidGroupChild {}
-impl ModifierAutofillGroup for ModifierValidGroupChild {}
-impl ModifierEvenGroup for ModifierValidGroupChild {}
-impl ModifierNodePositionGroup for ModifierValidGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierValidGroupChild {}
-impl ModifierVisitedGroup for ModifierValidGroupChild {}
-impl ModifierOptionalGroup for ModifierValidGroupChild {}
-impl ModifierFullScreenGroup for ModifierValidGroupChild {}
-impl ModifierTargetGroup for ModifierValidGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierValidGroupChild {}
-impl ModifierRequiredGroup for ModifierValidGroupChild {}
-impl ModifierDefaultGroup for ModifierValidGroupChild {}
-impl ModifierOnlyChildGroup for ModifierValidGroupChild {}
-impl ModifierOnlyGroup for ModifierValidGroupChild {}
-impl ModifierRootGroup for ModifierValidGroupChild {}
-impl ModifierLinkGroup for ModifierValidGroupChild {}
-impl ModifierPseudoGroup for ModifierValidGroupChild {}
-impl GeneratedAtom for ModifierValidGroupChild {}
-impl GeneratedNamedClasses for ModifierValidGroupChild {}
-impl ModifierSelectedGroup for ModifierLoadingGroupChild {}
-impl ModifierHiddenGroup for ModifierLoadingGroupChild {}
-impl ModifierAutofillGroup for ModifierLoadingGroupChild {}
-impl ModifierEvenGroup for ModifierLoadingGroupChild {}
-impl ModifierNodePositionGroup for ModifierLoadingGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierLoadingGroupChild {}
-impl ModifierVisitedGroup for ModifierLoadingGroupChild {}
-impl ModifierOptionalGroup for ModifierLoadingGroupChild {}
-impl ModifierFullScreenGroup for ModifierLoadingGroupChild {}
-impl ModifierTargetGroup for ModifierLoadingGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierLoadingGroupChild {}
-impl ModifierRequiredGroup for ModifierLoadingGroupChild {}
-impl ModifierDefaultGroup for ModifierLoadingGroupChild {}
-impl ModifierOnlyChildGroup for ModifierLoadingGroupChild {}
-impl ModifierOnlyGroup for ModifierLoadingGroupChild {}
-impl ModifierRootGroup for ModifierLoadingGroupChild {}
-impl ModifierLinkGroup for ModifierLoadingGroupChild {}
-impl ModifierPseudoGroup for ModifierLoadingGroupChild {}
-impl GeneratedAtom for ModifierLoadingGroupChild {}
-impl GeneratedNamedClasses for ModifierLoadingGroupChild {}
-impl ModifierHiddenGroup for ModifierSelectedGroupChild {}
-impl ModifierAutofillGroup for ModifierSelectedGroupChild {}
-impl ModifierEvenGroup for ModifierSelectedGroupChild {}
-impl ModifierNodePositionGroup for ModifierSelectedGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierSelectedGroupChild {}
-impl ModifierVisitedGroup for ModifierSelectedGroupChild {}
-impl ModifierOptionalGroup for ModifierSelectedGroupChild {}
-impl ModifierFullScreenGroup for ModifierSelectedGroupChild {}
-impl ModifierTargetGroup for ModifierSelectedGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierSelectedGroupChild {}
-impl ModifierRequiredGroup for ModifierSelectedGroupChild {}
-impl ModifierDefaultGroup for ModifierSelectedGroupChild {}
-impl ModifierOnlyChildGroup for ModifierSelectedGroupChild {}
-impl ModifierOnlyGroup for ModifierSelectedGroupChild {}
-impl ModifierRootGroup for ModifierSelectedGroupChild {}
-impl ModifierLinkGroup for ModifierSelectedGroupChild {}
-impl ModifierPseudoGroup for ModifierSelectedGroupChild {}
-impl GeneratedAtom for ModifierSelectedGroupChild {}
-impl GeneratedNamedClasses for ModifierSelectedGroupChild {}
-impl ModifierAutofillGroup for ModifierHiddenGroupChild {}
-impl ModifierEvenGroup for ModifierHiddenGroupChild {}
-impl ModifierNodePositionGroup for ModifierHiddenGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierHiddenGroupChild {}
-impl ModifierVisitedGroup for ModifierHiddenGroupChild {}
-impl ModifierOptionalGroup for ModifierHiddenGroupChild {}
-impl ModifierFullScreenGroup for ModifierHiddenGroupChild {}
-impl ModifierTargetGroup for ModifierHiddenGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierHiddenGroupChild {}
-impl ModifierRequiredGroup for ModifierHiddenGroupChild {}
-impl ModifierDefaultGroup for ModifierHiddenGroupChild {}
-impl ModifierOnlyChildGroup for ModifierHiddenGroupChild {}
-impl ModifierOnlyGroup for ModifierHiddenGroupChild {}
-impl ModifierRootGroup for ModifierHiddenGroupChild {}
-impl ModifierLinkGroup for ModifierHiddenGroupChild {}
-impl ModifierPseudoGroup for ModifierHiddenGroupChild {}
-impl GeneratedAtom for ModifierHiddenGroupChild {}
-impl GeneratedNamedClasses for ModifierHiddenGroupChild {}
-impl ModifierEvenGroup for ModifierAutofillGroupChild {}
-impl ModifierNodePositionGroup for ModifierAutofillGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierAutofillGroupChild {}
-impl ModifierVisitedGroup for ModifierAutofillGroupChild {}
-impl ModifierOptionalGroup for ModifierAutofillGroupChild {}
-impl ModifierFullScreenGroup for ModifierAutofillGroupChild {}
-impl ModifierTargetGroup for ModifierAutofillGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierAutofillGroupChild {}
-impl ModifierRequiredGroup for ModifierAutofillGroupChild {}
-impl ModifierDefaultGroup for ModifierAutofillGroupChild {}
-impl ModifierOnlyChildGroup for ModifierAutofillGroupChild {}
-impl ModifierOnlyGroup for ModifierAutofillGroupChild {}
-impl ModifierRootGroup for ModifierAutofillGroupChild {}
-impl ModifierLinkGroup for ModifierAutofillGroupChild {}
-impl ModifierPseudoGroup for ModifierAutofillGroupChild {}
-impl GeneratedAtom for ModifierAutofillGroupChild {}
-impl GeneratedNamedClasses for ModifierAutofillGroupChild {}
-impl ModifierNodePositionGroup for ModifierEvenGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierEvenGroupChild {}
-impl ModifierVisitedGroup for ModifierEvenGroupChild {}
-impl ModifierOptionalGroup for ModifierEvenGroupChild {}
-impl ModifierFullScreenGroup for ModifierEvenGroupChild {}
-impl ModifierTargetGroup for ModifierEvenGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierEvenGroupChild {}
-impl ModifierRequiredGroup for ModifierEvenGroupChild {}
-impl ModifierDefaultGroup for ModifierEvenGroupChild {}
-impl ModifierOnlyChildGroup for ModifierEvenGroupChild {}
-impl ModifierOnlyGroup for ModifierEvenGroupChild {}
-impl ModifierRootGroup for ModifierEvenGroupChild {}
-impl ModifierLinkGroup for ModifierEvenGroupChild {}
-impl ModifierPseudoGroup for ModifierEvenGroupChild {}
-impl GeneratedAtom for ModifierEvenGroupChild {}
-impl GeneratedNamedClasses for ModifierEvenGroupChild {}
-impl ModifierNodeOfTypeGroup for ModifierNodePositionGroupChild {}
-impl ModifierVisitedGroup for ModifierNodePositionGroupChild {}
-impl ModifierOptionalGroup for ModifierNodePositionGroupChild {}
-impl ModifierFullScreenGroup for ModifierNodePositionGroupChild {}
-impl ModifierTargetGroup for ModifierNodePositionGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierNodePositionGroupChild {}
-impl ModifierRequiredGroup for ModifierNodePositionGroupChild {}
-impl ModifierDefaultGroup for ModifierNodePositionGroupChild {}
-impl ModifierOnlyChildGroup for ModifierNodePositionGroupChild {}
-impl ModifierOnlyGroup for ModifierNodePositionGroupChild {}
-impl ModifierRootGroup for ModifierNodePositionGroupChild {}
-impl ModifierLinkGroup for ModifierNodePositionGroupChild {}
-impl ModifierPseudoGroup for ModifierNodePositionGroupChild {}
-impl GeneratedAtom for ModifierNodePositionGroupChild {}
-impl GeneratedNamedClasses for ModifierNodePositionGroupChild {}
-impl ModifierVisitedGroup for ModifierNodeOfTypeGroupChild {}
-impl ModifierOptionalGroup for ModifierNodeOfTypeGroupChild {}
-impl ModifierFullScreenGroup for ModifierNodeOfTypeGroupChild {}
-impl ModifierTargetGroup for ModifierNodeOfTypeGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierNodeOfTypeGroupChild {}
-impl ModifierRequiredGroup for ModifierNodeOfTypeGroupChild {}
-impl ModifierDefaultGroup for ModifierNodeOfTypeGroupChild {}
-impl ModifierOnlyChildGroup for ModifierNodeOfTypeGroupChild {}
-impl ModifierOnlyGroup for ModifierNodeOfTypeGroupChild {}
-impl ModifierRootGroup for ModifierNodeOfTypeGroupChild {}
-impl ModifierLinkGroup for ModifierNodeOfTypeGroupChild {}
-impl ModifierPseudoGroup for ModifierNodeOfTypeGroupChild {}
-impl GeneratedAtom for ModifierNodeOfTypeGroupChild {}
-impl GeneratedNamedClasses for ModifierNodeOfTypeGroupChild {}
-impl ModifierOptionalGroup for ModifierVisitedGroupChild {}
-impl ModifierFullScreenGroup for ModifierVisitedGroupChild {}
-impl ModifierTargetGroup for ModifierVisitedGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierVisitedGroupChild {}
-impl ModifierRequiredGroup for ModifierVisitedGroupChild {}
-impl ModifierDefaultGroup for ModifierVisitedGroupChild {}
-impl ModifierOnlyChildGroup for ModifierVisitedGroupChild {}
-impl ModifierOnlyGroup for ModifierVisitedGroupChild {}
-impl ModifierRootGroup for ModifierVisitedGroupChild {}
-impl ModifierLinkGroup for ModifierVisitedGroupChild {}
-impl ModifierPseudoGroup for ModifierVisitedGroupChild {}
-impl GeneratedAtom for ModifierVisitedGroupChild {}
-impl GeneratedNamedClasses for ModifierVisitedGroupChild {}
-impl ModifierFullScreenGroup for ModifierOptionalGroupChild {}
-impl ModifierTargetGroup for ModifierOptionalGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierOptionalGroupChild {}
-impl ModifierRequiredGroup for ModifierOptionalGroupChild {}
-impl ModifierDefaultGroup for ModifierOptionalGroupChild {}
-impl ModifierOnlyChildGroup for ModifierOptionalGroupChild {}
-impl ModifierOnlyGroup for ModifierOptionalGroupChild {}
-impl ModifierRootGroup for ModifierOptionalGroupChild {}
-impl ModifierLinkGroup for ModifierOptionalGroupChild {}
-impl ModifierPseudoGroup for ModifierOptionalGroupChild {}
-impl GeneratedAtom for ModifierOptionalGroupChild {}
-impl GeneratedNamedClasses for ModifierOptionalGroupChild {}
-impl ModifierTargetGroup for ModifierFullScreenGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierFullScreenGroupChild {}
-impl ModifierRequiredGroup for ModifierFullScreenGroupChild {}
-impl ModifierDefaultGroup for ModifierFullScreenGroupChild {}
-impl ModifierOnlyChildGroup for ModifierFullScreenGroupChild {}
-impl ModifierOnlyGroup for ModifierFullScreenGroupChild {}
-impl ModifierRootGroup for ModifierFullScreenGroupChild {}
-impl ModifierLinkGroup for ModifierFullScreenGroupChild {}
-impl ModifierPseudoGroup for ModifierFullScreenGroupChild {}
-impl GeneratedAtom for ModifierFullScreenGroupChild {}
-impl GeneratedNamedClasses for ModifierFullScreenGroupChild {}
-impl ModifierPlaceholderShownGroup for ModifierTargetGroupChild {}
-impl ModifierRequiredGroup for ModifierTargetGroupChild {}
-impl ModifierDefaultGroup for ModifierTargetGroupChild {}
-impl ModifierOnlyChildGroup for ModifierTargetGroupChild {}
-impl ModifierOnlyGroup for ModifierTargetGroupChild {}
-impl ModifierRootGroup for ModifierTargetGroupChild {}
-impl ModifierLinkGroup for ModifierTargetGroupChild {}
-impl ModifierPseudoGroup for ModifierTargetGroupChild {}
-impl GeneratedAtom for ModifierTargetGroupChild {}
-impl GeneratedNamedClasses for ModifierTargetGroupChild {}
-impl ModifierRequiredGroup for ModifierPlaceholderShownGroupChild {}
-impl ModifierDefaultGroup for ModifierPlaceholderShownGroupChild {}
-impl ModifierOnlyChildGroup for ModifierPlaceholderShownGroupChild {}
-impl ModifierOnlyGroup for ModifierPlaceholderShownGroupChild {}
-impl ModifierRootGroup for ModifierPlaceholderShownGroupChild {}
-impl ModifierLinkGroup for ModifierPlaceholderShownGroupChild {}
-impl ModifierPseudoGroup for ModifierPlaceholderShownGroupChild {}
-impl GeneratedAtom for ModifierPlaceholderShownGroupChild {}
-impl GeneratedNamedClasses for ModifierPlaceholderShownGroupChild {}
-impl ModifierDefaultGroup for ModifierRequiredGroupChild {}
-impl ModifierOnlyChildGroup for ModifierRequiredGroupChild {}
-impl ModifierOnlyGroup for ModifierRequiredGroupChild {}
-impl ModifierRootGroup for ModifierRequiredGroupChild {}
-impl ModifierLinkGroup for ModifierRequiredGroupChild {}
-impl ModifierPseudoGroup for ModifierRequiredGroupChild {}
-impl GeneratedAtom for ModifierRequiredGroupChild {}
-impl GeneratedNamedClasses for ModifierRequiredGroupChild {}
-impl ModifierOnlyChildGroup for ModifierDefaultGroupChild {}
-impl ModifierOnlyGroup for ModifierDefaultGroupChild {}
-impl ModifierRootGroup for ModifierDefaultGroupChild {}
-impl ModifierLinkGroup for ModifierDefaultGroupChild {}
-impl ModifierPseudoGroup for ModifierDefaultGroupChild {}
-impl GeneratedAtom for ModifierDefaultGroupChild {}
-impl GeneratedNamedClasses for ModifierDefaultGroupChild {}
-impl ModifierOnlyGroup for ModifierOnlyChildGroupChild {}
-impl ModifierRootGroup for ModifierOnlyChildGroupChild {}
-impl ModifierLinkGroup for ModifierOnlyChildGroupChild {}
-impl ModifierPseudoGroup for ModifierOnlyChildGroupChild {}
-impl GeneratedAtom for ModifierOnlyChildGroupChild {}
-impl GeneratedNamedClasses for ModifierOnlyChildGroupChild {}
-impl ModifierRootGroup for ModifierOnlyGroupChild {}
-impl ModifierLinkGroup for ModifierOnlyGroupChild {}
-impl ModifierPseudoGroup for ModifierOnlyGroupChild {}
-impl GeneratedAtom for ModifierOnlyGroupChild {}
-impl GeneratedNamedClasses for ModifierOnlyGroupChild {}
-impl ModifierLinkGroup for ModifierRootGroupChild {}
-impl ModifierPseudoGroup for ModifierRootGroupChild {}
-impl GeneratedAtom for ModifierRootGroupChild {}
-impl GeneratedNamedClasses for ModifierRootGroupChild {}
-impl ModifierPseudoGroup for ModifierLinkGroupChild {}
-impl GeneratedAtom for ModifierLinkGroupChild {}
-impl GeneratedNamedClasses for ModifierLinkGroupChild {}
-impl GeneratedAtom for ModifierPseudoGroupChild {}
-impl GeneratedNamedClasses for ModifierPseudoGroupChild {}
+impl GeneratedMediaQueryBreakpoints for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedMediaQueryOrientation for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedMediaQueryMotion for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedMediaQueryDarkMode for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierParentGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierHoverGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierActiveGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierFocusGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierFocusWithinGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierFocusVisibleGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierEnabledGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierEmptyGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierReadGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierExpandedGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierCheckedGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierGrabbedGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierPressedGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierInvalidGrammarGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierValidGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierLoadingGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierSelectedGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierHiddenGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierAutofillGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierEvenGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierVisitedGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierOptionalGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierTargetGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierRequiredGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierDefaultGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierOnlyGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierRootGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierLinkGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedModifierPseudoGroup for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtom for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedNamedClasses for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedMediaQueryOrientation for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedMediaQueryMotion for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedMediaQueryDarkMode for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierParentGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierHoverGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierActiveGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierFocusGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierFocusWithinGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierFocusVisibleGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierEnabledGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierEmptyGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierReadGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierExpandedGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierCheckedGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierGrabbedGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierPressedGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierInvalidGrammarGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierValidGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierLoadingGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierSelectedGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierHiddenGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierAutofillGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierEvenGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierVisitedGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierOptionalGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierTargetGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierRequiredGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierDefaultGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierOnlyGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierRootGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierLinkGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedModifierPseudoGroup for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtom for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedNamedClasses for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedMediaQueryMotion for GeneratedMediaQueryOrientationChild {}
+impl GeneratedMediaQueryDarkMode for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierParentGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierHoverGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierActiveGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierFocusGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierFocusWithinGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierFocusVisibleGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierEnabledGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierEmptyGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierReadGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierExpandedGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierCheckedGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierGrabbedGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierPressedGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierInvalidGrammarGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierValidGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierLoadingGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierSelectedGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierHiddenGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierAutofillGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierEvenGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierVisitedGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierOptionalGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierTargetGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierRequiredGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierDefaultGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierOnlyGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierRootGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierLinkGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedModifierPseudoGroup for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtom for GeneratedMediaQueryOrientationChild {}
+impl GeneratedNamedClasses for GeneratedMediaQueryOrientationChild {}
+impl GeneratedMediaQueryDarkMode for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierParentGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierHoverGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierActiveGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierFocusGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierFocusWithinGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierFocusVisibleGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierEnabledGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierEmptyGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierReadGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierExpandedGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierCheckedGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierGrabbedGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierPressedGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierInvalidGrammarGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierValidGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierLoadingGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierSelectedGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierHiddenGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierAutofillGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierEvenGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierVisitedGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierOptionalGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierTargetGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierRequiredGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierDefaultGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierOnlyGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierRootGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierLinkGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierPseudoGroup for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtom for GeneratedMediaQueryMotionChild {}
+impl GeneratedNamedClasses for GeneratedMediaQueryMotionChild {}
+impl GeneratedModifierParentGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierHoverGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierActiveGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierFocusGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierFocusWithinGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierFocusVisibleGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierEnabledGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierEmptyGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierReadGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierExpandedGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierCheckedGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierGrabbedGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierPressedGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierInvalidGrammarGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierValidGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierLoadingGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierSelectedGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierHiddenGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierAutofillGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierEvenGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierVisitedGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierOptionalGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierTargetGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierRequiredGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierDefaultGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierOnlyGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierRootGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierLinkGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierPseudoGroup for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtom for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedNamedClasses for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedModifierHoverGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierActiveGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierFocusGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierFocusWithinGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierFocusVisibleGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierEnabledGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierEmptyGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierReadGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierExpandedGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierCheckedGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierGrabbedGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierPressedGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierInvalidGrammarGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierValidGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierLoadingGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierSelectedGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierHiddenGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierAutofillGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierParentGroupChild {}
+impl GeneratedAtom for GeneratedModifierParentGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierParentGroupChild {}
+impl GeneratedModifierActiveGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierFocusGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierFocusWithinGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierFocusVisibleGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierEnabledGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierEmptyGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierReadGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierExpandedGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierCheckedGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierGrabbedGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierPressedGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierInvalidGrammarGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierValidGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierLoadingGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierSelectedGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierHiddenGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierAutofillGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtom for GeneratedModifierHoverGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierHoverGroupChild {}
+impl GeneratedModifierFocusGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierFocusWithinGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierFocusVisibleGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierEnabledGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierEmptyGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierReadGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierExpandedGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierCheckedGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierGrabbedGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierPressedGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierInvalidGrammarGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierValidGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierLoadingGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierSelectedGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierHiddenGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierAutofillGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtom for GeneratedModifierActiveGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierActiveGroupChild {}
+impl GeneratedModifierFocusWithinGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierFocusVisibleGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierEnabledGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierEmptyGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierReadGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierExpandedGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierCheckedGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierGrabbedGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierPressedGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierInvalidGrammarGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierValidGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierLoadingGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierSelectedGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierHiddenGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierAutofillGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtom for GeneratedModifierFocusGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierFocusGroupChild {}
+impl GeneratedModifierFocusVisibleGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierEnabledGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierEmptyGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierReadGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierExpandedGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierCheckedGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierGrabbedGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierPressedGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierInvalidGrammarGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierValidGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierLoadingGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierSelectedGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierHiddenGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierAutofillGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtom for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedModifierEnabledGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierEmptyGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierReadGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierExpandedGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierCheckedGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierGrabbedGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierPressedGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierInvalidGrammarGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierValidGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierLoadingGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierSelectedGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierHiddenGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierAutofillGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtom for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedModifierEmptyGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierReadGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierExpandedGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierCheckedGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierGrabbedGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierPressedGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierInvalidGrammarGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierValidGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierLoadingGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierSelectedGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierHiddenGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierAutofillGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtom for GeneratedModifierEnabledGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierEnabledGroupChild {}
+impl GeneratedModifierReadGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierExpandedGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierCheckedGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierGrabbedGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierPressedGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierInvalidGrammarGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierValidGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierLoadingGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierSelectedGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierHiddenGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierAutofillGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtom for GeneratedModifierEmptyGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierEmptyGroupChild {}
+impl GeneratedModifierExpandedGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierCheckedGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierGrabbedGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierPressedGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierInvalidGrammarGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierValidGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierLoadingGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierSelectedGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierHiddenGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierAutofillGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierReadGroupChild {}
+impl GeneratedAtom for GeneratedModifierReadGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierReadGroupChild {}
+impl GeneratedModifierCheckedGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierGrabbedGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierPressedGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierInvalidGrammarGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierValidGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierLoadingGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierSelectedGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierHiddenGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierAutofillGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierExpandedGroupChild {}
+impl GeneratedAtom for GeneratedModifierExpandedGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierExpandedGroupChild {}
+impl GeneratedModifierGrabbedGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierPressedGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierInvalidGrammarGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierValidGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierLoadingGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierSelectedGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierHiddenGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierAutofillGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtom for GeneratedModifierCheckedGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierCheckedGroupChild {}
+impl GeneratedModifierPressedGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierInvalidGrammarGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierValidGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierLoadingGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierSelectedGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierHiddenGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierAutofillGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedAtom for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierGrabbedGroupChild {}
+impl GeneratedModifierInvalidGrammarGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierValidGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierLoadingGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierSelectedGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierHiddenGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierAutofillGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierPressedGroupChild {}
+impl GeneratedAtom for GeneratedModifierPressedGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierPressedGroupChild {}
+impl GeneratedModifierInvalidSpellingGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierValidGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierLoadingGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierSelectedGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierHiddenGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierAutofillGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedAtom for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierInvalidGrammarGroupChild {}
+impl GeneratedModifierValidGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierLoadingGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierSelectedGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierHiddenGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierAutofillGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedAtom for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierInvalidSpellingGroupChild {}
+impl GeneratedModifierLoadingGroup for GeneratedModifierValidGroupChild {}
+impl GeneratedModifierSelectedGroup for GeneratedModifierValidGroupChild {}
+impl GeneratedModifierHiddenGroup for GeneratedModifierValidGroupChild {}
+impl GeneratedModifierAutofillGroup for GeneratedModifierValidGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierValidGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierValidGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierValidGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierValidGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierValidGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierValidGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierValidGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierValidGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierValidGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierValidGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierValidGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierValidGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierValidGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierValidGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierValidGroupChild {}
+impl GeneratedAtom for GeneratedModifierValidGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierValidGroupChild {}
+impl GeneratedModifierSelectedGroup for GeneratedModifierLoadingGroupChild {}
+impl GeneratedModifierHiddenGroup for GeneratedModifierLoadingGroupChild {}
+impl GeneratedModifierAutofillGroup for GeneratedModifierLoadingGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierLoadingGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierLoadingGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierLoadingGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierLoadingGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierLoadingGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierLoadingGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierLoadingGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierLoadingGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierLoadingGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierLoadingGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierLoadingGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierLoadingGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierLoadingGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierLoadingGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierLoadingGroupChild {}
+impl GeneratedAtom for GeneratedModifierLoadingGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierLoadingGroupChild {}
+impl GeneratedModifierHiddenGroup for GeneratedModifierSelectedGroupChild {}
+impl GeneratedModifierAutofillGroup for GeneratedModifierSelectedGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierSelectedGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierSelectedGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierSelectedGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierSelectedGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierSelectedGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierSelectedGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierSelectedGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierSelectedGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierSelectedGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierSelectedGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierSelectedGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierSelectedGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierSelectedGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierSelectedGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierSelectedGroupChild {}
+impl GeneratedAtom for GeneratedModifierSelectedGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierSelectedGroupChild {}
+impl GeneratedModifierAutofillGroup for GeneratedModifierHiddenGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierHiddenGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierHiddenGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierHiddenGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierHiddenGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierHiddenGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierHiddenGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierHiddenGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierHiddenGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierHiddenGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierHiddenGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierHiddenGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierHiddenGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierHiddenGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierHiddenGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierHiddenGroupChild {}
+impl GeneratedAtom for GeneratedModifierHiddenGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierHiddenGroupChild {}
+impl GeneratedModifierEvenGroup for GeneratedModifierAutofillGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierAutofillGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierAutofillGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierAutofillGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierAutofillGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierAutofillGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierAutofillGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierAutofillGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierAutofillGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierAutofillGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierAutofillGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierAutofillGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierAutofillGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierAutofillGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtom for GeneratedModifierAutofillGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierAutofillGroupChild {}
+impl GeneratedModifierNodePositionGroup for GeneratedModifierEvenGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierEvenGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierEvenGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierEvenGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierEvenGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierEvenGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierEvenGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierEvenGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierEvenGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierEvenGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierEvenGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierEvenGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierEvenGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtom for GeneratedModifierEvenGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierEvenGroupChild {}
+impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtom for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedModifierVisitedGroup for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtom for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedModifierOptionalGroup for GeneratedModifierVisitedGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierVisitedGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierVisitedGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierVisitedGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierVisitedGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierVisitedGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierVisitedGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierVisitedGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierVisitedGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierVisitedGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtom for GeneratedModifierVisitedGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierVisitedGroupChild {}
+impl GeneratedModifierFullScreenGroup for GeneratedModifierOptionalGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierOptionalGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierOptionalGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierOptionalGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierOptionalGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierOptionalGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierOptionalGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierOptionalGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierOptionalGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtom for GeneratedModifierOptionalGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierOptionalGroupChild {}
+impl GeneratedModifierTargetGroup for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtom for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierTargetGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierTargetGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierTargetGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierTargetGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierTargetGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierTargetGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierTargetGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtom for GeneratedModifierTargetGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierTargetGroupChild {}
+impl GeneratedModifierRequiredGroup for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtom for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedModifierDefaultGroup for GeneratedModifierRequiredGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierRequiredGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierRequiredGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierRequiredGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierRequiredGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtom for GeneratedModifierRequiredGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierRequiredGroupChild {}
+impl GeneratedModifierOnlyChildGroup for GeneratedModifierDefaultGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierDefaultGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierDefaultGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierDefaultGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtom for GeneratedModifierDefaultGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierDefaultGroupChild {}
+impl GeneratedModifierOnlyGroup for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtom for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedModifierRootGroup for GeneratedModifierOnlyGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierOnlyGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtom for GeneratedModifierOnlyGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierOnlyGroupChild {}
+impl GeneratedModifierLinkGroup for GeneratedModifierRootGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierRootGroupChild {}
+impl GeneratedAtom for GeneratedModifierRootGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierRootGroupChild {}
+impl GeneratedModifierPseudoGroup for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtom for GeneratedModifierLinkGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtom for GeneratedModifierPseudoGroupChild {}
+impl GeneratedNamedClasses for GeneratedModifierPseudoGroupChild {}

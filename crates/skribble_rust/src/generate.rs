@@ -27,7 +27,7 @@ fn generate_media_queries(
 ) -> AnyEmptyResult {
   for (key, map) in config.media_queries.iter() {
     let mut section = Vec::<String>::new();
-    let trait_name = format!("MediaQuery{}", key.to_pascal_case());
+    let trait_name = format!("GeneratedMediaQuery{}", key.to_pascal_case());
     let struct_name = format!("{trait_name}Child");
     section.push(generate_struct(&struct_name));
     section.push(generate_impl_skribble_value(&struct_name));
@@ -55,7 +55,7 @@ fn generate_media_queries(
         1,
       ));
       methods.push(wrap_indent(
-        format!("{struct_name}::from_ref(self.append_to_skribble_value(\"{name}\"))"),
+        format!("{struct_name}::from_ref(self.append(\"{name}\"))"),
         2,
       ));
       methods.push(wrap_indent("}", 1));
@@ -91,7 +91,7 @@ fn generate_modifiers(
 ) -> AnyEmptyResult {
   for (key, map) in config.modifiers.iter() {
     let mut section = Vec::<String>::new();
-    let trait_name = format!("Modifier{}", key.to_pascal_case());
+    let trait_name = format!("GeneratedModifier{}", key.to_pascal_case());
     let struct_name = format!("{trait_name}Child");
     section.push(generate_struct(&struct_name));
     section.push(generate_impl_skribble_value(&struct_name));
@@ -116,7 +116,7 @@ fn generate_modifiers(
         1,
       ));
       methods.push(wrap_indent(
-        format!("{struct_name}::from_ref(self.append_to_skribble_value(\"{name}\"))"),
+        format!("{struct_name}::from_ref(self.append(\"{name}\"))"),
         2,
       ));
       methods.push(wrap_indent("}", 1));
@@ -161,10 +161,7 @@ fn generate_keyframes(
       1,
     ));
 
-    sections.push(wrap_indent(
-      format!("self.append_string_to_skribble_value(\"{name}\")"),
-      2,
-    ));
+    sections.push(wrap_indent(format!("self.append_value(\"{name}\")"), 2));
 
     sections.push(wrap_indent("}", 1));
   }
@@ -195,7 +192,7 @@ fn generate_named_classes(
     ));
 
     sections.push(wrap_indent(
-      format!("self.append_string_to_skribble_value(\"{class_name}\")"),
+      format!("self.append_value(\"{class_name}\")"),
       2,
     ));
 
@@ -257,6 +254,7 @@ fn generate_atoms(
       }
     }
 
+    // The atom
     if let Some(ref description) = atom.description {
       trait_content.push(wrap_indent(wrap_docs(description), 1));
     }
@@ -267,7 +265,20 @@ fn generate_atoms(
     ));
 
     trait_content.push(wrap_indent(
-      format!("{atom_struct_name}::from_ref(self.append_to_skribble_value(\"{name}\"))"),
+      format!("{atom_struct_name}::from_ref(self.append(\"{name}\"))"),
+      2,
+    ));
+
+    trait_content.push(wrap_indent("}", 1));
+
+    // The atom argument
+    trait_content.push(wrap_indent(
+      format!("#[inline]\nfn {method_name}_(&self, value: &'static str) -> String {{"),
+      1,
+    ));
+
+    trait_content.push(wrap_indent(
+      format!("self.append(format!(\"{name}:[{{}}]\", value.trim()))"),
       2,
     ));
 
@@ -327,7 +338,7 @@ fn generate_atom_value_sets(
       ));
 
       struct_content.push(wrap_indent(
-        format!("self.append_string_to_skribble_value(\"{value_name}\")"),
+        format!("self.append_value(\"{value_name}\")"),
         2,
       ));
 
@@ -368,10 +379,7 @@ fn generate_atom_colors(
       format!("#[inline]\nfn {method_name}(&self) -> String {{"),
       1,
     ));
-    sections.push(wrap_indent(
-      format!("self.append_string_to_skribble_value(\"{name}\")"),
-      2,
-    ));
+    sections.push(wrap_indent(format!("self.append_value(\"{name}\")"), 2));
     sections.push(wrap_indent("}", 1))
   }
 
@@ -383,10 +391,7 @@ fn generate_atom_colors(
       1,
     ));
 
-    sections.push(wrap_indent(
-      format!("self.append_string_to_skribble_value(\"{name}\")"),
-      2,
-    ));
+    sections.push(wrap_indent(format!("self.append_value(\"{name}\")"), 2));
 
     sections.push(wrap_indent("}", 1));
   }
@@ -600,7 +605,7 @@ mod private {
     fn from_ref(value: impl AsRef<str>) -> Self;
     fn get_skribble_value(&self) -> &String;
     #[inline]
-    fn append_to_skribble_value(&self, value: impl AsRef<str>) -> String {
+    fn append(&self, value: impl AsRef<str>) -> String {
       let current_value = self.get_skribble_value();
       let prefix = if current_value.is_empty() {
         "".into()
@@ -611,7 +616,7 @@ mod private {
       format!("{}{}", prefix, value.as_ref())
     }
     #[inline]
-    fn append_string_to_skribble_value(&self, value: impl AsRef<str>) -> String {
+    fn append_value(&self, value: impl AsRef<str>) -> String {
       format!("{}:${}", self.get_skribble_value(), value.as_ref())
     }
   }
