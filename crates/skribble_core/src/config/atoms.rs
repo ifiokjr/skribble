@@ -12,6 +12,7 @@ use super::OptionalStringMap;
 use super::PrioritizedString;
 use super::Priority;
 use crate::AnyEmptyResult;
+use crate::Arguments;
 use crate::Placeholder;
 use crate::RunnerConfig;
 
@@ -84,6 +85,18 @@ impl Atom {
     self
       .values
       .write_css_properties(writer, config, self, name)?;
+    Ok(())
+  }
+
+  pub fn write_css_argument(
+    &self,
+    writer: &mut dyn Write,
+    config: &RunnerConfig,
+    argument: &Arguments,
+  ) -> AnyEmptyResult {
+    self
+      .values
+      .write_css_argument(writer, config, self, argument)?;
     Ok(())
   }
 

@@ -79,14 +79,14 @@ impl Placeholder {
 
         // get the name from the capture group
         let Some(name) = caps.name("name") else {
-        return default_value;
-      };
+          return default_value;
+        };
 
         let name = name.as_str();
 
         let Some(value) = config.palette.get(name) else {
-        return default_value;
-      };
+          return default_value;
+        };
 
         value.to_owned()
       })
@@ -97,14 +97,14 @@ impl Placeholder {
     MODIFIER_REGEX
       .replace_all(content.as_ref(), |caps: &Captures| {
         let Some(name) = caps.name("name") else {
-        return String::new();
-      };
+          return String::new();
+        };
 
         let name = name.as_str();
 
         let Some(modifier) = config.get_modifier(name) else {
-        return String::new();
-      };
+          return String::new();
+        };
 
         modifier.values.join(", ")
       })
@@ -115,13 +115,13 @@ impl Placeholder {
     MEDIA_QUERY_REGEX
       .replace_all(content.as_ref(), |caps: &Captures| {
         let Some(name) = caps.name("name") else {
-        return String::new();
-      };
+          return String::new();
+        };
 
         let name = name.as_str();
         let Some(media_query) = config.get_media_query(name) else {
-        return String::new();
-      };
+          return String::new();
+        };
 
         media_query.query.clone()
       })

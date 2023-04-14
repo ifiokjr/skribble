@@ -185,6 +185,8 @@ impl Class {
     if let Some(atom) = self.get_atom().and_then(|atom| config.atoms.get(atom)) {
       if let Some(value_set_name) = self.get_value_name() {
         atom.write_css_properties(writer, config, value_set_name)?;
+      } else if let Some(argument) = self.get_argument() {
+        atom.write_css_argument(writer, config, argument)?;
       }
     }
 

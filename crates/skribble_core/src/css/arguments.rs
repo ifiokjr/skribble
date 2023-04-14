@@ -1,8 +1,14 @@
 use std::fmt::Display;
 use std::fmt::Formatter;
+use std::fmt::Write;
 
 use serde::Deserialize;
 use serde::Serialize;
+
+use crate::AnyEmptyResult;
+use crate::Atom;
+use crate::Placeholder;
+use crate::RunnerConfig;
 
 #[derive(Clone, Debug, Deserialize, Serialize, PartialEq, Eq, Hash)]
 pub enum Arguments {
@@ -25,11 +31,49 @@ impl Arguments {
     Self::KV(key, value)
   }
 
-  pub fn get_value(&self) -> String {
+  pub fn get_value(&self) -> &str {
     match self {
-      Arguments::V(value) => value.to_string(),
-      Arguments::KV(_, value) => value.to_string(),
+      Arguments::V(value) => value,
+      Arguments::KV(_, value) => value,
     }
+  }
+
+  pub fn write_css(&self, writer: &mut dyn Write, config: &RunnerConfig) -> AnyEmptyResult {
+    let Arguments::KV(ref key, ref value) = self else {
+      return Ok(());
+    };
+
+    let property = Placeholder::normalize(key, config);
+    let css_value = Placeholder::normalize(value, config);
+
+    write!(writer, "{property}: {css_value};")?;
+
+    Ok(())
+  }
+
+  pub fn write_css_atom(
+    &self,
+    writer: &mut dyn Write,
+    config: &RunnerConfig,
+    atom: &Atom,
+  ) -> AnyEmptyResult {
+    let Arguments::V(ref value) = self else {
+      return Ok(());
+    };
+
+    let value = Placeholder::normalize(value, config);
+
+    for (property, css_value) in atom.styles.iter() {
+      let property = Placeholder::normalize(property, config);
+      let css_value = css_value
+        .as_ref()
+        .map(|value| Placeholder::normalize(value, config))
+        .unwrap_or_else(|| value.clone());
+
+      writeln!(writer, "{property}: {css_value};")?;
+    }
+
+    Ok(())
   }
 }
 

@@ -7,9 +7,11 @@ expression: css
 @layer default;
 @layer default {
   .pt\:\[1px\] {
+    padding-top: 1px;
   }
   @media (min-width: 768px) {
     .md\:pt\:\[1vh\] {
+      padding-top: 1vh;
     }
   }
 }

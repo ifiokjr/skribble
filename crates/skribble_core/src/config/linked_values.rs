@@ -8,6 +8,7 @@ use serde::Serialize;
 use super::Atom;
 use super::NameSet;
 use crate::AnyEmptyResult;
+use crate::Arguments;
 use crate::Placeholder;
 use crate::Prioritized;
 use crate::RunnerConfig;
@@ -139,6 +140,17 @@ impl LinkedValues {
       }
     }
 
+    Ok(())
+  }
+
+  pub fn write_css_argument(
+    &self,
+    writer: &mut dyn Write,
+    config: &RunnerConfig,
+    atom: &Atom,
+    argument: &Arguments,
+  ) -> AnyEmptyResult {
+    argument.write_css_atom(writer, config, atom)?;
     Ok(())
   }
 
