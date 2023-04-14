@@ -42,9 +42,15 @@ impl Default for PropertySyntax {
   }
 }
 
-impl<V: Into<PropertySyntaxValue>> From<V> for PropertySyntax {
-  fn from(value: V) -> Self {
-    PropertySyntax::Value(value.into())
+impl From<PropertySyntaxValue> for PropertySyntax {
+  fn from(value: PropertySyntaxValue) -> Self {
+    PropertySyntax::Value(value)
+  }
+}
+
+impl From<Vec<PropertySyntaxValue>> for PropertySyntax {
+  fn from(value: Vec<PropertySyntaxValue>) -> Self {
+    PropertySyntax::List(value)
   }
 }
 

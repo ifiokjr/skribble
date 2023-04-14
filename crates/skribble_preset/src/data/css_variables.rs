@@ -289,27 +289,105 @@ lazy_static! {
       })
       .build(),
     CssVariable::builder()
-      .name("defaultTransitionDuration")
-      .variable("--default-transition-duration")
+      .name("transitionDuration")
+      .variable("--transition-duration")
       .syntax(PropertySyntaxValue::Time)
       .value("150ms")
       .build(),
     CssVariable::builder()
-      .name("defaultAnimationDuration")
-      .variable("--default-animation-duration")
+      .name("animationDuration")
+      .variable("--animation-duration")
       .syntax(PropertySyntaxValue::Time)
       .value("1s")
       .build(),
     CssVariable::builder()
+      .name("enterOpacity")
+      .variable("--enter-opacity")
+      .syntax(vec![
+        PropertySyntaxValue::Number,
+        PropertySyntaxValue::Percentage
+      ])
+      .value("1")
+      .build(),
+    CssVariable::builder()
       .name("enterTranslateX")
-      .variable("--etx")
+      .variable("--enter-tx")
       .syntax(PropertySyntaxValue::LengthPercentage)
       .value("0")
       .build(),
     CssVariable::builder()
       .name("enterTranslateY")
-      .variable("--ety")
+      .variable("--enter-ty")
       .syntax(PropertySyntaxValue::LengthPercentage)
+      .value("0")
+      .build(),
+    CssVariable::builder()
+      .name("enterScaleX")
+      .variable("--enter-sx")
+      .syntax(vec![
+        PropertySyntaxValue::Number,
+        PropertySyntaxValue::Percentage
+      ])
+      .value("1")
+      .build(),
+    CssVariable::builder()
+      .name("enterScaleY")
+      .variable("--enter-sy")
+      .syntax(vec![
+        PropertySyntaxValue::Number,
+        PropertySyntaxValue::Percentage
+      ])
+      .value("1")
+      .build(),
+    CssVariable::builder()
+      .name("enterRotate")
+      .variable("--enter-rotate")
+      .syntax(PropertySyntaxValue::Angle)
+      .value("0")
+      .build(),
+    CssVariable::builder()
+      .name("exitOpacity")
+      .variable("--exit-opacity")
+      .syntax(vec![
+        PropertySyntaxValue::Number,
+        PropertySyntaxValue::Percentage
+      ])
+      .value("1")
+      .build(),
+    CssVariable::builder()
+      .name("exitTranslateX")
+      .variable("--exit-tx")
+      .syntax(PropertySyntaxValue::LengthPercentage)
+      .value("0")
+      .build(),
+    CssVariable::builder()
+      .name("exitTranslateY")
+      .variable("--exit-ty")
+      .syntax(PropertySyntaxValue::LengthPercentage)
+      .value("0")
+      .build(),
+    CssVariable::builder()
+      .name("exitScaleX")
+      .variable("--exit-sx")
+      .syntax(vec![
+        PropertySyntaxValue::Number,
+        PropertySyntaxValue::Percentage
+      ])
+      .value("1")
+      .build(),
+    CssVariable::builder()
+      .name("exitScaleY")
+      .variable("--exit-sy")
+      .syntax(vec![
+        PropertySyntaxValue::Number,
+        PropertySyntaxValue::Percentage
+      ])
+      .value("1")
+      .build(),
+    CssVariable::builder()
+      .name("exitRotate")
+      .variable("--exit-rotate")
+      .syntax(PropertySyntaxValue::Angle)
       .value("0")
       .build(),
   ];

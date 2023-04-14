@@ -1,28 +1,28 @@
 ---
 source: crates/skribble_preset/src/__tests.rs
-expression: json
+expression: runner_config
 ---
 {
   "layers": [
     "default"
   ],
   "keyframes": {
-    "enter": {
-      "name": "enter",
+    "in": {
+      "name": "in",
       "description": "Manages the keyframes for the entry animation",
       "priority": 150,
       "from": {
         "opacity": "var(__:CSS_VARIABLE::enterOpacity:__, 1)",
-        "transform": "translate3d(var(__:CSS_VARIABLE::enterTranslateX:__, 0), var(__:CSS_VARIABLE::enterTranslateY:__, 0), 0) scale3d(var(__:CSS_VARIABLE::enterScale:__, 1), var(__:CSS_VARIABLE::enterScale:__, 1), var(__:CSS_VARIABLE::enterScale:__, 1)) rotate(var(__:CSS_VARIABLE::enterRotate:__, 0deg))"
+        "transform": "translate3d(var(__:CSS_VARIABLE::enterTranslateX:__, 0), var(__:CSS_VARIABLE::enterTranslateY:__, 0), 0) scale3d(var(__:CSS_VARIABLE::enterScaleX:__, 1), var(__:CSS_VARIABLE::enterScaleY:__, 1), 1) rotate(var(__:CSS_VARIABLE::enterRotate:__, 0deg))"
       }
     },
-    "exit": {
-      "name": "exit",
+    "out": {
+      "name": "out",
       "description": "Manages the keyframes for the exit animation.",
       "priority": 150,
       "to": {
         "opacity": "var(__:CSS_VARIABLE::exitOpacity:__, 1)",
-        "transform": "translate3d(var(__:CSS_VARIABLE::exitTranslateX:__, 0), var(__:CSS_VARIABLE::exitTranslateY:__, 0), 0) scale3d(var(__:CSS_VARIABLE::exitScale:__, 1), var(__:CSS_VARIABLE::exitScale:__, 1), var(__:CSS_VARIABLE::exitScale:__, 1)) rotate(var(__:CSS_VARIABLE::exitRotate:__, 0deg))"
+        "transform": "translate3d(var(__:CSS_VARIABLE::exitTranslateX:__, 0), var(__:CSS_VARIABLE::exitTranslateY:__, 0), 0) scale3d(var(__:CSS_VARIABLE::exitScaleX:__, 1), var(__:CSS_VARIABLE::exitScaleY:__, 1), 1) rotate(var(__:CSS_VARIABLE::exitRotate:__, 0deg))"
       }
     },
     "spin": {
@@ -483,29 +483,41 @@ expression: json
       "value": "var(__:CSS_VARIABLE::backdropBlur:__) var(__:CSS_VARIABLE::backdropBrightness:__) var(__:CSS_VARIABLE::backdropContrast:__) var(__:CSS_VARIABLE::backdropGrayscale:__) var(__:CSS_VARIABLE::backdropHueRotate:__) var(__:CSS_VARIABLE::backdropInvert:__) var(__:CSS_VARIABLE::backdropSaturate:__) var(__:CSS_VARIABLE::backdropSepia:__) var(__:CSS_VARIABLE::backdropDropShadow:__) var(__:CSS_VARIABLE::backdropCustom:__)",
       "mediaQueries": {}
     },
-    "defaultTransitionDuration": {
-      "name": "defaultTransitionDuration",
+    "transitionDuration": {
+      "name": "transitionDuration",
       "description": null,
       "priority": 150,
-      "variable": "--default-transition-duration",
+      "variable": "--transition-duration",
       "syntax": "<time>",
       "value": "150ms",
       "mediaQueries": {}
     },
-    "defaultAnimationDuration": {
-      "name": "defaultAnimationDuration",
+    "animationDuration": {
+      "name": "animationDuration",
       "description": null,
       "priority": 150,
-      "variable": "--default-animation-duration",
+      "variable": "--animation-duration",
       "syntax": "<time>",
       "value": "1s",
+      "mediaQueries": {}
+    },
+    "enterOpacity": {
+      "name": "enterOpacity",
+      "description": null,
+      "priority": 150,
+      "variable": "--enter-opacity",
+      "syntax": [
+        "<number>",
+        "<percentage>"
+      ],
+      "value": "1",
       "mediaQueries": {}
     },
     "enterTranslateX": {
       "name": "enterTranslateX",
       "description": null,
       "priority": 150,
-      "variable": "--etx",
+      "variable": "--enter-tx",
       "syntax": "<length-percentage>",
       "value": "0",
       "mediaQueries": {}
@@ -514,8 +526,104 @@ expression: json
       "name": "enterTranslateY",
       "description": null,
       "priority": 150,
-      "variable": "--ety",
+      "variable": "--enter-ty",
       "syntax": "<length-percentage>",
+      "value": "0",
+      "mediaQueries": {}
+    },
+    "enterScaleX": {
+      "name": "enterScaleX",
+      "description": null,
+      "priority": 150,
+      "variable": "--enter-sx",
+      "syntax": [
+        "<number>",
+        "<percentage>"
+      ],
+      "value": "1",
+      "mediaQueries": {}
+    },
+    "enterScaleY": {
+      "name": "enterScaleY",
+      "description": null,
+      "priority": 150,
+      "variable": "--enter-sy",
+      "syntax": [
+        "<number>",
+        "<percentage>"
+      ],
+      "value": "1",
+      "mediaQueries": {}
+    },
+    "enterRotate": {
+      "name": "enterRotate",
+      "description": null,
+      "priority": 150,
+      "variable": "--enter-rotate",
+      "syntax": "<angle>",
+      "value": "0",
+      "mediaQueries": {}
+    },
+    "exitOpacity": {
+      "name": "exitOpacity",
+      "description": null,
+      "priority": 150,
+      "variable": "--exit-opacity",
+      "syntax": [
+        "<number>",
+        "<percentage>"
+      ],
+      "value": "1",
+      "mediaQueries": {}
+    },
+    "exitTranslateX": {
+      "name": "exitTranslateX",
+      "description": null,
+      "priority": 150,
+      "variable": "--exit-tx",
+      "syntax": "<length-percentage>",
+      "value": "0",
+      "mediaQueries": {}
+    },
+    "exitTranslateY": {
+      "name": "exitTranslateY",
+      "description": null,
+      "priority": 150,
+      "variable": "--exit-ty",
+      "syntax": "<length-percentage>",
+      "value": "0",
+      "mediaQueries": {}
+    },
+    "exitScaleX": {
+      "name": "exitScaleX",
+      "description": null,
+      "priority": 150,
+      "variable": "--exit-sx",
+      "syntax": [
+        "<number>",
+        "<percentage>"
+      ],
+      "value": "1",
+      "mediaQueries": {}
+    },
+    "exitScaleY": {
+      "name": "exitScaleY",
+      "description": null,
+      "priority": 150,
+      "variable": "--exit-sy",
+      "syntax": [
+        "<number>",
+        "<percentage>"
+      ],
+      "value": "1",
+      "mediaQueries": {}
+    },
+    "exitRotate": {
+      "name": "exitRotate",
+      "description": null,
+      "priority": 150,
+      "variable": "--exit-rotate",
+      "syntax": "<angle>",
       "value": "0",
       "mediaQueries": {}
     }
@@ -1274,7 +1382,7 @@ expression: json
         "values": [
           {
             "priority": 150,
-            "value": "transitions"
+            "value": "transition"
           }
         ]
       }
@@ -1306,7 +1414,7 @@ expression: json
         "values": [
           {
             "priority": 150,
-            "value": "durations"
+            "value": "duration"
           }
         ]
       }
@@ -1338,13 +1446,249 @@ expression: json
         "values": [
           {
             "priority": 150,
-            "value": "durations"
+            "value": "duration"
           }
         ]
       }
     },
-    "animationDuration": {
-      "name": "animationDuration",
+    "animate": {
+      "name": "animate",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "animation-name": null,
+        "animation-duration": "__:CSS_VARIABLE::animationDuration:__"
+      },
+      "values": "keyframes"
+    },
+    "fadeIn": {
+      "name": "fadeIn",
+      "description": "Fade in an element. Requires the `animate:$in` class to be applied to the element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::enterOpacity:__": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "opacity"
+          }
+        ]
+      }
+    },
+    "fadeOut": {
+      "name": "fadeOut",
+      "description": "Fade out an element. Requires the `animate:$out` class to be applied to the element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::exitOpacity:__": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "opacity"
+          }
+        ]
+      }
+    },
+    "spinIn": {
+      "name": "spinIn",
+      "description": "Rotate an element to enter. Requires the `animate:$in` class to be applied to the element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::enterRotate:__": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "rotation"
+          }
+        ]
+      }
+    },
+    "spinOut": {
+      "name": "spinOut",
+      "description": "Rotate an element to exit. Requires the `animate:$out` class to be applied to the element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::exitRotate:__": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "rotation"
+          }
+        ]
+      }
+    },
+    "slideInLeft": {
+      "name": "slideInLeft",
+      "description": "Entry animation from the left. Requires the `animate:$in` class to be applied to the element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::enterTranslateX:__": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "negativeTranslation"
+          }
+        ]
+      }
+    },
+    "slideInRight": {
+      "name": "slideInRight",
+      "description": "Entry animation from the right. Requires the `animate:$in` class to be applied to the element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::enterTranslateX:__": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "positiveTranslation"
+          }
+        ]
+      }
+    },
+    "slideOutLeft": {
+      "name": "slideOutLeft",
+      "description": "Exit animation to the left. Requires the `animate:$out` class to be applied to the element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::exitTranslateX:__": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "negativeTranslation"
+          }
+        ]
+      }
+    },
+    "slideOutRight": {
+      "name": "slideOutRight",
+      "description": "Exit animation to the right. Requires the `animate:$out` class to be applied to the element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::exitTranslateX:__": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "positiveTranslation"
+          }
+        ]
+      }
+    },
+    "slideInTop": {
+      "name": "slideInTop",
+      "description": "Entry animation from the top. Requires the `animate:$in` class to be applied to the element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::enterTranslateY:__": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "negativeTranslation"
+          }
+        ]
+      }
+    },
+    "slideInBottom": {
+      "name": "slideInBottom",
+      "description": "Entry animation from the bottom. Requires the `animate:$in` class to be applied to the element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::enterTranslateY:__": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "positiveTranslation"
+          }
+        ]
+      }
+    },
+    "slideOutTop": {
+      "name": "slideOutTop",
+      "description": "Exit animation to the top. Requires the `animate:$out` class to be applied to the element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::exitTranslateY:__": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "negativeTranslation"
+          }
+        ]
+      }
+    },
+    "slideOutBottom": {
+      "name": "slideOutBottom",
+      "description": "Exit animation to the bottom. Requires the `animate:$out` class to be applied to the element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::exitTranslateY:__": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "positiveTranslation"
+          }
+        ]
+      }
+    },
+    "zoomIn": {
+      "name": "zoomIn",
+      "description": "Entry animation from this zoom level. Requires the `animate:$in` class to be applied to the element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::enterScaleX:__": null,
+        "__:CSS_VARIABLE::enterScaleY:__": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "zoom"
+          }
+        ]
+      }
+    },
+    "zoomOut": {
+      "name": "zoomOut",
+      "description": "Exit animation from this zoom level. Requires the `animate:$out` class to be applied to the element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::exitScaleX:__": null,
+        "__:CSS_VARIABLE::exitScaleY:__": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "zoom"
+          }
+        ]
+      }
+    },
+    "animateDuration": {
+      "name": "animateDuration",
       "description": null,
       "priority": 150,
       "styles": {
@@ -1354,13 +1698,13 @@ expression: json
         "values": [
           {
             "priority": 150,
-            "value": "durations"
+            "value": "duration"
           }
         ]
       }
     },
-    "animationEasing": {
-      "name": "animationEasing",
+    "animateEasing": {
+      "name": "animateEasing",
       "description": null,
       "priority": 150,
       "styles": {
@@ -1375,8 +1719,8 @@ expression: json
         ]
       }
     },
-    "animationDelay": {
-      "name": "animationDelay",
+    "animateDelay": {
+      "name": "animateDelay",
       "description": null,
       "priority": 150,
       "styles": {
@@ -1386,13 +1730,13 @@ expression: json
         "values": [
           {
             "priority": 150,
-            "value": "durations"
+            "value": "duration"
           }
         ]
       }
     },
-    "animationRepeat": {
-      "name": "animationRepeat",
+    "animateRepeat": {
+      "name": "animateRepeat",
       "description": null,
       "priority": 150,
       "styles": {
@@ -1407,8 +1751,8 @@ expression: json
         ]
       }
     },
-    "animationDirection": {
-      "name": "animationDirection",
+    "animateDirection": {
+      "name": "animateDirection",
       "description": null,
       "priority": 150,
       "styles": {
@@ -1423,8 +1767,8 @@ expression: json
         ]
       }
     },
-    "animationFillMode": {
-      "name": "animationFillMode",
+    "animateFillMode": {
+      "name": "animateFillMode",
       "description": null,
       "priority": 150,
       "styles": {
@@ -1439,8 +1783,8 @@ expression: json
         ]
       }
     },
-    "animationState": {
-      "name": "animationState",
+    "animateState": {
+      "name": "animateState",
       "description": null,
       "priority": 150,
       "styles": {
@@ -1482,7 +1826,7 @@ expression: json
         "values": [
           {
             "priority": 150,
-            "value": "fonts"
+            "value": "font"
           }
         ]
       }
@@ -1883,15 +2227,6 @@ expression: json
           }
         ]
       }
-    },
-    "animate": {
-      "name": "animate",
-      "description": null,
-      "priority": 150,
-      "styles": {
-        "animation-name": null
-      },
-      "values": "keyframes"
     }
   },
   "classes": {
@@ -2327,12 +2662,12 @@ expression: json
         }
       }
     },
-    "transitions": {
-      "name": "transitions",
+    "transition": {
+      "name": "transition",
       "description": "The built-in transition class values.",
       "priority": 150,
       "values": {
-        "": {
+        "main": {
           "transition-property": "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
           "transition-timing-function": "cubic-bezier(0.4, 0, 0.2, 1)",
           "transition-duration": "var(--default-transition-duration)"
@@ -2372,7 +2707,7 @@ expression: json
       "description": null,
       "priority": 150,
       "values": {
-        "": "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
+        "most": "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
         "none": "none",
         "all": "all",
         "colors": "color, background-color, border-color, text-decoration-color, fill, stroke",
@@ -2381,8 +2716,8 @@ expression: json
         "transform": "transform"
       }
     },
-    "durations": {
-      "name": "durations",
+    "duration": {
+      "name": "duration",
       "description": null,
       "priority": 150,
       "values": {
@@ -2570,8 +2905,121 @@ expression: json
         "150": "1.5"
       }
     },
-    "fonts": {
-      "name": "fonts",
+    "rotation": {
+      "name": "rotation",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "0": "0deg",
+        "1": "1deg",
+        "2": "2deg",
+        "3": "3deg",
+        "6": "6deg",
+        "12": "12deg",
+        "30": "30deg",
+        "45": "45deg",
+        "90": "90deg",
+        "180": "180deg"
+      }
+    },
+    "negativeTranslation": {
+      "name": "negativeTranslation",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "full": "-100%",
+        "0": "-0px",
+        "px": "-1px",
+        "0.5": "-0.125rem",
+        "1": "-0.25rem",
+        "1.5": "-0.375rem",
+        "2": "-0.5rem",
+        "2.5": "-0.625rem",
+        "3": "-0.75rem",
+        "3.5": "-0.875rem",
+        "4": "-1rem",
+        "5": "-1.25rem",
+        "6": "-1.5rem",
+        "7": "-1.75rem",
+        "8": "-2rem",
+        "9": "-2.25rem",
+        "10": "-2.5rem",
+        "11": "-2.75rem",
+        "12": "-3rem",
+        "14": "-3.5rem",
+        "16": "-4rem",
+        "20": "-5rem",
+        "24": "-6rem",
+        "28": "-7rem",
+        "32": "-8rem",
+        "36": "-9rem",
+        "40": "-10rem",
+        "44": "-11rem",
+        "48": "-12rem",
+        "52": "-13rem",
+        "56": "-14rem",
+        "60": "-15rem",
+        "64": "-16rem",
+        "72": "-18rem",
+        "80": "-20rem",
+        "96": "-24rem",
+        "third": "-33.333333%",
+        "twoThirds": "-66.666667%",
+        "quarter": "-25%",
+        "half": "-50%",
+        "threeQuarters": "-75%"
+      }
+    },
+    "positiveTranslation": {
+      "name": "positiveTranslation",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "full": "100%",
+        "0": "0px",
+        "px": "1px",
+        "0.5": "0.125rem",
+        "1": "0.25rem",
+        "1.5": "0.375rem",
+        "2": "0.5rem",
+        "2.5": "0.625rem",
+        "3": "0.75rem",
+        "3.5": "0.875rem",
+        "4": "1rem",
+        "5": "1.25rem",
+        "6": "1.5rem",
+        "7": "1.75rem",
+        "8": "2rem",
+        "9": "2.25rem",
+        "10": "2.5rem",
+        "11": "2.75rem",
+        "12": "3rem",
+        "14": "3.5rem",
+        "16": "4rem",
+        "20": "5rem",
+        "24": "6rem",
+        "28": "7rem",
+        "32": "8rem",
+        "36": "9rem",
+        "40": "10rem",
+        "44": "11rem",
+        "48": "12rem",
+        "52": "13rem",
+        "56": "14rem",
+        "60": "15rem",
+        "64": "16rem",
+        "72": "18rem",
+        "80": "20rem",
+        "96": "24rem",
+        "third": "33.333333%",
+        "twoThirds": "66.666667%",
+        "quarter": "25%",
+        "half": "50%",
+        "threeQuarters": "75%"
+      }
+    },
+    "font": {
+      "name": "font",
       "description": null,
       "priority": 150,
       "values": {
@@ -2579,74 +3027,12 @@ expression: json
         "serif": "ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif",
         "mono": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
       }
-    },
-    "spinAnimation": {
-      "name": "spinAnimation",
-      "description": "The spin animation.",
-      "priority": 150,
-      "values": {
-        "spin": "spin var(__:CSS_VARIABLE::defaultAnimationDuration:__) linear infinite"
-      }
-    },
-    "pingAnimation": {
-      "name": "pingAnimation",
-      "description": "The ping animation.",
-      "priority": 150,
-      "values": {
-        "ping": "ping var(__:CSS_VARIABLE::defaultAnimationDuration:__) cubic-bezier(0, 0, 0.2, 1) infinite"
-      }
-    },
-    "pulseAnimation": {
-      "name": "pulseAnimation",
-      "description": "The pulse animation.",
-      "priority": 150,
-      "values": {
-        "pulse": "pulse calc(2 * var(__:CSS_VARIABLE::defaultAnimationDuration:__)) cubic-bezier(0.4, 0, 0.6, 1) infinite"
-      }
-    },
-    "bounceAnimation": {
-      "name": "bounceAnimation",
-      "description": "The bounce animation.",
-      "priority": 150,
-      "values": {
-        "bounce": "bounce var(__:CSS_VARIABLE::defaultAnimationDuration:__) infinite"
-      }
-    },
-    "enterAnimation": {
-      "name": "enterAnimation",
-      "description": "The enter animation.",
-      "priority": 150,
-      "values": {
-        "in": {
-          "animation": "enter var(__:CSS_VARIABLE::defaultAnimationDuration:__)",
-          "__:CSS_VARIABLE::enterOpacity:__": "initial",
-          "__:CSS_VARIABLE::enterScale:__": "initial",
-          "__:CSS_VARIABLE::enterRotate:__": "initial",
-          "__:CSS_VARIABLE::enterTranslateX:__": "initial",
-          "__:CSS_VARIABLE::enterTranslateY:__": "initial"
-        }
-      }
-    },
-    "exitAnimation": {
-      "name": "exitAnimation",
-      "description": "The exit animation.",
-      "priority": 150,
-      "values": {
-        "out": {
-          "animation": "exit var(__:CSS_VARIABLE::defaultAnimationDuration:__)",
-          "__:CSS_VARIABLE::exitOpacity:__": "initial",
-          "__:CSS_VARIABLE::exitScale:__": "initial",
-          "__:CSS_VARIABLE::exitRotate:__": "initial",
-          "__:CSS_VARIABLE::exitTranslateX:__": "initial",
-          "__:CSS_VARIABLE::exitTranslateY:__": "initial"
-        }
-      }
     }
   },
   "names": {
     "keyframes": [
-      "enter",
-      "exit",
+      "in",
+      "out",
       "spin",
       "ping",
       "pulse",
@@ -2697,10 +3083,20 @@ expression: json
       "backdropSepia",
       "backdropDropShadow",
       "groupNestedBackdrop",
-      "defaultTransitionDuration",
-      "defaultAnimationDuration",
+      "transitionDuration",
+      "animationDuration",
+      "enterOpacity",
       "enterTranslateX",
-      "enterTranslateY"
+      "enterTranslateY",
+      "enterScaleX",
+      "enterScaleY",
+      "enterRotate",
+      "exitOpacity",
+      "exitTranslateX",
+      "exitTranslateY",
+      "exitScaleX",
+      "exitScaleY",
+      "exitRotate"
     ],
     "atoms": [
       "sr",
@@ -2709,13 +3105,28 @@ expression: json
       "duration",
       "ease",
       "delay",
-      "animationDuration",
-      "animationEasing",
-      "animationDelay",
-      "animationRepeat",
-      "animationDirection",
-      "animationFillMode",
-      "animationState",
+      "animate",
+      "fadeIn",
+      "fadeOut",
+      "spinIn",
+      "spinOut",
+      "slideInLeft",
+      "slideInRight",
+      "slideOutLeft",
+      "slideOutRight",
+      "slideInTop",
+      "slideInBottom",
+      "slideOutTop",
+      "slideOutBottom",
+      "zoomIn",
+      "zoomOut",
+      "animateDuration",
+      "animateEasing",
+      "animateDelay",
+      "animateRepeat",
+      "animateDirection",
+      "animateFillMode",
+      "animateState",
       "zoom",
       "font",
       "p",
@@ -2742,8 +3153,7 @@ expression: json
       "dir",
       "bg",
       "bgOpacity",
-      "opacity",
-      "animate"
+      "opacity"
     ],
     "classes": [
       "group",
@@ -2856,7 +3266,7 @@ expression: json
       "exclude"
     ],
     "atom:transition": [
-      "",
+      "main",
       "none",
       "all",
       "colors",
@@ -2865,7 +3275,7 @@ expression: json
       "transform"
     ],
     "atom:transitionProperty": [
-      "",
+      "most",
       "none",
       "all",
       "colors",
@@ -2905,7 +3315,439 @@ expression: json
       "1500",
       "2000"
     ],
-    "atom:animationDuration": [
+    "atom:animate": [
+      "in",
+      "out",
+      "spin",
+      "ping",
+      "pulse",
+      "bounce"
+    ],
+    "atom:fadeIn": [
+      "0",
+      "5",
+      "10",
+      "20",
+      "30",
+      "40",
+      "50",
+      "60",
+      "70",
+      "75",
+      "80",
+      "90",
+      "95",
+      "100"
+    ],
+    "atom:fadeOut": [
+      "0",
+      "5",
+      "10",
+      "20",
+      "30",
+      "40",
+      "50",
+      "60",
+      "70",
+      "75",
+      "80",
+      "90",
+      "95",
+      "100"
+    ],
+    "atom:spinIn": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "6",
+      "12",
+      "30",
+      "45",
+      "90",
+      "180"
+    ],
+    "atom:spinOut": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "6",
+      "12",
+      "30",
+      "45",
+      "90",
+      "180"
+    ],
+    "atom:slideInLeft": [
+      "full",
+      "0",
+      "px",
+      "0.5",
+      "1",
+      "1.5",
+      "2",
+      "2.5",
+      "3",
+      "3.5",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "third",
+      "twoThirds",
+      "quarter",
+      "half",
+      "threeQuarters"
+    ],
+    "atom:slideInRight": [
+      "full",
+      "0",
+      "px",
+      "0.5",
+      "1",
+      "1.5",
+      "2",
+      "2.5",
+      "3",
+      "3.5",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "third",
+      "twoThirds",
+      "quarter",
+      "half",
+      "threeQuarters"
+    ],
+    "atom:slideOutLeft": [
+      "full",
+      "0",
+      "px",
+      "0.5",
+      "1",
+      "1.5",
+      "2",
+      "2.5",
+      "3",
+      "3.5",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "third",
+      "twoThirds",
+      "quarter",
+      "half",
+      "threeQuarters"
+    ],
+    "atom:slideOutRight": [
+      "full",
+      "0",
+      "px",
+      "0.5",
+      "1",
+      "1.5",
+      "2",
+      "2.5",
+      "3",
+      "3.5",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "third",
+      "twoThirds",
+      "quarter",
+      "half",
+      "threeQuarters"
+    ],
+    "atom:slideInTop": [
+      "full",
+      "0",
+      "px",
+      "0.5",
+      "1",
+      "1.5",
+      "2",
+      "2.5",
+      "3",
+      "3.5",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "third",
+      "twoThirds",
+      "quarter",
+      "half",
+      "threeQuarters"
+    ],
+    "atom:slideInBottom": [
+      "full",
+      "0",
+      "px",
+      "0.5",
+      "1",
+      "1.5",
+      "2",
+      "2.5",
+      "3",
+      "3.5",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "third",
+      "twoThirds",
+      "quarter",
+      "half",
+      "threeQuarters"
+    ],
+    "atom:slideOutTop": [
+      "full",
+      "0",
+      "px",
+      "0.5",
+      "1",
+      "1.5",
+      "2",
+      "2.5",
+      "3",
+      "3.5",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "third",
+      "twoThirds",
+      "quarter",
+      "half",
+      "threeQuarters"
+    ],
+    "atom:slideOutBottom": [
+      "full",
+      "0",
+      "px",
+      "0.5",
+      "1",
+      "1.5",
+      "2",
+      "2.5",
+      "3",
+      "3.5",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "third",
+      "twoThirds",
+      "quarter",
+      "half",
+      "threeQuarters"
+    ],
+    "atom:zoomIn": [
+      "0",
+      "50",
+      "75",
+      "90",
+      "95",
+      "100",
+      "105",
+      "110",
+      "125",
+      "150"
+    ],
+    "atom:zoomOut": [
+      "0",
+      "50",
+      "75",
+      "90",
+      "95",
+      "100",
+      "105",
+      "110",
+      "125",
+      "150"
+    ],
+    "atom:animateDuration": [
       "0",
       "75",
       "100",
@@ -2918,13 +3760,13 @@ expression: json
       "1500",
       "2000"
     ],
-    "atom:animationEasing": [
+    "atom:animateEasing": [
       "linear",
       "in",
       "out",
       "inOut"
     ],
-    "atom:animationDelay": [
+    "atom:animateDelay": [
       "0",
       "75",
       "100",
@@ -2937,7 +3779,7 @@ expression: json
       "1500",
       "2000"
     ],
-    "atom:animationRepeat": [
+    "atom:animateRepeat": [
       "0",
       "0.5",
       "1",
@@ -2948,19 +3790,19 @@ expression: json
       "out",
       "inOut"
     ],
-    "atom:animationDirection": [
+    "atom:animateDirection": [
       "normal",
       "reverse",
       "alt",
       "altReverse"
     ],
-    "atom:animationFillMode": [
+    "atom:animateFillMode": [
       "none",
       "forwards",
       "backwards",
       "both"
     ],
-    "atom:animationState": [
+    "atom:animateState": [
       "running",
       "paused"
     ],
@@ -4044,14 +4886,6 @@ expression: json
       "90",
       "95",
       "100"
-    ],
-    "atom:animate": [
-      "enter",
-      "exit",
-      "spin",
-      "ping",
-      "pulse",
-      "bounce"
     ]
   }
 }

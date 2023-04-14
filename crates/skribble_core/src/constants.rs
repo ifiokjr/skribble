@@ -146,6 +146,7 @@ impl Placeholder {
     Self::create(Self::CSS_VARIABLE, name)
   }
 
+  /// Generate a placeholder for a variable wrapped with `var()`.
   pub fn wrapped_variable(name: impl AsRef<str>, default: Option<String>) -> String {
     wrap_css_variable(Self::variable(name), default)
   }

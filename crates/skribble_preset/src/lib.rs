@@ -98,7 +98,6 @@ impl PresetPlugin {
 
   fn update_value_sets(&self, value_sets: &mut ValueSets) {
     value_sets.extend(ATOM_VALUE_SETS.clone());
-    value_sets.extend(ANIMATION_VALUE_SETS.clone());
   }
 }
 

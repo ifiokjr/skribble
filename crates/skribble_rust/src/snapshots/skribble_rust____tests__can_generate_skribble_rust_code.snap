@@ -571,29 +571,40 @@ impl GeneratedCssVariables {
     "--sk-gnb".into()
   }
   /// ```css
-  /// @property --sk-default-transition-duration {
+  /// @property --sk-transition-duration {
   ///   syntax: "<time>";
   ///   inherits: true;
   ///   initial-value: 150ms;
   /// }
   /// ```
   #[inline]
-  pub fn default_transition_duration(&self) -> String {
-    "--sk-default-transition-duration".into()
+  pub fn transition_duration(&self) -> String {
+    "--sk-transition-duration".into()
   }
   /// ```css
-  /// @property --sk-default-animation-duration {
+  /// @property --sk-animation-duration {
   ///   syntax: "<time>";
   ///   inherits: true;
   ///   initial-value: 1s;
   /// }
   /// ```
   #[inline]
-  pub fn default_animation_duration(&self) -> String {
-    "--sk-default-animation-duration".into()
+  pub fn animation_duration(&self) -> String {
+    "--sk-animation-duration".into()
   }
   /// ```css
-  /// @property --sk-etx {
+  /// @property --sk-enter-opacity {
+  ///   syntax: "<number> | <percentage>";
+  ///   inherits: true;
+  ///   initial-value: 1;
+  /// }
+  /// ```
+  #[inline]
+  pub fn enter_opacity(&self) -> String {
+    "--sk-enter-opacity".into()
+  }
+  /// ```css
+  /// @property --sk-enter-tx {
   ///   syntax: "<length-percentage>";
   ///   inherits: true;
   ///   initial-value: 0;
@@ -601,10 +612,10 @@ impl GeneratedCssVariables {
   /// ```
   #[inline]
   pub fn enter_translate_x(&self) -> String {
-    "--sk-etx".into()
+    "--sk-enter-tx".into()
   }
   /// ```css
-  /// @property --sk-ety {
+  /// @property --sk-enter-ty {
   ///   syntax: "<length-percentage>";
   ///   inherits: true;
   ///   initial-value: 0;
@@ -612,7 +623,106 @@ impl GeneratedCssVariables {
   /// ```
   #[inline]
   pub fn enter_translate_y(&self) -> String {
-    "--sk-ety".into()
+    "--sk-enter-ty".into()
+  }
+  /// ```css
+  /// @property --sk-enter-sx {
+  ///   syntax: "<number> | <percentage>";
+  ///   inherits: true;
+  ///   initial-value: 1;
+  /// }
+  /// ```
+  #[inline]
+  pub fn enter_scale_x(&self) -> String {
+    "--sk-enter-sx".into()
+  }
+  /// ```css
+  /// @property --sk-enter-sy {
+  ///   syntax: "<number> | <percentage>";
+  ///   inherits: true;
+  ///   initial-value: 1;
+  /// }
+  /// ```
+  #[inline]
+  pub fn enter_scale_y(&self) -> String {
+    "--sk-enter-sy".into()
+  }
+  /// ```css
+  /// @property --sk-enter-rotate {
+  ///   syntax: "<angle>";
+  ///   inherits: true;
+  ///   initial-value: 0;
+  /// }
+  /// ```
+  #[inline]
+  pub fn enter_rotate(&self) -> String {
+    "--sk-enter-rotate".into()
+  }
+  /// ```css
+  /// @property --sk-exit-opacity {
+  ///   syntax: "<number> | <percentage>";
+  ///   inherits: true;
+  ///   initial-value: 1;
+  /// }
+  /// ```
+  #[inline]
+  pub fn exit_opacity(&self) -> String {
+    "--sk-exit-opacity".into()
+  }
+  /// ```css
+  /// @property --sk-exit-tx {
+  ///   syntax: "<length-percentage>";
+  ///   inherits: true;
+  ///   initial-value: 0;
+  /// }
+  /// ```
+  #[inline]
+  pub fn exit_translate_x(&self) -> String {
+    "--sk-exit-tx".into()
+  }
+  /// ```css
+  /// @property --sk-exit-ty {
+  ///   syntax: "<length-percentage>";
+  ///   inherits: true;
+  ///   initial-value: 0;
+  /// }
+  /// ```
+  #[inline]
+  pub fn exit_translate_y(&self) -> String {
+    "--sk-exit-ty".into()
+  }
+  /// ```css
+  /// @property --sk-exit-sx {
+  ///   syntax: "<number> | <percentage>";
+  ///   inherits: true;
+  ///   initial-value: 1;
+  /// }
+  /// ```
+  #[inline]
+  pub fn exit_scale_x(&self) -> String {
+    "--sk-exit-sx".into()
+  }
+  /// ```css
+  /// @property --sk-exit-sy {
+  ///   syntax: "<number> | <percentage>";
+  ///   inherits: true;
+  ///   initial-value: 1;
+  /// }
+  /// ```
+  #[inline]
+  pub fn exit_scale_y(&self) -> String {
+    "--sk-exit-sy".into()
+  }
+  /// ```css
+  /// @property --sk-exit-rotate {
+  ///   syntax: "<angle>";
+  ///   inherits: true;
+  ///   initial-value: 0;
+  /// }
+  /// ```
+  #[inline]
+  pub fn exit_rotate(&self) -> String {
+    "--sk-exit-rotate".into()
   }
 }
 pub struct MediaQueryDeviceCategoriesChild(String);
@@ -1906,30 +2016,30 @@ pub trait GeneratedKeyframeSet: GeneratedSkribbleValue {
   /// Manages the keyframes for the entry animation
   ///
   /// ```css
-  /// @keyframes enter {
+  /// @keyframes in {
   ///   from {
-  ///     opacity: var(--sk-invalid-css-variable, 1);
-  ///     transform: translate3d(var(--sk-etx, 0), var(--sk-ety, 0), 0) scale3d(var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1)) rotate(var(--sk-invalid-css-variable, 0deg));
+  ///     opacity: var(--sk-enter-opacity, 1);
+  ///     transform: translate3d(var(--sk-enter-tx, 0), var(--sk-enter-ty, 0), 0) scale3d(var(--sk-enter-sx, 1), var(--sk-enter-sy, 1), 1) rotate(var(--sk-enter-rotate, 0deg));
   ///   }
   /// }
   /// ```
   #[inline]
-  fn enter(&self) -> String {
-    self.append_string_to_skribble_value("enter")
+  fn r#in(&self) -> String {
+    self.append_string_to_skribble_value("in")
   }
   /// Manages the keyframes for the exit animation.
   ///
   /// ```css
-  /// @keyframes exit {
+  /// @keyframes out {
   ///   to {
-  ///     opacity: var(--sk-invalid-css-variable, 1);
-  ///     transform: translate3d(var(--sk-invalid-css-variable, 0), var(--sk-invalid-css-variable, 0), 0) scale3d(var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1), var(--sk-invalid-css-variable, 1)) rotate(var(--sk-invalid-css-variable, 0deg));
+  ///     opacity: var(--sk-exit-opacity, 1);
+  ///     transform: translate3d(var(--sk-exit-tx, 0), var(--sk-exit-ty, 0), 0) scale3d(var(--sk-exit-sx, 1), var(--sk-exit-sy, 1), 1) rotate(var(--sk-exit-rotate, 0deg));
   ///   }
   /// }
   /// ```
   #[inline]
-  fn exit(&self) -> String {
-    self.append_string_to_skribble_value("exit")
+  fn out(&self) -> String {
+    self.append_string_to_skribble_value("out")
   }
   /// Manages the keyframes for the spin animation.
   ///
@@ -3306,15 +3416,15 @@ impl GeneratedSkribbleValue for GeneratedAtomTransition {
 }
 pub trait GeneratedValueSetTransition: GeneratedSkribbleValue {
   /// ```css
-  /// .transition {
+  /// .transition\:\$main {
   ///   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   ///   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   ///   transition-duration: var(--default-transition-duration);
   /// }
   /// ```
   #[inline]
-  fn __(&self) -> String {
-    self.append_string_to_skribble_value("")
+  fn main(&self) -> String {
+    self.append_string_to_skribble_value("main")
   }
   /// ```css
   /// .transition\:\$none {
@@ -3395,13 +3505,13 @@ impl GeneratedSkribbleValue for GeneratedAtomTransitionProperty {
 }
 pub trait GeneratedValueSetTransitionProperty: GeneratedSkribbleValue {
   /// ```css
-  /// .transition-property {
+  /// .transition-property\:\$most {
   ///   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   /// }
   /// ```
   #[inline]
-  fn __(&self) -> String {
-    self.append_string_to_skribble_value("")
+  fn most(&self) -> String {
+    self.append_string_to_skribble_value("most")
   }
   /// ```css
   /// .transition-property\:\$none {
@@ -3735,8 +3845,8 @@ pub trait GeneratedValueSetDelay: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetDelay for GeneratedAtomDelay {}
-pub struct GeneratedAtomAnimationDuration(String);
-impl GeneratedSkribbleValue for GeneratedAtomAnimationDuration {
+pub struct GeneratedAtomAnimate(String);
+impl GeneratedSkribbleValue for GeneratedAtomAnimate {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -3746,9 +3856,3801 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimationDuration {
     &self.0
   }
 }
-pub trait GeneratedValueSetAnimationDuration: GeneratedSkribbleValue {
+impl GeneratedKeyframeSet for GeneratedAtomAnimate {}
+pub struct GeneratedAtomFadeIn(String);
+impl GeneratedSkribbleValue for GeneratedAtomFadeIn {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
   /// ```css
-  /// .animation-duration\:\$0 {
+  /// .fade-in\:\$0 {
+  ///   --sk-enter-opacity: 0%;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  /// ```css
+  /// .fade-in\:\$5 {
+  ///   --sk-enter-opacity: 5%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_string_to_skribble_value("5")
+  }
+  /// ```css
+  /// .fade-in\:\$10 {
+  ///   --sk-enter-opacity: 10%;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_string_to_skribble_value("10")
+  }
+  /// ```css
+  /// .fade-in\:\$20 {
+  ///   --sk-enter-opacity: 20%;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_string_to_skribble_value("20")
+  }
+  /// ```css
+  /// .fade-in\:\$30 {
+  ///   --sk-enter-opacity: 30%;
+  /// }
+  /// ```
+  #[inline]
+  fn n30(&self) -> String {
+    self.append_string_to_skribble_value("30")
+  }
+  /// ```css
+  /// .fade-in\:\$40 {
+  ///   --sk-enter-opacity: 40%;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_string_to_skribble_value("40")
+  }
+  /// ```css
+  /// .fade-in\:\$50 {
+  ///   --sk-enter-opacity: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn n50(&self) -> String {
+    self.append_string_to_skribble_value("50")
+  }
+  /// ```css
+  /// .fade-in\:\$60 {
+  ///   --sk-enter-opacity: 60%;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_string_to_skribble_value("60")
+  }
+  /// ```css
+  /// .fade-in\:\$70 {
+  ///   --sk-enter-opacity: 70%;
+  /// }
+  /// ```
+  #[inline]
+  fn n70(&self) -> String {
+    self.append_string_to_skribble_value("70")
+  }
+  /// ```css
+  /// .fade-in\:\$75 {
+  ///   --sk-enter-opacity: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn n75(&self) -> String {
+    self.append_string_to_skribble_value("75")
+  }
+  /// ```css
+  /// .fade-in\:\$80 {
+  ///   --sk-enter-opacity: 80%;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_string_to_skribble_value("80")
+  }
+  /// ```css
+  /// .fade-in\:\$90 {
+  ///   --sk-enter-opacity: 90%;
+  /// }
+  /// ```
+  #[inline]
+  fn n90(&self) -> String {
+    self.append_string_to_skribble_value("90")
+  }
+  /// ```css
+  /// .fade-in\:\$95 {
+  ///   --sk-enter-opacity: 95%;
+  /// }
+  /// ```
+  #[inline]
+  fn n95(&self) -> String {
+    self.append_string_to_skribble_value("95")
+  }
+  /// ```css
+  /// .fade-in\:\$100 {
+  ///   --sk-enter-opacity: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn n100(&self) -> String {
+    self.append_string_to_skribble_value("100")
+  }
+}
+impl GeneratedValueSetFadeIn for GeneratedAtomFadeIn {}
+pub struct GeneratedAtomFadeOut(String);
+impl GeneratedSkribbleValue for GeneratedAtomFadeOut {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
+  /// ```css
+  /// .fade-out\:\$0 {
+  ///   --sk-exit-opacity: 0%;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  /// ```css
+  /// .fade-out\:\$5 {
+  ///   --sk-exit-opacity: 5%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_string_to_skribble_value("5")
+  }
+  /// ```css
+  /// .fade-out\:\$10 {
+  ///   --sk-exit-opacity: 10%;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_string_to_skribble_value("10")
+  }
+  /// ```css
+  /// .fade-out\:\$20 {
+  ///   --sk-exit-opacity: 20%;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_string_to_skribble_value("20")
+  }
+  /// ```css
+  /// .fade-out\:\$30 {
+  ///   --sk-exit-opacity: 30%;
+  /// }
+  /// ```
+  #[inline]
+  fn n30(&self) -> String {
+    self.append_string_to_skribble_value("30")
+  }
+  /// ```css
+  /// .fade-out\:\$40 {
+  ///   --sk-exit-opacity: 40%;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_string_to_skribble_value("40")
+  }
+  /// ```css
+  /// .fade-out\:\$50 {
+  ///   --sk-exit-opacity: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn n50(&self) -> String {
+    self.append_string_to_skribble_value("50")
+  }
+  /// ```css
+  /// .fade-out\:\$60 {
+  ///   --sk-exit-opacity: 60%;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_string_to_skribble_value("60")
+  }
+  /// ```css
+  /// .fade-out\:\$70 {
+  ///   --sk-exit-opacity: 70%;
+  /// }
+  /// ```
+  #[inline]
+  fn n70(&self) -> String {
+    self.append_string_to_skribble_value("70")
+  }
+  /// ```css
+  /// .fade-out\:\$75 {
+  ///   --sk-exit-opacity: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn n75(&self) -> String {
+    self.append_string_to_skribble_value("75")
+  }
+  /// ```css
+  /// .fade-out\:\$80 {
+  ///   --sk-exit-opacity: 80%;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_string_to_skribble_value("80")
+  }
+  /// ```css
+  /// .fade-out\:\$90 {
+  ///   --sk-exit-opacity: 90%;
+  /// }
+  /// ```
+  #[inline]
+  fn n90(&self) -> String {
+    self.append_string_to_skribble_value("90")
+  }
+  /// ```css
+  /// .fade-out\:\$95 {
+  ///   --sk-exit-opacity: 95%;
+  /// }
+  /// ```
+  #[inline]
+  fn n95(&self) -> String {
+    self.append_string_to_skribble_value("95")
+  }
+  /// ```css
+  /// .fade-out\:\$100 {
+  ///   --sk-exit-opacity: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn n100(&self) -> String {
+    self.append_string_to_skribble_value("100")
+  }
+}
+impl GeneratedValueSetFadeOut for GeneratedAtomFadeOut {}
+pub struct GeneratedAtomSpinIn(String);
+impl GeneratedSkribbleValue for GeneratedAtomSpinIn {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
+  /// ```css
+  /// .spin-in\:\$0 {
+  ///   --sk-enter-rotate: 0deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  /// ```css
+  /// .spin-in\:\$1 {
+  ///   --sk-enter-rotate: 1deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_string_to_skribble_value("1")
+  }
+  /// ```css
+  /// .spin-in\:\$2 {
+  ///   --sk-enter-rotate: 2deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_string_to_skribble_value("2")
+  }
+  /// ```css
+  /// .spin-in\:\$3 {
+  ///   --sk-enter-rotate: 3deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_string_to_skribble_value("3")
+  }
+  /// ```css
+  /// .spin-in\:\$6 {
+  ///   --sk-enter-rotate: 6deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_string_to_skribble_value("6")
+  }
+  /// ```css
+  /// .spin-in\:\$12 {
+  ///   --sk-enter-rotate: 12deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_string_to_skribble_value("12")
+  }
+  /// ```css
+  /// .spin-in\:\$30 {
+  ///   --sk-enter-rotate: 30deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n30(&self) -> String {
+    self.append_string_to_skribble_value("30")
+  }
+  /// ```css
+  /// .spin-in\:\$45 {
+  ///   --sk-enter-rotate: 45deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n45(&self) -> String {
+    self.append_string_to_skribble_value("45")
+  }
+  /// ```css
+  /// .spin-in\:\$90 {
+  ///   --sk-enter-rotate: 90deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n90(&self) -> String {
+    self.append_string_to_skribble_value("90")
+  }
+  /// ```css
+  /// .spin-in\:\$180 {
+  ///   --sk-enter-rotate: 180deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n180(&self) -> String {
+    self.append_string_to_skribble_value("180")
+  }
+}
+impl GeneratedValueSetSpinIn for GeneratedAtomSpinIn {}
+pub struct GeneratedAtomSpinOut(String);
+impl GeneratedSkribbleValue for GeneratedAtomSpinOut {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
+  /// ```css
+  /// .spin-out\:\$0 {
+  ///   --sk-exit-rotate: 0deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  /// ```css
+  /// .spin-out\:\$1 {
+  ///   --sk-exit-rotate: 1deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_string_to_skribble_value("1")
+  }
+  /// ```css
+  /// .spin-out\:\$2 {
+  ///   --sk-exit-rotate: 2deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_string_to_skribble_value("2")
+  }
+  /// ```css
+  /// .spin-out\:\$3 {
+  ///   --sk-exit-rotate: 3deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_string_to_skribble_value("3")
+  }
+  /// ```css
+  /// .spin-out\:\$6 {
+  ///   --sk-exit-rotate: 6deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_string_to_skribble_value("6")
+  }
+  /// ```css
+  /// .spin-out\:\$12 {
+  ///   --sk-exit-rotate: 12deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_string_to_skribble_value("12")
+  }
+  /// ```css
+  /// .spin-out\:\$30 {
+  ///   --sk-exit-rotate: 30deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n30(&self) -> String {
+    self.append_string_to_skribble_value("30")
+  }
+  /// ```css
+  /// .spin-out\:\$45 {
+  ///   --sk-exit-rotate: 45deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n45(&self) -> String {
+    self.append_string_to_skribble_value("45")
+  }
+  /// ```css
+  /// .spin-out\:\$90 {
+  ///   --sk-exit-rotate: 90deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n90(&self) -> String {
+    self.append_string_to_skribble_value("90")
+  }
+  /// ```css
+  /// .spin-out\:\$180 {
+  ///   --sk-exit-rotate: 180deg;
+  /// }
+  /// ```
+  #[inline]
+  fn n180(&self) -> String {
+    self.append_string_to_skribble_value("180")
+  }
+}
+impl GeneratedValueSetSpinOut for GeneratedAtomSpinOut {}
+pub struct GeneratedAtomSlideInLeft(String);
+impl GeneratedSkribbleValue for GeneratedAtomSlideInLeft {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
+  /// ```css
+  /// .slide-in-left\:\$full {
+  ///   --sk-enter-tx: -100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_string_to_skribble_value("full")
+  }
+  /// ```css
+  /// .slide-in-left\:\$0 {
+  ///   --sk-enter-tx: -0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  /// ```css
+  /// .slide-in-left\:\$px {
+  ///   --sk-enter-tx: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_string_to_skribble_value("px")
+  }
+  /// ```css
+  /// .slide-in-left\:\$0\.5 {
+  ///   --sk-enter-tx: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_string_to_skribble_value("0.5")
+  }
+  /// ```css
+  /// .slide-in-left\:\$1 {
+  ///   --sk-enter-tx: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_string_to_skribble_value("1")
+  }
+  /// ```css
+  /// .slide-in-left\:\$1\.5 {
+  ///   --sk-enter-tx: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_string_to_skribble_value("1.5")
+  }
+  /// ```css
+  /// .slide-in-left\:\$2 {
+  ///   --sk-enter-tx: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_string_to_skribble_value("2")
+  }
+  /// ```css
+  /// .slide-in-left\:\$2\.5 {
+  ///   --sk-enter-tx: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_string_to_skribble_value("2.5")
+  }
+  /// ```css
+  /// .slide-in-left\:\$3 {
+  ///   --sk-enter-tx: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_string_to_skribble_value("3")
+  }
+  /// ```css
+  /// .slide-in-left\:\$3\.5 {
+  ///   --sk-enter-tx: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_string_to_skribble_value("3.5")
+  }
+  /// ```css
+  /// .slide-in-left\:\$4 {
+  ///   --sk-enter-tx: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_string_to_skribble_value("4")
+  }
+  /// ```css
+  /// .slide-in-left\:\$5 {
+  ///   --sk-enter-tx: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_string_to_skribble_value("5")
+  }
+  /// ```css
+  /// .slide-in-left\:\$6 {
+  ///   --sk-enter-tx: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_string_to_skribble_value("6")
+  }
+  /// ```css
+  /// .slide-in-left\:\$7 {
+  ///   --sk-enter-tx: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_string_to_skribble_value("7")
+  }
+  /// ```css
+  /// .slide-in-left\:\$8 {
+  ///   --sk-enter-tx: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_string_to_skribble_value("8")
+  }
+  /// ```css
+  /// .slide-in-left\:\$9 {
+  ///   --sk-enter-tx: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_string_to_skribble_value("9")
+  }
+  /// ```css
+  /// .slide-in-left\:\$10 {
+  ///   --sk-enter-tx: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_string_to_skribble_value("10")
+  }
+  /// ```css
+  /// .slide-in-left\:\$11 {
+  ///   --sk-enter-tx: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_string_to_skribble_value("11")
+  }
+  /// ```css
+  /// .slide-in-left\:\$12 {
+  ///   --sk-enter-tx: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_string_to_skribble_value("12")
+  }
+  /// ```css
+  /// .slide-in-left\:\$14 {
+  ///   --sk-enter-tx: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_string_to_skribble_value("14")
+  }
+  /// ```css
+  /// .slide-in-left\:\$16 {
+  ///   --sk-enter-tx: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_string_to_skribble_value("16")
+  }
+  /// ```css
+  /// .slide-in-left\:\$20 {
+  ///   --sk-enter-tx: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_string_to_skribble_value("20")
+  }
+  /// ```css
+  /// .slide-in-left\:\$24 {
+  ///   --sk-enter-tx: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_string_to_skribble_value("24")
+  }
+  /// ```css
+  /// .slide-in-left\:\$28 {
+  ///   --sk-enter-tx: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_string_to_skribble_value("28")
+  }
+  /// ```css
+  /// .slide-in-left\:\$32 {
+  ///   --sk-enter-tx: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_string_to_skribble_value("32")
+  }
+  /// ```css
+  /// .slide-in-left\:\$36 {
+  ///   --sk-enter-tx: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_string_to_skribble_value("36")
+  }
+  /// ```css
+  /// .slide-in-left\:\$40 {
+  ///   --sk-enter-tx: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_string_to_skribble_value("40")
+  }
+  /// ```css
+  /// .slide-in-left\:\$44 {
+  ///   --sk-enter-tx: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_string_to_skribble_value("44")
+  }
+  /// ```css
+  /// .slide-in-left\:\$48 {
+  ///   --sk-enter-tx: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_string_to_skribble_value("48")
+  }
+  /// ```css
+  /// .slide-in-left\:\$52 {
+  ///   --sk-enter-tx: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_string_to_skribble_value("52")
+  }
+  /// ```css
+  /// .slide-in-left\:\$56 {
+  ///   --sk-enter-tx: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_string_to_skribble_value("56")
+  }
+  /// ```css
+  /// .slide-in-left\:\$60 {
+  ///   --sk-enter-tx: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_string_to_skribble_value("60")
+  }
+  /// ```css
+  /// .slide-in-left\:\$64 {
+  ///   --sk-enter-tx: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_string_to_skribble_value("64")
+  }
+  /// ```css
+  /// .slide-in-left\:\$72 {
+  ///   --sk-enter-tx: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_string_to_skribble_value("72")
+  }
+  /// ```css
+  /// .slide-in-left\:\$80 {
+  ///   --sk-enter-tx: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_string_to_skribble_value("80")
+  }
+  /// ```css
+  /// .slide-in-left\:\$96 {
+  ///   --sk-enter-tx: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_string_to_skribble_value("96")
+  }
+  /// ```css
+  /// .slide-in-left\:\$third {
+  ///   --sk-enter-tx: -33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn third(&self) -> String {
+    self.append_string_to_skribble_value("third")
+  }
+  /// ```css
+  /// .slide-in-left\:\$two-thirds {
+  ///   --sk-enter-tx: -66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn two_thirds(&self) -> String {
+    self.append_string_to_skribble_value("twoThirds")
+  }
+  /// ```css
+  /// .slide-in-left\:\$quarter {
+  ///   --sk-enter-tx: -25%;
+  /// }
+  /// ```
+  #[inline]
+  fn quarter(&self) -> String {
+    self.append_string_to_skribble_value("quarter")
+  }
+  /// ```css
+  /// .slide-in-left\:\$half {
+  ///   --sk-enter-tx: -50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_string_to_skribble_value("half")
+  }
+  /// ```css
+  /// .slide-in-left\:\$three-quarters {
+  ///   --sk-enter-tx: -75%;
+  /// }
+  /// ```
+  #[inline]
+  fn three_quarters(&self) -> String {
+    self.append_string_to_skribble_value("threeQuarters")
+  }
+}
+impl GeneratedValueSetSlideInLeft for GeneratedAtomSlideInLeft {}
+pub struct GeneratedAtomSlideInRight(String);
+impl GeneratedSkribbleValue for GeneratedAtomSlideInRight {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
+  /// ```css
+  /// .slide-in-right\:\$full {
+  ///   --sk-enter-tx: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_string_to_skribble_value("full")
+  }
+  /// ```css
+  /// .slide-in-right\:\$0 {
+  ///   --sk-enter-tx: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  /// ```css
+  /// .slide-in-right\:\$px {
+  ///   --sk-enter-tx: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_string_to_skribble_value("px")
+  }
+  /// ```css
+  /// .slide-in-right\:\$0\.5 {
+  ///   --sk-enter-tx: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_string_to_skribble_value("0.5")
+  }
+  /// ```css
+  /// .slide-in-right\:\$1 {
+  ///   --sk-enter-tx: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_string_to_skribble_value("1")
+  }
+  /// ```css
+  /// .slide-in-right\:\$1\.5 {
+  ///   --sk-enter-tx: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_string_to_skribble_value("1.5")
+  }
+  /// ```css
+  /// .slide-in-right\:\$2 {
+  ///   --sk-enter-tx: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_string_to_skribble_value("2")
+  }
+  /// ```css
+  /// .slide-in-right\:\$2\.5 {
+  ///   --sk-enter-tx: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_string_to_skribble_value("2.5")
+  }
+  /// ```css
+  /// .slide-in-right\:\$3 {
+  ///   --sk-enter-tx: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_string_to_skribble_value("3")
+  }
+  /// ```css
+  /// .slide-in-right\:\$3\.5 {
+  ///   --sk-enter-tx: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_string_to_skribble_value("3.5")
+  }
+  /// ```css
+  /// .slide-in-right\:\$4 {
+  ///   --sk-enter-tx: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_string_to_skribble_value("4")
+  }
+  /// ```css
+  /// .slide-in-right\:\$5 {
+  ///   --sk-enter-tx: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_string_to_skribble_value("5")
+  }
+  /// ```css
+  /// .slide-in-right\:\$6 {
+  ///   --sk-enter-tx: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_string_to_skribble_value("6")
+  }
+  /// ```css
+  /// .slide-in-right\:\$7 {
+  ///   --sk-enter-tx: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_string_to_skribble_value("7")
+  }
+  /// ```css
+  /// .slide-in-right\:\$8 {
+  ///   --sk-enter-tx: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_string_to_skribble_value("8")
+  }
+  /// ```css
+  /// .slide-in-right\:\$9 {
+  ///   --sk-enter-tx: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_string_to_skribble_value("9")
+  }
+  /// ```css
+  /// .slide-in-right\:\$10 {
+  ///   --sk-enter-tx: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_string_to_skribble_value("10")
+  }
+  /// ```css
+  /// .slide-in-right\:\$11 {
+  ///   --sk-enter-tx: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_string_to_skribble_value("11")
+  }
+  /// ```css
+  /// .slide-in-right\:\$12 {
+  ///   --sk-enter-tx: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_string_to_skribble_value("12")
+  }
+  /// ```css
+  /// .slide-in-right\:\$14 {
+  ///   --sk-enter-tx: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_string_to_skribble_value("14")
+  }
+  /// ```css
+  /// .slide-in-right\:\$16 {
+  ///   --sk-enter-tx: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_string_to_skribble_value("16")
+  }
+  /// ```css
+  /// .slide-in-right\:\$20 {
+  ///   --sk-enter-tx: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_string_to_skribble_value("20")
+  }
+  /// ```css
+  /// .slide-in-right\:\$24 {
+  ///   --sk-enter-tx: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_string_to_skribble_value("24")
+  }
+  /// ```css
+  /// .slide-in-right\:\$28 {
+  ///   --sk-enter-tx: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_string_to_skribble_value("28")
+  }
+  /// ```css
+  /// .slide-in-right\:\$32 {
+  ///   --sk-enter-tx: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_string_to_skribble_value("32")
+  }
+  /// ```css
+  /// .slide-in-right\:\$36 {
+  ///   --sk-enter-tx: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_string_to_skribble_value("36")
+  }
+  /// ```css
+  /// .slide-in-right\:\$40 {
+  ///   --sk-enter-tx: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_string_to_skribble_value("40")
+  }
+  /// ```css
+  /// .slide-in-right\:\$44 {
+  ///   --sk-enter-tx: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_string_to_skribble_value("44")
+  }
+  /// ```css
+  /// .slide-in-right\:\$48 {
+  ///   --sk-enter-tx: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_string_to_skribble_value("48")
+  }
+  /// ```css
+  /// .slide-in-right\:\$52 {
+  ///   --sk-enter-tx: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_string_to_skribble_value("52")
+  }
+  /// ```css
+  /// .slide-in-right\:\$56 {
+  ///   --sk-enter-tx: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_string_to_skribble_value("56")
+  }
+  /// ```css
+  /// .slide-in-right\:\$60 {
+  ///   --sk-enter-tx: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_string_to_skribble_value("60")
+  }
+  /// ```css
+  /// .slide-in-right\:\$64 {
+  ///   --sk-enter-tx: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_string_to_skribble_value("64")
+  }
+  /// ```css
+  /// .slide-in-right\:\$72 {
+  ///   --sk-enter-tx: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_string_to_skribble_value("72")
+  }
+  /// ```css
+  /// .slide-in-right\:\$80 {
+  ///   --sk-enter-tx: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_string_to_skribble_value("80")
+  }
+  /// ```css
+  /// .slide-in-right\:\$96 {
+  ///   --sk-enter-tx: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_string_to_skribble_value("96")
+  }
+  /// ```css
+  /// .slide-in-right\:\$third {
+  ///   --sk-enter-tx: 33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn third(&self) -> String {
+    self.append_string_to_skribble_value("third")
+  }
+  /// ```css
+  /// .slide-in-right\:\$two-thirds {
+  ///   --sk-enter-tx: 66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn two_thirds(&self) -> String {
+    self.append_string_to_skribble_value("twoThirds")
+  }
+  /// ```css
+  /// .slide-in-right\:\$quarter {
+  ///   --sk-enter-tx: 25%;
+  /// }
+  /// ```
+  #[inline]
+  fn quarter(&self) -> String {
+    self.append_string_to_skribble_value("quarter")
+  }
+  /// ```css
+  /// .slide-in-right\:\$half {
+  ///   --sk-enter-tx: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_string_to_skribble_value("half")
+  }
+  /// ```css
+  /// .slide-in-right\:\$three-quarters {
+  ///   --sk-enter-tx: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn three_quarters(&self) -> String {
+    self.append_string_to_skribble_value("threeQuarters")
+  }
+}
+impl GeneratedValueSetSlideInRight for GeneratedAtomSlideInRight {}
+pub struct GeneratedAtomSlideOutLeft(String);
+impl GeneratedSkribbleValue for GeneratedAtomSlideOutLeft {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
+  /// ```css
+  /// .slide-out-left\:\$full {
+  ///   --sk-exit-tx: -100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_string_to_skribble_value("full")
+  }
+  /// ```css
+  /// .slide-out-left\:\$0 {
+  ///   --sk-exit-tx: -0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  /// ```css
+  /// .slide-out-left\:\$px {
+  ///   --sk-exit-tx: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_string_to_skribble_value("px")
+  }
+  /// ```css
+  /// .slide-out-left\:\$0\.5 {
+  ///   --sk-exit-tx: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_string_to_skribble_value("0.5")
+  }
+  /// ```css
+  /// .slide-out-left\:\$1 {
+  ///   --sk-exit-tx: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_string_to_skribble_value("1")
+  }
+  /// ```css
+  /// .slide-out-left\:\$1\.5 {
+  ///   --sk-exit-tx: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_string_to_skribble_value("1.5")
+  }
+  /// ```css
+  /// .slide-out-left\:\$2 {
+  ///   --sk-exit-tx: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_string_to_skribble_value("2")
+  }
+  /// ```css
+  /// .slide-out-left\:\$2\.5 {
+  ///   --sk-exit-tx: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_string_to_skribble_value("2.5")
+  }
+  /// ```css
+  /// .slide-out-left\:\$3 {
+  ///   --sk-exit-tx: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_string_to_skribble_value("3")
+  }
+  /// ```css
+  /// .slide-out-left\:\$3\.5 {
+  ///   --sk-exit-tx: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_string_to_skribble_value("3.5")
+  }
+  /// ```css
+  /// .slide-out-left\:\$4 {
+  ///   --sk-exit-tx: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_string_to_skribble_value("4")
+  }
+  /// ```css
+  /// .slide-out-left\:\$5 {
+  ///   --sk-exit-tx: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_string_to_skribble_value("5")
+  }
+  /// ```css
+  /// .slide-out-left\:\$6 {
+  ///   --sk-exit-tx: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_string_to_skribble_value("6")
+  }
+  /// ```css
+  /// .slide-out-left\:\$7 {
+  ///   --sk-exit-tx: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_string_to_skribble_value("7")
+  }
+  /// ```css
+  /// .slide-out-left\:\$8 {
+  ///   --sk-exit-tx: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_string_to_skribble_value("8")
+  }
+  /// ```css
+  /// .slide-out-left\:\$9 {
+  ///   --sk-exit-tx: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_string_to_skribble_value("9")
+  }
+  /// ```css
+  /// .slide-out-left\:\$10 {
+  ///   --sk-exit-tx: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_string_to_skribble_value("10")
+  }
+  /// ```css
+  /// .slide-out-left\:\$11 {
+  ///   --sk-exit-tx: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_string_to_skribble_value("11")
+  }
+  /// ```css
+  /// .slide-out-left\:\$12 {
+  ///   --sk-exit-tx: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_string_to_skribble_value("12")
+  }
+  /// ```css
+  /// .slide-out-left\:\$14 {
+  ///   --sk-exit-tx: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_string_to_skribble_value("14")
+  }
+  /// ```css
+  /// .slide-out-left\:\$16 {
+  ///   --sk-exit-tx: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_string_to_skribble_value("16")
+  }
+  /// ```css
+  /// .slide-out-left\:\$20 {
+  ///   --sk-exit-tx: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_string_to_skribble_value("20")
+  }
+  /// ```css
+  /// .slide-out-left\:\$24 {
+  ///   --sk-exit-tx: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_string_to_skribble_value("24")
+  }
+  /// ```css
+  /// .slide-out-left\:\$28 {
+  ///   --sk-exit-tx: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_string_to_skribble_value("28")
+  }
+  /// ```css
+  /// .slide-out-left\:\$32 {
+  ///   --sk-exit-tx: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_string_to_skribble_value("32")
+  }
+  /// ```css
+  /// .slide-out-left\:\$36 {
+  ///   --sk-exit-tx: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_string_to_skribble_value("36")
+  }
+  /// ```css
+  /// .slide-out-left\:\$40 {
+  ///   --sk-exit-tx: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_string_to_skribble_value("40")
+  }
+  /// ```css
+  /// .slide-out-left\:\$44 {
+  ///   --sk-exit-tx: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_string_to_skribble_value("44")
+  }
+  /// ```css
+  /// .slide-out-left\:\$48 {
+  ///   --sk-exit-tx: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_string_to_skribble_value("48")
+  }
+  /// ```css
+  /// .slide-out-left\:\$52 {
+  ///   --sk-exit-tx: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_string_to_skribble_value("52")
+  }
+  /// ```css
+  /// .slide-out-left\:\$56 {
+  ///   --sk-exit-tx: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_string_to_skribble_value("56")
+  }
+  /// ```css
+  /// .slide-out-left\:\$60 {
+  ///   --sk-exit-tx: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_string_to_skribble_value("60")
+  }
+  /// ```css
+  /// .slide-out-left\:\$64 {
+  ///   --sk-exit-tx: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_string_to_skribble_value("64")
+  }
+  /// ```css
+  /// .slide-out-left\:\$72 {
+  ///   --sk-exit-tx: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_string_to_skribble_value("72")
+  }
+  /// ```css
+  /// .slide-out-left\:\$80 {
+  ///   --sk-exit-tx: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_string_to_skribble_value("80")
+  }
+  /// ```css
+  /// .slide-out-left\:\$96 {
+  ///   --sk-exit-tx: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_string_to_skribble_value("96")
+  }
+  /// ```css
+  /// .slide-out-left\:\$third {
+  ///   --sk-exit-tx: -33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn third(&self) -> String {
+    self.append_string_to_skribble_value("third")
+  }
+  /// ```css
+  /// .slide-out-left\:\$two-thirds {
+  ///   --sk-exit-tx: -66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn two_thirds(&self) -> String {
+    self.append_string_to_skribble_value("twoThirds")
+  }
+  /// ```css
+  /// .slide-out-left\:\$quarter {
+  ///   --sk-exit-tx: -25%;
+  /// }
+  /// ```
+  #[inline]
+  fn quarter(&self) -> String {
+    self.append_string_to_skribble_value("quarter")
+  }
+  /// ```css
+  /// .slide-out-left\:\$half {
+  ///   --sk-exit-tx: -50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_string_to_skribble_value("half")
+  }
+  /// ```css
+  /// .slide-out-left\:\$three-quarters {
+  ///   --sk-exit-tx: -75%;
+  /// }
+  /// ```
+  #[inline]
+  fn three_quarters(&self) -> String {
+    self.append_string_to_skribble_value("threeQuarters")
+  }
+}
+impl GeneratedValueSetSlideOutLeft for GeneratedAtomSlideOutLeft {}
+pub struct GeneratedAtomSlideOutRight(String);
+impl GeneratedSkribbleValue for GeneratedAtomSlideOutRight {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
+  /// ```css
+  /// .slide-out-right\:\$full {
+  ///   --sk-exit-tx: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_string_to_skribble_value("full")
+  }
+  /// ```css
+  /// .slide-out-right\:\$0 {
+  ///   --sk-exit-tx: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  /// ```css
+  /// .slide-out-right\:\$px {
+  ///   --sk-exit-tx: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_string_to_skribble_value("px")
+  }
+  /// ```css
+  /// .slide-out-right\:\$0\.5 {
+  ///   --sk-exit-tx: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_string_to_skribble_value("0.5")
+  }
+  /// ```css
+  /// .slide-out-right\:\$1 {
+  ///   --sk-exit-tx: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_string_to_skribble_value("1")
+  }
+  /// ```css
+  /// .slide-out-right\:\$1\.5 {
+  ///   --sk-exit-tx: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_string_to_skribble_value("1.5")
+  }
+  /// ```css
+  /// .slide-out-right\:\$2 {
+  ///   --sk-exit-tx: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_string_to_skribble_value("2")
+  }
+  /// ```css
+  /// .slide-out-right\:\$2\.5 {
+  ///   --sk-exit-tx: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_string_to_skribble_value("2.5")
+  }
+  /// ```css
+  /// .slide-out-right\:\$3 {
+  ///   --sk-exit-tx: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_string_to_skribble_value("3")
+  }
+  /// ```css
+  /// .slide-out-right\:\$3\.5 {
+  ///   --sk-exit-tx: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_string_to_skribble_value("3.5")
+  }
+  /// ```css
+  /// .slide-out-right\:\$4 {
+  ///   --sk-exit-tx: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_string_to_skribble_value("4")
+  }
+  /// ```css
+  /// .slide-out-right\:\$5 {
+  ///   --sk-exit-tx: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_string_to_skribble_value("5")
+  }
+  /// ```css
+  /// .slide-out-right\:\$6 {
+  ///   --sk-exit-tx: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_string_to_skribble_value("6")
+  }
+  /// ```css
+  /// .slide-out-right\:\$7 {
+  ///   --sk-exit-tx: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_string_to_skribble_value("7")
+  }
+  /// ```css
+  /// .slide-out-right\:\$8 {
+  ///   --sk-exit-tx: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_string_to_skribble_value("8")
+  }
+  /// ```css
+  /// .slide-out-right\:\$9 {
+  ///   --sk-exit-tx: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_string_to_skribble_value("9")
+  }
+  /// ```css
+  /// .slide-out-right\:\$10 {
+  ///   --sk-exit-tx: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_string_to_skribble_value("10")
+  }
+  /// ```css
+  /// .slide-out-right\:\$11 {
+  ///   --sk-exit-tx: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_string_to_skribble_value("11")
+  }
+  /// ```css
+  /// .slide-out-right\:\$12 {
+  ///   --sk-exit-tx: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_string_to_skribble_value("12")
+  }
+  /// ```css
+  /// .slide-out-right\:\$14 {
+  ///   --sk-exit-tx: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_string_to_skribble_value("14")
+  }
+  /// ```css
+  /// .slide-out-right\:\$16 {
+  ///   --sk-exit-tx: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_string_to_skribble_value("16")
+  }
+  /// ```css
+  /// .slide-out-right\:\$20 {
+  ///   --sk-exit-tx: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_string_to_skribble_value("20")
+  }
+  /// ```css
+  /// .slide-out-right\:\$24 {
+  ///   --sk-exit-tx: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_string_to_skribble_value("24")
+  }
+  /// ```css
+  /// .slide-out-right\:\$28 {
+  ///   --sk-exit-tx: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_string_to_skribble_value("28")
+  }
+  /// ```css
+  /// .slide-out-right\:\$32 {
+  ///   --sk-exit-tx: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_string_to_skribble_value("32")
+  }
+  /// ```css
+  /// .slide-out-right\:\$36 {
+  ///   --sk-exit-tx: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_string_to_skribble_value("36")
+  }
+  /// ```css
+  /// .slide-out-right\:\$40 {
+  ///   --sk-exit-tx: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_string_to_skribble_value("40")
+  }
+  /// ```css
+  /// .slide-out-right\:\$44 {
+  ///   --sk-exit-tx: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_string_to_skribble_value("44")
+  }
+  /// ```css
+  /// .slide-out-right\:\$48 {
+  ///   --sk-exit-tx: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_string_to_skribble_value("48")
+  }
+  /// ```css
+  /// .slide-out-right\:\$52 {
+  ///   --sk-exit-tx: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_string_to_skribble_value("52")
+  }
+  /// ```css
+  /// .slide-out-right\:\$56 {
+  ///   --sk-exit-tx: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_string_to_skribble_value("56")
+  }
+  /// ```css
+  /// .slide-out-right\:\$60 {
+  ///   --sk-exit-tx: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_string_to_skribble_value("60")
+  }
+  /// ```css
+  /// .slide-out-right\:\$64 {
+  ///   --sk-exit-tx: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_string_to_skribble_value("64")
+  }
+  /// ```css
+  /// .slide-out-right\:\$72 {
+  ///   --sk-exit-tx: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_string_to_skribble_value("72")
+  }
+  /// ```css
+  /// .slide-out-right\:\$80 {
+  ///   --sk-exit-tx: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_string_to_skribble_value("80")
+  }
+  /// ```css
+  /// .slide-out-right\:\$96 {
+  ///   --sk-exit-tx: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_string_to_skribble_value("96")
+  }
+  /// ```css
+  /// .slide-out-right\:\$third {
+  ///   --sk-exit-tx: 33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn third(&self) -> String {
+    self.append_string_to_skribble_value("third")
+  }
+  /// ```css
+  /// .slide-out-right\:\$two-thirds {
+  ///   --sk-exit-tx: 66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn two_thirds(&self) -> String {
+    self.append_string_to_skribble_value("twoThirds")
+  }
+  /// ```css
+  /// .slide-out-right\:\$quarter {
+  ///   --sk-exit-tx: 25%;
+  /// }
+  /// ```
+  #[inline]
+  fn quarter(&self) -> String {
+    self.append_string_to_skribble_value("quarter")
+  }
+  /// ```css
+  /// .slide-out-right\:\$half {
+  ///   --sk-exit-tx: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_string_to_skribble_value("half")
+  }
+  /// ```css
+  /// .slide-out-right\:\$three-quarters {
+  ///   --sk-exit-tx: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn three_quarters(&self) -> String {
+    self.append_string_to_skribble_value("threeQuarters")
+  }
+}
+impl GeneratedValueSetSlideOutRight for GeneratedAtomSlideOutRight {}
+pub struct GeneratedAtomSlideInTop(String);
+impl GeneratedSkribbleValue for GeneratedAtomSlideInTop {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
+  /// ```css
+  /// .slide-in-top\:\$full {
+  ///   --sk-enter-ty: -100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_string_to_skribble_value("full")
+  }
+  /// ```css
+  /// .slide-in-top\:\$0 {
+  ///   --sk-enter-ty: -0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  /// ```css
+  /// .slide-in-top\:\$px {
+  ///   --sk-enter-ty: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_string_to_skribble_value("px")
+  }
+  /// ```css
+  /// .slide-in-top\:\$0\.5 {
+  ///   --sk-enter-ty: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_string_to_skribble_value("0.5")
+  }
+  /// ```css
+  /// .slide-in-top\:\$1 {
+  ///   --sk-enter-ty: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_string_to_skribble_value("1")
+  }
+  /// ```css
+  /// .slide-in-top\:\$1\.5 {
+  ///   --sk-enter-ty: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_string_to_skribble_value("1.5")
+  }
+  /// ```css
+  /// .slide-in-top\:\$2 {
+  ///   --sk-enter-ty: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_string_to_skribble_value("2")
+  }
+  /// ```css
+  /// .slide-in-top\:\$2\.5 {
+  ///   --sk-enter-ty: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_string_to_skribble_value("2.5")
+  }
+  /// ```css
+  /// .slide-in-top\:\$3 {
+  ///   --sk-enter-ty: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_string_to_skribble_value("3")
+  }
+  /// ```css
+  /// .slide-in-top\:\$3\.5 {
+  ///   --sk-enter-ty: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_string_to_skribble_value("3.5")
+  }
+  /// ```css
+  /// .slide-in-top\:\$4 {
+  ///   --sk-enter-ty: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_string_to_skribble_value("4")
+  }
+  /// ```css
+  /// .slide-in-top\:\$5 {
+  ///   --sk-enter-ty: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_string_to_skribble_value("5")
+  }
+  /// ```css
+  /// .slide-in-top\:\$6 {
+  ///   --sk-enter-ty: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_string_to_skribble_value("6")
+  }
+  /// ```css
+  /// .slide-in-top\:\$7 {
+  ///   --sk-enter-ty: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_string_to_skribble_value("7")
+  }
+  /// ```css
+  /// .slide-in-top\:\$8 {
+  ///   --sk-enter-ty: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_string_to_skribble_value("8")
+  }
+  /// ```css
+  /// .slide-in-top\:\$9 {
+  ///   --sk-enter-ty: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_string_to_skribble_value("9")
+  }
+  /// ```css
+  /// .slide-in-top\:\$10 {
+  ///   --sk-enter-ty: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_string_to_skribble_value("10")
+  }
+  /// ```css
+  /// .slide-in-top\:\$11 {
+  ///   --sk-enter-ty: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_string_to_skribble_value("11")
+  }
+  /// ```css
+  /// .slide-in-top\:\$12 {
+  ///   --sk-enter-ty: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_string_to_skribble_value("12")
+  }
+  /// ```css
+  /// .slide-in-top\:\$14 {
+  ///   --sk-enter-ty: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_string_to_skribble_value("14")
+  }
+  /// ```css
+  /// .slide-in-top\:\$16 {
+  ///   --sk-enter-ty: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_string_to_skribble_value("16")
+  }
+  /// ```css
+  /// .slide-in-top\:\$20 {
+  ///   --sk-enter-ty: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_string_to_skribble_value("20")
+  }
+  /// ```css
+  /// .slide-in-top\:\$24 {
+  ///   --sk-enter-ty: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_string_to_skribble_value("24")
+  }
+  /// ```css
+  /// .slide-in-top\:\$28 {
+  ///   --sk-enter-ty: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_string_to_skribble_value("28")
+  }
+  /// ```css
+  /// .slide-in-top\:\$32 {
+  ///   --sk-enter-ty: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_string_to_skribble_value("32")
+  }
+  /// ```css
+  /// .slide-in-top\:\$36 {
+  ///   --sk-enter-ty: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_string_to_skribble_value("36")
+  }
+  /// ```css
+  /// .slide-in-top\:\$40 {
+  ///   --sk-enter-ty: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_string_to_skribble_value("40")
+  }
+  /// ```css
+  /// .slide-in-top\:\$44 {
+  ///   --sk-enter-ty: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_string_to_skribble_value("44")
+  }
+  /// ```css
+  /// .slide-in-top\:\$48 {
+  ///   --sk-enter-ty: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_string_to_skribble_value("48")
+  }
+  /// ```css
+  /// .slide-in-top\:\$52 {
+  ///   --sk-enter-ty: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_string_to_skribble_value("52")
+  }
+  /// ```css
+  /// .slide-in-top\:\$56 {
+  ///   --sk-enter-ty: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_string_to_skribble_value("56")
+  }
+  /// ```css
+  /// .slide-in-top\:\$60 {
+  ///   --sk-enter-ty: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_string_to_skribble_value("60")
+  }
+  /// ```css
+  /// .slide-in-top\:\$64 {
+  ///   --sk-enter-ty: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_string_to_skribble_value("64")
+  }
+  /// ```css
+  /// .slide-in-top\:\$72 {
+  ///   --sk-enter-ty: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_string_to_skribble_value("72")
+  }
+  /// ```css
+  /// .slide-in-top\:\$80 {
+  ///   --sk-enter-ty: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_string_to_skribble_value("80")
+  }
+  /// ```css
+  /// .slide-in-top\:\$96 {
+  ///   --sk-enter-ty: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_string_to_skribble_value("96")
+  }
+  /// ```css
+  /// .slide-in-top\:\$third {
+  ///   --sk-enter-ty: -33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn third(&self) -> String {
+    self.append_string_to_skribble_value("third")
+  }
+  /// ```css
+  /// .slide-in-top\:\$two-thirds {
+  ///   --sk-enter-ty: -66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn two_thirds(&self) -> String {
+    self.append_string_to_skribble_value("twoThirds")
+  }
+  /// ```css
+  /// .slide-in-top\:\$quarter {
+  ///   --sk-enter-ty: -25%;
+  /// }
+  /// ```
+  #[inline]
+  fn quarter(&self) -> String {
+    self.append_string_to_skribble_value("quarter")
+  }
+  /// ```css
+  /// .slide-in-top\:\$half {
+  ///   --sk-enter-ty: -50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_string_to_skribble_value("half")
+  }
+  /// ```css
+  /// .slide-in-top\:\$three-quarters {
+  ///   --sk-enter-ty: -75%;
+  /// }
+  /// ```
+  #[inline]
+  fn three_quarters(&self) -> String {
+    self.append_string_to_skribble_value("threeQuarters")
+  }
+}
+impl GeneratedValueSetSlideInTop for GeneratedAtomSlideInTop {}
+pub struct GeneratedAtomSlideInBottom(String);
+impl GeneratedSkribbleValue for GeneratedAtomSlideInBottom {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
+  /// ```css
+  /// .slide-in-bottom\:\$full {
+  ///   --sk-enter-ty: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_string_to_skribble_value("full")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$0 {
+  ///   --sk-enter-ty: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$px {
+  ///   --sk-enter-ty: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_string_to_skribble_value("px")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$0\.5 {
+  ///   --sk-enter-ty: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_string_to_skribble_value("0.5")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$1 {
+  ///   --sk-enter-ty: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_string_to_skribble_value("1")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$1\.5 {
+  ///   --sk-enter-ty: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_string_to_skribble_value("1.5")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$2 {
+  ///   --sk-enter-ty: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_string_to_skribble_value("2")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$2\.5 {
+  ///   --sk-enter-ty: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_string_to_skribble_value("2.5")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$3 {
+  ///   --sk-enter-ty: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_string_to_skribble_value("3")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$3\.5 {
+  ///   --sk-enter-ty: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_string_to_skribble_value("3.5")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$4 {
+  ///   --sk-enter-ty: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_string_to_skribble_value("4")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$5 {
+  ///   --sk-enter-ty: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_string_to_skribble_value("5")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$6 {
+  ///   --sk-enter-ty: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_string_to_skribble_value("6")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$7 {
+  ///   --sk-enter-ty: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_string_to_skribble_value("7")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$8 {
+  ///   --sk-enter-ty: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_string_to_skribble_value("8")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$9 {
+  ///   --sk-enter-ty: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_string_to_skribble_value("9")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$10 {
+  ///   --sk-enter-ty: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_string_to_skribble_value("10")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$11 {
+  ///   --sk-enter-ty: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_string_to_skribble_value("11")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$12 {
+  ///   --sk-enter-ty: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_string_to_skribble_value("12")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$14 {
+  ///   --sk-enter-ty: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_string_to_skribble_value("14")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$16 {
+  ///   --sk-enter-ty: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_string_to_skribble_value("16")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$20 {
+  ///   --sk-enter-ty: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_string_to_skribble_value("20")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$24 {
+  ///   --sk-enter-ty: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_string_to_skribble_value("24")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$28 {
+  ///   --sk-enter-ty: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_string_to_skribble_value("28")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$32 {
+  ///   --sk-enter-ty: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_string_to_skribble_value("32")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$36 {
+  ///   --sk-enter-ty: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_string_to_skribble_value("36")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$40 {
+  ///   --sk-enter-ty: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_string_to_skribble_value("40")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$44 {
+  ///   --sk-enter-ty: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_string_to_skribble_value("44")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$48 {
+  ///   --sk-enter-ty: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_string_to_skribble_value("48")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$52 {
+  ///   --sk-enter-ty: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_string_to_skribble_value("52")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$56 {
+  ///   --sk-enter-ty: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_string_to_skribble_value("56")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$60 {
+  ///   --sk-enter-ty: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_string_to_skribble_value("60")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$64 {
+  ///   --sk-enter-ty: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_string_to_skribble_value("64")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$72 {
+  ///   --sk-enter-ty: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_string_to_skribble_value("72")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$80 {
+  ///   --sk-enter-ty: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_string_to_skribble_value("80")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$96 {
+  ///   --sk-enter-ty: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_string_to_skribble_value("96")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$third {
+  ///   --sk-enter-ty: 33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn third(&self) -> String {
+    self.append_string_to_skribble_value("third")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$two-thirds {
+  ///   --sk-enter-ty: 66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn two_thirds(&self) -> String {
+    self.append_string_to_skribble_value("twoThirds")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$quarter {
+  ///   --sk-enter-ty: 25%;
+  /// }
+  /// ```
+  #[inline]
+  fn quarter(&self) -> String {
+    self.append_string_to_skribble_value("quarter")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$half {
+  ///   --sk-enter-ty: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_string_to_skribble_value("half")
+  }
+  /// ```css
+  /// .slide-in-bottom\:\$three-quarters {
+  ///   --sk-enter-ty: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn three_quarters(&self) -> String {
+    self.append_string_to_skribble_value("threeQuarters")
+  }
+}
+impl GeneratedValueSetSlideInBottom for GeneratedAtomSlideInBottom {}
+pub struct GeneratedAtomSlideOutTop(String);
+impl GeneratedSkribbleValue for GeneratedAtomSlideOutTop {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
+  /// ```css
+  /// .slide-out-top\:\$full {
+  ///   --sk-exit-ty: -100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_string_to_skribble_value("full")
+  }
+  /// ```css
+  /// .slide-out-top\:\$0 {
+  ///   --sk-exit-ty: -0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  /// ```css
+  /// .slide-out-top\:\$px {
+  ///   --sk-exit-ty: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_string_to_skribble_value("px")
+  }
+  /// ```css
+  /// .slide-out-top\:\$0\.5 {
+  ///   --sk-exit-ty: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_string_to_skribble_value("0.5")
+  }
+  /// ```css
+  /// .slide-out-top\:\$1 {
+  ///   --sk-exit-ty: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_string_to_skribble_value("1")
+  }
+  /// ```css
+  /// .slide-out-top\:\$1\.5 {
+  ///   --sk-exit-ty: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_string_to_skribble_value("1.5")
+  }
+  /// ```css
+  /// .slide-out-top\:\$2 {
+  ///   --sk-exit-ty: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_string_to_skribble_value("2")
+  }
+  /// ```css
+  /// .slide-out-top\:\$2\.5 {
+  ///   --sk-exit-ty: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_string_to_skribble_value("2.5")
+  }
+  /// ```css
+  /// .slide-out-top\:\$3 {
+  ///   --sk-exit-ty: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_string_to_skribble_value("3")
+  }
+  /// ```css
+  /// .slide-out-top\:\$3\.5 {
+  ///   --sk-exit-ty: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_string_to_skribble_value("3.5")
+  }
+  /// ```css
+  /// .slide-out-top\:\$4 {
+  ///   --sk-exit-ty: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_string_to_skribble_value("4")
+  }
+  /// ```css
+  /// .slide-out-top\:\$5 {
+  ///   --sk-exit-ty: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_string_to_skribble_value("5")
+  }
+  /// ```css
+  /// .slide-out-top\:\$6 {
+  ///   --sk-exit-ty: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_string_to_skribble_value("6")
+  }
+  /// ```css
+  /// .slide-out-top\:\$7 {
+  ///   --sk-exit-ty: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_string_to_skribble_value("7")
+  }
+  /// ```css
+  /// .slide-out-top\:\$8 {
+  ///   --sk-exit-ty: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_string_to_skribble_value("8")
+  }
+  /// ```css
+  /// .slide-out-top\:\$9 {
+  ///   --sk-exit-ty: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_string_to_skribble_value("9")
+  }
+  /// ```css
+  /// .slide-out-top\:\$10 {
+  ///   --sk-exit-ty: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_string_to_skribble_value("10")
+  }
+  /// ```css
+  /// .slide-out-top\:\$11 {
+  ///   --sk-exit-ty: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_string_to_skribble_value("11")
+  }
+  /// ```css
+  /// .slide-out-top\:\$12 {
+  ///   --sk-exit-ty: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_string_to_skribble_value("12")
+  }
+  /// ```css
+  /// .slide-out-top\:\$14 {
+  ///   --sk-exit-ty: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_string_to_skribble_value("14")
+  }
+  /// ```css
+  /// .slide-out-top\:\$16 {
+  ///   --sk-exit-ty: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_string_to_skribble_value("16")
+  }
+  /// ```css
+  /// .slide-out-top\:\$20 {
+  ///   --sk-exit-ty: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_string_to_skribble_value("20")
+  }
+  /// ```css
+  /// .slide-out-top\:\$24 {
+  ///   --sk-exit-ty: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_string_to_skribble_value("24")
+  }
+  /// ```css
+  /// .slide-out-top\:\$28 {
+  ///   --sk-exit-ty: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_string_to_skribble_value("28")
+  }
+  /// ```css
+  /// .slide-out-top\:\$32 {
+  ///   --sk-exit-ty: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_string_to_skribble_value("32")
+  }
+  /// ```css
+  /// .slide-out-top\:\$36 {
+  ///   --sk-exit-ty: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_string_to_skribble_value("36")
+  }
+  /// ```css
+  /// .slide-out-top\:\$40 {
+  ///   --sk-exit-ty: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_string_to_skribble_value("40")
+  }
+  /// ```css
+  /// .slide-out-top\:\$44 {
+  ///   --sk-exit-ty: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_string_to_skribble_value("44")
+  }
+  /// ```css
+  /// .slide-out-top\:\$48 {
+  ///   --sk-exit-ty: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_string_to_skribble_value("48")
+  }
+  /// ```css
+  /// .slide-out-top\:\$52 {
+  ///   --sk-exit-ty: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_string_to_skribble_value("52")
+  }
+  /// ```css
+  /// .slide-out-top\:\$56 {
+  ///   --sk-exit-ty: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_string_to_skribble_value("56")
+  }
+  /// ```css
+  /// .slide-out-top\:\$60 {
+  ///   --sk-exit-ty: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_string_to_skribble_value("60")
+  }
+  /// ```css
+  /// .slide-out-top\:\$64 {
+  ///   --sk-exit-ty: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_string_to_skribble_value("64")
+  }
+  /// ```css
+  /// .slide-out-top\:\$72 {
+  ///   --sk-exit-ty: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_string_to_skribble_value("72")
+  }
+  /// ```css
+  /// .slide-out-top\:\$80 {
+  ///   --sk-exit-ty: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_string_to_skribble_value("80")
+  }
+  /// ```css
+  /// .slide-out-top\:\$96 {
+  ///   --sk-exit-ty: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_string_to_skribble_value("96")
+  }
+  /// ```css
+  /// .slide-out-top\:\$third {
+  ///   --sk-exit-ty: -33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn third(&self) -> String {
+    self.append_string_to_skribble_value("third")
+  }
+  /// ```css
+  /// .slide-out-top\:\$two-thirds {
+  ///   --sk-exit-ty: -66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn two_thirds(&self) -> String {
+    self.append_string_to_skribble_value("twoThirds")
+  }
+  /// ```css
+  /// .slide-out-top\:\$quarter {
+  ///   --sk-exit-ty: -25%;
+  /// }
+  /// ```
+  #[inline]
+  fn quarter(&self) -> String {
+    self.append_string_to_skribble_value("quarter")
+  }
+  /// ```css
+  /// .slide-out-top\:\$half {
+  ///   --sk-exit-ty: -50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_string_to_skribble_value("half")
+  }
+  /// ```css
+  /// .slide-out-top\:\$three-quarters {
+  ///   --sk-exit-ty: -75%;
+  /// }
+  /// ```
+  #[inline]
+  fn three_quarters(&self) -> String {
+    self.append_string_to_skribble_value("threeQuarters")
+  }
+}
+impl GeneratedValueSetSlideOutTop for GeneratedAtomSlideOutTop {}
+pub struct GeneratedAtomSlideOutBottom(String);
+impl GeneratedSkribbleValue for GeneratedAtomSlideOutBottom {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
+  /// ```css
+  /// .slide-out-bottom\:\$full {
+  ///   --sk-exit-ty: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_string_to_skribble_value("full")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$0 {
+  ///   --sk-exit-ty: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$px {
+  ///   --sk-exit-ty: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_string_to_skribble_value("px")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$0\.5 {
+  ///   --sk-exit-ty: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_string_to_skribble_value("0.5")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$1 {
+  ///   --sk-exit-ty: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_string_to_skribble_value("1")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$1\.5 {
+  ///   --sk-exit-ty: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_string_to_skribble_value("1.5")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$2 {
+  ///   --sk-exit-ty: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_string_to_skribble_value("2")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$2\.5 {
+  ///   --sk-exit-ty: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_string_to_skribble_value("2.5")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$3 {
+  ///   --sk-exit-ty: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_string_to_skribble_value("3")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$3\.5 {
+  ///   --sk-exit-ty: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_string_to_skribble_value("3.5")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$4 {
+  ///   --sk-exit-ty: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_string_to_skribble_value("4")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$5 {
+  ///   --sk-exit-ty: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_string_to_skribble_value("5")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$6 {
+  ///   --sk-exit-ty: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_string_to_skribble_value("6")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$7 {
+  ///   --sk-exit-ty: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_string_to_skribble_value("7")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$8 {
+  ///   --sk-exit-ty: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_string_to_skribble_value("8")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$9 {
+  ///   --sk-exit-ty: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_string_to_skribble_value("9")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$10 {
+  ///   --sk-exit-ty: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_string_to_skribble_value("10")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$11 {
+  ///   --sk-exit-ty: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_string_to_skribble_value("11")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$12 {
+  ///   --sk-exit-ty: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_string_to_skribble_value("12")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$14 {
+  ///   --sk-exit-ty: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_string_to_skribble_value("14")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$16 {
+  ///   --sk-exit-ty: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_string_to_skribble_value("16")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$20 {
+  ///   --sk-exit-ty: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_string_to_skribble_value("20")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$24 {
+  ///   --sk-exit-ty: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_string_to_skribble_value("24")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$28 {
+  ///   --sk-exit-ty: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_string_to_skribble_value("28")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$32 {
+  ///   --sk-exit-ty: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_string_to_skribble_value("32")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$36 {
+  ///   --sk-exit-ty: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_string_to_skribble_value("36")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$40 {
+  ///   --sk-exit-ty: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_string_to_skribble_value("40")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$44 {
+  ///   --sk-exit-ty: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_string_to_skribble_value("44")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$48 {
+  ///   --sk-exit-ty: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_string_to_skribble_value("48")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$52 {
+  ///   --sk-exit-ty: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_string_to_skribble_value("52")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$56 {
+  ///   --sk-exit-ty: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_string_to_skribble_value("56")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$60 {
+  ///   --sk-exit-ty: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_string_to_skribble_value("60")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$64 {
+  ///   --sk-exit-ty: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_string_to_skribble_value("64")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$72 {
+  ///   --sk-exit-ty: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_string_to_skribble_value("72")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$80 {
+  ///   --sk-exit-ty: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_string_to_skribble_value("80")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$96 {
+  ///   --sk-exit-ty: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_string_to_skribble_value("96")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$third {
+  ///   --sk-exit-ty: 33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn third(&self) -> String {
+    self.append_string_to_skribble_value("third")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$two-thirds {
+  ///   --sk-exit-ty: 66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn two_thirds(&self) -> String {
+    self.append_string_to_skribble_value("twoThirds")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$quarter {
+  ///   --sk-exit-ty: 25%;
+  /// }
+  /// ```
+  #[inline]
+  fn quarter(&self) -> String {
+    self.append_string_to_skribble_value("quarter")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$half {
+  ///   --sk-exit-ty: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_string_to_skribble_value("half")
+  }
+  /// ```css
+  /// .slide-out-bottom\:\$three-quarters {
+  ///   --sk-exit-ty: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn three_quarters(&self) -> String {
+    self.append_string_to_skribble_value("threeQuarters")
+  }
+}
+impl GeneratedValueSetSlideOutBottom for GeneratedAtomSlideOutBottom {}
+pub struct GeneratedAtomZoomIn(String);
+impl GeneratedSkribbleValue for GeneratedAtomZoomIn {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
+  /// ```css
+  /// .zoom-in\:\$0 {
+  ///   --sk-enter-sx: 0;
+  ///   --sk-enter-sy: 0;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  /// ```css
+  /// .zoom-in\:\$50 {
+  ///   --sk-enter-sx: .5;
+  ///   --sk-enter-sy: .5;
+  /// }
+  /// ```
+  #[inline]
+  fn n50(&self) -> String {
+    self.append_string_to_skribble_value("50")
+  }
+  /// ```css
+  /// .zoom-in\:\$75 {
+  ///   --sk-enter-sx: .75;
+  ///   --sk-enter-sy: .75;
+  /// }
+  /// ```
+  #[inline]
+  fn n75(&self) -> String {
+    self.append_string_to_skribble_value("75")
+  }
+  /// ```css
+  /// .zoom-in\:\$90 {
+  ///   --sk-enter-sx: .9;
+  ///   --sk-enter-sy: .9;
+  /// }
+  /// ```
+  #[inline]
+  fn n90(&self) -> String {
+    self.append_string_to_skribble_value("90")
+  }
+  /// ```css
+  /// .zoom-in\:\$95 {
+  ///   --sk-enter-sx: .95;
+  ///   --sk-enter-sy: .95;
+  /// }
+  /// ```
+  #[inline]
+  fn n95(&self) -> String {
+    self.append_string_to_skribble_value("95")
+  }
+  /// ```css
+  /// .zoom-in\:\$100 {
+  ///   --sk-enter-sx: 1;
+  ///   --sk-enter-sy: 1;
+  /// }
+  /// ```
+  #[inline]
+  fn n100(&self) -> String {
+    self.append_string_to_skribble_value("100")
+  }
+  /// ```css
+  /// .zoom-in\:\$105 {
+  ///   --sk-enter-sx: 1.05;
+  ///   --sk-enter-sy: 1.05;
+  /// }
+  /// ```
+  #[inline]
+  fn n105(&self) -> String {
+    self.append_string_to_skribble_value("105")
+  }
+  /// ```css
+  /// .zoom-in\:\$110 {
+  ///   --sk-enter-sx: 1.1;
+  ///   --sk-enter-sy: 1.1;
+  /// }
+  /// ```
+  #[inline]
+  fn n110(&self) -> String {
+    self.append_string_to_skribble_value("110")
+  }
+  /// ```css
+  /// .zoom-in\:\$125 {
+  ///   --sk-enter-sx: 1.25;
+  ///   --sk-enter-sy: 1.25;
+  /// }
+  /// ```
+  #[inline]
+  fn n125(&self) -> String {
+    self.append_string_to_skribble_value("125")
+  }
+  /// ```css
+  /// .zoom-in\:\$150 {
+  ///   --sk-enter-sx: 1.5;
+  ///   --sk-enter-sy: 1.5;
+  /// }
+  /// ```
+  #[inline]
+  fn n150(&self) -> String {
+    self.append_string_to_skribble_value("150")
+  }
+}
+impl GeneratedValueSetZoomIn for GeneratedAtomZoomIn {}
+pub struct GeneratedAtomZoomOut(String);
+impl GeneratedSkribbleValue for GeneratedAtomZoomOut {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
+  /// ```css
+  /// .zoom-out\:\$0 {
+  ///   --sk-exit-sx: 0;
+  ///   --sk-exit-sy: 0;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_string_to_skribble_value("0")
+  }
+  /// ```css
+  /// .zoom-out\:\$50 {
+  ///   --sk-exit-sx: .5;
+  ///   --sk-exit-sy: .5;
+  /// }
+  /// ```
+  #[inline]
+  fn n50(&self) -> String {
+    self.append_string_to_skribble_value("50")
+  }
+  /// ```css
+  /// .zoom-out\:\$75 {
+  ///   --sk-exit-sx: .75;
+  ///   --sk-exit-sy: .75;
+  /// }
+  /// ```
+  #[inline]
+  fn n75(&self) -> String {
+    self.append_string_to_skribble_value("75")
+  }
+  /// ```css
+  /// .zoom-out\:\$90 {
+  ///   --sk-exit-sx: .9;
+  ///   --sk-exit-sy: .9;
+  /// }
+  /// ```
+  #[inline]
+  fn n90(&self) -> String {
+    self.append_string_to_skribble_value("90")
+  }
+  /// ```css
+  /// .zoom-out\:\$95 {
+  ///   --sk-exit-sx: .95;
+  ///   --sk-exit-sy: .95;
+  /// }
+  /// ```
+  #[inline]
+  fn n95(&self) -> String {
+    self.append_string_to_skribble_value("95")
+  }
+  /// ```css
+  /// .zoom-out\:\$100 {
+  ///   --sk-exit-sx: 1;
+  ///   --sk-exit-sy: 1;
+  /// }
+  /// ```
+  #[inline]
+  fn n100(&self) -> String {
+    self.append_string_to_skribble_value("100")
+  }
+  /// ```css
+  /// .zoom-out\:\$105 {
+  ///   --sk-exit-sx: 1.05;
+  ///   --sk-exit-sy: 1.05;
+  /// }
+  /// ```
+  #[inline]
+  fn n105(&self) -> String {
+    self.append_string_to_skribble_value("105")
+  }
+  /// ```css
+  /// .zoom-out\:\$110 {
+  ///   --sk-exit-sx: 1.1;
+  ///   --sk-exit-sy: 1.1;
+  /// }
+  /// ```
+  #[inline]
+  fn n110(&self) -> String {
+    self.append_string_to_skribble_value("110")
+  }
+  /// ```css
+  /// .zoom-out\:\$125 {
+  ///   --sk-exit-sx: 1.25;
+  ///   --sk-exit-sy: 1.25;
+  /// }
+  /// ```
+  #[inline]
+  fn n125(&self) -> String {
+    self.append_string_to_skribble_value("125")
+  }
+  /// ```css
+  /// .zoom-out\:\$150 {
+  ///   --sk-exit-sx: 1.5;
+  ///   --sk-exit-sy: 1.5;
+  /// }
+  /// ```
+  #[inline]
+  fn n150(&self) -> String {
+    self.append_string_to_skribble_value("150")
+  }
+}
+impl GeneratedValueSetZoomOut for GeneratedAtomZoomOut {}
+pub struct GeneratedAtomAnimateDuration(String);
+impl GeneratedSkribbleValue for GeneratedAtomAnimateDuration {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
+  /// ```css
+  /// .animate-duration\:\$0 {
   ///   animation-duration: 0ms;
   /// }
   /// ```
@@ -3757,7 +7659,7 @@ pub trait GeneratedValueSetAnimationDuration: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("0")
   }
   /// ```css
-  /// .animation-duration\:\$75 {
+  /// .animate-duration\:\$75 {
   ///   animation-duration: 75ms;
   /// }
   /// ```
@@ -3766,7 +7668,7 @@ pub trait GeneratedValueSetAnimationDuration: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("75")
   }
   /// ```css
-  /// .animation-duration\:\$100 {
+  /// .animate-duration\:\$100 {
   ///   animation-duration: 100ms;
   /// }
   /// ```
@@ -3775,7 +7677,7 @@ pub trait GeneratedValueSetAnimationDuration: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("100")
   }
   /// ```css
-  /// .animation-duration\:\$150 {
+  /// .animate-duration\:\$150 {
   ///   animation-duration: 150ms;
   /// }
   /// ```
@@ -3784,7 +7686,7 @@ pub trait GeneratedValueSetAnimationDuration: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("150")
   }
   /// ```css
-  /// .animation-duration\:\$200 {
+  /// .animate-duration\:\$200 {
   ///   animation-duration: 200ms;
   /// }
   /// ```
@@ -3793,7 +7695,7 @@ pub trait GeneratedValueSetAnimationDuration: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("200")
   }
   /// ```css
-  /// .animation-duration\:\$300 {
+  /// .animate-duration\:\$300 {
   ///   animation-duration: 300ms;
   /// }
   /// ```
@@ -3802,7 +7704,7 @@ pub trait GeneratedValueSetAnimationDuration: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("300")
   }
   /// ```css
-  /// .animation-duration\:\$500 {
+  /// .animate-duration\:\$500 {
   ///   animation-duration: 500ms;
   /// }
   /// ```
@@ -3811,7 +7713,7 @@ pub trait GeneratedValueSetAnimationDuration: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("500")
   }
   /// ```css
-  /// .animation-duration\:\$700 {
+  /// .animate-duration\:\$700 {
   ///   animation-duration: 700ms;
   /// }
   /// ```
@@ -3820,7 +7722,7 @@ pub trait GeneratedValueSetAnimationDuration: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("700")
   }
   /// ```css
-  /// .animation-duration\:\$1000 {
+  /// .animate-duration\:\$1000 {
   ///   animation-duration: 1000ms;
   /// }
   /// ```
@@ -3829,7 +7731,7 @@ pub trait GeneratedValueSetAnimationDuration: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("1000")
   }
   /// ```css
-  /// .animation-duration\:\$1500 {
+  /// .animate-duration\:\$1500 {
   ///   animation-duration: 1500ms;
   /// }
   /// ```
@@ -3838,7 +7740,7 @@ pub trait GeneratedValueSetAnimationDuration: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("1500")
   }
   /// ```css
-  /// .animation-duration\:\$2000 {
+  /// .animate-duration\:\$2000 {
   ///   animation-duration: 2000ms;
   /// }
   /// ```
@@ -3847,9 +7749,9 @@ pub trait GeneratedValueSetAnimationDuration: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("2000")
   }
 }
-impl GeneratedValueSetAnimationDuration for GeneratedAtomAnimationDuration {}
-pub struct GeneratedAtomAnimationEasing(String);
-impl GeneratedSkribbleValue for GeneratedAtomAnimationEasing {
+impl GeneratedValueSetAnimateDuration for GeneratedAtomAnimateDuration {}
+pub struct GeneratedAtomAnimateEasing(String);
+impl GeneratedSkribbleValue for GeneratedAtomAnimateEasing {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -3859,9 +7761,9 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimationEasing {
     &self.0
   }
 }
-pub trait GeneratedValueSetAnimationEasing: GeneratedSkribbleValue {
+pub trait GeneratedValueSetAnimateEasing: GeneratedSkribbleValue {
   /// ```css
-  /// .animation-easing\:\$linear {
+  /// .animate-easing\:\$linear {
   ///   animation-timing-function: linear;
   /// }
   /// ```
@@ -3870,7 +7772,7 @@ pub trait GeneratedValueSetAnimationEasing: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("linear")
   }
   /// ```css
-  /// .animation-easing\:\$in {
+  /// .animate-easing\:\$in {
   ///   animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
   /// }
   /// ```
@@ -3879,7 +7781,7 @@ pub trait GeneratedValueSetAnimationEasing: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("in")
   }
   /// ```css
-  /// .animation-easing\:\$out {
+  /// .animate-easing\:\$out {
   ///   animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   /// }
   /// ```
@@ -3888,7 +7790,7 @@ pub trait GeneratedValueSetAnimationEasing: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("out")
   }
   /// ```css
-  /// .animation-easing\:\$in-out {
+  /// .animate-easing\:\$in-out {
   ///   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   /// }
   /// ```
@@ -3897,9 +7799,9 @@ pub trait GeneratedValueSetAnimationEasing: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("inOut")
   }
 }
-impl GeneratedValueSetAnimationEasing for GeneratedAtomAnimationEasing {}
-pub struct GeneratedAtomAnimationDelay(String);
-impl GeneratedSkribbleValue for GeneratedAtomAnimationDelay {
+impl GeneratedValueSetAnimateEasing for GeneratedAtomAnimateEasing {}
+pub struct GeneratedAtomAnimateDelay(String);
+impl GeneratedSkribbleValue for GeneratedAtomAnimateDelay {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -3909,9 +7811,9 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimationDelay {
     &self.0
   }
 }
-pub trait GeneratedValueSetAnimationDelay: GeneratedSkribbleValue {
+pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
   /// ```css
-  /// .animation-delay\:\$0 {
+  /// .animate-delay\:\$0 {
   ///   animation-delay: 0ms;
   /// }
   /// ```
@@ -3920,7 +7822,7 @@ pub trait GeneratedValueSetAnimationDelay: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("0")
   }
   /// ```css
-  /// .animation-delay\:\$75 {
+  /// .animate-delay\:\$75 {
   ///   animation-delay: 75ms;
   /// }
   /// ```
@@ -3929,7 +7831,7 @@ pub trait GeneratedValueSetAnimationDelay: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("75")
   }
   /// ```css
-  /// .animation-delay\:\$100 {
+  /// .animate-delay\:\$100 {
   ///   animation-delay: 100ms;
   /// }
   /// ```
@@ -3938,7 +7840,7 @@ pub trait GeneratedValueSetAnimationDelay: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("100")
   }
   /// ```css
-  /// .animation-delay\:\$150 {
+  /// .animate-delay\:\$150 {
   ///   animation-delay: 150ms;
   /// }
   /// ```
@@ -3947,7 +7849,7 @@ pub trait GeneratedValueSetAnimationDelay: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("150")
   }
   /// ```css
-  /// .animation-delay\:\$200 {
+  /// .animate-delay\:\$200 {
   ///   animation-delay: 200ms;
   /// }
   /// ```
@@ -3956,7 +7858,7 @@ pub trait GeneratedValueSetAnimationDelay: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("200")
   }
   /// ```css
-  /// .animation-delay\:\$300 {
+  /// .animate-delay\:\$300 {
   ///   animation-delay: 300ms;
   /// }
   /// ```
@@ -3965,7 +7867,7 @@ pub trait GeneratedValueSetAnimationDelay: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("300")
   }
   /// ```css
-  /// .animation-delay\:\$500 {
+  /// .animate-delay\:\$500 {
   ///   animation-delay: 500ms;
   /// }
   /// ```
@@ -3974,7 +7876,7 @@ pub trait GeneratedValueSetAnimationDelay: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("500")
   }
   /// ```css
-  /// .animation-delay\:\$700 {
+  /// .animate-delay\:\$700 {
   ///   animation-delay: 700ms;
   /// }
   /// ```
@@ -3983,7 +7885,7 @@ pub trait GeneratedValueSetAnimationDelay: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("700")
   }
   /// ```css
-  /// .animation-delay\:\$1000 {
+  /// .animate-delay\:\$1000 {
   ///   animation-delay: 1000ms;
   /// }
   /// ```
@@ -3992,7 +7894,7 @@ pub trait GeneratedValueSetAnimationDelay: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("1000")
   }
   /// ```css
-  /// .animation-delay\:\$1500 {
+  /// .animate-delay\:\$1500 {
   ///   animation-delay: 1500ms;
   /// }
   /// ```
@@ -4001,7 +7903,7 @@ pub trait GeneratedValueSetAnimationDelay: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("1500")
   }
   /// ```css
-  /// .animation-delay\:\$2000 {
+  /// .animate-delay\:\$2000 {
   ///   animation-delay: 2000ms;
   /// }
   /// ```
@@ -4010,9 +7912,9 @@ pub trait GeneratedValueSetAnimationDelay: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("2000")
   }
 }
-impl GeneratedValueSetAnimationDelay for GeneratedAtomAnimationDelay {}
-pub struct GeneratedAtomAnimationRepeat(String);
-impl GeneratedSkribbleValue for GeneratedAtomAnimationRepeat {
+impl GeneratedValueSetAnimateDelay for GeneratedAtomAnimateDelay {}
+pub struct GeneratedAtomAnimateRepeat(String);
+impl GeneratedSkribbleValue for GeneratedAtomAnimateRepeat {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -4022,9 +7924,9 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimationRepeat {
     &self.0
   }
 }
-pub trait GeneratedValueSetAnimationRepeat: GeneratedSkribbleValue {
+pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
   /// ```css
-  /// .animation-repeat\:\$0 {
+  /// .animate-repeat\:\$0 {
   ///   animation-iteration-count: 0;
   /// }
   /// ```
@@ -4033,7 +7935,7 @@ pub trait GeneratedValueSetAnimationRepeat: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("0")
   }
   /// ```css
-  /// .animation-repeat\:\$0\.5 {
+  /// .animate-repeat\:\$0\.5 {
   ///   animation-iteration-count: 0.5;
   /// }
   /// ```
@@ -4042,7 +7944,7 @@ pub trait GeneratedValueSetAnimationRepeat: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("0.5")
   }
   /// ```css
-  /// .animation-repeat\:\$1 {
+  /// .animate-repeat\:\$1 {
   ///   animation-iteration-count: 1;
   /// }
   /// ```
@@ -4051,7 +7953,7 @@ pub trait GeneratedValueSetAnimationRepeat: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("1")
   }
   /// ```css
-  /// .animation-repeat\:\$2 {
+  /// .animate-repeat\:\$2 {
   ///   animation-iteration-count: 2;
   /// }
   /// ```
@@ -4060,7 +7962,7 @@ pub trait GeneratedValueSetAnimationRepeat: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("2")
   }
   /// ```css
-  /// .animation-repeat\:\$3 {
+  /// .animate-repeat\:\$3 {
   ///   animation-iteration-count: 3;
   /// }
   /// ```
@@ -4069,7 +7971,7 @@ pub trait GeneratedValueSetAnimationRepeat: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("3")
   }
   /// ```css
-  /// .animation-repeat\:\$infinite {
+  /// .animate-repeat\:\$infinite {
   ///   animation-iteration-count: infinite;
   /// }
   /// ```
@@ -4078,7 +7980,7 @@ pub trait GeneratedValueSetAnimationRepeat: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("infinite")
   }
   /// ```css
-  /// .animation-repeat\:\$in {
+  /// .animate-repeat\:\$in {
   ///   animation-iteration-count: cubic-bezier(0.4, 0, 1, 1);
   /// }
   /// ```
@@ -4087,7 +7989,7 @@ pub trait GeneratedValueSetAnimationRepeat: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("in")
   }
   /// ```css
-  /// .animation-repeat\:\$out {
+  /// .animate-repeat\:\$out {
   ///   animation-iteration-count: cubic-bezier(0, 0, 0.2, 1);
   /// }
   /// ```
@@ -4096,7 +7998,7 @@ pub trait GeneratedValueSetAnimationRepeat: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("out")
   }
   /// ```css
-  /// .animation-repeat\:\$in-out {
+  /// .animate-repeat\:\$in-out {
   ///   animation-iteration-count: cubic-bezier(0.4, 0, 0.2, 1);
   /// }
   /// ```
@@ -4105,9 +8007,9 @@ pub trait GeneratedValueSetAnimationRepeat: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("inOut")
   }
 }
-impl GeneratedValueSetAnimationRepeat for GeneratedAtomAnimationRepeat {}
-pub struct GeneratedAtomAnimationDirection(String);
-impl GeneratedSkribbleValue for GeneratedAtomAnimationDirection {
+impl GeneratedValueSetAnimateRepeat for GeneratedAtomAnimateRepeat {}
+pub struct GeneratedAtomAnimateDirection(String);
+impl GeneratedSkribbleValue for GeneratedAtomAnimateDirection {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -4117,9 +8019,9 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimationDirection {
     &self.0
   }
 }
-pub trait GeneratedValueSetAnimationDirection: GeneratedSkribbleValue {
+pub trait GeneratedValueSetAnimateDirection: GeneratedSkribbleValue {
   /// ```css
-  /// .animation-direction\:\$normal {
+  /// .animate-direction\:\$normal {
   ///   animation-direction: normal;
   /// }
   /// ```
@@ -4128,7 +8030,7 @@ pub trait GeneratedValueSetAnimationDirection: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("normal")
   }
   /// ```css
-  /// .animation-direction\:\$reverse {
+  /// .animate-direction\:\$reverse {
   ///   animation-direction: reverse;
   /// }
   /// ```
@@ -4137,7 +8039,7 @@ pub trait GeneratedValueSetAnimationDirection: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("reverse")
   }
   /// ```css
-  /// .animation-direction\:\$alt {
+  /// .animate-direction\:\$alt {
   ///   animation-direction: alternate;
   /// }
   /// ```
@@ -4146,7 +8048,7 @@ pub trait GeneratedValueSetAnimationDirection: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("alt")
   }
   /// ```css
-  /// .animation-direction\:\$alt-reverse {
+  /// .animate-direction\:\$alt-reverse {
   ///   animation-direction: alternate-reverse;
   /// }
   /// ```
@@ -4155,9 +8057,9 @@ pub trait GeneratedValueSetAnimationDirection: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("altReverse")
   }
 }
-impl GeneratedValueSetAnimationDirection for GeneratedAtomAnimationDirection {}
-pub struct GeneratedAtomAnimationFillMode(String);
-impl GeneratedSkribbleValue for GeneratedAtomAnimationFillMode {
+impl GeneratedValueSetAnimateDirection for GeneratedAtomAnimateDirection {}
+pub struct GeneratedAtomAnimateFillMode(String);
+impl GeneratedSkribbleValue for GeneratedAtomAnimateFillMode {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -4167,9 +8069,9 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimationFillMode {
     &self.0
   }
 }
-pub trait GeneratedValueSetAnimationFillMode: GeneratedSkribbleValue {
+pub trait GeneratedValueSetAnimateFillMode: GeneratedSkribbleValue {
   /// ```css
-  /// .animation-fill-mode\:\$none {
+  /// .animate-fill-mode\:\$none {
   ///   animation-fill-mode: none;
   /// }
   /// ```
@@ -4178,7 +8080,7 @@ pub trait GeneratedValueSetAnimationFillMode: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("none")
   }
   /// ```css
-  /// .animation-fill-mode\:\$forwards {
+  /// .animate-fill-mode\:\$forwards {
   ///   animation-fill-mode: forwards;
   /// }
   /// ```
@@ -4187,7 +8089,7 @@ pub trait GeneratedValueSetAnimationFillMode: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("forwards")
   }
   /// ```css
-  /// .animation-fill-mode\:\$backwards {
+  /// .animate-fill-mode\:\$backwards {
   ///   animation-fill-mode: backwards;
   /// }
   /// ```
@@ -4196,7 +8098,7 @@ pub trait GeneratedValueSetAnimationFillMode: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("backwards")
   }
   /// ```css
-  /// .animation-fill-mode\:\$both {
+  /// .animate-fill-mode\:\$both {
   ///   animation-fill-mode: both;
   /// }
   /// ```
@@ -4205,9 +8107,9 @@ pub trait GeneratedValueSetAnimationFillMode: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("both")
   }
 }
-impl GeneratedValueSetAnimationFillMode for GeneratedAtomAnimationFillMode {}
-pub struct GeneratedAtomAnimationState(String);
-impl GeneratedSkribbleValue for GeneratedAtomAnimationState {
+impl GeneratedValueSetAnimateFillMode for GeneratedAtomAnimateFillMode {}
+pub struct GeneratedAtomAnimateState(String);
+impl GeneratedSkribbleValue for GeneratedAtomAnimateState {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -4217,9 +8119,9 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimationState {
     &self.0
   }
 }
-pub trait GeneratedValueSetAnimationState: GeneratedSkribbleValue {
+pub trait GeneratedValueSetAnimateState: GeneratedSkribbleValue {
   /// ```css
-  /// .animation-state\:\$running {
+  /// .animate-state\:\$running {
   ///   animation-play-state: running;
   /// }
   /// ```
@@ -4228,7 +8130,7 @@ pub trait GeneratedValueSetAnimationState: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("running")
   }
   /// ```css
-  /// .animation-state\:\$paused {
+  /// .animate-state\:\$paused {
   ///   animation-play-state: paused;
   /// }
   /// ```
@@ -4237,7 +8139,7 @@ pub trait GeneratedValueSetAnimationState: GeneratedSkribbleValue {
     self.append_string_to_skribble_value("paused")
   }
 }
-impl GeneratedValueSetAnimationState for GeneratedAtomAnimationState {}
+impl GeneratedValueSetAnimateState for GeneratedAtomAnimateState {}
 pub struct GeneratedAtomZoom(String);
 impl GeneratedSkribbleValue for GeneratedAtomZoom {
   #[inline]
@@ -11594,18 +15496,6 @@ pub trait GeneratedValueSetOpacity: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetOpacity for GeneratedAtomOpacity {}
-pub struct GeneratedAtomAnimate(String);
-impl GeneratedSkribbleValue for GeneratedAtomAnimate {
-  #[inline]
-  fn from_ref(value: impl AsRef<str>) -> Self {
-    Self(value.as_ref().to_string())
-  }
-  #[inline]
-  fn get_skribble_value(&self) -> &String {
-    &self.0
-  }
-}
-impl GeneratedKeyframeSet for GeneratedAtomAnimate {}
 pub trait GeneratedAtom: GeneratedSkribbleValue {
   /// Screen reader only
   #[inline]
@@ -11634,32 +15524,106 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
     GeneratedAtomDelay::from_ref(self.append_to_skribble_value("delay"))
   }
   #[inline]
-  fn animation_duration(&self) -> GeneratedAtomAnimationDuration {
-    GeneratedAtomAnimationDuration::from_ref(self.append_to_skribble_value("animationDuration"))
+  fn animate(&self) -> GeneratedAtomAnimate {
+    GeneratedAtomAnimate::from_ref(self.append_to_skribble_value("animate"))
+  }
+  /// Fade in an element. Requires the `animate:$in` class to be applied to the element.
+  #[inline]
+  fn fade_in(&self) -> GeneratedAtomFadeIn {
+    GeneratedAtomFadeIn::from_ref(self.append_to_skribble_value("fadeIn"))
+  }
+  /// Fade out an element. Requires the `animate:$out` class to be applied to the element.
+  #[inline]
+  fn fade_out(&self) -> GeneratedAtomFadeOut {
+    GeneratedAtomFadeOut::from_ref(self.append_to_skribble_value("fadeOut"))
+  }
+  /// Rotate an element to enter. Requires the `animate:$in` class to be applied to the element.
+  #[inline]
+  fn spin_in(&self) -> GeneratedAtomSpinIn {
+    GeneratedAtomSpinIn::from_ref(self.append_to_skribble_value("spinIn"))
+  }
+  /// Rotate an element to exit. Requires the `animate:$out` class to be applied to the element.
+  #[inline]
+  fn spin_out(&self) -> GeneratedAtomSpinOut {
+    GeneratedAtomSpinOut::from_ref(self.append_to_skribble_value("spinOut"))
+  }
+  /// Entry animation from the left. Requires the `animate:$in` class to be applied to the element.
+  #[inline]
+  fn slide_in_left(&self) -> GeneratedAtomSlideInLeft {
+    GeneratedAtomSlideInLeft::from_ref(self.append_to_skribble_value("slideInLeft"))
+  }
+  /// Entry animation from the right. Requires the `animate:$in` class to be applied to the element.
+  #[inline]
+  fn slide_in_right(&self) -> GeneratedAtomSlideInRight {
+    GeneratedAtomSlideInRight::from_ref(self.append_to_skribble_value("slideInRight"))
+  }
+  /// Exit animation to the left. Requires the `animate:$out` class to be applied to the element.
+  #[inline]
+  fn slide_out_left(&self) -> GeneratedAtomSlideOutLeft {
+    GeneratedAtomSlideOutLeft::from_ref(self.append_to_skribble_value("slideOutLeft"))
+  }
+  /// Exit animation to the right. Requires the `animate:$out` class to be applied to the element.
+  #[inline]
+  fn slide_out_right(&self) -> GeneratedAtomSlideOutRight {
+    GeneratedAtomSlideOutRight::from_ref(self.append_to_skribble_value("slideOutRight"))
+  }
+  /// Entry animation from the top. Requires the `animate:$in` class to be applied to the element.
+  #[inline]
+  fn slide_in_top(&self) -> GeneratedAtomSlideInTop {
+    GeneratedAtomSlideInTop::from_ref(self.append_to_skribble_value("slideInTop"))
+  }
+  /// Entry animation from the bottom. Requires the `animate:$in` class to be applied to the element.
+  #[inline]
+  fn slide_in_bottom(&self) -> GeneratedAtomSlideInBottom {
+    GeneratedAtomSlideInBottom::from_ref(self.append_to_skribble_value("slideInBottom"))
+  }
+  /// Exit animation to the top. Requires the `animate:$out` class to be applied to the element.
+  #[inline]
+  fn slide_out_top(&self) -> GeneratedAtomSlideOutTop {
+    GeneratedAtomSlideOutTop::from_ref(self.append_to_skribble_value("slideOutTop"))
+  }
+  /// Exit animation to the bottom. Requires the `animate:$out` class to be applied to the element.
+  #[inline]
+  fn slide_out_bottom(&self) -> GeneratedAtomSlideOutBottom {
+    GeneratedAtomSlideOutBottom::from_ref(self.append_to_skribble_value("slideOutBottom"))
+  }
+  /// Entry animation from this zoom level. Requires the `animate:$in` class to be applied to the element.
+  #[inline]
+  fn zoom_in(&self) -> GeneratedAtomZoomIn {
+    GeneratedAtomZoomIn::from_ref(self.append_to_skribble_value("zoomIn"))
+  }
+  /// Exit animation from this zoom level. Requires the `animate:$out` class to be applied to the element.
+  #[inline]
+  fn zoom_out(&self) -> GeneratedAtomZoomOut {
+    GeneratedAtomZoomOut::from_ref(self.append_to_skribble_value("zoomOut"))
   }
   #[inline]
-  fn animation_easing(&self) -> GeneratedAtomAnimationEasing {
-    GeneratedAtomAnimationEasing::from_ref(self.append_to_skribble_value("animationEasing"))
+  fn animate_duration(&self) -> GeneratedAtomAnimateDuration {
+    GeneratedAtomAnimateDuration::from_ref(self.append_to_skribble_value("animateDuration"))
   }
   #[inline]
-  fn animation_delay(&self) -> GeneratedAtomAnimationDelay {
-    GeneratedAtomAnimationDelay::from_ref(self.append_to_skribble_value("animationDelay"))
+  fn animate_easing(&self) -> GeneratedAtomAnimateEasing {
+    GeneratedAtomAnimateEasing::from_ref(self.append_to_skribble_value("animateEasing"))
   }
   #[inline]
-  fn animation_repeat(&self) -> GeneratedAtomAnimationRepeat {
-    GeneratedAtomAnimationRepeat::from_ref(self.append_to_skribble_value("animationRepeat"))
+  fn animate_delay(&self) -> GeneratedAtomAnimateDelay {
+    GeneratedAtomAnimateDelay::from_ref(self.append_to_skribble_value("animateDelay"))
   }
   #[inline]
-  fn animation_direction(&self) -> GeneratedAtomAnimationDirection {
-    GeneratedAtomAnimationDirection::from_ref(self.append_to_skribble_value("animationDirection"))
+  fn animate_repeat(&self) -> GeneratedAtomAnimateRepeat {
+    GeneratedAtomAnimateRepeat::from_ref(self.append_to_skribble_value("animateRepeat"))
   }
   #[inline]
-  fn animation_fill_mode(&self) -> GeneratedAtomAnimationFillMode {
-    GeneratedAtomAnimationFillMode::from_ref(self.append_to_skribble_value("animationFillMode"))
+  fn animate_direction(&self) -> GeneratedAtomAnimateDirection {
+    GeneratedAtomAnimateDirection::from_ref(self.append_to_skribble_value("animateDirection"))
   }
   #[inline]
-  fn animation_state(&self) -> GeneratedAtomAnimationState {
-    GeneratedAtomAnimationState::from_ref(self.append_to_skribble_value("animationState"))
+  fn animate_fill_mode(&self) -> GeneratedAtomAnimateFillMode {
+    GeneratedAtomAnimateFillMode::from_ref(self.append_to_skribble_value("animateFillMode"))
+  }
+  #[inline]
+  fn animate_state(&self) -> GeneratedAtomAnimateState {
+    GeneratedAtomAnimateState::from_ref(self.append_to_skribble_value("animateState"))
   }
   #[inline]
   fn zoom(&self) -> GeneratedAtomZoom {
@@ -11768,10 +15732,6 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   #[inline]
   fn opacity(&self) -> GeneratedAtomOpacity {
     GeneratedAtomOpacity::from_ref(self.append_to_skribble_value("opacity"))
-  }
-  #[inline]
-  fn animate(&self) -> GeneratedAtomAnimate {
-    GeneratedAtomAnimate::from_ref(self.append_to_skribble_value("animate"))
   }
 }
 pub trait GeneratedNamedClasses: GeneratedSkribbleValue {

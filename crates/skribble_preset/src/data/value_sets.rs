@@ -1,6 +1,5 @@
 use indexmap::indexmap;
 use lazy_static::lazy_static;
-use skribble_core::Placeholder;
 use skribble_core::ValueSet;
 
 lazy_static! {
@@ -33,9 +32,9 @@ lazy_static! {
         })
         .build(),
       ValueSet::builder()
-        .name("transitions")
+        .name("transition")
         .values(indexmap! {
-          "" => indexmap! {
+          "main" => indexmap! {
             "transition-property" => "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
             "transition-timing-function" => "cubic-bezier(0.4, 0, 0.2, 1)",
             "transition-duration" => "var(--default-transition-duration)"
@@ -72,7 +71,7 @@ lazy_static! {
       ValueSet::builder()
         .name("transitionProperties")
         .values(indexmap!{
-          "" => "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
+          "most" => "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
           "none" => "none",
           "all" => "all",
           "colors" => "color, background-color, border-color, text-decoration-color, fill, stroke",
@@ -82,7 +81,7 @@ lazy_static! {
         })
         .build(),
       ValueSet::builder()
-        .name("durations")
+        .name("duration")
         .values(indexmap! {
           "0" => "0ms",
           "75" => "75ms",
@@ -246,93 +245,119 @@ lazy_static! {
         })
         .build(),
       ValueSet::builder()
-        .name("zoom")
+        .name("rotation")
         .values(indexmap! {
-          "0" => "0",
-          "50" => ".5",
-          "75" => ".75",
-          "90" => ".9",
-          "95" => ".95",
-          "100" => "1",
-          "105" => "1.05",
-          "110" => "1.1",
-          "125" => "1.25",
-          "150" => "1.5"
+          "0" => "0deg",
+          "1" => "1deg",
+          "2" => "2deg",
+          "3" => "3deg",
+          "6" => "6deg",
+          "12" => "12deg",
+          "30" => "30deg",
+          "45" => "45deg",
+          "90" => "90deg",
+          "180" => "180deg",
         })
         .build(),
       ValueSet::builder()
-        .name("fonts")
+        .name("negativeTranslation")
+        .values(indexmap! {
+          "full" => "-100%",
+          "0" => "-0px",
+          "px" => "-1px",
+          "0.5" => "-0.125rem",
+          "1" => "-0.25rem",
+          "1.5" => "-0.375rem",
+          "2" => "-0.5rem",
+          "2.5" => "-0.625rem",
+          "3" => "-0.75rem",
+          "3.5" => "-0.875rem",
+          "4" => "-1rem",
+          "5" => "-1.25rem",
+          "6" => "-1.5rem",
+          "7" => "-1.75rem",
+          "8" => "-2rem",
+          "9" => "-2.25rem",
+          "10" => "-2.5rem",
+          "11" => "-2.75rem",
+          "12" => "-3rem",
+          "14" => "-3.5rem",
+          "16" => "-4rem",
+          "20" => "-5rem",
+          "24" => "-6rem",
+          "28" => "-7rem",
+          "32" => "-8rem",
+          "36" => "-9rem",
+          "40" => "-10rem",
+          "44" => "-11rem",
+          "48" => "-12rem",
+          "52" => "-13rem",
+          "56" => "-14rem",
+          "60" => "-15rem",
+          "64" => "-16rem",
+          "72" => "-18rem",
+          "80" => "-20rem",
+          "96" => "-24rem",
+          "third" => "-33.333333%",
+          "twoThirds" => "-66.666667%",
+          "quarter" => "-25%",
+          "half" => "-50%",
+          "threeQuarters" => "-75%",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("positiveTranslation")
+        .values(indexmap! {
+          "full" => "100%",
+          "0" => "0px",
+          "px" => "1px",
+          "0.5" => "0.125rem",
+          "1" => "0.25rem",
+          "1.5" => "0.375rem",
+          "2" => "0.5rem",
+          "2.5" => "0.625rem",
+          "3" => "0.75rem",
+          "3.5" => "0.875rem",
+          "4" => "1rem",
+          "5" => "1.25rem",
+          "6" => "1.5rem",
+          "7" => "1.75rem",
+          "8" => "2rem",
+          "9" => "2.25rem",
+          "10" => "2.5rem",
+          "11" => "2.75rem",
+          "12" => "3rem",
+          "14" => "3.5rem",
+          "16" => "4rem",
+          "20" => "5rem",
+          "24" => "6rem",
+          "28" => "7rem",
+          "32" => "8rem",
+          "36" => "9rem",
+          "40" => "10rem",
+          "44" => "11rem",
+          "48" => "12rem",
+          "52" => "13rem",
+          "56" => "14rem",
+          "60" => "15rem",
+          "64" => "16rem",
+          "72" => "18rem",
+          "80" => "20rem",
+          "96" => "24rem",
+          "third" => "33.333333%",
+          "twoThirds" => "66.666667%",
+          "quarter" => "25%",
+          "half" => "50%",
+          "threeQuarters" => "75%",
+         })
+        .build(),
+      ValueSet::builder()
+        .name("font")
         .values(indexmap! {
           "sans" => "ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
           "serif" => "ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif",
           "mono" => "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
         })
-        .build(),
-
-    ]
-  };
-  pub(crate) static ref ANIMATION_VALUE_SETS: Vec<ValueSet> = {
-    let default_animation_duration =
-      Placeholder::wrapped_variable("defaultAnimationDuration", None);
-    let enter_opacity = Placeholder::variable("enterOpacity");
-    let enter_scale = Placeholder::variable("enterScale");
-    let enter_rotate = Placeholder::variable("enterRotate");
-    let enter_translate_x = Placeholder::variable("enterTranslateX");
-    let enter_translate_y = Placeholder::variable("enterTranslateY");
-    let exit_opacity = Placeholder::variable("exitOpacity");
-    let exit_scale = Placeholder::variable("exitScale");
-    let exit_rotate = Placeholder::variable("exitRotate");
-    let exit_translate_x = Placeholder::variable("exitTranslateX");
-    let exit_translate_y = Placeholder::variable("exitTranslateY");
-
-    vec![
-      ValueSet::builder()
-        .name("spinAnimation")
-        .values(indexmap! { "spin".to_string() => format!("spin {default_animation_duration} linear infinite") })
-        .description("The spin animation.")
-        .build(),
-      ValueSet::builder()
-        .name("pingAnimation")
-        .values(indexmap! { "ping".to_string() => format!("ping {default_animation_duration} cubic-bezier(0, 0, 0.2, 1) infinite") })
-        .description("The ping animation.")
-        .build(),
-      ValueSet::builder()
-        .name("pulseAnimation")
-        .values(indexmap! { "pulse".to_string() => format!("pulse calc(2 * {default_animation_duration}) cubic-bezier(0.4, 0, 0.6, 1) infinite") })
-        .description("The pulse animation.")
-        .build(),
-      ValueSet::builder()
-        .name("bounceAnimation")
-        .values(indexmap! { "bounce".to_string() => format!("bounce {default_animation_duration} infinite") })
-        .description("The bounce animation.")
-        .build(),
-      ValueSet::builder()
-        .name("enterAnimation")
-        .values(indexmap! {
-          "in".to_string() => indexmap! {
-            "animation".to_string() => format!("enter {default_animation_duration}"),
-            enter_opacity => "initial".to_string(),
-            enter_scale => "initial".to_string(),
-            enter_rotate => "initial".to_string(),
-            enter_translate_x => "initial".to_string(),
-            enter_translate_y => "initial".to_string()
-          }
-        })
-        .description("The enter animation.")
-        .build(),
-      ValueSet::builder()
-        .name("exitAnimation")
-        .values(indexmap! {
-          "out".to_string() => indexmap! {
-            "animation".to_string() => format!("exit {default_animation_duration}"),
-            exit_opacity => "initial".to_string(),
-            exit_scale => "initial".to_string(),
-            exit_rotate => "initial".to_string(),
-            exit_translate_x => "initial".to_string(),
-            exit_translate_y => "initial".to_string()
-          }
-        })
-        .description("The exit animation.")
         .build(),
     ]
   };
