@@ -1,29 +1,14 @@
 use heck::ToKebabCase;
 use indent_write::fmt::IndentWriter;
-use lazy_static::lazy_static;
 use regex::Regex;
 use typed_builder::TypedBuilder;
 
 use crate::constants::INDENTATION;
 
-lazy_static! {
-  static ref ESCAPE_CSS_STRING_REGEX: Regex =
-    Regex::new(r#"(#|&|~|=|>|'|:|"|!|;|,|\.|\*|\+|\||\[|\]|\(|\)|/|\^|\$)"#).unwrap();
-  static ref CSS_VARIABLE_REGEX: Regex =
-    Regex::new(r#"(?m)(?i)var\((--[a-zA-Z0-9_\-]+?)(?:,.*?)?\)"#).unwrap();
-}
-
 const ESCAPE_CHARS: &[char] = &[
   '#', '&', '~', '=', '>', '\'', ':', '"', '!', ';', ',', '.', '*', '+', '\\', ' ', '[', ']', '(',
   ')', '/', '^', '$',
 ];
-
-/// Escape a css string.
-pub fn escape_css_string(value: impl AsRef<str>) -> String {
-  ESCAPE_CSS_STRING_REGEX
-    .replace_all(value.as_ref(), "\\$1")
-    .to_string()
-}
 
 /// Format the provided string to be a valid string.
 pub fn format_css_string(value: impl AsRef<str>) -> String {
@@ -37,6 +22,7 @@ pub fn format_css_string(value: impl AsRef<str>) -> String {
         parts.push(alpha.join("").to_kebab_case());
         alpha.clear();
       }
+
       parts.push(format!(r"\{}", ch));
     }
 

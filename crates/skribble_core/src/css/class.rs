@@ -152,9 +152,9 @@ impl Class {
 
     // Append an argument if it exists.
     if let Some(ref argument) = self.argument {
-      let prefix = if tokens.is_empty() { "" } else { "-" };
+      let prefix = if tokens.is_empty() { "" } else { "\\:" };
       let argument = argument.to_string();
-      selector = format!("{selector}{prefix}[{argument}]");
+      selector = format!("{selector}{prefix}\\[{argument}\\]");
     };
 
     let mut selectors = vec![selector];

@@ -60,6 +60,11 @@ impl<'config> ClassFactory<'config> {
     let mut factory = Self::new(config);
 
     for token in string.split(':') {
+      if token.starts_with('[') && token.ends_with(']') {
+        if let Some(value) = token.get(1..token.len() - 1) {
+          factory.add_argument(value.into());
+        }
+      }
       if !token.starts_with('$') {
         factory.add_token(token);
       } else if let Some(value) = token.get(1..) {
@@ -215,6 +220,29 @@ impl<'config> ClassFactory<'config> {
     // invalid value received.
     else {
       self.valid = Some(false);
+    }
+
+    self
+  }
+
+  pub fn add_argument(&mut self, argument: Arguments) -> &Self {
+    match argument {
+      Arguments::V(_) => {
+        if self.argument.is_some() || self.atom.is_none() || self.named_class.is_some() {
+          self.valid = Some(false);
+        } else {
+          self.argument = Some(argument);
+          self.valid = Some(true);
+        }
+      }
+      Arguments::KV(..) => {
+        if self.argument.is_some() || self.atom.is_some() || self.named_class.is_some() {
+          self.valid = Some(false);
+        } else {
+          self.argument = Some(argument);
+          self.valid = Some(true);
+        }
+      }
     }
 
     self
