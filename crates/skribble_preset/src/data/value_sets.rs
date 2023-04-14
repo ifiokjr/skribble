@@ -6,7 +6,7 @@ lazy_static! {
   pub(crate) static ref ATOM_VALUE_SETS: Vec<ValueSet> = {
     vec![
       ValueSet::builder()
-        .name("screenReader")
+        .name("screen-reader")
         .values(indexmap! {
           "only" => indexmap! {
             "position" => "absolute",
@@ -69,7 +69,7 @@ lazy_static! {
         .description("The built-in transition class values.")
         .build(),
       ValueSet::builder()
-        .name("transitionProperties")
+        .name("transition-properties")
         .values(indexmap!{
           "most" => "color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter",
           "none" => "none",
@@ -106,7 +106,7 @@ lazy_static! {
         })
         .build(),
       ValueSet::builder()
-        .name("animationRepetitions")
+        .name("animation-repetitions")
         .values(indexmap! {
           "0" => "0",
           "0.5" => "0.5",
@@ -120,7 +120,7 @@ lazy_static! {
         })
         .build(),
       ValueSet::builder()
-        .name("animationDirection")
+        .name("animation-direction")
         .values(indexmap! {
           "normal" => "normal",
           "reverse" => "reverse",
@@ -129,7 +129,7 @@ lazy_static! {
         })
         .build(),
       ValueSet::builder()
-        .name("animationFillMode")
+        .name("animation-fill-mode")
         .values(indexmap! {
           "none" => "none",
           "forwards" => "forwards",
@@ -139,7 +139,7 @@ lazy_static! {
         .description("These are the default animation fill mode values.")
         .build(),
       ValueSet::builder()
-        .name("animationState")
+        .name("animation-state")
         .values(indexmap! { "running" => "running", "paused" => "paused" })
         .description("These are the default animation state values.")
         .build(),
@@ -204,7 +204,7 @@ lazy_static! {
          })
         .build(),
       ValueSet::builder()
-        .name("zIndex")
+        .name("z-index")
         .values(indexmap! {
           "0" => "0",
           "1" => "1",
@@ -260,7 +260,7 @@ lazy_static! {
         })
         .build(),
       ValueSet::builder()
-        .name("negativeTranslation")
+        .name("negative-translation")
         .values(indexmap! {
           "full" => "-100%",
           "0" => "-0px",
@@ -306,7 +306,7 @@ lazy_static! {
         })
         .build(),
       ValueSet::builder()
-        .name("positiveTranslation")
+        .name("positive-translation")
         .values(indexmap! {
           "full" => "100%",
           "0" => "0px",

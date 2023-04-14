@@ -10,6 +10,7 @@ use crate::Group;
 use crate::Keyframe;
 use crate::LinkedValues;
 use crate::MediaQuery;
+use crate::Modifier;
 use crate::Placeholder;
 use crate::PropertySyntaxValue;
 use crate::SkribbleRunner;
@@ -111,9 +112,10 @@ fn classes_with_modifier_arguments() -> AnyEmptyResult {
   let runner_config = runner.initialize()?;
   let mut classes = Classes::default();
   classes.insert_factories(vec![
-    ClassFactory::from_string(runner_config, "[padding|1px]"),
-    ClassFactory::from_string(runner_config, "md:[padding|1vh]"),
-    ClassFactory::from_string(runner_config, "hover:[--something|red]"),
+    ClassFactory::from_string(runner_config, "[padding=1px]"),
+    ClassFactory::from_string(runner_config, "md:[padding=1vh]"),
+    ClassFactory::from_string(runner_config, "hover:[--something=red]"),
+    ClassFactory::from_string(runner_config, "aria-hidden:[--something=red]"),
   ]);
   classes.sort_by_class();
   let css = classes.to_skribble_css(runner_config)?;
@@ -150,9 +152,33 @@ fn create_config() -> StyleConfig {
         .styles(indexmap! { "animation-name" => None as Option<String> })
         .build(),
     ])
+    .modifiers(vec![
+      Group::builder()
+        .name("aria")
+        .description("The aria attributes for the application.")
+        .items(vec![
+          Modifier::builder()
+            .name("aria-hidden")
+            .description("The aria-hidden attribute.")
+            .values(vec!["&[aria-hidden=\"true\"]"])
+            .build(),
+        ])
+        .build(),
+      Group::builder()
+        .name("other")
+        .description("Other stuff.")
+        .items(vec![
+          Modifier::builder()
+            .name("hover")
+            .description("The aria-hidden attribute.")
+            .values(vec!["&:hover"])
+            .build(),
+        ])
+        .build(),
+    ])
     .media_queries(vec![
       Group::builder()
-        .name("deviceCategories")
+        .name("device-categories")
         .description("The device categories for the media query.")
         .items(vec![
           MediaQuery::builder()
@@ -199,7 +225,7 @@ fn create_config() -> StyleConfig {
         ])
         .build(),
       Group::builder()
-        .name("darkMode")
+        .name("dark-mode")
         .description("The dark mode media query.")
         .items(vec![
           MediaQuery::builder()

@@ -19,7 +19,7 @@ pub enum Arguments {
 }
 
 impl Arguments {
-  pub const DELIMITER: char = '|';
+  pub const DELIMITER: char = '=';
 
   pub fn v(value: impl AsRef<str>) -> Self {
     let value = value.as_ref().to_string();

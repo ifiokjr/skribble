@@ -15,7 +15,7 @@ lazy_static! {
       .syntax(Color)
       .build(),
     CssVariable::builder()
-      .name("primaryContent")
+      .name("primary-content")
       .variable("--pc")
       .value(Placeholder::palette("white"))
       .description("The primary content color")
@@ -29,7 +29,7 @@ lazy_static! {
       .syntax(Color)
       .build(),
     CssVariable::builder()
-      .name("secondaryContent")
+      .name("secondary-content")
       .variable("--sc")
       .value(Placeholder::palette("white"))
       .description("The secondary content color. Useful for text within secondary buttons.")
@@ -43,7 +43,7 @@ lazy_static! {
       .syntax(Color)
       .build(),
     CssVariable::builder()
-      .name("accentContent")
+      .name("accent-content")
       .variable("--ac")
       .value("#163835")
       .description("Color for content within accents.")
@@ -57,7 +57,7 @@ lazy_static! {
       .syntax(Color)
       .build(),
     CssVariable::builder()
-      .name("neutralContent")
+      .name("neutral-content")
       .variable("--nc")
       .value(Placeholder::palette("white"))
       .description("The neutral content color.")
@@ -85,7 +85,7 @@ lazy_static! {
       .syntax(Color)
       .build(),
     CssVariable::builder()
-      .name("baseContent")
+      .name("base-content")
       .variable("--bc")
       .value("#1f2937")
       .description("The base content color. This is useful for text.")
@@ -99,7 +99,7 @@ lazy_static! {
       .syntax(Color)
       .build(),
     CssVariable::builder()
-      .name("infoContent")
+      .name("info-content")
       .variable("--inc")
       .value(Placeholder::palette("white"))
       .description("The info content color. Useful for text within info buttons and alerts.")
@@ -113,7 +113,7 @@ lazy_static! {
       .syntax(Color)
       .build(),
     CssVariable::builder()
-      .name("successContent")
+      .name("success-content")
       .variable("--suc")
       .value(Placeholder::palette("white"))
       .description("The success content color. Useful for text within success buttons and alerts.")
@@ -127,7 +127,7 @@ lazy_static! {
       .syntax(Color)
       .build(),
     CssVariable::builder()
-      .name("warningContent")
+      .name("warning-content")
       .variable("--wac")
       .value(Placeholder::palette("white"))
       .description("The warning content color. Useful for text within warning buttons and alerts.")
@@ -141,7 +141,7 @@ lazy_static! {
       .syntax(Color)
       .build(),
     CssVariable::builder()
-      .name("errorContent")
+      .name("error-content")
       .variable("--erc")
       .value(Placeholder::palette("white"))
       .description("The error content color. Useful for text within error buttons and alerts.")
@@ -150,7 +150,7 @@ lazy_static! {
   ];
   pub(crate) static ref CSS_VARIABLES: Vec<CssVariable> = vec![
     CssVariable::builder()
-      .name("containedMaxWidth")
+      .name("contained-max-width")
       .variable("--cmw")
       .value("inherit")
       .media_queries(map! {
@@ -167,47 +167,47 @@ lazy_static! {
       .value("/* */",)
       .build(),
     CssVariable::builder()
-      .name("filterBlur")
+      .name("filter-blur")
       .variable("--filter-blur")
       .build(),
     CssVariable::builder()
-      .name("filterBrightness")
+      .name("filter-brightness")
       .variable("--filter-brightness")
       .build(),
     CssVariable::builder()
-      .name("filterContrast")
+      .name("filter-contrast")
       .variable("--filter-contrast")
       .build(),
     CssVariable::builder()
-      .name("filterCustom")
+      .name("filter-custom")
       .variable("--filter-custom")
       .build(),
     CssVariable::builder()
-      .name("filterGrayscale")
+      .name("filter-grayscale")
       .variable("--filter-grayscale")
       .build(),
     CssVariable::builder()
-      .name("filterHueRotate")
+      .name("filter-hue-rotate")
       .variable("--filter-hue-rotate")
       .build(),
     CssVariable::builder()
-      .name("filterInvert")
+      .name("filter-invert")
       .variable("--filter-invert")
       .build(),
     CssVariable::builder()
-      .name("filterSaturate")
+      .name("filter-saturate")
       .variable("--filter-saturate")
       .build(),
     CssVariable::builder()
-      .name("filterSepia")
+      .name("filter-sepia")
       .variable("--filter-sepia")
       .build(),
     CssVariable::builder()
-      .name("filterDropShadow")
+      .name("filter-drop-shadow")
       .variable("--filter-drop-shadow")
       .build(),
     CssVariable::builder()
-      .name("groupNestedFilter")
+      .name("group-nested-filter")
       .variable("--group-nested-filter")
       .value({
         let filter_blur = Placeholder::wrapped_variable("filterBlur", None);
@@ -228,47 +228,47 @@ lazy_static! {
       })
       .build(),
     CssVariable::builder()
-      .name("backdropBlur")
+      .name("backdrop-blur")
       .variable("--backdrop-blur")
       .build(),
     CssVariable::builder()
-      .name("backdropBrightness")
+      .name("backdrop-brightness")
       .variable("--backdrop-brightness")
       .build(),
     CssVariable::builder()
-      .name("backdropContrast")
+      .name("backdrop-contrast")
       .variable("--backdrop-contrast")
       .build(),
     CssVariable::builder()
-      .name("backdropCustom")
+      .name("backdrop-custom")
       .variable("--backdrop-custom")
       .build(),
     CssVariable::builder()
-      .name("backdropGrayscale")
+      .name("backdrop-grayscale")
       .variable("--backdrop-grayscale")
       .build(),
     CssVariable::builder()
-      .name("backdropHueRotate")
+      .name("backdrop-hue-rotate")
       .variable("--backdrop-hue-rotate")
       .build(),
     CssVariable::builder()
-      .name("backdropInvert")
+      .name("backdrop-invert")
       .variable("--backdrop-invert")
       .build(),
     CssVariable::builder()
-      .name("backdropSaturate")
+      .name("backdrop-saturate")
       .variable("--backdrop-saturate")
       .build(),
     CssVariable::builder()
-      .name("backdropSepia")
+      .name("backdrop-sepia")
       .variable("--backdrop-sepia")
       .build(),
     CssVariable::builder()
-      .name("backdropDropShadow")
+      .name("backdrop-drop-shadow")
       .variable("--backdrop-drop-shadow")
       .build(),
     CssVariable::builder()
-      .name("groupNestedBackdrop")
+      .name("group-nested-backdrop")
       .variable("--gnb")
       .value({
         let backdrop_blur = Placeholder::wrapped_variable("backdropBlur", None);
@@ -289,19 +289,19 @@ lazy_static! {
       })
       .build(),
     CssVariable::builder()
-      .name("transitionDuration")
+      .name("transition-duration")
       .variable("--transition-duration")
       .syntax(PropertySyntaxValue::Time)
       .value("150ms")
       .build(),
     CssVariable::builder()
-      .name("animationDuration")
+      .name("animation-duration")
       .variable("--animation-duration")
       .syntax(PropertySyntaxValue::Time)
       .value("1s")
       .build(),
     CssVariable::builder()
-      .name("enterOpacity")
+      .name("enter-opacity")
       .variable("--enter-opacity")
       .syntax(vec![
         PropertySyntaxValue::Number,
@@ -310,19 +310,19 @@ lazy_static! {
       .value("1")
       .build(),
     CssVariable::builder()
-      .name("enterTranslateX")
+      .name("enter-translate-x")
       .variable("--enter-tx")
       .syntax(PropertySyntaxValue::LengthPercentage)
       .value("0")
       .build(),
     CssVariable::builder()
-      .name("enterTranslateY")
+      .name("enter-translate-y")
       .variable("--enter-ty")
       .syntax(PropertySyntaxValue::LengthPercentage)
       .value("0")
       .build(),
     CssVariable::builder()
-      .name("enterScaleX")
+      .name("enter-scale-x")
       .variable("--enter-sx")
       .syntax(vec![
         PropertySyntaxValue::Number,
@@ -331,7 +331,7 @@ lazy_static! {
       .value("1")
       .build(),
     CssVariable::builder()
-      .name("enterScaleY")
+      .name("enter-scale-y")
       .variable("--enter-sy")
       .syntax(vec![
         PropertySyntaxValue::Number,
@@ -340,13 +340,13 @@ lazy_static! {
       .value("1")
       .build(),
     CssVariable::builder()
-      .name("enterRotate")
+      .name("enter-rotate")
       .variable("--enter-rotate")
       .syntax(PropertySyntaxValue::Angle)
       .value("0")
       .build(),
     CssVariable::builder()
-      .name("exitOpacity")
+      .name("exit-opacity")
       .variable("--exit-opacity")
       .syntax(vec![
         PropertySyntaxValue::Number,
@@ -355,19 +355,19 @@ lazy_static! {
       .value("1")
       .build(),
     CssVariable::builder()
-      .name("exitTranslateX")
+      .name("exit-translate-x")
       .variable("--exit-tx")
       .syntax(PropertySyntaxValue::LengthPercentage)
       .value("0")
       .build(),
     CssVariable::builder()
-      .name("exitTranslateY")
+      .name("exit-translate-y")
       .variable("--exit-ty")
       .syntax(PropertySyntaxValue::LengthPercentage)
       .value("0")
       .build(),
     CssVariable::builder()
-      .name("exitScaleX")
+      .name("exit-scale-x")
       .variable("--exit-sx")
       .syntax(vec![
         PropertySyntaxValue::Number,
@@ -376,7 +376,7 @@ lazy_static! {
       .value("1")
       .build(),
     CssVariable::builder()
-      .name("exitScaleY")
+      .name("exit-scale-y")
       .variable("--exit-sy")
       .syntax(vec![
         PropertySyntaxValue::Number,
@@ -385,7 +385,7 @@ lazy_static! {
       .value("1")
       .build(),
     CssVariable::builder()
-      .name("exitRotate")
+      .name("exit-rotate")
       .variable("--exit-rotate")
       .syntax(PropertySyntaxValue::Angle)
       .value("0")

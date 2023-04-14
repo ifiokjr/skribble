@@ -750,7 +750,7 @@ pub trait GeneratedMediaQueryDeviceCategories: GeneratedSkribbleValue {
   }
   #[inline]
   fn screen_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("screen:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("screen:[{}={}]", property.trim(), value.trim()))
   }
   /// The media query for devices with a printer.
   ///
@@ -765,7 +765,7 @@ pub trait GeneratedMediaQueryDeviceCategories: GeneratedSkribbleValue {
   }
   #[inline]
   fn print_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("print:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("print:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedMediaQueryBreakpointsChild(String);
@@ -793,7 +793,7 @@ pub trait GeneratedMediaQueryBreakpoints: GeneratedSkribbleValue {
   }
   #[inline]
   fn sm_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("sm:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("sm:[{}={}]", property.trim(), value.trim()))
   }
   /// The breakpoint for devices screen size greater than medium
   ///
@@ -808,7 +808,7 @@ pub trait GeneratedMediaQueryBreakpoints: GeneratedSkribbleValue {
   }
   #[inline]
   fn md_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("md:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("md:[{}={}]", property.trim(), value.trim()))
   }
   /// The breakpoint for devices screen size greater than large
   ///
@@ -823,7 +823,7 @@ pub trait GeneratedMediaQueryBreakpoints: GeneratedSkribbleValue {
   }
   #[inline]
   fn lg_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("lg:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("lg:[{}={}]", property.trim(), value.trim()))
   }
   /// The breakpoint for devices screen size greater than extra large
   ///
@@ -838,7 +838,7 @@ pub trait GeneratedMediaQueryBreakpoints: GeneratedSkribbleValue {
   }
   #[inline]
   fn xl_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("xl:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("xl:[{}={}]", property.trim(), value.trim()))
   }
   /// The breakpoint for devices screen size greater than xxl
   ///
@@ -853,7 +853,7 @@ pub trait GeneratedMediaQueryBreakpoints: GeneratedSkribbleValue {
   }
   #[inline]
   fn xxl_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("xxl:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("xxl:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedMediaQueryOrientationChild(String);
@@ -881,7 +881,7 @@ pub trait GeneratedMediaQueryOrientation: GeneratedSkribbleValue {
   }
   #[inline]
   fn portrait_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("portrait:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("portrait:[{}={}]", property.trim(), value.trim()))
   }
   /// The media query for devices with a landscape orientation.
   ///
@@ -896,7 +896,7 @@ pub trait GeneratedMediaQueryOrientation: GeneratedSkribbleValue {
   }
   #[inline]
   fn landscape_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("landscape:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("landscape:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedMediaQueryMotionChild(String);
@@ -924,7 +924,7 @@ pub trait GeneratedMediaQueryMotion: GeneratedSkribbleValue {
   }
   #[inline]
   fn motion_reduce_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("motionReduce:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("motionReduce:[{}={}]", property.trim(), value.trim()))
   }
   /// The media query for devices with a no preference motion preference.
   ///
@@ -939,7 +939,7 @@ pub trait GeneratedMediaQueryMotion: GeneratedSkribbleValue {
   }
   #[inline]
   fn motion_safe_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("motionSafe:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("motionSafe:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedMediaQueryDarkModeChild(String);
@@ -967,7 +967,7 @@ pub trait GeneratedMediaQueryDarkMode: GeneratedSkribbleValue {
   }
   #[inline]
   fn dark_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("dark:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("dark:[{}={}]", property.trim(), value.trim()))
   }
   /// The media query for devices with a light color scheme.
   ///
@@ -982,7 +982,7 @@ pub trait GeneratedMediaQueryDarkMode: GeneratedSkribbleValue {
   }
   #[inline]
   fn light_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("light:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("light:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierParentGroupChild(String);
@@ -1010,7 +1010,7 @@ pub trait GeneratedModifierParentGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn rtl_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("rtl:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("rtl:[{}={}]", property.trim(), value.trim()))
   }
   /// This class modifier becomes active when a parent group is hovered.
   ///
@@ -1025,7 +1025,7 @@ pub trait GeneratedModifierParentGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn group_hover_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("groupHover:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("groupHover:[{}={}]", property.trim(), value.trim()))
   }
   /// This class modifier becomes active when a parent group is focused.
   ///
@@ -1040,7 +1040,7 @@ pub trait GeneratedModifierParentGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn group_focus_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("groupFocus:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("groupFocus:[{}={}]", property.trim(), value.trim()))
   }
   /// This class modifier becomes active when a parent group is active.
   ///
@@ -1055,7 +1055,7 @@ pub trait GeneratedModifierParentGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn group_active_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("groupActive:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("groupActive:[{}={}]", property.trim(), value.trim()))
   }
   /// This class modifier becomes active when a parent group is visited.
   ///
@@ -1070,7 +1070,7 @@ pub trait GeneratedModifierParentGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn group_visited_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("groupVisited:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("groupVisited:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierHoverGroupChild(String);
@@ -1098,7 +1098,7 @@ pub trait GeneratedModifierHoverGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn hover_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("hover:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("hover:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierActiveGroupChild(String);
@@ -1124,7 +1124,7 @@ pub trait GeneratedModifierActiveGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn active_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("active:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("active:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &[aria-current=page] {
@@ -1137,7 +1137,7 @@ pub trait GeneratedModifierActiveGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn active_link_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("activeLink:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("activeLink:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &[aria-current=location] {
@@ -1150,7 +1150,7 @@ pub trait GeneratedModifierActiveGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn active_location_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("activeLocation:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("activeLocation:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &[aria-current=date] {
@@ -1163,7 +1163,7 @@ pub trait GeneratedModifierActiveGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn active_date_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("activeDate:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("activeDate:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &[aria-current=time] {
@@ -1176,7 +1176,7 @@ pub trait GeneratedModifierActiveGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn active_time_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("activeTime:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("activeTime:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &[aria-current=step] {
@@ -1189,7 +1189,7 @@ pub trait GeneratedModifierActiveGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn active_step_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("activeStep:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("activeStep:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierFocusGroupChild(String);
@@ -1215,7 +1215,7 @@ pub trait GeneratedModifierFocusGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn focus_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("focus:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("focus:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierFocusWithinGroupChild(String);
@@ -1241,7 +1241,7 @@ pub trait GeneratedModifierFocusWithinGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn focus_within_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("focusWithin:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("focusWithin:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierFocusVisibleGroupChild(String);
@@ -1267,7 +1267,7 @@ pub trait GeneratedModifierFocusVisibleGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn focus_visible_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("focusVisible:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("focusVisible:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierEnabledGroupChild(String);
@@ -1293,7 +1293,7 @@ pub trait GeneratedModifierEnabledGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn disabled_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("disabled:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("disabled:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &[aria-disabled=false], &:disabled {
@@ -1306,7 +1306,7 @@ pub trait GeneratedModifierEnabledGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn not_disabled_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("notDisabled:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("notDisabled:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &:enabled {
@@ -1319,7 +1319,7 @@ pub trait GeneratedModifierEnabledGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn enabled_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("enabled:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("enabled:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierEmptyGroupChild(String);
@@ -1345,7 +1345,7 @@ pub trait GeneratedModifierEmptyGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn empty_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("empty:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("empty:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierReadGroupChild(String);
@@ -1371,7 +1371,7 @@ pub trait GeneratedModifierReadGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn read_write_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("readWrite:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("readWrite:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &[aria-readonly=true], &[readonly], &:read-only {
@@ -1384,7 +1384,7 @@ pub trait GeneratedModifierReadGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn read_only_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("readOnly:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("readOnly:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &[aria-readonly=false], &[readonly=false], &:not(:read-only) {
@@ -1397,7 +1397,7 @@ pub trait GeneratedModifierReadGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn not_read_only_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("notReadOnly:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("notReadOnly:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierExpandedGroupChild(String);
@@ -1423,7 +1423,7 @@ pub trait GeneratedModifierExpandedGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn expanded_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("expanded:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("expanded:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierCheckedGroupChild(String);
@@ -1449,7 +1449,7 @@ pub trait GeneratedModifierCheckedGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn indeterminate_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("indeterminate:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("indeterminate:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &[aria-checked=true], &:checked {
@@ -1462,7 +1462,7 @@ pub trait GeneratedModifierCheckedGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn checked_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("checked:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("checked:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &[aria-checked=false], &:not(:checked) {
@@ -1475,7 +1475,7 @@ pub trait GeneratedModifierCheckedGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn unchecked_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("unchecked:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("unchecked:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierGrabbedGroupChild(String);
@@ -1501,7 +1501,7 @@ pub trait GeneratedModifierGrabbedGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn grabbed_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("grabbed:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("grabbed:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierPressedGroupChild(String);
@@ -1527,7 +1527,7 @@ pub trait GeneratedModifierPressedGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn pressed_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("pressed:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("pressed:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierInvalidGrammarGroupChild(String);
@@ -1553,7 +1553,7 @@ pub trait GeneratedModifierInvalidGrammarGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn invalid_grammar_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("invalidGrammar:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("invalidGrammar:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierInvalidSpellingGroupChild(String);
@@ -1579,7 +1579,7 @@ pub trait GeneratedModifierInvalidSpellingGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn invalid_spelling_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("invalidSpelling:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("invalidSpelling:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierValidGroupChild(String);
@@ -1605,7 +1605,7 @@ pub trait GeneratedModifierValidGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn valid_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("valid:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("valid:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &[aria-invalid=true], &:invalid {
@@ -1618,7 +1618,7 @@ pub trait GeneratedModifierValidGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn invalid_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("invalid:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("invalid:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierLoadingGroupChild(String);
@@ -1644,7 +1644,7 @@ pub trait GeneratedModifierLoadingGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn loading_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("loading:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("loading:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierSelectedGroupChild(String);
@@ -1670,7 +1670,7 @@ pub trait GeneratedModifierSelectedGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn selected_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("selected:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("selected:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierHiddenGroupChild(String);
@@ -1696,7 +1696,7 @@ pub trait GeneratedModifierHiddenGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn aria_hidden_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("ariaHidden:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("ariaHidden:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierAutofillGroupChild(String);
@@ -1722,7 +1722,7 @@ pub trait GeneratedModifierAutofillGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn autofill_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("autofill:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("autofill:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierEvenGroupChild(String);
@@ -1748,7 +1748,7 @@ pub trait GeneratedModifierEvenGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn even_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("even:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("even:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &:odd {
@@ -1761,7 +1761,7 @@ pub trait GeneratedModifierEvenGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn odd_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("odd:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("odd:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &:nth-of-type(even) {
@@ -1774,7 +1774,7 @@ pub trait GeneratedModifierEvenGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn even_of_type_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("evenOfType:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("evenOfType:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &:nth-of-type(odd) {
@@ -1787,7 +1787,7 @@ pub trait GeneratedModifierEvenGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn odd_of_type_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("oddOfType:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("oddOfType:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierNodePositionGroupChild(String);
@@ -1813,7 +1813,7 @@ pub trait GeneratedModifierNodePositionGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn first_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("first:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("first:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &:not(:first-child) {
@@ -1826,7 +1826,7 @@ pub trait GeneratedModifierNodePositionGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn not_first_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("notFirst:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("notFirst:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &:last {
@@ -1839,7 +1839,7 @@ pub trait GeneratedModifierNodePositionGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn last_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("last:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("last:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &:not(:last-child) {
@@ -1852,7 +1852,7 @@ pub trait GeneratedModifierNodePositionGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn not_last_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("notLast:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("notLast:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierNodeOfTypeGroupChild(String);
@@ -1878,7 +1878,7 @@ pub trait GeneratedModifierNodeOfTypeGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn first_of_type_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("firstOfType:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("firstOfType:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &:not(:first-of-type) {
@@ -1891,7 +1891,7 @@ pub trait GeneratedModifierNodeOfTypeGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn not_first_of_type_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("notFirstOfType:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("notFirstOfType:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &:last-of-type {
@@ -1904,7 +1904,7 @@ pub trait GeneratedModifierNodeOfTypeGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn last_of_type_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("lastOfType:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("lastOfType:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &:not(:last-of-type) {
@@ -1917,7 +1917,7 @@ pub trait GeneratedModifierNodeOfTypeGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn not_last_of_type_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("notLastOfType:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("notLastOfType:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierVisitedGroupChild(String);
@@ -1943,7 +1943,7 @@ pub trait GeneratedModifierVisitedGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn visited_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("visited:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("visited:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierOptionalGroupChild(String);
@@ -1969,7 +1969,7 @@ pub trait GeneratedModifierOptionalGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn optional_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("optional:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("optional:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierFullScreenGroupChild(String);
@@ -1995,7 +1995,7 @@ pub trait GeneratedModifierFullScreenGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn full_screen_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("fullScreen:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("fullScreen:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierTargetGroupChild(String);
@@ -2021,7 +2021,7 @@ pub trait GeneratedModifierTargetGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn target_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("target:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("target:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierPlaceholderShownGroupChild(String);
@@ -2047,7 +2047,7 @@ pub trait GeneratedModifierPlaceholderShownGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn placeholder_shown_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("placeholderShown:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("placeholderShown:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierRequiredGroupChild(String);
@@ -2073,7 +2073,7 @@ pub trait GeneratedModifierRequiredGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn required_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("required:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("required:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// [arira-required=false], &:not(:required) {
@@ -2086,7 +2086,7 @@ pub trait GeneratedModifierRequiredGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn not_required_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("notRequired:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("notRequired:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierDefaultGroupChild(String);
@@ -2112,7 +2112,7 @@ pub trait GeneratedModifierDefaultGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn default_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("default:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("default:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierOnlyChildGroupChild(String);
@@ -2138,7 +2138,7 @@ pub trait GeneratedModifierOnlyChildGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn only_child_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("onlyChild:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("onlyChild:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &:not(:only-child) {
@@ -2151,7 +2151,7 @@ pub trait GeneratedModifierOnlyChildGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn not_only_child_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("notOnlyChild:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("notOnlyChild:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierOnlyGroupChild(String);
@@ -2177,7 +2177,7 @@ pub trait GeneratedModifierOnlyGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn only_of_type_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("onlyOfType:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("onlyOfType:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &:not(:only-of-type) {
@@ -2190,7 +2190,7 @@ pub trait GeneratedModifierOnlyGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn not_only_of_type_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("notOnlyOfType:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("notOnlyOfType:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierRootGroupChild(String);
@@ -2216,7 +2216,7 @@ pub trait GeneratedModifierRootGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn root_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("root:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("root:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierLinkGroupChild(String);
@@ -2242,7 +2242,7 @@ pub trait GeneratedModifierLinkGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn link_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("link:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("link:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierPseudoGroupChild(String);
@@ -2268,7 +2268,7 @@ pub trait GeneratedModifierPseudoGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn placeholder_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("placeholder:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("placeholder:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &::selection {
@@ -2281,7 +2281,7 @@ pub trait GeneratedModifierPseudoGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn selection_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("selection:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("selection:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &::first-letter {
@@ -2294,7 +2294,7 @@ pub trait GeneratedModifierPseudoGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn first_letter_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("firstLetter:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("firstLetter:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &::first-line {
@@ -2307,7 +2307,7 @@ pub trait GeneratedModifierPseudoGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn first_line_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("firstLine:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("firstLine:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &::before {
@@ -2320,7 +2320,7 @@ pub trait GeneratedModifierPseudoGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn before_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("before:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("before:[{}={}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &::after {
@@ -2333,7 +2333,7 @@ pub trait GeneratedModifierPseudoGroup: GeneratedSkribbleValue {
   }
   #[inline]
   fn after_(&self, property: &'static str, value: &'static str) -> String {
-    self.append(format!("after:[{}|{}]", property.trim(), value.trim()))
+    self.append(format!("after:[{}={}]", property.trim(), value.trim()))
   }
 }
 pub trait GeneratedKeyframeSet: GeneratedSkribbleValue {
@@ -3829,7 +3829,7 @@ impl GeneratedSkribbleValue for GeneratedAtomTransitionProperty {
 }
 pub trait GeneratedValueSetTransitionProperty: GeneratedSkribbleValue {
   /// ```css
-  /// .transition-property\:\$most {
+  /// .transitionProperty\:\$most {
   ///   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   /// }
   /// ```
@@ -3838,7 +3838,7 @@ pub trait GeneratedValueSetTransitionProperty: GeneratedSkribbleValue {
     self.append_value("most")
   }
   /// ```css
-  /// .transition-property\:\$none {
+  /// .transitionProperty\:\$none {
   ///   transition-property: none;
   /// }
   /// ```
@@ -3847,7 +3847,7 @@ pub trait GeneratedValueSetTransitionProperty: GeneratedSkribbleValue {
     self.append_value("none")
   }
   /// ```css
-  /// .transition-property\:\$all {
+  /// .transitionProperty\:\$all {
   ///   transition-property: all;
   /// }
   /// ```
@@ -3856,7 +3856,7 @@ pub trait GeneratedValueSetTransitionProperty: GeneratedSkribbleValue {
     self.append_value("all")
   }
   /// ```css
-  /// .transition-property\:\$colors {
+  /// .transitionProperty\:\$colors {
   ///   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   /// }
   /// ```
@@ -3865,7 +3865,7 @@ pub trait GeneratedValueSetTransitionProperty: GeneratedSkribbleValue {
     self.append_value("colors")
   }
   /// ```css
-  /// .transition-property\:\$opacity {
+  /// .transitionProperty\:\$opacity {
   ///   transition-property: opacity;
   /// }
   /// ```
@@ -3874,7 +3874,7 @@ pub trait GeneratedValueSetTransitionProperty: GeneratedSkribbleValue {
     self.append_value("opacity")
   }
   /// ```css
-  /// .transition-property\:\$shadow {
+  /// .transitionProperty\:\$shadow {
   ///   transition-property: box-shadow;
   /// }
   /// ```
@@ -3883,7 +3883,7 @@ pub trait GeneratedValueSetTransitionProperty: GeneratedSkribbleValue {
     self.append_value("shadow")
   }
   /// ```css
-  /// .transition-property\:\$transform {
+  /// .transitionProperty\:\$transform {
   ///   transition-property: transform;
   /// }
   /// ```
@@ -4046,7 +4046,7 @@ pub trait GeneratedValueSetEase: GeneratedSkribbleValue {
     self.append_value("out")
   }
   /// ```css
-  /// .ease\:\$in-out {
+  /// .ease\:\$inOut {
   ///   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   /// }
   /// ```
@@ -4194,7 +4194,7 @@ impl GeneratedSkribbleValue for GeneratedAtomFadeIn {
 }
 pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
   /// ```css
-  /// .fade-in\:\$0 {
+  /// .fadeIn\:\$0 {
   ///   --sk-enter-opacity: 0%;
   /// }
   /// ```
@@ -4203,7 +4203,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
     self.append_value("0")
   }
   /// ```css
-  /// .fade-in\:\$5 {
+  /// .fadeIn\:\$5 {
   ///   --sk-enter-opacity: 5%;
   /// }
   /// ```
@@ -4212,7 +4212,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
     self.append_value("5")
   }
   /// ```css
-  /// .fade-in\:\$10 {
+  /// .fadeIn\:\$10 {
   ///   --sk-enter-opacity: 10%;
   /// }
   /// ```
@@ -4221,7 +4221,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
     self.append_value("10")
   }
   /// ```css
-  /// .fade-in\:\$20 {
+  /// .fadeIn\:\$20 {
   ///   --sk-enter-opacity: 20%;
   /// }
   /// ```
@@ -4230,7 +4230,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
     self.append_value("20")
   }
   /// ```css
-  /// .fade-in\:\$30 {
+  /// .fadeIn\:\$30 {
   ///   --sk-enter-opacity: 30%;
   /// }
   /// ```
@@ -4239,7 +4239,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
     self.append_value("30")
   }
   /// ```css
-  /// .fade-in\:\$40 {
+  /// .fadeIn\:\$40 {
   ///   --sk-enter-opacity: 40%;
   /// }
   /// ```
@@ -4248,7 +4248,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
     self.append_value("40")
   }
   /// ```css
-  /// .fade-in\:\$50 {
+  /// .fadeIn\:\$50 {
   ///   --sk-enter-opacity: 50%;
   /// }
   /// ```
@@ -4257,7 +4257,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
     self.append_value("50")
   }
   /// ```css
-  /// .fade-in\:\$60 {
+  /// .fadeIn\:\$60 {
   ///   --sk-enter-opacity: 60%;
   /// }
   /// ```
@@ -4266,7 +4266,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
     self.append_value("60")
   }
   /// ```css
-  /// .fade-in\:\$70 {
+  /// .fadeIn\:\$70 {
   ///   --sk-enter-opacity: 70%;
   /// }
   /// ```
@@ -4275,7 +4275,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
     self.append_value("70")
   }
   /// ```css
-  /// .fade-in\:\$75 {
+  /// .fadeIn\:\$75 {
   ///   --sk-enter-opacity: 75%;
   /// }
   /// ```
@@ -4284,7 +4284,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
     self.append_value("75")
   }
   /// ```css
-  /// .fade-in\:\$80 {
+  /// .fadeIn\:\$80 {
   ///   --sk-enter-opacity: 80%;
   /// }
   /// ```
@@ -4293,7 +4293,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
     self.append_value("80")
   }
   /// ```css
-  /// .fade-in\:\$90 {
+  /// .fadeIn\:\$90 {
   ///   --sk-enter-opacity: 90%;
   /// }
   /// ```
@@ -4302,7 +4302,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
     self.append_value("90")
   }
   /// ```css
-  /// .fade-in\:\$95 {
+  /// .fadeIn\:\$95 {
   ///   --sk-enter-opacity: 95%;
   /// }
   /// ```
@@ -4311,7 +4311,7 @@ pub trait GeneratedValueSetFadeIn: GeneratedSkribbleValue {
     self.append_value("95")
   }
   /// ```css
-  /// .fade-in\:\$100 {
+  /// .fadeIn\:\$100 {
   ///   --sk-enter-opacity: 100%;
   /// }
   /// ```
@@ -4334,7 +4334,7 @@ impl GeneratedSkribbleValue for GeneratedAtomFadeOut {
 }
 pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
   /// ```css
-  /// .fade-out\:\$0 {
+  /// .fadeOut\:\$0 {
   ///   --sk-exit-opacity: 0%;
   /// }
   /// ```
@@ -4343,7 +4343,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
     self.append_value("0")
   }
   /// ```css
-  /// .fade-out\:\$5 {
+  /// .fadeOut\:\$5 {
   ///   --sk-exit-opacity: 5%;
   /// }
   /// ```
@@ -4352,7 +4352,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
     self.append_value("5")
   }
   /// ```css
-  /// .fade-out\:\$10 {
+  /// .fadeOut\:\$10 {
   ///   --sk-exit-opacity: 10%;
   /// }
   /// ```
@@ -4361,7 +4361,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
     self.append_value("10")
   }
   /// ```css
-  /// .fade-out\:\$20 {
+  /// .fadeOut\:\$20 {
   ///   --sk-exit-opacity: 20%;
   /// }
   /// ```
@@ -4370,7 +4370,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
     self.append_value("20")
   }
   /// ```css
-  /// .fade-out\:\$30 {
+  /// .fadeOut\:\$30 {
   ///   --sk-exit-opacity: 30%;
   /// }
   /// ```
@@ -4379,7 +4379,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
     self.append_value("30")
   }
   /// ```css
-  /// .fade-out\:\$40 {
+  /// .fadeOut\:\$40 {
   ///   --sk-exit-opacity: 40%;
   /// }
   /// ```
@@ -4388,7 +4388,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
     self.append_value("40")
   }
   /// ```css
-  /// .fade-out\:\$50 {
+  /// .fadeOut\:\$50 {
   ///   --sk-exit-opacity: 50%;
   /// }
   /// ```
@@ -4397,7 +4397,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
     self.append_value("50")
   }
   /// ```css
-  /// .fade-out\:\$60 {
+  /// .fadeOut\:\$60 {
   ///   --sk-exit-opacity: 60%;
   /// }
   /// ```
@@ -4406,7 +4406,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
     self.append_value("60")
   }
   /// ```css
-  /// .fade-out\:\$70 {
+  /// .fadeOut\:\$70 {
   ///   --sk-exit-opacity: 70%;
   /// }
   /// ```
@@ -4415,7 +4415,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
     self.append_value("70")
   }
   /// ```css
-  /// .fade-out\:\$75 {
+  /// .fadeOut\:\$75 {
   ///   --sk-exit-opacity: 75%;
   /// }
   /// ```
@@ -4424,7 +4424,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
     self.append_value("75")
   }
   /// ```css
-  /// .fade-out\:\$80 {
+  /// .fadeOut\:\$80 {
   ///   --sk-exit-opacity: 80%;
   /// }
   /// ```
@@ -4433,7 +4433,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
     self.append_value("80")
   }
   /// ```css
-  /// .fade-out\:\$90 {
+  /// .fadeOut\:\$90 {
   ///   --sk-exit-opacity: 90%;
   /// }
   /// ```
@@ -4442,7 +4442,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
     self.append_value("90")
   }
   /// ```css
-  /// .fade-out\:\$95 {
+  /// .fadeOut\:\$95 {
   ///   --sk-exit-opacity: 95%;
   /// }
   /// ```
@@ -4451,7 +4451,7 @@ pub trait GeneratedValueSetFadeOut: GeneratedSkribbleValue {
     self.append_value("95")
   }
   /// ```css
-  /// .fade-out\:\$100 {
+  /// .fadeOut\:\$100 {
   ///   --sk-exit-opacity: 100%;
   /// }
   /// ```
@@ -4474,7 +4474,7 @@ impl GeneratedSkribbleValue for GeneratedAtomSpinIn {
 }
 pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
   /// ```css
-  /// .spin-in\:\$0 {
+  /// .spinIn\:\$0 {
   ///   --sk-enter-rotate: 0deg;
   /// }
   /// ```
@@ -4483,7 +4483,7 @@ pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
     self.append_value("0")
   }
   /// ```css
-  /// .spin-in\:\$1 {
+  /// .spinIn\:\$1 {
   ///   --sk-enter-rotate: 1deg;
   /// }
   /// ```
@@ -4492,7 +4492,7 @@ pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
     self.append_value("1")
   }
   /// ```css
-  /// .spin-in\:\$2 {
+  /// .spinIn\:\$2 {
   ///   --sk-enter-rotate: 2deg;
   /// }
   /// ```
@@ -4501,7 +4501,7 @@ pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
     self.append_value("2")
   }
   /// ```css
-  /// .spin-in\:\$3 {
+  /// .spinIn\:\$3 {
   ///   --sk-enter-rotate: 3deg;
   /// }
   /// ```
@@ -4510,7 +4510,7 @@ pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
     self.append_value("3")
   }
   /// ```css
-  /// .spin-in\:\$6 {
+  /// .spinIn\:\$6 {
   ///   --sk-enter-rotate: 6deg;
   /// }
   /// ```
@@ -4519,7 +4519,7 @@ pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
     self.append_value("6")
   }
   /// ```css
-  /// .spin-in\:\$12 {
+  /// .spinIn\:\$12 {
   ///   --sk-enter-rotate: 12deg;
   /// }
   /// ```
@@ -4528,7 +4528,7 @@ pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
     self.append_value("12")
   }
   /// ```css
-  /// .spin-in\:\$30 {
+  /// .spinIn\:\$30 {
   ///   --sk-enter-rotate: 30deg;
   /// }
   /// ```
@@ -4537,7 +4537,7 @@ pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
     self.append_value("30")
   }
   /// ```css
-  /// .spin-in\:\$45 {
+  /// .spinIn\:\$45 {
   ///   --sk-enter-rotate: 45deg;
   /// }
   /// ```
@@ -4546,7 +4546,7 @@ pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
     self.append_value("45")
   }
   /// ```css
-  /// .spin-in\:\$90 {
+  /// .spinIn\:\$90 {
   ///   --sk-enter-rotate: 90deg;
   /// }
   /// ```
@@ -4555,7 +4555,7 @@ pub trait GeneratedValueSetSpinIn: GeneratedSkribbleValue {
     self.append_value("90")
   }
   /// ```css
-  /// .spin-in\:\$180 {
+  /// .spinIn\:\$180 {
   ///   --sk-enter-rotate: 180deg;
   /// }
   /// ```
@@ -4578,7 +4578,7 @@ impl GeneratedSkribbleValue for GeneratedAtomSpinOut {
 }
 pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
   /// ```css
-  /// .spin-out\:\$0 {
+  /// .spinOut\:\$0 {
   ///   --sk-exit-rotate: 0deg;
   /// }
   /// ```
@@ -4587,7 +4587,7 @@ pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
     self.append_value("0")
   }
   /// ```css
-  /// .spin-out\:\$1 {
+  /// .spinOut\:\$1 {
   ///   --sk-exit-rotate: 1deg;
   /// }
   /// ```
@@ -4596,7 +4596,7 @@ pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
     self.append_value("1")
   }
   /// ```css
-  /// .spin-out\:\$2 {
+  /// .spinOut\:\$2 {
   ///   --sk-exit-rotate: 2deg;
   /// }
   /// ```
@@ -4605,7 +4605,7 @@ pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
     self.append_value("2")
   }
   /// ```css
-  /// .spin-out\:\$3 {
+  /// .spinOut\:\$3 {
   ///   --sk-exit-rotate: 3deg;
   /// }
   /// ```
@@ -4614,7 +4614,7 @@ pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
     self.append_value("3")
   }
   /// ```css
-  /// .spin-out\:\$6 {
+  /// .spinOut\:\$6 {
   ///   --sk-exit-rotate: 6deg;
   /// }
   /// ```
@@ -4623,7 +4623,7 @@ pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
     self.append_value("6")
   }
   /// ```css
-  /// .spin-out\:\$12 {
+  /// .spinOut\:\$12 {
   ///   --sk-exit-rotate: 12deg;
   /// }
   /// ```
@@ -4632,7 +4632,7 @@ pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
     self.append_value("12")
   }
   /// ```css
-  /// .spin-out\:\$30 {
+  /// .spinOut\:\$30 {
   ///   --sk-exit-rotate: 30deg;
   /// }
   /// ```
@@ -4641,7 +4641,7 @@ pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
     self.append_value("30")
   }
   /// ```css
-  /// .spin-out\:\$45 {
+  /// .spinOut\:\$45 {
   ///   --sk-exit-rotate: 45deg;
   /// }
   /// ```
@@ -4650,7 +4650,7 @@ pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
     self.append_value("45")
   }
   /// ```css
-  /// .spin-out\:\$90 {
+  /// .spinOut\:\$90 {
   ///   --sk-exit-rotate: 90deg;
   /// }
   /// ```
@@ -4659,7 +4659,7 @@ pub trait GeneratedValueSetSpinOut: GeneratedSkribbleValue {
     self.append_value("90")
   }
   /// ```css
-  /// .spin-out\:\$180 {
+  /// .spinOut\:\$180 {
   ///   --sk-exit-rotate: 180deg;
   /// }
   /// ```
@@ -4682,7 +4682,7 @@ impl GeneratedSkribbleValue for GeneratedAtomSlideInLeft {
 }
 pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
   /// ```css
-  /// .slide-in-left\:\$full {
+  /// .slideInLeft\:\$full {
   ///   --sk-enter-tx: -100%;
   /// }
   /// ```
@@ -4691,7 +4691,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("full")
   }
   /// ```css
-  /// .slide-in-left\:\$0 {
+  /// .slideInLeft\:\$0 {
   ///   --sk-enter-tx: -0px;
   /// }
   /// ```
@@ -4700,7 +4700,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("0")
   }
   /// ```css
-  /// .slide-in-left\:\$px {
+  /// .slideInLeft\:\$px {
   ///   --sk-enter-tx: -1px;
   /// }
   /// ```
@@ -4709,7 +4709,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("px")
   }
   /// ```css
-  /// .slide-in-left\:\$0\.5 {
+  /// .slideInLeft\:\$0\.5 {
   ///   --sk-enter-tx: -0.125rem;
   /// }
   /// ```
@@ -4718,7 +4718,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("0.5")
   }
   /// ```css
-  /// .slide-in-left\:\$1 {
+  /// .slideInLeft\:\$1 {
   ///   --sk-enter-tx: -0.25rem;
   /// }
   /// ```
@@ -4727,7 +4727,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("1")
   }
   /// ```css
-  /// .slide-in-left\:\$1\.5 {
+  /// .slideInLeft\:\$1\.5 {
   ///   --sk-enter-tx: -0.375rem;
   /// }
   /// ```
@@ -4736,7 +4736,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("1.5")
   }
   /// ```css
-  /// .slide-in-left\:\$2 {
+  /// .slideInLeft\:\$2 {
   ///   --sk-enter-tx: -0.5rem;
   /// }
   /// ```
@@ -4745,7 +4745,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("2")
   }
   /// ```css
-  /// .slide-in-left\:\$2\.5 {
+  /// .slideInLeft\:\$2\.5 {
   ///   --sk-enter-tx: -0.625rem;
   /// }
   /// ```
@@ -4754,7 +4754,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("2.5")
   }
   /// ```css
-  /// .slide-in-left\:\$3 {
+  /// .slideInLeft\:\$3 {
   ///   --sk-enter-tx: -0.75rem;
   /// }
   /// ```
@@ -4763,7 +4763,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("3")
   }
   /// ```css
-  /// .slide-in-left\:\$3\.5 {
+  /// .slideInLeft\:\$3\.5 {
   ///   --sk-enter-tx: -0.875rem;
   /// }
   /// ```
@@ -4772,7 +4772,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("3.5")
   }
   /// ```css
-  /// .slide-in-left\:\$4 {
+  /// .slideInLeft\:\$4 {
   ///   --sk-enter-tx: -1rem;
   /// }
   /// ```
@@ -4781,7 +4781,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("4")
   }
   /// ```css
-  /// .slide-in-left\:\$5 {
+  /// .slideInLeft\:\$5 {
   ///   --sk-enter-tx: -1.25rem;
   /// }
   /// ```
@@ -4790,7 +4790,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("5")
   }
   /// ```css
-  /// .slide-in-left\:\$6 {
+  /// .slideInLeft\:\$6 {
   ///   --sk-enter-tx: -1.5rem;
   /// }
   /// ```
@@ -4799,7 +4799,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("6")
   }
   /// ```css
-  /// .slide-in-left\:\$7 {
+  /// .slideInLeft\:\$7 {
   ///   --sk-enter-tx: -1.75rem;
   /// }
   /// ```
@@ -4808,7 +4808,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("7")
   }
   /// ```css
-  /// .slide-in-left\:\$8 {
+  /// .slideInLeft\:\$8 {
   ///   --sk-enter-tx: -2rem;
   /// }
   /// ```
@@ -4817,7 +4817,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("8")
   }
   /// ```css
-  /// .slide-in-left\:\$9 {
+  /// .slideInLeft\:\$9 {
   ///   --sk-enter-tx: -2.25rem;
   /// }
   /// ```
@@ -4826,7 +4826,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("9")
   }
   /// ```css
-  /// .slide-in-left\:\$10 {
+  /// .slideInLeft\:\$10 {
   ///   --sk-enter-tx: -2.5rem;
   /// }
   /// ```
@@ -4835,7 +4835,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("10")
   }
   /// ```css
-  /// .slide-in-left\:\$11 {
+  /// .slideInLeft\:\$11 {
   ///   --sk-enter-tx: -2.75rem;
   /// }
   /// ```
@@ -4844,7 +4844,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("11")
   }
   /// ```css
-  /// .slide-in-left\:\$12 {
+  /// .slideInLeft\:\$12 {
   ///   --sk-enter-tx: -3rem;
   /// }
   /// ```
@@ -4853,7 +4853,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("12")
   }
   /// ```css
-  /// .slide-in-left\:\$14 {
+  /// .slideInLeft\:\$14 {
   ///   --sk-enter-tx: -3.5rem;
   /// }
   /// ```
@@ -4862,7 +4862,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("14")
   }
   /// ```css
-  /// .slide-in-left\:\$16 {
+  /// .slideInLeft\:\$16 {
   ///   --sk-enter-tx: -4rem;
   /// }
   /// ```
@@ -4871,7 +4871,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("16")
   }
   /// ```css
-  /// .slide-in-left\:\$20 {
+  /// .slideInLeft\:\$20 {
   ///   --sk-enter-tx: -5rem;
   /// }
   /// ```
@@ -4880,7 +4880,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("20")
   }
   /// ```css
-  /// .slide-in-left\:\$24 {
+  /// .slideInLeft\:\$24 {
   ///   --sk-enter-tx: -6rem;
   /// }
   /// ```
@@ -4889,7 +4889,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("24")
   }
   /// ```css
-  /// .slide-in-left\:\$28 {
+  /// .slideInLeft\:\$28 {
   ///   --sk-enter-tx: -7rem;
   /// }
   /// ```
@@ -4898,7 +4898,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("28")
   }
   /// ```css
-  /// .slide-in-left\:\$32 {
+  /// .slideInLeft\:\$32 {
   ///   --sk-enter-tx: -8rem;
   /// }
   /// ```
@@ -4907,7 +4907,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("32")
   }
   /// ```css
-  /// .slide-in-left\:\$36 {
+  /// .slideInLeft\:\$36 {
   ///   --sk-enter-tx: -9rem;
   /// }
   /// ```
@@ -4916,7 +4916,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("36")
   }
   /// ```css
-  /// .slide-in-left\:\$40 {
+  /// .slideInLeft\:\$40 {
   ///   --sk-enter-tx: -10rem;
   /// }
   /// ```
@@ -4925,7 +4925,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("40")
   }
   /// ```css
-  /// .slide-in-left\:\$44 {
+  /// .slideInLeft\:\$44 {
   ///   --sk-enter-tx: -11rem;
   /// }
   /// ```
@@ -4934,7 +4934,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("44")
   }
   /// ```css
-  /// .slide-in-left\:\$48 {
+  /// .slideInLeft\:\$48 {
   ///   --sk-enter-tx: -12rem;
   /// }
   /// ```
@@ -4943,7 +4943,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("48")
   }
   /// ```css
-  /// .slide-in-left\:\$52 {
+  /// .slideInLeft\:\$52 {
   ///   --sk-enter-tx: -13rem;
   /// }
   /// ```
@@ -4952,7 +4952,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("52")
   }
   /// ```css
-  /// .slide-in-left\:\$56 {
+  /// .slideInLeft\:\$56 {
   ///   --sk-enter-tx: -14rem;
   /// }
   /// ```
@@ -4961,7 +4961,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("56")
   }
   /// ```css
-  /// .slide-in-left\:\$60 {
+  /// .slideInLeft\:\$60 {
   ///   --sk-enter-tx: -15rem;
   /// }
   /// ```
@@ -4970,7 +4970,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("60")
   }
   /// ```css
-  /// .slide-in-left\:\$64 {
+  /// .slideInLeft\:\$64 {
   ///   --sk-enter-tx: -16rem;
   /// }
   /// ```
@@ -4979,7 +4979,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("64")
   }
   /// ```css
-  /// .slide-in-left\:\$72 {
+  /// .slideInLeft\:\$72 {
   ///   --sk-enter-tx: -18rem;
   /// }
   /// ```
@@ -4988,7 +4988,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("72")
   }
   /// ```css
-  /// .slide-in-left\:\$80 {
+  /// .slideInLeft\:\$80 {
   ///   --sk-enter-tx: -20rem;
   /// }
   /// ```
@@ -4997,7 +4997,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("80")
   }
   /// ```css
-  /// .slide-in-left\:\$96 {
+  /// .slideInLeft\:\$96 {
   ///   --sk-enter-tx: -24rem;
   /// }
   /// ```
@@ -5006,7 +5006,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("96")
   }
   /// ```css
-  /// .slide-in-left\:\$third {
+  /// .slideInLeft\:\$third {
   ///   --sk-enter-tx: -33.333333%;
   /// }
   /// ```
@@ -5015,7 +5015,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("third")
   }
   /// ```css
-  /// .slide-in-left\:\$two-thirds {
+  /// .slideInLeft\:\$twoThirds {
   ///   --sk-enter-tx: -66.666667%;
   /// }
   /// ```
@@ -5024,7 +5024,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("twoThirds")
   }
   /// ```css
-  /// .slide-in-left\:\$quarter {
+  /// .slideInLeft\:\$quarter {
   ///   --sk-enter-tx: -25%;
   /// }
   /// ```
@@ -5033,7 +5033,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("quarter")
   }
   /// ```css
-  /// .slide-in-left\:\$half {
+  /// .slideInLeft\:\$half {
   ///   --sk-enter-tx: -50%;
   /// }
   /// ```
@@ -5042,7 +5042,7 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-in-left\:\$three-quarters {
+  /// .slideInLeft\:\$threeQuarters {
   ///   --sk-enter-tx: -75%;
   /// }
   /// ```
@@ -5065,7 +5065,7 @@ impl GeneratedSkribbleValue for GeneratedAtomSlideInRight {
 }
 pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
   /// ```css
-  /// .slide-in-right\:\$full {
+  /// .slideInRight\:\$full {
   ///   --sk-enter-tx: 100%;
   /// }
   /// ```
@@ -5074,7 +5074,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("full")
   }
   /// ```css
-  /// .slide-in-right\:\$0 {
+  /// .slideInRight\:\$0 {
   ///   --sk-enter-tx: 0px;
   /// }
   /// ```
@@ -5083,7 +5083,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("0")
   }
   /// ```css
-  /// .slide-in-right\:\$px {
+  /// .slideInRight\:\$px {
   ///   --sk-enter-tx: 1px;
   /// }
   /// ```
@@ -5092,7 +5092,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("px")
   }
   /// ```css
-  /// .slide-in-right\:\$0\.5 {
+  /// .slideInRight\:\$0\.5 {
   ///   --sk-enter-tx: 0.125rem;
   /// }
   /// ```
@@ -5101,7 +5101,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("0.5")
   }
   /// ```css
-  /// .slide-in-right\:\$1 {
+  /// .slideInRight\:\$1 {
   ///   --sk-enter-tx: 0.25rem;
   /// }
   /// ```
@@ -5110,7 +5110,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("1")
   }
   /// ```css
-  /// .slide-in-right\:\$1\.5 {
+  /// .slideInRight\:\$1\.5 {
   ///   --sk-enter-tx: 0.375rem;
   /// }
   /// ```
@@ -5119,7 +5119,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("1.5")
   }
   /// ```css
-  /// .slide-in-right\:\$2 {
+  /// .slideInRight\:\$2 {
   ///   --sk-enter-tx: 0.5rem;
   /// }
   /// ```
@@ -5128,7 +5128,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("2")
   }
   /// ```css
-  /// .slide-in-right\:\$2\.5 {
+  /// .slideInRight\:\$2\.5 {
   ///   --sk-enter-tx: 0.625rem;
   /// }
   /// ```
@@ -5137,7 +5137,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("2.5")
   }
   /// ```css
-  /// .slide-in-right\:\$3 {
+  /// .slideInRight\:\$3 {
   ///   --sk-enter-tx: 0.75rem;
   /// }
   /// ```
@@ -5146,7 +5146,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("3")
   }
   /// ```css
-  /// .slide-in-right\:\$3\.5 {
+  /// .slideInRight\:\$3\.5 {
   ///   --sk-enter-tx: 0.875rem;
   /// }
   /// ```
@@ -5155,7 +5155,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("3.5")
   }
   /// ```css
-  /// .slide-in-right\:\$4 {
+  /// .slideInRight\:\$4 {
   ///   --sk-enter-tx: 1rem;
   /// }
   /// ```
@@ -5164,7 +5164,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("4")
   }
   /// ```css
-  /// .slide-in-right\:\$5 {
+  /// .slideInRight\:\$5 {
   ///   --sk-enter-tx: 1.25rem;
   /// }
   /// ```
@@ -5173,7 +5173,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("5")
   }
   /// ```css
-  /// .slide-in-right\:\$6 {
+  /// .slideInRight\:\$6 {
   ///   --sk-enter-tx: 1.5rem;
   /// }
   /// ```
@@ -5182,7 +5182,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("6")
   }
   /// ```css
-  /// .slide-in-right\:\$7 {
+  /// .slideInRight\:\$7 {
   ///   --sk-enter-tx: 1.75rem;
   /// }
   /// ```
@@ -5191,7 +5191,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("7")
   }
   /// ```css
-  /// .slide-in-right\:\$8 {
+  /// .slideInRight\:\$8 {
   ///   --sk-enter-tx: 2rem;
   /// }
   /// ```
@@ -5200,7 +5200,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("8")
   }
   /// ```css
-  /// .slide-in-right\:\$9 {
+  /// .slideInRight\:\$9 {
   ///   --sk-enter-tx: 2.25rem;
   /// }
   /// ```
@@ -5209,7 +5209,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("9")
   }
   /// ```css
-  /// .slide-in-right\:\$10 {
+  /// .slideInRight\:\$10 {
   ///   --sk-enter-tx: 2.5rem;
   /// }
   /// ```
@@ -5218,7 +5218,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("10")
   }
   /// ```css
-  /// .slide-in-right\:\$11 {
+  /// .slideInRight\:\$11 {
   ///   --sk-enter-tx: 2.75rem;
   /// }
   /// ```
@@ -5227,7 +5227,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("11")
   }
   /// ```css
-  /// .slide-in-right\:\$12 {
+  /// .slideInRight\:\$12 {
   ///   --sk-enter-tx: 3rem;
   /// }
   /// ```
@@ -5236,7 +5236,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("12")
   }
   /// ```css
-  /// .slide-in-right\:\$14 {
+  /// .slideInRight\:\$14 {
   ///   --sk-enter-tx: 3.5rem;
   /// }
   /// ```
@@ -5245,7 +5245,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("14")
   }
   /// ```css
-  /// .slide-in-right\:\$16 {
+  /// .slideInRight\:\$16 {
   ///   --sk-enter-tx: 4rem;
   /// }
   /// ```
@@ -5254,7 +5254,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("16")
   }
   /// ```css
-  /// .slide-in-right\:\$20 {
+  /// .slideInRight\:\$20 {
   ///   --sk-enter-tx: 5rem;
   /// }
   /// ```
@@ -5263,7 +5263,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("20")
   }
   /// ```css
-  /// .slide-in-right\:\$24 {
+  /// .slideInRight\:\$24 {
   ///   --sk-enter-tx: 6rem;
   /// }
   /// ```
@@ -5272,7 +5272,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("24")
   }
   /// ```css
-  /// .slide-in-right\:\$28 {
+  /// .slideInRight\:\$28 {
   ///   --sk-enter-tx: 7rem;
   /// }
   /// ```
@@ -5281,7 +5281,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("28")
   }
   /// ```css
-  /// .slide-in-right\:\$32 {
+  /// .slideInRight\:\$32 {
   ///   --sk-enter-tx: 8rem;
   /// }
   /// ```
@@ -5290,7 +5290,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("32")
   }
   /// ```css
-  /// .slide-in-right\:\$36 {
+  /// .slideInRight\:\$36 {
   ///   --sk-enter-tx: 9rem;
   /// }
   /// ```
@@ -5299,7 +5299,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("36")
   }
   /// ```css
-  /// .slide-in-right\:\$40 {
+  /// .slideInRight\:\$40 {
   ///   --sk-enter-tx: 10rem;
   /// }
   /// ```
@@ -5308,7 +5308,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("40")
   }
   /// ```css
-  /// .slide-in-right\:\$44 {
+  /// .slideInRight\:\$44 {
   ///   --sk-enter-tx: 11rem;
   /// }
   /// ```
@@ -5317,7 +5317,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("44")
   }
   /// ```css
-  /// .slide-in-right\:\$48 {
+  /// .slideInRight\:\$48 {
   ///   --sk-enter-tx: 12rem;
   /// }
   /// ```
@@ -5326,7 +5326,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("48")
   }
   /// ```css
-  /// .slide-in-right\:\$52 {
+  /// .slideInRight\:\$52 {
   ///   --sk-enter-tx: 13rem;
   /// }
   /// ```
@@ -5335,7 +5335,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("52")
   }
   /// ```css
-  /// .slide-in-right\:\$56 {
+  /// .slideInRight\:\$56 {
   ///   --sk-enter-tx: 14rem;
   /// }
   /// ```
@@ -5344,7 +5344,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("56")
   }
   /// ```css
-  /// .slide-in-right\:\$60 {
+  /// .slideInRight\:\$60 {
   ///   --sk-enter-tx: 15rem;
   /// }
   /// ```
@@ -5353,7 +5353,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("60")
   }
   /// ```css
-  /// .slide-in-right\:\$64 {
+  /// .slideInRight\:\$64 {
   ///   --sk-enter-tx: 16rem;
   /// }
   /// ```
@@ -5362,7 +5362,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("64")
   }
   /// ```css
-  /// .slide-in-right\:\$72 {
+  /// .slideInRight\:\$72 {
   ///   --sk-enter-tx: 18rem;
   /// }
   /// ```
@@ -5371,7 +5371,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("72")
   }
   /// ```css
-  /// .slide-in-right\:\$80 {
+  /// .slideInRight\:\$80 {
   ///   --sk-enter-tx: 20rem;
   /// }
   /// ```
@@ -5380,7 +5380,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("80")
   }
   /// ```css
-  /// .slide-in-right\:\$96 {
+  /// .slideInRight\:\$96 {
   ///   --sk-enter-tx: 24rem;
   /// }
   /// ```
@@ -5389,7 +5389,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("96")
   }
   /// ```css
-  /// .slide-in-right\:\$third {
+  /// .slideInRight\:\$third {
   ///   --sk-enter-tx: 33.333333%;
   /// }
   /// ```
@@ -5398,7 +5398,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("third")
   }
   /// ```css
-  /// .slide-in-right\:\$two-thirds {
+  /// .slideInRight\:\$twoThirds {
   ///   --sk-enter-tx: 66.666667%;
   /// }
   /// ```
@@ -5407,7 +5407,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("twoThirds")
   }
   /// ```css
-  /// .slide-in-right\:\$quarter {
+  /// .slideInRight\:\$quarter {
   ///   --sk-enter-tx: 25%;
   /// }
   /// ```
@@ -5416,7 +5416,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("quarter")
   }
   /// ```css
-  /// .slide-in-right\:\$half {
+  /// .slideInRight\:\$half {
   ///   --sk-enter-tx: 50%;
   /// }
   /// ```
@@ -5425,7 +5425,7 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-in-right\:\$three-quarters {
+  /// .slideInRight\:\$threeQuarters {
   ///   --sk-enter-tx: 75%;
   /// }
   /// ```
@@ -5448,7 +5448,7 @@ impl GeneratedSkribbleValue for GeneratedAtomSlideOutLeft {
 }
 pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
   /// ```css
-  /// .slide-out-left\:\$full {
+  /// .slideOutLeft\:\$full {
   ///   --sk-exit-tx: -100%;
   /// }
   /// ```
@@ -5457,7 +5457,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("full")
   }
   /// ```css
-  /// .slide-out-left\:\$0 {
+  /// .slideOutLeft\:\$0 {
   ///   --sk-exit-tx: -0px;
   /// }
   /// ```
@@ -5466,7 +5466,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("0")
   }
   /// ```css
-  /// .slide-out-left\:\$px {
+  /// .slideOutLeft\:\$px {
   ///   --sk-exit-tx: -1px;
   /// }
   /// ```
@@ -5475,7 +5475,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("px")
   }
   /// ```css
-  /// .slide-out-left\:\$0\.5 {
+  /// .slideOutLeft\:\$0\.5 {
   ///   --sk-exit-tx: -0.125rem;
   /// }
   /// ```
@@ -5484,7 +5484,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("0.5")
   }
   /// ```css
-  /// .slide-out-left\:\$1 {
+  /// .slideOutLeft\:\$1 {
   ///   --sk-exit-tx: -0.25rem;
   /// }
   /// ```
@@ -5493,7 +5493,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("1")
   }
   /// ```css
-  /// .slide-out-left\:\$1\.5 {
+  /// .slideOutLeft\:\$1\.5 {
   ///   --sk-exit-tx: -0.375rem;
   /// }
   /// ```
@@ -5502,7 +5502,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("1.5")
   }
   /// ```css
-  /// .slide-out-left\:\$2 {
+  /// .slideOutLeft\:\$2 {
   ///   --sk-exit-tx: -0.5rem;
   /// }
   /// ```
@@ -5511,7 +5511,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("2")
   }
   /// ```css
-  /// .slide-out-left\:\$2\.5 {
+  /// .slideOutLeft\:\$2\.5 {
   ///   --sk-exit-tx: -0.625rem;
   /// }
   /// ```
@@ -5520,7 +5520,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("2.5")
   }
   /// ```css
-  /// .slide-out-left\:\$3 {
+  /// .slideOutLeft\:\$3 {
   ///   --sk-exit-tx: -0.75rem;
   /// }
   /// ```
@@ -5529,7 +5529,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("3")
   }
   /// ```css
-  /// .slide-out-left\:\$3\.5 {
+  /// .slideOutLeft\:\$3\.5 {
   ///   --sk-exit-tx: -0.875rem;
   /// }
   /// ```
@@ -5538,7 +5538,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("3.5")
   }
   /// ```css
-  /// .slide-out-left\:\$4 {
+  /// .slideOutLeft\:\$4 {
   ///   --sk-exit-tx: -1rem;
   /// }
   /// ```
@@ -5547,7 +5547,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("4")
   }
   /// ```css
-  /// .slide-out-left\:\$5 {
+  /// .slideOutLeft\:\$5 {
   ///   --sk-exit-tx: -1.25rem;
   /// }
   /// ```
@@ -5556,7 +5556,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("5")
   }
   /// ```css
-  /// .slide-out-left\:\$6 {
+  /// .slideOutLeft\:\$6 {
   ///   --sk-exit-tx: -1.5rem;
   /// }
   /// ```
@@ -5565,7 +5565,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("6")
   }
   /// ```css
-  /// .slide-out-left\:\$7 {
+  /// .slideOutLeft\:\$7 {
   ///   --sk-exit-tx: -1.75rem;
   /// }
   /// ```
@@ -5574,7 +5574,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("7")
   }
   /// ```css
-  /// .slide-out-left\:\$8 {
+  /// .slideOutLeft\:\$8 {
   ///   --sk-exit-tx: -2rem;
   /// }
   /// ```
@@ -5583,7 +5583,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("8")
   }
   /// ```css
-  /// .slide-out-left\:\$9 {
+  /// .slideOutLeft\:\$9 {
   ///   --sk-exit-tx: -2.25rem;
   /// }
   /// ```
@@ -5592,7 +5592,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("9")
   }
   /// ```css
-  /// .slide-out-left\:\$10 {
+  /// .slideOutLeft\:\$10 {
   ///   --sk-exit-tx: -2.5rem;
   /// }
   /// ```
@@ -5601,7 +5601,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("10")
   }
   /// ```css
-  /// .slide-out-left\:\$11 {
+  /// .slideOutLeft\:\$11 {
   ///   --sk-exit-tx: -2.75rem;
   /// }
   /// ```
@@ -5610,7 +5610,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("11")
   }
   /// ```css
-  /// .slide-out-left\:\$12 {
+  /// .slideOutLeft\:\$12 {
   ///   --sk-exit-tx: -3rem;
   /// }
   /// ```
@@ -5619,7 +5619,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("12")
   }
   /// ```css
-  /// .slide-out-left\:\$14 {
+  /// .slideOutLeft\:\$14 {
   ///   --sk-exit-tx: -3.5rem;
   /// }
   /// ```
@@ -5628,7 +5628,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("14")
   }
   /// ```css
-  /// .slide-out-left\:\$16 {
+  /// .slideOutLeft\:\$16 {
   ///   --sk-exit-tx: -4rem;
   /// }
   /// ```
@@ -5637,7 +5637,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("16")
   }
   /// ```css
-  /// .slide-out-left\:\$20 {
+  /// .slideOutLeft\:\$20 {
   ///   --sk-exit-tx: -5rem;
   /// }
   /// ```
@@ -5646,7 +5646,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("20")
   }
   /// ```css
-  /// .slide-out-left\:\$24 {
+  /// .slideOutLeft\:\$24 {
   ///   --sk-exit-tx: -6rem;
   /// }
   /// ```
@@ -5655,7 +5655,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("24")
   }
   /// ```css
-  /// .slide-out-left\:\$28 {
+  /// .slideOutLeft\:\$28 {
   ///   --sk-exit-tx: -7rem;
   /// }
   /// ```
@@ -5664,7 +5664,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("28")
   }
   /// ```css
-  /// .slide-out-left\:\$32 {
+  /// .slideOutLeft\:\$32 {
   ///   --sk-exit-tx: -8rem;
   /// }
   /// ```
@@ -5673,7 +5673,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("32")
   }
   /// ```css
-  /// .slide-out-left\:\$36 {
+  /// .slideOutLeft\:\$36 {
   ///   --sk-exit-tx: -9rem;
   /// }
   /// ```
@@ -5682,7 +5682,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("36")
   }
   /// ```css
-  /// .slide-out-left\:\$40 {
+  /// .slideOutLeft\:\$40 {
   ///   --sk-exit-tx: -10rem;
   /// }
   /// ```
@@ -5691,7 +5691,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("40")
   }
   /// ```css
-  /// .slide-out-left\:\$44 {
+  /// .slideOutLeft\:\$44 {
   ///   --sk-exit-tx: -11rem;
   /// }
   /// ```
@@ -5700,7 +5700,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("44")
   }
   /// ```css
-  /// .slide-out-left\:\$48 {
+  /// .slideOutLeft\:\$48 {
   ///   --sk-exit-tx: -12rem;
   /// }
   /// ```
@@ -5709,7 +5709,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("48")
   }
   /// ```css
-  /// .slide-out-left\:\$52 {
+  /// .slideOutLeft\:\$52 {
   ///   --sk-exit-tx: -13rem;
   /// }
   /// ```
@@ -5718,7 +5718,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("52")
   }
   /// ```css
-  /// .slide-out-left\:\$56 {
+  /// .slideOutLeft\:\$56 {
   ///   --sk-exit-tx: -14rem;
   /// }
   /// ```
@@ -5727,7 +5727,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("56")
   }
   /// ```css
-  /// .slide-out-left\:\$60 {
+  /// .slideOutLeft\:\$60 {
   ///   --sk-exit-tx: -15rem;
   /// }
   /// ```
@@ -5736,7 +5736,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("60")
   }
   /// ```css
-  /// .slide-out-left\:\$64 {
+  /// .slideOutLeft\:\$64 {
   ///   --sk-exit-tx: -16rem;
   /// }
   /// ```
@@ -5745,7 +5745,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("64")
   }
   /// ```css
-  /// .slide-out-left\:\$72 {
+  /// .slideOutLeft\:\$72 {
   ///   --sk-exit-tx: -18rem;
   /// }
   /// ```
@@ -5754,7 +5754,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("72")
   }
   /// ```css
-  /// .slide-out-left\:\$80 {
+  /// .slideOutLeft\:\$80 {
   ///   --sk-exit-tx: -20rem;
   /// }
   /// ```
@@ -5763,7 +5763,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("80")
   }
   /// ```css
-  /// .slide-out-left\:\$96 {
+  /// .slideOutLeft\:\$96 {
   ///   --sk-exit-tx: -24rem;
   /// }
   /// ```
@@ -5772,7 +5772,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("96")
   }
   /// ```css
-  /// .slide-out-left\:\$third {
+  /// .slideOutLeft\:\$third {
   ///   --sk-exit-tx: -33.333333%;
   /// }
   /// ```
@@ -5781,7 +5781,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("third")
   }
   /// ```css
-  /// .slide-out-left\:\$two-thirds {
+  /// .slideOutLeft\:\$twoThirds {
   ///   --sk-exit-tx: -66.666667%;
   /// }
   /// ```
@@ -5790,7 +5790,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("twoThirds")
   }
   /// ```css
-  /// .slide-out-left\:\$quarter {
+  /// .slideOutLeft\:\$quarter {
   ///   --sk-exit-tx: -25%;
   /// }
   /// ```
@@ -5799,7 +5799,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("quarter")
   }
   /// ```css
-  /// .slide-out-left\:\$half {
+  /// .slideOutLeft\:\$half {
   ///   --sk-exit-tx: -50%;
   /// }
   /// ```
@@ -5808,7 +5808,7 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-out-left\:\$three-quarters {
+  /// .slideOutLeft\:\$threeQuarters {
   ///   --sk-exit-tx: -75%;
   /// }
   /// ```
@@ -5831,7 +5831,7 @@ impl GeneratedSkribbleValue for GeneratedAtomSlideOutRight {
 }
 pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
   /// ```css
-  /// .slide-out-right\:\$full {
+  /// .slideOutRight\:\$full {
   ///   --sk-exit-tx: 100%;
   /// }
   /// ```
@@ -5840,7 +5840,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("full")
   }
   /// ```css
-  /// .slide-out-right\:\$0 {
+  /// .slideOutRight\:\$0 {
   ///   --sk-exit-tx: 0px;
   /// }
   /// ```
@@ -5849,7 +5849,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("0")
   }
   /// ```css
-  /// .slide-out-right\:\$px {
+  /// .slideOutRight\:\$px {
   ///   --sk-exit-tx: 1px;
   /// }
   /// ```
@@ -5858,7 +5858,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("px")
   }
   /// ```css
-  /// .slide-out-right\:\$0\.5 {
+  /// .slideOutRight\:\$0\.5 {
   ///   --sk-exit-tx: 0.125rem;
   /// }
   /// ```
@@ -5867,7 +5867,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("0.5")
   }
   /// ```css
-  /// .slide-out-right\:\$1 {
+  /// .slideOutRight\:\$1 {
   ///   --sk-exit-tx: 0.25rem;
   /// }
   /// ```
@@ -5876,7 +5876,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("1")
   }
   /// ```css
-  /// .slide-out-right\:\$1\.5 {
+  /// .slideOutRight\:\$1\.5 {
   ///   --sk-exit-tx: 0.375rem;
   /// }
   /// ```
@@ -5885,7 +5885,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("1.5")
   }
   /// ```css
-  /// .slide-out-right\:\$2 {
+  /// .slideOutRight\:\$2 {
   ///   --sk-exit-tx: 0.5rem;
   /// }
   /// ```
@@ -5894,7 +5894,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("2")
   }
   /// ```css
-  /// .slide-out-right\:\$2\.5 {
+  /// .slideOutRight\:\$2\.5 {
   ///   --sk-exit-tx: 0.625rem;
   /// }
   /// ```
@@ -5903,7 +5903,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("2.5")
   }
   /// ```css
-  /// .slide-out-right\:\$3 {
+  /// .slideOutRight\:\$3 {
   ///   --sk-exit-tx: 0.75rem;
   /// }
   /// ```
@@ -5912,7 +5912,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("3")
   }
   /// ```css
-  /// .slide-out-right\:\$3\.5 {
+  /// .slideOutRight\:\$3\.5 {
   ///   --sk-exit-tx: 0.875rem;
   /// }
   /// ```
@@ -5921,7 +5921,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("3.5")
   }
   /// ```css
-  /// .slide-out-right\:\$4 {
+  /// .slideOutRight\:\$4 {
   ///   --sk-exit-tx: 1rem;
   /// }
   /// ```
@@ -5930,7 +5930,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("4")
   }
   /// ```css
-  /// .slide-out-right\:\$5 {
+  /// .slideOutRight\:\$5 {
   ///   --sk-exit-tx: 1.25rem;
   /// }
   /// ```
@@ -5939,7 +5939,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("5")
   }
   /// ```css
-  /// .slide-out-right\:\$6 {
+  /// .slideOutRight\:\$6 {
   ///   --sk-exit-tx: 1.5rem;
   /// }
   /// ```
@@ -5948,7 +5948,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("6")
   }
   /// ```css
-  /// .slide-out-right\:\$7 {
+  /// .slideOutRight\:\$7 {
   ///   --sk-exit-tx: 1.75rem;
   /// }
   /// ```
@@ -5957,7 +5957,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("7")
   }
   /// ```css
-  /// .slide-out-right\:\$8 {
+  /// .slideOutRight\:\$8 {
   ///   --sk-exit-tx: 2rem;
   /// }
   /// ```
@@ -5966,7 +5966,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("8")
   }
   /// ```css
-  /// .slide-out-right\:\$9 {
+  /// .slideOutRight\:\$9 {
   ///   --sk-exit-tx: 2.25rem;
   /// }
   /// ```
@@ -5975,7 +5975,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("9")
   }
   /// ```css
-  /// .slide-out-right\:\$10 {
+  /// .slideOutRight\:\$10 {
   ///   --sk-exit-tx: 2.5rem;
   /// }
   /// ```
@@ -5984,7 +5984,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("10")
   }
   /// ```css
-  /// .slide-out-right\:\$11 {
+  /// .slideOutRight\:\$11 {
   ///   --sk-exit-tx: 2.75rem;
   /// }
   /// ```
@@ -5993,7 +5993,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("11")
   }
   /// ```css
-  /// .slide-out-right\:\$12 {
+  /// .slideOutRight\:\$12 {
   ///   --sk-exit-tx: 3rem;
   /// }
   /// ```
@@ -6002,7 +6002,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("12")
   }
   /// ```css
-  /// .slide-out-right\:\$14 {
+  /// .slideOutRight\:\$14 {
   ///   --sk-exit-tx: 3.5rem;
   /// }
   /// ```
@@ -6011,7 +6011,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("14")
   }
   /// ```css
-  /// .slide-out-right\:\$16 {
+  /// .slideOutRight\:\$16 {
   ///   --sk-exit-tx: 4rem;
   /// }
   /// ```
@@ -6020,7 +6020,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("16")
   }
   /// ```css
-  /// .slide-out-right\:\$20 {
+  /// .slideOutRight\:\$20 {
   ///   --sk-exit-tx: 5rem;
   /// }
   /// ```
@@ -6029,7 +6029,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("20")
   }
   /// ```css
-  /// .slide-out-right\:\$24 {
+  /// .slideOutRight\:\$24 {
   ///   --sk-exit-tx: 6rem;
   /// }
   /// ```
@@ -6038,7 +6038,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("24")
   }
   /// ```css
-  /// .slide-out-right\:\$28 {
+  /// .slideOutRight\:\$28 {
   ///   --sk-exit-tx: 7rem;
   /// }
   /// ```
@@ -6047,7 +6047,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("28")
   }
   /// ```css
-  /// .slide-out-right\:\$32 {
+  /// .slideOutRight\:\$32 {
   ///   --sk-exit-tx: 8rem;
   /// }
   /// ```
@@ -6056,7 +6056,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("32")
   }
   /// ```css
-  /// .slide-out-right\:\$36 {
+  /// .slideOutRight\:\$36 {
   ///   --sk-exit-tx: 9rem;
   /// }
   /// ```
@@ -6065,7 +6065,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("36")
   }
   /// ```css
-  /// .slide-out-right\:\$40 {
+  /// .slideOutRight\:\$40 {
   ///   --sk-exit-tx: 10rem;
   /// }
   /// ```
@@ -6074,7 +6074,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("40")
   }
   /// ```css
-  /// .slide-out-right\:\$44 {
+  /// .slideOutRight\:\$44 {
   ///   --sk-exit-tx: 11rem;
   /// }
   /// ```
@@ -6083,7 +6083,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("44")
   }
   /// ```css
-  /// .slide-out-right\:\$48 {
+  /// .slideOutRight\:\$48 {
   ///   --sk-exit-tx: 12rem;
   /// }
   /// ```
@@ -6092,7 +6092,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("48")
   }
   /// ```css
-  /// .slide-out-right\:\$52 {
+  /// .slideOutRight\:\$52 {
   ///   --sk-exit-tx: 13rem;
   /// }
   /// ```
@@ -6101,7 +6101,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("52")
   }
   /// ```css
-  /// .slide-out-right\:\$56 {
+  /// .slideOutRight\:\$56 {
   ///   --sk-exit-tx: 14rem;
   /// }
   /// ```
@@ -6110,7 +6110,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("56")
   }
   /// ```css
-  /// .slide-out-right\:\$60 {
+  /// .slideOutRight\:\$60 {
   ///   --sk-exit-tx: 15rem;
   /// }
   /// ```
@@ -6119,7 +6119,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("60")
   }
   /// ```css
-  /// .slide-out-right\:\$64 {
+  /// .slideOutRight\:\$64 {
   ///   --sk-exit-tx: 16rem;
   /// }
   /// ```
@@ -6128,7 +6128,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("64")
   }
   /// ```css
-  /// .slide-out-right\:\$72 {
+  /// .slideOutRight\:\$72 {
   ///   --sk-exit-tx: 18rem;
   /// }
   /// ```
@@ -6137,7 +6137,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("72")
   }
   /// ```css
-  /// .slide-out-right\:\$80 {
+  /// .slideOutRight\:\$80 {
   ///   --sk-exit-tx: 20rem;
   /// }
   /// ```
@@ -6146,7 +6146,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("80")
   }
   /// ```css
-  /// .slide-out-right\:\$96 {
+  /// .slideOutRight\:\$96 {
   ///   --sk-exit-tx: 24rem;
   /// }
   /// ```
@@ -6155,7 +6155,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("96")
   }
   /// ```css
-  /// .slide-out-right\:\$third {
+  /// .slideOutRight\:\$third {
   ///   --sk-exit-tx: 33.333333%;
   /// }
   /// ```
@@ -6164,7 +6164,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("third")
   }
   /// ```css
-  /// .slide-out-right\:\$two-thirds {
+  /// .slideOutRight\:\$twoThirds {
   ///   --sk-exit-tx: 66.666667%;
   /// }
   /// ```
@@ -6173,7 +6173,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("twoThirds")
   }
   /// ```css
-  /// .slide-out-right\:\$quarter {
+  /// .slideOutRight\:\$quarter {
   ///   --sk-exit-tx: 25%;
   /// }
   /// ```
@@ -6182,7 +6182,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("quarter")
   }
   /// ```css
-  /// .slide-out-right\:\$half {
+  /// .slideOutRight\:\$half {
   ///   --sk-exit-tx: 50%;
   /// }
   /// ```
@@ -6191,7 +6191,7 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-out-right\:\$three-quarters {
+  /// .slideOutRight\:\$threeQuarters {
   ///   --sk-exit-tx: 75%;
   /// }
   /// ```
@@ -6214,7 +6214,7 @@ impl GeneratedSkribbleValue for GeneratedAtomSlideInTop {
 }
 pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
   /// ```css
-  /// .slide-in-top\:\$full {
+  /// .slideInTop\:\$full {
   ///   --sk-enter-ty: -100%;
   /// }
   /// ```
@@ -6223,7 +6223,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("full")
   }
   /// ```css
-  /// .slide-in-top\:\$0 {
+  /// .slideInTop\:\$0 {
   ///   --sk-enter-ty: -0px;
   /// }
   /// ```
@@ -6232,7 +6232,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("0")
   }
   /// ```css
-  /// .slide-in-top\:\$px {
+  /// .slideInTop\:\$px {
   ///   --sk-enter-ty: -1px;
   /// }
   /// ```
@@ -6241,7 +6241,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("px")
   }
   /// ```css
-  /// .slide-in-top\:\$0\.5 {
+  /// .slideInTop\:\$0\.5 {
   ///   --sk-enter-ty: -0.125rem;
   /// }
   /// ```
@@ -6250,7 +6250,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("0.5")
   }
   /// ```css
-  /// .slide-in-top\:\$1 {
+  /// .slideInTop\:\$1 {
   ///   --sk-enter-ty: -0.25rem;
   /// }
   /// ```
@@ -6259,7 +6259,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("1")
   }
   /// ```css
-  /// .slide-in-top\:\$1\.5 {
+  /// .slideInTop\:\$1\.5 {
   ///   --sk-enter-ty: -0.375rem;
   /// }
   /// ```
@@ -6268,7 +6268,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("1.5")
   }
   /// ```css
-  /// .slide-in-top\:\$2 {
+  /// .slideInTop\:\$2 {
   ///   --sk-enter-ty: -0.5rem;
   /// }
   /// ```
@@ -6277,7 +6277,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("2")
   }
   /// ```css
-  /// .slide-in-top\:\$2\.5 {
+  /// .slideInTop\:\$2\.5 {
   ///   --sk-enter-ty: -0.625rem;
   /// }
   /// ```
@@ -6286,7 +6286,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("2.5")
   }
   /// ```css
-  /// .slide-in-top\:\$3 {
+  /// .slideInTop\:\$3 {
   ///   --sk-enter-ty: -0.75rem;
   /// }
   /// ```
@@ -6295,7 +6295,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("3")
   }
   /// ```css
-  /// .slide-in-top\:\$3\.5 {
+  /// .slideInTop\:\$3\.5 {
   ///   --sk-enter-ty: -0.875rem;
   /// }
   /// ```
@@ -6304,7 +6304,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("3.5")
   }
   /// ```css
-  /// .slide-in-top\:\$4 {
+  /// .slideInTop\:\$4 {
   ///   --sk-enter-ty: -1rem;
   /// }
   /// ```
@@ -6313,7 +6313,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("4")
   }
   /// ```css
-  /// .slide-in-top\:\$5 {
+  /// .slideInTop\:\$5 {
   ///   --sk-enter-ty: -1.25rem;
   /// }
   /// ```
@@ -6322,7 +6322,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("5")
   }
   /// ```css
-  /// .slide-in-top\:\$6 {
+  /// .slideInTop\:\$6 {
   ///   --sk-enter-ty: -1.5rem;
   /// }
   /// ```
@@ -6331,7 +6331,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("6")
   }
   /// ```css
-  /// .slide-in-top\:\$7 {
+  /// .slideInTop\:\$7 {
   ///   --sk-enter-ty: -1.75rem;
   /// }
   /// ```
@@ -6340,7 +6340,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("7")
   }
   /// ```css
-  /// .slide-in-top\:\$8 {
+  /// .slideInTop\:\$8 {
   ///   --sk-enter-ty: -2rem;
   /// }
   /// ```
@@ -6349,7 +6349,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("8")
   }
   /// ```css
-  /// .slide-in-top\:\$9 {
+  /// .slideInTop\:\$9 {
   ///   --sk-enter-ty: -2.25rem;
   /// }
   /// ```
@@ -6358,7 +6358,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("9")
   }
   /// ```css
-  /// .slide-in-top\:\$10 {
+  /// .slideInTop\:\$10 {
   ///   --sk-enter-ty: -2.5rem;
   /// }
   /// ```
@@ -6367,7 +6367,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("10")
   }
   /// ```css
-  /// .slide-in-top\:\$11 {
+  /// .slideInTop\:\$11 {
   ///   --sk-enter-ty: -2.75rem;
   /// }
   /// ```
@@ -6376,7 +6376,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("11")
   }
   /// ```css
-  /// .slide-in-top\:\$12 {
+  /// .slideInTop\:\$12 {
   ///   --sk-enter-ty: -3rem;
   /// }
   /// ```
@@ -6385,7 +6385,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("12")
   }
   /// ```css
-  /// .slide-in-top\:\$14 {
+  /// .slideInTop\:\$14 {
   ///   --sk-enter-ty: -3.5rem;
   /// }
   /// ```
@@ -6394,7 +6394,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("14")
   }
   /// ```css
-  /// .slide-in-top\:\$16 {
+  /// .slideInTop\:\$16 {
   ///   --sk-enter-ty: -4rem;
   /// }
   /// ```
@@ -6403,7 +6403,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("16")
   }
   /// ```css
-  /// .slide-in-top\:\$20 {
+  /// .slideInTop\:\$20 {
   ///   --sk-enter-ty: -5rem;
   /// }
   /// ```
@@ -6412,7 +6412,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("20")
   }
   /// ```css
-  /// .slide-in-top\:\$24 {
+  /// .slideInTop\:\$24 {
   ///   --sk-enter-ty: -6rem;
   /// }
   /// ```
@@ -6421,7 +6421,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("24")
   }
   /// ```css
-  /// .slide-in-top\:\$28 {
+  /// .slideInTop\:\$28 {
   ///   --sk-enter-ty: -7rem;
   /// }
   /// ```
@@ -6430,7 +6430,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("28")
   }
   /// ```css
-  /// .slide-in-top\:\$32 {
+  /// .slideInTop\:\$32 {
   ///   --sk-enter-ty: -8rem;
   /// }
   /// ```
@@ -6439,7 +6439,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("32")
   }
   /// ```css
-  /// .slide-in-top\:\$36 {
+  /// .slideInTop\:\$36 {
   ///   --sk-enter-ty: -9rem;
   /// }
   /// ```
@@ -6448,7 +6448,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("36")
   }
   /// ```css
-  /// .slide-in-top\:\$40 {
+  /// .slideInTop\:\$40 {
   ///   --sk-enter-ty: -10rem;
   /// }
   /// ```
@@ -6457,7 +6457,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("40")
   }
   /// ```css
-  /// .slide-in-top\:\$44 {
+  /// .slideInTop\:\$44 {
   ///   --sk-enter-ty: -11rem;
   /// }
   /// ```
@@ -6466,7 +6466,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("44")
   }
   /// ```css
-  /// .slide-in-top\:\$48 {
+  /// .slideInTop\:\$48 {
   ///   --sk-enter-ty: -12rem;
   /// }
   /// ```
@@ -6475,7 +6475,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("48")
   }
   /// ```css
-  /// .slide-in-top\:\$52 {
+  /// .slideInTop\:\$52 {
   ///   --sk-enter-ty: -13rem;
   /// }
   /// ```
@@ -6484,7 +6484,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("52")
   }
   /// ```css
-  /// .slide-in-top\:\$56 {
+  /// .slideInTop\:\$56 {
   ///   --sk-enter-ty: -14rem;
   /// }
   /// ```
@@ -6493,7 +6493,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("56")
   }
   /// ```css
-  /// .slide-in-top\:\$60 {
+  /// .slideInTop\:\$60 {
   ///   --sk-enter-ty: -15rem;
   /// }
   /// ```
@@ -6502,7 +6502,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("60")
   }
   /// ```css
-  /// .slide-in-top\:\$64 {
+  /// .slideInTop\:\$64 {
   ///   --sk-enter-ty: -16rem;
   /// }
   /// ```
@@ -6511,7 +6511,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("64")
   }
   /// ```css
-  /// .slide-in-top\:\$72 {
+  /// .slideInTop\:\$72 {
   ///   --sk-enter-ty: -18rem;
   /// }
   /// ```
@@ -6520,7 +6520,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("72")
   }
   /// ```css
-  /// .slide-in-top\:\$80 {
+  /// .slideInTop\:\$80 {
   ///   --sk-enter-ty: -20rem;
   /// }
   /// ```
@@ -6529,7 +6529,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("80")
   }
   /// ```css
-  /// .slide-in-top\:\$96 {
+  /// .slideInTop\:\$96 {
   ///   --sk-enter-ty: -24rem;
   /// }
   /// ```
@@ -6538,7 +6538,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("96")
   }
   /// ```css
-  /// .slide-in-top\:\$third {
+  /// .slideInTop\:\$third {
   ///   --sk-enter-ty: -33.333333%;
   /// }
   /// ```
@@ -6547,7 +6547,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("third")
   }
   /// ```css
-  /// .slide-in-top\:\$two-thirds {
+  /// .slideInTop\:\$twoThirds {
   ///   --sk-enter-ty: -66.666667%;
   /// }
   /// ```
@@ -6556,7 +6556,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("twoThirds")
   }
   /// ```css
-  /// .slide-in-top\:\$quarter {
+  /// .slideInTop\:\$quarter {
   ///   --sk-enter-ty: -25%;
   /// }
   /// ```
@@ -6565,7 +6565,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("quarter")
   }
   /// ```css
-  /// .slide-in-top\:\$half {
+  /// .slideInTop\:\$half {
   ///   --sk-enter-ty: -50%;
   /// }
   /// ```
@@ -6574,7 +6574,7 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-in-top\:\$three-quarters {
+  /// .slideInTop\:\$threeQuarters {
   ///   --sk-enter-ty: -75%;
   /// }
   /// ```
@@ -6597,7 +6597,7 @@ impl GeneratedSkribbleValue for GeneratedAtomSlideInBottom {
 }
 pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
   /// ```css
-  /// .slide-in-bottom\:\$full {
+  /// .slideInBottom\:\$full {
   ///   --sk-enter-ty: 100%;
   /// }
   /// ```
@@ -6606,7 +6606,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("full")
   }
   /// ```css
-  /// .slide-in-bottom\:\$0 {
+  /// .slideInBottom\:\$0 {
   ///   --sk-enter-ty: 0px;
   /// }
   /// ```
@@ -6615,7 +6615,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("0")
   }
   /// ```css
-  /// .slide-in-bottom\:\$px {
+  /// .slideInBottom\:\$px {
   ///   --sk-enter-ty: 1px;
   /// }
   /// ```
@@ -6624,7 +6624,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("px")
   }
   /// ```css
-  /// .slide-in-bottom\:\$0\.5 {
+  /// .slideInBottom\:\$0\.5 {
   ///   --sk-enter-ty: 0.125rem;
   /// }
   /// ```
@@ -6633,7 +6633,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("0.5")
   }
   /// ```css
-  /// .slide-in-bottom\:\$1 {
+  /// .slideInBottom\:\$1 {
   ///   --sk-enter-ty: 0.25rem;
   /// }
   /// ```
@@ -6642,7 +6642,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("1")
   }
   /// ```css
-  /// .slide-in-bottom\:\$1\.5 {
+  /// .slideInBottom\:\$1\.5 {
   ///   --sk-enter-ty: 0.375rem;
   /// }
   /// ```
@@ -6651,7 +6651,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("1.5")
   }
   /// ```css
-  /// .slide-in-bottom\:\$2 {
+  /// .slideInBottom\:\$2 {
   ///   --sk-enter-ty: 0.5rem;
   /// }
   /// ```
@@ -6660,7 +6660,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("2")
   }
   /// ```css
-  /// .slide-in-bottom\:\$2\.5 {
+  /// .slideInBottom\:\$2\.5 {
   ///   --sk-enter-ty: 0.625rem;
   /// }
   /// ```
@@ -6669,7 +6669,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("2.5")
   }
   /// ```css
-  /// .slide-in-bottom\:\$3 {
+  /// .slideInBottom\:\$3 {
   ///   --sk-enter-ty: 0.75rem;
   /// }
   /// ```
@@ -6678,7 +6678,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("3")
   }
   /// ```css
-  /// .slide-in-bottom\:\$3\.5 {
+  /// .slideInBottom\:\$3\.5 {
   ///   --sk-enter-ty: 0.875rem;
   /// }
   /// ```
@@ -6687,7 +6687,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("3.5")
   }
   /// ```css
-  /// .slide-in-bottom\:\$4 {
+  /// .slideInBottom\:\$4 {
   ///   --sk-enter-ty: 1rem;
   /// }
   /// ```
@@ -6696,7 +6696,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("4")
   }
   /// ```css
-  /// .slide-in-bottom\:\$5 {
+  /// .slideInBottom\:\$5 {
   ///   --sk-enter-ty: 1.25rem;
   /// }
   /// ```
@@ -6705,7 +6705,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("5")
   }
   /// ```css
-  /// .slide-in-bottom\:\$6 {
+  /// .slideInBottom\:\$6 {
   ///   --sk-enter-ty: 1.5rem;
   /// }
   /// ```
@@ -6714,7 +6714,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("6")
   }
   /// ```css
-  /// .slide-in-bottom\:\$7 {
+  /// .slideInBottom\:\$7 {
   ///   --sk-enter-ty: 1.75rem;
   /// }
   /// ```
@@ -6723,7 +6723,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("7")
   }
   /// ```css
-  /// .slide-in-bottom\:\$8 {
+  /// .slideInBottom\:\$8 {
   ///   --sk-enter-ty: 2rem;
   /// }
   /// ```
@@ -6732,7 +6732,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("8")
   }
   /// ```css
-  /// .slide-in-bottom\:\$9 {
+  /// .slideInBottom\:\$9 {
   ///   --sk-enter-ty: 2.25rem;
   /// }
   /// ```
@@ -6741,7 +6741,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("9")
   }
   /// ```css
-  /// .slide-in-bottom\:\$10 {
+  /// .slideInBottom\:\$10 {
   ///   --sk-enter-ty: 2.5rem;
   /// }
   /// ```
@@ -6750,7 +6750,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("10")
   }
   /// ```css
-  /// .slide-in-bottom\:\$11 {
+  /// .slideInBottom\:\$11 {
   ///   --sk-enter-ty: 2.75rem;
   /// }
   /// ```
@@ -6759,7 +6759,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("11")
   }
   /// ```css
-  /// .slide-in-bottom\:\$12 {
+  /// .slideInBottom\:\$12 {
   ///   --sk-enter-ty: 3rem;
   /// }
   /// ```
@@ -6768,7 +6768,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("12")
   }
   /// ```css
-  /// .slide-in-bottom\:\$14 {
+  /// .slideInBottom\:\$14 {
   ///   --sk-enter-ty: 3.5rem;
   /// }
   /// ```
@@ -6777,7 +6777,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("14")
   }
   /// ```css
-  /// .slide-in-bottom\:\$16 {
+  /// .slideInBottom\:\$16 {
   ///   --sk-enter-ty: 4rem;
   /// }
   /// ```
@@ -6786,7 +6786,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("16")
   }
   /// ```css
-  /// .slide-in-bottom\:\$20 {
+  /// .slideInBottom\:\$20 {
   ///   --sk-enter-ty: 5rem;
   /// }
   /// ```
@@ -6795,7 +6795,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("20")
   }
   /// ```css
-  /// .slide-in-bottom\:\$24 {
+  /// .slideInBottom\:\$24 {
   ///   --sk-enter-ty: 6rem;
   /// }
   /// ```
@@ -6804,7 +6804,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("24")
   }
   /// ```css
-  /// .slide-in-bottom\:\$28 {
+  /// .slideInBottom\:\$28 {
   ///   --sk-enter-ty: 7rem;
   /// }
   /// ```
@@ -6813,7 +6813,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("28")
   }
   /// ```css
-  /// .slide-in-bottom\:\$32 {
+  /// .slideInBottom\:\$32 {
   ///   --sk-enter-ty: 8rem;
   /// }
   /// ```
@@ -6822,7 +6822,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("32")
   }
   /// ```css
-  /// .slide-in-bottom\:\$36 {
+  /// .slideInBottom\:\$36 {
   ///   --sk-enter-ty: 9rem;
   /// }
   /// ```
@@ -6831,7 +6831,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("36")
   }
   /// ```css
-  /// .slide-in-bottom\:\$40 {
+  /// .slideInBottom\:\$40 {
   ///   --sk-enter-ty: 10rem;
   /// }
   /// ```
@@ -6840,7 +6840,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("40")
   }
   /// ```css
-  /// .slide-in-bottom\:\$44 {
+  /// .slideInBottom\:\$44 {
   ///   --sk-enter-ty: 11rem;
   /// }
   /// ```
@@ -6849,7 +6849,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("44")
   }
   /// ```css
-  /// .slide-in-bottom\:\$48 {
+  /// .slideInBottom\:\$48 {
   ///   --sk-enter-ty: 12rem;
   /// }
   /// ```
@@ -6858,7 +6858,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("48")
   }
   /// ```css
-  /// .slide-in-bottom\:\$52 {
+  /// .slideInBottom\:\$52 {
   ///   --sk-enter-ty: 13rem;
   /// }
   /// ```
@@ -6867,7 +6867,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("52")
   }
   /// ```css
-  /// .slide-in-bottom\:\$56 {
+  /// .slideInBottom\:\$56 {
   ///   --sk-enter-ty: 14rem;
   /// }
   /// ```
@@ -6876,7 +6876,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("56")
   }
   /// ```css
-  /// .slide-in-bottom\:\$60 {
+  /// .slideInBottom\:\$60 {
   ///   --sk-enter-ty: 15rem;
   /// }
   /// ```
@@ -6885,7 +6885,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("60")
   }
   /// ```css
-  /// .slide-in-bottom\:\$64 {
+  /// .slideInBottom\:\$64 {
   ///   --sk-enter-ty: 16rem;
   /// }
   /// ```
@@ -6894,7 +6894,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("64")
   }
   /// ```css
-  /// .slide-in-bottom\:\$72 {
+  /// .slideInBottom\:\$72 {
   ///   --sk-enter-ty: 18rem;
   /// }
   /// ```
@@ -6903,7 +6903,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("72")
   }
   /// ```css
-  /// .slide-in-bottom\:\$80 {
+  /// .slideInBottom\:\$80 {
   ///   --sk-enter-ty: 20rem;
   /// }
   /// ```
@@ -6912,7 +6912,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("80")
   }
   /// ```css
-  /// .slide-in-bottom\:\$96 {
+  /// .slideInBottom\:\$96 {
   ///   --sk-enter-ty: 24rem;
   /// }
   /// ```
@@ -6921,7 +6921,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("96")
   }
   /// ```css
-  /// .slide-in-bottom\:\$third {
+  /// .slideInBottom\:\$third {
   ///   --sk-enter-ty: 33.333333%;
   /// }
   /// ```
@@ -6930,7 +6930,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("third")
   }
   /// ```css
-  /// .slide-in-bottom\:\$two-thirds {
+  /// .slideInBottom\:\$twoThirds {
   ///   --sk-enter-ty: 66.666667%;
   /// }
   /// ```
@@ -6939,7 +6939,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("twoThirds")
   }
   /// ```css
-  /// .slide-in-bottom\:\$quarter {
+  /// .slideInBottom\:\$quarter {
   ///   --sk-enter-ty: 25%;
   /// }
   /// ```
@@ -6948,7 +6948,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("quarter")
   }
   /// ```css
-  /// .slide-in-bottom\:\$half {
+  /// .slideInBottom\:\$half {
   ///   --sk-enter-ty: 50%;
   /// }
   /// ```
@@ -6957,7 +6957,7 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-in-bottom\:\$three-quarters {
+  /// .slideInBottom\:\$threeQuarters {
   ///   --sk-enter-ty: 75%;
   /// }
   /// ```
@@ -6980,7 +6980,7 @@ impl GeneratedSkribbleValue for GeneratedAtomSlideOutTop {
 }
 pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
   /// ```css
-  /// .slide-out-top\:\$full {
+  /// .slideOutTop\:\$full {
   ///   --sk-exit-ty: -100%;
   /// }
   /// ```
@@ -6989,7 +6989,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("full")
   }
   /// ```css
-  /// .slide-out-top\:\$0 {
+  /// .slideOutTop\:\$0 {
   ///   --sk-exit-ty: -0px;
   /// }
   /// ```
@@ -6998,7 +6998,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("0")
   }
   /// ```css
-  /// .slide-out-top\:\$px {
+  /// .slideOutTop\:\$px {
   ///   --sk-exit-ty: -1px;
   /// }
   /// ```
@@ -7007,7 +7007,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("px")
   }
   /// ```css
-  /// .slide-out-top\:\$0\.5 {
+  /// .slideOutTop\:\$0\.5 {
   ///   --sk-exit-ty: -0.125rem;
   /// }
   /// ```
@@ -7016,7 +7016,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("0.5")
   }
   /// ```css
-  /// .slide-out-top\:\$1 {
+  /// .slideOutTop\:\$1 {
   ///   --sk-exit-ty: -0.25rem;
   /// }
   /// ```
@@ -7025,7 +7025,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("1")
   }
   /// ```css
-  /// .slide-out-top\:\$1\.5 {
+  /// .slideOutTop\:\$1\.5 {
   ///   --sk-exit-ty: -0.375rem;
   /// }
   /// ```
@@ -7034,7 +7034,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("1.5")
   }
   /// ```css
-  /// .slide-out-top\:\$2 {
+  /// .slideOutTop\:\$2 {
   ///   --sk-exit-ty: -0.5rem;
   /// }
   /// ```
@@ -7043,7 +7043,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("2")
   }
   /// ```css
-  /// .slide-out-top\:\$2\.5 {
+  /// .slideOutTop\:\$2\.5 {
   ///   --sk-exit-ty: -0.625rem;
   /// }
   /// ```
@@ -7052,7 +7052,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("2.5")
   }
   /// ```css
-  /// .slide-out-top\:\$3 {
+  /// .slideOutTop\:\$3 {
   ///   --sk-exit-ty: -0.75rem;
   /// }
   /// ```
@@ -7061,7 +7061,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("3")
   }
   /// ```css
-  /// .slide-out-top\:\$3\.5 {
+  /// .slideOutTop\:\$3\.5 {
   ///   --sk-exit-ty: -0.875rem;
   /// }
   /// ```
@@ -7070,7 +7070,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("3.5")
   }
   /// ```css
-  /// .slide-out-top\:\$4 {
+  /// .slideOutTop\:\$4 {
   ///   --sk-exit-ty: -1rem;
   /// }
   /// ```
@@ -7079,7 +7079,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("4")
   }
   /// ```css
-  /// .slide-out-top\:\$5 {
+  /// .slideOutTop\:\$5 {
   ///   --sk-exit-ty: -1.25rem;
   /// }
   /// ```
@@ -7088,7 +7088,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("5")
   }
   /// ```css
-  /// .slide-out-top\:\$6 {
+  /// .slideOutTop\:\$6 {
   ///   --sk-exit-ty: -1.5rem;
   /// }
   /// ```
@@ -7097,7 +7097,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("6")
   }
   /// ```css
-  /// .slide-out-top\:\$7 {
+  /// .slideOutTop\:\$7 {
   ///   --sk-exit-ty: -1.75rem;
   /// }
   /// ```
@@ -7106,7 +7106,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("7")
   }
   /// ```css
-  /// .slide-out-top\:\$8 {
+  /// .slideOutTop\:\$8 {
   ///   --sk-exit-ty: -2rem;
   /// }
   /// ```
@@ -7115,7 +7115,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("8")
   }
   /// ```css
-  /// .slide-out-top\:\$9 {
+  /// .slideOutTop\:\$9 {
   ///   --sk-exit-ty: -2.25rem;
   /// }
   /// ```
@@ -7124,7 +7124,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("9")
   }
   /// ```css
-  /// .slide-out-top\:\$10 {
+  /// .slideOutTop\:\$10 {
   ///   --sk-exit-ty: -2.5rem;
   /// }
   /// ```
@@ -7133,7 +7133,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("10")
   }
   /// ```css
-  /// .slide-out-top\:\$11 {
+  /// .slideOutTop\:\$11 {
   ///   --sk-exit-ty: -2.75rem;
   /// }
   /// ```
@@ -7142,7 +7142,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("11")
   }
   /// ```css
-  /// .slide-out-top\:\$12 {
+  /// .slideOutTop\:\$12 {
   ///   --sk-exit-ty: -3rem;
   /// }
   /// ```
@@ -7151,7 +7151,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("12")
   }
   /// ```css
-  /// .slide-out-top\:\$14 {
+  /// .slideOutTop\:\$14 {
   ///   --sk-exit-ty: -3.5rem;
   /// }
   /// ```
@@ -7160,7 +7160,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("14")
   }
   /// ```css
-  /// .slide-out-top\:\$16 {
+  /// .slideOutTop\:\$16 {
   ///   --sk-exit-ty: -4rem;
   /// }
   /// ```
@@ -7169,7 +7169,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("16")
   }
   /// ```css
-  /// .slide-out-top\:\$20 {
+  /// .slideOutTop\:\$20 {
   ///   --sk-exit-ty: -5rem;
   /// }
   /// ```
@@ -7178,7 +7178,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("20")
   }
   /// ```css
-  /// .slide-out-top\:\$24 {
+  /// .slideOutTop\:\$24 {
   ///   --sk-exit-ty: -6rem;
   /// }
   /// ```
@@ -7187,7 +7187,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("24")
   }
   /// ```css
-  /// .slide-out-top\:\$28 {
+  /// .slideOutTop\:\$28 {
   ///   --sk-exit-ty: -7rem;
   /// }
   /// ```
@@ -7196,7 +7196,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("28")
   }
   /// ```css
-  /// .slide-out-top\:\$32 {
+  /// .slideOutTop\:\$32 {
   ///   --sk-exit-ty: -8rem;
   /// }
   /// ```
@@ -7205,7 +7205,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("32")
   }
   /// ```css
-  /// .slide-out-top\:\$36 {
+  /// .slideOutTop\:\$36 {
   ///   --sk-exit-ty: -9rem;
   /// }
   /// ```
@@ -7214,7 +7214,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("36")
   }
   /// ```css
-  /// .slide-out-top\:\$40 {
+  /// .slideOutTop\:\$40 {
   ///   --sk-exit-ty: -10rem;
   /// }
   /// ```
@@ -7223,7 +7223,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("40")
   }
   /// ```css
-  /// .slide-out-top\:\$44 {
+  /// .slideOutTop\:\$44 {
   ///   --sk-exit-ty: -11rem;
   /// }
   /// ```
@@ -7232,7 +7232,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("44")
   }
   /// ```css
-  /// .slide-out-top\:\$48 {
+  /// .slideOutTop\:\$48 {
   ///   --sk-exit-ty: -12rem;
   /// }
   /// ```
@@ -7241,7 +7241,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("48")
   }
   /// ```css
-  /// .slide-out-top\:\$52 {
+  /// .slideOutTop\:\$52 {
   ///   --sk-exit-ty: -13rem;
   /// }
   /// ```
@@ -7250,7 +7250,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("52")
   }
   /// ```css
-  /// .slide-out-top\:\$56 {
+  /// .slideOutTop\:\$56 {
   ///   --sk-exit-ty: -14rem;
   /// }
   /// ```
@@ -7259,7 +7259,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("56")
   }
   /// ```css
-  /// .slide-out-top\:\$60 {
+  /// .slideOutTop\:\$60 {
   ///   --sk-exit-ty: -15rem;
   /// }
   /// ```
@@ -7268,7 +7268,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("60")
   }
   /// ```css
-  /// .slide-out-top\:\$64 {
+  /// .slideOutTop\:\$64 {
   ///   --sk-exit-ty: -16rem;
   /// }
   /// ```
@@ -7277,7 +7277,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("64")
   }
   /// ```css
-  /// .slide-out-top\:\$72 {
+  /// .slideOutTop\:\$72 {
   ///   --sk-exit-ty: -18rem;
   /// }
   /// ```
@@ -7286,7 +7286,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("72")
   }
   /// ```css
-  /// .slide-out-top\:\$80 {
+  /// .slideOutTop\:\$80 {
   ///   --sk-exit-ty: -20rem;
   /// }
   /// ```
@@ -7295,7 +7295,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("80")
   }
   /// ```css
-  /// .slide-out-top\:\$96 {
+  /// .slideOutTop\:\$96 {
   ///   --sk-exit-ty: -24rem;
   /// }
   /// ```
@@ -7304,7 +7304,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("96")
   }
   /// ```css
-  /// .slide-out-top\:\$third {
+  /// .slideOutTop\:\$third {
   ///   --sk-exit-ty: -33.333333%;
   /// }
   /// ```
@@ -7313,7 +7313,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("third")
   }
   /// ```css
-  /// .slide-out-top\:\$two-thirds {
+  /// .slideOutTop\:\$twoThirds {
   ///   --sk-exit-ty: -66.666667%;
   /// }
   /// ```
@@ -7322,7 +7322,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("twoThirds")
   }
   /// ```css
-  /// .slide-out-top\:\$quarter {
+  /// .slideOutTop\:\$quarter {
   ///   --sk-exit-ty: -25%;
   /// }
   /// ```
@@ -7331,7 +7331,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("quarter")
   }
   /// ```css
-  /// .slide-out-top\:\$half {
+  /// .slideOutTop\:\$half {
   ///   --sk-exit-ty: -50%;
   /// }
   /// ```
@@ -7340,7 +7340,7 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-out-top\:\$three-quarters {
+  /// .slideOutTop\:\$threeQuarters {
   ///   --sk-exit-ty: -75%;
   /// }
   /// ```
@@ -7363,7 +7363,7 @@ impl GeneratedSkribbleValue for GeneratedAtomSlideOutBottom {
 }
 pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
   /// ```css
-  /// .slide-out-bottom\:\$full {
+  /// .slideOutBottom\:\$full {
   ///   --sk-exit-ty: 100%;
   /// }
   /// ```
@@ -7372,7 +7372,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("full")
   }
   /// ```css
-  /// .slide-out-bottom\:\$0 {
+  /// .slideOutBottom\:\$0 {
   ///   --sk-exit-ty: 0px;
   /// }
   /// ```
@@ -7381,7 +7381,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("0")
   }
   /// ```css
-  /// .slide-out-bottom\:\$px {
+  /// .slideOutBottom\:\$px {
   ///   --sk-exit-ty: 1px;
   /// }
   /// ```
@@ -7390,7 +7390,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("px")
   }
   /// ```css
-  /// .slide-out-bottom\:\$0\.5 {
+  /// .slideOutBottom\:\$0\.5 {
   ///   --sk-exit-ty: 0.125rem;
   /// }
   /// ```
@@ -7399,7 +7399,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("0.5")
   }
   /// ```css
-  /// .slide-out-bottom\:\$1 {
+  /// .slideOutBottom\:\$1 {
   ///   --sk-exit-ty: 0.25rem;
   /// }
   /// ```
@@ -7408,7 +7408,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("1")
   }
   /// ```css
-  /// .slide-out-bottom\:\$1\.5 {
+  /// .slideOutBottom\:\$1\.5 {
   ///   --sk-exit-ty: 0.375rem;
   /// }
   /// ```
@@ -7417,7 +7417,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("1.5")
   }
   /// ```css
-  /// .slide-out-bottom\:\$2 {
+  /// .slideOutBottom\:\$2 {
   ///   --sk-exit-ty: 0.5rem;
   /// }
   /// ```
@@ -7426,7 +7426,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("2")
   }
   /// ```css
-  /// .slide-out-bottom\:\$2\.5 {
+  /// .slideOutBottom\:\$2\.5 {
   ///   --sk-exit-ty: 0.625rem;
   /// }
   /// ```
@@ -7435,7 +7435,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("2.5")
   }
   /// ```css
-  /// .slide-out-bottom\:\$3 {
+  /// .slideOutBottom\:\$3 {
   ///   --sk-exit-ty: 0.75rem;
   /// }
   /// ```
@@ -7444,7 +7444,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("3")
   }
   /// ```css
-  /// .slide-out-bottom\:\$3\.5 {
+  /// .slideOutBottom\:\$3\.5 {
   ///   --sk-exit-ty: 0.875rem;
   /// }
   /// ```
@@ -7453,7 +7453,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("3.5")
   }
   /// ```css
-  /// .slide-out-bottom\:\$4 {
+  /// .slideOutBottom\:\$4 {
   ///   --sk-exit-ty: 1rem;
   /// }
   /// ```
@@ -7462,7 +7462,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("4")
   }
   /// ```css
-  /// .slide-out-bottom\:\$5 {
+  /// .slideOutBottom\:\$5 {
   ///   --sk-exit-ty: 1.25rem;
   /// }
   /// ```
@@ -7471,7 +7471,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("5")
   }
   /// ```css
-  /// .slide-out-bottom\:\$6 {
+  /// .slideOutBottom\:\$6 {
   ///   --sk-exit-ty: 1.5rem;
   /// }
   /// ```
@@ -7480,7 +7480,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("6")
   }
   /// ```css
-  /// .slide-out-bottom\:\$7 {
+  /// .slideOutBottom\:\$7 {
   ///   --sk-exit-ty: 1.75rem;
   /// }
   /// ```
@@ -7489,7 +7489,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("7")
   }
   /// ```css
-  /// .slide-out-bottom\:\$8 {
+  /// .slideOutBottom\:\$8 {
   ///   --sk-exit-ty: 2rem;
   /// }
   /// ```
@@ -7498,7 +7498,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("8")
   }
   /// ```css
-  /// .slide-out-bottom\:\$9 {
+  /// .slideOutBottom\:\$9 {
   ///   --sk-exit-ty: 2.25rem;
   /// }
   /// ```
@@ -7507,7 +7507,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("9")
   }
   /// ```css
-  /// .slide-out-bottom\:\$10 {
+  /// .slideOutBottom\:\$10 {
   ///   --sk-exit-ty: 2.5rem;
   /// }
   /// ```
@@ -7516,7 +7516,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("10")
   }
   /// ```css
-  /// .slide-out-bottom\:\$11 {
+  /// .slideOutBottom\:\$11 {
   ///   --sk-exit-ty: 2.75rem;
   /// }
   /// ```
@@ -7525,7 +7525,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("11")
   }
   /// ```css
-  /// .slide-out-bottom\:\$12 {
+  /// .slideOutBottom\:\$12 {
   ///   --sk-exit-ty: 3rem;
   /// }
   /// ```
@@ -7534,7 +7534,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("12")
   }
   /// ```css
-  /// .slide-out-bottom\:\$14 {
+  /// .slideOutBottom\:\$14 {
   ///   --sk-exit-ty: 3.5rem;
   /// }
   /// ```
@@ -7543,7 +7543,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("14")
   }
   /// ```css
-  /// .slide-out-bottom\:\$16 {
+  /// .slideOutBottom\:\$16 {
   ///   --sk-exit-ty: 4rem;
   /// }
   /// ```
@@ -7552,7 +7552,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("16")
   }
   /// ```css
-  /// .slide-out-bottom\:\$20 {
+  /// .slideOutBottom\:\$20 {
   ///   --sk-exit-ty: 5rem;
   /// }
   /// ```
@@ -7561,7 +7561,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("20")
   }
   /// ```css
-  /// .slide-out-bottom\:\$24 {
+  /// .slideOutBottom\:\$24 {
   ///   --sk-exit-ty: 6rem;
   /// }
   /// ```
@@ -7570,7 +7570,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("24")
   }
   /// ```css
-  /// .slide-out-bottom\:\$28 {
+  /// .slideOutBottom\:\$28 {
   ///   --sk-exit-ty: 7rem;
   /// }
   /// ```
@@ -7579,7 +7579,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("28")
   }
   /// ```css
-  /// .slide-out-bottom\:\$32 {
+  /// .slideOutBottom\:\$32 {
   ///   --sk-exit-ty: 8rem;
   /// }
   /// ```
@@ -7588,7 +7588,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("32")
   }
   /// ```css
-  /// .slide-out-bottom\:\$36 {
+  /// .slideOutBottom\:\$36 {
   ///   --sk-exit-ty: 9rem;
   /// }
   /// ```
@@ -7597,7 +7597,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("36")
   }
   /// ```css
-  /// .slide-out-bottom\:\$40 {
+  /// .slideOutBottom\:\$40 {
   ///   --sk-exit-ty: 10rem;
   /// }
   /// ```
@@ -7606,7 +7606,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("40")
   }
   /// ```css
-  /// .slide-out-bottom\:\$44 {
+  /// .slideOutBottom\:\$44 {
   ///   --sk-exit-ty: 11rem;
   /// }
   /// ```
@@ -7615,7 +7615,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("44")
   }
   /// ```css
-  /// .slide-out-bottom\:\$48 {
+  /// .slideOutBottom\:\$48 {
   ///   --sk-exit-ty: 12rem;
   /// }
   /// ```
@@ -7624,7 +7624,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("48")
   }
   /// ```css
-  /// .slide-out-bottom\:\$52 {
+  /// .slideOutBottom\:\$52 {
   ///   --sk-exit-ty: 13rem;
   /// }
   /// ```
@@ -7633,7 +7633,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("52")
   }
   /// ```css
-  /// .slide-out-bottom\:\$56 {
+  /// .slideOutBottom\:\$56 {
   ///   --sk-exit-ty: 14rem;
   /// }
   /// ```
@@ -7642,7 +7642,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("56")
   }
   /// ```css
-  /// .slide-out-bottom\:\$60 {
+  /// .slideOutBottom\:\$60 {
   ///   --sk-exit-ty: 15rem;
   /// }
   /// ```
@@ -7651,7 +7651,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("60")
   }
   /// ```css
-  /// .slide-out-bottom\:\$64 {
+  /// .slideOutBottom\:\$64 {
   ///   --sk-exit-ty: 16rem;
   /// }
   /// ```
@@ -7660,7 +7660,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("64")
   }
   /// ```css
-  /// .slide-out-bottom\:\$72 {
+  /// .slideOutBottom\:\$72 {
   ///   --sk-exit-ty: 18rem;
   /// }
   /// ```
@@ -7669,7 +7669,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("72")
   }
   /// ```css
-  /// .slide-out-bottom\:\$80 {
+  /// .slideOutBottom\:\$80 {
   ///   --sk-exit-ty: 20rem;
   /// }
   /// ```
@@ -7678,7 +7678,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("80")
   }
   /// ```css
-  /// .slide-out-bottom\:\$96 {
+  /// .slideOutBottom\:\$96 {
   ///   --sk-exit-ty: 24rem;
   /// }
   /// ```
@@ -7687,7 +7687,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("96")
   }
   /// ```css
-  /// .slide-out-bottom\:\$third {
+  /// .slideOutBottom\:\$third {
   ///   --sk-exit-ty: 33.333333%;
   /// }
   /// ```
@@ -7696,7 +7696,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("third")
   }
   /// ```css
-  /// .slide-out-bottom\:\$two-thirds {
+  /// .slideOutBottom\:\$twoThirds {
   ///   --sk-exit-ty: 66.666667%;
   /// }
   /// ```
@@ -7705,7 +7705,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("twoThirds")
   }
   /// ```css
-  /// .slide-out-bottom\:\$quarter {
+  /// .slideOutBottom\:\$quarter {
   ///   --sk-exit-ty: 25%;
   /// }
   /// ```
@@ -7714,7 +7714,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("quarter")
   }
   /// ```css
-  /// .slide-out-bottom\:\$half {
+  /// .slideOutBottom\:\$half {
   ///   --sk-exit-ty: 50%;
   /// }
   /// ```
@@ -7723,7 +7723,7 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-out-bottom\:\$three-quarters {
+  /// .slideOutBottom\:\$threeQuarters {
   ///   --sk-exit-ty: 75%;
   /// }
   /// ```
@@ -7746,7 +7746,7 @@ impl GeneratedSkribbleValue for GeneratedAtomZoomIn {
 }
 pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
   /// ```css
-  /// .zoom-in\:\$0 {
+  /// .zoomIn\:\$0 {
   ///   --sk-enter-sx: 0;
   ///   --sk-enter-sy: 0;
   /// }
@@ -7756,7 +7756,7 @@ pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
     self.append_value("0")
   }
   /// ```css
-  /// .zoom-in\:\$50 {
+  /// .zoomIn\:\$50 {
   ///   --sk-enter-sx: .5;
   ///   --sk-enter-sy: .5;
   /// }
@@ -7766,7 +7766,7 @@ pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
     self.append_value("50")
   }
   /// ```css
-  /// .zoom-in\:\$75 {
+  /// .zoomIn\:\$75 {
   ///   --sk-enter-sx: .75;
   ///   --sk-enter-sy: .75;
   /// }
@@ -7776,7 +7776,7 @@ pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
     self.append_value("75")
   }
   /// ```css
-  /// .zoom-in\:\$90 {
+  /// .zoomIn\:\$90 {
   ///   --sk-enter-sx: .9;
   ///   --sk-enter-sy: .9;
   /// }
@@ -7786,7 +7786,7 @@ pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
     self.append_value("90")
   }
   /// ```css
-  /// .zoom-in\:\$95 {
+  /// .zoomIn\:\$95 {
   ///   --sk-enter-sx: .95;
   ///   --sk-enter-sy: .95;
   /// }
@@ -7796,7 +7796,7 @@ pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
     self.append_value("95")
   }
   /// ```css
-  /// .zoom-in\:\$100 {
+  /// .zoomIn\:\$100 {
   ///   --sk-enter-sx: 1;
   ///   --sk-enter-sy: 1;
   /// }
@@ -7806,7 +7806,7 @@ pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
     self.append_value("100")
   }
   /// ```css
-  /// .zoom-in\:\$105 {
+  /// .zoomIn\:\$105 {
   ///   --sk-enter-sx: 1.05;
   ///   --sk-enter-sy: 1.05;
   /// }
@@ -7816,7 +7816,7 @@ pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
     self.append_value("105")
   }
   /// ```css
-  /// .zoom-in\:\$110 {
+  /// .zoomIn\:\$110 {
   ///   --sk-enter-sx: 1.1;
   ///   --sk-enter-sy: 1.1;
   /// }
@@ -7826,7 +7826,7 @@ pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
     self.append_value("110")
   }
   /// ```css
-  /// .zoom-in\:\$125 {
+  /// .zoomIn\:\$125 {
   ///   --sk-enter-sx: 1.25;
   ///   --sk-enter-sy: 1.25;
   /// }
@@ -7836,7 +7836,7 @@ pub trait GeneratedValueSetZoomIn: GeneratedSkribbleValue {
     self.append_value("125")
   }
   /// ```css
-  /// .zoom-in\:\$150 {
+  /// .zoomIn\:\$150 {
   ///   --sk-enter-sx: 1.5;
   ///   --sk-enter-sy: 1.5;
   /// }
@@ -7860,7 +7860,7 @@ impl GeneratedSkribbleValue for GeneratedAtomZoomOut {
 }
 pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
   /// ```css
-  /// .zoom-out\:\$0 {
+  /// .zoomOut\:\$0 {
   ///   --sk-exit-sx: 0;
   ///   --sk-exit-sy: 0;
   /// }
@@ -7870,7 +7870,7 @@ pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
     self.append_value("0")
   }
   /// ```css
-  /// .zoom-out\:\$50 {
+  /// .zoomOut\:\$50 {
   ///   --sk-exit-sx: .5;
   ///   --sk-exit-sy: .5;
   /// }
@@ -7880,7 +7880,7 @@ pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
     self.append_value("50")
   }
   /// ```css
-  /// .zoom-out\:\$75 {
+  /// .zoomOut\:\$75 {
   ///   --sk-exit-sx: .75;
   ///   --sk-exit-sy: .75;
   /// }
@@ -7890,7 +7890,7 @@ pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
     self.append_value("75")
   }
   /// ```css
-  /// .zoom-out\:\$90 {
+  /// .zoomOut\:\$90 {
   ///   --sk-exit-sx: .9;
   ///   --sk-exit-sy: .9;
   /// }
@@ -7900,7 +7900,7 @@ pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
     self.append_value("90")
   }
   /// ```css
-  /// .zoom-out\:\$95 {
+  /// .zoomOut\:\$95 {
   ///   --sk-exit-sx: .95;
   ///   --sk-exit-sy: .95;
   /// }
@@ -7910,7 +7910,7 @@ pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
     self.append_value("95")
   }
   /// ```css
-  /// .zoom-out\:\$100 {
+  /// .zoomOut\:\$100 {
   ///   --sk-exit-sx: 1;
   ///   --sk-exit-sy: 1;
   /// }
@@ -7920,7 +7920,7 @@ pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
     self.append_value("100")
   }
   /// ```css
-  /// .zoom-out\:\$105 {
+  /// .zoomOut\:\$105 {
   ///   --sk-exit-sx: 1.05;
   ///   --sk-exit-sy: 1.05;
   /// }
@@ -7930,7 +7930,7 @@ pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
     self.append_value("105")
   }
   /// ```css
-  /// .zoom-out\:\$110 {
+  /// .zoomOut\:\$110 {
   ///   --sk-exit-sx: 1.1;
   ///   --sk-exit-sy: 1.1;
   /// }
@@ -7940,7 +7940,7 @@ pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
     self.append_value("110")
   }
   /// ```css
-  /// .zoom-out\:\$125 {
+  /// .zoomOut\:\$125 {
   ///   --sk-exit-sx: 1.25;
   ///   --sk-exit-sy: 1.25;
   /// }
@@ -7950,7 +7950,7 @@ pub trait GeneratedValueSetZoomOut: GeneratedSkribbleValue {
     self.append_value("125")
   }
   /// ```css
-  /// .zoom-out\:\$150 {
+  /// .zoomOut\:\$150 {
   ///   --sk-exit-sx: 1.5;
   ///   --sk-exit-sy: 1.5;
   /// }
@@ -7974,7 +7974,7 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimateDuration {
 }
 pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
   /// ```css
-  /// .animate-duration\:\$0 {
+  /// .animateDuration\:\$0 {
   ///   animation-duration: 0ms;
   /// }
   /// ```
@@ -7983,7 +7983,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
     self.append_value("0")
   }
   /// ```css
-  /// .animate-duration\:\$75 {
+  /// .animateDuration\:\$75 {
   ///   animation-duration: 75ms;
   /// }
   /// ```
@@ -7992,7 +7992,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
     self.append_value("75")
   }
   /// ```css
-  /// .animate-duration\:\$100 {
+  /// .animateDuration\:\$100 {
   ///   animation-duration: 100ms;
   /// }
   /// ```
@@ -8001,7 +8001,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
     self.append_value("100")
   }
   /// ```css
-  /// .animate-duration\:\$150 {
+  /// .animateDuration\:\$150 {
   ///   animation-duration: 150ms;
   /// }
   /// ```
@@ -8010,7 +8010,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
     self.append_value("150")
   }
   /// ```css
-  /// .animate-duration\:\$200 {
+  /// .animateDuration\:\$200 {
   ///   animation-duration: 200ms;
   /// }
   /// ```
@@ -8019,7 +8019,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
     self.append_value("200")
   }
   /// ```css
-  /// .animate-duration\:\$300 {
+  /// .animateDuration\:\$300 {
   ///   animation-duration: 300ms;
   /// }
   /// ```
@@ -8028,7 +8028,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
     self.append_value("300")
   }
   /// ```css
-  /// .animate-duration\:\$500 {
+  /// .animateDuration\:\$500 {
   ///   animation-duration: 500ms;
   /// }
   /// ```
@@ -8037,7 +8037,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
     self.append_value("500")
   }
   /// ```css
-  /// .animate-duration\:\$700 {
+  /// .animateDuration\:\$700 {
   ///   animation-duration: 700ms;
   /// }
   /// ```
@@ -8046,7 +8046,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
     self.append_value("700")
   }
   /// ```css
-  /// .animate-duration\:\$1000 {
+  /// .animateDuration\:\$1000 {
   ///   animation-duration: 1000ms;
   /// }
   /// ```
@@ -8055,7 +8055,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
     self.append_value("1000")
   }
   /// ```css
-  /// .animate-duration\:\$1500 {
+  /// .animateDuration\:\$1500 {
   ///   animation-duration: 1500ms;
   /// }
   /// ```
@@ -8064,7 +8064,7 @@ pub trait GeneratedValueSetAnimateDuration: GeneratedSkribbleValue {
     self.append_value("1500")
   }
   /// ```css
-  /// .animate-duration\:\$2000 {
+  /// .animateDuration\:\$2000 {
   ///   animation-duration: 2000ms;
   /// }
   /// ```
@@ -8087,7 +8087,7 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimateEasing {
 }
 pub trait GeneratedValueSetAnimateEasing: GeneratedSkribbleValue {
   /// ```css
-  /// .animate-easing\:\$linear {
+  /// .animateEasing\:\$linear {
   ///   animation-timing-function: linear;
   /// }
   /// ```
@@ -8096,7 +8096,7 @@ pub trait GeneratedValueSetAnimateEasing: GeneratedSkribbleValue {
     self.append_value("linear")
   }
   /// ```css
-  /// .animate-easing\:\$in {
+  /// .animateEasing\:\$in {
   ///   animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
   /// }
   /// ```
@@ -8105,7 +8105,7 @@ pub trait GeneratedValueSetAnimateEasing: GeneratedSkribbleValue {
     self.append_value("in")
   }
   /// ```css
-  /// .animate-easing\:\$out {
+  /// .animateEasing\:\$out {
   ///   animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   /// }
   /// ```
@@ -8114,7 +8114,7 @@ pub trait GeneratedValueSetAnimateEasing: GeneratedSkribbleValue {
     self.append_value("out")
   }
   /// ```css
-  /// .animate-easing\:\$in-out {
+  /// .animateEasing\:\$inOut {
   ///   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   /// }
   /// ```
@@ -8137,7 +8137,7 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimateDelay {
 }
 pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
   /// ```css
-  /// .animate-delay\:\$0 {
+  /// .animateDelay\:\$0 {
   ///   animation-delay: 0ms;
   /// }
   /// ```
@@ -8146,7 +8146,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
     self.append_value("0")
   }
   /// ```css
-  /// .animate-delay\:\$75 {
+  /// .animateDelay\:\$75 {
   ///   animation-delay: 75ms;
   /// }
   /// ```
@@ -8155,7 +8155,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
     self.append_value("75")
   }
   /// ```css
-  /// .animate-delay\:\$100 {
+  /// .animateDelay\:\$100 {
   ///   animation-delay: 100ms;
   /// }
   /// ```
@@ -8164,7 +8164,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
     self.append_value("100")
   }
   /// ```css
-  /// .animate-delay\:\$150 {
+  /// .animateDelay\:\$150 {
   ///   animation-delay: 150ms;
   /// }
   /// ```
@@ -8173,7 +8173,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
     self.append_value("150")
   }
   /// ```css
-  /// .animate-delay\:\$200 {
+  /// .animateDelay\:\$200 {
   ///   animation-delay: 200ms;
   /// }
   /// ```
@@ -8182,7 +8182,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
     self.append_value("200")
   }
   /// ```css
-  /// .animate-delay\:\$300 {
+  /// .animateDelay\:\$300 {
   ///   animation-delay: 300ms;
   /// }
   /// ```
@@ -8191,7 +8191,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
     self.append_value("300")
   }
   /// ```css
-  /// .animate-delay\:\$500 {
+  /// .animateDelay\:\$500 {
   ///   animation-delay: 500ms;
   /// }
   /// ```
@@ -8200,7 +8200,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
     self.append_value("500")
   }
   /// ```css
-  /// .animate-delay\:\$700 {
+  /// .animateDelay\:\$700 {
   ///   animation-delay: 700ms;
   /// }
   /// ```
@@ -8209,7 +8209,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
     self.append_value("700")
   }
   /// ```css
-  /// .animate-delay\:\$1000 {
+  /// .animateDelay\:\$1000 {
   ///   animation-delay: 1000ms;
   /// }
   /// ```
@@ -8218,7 +8218,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
     self.append_value("1000")
   }
   /// ```css
-  /// .animate-delay\:\$1500 {
+  /// .animateDelay\:\$1500 {
   ///   animation-delay: 1500ms;
   /// }
   /// ```
@@ -8227,7 +8227,7 @@ pub trait GeneratedValueSetAnimateDelay: GeneratedSkribbleValue {
     self.append_value("1500")
   }
   /// ```css
-  /// .animate-delay\:\$2000 {
+  /// .animateDelay\:\$2000 {
   ///   animation-delay: 2000ms;
   /// }
   /// ```
@@ -8250,7 +8250,7 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimateRepeat {
 }
 pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
   /// ```css
-  /// .animate-repeat\:\$0 {
+  /// .animateRepeat\:\$0 {
   ///   animation-iteration-count: 0;
   /// }
   /// ```
@@ -8259,7 +8259,7 @@ pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
     self.append_value("0")
   }
   /// ```css
-  /// .animate-repeat\:\$0\.5 {
+  /// .animateRepeat\:\$0\.5 {
   ///   animation-iteration-count: 0.5;
   /// }
   /// ```
@@ -8268,7 +8268,7 @@ pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
     self.append_value("0.5")
   }
   /// ```css
-  /// .animate-repeat\:\$1 {
+  /// .animateRepeat\:\$1 {
   ///   animation-iteration-count: 1;
   /// }
   /// ```
@@ -8277,7 +8277,7 @@ pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
     self.append_value("1")
   }
   /// ```css
-  /// .animate-repeat\:\$2 {
+  /// .animateRepeat\:\$2 {
   ///   animation-iteration-count: 2;
   /// }
   /// ```
@@ -8286,7 +8286,7 @@ pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
     self.append_value("2")
   }
   /// ```css
-  /// .animate-repeat\:\$3 {
+  /// .animateRepeat\:\$3 {
   ///   animation-iteration-count: 3;
   /// }
   /// ```
@@ -8295,7 +8295,7 @@ pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
     self.append_value("3")
   }
   /// ```css
-  /// .animate-repeat\:\$infinite {
+  /// .animateRepeat\:\$infinite {
   ///   animation-iteration-count: infinite;
   /// }
   /// ```
@@ -8304,7 +8304,7 @@ pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
     self.append_value("infinite")
   }
   /// ```css
-  /// .animate-repeat\:\$in {
+  /// .animateRepeat\:\$in {
   ///   animation-iteration-count: cubic-bezier(0.4, 0, 1, 1);
   /// }
   /// ```
@@ -8313,7 +8313,7 @@ pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
     self.append_value("in")
   }
   /// ```css
-  /// .animate-repeat\:\$out {
+  /// .animateRepeat\:\$out {
   ///   animation-iteration-count: cubic-bezier(0, 0, 0.2, 1);
   /// }
   /// ```
@@ -8322,7 +8322,7 @@ pub trait GeneratedValueSetAnimateRepeat: GeneratedSkribbleValue {
     self.append_value("out")
   }
   /// ```css
-  /// .animate-repeat\:\$in-out {
+  /// .animateRepeat\:\$inOut {
   ///   animation-iteration-count: cubic-bezier(0.4, 0, 0.2, 1);
   /// }
   /// ```
@@ -8345,7 +8345,7 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimateDirection {
 }
 pub trait GeneratedValueSetAnimateDirection: GeneratedSkribbleValue {
   /// ```css
-  /// .animate-direction\:\$normal {
+  /// .animateDirection\:\$normal {
   ///   animation-direction: normal;
   /// }
   /// ```
@@ -8354,7 +8354,7 @@ pub trait GeneratedValueSetAnimateDirection: GeneratedSkribbleValue {
     self.append_value("normal")
   }
   /// ```css
-  /// .animate-direction\:\$reverse {
+  /// .animateDirection\:\$reverse {
   ///   animation-direction: reverse;
   /// }
   /// ```
@@ -8363,7 +8363,7 @@ pub trait GeneratedValueSetAnimateDirection: GeneratedSkribbleValue {
     self.append_value("reverse")
   }
   /// ```css
-  /// .animate-direction\:\$alt {
+  /// .animateDirection\:\$alt {
   ///   animation-direction: alternate;
   /// }
   /// ```
@@ -8372,7 +8372,7 @@ pub trait GeneratedValueSetAnimateDirection: GeneratedSkribbleValue {
     self.append_value("alt")
   }
   /// ```css
-  /// .animate-direction\:\$alt-reverse {
+  /// .animateDirection\:\$altReverse {
   ///   animation-direction: alternate-reverse;
   /// }
   /// ```
@@ -8395,7 +8395,7 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimateFillMode {
 }
 pub trait GeneratedValueSetAnimateFillMode: GeneratedSkribbleValue {
   /// ```css
-  /// .animate-fill-mode\:\$none {
+  /// .animateFillMode\:\$none {
   ///   animation-fill-mode: none;
   /// }
   /// ```
@@ -8404,7 +8404,7 @@ pub trait GeneratedValueSetAnimateFillMode: GeneratedSkribbleValue {
     self.append_value("none")
   }
   /// ```css
-  /// .animate-fill-mode\:\$forwards {
+  /// .animateFillMode\:\$forwards {
   ///   animation-fill-mode: forwards;
   /// }
   /// ```
@@ -8413,7 +8413,7 @@ pub trait GeneratedValueSetAnimateFillMode: GeneratedSkribbleValue {
     self.append_value("forwards")
   }
   /// ```css
-  /// .animate-fill-mode\:\$backwards {
+  /// .animateFillMode\:\$backwards {
   ///   animation-fill-mode: backwards;
   /// }
   /// ```
@@ -8422,7 +8422,7 @@ pub trait GeneratedValueSetAnimateFillMode: GeneratedSkribbleValue {
     self.append_value("backwards")
   }
   /// ```css
-  /// .animate-fill-mode\:\$both {
+  /// .animateFillMode\:\$both {
   ///   animation-fill-mode: both;
   /// }
   /// ```
@@ -8445,7 +8445,7 @@ impl GeneratedSkribbleValue for GeneratedAtomAnimateState {
 }
 pub trait GeneratedValueSetAnimateState: GeneratedSkribbleValue {
   /// ```css
-  /// .animate-state\:\$running {
+  /// .animateState\:\$running {
   ///   animation-play-state: running;
   /// }
   /// ```
@@ -8454,7 +8454,7 @@ pub trait GeneratedValueSetAnimateState: GeneratedSkribbleValue {
     self.append_value("running")
   }
   /// ```css
-  /// .animate-state\:\$paused {
+  /// .animateState\:\$paused {
   ///   animation-play-state: paused;
   /// }
   /// ```
@@ -15459,7 +15459,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
     self.append_value("auto")
   }
   /// ```css
-  /// .z\:\$1 {
+  /// .z\:\$-1 {
   ///   z-index: -1;
   /// }
   /// ```
@@ -15468,7 +15468,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
     self.append_value("-1")
   }
   /// ```css
-  /// .z\:\$2 {
+  /// .z\:\$-2 {
   ///   z-index: -2;
   /// }
   /// ```
@@ -15477,7 +15477,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
     self.append_value("-2")
   }
   /// ```css
-  /// .z\:\$3 {
+  /// .z\:\$-3 {
   ///   z-index: -3;
   /// }
   /// ```
@@ -15486,7 +15486,7 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
     self.append_value("-3")
   }
   /// ```css
-  /// .z\:\$5 {
+  /// .z\:\$-5 {
   ///   z-index: -5;
   /// }
   /// ```
@@ -15553,7 +15553,7 @@ impl GeneratedSkribbleValue for GeneratedAtomBgOpacity {
 }
 pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
   /// ```css
-  /// .bg-opacity\:\$0 {
+  /// .bgOpacity\:\$0 {
   ///   --sk-invalid-css-variable: 0%;
   /// }
   /// ```
@@ -15562,7 +15562,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
     self.append_value("0")
   }
   /// ```css
-  /// .bg-opacity\:\$5 {
+  /// .bgOpacity\:\$5 {
   ///   --sk-invalid-css-variable: 5%;
   /// }
   /// ```
@@ -15571,7 +15571,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
     self.append_value("5")
   }
   /// ```css
-  /// .bg-opacity\:\$10 {
+  /// .bgOpacity\:\$10 {
   ///   --sk-invalid-css-variable: 10%;
   /// }
   /// ```
@@ -15580,7 +15580,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
     self.append_value("10")
   }
   /// ```css
-  /// .bg-opacity\:\$20 {
+  /// .bgOpacity\:\$20 {
   ///   --sk-invalid-css-variable: 20%;
   /// }
   /// ```
@@ -15589,7 +15589,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
     self.append_value("20")
   }
   /// ```css
-  /// .bg-opacity\:\$30 {
+  /// .bgOpacity\:\$30 {
   ///   --sk-invalid-css-variable: 30%;
   /// }
   /// ```
@@ -15598,7 +15598,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
     self.append_value("30")
   }
   /// ```css
-  /// .bg-opacity\:\$40 {
+  /// .bgOpacity\:\$40 {
   ///   --sk-invalid-css-variable: 40%;
   /// }
   /// ```
@@ -15607,7 +15607,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
     self.append_value("40")
   }
   /// ```css
-  /// .bg-opacity\:\$50 {
+  /// .bgOpacity\:\$50 {
   ///   --sk-invalid-css-variable: 50%;
   /// }
   /// ```
@@ -15616,7 +15616,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
     self.append_value("50")
   }
   /// ```css
-  /// .bg-opacity\:\$60 {
+  /// .bgOpacity\:\$60 {
   ///   --sk-invalid-css-variable: 60%;
   /// }
   /// ```
@@ -15625,7 +15625,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
     self.append_value("60")
   }
   /// ```css
-  /// .bg-opacity\:\$70 {
+  /// .bgOpacity\:\$70 {
   ///   --sk-invalid-css-variable: 70%;
   /// }
   /// ```
@@ -15634,7 +15634,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
     self.append_value("70")
   }
   /// ```css
-  /// .bg-opacity\:\$75 {
+  /// .bgOpacity\:\$75 {
   ///   --sk-invalid-css-variable: 75%;
   /// }
   /// ```
@@ -15643,7 +15643,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
     self.append_value("75")
   }
   /// ```css
-  /// .bg-opacity\:\$80 {
+  /// .bgOpacity\:\$80 {
   ///   --sk-invalid-css-variable: 80%;
   /// }
   /// ```
@@ -15652,7 +15652,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
     self.append_value("80")
   }
   /// ```css
-  /// .bg-opacity\:\$90 {
+  /// .bgOpacity\:\$90 {
   ///   --sk-invalid-css-variable: 90%;
   /// }
   /// ```
@@ -15661,7 +15661,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
     self.append_value("90")
   }
   /// ```css
-  /// .bg-opacity\:\$95 {
+  /// .bgOpacity\:\$95 {
   ///   --sk-invalid-css-variable: 95%;
   /// }
   /// ```
@@ -15670,7 +15670,7 @@ pub trait GeneratedValueSetBgOpacity: GeneratedSkribbleValue {
     self.append_value("95")
   }
   /// ```css
-  /// .bg-opacity\:\$100 {
+  /// .bgOpacity\:\$100 {
   ///   --sk-invalid-css-variable: 100%;
   /// }
   /// ```

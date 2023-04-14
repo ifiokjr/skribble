@@ -6,14 +6,17 @@ expression: css
 @charset "utf-8";
 @layer default;
 @layer default {
-  .\[padding\|1px\] {
+  .\[padding\=1px\] {
     padding: 1px;
   }
-  .\[something\|red\] {
+  .aria-hidden\:\[--something\=red\] {
+    --something: red;
+  }
+  .hover\:\[--something\=red\] {
     --something: red;
   }
   @media (min-width: 768px) {
-    .md\:\[padding\|1vh\] {
+    .md\:\[padding\=1vh\] {
       padding: 1vh;
     }
   }

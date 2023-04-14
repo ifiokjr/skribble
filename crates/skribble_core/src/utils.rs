@@ -1,4 +1,3 @@
-use heck::ToKebabCase;
 use indent_write::fmt::IndentWriter;
 use regex::Regex;
 use typed_builder::TypedBuilder;
@@ -19,18 +18,19 @@ pub fn format_css_string(value: impl AsRef<str>) -> String {
   for ch in value.chars() {
     if ESCAPE_CHARS.contains(&ch) {
       if !alpha.is_empty() {
-        parts.push(alpha.join("").to_kebab_case());
+        parts.push(alpha.join(""));
         alpha.clear();
       }
 
       parts.push(format!(r"\{}", ch));
+      continue;
     }
 
     alpha.push(ch.to_string())
   }
 
   if !alpha.is_empty() {
-    parts.push(alpha.join("").to_kebab_case());
+    parts.push(alpha.join(""));
     alpha.clear();
   }
 

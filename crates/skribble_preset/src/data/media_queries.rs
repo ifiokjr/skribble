@@ -5,7 +5,7 @@ use skribble_core::MediaQuery;
 lazy_static! {
   pub(crate) static ref MEDIA_QUERIES: Vec<Group<MediaQuery>> = vec![
     Group::builder()
-      .name("deviceCategories")
+      .name("device-categories")
       .description("The device categories for the media query.")
       .items(vec![
         MediaQuery::builder()
@@ -72,12 +72,12 @@ lazy_static! {
       .description("The animation motion preference media query.")
       .items(vec![
         MediaQuery::builder()
-          .name("motionReduce")
+          .name("motion-reduce")
           .query("(prefers-reduced-motion: reduce)")
           .description("The media query for devices with a reduced motion preference.")
           .build(),
         MediaQuery::builder()
-          .name("motionSafe")
+          .name("motion-safe")
           .query("(prefers-reduced-motion: no-preference)")
           .description("The media query for devices with a no preference motion preference.")
           .build(),
@@ -86,7 +86,7 @@ lazy_static! {
   ];
   pub(crate) static ref DARK_MEDIA_QUERIES: Vec<Group<MediaQuery>> = vec![
     Group::builder()
-      .name("darkMode")
+      .name("dark-mode")
       .description("The dark mode media query.")
       .items(vec![
         MediaQuery::builder()

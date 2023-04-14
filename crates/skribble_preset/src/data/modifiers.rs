@@ -5,7 +5,7 @@ use skribble_core::Modifier;
 lazy_static! {
   pub(crate) static ref MODIFIERS: Vec<Group<Modifier>> = vec![
     Group::builder()
-      .name("parentGroup")
+      .name("parent-group")
       .description("These are modifiers that are affect the class name based on parent selectors")
       .items(vec![
         Modifier::builder()
@@ -17,7 +17,7 @@ lazy_static! {
           )
           .build(),
         Modifier::builder()
-          .name("groupHover")
+          .name("group-hover")
           .values(vec![
             ".\\$group:hover &",
             ".group:hover &",
@@ -26,7 +26,7 @@ lazy_static! {
           .description("This class modifier becomes active when a parent group is hovered.")
           .build(),
         Modifier::builder()
-          .name("groupFocus")
+          .name("group-focus")
           .values(vec![
             ".\\$group:focus &",
             ".group:focus &",
@@ -35,7 +35,7 @@ lazy_static! {
           .description("This class modifier becomes active when a parent group is focused.")
           .build(),
         Modifier::builder()
-          .name("groupActive")
+          .name("group-active")
           .values(vec![
             ".\\$group:active &",
             ".group:active &",
@@ -44,7 +44,7 @@ lazy_static! {
           .description("This class modifier becomes active when a parent group is active.")
           .build(),
         Modifier::builder()
-          .name("groupVisited")
+          .name("group-visited")
           .values(vec![
             ".\\$group:visited &",
             ".group:visited &",
@@ -55,7 +55,7 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("hoverGroup")
+      .name("hover-group")
       .items(vec![
         Modifier::builder()
           .name("hover")
@@ -65,7 +65,7 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("activeGroup")
+      .name("active-group")
       .items(vec![
         Modifier::builder()
           .name("active")
@@ -74,7 +74,7 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("focusGroup")
+      .name("focus-group")
       .items(vec![
         Modifier::builder()
           .name("focus")
@@ -83,32 +83,32 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("focusWithinGroup")
+      .name("focus-within-group")
       .items(vec![
         Modifier::builder()
-          .name("focusWithin")
+          .name("focus-within")
           .values(vec!["&:focus-within"])
           .build()
       ])
       .build(),
     Group::builder()
-      .name("focusVisibleGroup")
+      .name("focus-visible-group")
       .items(vec![
         Modifier::builder()
-          .name("focusVisible")
+          .name("focus-visible")
           .values(vec!["&:focus-visible"])
           .build()
       ])
       .build(),
     Group::builder()
-      .name("enabledGroup")
+      .name("enabled-group")
       .items(vec![
         Modifier::builder()
           .name("disabled")
           .values(vec!["&[disabled]", "&[aria-disabled=true]", "&:disabled"],)
           .build(),
         Modifier::builder()
-          .name("notDisabled")
+          .name("not-disabled")
           .values(vec!["&[aria-disabled=false]", "&:disabled"],)
           .build(),
         Modifier::builder()
@@ -118,7 +118,7 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("emptyGroup")
+      .name("empty-group")
       .items(vec![
         Modifier::builder()
           .name("empty")
@@ -127,18 +127,18 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("readGroup")
+      .name("read-group")
       .items(vec![
         Modifier::builder()
-          .name("readWrite")
+          .name("read-write")
           .values(vec!["&:read-write"],)
           .build(),
         Modifier::builder()
-          .name("readOnly")
+          .name("read-only")
           .values(vec!["&[aria-readonly=true]", "&[readonly]", "&:read-only"],)
           .build(),
         Modifier::builder()
-          .name("notReadOnly")
+          .name("not-read-only")
           .values(vec![
             "&[aria-readonly=false]",
             "&[readonly=false]",
@@ -148,7 +148,7 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("expandedGroup")
+      .name("expanded-group")
       .items(vec![
         Modifier::builder()
           .name("expanded")
@@ -157,7 +157,7 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("checkedGroup")
+      .name("checked-group")
       .items(vec![
         Modifier::builder()
           .name("indeterminate")
@@ -174,7 +174,7 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("grabbedGroup")
+      .name("grabbed-group")
       .items(vec![
         Modifier::builder()
           .name("grabbed")
@@ -183,7 +183,7 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("pressedGroup")
+      .name("pressed-group")
       .items(vec![
         Modifier::builder()
           .name("pressed")
@@ -192,25 +192,25 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("invalidGrammarGroup")
+      .name("invalid-grammar-group")
       .items(vec![
         Modifier::builder()
-          .name("invalidGrammar")
+          .name("invalid-grammar")
           .values(vec!["&[aria-invalid=grammar]"])
           .build()
       ])
       .build(),
     Group::builder()
-      .name("invalidSpellingGroup")
+      .name("invalid-spelling-group")
       .items(vec![
         Modifier::builder()
-          .name("invalidSpelling")
+          .name("invalid-spelling")
           .values(vec!["&[aria-invalid=spelling]"])
           .build()
       ])
       .build(),
     Group::builder()
-      .name("validGroup")
+      .name("valid-group")
       .items(vec![
         Modifier::builder()
           .name("valid")
@@ -223,7 +223,7 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("loadingGroup")
+      .name("loading-group")
       .items(vec![
         Modifier::builder()
           .name("loading")
@@ -232,7 +232,7 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("selectedGroup")
+      .name("selected-group")
       .items(vec![
         Modifier::builder()
           .name("selected")
@@ -241,16 +241,16 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("hiddenGroup")
+      .name("hidden-group")
       .items(vec![
         Modifier::builder()
-          .name("ariaHidden")
+          .name("aria-hidden")
           .values(vec!["&[aria-hidden=true]"])
           .build()
       ])
       .build(),
     Group::builder()
-      .name("autofillGroup")
+      .name("autofill-group")
       .items(vec![
         Modifier::builder()
           .name("autofill")
@@ -259,7 +259,7 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("evenGroup")
+      .name("even-group")
       .items(vec![
         Modifier::builder()
           .name("even")
@@ -272,27 +272,27 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("evenGroup")
+      .name("even-group")
       .items(vec![
         Modifier::builder()
-          .name("evenOfType")
+          .name("even-of-type")
           .values(vec!["&:nth-of-type(even)"],)
           .build(),
         Modifier::builder()
-          .name("oddOfType")
+          .name("odd-of-type")
           .values(vec!["&:nth-of-type(odd)"])
           .build(),
       ])
       .build(),
     Group::builder()
-      .name("nodePositionGroup")
+      .name("node-position-group")
       .items(vec![
         Modifier::builder()
           .name("first")
           .values(vec!["&:first"],)
           .build(),
         Modifier::builder()
-          .name("notFirst")
+          .name("not-first")
           .values(vec!["&:not(:first-child)"],)
           .build(),
         Modifier::builder()
@@ -300,34 +300,34 @@ lazy_static! {
           .values(vec!["&:last"],)
           .build(),
         Modifier::builder()
-          .name("notLast")
+          .name("not-last")
           .values(vec!["&:not(:last-child)"])
           .build(),
       ])
       .build(),
     Group::builder()
-      .name("nodeOfTypeGroup")
+      .name("node-of-type-group")
       .items(vec![
         Modifier::builder()
-          .name("firstOfType")
+          .name("first-of-type")
           .values(vec!["&:first-of-type"],)
           .build(),
         Modifier::builder()
-          .name("notFirstOfType")
+          .name("not-first-of-type")
           .values(vec!["&:not(:first-of-type)"],)
           .build(),
         Modifier::builder()
-          .name("lastOfType")
+          .name("last-of-type")
           .values(vec!["&:last-of-type"],)
           .build(),
         Modifier::builder()
-          .name("notLastOfType")
+          .name("not-last-of-type")
           .values(vec!["&:not(:last-of-type)"])
           .build(),
       ])
       .build(),
     Group::builder()
-      .name("visitedGroup")
+      .name("visited-group")
       .items(vec![
         Modifier::builder()
           .name("visited")
@@ -336,7 +336,7 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("optionalGroup")
+      .name("optional-group")
       .items(vec![
         Modifier::builder()
           .name("optional")
@@ -345,41 +345,41 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("activeGroup")
+      .name("active-group")
       .items(vec![
         Modifier::builder()
-          .name("activeLink")
+          .name("active-link")
           .values(vec!["&[aria-current=page]"],)
           .build(),
         Modifier::builder()
-          .name("activeLocation")
+          .name("active-location")
           .values(vec!["&[aria-current=location]"],)
           .build(),
         Modifier::builder()
-          .name("activeDate")
+          .name("active-date")
           .values(vec!["&[aria-current=date]"],)
           .build(),
         Modifier::builder()
-          .name("activeTime")
+          .name("active-time")
           .values(vec!["&[aria-current=time]"],)
           .build(),
         Modifier::builder()
-          .name("activeStep")
+          .name("active-step")
           .values(vec!["&[aria-current=step]"])
           .build(),
       ])
       .build(),
     Group::builder()
-      .name("fullScreenGroup")
+      .name("full-screen-group")
       .items(vec![
         Modifier::builder()
-          .name("fullScreen")
+          .name("full-screen")
           .values(vec!["&:fullscreen"])
           .build()
       ])
       .build(),
     Group::builder()
-      .name("targetGroup")
+      .name("target-group")
       .items(vec![
         Modifier::builder()
           .name("target")
@@ -388,29 +388,29 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("placeholderShownGroup")
+      .name("placeholder-shown-group")
       .items(vec![
         Modifier::builder()
-          .name("placeholderShown")
+          .name("placeholder-shown")
           .values(vec!["&:placeholder-shown"])
           .build()
       ])
       .build(),
     Group::builder()
-      .name("requiredGroup")
+      .name("required-group")
       .items(vec![
         Modifier::builder()
           .name("required")
           .values(vec!["[aria-required=true]", "&:required"],)
           .build(),
         Modifier::builder()
-          .name("notRequired")
+          .name("not-required")
           .values(vec!["[arira-required=false]", "&:not(:required)"])
           .build(),
       ])
       .build(),
     Group::builder()
-      .name("defaultGroup")
+      .name("default-group")
       .items(vec![
         Modifier::builder()
           .name("default")
@@ -419,33 +419,33 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("onlyChildGroup")
+      .name("only-child-group")
       .items(vec![
         Modifier::builder()
-          .name("onlyChild")
+          .name("only-child")
           .values(vec!["&:only-child"])
           .build(),
         Modifier::builder()
-          .name("notOnlyChild")
+          .name("not-only-child")
           .values(vec!["&:not(:only-child)"])
           .build()
       ])
       .build(),
     Group::builder()
-      .name("onlyGroup")
+      .name("only-group")
       .items(vec![
         Modifier::builder()
-          .name("onlyOfType")
+          .name("only-of-type")
           .values(vec!["&:only-of-type"],)
           .build(),
         Modifier::builder()
-          .name("notOnlyOfType")
+          .name("not-only-of-type")
           .values(vec!["&:not(:only-of-type)"])
           .build(),
       ])
       .build(),
     Group::builder()
-      .name("rootGroup")
+      .name("root-group")
       .items(vec![
         Modifier::builder()
           .name("root")
@@ -454,7 +454,7 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("linkGroup")
+      .name("link-group")
       .items(vec![
         Modifier::builder()
           .name("link")
@@ -463,7 +463,7 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("pseudoGroup")
+      .name("pseudo-group")
       .items(vec![
         Modifier::builder()
           .name("placeholder")
@@ -474,11 +474,11 @@ lazy_static! {
           .values(vec!["&::selection"],)
           .build(),
         Modifier::builder()
-          .name("firstLetter")
+          .name("first-letter")
           .values(vec!["&::first-letter"],)
           .build(),
         Modifier::builder()
-          .name("firstLine")
+          .name("first-line")
           .values(vec!["&::first-line"],)
           .build(),
         Modifier::builder()
@@ -493,7 +493,7 @@ lazy_static! {
       .build(),
   ];
   pub(crate) static ref DARK_PARENT_MODIFIERS: Group<Modifier> = Group::builder()
-    .name("parentGroup")
+    .name("parent-group")
     .items(vec![
       Modifier::builder()
         .name("light")

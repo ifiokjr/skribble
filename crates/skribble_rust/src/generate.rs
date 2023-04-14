@@ -67,7 +67,7 @@ fn generate_media_queries(
         1,
       ));
       methods.push(wrap_indent(
-        format!("self.append(format!(\"{name}:[{{}}|{{}}]\", property.trim(), value.trim()))"),
+        format!("self.append(format!(\"{name}:[{{}}={{}}]\", property.trim(), value.trim()))"),
         2,
       ));
       methods.push(wrap_indent("}", 1));
@@ -141,7 +141,7 @@ fn generate_modifiers(
         1,
       ));
       methods.push(wrap_indent(
-        format!("self.append(format!(\"{name}:[{{}}|{{}}]\", property.trim(), value.trim()))"),
+        format!("self.append(format!(\"{name}:[{{}}={{}}]\", property.trim(), value.trim()))"),
         2,
       ));
       methods.push(wrap_indent("}", 1));

@@ -29,7 +29,7 @@ lazy_static! {
         .name("sr")
         .description("Screen reader only")
         .styles(OptionalStringMap::default())
-        .values(vec!["screenReader"])
+        .values(vec!["screen-reader"])
         .build(),
       Atom::builder()
         .name("transition")
@@ -38,9 +38,9 @@ lazy_static! {
         .values(vec!["transition"])
         .build(),
       Atom::builder()
-        .name("transitionProperty")
+        .name("transition-property")
         .styles(indexmap! { "transition-property" => none })
-        .values(vec!["transitionProperties"])
+        .values(vec!["transition-properties"])
         .build(),
       Atom::builder()
         .name("duration")
@@ -66,7 +66,7 @@ lazy_static! {
         })
         .build(),
       Atom::builder()
-        .name("fadeIn")
+        .name("fade-in")
         .description(
           "Fade in an element. Requires the `animate:$in` class to be applied to the element.",
         )
@@ -74,7 +74,7 @@ lazy_static! {
         .values(vec!["opacity"])
         .build(),
       Atom::builder()
-        .name("fadeOut")
+        .name("fade-out")
         .description(
           "Fade out an element. Requires the `animate:$out` class to be applied to the element.",
         )
@@ -82,7 +82,7 @@ lazy_static! {
         .values(vec!["opacity"])
         .build(),
       Atom::builder()
-        .name("spinIn")
+        .name("spin-in")
         .description(
           "Rotate an element to enter. Requires the `animate:$in` class to be applied to the \
            element.",
@@ -91,7 +91,7 @@ lazy_static! {
         .values(vec!["rotation"])
         .build(),
       Atom::builder()
-        .name("spinOut")
+        .name("spin-out")
         .description(
           "Rotate an element to exit. Requires the `animate:$out` class to be applied to the \
            element.",
@@ -100,79 +100,79 @@ lazy_static! {
         .values(vec!["rotation"])
         .build(),
       Atom::builder()
-        .name("slideInLeft")
+        .name("slide-in-left")
         .description(
           "Entry animation from the left. Requires the `animate:$in` class to be applied to the \
            element.",
         )
         .styles(indexmap! { &enter_translate_x => none })
-        .values(vec!["negativeTranslation"])
+        .values(vec!["negative-translation"])
         .build(),
       Atom::builder()
-        .name("slideInRight")
+        .name("slide-in-right")
         .description(
           "Entry animation from the right. Requires the `animate:$in` class to be applied to the \
            element.",
         )
         .styles(indexmap! { &enter_translate_x => none })
-        .values(vec!["positiveTranslation"])
+        .values(vec!["positive-translation"])
         .build(),
       Atom::builder()
-        .name("slideOutLeft")
+        .name("slide-out-left")
         .description(
           "Exit animation to the left. Requires the `animate:$out` class to be applied to the \
            element.",
         )
         .styles(indexmap! { &exit_translate_x => none })
-        .values(vec!["negativeTranslation"])
+        .values(vec!["negative-translation"])
         .build(),
       Atom::builder()
-        .name("slideOutRight")
+        .name("slide-out-right")
         .description(
           "Exit animation to the right. Requires the `animate:$out` class to be applied to the \
            element.",
         )
         .styles(indexmap! { &exit_translate_x => none })
-        .values(vec!["positiveTranslation"])
+        .values(vec!["positive-translation"])
         .build(),
       Atom::builder()
-        .name("slideInTop")
+        .name("slide-in-top")
         .description(
           "Entry animation from the top. Requires the `animate:$in` class to be applied to the \
            element.",
         )
         .styles(indexmap! { &enter_translate_y => none })
-        .values(vec!["negativeTranslation"])
+        .values(vec!["negative-translation"])
         .build(),
       Atom::builder()
-        .name("slideInBottom")
+        .name("slide-in-bottom")
         .description(
           "Entry animation from the bottom. Requires the `animate:$in` class to be applied to the \
            element.",
         )
         .styles(indexmap! { &enter_translate_y => none })
-        .values(vec!["positiveTranslation"])
+        .values(vec!["positive-translation"])
         .build(),
       Atom::builder()
-        .name("slideOutTop")
+        .name("slide-out-top")
         .description(
           "Exit animation to the top. Requires the `animate:$out` class to be applied to the \
            element.",
         )
         .styles(indexmap! { &exit_translate_y => none })
-        .values(vec!["negativeTranslation"])
+        .values(vec!["negative-translation"])
         .build(),
       Atom::builder()
-        .name("slideOutBottom")
+        .name("slide-out-bottom")
         .description(
           "Exit animation to the bottom. Requires the `animate:$out` class to be applied to the \
            element.",
         )
         .styles(indexmap! { &exit_translate_y => none })
-        .values(vec!["positiveTranslation"])
+        .values(vec!["positive-translation"])
         .build(),
       Atom::builder()
-        .name("zoomIn")
+        .name("zoom-in")
         .description(
           "Entry animation from this zoom level. Requires the `animate:$in` class to be applied \
            to the element.",
@@ -181,7 +181,7 @@ lazy_static! {
         .values(vec!["zoom"])
         .build(),
       Atom::builder()
-        .name("zoomOut")
+        .name("zoom-out")
         .description(
           "Exit animation from this zoom level. Requires the `animate:$out` class to be applied \
            to the element.",
@@ -190,38 +190,38 @@ lazy_static! {
         .values(vec!["zoom"])
         .build(),
       Atom::builder()
-        .name("animateDuration")
+        .name("animate-duration")
         .styles(indexmap! { "animation-duration" => none })
         .values(vec!["duration"])
         .build(),
       Atom::builder()
-        .name("animateEasing")
+        .name("animate-easing")
         .styles(indexmap! { "animation-timing-function" => none })
         .values(vec!["easing"])
         .build(),
       Atom::builder()
-        .name("animateDelay")
+        .name("animate-delay")
         .styles(indexmap! { "animation-delay" => none })
         .values(vec!["duration"])
         .build(),
       Atom::builder()
-        .name("animateRepeat")
+        .name("animate-repeat")
         .styles(indexmap! { "animation-iteration-count" => none })
-        .values(vec!["animationRepetitions"])
+        .values(vec!["animation-repetitions"])
         .build(),
       Atom::builder()
-        .name("animateDirection")
+        .name("animate-direction")
         .styles(indexmap! { "animation-direction" => none })
-        .values(vec!["animationDirection"])
+        .values(vec!["animation-direction"])
         .build(),
       Atom::builder()
-        .name("animateFillMode")
-        .values(vec!["animationFillMode"])
+        .name("animate-fill-mode")
+        .values(vec!["animation-fill-mode"])
         .styles(indexmap! { "animation-fill-mode" => none })
         .build(),
       Atom::builder()
-        .name("animateState")
-        .values(vec!["animationState"])
+        .name("animate-state")
+        .values(vec!["animation-state"])
         .styles(indexmap! { "animation-play-state" => none })
         .build(),
       Atom::builder()
@@ -336,7 +336,7 @@ lazy_static! {
         .build(),
       Atom::builder()
         .name("z")
-        .values(vec!["zIndex"])
+        .values(vec!["z-index"])
         .styles(indexmap! { "z-index" => none })
         .build(),
       Atom::builder()
@@ -350,7 +350,7 @@ lazy_static! {
         .styles(indexmap! { "background-color" => none })
         .build(),
       Atom::builder()
-        .name("bgOpacity")
+        .name("bg-opacity")
         .values(vec!["opacity"])
         .styles(indexmap! { bg_opacity => none })
         .build(),

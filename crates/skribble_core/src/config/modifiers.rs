@@ -62,6 +62,12 @@ impl Modifiers {
   }
 }
 
+impl From<Vec<Group<Modifier>>> for Modifiers {
+  fn from(modifiers: Vec<Group<Modifier>>) -> Self {
+    Self(modifiers)
+  }
+}
+
 impl IntoIterator for Modifiers {
   type IntoIter = std::vec::IntoIter<Self::Item>;
   type Item = Group<Modifier>;

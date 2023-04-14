@@ -30,7 +30,7 @@ lazy_static! {
         .styles(indexmap! { "font-style" => "italic" })
         .build(),
       NamedClass::builder()
-        .name("nonItalic")
+        .name("non-italic")
         .styles(indexmap! { "font-style" => "normal" })
         .build(),
       NamedClass::builder()
@@ -45,7 +45,7 @@ lazy_static! {
         })
         .build(),
       NamedClass::builder()
-        .name("subpixelAntialiased")
+        .name("subpixel-antialiased")
         .styles(indexmap! {
           "-webkit-font-smoothing" => "auto",
           "-moz-osx-font-smoothing" => "auto",
@@ -56,7 +56,7 @@ lazy_static! {
         .styles(indexmap! { "display" => "block" })
         .build(),
       NamedClass::builder()
-        .name("inlineBlock")
+        .name("inline-block")
         .styles(indexmap! { "display" => "inline-block" })
         .build(),
       NamedClass::builder()
@@ -64,7 +64,7 @@ lazy_static! {
         .styles(indexmap! { "display" => "inline" })
         .build(),
       NamedClass::builder()
-        .name("flowRoot")
+        .name("flow-root")
         .styles(indexmap! { "display" => "flow-root" })
         .build(),
       NamedClass::builder()
@@ -84,19 +84,19 @@ lazy_static! {
         .styles(indexmap! { "visibility" => "visible" })
         .build(),
       NamedClass::builder()
-        .name("removeFilter")
+        .name("remove-filter")
         .styles(indexmap! { group_nested_filter => "none" })
         .build(),
       NamedClass::builder()
-        .name("removeBackdrop")
+        .name("remove-backdrop")
         .styles(indexmap! { group_nested_backdrop => "none" })
         .build(),
       NamedClass::builder()
-        .name("transformGpu")
+        .name("transform-gpu")
         .styles(indexmap! { &group_nested_transform => group_nested_transform_gpu })
         .build(),
       NamedClass::builder()
-        .name("transformCpu")
+        .name("transform-cpu")
         .styles(indexmap! { &group_nested_transform => group_nested_transform_cpu })
         .build(),
     ]
