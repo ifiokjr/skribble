@@ -59,6 +59,18 @@ fn generate_media_queries(
         2,
       ));
       methods.push(wrap_indent("}", 1));
+      methods.push(wrap_indent(
+        format!(
+          "#[inline]\nfn {method_name}_(&self, property: &'static str, value: &'static str) -> \
+           String {{"
+        ),
+        1,
+      ));
+      methods.push(wrap_indent(
+        format!("self.append(format!(\"{name}:[{{}}|{{}}]\", property.trim(), value.trim()))"),
+        2,
+      ));
+      methods.push(wrap_indent("}", 1));
     }
 
     methods.push("}".into());
@@ -117,6 +129,19 @@ fn generate_modifiers(
       ));
       methods.push(wrap_indent(
         format!("{struct_name}::from_ref(self.append(\"{name}\"))"),
+        2,
+      ));
+      methods.push(wrap_indent("}", 1));
+
+      methods.push(wrap_indent(
+        format!(
+          "#[inline]\nfn {method_name}_(&self, property: &'static str, value: &'static str) -> \
+           String {{"
+        ),
+        1,
+      ));
+      methods.push(wrap_indent(
+        format!("self.append(format!(\"{name}:[{{}}|{{}}]\", property.trim(), value.trim()))"),
         2,
       ));
       methods.push(wrap_indent("}", 1));

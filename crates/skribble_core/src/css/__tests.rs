@@ -105,6 +105,23 @@ fn classes_with_atom_arguments() -> AnyEmptyResult {
   Ok(())
 }
 
+#[test]
+fn classes_with_modifier_arguments() -> AnyEmptyResult {
+  let mut runner = SkribbleRunner::try_new(create_config())?;
+  let runner_config = runner.initialize()?;
+  let mut classes = Classes::default();
+  classes.insert_factories(vec![
+    ClassFactory::from_string(runner_config, "[padding|1px]"),
+    ClassFactory::from_string(runner_config, "md:[padding|1vh]"),
+    ClassFactory::from_string(runner_config, "hover:[--something|red]"),
+  ]);
+  classes.sort_by_class();
+  let css = classes.to_skribble_css(runner_config)?;
+  insta::assert_display_snapshot!(css);
+
+  Ok(())
+}
+
 fn create_config() -> StyleConfig {
   StyleConfig::builder()
     .keyframes(vec![

@@ -153,7 +153,7 @@ impl Class {
     // Append an argument if it exists.
     if let Some(ref argument) = self.argument {
       let prefix = if tokens.is_empty() { "" } else { "\\:" };
-      let argument = argument.to_string();
+      let argument = format_css_string(argument.to_string());
       selector = format!("{selector}{prefix}\\[{argument}\\]");
     };
 
@@ -195,6 +195,10 @@ impl Class {
       .and_then(|name| config.classes.get(name))
     {
       named_class.write_css_properties(writer, config)?;
+    }
+
+    if let Some(argument) = self.get_argument() {
+      argument.write_css(writer, config)?;
     }
 
     Ok(())

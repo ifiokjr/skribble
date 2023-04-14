@@ -7,7 +7,7 @@ use crate::constants::INDENTATION;
 
 const ESCAPE_CHARS: &[char] = &[
   '#', '&', '~', '=', '>', '\'', ':', '"', '!', ';', ',', '.', '*', '+', '\\', ' ', '[', ']', '(',
-  ')', '/', '^', '$',
+  ')', '/', '^', '$', '|',
 ];
 
 /// Format the provided string to be a valid string.

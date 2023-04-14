@@ -805,6 +805,10 @@ pub trait GeneratedMediaQueryDeviceCategories: GeneratedSkribbleValue {
   fn screen(&self) -> GeneratedMediaQueryDeviceCategoriesChild {
     GeneratedMediaQueryDeviceCategoriesChild::from_ref(self.append("screen"))
   }
+  #[inline]
+  fn screen_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("screen:[{}|{}]", property.trim(), value.trim()))
+  }
   /// The media query for devices with a printer.
   ///
   /// ```css
@@ -815,6 +819,10 @@ pub trait GeneratedMediaQueryDeviceCategories: GeneratedSkribbleValue {
   #[inline]
   fn print(&self) -> GeneratedMediaQueryDeviceCategoriesChild {
     GeneratedMediaQueryDeviceCategoriesChild::from_ref(self.append("print"))
+  }
+  #[inline]
+  fn print_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("print:[{}|{}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedMediaQueryBreakpointsChild(String);
@@ -841,6 +849,10 @@ pub trait GeneratedMediaQueryBreakpoints: GeneratedSkribbleValue {
   fn sm(&self) -> GeneratedMediaQueryBreakpointsChild {
     GeneratedMediaQueryBreakpointsChild::from_ref(self.append("sm"))
   }
+  #[inline]
+  fn sm_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("sm:[{}|{}]", property.trim(), value.trim()))
+  }
   /// The breakpoint for devices screen size greater than medium
   ///
   /// ```css
@@ -851,6 +863,10 @@ pub trait GeneratedMediaQueryBreakpoints: GeneratedSkribbleValue {
   #[inline]
   fn md(&self) -> GeneratedMediaQueryBreakpointsChild {
     GeneratedMediaQueryBreakpointsChild::from_ref(self.append("md"))
+  }
+  #[inline]
+  fn md_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("md:[{}|{}]", property.trim(), value.trim()))
   }
   /// The breakpoint for devices screen size greater than large
   ///
@@ -863,6 +879,10 @@ pub trait GeneratedMediaQueryBreakpoints: GeneratedSkribbleValue {
   fn lg(&self) -> GeneratedMediaQueryBreakpointsChild {
     GeneratedMediaQueryBreakpointsChild::from_ref(self.append("lg"))
   }
+  #[inline]
+  fn lg_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("lg:[{}|{}]", property.trim(), value.trim()))
+  }
   /// The breakpoint for devices screen size greater than extra large
   ///
   /// ```css
@@ -874,6 +894,10 @@ pub trait GeneratedMediaQueryBreakpoints: GeneratedSkribbleValue {
   fn xl(&self) -> GeneratedMediaQueryBreakpointsChild {
     GeneratedMediaQueryBreakpointsChild::from_ref(self.append("xl"))
   }
+  #[inline]
+  fn xl_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("xl:[{}|{}]", property.trim(), value.trim()))
+  }
   /// The breakpoint for devices screen size greater than xxl
   ///
   /// ```css
@@ -884,6 +908,10 @@ pub trait GeneratedMediaQueryBreakpoints: GeneratedSkribbleValue {
   #[inline]
   fn xxl(&self) -> GeneratedMediaQueryBreakpointsChild {
     GeneratedMediaQueryBreakpointsChild::from_ref(self.append("xxl"))
+  }
+  #[inline]
+  fn xxl_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("xxl:[{}|{}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedMediaQueryOrientationChild(String);
@@ -910,6 +938,10 @@ pub trait GeneratedMediaQueryOrientation: GeneratedSkribbleValue {
   fn portrait(&self) -> GeneratedMediaQueryOrientationChild {
     GeneratedMediaQueryOrientationChild::from_ref(self.append("portrait"))
   }
+  #[inline]
+  fn portrait_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("portrait:[{}|{}]", property.trim(), value.trim()))
+  }
   /// The media query for devices with a landscape orientation.
   ///
   /// ```css
@@ -920,6 +952,10 @@ pub trait GeneratedMediaQueryOrientation: GeneratedSkribbleValue {
   #[inline]
   fn landscape(&self) -> GeneratedMediaQueryOrientationChild {
     GeneratedMediaQueryOrientationChild::from_ref(self.append("landscape"))
+  }
+  #[inline]
+  fn landscape_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("landscape:[{}|{}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedMediaQueryMotionChild(String);
@@ -946,6 +982,14 @@ pub trait GeneratedMediaQueryMotion: GeneratedSkribbleValue {
   fn motion_reduce(&self) -> GeneratedMediaQueryMotionChild {
     GeneratedMediaQueryMotionChild::from_ref(self.append("motionReduce"))
   }
+  #[inline]
+  fn motion_reduce_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "motionReduce:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
+  }
   /// The media query for devices with a no preference motion preference.
   ///
   /// ```css
@@ -956,6 +1000,10 @@ pub trait GeneratedMediaQueryMotion: GeneratedSkribbleValue {
   #[inline]
   fn motion_safe(&self) -> GeneratedMediaQueryMotionChild {
     GeneratedMediaQueryMotionChild::from_ref(self.append("motionSafe"))
+  }
+  #[inline]
+  fn motion_safe_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("motionSafe:[{}|{}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedMediaQueryDarkModeChild(String);
@@ -982,6 +1030,10 @@ pub trait GeneratedMediaQueryDarkMode: GeneratedSkribbleValue {
   fn dark(&self) -> GeneratedMediaQueryDarkModeChild {
     GeneratedMediaQueryDarkModeChild::from_ref(self.append("dark"))
   }
+  #[inline]
+  fn dark_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("dark:[{}|{}]", property.trim(), value.trim()))
+  }
   /// The media query for devices with a light color scheme.
   ///
   /// ```css
@@ -992,6 +1044,10 @@ pub trait GeneratedMediaQueryDarkMode: GeneratedSkribbleValue {
   #[inline]
   fn light(&self) -> GeneratedMediaQueryDarkModeChild {
     GeneratedMediaQueryDarkModeChild::from_ref(self.append("light"))
+  }
+  #[inline]
+  fn light_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("light:[{}|{}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierParentGroupChild(String);
@@ -1019,6 +1075,10 @@ pub trait GeneratedModifierParentGroup: GeneratedSkribbleValue {
   fn rtl(&self) -> GeneratedModifierParentGroupChild {
     GeneratedModifierParentGroupChild::from_ref(self.append("rtl"))
   }
+  #[inline]
+  fn rtl_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("rtl:[{}|{}]", property.trim(), value.trim()))
+  }
   /// This class modifier becomes active when a parent group is hovered.
   ///
   /// ```css
@@ -1029,6 +1089,10 @@ pub trait GeneratedModifierParentGroup: GeneratedSkribbleValue {
   #[inline]
   fn group_hover(&self) -> GeneratedModifierParentGroupChild {
     GeneratedModifierParentGroupChild::from_ref(self.append("groupHover"))
+  }
+  #[inline]
+  fn group_hover_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("groupHover:[{}|{}]", property.trim(), value.trim()))
   }
   /// This class modifier becomes active when a parent group is focused.
   ///
@@ -1041,6 +1105,10 @@ pub trait GeneratedModifierParentGroup: GeneratedSkribbleValue {
   fn group_focus(&self) -> GeneratedModifierParentGroupChild {
     GeneratedModifierParentGroupChild::from_ref(self.append("groupFocus"))
   }
+  #[inline]
+  fn group_focus_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("groupFocus:[{}|{}]", property.trim(), value.trim()))
+  }
   /// This class modifier becomes active when a parent group is active.
   ///
   /// ```css
@@ -1052,6 +1120,14 @@ pub trait GeneratedModifierParentGroup: GeneratedSkribbleValue {
   fn group_active(&self) -> GeneratedModifierParentGroupChild {
     GeneratedModifierParentGroupChild::from_ref(self.append("groupActive"))
   }
+  #[inline]
+  fn group_active_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "groupActive:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
+  }
   /// This class modifier becomes active when a parent group is visited.
   ///
   /// ```css
@@ -1062,6 +1138,14 @@ pub trait GeneratedModifierParentGroup: GeneratedSkribbleValue {
   #[inline]
   fn group_visited(&self) -> GeneratedModifierParentGroupChild {
     GeneratedModifierParentGroupChild::from_ref(self.append("groupVisited"))
+  }
+  #[inline]
+  fn group_visited_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "groupVisited:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
   }
 }
 pub struct GeneratedModifierHoverGroupChild(String);
@@ -1088,6 +1172,10 @@ pub trait GeneratedModifierHoverGroup: GeneratedSkribbleValue {
   fn hover(&self) -> GeneratedModifierHoverGroupChild {
     GeneratedModifierHoverGroupChild::from_ref(self.append("hover"))
   }
+  #[inline]
+  fn hover_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("hover:[{}|{}]", property.trim(), value.trim()))
+  }
 }
 pub struct GeneratedModifierActiveGroupChild(String);
 impl GeneratedSkribbleValue for GeneratedModifierActiveGroupChild {
@@ -1111,6 +1199,10 @@ pub trait GeneratedModifierActiveGroup: GeneratedSkribbleValue {
   fn active(&self) -> GeneratedModifierActiveGroupChild {
     GeneratedModifierActiveGroupChild::from_ref(self.append("active"))
   }
+  #[inline]
+  fn active_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("active:[{}|{}]", property.trim(), value.trim()))
+  }
   /// ```css
   /// &[aria-current=page] {
   ///   /* ... */
@@ -1119,6 +1211,10 @@ pub trait GeneratedModifierActiveGroup: GeneratedSkribbleValue {
   #[inline]
   fn active_link(&self) -> GeneratedModifierActiveGroupChild {
     GeneratedModifierActiveGroupChild::from_ref(self.append("activeLink"))
+  }
+  #[inline]
+  fn active_link_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("activeLink:[{}|{}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &[aria-current=location] {
@@ -1129,6 +1225,14 @@ pub trait GeneratedModifierActiveGroup: GeneratedSkribbleValue {
   fn active_location(&self) -> GeneratedModifierActiveGroupChild {
     GeneratedModifierActiveGroupChild::from_ref(self.append("activeLocation"))
   }
+  #[inline]
+  fn active_location_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "activeLocation:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
+  }
   /// ```css
   /// &[aria-current=date] {
   ///   /* ... */
@@ -1137,6 +1241,10 @@ pub trait GeneratedModifierActiveGroup: GeneratedSkribbleValue {
   #[inline]
   fn active_date(&self) -> GeneratedModifierActiveGroupChild {
     GeneratedModifierActiveGroupChild::from_ref(self.append("activeDate"))
+  }
+  #[inline]
+  fn active_date_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("activeDate:[{}|{}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &[aria-current=time] {
@@ -1147,6 +1255,10 @@ pub trait GeneratedModifierActiveGroup: GeneratedSkribbleValue {
   fn active_time(&self) -> GeneratedModifierActiveGroupChild {
     GeneratedModifierActiveGroupChild::from_ref(self.append("activeTime"))
   }
+  #[inline]
+  fn active_time_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("activeTime:[{}|{}]", property.trim(), value.trim()))
+  }
   /// ```css
   /// &[aria-current=step] {
   ///   /* ... */
@@ -1155,6 +1267,10 @@ pub trait GeneratedModifierActiveGroup: GeneratedSkribbleValue {
   #[inline]
   fn active_step(&self) -> GeneratedModifierActiveGroupChild {
     GeneratedModifierActiveGroupChild::from_ref(self.append("activeStep"))
+  }
+  #[inline]
+  fn active_step_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("activeStep:[{}|{}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierFocusGroupChild(String);
@@ -1179,6 +1295,10 @@ pub trait GeneratedModifierFocusGroup: GeneratedSkribbleValue {
   fn focus(&self) -> GeneratedModifierFocusGroupChild {
     GeneratedModifierFocusGroupChild::from_ref(self.append("focus"))
   }
+  #[inline]
+  fn focus_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("focus:[{}|{}]", property.trim(), value.trim()))
+  }
 }
 pub struct GeneratedModifierFocusWithinGroupChild(String);
 impl GeneratedSkribbleValue for GeneratedModifierFocusWithinGroupChild {
@@ -1201,6 +1321,14 @@ pub trait GeneratedModifierFocusWithinGroup: GeneratedSkribbleValue {
   #[inline]
   fn focus_within(&self) -> GeneratedModifierFocusWithinGroupChild {
     GeneratedModifierFocusWithinGroupChild::from_ref(self.append("focusWithin"))
+  }
+  #[inline]
+  fn focus_within_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "focusWithin:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
   }
 }
 pub struct GeneratedModifierFocusVisibleGroupChild(String);
@@ -1225,6 +1353,14 @@ pub trait GeneratedModifierFocusVisibleGroup: GeneratedSkribbleValue {
   fn focus_visible(&self) -> GeneratedModifierFocusVisibleGroupChild {
     GeneratedModifierFocusVisibleGroupChild::from_ref(self.append("focusVisible"))
   }
+  #[inline]
+  fn focus_visible_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "focusVisible:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
+  }
 }
 pub struct GeneratedModifierEnabledGroupChild(String);
 impl GeneratedSkribbleValue for GeneratedModifierEnabledGroupChild {
@@ -1248,6 +1384,10 @@ pub trait GeneratedModifierEnabledGroup: GeneratedSkribbleValue {
   fn disabled(&self) -> GeneratedModifierEnabledGroupChild {
     GeneratedModifierEnabledGroupChild::from_ref(self.append("disabled"))
   }
+  #[inline]
+  fn disabled_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("disabled:[{}|{}]", property.trim(), value.trim()))
+  }
   /// ```css
   /// &[aria-disabled=false], &:disabled {
   ///   /* ... */
@@ -1257,6 +1397,14 @@ pub trait GeneratedModifierEnabledGroup: GeneratedSkribbleValue {
   fn not_disabled(&self) -> GeneratedModifierEnabledGroupChild {
     GeneratedModifierEnabledGroupChild::from_ref(self.append("notDisabled"))
   }
+  #[inline]
+  fn not_disabled_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "notDisabled:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
+  }
   /// ```css
   /// &:enabled {
   ///   /* ... */
@@ -1265,6 +1413,10 @@ pub trait GeneratedModifierEnabledGroup: GeneratedSkribbleValue {
   #[inline]
   fn enabled(&self) -> GeneratedModifierEnabledGroupChild {
     GeneratedModifierEnabledGroupChild::from_ref(self.append("enabled"))
+  }
+  #[inline]
+  fn enabled_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("enabled:[{}|{}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierEmptyGroupChild(String);
@@ -1289,6 +1441,10 @@ pub trait GeneratedModifierEmptyGroup: GeneratedSkribbleValue {
   fn empty(&self) -> GeneratedModifierEmptyGroupChild {
     GeneratedModifierEmptyGroupChild::from_ref(self.append("empty"))
   }
+  #[inline]
+  fn empty_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("empty:[{}|{}]", property.trim(), value.trim()))
+  }
 }
 pub struct GeneratedModifierReadGroupChild(String);
 impl GeneratedSkribbleValue for GeneratedModifierReadGroupChild {
@@ -1312,6 +1468,10 @@ pub trait GeneratedModifierReadGroup: GeneratedSkribbleValue {
   fn read_write(&self) -> GeneratedModifierReadGroupChild {
     GeneratedModifierReadGroupChild::from_ref(self.append("readWrite"))
   }
+  #[inline]
+  fn read_write_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("readWrite:[{}|{}]", property.trim(), value.trim()))
+  }
   /// ```css
   /// &[aria-readonly=true], &[readonly], &:read-only {
   ///   /* ... */
@@ -1321,6 +1481,10 @@ pub trait GeneratedModifierReadGroup: GeneratedSkribbleValue {
   fn read_only(&self) -> GeneratedModifierReadGroupChild {
     GeneratedModifierReadGroupChild::from_ref(self.append("readOnly"))
   }
+  #[inline]
+  fn read_only_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("readOnly:[{}|{}]", property.trim(), value.trim()))
+  }
   /// ```css
   /// &[aria-readonly=false], &[readonly=false], &:not(:read-only) {
   ///   /* ... */
@@ -1329,6 +1493,14 @@ pub trait GeneratedModifierReadGroup: GeneratedSkribbleValue {
   #[inline]
   fn not_read_only(&self) -> GeneratedModifierReadGroupChild {
     GeneratedModifierReadGroupChild::from_ref(self.append("notReadOnly"))
+  }
+  #[inline]
+  fn not_read_only_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "notReadOnly:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
   }
 }
 pub struct GeneratedModifierExpandedGroupChild(String);
@@ -1353,6 +1525,10 @@ pub trait GeneratedModifierExpandedGroup: GeneratedSkribbleValue {
   fn expanded(&self) -> GeneratedModifierExpandedGroupChild {
     GeneratedModifierExpandedGroupChild::from_ref(self.append("expanded"))
   }
+  #[inline]
+  fn expanded_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("expanded:[{}|{}]", property.trim(), value.trim()))
+  }
 }
 pub struct GeneratedModifierCheckedGroupChild(String);
 impl GeneratedSkribbleValue for GeneratedModifierCheckedGroupChild {
@@ -1376,6 +1552,14 @@ pub trait GeneratedModifierCheckedGroup: GeneratedSkribbleValue {
   fn indeterminate(&self) -> GeneratedModifierCheckedGroupChild {
     GeneratedModifierCheckedGroupChild::from_ref(self.append("indeterminate"))
   }
+  #[inline]
+  fn indeterminate_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "indeterminate:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
+  }
   /// ```css
   /// &[aria-checked=true], &:checked {
   ///   /* ... */
@@ -1385,6 +1569,10 @@ pub trait GeneratedModifierCheckedGroup: GeneratedSkribbleValue {
   fn checked(&self) -> GeneratedModifierCheckedGroupChild {
     GeneratedModifierCheckedGroupChild::from_ref(self.append("checked"))
   }
+  #[inline]
+  fn checked_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("checked:[{}|{}]", property.trim(), value.trim()))
+  }
   /// ```css
   /// &[aria-checked=false], &:not(:checked) {
   ///   /* ... */
@@ -1393,6 +1581,10 @@ pub trait GeneratedModifierCheckedGroup: GeneratedSkribbleValue {
   #[inline]
   fn unchecked(&self) -> GeneratedModifierCheckedGroupChild {
     GeneratedModifierCheckedGroupChild::from_ref(self.append("unchecked"))
+  }
+  #[inline]
+  fn unchecked_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("unchecked:[{}|{}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierGrabbedGroupChild(String);
@@ -1417,6 +1609,10 @@ pub trait GeneratedModifierGrabbedGroup: GeneratedSkribbleValue {
   fn grabbed(&self) -> GeneratedModifierGrabbedGroupChild {
     GeneratedModifierGrabbedGroupChild::from_ref(self.append("grabbed"))
   }
+  #[inline]
+  fn grabbed_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("grabbed:[{}|{}]", property.trim(), value.trim()))
+  }
 }
 pub struct GeneratedModifierPressedGroupChild(String);
 impl GeneratedSkribbleValue for GeneratedModifierPressedGroupChild {
@@ -1439,6 +1635,10 @@ pub trait GeneratedModifierPressedGroup: GeneratedSkribbleValue {
   #[inline]
   fn pressed(&self) -> GeneratedModifierPressedGroupChild {
     GeneratedModifierPressedGroupChild::from_ref(self.append("pressed"))
+  }
+  #[inline]
+  fn pressed_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("pressed:[{}|{}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierInvalidGrammarGroupChild(String);
@@ -1463,6 +1663,14 @@ pub trait GeneratedModifierInvalidGrammarGroup: GeneratedSkribbleValue {
   fn invalid_grammar(&self) -> GeneratedModifierInvalidGrammarGroupChild {
     GeneratedModifierInvalidGrammarGroupChild::from_ref(self.append("invalidGrammar"))
   }
+  #[inline]
+  fn invalid_grammar_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "invalidGrammar:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
+  }
 }
 pub struct GeneratedModifierInvalidSpellingGroupChild(String);
 impl GeneratedSkribbleValue for GeneratedModifierInvalidSpellingGroupChild {
@@ -1485,6 +1693,14 @@ pub trait GeneratedModifierInvalidSpellingGroup: GeneratedSkribbleValue {
   #[inline]
   fn invalid_spelling(&self) -> GeneratedModifierInvalidSpellingGroupChild {
     GeneratedModifierInvalidSpellingGroupChild::from_ref(self.append("invalidSpelling"))
+  }
+  #[inline]
+  fn invalid_spelling_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "invalidSpelling:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
   }
 }
 pub struct GeneratedModifierValidGroupChild(String);
@@ -1509,6 +1725,10 @@ pub trait GeneratedModifierValidGroup: GeneratedSkribbleValue {
   fn valid(&self) -> GeneratedModifierValidGroupChild {
     GeneratedModifierValidGroupChild::from_ref(self.append("valid"))
   }
+  #[inline]
+  fn valid_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("valid:[{}|{}]", property.trim(), value.trim()))
+  }
   /// ```css
   /// &[aria-invalid=true], &:invalid {
   ///   /* ... */
@@ -1517,6 +1737,10 @@ pub trait GeneratedModifierValidGroup: GeneratedSkribbleValue {
   #[inline]
   fn invalid(&self) -> GeneratedModifierValidGroupChild {
     GeneratedModifierValidGroupChild::from_ref(self.append("invalid"))
+  }
+  #[inline]
+  fn invalid_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("invalid:[{}|{}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierLoadingGroupChild(String);
@@ -1541,6 +1765,10 @@ pub trait GeneratedModifierLoadingGroup: GeneratedSkribbleValue {
   fn loading(&self) -> GeneratedModifierLoadingGroupChild {
     GeneratedModifierLoadingGroupChild::from_ref(self.append("loading"))
   }
+  #[inline]
+  fn loading_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("loading:[{}|{}]", property.trim(), value.trim()))
+  }
 }
 pub struct GeneratedModifierSelectedGroupChild(String);
 impl GeneratedSkribbleValue for GeneratedModifierSelectedGroupChild {
@@ -1563,6 +1791,10 @@ pub trait GeneratedModifierSelectedGroup: GeneratedSkribbleValue {
   #[inline]
   fn selected(&self) -> GeneratedModifierSelectedGroupChild {
     GeneratedModifierSelectedGroupChild::from_ref(self.append("selected"))
+  }
+  #[inline]
+  fn selected_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("selected:[{}|{}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierHiddenGroupChild(String);
@@ -1587,6 +1819,10 @@ pub trait GeneratedModifierHiddenGroup: GeneratedSkribbleValue {
   fn aria_hidden(&self) -> GeneratedModifierHiddenGroupChild {
     GeneratedModifierHiddenGroupChild::from_ref(self.append("ariaHidden"))
   }
+  #[inline]
+  fn aria_hidden_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("ariaHidden:[{}|{}]", property.trim(), value.trim()))
+  }
 }
 pub struct GeneratedModifierAutofillGroupChild(String);
 impl GeneratedSkribbleValue for GeneratedModifierAutofillGroupChild {
@@ -1609,6 +1845,10 @@ pub trait GeneratedModifierAutofillGroup: GeneratedSkribbleValue {
   #[inline]
   fn autofill(&self) -> GeneratedModifierAutofillGroupChild {
     GeneratedModifierAutofillGroupChild::from_ref(self.append("autofill"))
+  }
+  #[inline]
+  fn autofill_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("autofill:[{}|{}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierEvenGroupChild(String);
@@ -1633,6 +1873,10 @@ pub trait GeneratedModifierEvenGroup: GeneratedSkribbleValue {
   fn even(&self) -> GeneratedModifierEvenGroupChild {
     GeneratedModifierEvenGroupChild::from_ref(self.append("even"))
   }
+  #[inline]
+  fn even_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("even:[{}|{}]", property.trim(), value.trim()))
+  }
   /// ```css
   /// &:odd {
   ///   /* ... */
@@ -1641,6 +1885,10 @@ pub trait GeneratedModifierEvenGroup: GeneratedSkribbleValue {
   #[inline]
   fn odd(&self) -> GeneratedModifierEvenGroupChild {
     GeneratedModifierEvenGroupChild::from_ref(self.append("odd"))
+  }
+  #[inline]
+  fn odd_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("odd:[{}|{}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &:nth-of-type(even) {
@@ -1651,6 +1899,10 @@ pub trait GeneratedModifierEvenGroup: GeneratedSkribbleValue {
   fn even_of_type(&self) -> GeneratedModifierEvenGroupChild {
     GeneratedModifierEvenGroupChild::from_ref(self.append("evenOfType"))
   }
+  #[inline]
+  fn even_of_type_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("evenOfType:[{}|{}]", property.trim(), value.trim()))
+  }
   /// ```css
   /// &:nth-of-type(odd) {
   ///   /* ... */
@@ -1659,6 +1911,10 @@ pub trait GeneratedModifierEvenGroup: GeneratedSkribbleValue {
   #[inline]
   fn odd_of_type(&self) -> GeneratedModifierEvenGroupChild {
     GeneratedModifierEvenGroupChild::from_ref(self.append("oddOfType"))
+  }
+  #[inline]
+  fn odd_of_type_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("oddOfType:[{}|{}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierNodePositionGroupChild(String);
@@ -1683,6 +1939,10 @@ pub trait GeneratedModifierNodePositionGroup: GeneratedSkribbleValue {
   fn first(&self) -> GeneratedModifierNodePositionGroupChild {
     GeneratedModifierNodePositionGroupChild::from_ref(self.append("first"))
   }
+  #[inline]
+  fn first_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("first:[{}|{}]", property.trim(), value.trim()))
+  }
   /// ```css
   /// &:not(:first-child) {
   ///   /* ... */
@@ -1691,6 +1951,10 @@ pub trait GeneratedModifierNodePositionGroup: GeneratedSkribbleValue {
   #[inline]
   fn not_first(&self) -> GeneratedModifierNodePositionGroupChild {
     GeneratedModifierNodePositionGroupChild::from_ref(self.append("notFirst"))
+  }
+  #[inline]
+  fn not_first_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("notFirst:[{}|{}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &:last {
@@ -1701,6 +1965,10 @@ pub trait GeneratedModifierNodePositionGroup: GeneratedSkribbleValue {
   fn last(&self) -> GeneratedModifierNodePositionGroupChild {
     GeneratedModifierNodePositionGroupChild::from_ref(self.append("last"))
   }
+  #[inline]
+  fn last_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("last:[{}|{}]", property.trim(), value.trim()))
+  }
   /// ```css
   /// &:not(:last-child) {
   ///   /* ... */
@@ -1709,6 +1977,10 @@ pub trait GeneratedModifierNodePositionGroup: GeneratedSkribbleValue {
   #[inline]
   fn not_last(&self) -> GeneratedModifierNodePositionGroupChild {
     GeneratedModifierNodePositionGroupChild::from_ref(self.append("notLast"))
+  }
+  #[inline]
+  fn not_last_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("notLast:[{}|{}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierNodeOfTypeGroupChild(String);
@@ -1733,6 +2005,14 @@ pub trait GeneratedModifierNodeOfTypeGroup: GeneratedSkribbleValue {
   fn first_of_type(&self) -> GeneratedModifierNodeOfTypeGroupChild {
     GeneratedModifierNodeOfTypeGroupChild::from_ref(self.append("firstOfType"))
   }
+  #[inline]
+  fn first_of_type_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "firstOfType:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
+  }
   /// ```css
   /// &:not(:first-of-type) {
   ///   /* ... */
@@ -1741,6 +2021,14 @@ pub trait GeneratedModifierNodeOfTypeGroup: GeneratedSkribbleValue {
   #[inline]
   fn not_first_of_type(&self) -> GeneratedModifierNodeOfTypeGroupChild {
     GeneratedModifierNodeOfTypeGroupChild::from_ref(self.append("notFirstOfType"))
+  }
+  #[inline]
+  fn not_first_of_type_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "notFirstOfType:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
   }
   /// ```css
   /// &:last-of-type {
@@ -1751,6 +2039,10 @@ pub trait GeneratedModifierNodeOfTypeGroup: GeneratedSkribbleValue {
   fn last_of_type(&self) -> GeneratedModifierNodeOfTypeGroupChild {
     GeneratedModifierNodeOfTypeGroupChild::from_ref(self.append("lastOfType"))
   }
+  #[inline]
+  fn last_of_type_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("lastOfType:[{}|{}]", property.trim(), value.trim()))
+  }
   /// ```css
   /// &:not(:last-of-type) {
   ///   /* ... */
@@ -1759,6 +2051,14 @@ pub trait GeneratedModifierNodeOfTypeGroup: GeneratedSkribbleValue {
   #[inline]
   fn not_last_of_type(&self) -> GeneratedModifierNodeOfTypeGroupChild {
     GeneratedModifierNodeOfTypeGroupChild::from_ref(self.append("notLastOfType"))
+  }
+  #[inline]
+  fn not_last_of_type_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "notLastOfType:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
   }
 }
 pub struct GeneratedModifierVisitedGroupChild(String);
@@ -1783,6 +2083,10 @@ pub trait GeneratedModifierVisitedGroup: GeneratedSkribbleValue {
   fn visited(&self) -> GeneratedModifierVisitedGroupChild {
     GeneratedModifierVisitedGroupChild::from_ref(self.append("visited"))
   }
+  #[inline]
+  fn visited_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("visited:[{}|{}]", property.trim(), value.trim()))
+  }
 }
 pub struct GeneratedModifierOptionalGroupChild(String);
 impl GeneratedSkribbleValue for GeneratedModifierOptionalGroupChild {
@@ -1805,6 +2109,10 @@ pub trait GeneratedModifierOptionalGroup: GeneratedSkribbleValue {
   #[inline]
   fn optional(&self) -> GeneratedModifierOptionalGroupChild {
     GeneratedModifierOptionalGroupChild::from_ref(self.append("optional"))
+  }
+  #[inline]
+  fn optional_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("optional:[{}|{}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierFullScreenGroupChild(String);
@@ -1829,6 +2137,10 @@ pub trait GeneratedModifierFullScreenGroup: GeneratedSkribbleValue {
   fn full_screen(&self) -> GeneratedModifierFullScreenGroupChild {
     GeneratedModifierFullScreenGroupChild::from_ref(self.append("fullScreen"))
   }
+  #[inline]
+  fn full_screen_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("fullScreen:[{}|{}]", property.trim(), value.trim()))
+  }
 }
 pub struct GeneratedModifierTargetGroupChild(String);
 impl GeneratedSkribbleValue for GeneratedModifierTargetGroupChild {
@@ -1851,6 +2163,10 @@ pub trait GeneratedModifierTargetGroup: GeneratedSkribbleValue {
   #[inline]
   fn target(&self) -> GeneratedModifierTargetGroupChild {
     GeneratedModifierTargetGroupChild::from_ref(self.append("target"))
+  }
+  #[inline]
+  fn target_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("target:[{}|{}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierPlaceholderShownGroupChild(String);
@@ -1875,6 +2191,14 @@ pub trait GeneratedModifierPlaceholderShownGroup: GeneratedSkribbleValue {
   fn placeholder_shown(&self) -> GeneratedModifierPlaceholderShownGroupChild {
     GeneratedModifierPlaceholderShownGroupChild::from_ref(self.append("placeholderShown"))
   }
+  #[inline]
+  fn placeholder_shown_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "placeholderShown:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
+  }
 }
 pub struct GeneratedModifierRequiredGroupChild(String);
 impl GeneratedSkribbleValue for GeneratedModifierRequiredGroupChild {
@@ -1898,6 +2222,10 @@ pub trait GeneratedModifierRequiredGroup: GeneratedSkribbleValue {
   fn required(&self) -> GeneratedModifierRequiredGroupChild {
     GeneratedModifierRequiredGroupChild::from_ref(self.append("required"))
   }
+  #[inline]
+  fn required_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("required:[{}|{}]", property.trim(), value.trim()))
+  }
   /// ```css
   /// [arira-required=false], &:not(:required) {
   ///   /* ... */
@@ -1906,6 +2234,14 @@ pub trait GeneratedModifierRequiredGroup: GeneratedSkribbleValue {
   #[inline]
   fn not_required(&self) -> GeneratedModifierRequiredGroupChild {
     GeneratedModifierRequiredGroupChild::from_ref(self.append("notRequired"))
+  }
+  #[inline]
+  fn not_required_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "notRequired:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
   }
 }
 pub struct GeneratedModifierDefaultGroupChild(String);
@@ -1930,6 +2266,10 @@ pub trait GeneratedModifierDefaultGroup: GeneratedSkribbleValue {
   fn default(&self) -> GeneratedModifierDefaultGroupChild {
     GeneratedModifierDefaultGroupChild::from_ref(self.append("default"))
   }
+  #[inline]
+  fn default_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("default:[{}|{}]", property.trim(), value.trim()))
+  }
 }
 pub struct GeneratedModifierOnlyChildGroupChild(String);
 impl GeneratedSkribbleValue for GeneratedModifierOnlyChildGroupChild {
@@ -1953,6 +2293,10 @@ pub trait GeneratedModifierOnlyChildGroup: GeneratedSkribbleValue {
   fn only_child(&self) -> GeneratedModifierOnlyChildGroupChild {
     GeneratedModifierOnlyChildGroupChild::from_ref(self.append("onlyChild"))
   }
+  #[inline]
+  fn only_child_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("onlyChild:[{}|{}]", property.trim(), value.trim()))
+  }
   /// ```css
   /// &:not(:only-child) {
   ///   /* ... */
@@ -1961,6 +2305,14 @@ pub trait GeneratedModifierOnlyChildGroup: GeneratedSkribbleValue {
   #[inline]
   fn not_only_child(&self) -> GeneratedModifierOnlyChildGroupChild {
     GeneratedModifierOnlyChildGroupChild::from_ref(self.append("notOnlyChild"))
+  }
+  #[inline]
+  fn not_only_child_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "notOnlyChild:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
   }
 }
 pub struct GeneratedModifierOnlyGroupChild(String);
@@ -1985,6 +2337,10 @@ pub trait GeneratedModifierOnlyGroup: GeneratedSkribbleValue {
   fn only_of_type(&self) -> GeneratedModifierOnlyGroupChild {
     GeneratedModifierOnlyGroupChild::from_ref(self.append("onlyOfType"))
   }
+  #[inline]
+  fn only_of_type_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("onlyOfType:[{}|{}]", property.trim(), value.trim()))
+  }
   /// ```css
   /// &:not(:only-of-type) {
   ///   /* ... */
@@ -1993,6 +2349,14 @@ pub trait GeneratedModifierOnlyGroup: GeneratedSkribbleValue {
   #[inline]
   fn not_only_of_type(&self) -> GeneratedModifierOnlyGroupChild {
     GeneratedModifierOnlyGroupChild::from_ref(self.append("notOnlyOfType"))
+  }
+  #[inline]
+  fn not_only_of_type_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "notOnlyOfType:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
   }
 }
 pub struct GeneratedModifierRootGroupChild(String);
@@ -2017,6 +2381,10 @@ pub trait GeneratedModifierRootGroup: GeneratedSkribbleValue {
   fn root(&self) -> GeneratedModifierRootGroupChild {
     GeneratedModifierRootGroupChild::from_ref(self.append("root"))
   }
+  #[inline]
+  fn root_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("root:[{}|{}]", property.trim(), value.trim()))
+  }
 }
 pub struct GeneratedModifierLinkGroupChild(String);
 impl GeneratedSkribbleValue for GeneratedModifierLinkGroupChild {
@@ -2039,6 +2407,10 @@ pub trait GeneratedModifierLinkGroup: GeneratedSkribbleValue {
   #[inline]
   fn link(&self) -> GeneratedModifierLinkGroupChild {
     GeneratedModifierLinkGroupChild::from_ref(self.append("link"))
+  }
+  #[inline]
+  fn link_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("link:[{}|{}]", property.trim(), value.trim()))
   }
 }
 pub struct GeneratedModifierPseudoGroupChild(String);
@@ -2063,6 +2435,14 @@ pub trait GeneratedModifierPseudoGroup: GeneratedSkribbleValue {
   fn placeholder(&self) -> GeneratedModifierPseudoGroupChild {
     GeneratedModifierPseudoGroupChild::from_ref(self.append("placeholder"))
   }
+  #[inline]
+  fn placeholder_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "placeholder:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
+  }
   /// ```css
   /// &::selection {
   ///   /* ... */
@@ -2071,6 +2451,10 @@ pub trait GeneratedModifierPseudoGroup: GeneratedSkribbleValue {
   #[inline]
   fn selection(&self) -> GeneratedModifierPseudoGroupChild {
     GeneratedModifierPseudoGroupChild::from_ref(self.append("selection"))
+  }
+  #[inline]
+  fn selection_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("selection:[{}|{}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &::first-letter {
@@ -2081,6 +2465,14 @@ pub trait GeneratedModifierPseudoGroup: GeneratedSkribbleValue {
   fn first_letter(&self) -> GeneratedModifierPseudoGroupChild {
     GeneratedModifierPseudoGroupChild::from_ref(self.append("firstLetter"))
   }
+  #[inline]
+  fn first_letter_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!(
+      "firstLetter:[{}|{}]",
+      property.trim(),
+      value.trim()
+    ))
+  }
   /// ```css
   /// &::first-line {
   ///   /* ... */
@@ -2089,6 +2481,10 @@ pub trait GeneratedModifierPseudoGroup: GeneratedSkribbleValue {
   #[inline]
   fn first_line(&self) -> GeneratedModifierPseudoGroupChild {
     GeneratedModifierPseudoGroupChild::from_ref(self.append("firstLine"))
+  }
+  #[inline]
+  fn first_line_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("firstLine:[{}|{}]", property.trim(), value.trim()))
   }
   /// ```css
   /// &::before {
@@ -2099,6 +2495,10 @@ pub trait GeneratedModifierPseudoGroup: GeneratedSkribbleValue {
   fn before(&self) -> GeneratedModifierPseudoGroupChild {
     GeneratedModifierPseudoGroupChild::from_ref(self.append("before"))
   }
+  #[inline]
+  fn before_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("before:[{}|{}]", property.trim(), value.trim()))
+  }
   /// ```css
   /// &::after {
   ///   /* ... */
@@ -2107,6 +2507,10 @@ pub trait GeneratedModifierPseudoGroup: GeneratedSkribbleValue {
   #[inline]
   fn after(&self) -> GeneratedModifierPseudoGroupChild {
     GeneratedModifierPseudoGroupChild::from_ref(self.append("after"))
+  }
+  #[inline]
+  fn after_(&self, property: &'static str, value: &'static str) -> String {
+    self.append(format!("after:[{}|{}]", property.trim(), value.trim()))
   }
 }
 pub trait GeneratedKeyframeSet: GeneratedSkribbleValue {

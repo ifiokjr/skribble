@@ -19,6 +19,8 @@ pub enum Arguments {
 }
 
 impl Arguments {
+  pub const DELIMITER: char = '|';
+
   pub fn v(value: impl AsRef<str>) -> Self {
     let value = value.as_ref().to_string();
     Self::V(value)
@@ -46,7 +48,7 @@ impl Arguments {
     let property = Placeholder::normalize(key, config);
     let css_value = Placeholder::normalize(value, config);
 
-    write!(writer, "{property}: {css_value};")?;
+    writeln!(writer, "{property}: {css_value};")?;
 
     Ok(())
   }
@@ -81,14 +83,14 @@ impl Display for Arguments {
   fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
     match self {
       Arguments::V(value) => write!(f, "{}", value),
-      Arguments::KV(key, value) => write!(f, "{}:{}", key, value),
+      Arguments::KV(key, value) => write!(f, "{}{}{}", key, Arguments::DELIMITER, value),
     }
   }
 }
 
 impl<S: AsRef<str>> From<S> for Arguments {
   fn from(value: S) -> Self {
-    match value.as_ref().split_once(':') {
+    match value.as_ref().split_once(Arguments::DELIMITER) {
       Some((key, value)) => Self::kv(key, value),
       None => Self::v(value),
     }
