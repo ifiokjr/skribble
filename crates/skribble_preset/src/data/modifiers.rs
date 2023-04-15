@@ -105,11 +105,11 @@ lazy_static! {
       .items(vec![
         Modifier::builder()
           .name("disabled")
-          .values(vec!["&[disabled]", "&[aria-disabled=true]", "&:disabled"],)
+          .values(vec!["&[disabled]", "&:disabled"])
           .build(),
         Modifier::builder()
           .name("not-disabled")
-          .values(vec!["&[aria-disabled=false]", "&:disabled"],)
+          .values(vec!["&:disabled"])
           .build(),
         Modifier::builder()
           .name("enabled")
@@ -131,29 +131,16 @@ lazy_static! {
       .items(vec![
         Modifier::builder()
           .name("read-write")
-          .values(vec!["&:read-write"],)
+          .values(vec!["&:read-write"])
           .build(),
         Modifier::builder()
-          .name("read-only")
-          .values(vec!["&[aria-readonly=true]", "&[readonly]", "&:read-only"],)
+          .name("readonly")
+          .values(vec!["&[readonly]", "&:read-only"])
           .build(),
         Modifier::builder()
-          .name("not-read-only")
-          .values(vec![
-            "&[aria-readonly=false]",
-            "&[readonly=false]",
-            "&:not(:read-only)"
-          ])
+          .name("not-readonly")
+          .values(vec!["&[readonly=false]", "&:not(:read-only)"])
           .build(),
-      ])
-      .build(),
-    Group::builder()
-      .name("expanded-group")
-      .items(vec![
-        Modifier::builder()
-          .name("expanded")
-          .values(vec!["&[aria-expanded=true]"])
-          .build()
       ])
       .build(),
     Group::builder()
@@ -161,52 +148,16 @@ lazy_static! {
       .items(vec![
         Modifier::builder()
           .name("indeterminate")
-          .values(vec!["&:indeterminate", "&[aria-checked=mixed]"],)
+          .values(vec!["&:indeterminate"])
           .build(),
         Modifier::builder()
           .name("checked")
-          .values(vec!["&[aria-checked=true]", "&:checked"],)
+          .values(vec!["&:checked"])
           .build(),
         Modifier::builder()
           .name("unchecked")
-          .values(vec!["&[aria-checked=false]", "&:not(:checked)"])
+          .values(vec!["&:not(:checked)"])
           .build(),
-      ])
-      .build(),
-    Group::builder()
-      .name("grabbed-group")
-      .items(vec![
-        Modifier::builder()
-          .name("grabbed")
-          .values(vec!["&[aria-grabbed=true]"])
-          .build()
-      ])
-      .build(),
-    Group::builder()
-      .name("pressed-group")
-      .items(vec![
-        Modifier::builder()
-          .name("pressed")
-          .values(vec!["&[aria-pressed=true]"])
-          .build()
-      ])
-      .build(),
-    Group::builder()
-      .name("invalid-grammar-group")
-      .items(vec![
-        Modifier::builder()
-          .name("invalid-grammar")
-          .values(vec!["&[aria-invalid=grammar]"])
-          .build()
-      ])
-      .build(),
-    Group::builder()
-      .name("invalid-spelling-group")
-      .items(vec![
-        Modifier::builder()
-          .name("invalid-spelling")
-          .values(vec!["&[aria-invalid=spelling]"])
-          .build()
       ])
       .build(),
     Group::builder()
@@ -214,39 +165,12 @@ lazy_static! {
       .items(vec![
         Modifier::builder()
           .name("valid")
-          .values(vec!["&[aria-invalid=false]", "&:valid"],)
+          .values(vec!["&:valid"])
           .build(),
         Modifier::builder()
           .name("invalid")
-          .values(vec!["&[aria-invalid=true]", "&:invalid"])
+          .values(vec!["&:invalid"])
           .build(),
-      ])
-      .build(),
-    Group::builder()
-      .name("loading-group")
-      .items(vec![
-        Modifier::builder()
-          .name("loading")
-          .values(vec!["&[aria-busy=true]"])
-          .build()
-      ])
-      .build(),
-    Group::builder()
-      .name("selected-group")
-      .items(vec![
-        Modifier::builder()
-          .name("selected")
-          .values(vec!["&[aria-selected=true]"])
-          .build()
-      ])
-      .build(),
-    Group::builder()
-      .name("hidden-group")
-      .items(vec![
-        Modifier::builder()
-          .name("aria-hidden")
-          .values(vec!["&[aria-hidden=true]"])
-          .build()
       ])
       .build(),
     Group::builder()
@@ -276,7 +200,7 @@ lazy_static! {
       .items(vec![
         Modifier::builder()
           .name("even-of-type")
-          .values(vec!["&:nth-of-type(even)"],)
+          .values(vec!["&:nth-of-type(even)"])
           .build(),
         Modifier::builder()
           .name("odd-of-type")
@@ -289,15 +213,15 @@ lazy_static! {
       .items(vec![
         Modifier::builder()
           .name("first")
-          .values(vec!["&:first"],)
+          .values(vec!["&:first"])
           .build(),
         Modifier::builder()
           .name("not-first")
-          .values(vec!["&:not(:first-child)"],)
+          .values(vec!["&:not(:first-child)"])
           .build(),
         Modifier::builder()
           .name("last")
-          .values(vec!["&:last"],)
+          .values(vec!["&:last"])
           .build(),
         Modifier::builder()
           .name("not-last")
@@ -310,15 +234,15 @@ lazy_static! {
       .items(vec![
         Modifier::builder()
           .name("first-of-type")
-          .values(vec!["&:first-of-type"],)
+          .values(vec!["&:first-of-type"])
           .build(),
         Modifier::builder()
           .name("not-first-of-type")
-          .values(vec!["&:not(:first-of-type)"],)
+          .values(vec!["&:not(:first-of-type)"])
           .build(),
         Modifier::builder()
           .name("last-of-type")
-          .values(vec!["&:last-of-type"],)
+          .values(vec!["&:last-of-type"])
           .build(),
         Modifier::builder()
           .name("not-last-of-type")
@@ -345,27 +269,107 @@ lazy_static! {
       ])
       .build(),
     Group::builder()
-      .name("active-group")
+      .name("aria")
       .items(vec![
         Modifier::builder()
-          .name("active-link")
-          .values(vec!["&[aria-current=page]"],)
+          .name("aria-current-page")
+          .values(vec!["&[aria-current=page]"])
           .build(),
         Modifier::builder()
-          .name("active-location")
-          .values(vec!["&[aria-current=location]"],)
+          .name("aria-current-location")
+          .values(vec!["&[aria-current=location]"])
           .build(),
         Modifier::builder()
-          .name("active-date")
-          .values(vec!["&[aria-current=date]"],)
+          .name("aria-current-date")
+          .values(vec!["&[aria-current=date]"])
           .build(),
         Modifier::builder()
-          .name("active-time")
-          .values(vec!["&[aria-current=time]"],)
+          .name("aria-current-time")
+          .values(vec!["&[aria-current=time]"])
           .build(),
         Modifier::builder()
-          .name("active-step")
+          .name("aria-current-step")
           .values(vec!["&[aria-current=step]"])
+          .build(),
+        Modifier::builder()
+          .name("aria-disabled")
+          .values(vec!["&[aria-disabled=true]"])
+          .build(),
+        Modifier::builder()
+          .name("aria-not-disabled")
+          .values(vec!["&[aria-disabled=false]"])
+          .build(),
+        Modifier::builder()
+          .name("aria-readonly")
+          .values(vec!["&[aria-readonly=true]"])
+          .build(),
+        Modifier::builder()
+          .name("aria-not-readonly")
+          .values(vec!["&[aria-readonly=false]"])
+          .build(),
+        Modifier::builder()
+          .name("aria-expanded")
+          .values(vec!["&[aria-expanded=true]"])
+          .build(),
+        Modifier::builder()
+          .name("aria-indeterminate")
+          .values(vec!["&[aria-checked=mixed]"])
+          .build(),
+        Modifier::builder()
+          .name("aria-checked")
+          .values(vec!["&[aria-checked=true]"])
+          .build(),
+        Modifier::builder()
+          .name("aria-unchecked")
+          .values(vec!["&[aria-checked=false]"])
+          .build(),
+        Modifier::builder()
+          .name("aria-grabbed")
+          .values(vec!["&[aria-grabbed=true]"])
+          .build(),
+        Modifier::builder()
+          .name("aria-pressed")
+          .values(vec!["&[aria-pressed=true]"])
+          .build(),
+        Modifier::builder()
+          .name("aria-invalid-grammar")
+          .values(vec!["&[aria-invalid=grammar]"])
+          .build(),
+        Modifier::builder()
+          .name("aria-invalid-spelling")
+          .values(vec!["&[aria-invalid=spelling]"])
+          .build(),
+        Modifier::builder()
+          .name("aria-valid")
+          .values(vec!["&[aria-invalid=false]"])
+          .build(),
+        Modifier::builder()
+          .name("aria-invalid")
+          .values(vec!["&[aria-invalid=true]"])
+          .build(),
+        Modifier::builder()
+          .name("aria-required")
+          .values(vec!["[aria-required=true]"])
+          .build(),
+        Modifier::builder()
+          .name("aria-not-required")
+          .values(vec!["[aria-required=false]"])
+          .build(),
+        Modifier::builder()
+          .name("loading")
+          .values(vec!["&[aria-busy=true]"])
+          .build(),
+        Modifier::builder()
+          .name("aria-selected")
+          .values(vec!["&[aria-selected=true]"])
+          .build(),
+        Modifier::builder()
+          .name("aria-hidden")
+          .values(vec!["&[aria-hidden=true]"])
+          .build(),
+        Modifier::builder()
+          .name("aria-live")
+          .values(vec!["&[aria-live=polite]"])
           .build(),
       ])
       .build(),
@@ -401,11 +405,11 @@ lazy_static! {
       .items(vec![
         Modifier::builder()
           .name("required")
-          .values(vec!["[aria-required=true]", "&:required"],)
+          .values(vec!["&:required"])
           .build(),
         Modifier::builder()
           .name("not-required")
-          .values(vec!["[arira-required=false]", "&:not(:required)"])
+          .values(vec!["&:not(:required)"])
           .build(),
       ])
       .build(),
@@ -436,7 +440,7 @@ lazy_static! {
       .items(vec![
         Modifier::builder()
           .name("only-of-type")
-          .values(vec!["&:only-of-type"],)
+          .values(vec!["&:only-of-type"])
           .build(),
         Modifier::builder()
           .name("not-only-of-type")
@@ -467,23 +471,23 @@ lazy_static! {
       .items(vec![
         Modifier::builder()
           .name("placeholder")
-          .values(vec!["&::placeholder"],)
+          .values(vec!["&::placeholder"])
           .build(),
         Modifier::builder()
           .name("selection")
-          .values(vec!["&::selection"],)
+          .values(vec!["&::selection"])
           .build(),
         Modifier::builder()
           .name("first-letter")
-          .values(vec!["&::first-letter"],)
+          .values(vec!["&::first-letter"])
           .build(),
         Modifier::builder()
           .name("first-line")
-          .values(vec!["&::first-line"],)
+          .values(vec!["&::first-line"])
           .build(),
         Modifier::builder()
           .name("before")
-          .values(vec!["&::before"],)
+          .values(vec!["&::before"])
           .build(),
         Modifier::builder()
           .name("after")

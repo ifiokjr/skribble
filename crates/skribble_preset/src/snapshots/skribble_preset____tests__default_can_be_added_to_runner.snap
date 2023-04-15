@@ -787,46 +787,6 @@ expression: runner_config
         ],
         "description": null,
         "priority": 150
-      },
-      "active-link": {
-        "name": "active-link",
-        "values": [
-          "&[aria-current=page]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "active-location": {
-        "name": "active-location",
-        "values": [
-          "&[aria-current=location]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "active-date": {
-        "name": "active-date",
-        "values": [
-          "&[aria-current=date]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "active-time": {
-        "name": "active-time",
-        "values": [
-          "&[aria-current=time]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "active-step": {
-        "name": "active-step",
-        "values": [
-          "&[aria-current=step]"
-        ],
-        "description": null,
-        "priority": 150
       }
     },
     "focus-group": {
@@ -864,7 +824,6 @@ expression: runner_config
         "name": "disabled",
         "values": [
           "&[disabled]",
-          "&[aria-disabled=true]",
           "&:disabled"
         ],
         "description": null,
@@ -873,7 +832,6 @@ expression: runner_config
       "not-disabled": {
         "name": "not-disabled",
         "values": [
-          "&[aria-disabled=false]",
           "&:disabled"
         ],
         "description": null,
@@ -907,32 +865,20 @@ expression: runner_config
         "description": null,
         "priority": 150
       },
-      "read-only": {
-        "name": "read-only",
+      "readonly": {
+        "name": "readonly",
         "values": [
-          "&[aria-readonly=true]",
           "&[readonly]",
           "&:read-only"
         ],
         "description": null,
         "priority": 150
       },
-      "not-read-only": {
-        "name": "not-read-only",
+      "not-readonly": {
+        "name": "not-readonly",
         "values": [
-          "&[aria-readonly=false]",
           "&[readonly=false]",
           "&:not(:read-only)"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "expanded-group": {
-      "expanded": {
-        "name": "expanded",
-        "values": [
-          "&[aria-expanded=true]"
         ],
         "description": null,
         "priority": 150
@@ -942,8 +888,7 @@ expression: runner_config
       "indeterminate": {
         "name": "indeterminate",
         "values": [
-          "&:indeterminate",
-          "&[aria-checked=mixed]"
+          "&:indeterminate"
         ],
         "description": null,
         "priority": 150
@@ -951,7 +896,6 @@ expression: runner_config
       "checked": {
         "name": "checked",
         "values": [
-          "&[aria-checked=true]",
           "&:checked"
         ],
         "description": null,
@@ -960,48 +904,7 @@ expression: runner_config
       "unchecked": {
         "name": "unchecked",
         "values": [
-          "&[aria-checked=false]",
           "&:not(:checked)"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "grabbed-group": {
-      "grabbed": {
-        "name": "grabbed",
-        "values": [
-          "&[aria-grabbed=true]"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "pressed-group": {
-      "pressed": {
-        "name": "pressed",
-        "values": [
-          "&[aria-pressed=true]"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "invalid-grammar-group": {
-      "invalid-grammar": {
-        "name": "invalid-grammar",
-        "values": [
-          "&[aria-invalid=grammar]"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "invalid-spelling-group": {
-      "invalid-spelling": {
-        "name": "invalid-spelling",
-        "values": [
-          "&[aria-invalid=spelling]"
         ],
         "description": null,
         "priority": 150
@@ -1011,7 +914,6 @@ expression: runner_config
       "valid": {
         "name": "valid",
         "values": [
-          "&[aria-invalid=false]",
           "&:valid"
         ],
         "description": null,
@@ -1020,38 +922,7 @@ expression: runner_config
       "invalid": {
         "name": "invalid",
         "values": [
-          "&[aria-invalid=true]",
           "&:invalid"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "loading-group": {
-      "loading": {
-        "name": "loading",
-        "values": [
-          "&[aria-busy=true]"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "selected-group": {
-      "selected": {
-        "name": "selected",
-        "values": [
-          "&[aria-selected=true]"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "hidden-group": {
-      "aria-hidden": {
-        "name": "aria-hidden",
-        "values": [
-          "&[aria-hidden=true]"
         ],
         "description": null,
         "priority": 150
@@ -1189,6 +1060,208 @@ expression: runner_config
         "priority": 150
       }
     },
+    "aria": {
+      "aria-current-page": {
+        "name": "aria-current-page",
+        "values": [
+          "&[aria-current=page]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-current-location": {
+        "name": "aria-current-location",
+        "values": [
+          "&[aria-current=location]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-current-date": {
+        "name": "aria-current-date",
+        "values": [
+          "&[aria-current=date]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-current-time": {
+        "name": "aria-current-time",
+        "values": [
+          "&[aria-current=time]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-current-step": {
+        "name": "aria-current-step",
+        "values": [
+          "&[aria-current=step]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-disabled": {
+        "name": "aria-disabled",
+        "values": [
+          "&[aria-disabled=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-not-disabled": {
+        "name": "aria-not-disabled",
+        "values": [
+          "&[aria-disabled=false]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-readonly": {
+        "name": "aria-readonly",
+        "values": [
+          "&[aria-readonly=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-not-readonly": {
+        "name": "aria-not-readonly",
+        "values": [
+          "&[aria-readonly=false]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-expanded": {
+        "name": "aria-expanded",
+        "values": [
+          "&[aria-expanded=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-indeterminate": {
+        "name": "aria-indeterminate",
+        "values": [
+          "&[aria-checked=mixed]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-checked": {
+        "name": "aria-checked",
+        "values": [
+          "&[aria-checked=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-unchecked": {
+        "name": "aria-unchecked",
+        "values": [
+          "&[aria-checked=false]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-grabbed": {
+        "name": "aria-grabbed",
+        "values": [
+          "&[aria-grabbed=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-pressed": {
+        "name": "aria-pressed",
+        "values": [
+          "&[aria-pressed=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-invalid-grammar": {
+        "name": "aria-invalid-grammar",
+        "values": [
+          "&[aria-invalid=grammar]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-invalid-spelling": {
+        "name": "aria-invalid-spelling",
+        "values": [
+          "&[aria-invalid=spelling]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-valid": {
+        "name": "aria-valid",
+        "values": [
+          "&[aria-invalid=false]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-invalid": {
+        "name": "aria-invalid",
+        "values": [
+          "&[aria-invalid=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-required": {
+        "name": "aria-required",
+        "values": [
+          "[aria-required=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-not-required": {
+        "name": "aria-not-required",
+        "values": [
+          "[aria-required=false]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "loading": {
+        "name": "loading",
+        "values": [
+          "&[aria-busy=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-selected": {
+        "name": "aria-selected",
+        "values": [
+          "&[aria-selected=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-hidden": {
+        "name": "aria-hidden",
+        "values": [
+          "&[aria-hidden=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-live": {
+        "name": "aria-live",
+        "values": [
+          "&[aria-live=polite]"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
     "full-screen-group": {
       "full-screen": {
         "name": "full-screen",
@@ -1223,7 +1296,6 @@ expression: runner_config
       "required": {
         "name": "required",
         "values": [
-          "[aria-required=true]",
           "&:required"
         ],
         "description": null,
@@ -1232,7 +1304,6 @@ expression: runner_config
       "not-required": {
         "name": "not-required",
         "values": [
-          "[arira-required=false]",
           "&:not(:required)"
         ],
         "description": null,
@@ -3182,11 +3253,6 @@ expression: runner_config
       "group-visited",
       "hover",
       "active",
-      "active-link",
-      "active-location",
-      "active-date",
-      "active-time",
-      "active-step",
       "focus",
       "focus-within",
       "focus-visible",
@@ -3195,21 +3261,13 @@ expression: runner_config
       "enabled",
       "empty",
       "read-write",
-      "read-only",
-      "not-read-only",
-      "expanded",
+      "readonly",
+      "not-readonly",
       "indeterminate",
       "checked",
       "unchecked",
-      "grabbed",
-      "pressed",
-      "invalid-grammar",
-      "invalid-spelling",
       "valid",
       "invalid",
-      "loading",
-      "selected",
-      "aria-hidden",
       "autofill",
       "even",
       "odd",
@@ -3225,6 +3283,31 @@ expression: runner_config
       "not-last-of-type",
       "visited",
       "optional",
+      "aria-current-page",
+      "aria-current-location",
+      "aria-current-date",
+      "aria-current-time",
+      "aria-current-step",
+      "aria-disabled",
+      "aria-not-disabled",
+      "aria-readonly",
+      "aria-not-readonly",
+      "aria-expanded",
+      "aria-indeterminate",
+      "aria-checked",
+      "aria-unchecked",
+      "aria-grabbed",
+      "aria-pressed",
+      "aria-invalid-grammar",
+      "aria-invalid-spelling",
+      "aria-valid",
+      "aria-invalid",
+      "aria-required",
+      "aria-not-required",
+      "loading",
+      "aria-selected",
+      "aria-hidden",
+      "aria-live",
       "full-screen",
       "target",
       "placeholder-shown",
