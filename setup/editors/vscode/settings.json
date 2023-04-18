@@ -2,13 +2,10 @@
   "deno.enable": true,
   "deno.testing.enable": true,
   "deno.lint": true,
-  "[markdown]": {
+  "[css]": {
     "editor.defaultFormatter": "dprint.dprint"
   },
-  "[typescript]": {
-    "editor.defaultFormatter": "dprint.dprint"
-  },
-  "[typescriptreact]": {
+  "[dockerfile]": {
     "editor.defaultFormatter": "dprint.dprint"
   },
   "[javascript]": {
@@ -23,14 +20,22 @@
   "[jsonc]": {
     "editor.defaultFormatter": "dprint.dprint"
   },
-  "[toml]": {
-    "editor.defaultFormatter": "dprint.dprint"
-  },
-  "[yaml]": {
+  "[markdown]": {
     "editor.defaultFormatter": "dprint.dprint"
   },
   "[rust]": {
     "editor.defaultFormatter": "dprint.dprint"
   },
-  "rust-analyzer.checkOnSave.command": "clippy"
+  "[toml]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "dprint.dprint"
+  }
 }
