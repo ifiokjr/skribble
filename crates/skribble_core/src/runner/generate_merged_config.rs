@@ -6,14 +6,18 @@ use indexmap::IndexSet;
 
 use super::get_atom_name_lookup_name;
 use super::RunnerConfig;
+use crate::default_layers;
 use crate::Atom;
+use crate::CssChunk;
 use crate::CssVariable;
+use crate::Error;
 use crate::Keyframe;
 use crate::MediaQuery;
 use crate::Modifier;
 use crate::NamedClass;
 use crate::Options;
 use crate::PluginConfig;
+use crate::Result;
 use crate::StringMap;
 use crate::ValueSet;
 
@@ -21,7 +25,7 @@ pub(crate) fn generate_merged_config(
   mut plugin_config: PluginConfig,
   options: Arc<Options>,
   config: &PluginConfig,
-) -> RunnerConfig {
+) -> Result<RunnerConfig> {
   // mutate
   plugin_config.keyframes.extend(config.keyframes.clone());
   plugin_config.variables.extend(config.variables.clone());
@@ -32,10 +36,13 @@ pub(crate) fn generate_merged_config(
   plugin_config.value_sets.extend(config.value_sets.clone());
   plugin_config.atoms.extend(config.atoms.clone());
   plugin_config.classes.extend(config.classes.clone());
-  plugin_config.layers.extend(config.layers.clone());
+  let mut initial_layers = plugin_config.layers.clone();
+  initial_layers.merge(default_layers());
+  plugin_config.layers.extend(initial_layers);
 
-  let mut layers = indexset! { options.default_layer.clone() };
+  let mut layers = indexset! {};
   let mut keyframes = IndexMap::<String, Keyframe>::new();
+  let mut css_chunks = IndexMap::<String, CssChunk>::new();
   let mut css_variables = IndexMap::<String, CssVariable>::new();
   let mut media_queries = IndexMap::<String, IndexMap<String, MediaQuery>>::new();
   let mut modifiers = IndexMap::<String, IndexMap<String, Modifier>>::new();
@@ -45,8 +52,28 @@ pub(crate) fn generate_merged_config(
   let mut value_sets = IndexMap::<String, ValueSet>::new();
 
   // layers
-  plugin_config.layers.sort_by_priority();
+  let default_layer = &options.default_layer;
+  plugin_config.layers.sort_from_lowest_priority();
   layers.extend(plugin_config.layers.into_iter().map(|layer| layer.value));
+
+  if !layers.contains(default_layer) {
+    return Err(Error::InvalidDefaultLayer(default_layer.into()));
+  }
+
+  // css_chunks
+  plugin_config.css_chunks.extend(config.css_chunks.clone());
+  for css_chunk in plugin_config.css_chunks.into_iter() {
+    let key = &css_chunk.name;
+
+    match css_chunks.get_mut(key) {
+      Some(existing) => {
+        existing.merge(css_chunk);
+      }
+      None => {
+        css_chunks.insert(key.clone(), css_chunk);
+      }
+    }
+  }
 
   // keyframes
   plugin_config.keyframes.extend(config.keyframes.clone());
@@ -199,6 +226,7 @@ pub(crate) fn generate_merged_config(
   let css_variable_names = css_variables.keys().cloned().collect();
   let atom_names = atoms.keys().cloned().collect();
   let class_names = classes.keys().cloned().collect();
+  let css_chunk_names = css_chunks.keys().cloned().collect();
   let media_query_names = media_queries
     .iter()
     .flat_map(|(_, query)| query.keys().cloned())
@@ -212,6 +240,7 @@ pub(crate) fn generate_merged_config(
   names.insert("css_variables".into(), css_variable_names);
   names.insert("atoms".into(), atom_names);
   names.insert("classes".into(), class_names);
+  names.insert("css_chunks".into(), css_chunk_names);
   names.insert("media_queries".into(), media_query_names);
   names.insert("modifiers".into(), modifier_names);
 
@@ -227,6 +256,7 @@ pub(crate) fn generate_merged_config(
     .value_sets(value_sets)
     .names(names)
     ._options(options)
+    .css_chunks(css_chunks)
     .build();
 
   for (name, atom) in merged_config.atoms.iter() {
@@ -235,5 +265,5 @@ pub(crate) fn generate_merged_config(
     merged_config.names.insert(name_atom_name, atom_names);
   }
 
-  merged_config
+  Ok(merged_config)
 }

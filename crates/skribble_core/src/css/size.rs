@@ -6,6 +6,7 @@ use serde::Serialize;
 #[derive(Clone, Debug, Default, Deserialize, Serialize, PartialEq, Eq)]
 pub struct ClassSize {
   pub layer: usize,
+  pub css_chunk: usize,
   pub media_queries: Vec<usize>,
   pub modifiers: Vec<usize>,
   pub atom: usize,
@@ -25,6 +26,7 @@ impl Ord for ClassSize {
     self
       .layer
       .cmp(&other.layer)
+      .then(self.css_chunk.cmp(&other.css_chunk))
       .then(self.media_queries.cmp(&other.media_queries))
       .then(self.modifiers.cmp(&other.modifiers))
       .then(self.atom.cmp(&other.atom))

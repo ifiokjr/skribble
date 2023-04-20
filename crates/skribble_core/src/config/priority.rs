@@ -4,8 +4,8 @@ use serde::Deserialize;
 use serde::Serialize;
 use typed_builder::TypedBuilder;
 
-/// The priority of a an ordered item. A lower number is better. The default is
-/// 150.
+/// The priority of a an ordered item. A lower number is will be given a higher
+/// priority. The default is 150.
 #[derive(
   Clone, Copy, Debug, Deserialize, Hash, Eq, Ord, PartialEq, PartialOrd, Serialize, Deref, DerefMut,
 )]

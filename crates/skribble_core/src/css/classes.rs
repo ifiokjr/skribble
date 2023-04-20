@@ -134,9 +134,17 @@ impl Classes {
     let mut media_query_variables = IndexMap::<Option<String>, StringMap>::new();
     let mut media_query_text = IndexMap::<Option<String>, String>::new();
     let mut css_variables = indexset! {};
+    let mut css = String::new();
 
     for class in self.iter().filter(|class| class.get_layer() == layer) {
       class.collect_css_variables(&mut css_variables);
+
+      if let Some(chunk) = class
+        .get_css_chunk()
+        .and_then(|chunk| config.css_chunks.get(chunk))
+      {
+        chunk.write_skribble_css(&mut css, config)?;
+      }
     }
 
     for value in css_variables
@@ -210,6 +218,7 @@ impl Classes {
       a_pos.cmp(&z_pos)
     });
 
+    write!(writer, "{}", css)?;
     for (media_query, content) in media_query_text.iter() {
       if let Some(media_query) = media_query {
         writeln!(writer, "@media {media_query} {{")?;
@@ -264,9 +273,7 @@ impl ToSkribbleCss for Classes {
     self.write_css_variables(writer, config)?;
 
     for layer in config.layers.iter() {
-      writeln!(writer, "@layer {layer} {{")?;
       let mut indented = IndentWriter::new("  ", String::new());
-
       self.write_layer_css(
         &mut indented,
         config,
@@ -276,7 +283,14 @@ impl ToSkribbleCss for Classes {
           Some(layer)
         },
       )?;
-      write!(writer, "{}", indented.get_ref())?;
+      let content = indented.get_ref();
+
+      if content.trim().is_empty() {
+        continue;
+      }
+
+      writeln!(writer, "@layer {layer} {{")?;
+      write!(writer, "{}", content)?;
       writeln!(writer, "}}")?;
     }
 

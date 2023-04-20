@@ -14,6 +14,7 @@ use vfs::VfsPath;
 use super::generate_merged_config;
 use super::walk_directory;
 use super::RunnerConfig;
+use crate::ClassFactory;
 use crate::Classes;
 use crate::Error;
 use crate::GeneratedFiles;
@@ -87,7 +88,9 @@ impl SkribbleRunner {
   pub fn initialize(&mut self) -> Result<&RunnerConfig> {
     self.provide_options_to_plugins()?;
     let config_from_plugins = self.generate_plugin_config()?;
-    self.merge(config_from_plugins);
+    let config =
+      generate_merged_config(config_from_plugins, self.options.clone(), &self.base_config)?;
+    self.config = Some(config);
 
     self.config.as_ref().ok_or(Error::RunnerNotSetup)
   }
@@ -143,6 +146,17 @@ impl SkribbleRunner {
     let mut plugins = self.plugins.lock().unwrap();
     let mut classes = Classes::default();
 
+    // Add the auto-included CSS chunks.
+    for (name, chunk) in config.css_chunks.iter() {
+      if !chunk.auto_include {
+        continue;
+      }
+
+      let mut factory = ClassFactory::new(config);
+      factory.add_css_chunk(name);
+      classes.insert_factory(factory);
+    }
+
     for entry in entries.iter() {
       let path = entry.as_str();
       let contents = entry
@@ -184,11 +198,6 @@ impl SkribbleRunner {
     }
 
     Ok(plugin_config)
-  }
-
-  fn merge(&mut self, plugin_config: PluginConfig) {
-    let config = generate_merged_config(plugin_config, self.options.clone(), &self.base_config);
-    self.config = Some(config);
   }
 
   /// Write the generated files to the filesystem.

@@ -61,6 +61,7 @@ impl LinkedValues {
       Self::Values(value_set) => {
         if let Self::Values(other_value_set) = other {
           value_set.merge(other_value_set);
+          value_set.sort_from_highest_priority();
         }
       }
       Self::Color => {

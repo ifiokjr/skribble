@@ -11,6 +11,8 @@ pub struct ClassFactory<'config> {
   /// The layer to be used for this class. If left empty the default layer will
   /// be used.
   layer: Option<String>,
+  /// The css chunks that is referenced by this class.
+  css_chunk: Option<String>,
   /// The names of the media queries.
   media_queries: IndexSet<String>,
   /// The ordered list of modifiers.
@@ -41,6 +43,7 @@ impl<'config> ClassFactory<'config> {
   pub fn new(config: &'config RunnerConfig) -> Self {
     Self {
       layer: None,
+      css_chunk: None,
       media_queries: IndexSet::new(),
       modifiers: IndexSet::new(),
       atom: None,
@@ -115,6 +118,7 @@ impl<'config> ClassFactory<'config> {
       .modifiers(self.modifiers)
       .score(self.score)
       .layer(self.layer)
+      .css_chunk(self.css_chunk)
       .atom(self.atom)
       .value_name(self.value_name)
       .named_class(self.named_class)
@@ -231,6 +235,7 @@ impl<'config> ClassFactory<'config> {
         if self.argument.is_some() || self.atom.is_none() || self.named_class.is_some() {
           self.valid = Some(false);
         } else {
+          self.score.argument = argument.to_string().into();
           self.argument = Some(argument);
           self.valid = Some(true);
         }
@@ -239,10 +244,43 @@ impl<'config> ClassFactory<'config> {
         if self.argument.is_some() || self.atom.is_some() || self.named_class.is_some() {
           self.valid = Some(false);
         } else {
+          self.score.argument = argument.to_string().into();
           self.argument = Some(argument);
           self.valid = Some(true);
         }
       }
+    }
+
+    self
+  }
+
+  pub fn add_css_chunk(&mut self, token: impl AsRef<str>) -> &Self {
+    if self.is_locked() {
+      return self;
+    }
+
+    let Some(index) = self.config.get_css_chunk_index(&token) else {
+      self.valid = Some(false);
+      return self;
+    };
+
+    let Some(css_chunk) = self.config.css_chunks.get(token.as_ref()) else {
+      self.valid = Some(false);
+      return self;
+    };
+
+    if self.css_chunk.is_some()
+      || self.atom.is_some()
+      || self.named_class.is_some()
+      || !self.media_queries.is_empty()
+      || !self.modifiers.is_empty()
+    {
+      self.valid = Some(false);
+    } else {
+      self.css_chunk = Some(token.as_ref().to_string());
+      self.layer = Some(css_chunk.layer.clone());
+      self.score.css_chunk = index.checked_add(1).unwrap_or(index);
+      self.valid = Some(true);
     }
 
     self

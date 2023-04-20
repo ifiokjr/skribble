@@ -4,6 +4,7 @@ use serde::Serialize;
 use typed_builder::TypedBuilder;
 
 use super::Atoms;
+use super::CssChunks;
 use super::CssVariables;
 use super::Keyframes;
 use super::MediaQueries;
@@ -12,13 +13,14 @@ use super::NameSet;
 use super::NamedClasses;
 use super::Options;
 use super::Plugins;
+use super::PrioritizedString;
+use super::Priority;
 use super::StringMap;
 use super::ValueSets;
 use crate::Error;
 use crate::Plugin;
 use crate::PluginConfig;
 use crate::PluginContainer;
-use crate::Priority;
 use crate::Result;
 
 /// The style configuration which can also use the builder pattern.
@@ -30,8 +32,12 @@ pub struct StyleConfig {
   #[builder(default, setter(into))]
   pub options: Options,
   /// The css layers.
-  #[builder(default, setter(into))]
+  #[serde(default = "default_layers")]
+  #[builder(default =  default_layers(), setter(into))]
   pub layers: Layers,
+  /// Raw css which will be added to the end of the generated css.
+  #[builder(default, setter(into))]
+  pub css_chunks: CssChunks,
   /// Setup the keyframes.
   #[builder(default, setter(into))]
   pub keyframes: Keyframes,
@@ -82,6 +88,7 @@ impl StyleConfig {
     let Self {
       atoms,
       classes,
+      css_chunks,
       keyframes,
       layers,
       media_queries,
@@ -98,6 +105,7 @@ impl StyleConfig {
       PluginConfig {
         atoms,
         classes,
+        css_chunks,
         keyframes,
         layers,
         media_queries,
@@ -141,3 +149,20 @@ impl StyleConfig {
 pub type Palette = StringMap;
 /// The additional css layers.
 pub type Layers = NameSet;
+
+pub fn default_layers() -> Layers {
+  let mut layers = Layers::default();
+  let base = PrioritizedString {
+    value: "base".into(),
+    priority: Priority::LOW,
+  };
+  let default = PrioritizedString {
+    value: "default".into(),
+    priority: Priority::DEFAULT,
+  };
+
+  layers.insert(base);
+  layers.insert(default);
+
+  layers
+}

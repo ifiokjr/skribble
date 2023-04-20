@@ -54,6 +54,9 @@ pub struct Class {
   /// The css variables that are referenced by this class.
   #[builder(setter(into))]
   css_variables: IndexSet<String>,
+  /// The css chunks that are referenced by this class.
+  #[builder(setter(into))]
+  css_chunk: Option<String>,
 }
 
 impl Class {
@@ -107,6 +110,10 @@ impl Class {
 
   pub fn get_argument(&self) -> Option<&Arguments> {
     self.argument.as_ref()
+  }
+
+  pub fn get_css_chunk(&self) -> Option<&String> {
+    self.css_chunk.as_ref()
   }
 
   pub fn collect_css_variables(&self, css_variables: &mut IndexSet<String>) {
@@ -207,6 +214,15 @@ impl Class {
 
 impl ToSkribbleCss for Class {
   fn write_skribble_css(&self, writer: &mut dyn Write, config: &RunnerConfig) -> AnyEmptyResult {
+    if let Some(css_chunk) = self
+      .css_chunk
+      .as_ref()
+      .and_then(|name| config.css_chunks.get(name))
+    {
+      css_chunk.write_skribble_css(writer, config)?;
+      return Ok(());
+    }
+
     self.write_selector(writer, config)?;
     writeln!(writer, " {{")?;
     let mut indented = indent_writer();
@@ -221,6 +237,7 @@ impl ToSkribbleCss for Class {
 impl Hash for Class {
   fn hash<H: Hasher>(&self, state: &mut H) {
     self.layer.hash(state);
+    self.css_chunk.hash(state);
 
     for mq in self.media_queries.iter() {
       mq.hash(state);
@@ -230,10 +247,15 @@ impl Hash for Class {
       mq.hash(state);
     }
 
+    for variable in self.css_variables.iter() {
+      variable.hash(state);
+    }
+
     self.atom.hash(state);
     self.value_name.hash(state);
     self.named_class.hash(state);
     self.argument.hash(state);
+    self.keyframe.hash(state);
   }
 }
 

@@ -10,14 +10,20 @@ use super::PrioritizedString;
 pub struct NameSet(IndexSet<PrioritizedString>);
 
 impl NameSet {
-  pub fn sort_by_priority(&mut self) -> &Self {
+  /// Starts with the highest priority and ends with the lowest priority.
+  pub fn sort_from_highest_priority(&mut self) -> &Self {
     self.sort_by(|a, z| a.priority.cmp(&z.priority));
+    self
+  }
+
+  /// Starts with the lowest priority and ends with the highest priority.
+  pub fn sort_from_lowest_priority(&mut self) -> &Self {
+    self.sort_by(|a, z| z.priority.cmp(&a.priority));
     self
   }
 
   pub fn merge(&mut self, other: impl Into<Self>) {
     self.extend(other.into());
-    self.sort_by_priority();
   }
 }
 

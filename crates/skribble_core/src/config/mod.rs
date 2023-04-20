@@ -1,5 +1,6 @@
 pub use atoms::*;
 pub use color_format::*;
+pub use css_chunks::*;
 pub use css_values::*;
 pub use css_variables::*;
 pub use group::*;
@@ -20,6 +21,7 @@ pub use value_sets::*;
 
 mod atoms;
 mod color_format;
+mod css_chunks;
 mod css_values;
 mod css_variables;
 mod group;

@@ -30,6 +30,8 @@ pub enum Error {
     #[source]
     source: AnyError,
   },
+  #[error("invalid default layer provided in options: {0}")]
+  InvalidDefaultLayer(String),
   #[error("something went wrong with the plugin: `{id}` while reading options in `read_options`")]
   PluginReadConfigError {
     id: String,

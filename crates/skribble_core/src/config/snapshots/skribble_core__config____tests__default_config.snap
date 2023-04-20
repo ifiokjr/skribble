@@ -30,7 +30,17 @@ expression: "StyleConfig::default()"
     "defaultColor": "#000000",
     "minify": false
   },
-  "layers": [],
+  "layers": [
+    {
+      "priority": 200,
+      "value": "base"
+    },
+    {
+      "priority": 150,
+      "value": "default"
+    }
+  ],
+  "cssChunks": [],
   "keyframes": [],
   "variables": [],
   "mediaQueries": [],

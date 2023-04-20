@@ -2,7 +2,7 @@
 source: crates/skribble_rust/src/__tests.rs
 expression: scanned.code
 ---
-@layer default;
+@layer base, default;
 
 @property --sk-op-p {
   syntax: "<number>";
@@ -58,7 +58,7 @@ expression: scanned.code
     background-color: hsl(var(--sk-clr-s) / var(--sk-op-s));
   }
 
-  @media (min-width: 768px) {
+  @media (width >= 768px) {
     .md\:p\:\$px {
       padding: 1px;
     }

@@ -7,6 +7,7 @@ use serde::Serialize;
 use typed_builder::TypedBuilder;
 
 use crate::Atom;
+use crate::CssChunk;
 use crate::CssVariable;
 use crate::Error;
 use crate::Keyframe;
@@ -22,13 +23,14 @@ use crate::ValueSet;
 /// The configuration after all plugins have been run.
 #[derive(Clone, Debug, Default, Deserialize, Serialize, TypedBuilder)]
 pub struct RunnerConfig {
-  pub layers: IndexSet<String>,
-  pub keyframes: IndexMap<String, Keyframe>,
-  pub css_variables: IndexMap<String, CssVariable>,
-  pub media_queries: IndexMap<String, IndexMap<String, MediaQuery>>,
-  pub modifiers: IndexMap<String, IndexMap<String, Modifier>>,
   pub atoms: IndexMap<String, Atom>,
   pub classes: IndexMap<String, NamedClass>,
+  pub css_variables: IndexMap<String, CssVariable>,
+  pub css_chunks: IndexMap<String, CssChunk>,
+  pub keyframes: IndexMap<String, Keyframe>,
+  pub layers: IndexSet<String>,
+  pub media_queries: IndexMap<String, IndexMap<String, MediaQuery>>,
+  pub modifiers: IndexMap<String, IndexMap<String, Modifier>>,
   pub palette: StringMap,
   pub value_sets: IndexMap<String, ValueSet>,
   #[builder(default)]
@@ -162,6 +164,13 @@ impl RunnerConfig {
     self
       .names
       .get("classes")
+      .and_then(|map| map.get_index_of(name.as_ref()))
+  }
+
+  pub fn get_css_chunk_index(&self, name: impl AsRef<str>) -> Option<usize> {
+    self
+      .names
+      .get("css_chunks")
       .and_then(|map| map.get_index_of(name.as_ref()))
   }
 
