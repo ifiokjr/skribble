@@ -3,1430 +3,6 @@ source: crates/skribble_preset/src/__tests.rs
 expression: runner_config
 ---
 {
-  "layers": [
-    "default"
-  ],
-  "keyframes": {
-    "in": {
-      "name": "in",
-      "description": "Manages the keyframes for the entry animation",
-      "priority": 150,
-      "from": {
-        "opacity": "var(__:CSS_VARIABLE::enter-opacity:__, 1)",
-        "transform": "translate3d(var(__:CSS_VARIABLE::enter-translate-x:__, 0), var(__:CSS_VARIABLE::enter-translate-y:__, 0), 0) scale3d(var(__:CSS_VARIABLE::enter-scale-x:__, 1), var(__:CSS_VARIABLE::enter-scale-y:__, 1), 1) rotate(var(__:CSS_VARIABLE::enter-rotate:__, 0deg))"
-      }
-    },
-    "out": {
-      "name": "out",
-      "description": "Manages the keyframes for the exit animation.",
-      "priority": 150,
-      "to": {
-        "opacity": "var(__:CSS_VARIABLE::exit-opacity:__, 1)",
-        "transform": "translate3d(var(__:CSS_VARIABLE::exit-translate-x:__, 0), var(__:CSS_VARIABLE::exit-translate-y:__, 0), 0) scale3d(var(__:CSS_VARIABLE::exit-scale-x:__, 1), var(__:CSS_VARIABLE::exit-scale-y:__, 1), 1) rotate(var(__:CSS_VARIABLE::exit-rotate:__, 0deg))"
-      }
-    },
-    "spin": {
-      "name": "spin",
-      "description": "Manages the keyframes for the spin animation.",
-      "priority": 150,
-      "from": {
-        "transform": "rotate(0deg)"
-      },
-      "to": {
-        "transform": "rotate(360deg)"
-      }
-    },
-    "ping": {
-      "name": "ping",
-      "description": "Manages the keyframes for the ping animation.",
-      "priority": 150,
-      "75%, 100%": {
-        "transform": "scale(2)",
-        "opacity": "0"
-      }
-    },
-    "pulse": {
-      "name": "pulse",
-      "description": "Manages the keyframes for the pulse animation.",
-      "priority": 150,
-      "0%, 100%": {
-        "opacity": "1"
-      },
-      "50%": {
-        "opacity": "0.5"
-      }
-    },
-    "bounce": {
-      "name": "bounce",
-      "description": "Manages the keyframes for the bounce animation.",
-      "priority": 150,
-      "0%, 100%": {
-        "transform": "translateY(-25%)",
-        "animationTimingFunction": "cubic-bezier(0.8, 0, 1, 1)"
-      },
-      "50%": {
-        "transform": "translateY(0)",
-        "animationTimingFunction": "cubic-bezier(0, 0, 0.2, 1)"
-      }
-    }
-  },
-  "css_variables": {
-    "primary": {
-      "name": "primary",
-      "description": "The primary color. Useful for primary buttons.",
-      "priority": 150,
-      "variable": "--p",
-      "syntax": "<color>",
-      "value": "#570df8",
-      "mediaQueries": {}
-    },
-    "primary-content": {
-      "name": "primary-content",
-      "description": "The primary content color",
-      "priority": 150,
-      "variable": "--pc",
-      "syntax": "<color>",
-      "value": "__:PALETTE::white:__",
-      "mediaQueries": {}
-    },
-    "secondary": {
-      "name": "secondary",
-      "description": "The secondary color. Useful for secondary buttons.",
-      "priority": 150,
-      "variable": "--s",
-      "syntax": "<color>",
-      "value": "#f000b8",
-      "mediaQueries": {}
-    },
-    "secondary-content": {
-      "name": "secondary-content",
-      "description": "The secondary content color. Useful for text within secondary buttons.",
-      "priority": 150,
-      "variable": "--sc",
-      "syntax": "<color>",
-      "value": "__:PALETTE::white:__",
-      "mediaQueries": {}
-    },
-    "accent": {
-      "name": "accent",
-      "description": "Color for accents.",
-      "priority": 150,
-      "variable": "--a",
-      "syntax": "<color>",
-      "value": "#37cdbe",
-      "mediaQueries": {}
-    },
-    "accent-content": {
-      "name": "accent-content",
-      "description": "Color for content within accents.",
-      "priority": 150,
-      "variable": "--ac",
-      "syntax": "<color>",
-      "value": "#163835",
-      "mediaQueries": {}
-    },
-    "neutral": {
-      "name": "neutral",
-      "description": "The neutral color.",
-      "priority": 150,
-      "variable": "--n",
-      "syntax": "<color>",
-      "value": "#3d4451",
-      "mediaQueries": {}
-    },
-    "neutral-content": {
-      "name": "neutral-content",
-      "description": "The neutral content color.",
-      "priority": 150,
-      "variable": "--nc",
-      "syntax": "<color>",
-      "value": "__:PALETTE::white:__",
-      "mediaQueries": {}
-    },
-    "base100": {
-      "name": "base100",
-      "description": "The base color.",
-      "priority": 150,
-      "variable": "--b1",
-      "syntax": "<color>",
-      "value": "__:PALETTE::white:__",
-      "mediaQueries": {}
-    },
-    "base200": {
-      "name": "base200",
-      "description": "The secondary base color.",
-      "priority": 150,
-      "variable": "--b2",
-      "syntax": "<color>",
-      "value": "#F2F2F2",
-      "mediaQueries": {}
-    },
-    "base300": {
-      "name": "base300",
-      "description": "The tertiary base color.",
-      "priority": 150,
-      "variable": "--b3",
-      "syntax": "<color>",
-      "value": "#E5E6E6",
-      "mediaQueries": {}
-    },
-    "base-content": {
-      "name": "base-content",
-      "description": "The base content color. This is useful for text.",
-      "priority": 150,
-      "variable": "--bc",
-      "syntax": "<color>",
-      "value": "#1f2937",
-      "mediaQueries": {}
-    },
-    "info": {
-      "name": "info",
-      "description": "The info color. Useful for info buttons and alerts.",
-      "priority": 150,
-      "variable": "--in",
-      "syntax": "<color>",
-      "value": "#0070F3",
-      "mediaQueries": {}
-    },
-    "info-content": {
-      "name": "info-content",
-      "description": "The info content color. Useful for text within info buttons and alerts.",
-      "priority": 150,
-      "variable": "--inc",
-      "syntax": "<color>",
-      "value": "__:PALETTE::white:__",
-      "mediaQueries": {}
-    },
-    "success": {
-      "name": "success",
-      "description": "The success color. Useful for success buttons and alerts.",
-      "priority": 150,
-      "variable": "--su",
-      "syntax": "<color>",
-      "value": "#21CC51",
-      "mediaQueries": {}
-    },
-    "success-content": {
-      "name": "success-content",
-      "description": "The success content color. Useful for text within success buttons and alerts.",
-      "priority": 150,
-      "variable": "--suc",
-      "syntax": "<color>",
-      "value": "__:PALETTE::white:__",
-      "mediaQueries": {}
-    },
-    "warning": {
-      "name": "warning",
-      "description": "The warning color. Useful for warning buttons and alerts.",
-      "priority": 150,
-      "variable": "--wa",
-      "syntax": "<color>",
-      "value": "#FF6154",
-      "mediaQueries": {}
-    },
-    "warning-content": {
-      "name": "warning-content",
-      "description": "The warning content color. Useful for text within warning buttons and alerts.",
-      "priority": 150,
-      "variable": "--wac",
-      "syntax": "<color>",
-      "value": "__:PALETTE::white:__",
-      "mediaQueries": {}
-    },
-    "error": {
-      "name": "error",
-      "description": "The error color. Useful for error buttons and alerts.",
-      "priority": 150,
-      "variable": "--er",
-      "syntax": "<color>",
-      "value": "#DE1C8D",
-      "mediaQueries": {}
-    },
-    "error-content": {
-      "name": "error-content",
-      "description": "The error content color. Useful for text within error buttons and alerts.",
-      "priority": 150,
-      "variable": "--erc",
-      "syntax": "<color>",
-      "value": "__:PALETTE::white:__",
-      "mediaQueries": {}
-    },
-    "contained-max-width": {
-      "name": "contained-max-width",
-      "description": null,
-      "priority": 150,
-      "variable": "--cmw",
-      "syntax": "*",
-      "value": "inherit",
-      "mediaQueries": {
-        "__:MEDIA_QUERY::sm:__": {
-          "": "640px"
-        },
-        "__:MEDIA_QUERY::md:__": {
-          "": "768px"
-        },
-        "__:MEDIA_QUERY::lg:__": {
-          "": "1024px"
-        },
-        "__:MEDIA_QUERY::xl:__": {
-          "": "1280px"
-        },
-        "__:MEDIA_QUERY::xxl:__": {
-          "": "1536px"
-        }
-      }
-    },
-    "empty": {
-      "name": "empty",
-      "description": null,
-      "priority": 150,
-      "variable": "--empty",
-      "syntax": "*",
-      "value": "/* */",
-      "mediaQueries": {}
-    },
-    "filter-blur": {
-      "name": "filter-blur",
-      "description": null,
-      "priority": 150,
-      "variable": "--filter-blur",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "filter-brightness": {
-      "name": "filter-brightness",
-      "description": null,
-      "priority": 150,
-      "variable": "--filter-brightness",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "filter-contrast": {
-      "name": "filter-contrast",
-      "description": null,
-      "priority": 150,
-      "variable": "--filter-contrast",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "filter-custom": {
-      "name": "filter-custom",
-      "description": null,
-      "priority": 150,
-      "variable": "--filter-custom",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "filter-grayscale": {
-      "name": "filter-grayscale",
-      "description": null,
-      "priority": 150,
-      "variable": "--filter-grayscale",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "filter-hue-rotate": {
-      "name": "filter-hue-rotate",
-      "description": null,
-      "priority": 150,
-      "variable": "--filter-hue-rotate",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "filter-invert": {
-      "name": "filter-invert",
-      "description": null,
-      "priority": 150,
-      "variable": "--filter-invert",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "filter-saturate": {
-      "name": "filter-saturate",
-      "description": null,
-      "priority": 150,
-      "variable": "--filter-saturate",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "filter-sepia": {
-      "name": "filter-sepia",
-      "description": null,
-      "priority": 150,
-      "variable": "--filter-sepia",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "filter-drop-shadow": {
-      "name": "filter-drop-shadow",
-      "description": null,
-      "priority": 150,
-      "variable": "--filter-drop-shadow",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "group-nested-filter": {
-      "name": "group-nested-filter",
-      "description": null,
-      "priority": 150,
-      "variable": "--group-nested-filter",
-      "syntax": "*",
-      "value": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)",
-      "mediaQueries": {}
-    },
-    "backdrop-blur": {
-      "name": "backdrop-blur",
-      "description": null,
-      "priority": 150,
-      "variable": "--backdrop-blur",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "backdrop-brightness": {
-      "name": "backdrop-brightness",
-      "description": null,
-      "priority": 150,
-      "variable": "--backdrop-brightness",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "backdrop-contrast": {
-      "name": "backdrop-contrast",
-      "description": null,
-      "priority": 150,
-      "variable": "--backdrop-contrast",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "backdrop-custom": {
-      "name": "backdrop-custom",
-      "description": null,
-      "priority": 150,
-      "variable": "--backdrop-custom",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "backdrop-grayscale": {
-      "name": "backdrop-grayscale",
-      "description": null,
-      "priority": 150,
-      "variable": "--backdrop-grayscale",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "backdrop-hue-rotate": {
-      "name": "backdrop-hue-rotate",
-      "description": null,
-      "priority": 150,
-      "variable": "--backdrop-hue-rotate",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "backdrop-invert": {
-      "name": "backdrop-invert",
-      "description": null,
-      "priority": 150,
-      "variable": "--backdrop-invert",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "backdrop-saturate": {
-      "name": "backdrop-saturate",
-      "description": null,
-      "priority": 150,
-      "variable": "--backdrop-saturate",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "backdrop-sepia": {
-      "name": "backdrop-sepia",
-      "description": null,
-      "priority": 150,
-      "variable": "--backdrop-sepia",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "backdrop-drop-shadow": {
-      "name": "backdrop-drop-shadow",
-      "description": null,
-      "priority": 150,
-      "variable": "--backdrop-drop-shadow",
-      "syntax": "*",
-      "value": null,
-      "mediaQueries": {}
-    },
-    "group-nested-backdrop": {
-      "name": "group-nested-backdrop",
-      "description": null,
-      "priority": 150,
-      "variable": "--gnb",
-      "syntax": "*",
-      "value": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)",
-      "mediaQueries": {}
-    },
-    "transition-duration": {
-      "name": "transition-duration",
-      "description": null,
-      "priority": 150,
-      "variable": "--transition-duration",
-      "syntax": "<time>",
-      "value": "150ms",
-      "mediaQueries": {}
-    },
-    "animation-duration": {
-      "name": "animation-duration",
-      "description": null,
-      "priority": 150,
-      "variable": "--animation-duration",
-      "syntax": "<time>",
-      "value": "1s",
-      "mediaQueries": {}
-    },
-    "enter-opacity": {
-      "name": "enter-opacity",
-      "description": null,
-      "priority": 150,
-      "variable": "--enter-opacity",
-      "syntax": [
-        "<number>",
-        "<percentage>"
-      ],
-      "value": "1",
-      "mediaQueries": {}
-    },
-    "enter-translate-x": {
-      "name": "enter-translate-x",
-      "description": null,
-      "priority": 150,
-      "variable": "--enter-tx",
-      "syntax": "<length-percentage>",
-      "value": "0",
-      "mediaQueries": {}
-    },
-    "enter-translate-y": {
-      "name": "enter-translate-y",
-      "description": null,
-      "priority": 150,
-      "variable": "--enter-ty",
-      "syntax": "<length-percentage>",
-      "value": "0",
-      "mediaQueries": {}
-    },
-    "enter-scale-x": {
-      "name": "enter-scale-x",
-      "description": null,
-      "priority": 150,
-      "variable": "--enter-sx",
-      "syntax": [
-        "<number>",
-        "<percentage>"
-      ],
-      "value": "1",
-      "mediaQueries": {}
-    },
-    "enter-scale-y": {
-      "name": "enter-scale-y",
-      "description": null,
-      "priority": 150,
-      "variable": "--enter-sy",
-      "syntax": [
-        "<number>",
-        "<percentage>"
-      ],
-      "value": "1",
-      "mediaQueries": {}
-    },
-    "enter-rotate": {
-      "name": "enter-rotate",
-      "description": null,
-      "priority": 150,
-      "variable": "--enter-rotate",
-      "syntax": "<angle>",
-      "value": "0",
-      "mediaQueries": {}
-    },
-    "exit-opacity": {
-      "name": "exit-opacity",
-      "description": null,
-      "priority": 150,
-      "variable": "--exit-opacity",
-      "syntax": [
-        "<number>",
-        "<percentage>"
-      ],
-      "value": "1",
-      "mediaQueries": {}
-    },
-    "exit-translate-x": {
-      "name": "exit-translate-x",
-      "description": null,
-      "priority": 150,
-      "variable": "--exit-tx",
-      "syntax": "<length-percentage>",
-      "value": "0",
-      "mediaQueries": {}
-    },
-    "exit-translate-y": {
-      "name": "exit-translate-y",
-      "description": null,
-      "priority": 150,
-      "variable": "--exit-ty",
-      "syntax": "<length-percentage>",
-      "value": "0",
-      "mediaQueries": {}
-    },
-    "exit-scale-x": {
-      "name": "exit-scale-x",
-      "description": null,
-      "priority": 150,
-      "variable": "--exit-sx",
-      "syntax": [
-        "<number>",
-        "<percentage>"
-      ],
-      "value": "1",
-      "mediaQueries": {}
-    },
-    "exit-scale-y": {
-      "name": "exit-scale-y",
-      "description": null,
-      "priority": 150,
-      "variable": "--exit-sy",
-      "syntax": [
-        "<number>",
-        "<percentage>"
-      ],
-      "value": "1",
-      "mediaQueries": {}
-    },
-    "exit-rotate": {
-      "name": "exit-rotate",
-      "description": null,
-      "priority": 150,
-      "variable": "--exit-rotate",
-      "syntax": "<angle>",
-      "value": "0",
-      "mediaQueries": {}
-    }
-  },
-  "media_queries": {
-    "device-categories": {
-      "screen": {
-        "name": "screen",
-        "query": "screen",
-        "description": "The media query for devices with a screen.",
-        "priority": 150
-      },
-      "print": {
-        "name": "print",
-        "query": "print",
-        "description": "The media query for devices with a printer.",
-        "priority": 150
-      }
-    },
-    "breakpoints": {
-      "sm": {
-        "name": "sm",
-        "query": "(min-width: 640px)",
-        "description": "The breakpoint for devices with screen size greater than tiny.",
-        "priority": 150
-      },
-      "md": {
-        "name": "md",
-        "query": "(min-width: 768px)",
-        "description": "The breakpoint for devices screen size greater than medium",
-        "priority": 150
-      },
-      "lg": {
-        "name": "lg",
-        "query": "(min-width: 1024px)",
-        "description": "The breakpoint for devices screen size greater than large",
-        "priority": 150
-      },
-      "xl": {
-        "name": "xl",
-        "query": "(min-width: 1280px)",
-        "description": "The breakpoint for devices screen size greater than extra large",
-        "priority": 150
-      },
-      "xxl": {
-        "name": "xxl",
-        "query": "(min-width: 1536px)",
-        "description": "The breakpoint for devices screen size greater than xxl",
-        "priority": 150
-      }
-    },
-    "orientation": {
-      "portrait": {
-        "name": "portrait",
-        "query": "(orientation: portrait)",
-        "description": "The media query for devices with a portrait orientation.",
-        "priority": 150
-      },
-      "landscape": {
-        "name": "landscape",
-        "query": "(orientation: landscape)",
-        "description": "The media query for devices with a landscape orientation.",
-        "priority": 150
-      }
-    },
-    "motion": {
-      "motion-reduce": {
-        "name": "motion-reduce",
-        "query": "(prefers-reduced-motion: reduce)",
-        "description": "The media query for devices with a reduced motion preference.",
-        "priority": 150
-      },
-      "motion-safe": {
-        "name": "motion-safe",
-        "query": "(prefers-reduced-motion: no-preference)",
-        "description": "The media query for devices with a no preference motion preference.",
-        "priority": 150
-      }
-    },
-    "dark-mode": {
-      "dark": {
-        "name": "dark",
-        "query": "(prefers-color-scheme: dark)",
-        "description": "The media query for devices with a dark color scheme.",
-        "priority": 150
-      },
-      "light": {
-        "name": "light",
-        "query": "(prefers-color-scheme: light)",
-        "description": "The media query for devices with a light color scheme.",
-        "priority": 150
-      }
-    }
-  },
-  "modifiers": {
-    "parent-group": {
-      "rtl": {
-        "name": "rtl",
-        "values": [
-          "[dir=rtl] &"
-        ],
-        "description": "This class modifier becomes active when when the text direction of any parent nodes is set to right to left.",
-        "priority": 150
-      },
-      "group-hover": {
-        "name": "group-hover",
-        "values": [
-          ".\\$group:hover &",
-          ".group:hover &",
-          "[role='group']:hover &"
-        ],
-        "description": "This class modifier becomes active when a parent group is hovered.",
-        "priority": 150
-      },
-      "group-focus": {
-        "name": "group-focus",
-        "values": [
-          ".\\$group:focus &",
-          ".group:focus &",
-          "[role='group']:focus &"
-        ],
-        "description": "This class modifier becomes active when a parent group is focused.",
-        "priority": 150
-      },
-      "group-active": {
-        "name": "group-active",
-        "values": [
-          ".\\$group:active &",
-          ".group:active &",
-          "[role='group']:active &"
-        ],
-        "description": "This class modifier becomes active when a parent group is active.",
-        "priority": 150
-      },
-      "group-visited": {
-        "name": "group-visited",
-        "values": [
-          ".\\$group:visited &",
-          ".group:visited &",
-          "[role='group']:visited &"
-        ],
-        "description": "This class modifier becomes active when a parent group is visited.",
-        "priority": 150
-      }
-    },
-    "hover-group": {
-      "hover": {
-        "name": "hover",
-        "values": [
-          "&:hover"
-        ],
-        "description": "This class modifier becomes active when the element is hovered.",
-        "priority": 150
-      }
-    },
-    "active-group": {
-      "active": {
-        "name": "active",
-        "values": [
-          "&:active"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "focus-group": {
-      "focus": {
-        "name": "focus",
-        "values": [
-          "&:focus"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "focus-within-group": {
-      "focus-within": {
-        "name": "focus-within",
-        "values": [
-          "&:focus-within"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "focus-visible-group": {
-      "focus-visible": {
-        "name": "focus-visible",
-        "values": [
-          "&:focus-visible"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "enabled-group": {
-      "disabled": {
-        "name": "disabled",
-        "values": [
-          "&[disabled]",
-          "&:disabled"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "not-disabled": {
-        "name": "not-disabled",
-        "values": [
-          "&:disabled"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "enabled": {
-        "name": "enabled",
-        "values": [
-          "&:enabled"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "empty-group": {
-      "empty": {
-        "name": "empty",
-        "values": [
-          "&:empty"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "read-group": {
-      "read-write": {
-        "name": "read-write",
-        "values": [
-          "&:read-write"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "readonly": {
-        "name": "readonly",
-        "values": [
-          "&[readonly]",
-          "&:read-only"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "not-readonly": {
-        "name": "not-readonly",
-        "values": [
-          "&[readonly=false]",
-          "&:not(:read-only)"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "checked-group": {
-      "indeterminate": {
-        "name": "indeterminate",
-        "values": [
-          "&:indeterminate"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "checked": {
-        "name": "checked",
-        "values": [
-          "&:checked"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "unchecked": {
-        "name": "unchecked",
-        "values": [
-          "&:not(:checked)"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "valid-group": {
-      "valid": {
-        "name": "valid",
-        "values": [
-          "&:valid"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "invalid": {
-        "name": "invalid",
-        "values": [
-          "&:invalid"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "autofill-group": {
-      "autofill": {
-        "name": "autofill",
-        "values": [
-          "&:-webkit-autofill"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "even-group": {
-      "even": {
-        "name": "even",
-        "values": [
-          "&:even"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "odd": {
-        "name": "odd",
-        "values": [
-          "&:odd"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "even-of-type": {
-        "name": "even-of-type",
-        "values": [
-          "&:nth-of-type(even)"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "odd-of-type": {
-        "name": "odd-of-type",
-        "values": [
-          "&:nth-of-type(odd)"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "node-position-group": {
-      "first": {
-        "name": "first",
-        "values": [
-          "&:first"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "not-first": {
-        "name": "not-first",
-        "values": [
-          "&:not(:first-child)"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "last": {
-        "name": "last",
-        "values": [
-          "&:last"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "not-last": {
-        "name": "not-last",
-        "values": [
-          "&:not(:last-child)"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "node-of-type-group": {
-      "first-of-type": {
-        "name": "first-of-type",
-        "values": [
-          "&:first-of-type"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "not-first-of-type": {
-        "name": "not-first-of-type",
-        "values": [
-          "&:not(:first-of-type)"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "last-of-type": {
-        "name": "last-of-type",
-        "values": [
-          "&:last-of-type"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "not-last-of-type": {
-        "name": "not-last-of-type",
-        "values": [
-          "&:not(:last-of-type)"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "visited-group": {
-      "visited": {
-        "name": "visited",
-        "values": [
-          "&:visited"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "optional-group": {
-      "optional": {
-        "name": "optional",
-        "values": [
-          "&:optional"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "aria": {
-      "aria-current-page": {
-        "name": "aria-current-page",
-        "values": [
-          "&[aria-current=page]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-current-location": {
-        "name": "aria-current-location",
-        "values": [
-          "&[aria-current=location]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-current-date": {
-        "name": "aria-current-date",
-        "values": [
-          "&[aria-current=date]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-current-time": {
-        "name": "aria-current-time",
-        "values": [
-          "&[aria-current=time]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-current-step": {
-        "name": "aria-current-step",
-        "values": [
-          "&[aria-current=step]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-disabled": {
-        "name": "aria-disabled",
-        "values": [
-          "&[aria-disabled=true]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-not-disabled": {
-        "name": "aria-not-disabled",
-        "values": [
-          "&[aria-disabled=false]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-readonly": {
-        "name": "aria-readonly",
-        "values": [
-          "&[aria-readonly=true]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-not-readonly": {
-        "name": "aria-not-readonly",
-        "values": [
-          "&[aria-readonly=false]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-expanded": {
-        "name": "aria-expanded",
-        "values": [
-          "&[aria-expanded=true]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-indeterminate": {
-        "name": "aria-indeterminate",
-        "values": [
-          "&[aria-checked=mixed]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-checked": {
-        "name": "aria-checked",
-        "values": [
-          "&[aria-checked=true]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-unchecked": {
-        "name": "aria-unchecked",
-        "values": [
-          "&[aria-checked=false]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-grabbed": {
-        "name": "aria-grabbed",
-        "values": [
-          "&[aria-grabbed=true]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-pressed": {
-        "name": "aria-pressed",
-        "values": [
-          "&[aria-pressed=true]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-invalid-grammar": {
-        "name": "aria-invalid-grammar",
-        "values": [
-          "&[aria-invalid=grammar]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-invalid-spelling": {
-        "name": "aria-invalid-spelling",
-        "values": [
-          "&[aria-invalid=spelling]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-valid": {
-        "name": "aria-valid",
-        "values": [
-          "&[aria-invalid=false]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-invalid": {
-        "name": "aria-invalid",
-        "values": [
-          "&[aria-invalid=true]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-required": {
-        "name": "aria-required",
-        "values": [
-          "[aria-required=true]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-not-required": {
-        "name": "aria-not-required",
-        "values": [
-          "[aria-required=false]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "loading": {
-        "name": "loading",
-        "values": [
-          "&[aria-busy=true]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-selected": {
-        "name": "aria-selected",
-        "values": [
-          "&[aria-selected=true]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-hidden": {
-        "name": "aria-hidden",
-        "values": [
-          "&[aria-hidden=true]"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "aria-live": {
-        "name": "aria-live",
-        "values": [
-          "&[aria-live=polite]"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "full-screen-group": {
-      "full-screen": {
-        "name": "full-screen",
-        "values": [
-          "&:fullscreen"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "target-group": {
-      "target": {
-        "name": "target",
-        "values": [
-          "&:target"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "placeholder-shown-group": {
-      "placeholder-shown": {
-        "name": "placeholder-shown",
-        "values": [
-          "&:placeholder-shown"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "required-group": {
-      "required": {
-        "name": "required",
-        "values": [
-          "&:required"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "not-required": {
-        "name": "not-required",
-        "values": [
-          "&:not(:required)"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "default-group": {
-      "default": {
-        "name": "default",
-        "values": [
-          "&:default"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "only-child-group": {
-      "only-child": {
-        "name": "only-child",
-        "values": [
-          "&:only-child"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "not-only-child": {
-        "name": "not-only-child",
-        "values": [
-          "&:not(:only-child)"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "only-group": {
-      "only-of-type": {
-        "name": "only-of-type",
-        "values": [
-          "&:only-of-type"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "not-only-of-type": {
-        "name": "not-only-of-type",
-        "values": [
-          "&:not(:only-of-type)"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "root-group": {
-      "root": {
-        "name": "root",
-        "values": [
-          "&:root"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "link-group": {
-      "link": {
-        "name": "link",
-        "values": [
-          "&:link"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    },
-    "pseudo-group": {
-      "placeholder": {
-        "name": "placeholder",
-        "values": [
-          "&::placeholder"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "selection": {
-        "name": "selection",
-        "values": [
-          "&::selection"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "first-letter": {
-        "name": "first-letter",
-        "values": [
-          "&::first-letter"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "first-line": {
-        "name": "first-line",
-        "values": [
-          "&::first-line"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "before": {
-        "name": "before",
-        "values": [
-          "&::before"
-        ],
-        "description": null,
-        "priority": 150
-      },
-      "after": {
-        "name": "after",
-        "values": [
-          "&::after"
-        ],
-        "description": null,
-        "priority": 150
-      }
-    }
-  },
   "atoms": {
     "sr": {
       "name": "sr",
@@ -2439,6 +1015,1441 @@ expression: runner_config
       }
     }
   },
+  "css_variables": {
+    "primary": {
+      "name": "primary",
+      "description": "The primary color. Useful for primary buttons.",
+      "priority": 150,
+      "variable": "--p",
+      "syntax": "<color>",
+      "value": "#570df8",
+      "mediaQueries": {}
+    },
+    "primary-content": {
+      "name": "primary-content",
+      "description": "The primary content color",
+      "priority": 150,
+      "variable": "--pc",
+      "syntax": "<color>",
+      "value": "__:PALETTE::white:__",
+      "mediaQueries": {}
+    },
+    "secondary": {
+      "name": "secondary",
+      "description": "The secondary color. Useful for secondary buttons.",
+      "priority": 150,
+      "variable": "--s",
+      "syntax": "<color>",
+      "value": "#f000b8",
+      "mediaQueries": {}
+    },
+    "secondary-content": {
+      "name": "secondary-content",
+      "description": "The secondary content color. Useful for text within secondary buttons.",
+      "priority": 150,
+      "variable": "--sc",
+      "syntax": "<color>",
+      "value": "__:PALETTE::white:__",
+      "mediaQueries": {}
+    },
+    "accent": {
+      "name": "accent",
+      "description": "Color for accents.",
+      "priority": 150,
+      "variable": "--a",
+      "syntax": "<color>",
+      "value": "#37cdbe",
+      "mediaQueries": {}
+    },
+    "accent-content": {
+      "name": "accent-content",
+      "description": "Color for content within accents.",
+      "priority": 150,
+      "variable": "--ac",
+      "syntax": "<color>",
+      "value": "#163835",
+      "mediaQueries": {}
+    },
+    "neutral": {
+      "name": "neutral",
+      "description": "The neutral color.",
+      "priority": 150,
+      "variable": "--n",
+      "syntax": "<color>",
+      "value": "#3d4451",
+      "mediaQueries": {}
+    },
+    "neutral-content": {
+      "name": "neutral-content",
+      "description": "The neutral content color.",
+      "priority": 150,
+      "variable": "--nc",
+      "syntax": "<color>",
+      "value": "__:PALETTE::white:__",
+      "mediaQueries": {}
+    },
+    "base100": {
+      "name": "base100",
+      "description": "The base color.",
+      "priority": 150,
+      "variable": "--b1",
+      "syntax": "<color>",
+      "value": "__:PALETTE::white:__",
+      "mediaQueries": {}
+    },
+    "base200": {
+      "name": "base200",
+      "description": "The secondary base color.",
+      "priority": 150,
+      "variable": "--b2",
+      "syntax": "<color>",
+      "value": "#F2F2F2",
+      "mediaQueries": {}
+    },
+    "base300": {
+      "name": "base300",
+      "description": "The tertiary base color.",
+      "priority": 150,
+      "variable": "--b3",
+      "syntax": "<color>",
+      "value": "#E5E6E6",
+      "mediaQueries": {}
+    },
+    "base-content": {
+      "name": "base-content",
+      "description": "The base content color. This is useful for text.",
+      "priority": 150,
+      "variable": "--bc",
+      "syntax": "<color>",
+      "value": "#1f2937",
+      "mediaQueries": {}
+    },
+    "info": {
+      "name": "info",
+      "description": "The info color. Useful for info buttons and alerts.",
+      "priority": 150,
+      "variable": "--in",
+      "syntax": "<color>",
+      "value": "#0070F3",
+      "mediaQueries": {}
+    },
+    "info-content": {
+      "name": "info-content",
+      "description": "The info content color. Useful for text within info buttons and alerts.",
+      "priority": 150,
+      "variable": "--inc",
+      "syntax": "<color>",
+      "value": "__:PALETTE::white:__",
+      "mediaQueries": {}
+    },
+    "success": {
+      "name": "success",
+      "description": "The success color. Useful for success buttons and alerts.",
+      "priority": 150,
+      "variable": "--su",
+      "syntax": "<color>",
+      "value": "#21CC51",
+      "mediaQueries": {}
+    },
+    "success-content": {
+      "name": "success-content",
+      "description": "The success content color. Useful for text within success buttons and alerts.",
+      "priority": 150,
+      "variable": "--suc",
+      "syntax": "<color>",
+      "value": "__:PALETTE::white:__",
+      "mediaQueries": {}
+    },
+    "warning": {
+      "name": "warning",
+      "description": "The warning color. Useful for warning buttons and alerts.",
+      "priority": 150,
+      "variable": "--wa",
+      "syntax": "<color>",
+      "value": "#FF6154",
+      "mediaQueries": {}
+    },
+    "warning-content": {
+      "name": "warning-content",
+      "description": "The warning content color. Useful for text within warning buttons and alerts.",
+      "priority": 150,
+      "variable": "--wac",
+      "syntax": "<color>",
+      "value": "__:PALETTE::white:__",
+      "mediaQueries": {}
+    },
+    "error": {
+      "name": "error",
+      "description": "The error color. Useful for error buttons and alerts.",
+      "priority": 150,
+      "variable": "--er",
+      "syntax": "<color>",
+      "value": "#DE1C8D",
+      "mediaQueries": {}
+    },
+    "error-content": {
+      "name": "error-content",
+      "description": "The error content color. Useful for text within error buttons and alerts.",
+      "priority": 150,
+      "variable": "--erc",
+      "syntax": "<color>",
+      "value": "__:PALETTE::white:__",
+      "mediaQueries": {}
+    },
+    "contained-max-width": {
+      "name": "contained-max-width",
+      "description": null,
+      "priority": 150,
+      "variable": "--cmw",
+      "syntax": "*",
+      "value": "inherit",
+      "mediaQueries": {
+        "__:MEDIA_QUERY::sm:__": {
+          "": "640px"
+        },
+        "__:MEDIA_QUERY::md:__": {
+          "": "768px"
+        },
+        "__:MEDIA_QUERY::lg:__": {
+          "": "1024px"
+        },
+        "__:MEDIA_QUERY::xl:__": {
+          "": "1280px"
+        },
+        "__:MEDIA_QUERY::xxl:__": {
+          "": "1536px"
+        }
+      }
+    },
+    "empty": {
+      "name": "empty",
+      "description": null,
+      "priority": 150,
+      "variable": "--empty",
+      "syntax": "*",
+      "value": "/* */",
+      "mediaQueries": {}
+    },
+    "filter-blur": {
+      "name": "filter-blur",
+      "description": null,
+      "priority": 150,
+      "variable": "--filter-blur",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "filter-brightness": {
+      "name": "filter-brightness",
+      "description": null,
+      "priority": 150,
+      "variable": "--filter-brightness",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "filter-contrast": {
+      "name": "filter-contrast",
+      "description": null,
+      "priority": 150,
+      "variable": "--filter-contrast",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "filter-custom": {
+      "name": "filter-custom",
+      "description": null,
+      "priority": 150,
+      "variable": "--filter-custom",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "filter-grayscale": {
+      "name": "filter-grayscale",
+      "description": null,
+      "priority": 150,
+      "variable": "--filter-grayscale",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "filter-hue-rotate": {
+      "name": "filter-hue-rotate",
+      "description": null,
+      "priority": 150,
+      "variable": "--filter-hue-rotate",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "filter-invert": {
+      "name": "filter-invert",
+      "description": null,
+      "priority": 150,
+      "variable": "--filter-invert",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "filter-saturate": {
+      "name": "filter-saturate",
+      "description": null,
+      "priority": 150,
+      "variable": "--filter-saturate",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "filter-sepia": {
+      "name": "filter-sepia",
+      "description": null,
+      "priority": 150,
+      "variable": "--filter-sepia",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "filter-drop-shadow": {
+      "name": "filter-drop-shadow",
+      "description": null,
+      "priority": 150,
+      "variable": "--filter-drop-shadow",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "group-nested-filter": {
+      "name": "group-nested-filter",
+      "description": null,
+      "priority": 150,
+      "variable": "--group-nested-filter",
+      "syntax": "*",
+      "value": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)",
+      "mediaQueries": {}
+    },
+    "backdrop-blur": {
+      "name": "backdrop-blur",
+      "description": null,
+      "priority": 150,
+      "variable": "--backdrop-blur",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "backdrop-brightness": {
+      "name": "backdrop-brightness",
+      "description": null,
+      "priority": 150,
+      "variable": "--backdrop-brightness",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "backdrop-contrast": {
+      "name": "backdrop-contrast",
+      "description": null,
+      "priority": 150,
+      "variable": "--backdrop-contrast",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "backdrop-custom": {
+      "name": "backdrop-custom",
+      "description": null,
+      "priority": 150,
+      "variable": "--backdrop-custom",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "backdrop-grayscale": {
+      "name": "backdrop-grayscale",
+      "description": null,
+      "priority": 150,
+      "variable": "--backdrop-grayscale",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "backdrop-hue-rotate": {
+      "name": "backdrop-hue-rotate",
+      "description": null,
+      "priority": 150,
+      "variable": "--backdrop-hue-rotate",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "backdrop-invert": {
+      "name": "backdrop-invert",
+      "description": null,
+      "priority": 150,
+      "variable": "--backdrop-invert",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "backdrop-saturate": {
+      "name": "backdrop-saturate",
+      "description": null,
+      "priority": 150,
+      "variable": "--backdrop-saturate",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "backdrop-sepia": {
+      "name": "backdrop-sepia",
+      "description": null,
+      "priority": 150,
+      "variable": "--backdrop-sepia",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "backdrop-drop-shadow": {
+      "name": "backdrop-drop-shadow",
+      "description": null,
+      "priority": 150,
+      "variable": "--backdrop-drop-shadow",
+      "syntax": "*",
+      "value": null,
+      "mediaQueries": {}
+    },
+    "group-nested-backdrop": {
+      "name": "group-nested-backdrop",
+      "description": null,
+      "priority": 150,
+      "variable": "--gnb",
+      "syntax": "*",
+      "value": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)",
+      "mediaQueries": {}
+    },
+    "transition-duration": {
+      "name": "transition-duration",
+      "description": null,
+      "priority": 150,
+      "variable": "--transition-duration",
+      "syntax": "<time>",
+      "value": "150ms",
+      "mediaQueries": {}
+    },
+    "animation-duration": {
+      "name": "animation-duration",
+      "description": null,
+      "priority": 150,
+      "variable": "--animation-duration",
+      "syntax": "<time>",
+      "value": "1s",
+      "mediaQueries": {}
+    },
+    "enter-opacity": {
+      "name": "enter-opacity",
+      "description": null,
+      "priority": 150,
+      "variable": "--enter-opacity",
+      "syntax": [
+        "<number>",
+        "<percentage>"
+      ],
+      "value": "1",
+      "mediaQueries": {}
+    },
+    "enter-translate-x": {
+      "name": "enter-translate-x",
+      "description": null,
+      "priority": 150,
+      "variable": "--enter-tx",
+      "syntax": "<length-percentage>",
+      "value": "0",
+      "mediaQueries": {}
+    },
+    "enter-translate-y": {
+      "name": "enter-translate-y",
+      "description": null,
+      "priority": 150,
+      "variable": "--enter-ty",
+      "syntax": "<length-percentage>",
+      "value": "0",
+      "mediaQueries": {}
+    },
+    "enter-scale-x": {
+      "name": "enter-scale-x",
+      "description": null,
+      "priority": 150,
+      "variable": "--enter-sx",
+      "syntax": [
+        "<number>",
+        "<percentage>"
+      ],
+      "value": "1",
+      "mediaQueries": {}
+    },
+    "enter-scale-y": {
+      "name": "enter-scale-y",
+      "description": null,
+      "priority": 150,
+      "variable": "--enter-sy",
+      "syntax": [
+        "<number>",
+        "<percentage>"
+      ],
+      "value": "1",
+      "mediaQueries": {}
+    },
+    "enter-rotate": {
+      "name": "enter-rotate",
+      "description": null,
+      "priority": 150,
+      "variable": "--enter-rotate",
+      "syntax": "<angle>",
+      "value": "0",
+      "mediaQueries": {}
+    },
+    "exit-opacity": {
+      "name": "exit-opacity",
+      "description": null,
+      "priority": 150,
+      "variable": "--exit-opacity",
+      "syntax": [
+        "<number>",
+        "<percentage>"
+      ],
+      "value": "1",
+      "mediaQueries": {}
+    },
+    "exit-translate-x": {
+      "name": "exit-translate-x",
+      "description": null,
+      "priority": 150,
+      "variable": "--exit-tx",
+      "syntax": "<length-percentage>",
+      "value": "0",
+      "mediaQueries": {}
+    },
+    "exit-translate-y": {
+      "name": "exit-translate-y",
+      "description": null,
+      "priority": 150,
+      "variable": "--exit-ty",
+      "syntax": "<length-percentage>",
+      "value": "0",
+      "mediaQueries": {}
+    },
+    "exit-scale-x": {
+      "name": "exit-scale-x",
+      "description": null,
+      "priority": 150,
+      "variable": "--exit-sx",
+      "syntax": [
+        "<number>",
+        "<percentage>"
+      ],
+      "value": "1",
+      "mediaQueries": {}
+    },
+    "exit-scale-y": {
+      "name": "exit-scale-y",
+      "description": null,
+      "priority": 150,
+      "variable": "--exit-sy",
+      "syntax": [
+        "<number>",
+        "<percentage>"
+      ],
+      "value": "1",
+      "mediaQueries": {}
+    },
+    "exit-rotate": {
+      "name": "exit-rotate",
+      "description": null,
+      "priority": 150,
+      "variable": "--exit-rotate",
+      "syntax": "<angle>",
+      "value": "0",
+      "mediaQueries": {}
+    }
+  },
+  "css_chunks": {
+    "reset": {
+      "name": "reset",
+      "description": null,
+      "priority": 200,
+      "layer": "base",
+      "css": "/*\nPlease read: https://github.com/antfu/unocss/blob/main/packages/reset/tailwind-compat.md\n*/\n\n/*\n1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)\n2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)\n*/\n\n*,\n::before,\n::after {\n  box-sizing: border-box;\n  /* 1 */\n  border-width: 0;\n  /* 2 */\n  border-style: solid;\n  /* 2 */\n  border-color: #e5e7eb;\n  /* 2 */\n}\n\n/*\n1. Use a consistent sensible line-height in all browsers.\n2. Prevent adjustments of font size after orientation changes in iOS.\n3. Use a more readable tab size.\n4. Use the user's configured `sans` font-family by default.\n*/\n\nhtml {\n  line-height: 1.5;\n  /* 1 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */\n  -moz-tab-size: 4;\n  /* 3 */\n  tab-size: 4;\n  /* 3 */\n  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,\n    \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif,\n    \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\";\n  /* 4 */\n}\n\n/*\n1. Remove the margin in all browsers.\n2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.\n*/\n\nbody {\n  margin: 0;\n  /* 1 */\n  line-height: inherit;\n  /* 2 */\n}\n\n/*\n1. Add the correct height in Firefox.\n2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)\n3. Ensure horizontal rules are visible by default.\n*/\n\nhr {\n  height: 0;\n  /* 1 */\n  color: inherit;\n  /* 2 */\n  border-top-width: 1px;\n  /* 3 */\n}\n\n/*\nAdd the correct text decoration in Chrome, Edge, and Safari.\n*/\n\nabbr:where([title]) {\n  text-decoration: underline dotted;\n}\n\n/*\nRemove the default font size and weight for headings.\n*/\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-size: inherit;\n  font-weight: inherit;\n}\n\n/*\nReset links to optimize for opt-in styling instead of opt-out.\n*/\n\na {\n  color: inherit;\n  text-decoration: inherit;\n}\n\n/*\nAdd the correct font weight in Edge and Safari.\n*/\n\nb,\nstrong {\n  font-weight: bolder;\n}\n\n/*\n1. Use the user's configured `mono` font family by default.\n2. Correct the odd `em` font sizing in all browsers.\n*/\n\ncode,\nkbd,\nsamp,\npre {\n  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,\n    \"Liberation Mono\", \"Courier New\", monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */\n}\n\n/*\nAdd the correct font size in all browsers.\n*/\n\nsmall {\n  font-size: 80%;\n}\n\n/*\nPrevent `sub` and `sup` elements from affecting the line height in all browsers.\n*/\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n/*\n1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)\n2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)\n3. Remove gaps between table borders by default.\n*/\n\ntable {\n  text-indent: 0;\n  /* 1 */\n  border-color: inherit;\n  /* 2 */\n  border-collapse: collapse;\n  /* 3 */\n}\n\n/*\n1. Change the font styles in all browsers.\n2. Remove the margin in Firefox and Safari.\n3. Remove default padding in all browsers.\n*/\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit;\n  /* 1 */\n  font-size: 100%;\n  /* 1 */\n  font-weight: inherit;\n  /* 1 */\n  line-height: inherit;\n  /* 1 */\n  color: inherit;\n  /* 1 */\n  margin: 0;\n  /* 2 */\n  padding: 0;\n  /* 3 */\n}\n\n/*\nRemove the inheritance of text transform in Edge and Firefox.\n*/\n\nbutton,\nselect {\n  text-transform: none;\n}\n\n/*\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Remove default button styles.\n*/\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 1 */\n  /*will affect the button style of most component libraries, so disable it*/\n  /*https://github.com/unocss/unocss/issues/2127*/\n  /*background-color: transparent; !* 2 *!*/\n  background-image: none;\n  /* 2 */\n}\n\n/*\nUse the modern Firefox focus style for all focusable elements.\n*/\n\n:-moz-focusring {\n  outline: auto;\n}\n\n/*\nRemove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)\n*/\n\n:-moz-ui-invalid {\n  box-shadow: none;\n}\n\n/*\nAdd the correct vertical alignment in Chrome and Firefox.\n*/\n\nprogress {\n  vertical-align: baseline;\n}\n\n/*\nCorrect the cursor style of increment and decrement buttons in Safari.\n*/\n\n::-webkit-inner-spin-button,\n::-webkit-outer-spin-button {\n  height: auto;\n}\n\n/*\n1. Correct the odd appearance in Chrome and Safari.\n2. Correct the outline style in Safari.\n*/\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */\n}\n\n/*\nRemove the inner padding in Chrome and Safari on macOS.\n*/\n\n::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\n/*\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Change font properties to `inherit` in Safari.\n*/\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */\n}\n\n/*\nAdd the correct display in Chrome and Safari.\n*/\n\nsummary {\n  display: list-item;\n}\n\n/*\nRemoves the default spacing and border for appropriate elements.\n*/\n\nblockquote,\ndl,\ndd,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\nhr,\nfigure,\np,\npre {\n  margin: 0;\n}\n\nfieldset {\n  margin: 0;\n  padding: 0;\n}\n\nlegend {\n  padding: 0;\n}\n\nol,\nul,\nmenu {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n/*\nPrevent resizing textareas horizontally by default.\n*/\n\ntextarea {\n  resize: vertical;\n}\n\n/*\n1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)\n2. Set the default placeholder color to the user's configured gray 400 color.\n*/\n\ninput::placeholder,\ntextarea::placeholder {\n  opacity: 1;\n  /* 1 */\n  color: #9ca3af;\n  /* 2 */\n}\n\n/*\nSet the default cursor for buttons.\n*/\n\nbutton,\n[role=\"button\"] {\n  cursor: pointer;\n}\n\n/*\nMake sure disabled buttons don't get the pointer cursor.\n*/\n:disabled {\n  cursor: default;\n}\n\n/*\n1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)\n2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)\n   This can trigger a poorly considered lint error in some tools but is included by design.\n*/\n\nimg,\nsvg,\nvideo,\ncanvas,\naudio,\niframe,\nembed,\nobject {\n  display: block;\n  /* 1 */\n  vertical-align: middle;\n  /* 2 */\n}\n\n/*\nConstrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)\n*/\n\nimg,\nvideo {\n  max-width: 100%;\n  height: auto;\n}\n\n/* Make elements with the HTML hidden attribute stay hidden by default */\n[hidden] {\n  display: none;\n}\n",
+      "autoInclude": true
+    }
+  },
+  "keyframes": {
+    "in": {
+      "name": "in",
+      "description": "Manages the keyframes for the entry animation",
+      "priority": 150,
+      "from": {
+        "opacity": "var(__:CSS_VARIABLE::enter-opacity:__, 1)",
+        "transform": "translate3d(var(__:CSS_VARIABLE::enter-translate-x:__, 0), var(__:CSS_VARIABLE::enter-translate-y:__, 0), 0) scale3d(var(__:CSS_VARIABLE::enter-scale-x:__, 1), var(__:CSS_VARIABLE::enter-scale-y:__, 1), 1) rotate(var(__:CSS_VARIABLE::enter-rotate:__, 0deg))"
+      }
+    },
+    "out": {
+      "name": "out",
+      "description": "Manages the keyframes for the exit animation.",
+      "priority": 150,
+      "to": {
+        "opacity": "var(__:CSS_VARIABLE::exit-opacity:__, 1)",
+        "transform": "translate3d(var(__:CSS_VARIABLE::exit-translate-x:__, 0), var(__:CSS_VARIABLE::exit-translate-y:__, 0), 0) scale3d(var(__:CSS_VARIABLE::exit-scale-x:__, 1), var(__:CSS_VARIABLE::exit-scale-y:__, 1), 1) rotate(var(__:CSS_VARIABLE::exit-rotate:__, 0deg))"
+      }
+    },
+    "spin": {
+      "name": "spin",
+      "description": "Manages the keyframes for the spin animation.",
+      "priority": 150,
+      "from": {
+        "transform": "rotate(0deg)"
+      },
+      "to": {
+        "transform": "rotate(360deg)"
+      }
+    },
+    "ping": {
+      "name": "ping",
+      "description": "Manages the keyframes for the ping animation.",
+      "priority": 150,
+      "75%, 100%": {
+        "transform": "scale(2)",
+        "opacity": "0"
+      }
+    },
+    "pulse": {
+      "name": "pulse",
+      "description": "Manages the keyframes for the pulse animation.",
+      "priority": 150,
+      "0%, 100%": {
+        "opacity": "1"
+      },
+      "50%": {
+        "opacity": "0.5"
+      }
+    },
+    "bounce": {
+      "name": "bounce",
+      "description": "Manages the keyframes for the bounce animation.",
+      "priority": 150,
+      "0%, 100%": {
+        "transform": "translateY(-25%)",
+        "animationTimingFunction": "cubic-bezier(0.8, 0, 1, 1)"
+      },
+      "50%": {
+        "transform": "translateY(0)",
+        "animationTimingFunction": "cubic-bezier(0, 0, 0.2, 1)"
+      }
+    }
+  },
+  "layers": [
+    "base",
+    "default"
+  ],
+  "media_queries": {
+    "device-categories": {
+      "screen": {
+        "name": "screen",
+        "query": "screen",
+        "description": "The media query for devices with a screen.",
+        "priority": 150
+      },
+      "print": {
+        "name": "print",
+        "query": "print",
+        "description": "The media query for devices with a printer.",
+        "priority": 150
+      }
+    },
+    "breakpoints": {
+      "sm": {
+        "name": "sm",
+        "query": "(min-width: 640px)",
+        "description": "The breakpoint for devices with screen size greater than tiny.",
+        "priority": 150
+      },
+      "md": {
+        "name": "md",
+        "query": "(min-width: 768px)",
+        "description": "The breakpoint for devices screen size greater than medium",
+        "priority": 150
+      },
+      "lg": {
+        "name": "lg",
+        "query": "(min-width: 1024px)",
+        "description": "The breakpoint for devices screen size greater than large",
+        "priority": 150
+      },
+      "xl": {
+        "name": "xl",
+        "query": "(min-width: 1280px)",
+        "description": "The breakpoint for devices screen size greater than extra large",
+        "priority": 150
+      },
+      "xxl": {
+        "name": "xxl",
+        "query": "(min-width: 1536px)",
+        "description": "The breakpoint for devices screen size greater than xxl",
+        "priority": 150
+      }
+    },
+    "orientation": {
+      "portrait": {
+        "name": "portrait",
+        "query": "(orientation: portrait)",
+        "description": "The media query for devices with a portrait orientation.",
+        "priority": 150
+      },
+      "landscape": {
+        "name": "landscape",
+        "query": "(orientation: landscape)",
+        "description": "The media query for devices with a landscape orientation.",
+        "priority": 150
+      }
+    },
+    "motion": {
+      "motion-reduce": {
+        "name": "motion-reduce",
+        "query": "(prefers-reduced-motion: reduce)",
+        "description": "The media query for devices with a reduced motion preference.",
+        "priority": 150
+      },
+      "motion-safe": {
+        "name": "motion-safe",
+        "query": "(prefers-reduced-motion: no-preference)",
+        "description": "The media query for devices with a no preference motion preference.",
+        "priority": 150
+      }
+    },
+    "dark-mode": {
+      "dark": {
+        "name": "dark",
+        "query": "(prefers-color-scheme: dark)",
+        "description": "The media query for devices with a dark color scheme.",
+        "priority": 150
+      },
+      "light": {
+        "name": "light",
+        "query": "(prefers-color-scheme: light)",
+        "description": "The media query for devices with a light color scheme.",
+        "priority": 150
+      }
+    }
+  },
+  "modifiers": {
+    "parent-group": {
+      "rtl": {
+        "name": "rtl",
+        "values": [
+          "[dir=rtl] &"
+        ],
+        "description": "This class modifier becomes active when when the text direction of any parent nodes is set to right to left.",
+        "priority": 150
+      },
+      "group-hover": {
+        "name": "group-hover",
+        "values": [
+          ".\\$group:hover &",
+          ".group:hover &",
+          "[role='group']:hover &"
+        ],
+        "description": "This class modifier becomes active when a parent group is hovered.",
+        "priority": 150
+      },
+      "group-focus": {
+        "name": "group-focus",
+        "values": [
+          ".\\$group:focus &",
+          ".group:focus &",
+          "[role='group']:focus &"
+        ],
+        "description": "This class modifier becomes active when a parent group is focused.",
+        "priority": 150
+      },
+      "group-active": {
+        "name": "group-active",
+        "values": [
+          ".\\$group:active &",
+          ".group:active &",
+          "[role='group']:active &"
+        ],
+        "description": "This class modifier becomes active when a parent group is active.",
+        "priority": 150
+      },
+      "group-visited": {
+        "name": "group-visited",
+        "values": [
+          ".\\$group:visited &",
+          ".group:visited &",
+          "[role='group']:visited &"
+        ],
+        "description": "This class modifier becomes active when a parent group is visited.",
+        "priority": 150
+      }
+    },
+    "hover-group": {
+      "hover": {
+        "name": "hover",
+        "values": [
+          "&:hover"
+        ],
+        "description": "This class modifier becomes active when the element is hovered.",
+        "priority": 150
+      }
+    },
+    "active-group": {
+      "active": {
+        "name": "active",
+        "values": [
+          "&:active"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "focus-group": {
+      "focus": {
+        "name": "focus",
+        "values": [
+          "&:focus"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "focus-within-group": {
+      "focus-within": {
+        "name": "focus-within",
+        "values": [
+          "&:focus-within"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "focus-visible-group": {
+      "focus-visible": {
+        "name": "focus-visible",
+        "values": [
+          "&:focus-visible"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "enabled-group": {
+      "disabled": {
+        "name": "disabled",
+        "values": [
+          "&[disabled]",
+          "&:disabled"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "not-disabled": {
+        "name": "not-disabled",
+        "values": [
+          "&:disabled"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "enabled": {
+        "name": "enabled",
+        "values": [
+          "&:enabled"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "empty-group": {
+      "empty": {
+        "name": "empty",
+        "values": [
+          "&:empty"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "read-group": {
+      "read-write": {
+        "name": "read-write",
+        "values": [
+          "&:read-write"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "readonly": {
+        "name": "readonly",
+        "values": [
+          "&[readonly]",
+          "&:read-only"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "not-readonly": {
+        "name": "not-readonly",
+        "values": [
+          "&[readonly=false]",
+          "&:not(:read-only)"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "checked-group": {
+      "indeterminate": {
+        "name": "indeterminate",
+        "values": [
+          "&:indeterminate"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "checked": {
+        "name": "checked",
+        "values": [
+          "&:checked"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "unchecked": {
+        "name": "unchecked",
+        "values": [
+          "&:not(:checked)"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "valid-group": {
+      "valid": {
+        "name": "valid",
+        "values": [
+          "&:valid"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "invalid": {
+        "name": "invalid",
+        "values": [
+          "&:invalid"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "autofill-group": {
+      "autofill": {
+        "name": "autofill",
+        "values": [
+          "&:-webkit-autofill"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "even-group": {
+      "even": {
+        "name": "even",
+        "values": [
+          "&:even"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "odd": {
+        "name": "odd",
+        "values": [
+          "&:odd"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "even-of-type": {
+        "name": "even-of-type",
+        "values": [
+          "&:nth-of-type(even)"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "odd-of-type": {
+        "name": "odd-of-type",
+        "values": [
+          "&:nth-of-type(odd)"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "node-position-group": {
+      "first": {
+        "name": "first",
+        "values": [
+          "&:first"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "not-first": {
+        "name": "not-first",
+        "values": [
+          "&:not(:first-child)"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "last": {
+        "name": "last",
+        "values": [
+          "&:last"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "not-last": {
+        "name": "not-last",
+        "values": [
+          "&:not(:last-child)"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "node-of-type-group": {
+      "first-of-type": {
+        "name": "first-of-type",
+        "values": [
+          "&:first-of-type"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "not-first-of-type": {
+        "name": "not-first-of-type",
+        "values": [
+          "&:not(:first-of-type)"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "last-of-type": {
+        "name": "last-of-type",
+        "values": [
+          "&:last-of-type"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "not-last-of-type": {
+        "name": "not-last-of-type",
+        "values": [
+          "&:not(:last-of-type)"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "visited-group": {
+      "visited": {
+        "name": "visited",
+        "values": [
+          "&:visited"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "optional-group": {
+      "optional": {
+        "name": "optional",
+        "values": [
+          "&:optional"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "aria": {
+      "aria-current-page": {
+        "name": "aria-current-page",
+        "values": [
+          "&[aria-current=page]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-current-location": {
+        "name": "aria-current-location",
+        "values": [
+          "&[aria-current=location]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-current-date": {
+        "name": "aria-current-date",
+        "values": [
+          "&[aria-current=date]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-current-time": {
+        "name": "aria-current-time",
+        "values": [
+          "&[aria-current=time]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-current-step": {
+        "name": "aria-current-step",
+        "values": [
+          "&[aria-current=step]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-disabled": {
+        "name": "aria-disabled",
+        "values": [
+          "&[aria-disabled=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-not-disabled": {
+        "name": "aria-not-disabled",
+        "values": [
+          "&[aria-disabled=false]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-readonly": {
+        "name": "aria-readonly",
+        "values": [
+          "&[aria-readonly=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-not-readonly": {
+        "name": "aria-not-readonly",
+        "values": [
+          "&[aria-readonly=false]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-expanded": {
+        "name": "aria-expanded",
+        "values": [
+          "&[aria-expanded=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-indeterminate": {
+        "name": "aria-indeterminate",
+        "values": [
+          "&[aria-checked=mixed]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-checked": {
+        "name": "aria-checked",
+        "values": [
+          "&[aria-checked=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-unchecked": {
+        "name": "aria-unchecked",
+        "values": [
+          "&[aria-checked=false]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-grabbed": {
+        "name": "aria-grabbed",
+        "values": [
+          "&[aria-grabbed=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-pressed": {
+        "name": "aria-pressed",
+        "values": [
+          "&[aria-pressed=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-invalid-grammar": {
+        "name": "aria-invalid-grammar",
+        "values": [
+          "&[aria-invalid=grammar]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-invalid-spelling": {
+        "name": "aria-invalid-spelling",
+        "values": [
+          "&[aria-invalid=spelling]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-valid": {
+        "name": "aria-valid",
+        "values": [
+          "&[aria-invalid=false]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-invalid": {
+        "name": "aria-invalid",
+        "values": [
+          "&[aria-invalid=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-required": {
+        "name": "aria-required",
+        "values": [
+          "[aria-required=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-not-required": {
+        "name": "aria-not-required",
+        "values": [
+          "[aria-required=false]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "loading": {
+        "name": "loading",
+        "values": [
+          "&[aria-busy=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-selected": {
+        "name": "aria-selected",
+        "values": [
+          "&[aria-selected=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-hidden": {
+        "name": "aria-hidden",
+        "values": [
+          "&[aria-hidden=true]"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "aria-live": {
+        "name": "aria-live",
+        "values": [
+          "&[aria-live=polite]"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "full-screen-group": {
+      "full-screen": {
+        "name": "full-screen",
+        "values": [
+          "&:fullscreen"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "target-group": {
+      "target": {
+        "name": "target",
+        "values": [
+          "&:target"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "placeholder-shown-group": {
+      "placeholder-shown": {
+        "name": "placeholder-shown",
+        "values": [
+          "&:placeholder-shown"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "required-group": {
+      "required": {
+        "name": "required",
+        "values": [
+          "&:required"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "not-required": {
+        "name": "not-required",
+        "values": [
+          "&:not(:required)"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "default-group": {
+      "default": {
+        "name": "default",
+        "values": [
+          "&:default"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "only-child-group": {
+      "only-child": {
+        "name": "only-child",
+        "values": [
+          "&:only-child"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "not-only-child": {
+        "name": "not-only-child",
+        "values": [
+          "&:not(:only-child)"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "only-group": {
+      "only-of-type": {
+        "name": "only-of-type",
+        "values": [
+          "&:only-of-type"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "not-only-of-type": {
+        "name": "not-only-of-type",
+        "values": [
+          "&:not(:only-of-type)"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "root-group": {
+      "root": {
+        "name": "root",
+        "values": [
+          "&:root"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "link-group": {
+      "link": {
+        "name": "link",
+        "values": [
+          "&:link"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    },
+    "pseudo-group": {
+      "placeholder": {
+        "name": "placeholder",
+        "values": [
+          "&::placeholder"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "selection": {
+        "name": "selection",
+        "values": [
+          "&::selection"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "first-letter": {
+        "name": "first-letter",
+        "values": [
+          "&::first-letter"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "first-line": {
+        "name": "first-line",
+        "values": [
+          "&::first-line"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "before": {
+        "name": "before",
+        "values": [
+          "&::before"
+        ],
+        "description": null,
+        "priority": 150
+      },
+      "after": {
+        "name": "after",
+        "values": [
+          "&::after"
+        ],
+        "description": null,
+        "priority": 150
+      }
+    }
+  },
   "palette": {
     "inherit": "inherit",
     "current": "currentColor",
@@ -3229,6 +3240,9 @@ expression: runner_config
       "remove-backdrop",
       "transform-gpu",
       "transform-cpu"
+    ],
+    "css_chunks": [
+      "reset"
     ],
     "media_queries": [
       "screen",

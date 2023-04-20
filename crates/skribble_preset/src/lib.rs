@@ -26,6 +26,9 @@ pub struct PresetPlugin {
   /// custom theme.
   #[builder(default, setter(into))]
   pub ignore_colors: bool,
+  /// The reset to use for the CSS.
+  #[builder(default, setter(into, strip_option))]
+  reset: Option<CssReset>,
 }
 
 impl Plugin for PresetPlugin {
@@ -34,8 +37,8 @@ impl Plugin for PresetPlugin {
       .id("skribble_preset")
       .name("Preset Plugin")
       .description(
-        "This plugin provides a default preset for Skribble which is similar to `tailwind`, \
-         `windi` and `unocss`.",
+        "This plugin provides a default preset for `skribble` which is similar to `tailwindcss` \
+         and `unocss`.",
       )
       .version(crate_version!())
       .build()
@@ -50,6 +53,7 @@ impl Plugin for PresetPlugin {
     self.update_atoms(&mut config.atoms);
     self.update_named_classes(&mut config.classes);
     self.update_value_sets(&mut config.value_sets);
+    self.update_css_chunks(&mut config.css_chunks);
 
     Ok(())
   }
@@ -98,6 +102,22 @@ impl PresetPlugin {
 
   fn update_value_sets(&self, value_sets: &mut ValueSets) {
     value_sets.extend(ATOM_VALUE_SETS.clone());
+  }
+
+  fn update_css_chunks(&self, css_chunks: &mut CssChunks) {
+    let Some(reset) = &self.reset else {
+      return;
+    };
+
+    css_chunks.push(
+      CssChunk::builder()
+        .name("reset")
+        .layer("base")
+        .css(reset.get_css())
+        .auto_include(true)
+        .priority(Priority::LOW)
+        .build(),
+    );
   }
 }
 
