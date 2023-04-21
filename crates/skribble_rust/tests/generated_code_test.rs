@@ -4,15 +4,16 @@ use rstest::rstest;
 use similar_asserts::assert_eq;
 
 #[rstest]
-#[case(sk().md().p().px(), "md:p:$px")]
-#[case(sk().dark().p().px(), "dark:p:$px")]
-#[case(sk().bg().accent(), "bg:$accent")]
-#[case(sk().md().pt_("1px"), "md:pt:[1px]")]
-#[case(sk().md_("padding", "1px"), "md:[padding=1px]")]
-#[case(sk().screen().md_("padding", "1px"), "screen:md:[padding=1px]")]
-#[case(sk().p_("101px"), "p:[101px]")]
-#[case(sk().bg().red100(), "bg:$red100")]
-#[case(vars().primary(), "--sk-p")]
+#[case::breakpoint_padding(sk().md().p().px(), "md:p:$px")]
+#[case::media_query_padding(sk().dark().p().px(), "dark:p:$px")]
+#[case::background_color(sk().bg().accent(), "bg:$accent")]
+#[case::breakpoint_padding_argument(sk().md().pt_("1px"), "md:pt:[1px]")]
+#[case::breakpoint_key_value_argument(sk().md_("padding", "1px"), "md:[padding=1px]")]
+#[case::chained_media_query_key_value_argument(sk().screen().md_("padding", "1px"), "screen:md:[padding=1px]")]
+#[case::padding_argument(sk().p_("101px"), "p:[101px]")]
+#[case::background_pallete(sk().bg().red100(), "bg:$red100")]
+#[case::aspect_ratio(sk().aspect().square(), "aspect:$square")]
+#[case::variables(vars().primary(), "--sk-p")]
 fn generated_class_names(#[case] input: String, #[case] expected: &str) {
   assert_eq!(input, expected);
 }

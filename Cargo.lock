@@ -1159,6 +1159,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "rstest_reuse"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "45f80dcc84beab3a327bbe161f77db25f336a1452428176787c8c79ac79d7073"
+dependencies = [
+ "quote",
+ "rand",
+ "rustc_version",
+ "syn 1.0.109",
+]
+
+[[package]]
 name = "rustc_version"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1376,6 +1388,7 @@ dependencies = [
  "serde",
  "similar-asserts",
  "skribble_core",
+ "skribble_test",
  "typed-builder",
 ]
 
@@ -1391,13 +1404,24 @@ dependencies = [
  "lazy_static",
  "readonly",
  "rstest",
+ "rstest_reuse",
  "serde",
  "similar-asserts",
  "skribble_core",
  "skribble_preset",
+ "skribble_test",
  "syn 2.0.15",
  "thiserror",
  "typed-builder",
+]
+
+[[package]]
+name = "skribble_test"
+version = "0.0.0"
+dependencies = [
+ "insta",
+ "rstest",
+ "similar-asserts",
 ]
 
 [[package]]

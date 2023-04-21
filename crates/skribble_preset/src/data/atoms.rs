@@ -353,6 +353,12 @@ lazy_static! {
         .values(vec!["opacity"])
         .styles(indexmap! { "opacity" => none })
         .build(),
+      Atom::builder()
+        .name("aspect")
+        .values(vec!["ratio"])
+        .description("Control the aspect ratio of an element.")
+        .styles(indexmap! { "aspect-ratio" => none })
+        .build(),
     ]
   };
 }

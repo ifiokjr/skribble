@@ -26,3 +26,4 @@ typed-builder = { workspace = true }
 insta = { features = ["json"], workspace = true }
 rstest = { workspace = true }
 similar-asserts = { workspace = true }
+skribble_test = { workspace = true }

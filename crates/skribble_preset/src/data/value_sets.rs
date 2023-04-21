@@ -359,6 +359,17 @@ lazy_static! {
           "mono" => "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace",
         })
         .build(),
+      ValueSet::builder()
+        .name("ratio")
+        .description("Ratio of the width to the height")
+        .values(indexmap! {
+          "auto" => "auto",
+          "square" => "1",
+          "video" => "16 / 9",
+          "portrait" => "9 / 16",
+          "box" => "4 / 3",
+        })
+        .build(),
     ]
   };
 }

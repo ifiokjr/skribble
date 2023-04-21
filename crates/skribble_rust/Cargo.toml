@@ -30,5 +30,7 @@ typed-builder = { workspace = true }
 [dev-dependencies]
 insta = { features = ["json"], workspace = true }
 rstest = { workspace = true }
+rstest_reuse = { workspace = true }
 similar-asserts = { workspace = true }
 skribble_preset = { workspace = true }
+skribble_test = { workspace = true }

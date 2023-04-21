@@ -15745,6 +15745,65 @@ pub trait GeneratedValueSetOpacity: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetOpacity for GeneratedAtomOpacity {}
+pub struct GeneratedAtomAspect(String);
+impl GeneratedSkribbleValue for GeneratedAtomAspect {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetAspect: GeneratedSkribbleValue {
+  /// ```css
+  /// .aspect\:\$auto {
+  ///   aspect-ratio: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .aspect\:\$square {
+  ///   aspect-ratio: 1;
+  /// }
+  /// ```
+  #[inline]
+  fn square(&self) -> String {
+    self.append_value("square")
+  }
+  /// ```css
+  /// .aspect\:\$video {
+  ///   aspect-ratio: 16 / 9;
+  /// }
+  /// ```
+  #[inline]
+  fn video(&self) -> String {
+    self.append_value("video")
+  }
+  /// ```css
+  /// .aspect\:\$portrait {
+  ///   aspect-ratio: 9 / 16;
+  /// }
+  /// ```
+  #[inline]
+  fn portrait(&self) -> String {
+    self.append_value("portrait")
+  }
+  /// ```css
+  /// .aspect\:\$box {
+  ///   aspect-ratio: 4 / 3;
+  /// }
+  /// ```
+  #[inline]
+  fn r#box(&self) -> String {
+    self.append_value("box")
+  }
+}
+impl GeneratedValueSetAspect for GeneratedAtomAspect {}
 pub trait GeneratedAtom: GeneratedSkribbleValue {
   /// Screen reader only
   #[inline]
@@ -16193,6 +16252,15 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   #[inline]
   fn opacity_(&self, value: &'static str) -> String {
     self.append(format!("opacity:[{}]", value.trim()))
+  }
+  /// Control the aspect ratio of an element.
+  #[inline]
+  fn aspect(&self) -> GeneratedAtomAspect {
+    GeneratedAtomAspect::from_ref(self.append("aspect"))
+  }
+  #[inline]
+  fn aspect_(&self, value: &'static str) -> String {
+    self.append(format!("aspect:[{}]", value.trim()))
   }
 }
 pub trait GeneratedNamedClasses: GeneratedSkribbleValue {

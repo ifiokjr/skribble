@@ -1,0 +1,22 @@
+[package]
+name = "skribble_test"
+version = { workspace = true }
+authors = ["Ifiok Jr. <ifiokotung@gmail.com>"]
+documentation = "https://docs.rs/skribble_test"
+edition = { workspace = true }
+homepage = { workspace = true }
+include = ["src/**/*.rs", "Cargo.toml", "readme.md"]
+keywords = ["build", "atomic", "css"]
+license = { workspace = true }
+publish = false
+readme = "readme.md"
+repository = { workspace = true }
+rust-version = { workspace = true }
+description = "internal test helpers for skribble"
+
+[dependencies]
+
+[dev-dependencies]
+insta = { workspace = true }
+rstest = { workspace = true }
+similar-asserts = { workspace = true }

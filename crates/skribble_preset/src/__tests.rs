@@ -1,5 +1,7 @@
+use rstest::*;
 use skribble_core::vfs::MemoryFS;
 use skribble_core::*;
+use skribble_test::set_snapshot_suffix;
 
 use super::*;
 
@@ -17,21 +19,25 @@ fn default_can_be_added_to_runner() -> AnyEmptyResult {
   Ok(())
 }
 
-#[test]
-fn contained() -> AnyEmptyResult {
-  let plugin = PresetPlugin::builder().reset("tailwindCompat").build();
+#[rstest]
+#[case("contained", &["$contained", "lg:$contained", "xl:$contained"])]
+#[case("aspect-ratio", &["aspect:$square", "aspect:$portrait", "aspect:[2/1]"])]
+fn css_from_class_names(#[case] id: &str, #[case] names: &[&str]) -> AnyEmptyResult {
+  let plugin = PresetPlugin::default();
   let config: StyleConfig = StyleConfig::builder()
     .plugins(vec![PluginContainer::from(plugin)])
     .build();
   let mut runner = SkribbleRunner::try_new(config)?;
   let runner_config = runner.initialize()?;
   let mut classes = Classes::default();
-  classes.insert_factories(vec![
-    ClassFactory::from_tokens(runner_config, &["contained"]),
-    ClassFactory::from_tokens(runner_config, &["lg", "contained"]),
-  ]);
+
+  for name in names.iter() {
+    classes.insert_factory(ClassFactory::from_string(runner_config, name));
+  }
+
   classes.sort_by_class();
 
+  set_snapshot_suffix!("{id}");
   insta::assert_display_snapshot!(classes.to_skribble_css(runner_config)?);
 
   Ok(())

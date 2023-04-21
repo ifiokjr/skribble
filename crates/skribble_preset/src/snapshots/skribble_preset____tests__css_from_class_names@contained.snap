@@ -38,6 +38,10 @@ expression: classes.to_skribble_css(runner_config)?
     :root {
       --sk-cmw: 1280px;
     }
+    .xl\:\$contained {
+      width: 100%;
+      max-width: var(--sk-cmw);
+    }
   }
   @media (min-width: 1536px) {
     :root {

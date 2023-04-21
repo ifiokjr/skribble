@@ -858,6 +858,22 @@ expression: runner_config
           }
         ]
       }
+    },
+    "aspect": {
+      "name": "aspect",
+      "description": "Control the aspect ratio of an element.",
+      "priority": 150,
+      "styles": {
+        "aspect-ratio": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "ratio"
+          }
+        ]
+      }
     }
   },
   "classes": {
@@ -3093,6 +3109,18 @@ expression: runner_config
         "serif": "ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif",
         "mono": "ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace"
       }
+    },
+    "ratio": {
+      "name": "ratio",
+      "description": "Ratio of the width to the height",
+      "priority": 150,
+      "values": {
+        "auto": "auto",
+        "square": "1",
+        "video": "16 / 9",
+        "portrait": "9 / 16",
+        "box": "4 / 3"
+      }
     }
   },
   "names": {
@@ -3218,7 +3246,8 @@ expression: runner_config
       "z",
       "dir",
       "bg",
-      "opacity"
+      "opacity",
+      "aspect"
     ],
     "classes": [
       "group",
@@ -4950,6 +4979,13 @@ expression: runner_config
       "90",
       "95",
       "100"
+    ],
+    "atom:aspect": [
+      "auto",
+      "square",
+      "video",
+      "portrait",
+      "box"
     ]
   }
 }

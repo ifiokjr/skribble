@@ -2,7 +2,6 @@
 #![deny(clippy::indexing_slicing)]
 
 doc_comment::doctest!("../readme.md");
-
 use std::process::Command;
 use std::process::Stdio;
 
@@ -106,5 +105,7 @@ impl Plugin for RustPlugin {
   }
 }
 
+#[cfg(test)]
+pub use rstest_reuse;
 #[cfg(test)]
 mod __tests;

@@ -1,6 +1,9 @@
+use rstest::rstest;
+use rstest_reuse::*;
 use skribble_core::vfs::MemoryFS;
 use skribble_core::*;
 use skribble_preset::PresetPlugin;
+use skribble_test::set_snapshot_suffix;
 
 use super::*;
 
@@ -16,7 +19,7 @@ fn can_generate_skribble_rust_code() -> AnyEmptyResult {
     ])
     .build();
 
-  let vfs: VfsPath = create_memory_fs()?;
+  let vfs: VfsPath = MemoryFS::new().into();
   let mut runner = SkribbleRunner::new(config, "/", Some(vfs));
   let _ = runner.initialize()?;
   let result = runner.generate()?;
@@ -26,8 +29,8 @@ fn can_generate_skribble_rust_code() -> AnyEmptyResult {
   Ok(())
 }
 
-#[test]
-fn can_scan_and_generate_css() -> AnyEmptyResult {
+#[apply(test_cases)]
+fn can_scan_and_generate_css<S: AsRef<str>>(id: &str, files: &[(&str, S)]) -> AnyEmptyResult {
   let default_preset = PresetPlugin::builder().build();
   let rust_plugin = RustPlugin::builder().build();
 
@@ -38,58 +41,76 @@ fn can_scan_and_generate_css() -> AnyEmptyResult {
     ])
     .build();
 
-  let vfs: VfsPath = create_memory_fs()?;
+  let vfs: VfsPath = create_memory_fs(files)?;
   let mut runner = SkribbleRunner::new(config, "/", Some(vfs));
   let _ = runner.initialize()?;
   let scanned = runner.scan()?;
+  set_snapshot_suffix!("{id}");
   insta::assert_display_snapshot!(scanned.code);
 
   Ok(())
 }
 
-fn create_memory_fs() -> AnyResult<VfsPath> {
+fn create_memory_fs<S: AsRef<str>>(files: &[(&str, S)]) -> AnyResult<VfsPath> {
   let vfs: VfsPath = MemoryFS::new().into();
 
-  for file in FILES {
+  for file in files {
     let path = vfs.join(file.0)?;
     path.create_dir_all()?;
     let mut writer = path.create_file()?;
-    write!(writer, "{}", file.1)?;
+    write!(writer, "{}", file.1.as_ref())?;
   }
 
   Ok(vfs)
 }
 
-const FILES: &[(&str, &str)] = &[
-  (
-    "src/lib.rs",
+#[template]
+#[rstest]
+#[case("function-default", &[("src/lib.rs", function("default", DEFAULT_NAMES))])]
+#[case("component-default", &[("src/lib.rs", function("default", DEFAULT_NAMES))])]
+fn test_cases<S: AsRef<str>>(#[case] id: &str, #[case] files: &[(&str, S)]) {}
+
+#[allow(unused)]
+fn component(name: &str, values: &[&str]) -> String {
+  let classes = values.join(", ");
+  format!(
     r#"
 use leptos::*;
 use crate::skribble::*;
 #[component]
-fn App(cx: Scope) -> impl IntoView {
-  let s = sk().md().p().px();
-  let a = sk().bg().secondary();
-  let classes = vec![sk().bg().secondary(), sk().p().px()].join(" ");
-
-  view! {
+fn {name}(cx: Scope) -> impl IntoView {{
+  let classes = &[{classes}].join(" ");
+  view! {{
     cx,
     <div class={classes}>
-      <h1 class={sk().text().color().primary()}>Hello World</h1>
+      <h1>Hello World</h1>
     </div>
-  }
+  }}
+}}
+"#
+  )
 }
 
-mod other;
-"#,
-  ),
-  (
-    "src/other.rs",
+fn function(name: &str, values: &[&str]) -> String {
+  let classes = values.join(", ");
+  format!(
     r#"
 use crate::skribble::*;
-pub fn other() -> String {
-  sk().bg().primary()
+pub fn {name}() -> String {{
+  [{classes}].join(" ")
+}}
+"#
+  )
 }
-  "#,
-  ),
+
+const DEFAULT_NAMES: &[&str] = &[
+  r#"sk().md().p().px()"#,
+  r#"sk().dark().p().px()"#,
+  r#"sk().bg().accent()"#,
+  r#"sk().md().pt_("1px")"#,
+  r#"sk().md_("padding", "1px")"#,
+  r#"sk().screen().md_("padding", "1px")"#,
+  r#"sk().p_("101px")"#,
+  r#"sk().bg().red100()"#,
+  r#"sk().aspect().square()"#,
 ];
