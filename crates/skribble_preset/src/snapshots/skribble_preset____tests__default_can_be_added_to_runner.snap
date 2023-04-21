@@ -874,6 +874,26 @@ expression: runner_config
           }
         ]
       }
+    },
+    "columns": {
+      "name": "columns",
+      "description": "Control the number of columns within an element.",
+      "priority": 150,
+      "styles": {
+        "columns": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "grid-count"
+          },
+          {
+            "priority": 150,
+            "value": "grid-size"
+          }
+        ]
+      }
     }
   },
   "classes": {
@@ -3121,6 +3141,45 @@ expression: runner_config
         "portrait": "9 / 16",
         "box": "4 / 3"
       }
+    },
+    "grid-count": {
+      "name": "grid-count",
+      "description": "Column and row counts for grid layouts",
+      "priority": 150,
+      "values": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "10": "10",
+        "11": "11",
+        "12": "12"
+      }
+    },
+    "grid-size": {
+      "name": "grid-size",
+      "description": "Sizes for grid layouts",
+      "priority": 150,
+      "values": {
+        "3xs": "16rem",
+        "2xs": "18rem",
+        "xs": "20rem",
+        "sm": "24rem",
+        "md": "28rem",
+        "lg": "32rem",
+        "xl": "36rem",
+        "2xl": "42rem",
+        "3xl": "48rem",
+        "4xl": "56rem",
+        "5xl": "64rem",
+        "6xl": "72rem",
+        "7xl": "80rem"
+      }
     }
   },
   "names": {
@@ -3247,7 +3306,8 @@ expression: runner_config
       "dir",
       "bg",
       "opacity",
-      "aspect"
+      "aspect",
+      "columns"
     ],
     "classes": [
       "group",
@@ -4986,6 +5046,33 @@ expression: runner_config
       "video",
       "portrait",
       "box"
+    ],
+    "atom:columns": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "3xs",
+      "2xs",
+      "xs",
+      "sm",
+      "md",
+      "lg",
+      "xl",
+      "2xl",
+      "3xl",
+      "4xl",
+      "5xl",
+      "6xl",
+      "7xl"
     ]
   }
 }

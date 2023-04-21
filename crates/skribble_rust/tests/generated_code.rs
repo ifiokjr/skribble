@@ -16139,6 +16139,246 @@ pub trait GeneratedValueSetAspect: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetAspect for GeneratedAtomAspect {}
+pub struct GeneratedAtomColumns(String);
+impl GeneratedSkribbleValue for GeneratedAtomColumns {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetColumns: GeneratedSkribbleValue {
+  /// ```css
+  /// .columns\:\$1 {
+  ///   columns: 1;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .columns\:\$2 {
+  ///   columns: 2;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .columns\:\$3 {
+  ///   columns: 3;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .columns\:\$4 {
+  ///   columns: 4;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .columns\:\$5 {
+  ///   columns: 5;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .columns\:\$6 {
+  ///   columns: 6;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .columns\:\$7 {
+  ///   columns: 7;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .columns\:\$8 {
+  ///   columns: 8;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .columns\:\$9 {
+  ///   columns: 9;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .columns\:\$10 {
+  ///   columns: 10;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .columns\:\$11 {
+  ///   columns: 11;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .columns\:\$12 {
+  ///   columns: 12;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .columns\:\$3xs {
+  ///   columns: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3xs(&self) -> String {
+    self.append_value("3xs")
+  }
+  /// ```css
+  /// .columns\:\$2xs {
+  ///   columns: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2xs(&self) -> String {
+    self.append_value("2xs")
+  }
+  /// ```css
+  /// .columns\:\$xs {
+  ///   columns: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn xs(&self) -> String {
+    self.append_value("xs")
+  }
+  /// ```css
+  /// .columns\:\$sm {
+  ///   columns: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn sm(&self) -> String {
+    self.append_value("sm")
+  }
+  /// ```css
+  /// .columns\:\$md {
+  ///   columns: 28rem;
+  /// }
+  /// ```
+  #[inline]
+  fn md(&self) -> String {
+    self.append_value("md")
+  }
+  /// ```css
+  /// .columns\:\$lg {
+  ///   columns: 32rem;
+  /// }
+  /// ```
+  #[inline]
+  fn lg(&self) -> String {
+    self.append_value("lg")
+  }
+  /// ```css
+  /// .columns\:\$xl {
+  ///   columns: 36rem;
+  /// }
+  /// ```
+  #[inline]
+  fn xl(&self) -> String {
+    self.append_value("xl")
+  }
+  /// ```css
+  /// .columns\:\$2xl {
+  ///   columns: 42rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2xl(&self) -> String {
+    self.append_value("2xl")
+  }
+  /// ```css
+  /// .columns\:\$3xl {
+  ///   columns: 48rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3xl(&self) -> String {
+    self.append_value("3xl")
+  }
+  /// ```css
+  /// .columns\:\$4xl {
+  ///   columns: 56rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4xl(&self) -> String {
+    self.append_value("4xl")
+  }
+  /// ```css
+  /// .columns\:\$5xl {
+  ///   columns: 64rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5xl(&self) -> String {
+    self.append_value("5xl")
+  }
+  /// ```css
+  /// .columns\:\$6xl {
+  ///   columns: 72rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6xl(&self) -> String {
+    self.append_value("6xl")
+  }
+  /// ```css
+  /// .columns\:\$7xl {
+  ///   columns: 80rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7xl(&self) -> String {
+    self.append_value("7xl")
+  }
+}
+impl GeneratedValueSetColumns for GeneratedAtomColumns {}
 pub trait GeneratedAtom: GeneratedSkribbleValue {
   /// Screen reader only
   #[inline]
@@ -16610,6 +16850,15 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   #[inline]
   fn aspect_(&self, value: &'static str) -> String {
     self.append(format!("aspect:[{}]", value.trim()))
+  }
+  /// Control the number of columns within an element.
+  #[inline]
+  fn columns(&self) -> GeneratedAtomColumns {
+    GeneratedAtomColumns::from_ref(self.append("columns"))
+  }
+  #[inline]
+  fn columns_(&self, value: &'static str) -> String {
+    self.append(format!("columns:[{}]", value.trim()))
   }
 }
 pub trait GeneratedNamedClasses: GeneratedSkribbleValue {

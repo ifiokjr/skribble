@@ -13,6 +13,7 @@ use similar_asserts::assert_eq;
 #[case::padding_argument(sk().p_("101px"), "p:[101px]")]
 #[case::background_pallete(sk().bg().red100(), "bg:$red100")]
 #[case::aspect_ratio(sk().aspect().square(), "aspect:$square")]
+#[case::columns(sk().columns().n4(), "columns:$4")]
 #[case::variables(vars().primary(), "--sk-p")]
 fn generated_class_names(#[case] input: String, #[case] expected: &str) {
   assert_eq!(input, expected);

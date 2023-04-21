@@ -359,6 +359,12 @@ lazy_static! {
         .description("Control the aspect ratio of an element.")
         .styles(indexmap! { "aspect-ratio" => none })
         .build(),
+      Atom::builder()
+        .name("columns")
+        .values(vec!["grid-count", "grid-size"])
+        .description("Control the number of columns within an element.")
+        .styles(indexmap! { "columns" => none })
+        .build(),
     ]
   };
 }
