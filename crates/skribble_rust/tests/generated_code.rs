@@ -16391,7 +16391,80 @@ impl GeneratedSkribbleValue for GeneratedAtomBreakAfter {
     &self.0
   }
 }
-pub trait GeneratedValueSetBreakAfter: GeneratedSkribbleValue {}
+pub trait GeneratedValueSetBreakAfter: GeneratedSkribbleValue {
+  /// ```css
+  /// .break-after\:\$auto {
+  ///   break-after: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .break-after\:\$avoid {
+  ///   break-after: avoid;
+  /// }
+  /// ```
+  #[inline]
+  fn avoid(&self) -> String {
+    self.append_value("avoid")
+  }
+  /// ```css
+  /// .break-after\:\$all {
+  ///   break-after: all;
+  /// }
+  /// ```
+  #[inline]
+  fn all(&self) -> String {
+    self.append_value("all")
+  }
+  /// ```css
+  /// .break-after\:\$avoid-page {
+  ///   break-after: avoid-page;
+  /// }
+  /// ```
+  #[inline]
+  fn avoid_page(&self) -> String {
+    self.append_value("avoid-page")
+  }
+  /// ```css
+  /// .break-after\:\$page {
+  ///   break-after: page;
+  /// }
+  /// ```
+  #[inline]
+  fn page(&self) -> String {
+    self.append_value("page")
+  }
+  /// ```css
+  /// .break-after\:\$left {
+  ///   break-after: left;
+  /// }
+  /// ```
+  #[inline]
+  fn left(&self) -> String {
+    self.append_value("left")
+  }
+  /// ```css
+  /// .break-after\:\$right {
+  ///   break-after: right;
+  /// }
+  /// ```
+  #[inline]
+  fn right(&self) -> String {
+    self.append_value("right")
+  }
+  /// ```css
+  /// .break-after\:\$column {
+  ///   break-after: column;
+  /// }
+  /// ```
+  #[inline]
+  fn column(&self) -> String {
+    self.append_value("column")
+  }
+}
 impl GeneratedValueSetBreakAfter for GeneratedAtomBreakAfter {}
 pub struct GeneratedAtomBreakBefore(String);
 impl GeneratedSkribbleValue for GeneratedAtomBreakBefore {
@@ -16405,7 +16478,80 @@ impl GeneratedSkribbleValue for GeneratedAtomBreakBefore {
     &self.0
   }
 }
-pub trait GeneratedValueSetBreakBefore: GeneratedSkribbleValue {}
+pub trait GeneratedValueSetBreakBefore: GeneratedSkribbleValue {
+  /// ```css
+  /// .break-before\:\$auto {
+  ///   break-before: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .break-before\:\$avoid {
+  ///   break-before: avoid;
+  /// }
+  /// ```
+  #[inline]
+  fn avoid(&self) -> String {
+    self.append_value("avoid")
+  }
+  /// ```css
+  /// .break-before\:\$all {
+  ///   break-before: all;
+  /// }
+  /// ```
+  #[inline]
+  fn all(&self) -> String {
+    self.append_value("all")
+  }
+  /// ```css
+  /// .break-before\:\$avoid-page {
+  ///   break-before: avoid-page;
+  /// }
+  /// ```
+  #[inline]
+  fn avoid_page(&self) -> String {
+    self.append_value("avoid-page")
+  }
+  /// ```css
+  /// .break-before\:\$page {
+  ///   break-before: page;
+  /// }
+  /// ```
+  #[inline]
+  fn page(&self) -> String {
+    self.append_value("page")
+  }
+  /// ```css
+  /// .break-before\:\$left {
+  ///   break-before: left;
+  /// }
+  /// ```
+  #[inline]
+  fn left(&self) -> String {
+    self.append_value("left")
+  }
+  /// ```css
+  /// .break-before\:\$right {
+  ///   break-before: right;
+  /// }
+  /// ```
+  #[inline]
+  fn right(&self) -> String {
+    self.append_value("right")
+  }
+  /// ```css
+  /// .break-before\:\$column {
+  ///   break-before: column;
+  /// }
+  /// ```
+  #[inline]
+  fn column(&self) -> String {
+    self.append_value("column")
+  }
+}
 impl GeneratedValueSetBreakBefore for GeneratedAtomBreakBefore {}
 pub struct GeneratedAtomBreakInside(String);
 impl GeneratedSkribbleValue for GeneratedAtomBreakInside {
@@ -16458,6 +16604,276 @@ pub trait GeneratedValueSetBreakInside: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetBreakInside for GeneratedAtomBreakInside {}
+pub struct GeneratedAtomBoxDecoration(String);
+impl GeneratedSkribbleValue for GeneratedAtomBoxDecoration {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBoxDecoration: GeneratedSkribbleValue {
+  /// ```css
+  /// .box-decoration\:\$clone {
+  ///   box-decoration-break: clone;
+  /// }
+  /// ```
+  #[inline]
+  fn clone(&self) -> String {
+    self.append_value("clone")
+  }
+  /// ```css
+  /// .box-decoration\:\$slice {
+  ///   box-decoration-break: slice;
+  /// }
+  /// ```
+  #[inline]
+  fn slice(&self) -> String {
+    self.append_value("slice")
+  }
+}
+impl GeneratedValueSetBoxDecoration for GeneratedAtomBoxDecoration {}
+pub struct GeneratedAtomBox(String);
+impl GeneratedSkribbleValue for GeneratedAtomBox {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBox: GeneratedSkribbleValue {
+  /// ```css
+  /// .box\:\$border {
+  ///   box-sizing: border-box;
+  /// }
+  /// ```
+  #[inline]
+  fn border(&self) -> String {
+    self.append_value("border")
+  }
+  /// ```css
+  /// .box\:\$content {
+  ///   box-sizing: content-box;
+  /// }
+  /// ```
+  #[inline]
+  fn content(&self) -> String {
+    self.append_value("content")
+  }
+}
+impl GeneratedValueSetBox for GeneratedAtomBox {}
+pub struct GeneratedAtomDisplay(String);
+impl GeneratedSkribbleValue for GeneratedAtomDisplay {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetDisplay: GeneratedSkribbleValue {
+  /// ```css
+  /// .display\:\$block {
+  ///   display: block;
+  /// }
+  /// ```
+  #[inline]
+  fn block(&self) -> String {
+    self.append_value("block")
+  }
+  /// ```css
+  /// .display\:\$inline-block {
+  ///   display: inline-block;
+  /// }
+  /// ```
+  #[inline]
+  fn inline_block(&self) -> String {
+    self.append_value("inline-block")
+  }
+  /// ```css
+  /// .display\:\$inline {
+  ///   display: inline;
+  /// }
+  /// ```
+  #[inline]
+  fn inline(&self) -> String {
+    self.append_value("inline")
+  }
+  /// ```css
+  /// .display\:\$flex {
+  ///   display: flex;
+  /// }
+  /// ```
+  #[inline]
+  fn flex(&self) -> String {
+    self.append_value("flex")
+  }
+  /// ```css
+  /// .display\:\$inline-flex {
+  ///   display: inline-flex;
+  /// }
+  /// ```
+  #[inline]
+  fn inline_flex(&self) -> String {
+    self.append_value("inline-flex")
+  }
+  /// ```css
+  /// .display\:\$table {
+  ///   display: table;
+  /// }
+  /// ```
+  #[inline]
+  fn table(&self) -> String {
+    self.append_value("table")
+  }
+  /// ```css
+  /// .display\:\$inline-table {
+  ///   display: inline-table;
+  /// }
+  /// ```
+  #[inline]
+  fn inline_table(&self) -> String {
+    self.append_value("inline-table")
+  }
+  /// ```css
+  /// .display\:\$table-caption {
+  ///   display: table-caption;
+  /// }
+  /// ```
+  #[inline]
+  fn table_caption(&self) -> String {
+    self.append_value("table-caption")
+  }
+  /// ```css
+  /// .display\:\$table-cell {
+  ///   display: table-cell;
+  /// }
+  /// ```
+  #[inline]
+  fn table_cell(&self) -> String {
+    self.append_value("table-cell")
+  }
+  /// ```css
+  /// .display\:\$table-column {
+  ///   display: table-column;
+  /// }
+  /// ```
+  #[inline]
+  fn table_column(&self) -> String {
+    self.append_value("table-column")
+  }
+  /// ```css
+  /// .display\:\$table-column-group {
+  ///   display: table-column-group;
+  /// }
+  /// ```
+  #[inline]
+  fn table_column_group(&self) -> String {
+    self.append_value("table-column-group")
+  }
+  /// ```css
+  /// .display\:\$table-footer-group {
+  ///   display: table-footer-group;
+  /// }
+  /// ```
+  #[inline]
+  fn table_footer_group(&self) -> String {
+    self.append_value("table-footer-group")
+  }
+  /// ```css
+  /// .display\:\$table-header-group {
+  ///   display: table-header-group;
+  /// }
+  /// ```
+  #[inline]
+  fn table_header_group(&self) -> String {
+    self.append_value("table-header-group")
+  }
+  /// ```css
+  /// .display\:\$table-row-group {
+  ///   display: table-row-group;
+  /// }
+  /// ```
+  #[inline]
+  fn table_row_group(&self) -> String {
+    self.append_value("table-row-group")
+  }
+  /// ```css
+  /// .display\:\$table-row {
+  ///   display: table-row;
+  /// }
+  /// ```
+  #[inline]
+  fn table_row(&self) -> String {
+    self.append_value("table-row")
+  }
+  /// ```css
+  /// .display\:\$flow-root {
+  ///   display: flow-root;
+  /// }
+  /// ```
+  #[inline]
+  fn flow_root(&self) -> String {
+    self.append_value("flow-root")
+  }
+  /// ```css
+  /// .display\:\$grid {
+  ///   display: grid;
+  /// }
+  /// ```
+  #[inline]
+  fn grid(&self) -> String {
+    self.append_value("grid")
+  }
+  /// ```css
+  /// .display\:\$inline-grid {
+  ///   display: inline-grid;
+  /// }
+  /// ```
+  #[inline]
+  fn inline_grid(&self) -> String {
+    self.append_value("inline-grid")
+  }
+  /// ```css
+  /// .display\:\$contents {
+  ///   display: contents;
+  /// }
+  /// ```
+  #[inline]
+  fn contents(&self) -> String {
+    self.append_value("contents")
+  }
+  /// ```css
+  /// .display\:\$list-item {
+  ///   display: list-item;
+  /// }
+  /// ```
+  #[inline]
+  fn list_item(&self) -> String {
+    self.append_value("list-item")
+  }
+  /// ```css
+  /// .display\:\$hidden {
+  ///   display: none;
+  /// }
+  /// ```
+  #[inline]
+  fn hidden(&self) -> String {
+    self.append_value("hidden")
+  }
+}
+impl GeneratedValueSetDisplay for GeneratedAtomDisplay {}
 pub trait GeneratedAtom: GeneratedSkribbleValue {
   /// Screen reader only
   #[inline]
@@ -16965,6 +17381,35 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   #[inline]
   fn break_inside_(&self, value: &'static str) -> String {
     self.append(format!("break-inside:[{}]", value.trim()))
+  }
+  /// Use the box-decoration-slice and box-decoration-clone utilities to control
+  /// whether properties like background, border, border-image, box-shadow,
+  /// clip-page, margin, and padding should be rendered as if the element were
+  /// one continuous fragment, or distinct blocks.
+  #[inline]
+  fn box_decoration(&self) -> GeneratedAtomBoxDecoration {
+    GeneratedAtomBoxDecoration::from_ref(self.append("box-decoration"))
+  }
+  #[inline]
+  fn box_decoration_(&self, value: &'static str) -> String {
+    self.append(format!("box-decoration:[{}]", value.trim()))
+  }
+  /// Control how the browser should calculate an element's total size.
+  #[inline]
+  fn r#box(&self) -> GeneratedAtomBox {
+    GeneratedAtomBox::from_ref(self.append("box"))
+  }
+  #[inline]
+  fn r#box_(&self, value: &'static str) -> String {
+    self.append(format!("box:[{}]", value.trim()))
+  }
+  #[inline]
+  fn display(&self) -> GeneratedAtomDisplay {
+    GeneratedAtomDisplay::from_ref(self.append("display"))
+  }
+  #[inline]
+  fn display_(&self, value: &'static str) -> String {
+    self.append(format!("display:[{}]", value.trim()))
   }
 }
 pub trait GeneratedNamedClasses: GeneratedSkribbleValue {

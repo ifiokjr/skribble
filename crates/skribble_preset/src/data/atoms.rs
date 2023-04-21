@@ -383,6 +383,29 @@ lazy_static! {
         .description("Control how a column or page should break within an element.")
         .styles(indexmap! { "break-inside" => none })
         .build(),
+      Atom::builder()
+        .name("box-decoration")
+        .values(vec!["box-decoration"])
+        .description(
+          "Use the box-decoration-slice and box-decoration-clone utilities to control whether \
+           properties like background, border, border-image, box-shadow, clip-page, margin, and \
+           padding should be rendered as if the element were one continuous fragment, or distinct \
+           blocks.
+        ",
+        )
+        .styles(indexmap! { "box-decoration-break" => none })
+        .build(),
+      Atom::builder()
+        .name("box")
+        .values(vec!["box"])
+        .description("Control how the browser should calculate an element's total size.")
+        .styles(indexmap! { "box-sizing" => none })
+        .build(),
+      Atom::builder()
+        .name("display")
+        .values(vec!["display"])
+        .styles(indexmap! { "display" => none })
+        .build(),
     ]
   };
 }

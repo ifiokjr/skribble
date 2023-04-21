@@ -942,6 +942,54 @@ expression: runner_config
           }
         ]
       }
+    },
+    "box-decoration": {
+      "name": "box-decoration",
+      "description": "Use the box-decoration-slice and box-decoration-clone utilities to control whether properties like background, border, border-image, box-shadow, clip-page, margin, and padding should be rendered as if the element were one continuous fragment, or distinct blocks.\n        ",
+      "priority": 150,
+      "styles": {
+        "box-decoration-break": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "box-decoration"
+          }
+        ]
+      }
+    },
+    "box": {
+      "name": "box",
+      "description": "Control how the browser should calculate an element's total size.",
+      "priority": 150,
+      "styles": {
+        "box-sizing": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "box"
+          }
+        ]
+      }
+    },
+    "display": {
+      "name": "display",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "display": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "display"
+          }
+        ]
+      }
     }
   },
   "classes": {
@@ -3254,6 +3302,52 @@ expression: runner_config
         "avoid-page": "avoid-page",
         "avoid-column": "avoid-column"
       }
+    },
+    "box-decoration": {
+      "name": "box-decoration",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "clone": "clone",
+        "slice": "slice"
+      }
+    },
+    "box": {
+      "name": "box",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "border": "border-box",
+        "content": "content-box"
+      }
+    },
+    "display": {
+      "name": "display",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "block": "block",
+        "inline-block": "inline-block",
+        "inline": "inline",
+        "flex": "flex",
+        "inline-flex": "inline-flex",
+        "table": "table",
+        "inline-table": "inline-table",
+        "table-caption": "table-caption",
+        "table-cell": "table-cell",
+        "table-column": "table-column",
+        "table-column-group": "table-column-group",
+        "table-footer-group": "table-footer-group",
+        "table-header-group": "table-header-group",
+        "table-row-group": "table-row-group",
+        "table-row": "table-row",
+        "flow-root": "flow-root",
+        "grid": "grid",
+        "inline-grid": "inline-grid",
+        "contents": "contents",
+        "list-item": "list-item",
+        "hidden": "none"
+      }
     }
   },
   "names": {
@@ -3384,7 +3478,10 @@ expression: runner_config
       "columns",
       "break-after",
       "break-before",
-      "break-inside"
+      "break-inside",
+      "box-decoration",
+      "box",
+      "display"
     ],
     "classes": [
       "group",
@@ -5176,6 +5273,37 @@ expression: runner_config
       "avoid",
       "avoid-page",
       "avoid-column"
+    ],
+    "atom:box-decoration": [
+      "clone",
+      "slice"
+    ],
+    "atom:box": [
+      "border",
+      "content"
+    ],
+    "atom:display": [
+      "block",
+      "inline-block",
+      "inline",
+      "flex",
+      "inline-flex",
+      "table",
+      "inline-table",
+      "table-caption",
+      "table-cell",
+      "table-column",
+      "table-column-group",
+      "table-footer-group",
+      "table-header-group",
+      "table-row-group",
+      "table-row",
+      "flow-root",
+      "grid",
+      "inline-grid",
+      "contents",
+      "list-item",
+      "hidden"
     ]
   }
 }
