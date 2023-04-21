@@ -28,6 +28,7 @@ thiserror = { workspace = true }
 typed-builder = { workspace = true }
 
 [dev-dependencies]
+hex = { workspace = true }
 insta = { features = ["json"], workspace = true }
 rstest = { workspace = true }
 rstest_reuse = { workspace = true }

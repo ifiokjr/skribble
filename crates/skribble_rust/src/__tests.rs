@@ -1,3 +1,4 @@
+use hex::ToHex;
 use rstest::rstest;
 use rstest_reuse::*;
 use skribble_core::vfs::MemoryFS;
@@ -67,10 +68,10 @@ fn create_memory_fs<S: AsRef<str>>(files: &[(&str, S)]) -> AnyResult<VfsPath> {
 #[template]
 #[rstest]
 #[case("function-default", &[("src/lib.rs", function("default", DEFAULT_NAMES))])]
-#[case("component-default", &[("src/lib.rs", function("default", DEFAULT_NAMES))])]
+#[case("component-default", &[("src/lib.rs", component("default", DEFAULT_NAMES))])]
+#[case("variables-default", &[("src/lib.rs", variables(DEFAULT_NAMES))])]
 fn test_cases<S: AsRef<str>>(#[case] id: &str, #[case] files: &[(&str, S)]) {}
 
-#[allow(unused)]
 fn component(name: &str, values: &[&str]) -> String {
   let classes = values.join(", ");
   format!(
@@ -98,6 +99,22 @@ fn function(name: &str, values: &[&str]) -> String {
 use crate::skribble::*;
 pub fn {name}() -> String {{
   [{classes}].join(" ")
+}}
+"#
+  )
+}
+
+fn variables(values: &[&str]) -> String {
+  let classes = values
+    .iter()
+    .map(|value| format!("let _{} = {value};", value.encode_hex::<String>()))
+    .collect::<Vec<_>>()
+    .join("  \n");
+  format!(
+    r#"
+use crate::skribble::*;
+pub fn variables() -> String {{
+  {classes}
 }}
 "#
   )
