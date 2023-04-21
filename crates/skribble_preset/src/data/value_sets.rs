@@ -407,6 +407,29 @@ lazy_static! {
           "7xl" => "80rem",
         })
         .build(),
+      ValueSet::builder()
+        .name("break")
+        .description("Different break rules for elements.")
+        .values(indexmap! {
+          "auto" => "auto",
+          "avoid" => "avoid",
+          "all" => "all",
+          "avoid-page" => "avoid-page",
+          "page" => "page",
+          "left" => "left",
+          "right" => "right",
+          "column" => "column",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("break-inside")
+        .values(indexmap! {
+          "auto" => "auto",
+          "avoid" => "avoid",
+          "avoid-page" => "avoid-page",
+          "avoid-column" => "avoid-column",
+        })
+        .build(),
     ]
   };
 }

@@ -894,6 +894,54 @@ expression: runner_config
           }
         ]
       }
+    },
+    "break-after": {
+      "name": "break-after",
+      "description": "Control how a column or page should break after an element.",
+      "priority": 150,
+      "styles": {
+        "break-after": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "break"
+          }
+        ]
+      }
+    },
+    "break-before": {
+      "name": "break-before",
+      "description": "Control how a column or page should break before an element.",
+      "priority": 150,
+      "styles": {
+        "break-before": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "break"
+          }
+        ]
+      }
+    },
+    "break-inside": {
+      "name": "break-inside",
+      "description": "Control how a column or page should break within an element.",
+      "priority": 150,
+      "styles": {
+        "break-inside": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "break-inside"
+          }
+        ]
+      }
     }
   },
   "classes": {
@@ -3180,6 +3228,32 @@ expression: runner_config
         "6xl": "72rem",
         "7xl": "80rem"
       }
+    },
+    "break": {
+      "name": "break",
+      "description": "Different break rules for elements.",
+      "priority": 150,
+      "values": {
+        "auto": "auto",
+        "avoid": "avoid",
+        "all": "all",
+        "avoid-page": "avoid-page",
+        "page": "page",
+        "left": "left",
+        "right": "right",
+        "column": "column"
+      }
+    },
+    "break-inside": {
+      "name": "break-inside",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "auto": "auto",
+        "avoid": "avoid",
+        "avoid-page": "avoid-page",
+        "avoid-column": "avoid-column"
+      }
     }
   },
   "names": {
@@ -3307,7 +3381,10 @@ expression: runner_config
       "bg",
       "opacity",
       "aspect",
-      "columns"
+      "columns",
+      "break-after",
+      "break-before",
+      "break-inside"
     ],
     "classes": [
       "group",
@@ -5073,6 +5150,32 @@ expression: runner_config
       "5xl",
       "6xl",
       "7xl"
+    ],
+    "atom:break-after": [
+      "auto",
+      "avoid",
+      "all",
+      "avoid-page",
+      "page",
+      "left",
+      "right",
+      "column"
+    ],
+    "atom:break-before": [
+      "auto",
+      "avoid",
+      "all",
+      "avoid-page",
+      "page",
+      "left",
+      "right",
+      "column"
+    ],
+    "atom:break-inside": [
+      "auto",
+      "avoid",
+      "avoid-page",
+      "avoid-column"
     ]
   }
 }

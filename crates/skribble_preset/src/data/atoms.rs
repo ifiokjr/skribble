@@ -365,6 +365,24 @@ lazy_static! {
         .description("Control the number of columns within an element.")
         .styles(indexmap! { "columns" => none })
         .build(),
+      Atom::builder()
+        .name("break-after")
+        .values(vec!["break"])
+        .description("Control how a column or page should break after an element.")
+        .styles(indexmap! { "break-after" => none })
+        .build(),
+      Atom::builder()
+        .name("break-before")
+        .values(vec!["break"])
+        .description("Control how a column or page should break before an element.")
+        .styles(indexmap! { "break-before" => none })
+        .build(),
+      Atom::builder()
+        .name("break-inside")
+        .values(vec!["break-inside"])
+        .description("Control how a column or page should break within an element.")
+        .styles(indexmap! { "break-inside" => none })
+        .build(),
     ]
   };
 }

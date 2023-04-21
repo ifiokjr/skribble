@@ -16379,6 +16379,85 @@ pub trait GeneratedValueSetColumns: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetColumns for GeneratedAtomColumns {}
+pub struct GeneratedAtomBreakAfter(String);
+impl GeneratedSkribbleValue for GeneratedAtomBreakAfter {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBreakAfter: GeneratedSkribbleValue {}
+impl GeneratedValueSetBreakAfter for GeneratedAtomBreakAfter {}
+pub struct GeneratedAtomBreakBefore(String);
+impl GeneratedSkribbleValue for GeneratedAtomBreakBefore {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBreakBefore: GeneratedSkribbleValue {}
+impl GeneratedValueSetBreakBefore for GeneratedAtomBreakBefore {}
+pub struct GeneratedAtomBreakInside(String);
+impl GeneratedSkribbleValue for GeneratedAtomBreakInside {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBreakInside: GeneratedSkribbleValue {
+  /// ```css
+  /// .break-inside\:\$auto {
+  ///   break-inside: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .break-inside\:\$avoid {
+  ///   break-inside: avoid;
+  /// }
+  /// ```
+  #[inline]
+  fn avoid(&self) -> String {
+    self.append_value("avoid")
+  }
+  /// ```css
+  /// .break-inside\:\$avoid-page {
+  ///   break-inside: avoid-page;
+  /// }
+  /// ```
+  #[inline]
+  fn avoid_page(&self) -> String {
+    self.append_value("avoid-page")
+  }
+  /// ```css
+  /// .break-inside\:\$avoid-column {
+  ///   break-inside: avoid-column;
+  /// }
+  /// ```
+  #[inline]
+  fn avoid_column(&self) -> String {
+    self.append_value("avoid-column")
+  }
+}
+impl GeneratedValueSetBreakInside for GeneratedAtomBreakInside {}
 pub trait GeneratedAtom: GeneratedSkribbleValue {
   /// Screen reader only
   #[inline]
@@ -16859,6 +16938,33 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   #[inline]
   fn columns_(&self, value: &'static str) -> String {
     self.append(format!("columns:[{}]", value.trim()))
+  }
+  /// Control how a column or page should break after an element.
+  #[inline]
+  fn break_after(&self) -> GeneratedAtomBreakAfter {
+    GeneratedAtomBreakAfter::from_ref(self.append("break-after"))
+  }
+  #[inline]
+  fn break_after_(&self, value: &'static str) -> String {
+    self.append(format!("break-after:[{}]", value.trim()))
+  }
+  /// Control how a column or page should break before an element.
+  #[inline]
+  fn break_before(&self) -> GeneratedAtomBreakBefore {
+    GeneratedAtomBreakBefore::from_ref(self.append("break-before"))
+  }
+  #[inline]
+  fn break_before_(&self, value: &'static str) -> String {
+    self.append(format!("break-before:[{}]", value.trim()))
+  }
+  /// Control how a column or page should break within an element.
+  #[inline]
+  fn break_inside(&self) -> GeneratedAtomBreakInside {
+    GeneratedAtomBreakInside::from_ref(self.append("break-inside"))
+  }
+  #[inline]
+  fn break_inside_(&self, value: &'static str) -> String {
+    self.append(format!("break-inside:[{}]", value.trim()))
   }
 }
 pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
