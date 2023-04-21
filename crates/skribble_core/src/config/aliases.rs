@@ -1,20 +1,15 @@
-use std::fmt;
-
 use derive_more::Deref;
 use derive_more::DerefMut;
 use serde::Deserialize;
 use serde::Serialize;
 use typed_builder::TypedBuilder;
 
-use crate::AnyEmptyResult;
 use crate::Priority;
-use crate::RunnerConfig;
-use crate::ToSkribbleCss;
 
 #[derive(Clone, Default, Debug, Deserialize, PartialEq, Serialize, Deref, DerefMut)]
-pub struct CssChunks(Vec<CssChunk>);
+pub struct Aliases(Vec<Alias>);
 
-impl CssChunks {
+impl Aliases {
   pub fn merge(&mut self, other: impl Into<Self>) {
     self.extend(other.into());
   }
@@ -24,19 +19,19 @@ impl CssChunks {
   }
 }
 
-impl IntoIterator for CssChunks {
+impl IntoIterator for Aliases {
   type IntoIter = std::vec::IntoIter<Self::Item>;
-  type Item = CssChunk;
+  type Item = Alias;
 
   fn into_iter(self) -> Self::IntoIter {
     self.0.into_iter()
   }
 }
 
-impl FromIterator<CssChunk> for CssChunks {
+impl FromIterator<Alias> for Aliases {
   fn from_iter<T>(iter: T) -> Self
   where
-    T: IntoIterator<Item = CssChunk>,
+    T: IntoIterator<Item = Alias>,
   {
     Self(iter.into_iter().collect())
   }
@@ -44,32 +39,31 @@ impl FromIterator<CssChunk> for CssChunks {
 
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
-pub struct CssChunk {
-  /// The name of the css chunk.
+pub struct Alias {
+  /// The name of the alias.
   #[builder(setter(into))]
   pub name: String,
-  /// A markdown description of what this css chunk should be used for.
+  /// A markdown description of what this alias should be used for.
   #[builder(default, setter(into, strip_option))]
   pub description: Option<String>,
   /// The priority of this items.
   #[builder(default, setter(into))]
   pub priority: Priority,
-  /// The layer to place the css into. Two layers which are always available are
-  /// `default` and `base`. Base is used for the `reset` css.
+  /// The classes to be combined. Use spaces to separate each class name.
   #[builder(setter(into))]
-  pub layer: String,
-  /// The css to add.
-  #[builder(setter(into))]
-  pub css: String,
-  /// Whether to automatically include this chunk. For chunks that are not
-  /// automatically included it is up to plugins to ensure the relevant class
-  /// name is included.
+  pub classes: String,
+  /// When combine is true, it will create a new class that combines all the
+  /// styles of the classes specified, in the order they are specified in.
+  ///
+  /// It defaults to false meaning that the code generation will replace any
+  /// reference to this class with a space separated list of the classes
+  /// specified.
   #[builder(default, setter(into))]
   #[serde(default)]
-  pub auto_include: bool,
+  pub combine: bool,
 }
 
-impl CssChunk {
+impl Alias {
   pub fn merge(&mut self, other: impl Into<Self>) {
     let other = other.into();
 
@@ -85,20 +79,7 @@ impl CssChunk {
       self.priority = other.priority;
     }
 
-    self.auto_include = other.auto_include;
-    self.layer = other.layer;
-    // append rather than overwrite
-    self.css = format!("{}\n{}", self.css, other.css);
-  }
-}
-
-impl ToSkribbleCss for CssChunk {
-  fn write_skribble_css(
-    &self,
-    writer: &mut dyn fmt::Write,
-    _config: &RunnerConfig,
-  ) -> AnyEmptyResult {
-    writeln!(writer, "{}", self.css)?;
-    Ok(())
+    self.combine = other.combine;
+    self.classes = other.classes;
   }
 }

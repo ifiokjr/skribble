@@ -6,6 +6,7 @@ use crate::config::*;
 #[derive(Clone, Default, Serialize, Deserialize)]
 pub struct PluginConfig {
   pub atoms: Atoms,
+  pub aliases: Aliases,
   pub classes: NamedClasses,
   pub css_chunks: CssChunks,
   pub keyframes: Keyframes,

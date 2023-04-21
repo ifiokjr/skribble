@@ -7,6 +7,7 @@ use indexmap::IndexSet;
 use super::get_atom_name_lookup_name;
 use super::RunnerConfig;
 use crate::default_layers;
+use crate::Alias;
 use crate::Atom;
 use crate::CssChunk;
 use crate::CssVariable;
@@ -40,14 +41,15 @@ pub(crate) fn generate_merged_config(
   initial_layers.merge(default_layers());
   plugin_config.layers.extend(initial_layers);
 
-  let mut layers = indexset! {};
-  let mut keyframes = IndexMap::<String, Keyframe>::new();
+  let mut atoms = IndexMap::<String, Atom>::new();
+  let mut aliases = IndexMap::<String, Alias>::new();
+  let mut classes = IndexMap::<String, NamedClass>::new();
   let mut css_chunks = IndexMap::<String, CssChunk>::new();
   let mut css_variables = IndexMap::<String, CssVariable>::new();
+  let mut keyframes = IndexMap::<String, Keyframe>::new();
+  let mut layers = indexset! {};
   let mut media_queries = IndexMap::<String, IndexMap<String, MediaQuery>>::new();
   let mut modifiers = IndexMap::<String, IndexMap<String, Modifier>>::new();
-  let mut atoms = IndexMap::<String, Atom>::new();
-  let mut classes = IndexMap::<String, NamedClass>::new();
   let mut palette = StringMap::default();
   let mut value_sets = IndexMap::<String, ValueSet>::new();
 
@@ -58,6 +60,21 @@ pub(crate) fn generate_merged_config(
 
   if !layers.contains(default_layer) {
     return Err(Error::InvalidDefaultLayer(default_layer.into()));
+  }
+
+  // aliases
+  plugin_config.aliases.extend(config.aliases.clone());
+  for alias in plugin_config.aliases.into_iter() {
+    let key = &alias.name;
+
+    match aliases.get_mut(key) {
+      Some(existing) => {
+        existing.merge(alias);
+      }
+      None => {
+        aliases.insert(key.clone(), alias);
+      }
+    }
   }
 
   // css_chunks
@@ -227,6 +244,7 @@ pub(crate) fn generate_merged_config(
   let atom_names = atoms.keys().cloned().collect();
   let class_names = classes.keys().cloned().collect();
   let css_chunk_names = css_chunks.keys().cloned().collect();
+  let alias_names = aliases.keys().cloned().collect();
   let media_query_names = media_queries
     .iter()
     .flat_map(|(_, query)| query.keys().cloned())
@@ -241,22 +259,24 @@ pub(crate) fn generate_merged_config(
   names.insert("atoms".into(), atom_names);
   names.insert("classes".into(), class_names);
   names.insert("css_chunks".into(), css_chunk_names);
+  names.insert("aliases".into(), alias_names);
   names.insert("media_queries".into(), media_query_names);
   names.insert("modifiers".into(), modifier_names);
 
   let mut merged_config = RunnerConfig::builder()
-    .layers(layers)
-    .keyframes(keyframes)
-    .css_variables(css_variables)
-    .media_queries(media_queries)
-    .modifiers(modifiers)
+    ._options(options)
+    .aliases(aliases)
     .atoms(atoms)
     .classes(classes)
+    .css_chunks(css_chunks)
+    .css_variables(css_variables)
+    .keyframes(keyframes)
+    .layers(layers)
+    .media_queries(media_queries)
+    .modifiers(modifiers)
+    .names(names)
     .palette(palette)
     .value_sets(value_sets)
-    .names(names)
-    ._options(options)
-    .css_chunks(css_chunks)
     .build();
 
   for (name, atom) in merged_config.atoms.iter() {

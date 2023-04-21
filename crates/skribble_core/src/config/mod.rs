@@ -1,3 +1,4 @@
+pub use aliases::*;
 pub use atoms::*;
 pub use color_format::*;
 pub use css_chunks::*;
@@ -19,6 +20,7 @@ pub use syntax::*;
 pub use utils::*;
 pub use value_sets::*;
 
+mod aliases;
 mod atoms;
 mod color_format;
 mod css_chunks;

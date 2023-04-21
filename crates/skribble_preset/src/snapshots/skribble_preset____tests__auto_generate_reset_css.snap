@@ -2,7 +2,7 @@
 source: crates/skribble_preset/src/__tests.rs
 expression: scanned.code
 ---
-@layer base, default;
+@layer base, alias, default;
 
 @layer base {
   *, :before, :after {

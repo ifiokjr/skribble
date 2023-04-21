@@ -32,8 +32,12 @@ expression: "StyleConfig::default()"
   },
   "layers": [
     {
-      "priority": 200,
+      "priority": 250,
       "value": "base"
+    },
+    {
+      "priority": 250,
+      "value": "alias"
     },
     {
       "priority": 150,
@@ -47,6 +51,7 @@ expression: "StyleConfig::default()"
   "modifiers": [],
   "atoms": [],
   "classes": [],
+  "aliases": [],
   "palette": {},
   "valueSets": []
 }

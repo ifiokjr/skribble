@@ -1,3 +1,4 @@
+pub(crate) use aliases::*;
 pub(crate) use atoms::*;
 pub(crate) use css::*;
 pub(crate) use css_variables::*;
@@ -8,6 +9,7 @@ pub(crate) use named_classes::*;
 pub(crate) use palette::*;
 pub(crate) use value_sets::*;
 
+mod aliases;
 mod atoms;
 mod css;
 mod css_variables;

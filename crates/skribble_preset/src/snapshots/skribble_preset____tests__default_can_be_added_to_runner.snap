@@ -992,6 +992,155 @@ expression: runner_config
       }
     }
   },
+  "aliases": {
+    "block": {
+      "name": "block",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$block",
+      "combine": false
+    },
+    "inline-block": {
+      "name": "inline-block",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$inline-block",
+      "combine": false
+    },
+    "inline": {
+      "name": "inline",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$inline",
+      "combine": false
+    },
+    "flex": {
+      "name": "flex",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$flex",
+      "combine": false
+    },
+    "inline-flex": {
+      "name": "inline-flex",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$inline-flex",
+      "combine": false
+    },
+    "table": {
+      "name": "table",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$table",
+      "combine": false
+    },
+    "inline-table": {
+      "name": "inline-table",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$inline-table",
+      "combine": false
+    },
+    "table-caption": {
+      "name": "table-caption",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$table-caption",
+      "combine": false
+    },
+    "table-cell": {
+      "name": "table-cell",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$table-cell",
+      "combine": false
+    },
+    "table-column": {
+      "name": "table-column",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$table-column",
+      "combine": false
+    },
+    "table-column-group": {
+      "name": "table-column-group",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$table-column-group",
+      "combine": false
+    },
+    "table-footer-group": {
+      "name": "table-footer-group",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$table-footer-group",
+      "combine": false
+    },
+    "table-header-group": {
+      "name": "table-header-group",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$table-header-group",
+      "combine": false
+    },
+    "table-row-group": {
+      "name": "table-row-group",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$table-row-group",
+      "combine": false
+    },
+    "table-row": {
+      "name": "table-row",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$table-row",
+      "combine": false
+    },
+    "flow-root": {
+      "name": "flow-root",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$flow-root",
+      "combine": false
+    },
+    "grid": {
+      "name": "grid",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$grid",
+      "combine": false
+    },
+    "inline-grid": {
+      "name": "inline-grid",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$inline-grid",
+      "combine": false
+    },
+    "contents": {
+      "name": "contents",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$contents",
+      "combine": false
+    },
+    "list-item": {
+      "name": "list-item",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$list-item",
+      "combine": false
+    },
+    "hidden": {
+      "name": "hidden",
+      "description": null,
+      "priority": 150,
+      "classes": "display:$none",
+      "combine": false
+    }
+  },
   "classes": {
     "group": {
       "name": "group",
@@ -1781,6 +1930,7 @@ expression: runner_config
   },
   "layers": [
     "base",
+    "alias",
     "default"
   ],
   "media_queries": {
@@ -3506,6 +3656,29 @@ expression: runner_config
     ],
     "css_chunks": [
       "reset"
+    ],
+    "aliases": [
+      "block",
+      "inline-block",
+      "inline",
+      "flex",
+      "inline-flex",
+      "table",
+      "inline-table",
+      "table-caption",
+      "table-cell",
+      "table-column",
+      "table-column-group",
+      "table-footer-group",
+      "table-header-group",
+      "table-row-group",
+      "table-row",
+      "flow-root",
+      "grid",
+      "inline-grid",
+      "contents",
+      "list-item",
+      "hidden"
     ],
     "media_queries": [
       "screen",

@@ -41,10 +41,10 @@ where
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
 pub struct NamedClass {
-  /// The name of the media query.
+  /// The name of the standalone class.
   #[builder(setter(into))]
   pub name: String,
-  /// A markdown description of what this media query should be used for.
+  /// A markdown description of what this standalone class should be used for.
   #[builder(default, setter(into, strip_option))]
   pub description: Option<String>,
   /// The priority of this items.

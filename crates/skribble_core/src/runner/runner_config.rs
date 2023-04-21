@@ -6,6 +6,7 @@ use serde::Deserialize;
 use serde::Serialize;
 use typed_builder::TypedBuilder;
 
+use crate::Alias;
 use crate::Atom;
 use crate::CssChunk;
 use crate::CssVariable;
@@ -24,6 +25,7 @@ use crate::ValueSet;
 #[derive(Clone, Debug, Default, Deserialize, Serialize, TypedBuilder)]
 pub struct RunnerConfig {
   pub atoms: IndexMap<String, Atom>,
+  pub aliases: IndexMap<String, Alias>,
   pub classes: IndexMap<String, NamedClass>,
   pub css_variables: IndexMap<String, CssVariable>,
   pub css_chunks: IndexMap<String, CssChunk>,

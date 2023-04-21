@@ -3,6 +3,7 @@ use serde::Deserialize;
 use serde::Serialize;
 use typed_builder::TypedBuilder;
 
+use super::Aliases;
 use super::Atoms;
 use super::CssChunks;
 use super::CssVariables;
@@ -58,6 +59,9 @@ pub struct StyleConfig {
   /// A list of classes with predefined styles.
   #[builder(default, setter(into))]
   pub classes: NamedClasses,
+  /// A list of class name aliases.
+  #[builder(default, setter(into))]
+  pub aliases: Aliases,
   /// Hardcoded colors for the pallette.
   #[builder(default, setter(into))]
   pub palette: Palette,
@@ -87,6 +91,7 @@ impl StyleConfig {
   pub(crate) fn into_wrapped_config(self) -> (Options, PluginConfig, Plugins) {
     let Self {
       atoms,
+      aliases,
       classes,
       css_chunks,
       keyframes,
@@ -104,6 +109,7 @@ impl StyleConfig {
       options,
       PluginConfig {
         atoms,
+        aliases,
         classes,
         css_chunks,
         keyframes,
@@ -154,7 +160,11 @@ pub fn default_layers() -> Layers {
   let mut layers = Layers::default();
   let base = PrioritizedString {
     value: "base".into(),
-    priority: Priority::LOW,
+    priority: Priority::LOWER,
+  };
+  let alias = PrioritizedString {
+    value: "alias".into(),
+    priority: Priority::LOWER,
   };
   let default = PrioritizedString {
     value: "default".into(),
@@ -162,6 +172,7 @@ pub fn default_layers() -> Layers {
   };
 
   layers.insert(base);
+  layers.insert(alias);
   layers.insert(default);
 
   layers

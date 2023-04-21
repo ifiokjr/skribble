@@ -15,6 +15,7 @@ impl Priority {
   pub const DEFAULT: Self = Self(150);
   pub const HIGH: Self = Self(50);
   pub const LOW: Self = Self(200);
+  pub const LOWER: Self = Self(250);
   pub const MEDIUM: Self = Self(100);
 }
 

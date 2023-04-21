@@ -38,7 +38,7 @@ pub struct Class {
   /// The pre-configured value of the atom.
   #[builder(setter(into))]
   value_name: Option<String>,
-  /// The name of the shorthand class.
+  /// The name of the standalone class.
   #[builder(setter(into))]
   named_class: Option<String>,
   /// This is the callable argument when the provided value is a callable
