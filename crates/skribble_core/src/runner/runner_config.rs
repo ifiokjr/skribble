@@ -24,26 +24,63 @@ use crate::ValueSet;
 /// The configuration after all plugins have been run.
 #[derive(Clone, Debug, Default, Deserialize, Serialize, TypedBuilder)]
 pub struct RunnerConfig {
-  pub atoms: IndexMap<String, Atom>,
+  #[serde(skip)]
+  _options: Arc<Options>,
   pub aliases: IndexMap<String, Alias>,
+  pub atoms: IndexMap<String, Atom>,
   pub classes: IndexMap<String, NamedClass>,
-  pub css_variables: IndexMap<String, CssVariable>,
   pub css_chunks: IndexMap<String, CssChunk>,
+  pub css_variables: IndexMap<String, CssVariable>,
   pub keyframes: IndexMap<String, Keyframe>,
   pub layers: IndexSet<String>,
   pub media_queries: IndexMap<String, IndexMap<String, MediaQuery>>,
   pub modifiers: IndexMap<String, IndexMap<String, Modifier>>,
-  pub palette: StringMap,
-  pub value_sets: IndexMap<String, ValueSet>,
   #[builder(default)]
   pub names: IndexMap<String, IndexSet<String>>,
-  #[serde(skip)]
-  _options: Arc<Options>,
+  pub palette: StringMap,
+  pub value_sets: IndexMap<String, ValueSet>,
 }
 
 impl RunnerConfig {
-  pub fn to_json(&self) -> Result<String> {
-    serde_json::to_string_pretty(self).map_err(Error::CouldNotSerializeConfig)
+  pub fn get_alias_index(&self, name: impl AsRef<str>) -> Option<usize> {
+    self
+      .names
+      .get("aliases")
+      .and_then(|map| map.get_index_of(name.as_ref()))
+  }
+
+  pub fn get_atom_index(&self, name: impl AsRef<str>) -> Option<usize> {
+    self
+      .names
+      .get("atoms")
+      .and_then(|map| map.get_index_of(name.as_ref()))
+  }
+
+  pub fn get_atom_is_keyframe(&self, name: impl AsRef<str>) -> bool {
+    self
+      .atoms
+      .get(name.as_ref())
+      .map(|atom| atom.values == LinkedValues::Keyframes)
+      .unwrap_or(false)
+  }
+
+  pub fn get_atom_values_index(
+    &self,
+    atom_name: impl AsRef<str>,
+    value_name: impl AsRef<str>,
+  ) -> Option<usize> {
+    let lookup_name = get_atom_name_lookup_name(atom_name);
+    self
+      .names
+      .get(&lookup_name)
+      .and_then(|map| map.get_index_of(value_name.as_ref()))
+  }
+
+  pub fn get_css_chunk_index(&self, name: impl AsRef<str>) -> Option<usize> {
+    self
+      .names
+      .get("css_chunks")
+      .and_then(|map| map.get_index_of(name.as_ref()))
   }
 
   pub fn get_media_queries(&self) -> Vec<&MediaQuery> {
@@ -61,12 +98,11 @@ impl RunnerConfig {
       .find(|&media_query| media_query.name == name.as_ref())
   }
 
-  pub fn get_modifiers(&self) -> Vec<&Modifier> {
+  pub fn get_media_query_index(&self, name: impl AsRef<str>) -> Option<usize> {
     self
-      .modifiers
-      .values()
-      .flat_map(|map| map.values())
-      .collect()
+      .names
+      .get("media_queries")
+      .and_then(|map| map.get_index_of(name.as_ref()))
   }
 
   pub fn get_modifier(&self, name: impl AsRef<str>) -> Option<&Modifier> {
@@ -76,34 +112,26 @@ impl RunnerConfig {
       .find(|&modifier| modifier.name == name.as_ref())
   }
 
-  pub fn has_media_query(&self, name: impl AsRef<str>) -> bool {
-    let name = name.as_ref().to_string();
+  pub fn get_modifier_index(&self, name: impl AsRef<str>) -> Option<usize> {
     self
       .names
-      .get("media_queries")
-      .as_ref()
-      .map(|map| map.contains(&name))
-      .unwrap_or(false)
+      .get("modifiers")
+      .and_then(|map| map.get_index_of(name.as_ref()))
   }
 
-  pub fn has_keyframe(&self, name: impl AsRef<str>) -> bool {
-    let name = name.as_ref().to_string();
+  pub fn get_modifiers(&self) -> Vec<&Modifier> {
     self
-      .names
-      .get("keyframes")
-      .as_ref()
-      .map(|map| map.contains(&name))
-      .unwrap_or(false)
+      .modifiers
+      .values()
+      .flat_map(|map| map.values())
+      .collect()
   }
 
-  pub fn has_css_variable(&self, name: impl AsRef<str>) -> bool {
-    let name = name.as_ref().to_string();
+  pub fn get_named_class_index(&self, name: impl AsRef<str>) -> Option<usize> {
     self
       .names
-      .get("css_variables")
-      .as_ref()
-      .map(|map| map.contains(&name))
-      .unwrap_or(false)
+      .get("classes")
+      .and_then(|map| map.get_index_of(name.as_ref()))
   }
 
   pub fn has_atom(&self, name: impl AsRef<str>) -> bool {
@@ -126,6 +154,36 @@ impl RunnerConfig {
       .unwrap_or(false)
   }
 
+  pub fn has_css_variable(&self, name: impl AsRef<str>) -> bool {
+    let name = name.as_ref().to_string();
+    self
+      .names
+      .get("css_variables")
+      .as_ref()
+      .map(|map| map.contains(&name))
+      .unwrap_or(false)
+  }
+
+  pub fn has_keyframe(&self, name: impl AsRef<str>) -> bool {
+    let name = name.as_ref().to_string();
+    self
+      .names
+      .get("keyframes")
+      .as_ref()
+      .map(|map| map.contains(&name))
+      .unwrap_or(false)
+  }
+
+  pub fn has_media_query(&self, name: impl AsRef<str>) -> bool {
+    let name = name.as_ref().to_string();
+    self
+      .names
+      .get("media_queries")
+      .as_ref()
+      .map(|map| map.contains(&name))
+      .unwrap_or(false)
+  }
+
   pub fn has_modifier(&self, name: impl AsRef<str>) -> bool {
     let name = name.as_ref().to_string();
     self
@@ -141,59 +199,8 @@ impl RunnerConfig {
     &self._options
   }
 
-  pub fn get_media_query_index(&self, name: impl AsRef<str>) -> Option<usize> {
-    self
-      .names
-      .get("media_queries")
-      .and_then(|map| map.get_index_of(name.as_ref()))
-  }
-
-  pub fn get_modifier_index(&self, name: impl AsRef<str>) -> Option<usize> {
-    self
-      .names
-      .get("modifiers")
-      .and_then(|map| map.get_index_of(name.as_ref()))
-  }
-
-  pub fn get_atom_index(&self, name: impl AsRef<str>) -> Option<usize> {
-    self
-      .names
-      .get("atoms")
-      .and_then(|map| map.get_index_of(name.as_ref()))
-  }
-
-  pub fn get_named_class_index(&self, name: impl AsRef<str>) -> Option<usize> {
-    self
-      .names
-      .get("classes")
-      .and_then(|map| map.get_index_of(name.as_ref()))
-  }
-
-  pub fn get_css_chunk_index(&self, name: impl AsRef<str>) -> Option<usize> {
-    self
-      .names
-      .get("css_chunks")
-      .and_then(|map| map.get_index_of(name.as_ref()))
-  }
-
-  pub fn get_atom_values_index(
-    &self,
-    atom_name: impl AsRef<str>,
-    value_name: impl AsRef<str>,
-  ) -> Option<usize> {
-    let lookup_name = get_atom_name_lookup_name(atom_name);
-    self
-      .names
-      .get(&lookup_name)
-      .and_then(|map| map.get_index_of(value_name.as_ref()))
-  }
-
-  pub fn get_atom_is_keyframe(&self, name: impl AsRef<str>) -> bool {
-    self
-      .atoms
-      .get(name.as_ref())
-      .map(|atom| atom.values == LinkedValues::Keyframes)
-      .unwrap_or(false)
+  pub fn to_json(&self) -> Result<String> {
+    serde_json::to_string_pretty(self).map_err(Error::CouldNotSerializeConfig)
   }
 }
 

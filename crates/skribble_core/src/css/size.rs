@@ -12,6 +12,7 @@ pub struct ClassSize {
   pub atom: usize,
   pub value_name: usize,
   pub named_class: usize,
+  pub alias: usize,
   pub argument: Vec<u8>,
 }
 
@@ -32,6 +33,7 @@ impl Ord for ClassSize {
       .then(self.atom.cmp(&other.atom))
       .then(self.value_name.cmp(&other.value_name))
       .then(self.named_class.cmp(&other.named_class))
+      .then(self.alias.cmp(&other.alias))
       .then(self.argument.cmp(&other.argument))
   }
 }

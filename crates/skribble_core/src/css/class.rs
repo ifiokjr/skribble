@@ -57,6 +57,9 @@ pub struct Class {
   /// The css chunks that are referenced by this class.
   #[builder(setter(into))]
   css_chunk: Option<String>,
+  /// The alias that is referenced by this class.
+  #[builder(setter(into))]
+  alias: Option<String>,
 }
 
 impl Class {
@@ -116,14 +119,18 @@ impl Class {
     self.css_chunk.as_ref()
   }
 
+  pub fn get_alias(&self) -> Option<&String> {
+    self.alias.as_ref()
+  }
+
   pub fn collect_css_variables(&self, css_variables: &mut IndexSet<String>) {
     css_variables.extend(self.css_variables.iter().cloned());
   }
 
   /// Get the string representation of the selector for this `SkribbleClass`.
   ///
-  /// - Convert `["sm", "focus", "text", "red"]` -> `"sm\:text-red:focus"`
-  /// - Convert `tokens: ["sm", "p"], argument: "100px"` -> `"sm\:p-\[100px\]"`
+  /// - Convert `["sm", "focus", "text", "red"]` -> `".sm\:text-red:focus"`
+  /// - Convert `tokens: ["sm", "p"], argument: "100px"` -> `".sm\:p-\[100px\]"`
   pub fn selector(&self, config: &RunnerConfig) -> AnyResult<String> {
     let mut writer = String::new();
     self.write_selector(&mut writer, config)?;

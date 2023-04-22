@@ -22,26 +22,13 @@ use crate::ToSkribbleCss;
 pub struct Classes(IndexSet<Class>);
 
 impl Classes {
-  pub fn insert_factory(&mut self, class_factory: ClassFactory) -> bool {
-    self.insert_optional(class_factory.into_class())
+  pub fn insert_factory(&mut self, class_factory: ClassFactory) {
+    self.extend(class_factory.into_classes())
   }
 
   pub fn insert_factories(&mut self, class_factories: Vec<ClassFactory>) {
     for class_factory in class_factories {
       self.insert_factory(class_factory);
-    }
-  }
-
-  pub fn insert_optional(&mut self, class: Option<Class>) -> bool {
-    match class {
-      Some(class) => self.insert(class),
-      _ => false,
-    }
-  }
-
-  pub fn extend_optional(&mut self, classes: Option<Classes>) {
-    if let Some(classes) = classes {
-      self.extend(classes);
     }
   }
 

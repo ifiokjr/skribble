@@ -4,6 +4,7 @@ use serde::Deserialize;
 use serde::Serialize;
 use typed_builder::TypedBuilder;
 
+use super::StringList;
 use crate::Priority;
 
 #[derive(Clone, Default, Debug, Deserialize, PartialEq, Serialize, Deref, DerefMut)]
@@ -40,27 +41,27 @@ impl FromIterator<Alias> for Aliases {
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
 pub struct Alias {
-  /// The name of the alias.
-  #[builder(setter(into))]
-  pub name: String,
-  /// A markdown description of what this alias should be used for.
-  #[builder(default, setter(into, strip_option))]
-  pub description: Option<String>,
-  /// The priority of this items.
-  #[builder(default, setter(into))]
-  pub priority: Priority,
   /// The classes to be combined. Use spaces to separate each class name.
   #[builder(setter(into))]
-  pub classes: String,
-  /// When combine is true, it will create a new class that combines all the
+  pub classes: StringList,
+  /// When combined is `true`, it will create a new class that combines all the
   /// styles of the classes specified, in the order they are specified in.
   ///
-  /// It defaults to false meaning that the code generation will replace any
+  /// It defaults to `false` meaning that the code generation will replace any
   /// reference to this class with a space separated list of the classes
   /// specified.
   #[builder(default, setter(into))]
   #[serde(default)]
-  pub combine: bool,
+  pub combined: bool,
+  /// A markdown description of what this alias should be used for.
+  #[builder(default, setter(into, strip_option))]
+  pub description: Option<String>,
+  /// The name of the alias.
+  #[builder(setter(into))]
+  pub name: String,
+  /// The priority of this items.
+  #[builder(default, setter(into))]
+  pub priority: Priority,
 }
 
 impl Alias {
@@ -79,7 +80,7 @@ impl Alias {
       self.priority = other.priority;
     }
 
-    self.combine = other.combine;
+    self.combined = other.combined;
     self.classes = other.classes;
   }
 }

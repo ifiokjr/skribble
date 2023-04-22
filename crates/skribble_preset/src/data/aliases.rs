@@ -5,87 +5,87 @@ lazy_static! {
   pub(crate) static ref ALIASES: Vec<Alias> = vec![
     Alias::builder()
       .name("block")
-      .classes("display:$block")
+      .classes(vec!["display:$block"])
       .build(),
     Alias::builder()
       .name("inline-block")
-      .classes("display:$inline-block")
+      .classes(vec!["display:$inline-block"])
       .build(),
     Alias::builder()
       .name("inline")
-      .classes("display:$inline")
+      .classes(vec!["display:$inline"])
       .build(),
     Alias::builder()
       .name("flex")
-      .classes("display:$flex")
+      .classes(vec!["display:$flex"])
       .build(),
     Alias::builder()
       .name("inline-flex")
-      .classes("display:$inline-flex")
+      .classes(vec!["display:$inline-flex"])
       .build(),
     Alias::builder()
       .name("table")
-      .classes("display:$table")
+      .classes(vec!["display:$table"])
       .build(),
     Alias::builder()
       .name("inline-table")
-      .classes("display:$inline-table")
+      .classes(vec!["display:$inline-table"])
       .build(),
     Alias::builder()
       .name("table-caption")
-      .classes("display:$table-caption")
+      .classes(vec!["display:$table-caption"])
       .build(),
     Alias::builder()
       .name("table-cell")
-      .classes("display:$table-cell")
+      .classes(vec!["display:$table-cell"])
       .build(),
     Alias::builder()
       .name("table-column")
-      .classes("display:$table-column")
+      .classes(vec!["display:$table-column"])
       .build(),
     Alias::builder()
       .name("table-column-group")
-      .classes("display:$table-column-group")
+      .classes(vec!["display:$table-column-group"])
       .build(),
     Alias::builder()
       .name("table-footer-group")
-      .classes("display:$table-footer-group")
+      .classes(vec!["display:$table-footer-group"])
       .build(),
     Alias::builder()
       .name("table-header-group")
-      .classes("display:$table-header-group")
+      .classes(vec!["display:$table-header-group"])
       .build(),
     Alias::builder()
       .name("table-row-group")
-      .classes("display:$table-row-group")
+      .classes(vec!["display:$table-row-group"])
       .build(),
     Alias::builder()
       .name("table-row")
-      .classes("display:$table-row")
+      .classes(vec!["display:$table-row"])
       .build(),
     Alias::builder()
       .name("flow-root")
-      .classes("display:$flow-root")
+      .classes(vec!["display:$flow-root"])
       .build(),
     Alias::builder()
       .name("grid")
-      .classes("display:$grid")
+      .classes(vec!["display:$grid"])
       .build(),
     Alias::builder()
       .name("inline-grid")
-      .classes("display:$inline-grid")
+      .classes(vec!["display:$inline-grid"])
       .build(),
     Alias::builder()
       .name("contents")
-      .classes("display:$contents")
+      .classes(vec!["display:$contents"])
       .build(),
     Alias::builder()
       .name("list-item")
-      .classes("display:$list-item")
+      .classes(vec!["display:$list-item"])
       .build(),
     Alias::builder()
       .name("hidden")
-      .classes("display:$none")
+      .classes(vec!["display:$none"])
       .build(),
   ];
 }
