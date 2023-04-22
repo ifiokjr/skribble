@@ -20,6 +20,12 @@ impl Aliases {
   }
 }
 
+impl From<Vec<Alias>> for Aliases {
+  fn from(vec: Vec<Alias>) -> Self {
+    Self(vec)
+  }
+}
+
 impl IntoIterator for Aliases {
   type IntoIter = std::vec::IntoIter<Self::Item>;
   type Item = Alias;

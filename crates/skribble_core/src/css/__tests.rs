@@ -1,6 +1,9 @@
 use indexmap::indexmap;
 use rstest::rstest;
+use similar_asserts::assert_eq;
+use skribble_test::set_snapshot_suffix;
 
+use crate::Alias;
 use crate::AnyEmptyResult;
 use crate::Atom;
 use crate::ClassFactory;
@@ -25,99 +28,36 @@ use crate::ValueSet;
 fn class_order(#[case] a: &str, #[case] b: &str) -> AnyEmptyResult {
   let mut runner = SkribbleRunner::try_new(create_config())?;
   let config = runner.initialize()?;
-  let a = ClassFactory::from_string(config, a).into_class().unwrap();
-  let b = ClassFactory::from_string(config, b).into_class().unwrap();
+  let a = ClassFactory::from_string(config, a).into_classes();
+  let b = ClassFactory::from_string(config, b).into_classes();
+  assert_eq!(a.len(), b.len());
   assert!(a < b);
 
   Ok(())
 }
 
-#[test]
-fn class_selector() -> AnyEmptyResult {
-  let mut runner = SkribbleRunner::try_new(create_config())?;
-  let runner_config = runner.initialize()?;
-  let factory = ClassFactory::from_string(runner_config, "pt:$0");
-  let class = factory.into_class().unwrap();
-  insta::assert_display_snapshot!(class.to_skribble_css(runner_config)?);
+#[rstest]
+#[case("normal", &["pt:$0"])]
+#[case("alias", &["$yo"])]
+#[case("media_query_alias", &["md:$yo"])]
+#[case("mixed", &["pt:$0", "sm:pt:$10", "md:pt:$px", "screen:lg:pt:$px"])]
+#[case("colors", &["bg:$secondary", "sm:bg:$primary"])]
+#[case("keyframes", &["animate:$spin", "screen:animate:$spin"])]
+#[case("atom_arguments", &["pt:[1px]", "md:pt:[1vh]"])]
+#[case("modifier_arguments", &["[padding=1px]", "md:[padding=1vh]", "hover:[--something=red]", "aria-hidden:[--something=red]"])]
+fn css(#[case] id: &str, #[case] names: &[&str]) -> AnyEmptyResult {
+  set_snapshot_suffix!("{id}");
 
-  Ok(())
-}
-
-#[test]
-fn classes_css() -> AnyEmptyResult {
-  let mut runner = SkribbleRunner::try_new(create_config())?;
-  let runner_config = runner.initialize()?;
-  let mut classes = Classes::default();
-  classes.insert_factories(vec![
-    ClassFactory::from_string(runner_config, "pt:$0"),
-    ClassFactory::from_string(runner_config, "sm:pt:$10"),
-    ClassFactory::from_string(runner_config, "md:pt:$px"),
-    ClassFactory::from_string(runner_config, "screen:lg:pt:$px"),
-  ]);
-  classes.sort_by_class();
-  insta::assert_display_snapshot!(classes.to_skribble_css(runner_config)?);
-  Ok(())
-}
-
-#[test]
-fn classes_with_color_properties() -> AnyEmptyResult {
   let mut runner = SkribbleRunner::try_new(create_config())?;
   let runner_config = runner.initialize()?;
   let mut classes = Classes::default();
-  classes.insert_factories(vec![
-    ClassFactory::from_string(runner_config, "bg:$secondary"),
-    ClassFactory::from_string(runner_config, "sm:bg:$primary"),
-  ]);
-  classes.sort_by_class();
-  insta::assert_display_snapshot!(classes.to_skribble_css(runner_config)?);
+  let mut factories = vec![];
 
-  Ok(())
-}
+  for name in names {
+    factories.push(ClassFactory::from_string(runner_config, name));
+  }
 
-#[test]
-fn classes_with_keyframes() -> AnyEmptyResult {
-  let mut runner = SkribbleRunner::try_new(create_config())?;
-  let runner_config = runner.initialize()?;
-  let mut classes = Classes::default();
-  classes.insert_factories(vec![
-    ClassFactory::from_string(runner_config, "animate:$spin"),
-    ClassFactory::from_string(runner_config, "screen:animate:$spin"),
-  ]);
-  classes.sort_by_class();
-  let css = classes.to_skribble_css(runner_config)?;
-  insta::assert_display_snapshot!(css);
-
-  Ok(())
-}
-
-#[test]
-fn classes_with_atom_arguments() -> AnyEmptyResult {
-  let mut runner = SkribbleRunner::try_new(create_config())?;
-  let runner_config = runner.initialize()?;
-  let mut classes = Classes::default();
-  classes.insert_factories(vec![
-    ClassFactory::from_string(runner_config, "pt:[1px]"),
-    ClassFactory::from_string(runner_config, "md:pt:[1vh]"),
-  ]);
-  classes.sort_by_class();
-  let css = classes.to_skribble_css(runner_config)?;
-  insta::assert_display_snapshot!(css);
-
-  Ok(())
-}
-
-#[test]
-fn classes_with_modifier_arguments() -> AnyEmptyResult {
-  let mut runner = SkribbleRunner::try_new(create_config())?;
-  let runner_config = runner.initialize()?;
-  let mut classes = Classes::default();
-  classes.insert_factories(vec![
-    ClassFactory::from_string(runner_config, "[padding=1px]"),
-    ClassFactory::from_string(runner_config, "md:[padding=1vh]"),
-    ClassFactory::from_string(runner_config, "hover:[--something=red]"),
-    ClassFactory::from_string(runner_config, "aria-hidden:[--something=red]"),
-  ]);
-  classes.sort_by_class();
+  classes.insert_factories(factories);
   let css = classes.to_skribble_css(runner_config)?;
   insta::assert_display_snapshot!(css);
 
@@ -133,6 +73,12 @@ fn create_config() -> StyleConfig {
           "from" => indexmap! { "transform" => "rotate(0deg)" },
           "to" => indexmap! { "transform" => "rotate(360deg)" }
         })
+        .build(),
+    ])
+    .aliases(vec![
+      Alias::builder()
+        .name("yo")
+        .classes(vec!["pt:$0", "bg:$secondary"])
         .build(),
     ])
     .atoms(vec![

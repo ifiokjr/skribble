@@ -1,8 +1,0 @@
----
-source: crates/skribble_core/src/css/__tests.rs
-expression: class.to_skribble_css(runner_config)?
----
-.pt\:\$0 {
-  padding-top: 0px;
-}
-

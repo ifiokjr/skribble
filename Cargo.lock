@@ -1371,6 +1371,7 @@ dependencies = [
  "serde_json",
  "similar-asserts",
  "skribble_color",
+ "skribble_test",
  "thiserror",
  "typed-builder",
  "vfs",

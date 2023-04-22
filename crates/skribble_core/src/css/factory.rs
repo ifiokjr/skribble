@@ -1,3 +1,4 @@
+use indexmap::IndexMap;
 use indexmap::IndexSet;
 
 use crate::Arguments;
@@ -27,9 +28,9 @@ pub struct ClassFactory<'config> {
   /// be used.
   layer: Option<String>,
   /// The names of the media queries.
-  media_queries: IndexSet<String>,
+  media_queries: IndexMap<String, usize>,
   /// The ordered list of modifiers.
-  modifiers: IndexSet<String>,
+  modifiers: IndexMap<String, usize>,
   /// The name of the shorthand class.
   named_class: Option<String>,
   /// The score of this class. This is used to determine the order of the
@@ -82,8 +83,8 @@ impl<'config> ClassFactory<'config> {
       css_chunk: None,
       keyframe: false,
       layer: None,
-      media_queries: IndexSet::new(),
-      modifiers: IndexSet::new(),
+      media_queries: IndexMap::new(),
+      modifiers: IndexMap::new(),
       named_class: None,
       score: ClassSize::default(),
       valid: None,
@@ -179,28 +180,12 @@ impl<'config> ClassFactory<'config> {
       }
     }
     // media_query.
-    else if let Some(index) = self.config.get_media_query_index(&token) {
-      if self.media_queries.contains(token.as_ref()) {
-        self.valid = Some(false);
-      } else {
-        self.media_queries.insert(token.as_ref().to_string());
-        self
-          .score
-          .media_queries
-          .push(index.checked_add(1).unwrap_or(index));
-      }
+    else if self.add_media_query_token(&token) {
+      // Prevent further branches being run
     }
     // modifier.
-    else if let Some(index) = self.config.get_modifier_index(&token) {
-      if self.modifiers.contains(token.as_ref()) {
-        self.valid = Some(false);
-      } else {
-        self.modifiers.insert(token.as_ref().to_string());
-        self
-          .score
-          .modifiers
-          .push(index.checked_add(1).unwrap_or(index));
-      }
+    else if self.add_modifier_token(&token) {
+      // Prevent further branches being run
     }
     // atom.
     else if let Some(index) = self.config.get_atom_index(&token) {
@@ -238,9 +223,53 @@ impl<'config> ClassFactory<'config> {
     self
   }
 
+  fn add_modifier_token(&mut self, token: impl AsRef<str>) -> bool {
+    if let Some(index) = self.config.get_modifier_index(&token) {
+      if self.modifiers.contains_key(token.as_ref()) {
+        self.valid = Some(false);
+      } else {
+        self.modifiers.insert(token.as_ref().to_string(), index);
+        self
+          .score
+          .modifiers
+          .push(index.checked_add(1).unwrap_or(index));
+        self.score.modifiers.sort();
+        self
+          .modifiers
+          .sort_by(|_, a_index, _, z_index| a_index.cmp(z_index));
+      }
+
+      true
+    } else {
+      false
+    }
+  }
+
+  fn add_media_query_token(&mut self, token: impl AsRef<str>) -> bool {
+    if let Some(index) = self.config.get_media_query_index(&token) {
+      if self.media_queries.contains_key(token.as_ref()) {
+        self.valid = Some(false);
+      } else {
+        self.media_queries.insert(token.as_ref().to_string(), index);
+        self
+          .score
+          .media_queries
+          .push(index.checked_add(1).unwrap_or(index));
+        self.score.media_queries.sort();
+        self
+          .media_queries
+          .sort_by(|_, a_index, _, z_index| a_index.cmp(z_index));
+      }
+
+      true
+    } else {
+      false
+    }
+  }
+
   /// Create a new class from this factory. It will return none if the class is
   /// not valid.
-  pub fn into_class(self) -> Option<Class> {
+  fn into_class(self) -> Option<Class> {
     if !self.is_valid() {
       return None;
     }
@@ -263,6 +292,10 @@ impl<'config> ClassFactory<'config> {
       named_class.collect_css_variables(&mut css_variables)
     }
 
+    let media_queries: IndexSet<String> =
+      self.media_queries.into_iter().map(|(key, _)| key).collect();
+    let modifiers: IndexSet<String> = self.modifiers.into_iter().map(|(key, _)| key).collect();
+
     let class = Class::builder()
       .alias(self.alias)
       .argument(self.argument)
@@ -271,8 +304,8 @@ impl<'config> ClassFactory<'config> {
       .css_variables(css_variables)
       .keyframe(self.keyframe)
       .layer(self.layer)
-      .media_queries(self.media_queries)
-      .modifiers(self.modifiers)
+      .media_queries(media_queries)
+      .modifiers(modifiers)
       .named_class(self.named_class)
       .score(self.score)
       .value_name(self.value_name)
@@ -294,7 +327,17 @@ impl<'config> ClassFactory<'config> {
     // TODO this should only be done if `alias.combine == false`
     if !alias.combined {
       for name in alias.classes.iter() {
-        let Some(class) = Self::from_string(self.config, name).into_class() else {
+        let mut factory = Self::from_string(self.config, name);
+
+        for token in self.media_queries.keys() {
+          factory.add_media_query_token(token);
+        }
+
+        for token in self.modifiers.keys() {
+          factory.add_modifier_token(token);
+        }
+
+        let Some(class) = factory.into_class() else {
           continue;
         };
 
