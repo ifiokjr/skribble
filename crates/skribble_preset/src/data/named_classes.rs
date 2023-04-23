@@ -52,30 +52,6 @@ lazy_static! {
         })
         .build(),
       NamedClass::builder()
-        .name("block")
-        .styles(indexmap! { "display" => "block" })
-        .build(),
-      NamedClass::builder()
-        .name("inline-block")
-        .styles(indexmap! { "display" => "inline-block" })
-        .build(),
-      NamedClass::builder()
-        .name("inline")
-        .styles(indexmap! { "display" => "inline" })
-        .build(),
-      NamedClass::builder()
-        .name("flow-root")
-        .styles(indexmap! { "display" => "flow-root" })
-        .build(),
-      NamedClass::builder()
-        .name("content")
-        .styles(indexmap! { "display" => "content" })
-        .build(),
-      NamedClass::builder()
-        .name("hidden")
-        .styles(indexmap! { "display" => "hidden" })
-        .build(),
-      NamedClass::builder()
         .name("invisible")
         .styles(indexmap! { "visibility" => "hidden" })
         .build(),

@@ -17442,30 +17442,6 @@ pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
     self.append_value("subpixel-antialiased")
   }
   #[inline]
-  fn block(&self) -> String {
-    self.append_value("block")
-  }
-  #[inline]
-  fn inline_block(&self) -> String {
-    self.append_value("inline-block")
-  }
-  #[inline]
-  fn inline(&self) -> String {
-    self.append_value("inline")
-  }
-  #[inline]
-  fn flow_root(&self) -> String {
-    self.append_value("flow-root")
-  }
-  #[inline]
-  fn content(&self) -> String {
-    self.append_value("content")
-  }
-  #[inline]
-  fn hidden(&self) -> String {
-    self.append_value("hidden")
-  }
-  #[inline]
   fn invisible(&self) -> String {
     self.append_value("invisible")
   }
@@ -17488,6 +17464,124 @@ pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   #[inline]
   fn transform_cpu(&self) -> String {
     self.append_value("transform-cpu")
+  }
+}
+pub trait GeneratedAliases: GeneratedSkribbleValue {
+  #[inline]
+  fn block(&self) -> String {
+    ["display:$block"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn inline_block(&self) -> String {
+    ["display:$inline-block"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn inline(&self) -> String {
+    ["display:$inline"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn flex(&self) -> String {
+    ["display:$flex"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn inline_flex(&self) -> String {
+    ["display:$inline-flex"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn table(&self) -> String {
+    ["display:$table"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn inline_table(&self) -> String {
+    ["display:$inline-table"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn table_caption(&self) -> String {
+    ["display:$table-caption"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn table_cell(&self) -> String {
+    ["display:$table-cell"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn table_column(&self) -> String {
+    ["display:$table-column"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn table_column_group(&self) -> String {
+    ["display:$table-column-group"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn table_footer_group(&self) -> String {
+    ["display:$table-footer-group"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn table_header_group(&self) -> String {
+    ["display:$table-header-group"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn table_row_group(&self) -> String {
+    ["display:$table-row-group"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn table_row(&self) -> String {
+    ["display:$table-row"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn flow_root(&self) -> String {
+    ["display:$flow-root"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn grid(&self) -> String {
+    ["display:$grid"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn inline_grid(&self) -> String {
+    ["display:$inline-grid"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn contents(&self) -> String {
+    ["display:$contents"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn list_item(&self) -> String {
+    ["display:$list-item"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn hidden(&self) -> String {
+    ["display:$none"].map(|class| self.append(class)).join(" ")
   }
 }
 impl GeneratedMediaQueryDeviceCategories for GeneratedSkribbleRoot {}
@@ -17525,6 +17619,7 @@ impl GeneratedModifierLinkGroup for GeneratedSkribbleRoot {}
 impl GeneratedModifierPseudoGroup for GeneratedSkribbleRoot {}
 impl GeneratedAtom for GeneratedSkribbleRoot {}
 impl GeneratedNamedClasses for GeneratedSkribbleRoot {}
+impl GeneratedAliases for GeneratedSkribbleRoot {}
 impl GeneratedMediaQueryBreakpoints for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedMediaQueryOrientation for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedMediaQueryMotion for GeneratedMediaQueryDeviceCategoriesChild {}
@@ -17559,6 +17654,7 @@ impl GeneratedModifierLinkGroup for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedModifierPseudoGroup for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtom for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAliases for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedMediaQueryOrientation for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedMediaQueryMotion for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedMediaQueryDarkMode for GeneratedMediaQueryBreakpointsChild {}
@@ -17592,6 +17688,7 @@ impl GeneratedModifierLinkGroup for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedModifierPseudoGroup for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtom for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAliases for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedMediaQueryMotion for GeneratedMediaQueryOrientationChild {}
 impl GeneratedMediaQueryDarkMode for GeneratedMediaQueryOrientationChild {}
 impl GeneratedModifierParentGroup for GeneratedMediaQueryOrientationChild {}
@@ -17624,6 +17721,7 @@ impl GeneratedModifierLinkGroup for GeneratedMediaQueryOrientationChild {}
 impl GeneratedModifierPseudoGroup for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtom for GeneratedMediaQueryOrientationChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAliases for GeneratedMediaQueryOrientationChild {}
 impl GeneratedMediaQueryDarkMode for GeneratedMediaQueryMotionChild {}
 impl GeneratedModifierParentGroup for GeneratedMediaQueryMotionChild {}
 impl GeneratedModifierHoverGroup for GeneratedMediaQueryMotionChild {}
@@ -17655,6 +17753,7 @@ impl GeneratedModifierLinkGroup for GeneratedMediaQueryMotionChild {}
 impl GeneratedModifierPseudoGroup for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtom for GeneratedMediaQueryMotionChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryMotionChild {}
+impl GeneratedAliases for GeneratedMediaQueryMotionChild {}
 impl GeneratedModifierParentGroup for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedModifierHoverGroup for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedModifierActiveGroup for GeneratedMediaQueryDarkModeChild {}
@@ -17685,6 +17784,7 @@ impl GeneratedModifierLinkGroup for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedModifierPseudoGroup for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtom for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAliases for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedModifierHoverGroup for GeneratedModifierParentGroupChild {}
 impl GeneratedModifierActiveGroup for GeneratedModifierParentGroupChild {}
 impl GeneratedModifierFocusGroup for GeneratedModifierParentGroupChild {}
@@ -17714,6 +17814,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierParentGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierParentGroupChild {}
 impl GeneratedAtom for GeneratedModifierParentGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierParentGroupChild {}
+impl GeneratedAliases for GeneratedModifierParentGroupChild {}
 impl GeneratedModifierActiveGroup for GeneratedModifierHoverGroupChild {}
 impl GeneratedModifierFocusGroup for GeneratedModifierHoverGroupChild {}
 impl GeneratedModifierFocusWithinGroup for GeneratedModifierHoverGroupChild {}
@@ -17742,6 +17843,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierHoverGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtom for GeneratedModifierHoverGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierHoverGroupChild {}
+impl GeneratedAliases for GeneratedModifierHoverGroupChild {}
 impl GeneratedModifierFocusGroup for GeneratedModifierActiveGroupChild {}
 impl GeneratedModifierFocusWithinGroup for GeneratedModifierActiveGroupChild {}
 impl GeneratedModifierFocusVisibleGroup for GeneratedModifierActiveGroupChild {}
@@ -17769,6 +17871,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierActiveGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtom for GeneratedModifierActiveGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierActiveGroupChild {}
+impl GeneratedAliases for GeneratedModifierActiveGroupChild {}
 impl GeneratedModifierFocusWithinGroup for GeneratedModifierFocusGroupChild {}
 impl GeneratedModifierFocusVisibleGroup for GeneratedModifierFocusGroupChild {}
 impl GeneratedModifierEnabledGroup for GeneratedModifierFocusGroupChild {}
@@ -17795,6 +17898,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierFocusGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtom for GeneratedModifierFocusGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierFocusGroupChild {}
+impl GeneratedAliases for GeneratedModifierFocusGroupChild {}
 impl GeneratedModifierFocusVisibleGroup for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedModifierEnabledGroup for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedModifierEmptyGroup for GeneratedModifierFocusWithinGroupChild {}
@@ -17820,6 +17924,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtom for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAliases for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedModifierEnabledGroup for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedModifierEmptyGroup for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedModifierReadGroup for GeneratedModifierFocusVisibleGroupChild {}
@@ -17844,6 +17949,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtom for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAliases for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedModifierEmptyGroup for GeneratedModifierEnabledGroupChild {}
 impl GeneratedModifierReadGroup for GeneratedModifierEnabledGroupChild {}
 impl GeneratedModifierCheckedGroup for GeneratedModifierEnabledGroupChild {}
@@ -17867,6 +17973,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierEnabledGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtom for GeneratedModifierEnabledGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAliases for GeneratedModifierEnabledGroupChild {}
 impl GeneratedModifierReadGroup for GeneratedModifierEmptyGroupChild {}
 impl GeneratedModifierCheckedGroup for GeneratedModifierEmptyGroupChild {}
 impl GeneratedModifierValidGroup for GeneratedModifierEmptyGroupChild {}
@@ -17889,6 +17996,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierEmptyGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtom for GeneratedModifierEmptyGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAliases for GeneratedModifierEmptyGroupChild {}
 impl GeneratedModifierCheckedGroup for GeneratedModifierReadGroupChild {}
 impl GeneratedModifierValidGroup for GeneratedModifierReadGroupChild {}
 impl GeneratedModifierAutofillGroup for GeneratedModifierReadGroupChild {}
@@ -17910,6 +18018,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierReadGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierReadGroupChild {}
 impl GeneratedAtom for GeneratedModifierReadGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierReadGroupChild {}
+impl GeneratedAliases for GeneratedModifierReadGroupChild {}
 impl GeneratedModifierValidGroup for GeneratedModifierCheckedGroupChild {}
 impl GeneratedModifierAutofillGroup for GeneratedModifierCheckedGroupChild {}
 impl GeneratedModifierEvenGroup for GeneratedModifierCheckedGroupChild {}
@@ -17930,6 +18039,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierCheckedGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtom for GeneratedModifierCheckedGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAliases for GeneratedModifierCheckedGroupChild {}
 impl GeneratedModifierAutofillGroup for GeneratedModifierValidGroupChild {}
 impl GeneratedModifierEvenGroup for GeneratedModifierValidGroupChild {}
 impl GeneratedModifierNodePositionGroup for GeneratedModifierValidGroupChild {}
@@ -17949,6 +18059,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierValidGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierValidGroupChild {}
 impl GeneratedAtom for GeneratedModifierValidGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierValidGroupChild {}
+impl GeneratedAliases for GeneratedModifierValidGroupChild {}
 impl GeneratedModifierEvenGroup for GeneratedModifierAutofillGroupChild {}
 impl GeneratedModifierNodePositionGroup for GeneratedModifierAutofillGroupChild {}
 impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierAutofillGroupChild {}
@@ -17967,6 +18078,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierAutofillGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtom for GeneratedModifierAutofillGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAliases for GeneratedModifierAutofillGroupChild {}
 impl GeneratedModifierNodePositionGroup for GeneratedModifierEvenGroupChild {}
 impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierEvenGroupChild {}
 impl GeneratedModifierVisitedGroup for GeneratedModifierEvenGroupChild {}
@@ -17984,6 +18096,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierEvenGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtom for GeneratedModifierEvenGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierEvenGroupChild {}
+impl GeneratedAliases for GeneratedModifierEvenGroupChild {}
 impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedModifierVisitedGroup for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedModifierOptionalGroup for GeneratedModifierNodePositionGroupChild {}
@@ -18000,6 +18113,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtom for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAliases for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedModifierVisitedGroup for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedModifierOptionalGroup for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedModifierAria for GeneratedModifierNodeOfTypeGroupChild {}
@@ -18015,6 +18129,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtom for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAliases for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedModifierOptionalGroup for GeneratedModifierVisitedGroupChild {}
 impl GeneratedModifierAria for GeneratedModifierVisitedGroupChild {}
 impl GeneratedModifierFullScreenGroup for GeneratedModifierVisitedGroupChild {}
@@ -18029,6 +18144,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierVisitedGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtom for GeneratedModifierVisitedGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAliases for GeneratedModifierVisitedGroupChild {}
 impl GeneratedModifierAria for GeneratedModifierOptionalGroupChild {}
 impl GeneratedModifierFullScreenGroup for GeneratedModifierOptionalGroupChild {}
 impl GeneratedModifierTargetGroup for GeneratedModifierOptionalGroupChild {}
@@ -18042,6 +18158,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierOptionalGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtom for GeneratedModifierOptionalGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAliases for GeneratedModifierOptionalGroupChild {}
 impl GeneratedModifierFullScreenGroup for GeneratedModifierAriaChild {}
 impl GeneratedModifierTargetGroup for GeneratedModifierAriaChild {}
 impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierAriaChild {}
@@ -18054,6 +18171,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierAriaChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierAriaChild {}
 impl GeneratedAtom for GeneratedModifierAriaChild {}
 impl GeneratedNamedClasses for GeneratedModifierAriaChild {}
+impl GeneratedAliases for GeneratedModifierAriaChild {}
 impl GeneratedModifierTargetGroup for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedModifierRequiredGroup for GeneratedModifierFullScreenGroupChild {}
@@ -18065,6 +18183,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtom for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAliases for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierTargetGroupChild {}
 impl GeneratedModifierRequiredGroup for GeneratedModifierTargetGroupChild {}
 impl GeneratedModifierDefaultGroup for GeneratedModifierTargetGroupChild {}
@@ -18075,6 +18194,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierTargetGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtom for GeneratedModifierTargetGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierTargetGroupChild {}
+impl GeneratedAliases for GeneratedModifierTargetGroupChild {}
 impl GeneratedModifierRequiredGroup for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedModifierDefaultGroup for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedModifierOnlyChildGroup for GeneratedModifierPlaceholderShownGroupChild {}
@@ -18084,6 +18204,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierPlaceholderShownGroupChild 
 impl GeneratedModifierPseudoGroup for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtom for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAliases for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedModifierDefaultGroup for GeneratedModifierRequiredGroupChild {}
 impl GeneratedModifierOnlyChildGroup for GeneratedModifierRequiredGroupChild {}
 impl GeneratedModifierOnlyGroup for GeneratedModifierRequiredGroupChild {}
@@ -18092,6 +18213,7 @@ impl GeneratedModifierLinkGroup for GeneratedModifierRequiredGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtom for GeneratedModifierRequiredGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAliases for GeneratedModifierRequiredGroupChild {}
 impl GeneratedModifierOnlyChildGroup for GeneratedModifierDefaultGroupChild {}
 impl GeneratedModifierOnlyGroup for GeneratedModifierDefaultGroupChild {}
 impl GeneratedModifierRootGroup for GeneratedModifierDefaultGroupChild {}
@@ -18099,23 +18221,29 @@ impl GeneratedModifierLinkGroup for GeneratedModifierDefaultGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtom for GeneratedModifierDefaultGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAliases for GeneratedModifierDefaultGroupChild {}
 impl GeneratedModifierOnlyGroup for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedModifierRootGroup for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedModifierLinkGroup for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtom for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAliases for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedModifierRootGroup for GeneratedModifierOnlyGroupChild {}
 impl GeneratedModifierLinkGroup for GeneratedModifierOnlyGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtom for GeneratedModifierOnlyGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAliases for GeneratedModifierOnlyGroupChild {}
 impl GeneratedModifierLinkGroup for GeneratedModifierRootGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierRootGroupChild {}
 impl GeneratedAtom for GeneratedModifierRootGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierRootGroupChild {}
+impl GeneratedAliases for GeneratedModifierRootGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtom for GeneratedModifierLinkGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierLinkGroupChild {}
+impl GeneratedAliases for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtom for GeneratedModifierPseudoGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAliases for GeneratedModifierPseudoGroupChild {}

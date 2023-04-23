@@ -25,13 +25,13 @@ use crate::ValueSet;
 #[case("pt:$0", "pt:$1")]
 #[case("sm:pt:$10", "md:pt:$10")]
 #[case("bg:$primary", "bg:$secondary")]
-fn class_order(#[case] a: &str, #[case] b: &str) -> AnyEmptyResult {
+fn class_order(#[case] a: &str, #[case] z: &str) -> AnyEmptyResult {
   let mut runner = SkribbleRunner::try_new(create_config())?;
   let config = runner.initialize()?;
   let a = ClassFactory::from_string(config, a).into_classes();
-  let b = ClassFactory::from_string(config, b).into_classes();
-  assert_eq!(a.len(), b.len());
-  assert!(a < b);
+  let z = ClassFactory::from_string(config, z).into_classes();
+  assert_eq!(a.len(), z.len());
+  assert!(a < z);
 
   Ok(())
 }

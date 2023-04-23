@@ -35,6 +35,7 @@
   '';
   scripts."fix:all".exec = ''
     set -e
+    generate:all
     fix:clippy
     fix:format
   '';

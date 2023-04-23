@@ -14,6 +14,8 @@ use similar_asserts::assert_eq;
 #[case::background_pallete(sk().bg().red100(), "bg:$red100")]
 #[case::aspect_ratio(sk().aspect().square(), "aspect:$square")]
 #[case::columns(sk().columns().n4(), "columns:$4")]
+#[case::aliases(sk().md().block(), "md:display:$block")]
+#[case::aliases(sk().hover().inline_block(), "hover:display:$inline-block")]
 #[case::variables(vars().primary(), "--sk-p")]
 fn generated_class_names(#[case] input: String, #[case] expected: &str) {
   assert_eq!(input, expected);

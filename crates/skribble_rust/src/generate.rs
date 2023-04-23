@@ -230,6 +230,44 @@ fn generate_named_classes(
   Ok(())
 }
 
+fn generate_aliases(
+  config: &RunnerConfig,
+  method_names: &mut IndexMap<String, String>,
+  sections: &mut Vec<String>,
+  trait_names: &mut Vec<String>,
+) -> AnyEmptyResult {
+  sections.push("pub trait GeneratedAliases: GeneratedSkribbleValue {".into());
+
+  for (alias_name, alias) in config.aliases.iter() {
+    let method_name = get_method_name(alias_name, GLOBAL_PREFIX, method_names)?;
+    let classes = alias
+      .classes
+      .iter()
+      .map(|class| format!("\"{class}\""))
+      .collect::<Vec<String>>()
+      .join(", ");
+    let classes_array = format!("[{classes}].map(|class| self.append(class)).join(\" \")");
+
+    if let Some(ref description) = alias.description {
+      sections.push(wrap_indent(wrap_docs(description), 1));
+    }
+
+    sections.push(wrap_indent(
+      format!("#[inline]\nfn {method_name}(&self) -> String {{"),
+      1,
+    ));
+
+    sections.push(wrap_indent(&classes_array, 2));
+
+    sections.push(wrap_indent("}", 1));
+  }
+
+  trait_names.push("GeneratedAliases".into());
+  sections.push("}".into());
+
+  Ok(())
+}
+
 fn generate_atoms(
   config: &RunnerConfig,
   method_names: &mut IndexMap<String, String>,
@@ -680,6 +718,7 @@ pub(crate) fn generate_file_contents(
   generate_atom_colors(config, &mut method_names, &mut sections)?;
   generate_atoms(config, &mut method_names, &mut sections, &mut trait_names)?;
   generate_named_classes(config, &mut method_names, &mut sections, &mut trait_names)?;
+  generate_aliases(config, &mut method_names, &mut sections, &mut trait_names)?;
   generate_struct_implementations(&struct_names_map, &trait_names, &mut sections);
 
   Ok((combine_sections_with_header(sections), method_names))

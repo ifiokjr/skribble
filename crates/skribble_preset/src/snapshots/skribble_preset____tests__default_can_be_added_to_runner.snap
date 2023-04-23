@@ -1241,54 +1241,6 @@ expression: runner_config
         "-moz-osx-font-smoothing": "auto"
       }
     },
-    "block": {
-      "name": "block",
-      "description": null,
-      "priority": 150,
-      "styles": {
-        "display": "block"
-      }
-    },
-    "inline-block": {
-      "name": "inline-block",
-      "description": null,
-      "priority": 150,
-      "styles": {
-        "display": "inline-block"
-      }
-    },
-    "inline": {
-      "name": "inline",
-      "description": null,
-      "priority": 150,
-      "styles": {
-        "display": "inline"
-      }
-    },
-    "flow-root": {
-      "name": "flow-root",
-      "description": null,
-      "priority": 150,
-      "styles": {
-        "display": "flow-root"
-      }
-    },
-    "content": {
-      "name": "content",
-      "description": null,
-      "priority": 150,
-      "styles": {
-        "display": "content"
-      }
-    },
-    "hidden": {
-      "name": "hidden",
-      "description": null,
-      "priority": 150,
-      "styles": {
-        "display": "hidden"
-      }
-    },
     "invisible": {
       "name": "invisible",
       "description": null,
@@ -2915,12 +2867,6 @@ expression: runner_config
       "oblique",
       "antialiased",
       "subpixel-antialiased",
-      "block",
-      "inline-block",
-      "inline",
-      "flow-root",
-      "content",
-      "hidden",
       "invisible",
       "visible",
       "remove-filter",
