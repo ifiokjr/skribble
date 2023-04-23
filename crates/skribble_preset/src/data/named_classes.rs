@@ -12,6 +12,8 @@ lazy_static! {
     let group_nested_transform = Placeholder::variable("group-nested-transform");
     let group_nested_transform_cpu = Placeholder::variable("group-nested-transform-cpu");
     let contained_max_width = Placeholder::wrapped_variable("contained-max-width", None);
+    let space_x_reverse = Placeholder::variable("space-x-reverse");
+    let space_y_reverse = Placeholder::variable("space-y-reverse");
 
     vec![
       NamedClass::builder()
@@ -74,6 +76,14 @@ lazy_static! {
       NamedClass::builder()
         .name("transform-cpu")
         .styles(indexmap! { &group_nested_transform => group_nested_transform_cpu })
+        .build(),
+      NamedClass::builder()
+        .name("space-x-reverse")
+        .styles(indexmap! { space_x_reverse => "1" })
+        .build(),
+      NamedClass::builder()
+        .name("space-y-reverse")
+        .styles(indexmap! { space_y_reverse => "1" })
         .build(),
     ]
   };

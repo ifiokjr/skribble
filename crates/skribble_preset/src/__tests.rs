@@ -22,6 +22,9 @@ fn default_can_be_added_to_runner() -> AnyEmptyResult {
 #[rstest]
 #[case("contained", &["$contained", "lg:$contained", "xl:$contained"])]
 #[case("aspect-ratio", &["aspect:$square", "aspect:$portrait", "aspect:[2/1]"])]
+#[case("atom-modifiers", &["space-x:$px", "md:space-y:$64", "$space-x-reverse"])]
+#[case("modifiers", &["hover:bg:$primary"])]
+#[case("chained-modifiers", &["rtl:required:hover:bg:$primary"])]
 fn css_from_class_names(#[case] id: &str, #[case] names: &[&str]) -> AnyEmptyResult {
   let plugin = PresetPlugin::default();
   let config: StyleConfig = StyleConfig::builder()

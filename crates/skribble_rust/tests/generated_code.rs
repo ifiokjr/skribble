@@ -780,6 +780,30 @@ impl GeneratedCssVariables {
   pub fn exit_rotate(&self) -> String {
     "--sk-exit-rotate".into()
   }
+
+  /// ```css
+  /// @property --sk-space-x-reverse {
+  ///   syntax: "<number>";
+  ///   inherits: true;
+  ///   initial-value: 0;
+  /// }
+  /// ```
+  #[inline]
+  pub fn space_x_reverse(&self) -> String {
+    "--sk-space-x-reverse".into()
+  }
+
+  /// ```css
+  /// @property --sk-space-y-reverse {
+  ///   syntax: "<number>";
+  ///   inherits: true;
+  ///   initial-value: 0;
+  /// }
+  /// ```
+  #[inline]
+  pub fn space_y_reverse(&self) -> String {
+    "--sk-space-y-reverse".into()
+  }
 }
 pub struct GeneratedMediaQueryDeviceCategoriesChild(String);
 impl GeneratedSkribbleValue for GeneratedMediaQueryDeviceCategoriesChild {
@@ -9312,6 +9336,312 @@ pub trait GeneratedValueSetP: GeneratedSkribbleValue {
   fn n3_5(&self) -> String {
     self.append_value("3.5")
   }
+  /// ```css
+  /// .p\:\$-1 {
+  ///   padding: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .p\:\$-2 {
+  ///   padding: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .p\:\$-3 {
+  ///   padding: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .p\:\$-4 {
+  ///   padding: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .p\:\$-5 {
+  ///   padding: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .p\:\$-6 {
+  ///   padding: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .p\:\$-7 {
+  ///   padding: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .p\:\$-8 {
+  ///   padding: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .p\:\$-9 {
+  ///   padding: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .p\:\$-10 {
+  ///   padding: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .p\:\$-11 {
+  ///   padding: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .p\:\$-12 {
+  ///   padding: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .p\:\$-14 {
+  ///   padding: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .p\:\$-16 {
+  ///   padding: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .p\:\$-20 {
+  ///   padding: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .p\:\$-24 {
+  ///   padding: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .p\:\$-28 {
+  ///   padding: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .p\:\$-32 {
+  ///   padding: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .p\:\$-36 {
+  ///   padding: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .p\:\$-40 {
+  ///   padding: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .p\:\$-44 {
+  ///   padding: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .p\:\$-48 {
+  ///   padding: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .p\:\$-52 {
+  ///   padding: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .p\:\$-56 {
+  ///   padding: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .p\:\$-60 {
+  ///   padding: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .p\:\$-64 {
+  ///   padding: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .p\:\$-72 {
+  ///   padding: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .p\:\$-80 {
+  ///   padding: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .p\:\$-96 {
+  ///   padding: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .p\:\$-px {
+  ///   padding: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .p\:\$-0\.5 {
+  ///   padding: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .p\:\$-1\.5 {
+  ///   padding: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .p\:\$-2\.5 {
+  ///   padding: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .p\:\$-3\.5 {
+  ///   padding: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
 }
 impl GeneratedValueSetP for GeneratedAtomP {}
 pub struct GeneratedAtomPy(String);
@@ -9676,6 +10006,346 @@ pub trait GeneratedValueSetPy: GeneratedSkribbleValue {
   #[inline]
   fn n3_5(&self) -> String {
     self.append_value("3.5")
+  }
+  /// ```css
+  /// .py\:\$-1 {
+  ///   padding-top: -0.25rem;
+  ///   padding-bottom: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .py\:\$-2 {
+  ///   padding-top: -0.5rem;
+  ///   padding-bottom: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .py\:\$-3 {
+  ///   padding-top: -0.75rem;
+  ///   padding-bottom: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .py\:\$-4 {
+  ///   padding-top: -1rem;
+  ///   padding-bottom: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .py\:\$-5 {
+  ///   padding-top: -1.25rem;
+  ///   padding-bottom: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .py\:\$-6 {
+  ///   padding-top: -1.5rem;
+  ///   padding-bottom: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .py\:\$-7 {
+  ///   padding-top: -1.75rem;
+  ///   padding-bottom: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .py\:\$-8 {
+  ///   padding-top: -2rem;
+  ///   padding-bottom: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .py\:\$-9 {
+  ///   padding-top: -2.25rem;
+  ///   padding-bottom: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .py\:\$-10 {
+  ///   padding-top: -2.5rem;
+  ///   padding-bottom: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .py\:\$-11 {
+  ///   padding-top: -2.75rem;
+  ///   padding-bottom: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .py\:\$-12 {
+  ///   padding-top: -3rem;
+  ///   padding-bottom: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .py\:\$-14 {
+  ///   padding-top: -3.5rem;
+  ///   padding-bottom: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .py\:\$-16 {
+  ///   padding-top: -4rem;
+  ///   padding-bottom: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .py\:\$-20 {
+  ///   padding-top: -5rem;
+  ///   padding-bottom: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .py\:\$-24 {
+  ///   padding-top: -6rem;
+  ///   padding-bottom: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .py\:\$-28 {
+  ///   padding-top: -7rem;
+  ///   padding-bottom: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .py\:\$-32 {
+  ///   padding-top: -8rem;
+  ///   padding-bottom: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .py\:\$-36 {
+  ///   padding-top: -9rem;
+  ///   padding-bottom: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .py\:\$-40 {
+  ///   padding-top: -10rem;
+  ///   padding-bottom: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .py\:\$-44 {
+  ///   padding-top: -11rem;
+  ///   padding-bottom: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .py\:\$-48 {
+  ///   padding-top: -12rem;
+  ///   padding-bottom: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .py\:\$-52 {
+  ///   padding-top: -13rem;
+  ///   padding-bottom: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .py\:\$-56 {
+  ///   padding-top: -14rem;
+  ///   padding-bottom: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .py\:\$-60 {
+  ///   padding-top: -15rem;
+  ///   padding-bottom: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .py\:\$-64 {
+  ///   padding-top: -16rem;
+  ///   padding-bottom: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .py\:\$-72 {
+  ///   padding-top: -18rem;
+  ///   padding-bottom: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .py\:\$-80 {
+  ///   padding-top: -20rem;
+  ///   padding-bottom: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .py\:\$-96 {
+  ///   padding-top: -24rem;
+  ///   padding-bottom: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .py\:\$-px {
+  ///   padding-top: -1px;
+  ///   padding-bottom: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .py\:\$-0\.5 {
+  ///   padding-top: -0.125rem;
+  ///   padding-bottom: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .py\:\$-1\.5 {
+  ///   padding-top: -0.375rem;
+  ///   padding-bottom: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .py\:\$-2\.5 {
+  ///   padding-top: -0.625rem;
+  ///   padding-bottom: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .py\:\$-3\.5 {
+  ///   padding-top: -0.875rem;
+  ///   padding-bottom: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
   }
 }
 impl GeneratedValueSetPy for GeneratedAtomPy {}
@@ -10042,8 +10712,4164 @@ pub trait GeneratedValueSetPx: GeneratedSkribbleValue {
   fn n3_5(&self) -> String {
     self.append_value("3.5")
   }
+  /// ```css
+  /// .px\:\$-1 {
+  ///   padding-right: -0.25rem;
+  ///   padding-left: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .px\:\$-2 {
+  ///   padding-right: -0.5rem;
+  ///   padding-left: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .px\:\$-3 {
+  ///   padding-right: -0.75rem;
+  ///   padding-left: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .px\:\$-4 {
+  ///   padding-right: -1rem;
+  ///   padding-left: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .px\:\$-5 {
+  ///   padding-right: -1.25rem;
+  ///   padding-left: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .px\:\$-6 {
+  ///   padding-right: -1.5rem;
+  ///   padding-left: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .px\:\$-7 {
+  ///   padding-right: -1.75rem;
+  ///   padding-left: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .px\:\$-8 {
+  ///   padding-right: -2rem;
+  ///   padding-left: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .px\:\$-9 {
+  ///   padding-right: -2.25rem;
+  ///   padding-left: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .px\:\$-10 {
+  ///   padding-right: -2.5rem;
+  ///   padding-left: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .px\:\$-11 {
+  ///   padding-right: -2.75rem;
+  ///   padding-left: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .px\:\$-12 {
+  ///   padding-right: -3rem;
+  ///   padding-left: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .px\:\$-14 {
+  ///   padding-right: -3.5rem;
+  ///   padding-left: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .px\:\$-16 {
+  ///   padding-right: -4rem;
+  ///   padding-left: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .px\:\$-20 {
+  ///   padding-right: -5rem;
+  ///   padding-left: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .px\:\$-24 {
+  ///   padding-right: -6rem;
+  ///   padding-left: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .px\:\$-28 {
+  ///   padding-right: -7rem;
+  ///   padding-left: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .px\:\$-32 {
+  ///   padding-right: -8rem;
+  ///   padding-left: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .px\:\$-36 {
+  ///   padding-right: -9rem;
+  ///   padding-left: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .px\:\$-40 {
+  ///   padding-right: -10rem;
+  ///   padding-left: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .px\:\$-44 {
+  ///   padding-right: -11rem;
+  ///   padding-left: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .px\:\$-48 {
+  ///   padding-right: -12rem;
+  ///   padding-left: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .px\:\$-52 {
+  ///   padding-right: -13rem;
+  ///   padding-left: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .px\:\$-56 {
+  ///   padding-right: -14rem;
+  ///   padding-left: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .px\:\$-60 {
+  ///   padding-right: -15rem;
+  ///   padding-left: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .px\:\$-64 {
+  ///   padding-right: -16rem;
+  ///   padding-left: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .px\:\$-72 {
+  ///   padding-right: -18rem;
+  ///   padding-left: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .px\:\$-80 {
+  ///   padding-right: -20rem;
+  ///   padding-left: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .px\:\$-96 {
+  ///   padding-right: -24rem;
+  ///   padding-left: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .px\:\$-px {
+  ///   padding-right: -1px;
+  ///   padding-left: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .px\:\$-0\.5 {
+  ///   padding-right: -0.125rem;
+  ///   padding-left: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .px\:\$-1\.5 {
+  ///   padding-right: -0.375rem;
+  ///   padding-left: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .px\:\$-2\.5 {
+  ///   padding-right: -0.625rem;
+  ///   padding-left: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .px\:\$-3\.5 {
+  ///   padding-right: -0.875rem;
+  ///   padding-left: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
 }
 impl GeneratedValueSetPx for GeneratedAtomPx {}
+pub struct GeneratedAtomPBlock(String);
+impl GeneratedSkribbleValue for GeneratedAtomPBlock {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetPBlock: GeneratedSkribbleValue {
+  /// ```css
+  /// .p-block\:\$0 {
+  ///   padding-block: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .p-block\:\$1 {
+  ///   padding-block: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .p-block\:\$2 {
+  ///   padding-block: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .p-block\:\$3 {
+  ///   padding-block: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .p-block\:\$4 {
+  ///   padding-block: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .p-block\:\$5 {
+  ///   padding-block: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .p-block\:\$6 {
+  ///   padding-block: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .p-block\:\$7 {
+  ///   padding-block: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .p-block\:\$8 {
+  ///   padding-block: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .p-block\:\$9 {
+  ///   padding-block: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .p-block\:\$10 {
+  ///   padding-block: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .p-block\:\$11 {
+  ///   padding-block: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .p-block\:\$12 {
+  ///   padding-block: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .p-block\:\$14 {
+  ///   padding-block: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .p-block\:\$16 {
+  ///   padding-block: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .p-block\:\$20 {
+  ///   padding-block: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .p-block\:\$24 {
+  ///   padding-block: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .p-block\:\$28 {
+  ///   padding-block: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .p-block\:\$32 {
+  ///   padding-block: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .p-block\:\$36 {
+  ///   padding-block: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .p-block\:\$40 {
+  ///   padding-block: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .p-block\:\$44 {
+  ///   padding-block: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .p-block\:\$48 {
+  ///   padding-block: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .p-block\:\$52 {
+  ///   padding-block: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .p-block\:\$56 {
+  ///   padding-block: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .p-block\:\$60 {
+  ///   padding-block: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .p-block\:\$64 {
+  ///   padding-block: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .p-block\:\$72 {
+  ///   padding-block: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .p-block\:\$80 {
+  ///   padding-block: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .p-block\:\$96 {
+  ///   padding-block: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .p-block\:\$px {
+  ///   padding-block: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .p-block\:\$0\.5 {
+  ///   padding-block: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .p-block\:\$1\.5 {
+  ///   padding-block: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .p-block\:\$2\.5 {
+  ///   padding-block: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .p-block\:\$3\.5 {
+  ///   padding-block: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .p-block\:\$-1 {
+  ///   padding-block: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .p-block\:\$-2 {
+  ///   padding-block: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .p-block\:\$-3 {
+  ///   padding-block: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .p-block\:\$-4 {
+  ///   padding-block: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .p-block\:\$-5 {
+  ///   padding-block: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .p-block\:\$-6 {
+  ///   padding-block: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .p-block\:\$-7 {
+  ///   padding-block: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .p-block\:\$-8 {
+  ///   padding-block: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .p-block\:\$-9 {
+  ///   padding-block: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .p-block\:\$-10 {
+  ///   padding-block: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .p-block\:\$-11 {
+  ///   padding-block: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .p-block\:\$-12 {
+  ///   padding-block: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .p-block\:\$-14 {
+  ///   padding-block: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .p-block\:\$-16 {
+  ///   padding-block: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .p-block\:\$-20 {
+  ///   padding-block: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .p-block\:\$-24 {
+  ///   padding-block: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .p-block\:\$-28 {
+  ///   padding-block: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .p-block\:\$-32 {
+  ///   padding-block: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .p-block\:\$-36 {
+  ///   padding-block: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .p-block\:\$-40 {
+  ///   padding-block: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .p-block\:\$-44 {
+  ///   padding-block: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .p-block\:\$-48 {
+  ///   padding-block: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .p-block\:\$-52 {
+  ///   padding-block: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .p-block\:\$-56 {
+  ///   padding-block: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .p-block\:\$-60 {
+  ///   padding-block: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .p-block\:\$-64 {
+  ///   padding-block: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .p-block\:\$-72 {
+  ///   padding-block: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .p-block\:\$-80 {
+  ///   padding-block: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .p-block\:\$-96 {
+  ///   padding-block: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .p-block\:\$-px {
+  ///   padding-block: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .p-block\:\$-0\.5 {
+  ///   padding-block: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .p-block\:\$-1\.5 {
+  ///   padding-block: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .p-block\:\$-2\.5 {
+  ///   padding-block: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .p-block\:\$-3\.5 {
+  ///   padding-block: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+}
+impl GeneratedValueSetPBlock for GeneratedAtomPBlock {}
+pub struct GeneratedAtomPbs(String);
+impl GeneratedSkribbleValue for GeneratedAtomPbs {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetPbs: GeneratedSkribbleValue {
+  /// ```css
+  /// .pbs\:\$0 {
+  ///   padding-block-start: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .pbs\:\$1 {
+  ///   padding-block-start: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .pbs\:\$2 {
+  ///   padding-block-start: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .pbs\:\$3 {
+  ///   padding-block-start: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .pbs\:\$4 {
+  ///   padding-block-start: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .pbs\:\$5 {
+  ///   padding-block-start: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .pbs\:\$6 {
+  ///   padding-block-start: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .pbs\:\$7 {
+  ///   padding-block-start: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .pbs\:\$8 {
+  ///   padding-block-start: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .pbs\:\$9 {
+  ///   padding-block-start: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .pbs\:\$10 {
+  ///   padding-block-start: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .pbs\:\$11 {
+  ///   padding-block-start: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .pbs\:\$12 {
+  ///   padding-block-start: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .pbs\:\$14 {
+  ///   padding-block-start: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .pbs\:\$16 {
+  ///   padding-block-start: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .pbs\:\$20 {
+  ///   padding-block-start: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .pbs\:\$24 {
+  ///   padding-block-start: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .pbs\:\$28 {
+  ///   padding-block-start: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .pbs\:\$32 {
+  ///   padding-block-start: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .pbs\:\$36 {
+  ///   padding-block-start: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .pbs\:\$40 {
+  ///   padding-block-start: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .pbs\:\$44 {
+  ///   padding-block-start: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .pbs\:\$48 {
+  ///   padding-block-start: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .pbs\:\$52 {
+  ///   padding-block-start: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .pbs\:\$56 {
+  ///   padding-block-start: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .pbs\:\$60 {
+  ///   padding-block-start: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .pbs\:\$64 {
+  ///   padding-block-start: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .pbs\:\$72 {
+  ///   padding-block-start: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .pbs\:\$80 {
+  ///   padding-block-start: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .pbs\:\$96 {
+  ///   padding-block-start: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .pbs\:\$px {
+  ///   padding-block-start: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .pbs\:\$0\.5 {
+  ///   padding-block-start: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .pbs\:\$1\.5 {
+  ///   padding-block-start: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .pbs\:\$2\.5 {
+  ///   padding-block-start: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .pbs\:\$3\.5 {
+  ///   padding-block-start: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .pbs\:\$-1 {
+  ///   padding-block-start: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .pbs\:\$-2 {
+  ///   padding-block-start: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .pbs\:\$-3 {
+  ///   padding-block-start: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .pbs\:\$-4 {
+  ///   padding-block-start: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .pbs\:\$-5 {
+  ///   padding-block-start: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .pbs\:\$-6 {
+  ///   padding-block-start: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .pbs\:\$-7 {
+  ///   padding-block-start: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .pbs\:\$-8 {
+  ///   padding-block-start: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .pbs\:\$-9 {
+  ///   padding-block-start: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .pbs\:\$-10 {
+  ///   padding-block-start: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .pbs\:\$-11 {
+  ///   padding-block-start: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .pbs\:\$-12 {
+  ///   padding-block-start: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .pbs\:\$-14 {
+  ///   padding-block-start: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .pbs\:\$-16 {
+  ///   padding-block-start: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .pbs\:\$-20 {
+  ///   padding-block-start: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .pbs\:\$-24 {
+  ///   padding-block-start: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .pbs\:\$-28 {
+  ///   padding-block-start: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .pbs\:\$-32 {
+  ///   padding-block-start: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .pbs\:\$-36 {
+  ///   padding-block-start: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .pbs\:\$-40 {
+  ///   padding-block-start: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .pbs\:\$-44 {
+  ///   padding-block-start: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .pbs\:\$-48 {
+  ///   padding-block-start: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .pbs\:\$-52 {
+  ///   padding-block-start: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .pbs\:\$-56 {
+  ///   padding-block-start: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .pbs\:\$-60 {
+  ///   padding-block-start: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .pbs\:\$-64 {
+  ///   padding-block-start: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .pbs\:\$-72 {
+  ///   padding-block-start: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .pbs\:\$-80 {
+  ///   padding-block-start: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .pbs\:\$-96 {
+  ///   padding-block-start: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .pbs\:\$-px {
+  ///   padding-block-start: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .pbs\:\$-0\.5 {
+  ///   padding-block-start: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .pbs\:\$-1\.5 {
+  ///   padding-block-start: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .pbs\:\$-2\.5 {
+  ///   padding-block-start: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .pbs\:\$-3\.5 {
+  ///   padding-block-start: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+}
+impl GeneratedValueSetPbs for GeneratedAtomPbs {}
+pub struct GeneratedAtomPbe(String);
+impl GeneratedSkribbleValue for GeneratedAtomPbe {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetPbe: GeneratedSkribbleValue {
+  /// ```css
+  /// .pbe\:\$0 {
+  ///   padding-block-end: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .pbe\:\$1 {
+  ///   padding-block-end: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .pbe\:\$2 {
+  ///   padding-block-end: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .pbe\:\$3 {
+  ///   padding-block-end: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .pbe\:\$4 {
+  ///   padding-block-end: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .pbe\:\$5 {
+  ///   padding-block-end: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .pbe\:\$6 {
+  ///   padding-block-end: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .pbe\:\$7 {
+  ///   padding-block-end: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .pbe\:\$8 {
+  ///   padding-block-end: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .pbe\:\$9 {
+  ///   padding-block-end: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .pbe\:\$10 {
+  ///   padding-block-end: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .pbe\:\$11 {
+  ///   padding-block-end: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .pbe\:\$12 {
+  ///   padding-block-end: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .pbe\:\$14 {
+  ///   padding-block-end: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .pbe\:\$16 {
+  ///   padding-block-end: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .pbe\:\$20 {
+  ///   padding-block-end: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .pbe\:\$24 {
+  ///   padding-block-end: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .pbe\:\$28 {
+  ///   padding-block-end: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .pbe\:\$32 {
+  ///   padding-block-end: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .pbe\:\$36 {
+  ///   padding-block-end: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .pbe\:\$40 {
+  ///   padding-block-end: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .pbe\:\$44 {
+  ///   padding-block-end: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .pbe\:\$48 {
+  ///   padding-block-end: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .pbe\:\$52 {
+  ///   padding-block-end: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .pbe\:\$56 {
+  ///   padding-block-end: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .pbe\:\$60 {
+  ///   padding-block-end: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .pbe\:\$64 {
+  ///   padding-block-end: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .pbe\:\$72 {
+  ///   padding-block-end: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .pbe\:\$80 {
+  ///   padding-block-end: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .pbe\:\$96 {
+  ///   padding-block-end: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .pbe\:\$px {
+  ///   padding-block-end: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .pbe\:\$0\.5 {
+  ///   padding-block-end: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .pbe\:\$1\.5 {
+  ///   padding-block-end: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .pbe\:\$2\.5 {
+  ///   padding-block-end: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .pbe\:\$3\.5 {
+  ///   padding-block-end: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .pbe\:\$-1 {
+  ///   padding-block-end: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .pbe\:\$-2 {
+  ///   padding-block-end: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .pbe\:\$-3 {
+  ///   padding-block-end: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .pbe\:\$-4 {
+  ///   padding-block-end: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .pbe\:\$-5 {
+  ///   padding-block-end: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .pbe\:\$-6 {
+  ///   padding-block-end: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .pbe\:\$-7 {
+  ///   padding-block-end: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .pbe\:\$-8 {
+  ///   padding-block-end: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .pbe\:\$-9 {
+  ///   padding-block-end: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .pbe\:\$-10 {
+  ///   padding-block-end: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .pbe\:\$-11 {
+  ///   padding-block-end: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .pbe\:\$-12 {
+  ///   padding-block-end: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .pbe\:\$-14 {
+  ///   padding-block-end: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .pbe\:\$-16 {
+  ///   padding-block-end: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .pbe\:\$-20 {
+  ///   padding-block-end: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .pbe\:\$-24 {
+  ///   padding-block-end: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .pbe\:\$-28 {
+  ///   padding-block-end: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .pbe\:\$-32 {
+  ///   padding-block-end: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .pbe\:\$-36 {
+  ///   padding-block-end: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .pbe\:\$-40 {
+  ///   padding-block-end: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .pbe\:\$-44 {
+  ///   padding-block-end: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .pbe\:\$-48 {
+  ///   padding-block-end: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .pbe\:\$-52 {
+  ///   padding-block-end: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .pbe\:\$-56 {
+  ///   padding-block-end: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .pbe\:\$-60 {
+  ///   padding-block-end: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .pbe\:\$-64 {
+  ///   padding-block-end: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .pbe\:\$-72 {
+  ///   padding-block-end: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .pbe\:\$-80 {
+  ///   padding-block-end: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .pbe\:\$-96 {
+  ///   padding-block-end: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .pbe\:\$-px {
+  ///   padding-block-end: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .pbe\:\$-0\.5 {
+  ///   padding-block-end: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .pbe\:\$-1\.5 {
+  ///   padding-block-end: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .pbe\:\$-2\.5 {
+  ///   padding-block-end: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .pbe\:\$-3\.5 {
+  ///   padding-block-end: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+}
+impl GeneratedValueSetPbe for GeneratedAtomPbe {}
+pub struct GeneratedAtomPInline(String);
+impl GeneratedSkribbleValue for GeneratedAtomPInline {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetPInline: GeneratedSkribbleValue {
+  /// ```css
+  /// .p-inline\:\$0 {
+  ///   padding-inline: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .p-inline\:\$1 {
+  ///   padding-inline: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .p-inline\:\$2 {
+  ///   padding-inline: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .p-inline\:\$3 {
+  ///   padding-inline: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .p-inline\:\$4 {
+  ///   padding-inline: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .p-inline\:\$5 {
+  ///   padding-inline: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .p-inline\:\$6 {
+  ///   padding-inline: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .p-inline\:\$7 {
+  ///   padding-inline: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .p-inline\:\$8 {
+  ///   padding-inline: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .p-inline\:\$9 {
+  ///   padding-inline: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .p-inline\:\$10 {
+  ///   padding-inline: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .p-inline\:\$11 {
+  ///   padding-inline: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .p-inline\:\$12 {
+  ///   padding-inline: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .p-inline\:\$14 {
+  ///   padding-inline: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .p-inline\:\$16 {
+  ///   padding-inline: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .p-inline\:\$20 {
+  ///   padding-inline: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .p-inline\:\$24 {
+  ///   padding-inline: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .p-inline\:\$28 {
+  ///   padding-inline: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .p-inline\:\$32 {
+  ///   padding-inline: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .p-inline\:\$36 {
+  ///   padding-inline: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .p-inline\:\$40 {
+  ///   padding-inline: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .p-inline\:\$44 {
+  ///   padding-inline: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .p-inline\:\$48 {
+  ///   padding-inline: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .p-inline\:\$52 {
+  ///   padding-inline: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .p-inline\:\$56 {
+  ///   padding-inline: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .p-inline\:\$60 {
+  ///   padding-inline: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .p-inline\:\$64 {
+  ///   padding-inline: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .p-inline\:\$72 {
+  ///   padding-inline: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .p-inline\:\$80 {
+  ///   padding-inline: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .p-inline\:\$96 {
+  ///   padding-inline: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .p-inline\:\$px {
+  ///   padding-inline: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .p-inline\:\$0\.5 {
+  ///   padding-inline: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .p-inline\:\$1\.5 {
+  ///   padding-inline: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .p-inline\:\$2\.5 {
+  ///   padding-inline: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .p-inline\:\$3\.5 {
+  ///   padding-inline: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .p-inline\:\$-1 {
+  ///   padding-inline: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .p-inline\:\$-2 {
+  ///   padding-inline: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .p-inline\:\$-3 {
+  ///   padding-inline: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .p-inline\:\$-4 {
+  ///   padding-inline: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .p-inline\:\$-5 {
+  ///   padding-inline: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .p-inline\:\$-6 {
+  ///   padding-inline: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .p-inline\:\$-7 {
+  ///   padding-inline: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .p-inline\:\$-8 {
+  ///   padding-inline: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .p-inline\:\$-9 {
+  ///   padding-inline: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .p-inline\:\$-10 {
+  ///   padding-inline: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .p-inline\:\$-11 {
+  ///   padding-inline: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .p-inline\:\$-12 {
+  ///   padding-inline: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .p-inline\:\$-14 {
+  ///   padding-inline: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .p-inline\:\$-16 {
+  ///   padding-inline: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .p-inline\:\$-20 {
+  ///   padding-inline: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .p-inline\:\$-24 {
+  ///   padding-inline: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .p-inline\:\$-28 {
+  ///   padding-inline: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .p-inline\:\$-32 {
+  ///   padding-inline: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .p-inline\:\$-36 {
+  ///   padding-inline: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .p-inline\:\$-40 {
+  ///   padding-inline: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .p-inline\:\$-44 {
+  ///   padding-inline: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .p-inline\:\$-48 {
+  ///   padding-inline: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .p-inline\:\$-52 {
+  ///   padding-inline: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .p-inline\:\$-56 {
+  ///   padding-inline: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .p-inline\:\$-60 {
+  ///   padding-inline: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .p-inline\:\$-64 {
+  ///   padding-inline: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .p-inline\:\$-72 {
+  ///   padding-inline: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .p-inline\:\$-80 {
+  ///   padding-inline: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .p-inline\:\$-96 {
+  ///   padding-inline: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .p-inline\:\$-px {
+  ///   padding-inline: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .p-inline\:\$-0\.5 {
+  ///   padding-inline: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .p-inline\:\$-1\.5 {
+  ///   padding-inline: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .p-inline\:\$-2\.5 {
+  ///   padding-inline: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .p-inline\:\$-3\.5 {
+  ///   padding-inline: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+}
+impl GeneratedValueSetPInline for GeneratedAtomPInline {}
+pub struct GeneratedAtomPs(String);
+impl GeneratedSkribbleValue for GeneratedAtomPs {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetPs: GeneratedSkribbleValue {
+  /// ```css
+  /// .ps\:\$0 {
+  ///   padding-inline-start: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .ps\:\$1 {
+  ///   padding-inline-start: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .ps\:\$2 {
+  ///   padding-inline-start: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .ps\:\$3 {
+  ///   padding-inline-start: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .ps\:\$4 {
+  ///   padding-inline-start: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .ps\:\$5 {
+  ///   padding-inline-start: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .ps\:\$6 {
+  ///   padding-inline-start: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .ps\:\$7 {
+  ///   padding-inline-start: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .ps\:\$8 {
+  ///   padding-inline-start: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .ps\:\$9 {
+  ///   padding-inline-start: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .ps\:\$10 {
+  ///   padding-inline-start: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .ps\:\$11 {
+  ///   padding-inline-start: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .ps\:\$12 {
+  ///   padding-inline-start: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .ps\:\$14 {
+  ///   padding-inline-start: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .ps\:\$16 {
+  ///   padding-inline-start: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .ps\:\$20 {
+  ///   padding-inline-start: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .ps\:\$24 {
+  ///   padding-inline-start: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .ps\:\$28 {
+  ///   padding-inline-start: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .ps\:\$32 {
+  ///   padding-inline-start: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .ps\:\$36 {
+  ///   padding-inline-start: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .ps\:\$40 {
+  ///   padding-inline-start: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .ps\:\$44 {
+  ///   padding-inline-start: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .ps\:\$48 {
+  ///   padding-inline-start: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .ps\:\$52 {
+  ///   padding-inline-start: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .ps\:\$56 {
+  ///   padding-inline-start: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .ps\:\$60 {
+  ///   padding-inline-start: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .ps\:\$64 {
+  ///   padding-inline-start: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .ps\:\$72 {
+  ///   padding-inline-start: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .ps\:\$80 {
+  ///   padding-inline-start: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .ps\:\$96 {
+  ///   padding-inline-start: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .ps\:\$px {
+  ///   padding-inline-start: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .ps\:\$0\.5 {
+  ///   padding-inline-start: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .ps\:\$1\.5 {
+  ///   padding-inline-start: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .ps\:\$2\.5 {
+  ///   padding-inline-start: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .ps\:\$3\.5 {
+  ///   padding-inline-start: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .ps\:\$-1 {
+  ///   padding-inline-start: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .ps\:\$-2 {
+  ///   padding-inline-start: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .ps\:\$-3 {
+  ///   padding-inline-start: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .ps\:\$-4 {
+  ///   padding-inline-start: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .ps\:\$-5 {
+  ///   padding-inline-start: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .ps\:\$-6 {
+  ///   padding-inline-start: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .ps\:\$-7 {
+  ///   padding-inline-start: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .ps\:\$-8 {
+  ///   padding-inline-start: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .ps\:\$-9 {
+  ///   padding-inline-start: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .ps\:\$-10 {
+  ///   padding-inline-start: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .ps\:\$-11 {
+  ///   padding-inline-start: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .ps\:\$-12 {
+  ///   padding-inline-start: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .ps\:\$-14 {
+  ///   padding-inline-start: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .ps\:\$-16 {
+  ///   padding-inline-start: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .ps\:\$-20 {
+  ///   padding-inline-start: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .ps\:\$-24 {
+  ///   padding-inline-start: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .ps\:\$-28 {
+  ///   padding-inline-start: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .ps\:\$-32 {
+  ///   padding-inline-start: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .ps\:\$-36 {
+  ///   padding-inline-start: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .ps\:\$-40 {
+  ///   padding-inline-start: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .ps\:\$-44 {
+  ///   padding-inline-start: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .ps\:\$-48 {
+  ///   padding-inline-start: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .ps\:\$-52 {
+  ///   padding-inline-start: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .ps\:\$-56 {
+  ///   padding-inline-start: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .ps\:\$-60 {
+  ///   padding-inline-start: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .ps\:\$-64 {
+  ///   padding-inline-start: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .ps\:\$-72 {
+  ///   padding-inline-start: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .ps\:\$-80 {
+  ///   padding-inline-start: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .ps\:\$-96 {
+  ///   padding-inline-start: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .ps\:\$-px {
+  ///   padding-inline-start: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .ps\:\$-0\.5 {
+  ///   padding-inline-start: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .ps\:\$-1\.5 {
+  ///   padding-inline-start: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .ps\:\$-2\.5 {
+  ///   padding-inline-start: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .ps\:\$-3\.5 {
+  ///   padding-inline-start: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+}
+impl GeneratedValueSetPs for GeneratedAtomPs {}
+pub struct GeneratedAtomPe(String);
+impl GeneratedSkribbleValue for GeneratedAtomPe {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetPe: GeneratedSkribbleValue {
+  /// ```css
+  /// .pe\:\$0 {
+  ///   padding-inline-end: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .pe\:\$1 {
+  ///   padding-inline-end: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .pe\:\$2 {
+  ///   padding-inline-end: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .pe\:\$3 {
+  ///   padding-inline-end: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .pe\:\$4 {
+  ///   padding-inline-end: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .pe\:\$5 {
+  ///   padding-inline-end: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .pe\:\$6 {
+  ///   padding-inline-end: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .pe\:\$7 {
+  ///   padding-inline-end: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .pe\:\$8 {
+  ///   padding-inline-end: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .pe\:\$9 {
+  ///   padding-inline-end: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .pe\:\$10 {
+  ///   padding-inline-end: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .pe\:\$11 {
+  ///   padding-inline-end: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .pe\:\$12 {
+  ///   padding-inline-end: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .pe\:\$14 {
+  ///   padding-inline-end: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .pe\:\$16 {
+  ///   padding-inline-end: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .pe\:\$20 {
+  ///   padding-inline-end: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .pe\:\$24 {
+  ///   padding-inline-end: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .pe\:\$28 {
+  ///   padding-inline-end: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .pe\:\$32 {
+  ///   padding-inline-end: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .pe\:\$36 {
+  ///   padding-inline-end: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .pe\:\$40 {
+  ///   padding-inline-end: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .pe\:\$44 {
+  ///   padding-inline-end: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .pe\:\$48 {
+  ///   padding-inline-end: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .pe\:\$52 {
+  ///   padding-inline-end: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .pe\:\$56 {
+  ///   padding-inline-end: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .pe\:\$60 {
+  ///   padding-inline-end: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .pe\:\$64 {
+  ///   padding-inline-end: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .pe\:\$72 {
+  ///   padding-inline-end: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .pe\:\$80 {
+  ///   padding-inline-end: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .pe\:\$96 {
+  ///   padding-inline-end: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .pe\:\$px {
+  ///   padding-inline-end: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .pe\:\$0\.5 {
+  ///   padding-inline-end: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .pe\:\$1\.5 {
+  ///   padding-inline-end: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .pe\:\$2\.5 {
+  ///   padding-inline-end: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .pe\:\$3\.5 {
+  ///   padding-inline-end: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .pe\:\$-1 {
+  ///   padding-inline-end: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .pe\:\$-2 {
+  ///   padding-inline-end: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .pe\:\$-3 {
+  ///   padding-inline-end: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .pe\:\$-4 {
+  ///   padding-inline-end: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .pe\:\$-5 {
+  ///   padding-inline-end: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .pe\:\$-6 {
+  ///   padding-inline-end: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .pe\:\$-7 {
+  ///   padding-inline-end: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .pe\:\$-8 {
+  ///   padding-inline-end: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .pe\:\$-9 {
+  ///   padding-inline-end: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .pe\:\$-10 {
+  ///   padding-inline-end: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .pe\:\$-11 {
+  ///   padding-inline-end: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .pe\:\$-12 {
+  ///   padding-inline-end: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .pe\:\$-14 {
+  ///   padding-inline-end: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .pe\:\$-16 {
+  ///   padding-inline-end: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .pe\:\$-20 {
+  ///   padding-inline-end: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .pe\:\$-24 {
+  ///   padding-inline-end: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .pe\:\$-28 {
+  ///   padding-inline-end: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .pe\:\$-32 {
+  ///   padding-inline-end: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .pe\:\$-36 {
+  ///   padding-inline-end: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .pe\:\$-40 {
+  ///   padding-inline-end: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .pe\:\$-44 {
+  ///   padding-inline-end: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .pe\:\$-48 {
+  ///   padding-inline-end: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .pe\:\$-52 {
+  ///   padding-inline-end: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .pe\:\$-56 {
+  ///   padding-inline-end: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .pe\:\$-60 {
+  ///   padding-inline-end: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .pe\:\$-64 {
+  ///   padding-inline-end: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .pe\:\$-72 {
+  ///   padding-inline-end: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .pe\:\$-80 {
+  ///   padding-inline-end: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .pe\:\$-96 {
+  ///   padding-inline-end: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .pe\:\$-px {
+  ///   padding-inline-end: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .pe\:\$-0\.5 {
+  ///   padding-inline-end: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .pe\:\$-1\.5 {
+  ///   padding-inline-end: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .pe\:\$-2\.5 {
+  ///   padding-inline-end: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .pe\:\$-3\.5 {
+  ///   padding-inline-end: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+}
+impl GeneratedValueSetPe for GeneratedAtomPe {}
 pub struct GeneratedAtomPt(String);
 impl GeneratedSkribbleValue for GeneratedAtomPt {
   #[inline]
@@ -10371,6 +15197,312 @@ pub trait GeneratedValueSetPt: GeneratedSkribbleValue {
   #[inline]
   fn n3_5(&self) -> String {
     self.append_value("3.5")
+  }
+  /// ```css
+  /// .pt\:\$-1 {
+  ///   padding-top: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .pt\:\$-2 {
+  ///   padding-top: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .pt\:\$-3 {
+  ///   padding-top: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .pt\:\$-4 {
+  ///   padding-top: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .pt\:\$-5 {
+  ///   padding-top: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .pt\:\$-6 {
+  ///   padding-top: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .pt\:\$-7 {
+  ///   padding-top: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .pt\:\$-8 {
+  ///   padding-top: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .pt\:\$-9 {
+  ///   padding-top: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .pt\:\$-10 {
+  ///   padding-top: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .pt\:\$-11 {
+  ///   padding-top: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .pt\:\$-12 {
+  ///   padding-top: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .pt\:\$-14 {
+  ///   padding-top: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .pt\:\$-16 {
+  ///   padding-top: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .pt\:\$-20 {
+  ///   padding-top: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .pt\:\$-24 {
+  ///   padding-top: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .pt\:\$-28 {
+  ///   padding-top: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .pt\:\$-32 {
+  ///   padding-top: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .pt\:\$-36 {
+  ///   padding-top: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .pt\:\$-40 {
+  ///   padding-top: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .pt\:\$-44 {
+  ///   padding-top: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .pt\:\$-48 {
+  ///   padding-top: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .pt\:\$-52 {
+  ///   padding-top: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .pt\:\$-56 {
+  ///   padding-top: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .pt\:\$-60 {
+  ///   padding-top: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .pt\:\$-64 {
+  ///   padding-top: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .pt\:\$-72 {
+  ///   padding-top: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .pt\:\$-80 {
+  ///   padding-top: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .pt\:\$-96 {
+  ///   padding-top: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .pt\:\$-px {
+  ///   padding-top: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .pt\:\$-0\.5 {
+  ///   padding-top: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .pt\:\$-1\.5 {
+  ///   padding-top: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .pt\:\$-2\.5 {
+  ///   padding-top: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .pt\:\$-3\.5 {
+  ///   padding-top: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
   }
 }
 impl GeneratedValueSetPt for GeneratedAtomPt {}
@@ -10702,6 +15834,312 @@ pub trait GeneratedValueSetPr: GeneratedSkribbleValue {
   fn n3_5(&self) -> String {
     self.append_value("3.5")
   }
+  /// ```css
+  /// .pr\:\$-1 {
+  ///   padding-right: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .pr\:\$-2 {
+  ///   padding-right: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .pr\:\$-3 {
+  ///   padding-right: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .pr\:\$-4 {
+  ///   padding-right: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .pr\:\$-5 {
+  ///   padding-right: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .pr\:\$-6 {
+  ///   padding-right: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .pr\:\$-7 {
+  ///   padding-right: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .pr\:\$-8 {
+  ///   padding-right: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .pr\:\$-9 {
+  ///   padding-right: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .pr\:\$-10 {
+  ///   padding-right: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .pr\:\$-11 {
+  ///   padding-right: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .pr\:\$-12 {
+  ///   padding-right: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .pr\:\$-14 {
+  ///   padding-right: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .pr\:\$-16 {
+  ///   padding-right: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .pr\:\$-20 {
+  ///   padding-right: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .pr\:\$-24 {
+  ///   padding-right: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .pr\:\$-28 {
+  ///   padding-right: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .pr\:\$-32 {
+  ///   padding-right: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .pr\:\$-36 {
+  ///   padding-right: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .pr\:\$-40 {
+  ///   padding-right: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .pr\:\$-44 {
+  ///   padding-right: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .pr\:\$-48 {
+  ///   padding-right: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .pr\:\$-52 {
+  ///   padding-right: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .pr\:\$-56 {
+  ///   padding-right: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .pr\:\$-60 {
+  ///   padding-right: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .pr\:\$-64 {
+  ///   padding-right: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .pr\:\$-72 {
+  ///   padding-right: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .pr\:\$-80 {
+  ///   padding-right: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .pr\:\$-96 {
+  ///   padding-right: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .pr\:\$-px {
+  ///   padding-right: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .pr\:\$-0\.5 {
+  ///   padding-right: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .pr\:\$-1\.5 {
+  ///   padding-right: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .pr\:\$-2\.5 {
+  ///   padding-right: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .pr\:\$-3\.5 {
+  ///   padding-right: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
 }
 impl GeneratedValueSetPr for GeneratedAtomPr {}
 pub struct GeneratedAtomPb(String);
@@ -11031,6 +16469,312 @@ pub trait GeneratedValueSetPb: GeneratedSkribbleValue {
   #[inline]
   fn n3_5(&self) -> String {
     self.append_value("3.5")
+  }
+  /// ```css
+  /// .pb\:\$-1 {
+  ///   padding-bottom: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .pb\:\$-2 {
+  ///   padding-bottom: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .pb\:\$-3 {
+  ///   padding-bottom: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .pb\:\$-4 {
+  ///   padding-bottom: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .pb\:\$-5 {
+  ///   padding-bottom: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .pb\:\$-6 {
+  ///   padding-bottom: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .pb\:\$-7 {
+  ///   padding-bottom: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .pb\:\$-8 {
+  ///   padding-bottom: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .pb\:\$-9 {
+  ///   padding-bottom: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .pb\:\$-10 {
+  ///   padding-bottom: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .pb\:\$-11 {
+  ///   padding-bottom: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .pb\:\$-12 {
+  ///   padding-bottom: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .pb\:\$-14 {
+  ///   padding-bottom: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .pb\:\$-16 {
+  ///   padding-bottom: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .pb\:\$-20 {
+  ///   padding-bottom: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .pb\:\$-24 {
+  ///   padding-bottom: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .pb\:\$-28 {
+  ///   padding-bottom: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .pb\:\$-32 {
+  ///   padding-bottom: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .pb\:\$-36 {
+  ///   padding-bottom: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .pb\:\$-40 {
+  ///   padding-bottom: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .pb\:\$-44 {
+  ///   padding-bottom: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .pb\:\$-48 {
+  ///   padding-bottom: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .pb\:\$-52 {
+  ///   padding-bottom: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .pb\:\$-56 {
+  ///   padding-bottom: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .pb\:\$-60 {
+  ///   padding-bottom: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .pb\:\$-64 {
+  ///   padding-bottom: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .pb\:\$-72 {
+  ///   padding-bottom: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .pb\:\$-80 {
+  ///   padding-bottom: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .pb\:\$-96 {
+  ///   padding-bottom: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .pb\:\$-px {
+  ///   padding-bottom: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .pb\:\$-0\.5 {
+  ///   padding-bottom: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .pb\:\$-1\.5 {
+  ///   padding-bottom: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .pb\:\$-2\.5 {
+  ///   padding-bottom: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .pb\:\$-3\.5 {
+  ///   padding-bottom: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
   }
 }
 impl GeneratedValueSetPb for GeneratedAtomPb {}
@@ -11362,1988 +17106,314 @@ pub trait GeneratedValueSetPl: GeneratedSkribbleValue {
   fn n3_5(&self) -> String {
     self.append_value("3.5")
   }
+  /// ```css
+  /// .pl\:\$-1 {
+  ///   padding-left: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .pl\:\$-2 {
+  ///   padding-left: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .pl\:\$-3 {
+  ///   padding-left: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .pl\:\$-4 {
+  ///   padding-left: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .pl\:\$-5 {
+  ///   padding-left: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .pl\:\$-6 {
+  ///   padding-left: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .pl\:\$-7 {
+  ///   padding-left: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .pl\:\$-8 {
+  ///   padding-left: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .pl\:\$-9 {
+  ///   padding-left: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .pl\:\$-10 {
+  ///   padding-left: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .pl\:\$-11 {
+  ///   padding-left: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .pl\:\$-12 {
+  ///   padding-left: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .pl\:\$-14 {
+  ///   padding-left: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .pl\:\$-16 {
+  ///   padding-left: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .pl\:\$-20 {
+  ///   padding-left: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .pl\:\$-24 {
+  ///   padding-left: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .pl\:\$-28 {
+  ///   padding-left: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .pl\:\$-32 {
+  ///   padding-left: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .pl\:\$-36 {
+  ///   padding-left: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .pl\:\$-40 {
+  ///   padding-left: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .pl\:\$-44 {
+  ///   padding-left: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .pl\:\$-48 {
+  ///   padding-left: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .pl\:\$-52 {
+  ///   padding-left: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .pl\:\$-56 {
+  ///   padding-left: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .pl\:\$-60 {
+  ///   padding-left: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .pl\:\$-64 {
+  ///   padding-left: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .pl\:\$-72 {
+  ///   padding-left: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .pl\:\$-80 {
+  ///   padding-left: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .pl\:\$-96 {
+  ///   padding-left: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .pl\:\$-px {
+  ///   padding-left: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .pl\:\$-0\.5 {
+  ///   padding-left: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .pl\:\$-1\.5 {
+  ///   padding-left: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .pl\:\$-2\.5 {
+  ///   padding-left: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .pl\:\$-3\.5 {
+  ///   padding-left: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
 }
 impl GeneratedValueSetPl for GeneratedAtomPl {}
-pub struct GeneratedAtomPbl(String);
-impl GeneratedSkribbleValue for GeneratedAtomPbl {
-  #[inline]
-  fn from_ref(value: impl AsRef<str>) -> Self {
-    Self(value.as_ref().to_string())
-  }
-
-  #[inline]
-  fn get_skribble_value(&self) -> &String {
-    &self.0
-  }
-}
-pub trait GeneratedValueSetPbl: GeneratedSkribbleValue {
-  /// ```css
-  /// .pbl\:\$0 {
-  ///   padding-block: 0px;
-  /// }
-  /// ```
-  #[inline]
-  fn n0(&self) -> String {
-    self.append_value("0")
-  }
-  /// ```css
-  /// .pbl\:\$1 {
-  ///   padding-block: 0.25rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n1(&self) -> String {
-    self.append_value("1")
-  }
-  /// ```css
-  /// .pbl\:\$2 {
-  ///   padding-block: 0.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n2(&self) -> String {
-    self.append_value("2")
-  }
-  /// ```css
-  /// .pbl\:\$3 {
-  ///   padding-block: 0.75rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n3(&self) -> String {
-    self.append_value("3")
-  }
-  /// ```css
-  /// .pbl\:\$4 {
-  ///   padding-block: 1rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n4(&self) -> String {
-    self.append_value("4")
-  }
-  /// ```css
-  /// .pbl\:\$5 {
-  ///   padding-block: 1.25rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n5(&self) -> String {
-    self.append_value("5")
-  }
-  /// ```css
-  /// .pbl\:\$6 {
-  ///   padding-block: 1.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n6(&self) -> String {
-    self.append_value("6")
-  }
-  /// ```css
-  /// .pbl\:\$7 {
-  ///   padding-block: 1.75rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n7(&self) -> String {
-    self.append_value("7")
-  }
-  /// ```css
-  /// .pbl\:\$8 {
-  ///   padding-block: 2rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n8(&self) -> String {
-    self.append_value("8")
-  }
-  /// ```css
-  /// .pbl\:\$9 {
-  ///   padding-block: 2.25rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n9(&self) -> String {
-    self.append_value("9")
-  }
-  /// ```css
-  /// .pbl\:\$10 {
-  ///   padding-block: 2.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n10(&self) -> String {
-    self.append_value("10")
-  }
-  /// ```css
-  /// .pbl\:\$11 {
-  ///   padding-block: 2.75rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n11(&self) -> String {
-    self.append_value("11")
-  }
-  /// ```css
-  /// .pbl\:\$12 {
-  ///   padding-block: 3rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n12(&self) -> String {
-    self.append_value("12")
-  }
-  /// ```css
-  /// .pbl\:\$14 {
-  ///   padding-block: 3.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n14(&self) -> String {
-    self.append_value("14")
-  }
-  /// ```css
-  /// .pbl\:\$16 {
-  ///   padding-block: 4rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n16(&self) -> String {
-    self.append_value("16")
-  }
-  /// ```css
-  /// .pbl\:\$20 {
-  ///   padding-block: 5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n20(&self) -> String {
-    self.append_value("20")
-  }
-  /// ```css
-  /// .pbl\:\$24 {
-  ///   padding-block: 6rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n24(&self) -> String {
-    self.append_value("24")
-  }
-  /// ```css
-  /// .pbl\:\$28 {
-  ///   padding-block: 7rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n28(&self) -> String {
-    self.append_value("28")
-  }
-  /// ```css
-  /// .pbl\:\$32 {
-  ///   padding-block: 8rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n32(&self) -> String {
-    self.append_value("32")
-  }
-  /// ```css
-  /// .pbl\:\$36 {
-  ///   padding-block: 9rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n36(&self) -> String {
-    self.append_value("36")
-  }
-  /// ```css
-  /// .pbl\:\$40 {
-  ///   padding-block: 10rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n40(&self) -> String {
-    self.append_value("40")
-  }
-  /// ```css
-  /// .pbl\:\$44 {
-  ///   padding-block: 11rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n44(&self) -> String {
-    self.append_value("44")
-  }
-  /// ```css
-  /// .pbl\:\$48 {
-  ///   padding-block: 12rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n48(&self) -> String {
-    self.append_value("48")
-  }
-  /// ```css
-  /// .pbl\:\$52 {
-  ///   padding-block: 13rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n52(&self) -> String {
-    self.append_value("52")
-  }
-  /// ```css
-  /// .pbl\:\$56 {
-  ///   padding-block: 14rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n56(&self) -> String {
-    self.append_value("56")
-  }
-  /// ```css
-  /// .pbl\:\$60 {
-  ///   padding-block: 15rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n60(&self) -> String {
-    self.append_value("60")
-  }
-  /// ```css
-  /// .pbl\:\$64 {
-  ///   padding-block: 16rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n64(&self) -> String {
-    self.append_value("64")
-  }
-  /// ```css
-  /// .pbl\:\$72 {
-  ///   padding-block: 18rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n72(&self) -> String {
-    self.append_value("72")
-  }
-  /// ```css
-  /// .pbl\:\$80 {
-  ///   padding-block: 20rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n80(&self) -> String {
-    self.append_value("80")
-  }
-  /// ```css
-  /// .pbl\:\$96 {
-  ///   padding-block: 24rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n96(&self) -> String {
-    self.append_value("96")
-  }
-  /// ```css
-  /// .pbl\:\$px {
-  ///   padding-block: 1px;
-  /// }
-  /// ```
-  #[inline]
-  fn px(&self) -> String {
-    self.append_value("px")
-  }
-  /// ```css
-  /// .pbl\:\$0\.5 {
-  ///   padding-block: 0.125rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n0_5(&self) -> String {
-    self.append_value("0.5")
-  }
-  /// ```css
-  /// .pbl\:\$1\.5 {
-  ///   padding-block: 0.375rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n1_5(&self) -> String {
-    self.append_value("1.5")
-  }
-  /// ```css
-  /// .pbl\:\$2\.5 {
-  ///   padding-block: 0.625rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n2_5(&self) -> String {
-    self.append_value("2.5")
-  }
-  /// ```css
-  /// .pbl\:\$3\.5 {
-  ///   padding-block: 0.875rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n3_5(&self) -> String {
-    self.append_value("3.5")
-  }
-}
-impl GeneratedValueSetPbl for GeneratedAtomPbl {}
-pub struct GeneratedAtomPbls(String);
-impl GeneratedSkribbleValue for GeneratedAtomPbls {
-  #[inline]
-  fn from_ref(value: impl AsRef<str>) -> Self {
-    Self(value.as_ref().to_string())
-  }
-
-  #[inline]
-  fn get_skribble_value(&self) -> &String {
-    &self.0
-  }
-}
-pub trait GeneratedValueSetPbls: GeneratedSkribbleValue {
-  /// ```css
-  /// .pbls\:\$0 {
-  ///   padding-block-start: 0px;
-  /// }
-  /// ```
-  #[inline]
-  fn n0(&self) -> String {
-    self.append_value("0")
-  }
-  /// ```css
-  /// .pbls\:\$1 {
-  ///   padding-block-start: 0.25rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n1(&self) -> String {
-    self.append_value("1")
-  }
-  /// ```css
-  /// .pbls\:\$2 {
-  ///   padding-block-start: 0.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n2(&self) -> String {
-    self.append_value("2")
-  }
-  /// ```css
-  /// .pbls\:\$3 {
-  ///   padding-block-start: 0.75rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n3(&self) -> String {
-    self.append_value("3")
-  }
-  /// ```css
-  /// .pbls\:\$4 {
-  ///   padding-block-start: 1rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n4(&self) -> String {
-    self.append_value("4")
-  }
-  /// ```css
-  /// .pbls\:\$5 {
-  ///   padding-block-start: 1.25rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n5(&self) -> String {
-    self.append_value("5")
-  }
-  /// ```css
-  /// .pbls\:\$6 {
-  ///   padding-block-start: 1.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n6(&self) -> String {
-    self.append_value("6")
-  }
-  /// ```css
-  /// .pbls\:\$7 {
-  ///   padding-block-start: 1.75rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n7(&self) -> String {
-    self.append_value("7")
-  }
-  /// ```css
-  /// .pbls\:\$8 {
-  ///   padding-block-start: 2rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n8(&self) -> String {
-    self.append_value("8")
-  }
-  /// ```css
-  /// .pbls\:\$9 {
-  ///   padding-block-start: 2.25rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n9(&self) -> String {
-    self.append_value("9")
-  }
-  /// ```css
-  /// .pbls\:\$10 {
-  ///   padding-block-start: 2.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n10(&self) -> String {
-    self.append_value("10")
-  }
-  /// ```css
-  /// .pbls\:\$11 {
-  ///   padding-block-start: 2.75rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n11(&self) -> String {
-    self.append_value("11")
-  }
-  /// ```css
-  /// .pbls\:\$12 {
-  ///   padding-block-start: 3rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n12(&self) -> String {
-    self.append_value("12")
-  }
-  /// ```css
-  /// .pbls\:\$14 {
-  ///   padding-block-start: 3.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n14(&self) -> String {
-    self.append_value("14")
-  }
-  /// ```css
-  /// .pbls\:\$16 {
-  ///   padding-block-start: 4rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n16(&self) -> String {
-    self.append_value("16")
-  }
-  /// ```css
-  /// .pbls\:\$20 {
-  ///   padding-block-start: 5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n20(&self) -> String {
-    self.append_value("20")
-  }
-  /// ```css
-  /// .pbls\:\$24 {
-  ///   padding-block-start: 6rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n24(&self) -> String {
-    self.append_value("24")
-  }
-  /// ```css
-  /// .pbls\:\$28 {
-  ///   padding-block-start: 7rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n28(&self) -> String {
-    self.append_value("28")
-  }
-  /// ```css
-  /// .pbls\:\$32 {
-  ///   padding-block-start: 8rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n32(&self) -> String {
-    self.append_value("32")
-  }
-  /// ```css
-  /// .pbls\:\$36 {
-  ///   padding-block-start: 9rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n36(&self) -> String {
-    self.append_value("36")
-  }
-  /// ```css
-  /// .pbls\:\$40 {
-  ///   padding-block-start: 10rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n40(&self) -> String {
-    self.append_value("40")
-  }
-  /// ```css
-  /// .pbls\:\$44 {
-  ///   padding-block-start: 11rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n44(&self) -> String {
-    self.append_value("44")
-  }
-  /// ```css
-  /// .pbls\:\$48 {
-  ///   padding-block-start: 12rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n48(&self) -> String {
-    self.append_value("48")
-  }
-  /// ```css
-  /// .pbls\:\$52 {
-  ///   padding-block-start: 13rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n52(&self) -> String {
-    self.append_value("52")
-  }
-  /// ```css
-  /// .pbls\:\$56 {
-  ///   padding-block-start: 14rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n56(&self) -> String {
-    self.append_value("56")
-  }
-  /// ```css
-  /// .pbls\:\$60 {
-  ///   padding-block-start: 15rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n60(&self) -> String {
-    self.append_value("60")
-  }
-  /// ```css
-  /// .pbls\:\$64 {
-  ///   padding-block-start: 16rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n64(&self) -> String {
-    self.append_value("64")
-  }
-  /// ```css
-  /// .pbls\:\$72 {
-  ///   padding-block-start: 18rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n72(&self) -> String {
-    self.append_value("72")
-  }
-  /// ```css
-  /// .pbls\:\$80 {
-  ///   padding-block-start: 20rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n80(&self) -> String {
-    self.append_value("80")
-  }
-  /// ```css
-  /// .pbls\:\$96 {
-  ///   padding-block-start: 24rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n96(&self) -> String {
-    self.append_value("96")
-  }
-  /// ```css
-  /// .pbls\:\$px {
-  ///   padding-block-start: 1px;
-  /// }
-  /// ```
-  #[inline]
-  fn px(&self) -> String {
-    self.append_value("px")
-  }
-  /// ```css
-  /// .pbls\:\$0\.5 {
-  ///   padding-block-start: 0.125rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n0_5(&self) -> String {
-    self.append_value("0.5")
-  }
-  /// ```css
-  /// .pbls\:\$1\.5 {
-  ///   padding-block-start: 0.375rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n1_5(&self) -> String {
-    self.append_value("1.5")
-  }
-  /// ```css
-  /// .pbls\:\$2\.5 {
-  ///   padding-block-start: 0.625rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n2_5(&self) -> String {
-    self.append_value("2.5")
-  }
-  /// ```css
-  /// .pbls\:\$3\.5 {
-  ///   padding-block-start: 0.875rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n3_5(&self) -> String {
-    self.append_value("3.5")
-  }
-}
-impl GeneratedValueSetPbls for GeneratedAtomPbls {}
-pub struct GeneratedAtomPble(String);
-impl GeneratedSkribbleValue for GeneratedAtomPble {
-  #[inline]
-  fn from_ref(value: impl AsRef<str>) -> Self {
-    Self(value.as_ref().to_string())
-  }
-
-  #[inline]
-  fn get_skribble_value(&self) -> &String {
-    &self.0
-  }
-}
-pub trait GeneratedValueSetPble: GeneratedSkribbleValue {
-  /// ```css
-  /// .pble\:\$0 {
-  ///   padding-block-end: 0px;
-  /// }
-  /// ```
-  #[inline]
-  fn n0(&self) -> String {
-    self.append_value("0")
-  }
-  /// ```css
-  /// .pble\:\$1 {
-  ///   padding-block-end: 0.25rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n1(&self) -> String {
-    self.append_value("1")
-  }
-  /// ```css
-  /// .pble\:\$2 {
-  ///   padding-block-end: 0.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n2(&self) -> String {
-    self.append_value("2")
-  }
-  /// ```css
-  /// .pble\:\$3 {
-  ///   padding-block-end: 0.75rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n3(&self) -> String {
-    self.append_value("3")
-  }
-  /// ```css
-  /// .pble\:\$4 {
-  ///   padding-block-end: 1rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n4(&self) -> String {
-    self.append_value("4")
-  }
-  /// ```css
-  /// .pble\:\$5 {
-  ///   padding-block-end: 1.25rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n5(&self) -> String {
-    self.append_value("5")
-  }
-  /// ```css
-  /// .pble\:\$6 {
-  ///   padding-block-end: 1.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n6(&self) -> String {
-    self.append_value("6")
-  }
-  /// ```css
-  /// .pble\:\$7 {
-  ///   padding-block-end: 1.75rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n7(&self) -> String {
-    self.append_value("7")
-  }
-  /// ```css
-  /// .pble\:\$8 {
-  ///   padding-block-end: 2rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n8(&self) -> String {
-    self.append_value("8")
-  }
-  /// ```css
-  /// .pble\:\$9 {
-  ///   padding-block-end: 2.25rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n9(&self) -> String {
-    self.append_value("9")
-  }
-  /// ```css
-  /// .pble\:\$10 {
-  ///   padding-block-end: 2.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n10(&self) -> String {
-    self.append_value("10")
-  }
-  /// ```css
-  /// .pble\:\$11 {
-  ///   padding-block-end: 2.75rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n11(&self) -> String {
-    self.append_value("11")
-  }
-  /// ```css
-  /// .pble\:\$12 {
-  ///   padding-block-end: 3rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n12(&self) -> String {
-    self.append_value("12")
-  }
-  /// ```css
-  /// .pble\:\$14 {
-  ///   padding-block-end: 3.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n14(&self) -> String {
-    self.append_value("14")
-  }
-  /// ```css
-  /// .pble\:\$16 {
-  ///   padding-block-end: 4rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n16(&self) -> String {
-    self.append_value("16")
-  }
-  /// ```css
-  /// .pble\:\$20 {
-  ///   padding-block-end: 5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n20(&self) -> String {
-    self.append_value("20")
-  }
-  /// ```css
-  /// .pble\:\$24 {
-  ///   padding-block-end: 6rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n24(&self) -> String {
-    self.append_value("24")
-  }
-  /// ```css
-  /// .pble\:\$28 {
-  ///   padding-block-end: 7rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n28(&self) -> String {
-    self.append_value("28")
-  }
-  /// ```css
-  /// .pble\:\$32 {
-  ///   padding-block-end: 8rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n32(&self) -> String {
-    self.append_value("32")
-  }
-  /// ```css
-  /// .pble\:\$36 {
-  ///   padding-block-end: 9rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n36(&self) -> String {
-    self.append_value("36")
-  }
-  /// ```css
-  /// .pble\:\$40 {
-  ///   padding-block-end: 10rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n40(&self) -> String {
-    self.append_value("40")
-  }
-  /// ```css
-  /// .pble\:\$44 {
-  ///   padding-block-end: 11rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n44(&self) -> String {
-    self.append_value("44")
-  }
-  /// ```css
-  /// .pble\:\$48 {
-  ///   padding-block-end: 12rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n48(&self) -> String {
-    self.append_value("48")
-  }
-  /// ```css
-  /// .pble\:\$52 {
-  ///   padding-block-end: 13rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n52(&self) -> String {
-    self.append_value("52")
-  }
-  /// ```css
-  /// .pble\:\$56 {
-  ///   padding-block-end: 14rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n56(&self) -> String {
-    self.append_value("56")
-  }
-  /// ```css
-  /// .pble\:\$60 {
-  ///   padding-block-end: 15rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n60(&self) -> String {
-    self.append_value("60")
-  }
-  /// ```css
-  /// .pble\:\$64 {
-  ///   padding-block-end: 16rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n64(&self) -> String {
-    self.append_value("64")
-  }
-  /// ```css
-  /// .pble\:\$72 {
-  ///   padding-block-end: 18rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n72(&self) -> String {
-    self.append_value("72")
-  }
-  /// ```css
-  /// .pble\:\$80 {
-  ///   padding-block-end: 20rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n80(&self) -> String {
-    self.append_value("80")
-  }
-  /// ```css
-  /// .pble\:\$96 {
-  ///   padding-block-end: 24rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n96(&self) -> String {
-    self.append_value("96")
-  }
-  /// ```css
-  /// .pble\:\$px {
-  ///   padding-block-end: 1px;
-  /// }
-  /// ```
-  #[inline]
-  fn px(&self) -> String {
-    self.append_value("px")
-  }
-  /// ```css
-  /// .pble\:\$0\.5 {
-  ///   padding-block-end: 0.125rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n0_5(&self) -> String {
-    self.append_value("0.5")
-  }
-  /// ```css
-  /// .pble\:\$1\.5 {
-  ///   padding-block-end: 0.375rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n1_5(&self) -> String {
-    self.append_value("1.5")
-  }
-  /// ```css
-  /// .pble\:\$2\.5 {
-  ///   padding-block-end: 0.625rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n2_5(&self) -> String {
-    self.append_value("2.5")
-  }
-  /// ```css
-  /// .pble\:\$3\.5 {
-  ///   padding-block-end: 0.875rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n3_5(&self) -> String {
-    self.append_value("3.5")
-  }
-}
-impl GeneratedValueSetPble for GeneratedAtomPble {}
-pub struct GeneratedAtomPin(String);
-impl GeneratedSkribbleValue for GeneratedAtomPin {
-  #[inline]
-  fn from_ref(value: impl AsRef<str>) -> Self {
-    Self(value.as_ref().to_string())
-  }
-
-  #[inline]
-  fn get_skribble_value(&self) -> &String {
-    &self.0
-  }
-}
-pub trait GeneratedValueSetPin: GeneratedSkribbleValue {
-  /// ```css
-  /// .pin\:\$0 {
-  ///   padding-inline: 0px;
-  /// }
-  /// ```
-  #[inline]
-  fn n0(&self) -> String {
-    self.append_value("0")
-  }
-  /// ```css
-  /// .pin\:\$1 {
-  ///   padding-inline: 0.25rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n1(&self) -> String {
-    self.append_value("1")
-  }
-  /// ```css
-  /// .pin\:\$2 {
-  ///   padding-inline: 0.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n2(&self) -> String {
-    self.append_value("2")
-  }
-  /// ```css
-  /// .pin\:\$3 {
-  ///   padding-inline: 0.75rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n3(&self) -> String {
-    self.append_value("3")
-  }
-  /// ```css
-  /// .pin\:\$4 {
-  ///   padding-inline: 1rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n4(&self) -> String {
-    self.append_value("4")
-  }
-  /// ```css
-  /// .pin\:\$5 {
-  ///   padding-inline: 1.25rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n5(&self) -> String {
-    self.append_value("5")
-  }
-  /// ```css
-  /// .pin\:\$6 {
-  ///   padding-inline: 1.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n6(&self) -> String {
-    self.append_value("6")
-  }
-  /// ```css
-  /// .pin\:\$7 {
-  ///   padding-inline: 1.75rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n7(&self) -> String {
-    self.append_value("7")
-  }
-  /// ```css
-  /// .pin\:\$8 {
-  ///   padding-inline: 2rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n8(&self) -> String {
-    self.append_value("8")
-  }
-  /// ```css
-  /// .pin\:\$9 {
-  ///   padding-inline: 2.25rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n9(&self) -> String {
-    self.append_value("9")
-  }
-  /// ```css
-  /// .pin\:\$10 {
-  ///   padding-inline: 2.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n10(&self) -> String {
-    self.append_value("10")
-  }
-  /// ```css
-  /// .pin\:\$11 {
-  ///   padding-inline: 2.75rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n11(&self) -> String {
-    self.append_value("11")
-  }
-  /// ```css
-  /// .pin\:\$12 {
-  ///   padding-inline: 3rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n12(&self) -> String {
-    self.append_value("12")
-  }
-  /// ```css
-  /// .pin\:\$14 {
-  ///   padding-inline: 3.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n14(&self) -> String {
-    self.append_value("14")
-  }
-  /// ```css
-  /// .pin\:\$16 {
-  ///   padding-inline: 4rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n16(&self) -> String {
-    self.append_value("16")
-  }
-  /// ```css
-  /// .pin\:\$20 {
-  ///   padding-inline: 5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n20(&self) -> String {
-    self.append_value("20")
-  }
-  /// ```css
-  /// .pin\:\$24 {
-  ///   padding-inline: 6rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n24(&self) -> String {
-    self.append_value("24")
-  }
-  /// ```css
-  /// .pin\:\$28 {
-  ///   padding-inline: 7rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n28(&self) -> String {
-    self.append_value("28")
-  }
-  /// ```css
-  /// .pin\:\$32 {
-  ///   padding-inline: 8rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n32(&self) -> String {
-    self.append_value("32")
-  }
-  /// ```css
-  /// .pin\:\$36 {
-  ///   padding-inline: 9rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n36(&self) -> String {
-    self.append_value("36")
-  }
-  /// ```css
-  /// .pin\:\$40 {
-  ///   padding-inline: 10rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n40(&self) -> String {
-    self.append_value("40")
-  }
-  /// ```css
-  /// .pin\:\$44 {
-  ///   padding-inline: 11rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n44(&self) -> String {
-    self.append_value("44")
-  }
-  /// ```css
-  /// .pin\:\$48 {
-  ///   padding-inline: 12rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n48(&self) -> String {
-    self.append_value("48")
-  }
-  /// ```css
-  /// .pin\:\$52 {
-  ///   padding-inline: 13rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n52(&self) -> String {
-    self.append_value("52")
-  }
-  /// ```css
-  /// .pin\:\$56 {
-  ///   padding-inline: 14rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n56(&self) -> String {
-    self.append_value("56")
-  }
-  /// ```css
-  /// .pin\:\$60 {
-  ///   padding-inline: 15rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n60(&self) -> String {
-    self.append_value("60")
-  }
-  /// ```css
-  /// .pin\:\$64 {
-  ///   padding-inline: 16rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n64(&self) -> String {
-    self.append_value("64")
-  }
-  /// ```css
-  /// .pin\:\$72 {
-  ///   padding-inline: 18rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n72(&self) -> String {
-    self.append_value("72")
-  }
-  /// ```css
-  /// .pin\:\$80 {
-  ///   padding-inline: 20rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n80(&self) -> String {
-    self.append_value("80")
-  }
-  /// ```css
-  /// .pin\:\$96 {
-  ///   padding-inline: 24rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n96(&self) -> String {
-    self.append_value("96")
-  }
-  /// ```css
-  /// .pin\:\$px {
-  ///   padding-inline: 1px;
-  /// }
-  /// ```
-  #[inline]
-  fn px(&self) -> String {
-    self.append_value("px")
-  }
-  /// ```css
-  /// .pin\:\$0\.5 {
-  ///   padding-inline: 0.125rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n0_5(&self) -> String {
-    self.append_value("0.5")
-  }
-  /// ```css
-  /// .pin\:\$1\.5 {
-  ///   padding-inline: 0.375rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n1_5(&self) -> String {
-    self.append_value("1.5")
-  }
-  /// ```css
-  /// .pin\:\$2\.5 {
-  ///   padding-inline: 0.625rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n2_5(&self) -> String {
-    self.append_value("2.5")
-  }
-  /// ```css
-  /// .pin\:\$3\.5 {
-  ///   padding-inline: 0.875rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n3_5(&self) -> String {
-    self.append_value("3.5")
-  }
-}
-impl GeneratedValueSetPin for GeneratedAtomPin {}
-pub struct GeneratedAtomPins(String);
-impl GeneratedSkribbleValue for GeneratedAtomPins {
-  #[inline]
-  fn from_ref(value: impl AsRef<str>) -> Self {
-    Self(value.as_ref().to_string())
-  }
-
-  #[inline]
-  fn get_skribble_value(&self) -> &String {
-    &self.0
-  }
-}
-pub trait GeneratedValueSetPins: GeneratedSkribbleValue {
-  /// ```css
-  /// .pins\:\$0 {
-  ///   padding-inline-start: 0px;
-  /// }
-  /// ```
-  #[inline]
-  fn n0(&self) -> String {
-    self.append_value("0")
-  }
-  /// ```css
-  /// .pins\:\$1 {
-  ///   padding-inline-start: 0.25rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n1(&self) -> String {
-    self.append_value("1")
-  }
-  /// ```css
-  /// .pins\:\$2 {
-  ///   padding-inline-start: 0.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n2(&self) -> String {
-    self.append_value("2")
-  }
-  /// ```css
-  /// .pins\:\$3 {
-  ///   padding-inline-start: 0.75rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n3(&self) -> String {
-    self.append_value("3")
-  }
-  /// ```css
-  /// .pins\:\$4 {
-  ///   padding-inline-start: 1rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n4(&self) -> String {
-    self.append_value("4")
-  }
-  /// ```css
-  /// .pins\:\$5 {
-  ///   padding-inline-start: 1.25rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n5(&self) -> String {
-    self.append_value("5")
-  }
-  /// ```css
-  /// .pins\:\$6 {
-  ///   padding-inline-start: 1.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n6(&self) -> String {
-    self.append_value("6")
-  }
-  /// ```css
-  /// .pins\:\$7 {
-  ///   padding-inline-start: 1.75rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n7(&self) -> String {
-    self.append_value("7")
-  }
-  /// ```css
-  /// .pins\:\$8 {
-  ///   padding-inline-start: 2rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n8(&self) -> String {
-    self.append_value("8")
-  }
-  /// ```css
-  /// .pins\:\$9 {
-  ///   padding-inline-start: 2.25rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n9(&self) -> String {
-    self.append_value("9")
-  }
-  /// ```css
-  /// .pins\:\$10 {
-  ///   padding-inline-start: 2.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n10(&self) -> String {
-    self.append_value("10")
-  }
-  /// ```css
-  /// .pins\:\$11 {
-  ///   padding-inline-start: 2.75rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n11(&self) -> String {
-    self.append_value("11")
-  }
-  /// ```css
-  /// .pins\:\$12 {
-  ///   padding-inline-start: 3rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n12(&self) -> String {
-    self.append_value("12")
-  }
-  /// ```css
-  /// .pins\:\$14 {
-  ///   padding-inline-start: 3.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n14(&self) -> String {
-    self.append_value("14")
-  }
-  /// ```css
-  /// .pins\:\$16 {
-  ///   padding-inline-start: 4rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n16(&self) -> String {
-    self.append_value("16")
-  }
-  /// ```css
-  /// .pins\:\$20 {
-  ///   padding-inline-start: 5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n20(&self) -> String {
-    self.append_value("20")
-  }
-  /// ```css
-  /// .pins\:\$24 {
-  ///   padding-inline-start: 6rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n24(&self) -> String {
-    self.append_value("24")
-  }
-  /// ```css
-  /// .pins\:\$28 {
-  ///   padding-inline-start: 7rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n28(&self) -> String {
-    self.append_value("28")
-  }
-  /// ```css
-  /// .pins\:\$32 {
-  ///   padding-inline-start: 8rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n32(&self) -> String {
-    self.append_value("32")
-  }
-  /// ```css
-  /// .pins\:\$36 {
-  ///   padding-inline-start: 9rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n36(&self) -> String {
-    self.append_value("36")
-  }
-  /// ```css
-  /// .pins\:\$40 {
-  ///   padding-inline-start: 10rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n40(&self) -> String {
-    self.append_value("40")
-  }
-  /// ```css
-  /// .pins\:\$44 {
-  ///   padding-inline-start: 11rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n44(&self) -> String {
-    self.append_value("44")
-  }
-  /// ```css
-  /// .pins\:\$48 {
-  ///   padding-inline-start: 12rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n48(&self) -> String {
-    self.append_value("48")
-  }
-  /// ```css
-  /// .pins\:\$52 {
-  ///   padding-inline-start: 13rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n52(&self) -> String {
-    self.append_value("52")
-  }
-  /// ```css
-  /// .pins\:\$56 {
-  ///   padding-inline-start: 14rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n56(&self) -> String {
-    self.append_value("56")
-  }
-  /// ```css
-  /// .pins\:\$60 {
-  ///   padding-inline-start: 15rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n60(&self) -> String {
-    self.append_value("60")
-  }
-  /// ```css
-  /// .pins\:\$64 {
-  ///   padding-inline-start: 16rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n64(&self) -> String {
-    self.append_value("64")
-  }
-  /// ```css
-  /// .pins\:\$72 {
-  ///   padding-inline-start: 18rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n72(&self) -> String {
-    self.append_value("72")
-  }
-  /// ```css
-  /// .pins\:\$80 {
-  ///   padding-inline-start: 20rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n80(&self) -> String {
-    self.append_value("80")
-  }
-  /// ```css
-  /// .pins\:\$96 {
-  ///   padding-inline-start: 24rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n96(&self) -> String {
-    self.append_value("96")
-  }
-  /// ```css
-  /// .pins\:\$px {
-  ///   padding-inline-start: 1px;
-  /// }
-  /// ```
-  #[inline]
-  fn px(&self) -> String {
-    self.append_value("px")
-  }
-  /// ```css
-  /// .pins\:\$0\.5 {
-  ///   padding-inline-start: 0.125rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n0_5(&self) -> String {
-    self.append_value("0.5")
-  }
-  /// ```css
-  /// .pins\:\$1\.5 {
-  ///   padding-inline-start: 0.375rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n1_5(&self) -> String {
-    self.append_value("1.5")
-  }
-  /// ```css
-  /// .pins\:\$2\.5 {
-  ///   padding-inline-start: 0.625rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n2_5(&self) -> String {
-    self.append_value("2.5")
-  }
-  /// ```css
-  /// .pins\:\$3\.5 {
-  ///   padding-inline-start: 0.875rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n3_5(&self) -> String {
-    self.append_value("3.5")
-  }
-}
-impl GeneratedValueSetPins for GeneratedAtomPins {}
-pub struct GeneratedAtomPine(String);
-impl GeneratedSkribbleValue for GeneratedAtomPine {
-  #[inline]
-  fn from_ref(value: impl AsRef<str>) -> Self {
-    Self(value.as_ref().to_string())
-  }
-
-  #[inline]
-  fn get_skribble_value(&self) -> &String {
-    &self.0
-  }
-}
-pub trait GeneratedValueSetPine: GeneratedSkribbleValue {
-  /// ```css
-  /// .pine\:\$0 {
-  ///   padding-inline-end: 0px;
-  /// }
-  /// ```
-  #[inline]
-  fn n0(&self) -> String {
-    self.append_value("0")
-  }
-  /// ```css
-  /// .pine\:\$1 {
-  ///   padding-inline-end: 0.25rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n1(&self) -> String {
-    self.append_value("1")
-  }
-  /// ```css
-  /// .pine\:\$2 {
-  ///   padding-inline-end: 0.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n2(&self) -> String {
-    self.append_value("2")
-  }
-  /// ```css
-  /// .pine\:\$3 {
-  ///   padding-inline-end: 0.75rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n3(&self) -> String {
-    self.append_value("3")
-  }
-  /// ```css
-  /// .pine\:\$4 {
-  ///   padding-inline-end: 1rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n4(&self) -> String {
-    self.append_value("4")
-  }
-  /// ```css
-  /// .pine\:\$5 {
-  ///   padding-inline-end: 1.25rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n5(&self) -> String {
-    self.append_value("5")
-  }
-  /// ```css
-  /// .pine\:\$6 {
-  ///   padding-inline-end: 1.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n6(&self) -> String {
-    self.append_value("6")
-  }
-  /// ```css
-  /// .pine\:\$7 {
-  ///   padding-inline-end: 1.75rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n7(&self) -> String {
-    self.append_value("7")
-  }
-  /// ```css
-  /// .pine\:\$8 {
-  ///   padding-inline-end: 2rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n8(&self) -> String {
-    self.append_value("8")
-  }
-  /// ```css
-  /// .pine\:\$9 {
-  ///   padding-inline-end: 2.25rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n9(&self) -> String {
-    self.append_value("9")
-  }
-  /// ```css
-  /// .pine\:\$10 {
-  ///   padding-inline-end: 2.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n10(&self) -> String {
-    self.append_value("10")
-  }
-  /// ```css
-  /// .pine\:\$11 {
-  ///   padding-inline-end: 2.75rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n11(&self) -> String {
-    self.append_value("11")
-  }
-  /// ```css
-  /// .pine\:\$12 {
-  ///   padding-inline-end: 3rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n12(&self) -> String {
-    self.append_value("12")
-  }
-  /// ```css
-  /// .pine\:\$14 {
-  ///   padding-inline-end: 3.5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n14(&self) -> String {
-    self.append_value("14")
-  }
-  /// ```css
-  /// .pine\:\$16 {
-  ///   padding-inline-end: 4rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n16(&self) -> String {
-    self.append_value("16")
-  }
-  /// ```css
-  /// .pine\:\$20 {
-  ///   padding-inline-end: 5rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n20(&self) -> String {
-    self.append_value("20")
-  }
-  /// ```css
-  /// .pine\:\$24 {
-  ///   padding-inline-end: 6rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n24(&self) -> String {
-    self.append_value("24")
-  }
-  /// ```css
-  /// .pine\:\$28 {
-  ///   padding-inline-end: 7rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n28(&self) -> String {
-    self.append_value("28")
-  }
-  /// ```css
-  /// .pine\:\$32 {
-  ///   padding-inline-end: 8rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n32(&self) -> String {
-    self.append_value("32")
-  }
-  /// ```css
-  /// .pine\:\$36 {
-  ///   padding-inline-end: 9rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n36(&self) -> String {
-    self.append_value("36")
-  }
-  /// ```css
-  /// .pine\:\$40 {
-  ///   padding-inline-end: 10rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n40(&self) -> String {
-    self.append_value("40")
-  }
-  /// ```css
-  /// .pine\:\$44 {
-  ///   padding-inline-end: 11rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n44(&self) -> String {
-    self.append_value("44")
-  }
-  /// ```css
-  /// .pine\:\$48 {
-  ///   padding-inline-end: 12rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n48(&self) -> String {
-    self.append_value("48")
-  }
-  /// ```css
-  /// .pine\:\$52 {
-  ///   padding-inline-end: 13rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n52(&self) -> String {
-    self.append_value("52")
-  }
-  /// ```css
-  /// .pine\:\$56 {
-  ///   padding-inline-end: 14rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n56(&self) -> String {
-    self.append_value("56")
-  }
-  /// ```css
-  /// .pine\:\$60 {
-  ///   padding-inline-end: 15rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n60(&self) -> String {
-    self.append_value("60")
-  }
-  /// ```css
-  /// .pine\:\$64 {
-  ///   padding-inline-end: 16rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n64(&self) -> String {
-    self.append_value("64")
-  }
-  /// ```css
-  /// .pine\:\$72 {
-  ///   padding-inline-end: 18rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n72(&self) -> String {
-    self.append_value("72")
-  }
-  /// ```css
-  /// .pine\:\$80 {
-  ///   padding-inline-end: 20rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n80(&self) -> String {
-    self.append_value("80")
-  }
-  /// ```css
-  /// .pine\:\$96 {
-  ///   padding-inline-end: 24rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n96(&self) -> String {
-    self.append_value("96")
-  }
-  /// ```css
-  /// .pine\:\$px {
-  ///   padding-inline-end: 1px;
-  /// }
-  /// ```
-  #[inline]
-  fn px(&self) -> String {
-    self.append_value("px")
-  }
-  /// ```css
-  /// .pine\:\$0\.5 {
-  ///   padding-inline-end: 0.125rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n0_5(&self) -> String {
-    self.append_value("0.5")
-  }
-  /// ```css
-  /// .pine\:\$1\.5 {
-  ///   padding-inline-end: 0.375rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n1_5(&self) -> String {
-    self.append_value("1.5")
-  }
-  /// ```css
-  /// .pine\:\$2\.5 {
-  ///   padding-inline-end: 0.625rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n2_5(&self) -> String {
-    self.append_value("2.5")
-  }
-  /// ```css
-  /// .pine\:\$3\.5 {
-  ///   padding-inline-end: 0.875rem;
-  /// }
-  /// ```
-  #[inline]
-  fn n3_5(&self) -> String {
-    self.append_value("3.5")
-  }
-}
-impl GeneratedValueSetPine for GeneratedAtomPine {}
 pub struct GeneratedAtomM(String);
 impl GeneratedSkribbleValue for GeneratedAtomM {
   #[inline]
@@ -13671,6 +17741,312 @@ pub trait GeneratedValueSetM: GeneratedSkribbleValue {
   #[inline]
   fn n3_5(&self) -> String {
     self.append_value("3.5")
+  }
+  /// ```css
+  /// .m\:\$-1 {
+  ///   margin: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .m\:\$-2 {
+  ///   margin: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .m\:\$-3 {
+  ///   margin: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .m\:\$-4 {
+  ///   margin: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .m\:\$-5 {
+  ///   margin: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .m\:\$-6 {
+  ///   margin: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .m\:\$-7 {
+  ///   margin: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .m\:\$-8 {
+  ///   margin: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .m\:\$-9 {
+  ///   margin: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .m\:\$-10 {
+  ///   margin: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .m\:\$-11 {
+  ///   margin: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .m\:\$-12 {
+  ///   margin: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .m\:\$-14 {
+  ///   margin: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .m\:\$-16 {
+  ///   margin: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .m\:\$-20 {
+  ///   margin: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .m\:\$-24 {
+  ///   margin: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .m\:\$-28 {
+  ///   margin: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .m\:\$-32 {
+  ///   margin: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .m\:\$-36 {
+  ///   margin: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .m\:\$-40 {
+  ///   margin: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .m\:\$-44 {
+  ///   margin: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .m\:\$-48 {
+  ///   margin: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .m\:\$-52 {
+  ///   margin: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .m\:\$-56 {
+  ///   margin: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .m\:\$-60 {
+  ///   margin: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .m\:\$-64 {
+  ///   margin: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .m\:\$-72 {
+  ///   margin: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .m\:\$-80 {
+  ///   margin: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .m\:\$-96 {
+  ///   margin: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .m\:\$-px {
+  ///   margin: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .m\:\$-0\.5 {
+  ///   margin: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .m\:\$-1\.5 {
+  ///   margin: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .m\:\$-2\.5 {
+  ///   margin: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .m\:\$-3\.5 {
+  ///   margin: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
   }
 }
 impl GeneratedValueSetM for GeneratedAtomM {}
@@ -14037,6 +18413,346 @@ pub trait GeneratedValueSetMy: GeneratedSkribbleValue {
   fn n3_5(&self) -> String {
     self.append_value("3.5")
   }
+  /// ```css
+  /// .my\:\$-1 {
+  ///   margin-top: -0.25rem;
+  ///   margin-bottom: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .my\:\$-2 {
+  ///   margin-top: -0.5rem;
+  ///   margin-bottom: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .my\:\$-3 {
+  ///   margin-top: -0.75rem;
+  ///   margin-bottom: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .my\:\$-4 {
+  ///   margin-top: -1rem;
+  ///   margin-bottom: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .my\:\$-5 {
+  ///   margin-top: -1.25rem;
+  ///   margin-bottom: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .my\:\$-6 {
+  ///   margin-top: -1.5rem;
+  ///   margin-bottom: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .my\:\$-7 {
+  ///   margin-top: -1.75rem;
+  ///   margin-bottom: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .my\:\$-8 {
+  ///   margin-top: -2rem;
+  ///   margin-bottom: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .my\:\$-9 {
+  ///   margin-top: -2.25rem;
+  ///   margin-bottom: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .my\:\$-10 {
+  ///   margin-top: -2.5rem;
+  ///   margin-bottom: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .my\:\$-11 {
+  ///   margin-top: -2.75rem;
+  ///   margin-bottom: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .my\:\$-12 {
+  ///   margin-top: -3rem;
+  ///   margin-bottom: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .my\:\$-14 {
+  ///   margin-top: -3.5rem;
+  ///   margin-bottom: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .my\:\$-16 {
+  ///   margin-top: -4rem;
+  ///   margin-bottom: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .my\:\$-20 {
+  ///   margin-top: -5rem;
+  ///   margin-bottom: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .my\:\$-24 {
+  ///   margin-top: -6rem;
+  ///   margin-bottom: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .my\:\$-28 {
+  ///   margin-top: -7rem;
+  ///   margin-bottom: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .my\:\$-32 {
+  ///   margin-top: -8rem;
+  ///   margin-bottom: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .my\:\$-36 {
+  ///   margin-top: -9rem;
+  ///   margin-bottom: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .my\:\$-40 {
+  ///   margin-top: -10rem;
+  ///   margin-bottom: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .my\:\$-44 {
+  ///   margin-top: -11rem;
+  ///   margin-bottom: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .my\:\$-48 {
+  ///   margin-top: -12rem;
+  ///   margin-bottom: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .my\:\$-52 {
+  ///   margin-top: -13rem;
+  ///   margin-bottom: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .my\:\$-56 {
+  ///   margin-top: -14rem;
+  ///   margin-bottom: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .my\:\$-60 {
+  ///   margin-top: -15rem;
+  ///   margin-bottom: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .my\:\$-64 {
+  ///   margin-top: -16rem;
+  ///   margin-bottom: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .my\:\$-72 {
+  ///   margin-top: -18rem;
+  ///   margin-bottom: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .my\:\$-80 {
+  ///   margin-top: -20rem;
+  ///   margin-bottom: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .my\:\$-96 {
+  ///   margin-top: -24rem;
+  ///   margin-bottom: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .my\:\$-px {
+  ///   margin-top: -1px;
+  ///   margin-bottom: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .my\:\$-0\.5 {
+  ///   margin-top: -0.125rem;
+  ///   margin-bottom: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .my\:\$-1\.5 {
+  ///   margin-top: -0.375rem;
+  ///   margin-bottom: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .my\:\$-2\.5 {
+  ///   margin-top: -0.625rem;
+  ///   margin-bottom: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .my\:\$-3\.5 {
+  ///   margin-top: -0.875rem;
+  ///   margin-bottom: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
 }
 impl GeneratedValueSetMy for GeneratedAtomMy {}
 pub struct GeneratedAtomMx(String);
@@ -14402,8 +19118,4164 @@ pub trait GeneratedValueSetMx: GeneratedSkribbleValue {
   fn n3_5(&self) -> String {
     self.append_value("3.5")
   }
+  /// ```css
+  /// .mx\:\$-1 {
+  ///   margin-right: -0.25rem;
+  ///   margin-left: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .mx\:\$-2 {
+  ///   margin-right: -0.5rem;
+  ///   margin-left: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .mx\:\$-3 {
+  ///   margin-right: -0.75rem;
+  ///   margin-left: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .mx\:\$-4 {
+  ///   margin-right: -1rem;
+  ///   margin-left: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .mx\:\$-5 {
+  ///   margin-right: -1.25rem;
+  ///   margin-left: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .mx\:\$-6 {
+  ///   margin-right: -1.5rem;
+  ///   margin-left: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .mx\:\$-7 {
+  ///   margin-right: -1.75rem;
+  ///   margin-left: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .mx\:\$-8 {
+  ///   margin-right: -2rem;
+  ///   margin-left: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .mx\:\$-9 {
+  ///   margin-right: -2.25rem;
+  ///   margin-left: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .mx\:\$-10 {
+  ///   margin-right: -2.5rem;
+  ///   margin-left: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .mx\:\$-11 {
+  ///   margin-right: -2.75rem;
+  ///   margin-left: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .mx\:\$-12 {
+  ///   margin-right: -3rem;
+  ///   margin-left: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .mx\:\$-14 {
+  ///   margin-right: -3.5rem;
+  ///   margin-left: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .mx\:\$-16 {
+  ///   margin-right: -4rem;
+  ///   margin-left: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .mx\:\$-20 {
+  ///   margin-right: -5rem;
+  ///   margin-left: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .mx\:\$-24 {
+  ///   margin-right: -6rem;
+  ///   margin-left: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .mx\:\$-28 {
+  ///   margin-right: -7rem;
+  ///   margin-left: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .mx\:\$-32 {
+  ///   margin-right: -8rem;
+  ///   margin-left: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .mx\:\$-36 {
+  ///   margin-right: -9rem;
+  ///   margin-left: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .mx\:\$-40 {
+  ///   margin-right: -10rem;
+  ///   margin-left: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .mx\:\$-44 {
+  ///   margin-right: -11rem;
+  ///   margin-left: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .mx\:\$-48 {
+  ///   margin-right: -12rem;
+  ///   margin-left: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .mx\:\$-52 {
+  ///   margin-right: -13rem;
+  ///   margin-left: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .mx\:\$-56 {
+  ///   margin-right: -14rem;
+  ///   margin-left: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .mx\:\$-60 {
+  ///   margin-right: -15rem;
+  ///   margin-left: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .mx\:\$-64 {
+  ///   margin-right: -16rem;
+  ///   margin-left: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .mx\:\$-72 {
+  ///   margin-right: -18rem;
+  ///   margin-left: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .mx\:\$-80 {
+  ///   margin-right: -20rem;
+  ///   margin-left: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .mx\:\$-96 {
+  ///   margin-right: -24rem;
+  ///   margin-left: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .mx\:\$-px {
+  ///   margin-right: -1px;
+  ///   margin-left: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .mx\:\$-0\.5 {
+  ///   margin-right: -0.125rem;
+  ///   margin-left: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .mx\:\$-1\.5 {
+  ///   margin-right: -0.375rem;
+  ///   margin-left: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .mx\:\$-2\.5 {
+  ///   margin-right: -0.625rem;
+  ///   margin-left: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .mx\:\$-3\.5 {
+  ///   margin-right: -0.875rem;
+  ///   margin-left: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
 }
 impl GeneratedValueSetMx for GeneratedAtomMx {}
+pub struct GeneratedAtomMBlock(String);
+impl GeneratedSkribbleValue for GeneratedAtomMBlock {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetMBlock: GeneratedSkribbleValue {
+  /// ```css
+  /// .m-block\:\$0 {
+  ///   margin-block: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .m-block\:\$1 {
+  ///   margin-block: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .m-block\:\$2 {
+  ///   margin-block: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .m-block\:\$3 {
+  ///   margin-block: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .m-block\:\$4 {
+  ///   margin-block: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .m-block\:\$5 {
+  ///   margin-block: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .m-block\:\$6 {
+  ///   margin-block: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .m-block\:\$7 {
+  ///   margin-block: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .m-block\:\$8 {
+  ///   margin-block: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .m-block\:\$9 {
+  ///   margin-block: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .m-block\:\$10 {
+  ///   margin-block: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .m-block\:\$11 {
+  ///   margin-block: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .m-block\:\$12 {
+  ///   margin-block: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .m-block\:\$14 {
+  ///   margin-block: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .m-block\:\$16 {
+  ///   margin-block: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .m-block\:\$20 {
+  ///   margin-block: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .m-block\:\$24 {
+  ///   margin-block: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .m-block\:\$28 {
+  ///   margin-block: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .m-block\:\$32 {
+  ///   margin-block: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .m-block\:\$36 {
+  ///   margin-block: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .m-block\:\$40 {
+  ///   margin-block: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .m-block\:\$44 {
+  ///   margin-block: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .m-block\:\$48 {
+  ///   margin-block: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .m-block\:\$52 {
+  ///   margin-block: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .m-block\:\$56 {
+  ///   margin-block: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .m-block\:\$60 {
+  ///   margin-block: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .m-block\:\$64 {
+  ///   margin-block: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .m-block\:\$72 {
+  ///   margin-block: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .m-block\:\$80 {
+  ///   margin-block: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .m-block\:\$96 {
+  ///   margin-block: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .m-block\:\$px {
+  ///   margin-block: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .m-block\:\$0\.5 {
+  ///   margin-block: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .m-block\:\$1\.5 {
+  ///   margin-block: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .m-block\:\$2\.5 {
+  ///   margin-block: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .m-block\:\$3\.5 {
+  ///   margin-block: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .m-block\:\$-1 {
+  ///   margin-block: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .m-block\:\$-2 {
+  ///   margin-block: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .m-block\:\$-3 {
+  ///   margin-block: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .m-block\:\$-4 {
+  ///   margin-block: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .m-block\:\$-5 {
+  ///   margin-block: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .m-block\:\$-6 {
+  ///   margin-block: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .m-block\:\$-7 {
+  ///   margin-block: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .m-block\:\$-8 {
+  ///   margin-block: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .m-block\:\$-9 {
+  ///   margin-block: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .m-block\:\$-10 {
+  ///   margin-block: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .m-block\:\$-11 {
+  ///   margin-block: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .m-block\:\$-12 {
+  ///   margin-block: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .m-block\:\$-14 {
+  ///   margin-block: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .m-block\:\$-16 {
+  ///   margin-block: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .m-block\:\$-20 {
+  ///   margin-block: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .m-block\:\$-24 {
+  ///   margin-block: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .m-block\:\$-28 {
+  ///   margin-block: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .m-block\:\$-32 {
+  ///   margin-block: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .m-block\:\$-36 {
+  ///   margin-block: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .m-block\:\$-40 {
+  ///   margin-block: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .m-block\:\$-44 {
+  ///   margin-block: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .m-block\:\$-48 {
+  ///   margin-block: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .m-block\:\$-52 {
+  ///   margin-block: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .m-block\:\$-56 {
+  ///   margin-block: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .m-block\:\$-60 {
+  ///   margin-block: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .m-block\:\$-64 {
+  ///   margin-block: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .m-block\:\$-72 {
+  ///   margin-block: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .m-block\:\$-80 {
+  ///   margin-block: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .m-block\:\$-96 {
+  ///   margin-block: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .m-block\:\$-px {
+  ///   margin-block: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .m-block\:\$-0\.5 {
+  ///   margin-block: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .m-block\:\$-1\.5 {
+  ///   margin-block: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .m-block\:\$-2\.5 {
+  ///   margin-block: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .m-block\:\$-3\.5 {
+  ///   margin-block: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+}
+impl GeneratedValueSetMBlock for GeneratedAtomMBlock {}
+pub struct GeneratedAtomMbs(String);
+impl GeneratedSkribbleValue for GeneratedAtomMbs {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetMbs: GeneratedSkribbleValue {
+  /// ```css
+  /// .mbs\:\$0 {
+  ///   margin-block-start: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .mbs\:\$1 {
+  ///   margin-block-start: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .mbs\:\$2 {
+  ///   margin-block-start: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .mbs\:\$3 {
+  ///   margin-block-start: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .mbs\:\$4 {
+  ///   margin-block-start: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .mbs\:\$5 {
+  ///   margin-block-start: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .mbs\:\$6 {
+  ///   margin-block-start: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .mbs\:\$7 {
+  ///   margin-block-start: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .mbs\:\$8 {
+  ///   margin-block-start: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .mbs\:\$9 {
+  ///   margin-block-start: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .mbs\:\$10 {
+  ///   margin-block-start: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .mbs\:\$11 {
+  ///   margin-block-start: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .mbs\:\$12 {
+  ///   margin-block-start: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .mbs\:\$14 {
+  ///   margin-block-start: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .mbs\:\$16 {
+  ///   margin-block-start: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .mbs\:\$20 {
+  ///   margin-block-start: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .mbs\:\$24 {
+  ///   margin-block-start: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .mbs\:\$28 {
+  ///   margin-block-start: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .mbs\:\$32 {
+  ///   margin-block-start: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .mbs\:\$36 {
+  ///   margin-block-start: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .mbs\:\$40 {
+  ///   margin-block-start: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .mbs\:\$44 {
+  ///   margin-block-start: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .mbs\:\$48 {
+  ///   margin-block-start: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .mbs\:\$52 {
+  ///   margin-block-start: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .mbs\:\$56 {
+  ///   margin-block-start: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .mbs\:\$60 {
+  ///   margin-block-start: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .mbs\:\$64 {
+  ///   margin-block-start: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .mbs\:\$72 {
+  ///   margin-block-start: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .mbs\:\$80 {
+  ///   margin-block-start: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .mbs\:\$96 {
+  ///   margin-block-start: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .mbs\:\$px {
+  ///   margin-block-start: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .mbs\:\$0\.5 {
+  ///   margin-block-start: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .mbs\:\$1\.5 {
+  ///   margin-block-start: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .mbs\:\$2\.5 {
+  ///   margin-block-start: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .mbs\:\$3\.5 {
+  ///   margin-block-start: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .mbs\:\$-1 {
+  ///   margin-block-start: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .mbs\:\$-2 {
+  ///   margin-block-start: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .mbs\:\$-3 {
+  ///   margin-block-start: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .mbs\:\$-4 {
+  ///   margin-block-start: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .mbs\:\$-5 {
+  ///   margin-block-start: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .mbs\:\$-6 {
+  ///   margin-block-start: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .mbs\:\$-7 {
+  ///   margin-block-start: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .mbs\:\$-8 {
+  ///   margin-block-start: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .mbs\:\$-9 {
+  ///   margin-block-start: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .mbs\:\$-10 {
+  ///   margin-block-start: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .mbs\:\$-11 {
+  ///   margin-block-start: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .mbs\:\$-12 {
+  ///   margin-block-start: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .mbs\:\$-14 {
+  ///   margin-block-start: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .mbs\:\$-16 {
+  ///   margin-block-start: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .mbs\:\$-20 {
+  ///   margin-block-start: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .mbs\:\$-24 {
+  ///   margin-block-start: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .mbs\:\$-28 {
+  ///   margin-block-start: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .mbs\:\$-32 {
+  ///   margin-block-start: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .mbs\:\$-36 {
+  ///   margin-block-start: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .mbs\:\$-40 {
+  ///   margin-block-start: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .mbs\:\$-44 {
+  ///   margin-block-start: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .mbs\:\$-48 {
+  ///   margin-block-start: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .mbs\:\$-52 {
+  ///   margin-block-start: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .mbs\:\$-56 {
+  ///   margin-block-start: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .mbs\:\$-60 {
+  ///   margin-block-start: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .mbs\:\$-64 {
+  ///   margin-block-start: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .mbs\:\$-72 {
+  ///   margin-block-start: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .mbs\:\$-80 {
+  ///   margin-block-start: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .mbs\:\$-96 {
+  ///   margin-block-start: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .mbs\:\$-px {
+  ///   margin-block-start: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .mbs\:\$-0\.5 {
+  ///   margin-block-start: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .mbs\:\$-1\.5 {
+  ///   margin-block-start: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .mbs\:\$-2\.5 {
+  ///   margin-block-start: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .mbs\:\$-3\.5 {
+  ///   margin-block-start: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+}
+impl GeneratedValueSetMbs for GeneratedAtomMbs {}
+pub struct GeneratedAtomMbe(String);
+impl GeneratedSkribbleValue for GeneratedAtomMbe {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetMbe: GeneratedSkribbleValue {
+  /// ```css
+  /// .mbe\:\$0 {
+  ///   margin-block-end: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .mbe\:\$1 {
+  ///   margin-block-end: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .mbe\:\$2 {
+  ///   margin-block-end: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .mbe\:\$3 {
+  ///   margin-block-end: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .mbe\:\$4 {
+  ///   margin-block-end: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .mbe\:\$5 {
+  ///   margin-block-end: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .mbe\:\$6 {
+  ///   margin-block-end: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .mbe\:\$7 {
+  ///   margin-block-end: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .mbe\:\$8 {
+  ///   margin-block-end: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .mbe\:\$9 {
+  ///   margin-block-end: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .mbe\:\$10 {
+  ///   margin-block-end: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .mbe\:\$11 {
+  ///   margin-block-end: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .mbe\:\$12 {
+  ///   margin-block-end: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .mbe\:\$14 {
+  ///   margin-block-end: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .mbe\:\$16 {
+  ///   margin-block-end: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .mbe\:\$20 {
+  ///   margin-block-end: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .mbe\:\$24 {
+  ///   margin-block-end: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .mbe\:\$28 {
+  ///   margin-block-end: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .mbe\:\$32 {
+  ///   margin-block-end: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .mbe\:\$36 {
+  ///   margin-block-end: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .mbe\:\$40 {
+  ///   margin-block-end: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .mbe\:\$44 {
+  ///   margin-block-end: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .mbe\:\$48 {
+  ///   margin-block-end: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .mbe\:\$52 {
+  ///   margin-block-end: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .mbe\:\$56 {
+  ///   margin-block-end: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .mbe\:\$60 {
+  ///   margin-block-end: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .mbe\:\$64 {
+  ///   margin-block-end: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .mbe\:\$72 {
+  ///   margin-block-end: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .mbe\:\$80 {
+  ///   margin-block-end: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .mbe\:\$96 {
+  ///   margin-block-end: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .mbe\:\$px {
+  ///   margin-block-end: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .mbe\:\$0\.5 {
+  ///   margin-block-end: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .mbe\:\$1\.5 {
+  ///   margin-block-end: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .mbe\:\$2\.5 {
+  ///   margin-block-end: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .mbe\:\$3\.5 {
+  ///   margin-block-end: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .mbe\:\$-1 {
+  ///   margin-block-end: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .mbe\:\$-2 {
+  ///   margin-block-end: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .mbe\:\$-3 {
+  ///   margin-block-end: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .mbe\:\$-4 {
+  ///   margin-block-end: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .mbe\:\$-5 {
+  ///   margin-block-end: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .mbe\:\$-6 {
+  ///   margin-block-end: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .mbe\:\$-7 {
+  ///   margin-block-end: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .mbe\:\$-8 {
+  ///   margin-block-end: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .mbe\:\$-9 {
+  ///   margin-block-end: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .mbe\:\$-10 {
+  ///   margin-block-end: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .mbe\:\$-11 {
+  ///   margin-block-end: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .mbe\:\$-12 {
+  ///   margin-block-end: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .mbe\:\$-14 {
+  ///   margin-block-end: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .mbe\:\$-16 {
+  ///   margin-block-end: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .mbe\:\$-20 {
+  ///   margin-block-end: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .mbe\:\$-24 {
+  ///   margin-block-end: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .mbe\:\$-28 {
+  ///   margin-block-end: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .mbe\:\$-32 {
+  ///   margin-block-end: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .mbe\:\$-36 {
+  ///   margin-block-end: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .mbe\:\$-40 {
+  ///   margin-block-end: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .mbe\:\$-44 {
+  ///   margin-block-end: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .mbe\:\$-48 {
+  ///   margin-block-end: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .mbe\:\$-52 {
+  ///   margin-block-end: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .mbe\:\$-56 {
+  ///   margin-block-end: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .mbe\:\$-60 {
+  ///   margin-block-end: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .mbe\:\$-64 {
+  ///   margin-block-end: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .mbe\:\$-72 {
+  ///   margin-block-end: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .mbe\:\$-80 {
+  ///   margin-block-end: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .mbe\:\$-96 {
+  ///   margin-block-end: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .mbe\:\$-px {
+  ///   margin-block-end: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .mbe\:\$-0\.5 {
+  ///   margin-block-end: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .mbe\:\$-1\.5 {
+  ///   margin-block-end: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .mbe\:\$-2\.5 {
+  ///   margin-block-end: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .mbe\:\$-3\.5 {
+  ///   margin-block-end: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+}
+impl GeneratedValueSetMbe for GeneratedAtomMbe {}
+pub struct GeneratedAtomMInline(String);
+impl GeneratedSkribbleValue for GeneratedAtomMInline {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetMInline: GeneratedSkribbleValue {
+  /// ```css
+  /// .m-inline\:\$0 {
+  ///   margin-inline: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .m-inline\:\$1 {
+  ///   margin-inline: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .m-inline\:\$2 {
+  ///   margin-inline: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .m-inline\:\$3 {
+  ///   margin-inline: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .m-inline\:\$4 {
+  ///   margin-inline: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .m-inline\:\$5 {
+  ///   margin-inline: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .m-inline\:\$6 {
+  ///   margin-inline: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .m-inline\:\$7 {
+  ///   margin-inline: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .m-inline\:\$8 {
+  ///   margin-inline: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .m-inline\:\$9 {
+  ///   margin-inline: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .m-inline\:\$10 {
+  ///   margin-inline: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .m-inline\:\$11 {
+  ///   margin-inline: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .m-inline\:\$12 {
+  ///   margin-inline: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .m-inline\:\$14 {
+  ///   margin-inline: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .m-inline\:\$16 {
+  ///   margin-inline: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .m-inline\:\$20 {
+  ///   margin-inline: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .m-inline\:\$24 {
+  ///   margin-inline: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .m-inline\:\$28 {
+  ///   margin-inline: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .m-inline\:\$32 {
+  ///   margin-inline: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .m-inline\:\$36 {
+  ///   margin-inline: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .m-inline\:\$40 {
+  ///   margin-inline: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .m-inline\:\$44 {
+  ///   margin-inline: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .m-inline\:\$48 {
+  ///   margin-inline: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .m-inline\:\$52 {
+  ///   margin-inline: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .m-inline\:\$56 {
+  ///   margin-inline: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .m-inline\:\$60 {
+  ///   margin-inline: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .m-inline\:\$64 {
+  ///   margin-inline: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .m-inline\:\$72 {
+  ///   margin-inline: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .m-inline\:\$80 {
+  ///   margin-inline: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .m-inline\:\$96 {
+  ///   margin-inline: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .m-inline\:\$px {
+  ///   margin-inline: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .m-inline\:\$0\.5 {
+  ///   margin-inline: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .m-inline\:\$1\.5 {
+  ///   margin-inline: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .m-inline\:\$2\.5 {
+  ///   margin-inline: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .m-inline\:\$3\.5 {
+  ///   margin-inline: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .m-inline\:\$-1 {
+  ///   margin-inline: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .m-inline\:\$-2 {
+  ///   margin-inline: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .m-inline\:\$-3 {
+  ///   margin-inline: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .m-inline\:\$-4 {
+  ///   margin-inline: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .m-inline\:\$-5 {
+  ///   margin-inline: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .m-inline\:\$-6 {
+  ///   margin-inline: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .m-inline\:\$-7 {
+  ///   margin-inline: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .m-inline\:\$-8 {
+  ///   margin-inline: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .m-inline\:\$-9 {
+  ///   margin-inline: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .m-inline\:\$-10 {
+  ///   margin-inline: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .m-inline\:\$-11 {
+  ///   margin-inline: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .m-inline\:\$-12 {
+  ///   margin-inline: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .m-inline\:\$-14 {
+  ///   margin-inline: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .m-inline\:\$-16 {
+  ///   margin-inline: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .m-inline\:\$-20 {
+  ///   margin-inline: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .m-inline\:\$-24 {
+  ///   margin-inline: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .m-inline\:\$-28 {
+  ///   margin-inline: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .m-inline\:\$-32 {
+  ///   margin-inline: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .m-inline\:\$-36 {
+  ///   margin-inline: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .m-inline\:\$-40 {
+  ///   margin-inline: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .m-inline\:\$-44 {
+  ///   margin-inline: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .m-inline\:\$-48 {
+  ///   margin-inline: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .m-inline\:\$-52 {
+  ///   margin-inline: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .m-inline\:\$-56 {
+  ///   margin-inline: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .m-inline\:\$-60 {
+  ///   margin-inline: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .m-inline\:\$-64 {
+  ///   margin-inline: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .m-inline\:\$-72 {
+  ///   margin-inline: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .m-inline\:\$-80 {
+  ///   margin-inline: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .m-inline\:\$-96 {
+  ///   margin-inline: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .m-inline\:\$-px {
+  ///   margin-inline: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .m-inline\:\$-0\.5 {
+  ///   margin-inline: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .m-inline\:\$-1\.5 {
+  ///   margin-inline: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .m-inline\:\$-2\.5 {
+  ///   margin-inline: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .m-inline\:\$-3\.5 {
+  ///   margin-inline: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+}
+impl GeneratedValueSetMInline for GeneratedAtomMInline {}
+pub struct GeneratedAtomMs(String);
+impl GeneratedSkribbleValue for GeneratedAtomMs {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetMs: GeneratedSkribbleValue {
+  /// ```css
+  /// .ms\:\$0 {
+  ///   margin-inline-start: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .ms\:\$1 {
+  ///   margin-inline-start: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .ms\:\$2 {
+  ///   margin-inline-start: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .ms\:\$3 {
+  ///   margin-inline-start: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .ms\:\$4 {
+  ///   margin-inline-start: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .ms\:\$5 {
+  ///   margin-inline-start: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .ms\:\$6 {
+  ///   margin-inline-start: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .ms\:\$7 {
+  ///   margin-inline-start: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .ms\:\$8 {
+  ///   margin-inline-start: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .ms\:\$9 {
+  ///   margin-inline-start: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .ms\:\$10 {
+  ///   margin-inline-start: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .ms\:\$11 {
+  ///   margin-inline-start: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .ms\:\$12 {
+  ///   margin-inline-start: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .ms\:\$14 {
+  ///   margin-inline-start: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .ms\:\$16 {
+  ///   margin-inline-start: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .ms\:\$20 {
+  ///   margin-inline-start: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .ms\:\$24 {
+  ///   margin-inline-start: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .ms\:\$28 {
+  ///   margin-inline-start: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .ms\:\$32 {
+  ///   margin-inline-start: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .ms\:\$36 {
+  ///   margin-inline-start: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .ms\:\$40 {
+  ///   margin-inline-start: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .ms\:\$44 {
+  ///   margin-inline-start: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .ms\:\$48 {
+  ///   margin-inline-start: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .ms\:\$52 {
+  ///   margin-inline-start: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .ms\:\$56 {
+  ///   margin-inline-start: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .ms\:\$60 {
+  ///   margin-inline-start: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .ms\:\$64 {
+  ///   margin-inline-start: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .ms\:\$72 {
+  ///   margin-inline-start: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .ms\:\$80 {
+  ///   margin-inline-start: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .ms\:\$96 {
+  ///   margin-inline-start: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .ms\:\$px {
+  ///   margin-inline-start: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .ms\:\$0\.5 {
+  ///   margin-inline-start: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .ms\:\$1\.5 {
+  ///   margin-inline-start: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .ms\:\$2\.5 {
+  ///   margin-inline-start: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .ms\:\$3\.5 {
+  ///   margin-inline-start: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .ms\:\$-1 {
+  ///   margin-inline-start: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .ms\:\$-2 {
+  ///   margin-inline-start: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .ms\:\$-3 {
+  ///   margin-inline-start: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .ms\:\$-4 {
+  ///   margin-inline-start: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .ms\:\$-5 {
+  ///   margin-inline-start: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .ms\:\$-6 {
+  ///   margin-inline-start: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .ms\:\$-7 {
+  ///   margin-inline-start: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .ms\:\$-8 {
+  ///   margin-inline-start: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .ms\:\$-9 {
+  ///   margin-inline-start: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .ms\:\$-10 {
+  ///   margin-inline-start: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .ms\:\$-11 {
+  ///   margin-inline-start: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .ms\:\$-12 {
+  ///   margin-inline-start: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .ms\:\$-14 {
+  ///   margin-inline-start: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .ms\:\$-16 {
+  ///   margin-inline-start: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .ms\:\$-20 {
+  ///   margin-inline-start: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .ms\:\$-24 {
+  ///   margin-inline-start: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .ms\:\$-28 {
+  ///   margin-inline-start: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .ms\:\$-32 {
+  ///   margin-inline-start: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .ms\:\$-36 {
+  ///   margin-inline-start: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .ms\:\$-40 {
+  ///   margin-inline-start: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .ms\:\$-44 {
+  ///   margin-inline-start: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .ms\:\$-48 {
+  ///   margin-inline-start: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .ms\:\$-52 {
+  ///   margin-inline-start: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .ms\:\$-56 {
+  ///   margin-inline-start: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .ms\:\$-60 {
+  ///   margin-inline-start: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .ms\:\$-64 {
+  ///   margin-inline-start: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .ms\:\$-72 {
+  ///   margin-inline-start: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .ms\:\$-80 {
+  ///   margin-inline-start: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .ms\:\$-96 {
+  ///   margin-inline-start: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .ms\:\$-px {
+  ///   margin-inline-start: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .ms\:\$-0\.5 {
+  ///   margin-inline-start: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .ms\:\$-1\.5 {
+  ///   margin-inline-start: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .ms\:\$-2\.5 {
+  ///   margin-inline-start: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .ms\:\$-3\.5 {
+  ///   margin-inline-start: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+}
+impl GeneratedValueSetMs for GeneratedAtomMs {}
+pub struct GeneratedAtomMe(String);
+impl GeneratedSkribbleValue for GeneratedAtomMe {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetMe: GeneratedSkribbleValue {
+  /// ```css
+  /// .me\:\$0 {
+  ///   margin-inline-end: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .me\:\$1 {
+  ///   margin-inline-end: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .me\:\$2 {
+  ///   margin-inline-end: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .me\:\$3 {
+  ///   margin-inline-end: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .me\:\$4 {
+  ///   margin-inline-end: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .me\:\$5 {
+  ///   margin-inline-end: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .me\:\$6 {
+  ///   margin-inline-end: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .me\:\$7 {
+  ///   margin-inline-end: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .me\:\$8 {
+  ///   margin-inline-end: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .me\:\$9 {
+  ///   margin-inline-end: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .me\:\$10 {
+  ///   margin-inline-end: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .me\:\$11 {
+  ///   margin-inline-end: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .me\:\$12 {
+  ///   margin-inline-end: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .me\:\$14 {
+  ///   margin-inline-end: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .me\:\$16 {
+  ///   margin-inline-end: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .me\:\$20 {
+  ///   margin-inline-end: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .me\:\$24 {
+  ///   margin-inline-end: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .me\:\$28 {
+  ///   margin-inline-end: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .me\:\$32 {
+  ///   margin-inline-end: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .me\:\$36 {
+  ///   margin-inline-end: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .me\:\$40 {
+  ///   margin-inline-end: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .me\:\$44 {
+  ///   margin-inline-end: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .me\:\$48 {
+  ///   margin-inline-end: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .me\:\$52 {
+  ///   margin-inline-end: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .me\:\$56 {
+  ///   margin-inline-end: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .me\:\$60 {
+  ///   margin-inline-end: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .me\:\$64 {
+  ///   margin-inline-end: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .me\:\$72 {
+  ///   margin-inline-end: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .me\:\$80 {
+  ///   margin-inline-end: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .me\:\$96 {
+  ///   margin-inline-end: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .me\:\$px {
+  ///   margin-inline-end: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .me\:\$0\.5 {
+  ///   margin-inline-end: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .me\:\$1\.5 {
+  ///   margin-inline-end: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .me\:\$2\.5 {
+  ///   margin-inline-end: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .me\:\$3\.5 {
+  ///   margin-inline-end: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .me\:\$-1 {
+  ///   margin-inline-end: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .me\:\$-2 {
+  ///   margin-inline-end: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .me\:\$-3 {
+  ///   margin-inline-end: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .me\:\$-4 {
+  ///   margin-inline-end: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .me\:\$-5 {
+  ///   margin-inline-end: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .me\:\$-6 {
+  ///   margin-inline-end: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .me\:\$-7 {
+  ///   margin-inline-end: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .me\:\$-8 {
+  ///   margin-inline-end: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .me\:\$-9 {
+  ///   margin-inline-end: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .me\:\$-10 {
+  ///   margin-inline-end: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .me\:\$-11 {
+  ///   margin-inline-end: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .me\:\$-12 {
+  ///   margin-inline-end: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .me\:\$-14 {
+  ///   margin-inline-end: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .me\:\$-16 {
+  ///   margin-inline-end: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .me\:\$-20 {
+  ///   margin-inline-end: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .me\:\$-24 {
+  ///   margin-inline-end: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .me\:\$-28 {
+  ///   margin-inline-end: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .me\:\$-32 {
+  ///   margin-inline-end: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .me\:\$-36 {
+  ///   margin-inline-end: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .me\:\$-40 {
+  ///   margin-inline-end: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .me\:\$-44 {
+  ///   margin-inline-end: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .me\:\$-48 {
+  ///   margin-inline-end: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .me\:\$-52 {
+  ///   margin-inline-end: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .me\:\$-56 {
+  ///   margin-inline-end: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .me\:\$-60 {
+  ///   margin-inline-end: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .me\:\$-64 {
+  ///   margin-inline-end: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .me\:\$-72 {
+  ///   margin-inline-end: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .me\:\$-80 {
+  ///   margin-inline-end: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .me\:\$-96 {
+  ///   margin-inline-end: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .me\:\$-px {
+  ///   margin-inline-end: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .me\:\$-0\.5 {
+  ///   margin-inline-end: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .me\:\$-1\.5 {
+  ///   margin-inline-end: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .me\:\$-2\.5 {
+  ///   margin-inline-end: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .me\:\$-3\.5 {
+  ///   margin-inline-end: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+}
+impl GeneratedValueSetMe for GeneratedAtomMe {}
 pub struct GeneratedAtomMt(String);
 impl GeneratedSkribbleValue for GeneratedAtomMt {
   #[inline]
@@ -14731,6 +23603,312 @@ pub trait GeneratedValueSetMt: GeneratedSkribbleValue {
   #[inline]
   fn n3_5(&self) -> String {
     self.append_value("3.5")
+  }
+  /// ```css
+  /// .mt\:\$-1 {
+  ///   margin-top: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .mt\:\$-2 {
+  ///   margin-top: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .mt\:\$-3 {
+  ///   margin-top: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .mt\:\$-4 {
+  ///   margin-top: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .mt\:\$-5 {
+  ///   margin-top: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .mt\:\$-6 {
+  ///   margin-top: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .mt\:\$-7 {
+  ///   margin-top: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .mt\:\$-8 {
+  ///   margin-top: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .mt\:\$-9 {
+  ///   margin-top: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .mt\:\$-10 {
+  ///   margin-top: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .mt\:\$-11 {
+  ///   margin-top: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .mt\:\$-12 {
+  ///   margin-top: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .mt\:\$-14 {
+  ///   margin-top: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .mt\:\$-16 {
+  ///   margin-top: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .mt\:\$-20 {
+  ///   margin-top: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .mt\:\$-24 {
+  ///   margin-top: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .mt\:\$-28 {
+  ///   margin-top: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .mt\:\$-32 {
+  ///   margin-top: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .mt\:\$-36 {
+  ///   margin-top: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .mt\:\$-40 {
+  ///   margin-top: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .mt\:\$-44 {
+  ///   margin-top: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .mt\:\$-48 {
+  ///   margin-top: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .mt\:\$-52 {
+  ///   margin-top: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .mt\:\$-56 {
+  ///   margin-top: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .mt\:\$-60 {
+  ///   margin-top: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .mt\:\$-64 {
+  ///   margin-top: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .mt\:\$-72 {
+  ///   margin-top: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .mt\:\$-80 {
+  ///   margin-top: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .mt\:\$-96 {
+  ///   margin-top: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .mt\:\$-px {
+  ///   margin-top: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .mt\:\$-0\.5 {
+  ///   margin-top: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .mt\:\$-1\.5 {
+  ///   margin-top: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .mt\:\$-2\.5 {
+  ///   margin-top: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .mt\:\$-3\.5 {
+  ///   margin-top: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
   }
 }
 impl GeneratedValueSetMt for GeneratedAtomMt {}
@@ -15062,6 +24240,312 @@ pub trait GeneratedValueSetMr: GeneratedSkribbleValue {
   fn n3_5(&self) -> String {
     self.append_value("3.5")
   }
+  /// ```css
+  /// .mr\:\$-1 {
+  ///   margin-right: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .mr\:\$-2 {
+  ///   margin-right: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .mr\:\$-3 {
+  ///   margin-right: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .mr\:\$-4 {
+  ///   margin-right: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .mr\:\$-5 {
+  ///   margin-right: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .mr\:\$-6 {
+  ///   margin-right: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .mr\:\$-7 {
+  ///   margin-right: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .mr\:\$-8 {
+  ///   margin-right: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .mr\:\$-9 {
+  ///   margin-right: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .mr\:\$-10 {
+  ///   margin-right: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .mr\:\$-11 {
+  ///   margin-right: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .mr\:\$-12 {
+  ///   margin-right: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .mr\:\$-14 {
+  ///   margin-right: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .mr\:\$-16 {
+  ///   margin-right: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .mr\:\$-20 {
+  ///   margin-right: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .mr\:\$-24 {
+  ///   margin-right: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .mr\:\$-28 {
+  ///   margin-right: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .mr\:\$-32 {
+  ///   margin-right: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .mr\:\$-36 {
+  ///   margin-right: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .mr\:\$-40 {
+  ///   margin-right: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .mr\:\$-44 {
+  ///   margin-right: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .mr\:\$-48 {
+  ///   margin-right: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .mr\:\$-52 {
+  ///   margin-right: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .mr\:\$-56 {
+  ///   margin-right: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .mr\:\$-60 {
+  ///   margin-right: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .mr\:\$-64 {
+  ///   margin-right: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .mr\:\$-72 {
+  ///   margin-right: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .mr\:\$-80 {
+  ///   margin-right: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .mr\:\$-96 {
+  ///   margin-right: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .mr\:\$-px {
+  ///   margin-right: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .mr\:\$-0\.5 {
+  ///   margin-right: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .mr\:\$-1\.5 {
+  ///   margin-right: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .mr\:\$-2\.5 {
+  ///   margin-right: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .mr\:\$-3\.5 {
+  ///   margin-right: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
 }
 impl GeneratedValueSetMr for GeneratedAtomMr {}
 pub struct GeneratedAtomMb(String);
@@ -15391,6 +24875,312 @@ pub trait GeneratedValueSetMb: GeneratedSkribbleValue {
   #[inline]
   fn n3_5(&self) -> String {
     self.append_value("3.5")
+  }
+  /// ```css
+  /// .mb\:\$-1 {
+  ///   margin-bottom: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .mb\:\$-2 {
+  ///   margin-bottom: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .mb\:\$-3 {
+  ///   margin-bottom: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .mb\:\$-4 {
+  ///   margin-bottom: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .mb\:\$-5 {
+  ///   margin-bottom: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .mb\:\$-6 {
+  ///   margin-bottom: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .mb\:\$-7 {
+  ///   margin-bottom: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .mb\:\$-8 {
+  ///   margin-bottom: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .mb\:\$-9 {
+  ///   margin-bottom: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .mb\:\$-10 {
+  ///   margin-bottom: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .mb\:\$-11 {
+  ///   margin-bottom: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .mb\:\$-12 {
+  ///   margin-bottom: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .mb\:\$-14 {
+  ///   margin-bottom: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .mb\:\$-16 {
+  ///   margin-bottom: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .mb\:\$-20 {
+  ///   margin-bottom: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .mb\:\$-24 {
+  ///   margin-bottom: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .mb\:\$-28 {
+  ///   margin-bottom: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .mb\:\$-32 {
+  ///   margin-bottom: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .mb\:\$-36 {
+  ///   margin-bottom: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .mb\:\$-40 {
+  ///   margin-bottom: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .mb\:\$-44 {
+  ///   margin-bottom: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .mb\:\$-48 {
+  ///   margin-bottom: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .mb\:\$-52 {
+  ///   margin-bottom: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .mb\:\$-56 {
+  ///   margin-bottom: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .mb\:\$-60 {
+  ///   margin-bottom: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .mb\:\$-64 {
+  ///   margin-bottom: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .mb\:\$-72 {
+  ///   margin-bottom: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .mb\:\$-80 {
+  ///   margin-bottom: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .mb\:\$-96 {
+  ///   margin-bottom: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .mb\:\$-px {
+  ///   margin-bottom: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .mb\:\$-0\.5 {
+  ///   margin-bottom: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .mb\:\$-1\.5 {
+  ///   margin-bottom: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .mb\:\$-2\.5 {
+  ///   margin-bottom: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .mb\:\$-3\.5 {
+  ///   margin-bottom: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
   }
 }
 impl GeneratedValueSetMb for GeneratedAtomMb {}
@@ -15722,8 +25512,1724 @@ pub trait GeneratedValueSetMl: GeneratedSkribbleValue {
   fn n3_5(&self) -> String {
     self.append_value("3.5")
   }
+  /// ```css
+  /// .ml\:\$-1 {
+  ///   margin-left: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .ml\:\$-2 {
+  ///   margin-left: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .ml\:\$-3 {
+  ///   margin-left: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .ml\:\$-4 {
+  ///   margin-left: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .ml\:\$-5 {
+  ///   margin-left: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .ml\:\$-6 {
+  ///   margin-left: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .ml\:\$-7 {
+  ///   margin-left: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .ml\:\$-8 {
+  ///   margin-left: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .ml\:\$-9 {
+  ///   margin-left: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .ml\:\$-10 {
+  ///   margin-left: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .ml\:\$-11 {
+  ///   margin-left: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .ml\:\$-12 {
+  ///   margin-left: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .ml\:\$-14 {
+  ///   margin-left: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .ml\:\$-16 {
+  ///   margin-left: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .ml\:\$-20 {
+  ///   margin-left: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .ml\:\$-24 {
+  ///   margin-left: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .ml\:\$-28 {
+  ///   margin-left: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .ml\:\$-32 {
+  ///   margin-left: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .ml\:\$-36 {
+  ///   margin-left: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .ml\:\$-40 {
+  ///   margin-left: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .ml\:\$-44 {
+  ///   margin-left: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .ml\:\$-48 {
+  ///   margin-left: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .ml\:\$-52 {
+  ///   margin-left: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .ml\:\$-56 {
+  ///   margin-left: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .ml\:\$-60 {
+  ///   margin-left: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .ml\:\$-64 {
+  ///   margin-left: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .ml\:\$-72 {
+  ///   margin-left: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .ml\:\$-80 {
+  ///   margin-left: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .ml\:\$-96 {
+  ///   margin-left: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .ml\:\$-px {
+  ///   margin-left: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .ml\:\$-0\.5 {
+  ///   margin-left: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .ml\:\$-1\.5 {
+  ///   margin-left: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .ml\:\$-2\.5 {
+  ///   margin-left: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .ml\:\$-3\.5 {
+  ///   margin-left: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
 }
 impl GeneratedValueSetMl for GeneratedAtomMl {}
+pub struct GeneratedAtomSpaceX(String);
+impl GeneratedSkribbleValue for GeneratedAtomSpaceX {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetSpaceX: GeneratedSkribbleValue {
+  /// ```css
+  /// .space-x\:\$0 {
+  ///   margin-right: calc(0px * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(0px * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .space-x\:\$1 {
+  ///   margin-right: calc(0.25rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(0.25rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .space-x\:\$2 {
+  ///   margin-right: calc(0.5rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(0.5rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .space-x\:\$3 {
+  ///   margin-right: calc(0.75rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(0.75rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .space-x\:\$4 {
+  ///   margin-right: calc(1rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(1rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .space-x\:\$5 {
+  ///   margin-right: calc(1.25rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(1.25rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .space-x\:\$6 {
+  ///   margin-right: calc(1.5rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(1.5rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .space-x\:\$7 {
+  ///   margin-right: calc(1.75rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(1.75rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .space-x\:\$8 {
+  ///   margin-right: calc(2rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(2rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .space-x\:\$9 {
+  ///   margin-right: calc(2.25rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(2.25rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .space-x\:\$10 {
+  ///   margin-right: calc(2.5rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(2.5rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .space-x\:\$11 {
+  ///   margin-right: calc(2.75rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(2.75rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .space-x\:\$12 {
+  ///   margin-right: calc(3rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(3rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .space-x\:\$14 {
+  ///   margin-right: calc(3.5rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(3.5rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .space-x\:\$16 {
+  ///   margin-right: calc(4rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(4rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .space-x\:\$20 {
+  ///   margin-right: calc(5rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(5rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .space-x\:\$24 {
+  ///   margin-right: calc(6rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(6rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .space-x\:\$28 {
+  ///   margin-right: calc(7rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(7rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .space-x\:\$32 {
+  ///   margin-right: calc(8rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(8rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .space-x\:\$36 {
+  ///   margin-right: calc(9rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(9rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .space-x\:\$40 {
+  ///   margin-right: calc(10rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(10rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .space-x\:\$44 {
+  ///   margin-right: calc(11rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(11rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .space-x\:\$48 {
+  ///   margin-right: calc(12rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(12rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .space-x\:\$52 {
+  ///   margin-right: calc(13rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(13rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .space-x\:\$56 {
+  ///   margin-right: calc(14rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(14rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .space-x\:\$60 {
+  ///   margin-right: calc(15rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(15rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .space-x\:\$64 {
+  ///   margin-right: calc(16rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(16rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .space-x\:\$72 {
+  ///   margin-right: calc(18rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(18rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .space-x\:\$80 {
+  ///   margin-right: calc(20rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(20rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .space-x\:\$96 {
+  ///   margin-right: calc(24rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(24rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .space-x\:\$px {
+  ///   margin-right: calc(1px * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(1px * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .space-x\:\$0\.5 {
+  ///   margin-right: calc(0.125rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(0.125rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .space-x\:\$1\.5 {
+  ///   margin-right: calc(0.375rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(0.375rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .space-x\:\$2\.5 {
+  ///   margin-right: calc(0.625rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(0.625rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .space-x\:\$3\.5 {
+  ///   margin-right: calc(0.875rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(0.875rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .space-x\:\$-1 {
+  ///   margin-right: calc(-0.25rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-0.25rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .space-x\:\$-2 {
+  ///   margin-right: calc(-0.5rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-0.5rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .space-x\:\$-3 {
+  ///   margin-right: calc(-0.75rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-0.75rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .space-x\:\$-4 {
+  ///   margin-right: calc(-1rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-1rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .space-x\:\$-5 {
+  ///   margin-right: calc(-1.25rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-1.25rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .space-x\:\$-6 {
+  ///   margin-right: calc(-1.5rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-1.5rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .space-x\:\$-7 {
+  ///   margin-right: calc(-1.75rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-1.75rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .space-x\:\$-8 {
+  ///   margin-right: calc(-2rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-2rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .space-x\:\$-9 {
+  ///   margin-right: calc(-2.25rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-2.25rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .space-x\:\$-10 {
+  ///   margin-right: calc(-2.5rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-2.5rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .space-x\:\$-11 {
+  ///   margin-right: calc(-2.75rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-2.75rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .space-x\:\$-12 {
+  ///   margin-right: calc(-3rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-3rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .space-x\:\$-14 {
+  ///   margin-right: calc(-3.5rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-3.5rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .space-x\:\$-16 {
+  ///   margin-right: calc(-4rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-4rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .space-x\:\$-20 {
+  ///   margin-right: calc(-5rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-5rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .space-x\:\$-24 {
+  ///   margin-right: calc(-6rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-6rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .space-x\:\$-28 {
+  ///   margin-right: calc(-7rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-7rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .space-x\:\$-32 {
+  ///   margin-right: calc(-8rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-8rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .space-x\:\$-36 {
+  ///   margin-right: calc(-9rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-9rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .space-x\:\$-40 {
+  ///   margin-right: calc(-10rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-10rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .space-x\:\$-44 {
+  ///   margin-right: calc(-11rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-11rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .space-x\:\$-48 {
+  ///   margin-right: calc(-12rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-12rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .space-x\:\$-52 {
+  ///   margin-right: calc(-13rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-13rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .space-x\:\$-56 {
+  ///   margin-right: calc(-14rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-14rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .space-x\:\$-60 {
+  ///   margin-right: calc(-15rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-15rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .space-x\:\$-64 {
+  ///   margin-right: calc(-16rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-16rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .space-x\:\$-72 {
+  ///   margin-right: calc(-18rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-18rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .space-x\:\$-80 {
+  ///   margin-right: calc(-20rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-20rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .space-x\:\$-96 {
+  ///   margin-right: calc(-24rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-24rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .space-x\:\$-px {
+  ///   margin-right: calc(-1px * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-1px * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .space-x\:\$-0\.5 {
+  ///   margin-right: calc(-0.125rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-0.125rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .space-x\:\$-1\.5 {
+  ///   margin-right: calc(-0.375rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-0.375rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .space-x\:\$-2\.5 {
+  ///   margin-right: calc(-0.625rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-0.625rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .space-x\:\$-3\.5 {
+  ///   margin-right: calc(-0.875rem * var(--sk-space-x-reverse, 0));
+  ///   margin-left: calc(-0.875rem * calc(1 - var(--sk-space-x-reverse, 0)));
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+}
+impl GeneratedValueSetSpaceX for GeneratedAtomSpaceX {}
+pub struct GeneratedAtomSpaceY(String);
+impl GeneratedSkribbleValue for GeneratedAtomSpaceY {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetSpaceY: GeneratedSkribbleValue {
+  /// ```css
+  /// .space-y\:\$0 {
+  ///   margin-top: calc(0px * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(0px * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .space-y\:\$1 {
+  ///   margin-top: calc(0.25rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(0.25rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .space-y\:\$2 {
+  ///   margin-top: calc(0.5rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(0.5rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .space-y\:\$3 {
+  ///   margin-top: calc(0.75rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(0.75rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .space-y\:\$4 {
+  ///   margin-top: calc(1rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(1rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .space-y\:\$5 {
+  ///   margin-top: calc(1.25rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(1.25rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .space-y\:\$6 {
+  ///   margin-top: calc(1.5rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(1.5rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .space-y\:\$7 {
+  ///   margin-top: calc(1.75rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(1.75rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .space-y\:\$8 {
+  ///   margin-top: calc(2rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(2rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .space-y\:\$9 {
+  ///   margin-top: calc(2.25rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(2.25rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .space-y\:\$10 {
+  ///   margin-top: calc(2.5rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(2.5rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .space-y\:\$11 {
+  ///   margin-top: calc(2.75rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(2.75rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .space-y\:\$12 {
+  ///   margin-top: calc(3rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(3rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .space-y\:\$14 {
+  ///   margin-top: calc(3.5rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(3.5rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .space-y\:\$16 {
+  ///   margin-top: calc(4rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(4rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .space-y\:\$20 {
+  ///   margin-top: calc(5rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(5rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .space-y\:\$24 {
+  ///   margin-top: calc(6rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(6rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .space-y\:\$28 {
+  ///   margin-top: calc(7rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(7rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .space-y\:\$32 {
+  ///   margin-top: calc(8rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(8rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .space-y\:\$36 {
+  ///   margin-top: calc(9rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(9rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .space-y\:\$40 {
+  ///   margin-top: calc(10rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(10rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .space-y\:\$44 {
+  ///   margin-top: calc(11rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(11rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .space-y\:\$48 {
+  ///   margin-top: calc(12rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(12rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .space-y\:\$52 {
+  ///   margin-top: calc(13rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(13rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .space-y\:\$56 {
+  ///   margin-top: calc(14rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(14rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .space-y\:\$60 {
+  ///   margin-top: calc(15rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(15rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .space-y\:\$64 {
+  ///   margin-top: calc(16rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(16rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .space-y\:\$72 {
+  ///   margin-top: calc(18rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(18rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .space-y\:\$80 {
+  ///   margin-top: calc(20rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(20rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .space-y\:\$96 {
+  ///   margin-top: calc(24rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(24rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .space-y\:\$px {
+  ///   margin-top: calc(1px * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(1px * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .space-y\:\$0\.5 {
+  ///   margin-top: calc(0.125rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(0.125rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .space-y\:\$1\.5 {
+  ///   margin-top: calc(0.375rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(0.375rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .space-y\:\$2\.5 {
+  ///   margin-top: calc(0.625rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(0.625rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .space-y\:\$3\.5 {
+  ///   margin-top: calc(0.875rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(0.875rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .space-y\:\$-1 {
+  ///   margin-top: calc(-0.25rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-0.25rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .space-y\:\$-2 {
+  ///   margin-top: calc(-0.5rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-0.5rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .space-y\:\$-3 {
+  ///   margin-top: calc(-0.75rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-0.75rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .space-y\:\$-4 {
+  ///   margin-top: calc(-1rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-1rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .space-y\:\$-5 {
+  ///   margin-top: calc(-1.25rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-1.25rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .space-y\:\$-6 {
+  ///   margin-top: calc(-1.5rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-1.5rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .space-y\:\$-7 {
+  ///   margin-top: calc(-1.75rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-1.75rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .space-y\:\$-8 {
+  ///   margin-top: calc(-2rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-2rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .space-y\:\$-9 {
+  ///   margin-top: calc(-2.25rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-2.25rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .space-y\:\$-10 {
+  ///   margin-top: calc(-2.5rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-2.5rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .space-y\:\$-11 {
+  ///   margin-top: calc(-2.75rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-2.75rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .space-y\:\$-12 {
+  ///   margin-top: calc(-3rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-3rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .space-y\:\$-14 {
+  ///   margin-top: calc(-3.5rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-3.5rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .space-y\:\$-16 {
+  ///   margin-top: calc(-4rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-4rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .space-y\:\$-20 {
+  ///   margin-top: calc(-5rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-5rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .space-y\:\$-24 {
+  ///   margin-top: calc(-6rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-6rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .space-y\:\$-28 {
+  ///   margin-top: calc(-7rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-7rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .space-y\:\$-32 {
+  ///   margin-top: calc(-8rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-8rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .space-y\:\$-36 {
+  ///   margin-top: calc(-9rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-9rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .space-y\:\$-40 {
+  ///   margin-top: calc(-10rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-10rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .space-y\:\$-44 {
+  ///   margin-top: calc(-11rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-11rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .space-y\:\$-48 {
+  ///   margin-top: calc(-12rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-12rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .space-y\:\$-52 {
+  ///   margin-top: calc(-13rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-13rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .space-y\:\$-56 {
+  ///   margin-top: calc(-14rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-14rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .space-y\:\$-60 {
+  ///   margin-top: calc(-15rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-15rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .space-y\:\$-64 {
+  ///   margin-top: calc(-16rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-16rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .space-y\:\$-72 {
+  ///   margin-top: calc(-18rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-18rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .space-y\:\$-80 {
+  ///   margin-top: calc(-20rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-20rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .space-y\:\$-96 {
+  ///   margin-top: calc(-24rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-24rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .space-y\:\$-px {
+  ///   margin-top: calc(-1px * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-1px * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .space-y\:\$-0\.5 {
+  ///   margin-top: calc(-0.125rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-0.125rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .space-y\:\$-1\.5 {
+  ///   margin-top: calc(-0.375rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-0.375rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .space-y\:\$-2\.5 {
+  ///   margin-top: calc(-0.625rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-0.625rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .space-y\:\$-3\.5 {
+  ///   margin-top: calc(-0.875rem * calc(1 - var(--sk-space-y-reverse, 0)));
+  ///   margin-bottom: calc(-0.875rem * var(--sk-space-y-reverse, 0));
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+}
+impl GeneratedValueSetSpaceY for GeneratedAtomSpaceY {}
 pub struct GeneratedAtomZ(String);
 impl GeneratedSkribbleValue for GeneratedAtomZ {
   #[inline]
@@ -18009,6 +29515,366 @@ pub trait GeneratedValueSetInset: GeneratedSkribbleValue {
   fn full(&self) -> String {
     self.append_value("full")
   }
+  /// ```css
+  /// .inset\:\$-1 {
+  ///   inset: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .inset\:\$-2 {
+  ///   inset: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .inset\:\$-3 {
+  ///   inset: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .inset\:\$-4 {
+  ///   inset: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .inset\:\$-5 {
+  ///   inset: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .inset\:\$-6 {
+  ///   inset: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .inset\:\$-7 {
+  ///   inset: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .inset\:\$-8 {
+  ///   inset: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .inset\:\$-9 {
+  ///   inset: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .inset\:\$-10 {
+  ///   inset: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .inset\:\$-11 {
+  ///   inset: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .inset\:\$-12 {
+  ///   inset: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .inset\:\$-14 {
+  ///   inset: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .inset\:\$-16 {
+  ///   inset: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .inset\:\$-20 {
+  ///   inset: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .inset\:\$-24 {
+  ///   inset: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .inset\:\$-28 {
+  ///   inset: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .inset\:\$-32 {
+  ///   inset: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .inset\:\$-36 {
+  ///   inset: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .inset\:\$-40 {
+  ///   inset: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .inset\:\$-44 {
+  ///   inset: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .inset\:\$-48 {
+  ///   inset: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .inset\:\$-52 {
+  ///   inset: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .inset\:\$-56 {
+  ///   inset: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .inset\:\$-60 {
+  ///   inset: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .inset\:\$-64 {
+  ///   inset: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .inset\:\$-72 {
+  ///   inset: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .inset\:\$-80 {
+  ///   inset: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .inset\:\$-96 {
+  ///   inset: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .inset\:\$-px {
+  ///   inset: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .inset\:\$-0\.5 {
+  ///   inset: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .inset\:\$-1\.5 {
+  ///   inset: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .inset\:\$-2\.5 {
+  ///   inset: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .inset\:\$-3\.5 {
+  ///   inset: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+  /// ```css
+  /// .inset\:\$-half {
+  ///   inset: -50%;
+  /// }
+  /// ```
+  #[inline]
+  fn mhalf(&self) -> String {
+    self.append_value("-half")
+  }
+  /// ```css
+  /// .inset\:\$-third {
+  ///   inset: -33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn mthird(&self) -> String {
+    self.append_value("-third")
+  }
+  /// ```css
+  /// .inset\:\$-two-thirds {
+  ///   inset: -66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn mtwo_thirds(&self) -> String {
+    self.append_value("-two-thirds")
+  }
+  /// ```css
+  /// .inset\:\$-quarter {
+  ///   inset: -25%;
+  /// }
+  /// ```
+  #[inline]
+  fn mquarter(&self) -> String {
+    self.append_value("-quarter")
+  }
+  /// ```css
+  /// .inset\:\$-three-quarters {
+  ///   inset: -75%;
+  /// }
+  /// ```
+  #[inline]
+  fn mthree_quarters(&self) -> String {
+    self.append_value("-three-quarters")
+  }
+  /// ```css
+  /// .inset\:\$-full {
+  ///   inset: -100%;
+  /// }
+  /// ```
+  #[inline]
+  fn mfull(&self) -> String {
+    self.append_value("-full")
+  }
 }
 impl GeneratedValueSetInset for GeneratedAtomInset {}
 pub struct GeneratedAtomInsetX(String);
@@ -18443,6 +30309,406 @@ pub trait GeneratedValueSetInsetX: GeneratedSkribbleValue {
   #[inline]
   fn full(&self) -> String {
     self.append_value("full")
+  }
+  /// ```css
+  /// .inset-x\:\$-1 {
+  ///   left: -0.25rem;
+  ///   right: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .inset-x\:\$-2 {
+  ///   left: -0.5rem;
+  ///   right: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .inset-x\:\$-3 {
+  ///   left: -0.75rem;
+  ///   right: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .inset-x\:\$-4 {
+  ///   left: -1rem;
+  ///   right: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .inset-x\:\$-5 {
+  ///   left: -1.25rem;
+  ///   right: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .inset-x\:\$-6 {
+  ///   left: -1.5rem;
+  ///   right: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .inset-x\:\$-7 {
+  ///   left: -1.75rem;
+  ///   right: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .inset-x\:\$-8 {
+  ///   left: -2rem;
+  ///   right: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .inset-x\:\$-9 {
+  ///   left: -2.25rem;
+  ///   right: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .inset-x\:\$-10 {
+  ///   left: -2.5rem;
+  ///   right: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .inset-x\:\$-11 {
+  ///   left: -2.75rem;
+  ///   right: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .inset-x\:\$-12 {
+  ///   left: -3rem;
+  ///   right: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .inset-x\:\$-14 {
+  ///   left: -3.5rem;
+  ///   right: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .inset-x\:\$-16 {
+  ///   left: -4rem;
+  ///   right: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .inset-x\:\$-20 {
+  ///   left: -5rem;
+  ///   right: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .inset-x\:\$-24 {
+  ///   left: -6rem;
+  ///   right: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .inset-x\:\$-28 {
+  ///   left: -7rem;
+  ///   right: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .inset-x\:\$-32 {
+  ///   left: -8rem;
+  ///   right: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .inset-x\:\$-36 {
+  ///   left: -9rem;
+  ///   right: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .inset-x\:\$-40 {
+  ///   left: -10rem;
+  ///   right: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .inset-x\:\$-44 {
+  ///   left: -11rem;
+  ///   right: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .inset-x\:\$-48 {
+  ///   left: -12rem;
+  ///   right: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .inset-x\:\$-52 {
+  ///   left: -13rem;
+  ///   right: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .inset-x\:\$-56 {
+  ///   left: -14rem;
+  ///   right: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .inset-x\:\$-60 {
+  ///   left: -15rem;
+  ///   right: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .inset-x\:\$-64 {
+  ///   left: -16rem;
+  ///   right: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .inset-x\:\$-72 {
+  ///   left: -18rem;
+  ///   right: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .inset-x\:\$-80 {
+  ///   left: -20rem;
+  ///   right: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .inset-x\:\$-96 {
+  ///   left: -24rem;
+  ///   right: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .inset-x\:\$-px {
+  ///   left: -1px;
+  ///   right: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .inset-x\:\$-0\.5 {
+  ///   left: -0.125rem;
+  ///   right: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .inset-x\:\$-1\.5 {
+  ///   left: -0.375rem;
+  ///   right: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .inset-x\:\$-2\.5 {
+  ///   left: -0.625rem;
+  ///   right: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .inset-x\:\$-3\.5 {
+  ///   left: -0.875rem;
+  ///   right: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+  /// ```css
+  /// .inset-x\:\$-half {
+  ///   left: -50%;
+  ///   right: -50%;
+  /// }
+  /// ```
+  #[inline]
+  fn mhalf(&self) -> String {
+    self.append_value("-half")
+  }
+  /// ```css
+  /// .inset-x\:\$-third {
+  ///   left: -33.333333%;
+  ///   right: -33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn mthird(&self) -> String {
+    self.append_value("-third")
+  }
+  /// ```css
+  /// .inset-x\:\$-two-thirds {
+  ///   left: -66.666667%;
+  ///   right: -66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn mtwo_thirds(&self) -> String {
+    self.append_value("-two-thirds")
+  }
+  /// ```css
+  /// .inset-x\:\$-quarter {
+  ///   left: -25%;
+  ///   right: -25%;
+  /// }
+  /// ```
+  #[inline]
+  fn mquarter(&self) -> String {
+    self.append_value("-quarter")
+  }
+  /// ```css
+  /// .inset-x\:\$-three-quarters {
+  ///   left: -75%;
+  ///   right: -75%;
+  /// }
+  /// ```
+  #[inline]
+  fn mthree_quarters(&self) -> String {
+    self.append_value("-three-quarters")
+  }
+  /// ```css
+  /// .inset-x\:\$-full {
+  ///   left: -100%;
+  ///   right: -100%;
+  /// }
+  /// ```
+  #[inline]
+  fn mfull(&self) -> String {
+    self.append_value("-full")
   }
 }
 impl GeneratedValueSetInsetX for GeneratedAtomInsetX {}
@@ -18879,6 +31145,406 @@ pub trait GeneratedValueSetInsetY: GeneratedSkribbleValue {
   fn full(&self) -> String {
     self.append_value("full")
   }
+  /// ```css
+  /// .inset-y\:\$-1 {
+  ///   top: -0.25rem;
+  ///   bottom: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .inset-y\:\$-2 {
+  ///   top: -0.5rem;
+  ///   bottom: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .inset-y\:\$-3 {
+  ///   top: -0.75rem;
+  ///   bottom: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .inset-y\:\$-4 {
+  ///   top: -1rem;
+  ///   bottom: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .inset-y\:\$-5 {
+  ///   top: -1.25rem;
+  ///   bottom: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .inset-y\:\$-6 {
+  ///   top: -1.5rem;
+  ///   bottom: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .inset-y\:\$-7 {
+  ///   top: -1.75rem;
+  ///   bottom: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .inset-y\:\$-8 {
+  ///   top: -2rem;
+  ///   bottom: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .inset-y\:\$-9 {
+  ///   top: -2.25rem;
+  ///   bottom: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .inset-y\:\$-10 {
+  ///   top: -2.5rem;
+  ///   bottom: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .inset-y\:\$-11 {
+  ///   top: -2.75rem;
+  ///   bottom: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .inset-y\:\$-12 {
+  ///   top: -3rem;
+  ///   bottom: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .inset-y\:\$-14 {
+  ///   top: -3.5rem;
+  ///   bottom: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .inset-y\:\$-16 {
+  ///   top: -4rem;
+  ///   bottom: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .inset-y\:\$-20 {
+  ///   top: -5rem;
+  ///   bottom: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .inset-y\:\$-24 {
+  ///   top: -6rem;
+  ///   bottom: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .inset-y\:\$-28 {
+  ///   top: -7rem;
+  ///   bottom: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .inset-y\:\$-32 {
+  ///   top: -8rem;
+  ///   bottom: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .inset-y\:\$-36 {
+  ///   top: -9rem;
+  ///   bottom: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .inset-y\:\$-40 {
+  ///   top: -10rem;
+  ///   bottom: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .inset-y\:\$-44 {
+  ///   top: -11rem;
+  ///   bottom: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .inset-y\:\$-48 {
+  ///   top: -12rem;
+  ///   bottom: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .inset-y\:\$-52 {
+  ///   top: -13rem;
+  ///   bottom: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .inset-y\:\$-56 {
+  ///   top: -14rem;
+  ///   bottom: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .inset-y\:\$-60 {
+  ///   top: -15rem;
+  ///   bottom: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .inset-y\:\$-64 {
+  ///   top: -16rem;
+  ///   bottom: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .inset-y\:\$-72 {
+  ///   top: -18rem;
+  ///   bottom: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .inset-y\:\$-80 {
+  ///   top: -20rem;
+  ///   bottom: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .inset-y\:\$-96 {
+  ///   top: -24rem;
+  ///   bottom: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .inset-y\:\$-px {
+  ///   top: -1px;
+  ///   bottom: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .inset-y\:\$-0\.5 {
+  ///   top: -0.125rem;
+  ///   bottom: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .inset-y\:\$-1\.5 {
+  ///   top: -0.375rem;
+  ///   bottom: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .inset-y\:\$-2\.5 {
+  ///   top: -0.625rem;
+  ///   bottom: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .inset-y\:\$-3\.5 {
+  ///   top: -0.875rem;
+  ///   bottom: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+  /// ```css
+  /// .inset-y\:\$-half {
+  ///   top: -50%;
+  ///   bottom: -50%;
+  /// }
+  /// ```
+  #[inline]
+  fn mhalf(&self) -> String {
+    self.append_value("-half")
+  }
+  /// ```css
+  /// .inset-y\:\$-third {
+  ///   top: -33.333333%;
+  ///   bottom: -33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn mthird(&self) -> String {
+    self.append_value("-third")
+  }
+  /// ```css
+  /// .inset-y\:\$-two-thirds {
+  ///   top: -66.666667%;
+  ///   bottom: -66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn mtwo_thirds(&self) -> String {
+    self.append_value("-two-thirds")
+  }
+  /// ```css
+  /// .inset-y\:\$-quarter {
+  ///   top: -25%;
+  ///   bottom: -25%;
+  /// }
+  /// ```
+  #[inline]
+  fn mquarter(&self) -> String {
+    self.append_value("-quarter")
+  }
+  /// ```css
+  /// .inset-y\:\$-three-quarters {
+  ///   top: -75%;
+  ///   bottom: -75%;
+  /// }
+  /// ```
+  #[inline]
+  fn mthree_quarters(&self) -> String {
+    self.append_value("-three-quarters")
+  }
+  /// ```css
+  /// .inset-y\:\$-full {
+  ///   top: -100%;
+  ///   bottom: -100%;
+  /// }
+  /// ```
+  #[inline]
+  fn mfull(&self) -> String {
+    self.append_value("-full")
+  }
 }
 impl GeneratedValueSetInsetY for GeneratedAtomInsetY {}
 pub struct GeneratedAtomStart(String);
@@ -19271,6 +31937,366 @@ pub trait GeneratedValueSetStart: GeneratedSkribbleValue {
   #[inline]
   fn full(&self) -> String {
     self.append_value("full")
+  }
+  /// ```css
+  /// .start\:\$-1 {
+  ///   inset-inline-start: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .start\:\$-2 {
+  ///   inset-inline-start: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .start\:\$-3 {
+  ///   inset-inline-start: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .start\:\$-4 {
+  ///   inset-inline-start: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .start\:\$-5 {
+  ///   inset-inline-start: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .start\:\$-6 {
+  ///   inset-inline-start: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .start\:\$-7 {
+  ///   inset-inline-start: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .start\:\$-8 {
+  ///   inset-inline-start: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .start\:\$-9 {
+  ///   inset-inline-start: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .start\:\$-10 {
+  ///   inset-inline-start: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .start\:\$-11 {
+  ///   inset-inline-start: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .start\:\$-12 {
+  ///   inset-inline-start: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .start\:\$-14 {
+  ///   inset-inline-start: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .start\:\$-16 {
+  ///   inset-inline-start: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .start\:\$-20 {
+  ///   inset-inline-start: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .start\:\$-24 {
+  ///   inset-inline-start: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .start\:\$-28 {
+  ///   inset-inline-start: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .start\:\$-32 {
+  ///   inset-inline-start: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .start\:\$-36 {
+  ///   inset-inline-start: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .start\:\$-40 {
+  ///   inset-inline-start: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .start\:\$-44 {
+  ///   inset-inline-start: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .start\:\$-48 {
+  ///   inset-inline-start: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .start\:\$-52 {
+  ///   inset-inline-start: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .start\:\$-56 {
+  ///   inset-inline-start: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .start\:\$-60 {
+  ///   inset-inline-start: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .start\:\$-64 {
+  ///   inset-inline-start: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .start\:\$-72 {
+  ///   inset-inline-start: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .start\:\$-80 {
+  ///   inset-inline-start: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .start\:\$-96 {
+  ///   inset-inline-start: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .start\:\$-px {
+  ///   inset-inline-start: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .start\:\$-0\.5 {
+  ///   inset-inline-start: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .start\:\$-1\.5 {
+  ///   inset-inline-start: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .start\:\$-2\.5 {
+  ///   inset-inline-start: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .start\:\$-3\.5 {
+  ///   inset-inline-start: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+  /// ```css
+  /// .start\:\$-half {
+  ///   inset-inline-start: -50%;
+  /// }
+  /// ```
+  #[inline]
+  fn mhalf(&self) -> String {
+    self.append_value("-half")
+  }
+  /// ```css
+  /// .start\:\$-third {
+  ///   inset-inline-start: -33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn mthird(&self) -> String {
+    self.append_value("-third")
+  }
+  /// ```css
+  /// .start\:\$-two-thirds {
+  ///   inset-inline-start: -66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn mtwo_thirds(&self) -> String {
+    self.append_value("-two-thirds")
+  }
+  /// ```css
+  /// .start\:\$-quarter {
+  ///   inset-inline-start: -25%;
+  /// }
+  /// ```
+  #[inline]
+  fn mquarter(&self) -> String {
+    self.append_value("-quarter")
+  }
+  /// ```css
+  /// .start\:\$-three-quarters {
+  ///   inset-inline-start: -75%;
+  /// }
+  /// ```
+  #[inline]
+  fn mthree_quarters(&self) -> String {
+    self.append_value("-three-quarters")
+  }
+  /// ```css
+  /// .start\:\$-full {
+  ///   inset-inline-start: -100%;
+  /// }
+  /// ```
+  #[inline]
+  fn mfull(&self) -> String {
+    self.append_value("-full")
   }
 }
 impl GeneratedValueSetStart for GeneratedAtomStart {}
@@ -19665,6 +32691,366 @@ pub trait GeneratedValueSetEnd: GeneratedSkribbleValue {
   fn full(&self) -> String {
     self.append_value("full")
   }
+  /// ```css
+  /// .end\:\$-1 {
+  ///   inset-inline-end: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .end\:\$-2 {
+  ///   inset-inline-end: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .end\:\$-3 {
+  ///   inset-inline-end: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .end\:\$-4 {
+  ///   inset-inline-end: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .end\:\$-5 {
+  ///   inset-inline-end: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .end\:\$-6 {
+  ///   inset-inline-end: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .end\:\$-7 {
+  ///   inset-inline-end: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .end\:\$-8 {
+  ///   inset-inline-end: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .end\:\$-9 {
+  ///   inset-inline-end: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .end\:\$-10 {
+  ///   inset-inline-end: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .end\:\$-11 {
+  ///   inset-inline-end: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .end\:\$-12 {
+  ///   inset-inline-end: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .end\:\$-14 {
+  ///   inset-inline-end: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .end\:\$-16 {
+  ///   inset-inline-end: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .end\:\$-20 {
+  ///   inset-inline-end: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .end\:\$-24 {
+  ///   inset-inline-end: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .end\:\$-28 {
+  ///   inset-inline-end: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .end\:\$-32 {
+  ///   inset-inline-end: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .end\:\$-36 {
+  ///   inset-inline-end: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .end\:\$-40 {
+  ///   inset-inline-end: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .end\:\$-44 {
+  ///   inset-inline-end: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .end\:\$-48 {
+  ///   inset-inline-end: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .end\:\$-52 {
+  ///   inset-inline-end: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .end\:\$-56 {
+  ///   inset-inline-end: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .end\:\$-60 {
+  ///   inset-inline-end: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .end\:\$-64 {
+  ///   inset-inline-end: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .end\:\$-72 {
+  ///   inset-inline-end: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .end\:\$-80 {
+  ///   inset-inline-end: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .end\:\$-96 {
+  ///   inset-inline-end: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .end\:\$-px {
+  ///   inset-inline-end: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .end\:\$-0\.5 {
+  ///   inset-inline-end: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .end\:\$-1\.5 {
+  ///   inset-inline-end: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .end\:\$-2\.5 {
+  ///   inset-inline-end: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .end\:\$-3\.5 {
+  ///   inset-inline-end: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+  /// ```css
+  /// .end\:\$-half {
+  ///   inset-inline-end: -50%;
+  /// }
+  /// ```
+  #[inline]
+  fn mhalf(&self) -> String {
+    self.append_value("-half")
+  }
+  /// ```css
+  /// .end\:\$-third {
+  ///   inset-inline-end: -33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn mthird(&self) -> String {
+    self.append_value("-third")
+  }
+  /// ```css
+  /// .end\:\$-two-thirds {
+  ///   inset-inline-end: -66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn mtwo_thirds(&self) -> String {
+    self.append_value("-two-thirds")
+  }
+  /// ```css
+  /// .end\:\$-quarter {
+  ///   inset-inline-end: -25%;
+  /// }
+  /// ```
+  #[inline]
+  fn mquarter(&self) -> String {
+    self.append_value("-quarter")
+  }
+  /// ```css
+  /// .end\:\$-three-quarters {
+  ///   inset-inline-end: -75%;
+  /// }
+  /// ```
+  #[inline]
+  fn mthree_quarters(&self) -> String {
+    self.append_value("-three-quarters")
+  }
+  /// ```css
+  /// .end\:\$-full {
+  ///   inset-inline-end: -100%;
+  /// }
+  /// ```
+  #[inline]
+  fn mfull(&self) -> String {
+    self.append_value("-full")
+  }
 }
 impl GeneratedValueSetEnd for GeneratedAtomEnd {}
 pub struct GeneratedAtomTop(String);
@@ -20057,6 +33443,366 @@ pub trait GeneratedValueSetTop: GeneratedSkribbleValue {
   #[inline]
   fn full(&self) -> String {
     self.append_value("full")
+  }
+  /// ```css
+  /// .top\:\$-1 {
+  ///   top: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .top\:\$-2 {
+  ///   top: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .top\:\$-3 {
+  ///   top: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .top\:\$-4 {
+  ///   top: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .top\:\$-5 {
+  ///   top: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .top\:\$-6 {
+  ///   top: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .top\:\$-7 {
+  ///   top: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .top\:\$-8 {
+  ///   top: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .top\:\$-9 {
+  ///   top: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .top\:\$-10 {
+  ///   top: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .top\:\$-11 {
+  ///   top: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .top\:\$-12 {
+  ///   top: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .top\:\$-14 {
+  ///   top: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .top\:\$-16 {
+  ///   top: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .top\:\$-20 {
+  ///   top: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .top\:\$-24 {
+  ///   top: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .top\:\$-28 {
+  ///   top: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .top\:\$-32 {
+  ///   top: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .top\:\$-36 {
+  ///   top: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .top\:\$-40 {
+  ///   top: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .top\:\$-44 {
+  ///   top: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .top\:\$-48 {
+  ///   top: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .top\:\$-52 {
+  ///   top: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .top\:\$-56 {
+  ///   top: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .top\:\$-60 {
+  ///   top: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .top\:\$-64 {
+  ///   top: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .top\:\$-72 {
+  ///   top: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .top\:\$-80 {
+  ///   top: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .top\:\$-96 {
+  ///   top: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .top\:\$-px {
+  ///   top: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .top\:\$-0\.5 {
+  ///   top: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .top\:\$-1\.5 {
+  ///   top: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .top\:\$-2\.5 {
+  ///   top: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .top\:\$-3\.5 {
+  ///   top: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+  /// ```css
+  /// .top\:\$-half {
+  ///   top: -50%;
+  /// }
+  /// ```
+  #[inline]
+  fn mhalf(&self) -> String {
+    self.append_value("-half")
+  }
+  /// ```css
+  /// .top\:\$-third {
+  ///   top: -33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn mthird(&self) -> String {
+    self.append_value("-third")
+  }
+  /// ```css
+  /// .top\:\$-two-thirds {
+  ///   top: -66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn mtwo_thirds(&self) -> String {
+    self.append_value("-two-thirds")
+  }
+  /// ```css
+  /// .top\:\$-quarter {
+  ///   top: -25%;
+  /// }
+  /// ```
+  #[inline]
+  fn mquarter(&self) -> String {
+    self.append_value("-quarter")
+  }
+  /// ```css
+  /// .top\:\$-three-quarters {
+  ///   top: -75%;
+  /// }
+  /// ```
+  #[inline]
+  fn mthree_quarters(&self) -> String {
+    self.append_value("-three-quarters")
+  }
+  /// ```css
+  /// .top\:\$-full {
+  ///   top: -100%;
+  /// }
+  /// ```
+  #[inline]
+  fn mfull(&self) -> String {
+    self.append_value("-full")
   }
 }
 impl GeneratedValueSetTop for GeneratedAtomTop {}
@@ -20451,6 +34197,366 @@ pub trait GeneratedValueSetRight: GeneratedSkribbleValue {
   fn full(&self) -> String {
     self.append_value("full")
   }
+  /// ```css
+  /// .right\:\$-1 {
+  ///   right: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .right\:\$-2 {
+  ///   right: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .right\:\$-3 {
+  ///   right: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .right\:\$-4 {
+  ///   right: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .right\:\$-5 {
+  ///   right: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .right\:\$-6 {
+  ///   right: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .right\:\$-7 {
+  ///   right: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .right\:\$-8 {
+  ///   right: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .right\:\$-9 {
+  ///   right: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .right\:\$-10 {
+  ///   right: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .right\:\$-11 {
+  ///   right: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .right\:\$-12 {
+  ///   right: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .right\:\$-14 {
+  ///   right: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .right\:\$-16 {
+  ///   right: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .right\:\$-20 {
+  ///   right: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .right\:\$-24 {
+  ///   right: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .right\:\$-28 {
+  ///   right: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .right\:\$-32 {
+  ///   right: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .right\:\$-36 {
+  ///   right: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .right\:\$-40 {
+  ///   right: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .right\:\$-44 {
+  ///   right: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .right\:\$-48 {
+  ///   right: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .right\:\$-52 {
+  ///   right: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .right\:\$-56 {
+  ///   right: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .right\:\$-60 {
+  ///   right: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .right\:\$-64 {
+  ///   right: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .right\:\$-72 {
+  ///   right: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .right\:\$-80 {
+  ///   right: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .right\:\$-96 {
+  ///   right: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .right\:\$-px {
+  ///   right: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .right\:\$-0\.5 {
+  ///   right: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .right\:\$-1\.5 {
+  ///   right: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .right\:\$-2\.5 {
+  ///   right: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .right\:\$-3\.5 {
+  ///   right: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+  /// ```css
+  /// .right\:\$-half {
+  ///   right: -50%;
+  /// }
+  /// ```
+  #[inline]
+  fn mhalf(&self) -> String {
+    self.append_value("-half")
+  }
+  /// ```css
+  /// .right\:\$-third {
+  ///   right: -33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn mthird(&self) -> String {
+    self.append_value("-third")
+  }
+  /// ```css
+  /// .right\:\$-two-thirds {
+  ///   right: -66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn mtwo_thirds(&self) -> String {
+    self.append_value("-two-thirds")
+  }
+  /// ```css
+  /// .right\:\$-quarter {
+  ///   right: -25%;
+  /// }
+  /// ```
+  #[inline]
+  fn mquarter(&self) -> String {
+    self.append_value("-quarter")
+  }
+  /// ```css
+  /// .right\:\$-three-quarters {
+  ///   right: -75%;
+  /// }
+  /// ```
+  #[inline]
+  fn mthree_quarters(&self) -> String {
+    self.append_value("-three-quarters")
+  }
+  /// ```css
+  /// .right\:\$-full {
+  ///   right: -100%;
+  /// }
+  /// ```
+  #[inline]
+  fn mfull(&self) -> String {
+    self.append_value("-full")
+  }
 }
 impl GeneratedValueSetRight for GeneratedAtomRight {}
 pub struct GeneratedAtomBottom(String);
@@ -20843,6 +34949,366 @@ pub trait GeneratedValueSetBottom: GeneratedSkribbleValue {
   #[inline]
   fn full(&self) -> String {
     self.append_value("full")
+  }
+  /// ```css
+  /// .bottom\:\$-1 {
+  ///   bottom: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .bottom\:\$-2 {
+  ///   bottom: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .bottom\:\$-3 {
+  ///   bottom: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .bottom\:\$-4 {
+  ///   bottom: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .bottom\:\$-5 {
+  ///   bottom: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .bottom\:\$-6 {
+  ///   bottom: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .bottom\:\$-7 {
+  ///   bottom: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .bottom\:\$-8 {
+  ///   bottom: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .bottom\:\$-9 {
+  ///   bottom: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .bottom\:\$-10 {
+  ///   bottom: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .bottom\:\$-11 {
+  ///   bottom: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .bottom\:\$-12 {
+  ///   bottom: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .bottom\:\$-14 {
+  ///   bottom: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .bottom\:\$-16 {
+  ///   bottom: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .bottom\:\$-20 {
+  ///   bottom: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .bottom\:\$-24 {
+  ///   bottom: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .bottom\:\$-28 {
+  ///   bottom: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .bottom\:\$-32 {
+  ///   bottom: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .bottom\:\$-36 {
+  ///   bottom: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .bottom\:\$-40 {
+  ///   bottom: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .bottom\:\$-44 {
+  ///   bottom: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .bottom\:\$-48 {
+  ///   bottom: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .bottom\:\$-52 {
+  ///   bottom: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .bottom\:\$-56 {
+  ///   bottom: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .bottom\:\$-60 {
+  ///   bottom: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .bottom\:\$-64 {
+  ///   bottom: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .bottom\:\$-72 {
+  ///   bottom: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .bottom\:\$-80 {
+  ///   bottom: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .bottom\:\$-96 {
+  ///   bottom: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .bottom\:\$-px {
+  ///   bottom: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .bottom\:\$-0\.5 {
+  ///   bottom: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .bottom\:\$-1\.5 {
+  ///   bottom: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .bottom\:\$-2\.5 {
+  ///   bottom: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .bottom\:\$-3\.5 {
+  ///   bottom: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+  /// ```css
+  /// .bottom\:\$-half {
+  ///   bottom: -50%;
+  /// }
+  /// ```
+  #[inline]
+  fn mhalf(&self) -> String {
+    self.append_value("-half")
+  }
+  /// ```css
+  /// .bottom\:\$-third {
+  ///   bottom: -33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn mthird(&self) -> String {
+    self.append_value("-third")
+  }
+  /// ```css
+  /// .bottom\:\$-two-thirds {
+  ///   bottom: -66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn mtwo_thirds(&self) -> String {
+    self.append_value("-two-thirds")
+  }
+  /// ```css
+  /// .bottom\:\$-quarter {
+  ///   bottom: -25%;
+  /// }
+  /// ```
+  #[inline]
+  fn mquarter(&self) -> String {
+    self.append_value("-quarter")
+  }
+  /// ```css
+  /// .bottom\:\$-three-quarters {
+  ///   bottom: -75%;
+  /// }
+  /// ```
+  #[inline]
+  fn mthree_quarters(&self) -> String {
+    self.append_value("-three-quarters")
+  }
+  /// ```css
+  /// .bottom\:\$-full {
+  ///   bottom: -100%;
+  /// }
+  /// ```
+  #[inline]
+  fn mfull(&self) -> String {
+    self.append_value("-full")
   }
 }
 impl GeneratedValueSetBottom for GeneratedAtomBottom {}
@@ -21237,6 +35703,366 @@ pub trait GeneratedValueSetLeft: GeneratedSkribbleValue {
   fn full(&self) -> String {
     self.append_value("full")
   }
+  /// ```css
+  /// .left\:\$-1 {
+  ///   left: -0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .left\:\$-2 {
+  ///   left: -0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .left\:\$-3 {
+  ///   left: -0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .left\:\$-4 {
+  ///   left: -1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .left\:\$-5 {
+  ///   left: -1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .left\:\$-6 {
+  ///   left: -1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .left\:\$-7 {
+  ///   left: -1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .left\:\$-8 {
+  ///   left: -2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .left\:\$-9 {
+  ///   left: -2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .left\:\$-10 {
+  ///   left: -2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .left\:\$-11 {
+  ///   left: -2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .left\:\$-12 {
+  ///   left: -3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+  /// ```css
+  /// .left\:\$-14 {
+  ///   left: -3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m14(&self) -> String {
+    self.append_value("-14")
+  }
+  /// ```css
+  /// .left\:\$-16 {
+  ///   left: -4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m16(&self) -> String {
+    self.append_value("-16")
+  }
+  /// ```css
+  /// .left\:\$-20 {
+  ///   left: -5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .left\:\$-24 {
+  ///   left: -6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m24(&self) -> String {
+    self.append_value("-24")
+  }
+  /// ```css
+  /// .left\:\$-28 {
+  ///   left: -7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m28(&self) -> String {
+    self.append_value("-28")
+  }
+  /// ```css
+  /// .left\:\$-32 {
+  ///   left: -8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m32(&self) -> String {
+    self.append_value("-32")
+  }
+  /// ```css
+  /// .left\:\$-36 {
+  ///   left: -9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m36(&self) -> String {
+    self.append_value("-36")
+  }
+  /// ```css
+  /// .left\:\$-40 {
+  ///   left: -10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .left\:\$-44 {
+  ///   left: -11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m44(&self) -> String {
+    self.append_value("-44")
+  }
+  /// ```css
+  /// .left\:\$-48 {
+  ///   left: -12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m48(&self) -> String {
+    self.append_value("-48")
+  }
+  /// ```css
+  /// .left\:\$-52 {
+  ///   left: -13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m52(&self) -> String {
+    self.append_value("-52")
+  }
+  /// ```css
+  /// .left\:\$-56 {
+  ///   left: -14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m56(&self) -> String {
+    self.append_value("-56")
+  }
+  /// ```css
+  /// .left\:\$-60 {
+  ///   left: -15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
+  /// ```css
+  /// .left\:\$-64 {
+  ///   left: -16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m64(&self) -> String {
+    self.append_value("-64")
+  }
+  /// ```css
+  /// .left\:\$-72 {
+  ///   left: -18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m72(&self) -> String {
+    self.append_value("-72")
+  }
+  /// ```css
+  /// .left\:\$-80 {
+  ///   left: -20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m80(&self) -> String {
+    self.append_value("-80")
+  }
+  /// ```css
+  /// .left\:\$-96 {
+  ///   left: -24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m96(&self) -> String {
+    self.append_value("-96")
+  }
+  /// ```css
+  /// .left\:\$-px {
+  ///   left: -1px;
+  /// }
+  /// ```
+  #[inline]
+  fn mpx(&self) -> String {
+    self.append_value("-px")
+  }
+  /// ```css
+  /// .left\:\$-0\.5 {
+  ///   left: -0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m0_5(&self) -> String {
+    self.append_value("-0.5")
+  }
+  /// ```css
+  /// .left\:\$-1\.5 {
+  ///   left: -0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_5(&self) -> String {
+    self.append_value("-1.5")
+  }
+  /// ```css
+  /// .left\:\$-2\.5 {
+  ///   left: -0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_5(&self) -> String {
+    self.append_value("-2.5")
+  }
+  /// ```css
+  /// .left\:\$-3\.5 {
+  ///   left: -0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_5(&self) -> String {
+    self.append_value("-3.5")
+  }
+  /// ```css
+  /// .left\:\$-half {
+  ///   left: -50%;
+  /// }
+  /// ```
+  #[inline]
+  fn mhalf(&self) -> String {
+    self.append_value("-half")
+  }
+  /// ```css
+  /// .left\:\$-third {
+  ///   left: -33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn mthird(&self) -> String {
+    self.append_value("-third")
+  }
+  /// ```css
+  /// .left\:\$-two-thirds {
+  ///   left: -66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn mtwo_thirds(&self) -> String {
+    self.append_value("-two-thirds")
+  }
+  /// ```css
+  /// .left\:\$-quarter {
+  ///   left: -25%;
+  /// }
+  /// ```
+  #[inline]
+  fn mquarter(&self) -> String {
+    self.append_value("-quarter")
+  }
+  /// ```css
+  /// .left\:\$-three-quarters {
+  ///   left: -75%;
+  /// }
+  /// ```
+  #[inline]
+  fn mthree_quarters(&self) -> String {
+    self.append_value("-three-quarters")
+  }
+  /// ```css
+  /// .left\:\$-full {
+  ///   left: -100%;
+  /// }
+  /// ```
+  #[inline]
+  fn mfull(&self) -> String {
+    self.append_value("-full")
+  }
 }
 impl GeneratedValueSetLeft for GeneratedAtomLeft {}
 pub trait GeneratedAtom: GeneratedSkribbleValue {
@@ -21535,6 +36361,54 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
     self.append(format!("px:[{}]", value.trim()))
   }
   #[inline]
+  fn p_block(&self) -> GeneratedAtomPBlock {
+    GeneratedAtomPBlock::from_ref(self.append("p-block"))
+  }
+  #[inline]
+  fn p_block_(&self, value: &'static str) -> String {
+    self.append(format!("p-block:[{}]", value.trim()))
+  }
+  #[inline]
+  fn pbs(&self) -> GeneratedAtomPbs {
+    GeneratedAtomPbs::from_ref(self.append("pbs"))
+  }
+  #[inline]
+  fn pbs_(&self, value: &'static str) -> String {
+    self.append(format!("pbs:[{}]", value.trim()))
+  }
+  #[inline]
+  fn pbe(&self) -> GeneratedAtomPbe {
+    GeneratedAtomPbe::from_ref(self.append("pbe"))
+  }
+  #[inline]
+  fn pbe_(&self, value: &'static str) -> String {
+    self.append(format!("pbe:[{}]", value.trim()))
+  }
+  #[inline]
+  fn p_inline(&self) -> GeneratedAtomPInline {
+    GeneratedAtomPInline::from_ref(self.append("p-inline"))
+  }
+  #[inline]
+  fn p_inline_(&self, value: &'static str) -> String {
+    self.append(format!("p-inline:[{}]", value.trim()))
+  }
+  #[inline]
+  fn ps(&self) -> GeneratedAtomPs {
+    GeneratedAtomPs::from_ref(self.append("ps"))
+  }
+  #[inline]
+  fn ps_(&self, value: &'static str) -> String {
+    self.append(format!("ps:[{}]", value.trim()))
+  }
+  #[inline]
+  fn pe(&self) -> GeneratedAtomPe {
+    GeneratedAtomPe::from_ref(self.append("pe"))
+  }
+  #[inline]
+  fn pe_(&self, value: &'static str) -> String {
+    self.append(format!("pe:[{}]", value.trim()))
+  }
+  #[inline]
   fn pt(&self) -> GeneratedAtomPt {
     GeneratedAtomPt::from_ref(self.append("pt"))
   }
@@ -21567,54 +36441,6 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
     self.append(format!("pl:[{}]", value.trim()))
   }
   #[inline]
-  fn pbl(&self) -> GeneratedAtomPbl {
-    GeneratedAtomPbl::from_ref(self.append("pbl"))
-  }
-  #[inline]
-  fn pbl_(&self, value: &'static str) -> String {
-    self.append(format!("pbl:[{}]", value.trim()))
-  }
-  #[inline]
-  fn pbls(&self) -> GeneratedAtomPbls {
-    GeneratedAtomPbls::from_ref(self.append("pbls"))
-  }
-  #[inline]
-  fn pbls_(&self, value: &'static str) -> String {
-    self.append(format!("pbls:[{}]", value.trim()))
-  }
-  #[inline]
-  fn pble(&self) -> GeneratedAtomPble {
-    GeneratedAtomPble::from_ref(self.append("pble"))
-  }
-  #[inline]
-  fn pble_(&self, value: &'static str) -> String {
-    self.append(format!("pble:[{}]", value.trim()))
-  }
-  #[inline]
-  fn pin(&self) -> GeneratedAtomPin {
-    GeneratedAtomPin::from_ref(self.append("pin"))
-  }
-  #[inline]
-  fn pin_(&self, value: &'static str) -> String {
-    self.append(format!("pin:[{}]", value.trim()))
-  }
-  #[inline]
-  fn pins(&self) -> GeneratedAtomPins {
-    GeneratedAtomPins::from_ref(self.append("pins"))
-  }
-  #[inline]
-  fn pins_(&self, value: &'static str) -> String {
-    self.append(format!("pins:[{}]", value.trim()))
-  }
-  #[inline]
-  fn pine(&self) -> GeneratedAtomPine {
-    GeneratedAtomPine::from_ref(self.append("pine"))
-  }
-  #[inline]
-  fn pine_(&self, value: &'static str) -> String {
-    self.append(format!("pine:[{}]", value.trim()))
-  }
-  #[inline]
   fn m(&self) -> GeneratedAtomM {
     GeneratedAtomM::from_ref(self.append("m"))
   }
@@ -21637,6 +36463,54 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   #[inline]
   fn mx_(&self, value: &'static str) -> String {
     self.append(format!("mx:[{}]", value.trim()))
+  }
+  #[inline]
+  fn m_block(&self) -> GeneratedAtomMBlock {
+    GeneratedAtomMBlock::from_ref(self.append("m-block"))
+  }
+  #[inline]
+  fn m_block_(&self, value: &'static str) -> String {
+    self.append(format!("m-block:[{}]", value.trim()))
+  }
+  #[inline]
+  fn mbs(&self) -> GeneratedAtomMbs {
+    GeneratedAtomMbs::from_ref(self.append("mbs"))
+  }
+  #[inline]
+  fn mbs_(&self, value: &'static str) -> String {
+    self.append(format!("mbs:[{}]", value.trim()))
+  }
+  #[inline]
+  fn mbe(&self) -> GeneratedAtomMbe {
+    GeneratedAtomMbe::from_ref(self.append("mbe"))
+  }
+  #[inline]
+  fn mbe_(&self, value: &'static str) -> String {
+    self.append(format!("mbe:[{}]", value.trim()))
+  }
+  #[inline]
+  fn m_inline(&self) -> GeneratedAtomMInline {
+    GeneratedAtomMInline::from_ref(self.append("m-inline"))
+  }
+  #[inline]
+  fn m_inline_(&self, value: &'static str) -> String {
+    self.append(format!("m-inline:[{}]", value.trim()))
+  }
+  #[inline]
+  fn ms(&self) -> GeneratedAtomMs {
+    GeneratedAtomMs::from_ref(self.append("ms"))
+  }
+  #[inline]
+  fn ms_(&self, value: &'static str) -> String {
+    self.append(format!("ms:[{}]", value.trim()))
+  }
+  #[inline]
+  fn me(&self) -> GeneratedAtomMe {
+    GeneratedAtomMe::from_ref(self.append("me"))
+  }
+  #[inline]
+  fn me_(&self, value: &'static str) -> String {
+    self.append(format!("me:[{}]", value.trim()))
   }
   #[inline]
   fn mt(&self) -> GeneratedAtomMt {
@@ -21669,6 +36543,24 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   #[inline]
   fn ml_(&self, value: &'static str) -> String {
     self.append(format!("ml:[{}]", value.trim()))
+  }
+  /// Control the horizontal space between child elements.
+  #[inline]
+  fn space_x(&self) -> GeneratedAtomSpaceX {
+    GeneratedAtomSpaceX::from_ref(self.append("space-x"))
+  }
+  #[inline]
+  fn space_x_(&self, value: &'static str) -> String {
+    self.append(format!("space-x:[{}]", value.trim()))
+  }
+  /// Control the vertical space between child elements.
+  #[inline]
+  fn space_y(&self) -> GeneratedAtomSpaceY {
+    GeneratedAtomSpaceY::from_ref(self.append("space-y"))
+  }
+  #[inline]
+  fn space_y_(&self, value: &'static str) -> String {
+    self.append(format!("space-y:[{}]", value.trim()))
   }
   #[inline]
   fn z(&self) -> GeneratedAtomZ {
@@ -22031,6 +36923,14 @@ pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   #[inline]
   fn transform_cpu(&self) -> String {
     self.append_value("transform-cpu")
+  }
+  #[inline]
+  fn space_x_reverse(&self) -> String {
+    self.append_value("space-x-reverse")
+  }
+  #[inline]
+  fn space_y_reverse(&self) -> String {
+    self.append_value("space-y-reverse")
   }
 }
 pub trait GeneratedAliases: GeneratedSkribbleValue {

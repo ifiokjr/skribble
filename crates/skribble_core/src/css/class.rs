@@ -183,22 +183,46 @@ impl Class {
   fn write_selector(&self, writer: &mut dyn Write, config: &RunnerConfig) -> AnyEmptyResult {
     let selector = format!(".{}", format_css_string(self.class()?));
     let mut selectors = vec![selector];
+    let mut class_modifiers = vec![];
+
+    if let Some(modifier) = self
+      .get_named_class()
+      .and_then(|name| config.classes.get(name))
+      .and_then(|class| class.modifier.as_ref())
+    {
+      class_modifiers.push(modifier);
+    }
+
+    if let Some(modifier) = self
+      .get_atom()
+      .and_then(|name| config.atoms.get(name))
+      .and_then(|atom| atom.modifier.as_ref())
+    {
+      class_modifiers.push(modifier);
+    }
 
     // Handle modifiers.
     for modifier in self.modifiers.iter() {
-      if let Some(modifiers) = config.modifiers.get(modifier) {
-        let mut new_selectors = vec![];
+      let Some(modifier) = config.get_modifier(modifier) else {
+        continue;
+      };
 
-        for modifier in modifiers.keys() {
-          for selector in &selectors {
-            new_selectors.push(modifier.replace('&', selector));
-          }
-        }
-
-        if !new_selectors.is_empty() {
-          selectors = new_selectors;
-        }
+      for name in modifier.values.iter() {
+        class_modifiers.push(name);
       }
+    }
+
+    println!("class_modifiers: {:?}", class_modifiers);
+
+    for class_modifier in class_modifiers {
+      let mut new_selectors = vec![];
+
+      for selector in selectors.iter() {
+        let selector = class_modifier.replace('&', selector);
+        new_selectors.push(selector);
+      }
+
+      selectors = new_selectors;
     }
 
     write!(writer, "{}", selectors.join(", "))?;

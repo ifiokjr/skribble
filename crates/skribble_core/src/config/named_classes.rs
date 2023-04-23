@@ -53,6 +53,9 @@ pub struct NamedClass {
   /// The styles for the specific class.
   #[builder(setter(into))]
   pub styles: StringMap,
+  /// A modifier for the selector of the class.
+  #[builder(default, setter(into, strip_option))]
+  pub modifier: Option<String>,
 }
 
 impl NamedClass {

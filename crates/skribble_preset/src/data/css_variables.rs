@@ -390,5 +390,17 @@ lazy_static! {
       .syntax(PropertySyntaxValue::Angle)
       .value("0")
       .build(),
+    CssVariable::builder()
+      .name("space-x-reverse")
+      .variable("--space-x-reverse")
+      .syntax(PropertySyntaxValue::Number)
+      .value("0")
+      .build(),
+    CssVariable::builder()
+      .name("space-y-reverse")
+      .variable("--space-y-reverse")
+      .syntax(PropertySyntaxValue::Number)
+      .value("0")
+      .build(),
   ];
 }

@@ -111,7 +111,7 @@ impl LinkedValues {
             let property = Placeholder::normalize(property, config);
             let css_value = css_value
               .as_ref()
-              .map(|value| Placeholder::normalize_with_value(value, &color_value, config))
+              .map(|value| Placeholder::normalize_value(value, &color_value, config))
               .unwrap_or_else(|| color_value.clone());
 
             writeln!(writer, "{}: {};", property, css_value)?;
@@ -130,7 +130,7 @@ impl LinkedValues {
             let property = Placeholder::normalize(property, config);
             let css_value = css_value
               .as_ref()
-              .map(|value| Placeholder::normalize_with_value(value, keyframe_name, config))
+              .map(|value| Placeholder::normalize_value(value, keyframe_name, config))
               .unwrap_or_else(|| keyframe_name.clone());
 
             writeln!(writer, "{}: {};", property, css_value)?;

@@ -38,7 +38,7 @@ impl CssValue {
           let property = Placeholder::normalize(property, config);
           let css_value = css_value
             .as_ref()
-            .map(|value| Placeholder::normalize(value, config))
+            .map(|content| Placeholder::normalize_value(content, &value, config))
             .unwrap_or_else(|| value.clone());
 
           writeln!(writer, "{property}: {css_value};")?;

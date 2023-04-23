@@ -145,7 +145,7 @@ impl Placeholder {
   }
 
   /// Replaces all the value placeholders with the given value.
-  pub fn normalize_with_value(
+  pub fn normalize_value(
     content: impl AsRef<str>,
     value: impl AsRef<str>,
     config: &RunnerConfig,

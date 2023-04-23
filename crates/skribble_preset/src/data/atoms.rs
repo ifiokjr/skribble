@@ -22,6 +22,19 @@ lazy_static! {
     let exit_scale_x = Placeholder::variable("exit-scale-x");
     let exit_scale_y = Placeholder::variable("exit-scale-y");
     let exit_rotate = Placeholder::variable("exit-rotate");
+    let wrapped_space_x_reverse =
+      Placeholder::wrapped_variable("space-x-reverse", Some("0".into()));
+    let wrapped_space_y_reverse =
+      Placeholder::wrapped_variable("space-y-reverse", Some("0".into()));
+    let placeholder_value = Placeholder::value();
+    let space_margin_right = format!("calc({placeholder_value} * {wrapped_space_x_reverse})");
+    let space_margin_left =
+    format!("calc({placeholder_value} * calc(1 - {wrapped_space_x_reverse}))");
+    let space_margin_top =
+    format!("calc({placeholder_value} * calc(1 - {wrapped_space_y_reverse}))");
+    let space_margin_bottom = format!("calc({placeholder_value} * {wrapped_space_y_reverse})");
+    // let space_x_reverse = Placeholder::variable("space-x-reverse");
+    // let space_y_reverse = Placeholder::variable("space-y-reverse");
 
     vec![
       Atom::builder()
@@ -235,103 +248,155 @@ lazy_static! {
         .build(),
       Atom::builder()
         .name("p")
-        .values(vec!["spacing"])
+        .values(vec!["spacing", "negative-spacing"])
         .styles(indexmap! { "padding" => none })
         .build(),
       Atom::builder()
         .name("py")
-        .values(vec!["spacing"])
+        .values(vec!["spacing", "negative-spacing"])
         .styles(indexmap! { "padding-top" => none, "padding-bottom" => none })
         .build(),
       Atom::builder()
         .name("px")
-        .values(vec!["spacing"])
+        .values(vec!["spacing", "negative-spacing"])
         .styles(indexmap! { "padding-right" => none, "padding-left" => none })
         .build(),
       Atom::builder()
+        .name("p-block")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "padding-block" => none })
+        .build(),
+      Atom::builder()
+        .name("pbs")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "padding-block-start" => none })
+        .build(),
+      Atom::builder()
+        .name("pbe")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "padding-block-end" => none })
+        .build(),
+      Atom::builder()
+        .name("p-inline")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "padding-inline" => none })
+        .build(),
+      Atom::builder()
+        .name("ps")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "padding-inline-start" => none })
+        .build(),
+      Atom::builder()
+        .name("pe")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "padding-inline-end" => none })
+        .build(),
+      Atom::builder()
         .name("pt")
-        .values(vec!["spacing"])
+        .values(vec!["spacing", "negative-spacing"])
         .styles(indexmap! { "padding-top" => none })
         .build(),
       Atom::builder()
         .name("pr")
-        .values(vec!["spacing"])
+        .values(vec!["spacing", "negative-spacing"])
         .styles(indexmap! { "padding-right" => none })
         .build(),
       Atom::builder()
         .name("pb")
-        .values(vec!["spacing"])
+        .values(vec!["spacing", "negative-spacing"])
         .styles(indexmap! { "padding-bottom" => none })
         .build(),
       Atom::builder()
         .name("pl")
-        .values(vec!["spacing"])
+        .values(vec!["spacing", "negative-spacing"])
         .styles(indexmap! { "padding-left" => none })
         .build(),
       Atom::builder()
-        .name("pbl")
-        .values(vec!["spacing"])
-        .styles(indexmap! { "padding-block" => none })
-        .build(),
-      Atom::builder()
-        .name("pbls")
-        .values(vec!["spacing"])
-        .styles(indexmap! { "padding-block-start" => none })
-        .build(),
-      Atom::builder()
-        .name("pble")
-        .values(vec!["spacing"])
-        .styles(indexmap! { "padding-block-end" => none })
-        .build(),
-      Atom::builder()
-        .name("pin")
-        .values(vec!["spacing"])
-        .styles(indexmap! { "padding-inline" => none })
-        .build(),
-      Atom::builder()
-        .name("pins")
-        .values(vec!["spacing"])
-        .styles(indexmap! { "padding-inline-start" => none })
-        .build(),
-      Atom::builder()
-        .name("pine")
-        .values(vec!["spacing"])
-        .styles(indexmap! { "padding-inline-end" => none })
-        .build(),
-      Atom::builder()
         .name("m")
-        .values(vec!["spacing"])
+        .values(vec!["spacing", "negative-spacing"])
         .styles(indexmap! { "margin" => none })
         .build(),
       Atom::builder()
         .name("my")
-        .values(vec!["spacing"])
+        .values(vec!["spacing", "negative-spacing"])
         .styles(indexmap! { "margin-top" => none, "margin-bottom" => none })
         .build(),
       Atom::builder()
         .name("mx")
-        .values(vec!["spacing"])
+        .values(vec!["spacing", "negative-spacing"])
         .styles(indexmap! { "margin-right" => none, "margin-left" => none })
         .build(),
       Atom::builder()
+        .name("m-block")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "margin-block" => none })
+        .build(),
+      Atom::builder()
+        .name("mbs")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "margin-block-start" => none })
+        .build(),
+      Atom::builder()
+        .name("mbe")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "margin-block-end" => none })
+        .build(),
+      Atom::builder()
+        .name("m-inline")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "margin-inline" => none })
+        .build(),
+      Atom::builder()
+        .name("ms")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "margin-inline-start" => none })
+        .build(),
+      Atom::builder()
+        .name("me")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "margin-inline-end" => none })
+        .build(),
+      Atom::builder()
         .name("mt")
-        .values(vec!["spacing"])
+        .values(vec!["spacing", "negative-spacing"])
         .styles(indexmap! { "margin-top" => none })
         .build(),
       Atom::builder()
         .name("mr")
-        .values(vec!["spacing"])
+        .values(vec!["spacing", "negative-spacing"])
         .styles(indexmap! { "margin-right" => none })
         .build(),
       Atom::builder()
         .name("mb")
-        .values(vec!["spacing"])
+        .values(vec!["spacing", "negative-spacing"])
         .styles(indexmap! { "margin-bottom" => none })
         .build(),
       Atom::builder()
         .name("ml")
-        .values(vec!["spacing"])
+        .values(vec!["spacing", "negative-spacing"])
         .styles(indexmap! { "margin-left" => none })
+        .build(),
+      Atom::builder()
+        .name("space-x")
+        .description("Control the horizontal space between child elements.")
+        .modifier("&>:not([hidden])~:not([hidden])")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! {
+          // space_x_reverse.as_str() => Some("0"),
+          "margin-right" => Some(&space_margin_right),
+          "margin-left" => Some(&space_margin_left),
+        })
+        .build(),
+      Atom::builder()
+        .name("space-y")
+        .description("Control the vertical space between child elements.")
+        .modifier("&>:not([hidden])~:not([hidden])")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! {
+          // space_y_reverse.as_str() => Some("0"),
+          "margin-top" => Some(&space_margin_top),
+          "margin-bottom" => Some(&space_margin_bottom),
+        })
         .build(),
       Atom::builder()
         .name("z")
@@ -484,55 +549,55 @@ lazy_static! {
       Atom::builder()
         .name("inset")
         .description("Control the placement of positioned elements.")
-        .values(vec!["spacing", "relative-spacing"])
+        .values(vec!["spacing", "relative-spacing", "negative-spacing", "negative-relative-spacing"])
         .styles(indexmap! { "inset" => none })
         .build(),
       Atom::builder()
         .name("inset-x")
         .description("Control the placement of positioned elements.")
-        .values(vec!["spacing", "relative-spacing"])
+        .values(vec!["spacing", "relative-spacing", "negative-spacing", "negative-relative-spacing"])
         .styles(indexmap! { "left" => none, "right" => none })
         .build(),
       Atom::builder()
         .name("inset-y")
         .description("Control the placement of positioned elements.")
-        .values(vec!["spacing", "relative-spacing"])
+        .values(vec!["spacing", "relative-spacing", "negative-spacing", "negative-relative-spacing"])
         .styles(indexmap! { "top" => none, "bottom" => none })
         .build(),
       Atom::builder()
         .name("start")
         .description("Control the placement of positioned elements.")
-        .values(vec!["spacing", "relative-spacing"])
+        .values(vec!["spacing", "relative-spacing", "negative-spacing", "negative-relative-spacing"])
         .styles(indexmap! { "inset-inline-start" => none })
         .build(),
       Atom::builder()
         .name("end")
         .description("Control the placement of positioned elements.")
-        .values(vec!["spacing", "relative-spacing"])
+        .values(vec!["spacing", "relative-spacing", "negative-spacing", "negative-relative-spacing"])
         .styles(indexmap! { "inset-inline-end" => none })
         .build(),
       Atom::builder()
         .name("top")
         .description("Control the placement of positioned elements.")
-        .values(vec!["spacing", "relative-spacing"])
+        .values(vec!["spacing", "relative-spacing", "negative-spacing", "negative-relative-spacing"])
         .styles(indexmap! { "top" => none })
         .build(),
       Atom::builder()
         .name("right")
         .description("Control the placement of positioned elements.")
-        .values(vec!["spacing", "relative-spacing"])
+        .values(vec!["spacing", "relative-spacing", "negative-spacing", "negative-relative-spacing"])
         .styles(indexmap! { "right" => none })
         .build(),
       Atom::builder()
         .name("bottom")
         .description("Control the placement of positioned elements.")
-        .values(vec!["spacing", "relative-spacing"])
+        .values(vec!["spacing", "relative-spacing", "negative-spacing", "negative-relative-spacing"])
         .styles(indexmap! { "bottom" => none })
         .build(),
       Atom::builder()
         .name("left")
         .description("Control the placement of positioned elements.")
-        .values(vec!["spacing", "relative-spacing"])
+        .values(vec!["spacing", "relative-spacing", "negative-spacing", "negative-relative-spacing"])
         .styles(indexmap! { "left" => none })
         .build(),
     ]

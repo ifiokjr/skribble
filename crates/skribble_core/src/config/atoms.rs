@@ -70,6 +70,9 @@ pub struct Atom {
   /// filled with the value provided by the `atom`.
   #[builder(setter(into))]
   pub styles: OptionalStringMap,
+  /// Modify the selector.
+  #[builder(default, setter(into, strip_option))]
+  pub modifier: Option<String>,
   /// The names of the [`ValueSet`]s that will be used to generate the styles.
   #[builder(default, setter(into))]
   pub values: LinkedValues,
