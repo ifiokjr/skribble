@@ -5071,31 +5071,31 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("96")
   }
   /// ```css
-  /// .slide-in-left\:\$third {
+  /// .slide-in-left\:\$1-of-3 {
   ///   --sk-enter-tx: -33.333333%;
   /// }
   /// ```
   #[inline]
-  fn third(&self) -> String {
-    self.append_value("third")
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
   }
   /// ```css
-  /// .slide-in-left\:\$twoThirds {
+  /// .slide-in-left\:\$2-of-3 {
   ///   --sk-enter-tx: -66.666667%;
   /// }
   /// ```
   #[inline]
-  fn two_thirds(&self) -> String {
-    self.append_value("twoThirds")
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
   }
   /// ```css
-  /// .slide-in-left\:\$quarter {
+  /// .slide-in-left\:\$1-of-4 {
   ///   --sk-enter-tx: -25%;
   /// }
   /// ```
   #[inline]
-  fn quarter(&self) -> String {
-    self.append_value("quarter")
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
   }
   /// ```css
   /// .slide-in-left\:\$half {
@@ -5107,13 +5107,13 @@ pub trait GeneratedValueSetSlideInLeft: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-in-left\:\$threeQuarters {
+  /// .slide-in-left\:\$3-of-4 {
   ///   --sk-enter-tx: -75%;
   /// }
   /// ```
   #[inline]
-  fn three_quarters(&self) -> String {
-    self.append_value("threeQuarters")
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
   }
 }
 impl GeneratedValueSetSlideInLeft for GeneratedAtomSlideInLeft {}
@@ -5454,31 +5454,31 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("96")
   }
   /// ```css
-  /// .slide-in-right\:\$third {
+  /// .slide-in-right\:\$1-of-3 {
   ///   --sk-enter-tx: 33.333333%;
   /// }
   /// ```
   #[inline]
-  fn third(&self) -> String {
-    self.append_value("third")
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
   }
   /// ```css
-  /// .slide-in-right\:\$twoThirds {
+  /// .slide-in-right\:\$2-of-3 {
   ///   --sk-enter-tx: 66.666667%;
   /// }
   /// ```
   #[inline]
-  fn two_thirds(&self) -> String {
-    self.append_value("twoThirds")
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
   }
   /// ```css
-  /// .slide-in-right\:\$quarter {
+  /// .slide-in-right\:\$1-of-4 {
   ///   --sk-enter-tx: 25%;
   /// }
   /// ```
   #[inline]
-  fn quarter(&self) -> String {
-    self.append_value("quarter")
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
   }
   /// ```css
   /// .slide-in-right\:\$half {
@@ -5490,13 +5490,13 @@ pub trait GeneratedValueSetSlideInRight: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-in-right\:\$threeQuarters {
+  /// .slide-in-right\:\$3-of-4 {
   ///   --sk-enter-tx: 75%;
   /// }
   /// ```
   #[inline]
-  fn three_quarters(&self) -> String {
-    self.append_value("threeQuarters")
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
   }
 }
 impl GeneratedValueSetSlideInRight for GeneratedAtomSlideInRight {}
@@ -5837,31 +5837,31 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("96")
   }
   /// ```css
-  /// .slide-out-left\:\$third {
+  /// .slide-out-left\:\$1-of-3 {
   ///   --sk-exit-tx: -33.333333%;
   /// }
   /// ```
   #[inline]
-  fn third(&self) -> String {
-    self.append_value("third")
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
   }
   /// ```css
-  /// .slide-out-left\:\$twoThirds {
+  /// .slide-out-left\:\$2-of-3 {
   ///   --sk-exit-tx: -66.666667%;
   /// }
   /// ```
   #[inline]
-  fn two_thirds(&self) -> String {
-    self.append_value("twoThirds")
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
   }
   /// ```css
-  /// .slide-out-left\:\$quarter {
+  /// .slide-out-left\:\$1-of-4 {
   ///   --sk-exit-tx: -25%;
   /// }
   /// ```
   #[inline]
-  fn quarter(&self) -> String {
-    self.append_value("quarter")
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
   }
   /// ```css
   /// .slide-out-left\:\$half {
@@ -5873,13 +5873,13 @@ pub trait GeneratedValueSetSlideOutLeft: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-out-left\:\$threeQuarters {
+  /// .slide-out-left\:\$3-of-4 {
   ///   --sk-exit-tx: -75%;
   /// }
   /// ```
   #[inline]
-  fn three_quarters(&self) -> String {
-    self.append_value("threeQuarters")
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
   }
 }
 impl GeneratedValueSetSlideOutLeft for GeneratedAtomSlideOutLeft {}
@@ -6220,31 +6220,31 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("96")
   }
   /// ```css
-  /// .slide-out-right\:\$third {
+  /// .slide-out-right\:\$1-of-3 {
   ///   --sk-exit-tx: 33.333333%;
   /// }
   /// ```
   #[inline]
-  fn third(&self) -> String {
-    self.append_value("third")
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
   }
   /// ```css
-  /// .slide-out-right\:\$twoThirds {
+  /// .slide-out-right\:\$2-of-3 {
   ///   --sk-exit-tx: 66.666667%;
   /// }
   /// ```
   #[inline]
-  fn two_thirds(&self) -> String {
-    self.append_value("twoThirds")
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
   }
   /// ```css
-  /// .slide-out-right\:\$quarter {
+  /// .slide-out-right\:\$1-of-4 {
   ///   --sk-exit-tx: 25%;
   /// }
   /// ```
   #[inline]
-  fn quarter(&self) -> String {
-    self.append_value("quarter")
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
   }
   /// ```css
   /// .slide-out-right\:\$half {
@@ -6256,13 +6256,13 @@ pub trait GeneratedValueSetSlideOutRight: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-out-right\:\$threeQuarters {
+  /// .slide-out-right\:\$3-of-4 {
   ///   --sk-exit-tx: 75%;
   /// }
   /// ```
   #[inline]
-  fn three_quarters(&self) -> String {
-    self.append_value("threeQuarters")
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
   }
 }
 impl GeneratedValueSetSlideOutRight for GeneratedAtomSlideOutRight {}
@@ -6603,31 +6603,31 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("96")
   }
   /// ```css
-  /// .slide-in-top\:\$third {
+  /// .slide-in-top\:\$1-of-3 {
   ///   --sk-enter-ty: -33.333333%;
   /// }
   /// ```
   #[inline]
-  fn third(&self) -> String {
-    self.append_value("third")
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
   }
   /// ```css
-  /// .slide-in-top\:\$twoThirds {
+  /// .slide-in-top\:\$2-of-3 {
   ///   --sk-enter-ty: -66.666667%;
   /// }
   /// ```
   #[inline]
-  fn two_thirds(&self) -> String {
-    self.append_value("twoThirds")
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
   }
   /// ```css
-  /// .slide-in-top\:\$quarter {
+  /// .slide-in-top\:\$1-of-4 {
   ///   --sk-enter-ty: -25%;
   /// }
   /// ```
   #[inline]
-  fn quarter(&self) -> String {
-    self.append_value("quarter")
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
   }
   /// ```css
   /// .slide-in-top\:\$half {
@@ -6639,13 +6639,13 @@ pub trait GeneratedValueSetSlideInTop: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-in-top\:\$threeQuarters {
+  /// .slide-in-top\:\$3-of-4 {
   ///   --sk-enter-ty: -75%;
   /// }
   /// ```
   #[inline]
-  fn three_quarters(&self) -> String {
-    self.append_value("threeQuarters")
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
   }
 }
 impl GeneratedValueSetSlideInTop for GeneratedAtomSlideInTop {}
@@ -6986,31 +6986,31 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("96")
   }
   /// ```css
-  /// .slide-in-bottom\:\$third {
+  /// .slide-in-bottom\:\$1-of-3 {
   ///   --sk-enter-ty: 33.333333%;
   /// }
   /// ```
   #[inline]
-  fn third(&self) -> String {
-    self.append_value("third")
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
   }
   /// ```css
-  /// .slide-in-bottom\:\$twoThirds {
+  /// .slide-in-bottom\:\$2-of-3 {
   ///   --sk-enter-ty: 66.666667%;
   /// }
   /// ```
   #[inline]
-  fn two_thirds(&self) -> String {
-    self.append_value("twoThirds")
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
   }
   /// ```css
-  /// .slide-in-bottom\:\$quarter {
+  /// .slide-in-bottom\:\$1-of-4 {
   ///   --sk-enter-ty: 25%;
   /// }
   /// ```
   #[inline]
-  fn quarter(&self) -> String {
-    self.append_value("quarter")
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
   }
   /// ```css
   /// .slide-in-bottom\:\$half {
@@ -7022,13 +7022,13 @@ pub trait GeneratedValueSetSlideInBottom: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-in-bottom\:\$threeQuarters {
+  /// .slide-in-bottom\:\$3-of-4 {
   ///   --sk-enter-ty: 75%;
   /// }
   /// ```
   #[inline]
-  fn three_quarters(&self) -> String {
-    self.append_value("threeQuarters")
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
   }
 }
 impl GeneratedValueSetSlideInBottom for GeneratedAtomSlideInBottom {}
@@ -7369,31 +7369,31 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("96")
   }
   /// ```css
-  /// .slide-out-top\:\$third {
+  /// .slide-out-top\:\$1-of-3 {
   ///   --sk-exit-ty: -33.333333%;
   /// }
   /// ```
   #[inline]
-  fn third(&self) -> String {
-    self.append_value("third")
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
   }
   /// ```css
-  /// .slide-out-top\:\$twoThirds {
+  /// .slide-out-top\:\$2-of-3 {
   ///   --sk-exit-ty: -66.666667%;
   /// }
   /// ```
   #[inline]
-  fn two_thirds(&self) -> String {
-    self.append_value("twoThirds")
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
   }
   /// ```css
-  /// .slide-out-top\:\$quarter {
+  /// .slide-out-top\:\$1-of-4 {
   ///   --sk-exit-ty: -25%;
   /// }
   /// ```
   #[inline]
-  fn quarter(&self) -> String {
-    self.append_value("quarter")
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
   }
   /// ```css
   /// .slide-out-top\:\$half {
@@ -7405,13 +7405,13 @@ pub trait GeneratedValueSetSlideOutTop: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-out-top\:\$threeQuarters {
+  /// .slide-out-top\:\$3-of-4 {
   ///   --sk-exit-ty: -75%;
   /// }
   /// ```
   #[inline]
-  fn three_quarters(&self) -> String {
-    self.append_value("threeQuarters")
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
   }
 }
 impl GeneratedValueSetSlideOutTop for GeneratedAtomSlideOutTop {}
@@ -7752,31 +7752,31 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("96")
   }
   /// ```css
-  /// .slide-out-bottom\:\$third {
+  /// .slide-out-bottom\:\$1-of-3 {
   ///   --sk-exit-ty: 33.333333%;
   /// }
   /// ```
   #[inline]
-  fn third(&self) -> String {
-    self.append_value("third")
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
   }
   /// ```css
-  /// .slide-out-bottom\:\$twoThirds {
+  /// .slide-out-bottom\:\$2-of-3 {
   ///   --sk-exit-ty: 66.666667%;
   /// }
   /// ```
   #[inline]
-  fn two_thirds(&self) -> String {
-    self.append_value("twoThirds")
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
   }
   /// ```css
-  /// .slide-out-bottom\:\$quarter {
+  /// .slide-out-bottom\:\$1-of-4 {
   ///   --sk-exit-ty: 25%;
   /// }
   /// ```
   #[inline]
-  fn quarter(&self) -> String {
-    self.append_value("quarter")
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
   }
   /// ```css
   /// .slide-out-bottom\:\$half {
@@ -7788,13 +7788,13 @@ pub trait GeneratedValueSetSlideOutBottom: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .slide-out-bottom\:\$threeQuarters {
+  /// .slide-out-bottom\:\$3-of-4 {
   ///   --sk-exit-ty: 75%;
   /// }
   /// ```
   #[inline]
-  fn three_quarters(&self) -> String {
-    self.append_value("threeQuarters")
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
   }
 }
 impl GeneratedValueSetSlideOutBottom for GeneratedAtomSlideOutBottom {}
@@ -29083,40 +29083,130 @@ pub trait GeneratedValueSetInset: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .inset\:\$third {
+  /// .inset\:\$1-of-3 {
   ///   inset: 33.333333%;
   /// }
   /// ```
   #[inline]
-  fn third(&self) -> String {
-    self.append_value("third")
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
   }
   /// ```css
-  /// .inset\:\$two-thirds {
+  /// .inset\:\$2-of-3 {
   ///   inset: 66.666667%;
   /// }
   /// ```
   #[inline]
-  fn two_thirds(&self) -> String {
-    self.append_value("two-thirds")
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
   }
   /// ```css
-  /// .inset\:\$quarter {
+  /// .inset\:\$1-of-4 {
   ///   inset: 25%;
   /// }
   /// ```
   #[inline]
-  fn quarter(&self) -> String {
-    self.append_value("quarter")
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
   }
   /// ```css
-  /// .inset\:\$three-quarters {
+  /// .inset\:\$3-of-4 {
   ///   inset: 75%;
   /// }
   /// ```
   #[inline]
-  fn three_quarters(&self) -> String {
-    self.append_value("three-quarters")
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
+  }
+  /// ```css
+  /// .inset\:\$1-of-5 {
+  ///   inset: 20%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5(&self) -> String {
+    self.append_value("1-of-5")
+  }
+  /// ```css
+  /// .inset\:\$2-of-5 {
+  ///   inset: 40%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5(&self) -> String {
+    self.append_value("2-of-5")
+  }
+  /// ```css
+  /// .inset\:\$3-of-5 {
+  ///   inset: 60%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5(&self) -> String {
+    self.append_value("3-of-5")
+  }
+  /// ```css
+  /// .inset\:\$4-of-5 {
+  ///   inset: 80%;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5(&self) -> String {
+    self.append_value("4-of-5")
+  }
+  /// ```css
+  /// .inset\:\$1-of-6 {
+  ///   inset: 16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6(&self) -> String {
+    self.append_value("1-of-6")
+  }
+  /// ```css
+  /// .inset\:\$5-of-6 {
+  ///   inset: 83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6(&self) -> String {
+    self.append_value("5-of-6")
+  }
+  /// ```css
+  /// .inset\:\$1-of-12 {
+  ///   inset: 8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12(&self) -> String {
+    self.append_value("1-of-12")
+  }
+  /// ```css
+  /// .inset\:\$5-of-12 {
+  ///   inset: 41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12(&self) -> String {
+    self.append_value("5-of-12")
+  }
+  /// ```css
+  /// .inset\:\$7-of-12 {
+  ///   inset: 58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12(&self) -> String {
+    self.append_value("7-of-12")
+  }
+  /// ```css
+  /// .inset\:\$11-of-12 {
+  ///   inset: 91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12(&self) -> String {
+    self.append_value("11-of-12")
   }
   /// ```css
   /// .inset\:\$full {
@@ -29443,40 +29533,130 @@ pub trait GeneratedValueSetInset: GeneratedSkribbleValue {
     self.append_value("-half")
   }
   /// ```css
-  /// .inset\:\$-third {
+  /// .inset\:\$-1-of-3 {
   ///   inset: -33.333333%;
   /// }
   /// ```
   #[inline]
-  fn mthird(&self) -> String {
-    self.append_value("-third")
+  fn m1_of_3(&self) -> String {
+    self.append_value("-1-of-3")
   }
   /// ```css
-  /// .inset\:\$-two-thirds {
+  /// .inset\:\$-2-of-3 {
   ///   inset: -66.666667%;
   /// }
   /// ```
   #[inline]
-  fn mtwo_thirds(&self) -> String {
-    self.append_value("-two-thirds")
+  fn m2_of_3(&self) -> String {
+    self.append_value("-2-of-3")
   }
   /// ```css
-  /// .inset\:\$-quarter {
+  /// .inset\:\$-1-of-4 {
   ///   inset: -25%;
   /// }
   /// ```
   #[inline]
-  fn mquarter(&self) -> String {
-    self.append_value("-quarter")
+  fn m1_of_4(&self) -> String {
+    self.append_value("-1-of-4")
   }
   /// ```css
-  /// .inset\:\$-three-quarters {
+  /// .inset\:\$-3-of-4 {
   ///   inset: -75%;
   /// }
   /// ```
   #[inline]
-  fn mthree_quarters(&self) -> String {
-    self.append_value("-three-quarters")
+  fn m3_of_4(&self) -> String {
+    self.append_value("-3-of-4")
+  }
+  /// ```css
+  /// .inset\:\$-1-of-5 {
+  ///   inset: -20%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_5(&self) -> String {
+    self.append_value("-1-of-5")
+  }
+  /// ```css
+  /// .inset\:\$-2-of-5 {
+  ///   inset: -40%;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_of_5(&self) -> String {
+    self.append_value("-2-of-5")
+  }
+  /// ```css
+  /// .inset\:\$-3-of-5 {
+  ///   inset: -60%;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_of_5(&self) -> String {
+    self.append_value("-3-of-5")
+  }
+  /// ```css
+  /// .inset\:\$-4-of-5 {
+  ///   inset: -80%;
+  /// }
+  /// ```
+  #[inline]
+  fn m4_of_5(&self) -> String {
+    self.append_value("-4-of-5")
+  }
+  /// ```css
+  /// .inset\:\$-1-of-6 {
+  ///   inset: -16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_6(&self) -> String {
+    self.append_value("-1-of-6")
+  }
+  /// ```css
+  /// .inset\:\$-5-of-6 {
+  ///   inset: -83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m5_of_6(&self) -> String {
+    self.append_value("-5-of-6")
+  }
+  /// ```css
+  /// .inset\:\$-1-of-12 {
+  ///   inset: -8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_12(&self) -> String {
+    self.append_value("-1-of-12")
+  }
+  /// ```css
+  /// .inset\:\$-5-of-12 {
+  ///   inset: -41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m5_of_12(&self) -> String {
+    self.append_value("-5-of-12")
+  }
+  /// ```css
+  /// .inset\:\$-7-of-12 {
+  ///   inset: -58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m7_of_12(&self) -> String {
+    self.append_value("-7-of-12")
+  }
+  /// ```css
+  /// .inset\:\$-11-of-12 {
+  ///   inset: -91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m11_of_12(&self) -> String {
+    self.append_value("-11-of-12")
   }
   /// ```css
   /// .inset\:\$-full {
@@ -29872,44 +30052,144 @@ pub trait GeneratedValueSetInsetX: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .inset-x\:\$third {
+  /// .inset-x\:\$1-of-3 {
   ///   left: 33.333333%;
   ///   right: 33.333333%;
   /// }
   /// ```
   #[inline]
-  fn third(&self) -> String {
-    self.append_value("third")
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
   }
   /// ```css
-  /// .inset-x\:\$two-thirds {
+  /// .inset-x\:\$2-of-3 {
   ///   left: 66.666667%;
   ///   right: 66.666667%;
   /// }
   /// ```
   #[inline]
-  fn two_thirds(&self) -> String {
-    self.append_value("two-thirds")
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
   }
   /// ```css
-  /// .inset-x\:\$quarter {
+  /// .inset-x\:\$1-of-4 {
   ///   left: 25%;
   ///   right: 25%;
   /// }
   /// ```
   #[inline]
-  fn quarter(&self) -> String {
-    self.append_value("quarter")
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
   }
   /// ```css
-  /// .inset-x\:\$three-quarters {
+  /// .inset-x\:\$3-of-4 {
   ///   left: 75%;
   ///   right: 75%;
   /// }
   /// ```
   #[inline]
-  fn three_quarters(&self) -> String {
-    self.append_value("three-quarters")
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
+  }
+  /// ```css
+  /// .inset-x\:\$1-of-5 {
+  ///   left: 20%;
+  ///   right: 20%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5(&self) -> String {
+    self.append_value("1-of-5")
+  }
+  /// ```css
+  /// .inset-x\:\$2-of-5 {
+  ///   left: 40%;
+  ///   right: 40%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5(&self) -> String {
+    self.append_value("2-of-5")
+  }
+  /// ```css
+  /// .inset-x\:\$3-of-5 {
+  ///   left: 60%;
+  ///   right: 60%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5(&self) -> String {
+    self.append_value("3-of-5")
+  }
+  /// ```css
+  /// .inset-x\:\$4-of-5 {
+  ///   left: 80%;
+  ///   right: 80%;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5(&self) -> String {
+    self.append_value("4-of-5")
+  }
+  /// ```css
+  /// .inset-x\:\$1-of-6 {
+  ///   left: 16.666667%;
+  ///   right: 16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6(&self) -> String {
+    self.append_value("1-of-6")
+  }
+  /// ```css
+  /// .inset-x\:\$5-of-6 {
+  ///   left: 83.333333%;
+  ///   right: 83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6(&self) -> String {
+    self.append_value("5-of-6")
+  }
+  /// ```css
+  /// .inset-x\:\$1-of-12 {
+  ///   left: 8.333333%;
+  ///   right: 8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12(&self) -> String {
+    self.append_value("1-of-12")
+  }
+  /// ```css
+  /// .inset-x\:\$5-of-12 {
+  ///   left: 41.666667%;
+  ///   right: 41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12(&self) -> String {
+    self.append_value("5-of-12")
+  }
+  /// ```css
+  /// .inset-x\:\$7-of-12 {
+  ///   left: 58.333333%;
+  ///   right: 58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12(&self) -> String {
+    self.append_value("7-of-12")
+  }
+  /// ```css
+  /// .inset-x\:\$11-of-12 {
+  ///   left: 91.666667%;
+  ///   right: 91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12(&self) -> String {
+    self.append_value("11-of-12")
   }
   /// ```css
   /// .inset-x\:\$full {
@@ -30272,44 +30552,144 @@ pub trait GeneratedValueSetInsetX: GeneratedSkribbleValue {
     self.append_value("-half")
   }
   /// ```css
-  /// .inset-x\:\$-third {
+  /// .inset-x\:\$-1-of-3 {
   ///   left: -33.333333%;
   ///   right: -33.333333%;
   /// }
   /// ```
   #[inline]
-  fn mthird(&self) -> String {
-    self.append_value("-third")
+  fn m1_of_3(&self) -> String {
+    self.append_value("-1-of-3")
   }
   /// ```css
-  /// .inset-x\:\$-two-thirds {
+  /// .inset-x\:\$-2-of-3 {
   ///   left: -66.666667%;
   ///   right: -66.666667%;
   /// }
   /// ```
   #[inline]
-  fn mtwo_thirds(&self) -> String {
-    self.append_value("-two-thirds")
+  fn m2_of_3(&self) -> String {
+    self.append_value("-2-of-3")
   }
   /// ```css
-  /// .inset-x\:\$-quarter {
+  /// .inset-x\:\$-1-of-4 {
   ///   left: -25%;
   ///   right: -25%;
   /// }
   /// ```
   #[inline]
-  fn mquarter(&self) -> String {
-    self.append_value("-quarter")
+  fn m1_of_4(&self) -> String {
+    self.append_value("-1-of-4")
   }
   /// ```css
-  /// .inset-x\:\$-three-quarters {
+  /// .inset-x\:\$-3-of-4 {
   ///   left: -75%;
   ///   right: -75%;
   /// }
   /// ```
   #[inline]
-  fn mthree_quarters(&self) -> String {
-    self.append_value("-three-quarters")
+  fn m3_of_4(&self) -> String {
+    self.append_value("-3-of-4")
+  }
+  /// ```css
+  /// .inset-x\:\$-1-of-5 {
+  ///   left: -20%;
+  ///   right: -20%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_5(&self) -> String {
+    self.append_value("-1-of-5")
+  }
+  /// ```css
+  /// .inset-x\:\$-2-of-5 {
+  ///   left: -40%;
+  ///   right: -40%;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_of_5(&self) -> String {
+    self.append_value("-2-of-5")
+  }
+  /// ```css
+  /// .inset-x\:\$-3-of-5 {
+  ///   left: -60%;
+  ///   right: -60%;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_of_5(&self) -> String {
+    self.append_value("-3-of-5")
+  }
+  /// ```css
+  /// .inset-x\:\$-4-of-5 {
+  ///   left: -80%;
+  ///   right: -80%;
+  /// }
+  /// ```
+  #[inline]
+  fn m4_of_5(&self) -> String {
+    self.append_value("-4-of-5")
+  }
+  /// ```css
+  /// .inset-x\:\$-1-of-6 {
+  ///   left: -16.666667%;
+  ///   right: -16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_6(&self) -> String {
+    self.append_value("-1-of-6")
+  }
+  /// ```css
+  /// .inset-x\:\$-5-of-6 {
+  ///   left: -83.333333%;
+  ///   right: -83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m5_of_6(&self) -> String {
+    self.append_value("-5-of-6")
+  }
+  /// ```css
+  /// .inset-x\:\$-1-of-12 {
+  ///   left: -8.333333%;
+  ///   right: -8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_12(&self) -> String {
+    self.append_value("-1-of-12")
+  }
+  /// ```css
+  /// .inset-x\:\$-5-of-12 {
+  ///   left: -41.666667%;
+  ///   right: -41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m5_of_12(&self) -> String {
+    self.append_value("-5-of-12")
+  }
+  /// ```css
+  /// .inset-x\:\$-7-of-12 {
+  ///   left: -58.333333%;
+  ///   right: -58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m7_of_12(&self) -> String {
+    self.append_value("-7-of-12")
+  }
+  /// ```css
+  /// .inset-x\:\$-11-of-12 {
+  ///   left: -91.666667%;
+  ///   right: -91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m11_of_12(&self) -> String {
+    self.append_value("-11-of-12")
   }
   /// ```css
   /// .inset-x\:\$-full {
@@ -30706,44 +31086,144 @@ pub trait GeneratedValueSetInsetY: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .inset-y\:\$third {
+  /// .inset-y\:\$1-of-3 {
   ///   top: 33.333333%;
   ///   bottom: 33.333333%;
   /// }
   /// ```
   #[inline]
-  fn third(&self) -> String {
-    self.append_value("third")
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
   }
   /// ```css
-  /// .inset-y\:\$two-thirds {
+  /// .inset-y\:\$2-of-3 {
   ///   top: 66.666667%;
   ///   bottom: 66.666667%;
   /// }
   /// ```
   #[inline]
-  fn two_thirds(&self) -> String {
-    self.append_value("two-thirds")
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
   }
   /// ```css
-  /// .inset-y\:\$quarter {
+  /// .inset-y\:\$1-of-4 {
   ///   top: 25%;
   ///   bottom: 25%;
   /// }
   /// ```
   #[inline]
-  fn quarter(&self) -> String {
-    self.append_value("quarter")
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
   }
   /// ```css
-  /// .inset-y\:\$three-quarters {
+  /// .inset-y\:\$3-of-4 {
   ///   top: 75%;
   ///   bottom: 75%;
   /// }
   /// ```
   #[inline]
-  fn three_quarters(&self) -> String {
-    self.append_value("three-quarters")
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
+  }
+  /// ```css
+  /// .inset-y\:\$1-of-5 {
+  ///   top: 20%;
+  ///   bottom: 20%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5(&self) -> String {
+    self.append_value("1-of-5")
+  }
+  /// ```css
+  /// .inset-y\:\$2-of-5 {
+  ///   top: 40%;
+  ///   bottom: 40%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5(&self) -> String {
+    self.append_value("2-of-5")
+  }
+  /// ```css
+  /// .inset-y\:\$3-of-5 {
+  ///   top: 60%;
+  ///   bottom: 60%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5(&self) -> String {
+    self.append_value("3-of-5")
+  }
+  /// ```css
+  /// .inset-y\:\$4-of-5 {
+  ///   top: 80%;
+  ///   bottom: 80%;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5(&self) -> String {
+    self.append_value("4-of-5")
+  }
+  /// ```css
+  /// .inset-y\:\$1-of-6 {
+  ///   top: 16.666667%;
+  ///   bottom: 16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6(&self) -> String {
+    self.append_value("1-of-6")
+  }
+  /// ```css
+  /// .inset-y\:\$5-of-6 {
+  ///   top: 83.333333%;
+  ///   bottom: 83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6(&self) -> String {
+    self.append_value("5-of-6")
+  }
+  /// ```css
+  /// .inset-y\:\$1-of-12 {
+  ///   top: 8.333333%;
+  ///   bottom: 8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12(&self) -> String {
+    self.append_value("1-of-12")
+  }
+  /// ```css
+  /// .inset-y\:\$5-of-12 {
+  ///   top: 41.666667%;
+  ///   bottom: 41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12(&self) -> String {
+    self.append_value("5-of-12")
+  }
+  /// ```css
+  /// .inset-y\:\$7-of-12 {
+  ///   top: 58.333333%;
+  ///   bottom: 58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12(&self) -> String {
+    self.append_value("7-of-12")
+  }
+  /// ```css
+  /// .inset-y\:\$11-of-12 {
+  ///   top: 91.666667%;
+  ///   bottom: 91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12(&self) -> String {
+    self.append_value("11-of-12")
   }
   /// ```css
   /// .inset-y\:\$full {
@@ -31106,44 +31586,144 @@ pub trait GeneratedValueSetInsetY: GeneratedSkribbleValue {
     self.append_value("-half")
   }
   /// ```css
-  /// .inset-y\:\$-third {
+  /// .inset-y\:\$-1-of-3 {
   ///   top: -33.333333%;
   ///   bottom: -33.333333%;
   /// }
   /// ```
   #[inline]
-  fn mthird(&self) -> String {
-    self.append_value("-third")
+  fn m1_of_3(&self) -> String {
+    self.append_value("-1-of-3")
   }
   /// ```css
-  /// .inset-y\:\$-two-thirds {
+  /// .inset-y\:\$-2-of-3 {
   ///   top: -66.666667%;
   ///   bottom: -66.666667%;
   /// }
   /// ```
   #[inline]
-  fn mtwo_thirds(&self) -> String {
-    self.append_value("-two-thirds")
+  fn m2_of_3(&self) -> String {
+    self.append_value("-2-of-3")
   }
   /// ```css
-  /// .inset-y\:\$-quarter {
+  /// .inset-y\:\$-1-of-4 {
   ///   top: -25%;
   ///   bottom: -25%;
   /// }
   /// ```
   #[inline]
-  fn mquarter(&self) -> String {
-    self.append_value("-quarter")
+  fn m1_of_4(&self) -> String {
+    self.append_value("-1-of-4")
   }
   /// ```css
-  /// .inset-y\:\$-three-quarters {
+  /// .inset-y\:\$-3-of-4 {
   ///   top: -75%;
   ///   bottom: -75%;
   /// }
   /// ```
   #[inline]
-  fn mthree_quarters(&self) -> String {
-    self.append_value("-three-quarters")
+  fn m3_of_4(&self) -> String {
+    self.append_value("-3-of-4")
+  }
+  /// ```css
+  /// .inset-y\:\$-1-of-5 {
+  ///   top: -20%;
+  ///   bottom: -20%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_5(&self) -> String {
+    self.append_value("-1-of-5")
+  }
+  /// ```css
+  /// .inset-y\:\$-2-of-5 {
+  ///   top: -40%;
+  ///   bottom: -40%;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_of_5(&self) -> String {
+    self.append_value("-2-of-5")
+  }
+  /// ```css
+  /// .inset-y\:\$-3-of-5 {
+  ///   top: -60%;
+  ///   bottom: -60%;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_of_5(&self) -> String {
+    self.append_value("-3-of-5")
+  }
+  /// ```css
+  /// .inset-y\:\$-4-of-5 {
+  ///   top: -80%;
+  ///   bottom: -80%;
+  /// }
+  /// ```
+  #[inline]
+  fn m4_of_5(&self) -> String {
+    self.append_value("-4-of-5")
+  }
+  /// ```css
+  /// .inset-y\:\$-1-of-6 {
+  ///   top: -16.666667%;
+  ///   bottom: -16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_6(&self) -> String {
+    self.append_value("-1-of-6")
+  }
+  /// ```css
+  /// .inset-y\:\$-5-of-6 {
+  ///   top: -83.333333%;
+  ///   bottom: -83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m5_of_6(&self) -> String {
+    self.append_value("-5-of-6")
+  }
+  /// ```css
+  /// .inset-y\:\$-1-of-12 {
+  ///   top: -8.333333%;
+  ///   bottom: -8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_12(&self) -> String {
+    self.append_value("-1-of-12")
+  }
+  /// ```css
+  /// .inset-y\:\$-5-of-12 {
+  ///   top: -41.666667%;
+  ///   bottom: -41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m5_of_12(&self) -> String {
+    self.append_value("-5-of-12")
+  }
+  /// ```css
+  /// .inset-y\:\$-7-of-12 {
+  ///   top: -58.333333%;
+  ///   bottom: -58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m7_of_12(&self) -> String {
+    self.append_value("-7-of-12")
+  }
+  /// ```css
+  /// .inset-y\:\$-11-of-12 {
+  ///   top: -91.666667%;
+  ///   bottom: -91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m11_of_12(&self) -> String {
+    self.append_value("-11-of-12")
   }
   /// ```css
   /// .inset-y\:\$-full {
@@ -31503,40 +32083,130 @@ pub trait GeneratedValueSetStart: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .start\:\$third {
+  /// .start\:\$1-of-3 {
   ///   inset-inline-start: 33.333333%;
   /// }
   /// ```
   #[inline]
-  fn third(&self) -> String {
-    self.append_value("third")
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
   }
   /// ```css
-  /// .start\:\$two-thirds {
+  /// .start\:\$2-of-3 {
   ///   inset-inline-start: 66.666667%;
   /// }
   /// ```
   #[inline]
-  fn two_thirds(&self) -> String {
-    self.append_value("two-thirds")
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
   }
   /// ```css
-  /// .start\:\$quarter {
+  /// .start\:\$1-of-4 {
   ///   inset-inline-start: 25%;
   /// }
   /// ```
   #[inline]
-  fn quarter(&self) -> String {
-    self.append_value("quarter")
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
   }
   /// ```css
-  /// .start\:\$three-quarters {
+  /// .start\:\$3-of-4 {
   ///   inset-inline-start: 75%;
   /// }
   /// ```
   #[inline]
-  fn three_quarters(&self) -> String {
-    self.append_value("three-quarters")
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
+  }
+  /// ```css
+  /// .start\:\$1-of-5 {
+  ///   inset-inline-start: 20%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5(&self) -> String {
+    self.append_value("1-of-5")
+  }
+  /// ```css
+  /// .start\:\$2-of-5 {
+  ///   inset-inline-start: 40%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5(&self) -> String {
+    self.append_value("2-of-5")
+  }
+  /// ```css
+  /// .start\:\$3-of-5 {
+  ///   inset-inline-start: 60%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5(&self) -> String {
+    self.append_value("3-of-5")
+  }
+  /// ```css
+  /// .start\:\$4-of-5 {
+  ///   inset-inline-start: 80%;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5(&self) -> String {
+    self.append_value("4-of-5")
+  }
+  /// ```css
+  /// .start\:\$1-of-6 {
+  ///   inset-inline-start: 16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6(&self) -> String {
+    self.append_value("1-of-6")
+  }
+  /// ```css
+  /// .start\:\$5-of-6 {
+  ///   inset-inline-start: 83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6(&self) -> String {
+    self.append_value("5-of-6")
+  }
+  /// ```css
+  /// .start\:\$1-of-12 {
+  ///   inset-inline-start: 8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12(&self) -> String {
+    self.append_value("1-of-12")
+  }
+  /// ```css
+  /// .start\:\$5-of-12 {
+  ///   inset-inline-start: 41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12(&self) -> String {
+    self.append_value("5-of-12")
+  }
+  /// ```css
+  /// .start\:\$7-of-12 {
+  ///   inset-inline-start: 58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12(&self) -> String {
+    self.append_value("7-of-12")
+  }
+  /// ```css
+  /// .start\:\$11-of-12 {
+  ///   inset-inline-start: 91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12(&self) -> String {
+    self.append_value("11-of-12")
   }
   /// ```css
   /// .start\:\$full {
@@ -31863,40 +32533,130 @@ pub trait GeneratedValueSetStart: GeneratedSkribbleValue {
     self.append_value("-half")
   }
   /// ```css
-  /// .start\:\$-third {
+  /// .start\:\$-1-of-3 {
   ///   inset-inline-start: -33.333333%;
   /// }
   /// ```
   #[inline]
-  fn mthird(&self) -> String {
-    self.append_value("-third")
+  fn m1_of_3(&self) -> String {
+    self.append_value("-1-of-3")
   }
   /// ```css
-  /// .start\:\$-two-thirds {
+  /// .start\:\$-2-of-3 {
   ///   inset-inline-start: -66.666667%;
   /// }
   /// ```
   #[inline]
-  fn mtwo_thirds(&self) -> String {
-    self.append_value("-two-thirds")
+  fn m2_of_3(&self) -> String {
+    self.append_value("-2-of-3")
   }
   /// ```css
-  /// .start\:\$-quarter {
+  /// .start\:\$-1-of-4 {
   ///   inset-inline-start: -25%;
   /// }
   /// ```
   #[inline]
-  fn mquarter(&self) -> String {
-    self.append_value("-quarter")
+  fn m1_of_4(&self) -> String {
+    self.append_value("-1-of-4")
   }
   /// ```css
-  /// .start\:\$-three-quarters {
+  /// .start\:\$-3-of-4 {
   ///   inset-inline-start: -75%;
   /// }
   /// ```
   #[inline]
-  fn mthree_quarters(&self) -> String {
-    self.append_value("-three-quarters")
+  fn m3_of_4(&self) -> String {
+    self.append_value("-3-of-4")
+  }
+  /// ```css
+  /// .start\:\$-1-of-5 {
+  ///   inset-inline-start: -20%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_5(&self) -> String {
+    self.append_value("-1-of-5")
+  }
+  /// ```css
+  /// .start\:\$-2-of-5 {
+  ///   inset-inline-start: -40%;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_of_5(&self) -> String {
+    self.append_value("-2-of-5")
+  }
+  /// ```css
+  /// .start\:\$-3-of-5 {
+  ///   inset-inline-start: -60%;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_of_5(&self) -> String {
+    self.append_value("-3-of-5")
+  }
+  /// ```css
+  /// .start\:\$-4-of-5 {
+  ///   inset-inline-start: -80%;
+  /// }
+  /// ```
+  #[inline]
+  fn m4_of_5(&self) -> String {
+    self.append_value("-4-of-5")
+  }
+  /// ```css
+  /// .start\:\$-1-of-6 {
+  ///   inset-inline-start: -16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_6(&self) -> String {
+    self.append_value("-1-of-6")
+  }
+  /// ```css
+  /// .start\:\$-5-of-6 {
+  ///   inset-inline-start: -83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m5_of_6(&self) -> String {
+    self.append_value("-5-of-6")
+  }
+  /// ```css
+  /// .start\:\$-1-of-12 {
+  ///   inset-inline-start: -8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_12(&self) -> String {
+    self.append_value("-1-of-12")
+  }
+  /// ```css
+  /// .start\:\$-5-of-12 {
+  ///   inset-inline-start: -41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m5_of_12(&self) -> String {
+    self.append_value("-5-of-12")
+  }
+  /// ```css
+  /// .start\:\$-7-of-12 {
+  ///   inset-inline-start: -58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m7_of_12(&self) -> String {
+    self.append_value("-7-of-12")
+  }
+  /// ```css
+  /// .start\:\$-11-of-12 {
+  ///   inset-inline-start: -91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m11_of_12(&self) -> String {
+    self.append_value("-11-of-12")
   }
   /// ```css
   /// .start\:\$-full {
@@ -32255,40 +33015,130 @@ pub trait GeneratedValueSetEnd: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .end\:\$third {
+  /// .end\:\$1-of-3 {
   ///   inset-inline-end: 33.333333%;
   /// }
   /// ```
   #[inline]
-  fn third(&self) -> String {
-    self.append_value("third")
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
   }
   /// ```css
-  /// .end\:\$two-thirds {
+  /// .end\:\$2-of-3 {
   ///   inset-inline-end: 66.666667%;
   /// }
   /// ```
   #[inline]
-  fn two_thirds(&self) -> String {
-    self.append_value("two-thirds")
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
   }
   /// ```css
-  /// .end\:\$quarter {
+  /// .end\:\$1-of-4 {
   ///   inset-inline-end: 25%;
   /// }
   /// ```
   #[inline]
-  fn quarter(&self) -> String {
-    self.append_value("quarter")
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
   }
   /// ```css
-  /// .end\:\$three-quarters {
+  /// .end\:\$3-of-4 {
   ///   inset-inline-end: 75%;
   /// }
   /// ```
   #[inline]
-  fn three_quarters(&self) -> String {
-    self.append_value("three-quarters")
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
+  }
+  /// ```css
+  /// .end\:\$1-of-5 {
+  ///   inset-inline-end: 20%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5(&self) -> String {
+    self.append_value("1-of-5")
+  }
+  /// ```css
+  /// .end\:\$2-of-5 {
+  ///   inset-inline-end: 40%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5(&self) -> String {
+    self.append_value("2-of-5")
+  }
+  /// ```css
+  /// .end\:\$3-of-5 {
+  ///   inset-inline-end: 60%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5(&self) -> String {
+    self.append_value("3-of-5")
+  }
+  /// ```css
+  /// .end\:\$4-of-5 {
+  ///   inset-inline-end: 80%;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5(&self) -> String {
+    self.append_value("4-of-5")
+  }
+  /// ```css
+  /// .end\:\$1-of-6 {
+  ///   inset-inline-end: 16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6(&self) -> String {
+    self.append_value("1-of-6")
+  }
+  /// ```css
+  /// .end\:\$5-of-6 {
+  ///   inset-inline-end: 83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6(&self) -> String {
+    self.append_value("5-of-6")
+  }
+  /// ```css
+  /// .end\:\$1-of-12 {
+  ///   inset-inline-end: 8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12(&self) -> String {
+    self.append_value("1-of-12")
+  }
+  /// ```css
+  /// .end\:\$5-of-12 {
+  ///   inset-inline-end: 41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12(&self) -> String {
+    self.append_value("5-of-12")
+  }
+  /// ```css
+  /// .end\:\$7-of-12 {
+  ///   inset-inline-end: 58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12(&self) -> String {
+    self.append_value("7-of-12")
+  }
+  /// ```css
+  /// .end\:\$11-of-12 {
+  ///   inset-inline-end: 91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12(&self) -> String {
+    self.append_value("11-of-12")
   }
   /// ```css
   /// .end\:\$full {
@@ -32615,40 +33465,130 @@ pub trait GeneratedValueSetEnd: GeneratedSkribbleValue {
     self.append_value("-half")
   }
   /// ```css
-  /// .end\:\$-third {
+  /// .end\:\$-1-of-3 {
   ///   inset-inline-end: -33.333333%;
   /// }
   /// ```
   #[inline]
-  fn mthird(&self) -> String {
-    self.append_value("-third")
+  fn m1_of_3(&self) -> String {
+    self.append_value("-1-of-3")
   }
   /// ```css
-  /// .end\:\$-two-thirds {
+  /// .end\:\$-2-of-3 {
   ///   inset-inline-end: -66.666667%;
   /// }
   /// ```
   #[inline]
-  fn mtwo_thirds(&self) -> String {
-    self.append_value("-two-thirds")
+  fn m2_of_3(&self) -> String {
+    self.append_value("-2-of-3")
   }
   /// ```css
-  /// .end\:\$-quarter {
+  /// .end\:\$-1-of-4 {
   ///   inset-inline-end: -25%;
   /// }
   /// ```
   #[inline]
-  fn mquarter(&self) -> String {
-    self.append_value("-quarter")
+  fn m1_of_4(&self) -> String {
+    self.append_value("-1-of-4")
   }
   /// ```css
-  /// .end\:\$-three-quarters {
+  /// .end\:\$-3-of-4 {
   ///   inset-inline-end: -75%;
   /// }
   /// ```
   #[inline]
-  fn mthree_quarters(&self) -> String {
-    self.append_value("-three-quarters")
+  fn m3_of_4(&self) -> String {
+    self.append_value("-3-of-4")
+  }
+  /// ```css
+  /// .end\:\$-1-of-5 {
+  ///   inset-inline-end: -20%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_5(&self) -> String {
+    self.append_value("-1-of-5")
+  }
+  /// ```css
+  /// .end\:\$-2-of-5 {
+  ///   inset-inline-end: -40%;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_of_5(&self) -> String {
+    self.append_value("-2-of-5")
+  }
+  /// ```css
+  /// .end\:\$-3-of-5 {
+  ///   inset-inline-end: -60%;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_of_5(&self) -> String {
+    self.append_value("-3-of-5")
+  }
+  /// ```css
+  /// .end\:\$-4-of-5 {
+  ///   inset-inline-end: -80%;
+  /// }
+  /// ```
+  #[inline]
+  fn m4_of_5(&self) -> String {
+    self.append_value("-4-of-5")
+  }
+  /// ```css
+  /// .end\:\$-1-of-6 {
+  ///   inset-inline-end: -16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_6(&self) -> String {
+    self.append_value("-1-of-6")
+  }
+  /// ```css
+  /// .end\:\$-5-of-6 {
+  ///   inset-inline-end: -83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m5_of_6(&self) -> String {
+    self.append_value("-5-of-6")
+  }
+  /// ```css
+  /// .end\:\$-1-of-12 {
+  ///   inset-inline-end: -8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_12(&self) -> String {
+    self.append_value("-1-of-12")
+  }
+  /// ```css
+  /// .end\:\$-5-of-12 {
+  ///   inset-inline-end: -41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m5_of_12(&self) -> String {
+    self.append_value("-5-of-12")
+  }
+  /// ```css
+  /// .end\:\$-7-of-12 {
+  ///   inset-inline-end: -58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m7_of_12(&self) -> String {
+    self.append_value("-7-of-12")
+  }
+  /// ```css
+  /// .end\:\$-11-of-12 {
+  ///   inset-inline-end: -91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m11_of_12(&self) -> String {
+    self.append_value("-11-of-12")
   }
   /// ```css
   /// .end\:\$-full {
@@ -33007,40 +33947,130 @@ pub trait GeneratedValueSetTop: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .top\:\$third {
+  /// .top\:\$1-of-3 {
   ///   top: 33.333333%;
   /// }
   /// ```
   #[inline]
-  fn third(&self) -> String {
-    self.append_value("third")
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
   }
   /// ```css
-  /// .top\:\$two-thirds {
+  /// .top\:\$2-of-3 {
   ///   top: 66.666667%;
   /// }
   /// ```
   #[inline]
-  fn two_thirds(&self) -> String {
-    self.append_value("two-thirds")
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
   }
   /// ```css
-  /// .top\:\$quarter {
+  /// .top\:\$1-of-4 {
   ///   top: 25%;
   /// }
   /// ```
   #[inline]
-  fn quarter(&self) -> String {
-    self.append_value("quarter")
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
   }
   /// ```css
-  /// .top\:\$three-quarters {
+  /// .top\:\$3-of-4 {
   ///   top: 75%;
   /// }
   /// ```
   #[inline]
-  fn three_quarters(&self) -> String {
-    self.append_value("three-quarters")
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
+  }
+  /// ```css
+  /// .top\:\$1-of-5 {
+  ///   top: 20%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5(&self) -> String {
+    self.append_value("1-of-5")
+  }
+  /// ```css
+  /// .top\:\$2-of-5 {
+  ///   top: 40%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5(&self) -> String {
+    self.append_value("2-of-5")
+  }
+  /// ```css
+  /// .top\:\$3-of-5 {
+  ///   top: 60%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5(&self) -> String {
+    self.append_value("3-of-5")
+  }
+  /// ```css
+  /// .top\:\$4-of-5 {
+  ///   top: 80%;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5(&self) -> String {
+    self.append_value("4-of-5")
+  }
+  /// ```css
+  /// .top\:\$1-of-6 {
+  ///   top: 16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6(&self) -> String {
+    self.append_value("1-of-6")
+  }
+  /// ```css
+  /// .top\:\$5-of-6 {
+  ///   top: 83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6(&self) -> String {
+    self.append_value("5-of-6")
+  }
+  /// ```css
+  /// .top\:\$1-of-12 {
+  ///   top: 8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12(&self) -> String {
+    self.append_value("1-of-12")
+  }
+  /// ```css
+  /// .top\:\$5-of-12 {
+  ///   top: 41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12(&self) -> String {
+    self.append_value("5-of-12")
+  }
+  /// ```css
+  /// .top\:\$7-of-12 {
+  ///   top: 58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12(&self) -> String {
+    self.append_value("7-of-12")
+  }
+  /// ```css
+  /// .top\:\$11-of-12 {
+  ///   top: 91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12(&self) -> String {
+    self.append_value("11-of-12")
   }
   /// ```css
   /// .top\:\$full {
@@ -33367,40 +34397,130 @@ pub trait GeneratedValueSetTop: GeneratedSkribbleValue {
     self.append_value("-half")
   }
   /// ```css
-  /// .top\:\$-third {
+  /// .top\:\$-1-of-3 {
   ///   top: -33.333333%;
   /// }
   /// ```
   #[inline]
-  fn mthird(&self) -> String {
-    self.append_value("-third")
+  fn m1_of_3(&self) -> String {
+    self.append_value("-1-of-3")
   }
   /// ```css
-  /// .top\:\$-two-thirds {
+  /// .top\:\$-2-of-3 {
   ///   top: -66.666667%;
   /// }
   /// ```
   #[inline]
-  fn mtwo_thirds(&self) -> String {
-    self.append_value("-two-thirds")
+  fn m2_of_3(&self) -> String {
+    self.append_value("-2-of-3")
   }
   /// ```css
-  /// .top\:\$-quarter {
+  /// .top\:\$-1-of-4 {
   ///   top: -25%;
   /// }
   /// ```
   #[inline]
-  fn mquarter(&self) -> String {
-    self.append_value("-quarter")
+  fn m1_of_4(&self) -> String {
+    self.append_value("-1-of-4")
   }
   /// ```css
-  /// .top\:\$-three-quarters {
+  /// .top\:\$-3-of-4 {
   ///   top: -75%;
   /// }
   /// ```
   #[inline]
-  fn mthree_quarters(&self) -> String {
-    self.append_value("-three-quarters")
+  fn m3_of_4(&self) -> String {
+    self.append_value("-3-of-4")
+  }
+  /// ```css
+  /// .top\:\$-1-of-5 {
+  ///   top: -20%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_5(&self) -> String {
+    self.append_value("-1-of-5")
+  }
+  /// ```css
+  /// .top\:\$-2-of-5 {
+  ///   top: -40%;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_of_5(&self) -> String {
+    self.append_value("-2-of-5")
+  }
+  /// ```css
+  /// .top\:\$-3-of-5 {
+  ///   top: -60%;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_of_5(&self) -> String {
+    self.append_value("-3-of-5")
+  }
+  /// ```css
+  /// .top\:\$-4-of-5 {
+  ///   top: -80%;
+  /// }
+  /// ```
+  #[inline]
+  fn m4_of_5(&self) -> String {
+    self.append_value("-4-of-5")
+  }
+  /// ```css
+  /// .top\:\$-1-of-6 {
+  ///   top: -16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_6(&self) -> String {
+    self.append_value("-1-of-6")
+  }
+  /// ```css
+  /// .top\:\$-5-of-6 {
+  ///   top: -83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m5_of_6(&self) -> String {
+    self.append_value("-5-of-6")
+  }
+  /// ```css
+  /// .top\:\$-1-of-12 {
+  ///   top: -8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_12(&self) -> String {
+    self.append_value("-1-of-12")
+  }
+  /// ```css
+  /// .top\:\$-5-of-12 {
+  ///   top: -41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m5_of_12(&self) -> String {
+    self.append_value("-5-of-12")
+  }
+  /// ```css
+  /// .top\:\$-7-of-12 {
+  ///   top: -58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m7_of_12(&self) -> String {
+    self.append_value("-7-of-12")
+  }
+  /// ```css
+  /// .top\:\$-11-of-12 {
+  ///   top: -91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m11_of_12(&self) -> String {
+    self.append_value("-11-of-12")
   }
   /// ```css
   /// .top\:\$-full {
@@ -33759,40 +34879,130 @@ pub trait GeneratedValueSetRight: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .right\:\$third {
+  /// .right\:\$1-of-3 {
   ///   right: 33.333333%;
   /// }
   /// ```
   #[inline]
-  fn third(&self) -> String {
-    self.append_value("third")
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
   }
   /// ```css
-  /// .right\:\$two-thirds {
+  /// .right\:\$2-of-3 {
   ///   right: 66.666667%;
   /// }
   /// ```
   #[inline]
-  fn two_thirds(&self) -> String {
-    self.append_value("two-thirds")
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
   }
   /// ```css
-  /// .right\:\$quarter {
+  /// .right\:\$1-of-4 {
   ///   right: 25%;
   /// }
   /// ```
   #[inline]
-  fn quarter(&self) -> String {
-    self.append_value("quarter")
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
   }
   /// ```css
-  /// .right\:\$three-quarters {
+  /// .right\:\$3-of-4 {
   ///   right: 75%;
   /// }
   /// ```
   #[inline]
-  fn three_quarters(&self) -> String {
-    self.append_value("three-quarters")
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
+  }
+  /// ```css
+  /// .right\:\$1-of-5 {
+  ///   right: 20%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5(&self) -> String {
+    self.append_value("1-of-5")
+  }
+  /// ```css
+  /// .right\:\$2-of-5 {
+  ///   right: 40%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5(&self) -> String {
+    self.append_value("2-of-5")
+  }
+  /// ```css
+  /// .right\:\$3-of-5 {
+  ///   right: 60%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5(&self) -> String {
+    self.append_value("3-of-5")
+  }
+  /// ```css
+  /// .right\:\$4-of-5 {
+  ///   right: 80%;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5(&self) -> String {
+    self.append_value("4-of-5")
+  }
+  /// ```css
+  /// .right\:\$1-of-6 {
+  ///   right: 16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6(&self) -> String {
+    self.append_value("1-of-6")
+  }
+  /// ```css
+  /// .right\:\$5-of-6 {
+  ///   right: 83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6(&self) -> String {
+    self.append_value("5-of-6")
+  }
+  /// ```css
+  /// .right\:\$1-of-12 {
+  ///   right: 8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12(&self) -> String {
+    self.append_value("1-of-12")
+  }
+  /// ```css
+  /// .right\:\$5-of-12 {
+  ///   right: 41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12(&self) -> String {
+    self.append_value("5-of-12")
+  }
+  /// ```css
+  /// .right\:\$7-of-12 {
+  ///   right: 58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12(&self) -> String {
+    self.append_value("7-of-12")
+  }
+  /// ```css
+  /// .right\:\$11-of-12 {
+  ///   right: 91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12(&self) -> String {
+    self.append_value("11-of-12")
   }
   /// ```css
   /// .right\:\$full {
@@ -34119,40 +35329,130 @@ pub trait GeneratedValueSetRight: GeneratedSkribbleValue {
     self.append_value("-half")
   }
   /// ```css
-  /// .right\:\$-third {
+  /// .right\:\$-1-of-3 {
   ///   right: -33.333333%;
   /// }
   /// ```
   #[inline]
-  fn mthird(&self) -> String {
-    self.append_value("-third")
+  fn m1_of_3(&self) -> String {
+    self.append_value("-1-of-3")
   }
   /// ```css
-  /// .right\:\$-two-thirds {
+  /// .right\:\$-2-of-3 {
   ///   right: -66.666667%;
   /// }
   /// ```
   #[inline]
-  fn mtwo_thirds(&self) -> String {
-    self.append_value("-two-thirds")
+  fn m2_of_3(&self) -> String {
+    self.append_value("-2-of-3")
   }
   /// ```css
-  /// .right\:\$-quarter {
+  /// .right\:\$-1-of-4 {
   ///   right: -25%;
   /// }
   /// ```
   #[inline]
-  fn mquarter(&self) -> String {
-    self.append_value("-quarter")
+  fn m1_of_4(&self) -> String {
+    self.append_value("-1-of-4")
   }
   /// ```css
-  /// .right\:\$-three-quarters {
+  /// .right\:\$-3-of-4 {
   ///   right: -75%;
   /// }
   /// ```
   #[inline]
-  fn mthree_quarters(&self) -> String {
-    self.append_value("-three-quarters")
+  fn m3_of_4(&self) -> String {
+    self.append_value("-3-of-4")
+  }
+  /// ```css
+  /// .right\:\$-1-of-5 {
+  ///   right: -20%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_5(&self) -> String {
+    self.append_value("-1-of-5")
+  }
+  /// ```css
+  /// .right\:\$-2-of-5 {
+  ///   right: -40%;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_of_5(&self) -> String {
+    self.append_value("-2-of-5")
+  }
+  /// ```css
+  /// .right\:\$-3-of-5 {
+  ///   right: -60%;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_of_5(&self) -> String {
+    self.append_value("-3-of-5")
+  }
+  /// ```css
+  /// .right\:\$-4-of-5 {
+  ///   right: -80%;
+  /// }
+  /// ```
+  #[inline]
+  fn m4_of_5(&self) -> String {
+    self.append_value("-4-of-5")
+  }
+  /// ```css
+  /// .right\:\$-1-of-6 {
+  ///   right: -16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_6(&self) -> String {
+    self.append_value("-1-of-6")
+  }
+  /// ```css
+  /// .right\:\$-5-of-6 {
+  ///   right: -83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m5_of_6(&self) -> String {
+    self.append_value("-5-of-6")
+  }
+  /// ```css
+  /// .right\:\$-1-of-12 {
+  ///   right: -8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_12(&self) -> String {
+    self.append_value("-1-of-12")
+  }
+  /// ```css
+  /// .right\:\$-5-of-12 {
+  ///   right: -41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m5_of_12(&self) -> String {
+    self.append_value("-5-of-12")
+  }
+  /// ```css
+  /// .right\:\$-7-of-12 {
+  ///   right: -58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m7_of_12(&self) -> String {
+    self.append_value("-7-of-12")
+  }
+  /// ```css
+  /// .right\:\$-11-of-12 {
+  ///   right: -91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m11_of_12(&self) -> String {
+    self.append_value("-11-of-12")
   }
   /// ```css
   /// .right\:\$-full {
@@ -34511,40 +35811,130 @@ pub trait GeneratedValueSetBottom: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .bottom\:\$third {
+  /// .bottom\:\$1-of-3 {
   ///   bottom: 33.333333%;
   /// }
   /// ```
   #[inline]
-  fn third(&self) -> String {
-    self.append_value("third")
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
   }
   /// ```css
-  /// .bottom\:\$two-thirds {
+  /// .bottom\:\$2-of-3 {
   ///   bottom: 66.666667%;
   /// }
   /// ```
   #[inline]
-  fn two_thirds(&self) -> String {
-    self.append_value("two-thirds")
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
   }
   /// ```css
-  /// .bottom\:\$quarter {
+  /// .bottom\:\$1-of-4 {
   ///   bottom: 25%;
   /// }
   /// ```
   #[inline]
-  fn quarter(&self) -> String {
-    self.append_value("quarter")
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
   }
   /// ```css
-  /// .bottom\:\$three-quarters {
+  /// .bottom\:\$3-of-4 {
   ///   bottom: 75%;
   /// }
   /// ```
   #[inline]
-  fn three_quarters(&self) -> String {
-    self.append_value("three-quarters")
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
+  }
+  /// ```css
+  /// .bottom\:\$1-of-5 {
+  ///   bottom: 20%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5(&self) -> String {
+    self.append_value("1-of-5")
+  }
+  /// ```css
+  /// .bottom\:\$2-of-5 {
+  ///   bottom: 40%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5(&self) -> String {
+    self.append_value("2-of-5")
+  }
+  /// ```css
+  /// .bottom\:\$3-of-5 {
+  ///   bottom: 60%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5(&self) -> String {
+    self.append_value("3-of-5")
+  }
+  /// ```css
+  /// .bottom\:\$4-of-5 {
+  ///   bottom: 80%;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5(&self) -> String {
+    self.append_value("4-of-5")
+  }
+  /// ```css
+  /// .bottom\:\$1-of-6 {
+  ///   bottom: 16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6(&self) -> String {
+    self.append_value("1-of-6")
+  }
+  /// ```css
+  /// .bottom\:\$5-of-6 {
+  ///   bottom: 83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6(&self) -> String {
+    self.append_value("5-of-6")
+  }
+  /// ```css
+  /// .bottom\:\$1-of-12 {
+  ///   bottom: 8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12(&self) -> String {
+    self.append_value("1-of-12")
+  }
+  /// ```css
+  /// .bottom\:\$5-of-12 {
+  ///   bottom: 41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12(&self) -> String {
+    self.append_value("5-of-12")
+  }
+  /// ```css
+  /// .bottom\:\$7-of-12 {
+  ///   bottom: 58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12(&self) -> String {
+    self.append_value("7-of-12")
+  }
+  /// ```css
+  /// .bottom\:\$11-of-12 {
+  ///   bottom: 91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12(&self) -> String {
+    self.append_value("11-of-12")
   }
   /// ```css
   /// .bottom\:\$full {
@@ -34871,40 +36261,130 @@ pub trait GeneratedValueSetBottom: GeneratedSkribbleValue {
     self.append_value("-half")
   }
   /// ```css
-  /// .bottom\:\$-third {
+  /// .bottom\:\$-1-of-3 {
   ///   bottom: -33.333333%;
   /// }
   /// ```
   #[inline]
-  fn mthird(&self) -> String {
-    self.append_value("-third")
+  fn m1_of_3(&self) -> String {
+    self.append_value("-1-of-3")
   }
   /// ```css
-  /// .bottom\:\$-two-thirds {
+  /// .bottom\:\$-2-of-3 {
   ///   bottom: -66.666667%;
   /// }
   /// ```
   #[inline]
-  fn mtwo_thirds(&self) -> String {
-    self.append_value("-two-thirds")
+  fn m2_of_3(&self) -> String {
+    self.append_value("-2-of-3")
   }
   /// ```css
-  /// .bottom\:\$-quarter {
+  /// .bottom\:\$-1-of-4 {
   ///   bottom: -25%;
   /// }
   /// ```
   #[inline]
-  fn mquarter(&self) -> String {
-    self.append_value("-quarter")
+  fn m1_of_4(&self) -> String {
+    self.append_value("-1-of-4")
   }
   /// ```css
-  /// .bottom\:\$-three-quarters {
+  /// .bottom\:\$-3-of-4 {
   ///   bottom: -75%;
   /// }
   /// ```
   #[inline]
-  fn mthree_quarters(&self) -> String {
-    self.append_value("-three-quarters")
+  fn m3_of_4(&self) -> String {
+    self.append_value("-3-of-4")
+  }
+  /// ```css
+  /// .bottom\:\$-1-of-5 {
+  ///   bottom: -20%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_5(&self) -> String {
+    self.append_value("-1-of-5")
+  }
+  /// ```css
+  /// .bottom\:\$-2-of-5 {
+  ///   bottom: -40%;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_of_5(&self) -> String {
+    self.append_value("-2-of-5")
+  }
+  /// ```css
+  /// .bottom\:\$-3-of-5 {
+  ///   bottom: -60%;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_of_5(&self) -> String {
+    self.append_value("-3-of-5")
+  }
+  /// ```css
+  /// .bottom\:\$-4-of-5 {
+  ///   bottom: -80%;
+  /// }
+  /// ```
+  #[inline]
+  fn m4_of_5(&self) -> String {
+    self.append_value("-4-of-5")
+  }
+  /// ```css
+  /// .bottom\:\$-1-of-6 {
+  ///   bottom: -16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_6(&self) -> String {
+    self.append_value("-1-of-6")
+  }
+  /// ```css
+  /// .bottom\:\$-5-of-6 {
+  ///   bottom: -83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m5_of_6(&self) -> String {
+    self.append_value("-5-of-6")
+  }
+  /// ```css
+  /// .bottom\:\$-1-of-12 {
+  ///   bottom: -8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_12(&self) -> String {
+    self.append_value("-1-of-12")
+  }
+  /// ```css
+  /// .bottom\:\$-5-of-12 {
+  ///   bottom: -41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m5_of_12(&self) -> String {
+    self.append_value("-5-of-12")
+  }
+  /// ```css
+  /// .bottom\:\$-7-of-12 {
+  ///   bottom: -58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m7_of_12(&self) -> String {
+    self.append_value("-7-of-12")
+  }
+  /// ```css
+  /// .bottom\:\$-11-of-12 {
+  ///   bottom: -91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m11_of_12(&self) -> String {
+    self.append_value("-11-of-12")
   }
   /// ```css
   /// .bottom\:\$-full {
@@ -35263,40 +36743,130 @@ pub trait GeneratedValueSetLeft: GeneratedSkribbleValue {
     self.append_value("half")
   }
   /// ```css
-  /// .left\:\$third {
+  /// .left\:\$1-of-3 {
   ///   left: 33.333333%;
   /// }
   /// ```
   #[inline]
-  fn third(&self) -> String {
-    self.append_value("third")
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
   }
   /// ```css
-  /// .left\:\$two-thirds {
+  /// .left\:\$2-of-3 {
   ///   left: 66.666667%;
   /// }
   /// ```
   #[inline]
-  fn two_thirds(&self) -> String {
-    self.append_value("two-thirds")
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
   }
   /// ```css
-  /// .left\:\$quarter {
+  /// .left\:\$1-of-4 {
   ///   left: 25%;
   /// }
   /// ```
   #[inline]
-  fn quarter(&self) -> String {
-    self.append_value("quarter")
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
   }
   /// ```css
-  /// .left\:\$three-quarters {
+  /// .left\:\$3-of-4 {
   ///   left: 75%;
   /// }
   /// ```
   #[inline]
-  fn three_quarters(&self) -> String {
-    self.append_value("three-quarters")
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
+  }
+  /// ```css
+  /// .left\:\$1-of-5 {
+  ///   left: 20%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5(&self) -> String {
+    self.append_value("1-of-5")
+  }
+  /// ```css
+  /// .left\:\$2-of-5 {
+  ///   left: 40%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5(&self) -> String {
+    self.append_value("2-of-5")
+  }
+  /// ```css
+  /// .left\:\$3-of-5 {
+  ///   left: 60%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5(&self) -> String {
+    self.append_value("3-of-5")
+  }
+  /// ```css
+  /// .left\:\$4-of-5 {
+  ///   left: 80%;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5(&self) -> String {
+    self.append_value("4-of-5")
+  }
+  /// ```css
+  /// .left\:\$1-of-6 {
+  ///   left: 16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6(&self) -> String {
+    self.append_value("1-of-6")
+  }
+  /// ```css
+  /// .left\:\$5-of-6 {
+  ///   left: 83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6(&self) -> String {
+    self.append_value("5-of-6")
+  }
+  /// ```css
+  /// .left\:\$1-of-12 {
+  ///   left: 8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12(&self) -> String {
+    self.append_value("1-of-12")
+  }
+  /// ```css
+  /// .left\:\$5-of-12 {
+  ///   left: 41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12(&self) -> String {
+    self.append_value("5-of-12")
+  }
+  /// ```css
+  /// .left\:\$7-of-12 {
+  ///   left: 58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12(&self) -> String {
+    self.append_value("7-of-12")
+  }
+  /// ```css
+  /// .left\:\$11-of-12 {
+  ///   left: 91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12(&self) -> String {
+    self.append_value("11-of-12")
   }
   /// ```css
   /// .left\:\$full {
@@ -35623,40 +37193,130 @@ pub trait GeneratedValueSetLeft: GeneratedSkribbleValue {
     self.append_value("-half")
   }
   /// ```css
-  /// .left\:\$-third {
+  /// .left\:\$-1-of-3 {
   ///   left: -33.333333%;
   /// }
   /// ```
   #[inline]
-  fn mthird(&self) -> String {
-    self.append_value("-third")
+  fn m1_of_3(&self) -> String {
+    self.append_value("-1-of-3")
   }
   /// ```css
-  /// .left\:\$-two-thirds {
+  /// .left\:\$-2-of-3 {
   ///   left: -66.666667%;
   /// }
   /// ```
   #[inline]
-  fn mtwo_thirds(&self) -> String {
-    self.append_value("-two-thirds")
+  fn m2_of_3(&self) -> String {
+    self.append_value("-2-of-3")
   }
   /// ```css
-  /// .left\:\$-quarter {
+  /// .left\:\$-1-of-4 {
   ///   left: -25%;
   /// }
   /// ```
   #[inline]
-  fn mquarter(&self) -> String {
-    self.append_value("-quarter")
+  fn m1_of_4(&self) -> String {
+    self.append_value("-1-of-4")
   }
   /// ```css
-  /// .left\:\$-three-quarters {
+  /// .left\:\$-3-of-4 {
   ///   left: -75%;
   /// }
   /// ```
   #[inline]
-  fn mthree_quarters(&self) -> String {
-    self.append_value("-three-quarters")
+  fn m3_of_4(&self) -> String {
+    self.append_value("-3-of-4")
+  }
+  /// ```css
+  /// .left\:\$-1-of-5 {
+  ///   left: -20%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_5(&self) -> String {
+    self.append_value("-1-of-5")
+  }
+  /// ```css
+  /// .left\:\$-2-of-5 {
+  ///   left: -40%;
+  /// }
+  /// ```
+  #[inline]
+  fn m2_of_5(&self) -> String {
+    self.append_value("-2-of-5")
+  }
+  /// ```css
+  /// .left\:\$-3-of-5 {
+  ///   left: -60%;
+  /// }
+  /// ```
+  #[inline]
+  fn m3_of_5(&self) -> String {
+    self.append_value("-3-of-5")
+  }
+  /// ```css
+  /// .left\:\$-4-of-5 {
+  ///   left: -80%;
+  /// }
+  /// ```
+  #[inline]
+  fn m4_of_5(&self) -> String {
+    self.append_value("-4-of-5")
+  }
+  /// ```css
+  /// .left\:\$-1-of-6 {
+  ///   left: -16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_6(&self) -> String {
+    self.append_value("-1-of-6")
+  }
+  /// ```css
+  /// .left\:\$-5-of-6 {
+  ///   left: -83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m5_of_6(&self) -> String {
+    self.append_value("-5-of-6")
+  }
+  /// ```css
+  /// .left\:\$-1-of-12 {
+  ///   left: -8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m1_of_12(&self) -> String {
+    self.append_value("-1-of-12")
+  }
+  /// ```css
+  /// .left\:\$-5-of-12 {
+  ///   left: -41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m5_of_12(&self) -> String {
+    self.append_value("-5-of-12")
+  }
+  /// ```css
+  /// .left\:\$-7-of-12 {
+  ///   left: -58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn m7_of_12(&self) -> String {
+    self.append_value("-7-of-12")
+  }
+  /// ```css
+  /// .left\:\$-11-of-12 {
+  ///   left: -91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn m11_of_12(&self) -> String {
+    self.append_value("-11-of-12")
   }
   /// ```css
   /// .left\:\$-full {
@@ -36995,6 +38655,3204 @@ pub trait GeneratedValueSetBackdropFilter: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetBackdropFilter for GeneratedAtomBackdropFilter {}
+pub struct GeneratedAtomW(String);
+impl GeneratedSkribbleValue for GeneratedAtomW {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetW: GeneratedSkribbleValue {
+  /// ```css
+  /// .w\:\$0 {
+  ///   width: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .w\:\$1 {
+  ///   width: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .w\:\$2 {
+  ///   width: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .w\:\$3 {
+  ///   width: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .w\:\$4 {
+  ///   width: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .w\:\$5 {
+  ///   width: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .w\:\$6 {
+  ///   width: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .w\:\$7 {
+  ///   width: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .w\:\$8 {
+  ///   width: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .w\:\$9 {
+  ///   width: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .w\:\$10 {
+  ///   width: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .w\:\$11 {
+  ///   width: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .w\:\$12 {
+  ///   width: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .w\:\$14 {
+  ///   width: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .w\:\$16 {
+  ///   width: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .w\:\$20 {
+  ///   width: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .w\:\$24 {
+  ///   width: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .w\:\$28 {
+  ///   width: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .w\:\$32 {
+  ///   width: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .w\:\$36 {
+  ///   width: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .w\:\$40 {
+  ///   width: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .w\:\$44 {
+  ///   width: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .w\:\$48 {
+  ///   width: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .w\:\$52 {
+  ///   width: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .w\:\$56 {
+  ///   width: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .w\:\$60 {
+  ///   width: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .w\:\$64 {
+  ///   width: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .w\:\$72 {
+  ///   width: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .w\:\$80 {
+  ///   width: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .w\:\$96 {
+  ///   width: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .w\:\$px {
+  ///   width: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .w\:\$0\.5 {
+  ///   width: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .w\:\$1\.5 {
+  ///   width: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .w\:\$2\.5 {
+  ///   width: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .w\:\$3\.5 {
+  ///   width: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .w\:\$auto {
+  ///   width: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .w\:\$half {
+  ///   width: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_value("half")
+  }
+  /// ```css
+  /// .w\:\$1-of-3 {
+  ///   width: 33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
+  }
+  /// ```css
+  /// .w\:\$2-of-3 {
+  ///   width: 66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
+  }
+  /// ```css
+  /// .w\:\$1-of-4 {
+  ///   width: 25%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
+  }
+  /// ```css
+  /// .w\:\$3-of-4 {
+  ///   width: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
+  }
+  /// ```css
+  /// .w\:\$1-of-5 {
+  ///   width: 20%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5(&self) -> String {
+    self.append_value("1-of-5")
+  }
+  /// ```css
+  /// .w\:\$2-of-5 {
+  ///   width: 40%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5(&self) -> String {
+    self.append_value("2-of-5")
+  }
+  /// ```css
+  /// .w\:\$3-of-5 {
+  ///   width: 60%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5(&self) -> String {
+    self.append_value("3-of-5")
+  }
+  /// ```css
+  /// .w\:\$4-of-5 {
+  ///   width: 80%;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5(&self) -> String {
+    self.append_value("4-of-5")
+  }
+  /// ```css
+  /// .w\:\$1-of-6 {
+  ///   width: 16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6(&self) -> String {
+    self.append_value("1-of-6")
+  }
+  /// ```css
+  /// .w\:\$5-of-6 {
+  ///   width: 83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6(&self) -> String {
+    self.append_value("5-of-6")
+  }
+  /// ```css
+  /// .w\:\$1-of-12 {
+  ///   width: 8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12(&self) -> String {
+    self.append_value("1-of-12")
+  }
+  /// ```css
+  /// .w\:\$5-of-12 {
+  ///   width: 41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12(&self) -> String {
+    self.append_value("5-of-12")
+  }
+  /// ```css
+  /// .w\:\$7-of-12 {
+  ///   width: 58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12(&self) -> String {
+    self.append_value("7-of-12")
+  }
+  /// ```css
+  /// .w\:\$11-of-12 {
+  ///   width: 91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12(&self) -> String {
+    self.append_value("11-of-12")
+  }
+  /// ```css
+  /// .w\:\$full {
+  ///   width: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_value("full")
+  }
+  /// ```css
+  /// .w\:\$min {
+  ///   width: min-content;
+  /// }
+  /// ```
+  #[inline]
+  fn min(&self) -> String {
+    self.append_value("min")
+  }
+  /// ```css
+  /// .w\:\$max {
+  ///   width: max-content;
+  /// }
+  /// ```
+  #[inline]
+  fn max(&self) -> String {
+    self.append_value("max")
+  }
+  /// ```css
+  /// .w\:\$fit {
+  ///   width: fit-content;
+  /// }
+  /// ```
+  #[inline]
+  fn fit(&self) -> String {
+    self.append_value("fit")
+  }
+  /// ```css
+  /// .w\:\$screen {
+  ///   width: 100vw;
+  /// }
+  /// ```
+  #[inline]
+  fn screen(&self) -> String {
+    self.append_value("screen")
+  }
+  /// ```css
+  /// .w\:\$half-screen {
+  ///   width: 50vw;
+  /// }
+  /// ```
+  #[inline]
+  fn half_screen(&self) -> String {
+    self.append_value("half-screen")
+  }
+  /// ```css
+  /// .w\:\$1-of-3-screen {
+  ///   width: 33.333333vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_3_screen(&self) -> String {
+    self.append_value("1-of-3-screen")
+  }
+  /// ```css
+  /// .w\:\$2-of-3-screen {
+  ///   width: 66.666666vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_3_screen(&self) -> String {
+    self.append_value("2-of-3-screen")
+  }
+  /// ```css
+  /// .w\:\$1-of-4-screen {
+  ///   width: 25vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_4_screen(&self) -> String {
+    self.append_value("1-of-4-screen")
+  }
+  /// ```css
+  /// .w\:\$3-of-4-screen {
+  ///   width: 75vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_4_screen(&self) -> String {
+    self.append_value("3-of-4-screen")
+  }
+  /// ```css
+  /// .w\:\$1-of-5-screen {
+  ///   width: 20vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5_screen(&self) -> String {
+    self.append_value("1-of-5-screen")
+  }
+  /// ```css
+  /// .w\:\$2-of-5-screen {
+  ///   width: 40vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5_screen(&self) -> String {
+    self.append_value("2-of-5-screen")
+  }
+  /// ```css
+  /// .w\:\$3-of-5-screen {
+  ///   width: 60vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5_screen(&self) -> String {
+    self.append_value("3-of-5-screen")
+  }
+  /// ```css
+  /// .w\:\$4-of-5-screen {
+  ///   width: 80vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5_screen(&self) -> String {
+    self.append_value("4-of-5-screen")
+  }
+  /// ```css
+  /// .w\:\$1-of-6-screen {
+  ///   width: 16.666667vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6_screen(&self) -> String {
+    self.append_value("1-of-6-screen")
+  }
+  /// ```css
+  /// .w\:\$5-of-6-screen {
+  ///   width: 83.333333vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6_screen(&self) -> String {
+    self.append_value("5-of-6-screen")
+  }
+  /// ```css
+  /// .w\:\$1-of-12-screen {
+  ///   width: 8.333333vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12_screen(&self) -> String {
+    self.append_value("1-of-12-screen")
+  }
+  /// ```css
+  /// .w\:\$5-of-12-screen {
+  ///   width: 41.666667vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12_screen(&self) -> String {
+    self.append_value("5-of-12-screen")
+  }
+  /// ```css
+  /// .w\:\$7-of-12-screen {
+  ///   width: 58.333333vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12_screen(&self) -> String {
+    self.append_value("7-of-12-screen")
+  }
+  /// ```css
+  /// .w\:\$11-of-12-screen {
+  ///   width: 91.666667vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12_screen(&self) -> String {
+    self.append_value("11-of-12-screen")
+  }
+}
+impl GeneratedValueSetW for GeneratedAtomW {}
+pub struct GeneratedAtomMinW(String);
+impl GeneratedSkribbleValue for GeneratedAtomMinW {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetMinW: GeneratedSkribbleValue {
+  /// ```css
+  /// .min-w\:\$auto {
+  ///   min-width: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .min-w\:\$half {
+  ///   min-width: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_value("half")
+  }
+  /// ```css
+  /// .min-w\:\$1-of-3 {
+  ///   min-width: 33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
+  }
+  /// ```css
+  /// .min-w\:\$2-of-3 {
+  ///   min-width: 66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
+  }
+  /// ```css
+  /// .min-w\:\$1-of-4 {
+  ///   min-width: 25%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
+  }
+  /// ```css
+  /// .min-w\:\$3-of-4 {
+  ///   min-width: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
+  }
+  /// ```css
+  /// .min-w\:\$1-of-5 {
+  ///   min-width: 20%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5(&self) -> String {
+    self.append_value("1-of-5")
+  }
+  /// ```css
+  /// .min-w\:\$2-of-5 {
+  ///   min-width: 40%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5(&self) -> String {
+    self.append_value("2-of-5")
+  }
+  /// ```css
+  /// .min-w\:\$3-of-5 {
+  ///   min-width: 60%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5(&self) -> String {
+    self.append_value("3-of-5")
+  }
+  /// ```css
+  /// .min-w\:\$4-of-5 {
+  ///   min-width: 80%;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5(&self) -> String {
+    self.append_value("4-of-5")
+  }
+  /// ```css
+  /// .min-w\:\$1-of-6 {
+  ///   min-width: 16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6(&self) -> String {
+    self.append_value("1-of-6")
+  }
+  /// ```css
+  /// .min-w\:\$5-of-6 {
+  ///   min-width: 83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6(&self) -> String {
+    self.append_value("5-of-6")
+  }
+  /// ```css
+  /// .min-w\:\$1-of-12 {
+  ///   min-width: 8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12(&self) -> String {
+    self.append_value("1-of-12")
+  }
+  /// ```css
+  /// .min-w\:\$5-of-12 {
+  ///   min-width: 41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12(&self) -> String {
+    self.append_value("5-of-12")
+  }
+  /// ```css
+  /// .min-w\:\$7-of-12 {
+  ///   min-width: 58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12(&self) -> String {
+    self.append_value("7-of-12")
+  }
+  /// ```css
+  /// .min-w\:\$11-of-12 {
+  ///   min-width: 91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12(&self) -> String {
+    self.append_value("11-of-12")
+  }
+  /// ```css
+  /// .min-w\:\$full {
+  ///   min-width: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_value("full")
+  }
+  /// ```css
+  /// .min-w\:\$min {
+  ///   min-width: min-content;
+  /// }
+  /// ```
+  #[inline]
+  fn min(&self) -> String {
+    self.append_value("min")
+  }
+  /// ```css
+  /// .min-w\:\$max {
+  ///   min-width: max-content;
+  /// }
+  /// ```
+  #[inline]
+  fn max(&self) -> String {
+    self.append_value("max")
+  }
+  /// ```css
+  /// .min-w\:\$fit {
+  ///   min-width: fit-content;
+  /// }
+  /// ```
+  #[inline]
+  fn fit(&self) -> String {
+    self.append_value("fit")
+  }
+  /// ```css
+  /// .min-w\:\$screen {
+  ///   min-width: 100vw;
+  /// }
+  /// ```
+  #[inline]
+  fn screen(&self) -> String {
+    self.append_value("screen")
+  }
+  /// ```css
+  /// .min-w\:\$half-screen {
+  ///   min-width: 50vw;
+  /// }
+  /// ```
+  #[inline]
+  fn half_screen(&self) -> String {
+    self.append_value("half-screen")
+  }
+  /// ```css
+  /// .min-w\:\$1-of-3-screen {
+  ///   min-width: 33.333333vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_3_screen(&self) -> String {
+    self.append_value("1-of-3-screen")
+  }
+  /// ```css
+  /// .min-w\:\$2-of-3-screen {
+  ///   min-width: 66.666666vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_3_screen(&self) -> String {
+    self.append_value("2-of-3-screen")
+  }
+  /// ```css
+  /// .min-w\:\$1-of-4-screen {
+  ///   min-width: 25vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_4_screen(&self) -> String {
+    self.append_value("1-of-4-screen")
+  }
+  /// ```css
+  /// .min-w\:\$3-of-4-screen {
+  ///   min-width: 75vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_4_screen(&self) -> String {
+    self.append_value("3-of-4-screen")
+  }
+  /// ```css
+  /// .min-w\:\$1-of-5-screen {
+  ///   min-width: 20vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5_screen(&self) -> String {
+    self.append_value("1-of-5-screen")
+  }
+  /// ```css
+  /// .min-w\:\$2-of-5-screen {
+  ///   min-width: 40vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5_screen(&self) -> String {
+    self.append_value("2-of-5-screen")
+  }
+  /// ```css
+  /// .min-w\:\$3-of-5-screen {
+  ///   min-width: 60vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5_screen(&self) -> String {
+    self.append_value("3-of-5-screen")
+  }
+  /// ```css
+  /// .min-w\:\$4-of-5-screen {
+  ///   min-width: 80vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5_screen(&self) -> String {
+    self.append_value("4-of-5-screen")
+  }
+  /// ```css
+  /// .min-w\:\$1-of-6-screen {
+  ///   min-width: 16.666667vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6_screen(&self) -> String {
+    self.append_value("1-of-6-screen")
+  }
+  /// ```css
+  /// .min-w\:\$5-of-6-screen {
+  ///   min-width: 83.333333vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6_screen(&self) -> String {
+    self.append_value("5-of-6-screen")
+  }
+  /// ```css
+  /// .min-w\:\$1-of-12-screen {
+  ///   min-width: 8.333333vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12_screen(&self) -> String {
+    self.append_value("1-of-12-screen")
+  }
+  /// ```css
+  /// .min-w\:\$5-of-12-screen {
+  ///   min-width: 41.666667vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12_screen(&self) -> String {
+    self.append_value("5-of-12-screen")
+  }
+  /// ```css
+  /// .min-w\:\$7-of-12-screen {
+  ///   min-width: 58.333333vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12_screen(&self) -> String {
+    self.append_value("7-of-12-screen")
+  }
+  /// ```css
+  /// .min-w\:\$11-of-12-screen {
+  ///   min-width: 91.666667vw;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12_screen(&self) -> String {
+    self.append_value("11-of-12-screen")
+  }
+}
+impl GeneratedValueSetMinW for GeneratedAtomMinW {}
+pub struct GeneratedAtomMaxW(String);
+impl GeneratedSkribbleValue for GeneratedAtomMaxW {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetMaxW: GeneratedSkribbleValue {
+  /// ```css
+  /// .max-w\:\$0 {
+  ///   max-width: 0rem; /* 0px */;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .max-w\:\$none {
+  ///   max-width: none;;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+  /// ```css
+  /// .max-w\:\$xs {
+  ///   max-width: 20rem; /* 320px */;
+  /// }
+  /// ```
+  #[inline]
+  fn xs(&self) -> String {
+    self.append_value("xs")
+  }
+  /// ```css
+  /// .max-w\:\$sm {
+  ///   max-width: 24rem; /* 384px */;
+  /// }
+  /// ```
+  #[inline]
+  fn sm(&self) -> String {
+    self.append_value("sm")
+  }
+  /// ```css
+  /// .max-w\:\$md {
+  ///   max-width: 28rem; /* 448px */;
+  /// }
+  /// ```
+  #[inline]
+  fn md(&self) -> String {
+    self.append_value("md")
+  }
+  /// ```css
+  /// .max-w\:\$lg {
+  ///   max-width: 32rem; /* 512px */;
+  /// }
+  /// ```
+  #[inline]
+  fn lg(&self) -> String {
+    self.append_value("lg")
+  }
+  /// ```css
+  /// .max-w\:\$xl {
+  ///   max-width: 36rem; /* 576px */;
+  /// }
+  /// ```
+  #[inline]
+  fn xl(&self) -> String {
+    self.append_value("xl")
+  }
+  /// ```css
+  /// .max-w\:\$2xl {
+  ///   max-width: 42rem; /* 672px */;
+  /// }
+  /// ```
+  #[inline]
+  fn n2xl(&self) -> String {
+    self.append_value("2xl")
+  }
+  /// ```css
+  /// .max-w\:\$3xl {
+  ///   max-width: 48rem; /* 768px */;
+  /// }
+  /// ```
+  #[inline]
+  fn n3xl(&self) -> String {
+    self.append_value("3xl")
+  }
+  /// ```css
+  /// .max-w\:\$4xl {
+  ///   max-width: 56rem; /* 896px */;
+  /// }
+  /// ```
+  #[inline]
+  fn n4xl(&self) -> String {
+    self.append_value("4xl")
+  }
+  /// ```css
+  /// .max-w\:\$5xl {
+  ///   max-width: 64rem; /* 1024px */;
+  /// }
+  /// ```
+  #[inline]
+  fn n5xl(&self) -> String {
+    self.append_value("5xl")
+  }
+  /// ```css
+  /// .max-w\:\$6xl {
+  ///   max-width: 72rem; /* 1152px */;
+  /// }
+  /// ```
+  #[inline]
+  fn n6xl(&self) -> String {
+    self.append_value("6xl")
+  }
+  /// ```css
+  /// .max-w\:\$7xl {
+  ///   max-width: 80rem; /* 1280px */;
+  /// }
+  /// ```
+  #[inline]
+  fn n7xl(&self) -> String {
+    self.append_value("7xl")
+  }
+  /// ```css
+  /// .max-w\:\$full {
+  ///   max-width: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_value("full")
+  }
+  /// ```css
+  /// .max-w\:\$min {
+  ///   max-width: min-content;
+  /// }
+  /// ```
+  #[inline]
+  fn min(&self) -> String {
+    self.append_value("min")
+  }
+  /// ```css
+  /// .max-w\:\$max {
+  ///   max-width: max-content;
+  /// }
+  /// ```
+  #[inline]
+  fn max(&self) -> String {
+    self.append_value("max")
+  }
+  /// ```css
+  /// .max-w\:\$fit {
+  ///   max-width: fit-content;
+  /// }
+  /// ```
+  #[inline]
+  fn fit(&self) -> String {
+    self.append_value("fit")
+  }
+  /// ```css
+  /// .max-w\:\$prose {
+  ///   max-width: 65ch;
+  /// }
+  /// ```
+  #[inline]
+  fn prose(&self) -> String {
+    self.append_value("prose")
+  }
+  /// ```css
+  /// .max-w\:\$screen-sm {
+  ///   max-width: 640px;
+  /// }
+  /// ```
+  #[inline]
+  fn screen_sm(&self) -> String {
+    self.append_value("screen-sm")
+  }
+  /// ```css
+  /// .max-w\:\$screen-md {
+  ///   max-width: 768px;
+  /// }
+  /// ```
+  #[inline]
+  fn screen_md(&self) -> String {
+    self.append_value("screen-md")
+  }
+  /// ```css
+  /// .max-w\:\$screen-lg {
+  ///   max-width: 1024px;
+  /// }
+  /// ```
+  #[inline]
+  fn screen_lg(&self) -> String {
+    self.append_value("screen-lg")
+  }
+  /// ```css
+  /// .max-w\:\$screen-xl {
+  ///   max-width: 1280px;
+  /// }
+  /// ```
+  #[inline]
+  fn screen_xl(&self) -> String {
+    self.append_value("screen-xl")
+  }
+  /// ```css
+  /// .max-w\:\$screen-2xl {
+  ///   max-width: 1536px;
+  /// }
+  /// ```
+  #[inline]
+  fn screen_2xl(&self) -> String {
+    self.append_value("screen-2xl")
+  }
+  /// ```css
+  /// .max-w\:\$min {
+  ///   max-width: min-content;
+  /// }
+  /// ```
+  #[inline]
+  fn min_1(&self) -> String {
+    self.append_value("min")
+  }
+  /// ```css
+  /// .max-w\:\$max {
+  ///   max-width: max-content;
+  /// }
+  /// ```
+  #[inline]
+  fn max_1(&self) -> String {
+    self.append_value("max")
+  }
+  /// ```css
+  /// .max-w\:\$fit {
+  ///   max-width: fit-content;
+  /// }
+  /// ```
+  #[inline]
+  fn fit_1(&self) -> String {
+    self.append_value("fit")
+  }
+}
+impl GeneratedValueSetMaxW for GeneratedAtomMaxW {}
+pub struct GeneratedAtomH(String);
+impl GeneratedSkribbleValue for GeneratedAtomH {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetH: GeneratedSkribbleValue {
+  /// ```css
+  /// .h\:\$0 {
+  ///   height: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .h\:\$1 {
+  ///   height: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .h\:\$2 {
+  ///   height: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .h\:\$3 {
+  ///   height: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .h\:\$4 {
+  ///   height: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .h\:\$5 {
+  ///   height: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .h\:\$6 {
+  ///   height: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .h\:\$7 {
+  ///   height: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .h\:\$8 {
+  ///   height: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .h\:\$9 {
+  ///   height: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .h\:\$10 {
+  ///   height: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .h\:\$11 {
+  ///   height: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .h\:\$12 {
+  ///   height: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .h\:\$14 {
+  ///   height: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .h\:\$16 {
+  ///   height: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .h\:\$20 {
+  ///   height: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .h\:\$24 {
+  ///   height: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .h\:\$28 {
+  ///   height: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .h\:\$32 {
+  ///   height: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .h\:\$36 {
+  ///   height: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .h\:\$40 {
+  ///   height: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .h\:\$44 {
+  ///   height: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .h\:\$48 {
+  ///   height: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .h\:\$52 {
+  ///   height: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .h\:\$56 {
+  ///   height: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .h\:\$60 {
+  ///   height: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .h\:\$64 {
+  ///   height: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .h\:\$72 {
+  ///   height: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .h\:\$80 {
+  ///   height: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .h\:\$96 {
+  ///   height: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .h\:\$px {
+  ///   height: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .h\:\$0\.5 {
+  ///   height: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .h\:\$1\.5 {
+  ///   height: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .h\:\$2\.5 {
+  ///   height: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .h\:\$3\.5 {
+  ///   height: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .h\:\$auto {
+  ///   height: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .h\:\$half {
+  ///   height: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_value("half")
+  }
+  /// ```css
+  /// .h\:\$1-of-3 {
+  ///   height: 33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
+  }
+  /// ```css
+  /// .h\:\$2-of-3 {
+  ///   height: 66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
+  }
+  /// ```css
+  /// .h\:\$1-of-4 {
+  ///   height: 25%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
+  }
+  /// ```css
+  /// .h\:\$3-of-4 {
+  ///   height: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
+  }
+  /// ```css
+  /// .h\:\$1-of-5 {
+  ///   height: 20%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5(&self) -> String {
+    self.append_value("1-of-5")
+  }
+  /// ```css
+  /// .h\:\$2-of-5 {
+  ///   height: 40%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5(&self) -> String {
+    self.append_value("2-of-5")
+  }
+  /// ```css
+  /// .h\:\$3-of-5 {
+  ///   height: 60%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5(&self) -> String {
+    self.append_value("3-of-5")
+  }
+  /// ```css
+  /// .h\:\$4-of-5 {
+  ///   height: 80%;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5(&self) -> String {
+    self.append_value("4-of-5")
+  }
+  /// ```css
+  /// .h\:\$1-of-6 {
+  ///   height: 16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6(&self) -> String {
+    self.append_value("1-of-6")
+  }
+  /// ```css
+  /// .h\:\$5-of-6 {
+  ///   height: 83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6(&self) -> String {
+    self.append_value("5-of-6")
+  }
+  /// ```css
+  /// .h\:\$1-of-12 {
+  ///   height: 8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12(&self) -> String {
+    self.append_value("1-of-12")
+  }
+  /// ```css
+  /// .h\:\$5-of-12 {
+  ///   height: 41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12(&self) -> String {
+    self.append_value("5-of-12")
+  }
+  /// ```css
+  /// .h\:\$7-of-12 {
+  ///   height: 58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12(&self) -> String {
+    self.append_value("7-of-12")
+  }
+  /// ```css
+  /// .h\:\$11-of-12 {
+  ///   height: 91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12(&self) -> String {
+    self.append_value("11-of-12")
+  }
+  /// ```css
+  /// .h\:\$full {
+  ///   height: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_value("full")
+  }
+  /// ```css
+  /// .h\:\$min {
+  ///   height: min-content;
+  /// }
+  /// ```
+  #[inline]
+  fn min(&self) -> String {
+    self.append_value("min")
+  }
+  /// ```css
+  /// .h\:\$max {
+  ///   height: max-content;
+  /// }
+  /// ```
+  #[inline]
+  fn max(&self) -> String {
+    self.append_value("max")
+  }
+  /// ```css
+  /// .h\:\$fit {
+  ///   height: fit-content;
+  /// }
+  /// ```
+  #[inline]
+  fn fit(&self) -> String {
+    self.append_value("fit")
+  }
+  /// ```css
+  /// .h\:\$screen {
+  ///   height: 100vh;
+  /// }
+  /// ```
+  #[inline]
+  fn screen(&self) -> String {
+    self.append_value("screen")
+  }
+  /// ```css
+  /// .h\:\$half-screen {
+  ///   height: 50vh;
+  /// }
+  /// ```
+  #[inline]
+  fn half_screen(&self) -> String {
+    self.append_value("half-screen")
+  }
+  /// ```css
+  /// .h\:\$1-of-3-screen {
+  ///   height: 33.333333vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_3_screen(&self) -> String {
+    self.append_value("1-of-3-screen")
+  }
+  /// ```css
+  /// .h\:\$2-of-3-screen {
+  ///   height: 66.666666vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_3_screen(&self) -> String {
+    self.append_value("2-of-3-screen")
+  }
+  /// ```css
+  /// .h\:\$1-of-4-screen {
+  ///   height: 25vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_4_screen(&self) -> String {
+    self.append_value("1-of-4-screen")
+  }
+  /// ```css
+  /// .h\:\$3-of-4-screen {
+  ///   height: 75vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_4_screen(&self) -> String {
+    self.append_value("3-of-4-screen")
+  }
+  /// ```css
+  /// .h\:\$1-of-5-screen {
+  ///   height: 20vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5_screen(&self) -> String {
+    self.append_value("1-of-5-screen")
+  }
+  /// ```css
+  /// .h\:\$2-of-5-screen {
+  ///   height: 40vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5_screen(&self) -> String {
+    self.append_value("2-of-5-screen")
+  }
+  /// ```css
+  /// .h\:\$3-of-5-screen {
+  ///   height: 60vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5_screen(&self) -> String {
+    self.append_value("3-of-5-screen")
+  }
+  /// ```css
+  /// .h\:\$4-of-5-screen {
+  ///   height: 80vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5_screen(&self) -> String {
+    self.append_value("4-of-5-screen")
+  }
+  /// ```css
+  /// .h\:\$1-of-6-screen {
+  ///   height: 16.666667vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6_screen(&self) -> String {
+    self.append_value("1-of-6-screen")
+  }
+  /// ```css
+  /// .h\:\$5-of-6-screen {
+  ///   height: 83.333333vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6_screen(&self) -> String {
+    self.append_value("5-of-6-screen")
+  }
+  /// ```css
+  /// .h\:\$1-of-12-screen {
+  ///   height: 8.333333vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12_screen(&self) -> String {
+    self.append_value("1-of-12-screen")
+  }
+  /// ```css
+  /// .h\:\$5-of-12-screen {
+  ///   height: 41.666667vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12_screen(&self) -> String {
+    self.append_value("5-of-12-screen")
+  }
+  /// ```css
+  /// .h\:\$7-of-12-screen {
+  ///   height: 58.333333vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12_screen(&self) -> String {
+    self.append_value("7-of-12-screen")
+  }
+  /// ```css
+  /// .h\:\$11-of-12-screen {
+  ///   height: 91.666667vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12_screen(&self) -> String {
+    self.append_value("11-of-12-screen")
+  }
+}
+impl GeneratedValueSetH for GeneratedAtomH {}
+pub struct GeneratedAtomMinH(String);
+impl GeneratedSkribbleValue for GeneratedAtomMinH {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetMinH: GeneratedSkribbleValue {
+  /// ```css
+  /// .min-h\:\$0 {
+  ///   min-height: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .min-h\:\$1 {
+  ///   min-height: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .min-h\:\$2 {
+  ///   min-height: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .min-h\:\$3 {
+  ///   min-height: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .min-h\:\$4 {
+  ///   min-height: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .min-h\:\$5 {
+  ///   min-height: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .min-h\:\$6 {
+  ///   min-height: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .min-h\:\$7 {
+  ///   min-height: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .min-h\:\$8 {
+  ///   min-height: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .min-h\:\$9 {
+  ///   min-height: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .min-h\:\$10 {
+  ///   min-height: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .min-h\:\$11 {
+  ///   min-height: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .min-h\:\$12 {
+  ///   min-height: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .min-h\:\$14 {
+  ///   min-height: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .min-h\:\$16 {
+  ///   min-height: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .min-h\:\$20 {
+  ///   min-height: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .min-h\:\$24 {
+  ///   min-height: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .min-h\:\$28 {
+  ///   min-height: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .min-h\:\$32 {
+  ///   min-height: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .min-h\:\$36 {
+  ///   min-height: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .min-h\:\$40 {
+  ///   min-height: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .min-h\:\$44 {
+  ///   min-height: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .min-h\:\$48 {
+  ///   min-height: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .min-h\:\$52 {
+  ///   min-height: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .min-h\:\$56 {
+  ///   min-height: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .min-h\:\$60 {
+  ///   min-height: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .min-h\:\$64 {
+  ///   min-height: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .min-h\:\$72 {
+  ///   min-height: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .min-h\:\$80 {
+  ///   min-height: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .min-h\:\$96 {
+  ///   min-height: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .min-h\:\$px {
+  ///   min-height: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .min-h\:\$0\.5 {
+  ///   min-height: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .min-h\:\$1\.5 {
+  ///   min-height: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .min-h\:\$2\.5 {
+  ///   min-height: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .min-h\:\$3\.5 {
+  ///   min-height: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .min-h\:\$auto {
+  ///   min-height: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .min-h\:\$half {
+  ///   min-height: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_value("half")
+  }
+  /// ```css
+  /// .min-h\:\$1-of-3 {
+  ///   min-height: 33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
+  }
+  /// ```css
+  /// .min-h\:\$2-of-3 {
+  ///   min-height: 66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
+  }
+  /// ```css
+  /// .min-h\:\$1-of-4 {
+  ///   min-height: 25%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
+  }
+  /// ```css
+  /// .min-h\:\$3-of-4 {
+  ///   min-height: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
+  }
+  /// ```css
+  /// .min-h\:\$1-of-5 {
+  ///   min-height: 20%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5(&self) -> String {
+    self.append_value("1-of-5")
+  }
+  /// ```css
+  /// .min-h\:\$2-of-5 {
+  ///   min-height: 40%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5(&self) -> String {
+    self.append_value("2-of-5")
+  }
+  /// ```css
+  /// .min-h\:\$3-of-5 {
+  ///   min-height: 60%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5(&self) -> String {
+    self.append_value("3-of-5")
+  }
+  /// ```css
+  /// .min-h\:\$4-of-5 {
+  ///   min-height: 80%;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5(&self) -> String {
+    self.append_value("4-of-5")
+  }
+  /// ```css
+  /// .min-h\:\$1-of-6 {
+  ///   min-height: 16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6(&self) -> String {
+    self.append_value("1-of-6")
+  }
+  /// ```css
+  /// .min-h\:\$5-of-6 {
+  ///   min-height: 83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6(&self) -> String {
+    self.append_value("5-of-6")
+  }
+  /// ```css
+  /// .min-h\:\$1-of-12 {
+  ///   min-height: 8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12(&self) -> String {
+    self.append_value("1-of-12")
+  }
+  /// ```css
+  /// .min-h\:\$5-of-12 {
+  ///   min-height: 41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12(&self) -> String {
+    self.append_value("5-of-12")
+  }
+  /// ```css
+  /// .min-h\:\$7-of-12 {
+  ///   min-height: 58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12(&self) -> String {
+    self.append_value("7-of-12")
+  }
+  /// ```css
+  /// .min-h\:\$11-of-12 {
+  ///   min-height: 91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12(&self) -> String {
+    self.append_value("11-of-12")
+  }
+  /// ```css
+  /// .min-h\:\$full {
+  ///   min-height: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_value("full")
+  }
+  /// ```css
+  /// .min-h\:\$min {
+  ///   min-height: min-content;
+  /// }
+  /// ```
+  #[inline]
+  fn min(&self) -> String {
+    self.append_value("min")
+  }
+  /// ```css
+  /// .min-h\:\$max {
+  ///   min-height: max-content;
+  /// }
+  /// ```
+  #[inline]
+  fn max(&self) -> String {
+    self.append_value("max")
+  }
+  /// ```css
+  /// .min-h\:\$fit {
+  ///   min-height: fit-content;
+  /// }
+  /// ```
+  #[inline]
+  fn fit(&self) -> String {
+    self.append_value("fit")
+  }
+  /// ```css
+  /// .min-h\:\$screen {
+  ///   min-height: 100vh;
+  /// }
+  /// ```
+  #[inline]
+  fn screen(&self) -> String {
+    self.append_value("screen")
+  }
+  /// ```css
+  /// .min-h\:\$half-screen {
+  ///   min-height: 50vh;
+  /// }
+  /// ```
+  #[inline]
+  fn half_screen(&self) -> String {
+    self.append_value("half-screen")
+  }
+  /// ```css
+  /// .min-h\:\$1-of-3-screen {
+  ///   min-height: 33.333333vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_3_screen(&self) -> String {
+    self.append_value("1-of-3-screen")
+  }
+  /// ```css
+  /// .min-h\:\$2-of-3-screen {
+  ///   min-height: 66.666666vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_3_screen(&self) -> String {
+    self.append_value("2-of-3-screen")
+  }
+  /// ```css
+  /// .min-h\:\$1-of-4-screen {
+  ///   min-height: 25vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_4_screen(&self) -> String {
+    self.append_value("1-of-4-screen")
+  }
+  /// ```css
+  /// .min-h\:\$3-of-4-screen {
+  ///   min-height: 75vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_4_screen(&self) -> String {
+    self.append_value("3-of-4-screen")
+  }
+  /// ```css
+  /// .min-h\:\$1-of-5-screen {
+  ///   min-height: 20vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5_screen(&self) -> String {
+    self.append_value("1-of-5-screen")
+  }
+  /// ```css
+  /// .min-h\:\$2-of-5-screen {
+  ///   min-height: 40vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5_screen(&self) -> String {
+    self.append_value("2-of-5-screen")
+  }
+  /// ```css
+  /// .min-h\:\$3-of-5-screen {
+  ///   min-height: 60vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5_screen(&self) -> String {
+    self.append_value("3-of-5-screen")
+  }
+  /// ```css
+  /// .min-h\:\$4-of-5-screen {
+  ///   min-height: 80vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5_screen(&self) -> String {
+    self.append_value("4-of-5-screen")
+  }
+  /// ```css
+  /// .min-h\:\$1-of-6-screen {
+  ///   min-height: 16.666667vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6_screen(&self) -> String {
+    self.append_value("1-of-6-screen")
+  }
+  /// ```css
+  /// .min-h\:\$5-of-6-screen {
+  ///   min-height: 83.333333vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6_screen(&self) -> String {
+    self.append_value("5-of-6-screen")
+  }
+  /// ```css
+  /// .min-h\:\$1-of-12-screen {
+  ///   min-height: 8.333333vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12_screen(&self) -> String {
+    self.append_value("1-of-12-screen")
+  }
+  /// ```css
+  /// .min-h\:\$5-of-12-screen {
+  ///   min-height: 41.666667vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12_screen(&self) -> String {
+    self.append_value("5-of-12-screen")
+  }
+  /// ```css
+  /// .min-h\:\$7-of-12-screen {
+  ///   min-height: 58.333333vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12_screen(&self) -> String {
+    self.append_value("7-of-12-screen")
+  }
+  /// ```css
+  /// .min-h\:\$11-of-12-screen {
+  ///   min-height: 91.666667vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12_screen(&self) -> String {
+    self.append_value("11-of-12-screen")
+  }
+}
+impl GeneratedValueSetMinH for GeneratedAtomMinH {}
+pub struct GeneratedAtomMaxH(String);
+impl GeneratedSkribbleValue for GeneratedAtomMaxH {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetMaxH: GeneratedSkribbleValue {
+  /// ```css
+  /// .max-h\:\$0 {
+  ///   max-height: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .max-h\:\$1 {
+  ///   max-height: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .max-h\:\$2 {
+  ///   max-height: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .max-h\:\$3 {
+  ///   max-height: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .max-h\:\$4 {
+  ///   max-height: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .max-h\:\$5 {
+  ///   max-height: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .max-h\:\$6 {
+  ///   max-height: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .max-h\:\$7 {
+  ///   max-height: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .max-h\:\$8 {
+  ///   max-height: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .max-h\:\$9 {
+  ///   max-height: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .max-h\:\$10 {
+  ///   max-height: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .max-h\:\$11 {
+  ///   max-height: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .max-h\:\$12 {
+  ///   max-height: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .max-h\:\$14 {
+  ///   max-height: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .max-h\:\$16 {
+  ///   max-height: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .max-h\:\$20 {
+  ///   max-height: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .max-h\:\$24 {
+  ///   max-height: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .max-h\:\$28 {
+  ///   max-height: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .max-h\:\$32 {
+  ///   max-height: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .max-h\:\$36 {
+  ///   max-height: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .max-h\:\$40 {
+  ///   max-height: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .max-h\:\$44 {
+  ///   max-height: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .max-h\:\$48 {
+  ///   max-height: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .max-h\:\$52 {
+  ///   max-height: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .max-h\:\$56 {
+  ///   max-height: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .max-h\:\$60 {
+  ///   max-height: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .max-h\:\$64 {
+  ///   max-height: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .max-h\:\$72 {
+  ///   max-height: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .max-h\:\$80 {
+  ///   max-height: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .max-h\:\$96 {
+  ///   max-height: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .max-h\:\$px {
+  ///   max-height: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .max-h\:\$0\.5 {
+  ///   max-height: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .max-h\:\$1\.5 {
+  ///   max-height: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .max-h\:\$2\.5 {
+  ///   max-height: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .max-h\:\$3\.5 {
+  ///   max-height: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .max-h\:\$auto {
+  ///   max-height: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .max-h\:\$half {
+  ///   max-height: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_value("half")
+  }
+  /// ```css
+  /// .max-h\:\$1-of-3 {
+  ///   max-height: 33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
+  }
+  /// ```css
+  /// .max-h\:\$2-of-3 {
+  ///   max-height: 66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
+  }
+  /// ```css
+  /// .max-h\:\$1-of-4 {
+  ///   max-height: 25%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
+  }
+  /// ```css
+  /// .max-h\:\$3-of-4 {
+  ///   max-height: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
+  }
+  /// ```css
+  /// .max-h\:\$1-of-5 {
+  ///   max-height: 20%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5(&self) -> String {
+    self.append_value("1-of-5")
+  }
+  /// ```css
+  /// .max-h\:\$2-of-5 {
+  ///   max-height: 40%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5(&self) -> String {
+    self.append_value("2-of-5")
+  }
+  /// ```css
+  /// .max-h\:\$3-of-5 {
+  ///   max-height: 60%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5(&self) -> String {
+    self.append_value("3-of-5")
+  }
+  /// ```css
+  /// .max-h\:\$4-of-5 {
+  ///   max-height: 80%;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5(&self) -> String {
+    self.append_value("4-of-5")
+  }
+  /// ```css
+  /// .max-h\:\$1-of-6 {
+  ///   max-height: 16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6(&self) -> String {
+    self.append_value("1-of-6")
+  }
+  /// ```css
+  /// .max-h\:\$5-of-6 {
+  ///   max-height: 83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6(&self) -> String {
+    self.append_value("5-of-6")
+  }
+  /// ```css
+  /// .max-h\:\$1-of-12 {
+  ///   max-height: 8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12(&self) -> String {
+    self.append_value("1-of-12")
+  }
+  /// ```css
+  /// .max-h\:\$5-of-12 {
+  ///   max-height: 41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12(&self) -> String {
+    self.append_value("5-of-12")
+  }
+  /// ```css
+  /// .max-h\:\$7-of-12 {
+  ///   max-height: 58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12(&self) -> String {
+    self.append_value("7-of-12")
+  }
+  /// ```css
+  /// .max-h\:\$11-of-12 {
+  ///   max-height: 91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12(&self) -> String {
+    self.append_value("11-of-12")
+  }
+  /// ```css
+  /// .max-h\:\$full {
+  ///   max-height: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_value("full")
+  }
+  /// ```css
+  /// .max-h\:\$min {
+  ///   max-height: min-content;
+  /// }
+  /// ```
+  #[inline]
+  fn min(&self) -> String {
+    self.append_value("min")
+  }
+  /// ```css
+  /// .max-h\:\$max {
+  ///   max-height: max-content;
+  /// }
+  /// ```
+  #[inline]
+  fn max(&self) -> String {
+    self.append_value("max")
+  }
+  /// ```css
+  /// .max-h\:\$fit {
+  ///   max-height: fit-content;
+  /// }
+  /// ```
+  #[inline]
+  fn fit(&self) -> String {
+    self.append_value("fit")
+  }
+  /// ```css
+  /// .max-h\:\$screen {
+  ///   max-height: 100vh;
+  /// }
+  /// ```
+  #[inline]
+  fn screen(&self) -> String {
+    self.append_value("screen")
+  }
+  /// ```css
+  /// .max-h\:\$half-screen {
+  ///   max-height: 50vh;
+  /// }
+  /// ```
+  #[inline]
+  fn half_screen(&self) -> String {
+    self.append_value("half-screen")
+  }
+  /// ```css
+  /// .max-h\:\$1-of-3-screen {
+  ///   max-height: 33.333333vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_3_screen(&self) -> String {
+    self.append_value("1-of-3-screen")
+  }
+  /// ```css
+  /// .max-h\:\$2-of-3-screen {
+  ///   max-height: 66.666666vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_3_screen(&self) -> String {
+    self.append_value("2-of-3-screen")
+  }
+  /// ```css
+  /// .max-h\:\$1-of-4-screen {
+  ///   max-height: 25vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_4_screen(&self) -> String {
+    self.append_value("1-of-4-screen")
+  }
+  /// ```css
+  /// .max-h\:\$3-of-4-screen {
+  ///   max-height: 75vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_4_screen(&self) -> String {
+    self.append_value("3-of-4-screen")
+  }
+  /// ```css
+  /// .max-h\:\$1-of-5-screen {
+  ///   max-height: 20vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5_screen(&self) -> String {
+    self.append_value("1-of-5-screen")
+  }
+  /// ```css
+  /// .max-h\:\$2-of-5-screen {
+  ///   max-height: 40vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5_screen(&self) -> String {
+    self.append_value("2-of-5-screen")
+  }
+  /// ```css
+  /// .max-h\:\$3-of-5-screen {
+  ///   max-height: 60vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5_screen(&self) -> String {
+    self.append_value("3-of-5-screen")
+  }
+  /// ```css
+  /// .max-h\:\$4-of-5-screen {
+  ///   max-height: 80vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5_screen(&self) -> String {
+    self.append_value("4-of-5-screen")
+  }
+  /// ```css
+  /// .max-h\:\$1-of-6-screen {
+  ///   max-height: 16.666667vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6_screen(&self) -> String {
+    self.append_value("1-of-6-screen")
+  }
+  /// ```css
+  /// .max-h\:\$5-of-6-screen {
+  ///   max-height: 83.333333vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6_screen(&self) -> String {
+    self.append_value("5-of-6-screen")
+  }
+  /// ```css
+  /// .max-h\:\$1-of-12-screen {
+  ///   max-height: 8.333333vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12_screen(&self) -> String {
+    self.append_value("1-of-12-screen")
+  }
+  /// ```css
+  /// .max-h\:\$5-of-12-screen {
+  ///   max-height: 41.666667vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12_screen(&self) -> String {
+    self.append_value("5-of-12-screen")
+  }
+  /// ```css
+  /// .max-h\:\$7-of-12-screen {
+  ///   max-height: 58.333333vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12_screen(&self) -> String {
+    self.append_value("7-of-12-screen")
+  }
+  /// ```css
+  /// .max-h\:\$11-of-12-screen {
+  ///   max-height: 91.666667vh;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12_screen(&self) -> String {
+    self.append_value("11-of-12-screen")
+  }
+}
+impl GeneratedValueSetMaxH for GeneratedAtomMaxH {}
 pub trait GeneratedAtom: GeneratedSkribbleValue {
   /// Screen reader only
   #[inline]
@@ -37974,6 +42832,60 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   #[inline]
   fn backdrop_filter_(&self, value: &'static str) -> String {
     self.append(format!("backdrop-filter:[{}]", value.trim()))
+  }
+  /// Control the width of an element.
+  #[inline]
+  fn w(&self) -> GeneratedAtomW {
+    GeneratedAtomW::from_ref(self.append("w"))
+  }
+  #[inline]
+  fn w_(&self, value: &'static str) -> String {
+    self.append(format!("w:[{}]", value.trim()))
+  }
+  /// Control the minimum width of an element.
+  #[inline]
+  fn min_w(&self) -> GeneratedAtomMinW {
+    GeneratedAtomMinW::from_ref(self.append("min-w"))
+  }
+  #[inline]
+  fn min_w_(&self, value: &'static str) -> String {
+    self.append(format!("min-w:[{}]", value.trim()))
+  }
+  /// Control the maximum width of an element.
+  #[inline]
+  fn max_w(&self) -> GeneratedAtomMaxW {
+    GeneratedAtomMaxW::from_ref(self.append("max-w"))
+  }
+  #[inline]
+  fn max_w_(&self, value: &'static str) -> String {
+    self.append(format!("max-w:[{}]", value.trim()))
+  }
+  /// Control the height of an element.
+  #[inline]
+  fn h(&self) -> GeneratedAtomH {
+    GeneratedAtomH::from_ref(self.append("h"))
+  }
+  #[inline]
+  fn h_(&self, value: &'static str) -> String {
+    self.append(format!("h:[{}]", value.trim()))
+  }
+  /// Control the minimum height of an element.
+  #[inline]
+  fn min_h(&self) -> GeneratedAtomMinH {
+    GeneratedAtomMinH::from_ref(self.append("min-h"))
+  }
+  #[inline]
+  fn min_h_(&self, value: &'static str) -> String {
+    self.append(format!("min-h:[{}]", value.trim()))
+  }
+  /// Control the maximum height of an element.
+  #[inline]
+  fn max_h(&self) -> GeneratedAtomMaxH {
+    GeneratedAtomMaxH::from_ref(self.append("max-h"))
+  }
+  #[inline]
+  fn max_h_(&self, value: &'static str) -> String {
+    self.append(format!("max-h:[{}]", value.trim()))
   }
 }
 pub trait GeneratedNamedClasses: GeneratedSkribbleValue {

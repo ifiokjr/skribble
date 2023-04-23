@@ -247,10 +247,20 @@ lazy_static! {
         .values(indexmap! {
           "auto" => "auto",
           "half" => "50%",
-          "third" => "33.333333%",
-          "two-thirds" => "66.666667%",
-          "quarter" => "25%",
-          "three-quarters" => "75%",
+          "1-of-3" => "33.333333%",
+          "2-of-3" => "66.666667%",
+          "1-of-4" => "25%",
+          "3-of-4" => "75%",
+          "1-of-5" => "20%",
+          "2-of-5" => "40%",
+          "3-of-5" => "60%",
+          "4-of-5" => "80%",
+          "1-of-6" => "16.666667%",
+          "5-of-6" => "83.333333%",
+          "1-of-12" => "8.333333%",
+          "5-of-12" => "41.666667%",
+          "7-of-12" => "58.333333%",
+          "11-of-12" => "91.666667%",
           "full" => "100%",
          })
         .build(),
@@ -258,13 +268,101 @@ lazy_static! {
         .name("negative-relative-spacing")
         .values(indexmap! {
           "-half" => "-50%",
-          "-third" => "-33.333333%",
-          "-two-thirds" => "-66.666667%",
-          "-quarter" => "-25%",
-          "-three-quarters" => "-75%",
+          "-1-of-3" => "-33.333333%",
+          "-2-of-3" => "-66.666667%",
+          "-1-of-4" => "-25%",
+          "-3-of-4" => "-75%",
+          "-1-of-5" => "-20%",
+          "-2-of-5" => "-40%",
+          "-3-of-5" => "-60%",
+          "-4-of-5" => "-80%",
+          "-1-of-6" => "-16.666667%",
+          "-5-of-6" => "-83.333333%",
+          "-1-of-12" => "-8.333333%",
+          "-5-of-12" => "-41.666667%",
+          "-7-of-12" => "-58.333333%",
+          "-11-of-12" => "-91.666667%",
           "-full" => "-100%",
          })
         .build(),
+      ValueSet::builder()
+         .name("content-fit")
+         .values(indexmap! {
+          "min" => "min-content",
+          "max" => "max-content",
+          "fit" => "fit-content",
+         })
+         .build(),
+      ValueSet::builder()
+         .name("screen-width")
+         .values(indexmap! {
+          "screen" => "100vw",
+          "half-screen" => "50vw",
+          "1-of-3-screen" => "33.333333vw",
+          "2-of-3-screen" => "66.666666vw",
+          "1-of-4-screen" => "25vw",
+          "3-of-4-screen" => "75vw",
+          "1-of-5-screen" => "20vw",
+          "2-of-5-screen" => "40vw",
+          "3-of-5-screen" => "60vw",
+          "4-of-5-screen" => "80vw",
+          "1-of-6-screen" => "16.666667vw",
+          "5-of-6-screen" => "83.333333vw",
+          "1-of-12-screen" => "8.333333vw",
+          "5-of-12-screen" => "41.666667vw",
+          "7-of-12-screen" => "58.333333vw",
+          "11-of-12-screen" => "91.666667vw",
+         })
+         .build(),
+      ValueSet::builder()
+         .name("screen-height")
+         .values(indexmap! {
+          "screen" => "100vh",
+          "half-screen" => "50vh",
+          "1-of-3-screen" => "33.333333vh",
+          "2-of-3-screen" => "66.666666vh",
+          "1-of-4-screen" => "25vh",
+          "3-of-4-screen" => "75vh",
+          "1-of-5-screen" => "20vh",
+          "2-of-5-screen" => "40vh",
+          "3-of-5-screen" => "60vh",
+          "4-of-5-screen" => "80vh",
+          "1-of-6-screen" => "16.666667vh",
+          "5-of-6-screen" => "83.333333vh",
+          "1-of-12-screen" => "8.333333vh",
+          "5-of-12-screen" => "41.666667vh",
+          "7-of-12-screen" => "58.333333vh",
+          "11-of-12-screen" => "91.666667vh",
+         })
+         .build(),
+      ValueSet::builder()
+         .name("max-width")
+         .values(indexmap! {
+          "0"	=> "0rem; /* 0px */",
+          "none"	=> "none;",
+          "xs"	=> "20rem; /* 320px */",
+          "sm"	=> "24rem; /* 384px */",
+          "md"	=> "28rem; /* 448px */",
+          "lg"	=> "32rem; /* 512px */",
+          "xl"	=> "36rem; /* 576px */",
+          "2xl"	=> "42rem; /* 672px */",
+          "3xl"	=> "48rem; /* 768px */",
+          "4xl"	=> "56rem; /* 896px */",
+          "5xl"	=> "64rem; /* 1024px */",
+          "6xl"	=> "72rem; /* 1152px */",
+          "7xl"	=> "80rem; /* 1280px */",
+          "full"	=> "100%",
+          "min"	=> "min-content",
+          "max"	=> "max-content",
+          "fit"	=> "fit-content",
+          "prose"	=> "65ch",
+          "screen-sm"	=> "640px",
+          "screen-md"	=> "768px",
+          "screen-lg"	=> "1024px",
+          "screen-xl"	=> "1280px",
+          "screen-2xl"	=> "1536px",
+         })
+         .build(),
       ValueSet::builder()
         .name("z-index")
         .values(indexmap! {
@@ -366,11 +464,11 @@ lazy_static! {
           "72" => "-18rem",
           "80" => "-20rem",
           "96" => "-24rem",
-          "third" => "-33.333333%",
-          "twoThirds" => "-66.666667%",
-          "quarter" => "-25%",
+          "1-of-3" => "-33.333333%",
+          "2-of-3" => "-66.666667%",
+          "1-of-4" => "-25%",
           "half" => "-50%",
-          "threeQuarters" => "-75%",
+          "3-of-4" => "-75%",
         })
         .build(),
       ValueSet::builder()
@@ -412,11 +510,11 @@ lazy_static! {
           "72" => "18rem",
           "80" => "20rem",
           "96" => "24rem",
-          "third" => "33.333333%",
-          "twoThirds" => "66.666667%",
-          "quarter" => "25%",
+          "1-of-3" => "33.333333%",
+          "2-of-3" => "66.666667%",
+          "1-of-4" => "25%",
           "half" => "50%",
-          "threeQuarters" => "75%",
+          "3-of-4" => "75%",
          })
         .build(),
       ValueSet::builder()

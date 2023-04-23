@@ -782,6 +782,42 @@ lazy_static! {
         .values(vec!["filter"])
         .styles(indexmap! { "backdrop-filter" => none })
         .build(),
+      Atom::builder()
+        .name("w")
+        .description("Control the width of an element.")
+        .values(vec!["spacing", "relative-spacing", "content-fit", "screen-width"])
+        .styles(indexmap! { "width" => none })
+        .build(),
+      Atom::builder()
+        .name("min-w")
+        .description("Control the minimum width of an element.")
+        .values(vec!["relative-spacing", "content-fit", "screen-width"])
+        .styles(indexmap! { "min-width" => none })
+        .build(),
+      Atom::builder()
+        .name("max-w")
+        .description("Control the maximum width of an element.")
+        .values(vec!["max-width", "content-fit"])
+        .styles(indexmap! { "max-width" => none })
+        .build(),
+      Atom::builder()
+        .name("h")
+        .description("Control the height of an element.")
+        .values(vec!["spacing", "relative-spacing", "content-fit", "screen-height"])
+        .styles(indexmap! { "height" => none })
+        .build(),
+      Atom::builder()
+        .name("min-h")
+        .description("Control the minimum height of an element.")
+        .values(vec!["spacing", "relative-spacing", "content-fit", "screen-height"])
+        .styles(indexmap! { "min-height" => none })
+        .build(),
+      Atom::builder()
+        .name("max-h")
+        .description("Control the maximum height of an element.")
+        .values(vec!["spacing", "relative-spacing", "content-fit", "screen-height"])
+        .styles(indexmap! { "max-height" => none })
+        .build(),
     ]
   };
 }
