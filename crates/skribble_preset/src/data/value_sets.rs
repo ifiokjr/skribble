@@ -204,6 +204,18 @@ lazy_static! {
          })
         .build(),
       ValueSet::builder()
+        .name("relative-spacing")
+        .values(indexmap! {
+          "auto" => "auto",
+          "half" => "50%",
+          "third" => "33.333333%",
+          "two-thirds" => "66.666667%",
+          "quarter" => "25%",
+          "three-quarters" => "75%",
+          "full" => "100%",
+         })
+        .build(),
+      ValueSet::builder()
         .name("z-index")
         .values(indexmap! {
           "0" => "0",
@@ -223,6 +235,12 @@ lazy_static! {
           "-2" => "-2",
           "-3" => "-3",
           "-5" => "-5",
+          "-10" => "-10",
+          "-20" => "-20",
+          "-30" => "-30",
+          "-40" => "-40",
+          "-50" => "-50",
+          "-60" => "-60",
          })
         .build(),
       ValueSet::builder()
@@ -468,6 +486,85 @@ lazy_static! {
           "contents" => "contents",
           "list-item" => "list-item",
           "hidden" => "none",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("visibility")
+        .values(indexmap! {
+          "visible" => "visible",
+          "invisible" => "invisible",
+          "collapse" => "collapse",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("float")
+        .values(indexmap! {
+          "right" => "right",
+          "left" => "left",
+          "none" => "none",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("clear")
+        .values(indexmap! { "both" => "both" })
+        .build(),
+      ValueSet::builder()
+        .name("isolation")
+        .values(indexmap! {
+          "auto" => "auto",
+          "isolate" => "isolate"
+        })
+        .build(),
+      ValueSet::builder()
+        .name("object-fit")
+        .values(indexmap! {
+          "contain" => "contain",
+          "cover" => "cover",
+          "fill" => "fill",
+          "none" => "none",
+          "scale-down" => "scale-down",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("object-position")
+        .values(indexmap! {
+          "bottom" => "bottom",
+          "center" => "center",
+          "left" => "left",
+          "left bottom" => "left bottom",
+          "left top" => "left top",
+          "right" => "right",
+          "right bottom" => "right bottom",
+          "right top" => "right top",
+          "top" => "top",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("overflow")
+        .values(indexmap! {
+          "auto" => "auto",
+          "hidden" => "hidden",
+          "clip" => "clip",
+          "visible" => "visible",
+          "scroll" => "scroll",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("overscroll")
+        .values(indexmap! {
+          "auto" => "auto",
+          "contain" => "contain",
+          "none" => "none",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("position")
+        .values(indexmap! {
+          "static" => "static",
+          "fixed" => "fixed",
+          "absolute" => "absolute",
+          "relative" => "relative",
+          "sticky" => "sticky",
         })
         .build(),
     ]

@@ -87,5 +87,41 @@ lazy_static! {
       .name("hidden")
       .classes(vec!["display:$none"])
       .build(),
+    Alias::builder()
+      .name("visible")
+      .classes(vec!["visibility:$visible"])
+      .build(),
+    Alias::builder()
+      .name("invisible")
+      .classes(vec!["visibility:$hidden"])
+      .build(),
+    Alias::builder()
+      .name("collapse")
+      .classes(vec!["visibility:$collapse"])
+      .build(),
+    Alias::builder()
+      .name("isolate")
+      .classes(vec!["isolate:$isolate"])
+      .build(),
+    Alias::builder()
+      .name("static")
+      .classes(vec!["position:$static"])
+      .build(),
+    Alias::builder()
+      .name("fixed")
+      .classes(vec!["position:$fixed"])
+      .build(),
+    Alias::builder()
+      .name("absolute")
+      .classes(vec!["position:$absolute"])
+      .build(),
+    Alias::builder()
+      .name("relative")
+      .classes(vec!["position:$relative"])
+      .build(),
+    Alias::builder()
+      .name("sticky")
+      .classes(vec!["position:$sticky"])
+      .build(),
   ];
 }

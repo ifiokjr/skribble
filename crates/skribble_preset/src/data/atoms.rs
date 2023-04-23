@@ -406,6 +406,135 @@ lazy_static! {
         .values(vec!["display"])
         .styles(indexmap! { "display" => none })
         .build(),
+      Atom::builder()
+        .name("visibility")
+        .values(vec!["visibility"])
+        .styles(indexmap! { "visibility" => none })
+        .build(),
+      Atom::builder()
+        .name("float")
+        .values(vec!["float"])
+        .styles(indexmap! { "float" => none })
+        .build(),
+      Atom::builder()
+        .name("clear")
+        .values(vec!["float", "clear"])
+        .styles(indexmap! { "clear" => none })
+        .build(),
+      Atom::builder()
+        .name("isolate")
+        .description("Control whether an element should explicitly create a new stacking context. More details: https://developer.mozilla.org/en-US/docs/Web/CSS/isolation")
+        .values(vec!["isolation"])
+        .styles(indexmap! { "isolation" => none })
+        .build(),
+      Atom::builder()
+        .name("object-fit")
+        .description("Control how a replaced element's content should be resized.")
+        .values(vec!["object-fit"])
+        .styles(indexmap! { "object-fit" => none })
+        .build(),
+      Atom::builder()
+        .name("object-position")
+        .description("Control how a replaced element's content should be positioned within its container.")
+        .values(vec!["object-position"])
+        .styles(indexmap! { "object-position" => none })
+        .build(),
+      Atom::builder()
+        .name("overflow")
+        .description("Control how an element handles content that is too large for the container.")
+        .values(vec!["overflow"])
+        .styles(indexmap! { "overflow" => none })
+        .build(),
+        Atom::builder()
+        .name("overflow-x")
+        .description("Control how an element handles horizontal content that is too large for the container.")
+        .values(vec!["overflow"])
+        .styles(indexmap! { "overflow-x" => none })
+        .build(),
+        Atom::builder()
+        .name("overflow-y")
+        .description("Control how an element handles vertical content that is too large for the container.")
+        .values(vec!["overflow"])
+        .styles(indexmap! { "overflow-y" => none })
+        .build(),
+      Atom::builder()
+        .name("overscroll")
+        .description("Control how the browser behaves when reaching the boundary of a scrolling area.")
+        .values(vec!["overscroll"])
+        .styles(indexmap! { "overscroll-behavior" => none })
+        .build(),
+      Atom::builder()
+        .name("overscroll-x")
+        .description("Control how the browser behaves when reaching the horizontal boundary of a scrolling area.")
+        .values(vec!["overscroll"])
+        .styles(indexmap! { "overscroll-behavior-x" => none })
+        .build(),
+      Atom::builder()
+        .name("overscroll-y")
+        .description("Control how the browser behaves when reaching the vertical boundary of a scrolling area.")
+        .values(vec!["overscroll"])
+        .styles(indexmap! { "overscroll-behavior-y" => none })
+        .build(),
+      Atom::builder()
+        .name("position")
+        .description("Control how an element is positioned in the DOM.")
+        .values(vec!["position"])
+        .styles(indexmap! { "position" => none })
+        .build(),
+      Atom::builder()
+        .name("inset")
+        .description("Control the placement of positioned elements.")
+        .values(vec!["spacing", "relative-spacing"])
+        .styles(indexmap! { "inset" => none })
+        .build(),
+      Atom::builder()
+        .name("inset-x")
+        .description("Control the placement of positioned elements.")
+        .values(vec!["spacing", "relative-spacing"])
+        .styles(indexmap! { "left" => none, "right" => none })
+        .build(),
+      Atom::builder()
+        .name("inset-y")
+        .description("Control the placement of positioned elements.")
+        .values(vec!["spacing", "relative-spacing"])
+        .styles(indexmap! { "top" => none, "bottom" => none })
+        .build(),
+      Atom::builder()
+        .name("start")
+        .description("Control the placement of positioned elements.")
+        .values(vec!["spacing", "relative-spacing"])
+        .styles(indexmap! { "inset-inline-start" => none })
+        .build(),
+      Atom::builder()
+        .name("end")
+        .description("Control the placement of positioned elements.")
+        .values(vec!["spacing", "relative-spacing"])
+        .styles(indexmap! { "inset-inline-end" => none })
+        .build(),
+      Atom::builder()
+        .name("top")
+        .description("Control the placement of positioned elements.")
+        .values(vec!["spacing", "relative-spacing"])
+        .styles(indexmap! { "top" => none })
+        .build(),
+      Atom::builder()
+        .name("right")
+        .description("Control the placement of positioned elements.")
+        .values(vec!["spacing", "relative-spacing"])
+        .styles(indexmap! { "right" => none })
+        .build(),
+      Atom::builder()
+        .name("bottom")
+        .description("Control the placement of positioned elements.")
+        .values(vec!["spacing", "relative-spacing"])
+        .styles(indexmap! { "bottom" => none })
+        .build(),
+      Atom::builder()
+        .name("left")
+        .description("Control the placement of positioned elements.")
+        .values(vec!["spacing", "relative-spacing"])
+        .styles(indexmap! { "left" => none })
+        .build(),
     ]
   };
 }

@@ -192,6 +192,87 @@ expression: runner_config
       "description": null,
       "name": "hidden",
       "priority": 150
+    },
+    "visible": {
+      "classes": [
+        "visibility:$visible"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "visible",
+      "priority": 150
+    },
+    "invisible": {
+      "classes": [
+        "visibility:$hidden"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "invisible",
+      "priority": 150
+    },
+    "collapse": {
+      "classes": [
+        "visibility:$collapse"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "collapse",
+      "priority": 150
+    },
+    "isolate": {
+      "classes": [
+        "isolate:$isolate"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "isolate",
+      "priority": 150
+    },
+    "static": {
+      "classes": [
+        "position:$static"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "static",
+      "priority": 150
+    },
+    "fixed": {
+      "classes": [
+        "position:$fixed"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "fixed",
+      "priority": 150
+    },
+    "absolute": {
+      "classes": [
+        "position:$absolute"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "absolute",
+      "priority": 150
+    },
+    "relative": {
+      "classes": [
+        "position:$relative"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "relative",
+      "priority": 150
+    },
+    "sticky": {
+      "classes": [
+        "position:$sticky"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "sticky",
+      "priority": 150
     }
   },
   "atoms": {
@@ -1178,6 +1259,400 @@ expression: runner_config
           {
             "priority": 150,
             "value": "display"
+          }
+        ]
+      }
+    },
+    "visibility": {
+      "name": "visibility",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "visibility": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "visibility"
+          }
+        ]
+      }
+    },
+    "float": {
+      "name": "float",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "float": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "float"
+          }
+        ]
+      }
+    },
+    "clear": {
+      "name": "clear",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "clear": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "float"
+          },
+          {
+            "priority": 150,
+            "value": "clear"
+          }
+        ]
+      }
+    },
+    "isolate": {
+      "name": "isolate",
+      "description": "Control whether an element should explicitly create a new stacking context. More details: https://developer.mozilla.org/en-US/docs/Web/CSS/isolation",
+      "priority": 150,
+      "styles": {
+        "isolation": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "isolation"
+          }
+        ]
+      }
+    },
+    "object-fit": {
+      "name": "object-fit",
+      "description": "Control how a replaced element's content should be resized.",
+      "priority": 150,
+      "styles": {
+        "object-fit": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "object-fit"
+          }
+        ]
+      }
+    },
+    "object-position": {
+      "name": "object-position",
+      "description": "Control how a replaced element's content should be positioned within its container.",
+      "priority": 150,
+      "styles": {
+        "object-position": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "object-position"
+          }
+        ]
+      }
+    },
+    "overflow": {
+      "name": "overflow",
+      "description": "Control how an element handles content that is too large for the container.",
+      "priority": 150,
+      "styles": {
+        "overflow": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "overflow"
+          }
+        ]
+      }
+    },
+    "overflow-x": {
+      "name": "overflow-x",
+      "description": "Control how an element handles horizontal content that is too large for the container.",
+      "priority": 150,
+      "styles": {
+        "overflow-x": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "overflow"
+          }
+        ]
+      }
+    },
+    "overflow-y": {
+      "name": "overflow-y",
+      "description": "Control how an element handles vertical content that is too large for the container.",
+      "priority": 150,
+      "styles": {
+        "overflow-y": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "overflow"
+          }
+        ]
+      }
+    },
+    "overscroll": {
+      "name": "overscroll",
+      "description": "Control how the browser behaves when reaching the boundary of a scrolling area.",
+      "priority": 150,
+      "styles": {
+        "overscroll-behavior": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "overscroll"
+          }
+        ]
+      }
+    },
+    "overscroll-x": {
+      "name": "overscroll-x",
+      "description": "Control how the browser behaves when reaching the horizontal boundary of a scrolling area.",
+      "priority": 150,
+      "styles": {
+        "overscroll-behavior-x": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "overscroll"
+          }
+        ]
+      }
+    },
+    "overscroll-y": {
+      "name": "overscroll-y",
+      "description": "Control how the browser behaves when reaching the vertical boundary of a scrolling area.",
+      "priority": 150,
+      "styles": {
+        "overscroll-behavior-y": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "overscroll"
+          }
+        ]
+      }
+    },
+    "position": {
+      "name": "position",
+      "description": "Control how an element is positioned in the DOM.",
+      "priority": 150,
+      "styles": {
+        "position": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "position"
+          }
+        ]
+      }
+    },
+    "inset": {
+      "name": "inset",
+      "description": "Control the placement of positioned elements.",
+      "priority": 150,
+      "styles": {
+        "inset": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "spacing"
+          },
+          {
+            "priority": 150,
+            "value": "relative-spacing"
+          }
+        ]
+      }
+    },
+    "inset-x": {
+      "name": "inset-x",
+      "description": "Control the placement of positioned elements.",
+      "priority": 150,
+      "styles": {
+        "left": null,
+        "right": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "spacing"
+          },
+          {
+            "priority": 150,
+            "value": "relative-spacing"
+          }
+        ]
+      }
+    },
+    "inset-y": {
+      "name": "inset-y",
+      "description": "Control the placement of positioned elements.",
+      "priority": 150,
+      "styles": {
+        "top": null,
+        "bottom": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "spacing"
+          },
+          {
+            "priority": 150,
+            "value": "relative-spacing"
+          }
+        ]
+      }
+    },
+    "start": {
+      "name": "start",
+      "description": "Control the placement of positioned elements.",
+      "priority": 150,
+      "styles": {
+        "inset-inline-start": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "spacing"
+          },
+          {
+            "priority": 150,
+            "value": "relative-spacing"
+          }
+        ]
+      }
+    },
+    "end": {
+      "name": "end",
+      "description": "Control the placement of positioned elements.",
+      "priority": 150,
+      "styles": {
+        "inset-inline-end": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "spacing"
+          },
+          {
+            "priority": 150,
+            "value": "relative-spacing"
+          }
+        ]
+      }
+    },
+    "top": {
+      "name": "top",
+      "description": "Control the placement of positioned elements.",
+      "priority": 150,
+      "styles": {
+        "top": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "spacing"
+          },
+          {
+            "priority": 150,
+            "value": "relative-spacing"
+          }
+        ]
+      }
+    },
+    "right": {
+      "name": "right",
+      "description": "Control the placement of positioned elements.",
+      "priority": 150,
+      "styles": {
+        "right": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "spacing"
+          },
+          {
+            "priority": 150,
+            "value": "relative-spacing"
+          }
+        ]
+      }
+    },
+    "bottom": {
+      "name": "bottom",
+      "description": "Control the placement of positioned elements.",
+      "priority": 150,
+      "styles": {
+        "bottom": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "spacing"
+          },
+          {
+            "priority": 150,
+            "value": "relative-spacing"
+          }
+        ]
+      }
+    },
+    "left": {
+      "name": "left",
+      "description": "Control the placement of positioned elements.",
+      "priority": 150,
+      "styles": {
+        "left": null
+      },
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "spacing"
+          },
+          {
+            "priority": 150,
+            "value": "relative-spacing"
           }
         ]
       }
@@ -2857,7 +3332,29 @@ expression: runner_config
       "break-inside",
       "box-decoration",
       "box",
-      "display"
+      "display",
+      "visibility",
+      "float",
+      "clear",
+      "isolate",
+      "object-fit",
+      "object-position",
+      "overflow",
+      "overflow-x",
+      "overflow-y",
+      "overscroll",
+      "overscroll-x",
+      "overscroll-y",
+      "position",
+      "inset",
+      "inset-x",
+      "inset-y",
+      "start",
+      "end",
+      "top",
+      "right",
+      "bottom",
+      "left"
     ],
     "classes": [
       "group",
@@ -2898,7 +3395,16 @@ expression: runner_config
       "inline-grid",
       "contents",
       "list-item",
-      "hidden"
+      "hidden",
+      "visible",
+      "invisible",
+      "collapse",
+      "isolate",
+      "static",
+      "fixed",
+      "absolute",
+      "relative",
+      "sticky"
     ],
     "media_queries": [
       "screen",
@@ -4316,7 +4822,13 @@ expression: runner_config
       "-1",
       "-2",
       "-3",
-      "-5"
+      "-5",
+      "-10",
+      "-20",
+      "-30",
+      "-40",
+      "-50",
+      "-60"
     ],
     "atom:dir": [
       "ltr",
@@ -4697,6 +5209,483 @@ expression: runner_config
       "contents",
       "list-item",
       "hidden"
+    ],
+    "atom:visibility": [
+      "visible",
+      "invisible",
+      "collapse"
+    ],
+    "atom:float": [
+      "right",
+      "left",
+      "none"
+    ],
+    "atom:clear": [
+      "right",
+      "left",
+      "none",
+      "both"
+    ],
+    "atom:isolate": [
+      "auto",
+      "isolate"
+    ],
+    "atom:object-fit": [
+      "contain",
+      "cover",
+      "fill",
+      "none",
+      "scale-down"
+    ],
+    "atom:object-position": [
+      "bottom",
+      "center",
+      "left",
+      "left bottom",
+      "left top",
+      "right",
+      "right bottom",
+      "right top",
+      "top"
+    ],
+    "atom:overflow": [
+      "auto",
+      "hidden",
+      "clip",
+      "visible",
+      "scroll"
+    ],
+    "atom:overflow-x": [
+      "auto",
+      "hidden",
+      "clip",
+      "visible",
+      "scroll"
+    ],
+    "atom:overflow-y": [
+      "auto",
+      "hidden",
+      "clip",
+      "visible",
+      "scroll"
+    ],
+    "atom:overscroll": [
+      "auto",
+      "contain",
+      "none"
+    ],
+    "atom:overscroll-x": [
+      "auto",
+      "contain",
+      "none"
+    ],
+    "atom:overscroll-y": [
+      "auto",
+      "contain",
+      "none"
+    ],
+    "atom:position": [
+      "static",
+      "fixed",
+      "absolute",
+      "relative",
+      "sticky"
+    ],
+    "atom:inset": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "px",
+      "0.5",
+      "1.5",
+      "2.5",
+      "3.5",
+      "auto",
+      "half",
+      "third",
+      "two-thirds",
+      "quarter",
+      "three-quarters",
+      "full"
+    ],
+    "atom:inset-x": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "px",
+      "0.5",
+      "1.5",
+      "2.5",
+      "3.5",
+      "auto",
+      "half",
+      "third",
+      "two-thirds",
+      "quarter",
+      "three-quarters",
+      "full"
+    ],
+    "atom:inset-y": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "px",
+      "0.5",
+      "1.5",
+      "2.5",
+      "3.5",
+      "auto",
+      "half",
+      "third",
+      "two-thirds",
+      "quarter",
+      "three-quarters",
+      "full"
+    ],
+    "atom:start": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "px",
+      "0.5",
+      "1.5",
+      "2.5",
+      "3.5",
+      "auto",
+      "half",
+      "third",
+      "two-thirds",
+      "quarter",
+      "three-quarters",
+      "full"
+    ],
+    "atom:end": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "px",
+      "0.5",
+      "1.5",
+      "2.5",
+      "3.5",
+      "auto",
+      "half",
+      "third",
+      "two-thirds",
+      "quarter",
+      "three-quarters",
+      "full"
+    ],
+    "atom:top": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "px",
+      "0.5",
+      "1.5",
+      "2.5",
+      "3.5",
+      "auto",
+      "half",
+      "third",
+      "two-thirds",
+      "quarter",
+      "three-quarters",
+      "full"
+    ],
+    "atom:right": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "px",
+      "0.5",
+      "1.5",
+      "2.5",
+      "3.5",
+      "auto",
+      "half",
+      "third",
+      "two-thirds",
+      "quarter",
+      "three-quarters",
+      "full"
+    ],
+    "atom:bottom": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "px",
+      "0.5",
+      "1.5",
+      "2.5",
+      "3.5",
+      "auto",
+      "half",
+      "third",
+      "two-thirds",
+      "quarter",
+      "three-quarters",
+      "full"
+    ],
+    "atom:left": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "px",
+      "0.5",
+      "1.5",
+      "2.5",
+      "3.5",
+      "auto",
+      "half",
+      "third",
+      "two-thirds",
+      "quarter",
+      "three-quarters",
+      "full"
     ]
   },
   "palette": {
@@ -5170,6 +6159,20 @@ expression: runner_config
         "3.5": "0.875rem"
       }
     },
+    "relative-spacing": {
+      "name": "relative-spacing",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "auto": "auto",
+        "half": "50%",
+        "third": "33.333333%",
+        "two-thirds": "66.666667%",
+        "quarter": "25%",
+        "three-quarters": "75%",
+        "full": "100%"
+      }
+    },
     "z-index": {
       "name": "z-index",
       "description": null,
@@ -5191,7 +6194,13 @@ expression: runner_config
         "-1": "-1",
         "-2": "-2",
         "-3": "-3",
-        "-5": "-5"
+        "-5": "-5",
+        "-10": "-10",
+        "-20": "-20",
+        "-30": "-30",
+        "-40": "-40",
+        "-50": "-50",
+        "-60": "-60"
       }
     },
     "direction": {
@@ -5464,6 +6473,105 @@ expression: runner_config
         "contents": "contents",
         "list-item": "list-item",
         "hidden": "none"
+      }
+    },
+    "visibility": {
+      "name": "visibility",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "visible": "visible",
+        "invisible": "invisible",
+        "collapse": "collapse"
+      }
+    },
+    "float": {
+      "name": "float",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "right": "right",
+        "left": "left",
+        "none": "none"
+      }
+    },
+    "clear": {
+      "name": "clear",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "both": "both"
+      }
+    },
+    "isolation": {
+      "name": "isolation",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "auto": "auto",
+        "isolate": "isolate"
+      }
+    },
+    "object-fit": {
+      "name": "object-fit",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "contain": "contain",
+        "cover": "cover",
+        "fill": "fill",
+        "none": "none",
+        "scale-down": "scale-down"
+      }
+    },
+    "object-position": {
+      "name": "object-position",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "bottom": "bottom",
+        "center": "center",
+        "left": "left",
+        "left bottom": "left bottom",
+        "left top": "left top",
+        "right": "right",
+        "right bottom": "right bottom",
+        "right top": "right top",
+        "top": "top"
+      }
+    },
+    "overflow": {
+      "name": "overflow",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "auto": "auto",
+        "hidden": "hidden",
+        "clip": "clip",
+        "visible": "visible",
+        "scroll": "scroll"
+      }
+    },
+    "overscroll": {
+      "name": "overscroll",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "auto": "auto",
+        "contain": "contain",
+        "none": "none"
+      }
+    },
+    "position": {
+      "name": "position",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "static": "static",
+        "fixed": "fixed",
+        "absolute": "absolute",
+        "relative": "relative",
+        "sticky": "sticky"
       }
     }
   }

@@ -15890,6 +15890,60 @@ pub trait GeneratedValueSetZ: GeneratedSkribbleValue {
   fn m5(&self) -> String {
     self.append_value("-5")
   }
+  /// ```css
+  /// .z\:\$-10 {
+  ///   z-index: -10;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .z\:\$-20 {
+  ///   z-index: -20;
+  /// }
+  /// ```
+  #[inline]
+  fn m20(&self) -> String {
+    self.append_value("-20")
+  }
+  /// ```css
+  /// .z\:\$-30 {
+  ///   z-index: -30;
+  /// }
+  /// ```
+  #[inline]
+  fn m30(&self) -> String {
+    self.append_value("-30")
+  }
+  /// ```css
+  /// .z\:\$-40 {
+  ///   z-index: -40;
+  /// }
+  /// ```
+  #[inline]
+  fn m40(&self) -> String {
+    self.append_value("-40")
+  }
+  /// ```css
+  /// .z\:\$-50 {
+  ///   z-index: -50;
+  /// }
+  /// ```
+  #[inline]
+  fn m50(&self) -> String {
+    self.append_value("-50")
+  }
+  /// ```css
+  /// .z\:\$-60 {
+  ///   z-index: -60;
+  /// }
+  /// ```
+  #[inline]
+  fn m60(&self) -> String {
+    self.append_value("-60")
+  }
 }
 impl GeneratedValueSetZ for GeneratedAtomZ {}
 pub struct GeneratedAtomDir(String);
@@ -16874,6 +16928,4317 @@ pub trait GeneratedValueSetDisplay: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetDisplay for GeneratedAtomDisplay {}
+pub struct GeneratedAtomVisibility(String);
+impl GeneratedSkribbleValue for GeneratedAtomVisibility {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetVisibility: GeneratedSkribbleValue {
+  /// ```css
+  /// .visibility\:\$visible {
+  ///   visibility: visible;
+  /// }
+  /// ```
+  #[inline]
+  fn visible(&self) -> String {
+    self.append_value("visible")
+  }
+  /// ```css
+  /// .visibility\:\$invisible {
+  ///   visibility: invisible;
+  /// }
+  /// ```
+  #[inline]
+  fn invisible(&self) -> String {
+    self.append_value("invisible")
+  }
+  /// ```css
+  /// .visibility\:\$collapse {
+  ///   visibility: collapse;
+  /// }
+  /// ```
+  #[inline]
+  fn collapse(&self) -> String {
+    self.append_value("collapse")
+  }
+}
+impl GeneratedValueSetVisibility for GeneratedAtomVisibility {}
+pub struct GeneratedAtomFloat(String);
+impl GeneratedSkribbleValue for GeneratedAtomFloat {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetFloat: GeneratedSkribbleValue {
+  /// ```css
+  /// .float\:\$right {
+  ///   float: right;
+  /// }
+  /// ```
+  #[inline]
+  fn right(&self) -> String {
+    self.append_value("right")
+  }
+  /// ```css
+  /// .float\:\$left {
+  ///   float: left;
+  /// }
+  /// ```
+  #[inline]
+  fn left(&self) -> String {
+    self.append_value("left")
+  }
+  /// ```css
+  /// .float\:\$none {
+  ///   float: none;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+impl GeneratedValueSetFloat for GeneratedAtomFloat {}
+pub struct GeneratedAtomClear(String);
+impl GeneratedSkribbleValue for GeneratedAtomClear {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetClear: GeneratedSkribbleValue {
+  /// ```css
+  /// .clear\:\$right {
+  ///   clear: right;
+  /// }
+  /// ```
+  #[inline]
+  fn right(&self) -> String {
+    self.append_value("right")
+  }
+  /// ```css
+  /// .clear\:\$left {
+  ///   clear: left;
+  /// }
+  /// ```
+  #[inline]
+  fn left(&self) -> String {
+    self.append_value("left")
+  }
+  /// ```css
+  /// .clear\:\$none {
+  ///   clear: none;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+  /// ```css
+  /// .clear\:\$both {
+  ///   clear: both;
+  /// }
+  /// ```
+  #[inline]
+  fn both(&self) -> String {
+    self.append_value("both")
+  }
+}
+impl GeneratedValueSetClear for GeneratedAtomClear {}
+pub struct GeneratedAtomIsolate(String);
+impl GeneratedSkribbleValue for GeneratedAtomIsolate {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetIsolate: GeneratedSkribbleValue {
+  /// ```css
+  /// .isolate\:\$auto {
+  ///   isolation: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .isolate\:\$isolate {
+  ///   isolation: isolate;
+  /// }
+  /// ```
+  #[inline]
+  fn isolate(&self) -> String {
+    self.append_value("isolate")
+  }
+}
+impl GeneratedValueSetIsolate for GeneratedAtomIsolate {}
+pub struct GeneratedAtomObjectFit(String);
+impl GeneratedSkribbleValue for GeneratedAtomObjectFit {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetObjectFit: GeneratedSkribbleValue {
+  /// ```css
+  /// .object-fit\:\$contain {
+  ///   object-fit: contain;
+  /// }
+  /// ```
+  #[inline]
+  fn contain(&self) -> String {
+    self.append_value("contain")
+  }
+  /// ```css
+  /// .object-fit\:\$cover {
+  ///   object-fit: cover;
+  /// }
+  /// ```
+  #[inline]
+  fn cover(&self) -> String {
+    self.append_value("cover")
+  }
+  /// ```css
+  /// .object-fit\:\$fill {
+  ///   object-fit: fill;
+  /// }
+  /// ```
+  #[inline]
+  fn fill(&self) -> String {
+    self.append_value("fill")
+  }
+  /// ```css
+  /// .object-fit\:\$none {
+  ///   object-fit: none;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+  /// ```css
+  /// .object-fit\:\$scale-down {
+  ///   object-fit: scale-down;
+  /// }
+  /// ```
+  #[inline]
+  fn scale_down(&self) -> String {
+    self.append_value("scale-down")
+  }
+}
+impl GeneratedValueSetObjectFit for GeneratedAtomObjectFit {}
+pub struct GeneratedAtomObjectPosition(String);
+impl GeneratedSkribbleValue for GeneratedAtomObjectPosition {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetObjectPosition: GeneratedSkribbleValue {
+  /// ```css
+  /// .object-position\:\$bottom {
+  ///   object-position: bottom;
+  /// }
+  /// ```
+  #[inline]
+  fn bottom(&self) -> String {
+    self.append_value("bottom")
+  }
+  /// ```css
+  /// .object-position\:\$center {
+  ///   object-position: center;
+  /// }
+  /// ```
+  #[inline]
+  fn center(&self) -> String {
+    self.append_value("center")
+  }
+  /// ```css
+  /// .object-position\:\$left {
+  ///   object-position: left;
+  /// }
+  /// ```
+  #[inline]
+  fn left(&self) -> String {
+    self.append_value("left")
+  }
+  /// ```css
+  /// .object-position\:\$left\ bottom {
+  ///   object-position: left bottom;
+  /// }
+  /// ```
+  #[inline]
+  fn left_bottom(&self) -> String {
+    self.append_value("left bottom")
+  }
+  /// ```css
+  /// .object-position\:\$left\ top {
+  ///   object-position: left top;
+  /// }
+  /// ```
+  #[inline]
+  fn left_top(&self) -> String {
+    self.append_value("left top")
+  }
+  /// ```css
+  /// .object-position\:\$right {
+  ///   object-position: right;
+  /// }
+  /// ```
+  #[inline]
+  fn right(&self) -> String {
+    self.append_value("right")
+  }
+  /// ```css
+  /// .object-position\:\$right\ bottom {
+  ///   object-position: right bottom;
+  /// }
+  /// ```
+  #[inline]
+  fn right_bottom(&self) -> String {
+    self.append_value("right bottom")
+  }
+  /// ```css
+  /// .object-position\:\$right\ top {
+  ///   object-position: right top;
+  /// }
+  /// ```
+  #[inline]
+  fn right_top(&self) -> String {
+    self.append_value("right top")
+  }
+  /// ```css
+  /// .object-position\:\$top {
+  ///   object-position: top;
+  /// }
+  /// ```
+  #[inline]
+  fn top(&self) -> String {
+    self.append_value("top")
+  }
+}
+impl GeneratedValueSetObjectPosition for GeneratedAtomObjectPosition {}
+pub struct GeneratedAtomOverflow(String);
+impl GeneratedSkribbleValue for GeneratedAtomOverflow {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetOverflow: GeneratedSkribbleValue {
+  /// ```css
+  /// .overflow\:\$auto {
+  ///   overflow: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .overflow\:\$hidden {
+  ///   overflow: hidden;
+  /// }
+  /// ```
+  #[inline]
+  fn hidden(&self) -> String {
+    self.append_value("hidden")
+  }
+  /// ```css
+  /// .overflow\:\$clip {
+  ///   overflow: clip;
+  /// }
+  /// ```
+  #[inline]
+  fn clip(&self) -> String {
+    self.append_value("clip")
+  }
+  /// ```css
+  /// .overflow\:\$visible {
+  ///   overflow: visible;
+  /// }
+  /// ```
+  #[inline]
+  fn visible(&self) -> String {
+    self.append_value("visible")
+  }
+  /// ```css
+  /// .overflow\:\$scroll {
+  ///   overflow: scroll;
+  /// }
+  /// ```
+  #[inline]
+  fn scroll(&self) -> String {
+    self.append_value("scroll")
+  }
+}
+impl GeneratedValueSetOverflow for GeneratedAtomOverflow {}
+pub struct GeneratedAtomOverflowX(String);
+impl GeneratedSkribbleValue for GeneratedAtomOverflowX {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetOverflowX: GeneratedSkribbleValue {
+  /// ```css
+  /// .overflow-x\:\$auto {
+  ///   overflow-x: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .overflow-x\:\$hidden {
+  ///   overflow-x: hidden;
+  /// }
+  /// ```
+  #[inline]
+  fn hidden(&self) -> String {
+    self.append_value("hidden")
+  }
+  /// ```css
+  /// .overflow-x\:\$clip {
+  ///   overflow-x: clip;
+  /// }
+  /// ```
+  #[inline]
+  fn clip(&self) -> String {
+    self.append_value("clip")
+  }
+  /// ```css
+  /// .overflow-x\:\$visible {
+  ///   overflow-x: visible;
+  /// }
+  /// ```
+  #[inline]
+  fn visible(&self) -> String {
+    self.append_value("visible")
+  }
+  /// ```css
+  /// .overflow-x\:\$scroll {
+  ///   overflow-x: scroll;
+  /// }
+  /// ```
+  #[inline]
+  fn scroll(&self) -> String {
+    self.append_value("scroll")
+  }
+}
+impl GeneratedValueSetOverflowX for GeneratedAtomOverflowX {}
+pub struct GeneratedAtomOverflowY(String);
+impl GeneratedSkribbleValue for GeneratedAtomOverflowY {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetOverflowY: GeneratedSkribbleValue {
+  /// ```css
+  /// .overflow-y\:\$auto {
+  ///   overflow-y: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .overflow-y\:\$hidden {
+  ///   overflow-y: hidden;
+  /// }
+  /// ```
+  #[inline]
+  fn hidden(&self) -> String {
+    self.append_value("hidden")
+  }
+  /// ```css
+  /// .overflow-y\:\$clip {
+  ///   overflow-y: clip;
+  /// }
+  /// ```
+  #[inline]
+  fn clip(&self) -> String {
+    self.append_value("clip")
+  }
+  /// ```css
+  /// .overflow-y\:\$visible {
+  ///   overflow-y: visible;
+  /// }
+  /// ```
+  #[inline]
+  fn visible(&self) -> String {
+    self.append_value("visible")
+  }
+  /// ```css
+  /// .overflow-y\:\$scroll {
+  ///   overflow-y: scroll;
+  /// }
+  /// ```
+  #[inline]
+  fn scroll(&self) -> String {
+    self.append_value("scroll")
+  }
+}
+impl GeneratedValueSetOverflowY for GeneratedAtomOverflowY {}
+pub struct GeneratedAtomOverscroll(String);
+impl GeneratedSkribbleValue for GeneratedAtomOverscroll {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetOverscroll: GeneratedSkribbleValue {
+  /// ```css
+  /// .overscroll\:\$auto {
+  ///   overscroll-behavior: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .overscroll\:\$contain {
+  ///   overscroll-behavior: contain;
+  /// }
+  /// ```
+  #[inline]
+  fn contain(&self) -> String {
+    self.append_value("contain")
+  }
+  /// ```css
+  /// .overscroll\:\$none {
+  ///   overscroll-behavior: none;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+impl GeneratedValueSetOverscroll for GeneratedAtomOverscroll {}
+pub struct GeneratedAtomOverscrollX(String);
+impl GeneratedSkribbleValue for GeneratedAtomOverscrollX {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetOverscrollX: GeneratedSkribbleValue {
+  /// ```css
+  /// .overscroll-x\:\$auto {
+  ///   overscroll-behavior-x: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .overscroll-x\:\$contain {
+  ///   overscroll-behavior-x: contain;
+  /// }
+  /// ```
+  #[inline]
+  fn contain(&self) -> String {
+    self.append_value("contain")
+  }
+  /// ```css
+  /// .overscroll-x\:\$none {
+  ///   overscroll-behavior-x: none;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+impl GeneratedValueSetOverscrollX for GeneratedAtomOverscrollX {}
+pub struct GeneratedAtomOverscrollY(String);
+impl GeneratedSkribbleValue for GeneratedAtomOverscrollY {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetOverscrollY: GeneratedSkribbleValue {
+  /// ```css
+  /// .overscroll-y\:\$auto {
+  ///   overscroll-behavior-y: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .overscroll-y\:\$contain {
+  ///   overscroll-behavior-y: contain;
+  /// }
+  /// ```
+  #[inline]
+  fn contain(&self) -> String {
+    self.append_value("contain")
+  }
+  /// ```css
+  /// .overscroll-y\:\$none {
+  ///   overscroll-behavior-y: none;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+impl GeneratedValueSetOverscrollY for GeneratedAtomOverscrollY {}
+pub struct GeneratedAtomPosition(String);
+impl GeneratedSkribbleValue for GeneratedAtomPosition {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetPosition: GeneratedSkribbleValue {
+  /// ```css
+  /// .position\:\$static {
+  ///   position: static;
+  /// }
+  /// ```
+  #[inline]
+  fn r#static(&self) -> String {
+    self.append_value("static")
+  }
+  /// ```css
+  /// .position\:\$fixed {
+  ///   position: fixed;
+  /// }
+  /// ```
+  #[inline]
+  fn fixed(&self) -> String {
+    self.append_value("fixed")
+  }
+  /// ```css
+  /// .position\:\$absolute {
+  ///   position: absolute;
+  /// }
+  /// ```
+  #[inline]
+  fn absolute(&self) -> String {
+    self.append_value("absolute")
+  }
+  /// ```css
+  /// .position\:\$relative {
+  ///   position: relative;
+  /// }
+  /// ```
+  #[inline]
+  fn relative(&self) -> String {
+    self.append_value("relative")
+  }
+  /// ```css
+  /// .position\:\$sticky {
+  ///   position: sticky;
+  /// }
+  /// ```
+  #[inline]
+  fn sticky(&self) -> String {
+    self.append_value("sticky")
+  }
+}
+impl GeneratedValueSetPosition for GeneratedAtomPosition {}
+pub struct GeneratedAtomInset(String);
+impl GeneratedSkribbleValue for GeneratedAtomInset {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetInset: GeneratedSkribbleValue {
+  /// ```css
+  /// .inset\:\$0 {
+  ///   inset: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .inset\:\$1 {
+  ///   inset: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .inset\:\$2 {
+  ///   inset: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .inset\:\$3 {
+  ///   inset: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .inset\:\$4 {
+  ///   inset: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .inset\:\$5 {
+  ///   inset: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .inset\:\$6 {
+  ///   inset: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .inset\:\$7 {
+  ///   inset: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .inset\:\$8 {
+  ///   inset: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .inset\:\$9 {
+  ///   inset: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .inset\:\$10 {
+  ///   inset: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .inset\:\$11 {
+  ///   inset: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .inset\:\$12 {
+  ///   inset: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .inset\:\$14 {
+  ///   inset: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .inset\:\$16 {
+  ///   inset: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .inset\:\$20 {
+  ///   inset: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .inset\:\$24 {
+  ///   inset: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .inset\:\$28 {
+  ///   inset: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .inset\:\$32 {
+  ///   inset: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .inset\:\$36 {
+  ///   inset: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .inset\:\$40 {
+  ///   inset: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .inset\:\$44 {
+  ///   inset: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .inset\:\$48 {
+  ///   inset: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .inset\:\$52 {
+  ///   inset: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .inset\:\$56 {
+  ///   inset: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .inset\:\$60 {
+  ///   inset: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .inset\:\$64 {
+  ///   inset: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .inset\:\$72 {
+  ///   inset: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .inset\:\$80 {
+  ///   inset: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .inset\:\$96 {
+  ///   inset: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .inset\:\$px {
+  ///   inset: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .inset\:\$0\.5 {
+  ///   inset: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .inset\:\$1\.5 {
+  ///   inset: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .inset\:\$2\.5 {
+  ///   inset: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .inset\:\$3\.5 {
+  ///   inset: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .inset\:\$auto {
+  ///   inset: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .inset\:\$half {
+  ///   inset: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_value("half")
+  }
+  /// ```css
+  /// .inset\:\$third {
+  ///   inset: 33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn third(&self) -> String {
+    self.append_value("third")
+  }
+  /// ```css
+  /// .inset\:\$two-thirds {
+  ///   inset: 66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn two_thirds(&self) -> String {
+    self.append_value("two-thirds")
+  }
+  /// ```css
+  /// .inset\:\$quarter {
+  ///   inset: 25%;
+  /// }
+  /// ```
+  #[inline]
+  fn quarter(&self) -> String {
+    self.append_value("quarter")
+  }
+  /// ```css
+  /// .inset\:\$three-quarters {
+  ///   inset: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn three_quarters(&self) -> String {
+    self.append_value("three-quarters")
+  }
+  /// ```css
+  /// .inset\:\$full {
+  ///   inset: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_value("full")
+  }
+}
+impl GeneratedValueSetInset for GeneratedAtomInset {}
+pub struct GeneratedAtomInsetX(String);
+impl GeneratedSkribbleValue for GeneratedAtomInsetX {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetInsetX: GeneratedSkribbleValue {
+  /// ```css
+  /// .inset-x\:\$0 {
+  ///   left: 0px;
+  ///   right: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .inset-x\:\$1 {
+  ///   left: 0.25rem;
+  ///   right: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .inset-x\:\$2 {
+  ///   left: 0.5rem;
+  ///   right: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .inset-x\:\$3 {
+  ///   left: 0.75rem;
+  ///   right: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .inset-x\:\$4 {
+  ///   left: 1rem;
+  ///   right: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .inset-x\:\$5 {
+  ///   left: 1.25rem;
+  ///   right: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .inset-x\:\$6 {
+  ///   left: 1.5rem;
+  ///   right: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .inset-x\:\$7 {
+  ///   left: 1.75rem;
+  ///   right: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .inset-x\:\$8 {
+  ///   left: 2rem;
+  ///   right: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .inset-x\:\$9 {
+  ///   left: 2.25rem;
+  ///   right: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .inset-x\:\$10 {
+  ///   left: 2.5rem;
+  ///   right: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .inset-x\:\$11 {
+  ///   left: 2.75rem;
+  ///   right: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .inset-x\:\$12 {
+  ///   left: 3rem;
+  ///   right: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .inset-x\:\$14 {
+  ///   left: 3.5rem;
+  ///   right: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .inset-x\:\$16 {
+  ///   left: 4rem;
+  ///   right: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .inset-x\:\$20 {
+  ///   left: 5rem;
+  ///   right: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .inset-x\:\$24 {
+  ///   left: 6rem;
+  ///   right: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .inset-x\:\$28 {
+  ///   left: 7rem;
+  ///   right: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .inset-x\:\$32 {
+  ///   left: 8rem;
+  ///   right: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .inset-x\:\$36 {
+  ///   left: 9rem;
+  ///   right: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .inset-x\:\$40 {
+  ///   left: 10rem;
+  ///   right: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .inset-x\:\$44 {
+  ///   left: 11rem;
+  ///   right: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .inset-x\:\$48 {
+  ///   left: 12rem;
+  ///   right: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .inset-x\:\$52 {
+  ///   left: 13rem;
+  ///   right: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .inset-x\:\$56 {
+  ///   left: 14rem;
+  ///   right: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .inset-x\:\$60 {
+  ///   left: 15rem;
+  ///   right: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .inset-x\:\$64 {
+  ///   left: 16rem;
+  ///   right: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .inset-x\:\$72 {
+  ///   left: 18rem;
+  ///   right: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .inset-x\:\$80 {
+  ///   left: 20rem;
+  ///   right: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .inset-x\:\$96 {
+  ///   left: 24rem;
+  ///   right: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .inset-x\:\$px {
+  ///   left: 1px;
+  ///   right: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .inset-x\:\$0\.5 {
+  ///   left: 0.125rem;
+  ///   right: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .inset-x\:\$1\.5 {
+  ///   left: 0.375rem;
+  ///   right: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .inset-x\:\$2\.5 {
+  ///   left: 0.625rem;
+  ///   right: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .inset-x\:\$3\.5 {
+  ///   left: 0.875rem;
+  ///   right: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .inset-x\:\$auto {
+  ///   left: auto;
+  ///   right: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .inset-x\:\$half {
+  ///   left: 50%;
+  ///   right: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_value("half")
+  }
+  /// ```css
+  /// .inset-x\:\$third {
+  ///   left: 33.333333%;
+  ///   right: 33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn third(&self) -> String {
+    self.append_value("third")
+  }
+  /// ```css
+  /// .inset-x\:\$two-thirds {
+  ///   left: 66.666667%;
+  ///   right: 66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn two_thirds(&self) -> String {
+    self.append_value("two-thirds")
+  }
+  /// ```css
+  /// .inset-x\:\$quarter {
+  ///   left: 25%;
+  ///   right: 25%;
+  /// }
+  /// ```
+  #[inline]
+  fn quarter(&self) -> String {
+    self.append_value("quarter")
+  }
+  /// ```css
+  /// .inset-x\:\$three-quarters {
+  ///   left: 75%;
+  ///   right: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn three_quarters(&self) -> String {
+    self.append_value("three-quarters")
+  }
+  /// ```css
+  /// .inset-x\:\$full {
+  ///   left: 100%;
+  ///   right: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_value("full")
+  }
+}
+impl GeneratedValueSetInsetX for GeneratedAtomInsetX {}
+pub struct GeneratedAtomInsetY(String);
+impl GeneratedSkribbleValue for GeneratedAtomInsetY {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetInsetY: GeneratedSkribbleValue {
+  /// ```css
+  /// .inset-y\:\$0 {
+  ///   top: 0px;
+  ///   bottom: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .inset-y\:\$1 {
+  ///   top: 0.25rem;
+  ///   bottom: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .inset-y\:\$2 {
+  ///   top: 0.5rem;
+  ///   bottom: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .inset-y\:\$3 {
+  ///   top: 0.75rem;
+  ///   bottom: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .inset-y\:\$4 {
+  ///   top: 1rem;
+  ///   bottom: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .inset-y\:\$5 {
+  ///   top: 1.25rem;
+  ///   bottom: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .inset-y\:\$6 {
+  ///   top: 1.5rem;
+  ///   bottom: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .inset-y\:\$7 {
+  ///   top: 1.75rem;
+  ///   bottom: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .inset-y\:\$8 {
+  ///   top: 2rem;
+  ///   bottom: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .inset-y\:\$9 {
+  ///   top: 2.25rem;
+  ///   bottom: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .inset-y\:\$10 {
+  ///   top: 2.5rem;
+  ///   bottom: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .inset-y\:\$11 {
+  ///   top: 2.75rem;
+  ///   bottom: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .inset-y\:\$12 {
+  ///   top: 3rem;
+  ///   bottom: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .inset-y\:\$14 {
+  ///   top: 3.5rem;
+  ///   bottom: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .inset-y\:\$16 {
+  ///   top: 4rem;
+  ///   bottom: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .inset-y\:\$20 {
+  ///   top: 5rem;
+  ///   bottom: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .inset-y\:\$24 {
+  ///   top: 6rem;
+  ///   bottom: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .inset-y\:\$28 {
+  ///   top: 7rem;
+  ///   bottom: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .inset-y\:\$32 {
+  ///   top: 8rem;
+  ///   bottom: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .inset-y\:\$36 {
+  ///   top: 9rem;
+  ///   bottom: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .inset-y\:\$40 {
+  ///   top: 10rem;
+  ///   bottom: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .inset-y\:\$44 {
+  ///   top: 11rem;
+  ///   bottom: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .inset-y\:\$48 {
+  ///   top: 12rem;
+  ///   bottom: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .inset-y\:\$52 {
+  ///   top: 13rem;
+  ///   bottom: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .inset-y\:\$56 {
+  ///   top: 14rem;
+  ///   bottom: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .inset-y\:\$60 {
+  ///   top: 15rem;
+  ///   bottom: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .inset-y\:\$64 {
+  ///   top: 16rem;
+  ///   bottom: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .inset-y\:\$72 {
+  ///   top: 18rem;
+  ///   bottom: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .inset-y\:\$80 {
+  ///   top: 20rem;
+  ///   bottom: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .inset-y\:\$96 {
+  ///   top: 24rem;
+  ///   bottom: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .inset-y\:\$px {
+  ///   top: 1px;
+  ///   bottom: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .inset-y\:\$0\.5 {
+  ///   top: 0.125rem;
+  ///   bottom: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .inset-y\:\$1\.5 {
+  ///   top: 0.375rem;
+  ///   bottom: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .inset-y\:\$2\.5 {
+  ///   top: 0.625rem;
+  ///   bottom: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .inset-y\:\$3\.5 {
+  ///   top: 0.875rem;
+  ///   bottom: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .inset-y\:\$auto {
+  ///   top: auto;
+  ///   bottom: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .inset-y\:\$half {
+  ///   top: 50%;
+  ///   bottom: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_value("half")
+  }
+  /// ```css
+  /// .inset-y\:\$third {
+  ///   top: 33.333333%;
+  ///   bottom: 33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn third(&self) -> String {
+    self.append_value("third")
+  }
+  /// ```css
+  /// .inset-y\:\$two-thirds {
+  ///   top: 66.666667%;
+  ///   bottom: 66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn two_thirds(&self) -> String {
+    self.append_value("two-thirds")
+  }
+  /// ```css
+  /// .inset-y\:\$quarter {
+  ///   top: 25%;
+  ///   bottom: 25%;
+  /// }
+  /// ```
+  #[inline]
+  fn quarter(&self) -> String {
+    self.append_value("quarter")
+  }
+  /// ```css
+  /// .inset-y\:\$three-quarters {
+  ///   top: 75%;
+  ///   bottom: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn three_quarters(&self) -> String {
+    self.append_value("three-quarters")
+  }
+  /// ```css
+  /// .inset-y\:\$full {
+  ///   top: 100%;
+  ///   bottom: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_value("full")
+  }
+}
+impl GeneratedValueSetInsetY for GeneratedAtomInsetY {}
+pub struct GeneratedAtomStart(String);
+impl GeneratedSkribbleValue for GeneratedAtomStart {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetStart: GeneratedSkribbleValue {
+  /// ```css
+  /// .start\:\$0 {
+  ///   inset-inline-start: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .start\:\$1 {
+  ///   inset-inline-start: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .start\:\$2 {
+  ///   inset-inline-start: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .start\:\$3 {
+  ///   inset-inline-start: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .start\:\$4 {
+  ///   inset-inline-start: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .start\:\$5 {
+  ///   inset-inline-start: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .start\:\$6 {
+  ///   inset-inline-start: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .start\:\$7 {
+  ///   inset-inline-start: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .start\:\$8 {
+  ///   inset-inline-start: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .start\:\$9 {
+  ///   inset-inline-start: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .start\:\$10 {
+  ///   inset-inline-start: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .start\:\$11 {
+  ///   inset-inline-start: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .start\:\$12 {
+  ///   inset-inline-start: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .start\:\$14 {
+  ///   inset-inline-start: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .start\:\$16 {
+  ///   inset-inline-start: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .start\:\$20 {
+  ///   inset-inline-start: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .start\:\$24 {
+  ///   inset-inline-start: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .start\:\$28 {
+  ///   inset-inline-start: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .start\:\$32 {
+  ///   inset-inline-start: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .start\:\$36 {
+  ///   inset-inline-start: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .start\:\$40 {
+  ///   inset-inline-start: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .start\:\$44 {
+  ///   inset-inline-start: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .start\:\$48 {
+  ///   inset-inline-start: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .start\:\$52 {
+  ///   inset-inline-start: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .start\:\$56 {
+  ///   inset-inline-start: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .start\:\$60 {
+  ///   inset-inline-start: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .start\:\$64 {
+  ///   inset-inline-start: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .start\:\$72 {
+  ///   inset-inline-start: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .start\:\$80 {
+  ///   inset-inline-start: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .start\:\$96 {
+  ///   inset-inline-start: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .start\:\$px {
+  ///   inset-inline-start: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .start\:\$0\.5 {
+  ///   inset-inline-start: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .start\:\$1\.5 {
+  ///   inset-inline-start: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .start\:\$2\.5 {
+  ///   inset-inline-start: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .start\:\$3\.5 {
+  ///   inset-inline-start: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .start\:\$auto {
+  ///   inset-inline-start: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .start\:\$half {
+  ///   inset-inline-start: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_value("half")
+  }
+  /// ```css
+  /// .start\:\$third {
+  ///   inset-inline-start: 33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn third(&self) -> String {
+    self.append_value("third")
+  }
+  /// ```css
+  /// .start\:\$two-thirds {
+  ///   inset-inline-start: 66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn two_thirds(&self) -> String {
+    self.append_value("two-thirds")
+  }
+  /// ```css
+  /// .start\:\$quarter {
+  ///   inset-inline-start: 25%;
+  /// }
+  /// ```
+  #[inline]
+  fn quarter(&self) -> String {
+    self.append_value("quarter")
+  }
+  /// ```css
+  /// .start\:\$three-quarters {
+  ///   inset-inline-start: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn three_quarters(&self) -> String {
+    self.append_value("three-quarters")
+  }
+  /// ```css
+  /// .start\:\$full {
+  ///   inset-inline-start: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_value("full")
+  }
+}
+impl GeneratedValueSetStart for GeneratedAtomStart {}
+pub struct GeneratedAtomEnd(String);
+impl GeneratedSkribbleValue for GeneratedAtomEnd {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetEnd: GeneratedSkribbleValue {
+  /// ```css
+  /// .end\:\$0 {
+  ///   inset-inline-end: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .end\:\$1 {
+  ///   inset-inline-end: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .end\:\$2 {
+  ///   inset-inline-end: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .end\:\$3 {
+  ///   inset-inline-end: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .end\:\$4 {
+  ///   inset-inline-end: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .end\:\$5 {
+  ///   inset-inline-end: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .end\:\$6 {
+  ///   inset-inline-end: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .end\:\$7 {
+  ///   inset-inline-end: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .end\:\$8 {
+  ///   inset-inline-end: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .end\:\$9 {
+  ///   inset-inline-end: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .end\:\$10 {
+  ///   inset-inline-end: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .end\:\$11 {
+  ///   inset-inline-end: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .end\:\$12 {
+  ///   inset-inline-end: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .end\:\$14 {
+  ///   inset-inline-end: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .end\:\$16 {
+  ///   inset-inline-end: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .end\:\$20 {
+  ///   inset-inline-end: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .end\:\$24 {
+  ///   inset-inline-end: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .end\:\$28 {
+  ///   inset-inline-end: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .end\:\$32 {
+  ///   inset-inline-end: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .end\:\$36 {
+  ///   inset-inline-end: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .end\:\$40 {
+  ///   inset-inline-end: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .end\:\$44 {
+  ///   inset-inline-end: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .end\:\$48 {
+  ///   inset-inline-end: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .end\:\$52 {
+  ///   inset-inline-end: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .end\:\$56 {
+  ///   inset-inline-end: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .end\:\$60 {
+  ///   inset-inline-end: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .end\:\$64 {
+  ///   inset-inline-end: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .end\:\$72 {
+  ///   inset-inline-end: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .end\:\$80 {
+  ///   inset-inline-end: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .end\:\$96 {
+  ///   inset-inline-end: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .end\:\$px {
+  ///   inset-inline-end: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .end\:\$0\.5 {
+  ///   inset-inline-end: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .end\:\$1\.5 {
+  ///   inset-inline-end: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .end\:\$2\.5 {
+  ///   inset-inline-end: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .end\:\$3\.5 {
+  ///   inset-inline-end: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .end\:\$auto {
+  ///   inset-inline-end: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .end\:\$half {
+  ///   inset-inline-end: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_value("half")
+  }
+  /// ```css
+  /// .end\:\$third {
+  ///   inset-inline-end: 33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn third(&self) -> String {
+    self.append_value("third")
+  }
+  /// ```css
+  /// .end\:\$two-thirds {
+  ///   inset-inline-end: 66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn two_thirds(&self) -> String {
+    self.append_value("two-thirds")
+  }
+  /// ```css
+  /// .end\:\$quarter {
+  ///   inset-inline-end: 25%;
+  /// }
+  /// ```
+  #[inline]
+  fn quarter(&self) -> String {
+    self.append_value("quarter")
+  }
+  /// ```css
+  /// .end\:\$three-quarters {
+  ///   inset-inline-end: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn three_quarters(&self) -> String {
+    self.append_value("three-quarters")
+  }
+  /// ```css
+  /// .end\:\$full {
+  ///   inset-inline-end: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_value("full")
+  }
+}
+impl GeneratedValueSetEnd for GeneratedAtomEnd {}
+pub struct GeneratedAtomTop(String);
+impl GeneratedSkribbleValue for GeneratedAtomTop {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetTop: GeneratedSkribbleValue {
+  /// ```css
+  /// .top\:\$0 {
+  ///   top: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .top\:\$1 {
+  ///   top: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .top\:\$2 {
+  ///   top: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .top\:\$3 {
+  ///   top: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .top\:\$4 {
+  ///   top: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .top\:\$5 {
+  ///   top: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .top\:\$6 {
+  ///   top: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .top\:\$7 {
+  ///   top: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .top\:\$8 {
+  ///   top: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .top\:\$9 {
+  ///   top: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .top\:\$10 {
+  ///   top: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .top\:\$11 {
+  ///   top: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .top\:\$12 {
+  ///   top: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .top\:\$14 {
+  ///   top: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .top\:\$16 {
+  ///   top: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .top\:\$20 {
+  ///   top: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .top\:\$24 {
+  ///   top: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .top\:\$28 {
+  ///   top: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .top\:\$32 {
+  ///   top: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .top\:\$36 {
+  ///   top: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .top\:\$40 {
+  ///   top: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .top\:\$44 {
+  ///   top: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .top\:\$48 {
+  ///   top: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .top\:\$52 {
+  ///   top: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .top\:\$56 {
+  ///   top: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .top\:\$60 {
+  ///   top: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .top\:\$64 {
+  ///   top: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .top\:\$72 {
+  ///   top: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .top\:\$80 {
+  ///   top: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .top\:\$96 {
+  ///   top: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .top\:\$px {
+  ///   top: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .top\:\$0\.5 {
+  ///   top: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .top\:\$1\.5 {
+  ///   top: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .top\:\$2\.5 {
+  ///   top: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .top\:\$3\.5 {
+  ///   top: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .top\:\$auto {
+  ///   top: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .top\:\$half {
+  ///   top: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_value("half")
+  }
+  /// ```css
+  /// .top\:\$third {
+  ///   top: 33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn third(&self) -> String {
+    self.append_value("third")
+  }
+  /// ```css
+  /// .top\:\$two-thirds {
+  ///   top: 66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn two_thirds(&self) -> String {
+    self.append_value("two-thirds")
+  }
+  /// ```css
+  /// .top\:\$quarter {
+  ///   top: 25%;
+  /// }
+  /// ```
+  #[inline]
+  fn quarter(&self) -> String {
+    self.append_value("quarter")
+  }
+  /// ```css
+  /// .top\:\$three-quarters {
+  ///   top: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn three_quarters(&self) -> String {
+    self.append_value("three-quarters")
+  }
+  /// ```css
+  /// .top\:\$full {
+  ///   top: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_value("full")
+  }
+}
+impl GeneratedValueSetTop for GeneratedAtomTop {}
+pub struct GeneratedAtomRight(String);
+impl GeneratedSkribbleValue for GeneratedAtomRight {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetRight: GeneratedSkribbleValue {
+  /// ```css
+  /// .right\:\$0 {
+  ///   right: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .right\:\$1 {
+  ///   right: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .right\:\$2 {
+  ///   right: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .right\:\$3 {
+  ///   right: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .right\:\$4 {
+  ///   right: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .right\:\$5 {
+  ///   right: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .right\:\$6 {
+  ///   right: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .right\:\$7 {
+  ///   right: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .right\:\$8 {
+  ///   right: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .right\:\$9 {
+  ///   right: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .right\:\$10 {
+  ///   right: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .right\:\$11 {
+  ///   right: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .right\:\$12 {
+  ///   right: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .right\:\$14 {
+  ///   right: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .right\:\$16 {
+  ///   right: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .right\:\$20 {
+  ///   right: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .right\:\$24 {
+  ///   right: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .right\:\$28 {
+  ///   right: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .right\:\$32 {
+  ///   right: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .right\:\$36 {
+  ///   right: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .right\:\$40 {
+  ///   right: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .right\:\$44 {
+  ///   right: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .right\:\$48 {
+  ///   right: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .right\:\$52 {
+  ///   right: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .right\:\$56 {
+  ///   right: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .right\:\$60 {
+  ///   right: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .right\:\$64 {
+  ///   right: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .right\:\$72 {
+  ///   right: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .right\:\$80 {
+  ///   right: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .right\:\$96 {
+  ///   right: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .right\:\$px {
+  ///   right: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .right\:\$0\.5 {
+  ///   right: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .right\:\$1\.5 {
+  ///   right: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .right\:\$2\.5 {
+  ///   right: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .right\:\$3\.5 {
+  ///   right: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .right\:\$auto {
+  ///   right: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .right\:\$half {
+  ///   right: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_value("half")
+  }
+  /// ```css
+  /// .right\:\$third {
+  ///   right: 33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn third(&self) -> String {
+    self.append_value("third")
+  }
+  /// ```css
+  /// .right\:\$two-thirds {
+  ///   right: 66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn two_thirds(&self) -> String {
+    self.append_value("two-thirds")
+  }
+  /// ```css
+  /// .right\:\$quarter {
+  ///   right: 25%;
+  /// }
+  /// ```
+  #[inline]
+  fn quarter(&self) -> String {
+    self.append_value("quarter")
+  }
+  /// ```css
+  /// .right\:\$three-quarters {
+  ///   right: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn three_quarters(&self) -> String {
+    self.append_value("three-quarters")
+  }
+  /// ```css
+  /// .right\:\$full {
+  ///   right: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_value("full")
+  }
+}
+impl GeneratedValueSetRight for GeneratedAtomRight {}
+pub struct GeneratedAtomBottom(String);
+impl GeneratedSkribbleValue for GeneratedAtomBottom {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBottom: GeneratedSkribbleValue {
+  /// ```css
+  /// .bottom\:\$0 {
+  ///   bottom: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .bottom\:\$1 {
+  ///   bottom: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .bottom\:\$2 {
+  ///   bottom: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .bottom\:\$3 {
+  ///   bottom: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .bottom\:\$4 {
+  ///   bottom: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .bottom\:\$5 {
+  ///   bottom: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .bottom\:\$6 {
+  ///   bottom: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .bottom\:\$7 {
+  ///   bottom: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .bottom\:\$8 {
+  ///   bottom: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .bottom\:\$9 {
+  ///   bottom: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .bottom\:\$10 {
+  ///   bottom: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .bottom\:\$11 {
+  ///   bottom: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .bottom\:\$12 {
+  ///   bottom: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .bottom\:\$14 {
+  ///   bottom: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .bottom\:\$16 {
+  ///   bottom: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .bottom\:\$20 {
+  ///   bottom: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .bottom\:\$24 {
+  ///   bottom: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .bottom\:\$28 {
+  ///   bottom: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .bottom\:\$32 {
+  ///   bottom: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .bottom\:\$36 {
+  ///   bottom: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .bottom\:\$40 {
+  ///   bottom: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .bottom\:\$44 {
+  ///   bottom: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .bottom\:\$48 {
+  ///   bottom: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .bottom\:\$52 {
+  ///   bottom: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .bottom\:\$56 {
+  ///   bottom: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .bottom\:\$60 {
+  ///   bottom: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .bottom\:\$64 {
+  ///   bottom: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .bottom\:\$72 {
+  ///   bottom: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .bottom\:\$80 {
+  ///   bottom: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .bottom\:\$96 {
+  ///   bottom: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .bottom\:\$px {
+  ///   bottom: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .bottom\:\$0\.5 {
+  ///   bottom: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .bottom\:\$1\.5 {
+  ///   bottom: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .bottom\:\$2\.5 {
+  ///   bottom: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .bottom\:\$3\.5 {
+  ///   bottom: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .bottom\:\$auto {
+  ///   bottom: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .bottom\:\$half {
+  ///   bottom: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_value("half")
+  }
+  /// ```css
+  /// .bottom\:\$third {
+  ///   bottom: 33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn third(&self) -> String {
+    self.append_value("third")
+  }
+  /// ```css
+  /// .bottom\:\$two-thirds {
+  ///   bottom: 66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn two_thirds(&self) -> String {
+    self.append_value("two-thirds")
+  }
+  /// ```css
+  /// .bottom\:\$quarter {
+  ///   bottom: 25%;
+  /// }
+  /// ```
+  #[inline]
+  fn quarter(&self) -> String {
+    self.append_value("quarter")
+  }
+  /// ```css
+  /// .bottom\:\$three-quarters {
+  ///   bottom: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn three_quarters(&self) -> String {
+    self.append_value("three-quarters")
+  }
+  /// ```css
+  /// .bottom\:\$full {
+  ///   bottom: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_value("full")
+  }
+}
+impl GeneratedValueSetBottom for GeneratedAtomBottom {}
+pub struct GeneratedAtomLeft(String);
+impl GeneratedSkribbleValue for GeneratedAtomLeft {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetLeft: GeneratedSkribbleValue {
+  /// ```css
+  /// .left\:\$0 {
+  ///   left: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .left\:\$1 {
+  ///   left: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .left\:\$2 {
+  ///   left: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .left\:\$3 {
+  ///   left: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .left\:\$4 {
+  ///   left: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .left\:\$5 {
+  ///   left: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .left\:\$6 {
+  ///   left: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .left\:\$7 {
+  ///   left: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .left\:\$8 {
+  ///   left: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .left\:\$9 {
+  ///   left: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .left\:\$10 {
+  ///   left: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .left\:\$11 {
+  ///   left: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .left\:\$12 {
+  ///   left: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .left\:\$14 {
+  ///   left: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .left\:\$16 {
+  ///   left: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .left\:\$20 {
+  ///   left: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .left\:\$24 {
+  ///   left: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .left\:\$28 {
+  ///   left: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .left\:\$32 {
+  ///   left: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .left\:\$36 {
+  ///   left: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .left\:\$40 {
+  ///   left: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .left\:\$44 {
+  ///   left: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .left\:\$48 {
+  ///   left: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .left\:\$52 {
+  ///   left: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .left\:\$56 {
+  ///   left: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .left\:\$60 {
+  ///   left: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .left\:\$64 {
+  ///   left: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .left\:\$72 {
+  ///   left: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .left\:\$80 {
+  ///   left: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .left\:\$96 {
+  ///   left: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .left\:\$px {
+  ///   left: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .left\:\$0\.5 {
+  ///   left: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .left\:\$1\.5 {
+  ///   left: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .left\:\$2\.5 {
+  ///   left: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .left\:\$3\.5 {
+  ///   left: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .left\:\$auto {
+  ///   left: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .left\:\$half {
+  ///   left: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_value("half")
+  }
+  /// ```css
+  /// .left\:\$third {
+  ///   left: 33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn third(&self) -> String {
+    self.append_value("third")
+  }
+  /// ```css
+  /// .left\:\$two-thirds {
+  ///   left: 66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn two_thirds(&self) -> String {
+    self.append_value("two-thirds")
+  }
+  /// ```css
+  /// .left\:\$quarter {
+  ///   left: 25%;
+  /// }
+  /// ```
+  #[inline]
+  fn quarter(&self) -> String {
+    self.append_value("quarter")
+  }
+  /// ```css
+  /// .left\:\$three-quarters {
+  ///   left: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn three_quarters(&self) -> String {
+    self.append_value("three-quarters")
+  }
+  /// ```css
+  /// .left\:\$full {
+  ///   left: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_value("full")
+  }
+}
+impl GeneratedValueSetLeft for GeneratedAtomLeft {}
 pub trait GeneratedAtom: GeneratedSkribbleValue {
   /// Screen reader only
   #[inline]
@@ -17411,6 +21776,208 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   fn display_(&self, value: &'static str) -> String {
     self.append(format!("display:[{}]", value.trim()))
   }
+  #[inline]
+  fn visibility(&self) -> GeneratedAtomVisibility {
+    GeneratedAtomVisibility::from_ref(self.append("visibility"))
+  }
+  #[inline]
+  fn visibility_(&self, value: &'static str) -> String {
+    self.append(format!("visibility:[{}]", value.trim()))
+  }
+  #[inline]
+  fn float(&self) -> GeneratedAtomFloat {
+    GeneratedAtomFloat::from_ref(self.append("float"))
+  }
+  #[inline]
+  fn float_(&self, value: &'static str) -> String {
+    self.append(format!("float:[{}]", value.trim()))
+  }
+  #[inline]
+  fn clear(&self) -> GeneratedAtomClear {
+    GeneratedAtomClear::from_ref(self.append("clear"))
+  }
+  #[inline]
+  fn clear_(&self, value: &'static str) -> String {
+    self.append(format!("clear:[{}]", value.trim()))
+  }
+  /// Control whether an element should explicitly create a new stacking context. More details: https://developer.mozilla.org/en-US/docs/Web/CSS/isolation
+  #[inline]
+  fn isolate(&self) -> GeneratedAtomIsolate {
+    GeneratedAtomIsolate::from_ref(self.append("isolate"))
+  }
+  #[inline]
+  fn isolate_(&self, value: &'static str) -> String {
+    self.append(format!("isolate:[{}]", value.trim()))
+  }
+  /// Control how a replaced element's content should be resized.
+  #[inline]
+  fn object_fit(&self) -> GeneratedAtomObjectFit {
+    GeneratedAtomObjectFit::from_ref(self.append("object-fit"))
+  }
+  #[inline]
+  fn object_fit_(&self, value: &'static str) -> String {
+    self.append(format!("object-fit:[{}]", value.trim()))
+  }
+  /// Control how a replaced element's content should be positioned within its
+  /// container.
+  #[inline]
+  fn object_position(&self) -> GeneratedAtomObjectPosition {
+    GeneratedAtomObjectPosition::from_ref(self.append("object-position"))
+  }
+  #[inline]
+  fn object_position_(&self, value: &'static str) -> String {
+    self.append(format!("object-position:[{}]", value.trim()))
+  }
+  /// Control how an element handles content that is too large for the
+  /// container.
+  #[inline]
+  fn overflow(&self) -> GeneratedAtomOverflow {
+    GeneratedAtomOverflow::from_ref(self.append("overflow"))
+  }
+  #[inline]
+  fn overflow_(&self, value: &'static str) -> String {
+    self.append(format!("overflow:[{}]", value.trim()))
+  }
+  /// Control how an element handles horizontal content that is too large for
+  /// the container.
+  #[inline]
+  fn overflow_x(&self) -> GeneratedAtomOverflowX {
+    GeneratedAtomOverflowX::from_ref(self.append("overflow-x"))
+  }
+  #[inline]
+  fn overflow_x_(&self, value: &'static str) -> String {
+    self.append(format!("overflow-x:[{}]", value.trim()))
+  }
+  /// Control how an element handles vertical content that is too large for the
+  /// container.
+  #[inline]
+  fn overflow_y(&self) -> GeneratedAtomOverflowY {
+    GeneratedAtomOverflowY::from_ref(self.append("overflow-y"))
+  }
+  #[inline]
+  fn overflow_y_(&self, value: &'static str) -> String {
+    self.append(format!("overflow-y:[{}]", value.trim()))
+  }
+  /// Control how the browser behaves when reaching the boundary of a scrolling
+  /// area.
+  #[inline]
+  fn overscroll(&self) -> GeneratedAtomOverscroll {
+    GeneratedAtomOverscroll::from_ref(self.append("overscroll"))
+  }
+  #[inline]
+  fn overscroll_(&self, value: &'static str) -> String {
+    self.append(format!("overscroll:[{}]", value.trim()))
+  }
+  /// Control how the browser behaves when reaching the horizontal boundary of a
+  /// scrolling area.
+  #[inline]
+  fn overscroll_x(&self) -> GeneratedAtomOverscrollX {
+    GeneratedAtomOverscrollX::from_ref(self.append("overscroll-x"))
+  }
+  #[inline]
+  fn overscroll_x_(&self, value: &'static str) -> String {
+    self.append(format!("overscroll-x:[{}]", value.trim()))
+  }
+  /// Control how the browser behaves when reaching the vertical boundary of a
+  /// scrolling area.
+  #[inline]
+  fn overscroll_y(&self) -> GeneratedAtomOverscrollY {
+    GeneratedAtomOverscrollY::from_ref(self.append("overscroll-y"))
+  }
+  #[inline]
+  fn overscroll_y_(&self, value: &'static str) -> String {
+    self.append(format!("overscroll-y:[{}]", value.trim()))
+  }
+  /// Control how an element is positioned in the DOM.
+  #[inline]
+  fn position(&self) -> GeneratedAtomPosition {
+    GeneratedAtomPosition::from_ref(self.append("position"))
+  }
+  #[inline]
+  fn position_(&self, value: &'static str) -> String {
+    self.append(format!("position:[{}]", value.trim()))
+  }
+  /// Control the placement of positioned elements.
+  #[inline]
+  fn inset(&self) -> GeneratedAtomInset {
+    GeneratedAtomInset::from_ref(self.append("inset"))
+  }
+  #[inline]
+  fn inset_(&self, value: &'static str) -> String {
+    self.append(format!("inset:[{}]", value.trim()))
+  }
+  /// Control the placement of positioned elements.
+  #[inline]
+  fn inset_x(&self) -> GeneratedAtomInsetX {
+    GeneratedAtomInsetX::from_ref(self.append("inset-x"))
+  }
+  #[inline]
+  fn inset_x_(&self, value: &'static str) -> String {
+    self.append(format!("inset-x:[{}]", value.trim()))
+  }
+  /// Control the placement of positioned elements.
+  #[inline]
+  fn inset_y(&self) -> GeneratedAtomInsetY {
+    GeneratedAtomInsetY::from_ref(self.append("inset-y"))
+  }
+  #[inline]
+  fn inset_y_(&self, value: &'static str) -> String {
+    self.append(format!("inset-y:[{}]", value.trim()))
+  }
+  /// Control the placement of positioned elements.
+  #[inline]
+  fn start(&self) -> GeneratedAtomStart {
+    GeneratedAtomStart::from_ref(self.append("start"))
+  }
+  #[inline]
+  fn start_(&self, value: &'static str) -> String {
+    self.append(format!("start:[{}]", value.trim()))
+  }
+  /// Control the placement of positioned elements.
+  #[inline]
+  fn end(&self) -> GeneratedAtomEnd {
+    GeneratedAtomEnd::from_ref(self.append("end"))
+  }
+  #[inline]
+  fn end_(&self, value: &'static str) -> String {
+    self.append(format!("end:[{}]", value.trim()))
+  }
+  /// Control the placement of positioned elements.
+  #[inline]
+  fn top(&self) -> GeneratedAtomTop {
+    GeneratedAtomTop::from_ref(self.append("top"))
+  }
+  #[inline]
+  fn top_(&self, value: &'static str) -> String {
+    self.append(format!("top:[{}]", value.trim()))
+  }
+  /// Control the placement of positioned elements.
+  #[inline]
+  fn right(&self) -> GeneratedAtomRight {
+    GeneratedAtomRight::from_ref(self.append("right"))
+  }
+  #[inline]
+  fn right_(&self, value: &'static str) -> String {
+    self.append(format!("right:[{}]", value.trim()))
+  }
+  /// Control the placement of positioned elements.
+  #[inline]
+  fn bottom(&self) -> GeneratedAtomBottom {
+    GeneratedAtomBottom::from_ref(self.append("bottom"))
+  }
+  #[inline]
+  fn bottom_(&self, value: &'static str) -> String {
+    self.append(format!("bottom:[{}]", value.trim()))
+  }
+  /// Control the placement of positioned elements.
+  #[inline]
+  fn left(&self) -> GeneratedAtomLeft {
+    GeneratedAtomLeft::from_ref(self.append("left"))
+  }
+  #[inline]
+  fn left_(&self, value: &'static str) -> String {
+    self.append(format!("left:[{}]", value.trim()))
+  }
 }
 pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   #[inline]
@@ -17582,6 +22149,60 @@ pub trait GeneratedAliases: GeneratedSkribbleValue {
   #[inline]
   fn hidden(&self) -> String {
     ["display:$none"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn visible_1(&self) -> String {
+    ["visibility:$visible"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn invisible_1(&self) -> String {
+    ["visibility:$hidden"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn collapse(&self) -> String {
+    ["visibility:$collapse"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn isolate_1(&self) -> String {
+    ["isolate:$isolate"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn r#static(&self) -> String {
+    ["position:$static"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn fixed(&self) -> String {
+    ["position:$fixed"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn absolute(&self) -> String {
+    ["position:$absolute"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn relative(&self) -> String {
+    ["position:$relative"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn sticky(&self) -> String {
+    ["position:$sticky"]
+      .map(|class| self.append(class))
+      .join(" ")
   }
 }
 impl GeneratedMediaQueryDeviceCategories for GeneratedSkribbleRoot {}
