@@ -273,6 +273,114 @@ expression: runner_config
       "description": null,
       "name": "sticky",
       "priority": 150
+    },
+    "blur": {
+      "classes": [
+        "blur:$default"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "blur",
+      "priority": 150
+    },
+    "drop-shadow": {
+      "classes": [
+        "drop-shadow:$default"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "drop-shadow",
+      "priority": 150
+    },
+    "grayscale": {
+      "classes": [
+        "grayscale:$default"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "grayscale",
+      "priority": 150
+    },
+    "invert": {
+      "classes": [
+        "invert:$default"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "invert",
+      "priority": 150
+    },
+    "sepia": {
+      "classes": [
+        "sepia:$default"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "sepia",
+      "priority": 150
+    },
+    "filter-none": {
+      "classes": [
+        "filter:$none"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "filter-none",
+      "priority": 150
+    },
+    "backdrop-blur": {
+      "classes": [
+        "backdrop-blur:$default"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "backdrop-blur",
+      "priority": 150
+    },
+    "backdrop-drop-shadow": {
+      "classes": [
+        "backdrop-drop-shadow:$default"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "backdrop-drop-shadow",
+      "priority": 150
+    },
+    "backdrop-grayscale": {
+      "classes": [
+        "backdrop-grayscale:$default"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "backdrop-grayscale",
+      "priority": 150
+    },
+    "backdrop-invert": {
+      "classes": [
+        "backdrop-invert:$default"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "backdrop-invert",
+      "priority": 150
+    },
+    "backdrop-sepia": {
+      "classes": [
+        "backdrop-sepia:$default"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "backdrop-sepia",
+      "priority": 150
+    },
+    "backdrop-filter-none": {
+      "classes": [
+        "backdrop-filter:$none"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "backdrop-filter-none",
+      "priority": 150
     }
   },
   "atoms": {
@@ -2062,6 +2170,400 @@ expression: runner_config
           }
         ]
       }
+    },
+    "blur": {
+      "name": "blur",
+      "description": "Control the blur filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::filter-blur:__": null,
+        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "blur"
+          }
+        ]
+      }
+    },
+    "brightness": {
+      "name": "brightness",
+      "description": "Control the brightness filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::filter-brightness:__": null,
+        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "brightness"
+          }
+        ]
+      }
+    },
+    "contrast": {
+      "name": "contrast",
+      "description": "Control the contrast filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::filter-contrast:__": null,
+        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "contrast"
+          }
+        ]
+      }
+    },
+    "grayscale": {
+      "name": "grayscale",
+      "description": "Control the grayscale filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::filter-grayscale:__": null,
+        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "grayscale"
+          }
+        ]
+      }
+    },
+    "hue-rotate": {
+      "name": "hue-rotate",
+      "description": "Control the hue-rotate filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::filter-hue-rotate:__": null,
+        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "hue-rotate"
+          }
+        ]
+      }
+    },
+    "invert": {
+      "name": "invert",
+      "description": "Control the invert filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::filter-invert:__": null,
+        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "invert"
+          }
+        ]
+      }
+    },
+    "saturate": {
+      "name": "saturate",
+      "description": "Control the saturate filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::filter-saturate:__": null,
+        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "saturate"
+          }
+        ]
+      }
+    },
+    "sepia": {
+      "name": "sepia",
+      "description": "Control the sepia filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::filter-sepia:__": null,
+        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "sepia"
+          }
+        ]
+      }
+    },
+    "drop-shadow": {
+      "name": "drop-shadow",
+      "description": "Control the drop-shadow filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::filter-drop-shadow:__": null,
+        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "drop-shadow"
+          }
+        ]
+      }
+    },
+    "custom": {
+      "name": "custom",
+      "description": "Control the custom filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::filter-custom:__": null,
+        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "custom"
+          }
+        ]
+      }
+    },
+    "filter": {
+      "name": "filter",
+      "description": "Control the filters to an element.",
+      "priority": 150,
+      "styles": {
+        "filter": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "filter"
+          }
+        ]
+      }
+    },
+    "backdrop-blur": {
+      "name": "backdrop-blur",
+      "description": "Control the backdrop-blur filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::backdrop-blur:__": null,
+        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "blur"
+          }
+        ]
+      }
+    },
+    "backdrop-brightness": {
+      "name": "backdrop-brightness",
+      "description": "Control the backdrop-brightness filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::backdrop-brightness:__": null,
+        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "brightness"
+          }
+        ]
+      }
+    },
+    "backdrop-contrast": {
+      "name": "backdrop-contrast",
+      "description": "Control the backdrop-contrast filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::backdrop-contrast:__": null,
+        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "contrast"
+          }
+        ]
+      }
+    },
+    "backdrop-grayscale": {
+      "name": "backdrop-grayscale",
+      "description": "Control the backdrop-grayscale filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::backdrop-grayscale:__": null,
+        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "grayscale"
+          }
+        ]
+      }
+    },
+    "backdrop-hue-rotate": {
+      "name": "backdrop-hue-rotate",
+      "description": "Control the backdrop-hue-rotate filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::backdrop-hue-rotate:__": null,
+        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "hue-rotate"
+          }
+        ]
+      }
+    },
+    "backdrop-invert": {
+      "name": "backdrop-invert",
+      "description": "Control the backdrop-invert filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::backdrop-invert:__": null,
+        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "invert"
+          }
+        ]
+      }
+    },
+    "backdrop-saturate": {
+      "name": "backdrop-saturate",
+      "description": "Control the backdrop-saturate filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::backdrop-saturate:__": null,
+        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "saturate"
+          }
+        ]
+      }
+    },
+    "backdrop-sepia": {
+      "name": "backdrop-sepia",
+      "description": "Control the backdrop-sepia filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::backdrop-sepia:__": null,
+        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "sepia"
+          }
+        ]
+      }
+    },
+    "backdrop-drop-shadow": {
+      "name": "backdrop-drop-shadow",
+      "description": "Control the backdrop-drop-shadow filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::backdrop-drop-shadow:__": null,
+        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "drop-shadow"
+          }
+        ]
+      }
+    },
+    "backdrop-custom": {
+      "name": "backdrop-custom",
+      "description": "Control the backdrop-custom filters to an element.",
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::backdrop-custom:__": null,
+        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "custom"
+          }
+        ]
+      }
+    },
+    "backdrop-filter": {
+      "name": "backdrop-filter",
+      "description": "Control the backdrop-filters to an element.",
+      "priority": 150,
+      "styles": {
+        "backdrop-filter": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "filter"
+          }
+        ]
+      }
     }
   },
   "classes": {
@@ -2144,24 +2646,6 @@ expression: runner_config
       "priority": 150,
       "styles": {
         "visibility": "visible"
-      },
-      "modifier": null
-    },
-    "remove-filter": {
-      "name": "remove-filter",
-      "description": null,
-      "priority": 150,
-      "styles": {
-        "__:CSS_VARIABLE::group-nested-filter:__": "none"
-      },
-      "modifier": null
-    },
-    "remove-backdrop": {
-      "name": "remove-backdrop",
-      "description": null,
-      "priority": 150,
-      "styles": {
-        "__:CSS_VARIABLE::group-nested-backdrop:__": "none"
       },
       "modifier": null
     },
@@ -2517,15 +3001,6 @@ expression: runner_config
       "value": null,
       "mediaQueries": {}
     },
-    "group-nested-filter": {
-      "name": "group-nested-filter",
-      "description": null,
-      "priority": 150,
-      "variable": "--group-nested-filter",
-      "syntax": "*",
-      "value": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)",
-      "mediaQueries": {}
-    },
     "backdrop-blur": {
       "name": "backdrop-blur",
       "description": null,
@@ -2614,15 +3089,6 @@ expression: runner_config
       "variable": "--backdrop-drop-shadow",
       "syntax": "*",
       "value": null,
-      "mediaQueries": {}
-    },
-    "group-nested-backdrop": {
-      "name": "group-nested-backdrop",
-      "description": null,
-      "priority": 150,
-      "variable": "--gnb",
-      "syntax": "*",
-      "value": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)",
       "mediaQueries": {}
     },
     "transition-duration": {
@@ -3698,7 +4164,6 @@ expression: runner_config
       "filter-saturate",
       "filter-sepia",
       "filter-drop-shadow",
-      "group-nested-filter",
       "backdrop-blur",
       "backdrop-brightness",
       "backdrop-contrast",
@@ -3709,7 +4174,6 @@ expression: runner_config
       "backdrop-saturate",
       "backdrop-sepia",
       "backdrop-drop-shadow",
-      "group-nested-backdrop",
       "transition-duration",
       "animation-duration",
       "enter-opacity",
@@ -3819,7 +4283,29 @@ expression: runner_config
       "top",
       "right",
       "bottom",
-      "left"
+      "left",
+      "blur",
+      "brightness",
+      "contrast",
+      "grayscale",
+      "hue-rotate",
+      "invert",
+      "saturate",
+      "sepia",
+      "drop-shadow",
+      "custom",
+      "filter",
+      "backdrop-blur",
+      "backdrop-brightness",
+      "backdrop-contrast",
+      "backdrop-grayscale",
+      "backdrop-hue-rotate",
+      "backdrop-invert",
+      "backdrop-saturate",
+      "backdrop-sepia",
+      "backdrop-drop-shadow",
+      "backdrop-custom",
+      "backdrop-filter"
     ],
     "classes": [
       "group",
@@ -3831,8 +4317,6 @@ expression: runner_config
       "subpixel-antialiased",
       "invisible",
       "visible",
-      "remove-filter",
-      "remove-backdrop",
       "transform-gpu",
       "transform-cpu",
       "space-x-reverse",
@@ -3871,7 +4355,19 @@ expression: runner_config
       "fixed",
       "absolute",
       "relative",
-      "sticky"
+      "sticky",
+      "blur",
+      "drop-shadow",
+      "grayscale",
+      "invert",
+      "sepia",
+      "filter-none",
+      "backdrop-blur",
+      "backdrop-drop-shadow",
+      "backdrop-grayscale",
+      "backdrop-invert",
+      "backdrop-sepia",
+      "backdrop-filter-none"
     ],
     "media_queries": [
       "screen",
@@ -7761,6 +8257,150 @@ expression: runner_config
       "-quarter",
       "-three-quarters",
       "-full"
+    ],
+    "atom:blur": [
+      "default",
+      "none",
+      "sm",
+      "md",
+      "lg",
+      "xl",
+      "2xl",
+      "3xl"
+    ],
+    "atom:brightness": [
+      "0",
+      "50",
+      "75",
+      "90",
+      "95",
+      "100",
+      "105",
+      "110",
+      "125",
+      "150",
+      "200"
+    ],
+    "atom:contrast": [
+      "0",
+      "50",
+      "75",
+      "100",
+      "125",
+      "150",
+      "200"
+    ],
+    "atom:grayscale": [
+      "default",
+      "0"
+    ],
+    "atom:hue-rotate": [
+      "0",
+      "15",
+      "30",
+      "60",
+      "90",
+      "180"
+    ],
+    "atom:invert": [
+      "default",
+      "0"
+    ],
+    "atom:saturate": [
+      "0",
+      "50",
+      "100",
+      "150",
+      "200"
+    ],
+    "atom:sepia": [
+      "default",
+      "0"
+    ],
+    "atom:drop-shadow": [
+      "default",
+      "sm",
+      "md",
+      "lg",
+      "xl",
+      "2xl",
+      "none"
+    ],
+    "atom:custom": [],
+    "atom:filter": [
+      "none"
+    ],
+    "atom:backdrop-blur": [
+      "default",
+      "none",
+      "sm",
+      "md",
+      "lg",
+      "xl",
+      "2xl",
+      "3xl"
+    ],
+    "atom:backdrop-brightness": [
+      "0",
+      "50",
+      "75",
+      "90",
+      "95",
+      "100",
+      "105",
+      "110",
+      "125",
+      "150",
+      "200"
+    ],
+    "atom:backdrop-contrast": [
+      "0",
+      "50",
+      "75",
+      "100",
+      "125",
+      "150",
+      "200"
+    ],
+    "atom:backdrop-grayscale": [
+      "default",
+      "0"
+    ],
+    "atom:backdrop-hue-rotate": [
+      "0",
+      "15",
+      "30",
+      "60",
+      "90",
+      "180"
+    ],
+    "atom:backdrop-invert": [
+      "default",
+      "0"
+    ],
+    "atom:backdrop-saturate": [
+      "0",
+      "50",
+      "100",
+      "150",
+      "200"
+    ],
+    "atom:backdrop-sepia": [
+      "default",
+      "0"
+    ],
+    "atom:backdrop-drop-shadow": [
+      "default",
+      "sm",
+      "md",
+      "lg",
+      "xl",
+      "2xl",
+      "none"
+    ],
+    "atom:backdrop-custom": [],
+    "atom:backdrop-filter": [
+      "none"
     ]
   },
   "palette": {
@@ -8701,6 +9341,127 @@ expression: runner_config
         "absolute": "absolute",
         "relative": "relative",
         "sticky": "sticky"
+      }
+    },
+    "blur": {
+      "name": "blur",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "default": "blur(8px)",
+        "none": "blur(0)",
+        "sm": "blur(4px)",
+        "md": "blur(12px)",
+        "lg": "blur(16px)",
+        "xl": "blur(24px)",
+        "2xl": "blur(40px)",
+        "3xl": "blur(64px)"
+      }
+    },
+    "brightness": {
+      "name": "brightness",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "0": "brightness(0)",
+        "50": "brightness(.5)",
+        "75": "brightness(.75)",
+        "90": "brightness(.9)",
+        "95": "brightness(.95)",
+        "100": "brightness(1)",
+        "105": "brightness(1.05)",
+        "110": "brightness(1.1)",
+        "125": "brightness(1.25)",
+        "150": "brightness(1.5)",
+        "200": "brightness(2)"
+      }
+    },
+    "contrast": {
+      "name": "contrast",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "0": "contrast(0)",
+        "50": "contrast(.5)",
+        "75": "contrast(.75)",
+        "100": "contrast(1)",
+        "125": "contrast(1.25)",
+        "150": "contrast(1.5)",
+        "200": "contrast(2)"
+      }
+    },
+    "drop-shadow": {
+      "name": "drop-shadow",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "default": "drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06))",
+        "sm": "drop-shadow(0 1px 1px rgb(0 0 0 / 0.05))",
+        "md": "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))",
+        "lg": "drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))",
+        "xl": "drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))",
+        "2xl": "drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))",
+        "none": "drop-shadow(0 0 #0000)"
+      }
+    },
+    "grayscale": {
+      "name": "grayscale",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "default": "grayscale(100%)",
+        "0": "grayscale(0)"
+      }
+    },
+    "invert": {
+      "name": "invert",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "default": "invert(100%)",
+        "0": "invert(0)"
+      }
+    },
+    "sepia": {
+      "name": "sepia",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "default": "sepia(100%)",
+        "0": "sepia(0)"
+      }
+    },
+    "hue-rotate": {
+      "name": "hue-rotate",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "0": "hue-rotate(0deg)",
+        "15": "hue-rotate(15deg)",
+        "30": "hue-rotate(30deg)",
+        "60": "hue-rotate(60deg)",
+        "90": "hue-rotate(90deg)",
+        "180": "hue-rotate(180deg)"
+      }
+    },
+    "saturate": {
+      "name": "saturate",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "0": "saturate(0)",
+        "50": "saturate(.5)",
+        "100": "saturate(1)",
+        "150": "saturate(1.5)",
+        "200": "saturate(2)"
+      }
+    },
+    "filter": {
+      "name": "filter",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "none": "none"
       }
     }
   }

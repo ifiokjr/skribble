@@ -617,6 +617,105 @@ lazy_static! {
           "sticky" => "sticky",
         })
         .build(),
+      ValueSet::builder()
+        .name("blur")
+        .values(indexmap! {
+        	"default" => "blur(8px)",
+          "none" => "blur(0)",
+          "sm"	=> "blur(4px)",
+          "md"	=> "blur(12px)",
+          "lg"	=> "blur(16px)",
+          "xl"	=> "blur(24px)",
+          "2xl"	=> "blur(40px)",
+          "3xl"	=> "blur(64px)",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("brightness")
+        .values(indexmap! {
+          "0" => "brightness(0)",
+          "50" => "brightness(.5)",
+          "75" => "brightness(.75)",
+          "90" => "brightness(.9)",
+          "95" => "brightness(.95)",
+          "100" => "brightness(1)",
+          "105" => "brightness(1.05)",
+          "110" => "brightness(1.1)",
+          "125" => "brightness(1.25)",
+          "150" => "brightness(1.5)",
+          "200" => "brightness(2)",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("contrast")
+        .values(indexmap! {
+          "0" => "contrast(0)",
+          "50" => "contrast(.5)",
+          "75" => "contrast(.75)",
+          "100" => "contrast(1)",
+          "125" => "contrast(1.25)",
+          "150" => "contrast(1.5)",
+          "200" => "contrast(2)",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("drop-shadow")
+        .values(indexmap! {
+          "default" => "drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06))",
+          "sm" => "drop-shadow(0 1px 1px rgb(0 0 0 / 0.05))",
+          "md" => "drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))",
+          "lg" => "drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))",
+          "xl" => "drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))",
+          "2xl" => "drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))",
+          "none" => "drop-shadow(0 0 #0000)",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("grayscale")
+        .values(indexmap! {
+          "default" => "grayscale(100%)",
+          "0" => "grayscale(0)",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("invert")
+        .values(indexmap! {
+          "default" => "invert(100%)",
+          "0" => "invert(0)",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("sepia")
+        .values(indexmap! {
+          "default" => "sepia(100%)",
+          "0" => "sepia(0)",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("hue-rotate")
+        .values(indexmap! {
+          "0" => "hue-rotate(0deg)",
+          "15" => "hue-rotate(15deg)",
+          "30" => "hue-rotate(30deg)",
+          "60" => "hue-rotate(60deg)",
+          "90" => "hue-rotate(90deg)",
+          "180" => "hue-rotate(180deg)",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("saturate")
+        .values(indexmap! {
+          "0" => "saturate(0)",
+          "50" => "saturate(.5)",
+          "100" => "saturate(1)",
+          "150" => "saturate(1.5)",
+          "200" => "saturate(2)",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("filter")
+        .values(indexmap! { "none" => "none" })
+        .build(),
     ]
   };
 }

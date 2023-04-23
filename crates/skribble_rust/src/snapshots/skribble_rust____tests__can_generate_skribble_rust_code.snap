@@ -439,17 +439,6 @@ impl GeneratedCssVariables {
     "--sk-filter-drop-shadow".into()
   }
   /// ```css
-  /// @property --sk-group-nested-filter {
-  ///   syntax: "*";
-  ///   inherits: true;
-  ///   initial-value: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
-  /// }
-  /// ```
-  #[inline]
-  pub fn group_nested_filter(&self) -> String {
-    "--sk-group-nested-filter".into()
-  }
-  /// ```css
   /// @property --sk-backdrop-blur {
   ///   syntax: "*";
   ///   inherits: false;
@@ -558,17 +547,6 @@ impl GeneratedCssVariables {
   #[inline]
   pub fn backdrop_drop_shadow(&self) -> String {
     "--sk-backdrop-drop-shadow".into()
-  }
-  /// ```css
-  /// @property --sk-gnb {
-  ///   syntax: "*";
-  ///   inherits: true;
-  ///   initial-value: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
-  /// }
-  /// ```
-  #[inline]
-  pub fn group_nested_backdrop(&self) -> String {
-    "--sk-gnb".into()
   }
   /// ```css
   /// @property --sk-transition-duration {
@@ -35691,6 +35669,1332 @@ pub trait GeneratedValueSetLeft: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetLeft for GeneratedAtomLeft {}
+pub struct GeneratedAtomBlur(String);
+impl GeneratedSkribbleValue for GeneratedAtomBlur {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBlur: GeneratedSkribbleValue {
+  /// ```css
+  /// .blur\:\$default {
+  ///   --sk-filter-blur: blur(8px);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn default(&self) -> String {
+    self.append_value("default")
+  }
+  /// ```css
+  /// .blur\:\$none {
+  ///   --sk-filter-blur: blur(0);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+  /// ```css
+  /// .blur\:\$sm {
+  ///   --sk-filter-blur: blur(4px);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn sm(&self) -> String {
+    self.append_value("sm")
+  }
+  /// ```css
+  /// .blur\:\$md {
+  ///   --sk-filter-blur: blur(12px);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn md(&self) -> String {
+    self.append_value("md")
+  }
+  /// ```css
+  /// .blur\:\$lg {
+  ///   --sk-filter-blur: blur(16px);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn lg(&self) -> String {
+    self.append_value("lg")
+  }
+  /// ```css
+  /// .blur\:\$xl {
+  ///   --sk-filter-blur: blur(24px);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn xl(&self) -> String {
+    self.append_value("xl")
+  }
+  /// ```css
+  /// .blur\:\$2xl {
+  ///   --sk-filter-blur: blur(40px);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n2xl(&self) -> String {
+    self.append_value("2xl")
+  }
+  /// ```css
+  /// .blur\:\$3xl {
+  ///   --sk-filter-blur: blur(64px);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n3xl(&self) -> String {
+    self.append_value("3xl")
+  }
+}
+impl GeneratedValueSetBlur for GeneratedAtomBlur {}
+pub struct GeneratedAtomBrightness(String);
+impl GeneratedSkribbleValue for GeneratedAtomBrightness {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBrightness: GeneratedSkribbleValue {
+  /// ```css
+  /// .brightness\:\$0 {
+  ///   --sk-filter-brightness: brightness(0);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .brightness\:\$50 {
+  ///   --sk-filter-brightness: brightness(.5);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n50(&self) -> String {
+    self.append_value("50")
+  }
+  /// ```css
+  /// .brightness\:\$75 {
+  ///   --sk-filter-brightness: brightness(.75);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n75(&self) -> String {
+    self.append_value("75")
+  }
+  /// ```css
+  /// .brightness\:\$90 {
+  ///   --sk-filter-brightness: brightness(.9);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n90(&self) -> String {
+    self.append_value("90")
+  }
+  /// ```css
+  /// .brightness\:\$95 {
+  ///   --sk-filter-brightness: brightness(.95);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n95(&self) -> String {
+    self.append_value("95")
+  }
+  /// ```css
+  /// .brightness\:\$100 {
+  ///   --sk-filter-brightness: brightness(1);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n100(&self) -> String {
+    self.append_value("100")
+  }
+  /// ```css
+  /// .brightness\:\$105 {
+  ///   --sk-filter-brightness: brightness(1.05);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n105(&self) -> String {
+    self.append_value("105")
+  }
+  /// ```css
+  /// .brightness\:\$110 {
+  ///   --sk-filter-brightness: brightness(1.1);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n110(&self) -> String {
+    self.append_value("110")
+  }
+  /// ```css
+  /// .brightness\:\$125 {
+  ///   --sk-filter-brightness: brightness(1.25);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n125(&self) -> String {
+    self.append_value("125")
+  }
+  /// ```css
+  /// .brightness\:\$150 {
+  ///   --sk-filter-brightness: brightness(1.5);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n150(&self) -> String {
+    self.append_value("150")
+  }
+  /// ```css
+  /// .brightness\:\$200 {
+  ///   --sk-filter-brightness: brightness(2);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n200(&self) -> String {
+    self.append_value("200")
+  }
+}
+impl GeneratedValueSetBrightness for GeneratedAtomBrightness {}
+pub struct GeneratedAtomContrast(String);
+impl GeneratedSkribbleValue for GeneratedAtomContrast {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetContrast: GeneratedSkribbleValue {
+  /// ```css
+  /// .contrast\:\$0 {
+  ///   --sk-filter-contrast: contrast(0);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .contrast\:\$50 {
+  ///   --sk-filter-contrast: contrast(.5);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n50(&self) -> String {
+    self.append_value("50")
+  }
+  /// ```css
+  /// .contrast\:\$75 {
+  ///   --sk-filter-contrast: contrast(.75);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n75(&self) -> String {
+    self.append_value("75")
+  }
+  /// ```css
+  /// .contrast\:\$100 {
+  ///   --sk-filter-contrast: contrast(1);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n100(&self) -> String {
+    self.append_value("100")
+  }
+  /// ```css
+  /// .contrast\:\$125 {
+  ///   --sk-filter-contrast: contrast(1.25);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n125(&self) -> String {
+    self.append_value("125")
+  }
+  /// ```css
+  /// .contrast\:\$150 {
+  ///   --sk-filter-contrast: contrast(1.5);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n150(&self) -> String {
+    self.append_value("150")
+  }
+  /// ```css
+  /// .contrast\:\$200 {
+  ///   --sk-filter-contrast: contrast(2);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n200(&self) -> String {
+    self.append_value("200")
+  }
+}
+impl GeneratedValueSetContrast for GeneratedAtomContrast {}
+pub struct GeneratedAtomGrayscale(String);
+impl GeneratedSkribbleValue for GeneratedAtomGrayscale {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetGrayscale: GeneratedSkribbleValue {
+  /// ```css
+  /// .grayscale\:\$default {
+  ///   --sk-filter-grayscale: grayscale(100%);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn default(&self) -> String {
+    self.append_value("default")
+  }
+  /// ```css
+  /// .grayscale\:\$0 {
+  ///   --sk-filter-grayscale: grayscale(0);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+}
+impl GeneratedValueSetGrayscale for GeneratedAtomGrayscale {}
+pub struct GeneratedAtomHueRotate(String);
+impl GeneratedSkribbleValue for GeneratedAtomHueRotate {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetHueRotate: GeneratedSkribbleValue {
+  /// ```css
+  /// .hue-rotate\:\$0 {
+  ///   --sk-filter-hue-rotate: hue-rotate(0deg);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .hue-rotate\:\$15 {
+  ///   --sk-filter-hue-rotate: hue-rotate(15deg);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n15(&self) -> String {
+    self.append_value("15")
+  }
+  /// ```css
+  /// .hue-rotate\:\$30 {
+  ///   --sk-filter-hue-rotate: hue-rotate(30deg);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n30(&self) -> String {
+    self.append_value("30")
+  }
+  /// ```css
+  /// .hue-rotate\:\$60 {
+  ///   --sk-filter-hue-rotate: hue-rotate(60deg);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .hue-rotate\:\$90 {
+  ///   --sk-filter-hue-rotate: hue-rotate(90deg);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n90(&self) -> String {
+    self.append_value("90")
+  }
+  /// ```css
+  /// .hue-rotate\:\$180 {
+  ///   --sk-filter-hue-rotate: hue-rotate(180deg);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n180(&self) -> String {
+    self.append_value("180")
+  }
+}
+impl GeneratedValueSetHueRotate for GeneratedAtomHueRotate {}
+pub struct GeneratedAtomInvert(String);
+impl GeneratedSkribbleValue for GeneratedAtomInvert {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetInvert: GeneratedSkribbleValue {
+  /// ```css
+  /// .invert\:\$default {
+  ///   --sk-filter-invert: invert(100%);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn default(&self) -> String {
+    self.append_value("default")
+  }
+  /// ```css
+  /// .invert\:\$0 {
+  ///   --sk-filter-invert: invert(0);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+}
+impl GeneratedValueSetInvert for GeneratedAtomInvert {}
+pub struct GeneratedAtomSaturate(String);
+impl GeneratedSkribbleValue for GeneratedAtomSaturate {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetSaturate: GeneratedSkribbleValue {
+  /// ```css
+  /// .saturate\:\$0 {
+  ///   --sk-filter-saturate: saturate(0);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .saturate\:\$50 {
+  ///   --sk-filter-saturate: saturate(.5);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n50(&self) -> String {
+    self.append_value("50")
+  }
+  /// ```css
+  /// .saturate\:\$100 {
+  ///   --sk-filter-saturate: saturate(1);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n100(&self) -> String {
+    self.append_value("100")
+  }
+  /// ```css
+  /// .saturate\:\$150 {
+  ///   --sk-filter-saturate: saturate(1.5);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n150(&self) -> String {
+    self.append_value("150")
+  }
+  /// ```css
+  /// .saturate\:\$200 {
+  ///   --sk-filter-saturate: saturate(2);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n200(&self) -> String {
+    self.append_value("200")
+  }
+}
+impl GeneratedValueSetSaturate for GeneratedAtomSaturate {}
+pub struct GeneratedAtomSepia(String);
+impl GeneratedSkribbleValue for GeneratedAtomSepia {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetSepia: GeneratedSkribbleValue {
+  /// ```css
+  /// .sepia\:\$default {
+  ///   --sk-filter-sepia: sepia(100%);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn default(&self) -> String {
+    self.append_value("default")
+  }
+  /// ```css
+  /// .sepia\:\$0 {
+  ///   --sk-filter-sepia: sepia(0);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+}
+impl GeneratedValueSetSepia for GeneratedAtomSepia {}
+pub struct GeneratedAtomDropShadow(String);
+impl GeneratedSkribbleValue for GeneratedAtomDropShadow {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetDropShadow: GeneratedSkribbleValue {
+  /// ```css
+  /// .drop-shadow\:\$default {
+  ///   --sk-filter-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn default(&self) -> String {
+    self.append_value("default")
+  }
+  /// ```css
+  /// .drop-shadow\:\$sm {
+  ///   --sk-filter-drop-shadow: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn sm(&self) -> String {
+    self.append_value("sm")
+  }
+  /// ```css
+  /// .drop-shadow\:\$md {
+  ///   --sk-filter-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn md(&self) -> String {
+    self.append_value("md")
+  }
+  /// ```css
+  /// .drop-shadow\:\$lg {
+  ///   --sk-filter-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn lg(&self) -> String {
+    self.append_value("lg")
+  }
+  /// ```css
+  /// .drop-shadow\:\$xl {
+  ///   --sk-filter-drop-shadow: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn xl(&self) -> String {
+    self.append_value("xl")
+  }
+  /// ```css
+  /// .drop-shadow\:\$2xl {
+  ///   --sk-filter-drop-shadow: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n2xl(&self) -> String {
+    self.append_value("2xl")
+  }
+  /// ```css
+  /// .drop-shadow\:\$none {
+  ///   --sk-filter-drop-shadow: drop-shadow(0 0 #0000);
+  ///   filter: var(--sk-filter-blur) var(--sk-filter-brightness) var(--sk-filter-contrast) var(--sk-filter-grayscale) var(--sk-filter-hue-rotate) var(--sk-filter-invert) var(--sk-filter-saturate) var(--sk-filter-sepia) var(--sk-filter-drop-shadow) var(--sk-filter-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+impl GeneratedValueSetDropShadow for GeneratedAtomDropShadow {}
+pub struct GeneratedAtomCustom(String);
+impl GeneratedSkribbleValue for GeneratedAtomCustom {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetCustom: GeneratedSkribbleValue {
+}
+impl GeneratedValueSetCustom for GeneratedAtomCustom {}
+pub struct GeneratedAtomFilter(String);
+impl GeneratedSkribbleValue for GeneratedAtomFilter {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetFilter: GeneratedSkribbleValue {
+  /// ```css
+  /// .filter\:\$none {
+  ///   filter: none;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+impl GeneratedValueSetFilter for GeneratedAtomFilter {}
+pub struct GeneratedAtomBackdropBlur(String);
+impl GeneratedSkribbleValue for GeneratedAtomBackdropBlur {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBackdropBlur: GeneratedSkribbleValue {
+  /// ```css
+  /// .backdrop-blur\:\$default {
+  ///   --sk-backdrop-blur: blur(8px);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn default(&self) -> String {
+    self.append_value("default")
+  }
+  /// ```css
+  /// .backdrop-blur\:\$none {
+  ///   --sk-backdrop-blur: blur(0);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+  /// ```css
+  /// .backdrop-blur\:\$sm {
+  ///   --sk-backdrop-blur: blur(4px);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn sm(&self) -> String {
+    self.append_value("sm")
+  }
+  /// ```css
+  /// .backdrop-blur\:\$md {
+  ///   --sk-backdrop-blur: blur(12px);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn md(&self) -> String {
+    self.append_value("md")
+  }
+  /// ```css
+  /// .backdrop-blur\:\$lg {
+  ///   --sk-backdrop-blur: blur(16px);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn lg(&self) -> String {
+    self.append_value("lg")
+  }
+  /// ```css
+  /// .backdrop-blur\:\$xl {
+  ///   --sk-backdrop-blur: blur(24px);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn xl(&self) -> String {
+    self.append_value("xl")
+  }
+  /// ```css
+  /// .backdrop-blur\:\$2xl {
+  ///   --sk-backdrop-blur: blur(40px);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n2xl(&self) -> String {
+    self.append_value("2xl")
+  }
+  /// ```css
+  /// .backdrop-blur\:\$3xl {
+  ///   --sk-backdrop-blur: blur(64px);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n3xl(&self) -> String {
+    self.append_value("3xl")
+  }
+}
+impl GeneratedValueSetBackdropBlur for GeneratedAtomBackdropBlur {}
+pub struct GeneratedAtomBackdropBrightness(String);
+impl GeneratedSkribbleValue for GeneratedAtomBackdropBrightness {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBackdropBrightness: GeneratedSkribbleValue {
+  /// ```css
+  /// .backdrop-brightness\:\$0 {
+  ///   --sk-backdrop-brightness: brightness(0);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .backdrop-brightness\:\$50 {
+  ///   --sk-backdrop-brightness: brightness(.5);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n50(&self) -> String {
+    self.append_value("50")
+  }
+  /// ```css
+  /// .backdrop-brightness\:\$75 {
+  ///   --sk-backdrop-brightness: brightness(.75);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n75(&self) -> String {
+    self.append_value("75")
+  }
+  /// ```css
+  /// .backdrop-brightness\:\$90 {
+  ///   --sk-backdrop-brightness: brightness(.9);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n90(&self) -> String {
+    self.append_value("90")
+  }
+  /// ```css
+  /// .backdrop-brightness\:\$95 {
+  ///   --sk-backdrop-brightness: brightness(.95);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n95(&self) -> String {
+    self.append_value("95")
+  }
+  /// ```css
+  /// .backdrop-brightness\:\$100 {
+  ///   --sk-backdrop-brightness: brightness(1);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n100(&self) -> String {
+    self.append_value("100")
+  }
+  /// ```css
+  /// .backdrop-brightness\:\$105 {
+  ///   --sk-backdrop-brightness: brightness(1.05);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n105(&self) -> String {
+    self.append_value("105")
+  }
+  /// ```css
+  /// .backdrop-brightness\:\$110 {
+  ///   --sk-backdrop-brightness: brightness(1.1);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n110(&self) -> String {
+    self.append_value("110")
+  }
+  /// ```css
+  /// .backdrop-brightness\:\$125 {
+  ///   --sk-backdrop-brightness: brightness(1.25);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n125(&self) -> String {
+    self.append_value("125")
+  }
+  /// ```css
+  /// .backdrop-brightness\:\$150 {
+  ///   --sk-backdrop-brightness: brightness(1.5);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n150(&self) -> String {
+    self.append_value("150")
+  }
+  /// ```css
+  /// .backdrop-brightness\:\$200 {
+  ///   --sk-backdrop-brightness: brightness(2);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n200(&self) -> String {
+    self.append_value("200")
+  }
+}
+impl GeneratedValueSetBackdropBrightness for GeneratedAtomBackdropBrightness {}
+pub struct GeneratedAtomBackdropContrast(String);
+impl GeneratedSkribbleValue for GeneratedAtomBackdropContrast {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBackdropContrast: GeneratedSkribbleValue {
+  /// ```css
+  /// .backdrop-contrast\:\$0 {
+  ///   --sk-backdrop-contrast: contrast(0);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .backdrop-contrast\:\$50 {
+  ///   --sk-backdrop-contrast: contrast(.5);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n50(&self) -> String {
+    self.append_value("50")
+  }
+  /// ```css
+  /// .backdrop-contrast\:\$75 {
+  ///   --sk-backdrop-contrast: contrast(.75);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n75(&self) -> String {
+    self.append_value("75")
+  }
+  /// ```css
+  /// .backdrop-contrast\:\$100 {
+  ///   --sk-backdrop-contrast: contrast(1);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n100(&self) -> String {
+    self.append_value("100")
+  }
+  /// ```css
+  /// .backdrop-contrast\:\$125 {
+  ///   --sk-backdrop-contrast: contrast(1.25);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n125(&self) -> String {
+    self.append_value("125")
+  }
+  /// ```css
+  /// .backdrop-contrast\:\$150 {
+  ///   --sk-backdrop-contrast: contrast(1.5);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n150(&self) -> String {
+    self.append_value("150")
+  }
+  /// ```css
+  /// .backdrop-contrast\:\$200 {
+  ///   --sk-backdrop-contrast: contrast(2);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n200(&self) -> String {
+    self.append_value("200")
+  }
+}
+impl GeneratedValueSetBackdropContrast for GeneratedAtomBackdropContrast {}
+pub struct GeneratedAtomBackdropGrayscale(String);
+impl GeneratedSkribbleValue for GeneratedAtomBackdropGrayscale {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBackdropGrayscale: GeneratedSkribbleValue {
+  /// ```css
+  /// .backdrop-grayscale\:\$default {
+  ///   --sk-backdrop-grayscale: grayscale(100%);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn default(&self) -> String {
+    self.append_value("default")
+  }
+  /// ```css
+  /// .backdrop-grayscale\:\$0 {
+  ///   --sk-backdrop-grayscale: grayscale(0);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+}
+impl GeneratedValueSetBackdropGrayscale for GeneratedAtomBackdropGrayscale {}
+pub struct GeneratedAtomBackdropHueRotate(String);
+impl GeneratedSkribbleValue for GeneratedAtomBackdropHueRotate {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBackdropHueRotate: GeneratedSkribbleValue {
+  /// ```css
+  /// .backdrop-hue-rotate\:\$0 {
+  ///   --sk-backdrop-hue-rotate: hue-rotate(0deg);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .backdrop-hue-rotate\:\$15 {
+  ///   --sk-backdrop-hue-rotate: hue-rotate(15deg);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n15(&self) -> String {
+    self.append_value("15")
+  }
+  /// ```css
+  /// .backdrop-hue-rotate\:\$30 {
+  ///   --sk-backdrop-hue-rotate: hue-rotate(30deg);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n30(&self) -> String {
+    self.append_value("30")
+  }
+  /// ```css
+  /// .backdrop-hue-rotate\:\$60 {
+  ///   --sk-backdrop-hue-rotate: hue-rotate(60deg);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .backdrop-hue-rotate\:\$90 {
+  ///   --sk-backdrop-hue-rotate: hue-rotate(90deg);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n90(&self) -> String {
+    self.append_value("90")
+  }
+  /// ```css
+  /// .backdrop-hue-rotate\:\$180 {
+  ///   --sk-backdrop-hue-rotate: hue-rotate(180deg);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n180(&self) -> String {
+    self.append_value("180")
+  }
+}
+impl GeneratedValueSetBackdropHueRotate for GeneratedAtomBackdropHueRotate {}
+pub struct GeneratedAtomBackdropInvert(String);
+impl GeneratedSkribbleValue for GeneratedAtomBackdropInvert {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBackdropInvert: GeneratedSkribbleValue {
+  /// ```css
+  /// .backdrop-invert\:\$default {
+  ///   --sk-backdrop-invert: invert(100%);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn default(&self) -> String {
+    self.append_value("default")
+  }
+  /// ```css
+  /// .backdrop-invert\:\$0 {
+  ///   --sk-backdrop-invert: invert(0);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+}
+impl GeneratedValueSetBackdropInvert for GeneratedAtomBackdropInvert {}
+pub struct GeneratedAtomBackdropSaturate(String);
+impl GeneratedSkribbleValue for GeneratedAtomBackdropSaturate {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBackdropSaturate: GeneratedSkribbleValue {
+  /// ```css
+  /// .backdrop-saturate\:\$0 {
+  ///   --sk-backdrop-saturate: saturate(0);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .backdrop-saturate\:\$50 {
+  ///   --sk-backdrop-saturate: saturate(.5);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n50(&self) -> String {
+    self.append_value("50")
+  }
+  /// ```css
+  /// .backdrop-saturate\:\$100 {
+  ///   --sk-backdrop-saturate: saturate(1);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n100(&self) -> String {
+    self.append_value("100")
+  }
+  /// ```css
+  /// .backdrop-saturate\:\$150 {
+  ///   --sk-backdrop-saturate: saturate(1.5);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n150(&self) -> String {
+    self.append_value("150")
+  }
+  /// ```css
+  /// .backdrop-saturate\:\$200 {
+  ///   --sk-backdrop-saturate: saturate(2);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n200(&self) -> String {
+    self.append_value("200")
+  }
+}
+impl GeneratedValueSetBackdropSaturate for GeneratedAtomBackdropSaturate {}
+pub struct GeneratedAtomBackdropSepia(String);
+impl GeneratedSkribbleValue for GeneratedAtomBackdropSepia {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBackdropSepia: GeneratedSkribbleValue {
+  /// ```css
+  /// .backdrop-sepia\:\$default {
+  ///   --sk-backdrop-sepia: sepia(100%);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn default(&self) -> String {
+    self.append_value("default")
+  }
+  /// ```css
+  /// .backdrop-sepia\:\$0 {
+  ///   --sk-backdrop-sepia: sepia(0);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+}
+impl GeneratedValueSetBackdropSepia for GeneratedAtomBackdropSepia {}
+pub struct GeneratedAtomBackdropDropShadow(String);
+impl GeneratedSkribbleValue for GeneratedAtomBackdropDropShadow {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBackdropDropShadow: GeneratedSkribbleValue {
+  /// ```css
+  /// .backdrop-drop-shadow\:\$default {
+  ///   --sk-backdrop-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn default(&self) -> String {
+    self.append_value("default")
+  }
+  /// ```css
+  /// .backdrop-drop-shadow\:\$sm {
+  ///   --sk-backdrop-drop-shadow: drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn sm(&self) -> String {
+    self.append_value("sm")
+  }
+  /// ```css
+  /// .backdrop-drop-shadow\:\$md {
+  ///   --sk-backdrop-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn md(&self) -> String {
+    self.append_value("md")
+  }
+  /// ```css
+  /// .backdrop-drop-shadow\:\$lg {
+  ///   --sk-backdrop-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn lg(&self) -> String {
+    self.append_value("lg")
+  }
+  /// ```css
+  /// .backdrop-drop-shadow\:\$xl {
+  ///   --sk-backdrop-drop-shadow: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn xl(&self) -> String {
+    self.append_value("xl")
+  }
+  /// ```css
+  /// .backdrop-drop-shadow\:\$2xl {
+  ///   --sk-backdrop-drop-shadow: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn n2xl(&self) -> String {
+    self.append_value("2xl")
+  }
+  /// ```css
+  /// .backdrop-drop-shadow\:\$none {
+  ///   --sk-backdrop-drop-shadow: drop-shadow(0 0 #0000);
+  ///   backdrop-filter: var(--sk-backdrop-blur) var(--sk-backdrop-brightness) var(--sk-backdrop-contrast) var(--sk-backdrop-grayscale) var(--sk-backdrop-hue-rotate) var(--sk-backdrop-invert) var(--sk-backdrop-saturate) var(--sk-backdrop-sepia) var(--sk-backdrop-drop-shadow) var(--sk-backdrop-custom);
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+impl GeneratedValueSetBackdropDropShadow for GeneratedAtomBackdropDropShadow {}
+pub struct GeneratedAtomBackdropCustom(String);
+impl GeneratedSkribbleValue for GeneratedAtomBackdropCustom {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBackdropCustom: GeneratedSkribbleValue {
+}
+impl GeneratedValueSetBackdropCustom for GeneratedAtomBackdropCustom {}
+pub struct GeneratedAtomBackdropFilter(String);
+impl GeneratedSkribbleValue for GeneratedAtomBackdropFilter {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBackdropFilter: GeneratedSkribbleValue {
+  /// ```css
+  /// .backdrop-filter\:\$none {
+  ///   backdrop-filter: none;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+impl GeneratedValueSetBackdropFilter for GeneratedAtomBackdropFilter {}
 pub trait GeneratedAtom: GeneratedSkribbleValue {
   /// Screen reader only
   #[inline]
@@ -36473,6 +37777,204 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   fn left_(&self, value: &'static str) -> String {
     self.append(format!("left:[{}]", value.trim()))
   }
+  /// Control the blur filters to an element.
+  #[inline]
+  fn blur(&self) -> GeneratedAtomBlur {
+    GeneratedAtomBlur::from_ref(self.append("blur"))
+  }
+  #[inline]
+  fn blur_(&self, value: &'static str) -> String {
+    self.append(format!("blur:[{}]", value.trim()))
+  }
+  /// Control the brightness filters to an element.
+  #[inline]
+  fn brightness(&self) -> GeneratedAtomBrightness {
+    GeneratedAtomBrightness::from_ref(self.append("brightness"))
+  }
+  #[inline]
+  fn brightness_(&self, value: &'static str) -> String {
+    self.append(format!("brightness:[{}]", value.trim()))
+  }
+  /// Control the contrast filters to an element.
+  #[inline]
+  fn contrast(&self) -> GeneratedAtomContrast {
+    GeneratedAtomContrast::from_ref(self.append("contrast"))
+  }
+  #[inline]
+  fn contrast_(&self, value: &'static str) -> String {
+    self.append(format!("contrast:[{}]", value.trim()))
+  }
+  /// Control the grayscale filters to an element.
+  #[inline]
+  fn grayscale(&self) -> GeneratedAtomGrayscale {
+    GeneratedAtomGrayscale::from_ref(self.append("grayscale"))
+  }
+  #[inline]
+  fn grayscale_(&self, value: &'static str) -> String {
+    self.append(format!("grayscale:[{}]", value.trim()))
+  }
+  /// Control the hue-rotate filters to an element.
+  #[inline]
+  fn hue_rotate(&self) -> GeneratedAtomHueRotate {
+    GeneratedAtomHueRotate::from_ref(self.append("hue-rotate"))
+  }
+  #[inline]
+  fn hue_rotate_(&self, value: &'static str) -> String {
+    self.append(format!("hue-rotate:[{}]", value.trim()))
+  }
+  /// Control the invert filters to an element.
+  #[inline]
+  fn invert(&self) -> GeneratedAtomInvert {
+    GeneratedAtomInvert::from_ref(self.append("invert"))
+  }
+  #[inline]
+  fn invert_(&self, value: &'static str) -> String {
+    self.append(format!("invert:[{}]", value.trim()))
+  }
+  /// Control the saturate filters to an element.
+  #[inline]
+  fn saturate(&self) -> GeneratedAtomSaturate {
+    GeneratedAtomSaturate::from_ref(self.append("saturate"))
+  }
+  #[inline]
+  fn saturate_(&self, value: &'static str) -> String {
+    self.append(format!("saturate:[{}]", value.trim()))
+  }
+  /// Control the sepia filters to an element.
+  #[inline]
+  fn sepia(&self) -> GeneratedAtomSepia {
+    GeneratedAtomSepia::from_ref(self.append("sepia"))
+  }
+  #[inline]
+  fn sepia_(&self, value: &'static str) -> String {
+    self.append(format!("sepia:[{}]", value.trim()))
+  }
+  /// Control the drop-shadow filters to an element.
+  #[inline]
+  fn drop_shadow(&self) -> GeneratedAtomDropShadow {
+    GeneratedAtomDropShadow::from_ref(self.append("drop-shadow"))
+  }
+  #[inline]
+  fn drop_shadow_(&self, value: &'static str) -> String {
+    self.append(format!("drop-shadow:[{}]", value.trim()))
+  }
+  /// Control the custom filters to an element.
+  #[inline]
+  fn custom(&self) -> GeneratedAtomCustom {
+    GeneratedAtomCustom::from_ref(self.append("custom"))
+  }
+  #[inline]
+  fn custom_(&self, value: &'static str) -> String {
+    self.append(format!("custom:[{}]", value.trim()))
+  }
+  /// Control the filters to an element.
+  #[inline]
+  fn filter(&self) -> GeneratedAtomFilter {
+    GeneratedAtomFilter::from_ref(self.append("filter"))
+  }
+  #[inline]
+  fn filter_(&self, value: &'static str) -> String {
+    self.append(format!("filter:[{}]", value.trim()))
+  }
+  /// Control the backdrop-blur filters to an element.
+  #[inline]
+  fn backdrop_blur(&self) -> GeneratedAtomBackdropBlur {
+    GeneratedAtomBackdropBlur::from_ref(self.append("backdrop-blur"))
+  }
+  #[inline]
+  fn backdrop_blur_(&self, value: &'static str) -> String {
+    self.append(format!("backdrop-blur:[{}]", value.trim()))
+  }
+  /// Control the backdrop-brightness filters to an element.
+  #[inline]
+  fn backdrop_brightness(&self) -> GeneratedAtomBackdropBrightness {
+    GeneratedAtomBackdropBrightness::from_ref(self.append("backdrop-brightness"))
+  }
+  #[inline]
+  fn backdrop_brightness_(&self, value: &'static str) -> String {
+    self.append(format!("backdrop-brightness:[{}]", value.trim()))
+  }
+  /// Control the backdrop-contrast filters to an element.
+  #[inline]
+  fn backdrop_contrast(&self) -> GeneratedAtomBackdropContrast {
+    GeneratedAtomBackdropContrast::from_ref(self.append("backdrop-contrast"))
+  }
+  #[inline]
+  fn backdrop_contrast_(&self, value: &'static str) -> String {
+    self.append(format!("backdrop-contrast:[{}]", value.trim()))
+  }
+  /// Control the backdrop-grayscale filters to an element.
+  #[inline]
+  fn backdrop_grayscale(&self) -> GeneratedAtomBackdropGrayscale {
+    GeneratedAtomBackdropGrayscale::from_ref(self.append("backdrop-grayscale"))
+  }
+  #[inline]
+  fn backdrop_grayscale_(&self, value: &'static str) -> String {
+    self.append(format!("backdrop-grayscale:[{}]", value.trim()))
+  }
+  /// Control the backdrop-hue-rotate filters to an element.
+  #[inline]
+  fn backdrop_hue_rotate(&self) -> GeneratedAtomBackdropHueRotate {
+    GeneratedAtomBackdropHueRotate::from_ref(self.append("backdrop-hue-rotate"))
+  }
+  #[inline]
+  fn backdrop_hue_rotate_(&self, value: &'static str) -> String {
+    self.append(format!("backdrop-hue-rotate:[{}]", value.trim()))
+  }
+  /// Control the backdrop-invert filters to an element.
+  #[inline]
+  fn backdrop_invert(&self) -> GeneratedAtomBackdropInvert {
+    GeneratedAtomBackdropInvert::from_ref(self.append("backdrop-invert"))
+  }
+  #[inline]
+  fn backdrop_invert_(&self, value: &'static str) -> String {
+    self.append(format!("backdrop-invert:[{}]", value.trim()))
+  }
+  /// Control the backdrop-saturate filters to an element.
+  #[inline]
+  fn backdrop_saturate(&self) -> GeneratedAtomBackdropSaturate {
+    GeneratedAtomBackdropSaturate::from_ref(self.append("backdrop-saturate"))
+  }
+  #[inline]
+  fn backdrop_saturate_(&self, value: &'static str) -> String {
+    self.append(format!("backdrop-saturate:[{}]", value.trim()))
+  }
+  /// Control the backdrop-sepia filters to an element.
+  #[inline]
+  fn backdrop_sepia(&self) -> GeneratedAtomBackdropSepia {
+    GeneratedAtomBackdropSepia::from_ref(self.append("backdrop-sepia"))
+  }
+  #[inline]
+  fn backdrop_sepia_(&self, value: &'static str) -> String {
+    self.append(format!("backdrop-sepia:[{}]", value.trim()))
+  }
+  /// Control the backdrop-drop-shadow filters to an element.
+  #[inline]
+  fn backdrop_drop_shadow(&self) -> GeneratedAtomBackdropDropShadow {
+    GeneratedAtomBackdropDropShadow::from_ref(self.append("backdrop-drop-shadow"))
+  }
+  #[inline]
+  fn backdrop_drop_shadow_(&self, value: &'static str) -> String {
+    self.append(format!("backdrop-drop-shadow:[{}]", value.trim()))
+  }
+  /// Control the backdrop-custom filters to an element.
+  #[inline]
+  fn backdrop_custom(&self) -> GeneratedAtomBackdropCustom {
+    GeneratedAtomBackdropCustom::from_ref(self.append("backdrop-custom"))
+  }
+  #[inline]
+  fn backdrop_custom_(&self, value: &'static str) -> String {
+    self.append(format!("backdrop-custom:[{}]", value.trim()))
+  }
+  /// Control the backdrop-filters to an element.
+  #[inline]
+  fn backdrop_filter(&self) -> GeneratedAtomBackdropFilter {
+    GeneratedAtomBackdropFilter::from_ref(self.append("backdrop-filter"))
+  }
+  #[inline]
+  fn backdrop_filter_(&self, value: &'static str) -> String {
+    self.append(format!("backdrop-filter:[{}]", value.trim()))
+  }
 }
 pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   #[inline]
@@ -36510,14 +38012,6 @@ pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   #[inline]
   fn visible(&self) -> String {
     self.append_value("visible")
-  }
-  #[inline]
-  fn remove_filter(&self) -> String {
-    self.append_value("remove-filter")
-  }
-  #[inline]
-  fn remove_backdrop(&self) -> String {
-    self.append_value("remove-backdrop")
   }
   #[inline]
   fn transform_gpu(&self) -> String {
@@ -36656,6 +38150,54 @@ pub trait GeneratedAliases: GeneratedSkribbleValue {
   #[inline]
   fn sticky(&self) -> String {
     ["position:$sticky"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn blur_1(&self) -> String {
+    ["blur:$default"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn drop_shadow_1(&self) -> String {
+    ["drop-shadow:$default"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn grayscale_1(&self) -> String {
+    ["grayscale:$default"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn invert_1(&self) -> String {
+    ["invert:$default"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn sepia_1(&self) -> String {
+    ["sepia:$default"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn filter_none(&self) -> String {
+    ["filter:$none"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn backdrop_blur_1(&self) -> String {
+    ["backdrop-blur:$default"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn backdrop_drop_shadow_1(&self) -> String {
+    ["backdrop-drop-shadow:$default"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn backdrop_grayscale_1(&self) -> String {
+    ["backdrop-grayscale:$default"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn backdrop_invert_1(&self) -> String {
+    ["backdrop-invert:$default"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn backdrop_sepia_1(&self) -> String {
+    ["backdrop-sepia:$default"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn backdrop_filter_none(&self) -> String {
+    ["backdrop-filter:$none"].map(|class| self.append(class)).join(" ")
   }
 }
 impl GeneratedMediaQueryDeviceCategories for GeneratedSkribbleRoot {}

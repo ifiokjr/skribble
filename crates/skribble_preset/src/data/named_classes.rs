@@ -6,8 +6,6 @@ use skribble_core::StringMap;
 
 lazy_static! {
   pub(crate) static ref NAMED_CLASSES: Vec<NamedClass> = {
-    let group_nested_filter = Placeholder::variable("group-nested-filter");
-    let group_nested_backdrop = Placeholder::variable("group-nested-backdrop");
     let group_nested_transform_gpu = Placeholder::variable("group-nested-transform-gpu");
     let group_nested_transform = Placeholder::variable("group-nested-transform");
     let group_nested_transform_cpu = Placeholder::variable("group-nested-transform-cpu");
@@ -60,14 +58,6 @@ lazy_static! {
       NamedClass::builder()
         .name("visible")
         .styles(indexmap! { "visibility" => "visible" })
-        .build(),
-      NamedClass::builder()
-        .name("remove-filter")
-        .styles(indexmap! { group_nested_filter => "none" })
-        .build(),
-      NamedClass::builder()
-        .name("remove-backdrop")
-        .styles(indexmap! { group_nested_backdrop => "none" })
         .build(),
       NamedClass::builder()
         .name("transform-gpu")

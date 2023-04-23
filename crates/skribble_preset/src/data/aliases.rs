@@ -123,5 +123,53 @@ lazy_static! {
       .name("sticky")
       .classes(vec!["position:$sticky"])
       .build(),
+    Alias::builder()
+      .name("blur")
+      .classes(vec!["blur:$default"])
+      .build(),
+    Alias::builder()
+      .name("drop-shadow")
+      .classes(vec!["drop-shadow:$default"])
+      .build(),
+    Alias::builder()
+      .name("grayscale")
+      .classes(vec!["grayscale:$default"])
+      .build(),
+    Alias::builder()
+      .name("invert")
+      .classes(vec!["invert:$default"])
+      .build(),
+    Alias::builder()
+      .name("sepia")
+      .classes(vec!["sepia:$default"])
+      .build(),
+    Alias::builder()
+      .name("filter-none")
+      .classes(vec!["filter:$none"])
+      .build(),
+    Alias::builder()
+      .name("backdrop-blur")
+      .classes(vec!["backdrop-blur:$default"])
+      .build(),
+    Alias::builder()
+      .name("backdrop-drop-shadow")
+      .classes(vec!["backdrop-drop-shadow:$default"])
+      .build(),
+    Alias::builder()
+      .name("backdrop-grayscale")
+      .classes(vec!["backdrop-grayscale:$default"])
+      .build(),
+    Alias::builder()
+      .name("backdrop-invert")
+      .classes(vec!["backdrop-invert:$default"])
+      .build(),
+    Alias::builder()
+      .name("backdrop-sepia")
+      .classes(vec!["backdrop-sepia:$default"])
+      .build(),
+    Alias::builder()
+      .name("backdrop-filter-none")
+      .classes(vec!["backdrop-filter:$none"])
+      .build(),
   ];
 }

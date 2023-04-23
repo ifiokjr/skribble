@@ -207,27 +207,6 @@ lazy_static! {
       .variable("--filter-drop-shadow")
       .build(),
     CssVariable::builder()
-      .name("group-nested-filter")
-      .variable("--group-nested-filter")
-      .value({
-        let filter_blur = Placeholder::wrapped_variable("filter-blur", None);
-        let filter_brightness = Placeholder::wrapped_variable("filter-brightness", None);
-        let filter_contrast = Placeholder::wrapped_variable("filter-contrast", None);
-        let filter_grayscale = Placeholder::wrapped_variable("filter-grayscale", None);
-        let filter_hue_rotate = Placeholder::wrapped_variable("filter-hue-rotate", None);
-        let filter_invert = Placeholder::wrapped_variable("filter-invert", None);
-        let filter_saturate = Placeholder::wrapped_variable("filter-saturate", None);
-        let filter_sepia = Placeholder::wrapped_variable("filter-sepia", None);
-        let filter_drop_shadow = Placeholder::wrapped_variable("filter-drop-shadow", None);
-        let filter_custom = Placeholder::wrapped_variable("filter-custom", None);
-        format!(
-          "{filter_blur} {filter_brightness} {filter_contrast} {filter_grayscale} \
-           {filter_hue_rotate} {filter_invert} {filter_saturate} {filter_sepia} \
-           {filter_drop_shadow} {filter_custom}",
-        )
-      })
-      .build(),
-    CssVariable::builder()
       .name("backdrop-blur")
       .variable("--backdrop-blur")
       .build(),
@@ -266,27 +245,6 @@ lazy_static! {
     CssVariable::builder()
       .name("backdrop-drop-shadow")
       .variable("--backdrop-drop-shadow")
-      .build(),
-    CssVariable::builder()
-      .name("group-nested-backdrop")
-      .variable("--gnb")
-      .value({
-        let backdrop_blur = Placeholder::wrapped_variable("backdrop-blur", None);
-        let backdrop_brightness = Placeholder::wrapped_variable("backdrop-brightness", None);
-        let backdrop_contrast = Placeholder::wrapped_variable("backdrop-contrast", None);
-        let backdrop_grayscale = Placeholder::wrapped_variable("backdrop-grayscale", None);
-        let backdrop_hue_rotate = Placeholder::wrapped_variable("backdrop-hue-rotate", None);
-        let backdrop_invert = Placeholder::wrapped_variable("backdrop-invert", None);
-        let backdrop_saturate = Placeholder::wrapped_variable("backdrop-saturate", None);
-        let backdrop_sepia = Placeholder::wrapped_variable("backdrop-sepia", None);
-        let backdrop_drop_shadow = Placeholder::wrapped_variable("backdrop-drop-shadow", None);
-        let backdrop_custom = Placeholder::wrapped_variable("backdrop-custom", None);
-        format!(
-          "{backdrop_blur} {backdrop_brightness} {backdrop_contrast} {backdrop_grayscale} \
-           {backdrop_hue_rotate} {backdrop_invert} {backdrop_saturate} {backdrop_sepia} \
-           {backdrop_drop_shadow} {backdrop_custom}",
-        )
-      })
       .build(),
     CssVariable::builder()
       .name("transition-duration")
