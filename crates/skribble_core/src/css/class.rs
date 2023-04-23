@@ -137,40 +137,51 @@ impl Class {
     Ok(writer)
   }
 
-  fn write_selector(&self, writer: &mut dyn Write, config: &RunnerConfig) -> AnyEmptyResult {
+  pub fn class(&self) -> AnyResult<String> {
+    let mut writer = String::new();
+    self.write_class(&mut writer)?;
+    Ok(writer)
+  }
+
+  fn write_class(&self, writer: &mut dyn Write) -> AnyEmptyResult {
     let mut tokens = vec![];
 
     for media_query in self.media_queries.iter() {
-      tokens.push(format_css_string(media_query));
+      tokens.push(media_query.to_string());
     }
 
     for modifier in self.modifiers.iter() {
-      tokens.push(format_css_string(modifier));
+      tokens.push(modifier.to_string());
     }
 
     if let Some(ref named_class) = self.named_class {
-      let name = format_css_string(named_class);
-      tokens.push(format!("\\${name}"));
+      tokens.push(format!("${named_class}"));
     }
 
     if let Some(ref atom) = self.atom {
-      tokens.push(format_css_string(atom));
+      tokens.push(atom.to_string());
     }
 
     if let Some(ref value_name) = self.value_name {
-      let name = format_css_string(value_name);
-      tokens.push(format!("\\${name}"));
+      tokens.push(format!("${value_name}"));
     }
 
-    let mut selector = format!(".{}", tokens.join("\\:"));
+    if let Some(ref alias) = self.alias {
+      tokens.push(format!("${alias}"));
+    }
 
     // Append an argument if it exists.
     if let Some(ref argument) = self.argument {
-      let prefix = if tokens.is_empty() { "" } else { "\\:" };
-      let argument = format_css_string(argument.to_string());
-      selector = format!("{selector}{prefix}\\[{argument}\\]");
+      tokens.push(format!("[{argument}]"));
     };
 
+    write!(writer, "{}", tokens.join(":"))?;
+
+    Ok(())
+  }
+
+  fn write_selector(&self, writer: &mut dyn Write, config: &RunnerConfig) -> AnyEmptyResult {
+    let selector = format!(".{}", format_css_string(self.class()?));
     let mut selectors = vec![selector];
 
     // Handle modifiers.
