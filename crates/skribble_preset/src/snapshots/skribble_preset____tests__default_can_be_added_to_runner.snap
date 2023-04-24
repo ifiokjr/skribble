@@ -3088,6 +3088,269 @@ expression: runner_config
           }
         ]
       }
+    },
+    "flow": {
+      "name": "flow",
+      "description": "Control how elements in a grid are auto-placed.",
+      "priority": 150,
+      "styles": {
+        "grid-auto-flow": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "auto-flow"
+          }
+        ]
+      }
+    },
+    "auto-cols": {
+      "name": "auto-cols",
+      "description": "Control the size of implicitly-created grid columns.",
+      "priority": 150,
+      "styles": {
+        "grid-auto-columns": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "grid-auto"
+          }
+        ]
+      }
+    },
+    "auto-rows": {
+      "name": "auto-rows",
+      "description": "Control the size of implicitly-created grid rows.",
+      "priority": 150,
+      "styles": {
+        "grid-auto-rows": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "grid-auto"
+          }
+        ]
+      }
+    },
+    "gap": {
+      "name": "gap",
+      "description": "Control gutters between grid and flexbox items.",
+      "priority": 150,
+      "styles": {
+        "gap": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "spacing"
+          }
+        ]
+      }
+    },
+    "gap-x": {
+      "name": "gap-x",
+      "description": "Control gutters between grid and flexbox items.",
+      "priority": 150,
+      "styles": {
+        "column-gap": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "spacing"
+          }
+        ]
+      }
+    },
+    "gap-y": {
+      "name": "gap-y",
+      "description": "Control gutters between grid and flexbox items.",
+      "priority": 150,
+      "styles": {
+        "row-gap": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "spacing"
+          }
+        ]
+      }
+    },
+    "justify": {
+      "name": "justify",
+      "description": "Control how flex and grid items are positioned along a container's main axis.",
+      "priority": 150,
+      "styles": {
+        "justify-content": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "justify"
+          }
+        ]
+      }
+    },
+    "justify-items": {
+      "name": "justify-items",
+      "description": "Control how grid items are aligned along their inline axis.",
+      "priority": 150,
+      "styles": {
+        "justify-items": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "justify-items"
+          }
+        ]
+      }
+    },
+    "justify-self": {
+      "name": "justify-self",
+      "description": "Control how an individual grid item is aligned along its inline axis.",
+      "priority": 150,
+      "styles": {
+        "justify-self": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "justify-items"
+          },
+          {
+            "priority": 150,
+            "value": "auto"
+          }
+        ]
+      }
+    },
+    "content": {
+      "name": "content",
+      "description": "Control how rows are positioned in multi-row flex and grid containers.",
+      "priority": 150,
+      "styles": {
+        "align-content": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "align-content"
+          }
+        ]
+      }
+    },
+    "items": {
+      "name": "items",
+      "description": "Control how flex and grid items are positioned along a container's cross axis.",
+      "priority": 150,
+      "styles": {
+        "align-items": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "align-items"
+          }
+        ]
+      }
+    },
+    "self": {
+      "name": "self",
+      "description": "Control how an individual flex or grid item is positioned along its container's cross axis.",
+      "priority": 150,
+      "styles": {
+        "align-self": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "align-self"
+          }
+        ]
+      }
+    },
+    "place-content": {
+      "name": "place-content",
+      "description": "Control how content is justified and aligned at the same time.",
+      "priority": 150,
+      "styles": {
+        "place-content": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "place-content"
+          }
+        ]
+      }
+    },
+    "place-items": {
+      "name": "place-items",
+      "description": "Control how items are justified and aligned at the same time.",
+      "priority": 150,
+      "styles": {
+        "place-items": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "place-items"
+          }
+        ]
+      }
+    },
+    "place-self": {
+      "name": "place-self",
+      "description": "Control how an individual flex or grid item is positioned along its container's cross axis.",
+      "priority": 150,
+      "styles": {
+        "place-self": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "justify-items"
+          },
+          {
+            "priority": 150,
+            "value": "auto"
+          }
+        ]
+      }
     }
   },
   "classes": {
@@ -4850,7 +5113,22 @@ expression: runner_config
       "col-end",
       "row-span",
       "row-start",
-      "row-end"
+      "row-end",
+      "flow",
+      "auto-cols",
+      "auto-rows",
+      "gap",
+      "gap-x",
+      "gap-y",
+      "justify",
+      "justify-items",
+      "justify-self",
+      "content",
+      "items",
+      "self",
+      "place-content",
+      "place-items",
+      "place-self"
     ],
     "classes": [
       "group",
@@ -9726,6 +10004,209 @@ expression: runner_config
       "12",
       "13",
       "auto"
+    ],
+    "atom:flow": [
+      "grid-flow-row",
+      "grid-flow-col",
+      "grid-flow-dense",
+      "grid-flow-row-dense",
+      "grid-flow-col-dense"
+    ],
+    "atom:auto-cols": [
+      "auto",
+      "min",
+      "max",
+      "fr"
+    ],
+    "atom:auto-rows": [
+      "auto",
+      "min",
+      "max",
+      "fr"
+    ],
+    "atom:gap": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "px",
+      "0.5",
+      "1.5",
+      "2.5",
+      "3.5"
+    ],
+    "atom:gap-x": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "px",
+      "0.5",
+      "1.5",
+      "2.5",
+      "3.5"
+    ],
+    "atom:gap-y": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "px",
+      "0.5",
+      "1.5",
+      "2.5",
+      "3.5"
+    ],
+    "atom:justify": [
+      "normal",
+      "start",
+      "end",
+      "center",
+      "between",
+      "around",
+      "evenly",
+      "stretch"
+    ],
+    "atom:justify-items": [
+      "start",
+      "end",
+      "center",
+      "stretch"
+    ],
+    "atom:justify-self": [
+      "start",
+      "end",
+      "center",
+      "stretch",
+      "auto"
+    ],
+    "atom:content": [
+      "normal",
+      "center",
+      "start",
+      "end",
+      "between",
+      "around",
+      "evenly",
+      "baseline",
+      "stretch"
+    ],
+    "atom:items": [
+      "center",
+      "start",
+      "end",
+      "baseline",
+      "stretch"
+    ],
+    "atom:self": [
+      "auto",
+      "start",
+      "end",
+      "center",
+      "stretch",
+      "baseline"
+    ],
+    "atom:place-content": [
+      "center",
+      "start",
+      "end",
+      "between",
+      "around",
+      "evenly",
+      "baseline",
+      "stretch"
+    ],
+    "atom:place-items": [
+      "center",
+      "start",
+      "end",
+      "baseline",
+      "stretch"
+    ],
+    "atom:place-self": [
+      "start",
+      "end",
+      "center",
+      "stretch",
+      "auto"
     ]
   },
   "palette": {
@@ -11046,6 +11527,146 @@ expression: runner_config
         "12": "12",
         "13": "13",
         "auto": "auto"
+      }
+    },
+    "auto-flow": {
+      "name": "auto-flow",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "grid-flow-row": "row",
+        "grid-flow-col": "column",
+        "grid-flow-dense": "dense",
+        "grid-flow-row-dense": "row dense",
+        "grid-flow-col-dense": "column dense"
+      }
+    },
+    "grid-auto": {
+      "name": "grid-auto",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "auto": "auto",
+        "min": "min-content",
+        "max": "max-content",
+        "fr": "minmax(0, 1fr)"
+      }
+    },
+    "justify": {
+      "name": "justify",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "normal": "normal",
+        "start": "flex-start",
+        "end": "flex-end",
+        "center": "center",
+        "between": "space-between",
+        "around": "space-around",
+        "evenly": "space-evenly",
+        "stretch": "stretch"
+      }
+    },
+    "justify-items": {
+      "name": "justify-items",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "start": "start",
+        "end": "end",
+        "center": "center",
+        "stretch": "stretch"
+      }
+    },
+    "auto": {
+      "name": "auto",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "auto": "auto"
+      }
+    },
+    "align-content": {
+      "name": "align-content",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "normal": "normal",
+        "center": "center",
+        "start": "flex-start",
+        "end": "flex-end",
+        "between": "space-between",
+        "around": "space-around",
+        "evenly": "space-evenly",
+        "baseline": "baseline",
+        "stretch": "stretch"
+      }
+    },
+    "align-items": {
+      "name": "align-items",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "center": "center",
+        "start": "flex-start",
+        "end": "flex-end",
+        "baseline": "baseline",
+        "stretch": "stretch"
+      }
+    },
+    "align-self": {
+      "name": "align-self",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "auto": "auto",
+        "start": "flex-start",
+        "end": "flex-end",
+        "center": "center",
+        "stretch": "stretch",
+        "baseline": "baseline"
+      }
+    },
+    "place-content": {
+      "name": "place-content",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "center": "center",
+        "start": "start",
+        "end": "end",
+        "between": "space-between",
+        "around": "space-around",
+        "evenly": "space-evenly",
+        "baseline": "baseline",
+        "stretch": "stretch"
+      }
+    },
+    "place-items": {
+      "name": "place-items",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "center": "center",
+        "start": "start",
+        "end": "end",
+        "baseline": "baseline",
+        "stretch": "stretch"
+      }
+    },
+    "place-self": {
+      "name": "place-self",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "center": "center",
+        "start": "start",
+        "end": "end",
+        "between": "space-between",
+        "around": "space-around",
+        "evenly": "space-evenly",
+        "baseline": "baseline",
+        "stretch": "stretch"
       }
     }
   }

@@ -947,6 +947,122 @@ lazy_static! {
           "auto" =>	"auto",
         })
         .build(),
+      ValueSet::builder()
+        .name("auto-flow")
+        .values(indexmap! {
+          "grid-flow-row"	=> "row",
+          "grid-flow-col"	=> "column",
+          "grid-flow-dense"	=> "dense",
+          "grid-flow-row-dense"	=> "row dense",
+          "grid-flow-col-dense"	=> "column dense",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("grid-auto")
+        .values(indexmap! {
+          "auto" => "auto",
+          "min" => "min-content",
+          "max" => "max-content",
+          "fr" => "minmax(0, 1fr)",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("justify")
+        .values(indexmap! {
+          "normal" => "normal",
+          "start" => "flex-start",
+          "end" => "flex-end",
+          "center" => "center",
+          "between" => "space-between",
+          "around" => "space-around",
+          "evenly" => "space-evenly",
+          "stretch" => "stretch",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("justify-items")
+        .values(indexmap! {
+          "start" => "start",
+          "end" => "end",
+          "center" => "center",
+          "stretch" => "stretch",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("auto")
+        .values(indexmap! { "auto" => "auto" })
+        .build(),
+      ValueSet::builder()
+        .name("align-content")
+        .values(indexmap! {
+          "normal" => "normal",
+          "center" => "center",
+          "start" => "flex-start",
+          "end" => "flex-end",
+          "between" => "space-between",
+          "around" => "space-around",
+          "evenly" => "space-evenly",
+          "baseline" => "baseline",
+          "stretch" => "stretch",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("align-items")
+        .values(indexmap! {
+          "center" => "center",
+          "start" => "flex-start",
+          "end" => "flex-end",
+          "baseline" => "baseline",
+          "stretch" => "stretch",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("align-self")
+        .values(indexmap! {
+          "auto" => "auto",
+          "start" => "flex-start",
+          "end" => "flex-end",
+          "center" => "center",
+          "stretch" => "stretch",
+          "baseline" => "baseline",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("place-content")
+        .values(indexmap! {
+          "center" => "center",
+          "start" => "start",
+          "end" => "end",
+          "between" => "space-between",
+          "around" => "space-around",
+          "evenly" => "space-evenly",
+          "baseline" => "baseline",
+          "stretch" => "stretch",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("place-items")
+        .values(indexmap! {
+          "center" => "center",
+          "start" => "start",
+          "end" => "end",
+          "baseline" => "baseline",
+          "stretch" => "stretch",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("place-self")
+        .values(indexmap! {
+          "center" => "center",
+          "start" => "start",
+          "end" => "end",
+          "between" => "space-between",
+          "around" => "space-around",
+          "evenly" => "space-evenly",
+          "baseline" => "baseline",
+          "stretch" => "stretch",
+        })
+        .build(),
     ]
   };
 }

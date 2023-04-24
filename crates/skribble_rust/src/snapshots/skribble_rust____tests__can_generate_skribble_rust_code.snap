@@ -43899,6 +43899,1773 @@ pub trait GeneratedValueSetRowEnd: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetRowEnd for GeneratedAtomRowEnd {}
+pub struct GeneratedAtomFlow(String);
+impl GeneratedSkribbleValue for GeneratedAtomFlow {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetFlow: GeneratedSkribbleValue {
+  /// ```css
+  /// .flow\:\$grid-flow-row {
+  ///   grid-auto-flow: row;
+  /// }
+  /// ```
+  #[inline]
+  fn grid_flow_row(&self) -> String {
+    self.append_value("grid-flow-row")
+  }
+  /// ```css
+  /// .flow\:\$grid-flow-col {
+  ///   grid-auto-flow: column;
+  /// }
+  /// ```
+  #[inline]
+  fn grid_flow_col(&self) -> String {
+    self.append_value("grid-flow-col")
+  }
+  /// ```css
+  /// .flow\:\$grid-flow-dense {
+  ///   grid-auto-flow: dense;
+  /// }
+  /// ```
+  #[inline]
+  fn grid_flow_dense(&self) -> String {
+    self.append_value("grid-flow-dense")
+  }
+  /// ```css
+  /// .flow\:\$grid-flow-row-dense {
+  ///   grid-auto-flow: row dense;
+  /// }
+  /// ```
+  #[inline]
+  fn grid_flow_row_dense(&self) -> String {
+    self.append_value("grid-flow-row-dense")
+  }
+  /// ```css
+  /// .flow\:\$grid-flow-col-dense {
+  ///   grid-auto-flow: column dense;
+  /// }
+  /// ```
+  #[inline]
+  fn grid_flow_col_dense(&self) -> String {
+    self.append_value("grid-flow-col-dense")
+  }
+}
+impl GeneratedValueSetFlow for GeneratedAtomFlow {}
+pub struct GeneratedAtomAutoCols(String);
+impl GeneratedSkribbleValue for GeneratedAtomAutoCols {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetAutoCols: GeneratedSkribbleValue {
+  /// ```css
+  /// .auto-cols\:\$auto {
+  ///   grid-auto-columns: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .auto-cols\:\$min {
+  ///   grid-auto-columns: min-content;
+  /// }
+  /// ```
+  #[inline]
+  fn min(&self) -> String {
+    self.append_value("min")
+  }
+  /// ```css
+  /// .auto-cols\:\$max {
+  ///   grid-auto-columns: max-content;
+  /// }
+  /// ```
+  #[inline]
+  fn max(&self) -> String {
+    self.append_value("max")
+  }
+  /// ```css
+  /// .auto-cols\:\$fr {
+  ///   grid-auto-columns: minmax(0, 1fr);
+  /// }
+  /// ```
+  #[inline]
+  fn fr(&self) -> String {
+    self.append_value("fr")
+  }
+}
+impl GeneratedValueSetAutoCols for GeneratedAtomAutoCols {}
+pub struct GeneratedAtomAutoRows(String);
+impl GeneratedSkribbleValue for GeneratedAtomAutoRows {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetAutoRows: GeneratedSkribbleValue {
+  /// ```css
+  /// .auto-rows\:\$auto {
+  ///   grid-auto-rows: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .auto-rows\:\$min {
+  ///   grid-auto-rows: min-content;
+  /// }
+  /// ```
+  #[inline]
+  fn min(&self) -> String {
+    self.append_value("min")
+  }
+  /// ```css
+  /// .auto-rows\:\$max {
+  ///   grid-auto-rows: max-content;
+  /// }
+  /// ```
+  #[inline]
+  fn max(&self) -> String {
+    self.append_value("max")
+  }
+  /// ```css
+  /// .auto-rows\:\$fr {
+  ///   grid-auto-rows: minmax(0, 1fr);
+  /// }
+  /// ```
+  #[inline]
+  fn fr(&self) -> String {
+    self.append_value("fr")
+  }
+}
+impl GeneratedValueSetAutoRows for GeneratedAtomAutoRows {}
+pub struct GeneratedAtomGap(String);
+impl GeneratedSkribbleValue for GeneratedAtomGap {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetGap: GeneratedSkribbleValue {
+  /// ```css
+  /// .gap\:\$0 {
+  ///   gap: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .gap\:\$1 {
+  ///   gap: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .gap\:\$2 {
+  ///   gap: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .gap\:\$3 {
+  ///   gap: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .gap\:\$4 {
+  ///   gap: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .gap\:\$5 {
+  ///   gap: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .gap\:\$6 {
+  ///   gap: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .gap\:\$7 {
+  ///   gap: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .gap\:\$8 {
+  ///   gap: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .gap\:\$9 {
+  ///   gap: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .gap\:\$10 {
+  ///   gap: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .gap\:\$11 {
+  ///   gap: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .gap\:\$12 {
+  ///   gap: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .gap\:\$14 {
+  ///   gap: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .gap\:\$16 {
+  ///   gap: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .gap\:\$20 {
+  ///   gap: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .gap\:\$24 {
+  ///   gap: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .gap\:\$28 {
+  ///   gap: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .gap\:\$32 {
+  ///   gap: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .gap\:\$36 {
+  ///   gap: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .gap\:\$40 {
+  ///   gap: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .gap\:\$44 {
+  ///   gap: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .gap\:\$48 {
+  ///   gap: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .gap\:\$52 {
+  ///   gap: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .gap\:\$56 {
+  ///   gap: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .gap\:\$60 {
+  ///   gap: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .gap\:\$64 {
+  ///   gap: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .gap\:\$72 {
+  ///   gap: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .gap\:\$80 {
+  ///   gap: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .gap\:\$96 {
+  ///   gap: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .gap\:\$px {
+  ///   gap: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .gap\:\$0\.5 {
+  ///   gap: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .gap\:\$1\.5 {
+  ///   gap: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .gap\:\$2\.5 {
+  ///   gap: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .gap\:\$3\.5 {
+  ///   gap: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+}
+impl GeneratedValueSetGap for GeneratedAtomGap {}
+pub struct GeneratedAtomGapX(String);
+impl GeneratedSkribbleValue for GeneratedAtomGapX {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetGapX: GeneratedSkribbleValue {
+  /// ```css
+  /// .gap-x\:\$0 {
+  ///   column-gap: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .gap-x\:\$1 {
+  ///   column-gap: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .gap-x\:\$2 {
+  ///   column-gap: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .gap-x\:\$3 {
+  ///   column-gap: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .gap-x\:\$4 {
+  ///   column-gap: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .gap-x\:\$5 {
+  ///   column-gap: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .gap-x\:\$6 {
+  ///   column-gap: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .gap-x\:\$7 {
+  ///   column-gap: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .gap-x\:\$8 {
+  ///   column-gap: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .gap-x\:\$9 {
+  ///   column-gap: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .gap-x\:\$10 {
+  ///   column-gap: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .gap-x\:\$11 {
+  ///   column-gap: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .gap-x\:\$12 {
+  ///   column-gap: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .gap-x\:\$14 {
+  ///   column-gap: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .gap-x\:\$16 {
+  ///   column-gap: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .gap-x\:\$20 {
+  ///   column-gap: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .gap-x\:\$24 {
+  ///   column-gap: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .gap-x\:\$28 {
+  ///   column-gap: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .gap-x\:\$32 {
+  ///   column-gap: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .gap-x\:\$36 {
+  ///   column-gap: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .gap-x\:\$40 {
+  ///   column-gap: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .gap-x\:\$44 {
+  ///   column-gap: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .gap-x\:\$48 {
+  ///   column-gap: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .gap-x\:\$52 {
+  ///   column-gap: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .gap-x\:\$56 {
+  ///   column-gap: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .gap-x\:\$60 {
+  ///   column-gap: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .gap-x\:\$64 {
+  ///   column-gap: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .gap-x\:\$72 {
+  ///   column-gap: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .gap-x\:\$80 {
+  ///   column-gap: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .gap-x\:\$96 {
+  ///   column-gap: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .gap-x\:\$px {
+  ///   column-gap: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .gap-x\:\$0\.5 {
+  ///   column-gap: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .gap-x\:\$1\.5 {
+  ///   column-gap: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .gap-x\:\$2\.5 {
+  ///   column-gap: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .gap-x\:\$3\.5 {
+  ///   column-gap: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+}
+impl GeneratedValueSetGapX for GeneratedAtomGapX {}
+pub struct GeneratedAtomGapY(String);
+impl GeneratedSkribbleValue for GeneratedAtomGapY {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetGapY: GeneratedSkribbleValue {
+  /// ```css
+  /// .gap-y\:\$0 {
+  ///   row-gap: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .gap-y\:\$1 {
+  ///   row-gap: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .gap-y\:\$2 {
+  ///   row-gap: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .gap-y\:\$3 {
+  ///   row-gap: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .gap-y\:\$4 {
+  ///   row-gap: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .gap-y\:\$5 {
+  ///   row-gap: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .gap-y\:\$6 {
+  ///   row-gap: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .gap-y\:\$7 {
+  ///   row-gap: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .gap-y\:\$8 {
+  ///   row-gap: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .gap-y\:\$9 {
+  ///   row-gap: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .gap-y\:\$10 {
+  ///   row-gap: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .gap-y\:\$11 {
+  ///   row-gap: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .gap-y\:\$12 {
+  ///   row-gap: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .gap-y\:\$14 {
+  ///   row-gap: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .gap-y\:\$16 {
+  ///   row-gap: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .gap-y\:\$20 {
+  ///   row-gap: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .gap-y\:\$24 {
+  ///   row-gap: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .gap-y\:\$28 {
+  ///   row-gap: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .gap-y\:\$32 {
+  ///   row-gap: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .gap-y\:\$36 {
+  ///   row-gap: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .gap-y\:\$40 {
+  ///   row-gap: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .gap-y\:\$44 {
+  ///   row-gap: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .gap-y\:\$48 {
+  ///   row-gap: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .gap-y\:\$52 {
+  ///   row-gap: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .gap-y\:\$56 {
+  ///   row-gap: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .gap-y\:\$60 {
+  ///   row-gap: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .gap-y\:\$64 {
+  ///   row-gap: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .gap-y\:\$72 {
+  ///   row-gap: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .gap-y\:\$80 {
+  ///   row-gap: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .gap-y\:\$96 {
+  ///   row-gap: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .gap-y\:\$px {
+  ///   row-gap: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .gap-y\:\$0\.5 {
+  ///   row-gap: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .gap-y\:\$1\.5 {
+  ///   row-gap: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .gap-y\:\$2\.5 {
+  ///   row-gap: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .gap-y\:\$3\.5 {
+  ///   row-gap: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+}
+impl GeneratedValueSetGapY for GeneratedAtomGapY {}
+pub struct GeneratedAtomJustify(String);
+impl GeneratedSkribbleValue for GeneratedAtomJustify {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetJustify: GeneratedSkribbleValue {
+  /// ```css
+  /// .justify\:\$normal {
+  ///   justify-content: normal;
+  /// }
+  /// ```
+  #[inline]
+  fn normal(&self) -> String {
+    self.append_value("normal")
+  }
+  /// ```css
+  /// .justify\:\$start {
+  ///   justify-content: flex-start;
+  /// }
+  /// ```
+  #[inline]
+  fn start(&self) -> String {
+    self.append_value("start")
+  }
+  /// ```css
+  /// .justify\:\$end {
+  ///   justify-content: flex-end;
+  /// }
+  /// ```
+  #[inline]
+  fn end(&self) -> String {
+    self.append_value("end")
+  }
+  /// ```css
+  /// .justify\:\$center {
+  ///   justify-content: center;
+  /// }
+  /// ```
+  #[inline]
+  fn center(&self) -> String {
+    self.append_value("center")
+  }
+  /// ```css
+  /// .justify\:\$between {
+  ///   justify-content: space-between;
+  /// }
+  /// ```
+  #[inline]
+  fn between(&self) -> String {
+    self.append_value("between")
+  }
+  /// ```css
+  /// .justify\:\$around {
+  ///   justify-content: space-around;
+  /// }
+  /// ```
+  #[inline]
+  fn around(&self) -> String {
+    self.append_value("around")
+  }
+  /// ```css
+  /// .justify\:\$evenly {
+  ///   justify-content: space-evenly;
+  /// }
+  /// ```
+  #[inline]
+  fn evenly(&self) -> String {
+    self.append_value("evenly")
+  }
+  /// ```css
+  /// .justify\:\$stretch {
+  ///   justify-content: stretch;
+  /// }
+  /// ```
+  #[inline]
+  fn stretch(&self) -> String {
+    self.append_value("stretch")
+  }
+}
+impl GeneratedValueSetJustify for GeneratedAtomJustify {}
+pub struct GeneratedAtomJustifyItems(String);
+impl GeneratedSkribbleValue for GeneratedAtomJustifyItems {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetJustifyItems: GeneratedSkribbleValue {
+  /// ```css
+  /// .justify-items\:\$start {
+  ///   justify-items: start;
+  /// }
+  /// ```
+  #[inline]
+  fn start(&self) -> String {
+    self.append_value("start")
+  }
+  /// ```css
+  /// .justify-items\:\$end {
+  ///   justify-items: end;
+  /// }
+  /// ```
+  #[inline]
+  fn end(&self) -> String {
+    self.append_value("end")
+  }
+  /// ```css
+  /// .justify-items\:\$center {
+  ///   justify-items: center;
+  /// }
+  /// ```
+  #[inline]
+  fn center(&self) -> String {
+    self.append_value("center")
+  }
+  /// ```css
+  /// .justify-items\:\$stretch {
+  ///   justify-items: stretch;
+  /// }
+  /// ```
+  #[inline]
+  fn stretch(&self) -> String {
+    self.append_value("stretch")
+  }
+}
+impl GeneratedValueSetJustifyItems for GeneratedAtomJustifyItems {}
+pub struct GeneratedAtomJustifySelf(String);
+impl GeneratedSkribbleValue for GeneratedAtomJustifySelf {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetJustifySelf: GeneratedSkribbleValue {
+  /// ```css
+  /// .justify-self\:\$start {
+  ///   justify-self: start;
+  /// }
+  /// ```
+  #[inline]
+  fn start(&self) -> String {
+    self.append_value("start")
+  }
+  /// ```css
+  /// .justify-self\:\$end {
+  ///   justify-self: end;
+  /// }
+  /// ```
+  #[inline]
+  fn end(&self) -> String {
+    self.append_value("end")
+  }
+  /// ```css
+  /// .justify-self\:\$center {
+  ///   justify-self: center;
+  /// }
+  /// ```
+  #[inline]
+  fn center(&self) -> String {
+    self.append_value("center")
+  }
+  /// ```css
+  /// .justify-self\:\$stretch {
+  ///   justify-self: stretch;
+  /// }
+  /// ```
+  #[inline]
+  fn stretch(&self) -> String {
+    self.append_value("stretch")
+  }
+  /// ```css
+  /// .justify-self\:\$auto {
+  ///   justify-self: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+}
+impl GeneratedValueSetJustifySelf for GeneratedAtomJustifySelf {}
+pub struct GeneratedAtomContent(String);
+impl GeneratedSkribbleValue for GeneratedAtomContent {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetContent: GeneratedSkribbleValue {
+  /// ```css
+  /// .content\:\$normal {
+  ///   align-content: normal;
+  /// }
+  /// ```
+  #[inline]
+  fn normal(&self) -> String {
+    self.append_value("normal")
+  }
+  /// ```css
+  /// .content\:\$center {
+  ///   align-content: center;
+  /// }
+  /// ```
+  #[inline]
+  fn center(&self) -> String {
+    self.append_value("center")
+  }
+  /// ```css
+  /// .content\:\$start {
+  ///   align-content: flex-start;
+  /// }
+  /// ```
+  #[inline]
+  fn start(&self) -> String {
+    self.append_value("start")
+  }
+  /// ```css
+  /// .content\:\$end {
+  ///   align-content: flex-end;
+  /// }
+  /// ```
+  #[inline]
+  fn end(&self) -> String {
+    self.append_value("end")
+  }
+  /// ```css
+  /// .content\:\$between {
+  ///   align-content: space-between;
+  /// }
+  /// ```
+  #[inline]
+  fn between(&self) -> String {
+    self.append_value("between")
+  }
+  /// ```css
+  /// .content\:\$around {
+  ///   align-content: space-around;
+  /// }
+  /// ```
+  #[inline]
+  fn around(&self) -> String {
+    self.append_value("around")
+  }
+  /// ```css
+  /// .content\:\$evenly {
+  ///   align-content: space-evenly;
+  /// }
+  /// ```
+  #[inline]
+  fn evenly(&self) -> String {
+    self.append_value("evenly")
+  }
+  /// ```css
+  /// .content\:\$baseline {
+  ///   align-content: baseline;
+  /// }
+  /// ```
+  #[inline]
+  fn baseline(&self) -> String {
+    self.append_value("baseline")
+  }
+  /// ```css
+  /// .content\:\$stretch {
+  ///   align-content: stretch;
+  /// }
+  /// ```
+  #[inline]
+  fn stretch(&self) -> String {
+    self.append_value("stretch")
+  }
+}
+impl GeneratedValueSetContent for GeneratedAtomContent {}
+pub struct GeneratedAtomItems(String);
+impl GeneratedSkribbleValue for GeneratedAtomItems {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetItems: GeneratedSkribbleValue {
+  /// ```css
+  /// .items\:\$center {
+  ///   align-items: center;
+  /// }
+  /// ```
+  #[inline]
+  fn center(&self) -> String {
+    self.append_value("center")
+  }
+  /// ```css
+  /// .items\:\$start {
+  ///   align-items: flex-start;
+  /// }
+  /// ```
+  #[inline]
+  fn start(&self) -> String {
+    self.append_value("start")
+  }
+  /// ```css
+  /// .items\:\$end {
+  ///   align-items: flex-end;
+  /// }
+  /// ```
+  #[inline]
+  fn end(&self) -> String {
+    self.append_value("end")
+  }
+  /// ```css
+  /// .items\:\$baseline {
+  ///   align-items: baseline;
+  /// }
+  /// ```
+  #[inline]
+  fn baseline(&self) -> String {
+    self.append_value("baseline")
+  }
+  /// ```css
+  /// .items\:\$stretch {
+  ///   align-items: stretch;
+  /// }
+  /// ```
+  #[inline]
+  fn stretch(&self) -> String {
+    self.append_value("stretch")
+  }
+}
+impl GeneratedValueSetItems for GeneratedAtomItems {}
+pub struct GeneratedAtomSelf(String);
+impl GeneratedSkribbleValue for GeneratedAtomSelf {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetSelf: GeneratedSkribbleValue {
+  /// ```css
+  /// .self\:\$auto {
+  ///   align-self: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .self\:\$start {
+  ///   align-self: flex-start;
+  /// }
+  /// ```
+  #[inline]
+  fn start(&self) -> String {
+    self.append_value("start")
+  }
+  /// ```css
+  /// .self\:\$end {
+  ///   align-self: flex-end;
+  /// }
+  /// ```
+  #[inline]
+  fn end(&self) -> String {
+    self.append_value("end")
+  }
+  /// ```css
+  /// .self\:\$center {
+  ///   align-self: center;
+  /// }
+  /// ```
+  #[inline]
+  fn center(&self) -> String {
+    self.append_value("center")
+  }
+  /// ```css
+  /// .self\:\$stretch {
+  ///   align-self: stretch;
+  /// }
+  /// ```
+  #[inline]
+  fn stretch(&self) -> String {
+    self.append_value("stretch")
+  }
+  /// ```css
+  /// .self\:\$baseline {
+  ///   align-self: baseline;
+  /// }
+  /// ```
+  #[inline]
+  fn baseline(&self) -> String {
+    self.append_value("baseline")
+  }
+}
+impl GeneratedValueSetSelf for GeneratedAtomSelf {}
+pub struct GeneratedAtomPlaceContent(String);
+impl GeneratedSkribbleValue for GeneratedAtomPlaceContent {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetPlaceContent: GeneratedSkribbleValue {
+  /// ```css
+  /// .place-content\:\$center {
+  ///   place-content: center;
+  /// }
+  /// ```
+  #[inline]
+  fn center(&self) -> String {
+    self.append_value("center")
+  }
+  /// ```css
+  /// .place-content\:\$start {
+  ///   place-content: start;
+  /// }
+  /// ```
+  #[inline]
+  fn start(&self) -> String {
+    self.append_value("start")
+  }
+  /// ```css
+  /// .place-content\:\$end {
+  ///   place-content: end;
+  /// }
+  /// ```
+  #[inline]
+  fn end(&self) -> String {
+    self.append_value("end")
+  }
+  /// ```css
+  /// .place-content\:\$between {
+  ///   place-content: space-between;
+  /// }
+  /// ```
+  #[inline]
+  fn between(&self) -> String {
+    self.append_value("between")
+  }
+  /// ```css
+  /// .place-content\:\$around {
+  ///   place-content: space-around;
+  /// }
+  /// ```
+  #[inline]
+  fn around(&self) -> String {
+    self.append_value("around")
+  }
+  /// ```css
+  /// .place-content\:\$evenly {
+  ///   place-content: space-evenly;
+  /// }
+  /// ```
+  #[inline]
+  fn evenly(&self) -> String {
+    self.append_value("evenly")
+  }
+  /// ```css
+  /// .place-content\:\$baseline {
+  ///   place-content: baseline;
+  /// }
+  /// ```
+  #[inline]
+  fn baseline(&self) -> String {
+    self.append_value("baseline")
+  }
+  /// ```css
+  /// .place-content\:\$stretch {
+  ///   place-content: stretch;
+  /// }
+  /// ```
+  #[inline]
+  fn stretch(&self) -> String {
+    self.append_value("stretch")
+  }
+}
+impl GeneratedValueSetPlaceContent for GeneratedAtomPlaceContent {}
+pub struct GeneratedAtomPlaceItems(String);
+impl GeneratedSkribbleValue for GeneratedAtomPlaceItems {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetPlaceItems: GeneratedSkribbleValue {
+  /// ```css
+  /// .place-items\:\$center {
+  ///   place-items: center;
+  /// }
+  /// ```
+  #[inline]
+  fn center(&self) -> String {
+    self.append_value("center")
+  }
+  /// ```css
+  /// .place-items\:\$start {
+  ///   place-items: start;
+  /// }
+  /// ```
+  #[inline]
+  fn start(&self) -> String {
+    self.append_value("start")
+  }
+  /// ```css
+  /// .place-items\:\$end {
+  ///   place-items: end;
+  /// }
+  /// ```
+  #[inline]
+  fn end(&self) -> String {
+    self.append_value("end")
+  }
+  /// ```css
+  /// .place-items\:\$baseline {
+  ///   place-items: baseline;
+  /// }
+  /// ```
+  #[inline]
+  fn baseline(&self) -> String {
+    self.append_value("baseline")
+  }
+  /// ```css
+  /// .place-items\:\$stretch {
+  ///   place-items: stretch;
+  /// }
+  /// ```
+  #[inline]
+  fn stretch(&self) -> String {
+    self.append_value("stretch")
+  }
+}
+impl GeneratedValueSetPlaceItems for GeneratedAtomPlaceItems {}
+pub struct GeneratedAtomPlaceSelf(String);
+impl GeneratedSkribbleValue for GeneratedAtomPlaceSelf {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetPlaceSelf: GeneratedSkribbleValue {
+  /// ```css
+  /// .place-self\:\$start {
+  ///   place-self: start;
+  /// }
+  /// ```
+  #[inline]
+  fn start(&self) -> String {
+    self.append_value("start")
+  }
+  /// ```css
+  /// .place-self\:\$end {
+  ///   place-self: end;
+  /// }
+  /// ```
+  #[inline]
+  fn end(&self) -> String {
+    self.append_value("end")
+  }
+  /// ```css
+  /// .place-self\:\$center {
+  ///   place-self: center;
+  /// }
+  /// ```
+  #[inline]
+  fn center(&self) -> String {
+    self.append_value("center")
+  }
+  /// ```css
+  /// .place-self\:\$stretch {
+  ///   place-self: stretch;
+  /// }
+  /// ```
+  #[inline]
+  fn stretch(&self) -> String {
+    self.append_value("stretch")
+  }
+  /// ```css
+  /// .place-self\:\$auto {
+  ///   place-self: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+}
+impl GeneratedValueSetPlaceSelf for GeneratedAtomPlaceSelf {}
 pub trait GeneratedAtom: GeneratedSkribbleValue {
   /// Screen reader only
   #[inline]
@@ -45067,6 +46834,141 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   #[inline]
   fn row_end_(&self, value: &'static str) -> String {
     self.append(format!("row-end:[{}]", value.trim()))
+  }
+  /// Control how elements in a grid are auto-placed.
+  #[inline]
+  fn flow(&self) -> GeneratedAtomFlow {
+    GeneratedAtomFlow::from_ref(self.append("flow"))
+  }
+  #[inline]
+  fn flow_(&self, value: &'static str) -> String {
+    self.append(format!("flow:[{}]", value.trim()))
+  }
+  /// Control the size of implicitly-created grid columns.
+  #[inline]
+  fn auto_cols(&self) -> GeneratedAtomAutoCols {
+    GeneratedAtomAutoCols::from_ref(self.append("auto-cols"))
+  }
+  #[inline]
+  fn auto_cols_(&self, value: &'static str) -> String {
+    self.append(format!("auto-cols:[{}]", value.trim()))
+  }
+  /// Control the size of implicitly-created grid rows.
+  #[inline]
+  fn auto_rows(&self) -> GeneratedAtomAutoRows {
+    GeneratedAtomAutoRows::from_ref(self.append("auto-rows"))
+  }
+  #[inline]
+  fn auto_rows_(&self, value: &'static str) -> String {
+    self.append(format!("auto-rows:[{}]", value.trim()))
+  }
+  /// Control gutters between grid and flexbox items.
+  #[inline]
+  fn gap(&self) -> GeneratedAtomGap {
+    GeneratedAtomGap::from_ref(self.append("gap"))
+  }
+  #[inline]
+  fn gap_(&self, value: &'static str) -> String {
+    self.append(format!("gap:[{}]", value.trim()))
+  }
+  /// Control gutters between grid and flexbox items.
+  #[inline]
+  fn gap_x(&self) -> GeneratedAtomGapX {
+    GeneratedAtomGapX::from_ref(self.append("gap-x"))
+  }
+  #[inline]
+  fn gap_x_(&self, value: &'static str) -> String {
+    self.append(format!("gap-x:[{}]", value.trim()))
+  }
+  /// Control gutters between grid and flexbox items.
+  #[inline]
+  fn gap_y(&self) -> GeneratedAtomGapY {
+    GeneratedAtomGapY::from_ref(self.append("gap-y"))
+  }
+  #[inline]
+  fn gap_y_(&self, value: &'static str) -> String {
+    self.append(format!("gap-y:[{}]", value.trim()))
+  }
+  /// Control how flex and grid items are positioned along a container's main axis.
+  #[inline]
+  fn justify(&self) -> GeneratedAtomJustify {
+    GeneratedAtomJustify::from_ref(self.append("justify"))
+  }
+  #[inline]
+  fn justify_(&self, value: &'static str) -> String {
+    self.append(format!("justify:[{}]", value.trim()))
+  }
+  /// Control how grid items are aligned along their inline axis.
+  #[inline]
+  fn justify_items(&self) -> GeneratedAtomJustifyItems {
+    GeneratedAtomJustifyItems::from_ref(self.append("justify-items"))
+  }
+  #[inline]
+  fn justify_items_(&self, value: &'static str) -> String {
+    self.append(format!("justify-items:[{}]", value.trim()))
+  }
+  /// Control how an individual grid item is aligned along its inline axis.
+  #[inline]
+  fn justify_self(&self) -> GeneratedAtomJustifySelf {
+    GeneratedAtomJustifySelf::from_ref(self.append("justify-self"))
+  }
+  #[inline]
+  fn justify_self_(&self, value: &'static str) -> String {
+    self.append(format!("justify-self:[{}]", value.trim()))
+  }
+  /// Control how rows are positioned in multi-row flex and grid containers.
+  #[inline]
+  fn content(&self) -> GeneratedAtomContent {
+    GeneratedAtomContent::from_ref(self.append("content"))
+  }
+  #[inline]
+  fn content_(&self, value: &'static str) -> String {
+    self.append(format!("content:[{}]", value.trim()))
+  }
+  /// Control how flex and grid items are positioned along a container's cross axis.
+  #[inline]
+  fn items(&self) -> GeneratedAtomItems {
+    GeneratedAtomItems::from_ref(self.append("items"))
+  }
+  #[inline]
+  fn items_(&self, value: &'static str) -> String {
+    self.append(format!("items:[{}]", value.trim()))
+  }
+  /// Control how an individual flex or grid item is positioned along its container's cross axis.
+  #[inline]
+  fn self_(&self) -> GeneratedAtomSelf {
+    GeneratedAtomSelf::from_ref(self.append("self"))
+  }
+  #[inline]
+  fn self__(&self, value: &'static str) -> String {
+    self.append(format!("self:[{}]", value.trim()))
+  }
+  /// Control how content is justified and aligned at the same time.
+  #[inline]
+  fn place_content(&self) -> GeneratedAtomPlaceContent {
+    GeneratedAtomPlaceContent::from_ref(self.append("place-content"))
+  }
+  #[inline]
+  fn place_content_(&self, value: &'static str) -> String {
+    self.append(format!("place-content:[{}]", value.trim()))
+  }
+  /// Control how items are justified and aligned at the same time.
+  #[inline]
+  fn place_items(&self) -> GeneratedAtomPlaceItems {
+    GeneratedAtomPlaceItems::from_ref(self.append("place-items"))
+  }
+  #[inline]
+  fn place_items_(&self, value: &'static str) -> String {
+    self.append(format!("place-items:[{}]", value.trim()))
+  }
+  /// Control how an individual flex or grid item is positioned along its container's cross axis.
+  #[inline]
+  fn place_self(&self) -> GeneratedAtomPlaceSelf {
+    GeneratedAtomPlaceSelf::from_ref(self.append("place-self"))
+  }
+  #[inline]
+  fn place_self_(&self, value: &'static str) -> String {
+    self.append(format!("place-self:[{}]", value.trim()))
   }
 }
 pub trait GeneratedNamedClasses: GeneratedSkribbleValue {

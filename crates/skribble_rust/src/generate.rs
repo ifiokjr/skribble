@@ -619,6 +619,10 @@ fn safe_method_name(name: impl AsRef<str>) -> Result<String, Error> {
 
   let method_name = format!("{prefix}{}", name.to_snake_case());
 
+  if "self" == &method_name {
+    return Ok("self_".into());
+  }
+
   if RESERVED_WORDS.contains(&method_name.as_str()) {
     return Ok(format!("r#{}", method_name));
   }

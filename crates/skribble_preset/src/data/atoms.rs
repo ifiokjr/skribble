@@ -819,7 +819,7 @@ lazy_static! {
         .styles(indexmap! { "max-height" => none })
         .build(),
 
-      // Flexbox & Grid
+      // Flex
       Atom::builder()
         .name("basis")
         .description("Control the initial size of flex items.")
@@ -862,6 +862,7 @@ lazy_static! {
         .values(vec!["order", "negative-order"])
         .styles(indexmap! { "order" => none })
         .build(),
+
       // Grid
       Atom::builder()
         .name("grid-cols")
@@ -911,7 +912,96 @@ lazy_static! {
         .values(vec!["grid-start-end"])
         .styles(indexmap! { "grid-row-end" => none })
         .build(),
-
+      Atom::builder()
+        .name("flow")
+        .description("Control how elements in a grid are auto-placed.")
+        .values(vec!["auto-flow"])
+        .styles(indexmap! { "grid-auto-flow" => none })
+        .build(),
+      Atom::builder()
+        .name("auto-cols")
+        .description("Control the size of implicitly-created grid columns.")
+        .values(vec!["grid-auto"])
+        .styles(indexmap! { "grid-auto-columns" => none })
+        .build(),
+      Atom::builder()
+        .name("auto-rows")
+        .description("Control the size of implicitly-created grid rows.")
+        .values(vec!["grid-auto"])
+        .styles(indexmap! { "grid-auto-rows" => none })
+        .build(),
+      Atom::builder()
+        .name("gap")
+        .description("Control gutters between grid and flexbox items.")
+        .values(vec!["spacing"])
+        .styles(indexmap! { "gap" => none })
+        .build(),
+      Atom::builder()
+        .name("gap-x")
+        .description("Control gutters between grid and flexbox items.")
+        .values(vec!["spacing"])
+        .styles(indexmap! { "column-gap" => none })
+        .build(),
+      Atom::builder()
+        .name("gap-y")
+        .description("Control gutters between grid and flexbox items.")
+        .values(vec!["spacing"])
+        .styles(indexmap! { "row-gap" => none })
+        .build(),
+      Atom::builder()
+        .name("justify")
+        .description("Control how flex and grid items are positioned along a container's main axis.")
+        .values(vec!["justify"])
+        .styles(indexmap! { "justify-content" => none })
+        .build(),
+      Atom::builder()
+        .name("justify-items")
+        .description("Control how grid items are aligned along their inline axis.")
+        .values(vec!["justify-items"])
+        .styles(indexmap! { "justify-items" => none })
+        .build(),
+      Atom::builder()
+        .name("justify-self")
+        .description("Control how an individual grid item is aligned along its inline axis.")
+        .values(vec!["justify-items", "auto"])
+        .styles(indexmap! { "justify-self" => none })
+        .build(),
+      Atom::builder()
+        .name("content")
+        .description("Control how rows are positioned in multi-row flex and grid containers.")
+        .values(vec!["align-content"])
+        .styles(indexmap! { "align-content" => none })
+        .build(),
+      Atom::builder()
+        .name("items")
+        .description("Control how flex and grid items are positioned along a container's cross axis.")
+        .values(vec!["align-items"])
+        .styles(indexmap! { "align-items" => none })
+        .build(),
+      Atom::builder()
+        .name("self")
+        .description("Control how an individual flex or grid item is positioned along its container's cross axis.")
+        .values(vec!["align-self"])
+        .styles(indexmap! { "align-self" => none })
+        .build(),
+      Atom::builder()
+        .name("place-content")
+        .description("Control how content is justified and aligned at the same time.")
+        .values(vec!["place-content"])
+        .styles(indexmap! { "place-content" => none })
+        .build(),
+      Atom::builder()
+        .name("place-items")
+        .description("Control how items are justified and aligned at the same time.")
+        .values(vec!["place-items"])
+        .styles(indexmap! { "place-items" => none })
+        .build(),
+      Atom::builder()
+        .name("place-self")
+        .description("Control how an individual flex or grid item is positioned along its container's cross axis.")
+        .values(vec!["justify-items", "auto"])
+        .styles(indexmap! { "place-self" => none })
+        .build(),
     ]
   };
 }
