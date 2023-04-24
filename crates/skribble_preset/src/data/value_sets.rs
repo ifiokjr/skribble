@@ -814,6 +814,139 @@ lazy_static! {
         .name("filter")
         .values(indexmap! { "none" => "none" })
         .build(),
+      ValueSet::builder()
+        .name("flex-direction")
+        .values(indexmap! {
+          "row" => "row",
+          "row-reverse" => "row-reverse",
+          "col" => "column",
+          "col-reverse" => "column-reverse",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("flex-wrap")
+        .values(indexmap! {
+          "wrap"	=> "wrap",
+          "wrap-reverse"	=> "wrap-reverse",
+          "nowrap"	=> "nowrap",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("flex")
+        .values(indexmap! {
+          "1" => "1 1 0%",
+          "auto" => "1 1 auto",
+          "initial" => "0 1 auto",
+          "none" => "none",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("flex-grow")
+        .values(indexmap! {
+          "1" => "1",
+          "0" => "0",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("flex-shrink")
+        .values(indexmap! {
+          "1" => "1",
+          "0" => "0",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("order")
+        .values(indexmap! {
+          "1" => "1",
+          "2" => "2",
+          "3" => "3",
+          "4" => "4",
+          "5" => "5",
+          "6" => "6",
+          "7" => "7",
+          "8" => "8",
+          "9" => "9",
+          "10" => "10",
+          "11" => "11",
+          "12" => "12",
+          "first" => "-9999",
+          "last" => "9999",
+          "none" => "0",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("negative-order")
+        .values(indexmap! {
+          "-1" => "-1",
+          "-2" => "-2",
+          "-3" => "-3",
+          "-4" => "-4",
+          "-5" => "-5",
+          "-6" => "-6",
+          "-7" => "-7",
+          "-8" => "-8",
+          "-9" => "-9",
+          "-10" => "-10",
+          "-11" => "-11",
+          "-12" => "-12",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("grid-template")
+        .values(indexmap! {
+          "1" => "repeat(1, minmax(0, 1fr))",
+          "2" => "repeat(2, minmax(0, 1fr))",
+          "3" => "repeat(3, minmax(0, 1fr))",
+          "4" => "repeat(4, minmax(0, 1fr))",
+          "5" => "repeat(5, minmax(0, 1fr))",
+          "6" => "repeat(6, minmax(0, 1fr))",
+          "7" => "repeat(7, minmax(0, 1fr))",
+          "8" => "repeat(8, minmax(0, 1fr))",
+          "9" => "repeat(9, minmax(0, 1fr))",
+          "10" => "repeat(10, minmax(0, 1fr))",
+          "11" => "repeat(11, minmax(0, 1fr))",
+          "12" => "repeat(12, minmax(0, 1fr))",
+          "none" => "none",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("grid-span")
+        .values(indexmap! {
+          "auto" =>	"auto",
+          "1" =>	"span 1 / span 1",
+          "2" =>	"span 2 / span 2",
+          "3" =>	"span 3 / span 3",
+          "4" =>	"span 4 / span 4",
+          "5" =>	"span 5 / span 5",
+          "6" =>	"span 6 / span 6",
+          "7" =>	"span 7 / span 7",
+          "8" =>	"span 8 / span 8",
+          "9" =>	"span 9 / span 9",
+          "10" =>	"span 10 / span 10",
+          "11" =>	"span 11 / span 11",
+          "12" =>	"span 12 / span 12",
+          "full" =>	"1 / -1",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("grid-start-end")
+        .values(indexmap! {
+          "1" =>	"1",
+          "2" =>	"2",
+          "3" =>	"3",
+          "4" =>	"4",
+          "5" =>	"5",
+          "6" =>	"6",
+          "7" =>	"7",
+          "8" =>	"8",
+          "9" =>	"9",
+          "10" =>	"10",
+          "11" =>	"11",
+          "12" =>	"12",
+          "13" =>	"13",
+          "auto" =>	"auto",
+        })
+        .build(),
     ]
   };
 }

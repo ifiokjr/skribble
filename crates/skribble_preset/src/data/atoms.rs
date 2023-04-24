@@ -818,6 +818,100 @@ lazy_static! {
         .values(vec!["spacing", "relative-spacing", "content-fit", "screen-height"])
         .styles(indexmap! { "max-height" => none })
         .build(),
+
+      // Flexbox & Grid
+      Atom::builder()
+        .name("basis")
+        .description("Control the initial size of flex items.")
+        .values(vec!["spacing", "relative-spacing"])
+        .styles(indexmap! { "flex-basis" => none })
+        .build(),
+      Atom::builder()
+        .name("flex-direction")
+        .description("Control the direction of flex items.")
+        .values(vec!["flex-direction"])
+        .styles(indexmap! { "flex-direction" => none })
+        .build(),
+      Atom::builder()
+        .name("flex-wrap")
+        .description("Control how flex items wrap.")
+        .values(vec!["flex-wrap"])
+        .styles(indexmap! { "flex-wrap" => none })
+        .build(),
+      Atom::builder()
+        .name("flex")
+        .description("Control how flex items both grow and shrink.")
+        .values(vec!["flex"])
+        .styles(indexmap! { "flex" => none })
+        .build(),
+      Atom::builder()
+        .name("flex-grow")
+        .description("Control how flex items grow.")
+        .values(vec!["flex-grow"])
+        .styles(indexmap! { "flex-grow" => none })
+        .build(),
+      Atom::builder()
+        .name("flex-shrink")
+        .description("Control how flex items shrink.")
+        .values(vec!["flex-shrink"])
+        .styles(indexmap! { "flex-shrink" => none })
+        .build(),
+      Atom::builder()
+        .name("order")
+        .description("Control how flex items shrink.")
+        .values(vec!["order", "negative-order"])
+        .styles(indexmap! { "order" => none })
+        .build(),
+      // Grid
+      Atom::builder()
+        .name("grid-cols")
+        .description("Specify the columns in a grid layout.")
+        .values(vec!["grid-template"])
+        .styles(indexmap! { "grid-template-columns" => none })
+        .build(),
+      Atom::builder()
+        .name("grid-rows")
+        .description("Specify the rows in a grid layout.")
+        .values(vec!["grid-template"])
+        .styles(indexmap! { "grid-template-rows" => none })
+        .build(),
+      Atom::builder()
+        .name("col-span")
+        .description("Control how elements are sized and placed across grid columns.")
+        .values(vec!["grid-span"])
+        .styles(indexmap! { "grid-column" => none })
+        .build(),
+      Atom::builder()
+        .name("col-start")
+        .description("Control how elements are sized and placed across grid columns.")
+        .values(vec!["grid-start-end"])
+        .styles(indexmap! { "grid-column-start" => none })
+        .build(),
+      Atom::builder()
+        .name("col-end")
+        .description("Control how elements are sized and placed across grid columns.")
+        .values(vec!["grid-start-end"])
+        .styles(indexmap! { "grid-column-end" => none })
+        .build(),
+      Atom::builder()
+        .name("row-span")
+        .description("Control how elements are sized and placed across grid rows.")
+        .values(vec!["grid-span"])
+        .styles(indexmap! { "grid-row" => none })
+        .build(),
+      Atom::builder()
+        .name("row-start")
+        .description("Control how elements are sized and placed across grid rows.")
+        .values(vec!["grid-start-end"])
+        .styles(indexmap! { "grid-row-start" => none })
+        .build(),
+      Atom::builder()
+        .name("row-end")
+        .description("Control how elements are sized and placed across grid rows.")
+        .values(vec!["grid-start-end"])
+        .styles(indexmap! { "grid-row-end" => none })
+        .build(),
+
     ]
   };
 }

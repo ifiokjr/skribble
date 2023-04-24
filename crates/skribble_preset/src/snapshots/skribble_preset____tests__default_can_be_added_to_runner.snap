@@ -381,6 +381,105 @@ expression: runner_config
       "description": null,
       "name": "backdrop-filter-none",
       "priority": 150
+    },
+    "flex-row": {
+      "classes": [
+        "flex-direction:$row"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "flex-row",
+      "priority": 150
+    },
+    "flex-row-reverse": {
+      "classes": [
+        "flex-direction:$row-reverse"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "flex-row-reverse",
+      "priority": 150
+    },
+    "flex-col": {
+      "classes": [
+        "flex-direction:$col"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "flex-col",
+      "priority": 150
+    },
+    "flex-col-reverse": {
+      "classes": [
+        "flex-direction:$col-reverse"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "flex-col-reverse",
+      "priority": 150
+    },
+    "flex-wrap": {
+      "classes": [
+        "flex-direction:$wrap"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "flex-wrap",
+      "priority": 150
+    },
+    "flex-wrap-reverse": {
+      "classes": [
+        "flex-direction:$wrap-reverse"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "flex-wrap-reverse",
+      "priority": 150
+    },
+    "flex-nowrap": {
+      "classes": [
+        "flex-direction:$nowrap"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "flex-nowrap",
+      "priority": 150
+    },
+    "grow": {
+      "classes": [
+        "flex-grow:$1"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "grow",
+      "priority": 150
+    },
+    "grow-0": {
+      "classes": [
+        "flex-grow:$0"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "grow-0",
+      "priority": 150
+    },
+    "shrink": {
+      "classes": [
+        "flex-shrink:$1"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "shrink",
+      "priority": 150
+    },
+    "shrink-0": {
+      "classes": [
+        "flex-shrink:$0"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "shrink-0",
+      "priority": 150
     }
   },
   "atoms": {
@@ -2726,6 +2825,269 @@ expression: runner_config
           }
         ]
       }
+    },
+    "basis": {
+      "name": "basis",
+      "description": "Control the initial size of flex items.",
+      "priority": 150,
+      "styles": {
+        "flex-basis": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "spacing"
+          },
+          {
+            "priority": 150,
+            "value": "relative-spacing"
+          }
+        ]
+      }
+    },
+    "flex-direction": {
+      "name": "flex-direction",
+      "description": "Control the direction of flex items.",
+      "priority": 150,
+      "styles": {
+        "flex-direction": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "flex-direction"
+          }
+        ]
+      }
+    },
+    "flex-wrap": {
+      "name": "flex-wrap",
+      "description": "Control how flex items wrap.",
+      "priority": 150,
+      "styles": {
+        "flex-wrap": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "flex-wrap"
+          }
+        ]
+      }
+    },
+    "flex": {
+      "name": "flex",
+      "description": "Control how flex items both grow and shrink.",
+      "priority": 150,
+      "styles": {
+        "flex": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "flex"
+          }
+        ]
+      }
+    },
+    "flex-grow": {
+      "name": "flex-grow",
+      "description": "Control how flex items grow.",
+      "priority": 150,
+      "styles": {
+        "flex-grow": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "flex-grow"
+          }
+        ]
+      }
+    },
+    "flex-shrink": {
+      "name": "flex-shrink",
+      "description": "Control how flex items shrink.",
+      "priority": 150,
+      "styles": {
+        "flex-shrink": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "flex-shrink"
+          }
+        ]
+      }
+    },
+    "order": {
+      "name": "order",
+      "description": "Control how flex items shrink.",
+      "priority": 150,
+      "styles": {
+        "order": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "order"
+          },
+          {
+            "priority": 150,
+            "value": "negative-order"
+          }
+        ]
+      }
+    },
+    "grid-cols": {
+      "name": "grid-cols",
+      "description": "Specify the columns in a grid layout.",
+      "priority": 150,
+      "styles": {
+        "grid-template-columns": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "grid-template"
+          }
+        ]
+      }
+    },
+    "grid-rows": {
+      "name": "grid-rows",
+      "description": "Specify the rows in a grid layout.",
+      "priority": 150,
+      "styles": {
+        "grid-template-rows": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "grid-template"
+          }
+        ]
+      }
+    },
+    "col-span": {
+      "name": "col-span",
+      "description": "Control how elements are sized and placed across grid columns.",
+      "priority": 150,
+      "styles": {
+        "grid-column": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "grid-span"
+          }
+        ]
+      }
+    },
+    "col-start": {
+      "name": "col-start",
+      "description": "Control how elements are sized and placed across grid columns.",
+      "priority": 150,
+      "styles": {
+        "grid-column-start": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "grid-start-end"
+          }
+        ]
+      }
+    },
+    "col-end": {
+      "name": "col-end",
+      "description": "Control how elements are sized and placed across grid columns.",
+      "priority": 150,
+      "styles": {
+        "grid-column-end": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "grid-start-end"
+          }
+        ]
+      }
+    },
+    "row-span": {
+      "name": "row-span",
+      "description": "Control how elements are sized and placed across grid rows.",
+      "priority": 150,
+      "styles": {
+        "grid-row": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "grid-span"
+          }
+        ]
+      }
+    },
+    "row-start": {
+      "name": "row-start",
+      "description": "Control how elements are sized and placed across grid rows.",
+      "priority": 150,
+      "styles": {
+        "grid-row-start": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "grid-start-end"
+          }
+        ]
+      }
+    },
+    "row-end": {
+      "name": "row-end",
+      "description": "Control how elements are sized and placed across grid rows.",
+      "priority": 150,
+      "styles": {
+        "grid-row-end": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "grid-start-end"
+          }
+        ]
+      }
     }
   },
   "classes": {
@@ -4473,7 +4835,22 @@ expression: runner_config
       "max-w",
       "h",
       "min-h",
-      "max-h"
+      "max-h",
+      "basis",
+      "flex-direction",
+      "flex-wrap",
+      "flex",
+      "flex-grow",
+      "flex-shrink",
+      "order",
+      "grid-cols",
+      "grid-rows",
+      "col-span",
+      "col-start",
+      "col-end",
+      "row-span",
+      "row-start",
+      "row-end"
     ],
     "classes": [
       "group",
@@ -4535,7 +4912,18 @@ expression: runner_config
       "backdrop-grayscale",
       "backdrop-invert",
       "backdrop-sepia",
-      "backdrop-filter-none"
+      "backdrop-filter-none",
+      "flex-row",
+      "flex-row-reverse",
+      "flex-col",
+      "flex-col-reverse",
+      "flex-wrap",
+      "flex-wrap-reverse",
+      "flex-nowrap",
+      "grow",
+      "grow-0",
+      "shrink",
+      "shrink-0"
     ],
     "media_queries": [
       "screen",
@@ -9104,6 +9492,240 @@ expression: runner_config
       "5-of-12-screen",
       "7-of-12-screen",
       "11-of-12-screen"
+    ],
+    "atom:basis": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96",
+      "px",
+      "0.5",
+      "1.5",
+      "2.5",
+      "3.5",
+      "auto",
+      "half",
+      "1-of-3",
+      "2-of-3",
+      "1-of-4",
+      "3-of-4",
+      "1-of-5",
+      "2-of-5",
+      "3-of-5",
+      "4-of-5",
+      "1-of-6",
+      "5-of-6",
+      "1-of-12",
+      "5-of-12",
+      "7-of-12",
+      "11-of-12",
+      "full"
+    ],
+    "atom:flex-direction": [
+      "row",
+      "row-reverse",
+      "col",
+      "col-reverse"
+    ],
+    "atom:flex-wrap": [
+      "wrap",
+      "wrap-reverse",
+      "nowrap"
+    ],
+    "atom:flex": [
+      "1",
+      "auto",
+      "initial",
+      "none"
+    ],
+    "atom:flex-grow": [
+      "1",
+      "0"
+    ],
+    "atom:flex-shrink": [
+      "1",
+      "0"
+    ],
+    "atom:order": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "first",
+      "last",
+      "none",
+      "-1",
+      "-2",
+      "-3",
+      "-4",
+      "-5",
+      "-6",
+      "-7",
+      "-8",
+      "-9",
+      "-10",
+      "-11",
+      "-12"
+    ],
+    "atom:grid-cols": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "none"
+    ],
+    "atom:grid-rows": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "none"
+    ],
+    "atom:col-span": [
+      "auto",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "full"
+    ],
+    "atom:col-start": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "auto"
+    ],
+    "atom:col-end": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "auto"
+    ],
+    "atom:row-span": [
+      "auto",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "full"
+    ],
+    "atom:row-start": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "auto"
+    ],
+    "atom:row-end": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "auto"
     ]
   },
   "palette": {
@@ -10271,6 +10893,159 @@ expression: runner_config
       "priority": 150,
       "values": {
         "none": "none"
+      }
+    },
+    "flex-direction": {
+      "name": "flex-direction",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "row": "row",
+        "row-reverse": "row-reverse",
+        "col": "column",
+        "col-reverse": "column-reverse"
+      }
+    },
+    "flex-wrap": {
+      "name": "flex-wrap",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "wrap": "wrap",
+        "wrap-reverse": "wrap-reverse",
+        "nowrap": "nowrap"
+      }
+    },
+    "flex": {
+      "name": "flex",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "1": "1 1 0%",
+        "auto": "1 1 auto",
+        "initial": "0 1 auto",
+        "none": "none"
+      }
+    },
+    "flex-grow": {
+      "name": "flex-grow",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "1": "1",
+        "0": "0"
+      }
+    },
+    "flex-shrink": {
+      "name": "flex-shrink",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "1": "1",
+        "0": "0"
+      }
+    },
+    "order": {
+      "name": "order",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "10": "10",
+        "11": "11",
+        "12": "12",
+        "first": "-9999",
+        "last": "9999",
+        "none": "0"
+      }
+    },
+    "negative-order": {
+      "name": "negative-order",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "-1": "-1",
+        "-2": "-2",
+        "-3": "-3",
+        "-4": "-4",
+        "-5": "-5",
+        "-6": "-6",
+        "-7": "-7",
+        "-8": "-8",
+        "-9": "-9",
+        "-10": "-10",
+        "-11": "-11",
+        "-12": "-12"
+      }
+    },
+    "grid-template": {
+      "name": "grid-template",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "1": "repeat(1, minmax(0, 1fr))",
+        "2": "repeat(2, minmax(0, 1fr))",
+        "3": "repeat(3, minmax(0, 1fr))",
+        "4": "repeat(4, minmax(0, 1fr))",
+        "5": "repeat(5, minmax(0, 1fr))",
+        "6": "repeat(6, minmax(0, 1fr))",
+        "7": "repeat(7, minmax(0, 1fr))",
+        "8": "repeat(8, minmax(0, 1fr))",
+        "9": "repeat(9, minmax(0, 1fr))",
+        "10": "repeat(10, minmax(0, 1fr))",
+        "11": "repeat(11, minmax(0, 1fr))",
+        "12": "repeat(12, minmax(0, 1fr))",
+        "none": "none"
+      }
+    },
+    "grid-span": {
+      "name": "grid-span",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "auto": "auto",
+        "1": "span 1 / span 1",
+        "2": "span 2 / span 2",
+        "3": "span 3 / span 3",
+        "4": "span 4 / span 4",
+        "5": "span 5 / span 5",
+        "6": "span 6 / span 6",
+        "7": "span 7 / span 7",
+        "8": "span 8 / span 8",
+        "9": "span 9 / span 9",
+        "10": "span 10 / span 10",
+        "11": "span 11 / span 11",
+        "12": "span 12 / span 12",
+        "full": "1 / -1"
+      }
+    },
+    "grid-start-end": {
+      "name": "grid-start-end",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "10": "10",
+        "11": "11",
+        "12": "12",
+        "13": "13",
+        "auto": "auto"
       }
     }
   }

@@ -42251,6 +42251,2067 @@ pub trait GeneratedValueSetMaxH: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetMaxH for GeneratedAtomMaxH {}
+pub struct GeneratedAtomBasis(String);
+impl GeneratedSkribbleValue for GeneratedAtomBasis {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBasis: GeneratedSkribbleValue {
+  /// ```css
+  /// .basis\:\$0 {
+  ///   flex-basis: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .basis\:\$1 {
+  ///   flex-basis: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .basis\:\$2 {
+  ///   flex-basis: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .basis\:\$3 {
+  ///   flex-basis: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .basis\:\$4 {
+  ///   flex-basis: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .basis\:\$5 {
+  ///   flex-basis: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .basis\:\$6 {
+  ///   flex-basis: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .basis\:\$7 {
+  ///   flex-basis: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .basis\:\$8 {
+  ///   flex-basis: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .basis\:\$9 {
+  ///   flex-basis: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .basis\:\$10 {
+  ///   flex-basis: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .basis\:\$11 {
+  ///   flex-basis: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .basis\:\$12 {
+  ///   flex-basis: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .basis\:\$14 {
+  ///   flex-basis: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .basis\:\$16 {
+  ///   flex-basis: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .basis\:\$20 {
+  ///   flex-basis: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .basis\:\$24 {
+  ///   flex-basis: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .basis\:\$28 {
+  ///   flex-basis: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .basis\:\$32 {
+  ///   flex-basis: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .basis\:\$36 {
+  ///   flex-basis: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .basis\:\$40 {
+  ///   flex-basis: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .basis\:\$44 {
+  ///   flex-basis: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .basis\:\$48 {
+  ///   flex-basis: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .basis\:\$52 {
+  ///   flex-basis: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .basis\:\$56 {
+  ///   flex-basis: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .basis\:\$60 {
+  ///   flex-basis: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .basis\:\$64 {
+  ///   flex-basis: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .basis\:\$72 {
+  ///   flex-basis: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .basis\:\$80 {
+  ///   flex-basis: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .basis\:\$96 {
+  ///   flex-basis: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+  /// ```css
+  /// .basis\:\$px {
+  ///   flex-basis: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .basis\:\$0\.5 {
+  ///   flex-basis: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .basis\:\$1\.5 {
+  ///   flex-basis: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .basis\:\$2\.5 {
+  ///   flex-basis: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .basis\:\$3\.5 {
+  ///   flex-basis: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .basis\:\$auto {
+  ///   flex-basis: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .basis\:\$half {
+  ///   flex-basis: 50%;
+  /// }
+  /// ```
+  #[inline]
+  fn half(&self) -> String {
+    self.append_value("half")
+  }
+  /// ```css
+  /// .basis\:\$1-of-3 {
+  ///   flex-basis: 33.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_3(&self) -> String {
+    self.append_value("1-of-3")
+  }
+  /// ```css
+  /// .basis\:\$2-of-3 {
+  ///   flex-basis: 66.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_3(&self) -> String {
+    self.append_value("2-of-3")
+  }
+  /// ```css
+  /// .basis\:\$1-of-4 {
+  ///   flex-basis: 25%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_4(&self) -> String {
+    self.append_value("1-of-4")
+  }
+  /// ```css
+  /// .basis\:\$3-of-4 {
+  ///   flex-basis: 75%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_4(&self) -> String {
+    self.append_value("3-of-4")
+  }
+  /// ```css
+  /// .basis\:\$1-of-5 {
+  ///   flex-basis: 20%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_5(&self) -> String {
+    self.append_value("1-of-5")
+  }
+  /// ```css
+  /// .basis\:\$2-of-5 {
+  ///   flex-basis: 40%;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_of_5(&self) -> String {
+    self.append_value("2-of-5")
+  }
+  /// ```css
+  /// .basis\:\$3-of-5 {
+  ///   flex-basis: 60%;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_of_5(&self) -> String {
+    self.append_value("3-of-5")
+  }
+  /// ```css
+  /// .basis\:\$4-of-5 {
+  ///   flex-basis: 80%;
+  /// }
+  /// ```
+  #[inline]
+  fn n4_of_5(&self) -> String {
+    self.append_value("4-of-5")
+  }
+  /// ```css
+  /// .basis\:\$1-of-6 {
+  ///   flex-basis: 16.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_6(&self) -> String {
+    self.append_value("1-of-6")
+  }
+  /// ```css
+  /// .basis\:\$5-of-6 {
+  ///   flex-basis: 83.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_6(&self) -> String {
+    self.append_value("5-of-6")
+  }
+  /// ```css
+  /// .basis\:\$1-of-12 {
+  ///   flex-basis: 8.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_of_12(&self) -> String {
+    self.append_value("1-of-12")
+  }
+  /// ```css
+  /// .basis\:\$5-of-12 {
+  ///   flex-basis: 41.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n5_of_12(&self) -> String {
+    self.append_value("5-of-12")
+  }
+  /// ```css
+  /// .basis\:\$7-of-12 {
+  ///   flex-basis: 58.333333%;
+  /// }
+  /// ```
+  #[inline]
+  fn n7_of_12(&self) -> String {
+    self.append_value("7-of-12")
+  }
+  /// ```css
+  /// .basis\:\$11-of-12 {
+  ///   flex-basis: 91.666667%;
+  /// }
+  /// ```
+  #[inline]
+  fn n11_of_12(&self) -> String {
+    self.append_value("11-of-12")
+  }
+  /// ```css
+  /// .basis\:\$full {
+  ///   flex-basis: 100%;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_value("full")
+  }
+}
+impl GeneratedValueSetBasis for GeneratedAtomBasis {}
+pub struct GeneratedAtomFlexDirection(String);
+impl GeneratedSkribbleValue for GeneratedAtomFlexDirection {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetFlexDirection: GeneratedSkribbleValue {
+  /// ```css
+  /// .flex-direction\:\$row {
+  ///   flex-direction: row;
+  /// }
+  /// ```
+  #[inline]
+  fn row(&self) -> String {
+    self.append_value("row")
+  }
+  /// ```css
+  /// .flex-direction\:\$row-reverse {
+  ///   flex-direction: row-reverse;
+  /// }
+  /// ```
+  #[inline]
+  fn row_reverse(&self) -> String {
+    self.append_value("row-reverse")
+  }
+  /// ```css
+  /// .flex-direction\:\$col {
+  ///   flex-direction: column;
+  /// }
+  /// ```
+  #[inline]
+  fn col(&self) -> String {
+    self.append_value("col")
+  }
+  /// ```css
+  /// .flex-direction\:\$col-reverse {
+  ///   flex-direction: column-reverse;
+  /// }
+  /// ```
+  #[inline]
+  fn col_reverse(&self) -> String {
+    self.append_value("col-reverse")
+  }
+}
+impl GeneratedValueSetFlexDirection for GeneratedAtomFlexDirection {}
+pub struct GeneratedAtomFlexWrap(String);
+impl GeneratedSkribbleValue for GeneratedAtomFlexWrap {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetFlexWrap: GeneratedSkribbleValue {
+  /// ```css
+  /// .flex-wrap\:\$wrap {
+  ///   flex-wrap: wrap;
+  /// }
+  /// ```
+  #[inline]
+  fn wrap(&self) -> String {
+    self.append_value("wrap")
+  }
+  /// ```css
+  /// .flex-wrap\:\$wrap-reverse {
+  ///   flex-wrap: wrap-reverse;
+  /// }
+  /// ```
+  #[inline]
+  fn wrap_reverse(&self) -> String {
+    self.append_value("wrap-reverse")
+  }
+  /// ```css
+  /// .flex-wrap\:\$nowrap {
+  ///   flex-wrap: nowrap;
+  /// }
+  /// ```
+  #[inline]
+  fn nowrap(&self) -> String {
+    self.append_value("nowrap")
+  }
+}
+impl GeneratedValueSetFlexWrap for GeneratedAtomFlexWrap {}
+pub struct GeneratedAtomFlex(String);
+impl GeneratedSkribbleValue for GeneratedAtomFlex {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetFlex: GeneratedSkribbleValue {
+  /// ```css
+  /// .flex\:\$1 {
+  ///   flex: 1 1 0%;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .flex\:\$auto {
+  ///   flex: 1 1 auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .flex\:\$initial {
+  ///   flex: 0 1 auto;
+  /// }
+  /// ```
+  #[inline]
+  fn initial(&self) -> String {
+    self.append_value("initial")
+  }
+  /// ```css
+  /// .flex\:\$none {
+  ///   flex: none;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+impl GeneratedValueSetFlex for GeneratedAtomFlex {}
+pub struct GeneratedAtomFlexGrow(String);
+impl GeneratedSkribbleValue for GeneratedAtomFlexGrow {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetFlexGrow: GeneratedSkribbleValue {
+  /// ```css
+  /// .flex-grow\:\$1 {
+  ///   flex-grow: 1;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .flex-grow\:\$0 {
+  ///   flex-grow: 0;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+}
+impl GeneratedValueSetFlexGrow for GeneratedAtomFlexGrow {}
+pub struct GeneratedAtomFlexShrink(String);
+impl GeneratedSkribbleValue for GeneratedAtomFlexShrink {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetFlexShrink: GeneratedSkribbleValue {
+  /// ```css
+  /// .flex-shrink\:\$1 {
+  ///   flex-shrink: 1;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .flex-shrink\:\$0 {
+  ///   flex-shrink: 0;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+}
+impl GeneratedValueSetFlexShrink for GeneratedAtomFlexShrink {}
+pub struct GeneratedAtomOrder(String);
+impl GeneratedSkribbleValue for GeneratedAtomOrder {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetOrder: GeneratedSkribbleValue {
+  /// ```css
+  /// .order\:\$1 {
+  ///   order: 1;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .order\:\$2 {
+  ///   order: 2;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .order\:\$3 {
+  ///   order: 3;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .order\:\$4 {
+  ///   order: 4;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .order\:\$5 {
+  ///   order: 5;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .order\:\$6 {
+  ///   order: 6;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .order\:\$7 {
+  ///   order: 7;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .order\:\$8 {
+  ///   order: 8;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .order\:\$9 {
+  ///   order: 9;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .order\:\$10 {
+  ///   order: 10;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .order\:\$11 {
+  ///   order: 11;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .order\:\$12 {
+  ///   order: 12;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .order\:\$first {
+  ///   order: -9999;
+  /// }
+  /// ```
+  #[inline]
+  fn first(&self) -> String {
+    self.append_value("first")
+  }
+  /// ```css
+  /// .order\:\$last {
+  ///   order: 9999;
+  /// }
+  /// ```
+  #[inline]
+  fn last(&self) -> String {
+    self.append_value("last")
+  }
+  /// ```css
+  /// .order\:\$none {
+  ///   order: 0;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+  /// ```css
+  /// .order\:\$-1 {
+  ///   order: -1;
+  /// }
+  /// ```
+  #[inline]
+  fn m1(&self) -> String {
+    self.append_value("-1")
+  }
+  /// ```css
+  /// .order\:\$-2 {
+  ///   order: -2;
+  /// }
+  /// ```
+  #[inline]
+  fn m2(&self) -> String {
+    self.append_value("-2")
+  }
+  /// ```css
+  /// .order\:\$-3 {
+  ///   order: -3;
+  /// }
+  /// ```
+  #[inline]
+  fn m3(&self) -> String {
+    self.append_value("-3")
+  }
+  /// ```css
+  /// .order\:\$-4 {
+  ///   order: -4;
+  /// }
+  /// ```
+  #[inline]
+  fn m4(&self) -> String {
+    self.append_value("-4")
+  }
+  /// ```css
+  /// .order\:\$-5 {
+  ///   order: -5;
+  /// }
+  /// ```
+  #[inline]
+  fn m5(&self) -> String {
+    self.append_value("-5")
+  }
+  /// ```css
+  /// .order\:\$-6 {
+  ///   order: -6;
+  /// }
+  /// ```
+  #[inline]
+  fn m6(&self) -> String {
+    self.append_value("-6")
+  }
+  /// ```css
+  /// .order\:\$-7 {
+  ///   order: -7;
+  /// }
+  /// ```
+  #[inline]
+  fn m7(&self) -> String {
+    self.append_value("-7")
+  }
+  /// ```css
+  /// .order\:\$-8 {
+  ///   order: -8;
+  /// }
+  /// ```
+  #[inline]
+  fn m8(&self) -> String {
+    self.append_value("-8")
+  }
+  /// ```css
+  /// .order\:\$-9 {
+  ///   order: -9;
+  /// }
+  /// ```
+  #[inline]
+  fn m9(&self) -> String {
+    self.append_value("-9")
+  }
+  /// ```css
+  /// .order\:\$-10 {
+  ///   order: -10;
+  /// }
+  /// ```
+  #[inline]
+  fn m10(&self) -> String {
+    self.append_value("-10")
+  }
+  /// ```css
+  /// .order\:\$-11 {
+  ///   order: -11;
+  /// }
+  /// ```
+  #[inline]
+  fn m11(&self) -> String {
+    self.append_value("-11")
+  }
+  /// ```css
+  /// .order\:\$-12 {
+  ///   order: -12;
+  /// }
+  /// ```
+  #[inline]
+  fn m12(&self) -> String {
+    self.append_value("-12")
+  }
+}
+impl GeneratedValueSetOrder for GeneratedAtomOrder {}
+pub struct GeneratedAtomGridCols(String);
+impl GeneratedSkribbleValue for GeneratedAtomGridCols {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetGridCols: GeneratedSkribbleValue {
+  /// ```css
+  /// .grid-cols\:\$1 {
+  ///   grid-template-columns: repeat(1, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .grid-cols\:\$2 {
+  ///   grid-template-columns: repeat(2, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .grid-cols\:\$3 {
+  ///   grid-template-columns: repeat(3, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .grid-cols\:\$4 {
+  ///   grid-template-columns: repeat(4, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .grid-cols\:\$5 {
+  ///   grid-template-columns: repeat(5, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .grid-cols\:\$6 {
+  ///   grid-template-columns: repeat(6, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .grid-cols\:\$7 {
+  ///   grid-template-columns: repeat(7, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .grid-cols\:\$8 {
+  ///   grid-template-columns: repeat(8, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .grid-cols\:\$9 {
+  ///   grid-template-columns: repeat(9, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .grid-cols\:\$10 {
+  ///   grid-template-columns: repeat(10, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .grid-cols\:\$11 {
+  ///   grid-template-columns: repeat(11, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .grid-cols\:\$12 {
+  ///   grid-template-columns: repeat(12, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .grid-cols\:\$none {
+  ///   grid-template-columns: none;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+impl GeneratedValueSetGridCols for GeneratedAtomGridCols {}
+pub struct GeneratedAtomGridRows(String);
+impl GeneratedSkribbleValue for GeneratedAtomGridRows {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetGridRows: GeneratedSkribbleValue {
+  /// ```css
+  /// .grid-rows\:\$1 {
+  ///   grid-template-rows: repeat(1, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .grid-rows\:\$2 {
+  ///   grid-template-rows: repeat(2, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .grid-rows\:\$3 {
+  ///   grid-template-rows: repeat(3, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .grid-rows\:\$4 {
+  ///   grid-template-rows: repeat(4, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .grid-rows\:\$5 {
+  ///   grid-template-rows: repeat(5, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .grid-rows\:\$6 {
+  ///   grid-template-rows: repeat(6, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .grid-rows\:\$7 {
+  ///   grid-template-rows: repeat(7, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .grid-rows\:\$8 {
+  ///   grid-template-rows: repeat(8, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .grid-rows\:\$9 {
+  ///   grid-template-rows: repeat(9, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .grid-rows\:\$10 {
+  ///   grid-template-rows: repeat(10, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .grid-rows\:\$11 {
+  ///   grid-template-rows: repeat(11, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .grid-rows\:\$12 {
+  ///   grid-template-rows: repeat(12, minmax(0, 1fr));
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .grid-rows\:\$none {
+  ///   grid-template-rows: none;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+impl GeneratedValueSetGridRows for GeneratedAtomGridRows {}
+pub struct GeneratedAtomColSpan(String);
+impl GeneratedSkribbleValue for GeneratedAtomColSpan {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetColSpan: GeneratedSkribbleValue {
+  /// ```css
+  /// .col-span\:\$auto {
+  ///   grid-column: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .col-span\:\$1 {
+  ///   grid-column: span 1 / span 1;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .col-span\:\$2 {
+  ///   grid-column: span 2 / span 2;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .col-span\:\$3 {
+  ///   grid-column: span 3 / span 3;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .col-span\:\$4 {
+  ///   grid-column: span 4 / span 4;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .col-span\:\$5 {
+  ///   grid-column: span 5 / span 5;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .col-span\:\$6 {
+  ///   grid-column: span 6 / span 6;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .col-span\:\$7 {
+  ///   grid-column: span 7 / span 7;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .col-span\:\$8 {
+  ///   grid-column: span 8 / span 8;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .col-span\:\$9 {
+  ///   grid-column: span 9 / span 9;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .col-span\:\$10 {
+  ///   grid-column: span 10 / span 10;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .col-span\:\$11 {
+  ///   grid-column: span 11 / span 11;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .col-span\:\$12 {
+  ///   grid-column: span 12 / span 12;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .col-span\:\$full {
+  ///   grid-column: 1 / -1;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_value("full")
+  }
+}
+impl GeneratedValueSetColSpan for GeneratedAtomColSpan {}
+pub struct GeneratedAtomColStart(String);
+impl GeneratedSkribbleValue for GeneratedAtomColStart {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetColStart: GeneratedSkribbleValue {
+  /// ```css
+  /// .col-start\:\$1 {
+  ///   grid-column-start: 1;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .col-start\:\$2 {
+  ///   grid-column-start: 2;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .col-start\:\$3 {
+  ///   grid-column-start: 3;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .col-start\:\$4 {
+  ///   grid-column-start: 4;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .col-start\:\$5 {
+  ///   grid-column-start: 5;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .col-start\:\$6 {
+  ///   grid-column-start: 6;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .col-start\:\$7 {
+  ///   grid-column-start: 7;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .col-start\:\$8 {
+  ///   grid-column-start: 8;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .col-start\:\$9 {
+  ///   grid-column-start: 9;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .col-start\:\$10 {
+  ///   grid-column-start: 10;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .col-start\:\$11 {
+  ///   grid-column-start: 11;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .col-start\:\$12 {
+  ///   grid-column-start: 12;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .col-start\:\$13 {
+  ///   grid-column-start: 13;
+  /// }
+  /// ```
+  #[inline]
+  fn n13(&self) -> String {
+    self.append_value("13")
+  }
+  /// ```css
+  /// .col-start\:\$auto {
+  ///   grid-column-start: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+}
+impl GeneratedValueSetColStart for GeneratedAtomColStart {}
+pub struct GeneratedAtomColEnd(String);
+impl GeneratedSkribbleValue for GeneratedAtomColEnd {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetColEnd: GeneratedSkribbleValue {
+  /// ```css
+  /// .col-end\:\$1 {
+  ///   grid-column-end: 1;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .col-end\:\$2 {
+  ///   grid-column-end: 2;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .col-end\:\$3 {
+  ///   grid-column-end: 3;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .col-end\:\$4 {
+  ///   grid-column-end: 4;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .col-end\:\$5 {
+  ///   grid-column-end: 5;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .col-end\:\$6 {
+  ///   grid-column-end: 6;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .col-end\:\$7 {
+  ///   grid-column-end: 7;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .col-end\:\$8 {
+  ///   grid-column-end: 8;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .col-end\:\$9 {
+  ///   grid-column-end: 9;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .col-end\:\$10 {
+  ///   grid-column-end: 10;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .col-end\:\$11 {
+  ///   grid-column-end: 11;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .col-end\:\$12 {
+  ///   grid-column-end: 12;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .col-end\:\$13 {
+  ///   grid-column-end: 13;
+  /// }
+  /// ```
+  #[inline]
+  fn n13(&self) -> String {
+    self.append_value("13")
+  }
+  /// ```css
+  /// .col-end\:\$auto {
+  ///   grid-column-end: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+}
+impl GeneratedValueSetColEnd for GeneratedAtomColEnd {}
+pub struct GeneratedAtomRowSpan(String);
+impl GeneratedSkribbleValue for GeneratedAtomRowSpan {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetRowSpan: GeneratedSkribbleValue {
+  /// ```css
+  /// .row-span\:\$auto {
+  ///   grid-row: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .row-span\:\$1 {
+  ///   grid-row: span 1 / span 1;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .row-span\:\$2 {
+  ///   grid-row: span 2 / span 2;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .row-span\:\$3 {
+  ///   grid-row: span 3 / span 3;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .row-span\:\$4 {
+  ///   grid-row: span 4 / span 4;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .row-span\:\$5 {
+  ///   grid-row: span 5 / span 5;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .row-span\:\$6 {
+  ///   grid-row: span 6 / span 6;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .row-span\:\$7 {
+  ///   grid-row: span 7 / span 7;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .row-span\:\$8 {
+  ///   grid-row: span 8 / span 8;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .row-span\:\$9 {
+  ///   grid-row: span 9 / span 9;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .row-span\:\$10 {
+  ///   grid-row: span 10 / span 10;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .row-span\:\$11 {
+  ///   grid-row: span 11 / span 11;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .row-span\:\$12 {
+  ///   grid-row: span 12 / span 12;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .row-span\:\$full {
+  ///   grid-row: 1 / -1;
+  /// }
+  /// ```
+  #[inline]
+  fn full(&self) -> String {
+    self.append_value("full")
+  }
+}
+impl GeneratedValueSetRowSpan for GeneratedAtomRowSpan {}
+pub struct GeneratedAtomRowStart(String);
+impl GeneratedSkribbleValue for GeneratedAtomRowStart {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetRowStart: GeneratedSkribbleValue {
+  /// ```css
+  /// .row-start\:\$1 {
+  ///   grid-row-start: 1;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .row-start\:\$2 {
+  ///   grid-row-start: 2;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .row-start\:\$3 {
+  ///   grid-row-start: 3;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .row-start\:\$4 {
+  ///   grid-row-start: 4;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .row-start\:\$5 {
+  ///   grid-row-start: 5;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .row-start\:\$6 {
+  ///   grid-row-start: 6;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .row-start\:\$7 {
+  ///   grid-row-start: 7;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .row-start\:\$8 {
+  ///   grid-row-start: 8;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .row-start\:\$9 {
+  ///   grid-row-start: 9;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .row-start\:\$10 {
+  ///   grid-row-start: 10;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .row-start\:\$11 {
+  ///   grid-row-start: 11;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .row-start\:\$12 {
+  ///   grid-row-start: 12;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .row-start\:\$13 {
+  ///   grid-row-start: 13;
+  /// }
+  /// ```
+  #[inline]
+  fn n13(&self) -> String {
+    self.append_value("13")
+  }
+  /// ```css
+  /// .row-start\:\$auto {
+  ///   grid-row-start: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+}
+impl GeneratedValueSetRowStart for GeneratedAtomRowStart {}
+pub struct GeneratedAtomRowEnd(String);
+impl GeneratedSkribbleValue for GeneratedAtomRowEnd {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetRowEnd: GeneratedSkribbleValue {
+  /// ```css
+  /// .row-end\:\$1 {
+  ///   grid-row-end: 1;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .row-end\:\$2 {
+  ///   grid-row-end: 2;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .row-end\:\$3 {
+  ///   grid-row-end: 3;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .row-end\:\$4 {
+  ///   grid-row-end: 4;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .row-end\:\$5 {
+  ///   grid-row-end: 5;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .row-end\:\$6 {
+  ///   grid-row-end: 6;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .row-end\:\$7 {
+  ///   grid-row-end: 7;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .row-end\:\$8 {
+  ///   grid-row-end: 8;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .row-end\:\$9 {
+  ///   grid-row-end: 9;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .row-end\:\$10 {
+  ///   grid-row-end: 10;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .row-end\:\$11 {
+  ///   grid-row-end: 11;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .row-end\:\$12 {
+  ///   grid-row-end: 12;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .row-end\:\$13 {
+  ///   grid-row-end: 13;
+  /// }
+  /// ```
+  #[inline]
+  fn n13(&self) -> String {
+    self.append_value("13")
+  }
+  /// ```css
+  /// .row-end\:\$auto {
+  ///   grid-row-end: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+}
+impl GeneratedValueSetRowEnd for GeneratedAtomRowEnd {}
 pub trait GeneratedAtom: GeneratedSkribbleValue {
   /// Screen reader only
   #[inline]
@@ -43308,6 +45369,141 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   fn max_h_(&self, value: &'static str) -> String {
     self.append(format!("max-h:[{}]", value.trim()))
   }
+  /// Control the initial size of flex items.
+  #[inline]
+  fn basis(&self) -> GeneratedAtomBasis {
+    GeneratedAtomBasis::from_ref(self.append("basis"))
+  }
+  #[inline]
+  fn basis_(&self, value: &'static str) -> String {
+    self.append(format!("basis:[{}]", value.trim()))
+  }
+  /// Control the direction of flex items.
+  #[inline]
+  fn flex_direction(&self) -> GeneratedAtomFlexDirection {
+    GeneratedAtomFlexDirection::from_ref(self.append("flex-direction"))
+  }
+  #[inline]
+  fn flex_direction_(&self, value: &'static str) -> String {
+    self.append(format!("flex-direction:[{}]", value.trim()))
+  }
+  /// Control how flex items wrap.
+  #[inline]
+  fn flex_wrap(&self) -> GeneratedAtomFlexWrap {
+    GeneratedAtomFlexWrap::from_ref(self.append("flex-wrap"))
+  }
+  #[inline]
+  fn flex_wrap_(&self, value: &'static str) -> String {
+    self.append(format!("flex-wrap:[{}]", value.trim()))
+  }
+  /// Control how flex items both grow and shrink.
+  #[inline]
+  fn flex(&self) -> GeneratedAtomFlex {
+    GeneratedAtomFlex::from_ref(self.append("flex"))
+  }
+  #[inline]
+  fn flex_(&self, value: &'static str) -> String {
+    self.append(format!("flex:[{}]", value.trim()))
+  }
+  /// Control how flex items grow.
+  #[inline]
+  fn flex_grow(&self) -> GeneratedAtomFlexGrow {
+    GeneratedAtomFlexGrow::from_ref(self.append("flex-grow"))
+  }
+  #[inline]
+  fn flex_grow_(&self, value: &'static str) -> String {
+    self.append(format!("flex-grow:[{}]", value.trim()))
+  }
+  /// Control how flex items shrink.
+  #[inline]
+  fn flex_shrink(&self) -> GeneratedAtomFlexShrink {
+    GeneratedAtomFlexShrink::from_ref(self.append("flex-shrink"))
+  }
+  #[inline]
+  fn flex_shrink_(&self, value: &'static str) -> String {
+    self.append(format!("flex-shrink:[{}]", value.trim()))
+  }
+  /// Control how flex items shrink.
+  #[inline]
+  fn order(&self) -> GeneratedAtomOrder {
+    GeneratedAtomOrder::from_ref(self.append("order"))
+  }
+  #[inline]
+  fn order_(&self, value: &'static str) -> String {
+    self.append(format!("order:[{}]", value.trim()))
+  }
+  /// Specify the columns in a grid layout.
+  #[inline]
+  fn grid_cols(&self) -> GeneratedAtomGridCols {
+    GeneratedAtomGridCols::from_ref(self.append("grid-cols"))
+  }
+  #[inline]
+  fn grid_cols_(&self, value: &'static str) -> String {
+    self.append(format!("grid-cols:[{}]", value.trim()))
+  }
+  /// Specify the rows in a grid layout.
+  #[inline]
+  fn grid_rows(&self) -> GeneratedAtomGridRows {
+    GeneratedAtomGridRows::from_ref(self.append("grid-rows"))
+  }
+  #[inline]
+  fn grid_rows_(&self, value: &'static str) -> String {
+    self.append(format!("grid-rows:[{}]", value.trim()))
+  }
+  /// Control how elements are sized and placed across grid columns.
+  #[inline]
+  fn col_span(&self) -> GeneratedAtomColSpan {
+    GeneratedAtomColSpan::from_ref(self.append("col-span"))
+  }
+  #[inline]
+  fn col_span_(&self, value: &'static str) -> String {
+    self.append(format!("col-span:[{}]", value.trim()))
+  }
+  /// Control how elements are sized and placed across grid columns.
+  #[inline]
+  fn col_start(&self) -> GeneratedAtomColStart {
+    GeneratedAtomColStart::from_ref(self.append("col-start"))
+  }
+  #[inline]
+  fn col_start_(&self, value: &'static str) -> String {
+    self.append(format!("col-start:[{}]", value.trim()))
+  }
+  /// Control how elements are sized and placed across grid columns.
+  #[inline]
+  fn col_end(&self) -> GeneratedAtomColEnd {
+    GeneratedAtomColEnd::from_ref(self.append("col-end"))
+  }
+  #[inline]
+  fn col_end_(&self, value: &'static str) -> String {
+    self.append(format!("col-end:[{}]", value.trim()))
+  }
+  /// Control how elements are sized and placed across grid rows.
+  #[inline]
+  fn row_span(&self) -> GeneratedAtomRowSpan {
+    GeneratedAtomRowSpan::from_ref(self.append("row-span"))
+  }
+  #[inline]
+  fn row_span_(&self, value: &'static str) -> String {
+    self.append(format!("row-span:[{}]", value.trim()))
+  }
+  /// Control how elements are sized and placed across grid rows.
+  #[inline]
+  fn row_start(&self) -> GeneratedAtomRowStart {
+    GeneratedAtomRowStart::from_ref(self.append("row-start"))
+  }
+  #[inline]
+  fn row_start_(&self, value: &'static str) -> String {
+    self.append(format!("row-start:[{}]", value.trim()))
+  }
+  /// Control how elements are sized and placed across grid rows.
+  #[inline]
+  fn row_end(&self) -> GeneratedAtomRowEnd {
+    GeneratedAtomRowEnd::from_ref(self.append("row-end"))
+  }
+  #[inline]
+  fn row_end_(&self, value: &'static str) -> String {
+    self.append(format!("row-end:[{}]", value.trim()))
+  }
 }
 pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   #[inline]
@@ -43381,7 +45577,7 @@ pub trait GeneratedAliases: GeneratedSkribbleValue {
       .join(" ")
   }
   #[inline]
-  fn flex(&self) -> String {
+  fn flex_1(&self) -> String {
     ["display:$flex"].map(|class| self.append(class)).join(" ")
   }
   #[inline]
@@ -43599,6 +45795,64 @@ pub trait GeneratedAliases: GeneratedSkribbleValue {
     ["backdrop-filter:$none"]
       .map(|class| self.append(class))
       .join(" ")
+  }
+  #[inline]
+  fn flex_row(&self) -> String {
+    ["flex-direction:$row"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn flex_row_reverse(&self) -> String {
+    ["flex-direction:$row-reverse"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn flex_col(&self) -> String {
+    ["flex-direction:$col"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn flex_col_reverse(&self) -> String {
+    ["flex-direction:$col-reverse"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn flex_wrap_1(&self) -> String {
+    ["flex-direction:$wrap"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn flex_wrap_reverse(&self) -> String {
+    ["flex-direction:$wrap-reverse"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn flex_nowrap(&self) -> String {
+    ["flex-direction:$nowrap"]
+      .map(|class| self.append(class))
+      .join(" ")
+  }
+  #[inline]
+  fn grow(&self) -> String {
+    ["flex-grow:$1"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn grow_0(&self) -> String {
+    ["flex-grow:$0"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn shrink(&self) -> String {
+    ["flex-shrink:$1"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn shrink_0(&self) -> String {
+    ["flex-shrink:$0"].map(|class| self.append(class)).join(" ")
   }
 }
 impl GeneratedMediaQueryDeviceCategories for GeneratedSkribbleRoot {}

@@ -171,5 +171,49 @@ lazy_static! {
       .name("backdrop-filter-none")
       .classes(vec!["backdrop-filter:$none"])
       .build(),
+    Alias::builder()
+      .name("flex-row")
+      .classes(vec!["flex-direction:$row"])
+      .build(),
+    Alias::builder()
+      .name("flex-row-reverse")
+      .classes(vec!["flex-direction:$row-reverse"])
+      .build(),
+    Alias::builder()
+      .name("flex-col")
+      .classes(vec!["flex-direction:$col"])
+      .build(),
+    Alias::builder()
+      .name("flex-col-reverse")
+      .classes(vec!["flex-direction:$col-reverse"])
+      .build(),
+    Alias::builder()
+      .name("flex-wrap")
+      .classes(vec!["flex-direction:$wrap"])
+      .build(),
+    Alias::builder()
+      .name("flex-wrap-reverse")
+      .classes(vec!["flex-direction:$wrap-reverse"])
+      .build(),
+    Alias::builder()
+      .name("flex-nowrap")
+      .classes(vec!["flex-direction:$nowrap"])
+      .build(),
+    Alias::builder()
+      .name("grow")
+      .classes(vec!["flex-grow:$1"])
+      .build(),
+    Alias::builder()
+      .name("grow-0")
+      .classes(vec!["flex-grow:$0"])
+      .build(),
+    Alias::builder()
+      .name("shrink")
+      .classes(vec!["flex-shrink:$1"])
+      .build(),
+    Alias::builder()
+      .name("shrink-0")
+      .classes(vec!["flex-shrink:$0"])
+      .build(),
   ];
 }
