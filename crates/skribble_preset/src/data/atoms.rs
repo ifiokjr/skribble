@@ -1002,6 +1002,23 @@ lazy_static! {
         .values(vec!["justify-items", "auto"])
         .styles(indexmap! { "place-self" => none })
         .build(),
+
+        // Svg
+        Atom::builder()
+        .name("fill")
+        .values(LinkedValues::Color)
+        .styles(indexmap! { "fill" => none })
+        .build(),
+        Atom::builder()
+        .name("stroke")
+        .values(LinkedValues::Color)
+        .styles(indexmap! { "stroke" => none })
+        .build(),
+      Atom::builder()
+        .name("stroke-width")
+        .values(vec!["stroke-width"])
+        .styles(indexmap! { "stroke-width" => none })
+        .build(),
     ]
   };
 }

@@ -46094,6 +46094,92 @@ pub trait GeneratedValueSetPlaceSelf: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetPlaceSelf for GeneratedAtomPlaceSelf {}
+pub struct GeneratedAtomFill(String);
+impl GeneratedSkribbleValue for GeneratedAtomFill {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorSet for GeneratedAtomFill {}
+pub struct GeneratedAtomStroke(String);
+impl GeneratedSkribbleValue for GeneratedAtomStroke {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorSet for GeneratedAtomStroke {}
+pub struct GeneratedAtomStrokeWidth(String);
+impl GeneratedSkribbleValue for GeneratedAtomStrokeWidth {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetStrokeWidth: GeneratedSkribbleValue {
+  /// ```css
+  /// .stroke-width\:\$0 {
+  ///   stroke-width: 0;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .stroke-width\:\$1 {
+  ///   stroke-width: 1;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .stroke-width\:\$2 {
+  ///   stroke-width: 2;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .stroke-width\:\$3 {
+  ///   stroke-width: 3;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .stroke-width\:\$4 {
+  ///   stroke-width: 4;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+}
+impl GeneratedValueSetStrokeWidth for GeneratedAtomStrokeWidth {}
 pub trait GeneratedAtom: GeneratedSkribbleValue {
   /// Screen reader only
   #[inline]
@@ -47425,6 +47511,30 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   fn place_self_(&self, value: &'static str) -> String {
     self.append(format!("place-self:[{}]", value.trim()))
   }
+  #[inline]
+  fn fill(&self) -> GeneratedAtomFill {
+    GeneratedAtomFill::from_ref(self.append("fill"))
+  }
+  #[inline]
+  fn fill_(&self, value: &'static str) -> String {
+    self.append(format!("fill:[{}]", value.trim()))
+  }
+  #[inline]
+  fn stroke(&self) -> GeneratedAtomStroke {
+    GeneratedAtomStroke::from_ref(self.append("stroke"))
+  }
+  #[inline]
+  fn stroke_(&self, value: &'static str) -> String {
+    self.append(format!("stroke:[{}]", value.trim()))
+  }
+  #[inline]
+  fn stroke_width(&self) -> GeneratedAtomStrokeWidth {
+    GeneratedAtomStrokeWidth::from_ref(self.append("stroke-width"))
+  }
+  #[inline]
+  fn stroke_width_(&self, value: &'static str) -> String {
+    self.append(format!("stroke-width:[{}]", value.trim()))
+  }
 }
 pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   #[inline]
@@ -47478,6 +47588,14 @@ pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   #[inline]
   fn space_y_reverse(&self) -> String {
     self.append_value("space-y-reverse")
+  }
+  #[inline]
+  fn sr_only(&self) -> String {
+    self.append_value("sr-only")
+  }
+  #[inline]
+  fn sr_exclude(&self) -> String {
+    self.append_value("sr-exclude")
   }
 }
 pub trait GeneratedAliases: GeneratedSkribbleValue {
