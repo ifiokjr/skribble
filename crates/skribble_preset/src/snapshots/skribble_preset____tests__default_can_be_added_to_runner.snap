@@ -480,6 +480,15 @@ expression: runner_config
       "description": null,
       "name": "shrink-0",
       "priority": 150
+    },
+    "font-sans": {
+      "classes": [
+        "font-family:$sans"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "font-sans",
+      "priority": 150
     }
   },
   "atoms": {
@@ -502,9 +511,7 @@ expression: runner_config
       "name": "transition",
       "description": "A class to apply transition effects.",
       "priority": 150,
-      "styles": {
-        "transition": null
-      },
+      "styles": {},
       "modifier": null,
       "values": {
         "values": [
@@ -966,23 +973,6 @@ expression: runner_config
           {
             "priority": 150,
             "value": "zoom"
-          }
-        ]
-      }
-    },
-    "font": {
-      "name": "font",
-      "description": null,
-      "priority": 150,
-      "styles": {
-        "font-family": null
-      },
-      "modifier": null,
-      "values": {
-        "values": [
-          {
-            "priority": 150,
-            "value": "font"
           }
         ]
       }
@@ -1542,8 +1532,8 @@ expression: runner_config
       "description": "Control the horizontal space between child elements.",
       "priority": 150,
       "styles": {
-        "margin-right": "calc(__:VALUE::0:__ * var(__:CSS_VARIABLE::space-x-reverse:__, 0))",
-        "margin-left": "calc(__:VALUE::0:__ * calc(1 - var(__:CSS_VARIABLE::space-x-reverse:__, 0)))"
+        "margin-right": "calc(__:VALUE:::__ * var(__:CSS_VARIABLE::space-x-reverse:__, 0))",
+        "margin-left": "calc(__:VALUE:::__ * calc(1 - var(__:CSS_VARIABLE::space-x-reverse:__, 0)))"
       },
       "modifier": "&>:not([hidden])~:not([hidden])",
       "values": {
@@ -1564,8 +1554,8 @@ expression: runner_config
       "description": "Control the vertical space between child elements.",
       "priority": 150,
       "styles": {
-        "margin-top": "calc(__:VALUE::0:__ * calc(1 - var(__:CSS_VARIABLE::space-y-reverse:__, 0)))",
-        "margin-bottom": "calc(__:VALUE::0:__ * var(__:CSS_VARIABLE::space-y-reverse:__, 0))"
+        "margin-top": "calc(__:VALUE:::__ * calc(1 - var(__:CSS_VARIABLE::space-y-reverse:__, 0)))",
+        "margin-bottom": "calc(__:VALUE:::__ * var(__:CSS_VARIABLE::space-y-reverse:__, 0))"
       },
       "modifier": "&>:not([hidden])~:not([hidden])",
       "values": {
@@ -3388,6 +3378,38 @@ expression: runner_config
           }
         ]
       }
+    },
+    "font-family": {
+      "name": "font-family",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "font-family": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "font-family"
+          }
+        ]
+      }
+    },
+    "font-size": {
+      "name": "font-size",
+      "description": null,
+      "priority": 150,
+      "styles": {},
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "font-size"
+          }
+        ]
+      }
     }
   },
   "classes": {
@@ -5078,7 +5100,6 @@ expression: runner_config
       "animate-fill-mode",
       "animate-state",
       "zoom",
-      "font",
       "p",
       "py",
       "px",
@@ -5201,7 +5222,9 @@ expression: runner_config
       "place-self",
       "fill",
       "stroke",
-      "stroke-width"
+      "stroke-width",
+      "font-family",
+      "font-size"
     ],
     "classes": [
       "group",
@@ -5276,7 +5299,8 @@ expression: runner_config
       "grow",
       "grow-0",
       "shrink",
-      "shrink-0"
+      "shrink-0",
+      "font-sans"
     ],
     "media_queries": [
       "screen",
@@ -5931,11 +5955,6 @@ expression: runner_config
       "110",
       "125",
       "150"
-    ],
-    "atom:font": [
-      "sans",
-      "serif",
-      "mono"
     ],
     "atom:p": [
       "0",
@@ -10827,6 +10846,26 @@ expression: runner_config
       "2",
       "3",
       "4"
+    ],
+    "atom:font-family": [
+      "sans",
+      "serif",
+      "mono"
+    ],
+    "atom:font-size": [
+      "xs",
+      "sm",
+      "base",
+      "lg",
+      "xl",
+      "2xl",
+      "3xl",
+      "4xl",
+      "5xl",
+      "6xl",
+      "7xl",
+      "8xl",
+      "9xl"
     ]
   },
   "palette": {
@@ -11643,8 +11682,8 @@ expression: runner_config
         "3-of-4": "75%"
       }
     },
-    "font": {
-      "name": "font",
+    "font-family": {
+      "name": "font-family",
       "description": null,
       "priority": 150,
       "values": {
@@ -12299,6 +12338,65 @@ expression: runner_config
         "2": "2",
         "3": "3",
         "4": "4"
+      }
+    },
+    "font-size": {
+      "name": "font-size",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "xs": {
+          "font-size": "0.75rem",
+          "line-height": "1rem"
+        },
+        "sm": {
+          "font-size": "0.875rem",
+          "line-height": "1.25rem"
+        },
+        "base": {
+          "font-size": "1rem",
+          "line-height": "1.5rem"
+        },
+        "lg": {
+          "font-size": "1.125rem",
+          "line-height": "1.75rem"
+        },
+        "xl": {
+          "font-size": "1.25rem",
+          "line-height": "1.75rem"
+        },
+        "2xl": {
+          "font-size": "1.5rem",
+          "line-height": "2rem"
+        },
+        "3xl": {
+          "font-size": "1.875rem",
+          "line-height": "2.25rem"
+        },
+        "4xl": {
+          "font-size": "2.25rem",
+          "line-height": "2.5rem"
+        },
+        "5xl": {
+          "font-size": "3rem",
+          "line-height": "1"
+        },
+        "6xl": {
+          "font-size": "3.75rem",
+          "line-height": "1"
+        },
+        "7xl": {
+          "font-size": "4.5rem",
+          "line-height": "1"
+        },
+        "8xl": {
+          "font-size": "6rem",
+          "line-height": "1"
+        },
+        "9xl": {
+          "font-size": "8rem",
+          "line-height": "1"
+        }
       }
     }
   }

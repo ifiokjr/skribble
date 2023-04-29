@@ -8633,47 +8633,6 @@ pub trait GeneratedValueSetZoom: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetZoom for GeneratedAtomZoom {}
-pub struct GeneratedAtomFont(String);
-impl GeneratedSkribbleValue for GeneratedAtomFont {
-  #[inline]
-  fn from_ref(value: impl AsRef<str>) -> Self {
-    Self(value.as_ref().to_string())
-  }
-  #[inline]
-  fn get_skribble_value(&self) -> &String {
-    &self.0
-  }
-}
-pub trait GeneratedValueSetFont: GeneratedSkribbleValue {
-  /// ```css
-  /// .font\:\$sans {
-  ///   font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-  /// }
-  /// ```
-  #[inline]
-  fn sans(&self) -> String {
-    self.append_value("sans")
-  }
-  /// ```css
-  /// .font\:\$serif {
-  ///   font-family: ui-serif,Georgia,Cambria,"Times New Roman",Times,serif;
-  /// }
-  /// ```
-  #[inline]
-  fn serif(&self) -> String {
-    self.append_value("serif")
-  }
-  /// ```css
-  /// .font\:\$mono {
-  ///   font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-  /// }
-  /// ```
-  #[inline]
-  fn mono(&self) -> String {
-    self.append_value("mono")
-  }
-}
-impl GeneratedValueSetFont for GeneratedAtomFont {}
 pub struct GeneratedAtomP(String);
 impl GeneratedSkribbleValue for GeneratedAtomP {
   #[inline]
@@ -45749,6 +45708,191 @@ pub trait GeneratedValueSetStrokeWidth: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetStrokeWidth for GeneratedAtomStrokeWidth {}
+pub struct GeneratedAtomFontFamily(String);
+impl GeneratedSkribbleValue for GeneratedAtomFontFamily {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetFontFamily: GeneratedSkribbleValue {
+  /// ```css
+  /// .font-family\:\$sans {
+  ///   font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  /// }
+  /// ```
+  #[inline]
+  fn sans(&self) -> String {
+    self.append_value("sans")
+  }
+  /// ```css
+  /// .font-family\:\$serif {
+  ///   font-family: ui-serif,Georgia,Cambria,"Times New Roman",Times,serif;
+  /// }
+  /// ```
+  #[inline]
+  fn serif(&self) -> String {
+    self.append_value("serif")
+  }
+  /// ```css
+  /// .font-family\:\$mono {
+  ///   font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  /// }
+  /// ```
+  #[inline]
+  fn mono(&self) -> String {
+    self.append_value("mono")
+  }
+}
+impl GeneratedValueSetFontFamily for GeneratedAtomFontFamily {}
+pub struct GeneratedAtomFontSize(String);
+impl GeneratedSkribbleValue for GeneratedAtomFontSize {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetFontSize: GeneratedSkribbleValue {
+  /// ```css
+  /// .font-size\:\$xs {
+  ///   font-size: 0.75rem;
+  ///   line-height: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn xs(&self) -> String {
+    self.append_value("xs")
+  }
+  /// ```css
+  /// .font-size\:\$sm {
+  ///   font-size: 0.875rem;
+  ///   line-height: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn sm(&self) -> String {
+    self.append_value("sm")
+  }
+  /// ```css
+  /// .font-size\:\$base {
+  ///   font-size: 1rem;
+  ///   line-height: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn base(&self) -> String {
+    self.append_value("base")
+  }
+  /// ```css
+  /// .font-size\:\$lg {
+  ///   font-size: 1.125rem;
+  ///   line-height: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn lg(&self) -> String {
+    self.append_value("lg")
+  }
+  /// ```css
+  /// .font-size\:\$xl {
+  ///   font-size: 1.25rem;
+  ///   line-height: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn xl(&self) -> String {
+    self.append_value("xl")
+  }
+  /// ```css
+  /// .font-size\:\$2xl {
+  ///   font-size: 1.5rem;
+  ///   line-height: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2xl(&self) -> String {
+    self.append_value("2xl")
+  }
+  /// ```css
+  /// .font-size\:\$3xl {
+  ///   font-size: 1.875rem;
+  ///   line-height: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3xl(&self) -> String {
+    self.append_value("3xl")
+  }
+  /// ```css
+  /// .font-size\:\$4xl {
+  ///   font-size: 2.25rem;
+  ///   line-height: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4xl(&self) -> String {
+    self.append_value("4xl")
+  }
+  /// ```css
+  /// .font-size\:\$5xl {
+  ///   font-size: 3rem;
+  ///   line-height: 1;
+  /// }
+  /// ```
+  #[inline]
+  fn n5xl(&self) -> String {
+    self.append_value("5xl")
+  }
+  /// ```css
+  /// .font-size\:\$6xl {
+  ///   font-size: 3.75rem;
+  ///   line-height: 1;
+  /// }
+  /// ```
+  #[inline]
+  fn n6xl(&self) -> String {
+    self.append_value("6xl")
+  }
+  /// ```css
+  /// .font-size\:\$7xl {
+  ///   font-size: 4.5rem;
+  ///   line-height: 1;
+  /// }
+  /// ```
+  #[inline]
+  fn n7xl(&self) -> String {
+    self.append_value("7xl")
+  }
+  /// ```css
+  /// .font-size\:\$8xl {
+  ///   font-size: 6rem;
+  ///   line-height: 1;
+  /// }
+  /// ```
+  #[inline]
+  fn n8xl(&self) -> String {
+    self.append_value("8xl")
+  }
+  /// ```css
+  /// .font-size\:\$9xl {
+  ///   font-size: 8rem;
+  ///   line-height: 1;
+  /// }
+  /// ```
+  #[inline]
+  fn n9xl(&self) -> String {
+    self.append_value("9xl")
+  }
+}
+impl GeneratedValueSetFontSize for GeneratedAtomFontSize {}
 pub trait GeneratedAtom: GeneratedSkribbleValue {
   /// Screen reader only
   #[inline]
@@ -45997,14 +46141,6 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   #[inline]
   fn zoom_(&self, value: &'static str) -> String {
     self.append(format!("zoom:[{}]", value.trim()))
-  }
-  #[inline]
-  fn font(&self) -> GeneratedAtomFont {
-    GeneratedAtomFont::from_ref(self.append("font"))
-  }
-  #[inline]
-  fn font_(&self, value: &'static str) -> String {
-    self.append(format!("font:[{}]", value.trim()))
   }
   #[inline]
   fn p(&self) -> GeneratedAtomP {
@@ -47077,6 +47213,22 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   fn stroke_width_(&self, value: &'static str) -> String {
     self.append(format!("stroke-width:[{}]", value.trim()))
   }
+  #[inline]
+  fn font_family(&self) -> GeneratedAtomFontFamily {
+    GeneratedAtomFontFamily::from_ref(self.append("font-family"))
+  }
+  #[inline]
+  fn font_family_(&self, value: &'static str) -> String {
+    self.append(format!("font-family:[{}]", value.trim()))
+  }
+  #[inline]
+  fn font_size(&self) -> GeneratedAtomFontSize {
+    GeneratedAtomFontSize::from_ref(self.append("font-size"))
+  }
+  #[inline]
+  fn font_size_(&self, value: &'static str) -> String {
+    self.append(format!("font-size:[{}]", value.trim()))
+  }
 }
 pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   #[inline]
@@ -47352,6 +47504,10 @@ pub trait GeneratedAliases: GeneratedSkribbleValue {
   #[inline]
   fn shrink_0(&self) -> String {
     ["flex-shrink:$0"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn font_sans(&self) -> String {
+    ["font-family:$sans"].map(|class| self.append(class)).join(" ")
   }
 }
 impl GeneratedMediaQueryDeviceCategories for GeneratedSkribbleRoot {}

@@ -215,5 +215,9 @@ lazy_static! {
       .name("shrink-0")
       .classes(vec!["flex-shrink:$0"])
       .build(),
+    Alias::builder()
+      .name("font-sans")
+      .classes(vec!["font-family:$sans"])
+      .build(),
   ];
 }

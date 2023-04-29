@@ -1,5 +1,6 @@
 use std::fmt::Write;
 
+use indexmap::indexmap;
 use indexmap::indexset;
 use indexmap::IndexSet;
 use serde::Deserialize;
@@ -109,9 +110,10 @@ impl LinkedValues {
 
           for (property, css_value) in atom.styles.iter() {
             let property = Placeholder::normalize(property, config);
+            let values = indexmap! { "" => color_value.as_str() }.into();
             let css_value = css_value
               .as_ref()
-              .map(|value| Placeholder::normalize_value(value, &color_value, config))
+              .map(|value| Placeholder::normalize_value(value, &values, config))
               .unwrap_or_else(|| color_value.clone());
 
             writeln!(writer, "{}: {};", property, css_value)?;
@@ -128,9 +130,10 @@ impl LinkedValues {
 
           for (property, css_value) in atom.styles.iter() {
             let property = Placeholder::normalize(property, config);
+            let values = indexmap! { "" => keyframe_name.as_str() }.into();
             let css_value = css_value
               .as_ref()
-              .map(|value| Placeholder::normalize_value(value, keyframe_name, config))
+              .map(|value| Placeholder::normalize_value(value, &values, config))
               .unwrap_or_else(|| keyframe_name.clone());
 
             writeln!(writer, "{}: {};", property, css_value)?;

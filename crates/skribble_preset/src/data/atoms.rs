@@ -26,7 +26,7 @@ lazy_static! {
       Placeholder::wrapped_variable("space-x-reverse", Some("0".into()));
     let wrapped_space_y_reverse =
       Placeholder::wrapped_variable("space-y-reverse", Some("0".into()));
-    let placeholder_value = Placeholder::value();
+    let placeholder_value = Placeholder::value("");
     let space_margin_right = format!("calc({placeholder_value} * {wrapped_space_x_reverse})");
     let space_margin_left =
       format!("calc({placeholder_value} * calc(1 - {wrapped_space_x_reverse}))");
@@ -98,7 +98,7 @@ lazy_static! {
       Atom::builder()
         .name("transition")
         .description("A class to apply transition effects.")
-        .styles(indexmap! { "transition" => none })
+        .styles(OptionalStringMap::default())
         .values(vec!["transition"])
         .build(),
       Atom::builder()
@@ -292,11 +292,6 @@ lazy_static! {
         .name("zoom")
         .values(vec!["zoom"])
         .styles(indexmap! {enter_scale => none })
-        .build(),
-      Atom::builder()
-        .name("font")
-        .values(vec!["font"])
-        .styles(indexmap! { "font-family" => none })
         .build(),
       Atom::builder()
         .name("p")
@@ -1018,6 +1013,18 @@ lazy_static! {
         .name("stroke-width")
         .values(vec!["stroke-width"])
         .styles(indexmap! { "stroke-width" => none })
+        .build(),
+
+      // Typography
+      Atom::builder()
+        .name("font-family")
+        .values(vec!["font-family"])
+        .styles(indexmap! { "font-family" => none })
+        .build(),
+      Atom::builder()
+        .name("font-size")
+        .values(vec!["font-size"])
+        .styles(OptionalStringMap::default())
         .build(),
     ]
   };

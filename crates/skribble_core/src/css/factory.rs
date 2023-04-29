@@ -179,12 +179,8 @@ impl<'config> ClassFactory<'config> {
         self.score.layer = index.checked_add(1).unwrap_or(index);
       }
     }
-    // media_query.
-    else if self.add_media_query_token(&token) {
-      // Prevent further branches being run
-    }
-    // modifier.
-    else if self.add_modifier_token(&token) {
+    // media_query
+    else if self.add_media_query_token(&token) || self.add_modifier_token(&token) {
       // Prevent further branches being run
     }
     // atom.

@@ -2,6 +2,7 @@ use std::fmt::Write;
 
 use derive_more::Deref;
 use derive_more::DerefMut;
+use indexmap::indexmap;
 use indexmap::IndexMap;
 use indexmap::IndexSet;
 use serde::Deserialize;
@@ -33,22 +34,19 @@ impl CssValue {
     match self {
       Self::Value(value) => {
         let value = Placeholder::normalize(value, config);
+        let values: StringMap = indexmap! { "" => value.as_str() }.into();
 
-        for (property, css_value) in atom.styles.iter() {
-          let property = Placeholder::normalize(property, config);
-          let css_value = css_value
-            .as_ref()
-            .map(|content| Placeholder::normalize_value(content, &value, config))
-            .unwrap_or_else(|| value.clone());
-
-          writeln!(writer, "{property}: {css_value};")?;
-        }
+        write_css_property(writer, atom, config, &values, Some(value))?;
       }
       Self::Object(map) => {
-        for (property, css_value) in map.iter() {
-          let property = Placeholder::normalize(property, config);
-          let css_value = Placeholder::normalize(css_value, config);
-          writeln!(writer, "{property}: {css_value};")?;
+        if atom.styles.is_empty() {
+          for (property, css_value) in map.iter() {
+            let property = Placeholder::normalize(property, config);
+            let css_value = Placeholder::normalize(css_value, config);
+            writeln!(writer, "{property}: {css_value};")?;
+          }
+        } else {
+          write_css_property(writer, atom, config, map, None)?;
         }
       }
     }
@@ -68,6 +66,35 @@ impl CssValue {
       }
     };
   }
+}
+
+fn write_css_property(
+  writer: &mut dyn Write,
+  atom: &Atom,
+  config: &RunnerConfig,
+  values: &StringMap,
+  value: Option<String>,
+) -> AnyEmptyResult {
+  for (property, css_value) in atom.styles.iter() {
+    let property = Placeholder::normalize(property, config);
+    match css_value
+      .as_ref()
+      .map(|content| Placeholder::normalize_value(content, values, config))
+    {
+      Some(css_value) => {
+        writeln!(writer, "{property}: {css_value};")?;
+      }
+      None => {
+        let Some(ref value) = value else {
+          continue;
+        };
+
+        writeln!(writer, "{property}: {value};")?;
+      }
+    }
+  }
+
+  Ok(())
 }
 
 impl From<&str> for CssValue {

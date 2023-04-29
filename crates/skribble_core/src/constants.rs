@@ -5,6 +5,7 @@ use regex::Regex;
 
 use crate::wrap_css_variable;
 use crate::RunnerConfig;
+use crate::StringMap;
 
 pub const INDENTATION: &str = "  ";
 pub const ROOT_SELECTOR: &str = ":root";
@@ -37,7 +38,6 @@ lazy_static! {
   static ref PALETTE_REGEX: Regex =
     Regex::new(format!("(?m){}", Placeholder::palette("(?P<name>\\w[a-zA-Z0-9-]+)")).as_str())
       .unwrap();
-  static ref VALUE: Regex = Regex::new(format!("(?m){}", Placeholder::value()).as_str()).unwrap();
 }
 
 pub struct Placeholder;
@@ -147,10 +147,15 @@ impl Placeholder {
   /// Replaces all the value placeholders with the given value.
   pub fn normalize_value(
     content: impl AsRef<str>,
-    value: impl AsRef<str>,
+    values: &StringMap,
     config: &RunnerConfig,
   ) -> String {
-    let content = VALUE.replace_all(content.as_ref(), value.as_ref());
+    let mut content = content.as_ref().to_string();
+
+    for (name, value) in values.iter() {
+      let regex: Regex = Regex::new(format!("(?m){}", Placeholder::value(name)).as_str()).unwrap();
+      content = regex.replace_all(content.as_str(), value).to_string();
+    }
 
     Self::normalize(content, config)
   }
@@ -193,7 +198,7 @@ impl Placeholder {
     Self::create(Self::MODIFIER, name)
   }
 
-  pub fn value() -> String {
-    Self::create(Self::VALUE, "0")
+  pub fn value(name: impl AsRef<str>) -> String {
+    Self::create(Self::VALUE, name)
   }
 }

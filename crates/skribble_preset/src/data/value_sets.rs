@@ -518,7 +518,7 @@ lazy_static! {
          })
         .build(),
       ValueSet::builder()
-        .name("font")
+        .name("font-family")
         .values(indexmap! {
           "sans" => "ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"",
           "serif" => "ui-serif,Georgia,Cambria,\"Times New Roman\",Times,serif",
@@ -1071,6 +1071,24 @@ lazy_static! {
           "2" => "2",
           "3" => "3",
           "4" => "4",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("font-size")
+        .values(indexmap! {
+          "xs" => indexmap! {	"font-size" =>  "0.75rem", "line-height" => "1rem" }, 
+          "sm" => indexmap! {	"font-size" =>  "0.875rem", "line-height" => "1.25rem" }, 
+          "base" => indexmap! {	"font-size" =>  "1rem", "line-height" => "1.5rem" }, 
+          "lg" => indexmap! {	"font-size" =>  "1.125rem", "line-height" => "1.75rem" }, 
+          "xl" => indexmap! {	"font-size" =>  "1.25rem", "line-height" => "1.75rem" }, 
+          "2xl" => indexmap! {	"font-size" =>  "1.5rem", "line-height" => "2rem" }, 
+          "3xl" => indexmap! {	"font-size" =>  "1.875rem", "line-height" => "2.25rem" }, 
+          "4xl" => indexmap! {	"font-size" =>  "2.25rem", "line-height" => "2.5rem" }, 
+          "5xl" => indexmap! {	"font-size" =>  "3rem", "line-height" => "1" }, 
+          "6xl" => indexmap! {	"font-size" =>  "3.75rem", "line-height" => "1" }, 
+          "7xl" => indexmap! {	"font-size" =>  "4.5rem", "line-height" => "1" }, 
+          "8xl" => indexmap! {	"font-size" =>  "6rem", "line-height" => "1" }, 
+          "9xl" => indexmap! {	"font-size" =>  "8rem", "line-height" => "1" }, 
         })
         .build(),
     ]
