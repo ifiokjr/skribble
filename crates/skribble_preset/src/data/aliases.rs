@@ -219,5 +219,61 @@ lazy_static! {
       .name("font-sans")
       .classes(vec!["font-family:$sans"])
       .build(),
+    Alias::builder()
+      .name("font-sans")
+      .classes(vec!["font-family:$sans"])
+      .build(),
+    Alias::builder()
+      .name("text-xs")
+      .classes(vec!["font-size:$xs"])
+      .build(),
+    Alias::builder()
+      .name("text-sm")
+      .classes(vec!["font-size:$sm"])
+      .build(),
+    Alias::builder()
+      .name("text-base")
+      .classes(vec!["font-size:$base"])
+      .build(),
+    Alias::builder()
+      .name("text-lg")
+      .classes(vec!["font-size:$lg"])
+      .build(),
+    Alias::builder()
+      .name("text-xl")
+      .classes(vec!["font-size:$xl"])
+      .build(),
+    Alias::builder()
+      .name("text-2xl")
+      .classes(vec!["font-size:$2xl"])
+      .build(),
+    Alias::builder()
+      .name("text-3xl")
+      .classes(vec!["font-size:$3xl"])
+      .build(),
+    Alias::builder()
+      .name("text-4xl")
+      .classes(vec!["font-size:$4xl"])
+      .build(),
+    Alias::builder()
+      .name("text-5xl")
+      .classes(vec!["font-size:$5xl"])
+      .build(),
+    Alias::builder()
+      .name("text-6xl")
+      .classes(vec!["font-size:$6xl"])
+      .build(),
+    Alias::builder()
+      .name("text-7xl")
+      .classes(vec!["font-size:$7xl"])
+      .build(),
+    Alias::builder()
+      .name("text-8xl")
+      .classes(vec!["font-size:$8xl"])
+      .build(),
+    Alias::builder()
+      .name("text-9xl")
+      .classes(vec!["font-size:$9xl"])
+      .build(),
   ];
 }

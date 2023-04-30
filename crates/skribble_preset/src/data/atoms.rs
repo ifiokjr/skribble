@@ -1024,7 +1024,10 @@ lazy_static! {
       Atom::builder()
         .name("font-size")
         .values(vec!["font-size"])
-        .styles(OptionalStringMap::default())
+        .styles(indexmap! {
+          "font-size" => Some(Placeholder::value("size")),
+          "line-height" => Some(Placeholder::value("height")),
+        })
         .build(),
     ]
   };

@@ -489,6 +489,123 @@ expression: runner_config
       "description": null,
       "name": "font-sans",
       "priority": 150
+    },
+    "text-xs": {
+      "classes": [
+        "font-size:$xs"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-xs",
+      "priority": 150
+    },
+    "text-sm": {
+      "classes": [
+        "font-size:$sm"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-sm",
+      "priority": 150
+    },
+    "text-base": {
+      "classes": [
+        "font-size:$base"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-base",
+      "priority": 150
+    },
+    "text-lg": {
+      "classes": [
+        "font-size:$lg"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-lg",
+      "priority": 150
+    },
+    "text-xl": {
+      "classes": [
+        "font-size:$xl"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-xl",
+      "priority": 150
+    },
+    "text-2xl": {
+      "classes": [
+        "font-size:$2xl"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-2xl",
+      "priority": 150
+    },
+    "text-3xl": {
+      "classes": [
+        "font-size:$3xl"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-3xl",
+      "priority": 150
+    },
+    "text-4xl": {
+      "classes": [
+        "font-size:$4xl"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-4xl",
+      "priority": 150
+    },
+    "text-5xl": {
+      "classes": [
+        "font-size:$5xl"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-5xl",
+      "priority": 150
+    },
+    "text-6xl": {
+      "classes": [
+        "font-size:$6xl"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-6xl",
+      "priority": 150
+    },
+    "text-7xl": {
+      "classes": [
+        "font-size:$7xl"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-7xl",
+      "priority": 150
+    },
+    "text-8xl": {
+      "classes": [
+        "font-size:$8xl"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-8xl",
+      "priority": 150
+    },
+    "text-9xl": {
+      "classes": [
+        "font-size:$9xl"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-9xl",
+      "priority": 150
     }
   },
   "atoms": {
@@ -3400,7 +3517,10 @@ expression: runner_config
       "name": "font-size",
       "description": null,
       "priority": 150,
-      "styles": {},
+      "styles": {
+        "font-size": "__:VALUE::size:__",
+        "line-height": "__:VALUE::height:__"
+      },
       "modifier": null,
       "values": {
         "values": [
@@ -5300,7 +5420,20 @@ expression: runner_config
       "grow-0",
       "shrink",
       "shrink-0",
-      "font-sans"
+      "font-sans",
+      "text-xs",
+      "text-sm",
+      "text-base",
+      "text-lg",
+      "text-xl",
+      "text-2xl",
+      "text-3xl",
+      "text-4xl",
+      "text-5xl",
+      "text-6xl",
+      "text-7xl",
+      "text-8xl",
+      "text-9xl"
     ],
     "media_queries": [
       "screen",
@@ -12346,56 +12479,56 @@ expression: runner_config
       "priority": 150,
       "values": {
         "xs": {
-          "font-size": "0.75rem",
-          "line-height": "1rem"
+          "size": "0.75rem",
+          "height": "1rem"
         },
         "sm": {
-          "font-size": "0.875rem",
-          "line-height": "1.25rem"
+          "size": "0.875rem",
+          "height": "1.25rem"
         },
         "base": {
-          "font-size": "1rem",
-          "line-height": "1.5rem"
+          "size": "1rem",
+          "height": "1.5rem"
         },
         "lg": {
-          "font-size": "1.125rem",
-          "line-height": "1.75rem"
+          "size": "1.125rem",
+          "height": "1.75rem"
         },
         "xl": {
-          "font-size": "1.25rem",
-          "line-height": "1.75rem"
+          "size": "1.25rem",
+          "height": "1.75rem"
         },
         "2xl": {
-          "font-size": "1.5rem",
-          "line-height": "2rem"
+          "size": "1.5rem",
+          "height": "2rem"
         },
         "3xl": {
-          "font-size": "1.875rem",
-          "line-height": "2.25rem"
+          "size": "1.875rem",
+          "height": "2.25rem"
         },
         "4xl": {
-          "font-size": "2.25rem",
-          "line-height": "2.5rem"
+          "size": "2.25rem",
+          "height": "2.5rem"
         },
         "5xl": {
-          "font-size": "3rem",
-          "line-height": "1"
+          "size": "3rem",
+          "height": "1"
         },
         "6xl": {
-          "font-size": "3.75rem",
-          "line-height": "1"
+          "size": "3.75rem",
+          "height": "1"
         },
         "7xl": {
-          "font-size": "4.5rem",
-          "line-height": "1"
+          "size": "4.5rem",
+          "height": "1"
         },
         "8xl": {
-          "font-size": "6rem",
-          "line-height": "1"
+          "size": "6rem",
+          "height": "1"
         },
         "9xl": {
-          "font-size": "8rem",
-          "line-height": "1"
+          "size": "8rem",
+          "height": "1"
         }
       }
     }

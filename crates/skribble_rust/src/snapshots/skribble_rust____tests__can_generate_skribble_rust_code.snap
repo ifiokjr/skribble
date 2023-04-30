@@ -47509,6 +47509,58 @@ pub trait GeneratedAliases: GeneratedSkribbleValue {
   fn font_sans(&self) -> String {
     ["font-family:$sans"].map(|class| self.append(class)).join(" ")
   }
+  #[inline]
+  fn text_xs(&self) -> String {
+    ["font-size:$xs"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_sm(&self) -> String {
+    ["font-size:$sm"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_base(&self) -> String {
+    ["font-size:$base"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_lg(&self) -> String {
+    ["font-size:$lg"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_xl(&self) -> String {
+    ["font-size:$xl"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_2xl(&self) -> String {
+    ["font-size:$2xl"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_3xl(&self) -> String {
+    ["font-size:$3xl"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_4xl(&self) -> String {
+    ["font-size:$4xl"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_5xl(&self) -> String {
+    ["font-size:$5xl"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_6xl(&self) -> String {
+    ["font-size:$6xl"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_7xl(&self) -> String {
+    ["font-size:$7xl"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_8xl(&self) -> String {
+    ["font-size:$8xl"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_9xl(&self) -> String {
+    ["font-size:$9xl"].map(|class| self.append(class)).join(" ")
+  }
 }
 impl GeneratedMediaQueryDeviceCategories for GeneratedSkribbleRoot {}
 impl GeneratedMediaQueryBreakpoints for GeneratedSkribbleRoot {}
