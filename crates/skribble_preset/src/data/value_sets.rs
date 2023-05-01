@@ -718,7 +718,7 @@ lazy_static! {
       ValueSet::builder()
         .name("blur")
         .values(indexmap! {
-        	"default" => "blur(8px)",
+          "default" => "blur(8px)",
           "none" => "blur(0)",
           "sm"	=> "blur(4px)",
           "md"	=> "blur(12px)",
@@ -993,6 +993,10 @@ lazy_static! {
         .values(indexmap! { "auto" => "auto" })
         .build(),
       ValueSet::builder()
+        .name("none")
+        .values(indexmap! { "none" => "none" })
+        .build(),
+      ValueSet::builder()
         .name("align-content")
         .values(indexmap! {
           "normal" => "normal",
@@ -1076,20 +1080,297 @@ lazy_static! {
       ValueSet::builder()
         .name("font-size")
         .values(indexmap! {
-          "xs" => indexmap! {	"size" => "0.75rem", "height" => "1rem" }, 
-          "sm" => indexmap! {	"size" => "0.875rem", "height" => "1.25rem" }, 
-          "base" => indexmap! {	"size" => "1rem", "height" => "1.5rem" }, 
-          "lg" => indexmap! {	"size" => "1.125rem", "height" => "1.75rem" }, 
-          "xl" => indexmap! {	"size" => "1.25rem", "height" => "1.75rem" }, 
-          "2xl" => indexmap! {	"size" => "1.5rem", "height" => "2rem" }, 
-          "3xl" => indexmap! {	"size" => "1.875rem", "height" => "2.25rem" }, 
-          "4xl" => indexmap! {	"size" => "2.25rem", "height" => "2.5rem" }, 
-          "5xl" => indexmap! {	"size" => "3rem", "height" => "1" }, 
-          "6xl" => indexmap! {	"size" => "3.75rem", "height" => "1" }, 
-          "7xl" => indexmap! {	"size" => "4.5rem", "height" => "1" }, 
-          "8xl" => indexmap! {	"size" => "6rem", "height" => "1" }, 
-          "9xl" => indexmap! {	"size" => "8rem", "height" => "1" }, 
+          "xs" => indexmap! {	"size" => "0.75rem", "height" => "1rem" },
+          "sm" => indexmap! {	"size" => "0.875rem", "height" => "1.25rem" },
+          "base" => indexmap! {	"size" => "1rem", "height" => "1.5rem" },
+          "lg" => indexmap! {	"size" => "1.125rem", "height" => "1.75rem" },
+          "xl" => indexmap! {	"size" => "1.25rem", "height" => "1.75rem" },
+          "2xl" => indexmap! {	"size" => "1.5rem", "height" => "2rem" },
+          "3xl" => indexmap! {	"size" => "1.875rem", "height" => "2.25rem" },
+          "4xl" => indexmap! {	"size" => "2.25rem", "height" => "2.5rem" },
+          "5xl" => indexmap! {	"size" => "3rem", "height" => "1" },
+          "6xl" => indexmap! {	"size" => "3.75rem", "height" => "1" },
+          "7xl" => indexmap! {	"size" => "4.5rem", "height" => "1" },
+          "8xl" => indexmap! {	"size" => "6rem", "height" => "1" },
+          "9xl" => indexmap! {	"size" => "8rem", "height" => "1" },
         })
+        .build(),
+      ValueSet::builder()
+        .name("smoothing")
+        .values(indexmap! {
+          "antialiased"	=> indexmap! { "webkit" => "antialiased", "moz" => "grayscale" },
+          "subpixel"	=> indexmap! { "webkit" => "auto", "moz" => "auto" },
+        })
+        .build(),
+      ValueSet::builder()
+        .name("font-style")
+        .values(indexmap! {
+          "italic" => "italic",
+          "normal" => "normal",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("font-weight")
+        .values(indexmap! {
+          "thin" => "100",
+          "extralight" => "200",
+          "light" => "300",
+          "normal" => "400",
+          "medium" => "500",
+          "semibold" => "600",
+          "bold" => "700",
+          "extrabold" => "800",
+          "black" => "900",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("font-variant-numeric")
+        .values(indexmap!{
+          "normal" => "normal",
+          "ordinal" => "ordinal",
+          "slashed" => "slashed-zero",
+          "lining" => "lining-nums",
+          "oldstyle" => "oldstyle-nums",
+          "proportional" => "proportional-nums",
+          "tabular" => "tabular-nums",
+          "diagonal" => "diagonal-fractions",
+          "stacked" => "stacked-fractions",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("letter-spacing")
+        .values(indexmap!{
+          "tighter" => "-0.05em",
+          "tight" => "-0.025em",
+          "normal" => "0em",
+          "wide" => "0.025em",
+          "wider" => "0.05em",
+          "widest" => "0.1em",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("line-clamp")
+        .values(indexmap!{
+          "1" => indexmap! { 
+            "overflow" => "hidden", 
+            "display" => "-webkit-box", 
+            "orient" => "vertical", 
+            "clamp" =>  "1",
+          },
+          "2" => indexmap! { 
+            "overflow" => "hidden", 
+            "display" => "-webkit-box", 
+            "orient" => "vertical", 
+            "clamp" =>  "2",
+          },
+          "3" => indexmap! { 
+            "overflow" => "hidden", 
+            "display" => "-webkit-box", 
+            "orient" => "vertical", 
+            "clamp" =>  "3",
+          },
+          "4" => indexmap! { 
+            "overflow" => "hidden", 
+            "display" => "-webkit-box", 
+            "orient" => "vertical", 
+            "clamp" =>  "4",
+          },
+          "5" => indexmap! { 
+            "overflow" => "hidden", 
+            "display" => "-webkit-box", 
+            "orient" => "vertical", 
+            "clamp" =>  "5",
+          },
+          "6" => indexmap! { 
+            "overflow" => "hidden", 
+            "display" => "-webkit-box", 
+            "orient" => "vertical", 
+            "clamp" =>  "6",
+          },
+          "none" => indexmap! { 
+            "overflow" => "visible", 
+            "display" => "block", 
+            "orient" => "horizontal", 
+            "clamp" =>  "none",
+          },
+        })
+        .build(),
+      ValueSet::builder()
+        .name("line-height")
+        .values(indexmap!{
+          "3" => ".75rem",
+          "4" => "1rem",
+          "5" => "1.25rem",
+          "6" => "1.5rem",
+          "7" => "1.75rem",
+          "8" => "2rem",
+          "9" => "2.25rem",
+          "10" => "2.5rem",
+          "none" => "1",
+          "tight" => "1.25",
+          "snug" => "1.375",
+          "normal" => "1.5",
+          "relaxed" => "1.625",
+          "loose" => "2",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("list-style-position")
+        .values(indexmap! {
+          "inside" => "inside",
+          "outside" => "outside",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("list-style-type")
+        .values(indexmap! {
+          "disc" => "disc",
+          "decimal" => "decimal",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("text-align")
+        .values(indexmap! {
+          "left" => "left",
+          "center" => "center",
+          "right" => "right",
+          "justify" => "justify",
+          "start" => "start",
+          "end" => "end",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("text-decoration-line")
+        .values(indexmap! {
+          "underline"	=> "underline",
+          "overline"	=> "overline",
+          "through"	=> "line-through",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("text-decoration-style")
+        .values(indexmap! {
+          "solid" => "solid",
+          "double" => "double",
+          "dotted" => "dotted",
+          "dashed" => "dashed",
+          "wavy" => "wavy",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("text-decoration-thickness")
+        .values(indexmap! {
+          "auto"	=> "auto",
+          "from-font"	=> "from-font",
+          "0"	=> "0px",
+          "1"	=> "1px",
+          "2"	=> "2px",
+          "4"	=> "4px",
+          "8"	=> "8px",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("text-underline-offset")
+        .values(indexmap!{
+          "auto" => "auto",
+          "0" => "0px",
+          "1" => "1px",
+          "2" => "2px",
+          "4" => "4px",
+          "8" => "8px",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("text-transform")
+        .values(indexmap!{
+          "uppercase"	=> "uppercase",
+          "lowercase"	=> "lowercase",
+          "capitalize"	=> "capitalize",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("text-overflow")
+        .values(indexmap! {
+          "ellipsis" => "ellipsis",
+          "clip" => "clip",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("text-indent")
+        .values(indexmap! {
+          "0" => "0px",
+          "px" => "1px",
+          "0.5" => "0.125rem",
+          "1" => "0.25rem",
+          "1.5" => "0.375rem",
+          "2" => "0.5rem",
+          "2.5" => "0.625rem",
+          "3" => "0.75rem",
+          "3.5" => "0.875rem",
+          "4" => "1rem",
+          "5" => "1.25rem",
+          "6" => "1.5rem",
+          "7" => "1.75rem",
+          "8" => "2rem",
+          "9" => "2.25rem",
+          "10" => "2.5rem",
+          "11" => "2.75rem",
+          "12" => "3rem",
+          "14" => "3.5rem",
+          "16" => "4rem",
+          "20" => "5rem",
+          "24" => "6rem",
+          "28" => "7rem",
+          "32" => "8rem",
+          "36" => "9rem",
+          "40" => "10rem",
+          "44" => "11rem",
+          "48" => "12rem",
+          "52" => "13rem",
+          "56" => "14rem",
+          "60" => "15rem",
+          "64" => "16rem",
+          "72" => "18rem",
+          "80" => "20rem",
+          "96" => "24rem",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("vertial-align")
+        .values(indexmap! {
+          "baseline"	=> "baseline",
+          "top"	=> "top",
+          "middle"	=> "middle",
+          "bottom"	=> "bottom",
+          "text-top"	=> "text-top",
+          "text-bottom"	=> "text-bottom",
+          "sub"	=> "sub",
+          "super"	=> "super",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("whitespace")
+        .values(indexmap! {
+          "normal" => "normal",
+          "nowrap" => "nowrap",
+          "pre" => "pre",
+          "pre-line" => "pre-line",
+          "pre-wrap" => "pre-wrap",
+          "break-spaces" => "break-spaces",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("break")
+        .values(indexmap! {
+          "normal" => indexmap! { "overflow-wrap" => "normal" , "word-break" =>  "normal" },
+          "words" => indexmap! { "overflow-wrap" => "break-word" },
+          "all" => indexmap! { "word-break" => "break-all" },
+          "keep" => indexmap! { "word-break" => "keep-all" },
+        })
+        .build(),
+      ValueSet::builder()
+        .name("hyphens")
+        .values(indexmap! { "manual" => "manual" })
         .build(),
     ]
   };

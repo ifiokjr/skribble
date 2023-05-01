@@ -606,6 +606,467 @@ expression: runner_config
       "description": null,
       "name": "text-9xl",
       "priority": 150
+    },
+    "antialiased": {
+      "classes": [
+        "smoothing:$antialiased"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "antialiased",
+      "priority": 150
+    },
+    "subpixel-antialiased": {
+      "classes": [
+        "smoothing:$subpixel"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "subpixel-antialiased",
+      "priority": 150
+    },
+    "italic": {
+      "classes": [
+        "font-style:$italic"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "italic",
+      "priority": 150
+    },
+    "non-italic": {
+      "classes": [
+        "font-style:$normal"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "non-italic",
+      "priority": 150
+    },
+    "font-thin": {
+      "classes": [
+        "font-weight:$thin"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "font-thin",
+      "priority": 150
+    },
+    "font-extralight": {
+      "classes": [
+        "font-weight:$extralight"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "font-extralight",
+      "priority": 150
+    },
+    "font-light": {
+      "classes": [
+        "font-weight:$light"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "font-light",
+      "priority": 150
+    },
+    "font-normal": {
+      "classes": [
+        "font-weight:$normal"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "font-normal",
+      "priority": 150
+    },
+    "font-medium": {
+      "classes": [
+        "font-weight:$medium"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "font-medium",
+      "priority": 150
+    },
+    "font-semibold": {
+      "classes": [
+        "font-weight:$semibold"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "font-semibold",
+      "priority": 150
+    },
+    "font-bold": {
+      "classes": [
+        "font-weight:$bold"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "font-bold",
+      "priority": 150
+    },
+    "font-extrabold": {
+      "classes": [
+        "font-weight:$extrabold"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "font-extrabold",
+      "priority": 150
+    },
+    "font-black": {
+      "classes": [
+        "font-weight:$black"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "font-black",
+      "priority": 150
+    },
+    "slashed-zero": {
+      "classes": [
+        "font-numeric:$slashed"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "slashed-zero",
+      "priority": 150
+    },
+    "lining-nums": {
+      "classes": [
+        "font-numeric:$lining"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "lining-nums",
+      "priority": 150
+    },
+    "oldstyle-nums": {
+      "classes": [
+        "font-numeric:$oldstyle"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "oldstyle-nums",
+      "priority": 150
+    },
+    "proportional-nums": {
+      "classes": [
+        "font-numeric:$proportional"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "proportional-nums",
+      "priority": 150
+    },
+    "tabular-nums": {
+      "classes": [
+        "font-numeric:$tabular"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "tabular-nums",
+      "priority": 150
+    },
+    "diagonal-fractions": {
+      "classes": [
+        "font-numeric:$diagonal"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "diagonal-fractions",
+      "priority": 150
+    },
+    "stacked-fractions": {
+      "classes": [
+        "font-numeric:$stacked"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "stacked-fractions",
+      "priority": 150
+    },
+    "list-inside": {
+      "classes": [
+        "list-position:$inside"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "list-inside",
+      "priority": 150
+    },
+    "list-outside": {
+      "classes": [
+        "list-position:$outside"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "list-outside",
+      "priority": 150
+    },
+    "text-left": {
+      "classes": [
+        "text-align:$left"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-left",
+      "priority": 150
+    },
+    "text-center": {
+      "classes": [
+        "text-align:$center"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-center",
+      "priority": 150
+    },
+    "text-right": {
+      "classes": [
+        "text-align:$right"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-right",
+      "priority": 150
+    },
+    "text-justify": {
+      "classes": [
+        "text-align:$justify"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-justify",
+      "priority": 150
+    },
+    "text-start": {
+      "classes": [
+        "text-align:$start"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-start",
+      "priority": 150
+    },
+    "text-end": {
+      "classes": [
+        "text-align:$end"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-end",
+      "priority": 150
+    },
+    "underline": {
+      "classes": [
+        "text-decoration:$underline"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "underline",
+      "priority": 150
+    },
+    "overline": {
+      "classes": [
+        "text-decoration:$overline"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "overline",
+      "priority": 150
+    },
+    "line-through": {
+      "classes": [
+        "text-decoration:$through"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "line-through",
+      "priority": 150
+    },
+    "strikethrough": {
+      "classes": [
+        "text-decoration:$through"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "strikethrough",
+      "priority": 150
+    },
+    "no-underline": {
+      "classes": [
+        "text-decoration:$none"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "no-underline",
+      "priority": 150
+    },
+    "decoration-solid": {
+      "classes": [
+        "decoration-style:$solid"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "decoration-solid",
+      "priority": 150
+    },
+    "decoration-double": {
+      "classes": [
+        "decoration-style:$double"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "decoration-double",
+      "priority": 150
+    },
+    "decoration-dotted": {
+      "classes": [
+        "decoration-style:$dotted"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "decoration-dotted",
+      "priority": 150
+    },
+    "decoration-dashed": {
+      "classes": [
+        "decoration-style:$dashed"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "decoration-dashed",
+      "priority": 150
+    },
+    "decoration-wavy": {
+      "classes": [
+        "decoration-style:$wavy"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "decoration-wavy",
+      "priority": 150
+    },
+    "decoration-auto": {
+      "classes": [
+        "decoration-thickness:$auto"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "decoration-auto",
+      "priority": 150
+    },
+    "decoration-from-font": {
+      "classes": [
+        "decoration-thickness:$from-font"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "decoration-from-font",
+      "priority": 150
+    },
+    "decoration-0": {
+      "classes": [
+        "decoration-thickness:$0"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "decoration-0",
+      "priority": 150
+    },
+    "decoration-1": {
+      "classes": [
+        "decoration-thickness:$1"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "decoration-1",
+      "priority": 150
+    },
+    "decoration-2": {
+      "classes": [
+        "decoration-thickness:$2"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "decoration-2",
+      "priority": 150
+    },
+    "decoration-4": {
+      "classes": [
+        "decoration-thickness:$4"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "decoration-4",
+      "priority": 150
+    },
+    "decoration-8": {
+      "classes": [
+        "decoration-thickness:$8"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "decoration-8",
+      "priority": 150
+    },
+    "uppercase": {
+      "classes": [
+        "text-transform:$uppercase"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "uppercase",
+      "priority": 150
+    },
+    "lowercase": {
+      "classes": [
+        "text-transform:$lowercase"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "lowercase",
+      "priority": 150
+    },
+    "capitalize": {
+      "classes": [
+        "text-transform:$capitalize"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "capitalize",
+      "priority": 150
+    },
+    "text-ellipsis": {
+      "classes": [
+        "text-overflow:$ellipsis"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-ellipsis",
+      "priority": 150
+    },
+    "text-clip": {
+      "classes": [
+        "text-overflow:$clip"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "text-clip",
+      "priority": 150
+    },
+    "truncate": {
+      "classes": [
+        "visibility:$hidden",
+        "text-overflow:$ellipsis",
+        "whitespace:$nowrap"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "truncate",
+      "priority": 150
     }
   },
   "atoms": {
@@ -3358,7 +3819,8 @@ expression: runner_config
       "description": "Control how rows are positioned in multi-row flex and grid containers.",
       "priority": 150,
       "styles": {
-        "align-content": null
+        "align-content": null,
+        "content": null
       },
       "modifier": null,
       "values": {
@@ -3366,6 +3828,10 @@ expression: runner_config
           {
             "priority": 150,
             "value": "align-content"
+          },
+          {
+            "priority": 150,
+            "value": "none"
           }
         ]
       }
@@ -3527,6 +3993,422 @@ expression: runner_config
           {
             "priority": 150,
             "value": "font-size"
+          }
+        ]
+      }
+    },
+    "smoothing": {
+      "name": "smoothing",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "-webkit-font-smoothing": "__:VALUE::webkit:__",
+        "-moz-osx-font-smoothing": "__:VALUE::moz:__"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "smoothing"
+          }
+        ]
+      }
+    },
+    "font-style": {
+      "name": "font-style",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "font-style": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "font-style"
+          }
+        ]
+      }
+    },
+    "font-weight": {
+      "name": "font-weight",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "font-weight": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "font-weight"
+          }
+        ]
+      }
+    },
+    "font-numeric": {
+      "name": "font-numeric",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "font-variant-numeric": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "font-variant-numeric"
+          }
+        ]
+      }
+    },
+    "tracking": {
+      "name": "tracking",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "letter-spacing": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "letter-spacing"
+          }
+        ]
+      }
+    },
+    "line-clamp": {
+      "name": "line-clamp",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "overflow": "__:VALUE::overflow:__",
+        "display": "__:VALUE::display:__",
+        "-webkit-box-orient": "__:VALUE::orient:__",
+        "-webkit-box-clamp": "__:VALUE::clamp:__"
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "line-clamp"
+          }
+        ]
+      }
+    },
+    "leading": {
+      "name": "leading",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "line-height": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "line-height"
+          }
+        ]
+      }
+    },
+    "list-image": {
+      "name": "list-image",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "list-style-image": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "none"
+          }
+        ]
+      }
+    },
+    "list-position": {
+      "name": "list-position",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "list-style-position": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "list-style-position"
+          }
+        ]
+      }
+    },
+    "list-type": {
+      "name": "list-type",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "list-style-type": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "list-style-type"
+          },
+          {
+            "priority": 150,
+            "value": "none"
+          }
+        ]
+      }
+    },
+    "text-align": {
+      "name": "text-align",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "text-align": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "text-align"
+          }
+        ]
+      }
+    },
+    "text": {
+      "name": "text",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "color": null
+      },
+      "modifier": null,
+      "values": "color"
+    },
+    "text-decoration": {
+      "name": "text-decoration",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "text-decoration-line": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "text-decoration-line"
+          },
+          {
+            "priority": 150,
+            "value": "none"
+          }
+        ]
+      }
+    },
+    "decoration": {
+      "name": "decoration",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "text-decoration-color": null
+      },
+      "modifier": null,
+      "values": "color"
+    },
+    "decoration-style": {
+      "name": "decoration-style",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "text-decoration-style": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "text-decoration-style"
+          }
+        ]
+      }
+    },
+    "decoration-thickness": {
+      "name": "decoration-thickness",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "text-decoration-thickness": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "text-decoration-thickness"
+          }
+        ]
+      }
+    },
+    "underline-offset": {
+      "name": "underline-offset",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "text-underline-offset": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "text-underline-offset"
+          }
+        ]
+      }
+    },
+    "text-transform": {
+      "name": "text-transform",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "text-transform": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "text-transform"
+          },
+          {
+            "priority": 150,
+            "value": "none"
+          }
+        ]
+      }
+    },
+    "text-overflow": {
+      "name": "text-overflow",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "text-overflow": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "text-overflow"
+          }
+        ]
+      }
+    },
+    "indent": {
+      "name": "indent",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "text-indent": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "text-indent"
+          }
+        ]
+      }
+    },
+    "align": {
+      "name": "align",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "vertical-align": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "vertical-align"
+          }
+        ]
+      }
+    },
+    "whitespace": {
+      "name": "whitespace",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "white-space": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "whitespace"
+          }
+        ]
+      }
+    },
+    "break": {
+      "name": "break",
+      "description": null,
+      "priority": 150,
+      "styles": {},
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "break"
+          }
+        ]
+      }
+    },
+    "hyphens": {
+      "name": "hyphens",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "hyphens": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "none"
+          },
+          {
+            "priority": 150,
+            "value": "auto"
+          },
+          {
+            "priority": 150,
+            "value": "hyphens"
           }
         ]
       }
@@ -5344,7 +6226,31 @@ expression: runner_config
       "stroke",
       "stroke-width",
       "font-family",
-      "font-size"
+      "font-size",
+      "smoothing",
+      "font-style",
+      "font-weight",
+      "font-numeric",
+      "tracking",
+      "line-clamp",
+      "leading",
+      "list-image",
+      "list-position",
+      "list-type",
+      "text-align",
+      "text",
+      "text-decoration",
+      "decoration",
+      "decoration-style",
+      "decoration-thickness",
+      "underline-offset",
+      "text-transform",
+      "text-overflow",
+      "indent",
+      "align",
+      "whitespace",
+      "break",
+      "hyphens"
     ],
     "classes": [
       "group",
@@ -5433,7 +6339,58 @@ expression: runner_config
       "text-6xl",
       "text-7xl",
       "text-8xl",
-      "text-9xl"
+      "text-9xl",
+      "antialiased",
+      "subpixel-antialiased",
+      "italic",
+      "non-italic",
+      "font-thin",
+      "font-extralight",
+      "font-light",
+      "font-normal",
+      "font-medium",
+      "font-semibold",
+      "font-bold",
+      "font-extrabold",
+      "font-black",
+      "slashed-zero",
+      "lining-nums",
+      "oldstyle-nums",
+      "proportional-nums",
+      "tabular-nums",
+      "diagonal-fractions",
+      "stacked-fractions",
+      "list-inside",
+      "list-outside",
+      "text-left",
+      "text-center",
+      "text-right",
+      "text-justify",
+      "text-start",
+      "text-end",
+      "underline",
+      "overline",
+      "line-through",
+      "strikethrough",
+      "no-underline",
+      "decoration-solid",
+      "decoration-double",
+      "decoration-dotted",
+      "decoration-dashed",
+      "decoration-wavy",
+      "decoration-auto",
+      "decoration-from-font",
+      "decoration-0",
+      "decoration-1",
+      "decoration-2",
+      "decoration-4",
+      "decoration-8",
+      "uppercase",
+      "lowercase",
+      "capitalize",
+      "text-ellipsis",
+      "text-clip",
+      "truncate"
     ],
     "media_queries": [
       "screen",
@@ -8433,7 +9390,10 @@ expression: runner_config
       "page",
       "left",
       "right",
-      "column"
+      "column",
+      "normal",
+      "words",
+      "keep"
     ],
     "atom:break-before": [
       "auto",
@@ -8443,7 +9403,10 @@ expression: runner_config
       "page",
       "left",
       "right",
-      "column"
+      "column",
+      "normal",
+      "words",
+      "keep"
     ],
     "atom:break-inside": [
       "auto",
@@ -10394,7 +11357,8 @@ expression: runner_config
       "around",
       "evenly",
       "baseline",
-      "stretch"
+      "stretch",
+      "none"
     ],
     "atom:items": [
       "center",
@@ -10999,6 +11963,731 @@ expression: runner_config
       "7xl",
       "8xl",
       "9xl"
+    ],
+    "atom:smoothing": [
+      "antialiased",
+      "subpixel"
+    ],
+    "atom:font-style": [
+      "italic",
+      "normal"
+    ],
+    "atom:font-weight": [
+      "thin",
+      "extralight",
+      "light",
+      "normal",
+      "medium",
+      "semibold",
+      "bold",
+      "extrabold",
+      "black"
+    ],
+    "atom:font-numeric": [
+      "normal",
+      "ordinal",
+      "slashed",
+      "lining",
+      "oldstyle",
+      "proportional",
+      "tabular",
+      "diagonal",
+      "stacked"
+    ],
+    "atom:tracking": [
+      "tighter",
+      "tight",
+      "normal",
+      "wide",
+      "wider",
+      "widest"
+    ],
+    "atom:line-clamp": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "none"
+    ],
+    "atom:leading": [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "none",
+      "tight",
+      "snug",
+      "normal",
+      "relaxed",
+      "loose"
+    ],
+    "atom:list-image": [
+      "none"
+    ],
+    "atom:list-position": [
+      "inside",
+      "outside"
+    ],
+    "atom:list-type": [
+      "disc",
+      "decimal",
+      "none"
+    ],
+    "atom:text-align": [
+      "left",
+      "center",
+      "right",
+      "justify",
+      "start",
+      "end"
+    ],
+    "atom:text": [
+      "primary",
+      "primary-content",
+      "secondary",
+      "secondary-content",
+      "accent",
+      "accent-content",
+      "neutral",
+      "neutral-content",
+      "base100",
+      "base200",
+      "base300",
+      "base-content",
+      "info",
+      "info-content",
+      "success",
+      "success-content",
+      "warning",
+      "warning-content",
+      "error",
+      "error-content",
+      "inherit",
+      "current",
+      "transparent",
+      "black",
+      "white",
+      "slate50",
+      "slate100",
+      "slate200",
+      "slate300",
+      "slate400",
+      "slate500",
+      "slate600",
+      "slate700",
+      "slate800",
+      "slate900",
+      "slate950",
+      "gray50",
+      "gray100",
+      "gray200",
+      "gray300",
+      "gray400",
+      "gray500",
+      "gray600",
+      "gray700",
+      "gray800",
+      "gray900",
+      "gray950",
+      "zinc50",
+      "zinc100",
+      "zinc200",
+      "zinc300",
+      "zinc400",
+      "zinc500",
+      "zinc600",
+      "zinc700",
+      "zinc800",
+      "zinc900",
+      "zinc950",
+      "neutral50",
+      "neutral100",
+      "neutral200",
+      "neutral300",
+      "neutral400",
+      "neutral500",
+      "neutral600",
+      "neutral700",
+      "neutral800",
+      "neutral900",
+      "neutral950",
+      "stone50",
+      "stone100",
+      "stone200",
+      "stone300",
+      "stone400",
+      "stone500",
+      "stone600",
+      "stone700",
+      "stone800",
+      "stone900",
+      "stone950",
+      "red50",
+      "red100",
+      "red200",
+      "red300",
+      "red400",
+      "red500",
+      "red600",
+      "red700",
+      "red800",
+      "red900",
+      "red950",
+      "orange50",
+      "orange100",
+      "orange200",
+      "orange300",
+      "orange400",
+      "orange500",
+      "orange600",
+      "orange700",
+      "orange800",
+      "orange900",
+      "orange950",
+      "amber50",
+      "amber100",
+      "amber200",
+      "amber300",
+      "amber400",
+      "amber500",
+      "amber600",
+      "amber700",
+      "amber800",
+      "amber900",
+      "amber950",
+      "yellow50",
+      "yellow100",
+      "yellow200",
+      "yellow300",
+      "yellow400",
+      "yellow500",
+      "yellow600",
+      "yellow700",
+      "yellow800",
+      "yellow900",
+      "yellow950",
+      "lime50",
+      "lime100",
+      "lime200",
+      "lime300",
+      "lime400",
+      "lime500",
+      "lime600",
+      "lime700",
+      "lime800",
+      "lime900",
+      "lime950",
+      "green50",
+      "green100",
+      "green200",
+      "green300",
+      "green400",
+      "green500",
+      "green600",
+      "green700",
+      "green800",
+      "green900",
+      "green950",
+      "emerald50",
+      "emerald100",
+      "emerald200",
+      "emerald300",
+      "emerald400",
+      "emerald500",
+      "emerald600",
+      "emerald700",
+      "emerald800",
+      "emerald900",
+      "emerald950",
+      "teal50",
+      "teal100",
+      "teal200",
+      "teal300",
+      "teal400",
+      "teal500",
+      "teal600",
+      "teal700",
+      "teal800",
+      "teal900",
+      "teal950",
+      "cyan50",
+      "cyan100",
+      "cyan200",
+      "cyan300",
+      "cyan400",
+      "cyan500",
+      "cyan600",
+      "cyan700",
+      "cyan800",
+      "cyan900",
+      "cyan950",
+      "sky50",
+      "sky100",
+      "sky200",
+      "sky300",
+      "sky400",
+      "sky500",
+      "sky600",
+      "sky700",
+      "sky800",
+      "sky900",
+      "sky950",
+      "blue50",
+      "blue100",
+      "blue200",
+      "blue300",
+      "blue400",
+      "blue500",
+      "blue600",
+      "blue700",
+      "blue800",
+      "blue900",
+      "blue950",
+      "indigo50",
+      "indigo100",
+      "indigo200",
+      "indigo300",
+      "indigo400",
+      "indigo500",
+      "indigo600",
+      "indigo700",
+      "indigo800",
+      "indigo900",
+      "indigo950",
+      "violet50",
+      "violet100",
+      "violet200",
+      "violet300",
+      "violet400",
+      "violet500",
+      "violet600",
+      "violet700",
+      "violet800",
+      "violet900",
+      "violet950",
+      "purple50",
+      "purple100",
+      "purple200",
+      "purple300",
+      "purple400",
+      "purple500",
+      "purple600",
+      "purple700",
+      "purple800",
+      "purple900",
+      "purple950",
+      "fuchsia50",
+      "fuchsia100",
+      "fuchsia200",
+      "fuchsia300",
+      "fuchsia400",
+      "fuchsia500",
+      "fuchsia600",
+      "fuchsia700",
+      "fuchsia800",
+      "fuchsia900",
+      "fuchsia950",
+      "pink50",
+      "pink100",
+      "pink200",
+      "pink300",
+      "pink400",
+      "pink500",
+      "pink600",
+      "pink700",
+      "pink800",
+      "pink900",
+      "pink950",
+      "rose50",
+      "rose100",
+      "rose200",
+      "rose300",
+      "rose400",
+      "rose500",
+      "rose600",
+      "rose700",
+      "rose800",
+      "rose900",
+      "rose950"
+    ],
+    "atom:text-decoration": [
+      "underline",
+      "overline",
+      "through",
+      "none"
+    ],
+    "atom:decoration": [
+      "primary",
+      "primary-content",
+      "secondary",
+      "secondary-content",
+      "accent",
+      "accent-content",
+      "neutral",
+      "neutral-content",
+      "base100",
+      "base200",
+      "base300",
+      "base-content",
+      "info",
+      "info-content",
+      "success",
+      "success-content",
+      "warning",
+      "warning-content",
+      "error",
+      "error-content",
+      "inherit",
+      "current",
+      "transparent",
+      "black",
+      "white",
+      "slate50",
+      "slate100",
+      "slate200",
+      "slate300",
+      "slate400",
+      "slate500",
+      "slate600",
+      "slate700",
+      "slate800",
+      "slate900",
+      "slate950",
+      "gray50",
+      "gray100",
+      "gray200",
+      "gray300",
+      "gray400",
+      "gray500",
+      "gray600",
+      "gray700",
+      "gray800",
+      "gray900",
+      "gray950",
+      "zinc50",
+      "zinc100",
+      "zinc200",
+      "zinc300",
+      "zinc400",
+      "zinc500",
+      "zinc600",
+      "zinc700",
+      "zinc800",
+      "zinc900",
+      "zinc950",
+      "neutral50",
+      "neutral100",
+      "neutral200",
+      "neutral300",
+      "neutral400",
+      "neutral500",
+      "neutral600",
+      "neutral700",
+      "neutral800",
+      "neutral900",
+      "neutral950",
+      "stone50",
+      "stone100",
+      "stone200",
+      "stone300",
+      "stone400",
+      "stone500",
+      "stone600",
+      "stone700",
+      "stone800",
+      "stone900",
+      "stone950",
+      "red50",
+      "red100",
+      "red200",
+      "red300",
+      "red400",
+      "red500",
+      "red600",
+      "red700",
+      "red800",
+      "red900",
+      "red950",
+      "orange50",
+      "orange100",
+      "orange200",
+      "orange300",
+      "orange400",
+      "orange500",
+      "orange600",
+      "orange700",
+      "orange800",
+      "orange900",
+      "orange950",
+      "amber50",
+      "amber100",
+      "amber200",
+      "amber300",
+      "amber400",
+      "amber500",
+      "amber600",
+      "amber700",
+      "amber800",
+      "amber900",
+      "amber950",
+      "yellow50",
+      "yellow100",
+      "yellow200",
+      "yellow300",
+      "yellow400",
+      "yellow500",
+      "yellow600",
+      "yellow700",
+      "yellow800",
+      "yellow900",
+      "yellow950",
+      "lime50",
+      "lime100",
+      "lime200",
+      "lime300",
+      "lime400",
+      "lime500",
+      "lime600",
+      "lime700",
+      "lime800",
+      "lime900",
+      "lime950",
+      "green50",
+      "green100",
+      "green200",
+      "green300",
+      "green400",
+      "green500",
+      "green600",
+      "green700",
+      "green800",
+      "green900",
+      "green950",
+      "emerald50",
+      "emerald100",
+      "emerald200",
+      "emerald300",
+      "emerald400",
+      "emerald500",
+      "emerald600",
+      "emerald700",
+      "emerald800",
+      "emerald900",
+      "emerald950",
+      "teal50",
+      "teal100",
+      "teal200",
+      "teal300",
+      "teal400",
+      "teal500",
+      "teal600",
+      "teal700",
+      "teal800",
+      "teal900",
+      "teal950",
+      "cyan50",
+      "cyan100",
+      "cyan200",
+      "cyan300",
+      "cyan400",
+      "cyan500",
+      "cyan600",
+      "cyan700",
+      "cyan800",
+      "cyan900",
+      "cyan950",
+      "sky50",
+      "sky100",
+      "sky200",
+      "sky300",
+      "sky400",
+      "sky500",
+      "sky600",
+      "sky700",
+      "sky800",
+      "sky900",
+      "sky950",
+      "blue50",
+      "blue100",
+      "blue200",
+      "blue300",
+      "blue400",
+      "blue500",
+      "blue600",
+      "blue700",
+      "blue800",
+      "blue900",
+      "blue950",
+      "indigo50",
+      "indigo100",
+      "indigo200",
+      "indigo300",
+      "indigo400",
+      "indigo500",
+      "indigo600",
+      "indigo700",
+      "indigo800",
+      "indigo900",
+      "indigo950",
+      "violet50",
+      "violet100",
+      "violet200",
+      "violet300",
+      "violet400",
+      "violet500",
+      "violet600",
+      "violet700",
+      "violet800",
+      "violet900",
+      "violet950",
+      "purple50",
+      "purple100",
+      "purple200",
+      "purple300",
+      "purple400",
+      "purple500",
+      "purple600",
+      "purple700",
+      "purple800",
+      "purple900",
+      "purple950",
+      "fuchsia50",
+      "fuchsia100",
+      "fuchsia200",
+      "fuchsia300",
+      "fuchsia400",
+      "fuchsia500",
+      "fuchsia600",
+      "fuchsia700",
+      "fuchsia800",
+      "fuchsia900",
+      "fuchsia950",
+      "pink50",
+      "pink100",
+      "pink200",
+      "pink300",
+      "pink400",
+      "pink500",
+      "pink600",
+      "pink700",
+      "pink800",
+      "pink900",
+      "pink950",
+      "rose50",
+      "rose100",
+      "rose200",
+      "rose300",
+      "rose400",
+      "rose500",
+      "rose600",
+      "rose700",
+      "rose800",
+      "rose900",
+      "rose950"
+    ],
+    "atom:decoration-style": [
+      "solid",
+      "double",
+      "dotted",
+      "dashed",
+      "wavy"
+    ],
+    "atom:decoration-thickness": [
+      "auto",
+      "from-font",
+      "0",
+      "1",
+      "2",
+      "4",
+      "8"
+    ],
+    "atom:underline-offset": [
+      "auto",
+      "0",
+      "1",
+      "2",
+      "4",
+      "8"
+    ],
+    "atom:text-transform": [
+      "uppercase",
+      "lowercase",
+      "capitalize",
+      "none"
+    ],
+    "atom:text-overflow": [
+      "ellipsis",
+      "clip"
+    ],
+    "atom:indent": [
+      "0",
+      "px",
+      "0.5",
+      "1",
+      "1.5",
+      "2",
+      "2.5",
+      "3",
+      "3.5",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "14",
+      "16",
+      "20",
+      "24",
+      "28",
+      "32",
+      "36",
+      "40",
+      "44",
+      "48",
+      "52",
+      "56",
+      "60",
+      "64",
+      "72",
+      "80",
+      "96"
+    ],
+    "atom:align": [],
+    "atom:whitespace": [
+      "normal",
+      "nowrap",
+      "pre",
+      "pre-line",
+      "pre-wrap",
+      "break-spaces"
+    ],
+    "atom:break": [
+      "auto",
+      "avoid",
+      "all",
+      "avoid-page",
+      "page",
+      "left",
+      "right",
+      "column",
+      "normal",
+      "words",
+      "keep"
+    ],
+    "atom:hyphens": [
+      "none",
+      "auto",
+      "manual"
     ]
   },
   "palette": {
@@ -11883,12 +13572,24 @@ expression: runner_config
       "values": {
         "auto": "auto",
         "avoid": "avoid",
-        "all": "all",
+        "all": {
+          "word-break": "break-all"
+        },
         "avoid-page": "avoid-page",
         "page": "page",
         "left": "left",
         "right": "right",
-        "column": "column"
+        "column": "column",
+        "normal": {
+          "overflow-wrap": "normal",
+          "word-break": "normal"
+        },
+        "words": {
+          "overflow-wrap": "break-word"
+        },
+        "keep": {
+          "word-break": "keep-all"
+        }
       }
     },
     "break-inside": {
@@ -12378,6 +14079,14 @@ expression: runner_config
         "auto": "auto"
       }
     },
+    "none": {
+      "name": "none",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "none": "none"
+      }
+    },
     "align-content": {
       "name": "align-content",
       "description": null,
@@ -12530,6 +14239,322 @@ expression: runner_config
           "size": "8rem",
           "height": "1"
         }
+      }
+    },
+    "smoothing": {
+      "name": "smoothing",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "antialiased": {
+          "webkit": "antialiased",
+          "moz": "grayscale"
+        },
+        "subpixel": {
+          "webkit": "auto",
+          "moz": "auto"
+        }
+      }
+    },
+    "font-style": {
+      "name": "font-style",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "italic": "italic",
+        "normal": "normal"
+      }
+    },
+    "font-weight": {
+      "name": "font-weight",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "thin": "100",
+        "extralight": "200",
+        "light": "300",
+        "normal": "400",
+        "medium": "500",
+        "semibold": "600",
+        "bold": "700",
+        "extrabold": "800",
+        "black": "900"
+      }
+    },
+    "font-variant-numeric": {
+      "name": "font-variant-numeric",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "normal": "normal",
+        "ordinal": "ordinal",
+        "slashed": "slashed-zero",
+        "lining": "lining-nums",
+        "oldstyle": "oldstyle-nums",
+        "proportional": "proportional-nums",
+        "tabular": "tabular-nums",
+        "diagonal": "diagonal-fractions",
+        "stacked": "stacked-fractions"
+      }
+    },
+    "letter-spacing": {
+      "name": "letter-spacing",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "tighter": "-0.05em",
+        "tight": "-0.025em",
+        "normal": "0em",
+        "wide": "0.025em",
+        "wider": "0.05em",
+        "widest": "0.1em"
+      }
+    },
+    "line-clamp": {
+      "name": "line-clamp",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "1": {
+          "overflow": "hidden",
+          "display": "-webkit-box",
+          "orient": "vertical",
+          "clamp": "1"
+        },
+        "2": {
+          "overflow": "hidden",
+          "display": "-webkit-box",
+          "orient": "vertical",
+          "clamp": "2"
+        },
+        "3": {
+          "overflow": "hidden",
+          "display": "-webkit-box",
+          "orient": "vertical",
+          "clamp": "3"
+        },
+        "4": {
+          "overflow": "hidden",
+          "display": "-webkit-box",
+          "orient": "vertical",
+          "clamp": "4"
+        },
+        "5": {
+          "overflow": "hidden",
+          "display": "-webkit-box",
+          "orient": "vertical",
+          "clamp": "5"
+        },
+        "6": {
+          "overflow": "hidden",
+          "display": "-webkit-box",
+          "orient": "vertical",
+          "clamp": "6"
+        },
+        "none": {
+          "overflow": "visible",
+          "display": "block",
+          "orient": "horizontal",
+          "clamp": "none"
+        }
+      }
+    },
+    "line-height": {
+      "name": "line-height",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "3": ".75rem",
+        "4": "1rem",
+        "5": "1.25rem",
+        "6": "1.5rem",
+        "7": "1.75rem",
+        "8": "2rem",
+        "9": "2.25rem",
+        "10": "2.5rem",
+        "none": "1",
+        "tight": "1.25",
+        "snug": "1.375",
+        "normal": "1.5",
+        "relaxed": "1.625",
+        "loose": "2"
+      }
+    },
+    "list-style-position": {
+      "name": "list-style-position",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "inside": "inside",
+        "outside": "outside"
+      }
+    },
+    "list-style-type": {
+      "name": "list-style-type",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "disc": "disc",
+        "decimal": "decimal"
+      }
+    },
+    "text-align": {
+      "name": "text-align",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "left": "left",
+        "center": "center",
+        "right": "right",
+        "justify": "justify",
+        "start": "start",
+        "end": "end"
+      }
+    },
+    "text-decoration-line": {
+      "name": "text-decoration-line",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "underline": "underline",
+        "overline": "overline",
+        "through": "line-through"
+      }
+    },
+    "text-decoration-style": {
+      "name": "text-decoration-style",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "solid": "solid",
+        "double": "double",
+        "dotted": "dotted",
+        "dashed": "dashed",
+        "wavy": "wavy"
+      }
+    },
+    "text-decoration-thickness": {
+      "name": "text-decoration-thickness",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "auto": "auto",
+        "from-font": "from-font",
+        "0": "0px",
+        "1": "1px",
+        "2": "2px",
+        "4": "4px",
+        "8": "8px"
+      }
+    },
+    "text-underline-offset": {
+      "name": "text-underline-offset",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "auto": "auto",
+        "0": "0px",
+        "1": "1px",
+        "2": "2px",
+        "4": "4px",
+        "8": "8px"
+      }
+    },
+    "text-transform": {
+      "name": "text-transform",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "uppercase": "uppercase",
+        "lowercase": "lowercase",
+        "capitalize": "capitalize"
+      }
+    },
+    "text-overflow": {
+      "name": "text-overflow",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "ellipsis": "ellipsis",
+        "clip": "clip"
+      }
+    },
+    "text-indent": {
+      "name": "text-indent",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "0": "0px",
+        "px": "1px",
+        "0.5": "0.125rem",
+        "1": "0.25rem",
+        "1.5": "0.375rem",
+        "2": "0.5rem",
+        "2.5": "0.625rem",
+        "3": "0.75rem",
+        "3.5": "0.875rem",
+        "4": "1rem",
+        "5": "1.25rem",
+        "6": "1.5rem",
+        "7": "1.75rem",
+        "8": "2rem",
+        "9": "2.25rem",
+        "10": "2.5rem",
+        "11": "2.75rem",
+        "12": "3rem",
+        "14": "3.5rem",
+        "16": "4rem",
+        "20": "5rem",
+        "24": "6rem",
+        "28": "7rem",
+        "32": "8rem",
+        "36": "9rem",
+        "40": "10rem",
+        "44": "11rem",
+        "48": "12rem",
+        "52": "13rem",
+        "56": "14rem",
+        "60": "15rem",
+        "64": "16rem",
+        "72": "18rem",
+        "80": "20rem",
+        "96": "24rem"
+      }
+    },
+    "vertial-align": {
+      "name": "vertial-align",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "baseline": "baseline",
+        "top": "top",
+        "middle": "middle",
+        "bottom": "bottom",
+        "text-top": "text-top",
+        "text-bottom": "text-bottom",
+        "sub": "sub",
+        "super": "super"
+      }
+    },
+    "whitespace": {
+      "name": "whitespace",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "normal": "normal",
+        "nowrap": "nowrap",
+        "pre": "pre",
+        "pre-line": "pre-line",
+        "pre-wrap": "pre-wrap",
+        "break-spaces": "break-spaces"
+      }
+    },
+    "hyphens": {
+      "name": "hyphens",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "manual": "manual"
       }
     }
   }

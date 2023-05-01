@@ -1029,6 +1029,139 @@ lazy_static! {
           "line-height" => Some(Placeholder::value("height")),
         })
         .build(),
+      Atom::builder()
+        .name("smoothing")
+        .values(vec!["smoothing"])
+        .styles(indexmap! {
+          "-webkit-font-smoothing" => Some(Placeholder::value("webkit")),
+          "-moz-osx-font-smoothing" => Some(Placeholder::value("moz")),
+        })
+        .build(),
+      Atom::builder()
+        .name("font-style")
+        .values(vec!["font-style"])
+        .styles(indexmap! { "font-style" => none })
+        .build(),
+      Atom::builder()
+        .name("font-weight")
+        .values(vec!["font-weight"])
+        .styles(indexmap! { "font-weight" => none })
+        .build(),
+      Atom::builder()
+        .name("font-numeric")
+        .values(vec!["font-variant-numeric"])
+        .styles(indexmap! { "font-variant-numeric" => none })
+        .build(),
+      Atom::builder()
+        .name("tracking")
+        .values(vec!["letter-spacing"])
+        .styles(indexmap! { "letter-spacing" => none })
+        .build(),
+      Atom::builder()
+        .name("line-clamp")
+        .values(vec!["line-clamp"])
+        .styles(indexmap! {
+          "overflow" => Some(Placeholder::value("overflow")),
+          "display" => Some(Placeholder::value("display")),
+          "-webkit-box-orient" => Some(Placeholder::value("orient")),
+          "-webkit-box-clamp" => Some(Placeholder::value("clamp")),
+        })
+        .build(),
+      Atom::builder()
+        .name("leading")
+        .values(vec!["line-height"])
+        .styles(indexmap! { "line-height" => none })
+        .build(),
+      Atom::builder()
+        .name("list-image")
+        .values(vec!["none"])
+        .styles(indexmap! { "list-style-image" => none })
+        .build(),
+      Atom::builder()
+        .name("list-position")
+        .values(vec!["list-style-position"])
+        .styles(indexmap! { "list-style-position" => none })
+        .build(),
+      Atom::builder()
+        .name("list-type")
+        .values(vec!["list-style-type", "none"])
+        .styles(indexmap! { "list-style-type" => none })
+        .build(),
+      Atom::builder()
+        .name("text-align")
+        .values(vec!["text-align"])
+        .styles(indexmap! { "text-align" => none })
+        .build(),
+      Atom::builder()
+        .name("text")
+        .values(LinkedValues::Color)
+        .styles(indexmap! { "color" => none })
+        .build(),
+      Atom::builder()
+        .name("text-decoration")
+        .values(vec!["text-decoration-line", "none"])
+        .styles(indexmap! { "text-decoration-line" => none })
+        .build(),
+      Atom::builder()
+        .name("decoration")
+        .values(LinkedValues::Color)
+        .styles(indexmap! { "text-decoration-color" => none })
+        .build(),
+      Atom::builder()
+        .name("decoration-style")
+        .values(vec!["text-decoration-style"])
+        .styles(indexmap! { "text-decoration-style" => none })
+        .build(),
+      Atom::builder()
+        .name("decoration-thickness")
+        .values(vec!["text-decoration-thickness"])
+        .styles(indexmap! { "text-decoration-thickness" => none })
+        .build(),
+      Atom::builder()
+        .name("underline-offset")
+        .values(vec!["text-underline-offset"])
+        .styles(indexmap! { "text-underline-offset" => none })
+        .build(),
+      Atom::builder()
+        .name("text-transform")
+        .values(vec!["text-transform", "none"])
+        .styles(indexmap! { "text-transform" => none })
+        .build(),
+      Atom::builder()
+        .name("text-overflow")
+        .values(vec!["text-overflow"])
+        .styles(indexmap! { "text-overflow" => none })
+        .build(),
+      Atom::builder()
+        .name("indent")
+        .values(vec!["text-indent"])
+        .styles(indexmap! { "text-indent" => none })
+        .build(),
+      Atom::builder()
+        .name("align")
+        .values(vec!["vertical-align"])
+        .styles(indexmap! { "vertical-align" => none })
+        .build(),
+      Atom::builder()
+        .name("whitespace")
+        .values(vec!["whitespace"])
+        .styles(indexmap! { "white-space" => none })
+        .build(),
+      Atom::builder()
+        .name("break")
+        .values(vec!["break"])
+        .styles(OptionalStringMap::default())
+        .build(),
+      Atom::builder()
+        .name("hyphens")
+        .values(vec!["none", "auto", "hyphens"])
+        .styles(indexmap! { "hyphens" => none })
+        .build(),
+      Atom::builder()
+        .name("content")
+        .values(vec!["none"])
+        .styles(indexmap! { "content" => none })
+        .build(),
     ]
   };
 }

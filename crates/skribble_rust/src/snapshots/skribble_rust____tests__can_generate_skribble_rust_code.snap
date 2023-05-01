@@ -27562,7 +27562,6 @@ pub trait GeneratedValueSetBreakAfter: GeneratedSkribbleValue {
   }
   /// ```css
   /// .break-after\:\$all {
-  ///   break-after: all;
   /// }
   /// ```
   #[inline]
@@ -27614,6 +27613,30 @@ pub trait GeneratedValueSetBreakAfter: GeneratedSkribbleValue {
   fn column(&self) -> String {
     self.append_value("column")
   }
+  /// ```css
+  /// .break-after\:\$normal {
+  /// }
+  /// ```
+  #[inline]
+  fn normal(&self) -> String {
+    self.append_value("normal")
+  }
+  /// ```css
+  /// .break-after\:\$words {
+  /// }
+  /// ```
+  #[inline]
+  fn words(&self) -> String {
+    self.append_value("words")
+  }
+  /// ```css
+  /// .break-after\:\$keep {
+  /// }
+  /// ```
+  #[inline]
+  fn keep(&self) -> String {
+    self.append_value("keep")
+  }
 }
 impl GeneratedValueSetBreakAfter for GeneratedAtomBreakAfter {}
 pub struct GeneratedAtomBreakBefore(String);
@@ -27648,7 +27671,6 @@ pub trait GeneratedValueSetBreakBefore: GeneratedSkribbleValue {
   }
   /// ```css
   /// .break-before\:\$all {
-  ///   break-before: all;
   /// }
   /// ```
   #[inline]
@@ -27699,6 +27721,30 @@ pub trait GeneratedValueSetBreakBefore: GeneratedSkribbleValue {
   #[inline]
   fn column(&self) -> String {
     self.append_value("column")
+  }
+  /// ```css
+  /// .break-before\:\$normal {
+  /// }
+  /// ```
+  #[inline]
+  fn normal(&self) -> String {
+    self.append_value("normal")
+  }
+  /// ```css
+  /// .break-before\:\$words {
+  /// }
+  /// ```
+  #[inline]
+  fn words(&self) -> String {
+    self.append_value("words")
+  }
+  /// ```css
+  /// .break-before\:\$keep {
+  /// }
+  /// ```
+  #[inline]
+  fn keep(&self) -> String {
+    self.append_value("keep")
   }
 }
 impl GeneratedValueSetBreakBefore for GeneratedAtomBreakBefore {}
@@ -45214,6 +45260,7 @@ pub trait GeneratedValueSetContent: GeneratedSkribbleValue {
   /// ```css
   /// .content\:\$normal {
   ///   align-content: normal;
+  ///   content: normal;
   /// }
   /// ```
   #[inline]
@@ -45223,6 +45270,7 @@ pub trait GeneratedValueSetContent: GeneratedSkribbleValue {
   /// ```css
   /// .content\:\$center {
   ///   align-content: center;
+  ///   content: center;
   /// }
   /// ```
   #[inline]
@@ -45232,6 +45280,7 @@ pub trait GeneratedValueSetContent: GeneratedSkribbleValue {
   /// ```css
   /// .content\:\$start {
   ///   align-content: flex-start;
+  ///   content: flex-start;
   /// }
   /// ```
   #[inline]
@@ -45241,6 +45290,7 @@ pub trait GeneratedValueSetContent: GeneratedSkribbleValue {
   /// ```css
   /// .content\:\$end {
   ///   align-content: flex-end;
+  ///   content: flex-end;
   /// }
   /// ```
   #[inline]
@@ -45250,6 +45300,7 @@ pub trait GeneratedValueSetContent: GeneratedSkribbleValue {
   /// ```css
   /// .content\:\$between {
   ///   align-content: space-between;
+  ///   content: space-between;
   /// }
   /// ```
   #[inline]
@@ -45259,6 +45310,7 @@ pub trait GeneratedValueSetContent: GeneratedSkribbleValue {
   /// ```css
   /// .content\:\$around {
   ///   align-content: space-around;
+  ///   content: space-around;
   /// }
   /// ```
   #[inline]
@@ -45268,6 +45320,7 @@ pub trait GeneratedValueSetContent: GeneratedSkribbleValue {
   /// ```css
   /// .content\:\$evenly {
   ///   align-content: space-evenly;
+  ///   content: space-evenly;
   /// }
   /// ```
   #[inline]
@@ -45277,6 +45330,7 @@ pub trait GeneratedValueSetContent: GeneratedSkribbleValue {
   /// ```css
   /// .content\:\$baseline {
   ///   align-content: baseline;
+  ///   content: baseline;
   /// }
   /// ```
   #[inline]
@@ -45286,11 +45340,22 @@ pub trait GeneratedValueSetContent: GeneratedSkribbleValue {
   /// ```css
   /// .content\:\$stretch {
   ///   align-content: stretch;
+  ///   content: stretch;
   /// }
   /// ```
   #[inline]
   fn stretch(&self) -> String {
     self.append_value("stretch")
+  }
+  /// ```css
+  /// .content\:\$none {
+  ///   align-content: none;
+  ///   content: none;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
   }
 }
 impl GeneratedValueSetContent for GeneratedAtomContent {}
@@ -45893,6 +45958,1651 @@ pub trait GeneratedValueSetFontSize: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetFontSize for GeneratedAtomFontSize {}
+pub struct GeneratedAtomSmoothing(String);
+impl GeneratedSkribbleValue for GeneratedAtomSmoothing {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetSmoothing: GeneratedSkribbleValue {
+  /// ```css
+  /// .smoothing\:\$antialiased {
+  ///   -webkit-font-smoothing: antialiased;
+  ///   -moz-osx-font-smoothing: grayscale;
+  /// }
+  /// ```
+  #[inline]
+  fn antialiased(&self) -> String {
+    self.append_value("antialiased")
+  }
+  /// ```css
+  /// .smoothing\:\$subpixel {
+  ///   -webkit-font-smoothing: auto;
+  ///   -moz-osx-font-smoothing: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn subpixel(&self) -> String {
+    self.append_value("subpixel")
+  }
+}
+impl GeneratedValueSetSmoothing for GeneratedAtomSmoothing {}
+pub struct GeneratedAtomFontStyle(String);
+impl GeneratedSkribbleValue for GeneratedAtomFontStyle {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetFontStyle: GeneratedSkribbleValue {
+  /// ```css
+  /// .font-style\:\$italic {
+  ///   font-style: italic;
+  /// }
+  /// ```
+  #[inline]
+  fn italic(&self) -> String {
+    self.append_value("italic")
+  }
+  /// ```css
+  /// .font-style\:\$normal {
+  ///   font-style: normal;
+  /// }
+  /// ```
+  #[inline]
+  fn normal(&self) -> String {
+    self.append_value("normal")
+  }
+}
+impl GeneratedValueSetFontStyle for GeneratedAtomFontStyle {}
+pub struct GeneratedAtomFontWeight(String);
+impl GeneratedSkribbleValue for GeneratedAtomFontWeight {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetFontWeight: GeneratedSkribbleValue {
+  /// ```css
+  /// .font-weight\:\$thin {
+  ///   font-weight: 100;
+  /// }
+  /// ```
+  #[inline]
+  fn thin(&self) -> String {
+    self.append_value("thin")
+  }
+  /// ```css
+  /// .font-weight\:\$extralight {
+  ///   font-weight: 200;
+  /// }
+  /// ```
+  #[inline]
+  fn extralight(&self) -> String {
+    self.append_value("extralight")
+  }
+  /// ```css
+  /// .font-weight\:\$light {
+  ///   font-weight: 300;
+  /// }
+  /// ```
+  #[inline]
+  fn light(&self) -> String {
+    self.append_value("light")
+  }
+  /// ```css
+  /// .font-weight\:\$normal {
+  ///   font-weight: 400;
+  /// }
+  /// ```
+  #[inline]
+  fn normal(&self) -> String {
+    self.append_value("normal")
+  }
+  /// ```css
+  /// .font-weight\:\$medium {
+  ///   font-weight: 500;
+  /// }
+  /// ```
+  #[inline]
+  fn medium(&self) -> String {
+    self.append_value("medium")
+  }
+  /// ```css
+  /// .font-weight\:\$semibold {
+  ///   font-weight: 600;
+  /// }
+  /// ```
+  #[inline]
+  fn semibold(&self) -> String {
+    self.append_value("semibold")
+  }
+  /// ```css
+  /// .font-weight\:\$bold {
+  ///   font-weight: 700;
+  /// }
+  /// ```
+  #[inline]
+  fn bold(&self) -> String {
+    self.append_value("bold")
+  }
+  /// ```css
+  /// .font-weight\:\$extrabold {
+  ///   font-weight: 800;
+  /// }
+  /// ```
+  #[inline]
+  fn extrabold(&self) -> String {
+    self.append_value("extrabold")
+  }
+  /// ```css
+  /// .font-weight\:\$black {
+  ///   font-weight: 900;
+  /// }
+  /// ```
+  #[inline]
+  fn black(&self) -> String {
+    self.append_value("black")
+  }
+}
+impl GeneratedValueSetFontWeight for GeneratedAtomFontWeight {}
+pub struct GeneratedAtomFontNumeric(String);
+impl GeneratedSkribbleValue for GeneratedAtomFontNumeric {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetFontNumeric: GeneratedSkribbleValue {
+  /// ```css
+  /// .font-numeric\:\$normal {
+  ///   font-variant-numeric: normal;
+  /// }
+  /// ```
+  #[inline]
+  fn normal(&self) -> String {
+    self.append_value("normal")
+  }
+  /// ```css
+  /// .font-numeric\:\$ordinal {
+  ///   font-variant-numeric: ordinal;
+  /// }
+  /// ```
+  #[inline]
+  fn ordinal(&self) -> String {
+    self.append_value("ordinal")
+  }
+  /// ```css
+  /// .font-numeric\:\$slashed {
+  ///   font-variant-numeric: slashed-zero;
+  /// }
+  /// ```
+  #[inline]
+  fn slashed(&self) -> String {
+    self.append_value("slashed")
+  }
+  /// ```css
+  /// .font-numeric\:\$lining {
+  ///   font-variant-numeric: lining-nums;
+  /// }
+  /// ```
+  #[inline]
+  fn lining(&self) -> String {
+    self.append_value("lining")
+  }
+  /// ```css
+  /// .font-numeric\:\$oldstyle {
+  ///   font-variant-numeric: oldstyle-nums;
+  /// }
+  /// ```
+  #[inline]
+  fn oldstyle(&self) -> String {
+    self.append_value("oldstyle")
+  }
+  /// ```css
+  /// .font-numeric\:\$proportional {
+  ///   font-variant-numeric: proportional-nums;
+  /// }
+  /// ```
+  #[inline]
+  fn proportional(&self) -> String {
+    self.append_value("proportional")
+  }
+  /// ```css
+  /// .font-numeric\:\$tabular {
+  ///   font-variant-numeric: tabular-nums;
+  /// }
+  /// ```
+  #[inline]
+  fn tabular(&self) -> String {
+    self.append_value("tabular")
+  }
+  /// ```css
+  /// .font-numeric\:\$diagonal {
+  ///   font-variant-numeric: diagonal-fractions;
+  /// }
+  /// ```
+  #[inline]
+  fn diagonal(&self) -> String {
+    self.append_value("diagonal")
+  }
+  /// ```css
+  /// .font-numeric\:\$stacked {
+  ///   font-variant-numeric: stacked-fractions;
+  /// }
+  /// ```
+  #[inline]
+  fn stacked(&self) -> String {
+    self.append_value("stacked")
+  }
+}
+impl GeneratedValueSetFontNumeric for GeneratedAtomFontNumeric {}
+pub struct GeneratedAtomTracking(String);
+impl GeneratedSkribbleValue for GeneratedAtomTracking {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetTracking: GeneratedSkribbleValue {
+  /// ```css
+  /// .tracking\:\$tighter {
+  ///   letter-spacing: -0.05em;
+  /// }
+  /// ```
+  #[inline]
+  fn tighter(&self) -> String {
+    self.append_value("tighter")
+  }
+  /// ```css
+  /// .tracking\:\$tight {
+  ///   letter-spacing: -0.025em;
+  /// }
+  /// ```
+  #[inline]
+  fn tight(&self) -> String {
+    self.append_value("tight")
+  }
+  /// ```css
+  /// .tracking\:\$normal {
+  ///   letter-spacing: 0em;
+  /// }
+  /// ```
+  #[inline]
+  fn normal(&self) -> String {
+    self.append_value("normal")
+  }
+  /// ```css
+  /// .tracking\:\$wide {
+  ///   letter-spacing: 0.025em;
+  /// }
+  /// ```
+  #[inline]
+  fn wide(&self) -> String {
+    self.append_value("wide")
+  }
+  /// ```css
+  /// .tracking\:\$wider {
+  ///   letter-spacing: 0.05em;
+  /// }
+  /// ```
+  #[inline]
+  fn wider(&self) -> String {
+    self.append_value("wider")
+  }
+  /// ```css
+  /// .tracking\:\$widest {
+  ///   letter-spacing: 0.1em;
+  /// }
+  /// ```
+  #[inline]
+  fn widest(&self) -> String {
+    self.append_value("widest")
+  }
+}
+impl GeneratedValueSetTracking for GeneratedAtomTracking {}
+pub struct GeneratedAtomLineClamp(String);
+impl GeneratedSkribbleValue for GeneratedAtomLineClamp {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetLineClamp: GeneratedSkribbleValue {
+  /// ```css
+  /// .line-clamp\:\$1 {
+  ///   overflow: hidden;
+  ///   display: -webkit-box;
+  ///   -webkit-box-orient: vertical;
+  ///   -webkit-box-clamp: 1;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .line-clamp\:\$2 {
+  ///   overflow: hidden;
+  ///   display: -webkit-box;
+  ///   -webkit-box-orient: vertical;
+  ///   -webkit-box-clamp: 2;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .line-clamp\:\$3 {
+  ///   overflow: hidden;
+  ///   display: -webkit-box;
+  ///   -webkit-box-orient: vertical;
+  ///   -webkit-box-clamp: 3;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .line-clamp\:\$4 {
+  ///   overflow: hidden;
+  ///   display: -webkit-box;
+  ///   -webkit-box-orient: vertical;
+  ///   -webkit-box-clamp: 4;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .line-clamp\:\$5 {
+  ///   overflow: hidden;
+  ///   display: -webkit-box;
+  ///   -webkit-box-orient: vertical;
+  ///   -webkit-box-clamp: 5;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .line-clamp\:\$6 {
+  ///   overflow: hidden;
+  ///   display: -webkit-box;
+  ///   -webkit-box-orient: vertical;
+  ///   -webkit-box-clamp: 6;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .line-clamp\:\$none {
+  ///   overflow: visible;
+  ///   display: block;
+  ///   -webkit-box-orient: horizontal;
+  ///   -webkit-box-clamp: none;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+impl GeneratedValueSetLineClamp for GeneratedAtomLineClamp {}
+pub struct GeneratedAtomLeading(String);
+impl GeneratedSkribbleValue for GeneratedAtomLeading {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetLeading: GeneratedSkribbleValue {
+  /// ```css
+  /// .leading\:\$3 {
+  ///   line-height: .75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .leading\:\$4 {
+  ///   line-height: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .leading\:\$5 {
+  ///   line-height: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .leading\:\$6 {
+  ///   line-height: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .leading\:\$7 {
+  ///   line-height: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .leading\:\$8 {
+  ///   line-height: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .leading\:\$9 {
+  ///   line-height: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .leading\:\$10 {
+  ///   line-height: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .leading\:\$none {
+  ///   line-height: 1;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+  /// ```css
+  /// .leading\:\$tight {
+  ///   line-height: 1.25;
+  /// }
+  /// ```
+  #[inline]
+  fn tight(&self) -> String {
+    self.append_value("tight")
+  }
+  /// ```css
+  /// .leading\:\$snug {
+  ///   line-height: 1.375;
+  /// }
+  /// ```
+  #[inline]
+  fn snug(&self) -> String {
+    self.append_value("snug")
+  }
+  /// ```css
+  /// .leading\:\$normal {
+  ///   line-height: 1.5;
+  /// }
+  /// ```
+  #[inline]
+  fn normal(&self) -> String {
+    self.append_value("normal")
+  }
+  /// ```css
+  /// .leading\:\$relaxed {
+  ///   line-height: 1.625;
+  /// }
+  /// ```
+  #[inline]
+  fn relaxed(&self) -> String {
+    self.append_value("relaxed")
+  }
+  /// ```css
+  /// .leading\:\$loose {
+  ///   line-height: 2;
+  /// }
+  /// ```
+  #[inline]
+  fn loose(&self) -> String {
+    self.append_value("loose")
+  }
+}
+impl GeneratedValueSetLeading for GeneratedAtomLeading {}
+pub struct GeneratedAtomListImage(String);
+impl GeneratedSkribbleValue for GeneratedAtomListImage {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetListImage: GeneratedSkribbleValue {
+  /// ```css
+  /// .list-image\:\$none {
+  ///   list-style-image: none;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+impl GeneratedValueSetListImage for GeneratedAtomListImage {}
+pub struct GeneratedAtomListPosition(String);
+impl GeneratedSkribbleValue for GeneratedAtomListPosition {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetListPosition: GeneratedSkribbleValue {
+  /// ```css
+  /// .list-position\:\$inside {
+  ///   list-style-position: inside;
+  /// }
+  /// ```
+  #[inline]
+  fn inside(&self) -> String {
+    self.append_value("inside")
+  }
+  /// ```css
+  /// .list-position\:\$outside {
+  ///   list-style-position: outside;
+  /// }
+  /// ```
+  #[inline]
+  fn outside(&self) -> String {
+    self.append_value("outside")
+  }
+}
+impl GeneratedValueSetListPosition for GeneratedAtomListPosition {}
+pub struct GeneratedAtomListType(String);
+impl GeneratedSkribbleValue for GeneratedAtomListType {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetListType: GeneratedSkribbleValue {
+  /// ```css
+  /// .list-type\:\$disc {
+  ///   list-style-type: disc;
+  /// }
+  /// ```
+  #[inline]
+  fn disc(&self) -> String {
+    self.append_value("disc")
+  }
+  /// ```css
+  /// .list-type\:\$decimal {
+  ///   list-style-type: decimal;
+  /// }
+  /// ```
+  #[inline]
+  fn decimal(&self) -> String {
+    self.append_value("decimal")
+  }
+  /// ```css
+  /// .list-type\:\$none {
+  ///   list-style-type: none;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+impl GeneratedValueSetListType for GeneratedAtomListType {}
+pub struct GeneratedAtomTextAlign(String);
+impl GeneratedSkribbleValue for GeneratedAtomTextAlign {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetTextAlign: GeneratedSkribbleValue {
+  /// ```css
+  /// .text-align\:\$left {
+  ///   text-align: left;
+  /// }
+  /// ```
+  #[inline]
+  fn left(&self) -> String {
+    self.append_value("left")
+  }
+  /// ```css
+  /// .text-align\:\$center {
+  ///   text-align: center;
+  /// }
+  /// ```
+  #[inline]
+  fn center(&self) -> String {
+    self.append_value("center")
+  }
+  /// ```css
+  /// .text-align\:\$right {
+  ///   text-align: right;
+  /// }
+  /// ```
+  #[inline]
+  fn right(&self) -> String {
+    self.append_value("right")
+  }
+  /// ```css
+  /// .text-align\:\$justify {
+  ///   text-align: justify;
+  /// }
+  /// ```
+  #[inline]
+  fn justify(&self) -> String {
+    self.append_value("justify")
+  }
+  /// ```css
+  /// .text-align\:\$start {
+  ///   text-align: start;
+  /// }
+  /// ```
+  #[inline]
+  fn start(&self) -> String {
+    self.append_value("start")
+  }
+  /// ```css
+  /// .text-align\:\$end {
+  ///   text-align: end;
+  /// }
+  /// ```
+  #[inline]
+  fn end(&self) -> String {
+    self.append_value("end")
+  }
+}
+impl GeneratedValueSetTextAlign for GeneratedAtomTextAlign {}
+pub struct GeneratedAtomText(String);
+impl GeneratedSkribbleValue for GeneratedAtomText {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorSet for GeneratedAtomText {}
+pub struct GeneratedAtomTextDecoration(String);
+impl GeneratedSkribbleValue for GeneratedAtomTextDecoration {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetTextDecoration: GeneratedSkribbleValue {
+  /// ```css
+  /// .text-decoration\:\$underline {
+  ///   text-decoration-line: underline;
+  /// }
+  /// ```
+  #[inline]
+  fn underline(&self) -> String {
+    self.append_value("underline")
+  }
+  /// ```css
+  /// .text-decoration\:\$overline {
+  ///   text-decoration-line: overline;
+  /// }
+  /// ```
+  #[inline]
+  fn overline(&self) -> String {
+    self.append_value("overline")
+  }
+  /// ```css
+  /// .text-decoration\:\$through {
+  ///   text-decoration-line: line-through;
+  /// }
+  /// ```
+  #[inline]
+  fn through(&self) -> String {
+    self.append_value("through")
+  }
+  /// ```css
+  /// .text-decoration\:\$none {
+  ///   text-decoration-line: none;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+impl GeneratedValueSetTextDecoration for GeneratedAtomTextDecoration {}
+pub struct GeneratedAtomDecoration(String);
+impl GeneratedSkribbleValue for GeneratedAtomDecoration {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorSet for GeneratedAtomDecoration {}
+pub struct GeneratedAtomDecorationStyle(String);
+impl GeneratedSkribbleValue for GeneratedAtomDecorationStyle {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetDecorationStyle: GeneratedSkribbleValue {
+  /// ```css
+  /// .decoration-style\:\$solid {
+  ///   text-decoration-style: solid;
+  /// }
+  /// ```
+  #[inline]
+  fn solid(&self) -> String {
+    self.append_value("solid")
+  }
+  /// ```css
+  /// .decoration-style\:\$double {
+  ///   text-decoration-style: double;
+  /// }
+  /// ```
+  #[inline]
+  fn double(&self) -> String {
+    self.append_value("double")
+  }
+  /// ```css
+  /// .decoration-style\:\$dotted {
+  ///   text-decoration-style: dotted;
+  /// }
+  /// ```
+  #[inline]
+  fn dotted(&self) -> String {
+    self.append_value("dotted")
+  }
+  /// ```css
+  /// .decoration-style\:\$dashed {
+  ///   text-decoration-style: dashed;
+  /// }
+  /// ```
+  #[inline]
+  fn dashed(&self) -> String {
+    self.append_value("dashed")
+  }
+  /// ```css
+  /// .decoration-style\:\$wavy {
+  ///   text-decoration-style: wavy;
+  /// }
+  /// ```
+  #[inline]
+  fn wavy(&self) -> String {
+    self.append_value("wavy")
+  }
+}
+impl GeneratedValueSetDecorationStyle for GeneratedAtomDecorationStyle {}
+pub struct GeneratedAtomDecorationThickness(String);
+impl GeneratedSkribbleValue for GeneratedAtomDecorationThickness {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetDecorationThickness: GeneratedSkribbleValue {
+  /// ```css
+  /// .decoration-thickness\:\$auto {
+  ///   text-decoration-thickness: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .decoration-thickness\:\$from-font {
+  ///   text-decoration-thickness: from-font;
+  /// }
+  /// ```
+  #[inline]
+  fn from_font(&self) -> String {
+    self.append_value("from-font")
+  }
+  /// ```css
+  /// .decoration-thickness\:\$0 {
+  ///   text-decoration-thickness: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .decoration-thickness\:\$1 {
+  ///   text-decoration-thickness: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .decoration-thickness\:\$2 {
+  ///   text-decoration-thickness: 2px;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .decoration-thickness\:\$4 {
+  ///   text-decoration-thickness: 4px;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .decoration-thickness\:\$8 {
+  ///   text-decoration-thickness: 8px;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+}
+impl GeneratedValueSetDecorationThickness for GeneratedAtomDecorationThickness {}
+pub struct GeneratedAtomUnderlineOffset(String);
+impl GeneratedSkribbleValue for GeneratedAtomUnderlineOffset {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetUnderlineOffset: GeneratedSkribbleValue {
+  /// ```css
+  /// .underline-offset\:\$auto {
+  ///   text-underline-offset: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .underline-offset\:\$0 {
+  ///   text-underline-offset: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .underline-offset\:\$1 {
+  ///   text-underline-offset: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .underline-offset\:\$2 {
+  ///   text-underline-offset: 2px;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .underline-offset\:\$4 {
+  ///   text-underline-offset: 4px;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .underline-offset\:\$8 {
+  ///   text-underline-offset: 8px;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+}
+impl GeneratedValueSetUnderlineOffset for GeneratedAtomUnderlineOffset {}
+pub struct GeneratedAtomTextTransform(String);
+impl GeneratedSkribbleValue for GeneratedAtomTextTransform {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetTextTransform: GeneratedSkribbleValue {
+  /// ```css
+  /// .text-transform\:\$uppercase {
+  ///   text-transform: uppercase;
+  /// }
+  /// ```
+  #[inline]
+  fn uppercase(&self) -> String {
+    self.append_value("uppercase")
+  }
+  /// ```css
+  /// .text-transform\:\$lowercase {
+  ///   text-transform: lowercase;
+  /// }
+  /// ```
+  #[inline]
+  fn lowercase(&self) -> String {
+    self.append_value("lowercase")
+  }
+  /// ```css
+  /// .text-transform\:\$capitalize {
+  ///   text-transform: capitalize;
+  /// }
+  /// ```
+  #[inline]
+  fn capitalize(&self) -> String {
+    self.append_value("capitalize")
+  }
+  /// ```css
+  /// .text-transform\:\$none {
+  ///   text-transform: none;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+impl GeneratedValueSetTextTransform for GeneratedAtomTextTransform {}
+pub struct GeneratedAtomTextOverflow(String);
+impl GeneratedSkribbleValue for GeneratedAtomTextOverflow {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetTextOverflow: GeneratedSkribbleValue {
+  /// ```css
+  /// .text-overflow\:\$ellipsis {
+  ///   text-overflow: ellipsis;
+  /// }
+  /// ```
+  #[inline]
+  fn ellipsis(&self) -> String {
+    self.append_value("ellipsis")
+  }
+  /// ```css
+  /// .text-overflow\:\$clip {
+  ///   text-overflow: clip;
+  /// }
+  /// ```
+  #[inline]
+  fn clip(&self) -> String {
+    self.append_value("clip")
+  }
+}
+impl GeneratedValueSetTextOverflow for GeneratedAtomTextOverflow {}
+pub struct GeneratedAtomIndent(String);
+impl GeneratedSkribbleValue for GeneratedAtomIndent {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetIndent: GeneratedSkribbleValue {
+  /// ```css
+  /// .indent\:\$0 {
+  ///   text-indent: 0px;
+  /// }
+  /// ```
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+  /// ```css
+  /// .indent\:\$px {
+  ///   text-indent: 1px;
+  /// }
+  /// ```
+  #[inline]
+  fn px(&self) -> String {
+    self.append_value("px")
+  }
+  /// ```css
+  /// .indent\:\$0\.5 {
+  ///   text-indent: 0.125rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n0_5(&self) -> String {
+    self.append_value("0.5")
+  }
+  /// ```css
+  /// .indent\:\$1 {
+  ///   text-indent: 0.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+  /// ```css
+  /// .indent\:\$1\.5 {
+  ///   text-indent: 0.375rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n1_5(&self) -> String {
+    self.append_value("1.5")
+  }
+  /// ```css
+  /// .indent\:\$2 {
+  ///   text-indent: 0.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+  /// ```css
+  /// .indent\:\$2\.5 {
+  ///   text-indent: 0.625rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n2_5(&self) -> String {
+    self.append_value("2.5")
+  }
+  /// ```css
+  /// .indent\:\$3 {
+  ///   text-indent: 0.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+  /// ```css
+  /// .indent\:\$3\.5 {
+  ///   text-indent: 0.875rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n3_5(&self) -> String {
+    self.append_value("3.5")
+  }
+  /// ```css
+  /// .indent\:\$4 {
+  ///   text-indent: 1rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+  /// ```css
+  /// .indent\:\$5 {
+  ///   text-indent: 1.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+  /// ```css
+  /// .indent\:\$6 {
+  ///   text-indent: 1.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+  /// ```css
+  /// .indent\:\$7 {
+  ///   text-indent: 1.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+  /// ```css
+  /// .indent\:\$8 {
+  ///   text-indent: 2rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+  /// ```css
+  /// .indent\:\$9 {
+  ///   text-indent: 2.25rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+  /// ```css
+  /// .indent\:\$10 {
+  ///   text-indent: 2.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+  /// ```css
+  /// .indent\:\$11 {
+  ///   text-indent: 2.75rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+  /// ```css
+  /// .indent\:\$12 {
+  ///   text-indent: 3rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+  /// ```css
+  /// .indent\:\$14 {
+  ///   text-indent: 3.5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+  /// ```css
+  /// .indent\:\$16 {
+  ///   text-indent: 4rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+  /// ```css
+  /// .indent\:\$20 {
+  ///   text-indent: 5rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n20(&self) -> String {
+    self.append_value("20")
+  }
+  /// ```css
+  /// .indent\:\$24 {
+  ///   text-indent: 6rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n24(&self) -> String {
+    self.append_value("24")
+  }
+  /// ```css
+  /// .indent\:\$28 {
+  ///   text-indent: 7rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n28(&self) -> String {
+    self.append_value("28")
+  }
+  /// ```css
+  /// .indent\:\$32 {
+  ///   text-indent: 8rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n32(&self) -> String {
+    self.append_value("32")
+  }
+  /// ```css
+  /// .indent\:\$36 {
+  ///   text-indent: 9rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n36(&self) -> String {
+    self.append_value("36")
+  }
+  /// ```css
+  /// .indent\:\$40 {
+  ///   text-indent: 10rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n40(&self) -> String {
+    self.append_value("40")
+  }
+  /// ```css
+  /// .indent\:\$44 {
+  ///   text-indent: 11rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n44(&self) -> String {
+    self.append_value("44")
+  }
+  /// ```css
+  /// .indent\:\$48 {
+  ///   text-indent: 12rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n48(&self) -> String {
+    self.append_value("48")
+  }
+  /// ```css
+  /// .indent\:\$52 {
+  ///   text-indent: 13rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n52(&self) -> String {
+    self.append_value("52")
+  }
+  /// ```css
+  /// .indent\:\$56 {
+  ///   text-indent: 14rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n56(&self) -> String {
+    self.append_value("56")
+  }
+  /// ```css
+  /// .indent\:\$60 {
+  ///   text-indent: 15rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n60(&self) -> String {
+    self.append_value("60")
+  }
+  /// ```css
+  /// .indent\:\$64 {
+  ///   text-indent: 16rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n64(&self) -> String {
+    self.append_value("64")
+  }
+  /// ```css
+  /// .indent\:\$72 {
+  ///   text-indent: 18rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n72(&self) -> String {
+    self.append_value("72")
+  }
+  /// ```css
+  /// .indent\:\$80 {
+  ///   text-indent: 20rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n80(&self) -> String {
+    self.append_value("80")
+  }
+  /// ```css
+  /// .indent\:\$96 {
+  ///   text-indent: 24rem;
+  /// }
+  /// ```
+  #[inline]
+  fn n96(&self) -> String {
+    self.append_value("96")
+  }
+}
+impl GeneratedValueSetIndent for GeneratedAtomIndent {}
+pub struct GeneratedAtomAlign(String);
+impl GeneratedSkribbleValue for GeneratedAtomAlign {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetAlign: GeneratedSkribbleValue {
+}
+impl GeneratedValueSetAlign for GeneratedAtomAlign {}
+pub struct GeneratedAtomWhitespace(String);
+impl GeneratedSkribbleValue for GeneratedAtomWhitespace {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetWhitespace: GeneratedSkribbleValue {
+  /// ```css
+  /// .whitespace\:\$normal {
+  ///   white-space: normal;
+  /// }
+  /// ```
+  #[inline]
+  fn normal(&self) -> String {
+    self.append_value("normal")
+  }
+  /// ```css
+  /// .whitespace\:\$nowrap {
+  ///   white-space: nowrap;
+  /// }
+  /// ```
+  #[inline]
+  fn nowrap(&self) -> String {
+    self.append_value("nowrap")
+  }
+  /// ```css
+  /// .whitespace\:\$pre {
+  ///   white-space: pre;
+  /// }
+  /// ```
+  #[inline]
+  fn pre(&self) -> String {
+    self.append_value("pre")
+  }
+  /// ```css
+  /// .whitespace\:\$pre-line {
+  ///   white-space: pre-line;
+  /// }
+  /// ```
+  #[inline]
+  fn pre_line(&self) -> String {
+    self.append_value("pre-line")
+  }
+  /// ```css
+  /// .whitespace\:\$pre-wrap {
+  ///   white-space: pre-wrap;
+  /// }
+  /// ```
+  #[inline]
+  fn pre_wrap(&self) -> String {
+    self.append_value("pre-wrap")
+  }
+  /// ```css
+  /// .whitespace\:\$break-spaces {
+  ///   white-space: break-spaces;
+  /// }
+  /// ```
+  #[inline]
+  fn break_spaces(&self) -> String {
+    self.append_value("break-spaces")
+  }
+}
+impl GeneratedValueSetWhitespace for GeneratedAtomWhitespace {}
+pub struct GeneratedAtomBreak(String);
+impl GeneratedSkribbleValue for GeneratedAtomBreak {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBreak: GeneratedSkribbleValue {
+  /// ```css
+  /// .break\:\$auto {
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .break\:\$avoid {
+  /// }
+  /// ```
+  #[inline]
+  fn avoid(&self) -> String {
+    self.append_value("avoid")
+  }
+  /// ```css
+  /// .break\:\$all {
+  ///   word-break: break-all;
+  /// }
+  /// ```
+  #[inline]
+  fn all(&self) -> String {
+    self.append_value("all")
+  }
+  /// ```css
+  /// .break\:\$avoid-page {
+  /// }
+  /// ```
+  #[inline]
+  fn avoid_page(&self) -> String {
+    self.append_value("avoid-page")
+  }
+  /// ```css
+  /// .break\:\$page {
+  /// }
+  /// ```
+  #[inline]
+  fn page(&self) -> String {
+    self.append_value("page")
+  }
+  /// ```css
+  /// .break\:\$left {
+  /// }
+  /// ```
+  #[inline]
+  fn left(&self) -> String {
+    self.append_value("left")
+  }
+  /// ```css
+  /// .break\:\$right {
+  /// }
+  /// ```
+  #[inline]
+  fn right(&self) -> String {
+    self.append_value("right")
+  }
+  /// ```css
+  /// .break\:\$column {
+  /// }
+  /// ```
+  #[inline]
+  fn column(&self) -> String {
+    self.append_value("column")
+  }
+  /// ```css
+  /// .break\:\$normal {
+  ///   overflow-wrap: normal;
+  ///   word-break: normal;
+  /// }
+  /// ```
+  #[inline]
+  fn normal(&self) -> String {
+    self.append_value("normal")
+  }
+  /// ```css
+  /// .break\:\$words {
+  ///   overflow-wrap: break-word;
+  /// }
+  /// ```
+  #[inline]
+  fn words(&self) -> String {
+    self.append_value("words")
+  }
+  /// ```css
+  /// .break\:\$keep {
+  ///   word-break: keep-all;
+  /// }
+  /// ```
+  #[inline]
+  fn keep(&self) -> String {
+    self.append_value("keep")
+  }
+}
+impl GeneratedValueSetBreak for GeneratedAtomBreak {}
+pub struct GeneratedAtomHyphens(String);
+impl GeneratedSkribbleValue for GeneratedAtomHyphens {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetHyphens: GeneratedSkribbleValue {
+  /// ```css
+  /// .hyphens\:\$none {
+  ///   hyphens: none;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+  /// ```css
+  /// .hyphens\:\$auto {
+  ///   hyphens: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .hyphens\:\$manual {
+  ///   hyphens: manual;
+  /// }
+  /// ```
+  #[inline]
+  fn manual(&self) -> String {
+    self.append_value("manual")
+  }
+}
+impl GeneratedValueSetHyphens for GeneratedAtomHyphens {}
 pub trait GeneratedAtom: GeneratedSkribbleValue {
   /// Screen reader only
   #[inline]
@@ -47229,6 +48939,198 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   fn font_size_(&self, value: &'static str) -> String {
     self.append(format!("font-size:[{}]", value.trim()))
   }
+  #[inline]
+  fn smoothing(&self) -> GeneratedAtomSmoothing {
+    GeneratedAtomSmoothing::from_ref(self.append("smoothing"))
+  }
+  #[inline]
+  fn smoothing_(&self, value: &'static str) -> String {
+    self.append(format!("smoothing:[{}]", value.trim()))
+  }
+  #[inline]
+  fn font_style(&self) -> GeneratedAtomFontStyle {
+    GeneratedAtomFontStyle::from_ref(self.append("font-style"))
+  }
+  #[inline]
+  fn font_style_(&self, value: &'static str) -> String {
+    self.append(format!("font-style:[{}]", value.trim()))
+  }
+  #[inline]
+  fn font_weight(&self) -> GeneratedAtomFontWeight {
+    GeneratedAtomFontWeight::from_ref(self.append("font-weight"))
+  }
+  #[inline]
+  fn font_weight_(&self, value: &'static str) -> String {
+    self.append(format!("font-weight:[{}]", value.trim()))
+  }
+  #[inline]
+  fn font_numeric(&self) -> GeneratedAtomFontNumeric {
+    GeneratedAtomFontNumeric::from_ref(self.append("font-numeric"))
+  }
+  #[inline]
+  fn font_numeric_(&self, value: &'static str) -> String {
+    self.append(format!("font-numeric:[{}]", value.trim()))
+  }
+  #[inline]
+  fn tracking(&self) -> GeneratedAtomTracking {
+    GeneratedAtomTracking::from_ref(self.append("tracking"))
+  }
+  #[inline]
+  fn tracking_(&self, value: &'static str) -> String {
+    self.append(format!("tracking:[{}]", value.trim()))
+  }
+  #[inline]
+  fn line_clamp(&self) -> GeneratedAtomLineClamp {
+    GeneratedAtomLineClamp::from_ref(self.append("line-clamp"))
+  }
+  #[inline]
+  fn line_clamp_(&self, value: &'static str) -> String {
+    self.append(format!("line-clamp:[{}]", value.trim()))
+  }
+  #[inline]
+  fn leading(&self) -> GeneratedAtomLeading {
+    GeneratedAtomLeading::from_ref(self.append("leading"))
+  }
+  #[inline]
+  fn leading_(&self, value: &'static str) -> String {
+    self.append(format!("leading:[{}]", value.trim()))
+  }
+  #[inline]
+  fn list_image(&self) -> GeneratedAtomListImage {
+    GeneratedAtomListImage::from_ref(self.append("list-image"))
+  }
+  #[inline]
+  fn list_image_(&self, value: &'static str) -> String {
+    self.append(format!("list-image:[{}]", value.trim()))
+  }
+  #[inline]
+  fn list_position(&self) -> GeneratedAtomListPosition {
+    GeneratedAtomListPosition::from_ref(self.append("list-position"))
+  }
+  #[inline]
+  fn list_position_(&self, value: &'static str) -> String {
+    self.append(format!("list-position:[{}]", value.trim()))
+  }
+  #[inline]
+  fn list_type(&self) -> GeneratedAtomListType {
+    GeneratedAtomListType::from_ref(self.append("list-type"))
+  }
+  #[inline]
+  fn list_type_(&self, value: &'static str) -> String {
+    self.append(format!("list-type:[{}]", value.trim()))
+  }
+  #[inline]
+  fn text_align(&self) -> GeneratedAtomTextAlign {
+    GeneratedAtomTextAlign::from_ref(self.append("text-align"))
+  }
+  #[inline]
+  fn text_align_(&self, value: &'static str) -> String {
+    self.append(format!("text-align:[{}]", value.trim()))
+  }
+  #[inline]
+  fn text(&self) -> GeneratedAtomText {
+    GeneratedAtomText::from_ref(self.append("text"))
+  }
+  #[inline]
+  fn text_(&self, value: &'static str) -> String {
+    self.append(format!("text:[{}]", value.trim()))
+  }
+  #[inline]
+  fn text_decoration(&self) -> GeneratedAtomTextDecoration {
+    GeneratedAtomTextDecoration::from_ref(self.append("text-decoration"))
+  }
+  #[inline]
+  fn text_decoration_(&self, value: &'static str) -> String {
+    self.append(format!("text-decoration:[{}]", value.trim()))
+  }
+  #[inline]
+  fn decoration(&self) -> GeneratedAtomDecoration {
+    GeneratedAtomDecoration::from_ref(self.append("decoration"))
+  }
+  #[inline]
+  fn decoration_(&self, value: &'static str) -> String {
+    self.append(format!("decoration:[{}]", value.trim()))
+  }
+  #[inline]
+  fn decoration_style(&self) -> GeneratedAtomDecorationStyle {
+    GeneratedAtomDecorationStyle::from_ref(self.append("decoration-style"))
+  }
+  #[inline]
+  fn decoration_style_(&self, value: &'static str) -> String {
+    self.append(format!("decoration-style:[{}]", value.trim()))
+  }
+  #[inline]
+  fn decoration_thickness(&self) -> GeneratedAtomDecorationThickness {
+    GeneratedAtomDecorationThickness::from_ref(self.append("decoration-thickness"))
+  }
+  #[inline]
+  fn decoration_thickness_(&self, value: &'static str) -> String {
+    self.append(format!("decoration-thickness:[{}]", value.trim()))
+  }
+  #[inline]
+  fn underline_offset(&self) -> GeneratedAtomUnderlineOffset {
+    GeneratedAtomUnderlineOffset::from_ref(self.append("underline-offset"))
+  }
+  #[inline]
+  fn underline_offset_(&self, value: &'static str) -> String {
+    self.append(format!("underline-offset:[{}]", value.trim()))
+  }
+  #[inline]
+  fn text_transform(&self) -> GeneratedAtomTextTransform {
+    GeneratedAtomTextTransform::from_ref(self.append("text-transform"))
+  }
+  #[inline]
+  fn text_transform_(&self, value: &'static str) -> String {
+    self.append(format!("text-transform:[{}]", value.trim()))
+  }
+  #[inline]
+  fn text_overflow(&self) -> GeneratedAtomTextOverflow {
+    GeneratedAtomTextOverflow::from_ref(self.append("text-overflow"))
+  }
+  #[inline]
+  fn text_overflow_(&self, value: &'static str) -> String {
+    self.append(format!("text-overflow:[{}]", value.trim()))
+  }
+  #[inline]
+  fn indent(&self) -> GeneratedAtomIndent {
+    GeneratedAtomIndent::from_ref(self.append("indent"))
+  }
+  #[inline]
+  fn indent_(&self, value: &'static str) -> String {
+    self.append(format!("indent:[{}]", value.trim()))
+  }
+  #[inline]
+  fn align(&self) -> GeneratedAtomAlign {
+    GeneratedAtomAlign::from_ref(self.append("align"))
+  }
+  #[inline]
+  fn align_(&self, value: &'static str) -> String {
+    self.append(format!("align:[{}]", value.trim()))
+  }
+  #[inline]
+  fn whitespace(&self) -> GeneratedAtomWhitespace {
+    GeneratedAtomWhitespace::from_ref(self.append("whitespace"))
+  }
+  #[inline]
+  fn whitespace_(&self, value: &'static str) -> String {
+    self.append(format!("whitespace:[{}]", value.trim()))
+  }
+  #[inline]
+  fn r#break(&self) -> GeneratedAtomBreak {
+    GeneratedAtomBreak::from_ref(self.append("break"))
+  }
+  #[inline]
+  fn r#break_(&self, value: &'static str) -> String {
+    self.append(format!("break:[{}]", value.trim()))
+  }
+  #[inline]
+  fn hyphens(&self) -> GeneratedAtomHyphens {
+    GeneratedAtomHyphens::from_ref(self.append("hyphens"))
+  }
+  #[inline]
+  fn hyphens_(&self, value: &'static str) -> String {
+    self.append(format!("hyphens:[{}]", value.trim()))
+  }
 }
 pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   #[inline]
@@ -47560,6 +49462,210 @@ pub trait GeneratedAliases: GeneratedSkribbleValue {
   #[inline]
   fn text_9xl(&self) -> String {
     ["font-size:$9xl"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn antialiased_1(&self) -> String {
+    ["smoothing:$antialiased"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn subpixel_antialiased_1(&self) -> String {
+    ["smoothing:$subpixel"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn italic_1(&self) -> String {
+    ["font-style:$italic"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn non_italic_1(&self) -> String {
+    ["font-style:$normal"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn font_thin(&self) -> String {
+    ["font-weight:$thin"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn font_extralight(&self) -> String {
+    ["font-weight:$extralight"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn font_light(&self) -> String {
+    ["font-weight:$light"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn font_normal(&self) -> String {
+    ["font-weight:$normal"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn font_medium(&self) -> String {
+    ["font-weight:$medium"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn font_semibold(&self) -> String {
+    ["font-weight:$semibold"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn font_bold(&self) -> String {
+    ["font-weight:$bold"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn font_extrabold(&self) -> String {
+    ["font-weight:$extrabold"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn font_black(&self) -> String {
+    ["font-weight:$black"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn slashed_zero(&self) -> String {
+    ["font-numeric:$slashed"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn lining_nums(&self) -> String {
+    ["font-numeric:$lining"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn oldstyle_nums(&self) -> String {
+    ["font-numeric:$oldstyle"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn proportional_nums(&self) -> String {
+    ["font-numeric:$proportional"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn tabular_nums(&self) -> String {
+    ["font-numeric:$tabular"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn diagonal_fractions(&self) -> String {
+    ["font-numeric:$diagonal"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn stacked_fractions(&self) -> String {
+    ["font-numeric:$stacked"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn list_inside(&self) -> String {
+    ["list-position:$inside"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn list_outside(&self) -> String {
+    ["list-position:$outside"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_left(&self) -> String {
+    ["text-align:$left"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_center(&self) -> String {
+    ["text-align:$center"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_right(&self) -> String {
+    ["text-align:$right"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_justify(&self) -> String {
+    ["text-align:$justify"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_start(&self) -> String {
+    ["text-align:$start"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_end(&self) -> String {
+    ["text-align:$end"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn underline(&self) -> String {
+    ["text-decoration:$underline"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn overline(&self) -> String {
+    ["text-decoration:$overline"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn line_through(&self) -> String {
+    ["text-decoration:$through"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn strikethrough(&self) -> String {
+    ["text-decoration:$through"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn no_underline(&self) -> String {
+    ["text-decoration:$none"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn decoration_solid(&self) -> String {
+    ["decoration-style:$solid"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn decoration_double(&self) -> String {
+    ["decoration-style:$double"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn decoration_dotted(&self) -> String {
+    ["decoration-style:$dotted"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn decoration_dashed(&self) -> String {
+    ["decoration-style:$dashed"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn decoration_wavy(&self) -> String {
+    ["decoration-style:$wavy"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn decoration_auto(&self) -> String {
+    ["decoration-thickness:$auto"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn decoration_from_font(&self) -> String {
+    ["decoration-thickness:$from-font"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn decoration_0(&self) -> String {
+    ["decoration-thickness:$0"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn decoration_1(&self) -> String {
+    ["decoration-thickness:$1"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn decoration_2(&self) -> String {
+    ["decoration-thickness:$2"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn decoration_4(&self) -> String {
+    ["decoration-thickness:$4"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn decoration_8(&self) -> String {
+    ["decoration-thickness:$8"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn uppercase(&self) -> String {
+    ["text-transform:$uppercase"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn lowercase(&self) -> String {
+    ["text-transform:$lowercase"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn capitalize(&self) -> String {
+    ["text-transform:$capitalize"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_ellipsis(&self) -> String {
+    ["text-overflow:$ellipsis"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn text_clip(&self) -> String {
+    ["text-overflow:$clip"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn truncate(&self) -> String {
+    ["visibility:$hidden", "text-overflow:$ellipsis", "whitespace:$nowrap"].map(|class| self.append(class)).join(" ")
   }
 }
 impl GeneratedMediaQueryDeviceCategories for GeneratedSkribbleRoot {}
