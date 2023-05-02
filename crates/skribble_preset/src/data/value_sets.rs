@@ -1372,6 +1372,14 @@ lazy_static! {
         .name("hyphens")
         .values(indexmap! { "manual" => "manual" })
         .build(),
+      ValueSet::builder()
+        .name("background-attachment")
+        .values(indexmap! { 
+          "fixed" => "fixed",
+          "local" => "local",
+          "scroll" => "scroll",
+        })
+        .build(),
     ]
   };
 }

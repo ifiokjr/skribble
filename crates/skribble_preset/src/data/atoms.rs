@@ -454,11 +454,6 @@ lazy_static! {
         .styles(indexmap! { "direction" => none })
         .build(),
       Atom::builder()
-        .name("bg")
-        .values(LinkedValues::Color)
-        .styles(indexmap! { "background-color" => none })
-        .build(),
-      Atom::builder()
         .name("opacity")
         .values(vec!["opacity"])
         .styles(indexmap! { "opacity" => none })
@@ -1161,6 +1156,18 @@ lazy_static! {
         .name("content")
         .values(vec!["none"])
         .styles(indexmap! { "content" => none })
+        .build(),
+
+      // Backgrounds
+      Atom::builder()
+        .name("bg-attachment")
+        .values(vec!["background-attachment"])
+        .styles(indexmap! { "background-attachment" => none })
+        .build(),
+      Atom::builder()
+        .name("bg")
+        .values(LinkedValues::Color)
+        .styles(indexmap! { "background-color" => none })
         .build(),
     ]
   };

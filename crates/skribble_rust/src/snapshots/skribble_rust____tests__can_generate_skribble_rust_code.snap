@@ -27080,18 +27080,6 @@ pub trait GeneratedValueSetDir: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetDir for GeneratedAtomDir {}
-pub struct GeneratedAtomBg(String);
-impl GeneratedSkribbleValue for GeneratedAtomBg {
-  #[inline]
-  fn from_ref(value: impl AsRef<str>) -> Self {
-    Self(value.as_ref().to_string())
-  }
-  #[inline]
-  fn get_skribble_value(&self) -> &String {
-    &self.0
-  }
-}
-impl GeneratedColorSet for GeneratedAtomBg {}
 pub struct GeneratedAtomOpacity(String);
 impl GeneratedSkribbleValue for GeneratedAtomOpacity {
   #[inline]
@@ -47603,6 +47591,59 @@ pub trait GeneratedValueSetHyphens: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetHyphens for GeneratedAtomHyphens {}
+pub struct GeneratedAtomBgAttachment(String);
+impl GeneratedSkribbleValue for GeneratedAtomBgAttachment {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBgAttachment: GeneratedSkribbleValue {
+  /// ```css
+  /// .bg-attachment\:\$fixed {
+  ///   background-attachment: fixed;
+  /// }
+  /// ```
+  #[inline]
+  fn fixed(&self) -> String {
+    self.append_value("fixed")
+  }
+  /// ```css
+  /// .bg-attachment\:\$local {
+  ///   background-attachment: local;
+  /// }
+  /// ```
+  #[inline]
+  fn local(&self) -> String {
+    self.append_value("local")
+  }
+  /// ```css
+  /// .bg-attachment\:\$scroll {
+  ///   background-attachment: scroll;
+  /// }
+  /// ```
+  #[inline]
+  fn scroll(&self) -> String {
+    self.append_value("scroll")
+  }
+}
+impl GeneratedValueSetBgAttachment for GeneratedAtomBgAttachment {}
+pub struct GeneratedAtomBg(String);
+impl GeneratedSkribbleValue for GeneratedAtomBg {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorSet for GeneratedAtomBg {}
 pub trait GeneratedAtom: GeneratedSkribbleValue {
   /// Screen reader only
   #[inline]
@@ -48093,14 +48134,6 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   #[inline]
   fn dir_(&self, value: &'static str) -> String {
     self.append(format!("dir:[{}]", value.trim()))
-  }
-  #[inline]
-  fn bg(&self) -> GeneratedAtomBg {
-    GeneratedAtomBg::from_ref(self.append("bg"))
-  }
-  #[inline]
-  fn bg_(&self, value: &'static str) -> String {
-    self.append(format!("bg:[{}]", value.trim()))
   }
   #[inline]
   fn opacity(&self) -> GeneratedAtomOpacity {
@@ -49131,6 +49164,22 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   fn hyphens_(&self, value: &'static str) -> String {
     self.append(format!("hyphens:[{}]", value.trim()))
   }
+  #[inline]
+  fn bg_attachment(&self) -> GeneratedAtomBgAttachment {
+    GeneratedAtomBgAttachment::from_ref(self.append("bg-attachment"))
+  }
+  #[inline]
+  fn bg_attachment_(&self, value: &'static str) -> String {
+    self.append(format!("bg-attachment:[{}]", value.trim()))
+  }
+  #[inline]
+  fn bg(&self) -> GeneratedAtomBg {
+    GeneratedAtomBg::from_ref(self.append("bg"))
+  }
+  #[inline]
+  fn bg_(&self, value: &'static str) -> String {
+    self.append(format!("bg:[{}]", value.trim()))
+  }
 }
 pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   #[inline]
@@ -49666,6 +49715,18 @@ pub trait GeneratedAliases: GeneratedSkribbleValue {
   #[inline]
   fn truncate(&self) -> String {
     ["visibility:$hidden", "text-overflow:$ellipsis", "whitespace:$nowrap"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_fixed(&self) -> String {
+    ["bg-attachment:$fixed"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_local(&self) -> String {
+    ["bg-attachment:$local"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_scroll(&self) -> String {
+    ["bg-attachment:$scroll"].map(|class| self.append(class)).join(" ")
   }
 }
 impl GeneratedMediaQueryDeviceCategories for GeneratedSkribbleRoot {}

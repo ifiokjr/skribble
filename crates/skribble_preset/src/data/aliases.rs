@@ -483,5 +483,17 @@ lazy_static! {
         "whitespace:$nowrap"
       ])
       .build(),
+    Alias::builder()
+      .name("bg-fixed")
+      .classes(vec!["bg-attachment:$fixed"])
+      .build(),
+    Alias::builder()
+      .name("bg-local")
+      .classes(vec!["bg-attachment:$local"])
+      .build(),
+    Alias::builder()
+      .name("bg-scroll")
+      .classes(vec!["bg-attachment:$scroll"])
+      .build(),
   ];
 }

@@ -29,15 +29,15 @@ expression: scanned.code
     --sk-a: hsl(var(--sk-clr-a) / var(--sk-op-a));
   }
 
+  .aspect\:\$square {
+    aspect-ratio: 1;
+  }
+
   .bg\:\$accent {
     background-color: hsl(var(--sk-clr-a) / var(--sk-op-a));
   }
 
   .bg\:\$red100 {
-  }
-
-  .aspect\:\$square {
-    aspect-ratio: 1;
   }
 
   @media (width >= 768px) {
