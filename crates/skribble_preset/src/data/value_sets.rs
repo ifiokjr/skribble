@@ -1380,6 +1380,15 @@ lazy_static! {
           "scroll" => "scroll",
         })
         .build(),
+      ValueSet::builder()
+        .name("background-clip")
+        .values(indexmap! { 
+          "border" => "border-box",
+          "padding" => "padding-box",
+          "content" => "content-box",
+          "text" => "text",
+        })
+        .build(),
     ]
   };
 }

@@ -47632,6 +47632,56 @@ pub trait GeneratedValueSetBgAttachment: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetBgAttachment for GeneratedAtomBgAttachment {}
+pub struct GeneratedAtomBgClip(String);
+impl GeneratedSkribbleValue for GeneratedAtomBgClip {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBgClip: GeneratedSkribbleValue {
+  /// ```css
+  /// .bg-clip\:\$border {
+  ///   background-clip: border-box;
+  /// }
+  /// ```
+  #[inline]
+  fn border(&self) -> String {
+    self.append_value("border")
+  }
+  /// ```css
+  /// .bg-clip\:\$padding {
+  ///   background-clip: padding-box;
+  /// }
+  /// ```
+  #[inline]
+  fn padding(&self) -> String {
+    self.append_value("padding")
+  }
+  /// ```css
+  /// .bg-clip\:\$content {
+  ///   background-clip: content-box;
+  /// }
+  /// ```
+  #[inline]
+  fn content(&self) -> String {
+    self.append_value("content")
+  }
+  /// ```css
+  /// .bg-clip\:\$text {
+  ///   background-clip: text;
+  /// }
+  /// ```
+  #[inline]
+  fn text(&self) -> String {
+    self.append_value("text")
+  }
+}
+impl GeneratedValueSetBgClip for GeneratedAtomBgClip {}
 pub struct GeneratedAtomBg(String);
 impl GeneratedSkribbleValue for GeneratedAtomBg {
   #[inline]
@@ -49171,6 +49221,14 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
   #[inline]
   fn bg_attachment_(&self, value: &'static str) -> String {
     self.append(format!("bg-attachment:[{}]", value.trim()))
+  }
+  #[inline]
+  fn bg_clip(&self) -> GeneratedAtomBgClip {
+    GeneratedAtomBgClip::from_ref(self.append("bg-clip"))
+  }
+  #[inline]
+  fn bg_clip_(&self, value: &'static str) -> String {
+    self.append(format!("bg-clip:[{}]", value.trim()))
   }
   #[inline]
   fn bg(&self) -> GeneratedAtomBg {

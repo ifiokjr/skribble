@@ -4447,6 +4447,23 @@ expression: runner_config
         ]
       }
     },
+    "bg-clip": {
+      "name": "bg-clip",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "background-clip": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "background-clip"
+          }
+        ]
+      }
+    },
     "bg": {
       "name": "bg",
       "description": null,
@@ -6295,6 +6312,7 @@ expression: runner_config
       "break",
       "hyphens",
       "bg-attachment",
+      "bg-clip",
       "bg"
     ],
     "classes": [
@@ -12473,6 +12491,12 @@ expression: runner_config
       "local",
       "scroll"
     ],
+    "atom:bg-clip": [
+      "border",
+      "padding",
+      "content",
+      "text"
+    ],
     "atom:bg": [
       "primary",
       "primary-content",
@@ -14618,6 +14642,17 @@ expression: runner_config
         "fixed": "fixed",
         "local": "local",
         "scroll": "scroll"
+      }
+    },
+    "background-clip": {
+      "name": "background-clip",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "border": "border-box",
+        "padding": "padding-box",
+        "content": "content-box",
+        "text": "text"
       }
     }
   }

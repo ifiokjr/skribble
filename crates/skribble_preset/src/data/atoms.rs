@@ -1165,6 +1165,11 @@ lazy_static! {
         .styles(indexmap! { "background-attachment" => none })
         .build(),
       Atom::builder()
+        .name("bg-clip")
+        .values(vec!["background-clip"])
+        .styles(indexmap! { "background-clip" => none })
+        .build(),
+      Atom::builder()
         .name("bg")
         .values(LinkedValues::Color)
         .styles(indexmap! { "background-color" => none })
