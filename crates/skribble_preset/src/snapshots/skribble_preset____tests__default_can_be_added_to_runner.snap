@@ -1094,6 +1094,168 @@ expression: runner_config
       "description": null,
       "name": "bg-scroll",
       "priority": 150
+    },
+    "bg-bottom": {
+      "classes": [
+        "bg-position:$bottom"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "bg-bottom",
+      "priority": 150
+    },
+    "bg-center": {
+      "classes": [
+        "bg-position:$center"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "bg-center",
+      "priority": 150
+    },
+    "bg-left": {
+      "classes": [
+        "bg-position:$left"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "bg-left",
+      "priority": 150
+    },
+    "bg-left-bottom": {
+      "classes": [
+        "bg-position:$left-bottom"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "bg-left-bottom",
+      "priority": 150
+    },
+    "bg-left-top": {
+      "classes": [
+        "bg-position:$left-top"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "bg-left-top",
+      "priority": 150
+    },
+    "bg-right": {
+      "classes": [
+        "bg-position:$right"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "bg-right",
+      "priority": 150
+    },
+    "bg-right-bottom": {
+      "classes": [
+        "bg-position:$right-bottom"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "bg-right-bottom",
+      "priority": 150
+    },
+    "bg-right-top": {
+      "classes": [
+        "bg-position:$right-top"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "bg-right-top",
+      "priority": 150
+    },
+    "bg-top": {
+      "classes": [
+        "bg-position:$top"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "bg-top",
+      "priority": 150
+    },
+    "bg-repeat": {
+      "classes": [
+        "bg-repeat:$default"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "bg-repeat",
+      "priority": 150
+    },
+    "bg-no-repeat": {
+      "classes": [
+        "bg-repeat:$none"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "bg-no-repeat",
+      "priority": 150
+    },
+    "bg-repeat-x": {
+      "classes": [
+        "bg-repeat:$x"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "bg-repeat-x",
+      "priority": 150
+    },
+    "bg-repeat-y": {
+      "classes": [
+        "bg-repeat:$y"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "bg-repeat-y",
+      "priority": 150
+    },
+    "bg-repeat-round": {
+      "classes": [
+        "bg-repeat:$round"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "bg-repeat-round",
+      "priority": 150
+    },
+    "bg-repeat-space": {
+      "classes": [
+        "bg-repeat:$space"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "bg-repeat-space",
+      "priority": 150
+    },
+    "bg-auto": {
+      "classes": [
+        "bg-size:$auto"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "bg-auto",
+      "priority": 150
+    },
+    "bg-cover": {
+      "classes": [
+        "bg-size:$cover"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "bg-cover",
+      "priority": 150
+    },
+    "bg-contain": {
+      "classes": [
+        "bg-size:$contain"
+      ],
+      "combined": false,
+      "description": null,
+      "name": "bg-contain",
+      "priority": 150
     }
   },
   "atoms": {
@@ -4447,6 +4609,16 @@ expression: runner_config
         ]
       }
     },
+    "bg": {
+      "name": "bg",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "background-color": null
+      },
+      "modifier": null,
+      "values": "color"
+    },
     "bg-clip": {
       "name": "bg-clip",
       "description": null,
@@ -4459,20 +4631,82 @@ expression: runner_config
         "values": [
           {
             "priority": 150,
-            "value": "background-clip"
+            "value": "background-origin"
+          },
+          {
+            "priority": 150,
+            "value": "background-text"
           }
         ]
       }
     },
-    "bg": {
-      "name": "bg",
+    "bg-origin": {
+      "name": "bg-origin",
       "description": null,
       "priority": 150,
       "styles": {
-        "background-color": null
+        "background-origin": null
       },
       "modifier": null,
-      "values": "color"
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "background-origin"
+          }
+        ]
+      }
+    },
+    "bg-position": {
+      "name": "bg-position",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "background-position": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "background-position"
+          }
+        ]
+      }
+    },
+    "bg-repeat": {
+      "name": "bg-repeat",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "background-repeat": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "background-repeat"
+          }
+        ]
+      }
+    },
+    "bg-size": {
+      "name": "bg-size",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "background-size": null
+      },
+      "modifier": null,
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "background-size"
+          }
+        ]
+      }
     }
   },
   "classes": {
@@ -6312,8 +6546,12 @@ expression: runner_config
       "break",
       "hyphens",
       "bg-attachment",
+      "bg",
       "bg-clip",
-      "bg"
+      "bg-origin",
+      "bg-position",
+      "bg-repeat",
+      "bg-size"
     ],
     "classes": [
       "group",
@@ -6456,7 +6694,25 @@ expression: runner_config
       "truncate",
       "bg-fixed",
       "bg-local",
-      "bg-scroll"
+      "bg-scroll",
+      "bg-bottom",
+      "bg-center",
+      "bg-left",
+      "bg-left-bottom",
+      "bg-left-top",
+      "bg-right",
+      "bg-right-bottom",
+      "bg-right-top",
+      "bg-top",
+      "bg-repeat",
+      "bg-no-repeat",
+      "bg-repeat-x",
+      "bg-repeat-y",
+      "bg-repeat-round",
+      "bg-repeat-space",
+      "bg-auto",
+      "bg-cover",
+      "bg-contain"
     ],
     "media_queries": [
       "screen",
@@ -12491,12 +12747,6 @@ expression: runner_config
       "local",
       "scroll"
     ],
-    "atom:bg-clip": [
-      "border",
-      "padding",
-      "content",
-      "text"
-    ],
     "atom:bg": [
       "primary",
       "primary-content",
@@ -12765,6 +13015,41 @@ expression: runner_config
       "rose800",
       "rose900",
       "rose950"
+    ],
+    "atom:bg-clip": [
+      "border",
+      "padding",
+      "content",
+      "text"
+    ],
+    "atom:bg-origin": [
+      "border",
+      "padding",
+      "content"
+    ],
+    "atom:bg-position": [
+      "bottom",
+      "center",
+      "left",
+      "left-bottom",
+      "left-top",
+      "right",
+      "right-bottom",
+      "right-top",
+      "top"
+    ],
+    "atom:bg-repeat": [
+      "default",
+      "none",
+      "x",
+      "y",
+      "round",
+      "space"
+    ],
+    "atom:bg-size": [
+      "auto",
+      "cover",
+      "contain"
     ]
   },
   "palette": {
@@ -14644,15 +14929,61 @@ expression: runner_config
         "scroll": "scroll"
       }
     },
-    "background-clip": {
-      "name": "background-clip",
+    "background-origin": {
+      "name": "background-origin",
       "description": null,
       "priority": 150,
       "values": {
         "border": "border-box",
         "padding": "padding-box",
-        "content": "content-box",
+        "content": "content-box"
+      }
+    },
+    "background-text": {
+      "name": "background-text",
+      "description": null,
+      "priority": 150,
+      "values": {
         "text": "text"
+      }
+    },
+    "background-position": {
+      "name": "background-position",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "bottom": "bottom",
+        "center": "center",
+        "left": "left",
+        "left-bottom": "left bottom",
+        "left-top": "left top",
+        "right": "right",
+        "right-bottom": "right bottom",
+        "right-top": "right top",
+        "top": "top"
+      }
+    },
+    "background-repeat": {
+      "name": "background-repeat",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "default": "repeat",
+        "none": "no-repeat",
+        "x": "repeat-x",
+        "y": "repeat-y",
+        "round": "round",
+        "space": "space"
+      }
+    },
+    "background-size": {
+      "name": "background-size",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "auto": "auto",
+        "cover": "cover",
+        "contain": "contain"
       }
     }
   }

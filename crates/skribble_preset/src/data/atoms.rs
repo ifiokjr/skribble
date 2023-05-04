@@ -1165,14 +1165,34 @@ lazy_static! {
         .styles(indexmap! { "background-attachment" => none })
         .build(),
       Atom::builder()
-        .name("bg-clip")
-        .values(vec!["background-clip"])
-        .styles(indexmap! { "background-clip" => none })
-        .build(),
-      Atom::builder()
         .name("bg")
         .values(LinkedValues::Color)
         .styles(indexmap! { "background-color" => none })
+        .build(),
+      Atom::builder()
+        .name("bg-clip")
+        .values(vec!["background-origin", "background-text"])
+        .styles(indexmap! { "background-clip" => none })
+        .build(),
+      Atom::builder()
+        .name("bg-origin")
+        .values(vec!["background-origin"])
+        .styles(indexmap! { "background-origin" => none })
+        .build(),
+      Atom::builder()
+        .name("bg-position")
+        .values(vec!["background-position"])
+        .styles(indexmap! { "background-position" => none })
+        .build(),
+      Atom::builder()
+        .name("bg-repeat")
+        .values(vec!["background-repeat"])
+        .styles(indexmap! { "background-repeat" => none })
+        .build(),
+      Atom::builder()
+        .name("bg-size")
+        .values(vec!["background-size"])
+        .styles(indexmap! { "background-size" => none })
         .build(),
     ]
   };

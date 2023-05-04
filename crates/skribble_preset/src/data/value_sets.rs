@@ -1381,12 +1381,50 @@ lazy_static! {
         })
         .build(),
       ValueSet::builder()
-        .name("background-clip")
+        .name("background-origin")
         .values(indexmap! { 
           "border" => "border-box",
           "padding" => "padding-box",
           "content" => "content-box",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("background-text")
+        .values(indexmap! { 
           "text" => "text",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("background-position")
+        .values(indexmap! { 
+          "bottom"	=> "bottom",
+          "center"	=> "center",
+          "left"	=> "left",
+          "left-bottom"	=> "left bottom",
+          "left-top"	=> "left top",
+          "right"	=> "right",
+          "right-bottom"	=> "right bottom",
+          "right-top"	=> "right top",
+          "top"	=> "top",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("background-repeat")
+        .values(indexmap! { 
+          "default" => "repeat",
+          "none" => "no-repeat",
+          "x" => "repeat-x",
+          "y" => "repeat-y",
+          "round" => "round",
+          "space" => "space",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("background-size")
+        .values(indexmap! { 
+          "auto" => "auto",
+          "cover" => "cover",
+          "contain" => "contain",
         })
         .build(),
     ]

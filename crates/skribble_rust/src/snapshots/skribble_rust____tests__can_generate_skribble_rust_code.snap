@@ -47632,6 +47632,18 @@ pub trait GeneratedValueSetBgAttachment: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetBgAttachment for GeneratedAtomBgAttachment {}
+pub struct GeneratedAtomBg(String);
+impl GeneratedSkribbleValue for GeneratedAtomBg {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorSet for GeneratedAtomBg {}
 pub struct GeneratedAtomBgClip(String);
 impl GeneratedSkribbleValue for GeneratedAtomBgClip {
   #[inline]
@@ -47682,8 +47694,8 @@ pub trait GeneratedValueSetBgClip: GeneratedSkribbleValue {
   }
 }
 impl GeneratedValueSetBgClip for GeneratedAtomBgClip {}
-pub struct GeneratedAtomBg(String);
-impl GeneratedSkribbleValue for GeneratedAtomBg {
+pub struct GeneratedAtomBgOrigin(String);
+impl GeneratedSkribbleValue for GeneratedAtomBgOrigin {
   #[inline]
   fn from_ref(value: impl AsRef<str>) -> Self {
     Self(value.as_ref().to_string())
@@ -47693,7 +47705,240 @@ impl GeneratedSkribbleValue for GeneratedAtomBg {
     &self.0
   }
 }
-impl GeneratedColorSet for GeneratedAtomBg {}
+pub trait GeneratedValueSetBgOrigin: GeneratedSkribbleValue {
+  /// ```css
+  /// .bg-origin\:\$border {
+  ///   background-origin: border-box;
+  /// }
+  /// ```
+  #[inline]
+  fn border(&self) -> String {
+    self.append_value("border")
+  }
+  /// ```css
+  /// .bg-origin\:\$padding {
+  ///   background-origin: padding-box;
+  /// }
+  /// ```
+  #[inline]
+  fn padding(&self) -> String {
+    self.append_value("padding")
+  }
+  /// ```css
+  /// .bg-origin\:\$content {
+  ///   background-origin: content-box;
+  /// }
+  /// ```
+  #[inline]
+  fn content(&self) -> String {
+    self.append_value("content")
+  }
+}
+impl GeneratedValueSetBgOrigin for GeneratedAtomBgOrigin {}
+pub struct GeneratedAtomBgPosition(String);
+impl GeneratedSkribbleValue for GeneratedAtomBgPosition {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBgPosition: GeneratedSkribbleValue {
+  /// ```css
+  /// .bg-position\:\$bottom {
+  ///   background-position: bottom;
+  /// }
+  /// ```
+  #[inline]
+  fn bottom(&self) -> String {
+    self.append_value("bottom")
+  }
+  /// ```css
+  /// .bg-position\:\$center {
+  ///   background-position: center;
+  /// }
+  /// ```
+  #[inline]
+  fn center(&self) -> String {
+    self.append_value("center")
+  }
+  /// ```css
+  /// .bg-position\:\$left {
+  ///   background-position: left;
+  /// }
+  /// ```
+  #[inline]
+  fn left(&self) -> String {
+    self.append_value("left")
+  }
+  /// ```css
+  /// .bg-position\:\$left-bottom {
+  ///   background-position: left bottom;
+  /// }
+  /// ```
+  #[inline]
+  fn left_bottom(&self) -> String {
+    self.append_value("left-bottom")
+  }
+  /// ```css
+  /// .bg-position\:\$left-top {
+  ///   background-position: left top;
+  /// }
+  /// ```
+  #[inline]
+  fn left_top(&self) -> String {
+    self.append_value("left-top")
+  }
+  /// ```css
+  /// .bg-position\:\$right {
+  ///   background-position: right;
+  /// }
+  /// ```
+  #[inline]
+  fn right(&self) -> String {
+    self.append_value("right")
+  }
+  /// ```css
+  /// .bg-position\:\$right-bottom {
+  ///   background-position: right bottom;
+  /// }
+  /// ```
+  #[inline]
+  fn right_bottom(&self) -> String {
+    self.append_value("right-bottom")
+  }
+  /// ```css
+  /// .bg-position\:\$right-top {
+  ///   background-position: right top;
+  /// }
+  /// ```
+  #[inline]
+  fn right_top(&self) -> String {
+    self.append_value("right-top")
+  }
+  /// ```css
+  /// .bg-position\:\$top {
+  ///   background-position: top;
+  /// }
+  /// ```
+  #[inline]
+  fn top(&self) -> String {
+    self.append_value("top")
+  }
+}
+impl GeneratedValueSetBgPosition for GeneratedAtomBgPosition {}
+pub struct GeneratedAtomBgRepeat(String);
+impl GeneratedSkribbleValue for GeneratedAtomBgRepeat {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBgRepeat: GeneratedSkribbleValue {
+  /// ```css
+  /// .bg-repeat\:\$default {
+  ///   background-repeat: repeat;
+  /// }
+  /// ```
+  #[inline]
+  fn default(&self) -> String {
+    self.append_value("default")
+  }
+  /// ```css
+  /// .bg-repeat\:\$none {
+  ///   background-repeat: no-repeat;
+  /// }
+  /// ```
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+  /// ```css
+  /// .bg-repeat\:\$x {
+  ///   background-repeat: repeat-x;
+  /// }
+  /// ```
+  #[inline]
+  fn x(&self) -> String {
+    self.append_value("x")
+  }
+  /// ```css
+  /// .bg-repeat\:\$y {
+  ///   background-repeat: repeat-y;
+  /// }
+  /// ```
+  #[inline]
+  fn y(&self) -> String {
+    self.append_value("y")
+  }
+  /// ```css
+  /// .bg-repeat\:\$round {
+  ///   background-repeat: round;
+  /// }
+  /// ```
+  #[inline]
+  fn round(&self) -> String {
+    self.append_value("round")
+  }
+  /// ```css
+  /// .bg-repeat\:\$space {
+  ///   background-repeat: space;
+  /// }
+  /// ```
+  #[inline]
+  fn space(&self) -> String {
+    self.append_value("space")
+  }
+}
+impl GeneratedValueSetBgRepeat for GeneratedAtomBgRepeat {}
+pub struct GeneratedAtomBgSize(String);
+impl GeneratedSkribbleValue for GeneratedAtomBgSize {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub trait GeneratedValueSetBgSize: GeneratedSkribbleValue {
+  /// ```css
+  /// .bg-size\:\$auto {
+  ///   background-size: auto;
+  /// }
+  /// ```
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+  /// ```css
+  /// .bg-size\:\$cover {
+  ///   background-size: cover;
+  /// }
+  /// ```
+  #[inline]
+  fn cover(&self) -> String {
+    self.append_value("cover")
+  }
+  /// ```css
+  /// .bg-size\:\$contain {
+  ///   background-size: contain;
+  /// }
+  /// ```
+  #[inline]
+  fn contain(&self) -> String {
+    self.append_value("contain")
+  }
+}
+impl GeneratedValueSetBgSize for GeneratedAtomBgSize {}
 pub trait GeneratedAtom: GeneratedSkribbleValue {
   /// Screen reader only
   #[inline]
@@ -49223,6 +49468,14 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
     self.append(format!("bg-attachment:[{}]", value.trim()))
   }
   #[inline]
+  fn bg(&self) -> GeneratedAtomBg {
+    GeneratedAtomBg::from_ref(self.append("bg"))
+  }
+  #[inline]
+  fn bg_(&self, value: &'static str) -> String {
+    self.append(format!("bg:[{}]", value.trim()))
+  }
+  #[inline]
   fn bg_clip(&self) -> GeneratedAtomBgClip {
     GeneratedAtomBgClip::from_ref(self.append("bg-clip"))
   }
@@ -49231,12 +49484,36 @@ pub trait GeneratedAtom: GeneratedSkribbleValue {
     self.append(format!("bg-clip:[{}]", value.trim()))
   }
   #[inline]
-  fn bg(&self) -> GeneratedAtomBg {
-    GeneratedAtomBg::from_ref(self.append("bg"))
+  fn bg_origin(&self) -> GeneratedAtomBgOrigin {
+    GeneratedAtomBgOrigin::from_ref(self.append("bg-origin"))
   }
   #[inline]
-  fn bg_(&self, value: &'static str) -> String {
-    self.append(format!("bg:[{}]", value.trim()))
+  fn bg_origin_(&self, value: &'static str) -> String {
+    self.append(format!("bg-origin:[{}]", value.trim()))
+  }
+  #[inline]
+  fn bg_position(&self) -> GeneratedAtomBgPosition {
+    GeneratedAtomBgPosition::from_ref(self.append("bg-position"))
+  }
+  #[inline]
+  fn bg_position_(&self, value: &'static str) -> String {
+    self.append(format!("bg-position:[{}]", value.trim()))
+  }
+  #[inline]
+  fn bg_repeat(&self) -> GeneratedAtomBgRepeat {
+    GeneratedAtomBgRepeat::from_ref(self.append("bg-repeat"))
+  }
+  #[inline]
+  fn bg_repeat_(&self, value: &'static str) -> String {
+    self.append(format!("bg-repeat:[{}]", value.trim()))
+  }
+  #[inline]
+  fn bg_size(&self) -> GeneratedAtomBgSize {
+    GeneratedAtomBgSize::from_ref(self.append("bg-size"))
+  }
+  #[inline]
+  fn bg_size_(&self, value: &'static str) -> String {
+    self.append(format!("bg-size:[{}]", value.trim()))
   }
 }
 pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
@@ -49785,6 +50062,78 @@ pub trait GeneratedAliases: GeneratedSkribbleValue {
   #[inline]
   fn bg_scroll(&self) -> String {
     ["bg-attachment:$scroll"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_bottom(&self) -> String {
+    ["bg-position:$bottom"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_center(&self) -> String {
+    ["bg-position:$center"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_left(&self) -> String {
+    ["bg-position:$left"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_left_bottom(&self) -> String {
+    ["bg-position:$left-bottom"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_left_top(&self) -> String {
+    ["bg-position:$left-top"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_right(&self) -> String {
+    ["bg-position:$right"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_right_bottom(&self) -> String {
+    ["bg-position:$right-bottom"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_right_top(&self) -> String {
+    ["bg-position:$right-top"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_top(&self) -> String {
+    ["bg-position:$top"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_repeat_1(&self) -> String {
+    ["bg-repeat:$default"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_no_repeat(&self) -> String {
+    ["bg-repeat:$none"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_repeat_x(&self) -> String {
+    ["bg-repeat:$x"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_repeat_y(&self) -> String {
+    ["bg-repeat:$y"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_repeat_round(&self) -> String {
+    ["bg-repeat:$round"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_repeat_space(&self) -> String {
+    ["bg-repeat:$space"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_auto(&self) -> String {
+    ["bg-size:$auto"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_cover(&self) -> String {
+    ["bg-size:$cover"].map(|class| self.append(class)).join(" ")
+  }
+  #[inline]
+  fn bg_contain(&self) -> String {
+    ["bg-size:$contain"].map(|class| self.append(class)).join(" ")
   }
 }
 impl GeneratedMediaQueryDeviceCategories for GeneratedSkribbleRoot {}
