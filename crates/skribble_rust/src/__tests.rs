@@ -1,6 +1,5 @@
 use hex::ToHex;
 use rstest::rstest;
-use rstest_reuse::*;
 use skribble_core::vfs::MemoryFS;
 use skribble_core::*;
 use skribble_preset::PresetPlugin;
@@ -52,8 +51,16 @@ fn can_generate_skribble_rust_methods() -> AnyEmptyResult {
   Ok(())
 }
 
-#[apply(test_cases)]
-fn can_scan_and_generate_css<S: AsRef<str>>(id: &str, files: &[(&str, S)]) -> AnyEmptyResult {
+#[rstest]
+#[case("function-default", &[("src/lib.rs", function("default", DEFAULT_NAMES))])]
+#[case("basic-component-default", &[("src/lib.rs", basic_component("default", DEFAULT_NAMES))])]
+#[case("component-default", &[("src/lib.rs", component("default", DEFAULT_NAMES))])]
+#[case("variables-default", &[("src/lib.rs", variables(DEFAULT_NAMES))])]
+#[case("gradients", &[("src/lib.rs", GRADIENTS)])]
+fn can_scan_and_generate_css<S: AsRef<str>>(
+  #[case] id: &str,
+  #[case] files: &[(&str, S)],
+) -> AnyEmptyResult {
   let default_preset = PresetPlugin::builder().build();
   let rust_plugin = RustPlugin::builder().build();
 
@@ -87,14 +94,6 @@ fn create_memory_fs<S: AsRef<str>>(files: &[(&str, S)]) -> AnyResult<VfsPath> {
 
   Ok(vfs)
 }
-
-#[template]
-#[rstest]
-#[case("function-default", &[("src/lib.rs", function("default", DEFAULT_NAMES))])]
-#[case("basic-component-default", &[("src/lib.rs", basic_component("default", DEFAULT_NAMES))])]
-#[case("component-default", &[("src/lib.rs", component("default", DEFAULT_NAMES))])]
-#[case("variables-default", &[("src/lib.rs", variables(DEFAULT_NAMES))])]
-fn test_cases<S: AsRef<str>>(#[case] id: &str, #[case] files: &[(&str, S)]) {}
 
 fn component(name: &str, values: &[&str]) -> String {
   let classes = values.join(", ");
@@ -131,13 +130,26 @@ fn {name}(cx: Scope) -> impl IntoView {{
   view! {{
     cx,
     <div class={classes}>
-      <h1>Hello World</h1>
+      <h1>"Hello World"</h1>
     </div>
   }}
 }}
 "#
   )
 }
+
+const GRADIENTS: &str = r#"
+use crate::skribble::*;
+
+#[component]
+fn BackgroundGradient(cx: Scope) -> impl IntoView {{
+  let class = &[sk().bg_gradient().to_right(), sk().from_color().cyan500(), sk().to_color().blue500()].join(" ");
+  view! {{
+    cx,
+    <div class=class>"gradient"</div>
+  }}
+}}
+"#;
 
 fn function(name: &str, values: &[&str]) -> String {
   let classes = values.join(", ");

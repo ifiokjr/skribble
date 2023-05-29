@@ -45,12 +45,6 @@ fn css_from_class_names(#[case] id: &str, #[case] names: &[&str]) -> AnyEmptyRes
 
   classes.sort_by_class();
 
-  println!("CLASSES: {classes:#?}, LENGTH: {}", classes.len());
-
-  for class in classes.iter() {
-    println!("{:#?}", class);
-  }
-
   set_snapshot_suffix!("{id}");
   insta::assert_display_snapshot!(classes.to_skribble_css(runner_config)?);
 

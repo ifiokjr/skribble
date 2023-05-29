@@ -1236,7 +1236,7 @@ lazy_static! {
         .styles(indexmap! { &gradient_from_position => none })
         .build(),
       Atom::builder()
-        .name("via")
+        .name("via-position")
         .values(ColorField::default())
         .children(vec!["gradient-reference"])
         .styles({
@@ -1257,7 +1257,7 @@ lazy_static! {
         .styles(indexmap! { &gradient_via_position => none })
         .build(),
       Atom::builder()
-        .name("to")
+        .name("to-color")
         .values(ColorField::default())
         .children(vec!["gradient-reference"])
         .styles({

@@ -72,8 +72,7 @@ impl Formatter {
       files.replace(generated);
     }
 
-    println!("Formatted files: {tmpdir:?}");
-    // fs::remove_dir_all(&tmpdir)?;
+    fs::remove_dir_all(&tmpdir)?;
 
     Ok(())
   }

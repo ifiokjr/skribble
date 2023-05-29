@@ -193,13 +193,15 @@ impl CssVariable {
       }
     }
 
-    writeln!(writer, "@property {variable_name} {{")?;
-    let mut indented_writer = indent_writer();
-    writeln!(indented_writer, "syntax: \"{syntax}\";")?;
-    writeln!(indented_writer, "inherits: true;")?;
-    writeln!(indented_writer, "initial-value: {value};")?;
-    write!(writer, "{}", indented_writer.get_ref())?;
-    writeln!(writer, "}}")?;
+    if !value.is_empty() {
+      writeln!(writer, "@property {variable_name} {{")?;
+      let mut indented_writer = indent_writer();
+      writeln!(indented_writer, "syntax: \"{syntax}\";")?;
+      writeln!(indented_writer, "inherits: true;")?;
+      writeln!(indented_writer, "initial-value: {value};")?;
+      write!(writer, "{}", indented_writer.get_ref())?;
+      writeln!(writer, "}}")?;
+    }
 
     Ok(())
   }

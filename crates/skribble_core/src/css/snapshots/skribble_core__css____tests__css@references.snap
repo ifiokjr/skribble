@@ -8,11 +8,11 @@ expression: css
 @property --sk-c {
   syntax: "*";
   inherits: true;
-  initial-value: ;
+  initial-value: inherit;
 }
 @layer default {
   :root {
-    --sk-c: ;
+    --sk-c: inherit;
   }
   .needs-custom\:\$px {
     --sk-c: ;

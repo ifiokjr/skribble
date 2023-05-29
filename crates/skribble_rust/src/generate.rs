@@ -745,9 +745,6 @@ fn generate_struct_implementations(
       }
 
       if let Some(ref included) = prop.included {
-        // println!(
-        //   "included: {included:?}\ntrait_name: {trait_name:?}\nstruct_name:
-        // {struct_name}\n" );
         if !included.contains(trait_name) {
           continue;
         }

@@ -243,7 +243,7 @@ fn create_config() -> StyleConfig {
       CssVariable::builder()
         .name("custom")
         .variable("--c")
-        .value("")
+        .value("inherit")
         .description("A custom variable")
         .build(),
       CssVariable::builder()

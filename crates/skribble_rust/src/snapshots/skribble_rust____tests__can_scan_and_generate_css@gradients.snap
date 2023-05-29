@@ -1,0 +1,43 @@
+---
+source: crates/skribble_rust/src/__tests.rs
+expression: scanned.code
+---
+@layer base, alias, default;
+
+@layer default {
+  :root {
+    --sk-gradient-from-position: ;
+    --sk-gradient-via-position: ;
+    --sk-gradient-to-position: ;
+    --sk-gradient-stops: ;
+    --sk-gradient-from: ;
+    --sk-gradient-to: ;
+  }
+
+  .from-color\:\$cyan500 {
+    --sk-gradient-from-position: ;
+    --sk-gradient-via-position: ;
+    --sk-gradient-to-position: ;
+  }
+
+  .to-color\:\$blue500 {
+    --sk-gradient-from-position: ;
+    --sk-gradient-via-position: ;
+    --sk-gradient-to-position: ;
+  }
+
+  .bg-gradient\:\$to-right {
+    background-image: linear-gradient(to right, var(--sk-gradient-stops));
+  }
+
+  .from-color\:\$cyan500 {
+    --sk-gradient-from: #06b6d4 var(--sk-gradient-from-position);
+    --sk-gradient-to: #06b6d400 var(--sk-gradient-to-position);
+    --sk-gradient-stops: var(--sk-gradient-from), var(--sk-gradient-to);
+  }
+
+  .to-color\:\$blue500 {
+    --sk-gradient-to: #3b82f6 var(--sk-gradient-to-position);
+  }
+}
+

@@ -22,7 +22,11 @@ use similar_asserts::assert_eq;
 #[case::important_named_class(sk().important().sr_only(), "(important):$sr-only")]
 #[case::transformer_color(sk().md().darken_050().bg().red100(), "md:(darken==050):bg:$red100")]
 #[case::transformer_color_args(sk().md().alpha("50%").bg().red100(), "md:(alpha=50%):bg:$red100")]
+#[case::gradients(
+  &[sk().bg_gradient().to_right(), sk().from_color().cyan500(), sk().to_color().blue500()].join(" "),
+  "bg-gradient:$to-right from-color:$cyan500 to-color:$blue500"
+)]
 #[case::variables(vars().primary(), "--sk-p")]
-fn generated_class_names(#[case] input: String, #[case] expected: &str) {
-  assert_eq!(input, expected);
+fn generated_class_names(#[case] input: impl AsRef<str>, #[case] expected: &str) {
+  assert_eq!(input.as_ref(), expected);
 }
