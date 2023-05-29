@@ -4,6 +4,7 @@
   packages = [
     pkgs.cargo-insta
     pkgs.cargo-nextest
+    pkgs.cargo-udeps
     pkgs.deno
     pkgs.dprint
     pkgs.mdbook

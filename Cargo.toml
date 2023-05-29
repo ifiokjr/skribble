@@ -4,10 +4,12 @@ default-members = ["crates/*", "docs"]
 resolver = "2"
 
 [workspace.dependencies]
+abi_stable = "0.11"
 derivative = "2"
 derive_more = "0.99"
 dirs = "5"
 doc-comment = "0.3"
+document-features = "0.2"
 globset = "0.4"
 heck = "0.4"
 hex = "0.4"
@@ -18,6 +20,7 @@ insta = "1"
 lazy_static = "1"
 lightningcss = "1.0.0-alpha.41"
 logos = "0.13"
+"miette" = "5"
 palette = "0.7"
 readonly = "0.2"
 regex = "1"
@@ -34,6 +37,8 @@ tokio = "1"
 tower-lsp = "0.19"
 typed-builder = "0.14"
 vfs = "0.9"
+wasmer = "3"
+wasmer-wasi = "3"
 
 # Internal crates
 skribble = { path = "./crates/skribble", version = "0.0.0" }

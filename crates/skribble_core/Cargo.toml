@@ -14,10 +14,22 @@ repository = { workspace = true }
 rust-version = { workspace = true }
 description = "Core features for the skribble atomic css library"
 
+[features]
+## By default no features are included.
+default = []
+
+## Tha abi feature add support for `abi` plugins and pulls in the required crates.
+abi = ["dep:abi_stable"]
+
+## The wasm feature adds support for `wasm` plugins and pulls in the required crates.
+wasm = ["dep:wasmer", "dep:wasmer-wasi"]
+
 [dependencies]
+abi_stable = { workspace = true, optional = true }
 derivative = { workspace = true }
 derive_more = { workspace = true }
 doc-comment = { workspace = true }
+document-features = { workspace = true }
 globset = { workspace = true }
 heck = { workspace = true }
 hex = { workspace = true }
@@ -25,6 +37,7 @@ indent_write = { workspace = true }
 indexmap = { features = ["serde"], workspace = true }
 lazy_static = { workspace = true }
 lightningcss = { workspace = true }
+miette = { workspace = true }
 readonly = { workspace = true }
 regex = { workspace = true }
 serde = { workspace = true }
@@ -34,6 +47,8 @@ tempfile = { workspace = true }
 thiserror = { workspace = true }
 typed-builder = { workspace = true }
 vfs = { workspace = true }
+wasmer = { workspace = true, optional = true }
+wasmer-wasi = { workspace = true, optional = true }
 
 [dev-dependencies]
 insta = { features = ["json"], workspace = true }

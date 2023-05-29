@@ -1,5 +1,6 @@
 #![deny(clippy::all)]
 #![forbid(clippy::indexing_slicing)]
+#![doc = document_features::document_features!()]
 
 doc_comment::doctest!("../readme.md");
 

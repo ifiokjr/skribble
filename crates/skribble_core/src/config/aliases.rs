@@ -4,8 +4,8 @@ use serde::Deserialize;
 use serde::Serialize;
 use typed_builder::TypedBuilder;
 
+use super::Priority;
 use super::StringList;
-use crate::Priority;
 
 #[derive(Clone, Default, Debug, Deserialize, PartialEq, Serialize, Deref, DerefMut)]
 pub struct Aliases(Vec<Alias>);
