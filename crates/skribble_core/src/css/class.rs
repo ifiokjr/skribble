@@ -8,12 +8,14 @@ use serde::Deserialize;
 use serde::Serialize;
 use typed_builder::TypedBuilder;
 
+use super::Arguments;
+use super::ClassScore;
+use super::ClassTransformer;
 use crate::format_css_string;
 use crate::indent_writer;
 use crate::AnyEmptyResult;
 use crate::AnyResult;
-use crate::Arguments;
-use crate::ClassSize;
+use crate::AtomType;
 use crate::RunnerConfig;
 use crate::ToSkribbleCss;
 
@@ -31,6 +33,9 @@ pub struct Class {
   /// The ordered list of modifiers.
   #[builder(setter(into))]
   modifiers: IndexSet<String>,
+  /// The ordered list of transformers.
+  #[builder(setter(into))]
+  transformers: IndexSet<ClassTransformer>,
   /// The name of the style provided. This must be provided for the `class_name`
   /// to be valid.
   #[builder(setter(into))]
@@ -47,10 +52,10 @@ pub struct Class {
   argument: Option<Arguments>,
   /// Used to compare to classes
   #[builder(setter(into))]
-  score: ClassSize,
+  score: ClassScore,
   /// The keyframes used in this class.
   #[builder(setter(into))]
-  keyframe: bool,
+  atom_type: Option<AtomType>,
   /// The css variables that are referenced by this class.
   #[builder(setter(into))]
   css_variables: IndexSet<String>,
@@ -60,15 +65,22 @@ pub struct Class {
   /// The alias that is referenced by this class.
   #[builder(setter(into))]
   alias: Option<String>,
+  /// The parent selector that is referenced by this class (applies only to
+  /// named_classes)
+  #[builder(setter(into))]
+  parent_class_name: Option<String>,
 }
 
 impl Class {
+  pub fn get_atom_type(&self) -> Option<AtomType> {
+    self.atom_type
+  }
+
   pub fn get_keyframe(&self) -> Option<&String> {
-    if self.keyframe {
-      self.value_name.as_ref()
-    } else {
-      None
-    }
+    self
+      .get_atom_type()
+      .filter(|ty| *ty == AtomType::Keyframes)
+      .and_then(|_| self.get_value_name())
   }
 
   pub fn get_layer(&self) -> Option<&String> {
@@ -97,6 +109,10 @@ impl Class {
 
   pub fn get_modifiers(&self) -> &IndexSet<String> {
     &self.modifiers
+  }
+
+  pub fn get_transformers(&self) -> &IndexSet<ClassTransformer> {
+    &self.transformers
   }
 
   pub fn get_atom(&self) -> Option<&String> {
@@ -137,13 +153,18 @@ impl Class {
     Ok(writer)
   }
 
-  pub fn class(&self) -> AnyResult<String> {
+  pub fn class_name(&self) -> AnyResult<String> {
     let mut writer = String::new();
-    self.write_class(&mut writer)?;
+    self.write_class_name(&mut writer)?;
     Ok(writer)
   }
 
-  fn write_class(&self, writer: &mut dyn Write) -> AnyEmptyResult {
+  fn write_class_name(&self, writer: &mut dyn Write) -> AnyEmptyResult {
+    if let Some(ref class) = self.parent_class_name {
+      write!(writer, "{}", class)?;
+      return Ok(());
+    }
+
     let mut tokens = vec![];
 
     for media_query in self.media_queries.iter() {
@@ -152,6 +173,10 @@ impl Class {
 
     for modifier in self.modifiers.iter() {
       tokens.push(modifier.to_string());
+    }
+
+    for transformer in self.transformers.iter() {
+      tokens.push(transformer.to_string());
     }
 
     if let Some(ref named_class) = self.named_class {
@@ -181,7 +206,7 @@ impl Class {
   }
 
   fn write_selector(&self, writer: &mut dyn Write, config: &RunnerConfig) -> AnyEmptyResult {
-    let selector = format!(".{}", format_css_string(self.class()?));
+    let selector = format!(".{}", format_css_string(self.class_name()?));
     let mut selectors = vec![selector];
     let mut class_modifiers = vec![];
 
@@ -212,8 +237,6 @@ impl Class {
       }
     }
 
-    println!("class_modifiers: {:?}", class_modifiers);
-
     for class_modifier in class_modifiers {
       let mut new_selectors = vec![];
 
@@ -233,9 +256,9 @@ impl Class {
   fn write_css_properties(&self, writer: &mut dyn Write, config: &RunnerConfig) -> AnyEmptyResult {
     if let Some(atom) = self.get_atom().and_then(|atom| config.atoms.get(atom)) {
       if let Some(value_set_name) = self.get_value_name() {
-        atom.write_css_properties(writer, config, value_set_name)?;
+        atom.write_css_properties(writer, config, value_set_name, self.get_transformers())?;
       } else if let Some(argument) = self.get_argument() {
-        atom.write_css_argument(writer, config, argument)?;
+        atom.write_css_argument(writer, config, argument, self.get_transformers())?;
       }
     }
 
@@ -247,7 +270,7 @@ impl Class {
     }
 
     if let Some(argument) = self.get_argument() {
-      argument.write_css(writer, config)?;
+      argument.write_css(writer, config, self.get_transformers())?;
     }
 
     Ok(())
@@ -297,7 +320,8 @@ impl Hash for Class {
     self.value_name.hash(state);
     self.named_class.hash(state);
     self.argument.hash(state);
-    self.keyframe.hash(state);
+    self.atom_type.hash(state);
+    self.parent_class_name.hash(state);
   }
 }
 

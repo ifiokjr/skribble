@@ -179,6 +179,7 @@ impl SkribbleRunner {
     let css = classes
       .to_skribble_css(config)
       .map_err(Error::GenerateCssError)?;
+    println!("{}", css);
     transform_css(&css, self.options.minify)
   }
 
@@ -201,12 +202,23 @@ impl SkribbleRunner {
   }
 
   /// Write the generated files to the filesystem.
-  pub fn write_files(&self, files: &GeneratedFiles) -> Result<()> {
+  pub fn write_files(&self, files: &mut GeneratedFiles) -> Result<()> {
+    let options = self.get_options();
+
+    if !options.disable_formatting {
+      let formatters = &self.get_options().formatters;
+
+      for formatter in formatters.iter() {
+        formatter.format(files).map_err(Error::FormatterError)?;
+      }
+    }
+
     for file in files.iter() {
       let entry = self
         .fs
         .join(file.path.to_string_lossy())
         .map_err(|_| Error::FileWriteError(file.path.clone()))?;
+
       let mut writer = entry
         .create_file()
         .map_err(|_| Error::FileWriteError(file.path.clone()))?;
@@ -256,3 +268,15 @@ fn transform_css(css: &str, minify: bool) -> Result<ToCssResult> {
 
   Ok(result)
 }
+
+// fn entries_from_generated_files(files: &GeneratedFiles, fs: &VfsPath) ->
+// Result<Vec<VfsPath>> {   let mut entries = Vec::<VfsPath>::new();
+//   for file in files.iter() {
+//     let entry = fs
+//       .join(file.path.to_string_lossy())
+//       .map_err(|_| Error::FileWriteError(file.path.clone()))?;
+//     entries.push(entry);
+//   }
+
+//   Ok(entries)
+// }

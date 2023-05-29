@@ -47,6 +47,7 @@ impl Placeholder {
   pub const MEDIA_QUERY: &str = "MEDIA_QUERY";
   pub const MODIFIER: &str = "MODIFIER";
   pub const PALETTE: &str = "PALETTE";
+  pub const TRANSFORMER_VALUE: &str = "TRANSFORMER_VALUE";
   pub const VALUE: &str = "VALUE";
 
   pub fn create(namespace: &str, name: impl AsRef<str>) -> String {

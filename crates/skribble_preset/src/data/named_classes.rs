@@ -6,6 +6,9 @@ use skribble_core::StringMap;
 
 lazy_static! {
   pub(crate) static ref NAMED_CLASSES: Vec<NamedClass> = {
+    let gradient_from_position = Placeholder::variable("gradient-from-position");
+    let gradient_via_position = Placeholder::variable("gradient-via-position");
+    let gradient_to_position = Placeholder::variable("gradient-to-position");
     let group_nested_transform_gpu = Placeholder::variable("group-nested-transform-gpu");
     let group_nested_transform = Placeholder::variable("group-nested-transform");
     let group_nested_transform_cpu = Placeholder::variable("group-nested-transform-cpu");
@@ -100,6 +103,17 @@ lazy_static! {
           "overflow" => "visible",
           "clip" => "auto",
           "white-space" => "normal",
+        })
+        .build(),
+      NamedClass::builder()
+        .name("gradient-reference")
+        .reference(true)
+        .styles({
+          indexmap! {
+            &gradient_from_position => "",
+            &gradient_via_position => "",
+            &gradient_to_position => "",
+          }
         })
         .build(),
     ]

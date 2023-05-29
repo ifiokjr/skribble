@@ -20,6 +20,7 @@ use crate::Options;
 use crate::PluginConfig;
 use crate::Result;
 use crate::StringMap;
+use crate::Transformer;
 use crate::ValueSet;
 
 pub(crate) fn generate_merged_config(
@@ -50,6 +51,7 @@ pub(crate) fn generate_merged_config(
   let mut layers = indexset! {};
   let mut media_queries = IndexMap::<String, IndexMap<String, MediaQuery>>::new();
   let mut modifiers = IndexMap::<String, IndexMap<String, Modifier>>::new();
+  let mut transformers = IndexMap::<String, IndexMap<String, Transformer>>::new();
   let mut palette = StringMap::default();
   let mut value_sets = IndexMap::<String, ValueSet>::new();
 
@@ -185,7 +187,39 @@ pub(crate) fn generate_merged_config(
     }
   }
 
-  // css_variables
+  // transformers
+  let mut wrapped_transformers = plugin_config.transformers;
+  wrapped_transformers.sort_by(|a, z| z.priority.cmp(&a.priority));
+
+  for transformer_group in wrapped_transformers.into_iter() {
+    let group_name = transformer_group.name.clone();
+    let mut group = IndexMap::<String, Transformer>::new();
+
+    for transformer in transformer_group.into_iter() {
+      let key = &transformer.name;
+      match group.get_mut(key) {
+        Some(existing) => {
+          existing.merge(transformer);
+        }
+        None => {
+          group.insert(key.clone(), transformer);
+        }
+      }
+    }
+
+    group.sort_by(|_, a_value, _, z_value| z_value.priority.cmp(&a_value.priority));
+
+    match transformers.get_mut(&group_name) {
+      Some(existing) => {
+        existing.extend(group);
+      }
+      None => {
+        transformers.insert(group_name.clone(), group);
+      }
+    }
+  }
+
+  // atoms
   for atom in plugin_config.atoms.into_iter() {
     let key = &atom.name;
 
@@ -253,6 +287,10 @@ pub(crate) fn generate_merged_config(
     .iter()
     .flat_map(|(_, query)| query.keys().cloned())
     .collect();
+  let transformer_names = transformers
+    .iter()
+    .flat_map(|(_, query)| query.keys().cloned())
+    .collect();
 
   names.insert("keyframes".into(), keyframe_names);
   names.insert("css_variables".into(), css_variable_names);
@@ -262,6 +300,7 @@ pub(crate) fn generate_merged_config(
   names.insert("aliases".into(), alias_names);
   names.insert("media_queries".into(), media_query_names);
   names.insert("modifiers".into(), modifier_names);
+  names.insert("transformers".into(), transformer_names);
 
   let mut merged_config = RunnerConfig::builder()
     ._options(options)
@@ -274,6 +313,7 @@ pub(crate) fn generate_merged_config(
     .layers(layers)
     .media_queries(media_queries)
     .modifiers(modifiers)
+    .transformers(transformers)
     .names(names)
     .palette(palette)
     .value_sets(value_sets)

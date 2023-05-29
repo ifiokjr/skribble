@@ -4,7 +4,8 @@ use serde::Deserialize;
 use serde::Serialize;
 use typed_builder::TypedBuilder;
 
-use crate::config::*;
+use crate::config::Options;
+use crate::config::StringList;
 use crate::plugin::AnyEmptyResult;
 use crate::plugin::AnyResult;
 use crate::plugin::GeneratedFiles;
@@ -19,7 +20,7 @@ pub struct PluginData {
   /// if the plugin is scanning files.
   #[serde(default)]
   #[builder(default, setter(into))]
-  pub globs: Vec<String>,
+  pub globs: StringList,
   /// Store the id of the plugin. This should be globally unique and if the
   /// crate is published it should be the published crate name of the plugin.
   #[builder(setter(into))]

@@ -9,10 +9,10 @@ expression: css
   .\[padding\=1px\] {
     padding: 1px;
   }
-  .hover\:\[--something\=red\]:hover {
+  .aria-hidden\:\[--something\=red\][aria-hidden="true"] {
     --something: red;
   }
-  .aria-hidden\:\[--something\=red\][aria-hidden="true"] {
+  .hover\:\[--something\=red\]:hover {
     --something: red;
   }
   @media (min-width: 768px) {

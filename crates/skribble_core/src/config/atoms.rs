@@ -1,4 +1,6 @@
 use std::fmt::Write;
+use std::hash::Hash;
+use std::hash::Hasher;
 
 use derive_more::Deref;
 use derive_more::DerefMut;
@@ -11,8 +13,10 @@ use super::LinkedValues;
 use super::OptionalStringMap;
 use super::PrioritizedString;
 use super::Priority;
+use super::StringList;
 use crate::AnyEmptyResult;
 use crate::Arguments;
+use crate::ClassTransformer;
 use crate::Placeholder;
 use crate::RunnerConfig;
 
@@ -73,6 +77,10 @@ pub struct Atom {
   /// Modify the selector.
   #[builder(default, setter(into, strip_option))]
   pub modifier: Option<String>,
+  /// Reference the named classes that are automatically injected whenever this
+  /// atom is added.
+  #[builder(default, setter(into))]
+  pub children: StringList,
   /// The names of the [`ValueSet`]s that will be used to generate the styles.
   #[builder(default, setter(into))]
   pub values: LinkedValues,
@@ -84,10 +92,11 @@ impl Atom {
     writer: &mut dyn Write,
     config: &RunnerConfig,
     name: impl AsRef<str>,
+    transformers: &IndexSet<ClassTransformer>,
   ) -> AnyEmptyResult {
     self
       .values
-      .write_css_properties(writer, config, self, name)?;
+      .write_css_properties(writer, config, self, name, transformers)?;
     Ok(())
   }
 
@@ -96,10 +105,11 @@ impl Atom {
     writer: &mut dyn Write,
     config: &RunnerConfig,
     argument: &Arguments,
+    transformers: &IndexSet<ClassTransformer>,
   ) -> AnyEmptyResult {
     self
       .values
-      .write_css_argument(writer, config, self, argument)?;
+      .write_css_argument(writer, config, self, argument, transformers)?;
     Ok(())
   }
 
@@ -151,5 +161,26 @@ impl Atom {
         Placeholder::collect_css_variables(content, css_variables);
       }
     }
+  }
+
+  pub fn get_type(&self) -> AtomType {
+    match self.values {
+      LinkedValues::Values(_) => AtomType::Values,
+      LinkedValues::Color(_) => AtomType::Color,
+      LinkedValues::Keyframes => AtomType::Keyframes,
+    }
+  }
+}
+
+#[derive(Copy, Clone, Debug, Deserialize, PartialEq, Eq, Serialize)]
+pub enum AtomType {
+  Values,
+  Color,
+  Keyframes,
+}
+
+impl Hash for AtomType {
+  fn hash<H: Hasher>(&self, state: &mut H) {
+    std::mem::discriminant(self).hash(state);
   }
 }

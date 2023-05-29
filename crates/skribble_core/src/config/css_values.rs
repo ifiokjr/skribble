@@ -10,9 +10,12 @@ use serde::Serialize;
 
 use super::Atom;
 use super::StringMap;
+use crate::apply_transformers;
 use crate::AnyEmptyResult;
+use crate::ClassTransformer;
 use crate::Placeholder;
 use crate::RunnerConfig;
+use crate::TransformationRecipient;
 
 /// The value of an individual value atom.
 #[derive(Clone, Debug, Deserialize, PartialEq, Serialize)]
@@ -30,23 +33,47 @@ impl CssValue {
     writer: &mut dyn Write,
     config: &RunnerConfig,
     atom: &Atom,
+    transformers: &IndexSet<ClassTransformer>,
   ) -> AnyEmptyResult {
     match self {
       Self::Value(value) => {
-        let value = Placeholder::normalize(value, config);
+        let value = {
+          let normalized_value = Placeholder::normalize(value, config);
+          apply_transformers(
+            normalized_value,
+            transformers,
+            config,
+            TransformationRecipient::Value,
+          )
+        };
+
         let values: StringMap = indexmap! { "" => value.as_str() }.into();
 
-        write_css_property(writer, atom, config, &values, Some(value))?;
+        write_css_property(writer, atom, config, &values, transformers, Some(value))?;
       }
       Self::Object(map) => {
         if atom.styles.is_empty() {
           for (property, css_value) in map.iter() {
             let property = Placeholder::normalize(property, config);
-            let css_value = Placeholder::normalize(css_value, config);
+            let css_value = {
+              let mut normalized_value = Placeholder::normalize(css_value, config);
+              normalized_value = apply_transformers(
+                normalized_value,
+                transformers,
+                config,
+                TransformationRecipient::Value,
+              );
+              apply_transformers(
+                normalized_value,
+                transformers,
+                config,
+                TransformationRecipient::Property,
+              )
+            };
             writeln!(writer, "{property}: {css_value};")?;
           }
         } else {
-          write_css_property(writer, atom, config, map, None)?;
+          write_css_property(writer, atom, config, map, transformers, None)?;
         }
       }
     }
@@ -73,14 +100,31 @@ fn write_css_property(
   atom: &Atom,
   config: &RunnerConfig,
   values: &StringMap,
+  transformers: &IndexSet<ClassTransformer>,
   value: Option<String>,
 ) -> AnyEmptyResult {
+  let values = values
+    .iter()
+    .map(|(key, value)| {
+      (
+        key.clone(),
+        apply_transformers(value, transformers, config, TransformationRecipient::Value),
+      )
+    })
+    .collect::<StringMap>();
+
   for (property, css_value) in atom.styles.iter() {
     let property = Placeholder::normalize(property, config);
-    match css_value
-      .as_ref()
-      .map(|content| Placeholder::normalize_value(content, values, config))
-    {
+
+    match css_value.as_ref().map(|content| {
+      let transformed_property = Placeholder::normalize_value(content, &values, config);
+      apply_transformers(
+        transformed_property,
+        transformers,
+        config,
+        TransformationRecipient::Property,
+      )
+    }) {
       Some(css_value) => {
         writeln!(writer, "{property}: {css_value};")?;
       }

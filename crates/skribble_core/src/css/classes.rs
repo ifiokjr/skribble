@@ -23,13 +23,15 @@ pub struct Classes(IndexSet<Class>);
 
 impl Classes {
   pub fn insert_factory(&mut self, class_factory: ClassFactory) {
-    self.extend(class_factory.into_classes())
+    self.insert_factories(vec![class_factory]);
   }
 
   pub fn insert_factories(&mut self, class_factories: Vec<ClassFactory>) {
     for class_factory in class_factories {
-      self.insert_factory(class_factory);
+      self.extend(class_factory.into_classes());
     }
+
+    self.sort_by_class();
   }
 
   pub fn merge(&mut self, other: impl Into<Self>) {

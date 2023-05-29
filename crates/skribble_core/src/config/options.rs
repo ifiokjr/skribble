@@ -5,10 +5,11 @@ use serde::Serialize;
 use typed_builder::TypedBuilder;
 
 use super::ColorFormat;
+use super::Formatter;
 use super::MergeRules;
 
 /// Options to use in the configuration.
-#[derive(Clone, Debug, Deserialize, PartialEq, Serialize, TypedBuilder)]
+#[derive(Clone, Debug, Deserialize, Serialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
 pub struct Options {
   /// The path to the output css file. If not specified then the output is set
@@ -52,15 +53,6 @@ pub struct Options {
   #[serde(default = "default_variable_prefix")]
   #[builder(default = default_variable_prefix(), setter(into))]
   pub variable_prefix: String,
-  /// Set the prefix that the opacity for color variables should use.
-  #[serde(default = "default_opacity_prefix")]
-  #[builder(default = default_opacity_prefix(), setter(into))]
-  pub opacity_prefix: String,
-  /// Set the prefix that the color parts for color variables should use.
-  /// For hsl the colors parts would look like `314 100% 47.0588%`.
-  #[serde(default = "default_color_prefix")]
-  #[builder(default = default_color_prefix(), setter(into))]
-  pub color_prefix: String,
   /// The default color value to use when no color is specified.
   #[serde(default = "default_hex_color")]
   #[builder(default = default_hex_color(), setter(into))]
@@ -69,6 +61,15 @@ pub struct Options {
   #[serde(default)]
   #[builder(default)]
   pub minify: bool,
+  /// Whether to disable formatting of the generated files and stylesheets.
+  /// Formatters can be configured in the `formatters` field.
+  #[serde(default)]
+  #[builder(default)]
+  pub disable_formatting: bool,
+  /// Formatters which are used to format files.
+  #[serde(default)]
+  #[builder(default)]
+  pub formatters: Vec<Formatter>,
 }
 
 impl Default for Options {
@@ -87,14 +88,6 @@ fn default_root() -> PathBuf {
 
 fn default_variable_prefix() -> String {
   "sk".into()
-}
-
-fn default_opacity_prefix() -> String {
-  "op".into()
-}
-
-fn default_color_prefix() -> String {
-  "clr".into()
 }
 
 fn default_charset() -> String {

@@ -4,16 +4,28 @@ expression: scanned.code
 ---
 @layer base, alias, default;
 
-@property --sk-op-a {
-  syntax: "<number>";
-  inherits: true;
-  initial-value: 1;
-}
-
-@property --sk-clr-a {
-  syntax: "*";
+@property --sk-a-hue {
+  syntax: "<number> | <angle>";
   inherits: true;
   initial-value: 174;
+}
+
+@property --sk-a-saturation {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 60%;
+}
+
+@property --sk-a-lightness {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 50.9804%;
+}
+
+@property --sk-a-alpha {
+  syntax: "<number> | <percentage>";
+  inherits: true;
+  initial-value: 1;
 }
 
 @property --sk-a {
@@ -24,25 +36,58 @@ expression: scanned.code
 
 @layer default {
   :root {
-    --sk-op-a: 1;
-    --sk-clr-a: 174 60% 50.9804%;
-    --sk-a: hsl(var(--sk-clr-a) / var(--sk-op-a));
+    --sk-a-hue: 174;
+    --sk-a-saturation: 60%;
+    --sk-a-lightness: 50.9804%;
+    --sk-a-alpha: 1;
+    --sk-a: #37cdbe;
+  }
+
+  .\[height\=50px\] {
+    height: 50px;
+  }
+
+  .p\:\[101px\] {
+    padding: 101px;
   }
 
   .aspect\:\$square {
     aspect-ratio: 1;
   }
 
-  .bg\:\$accent {
-    background-color: hsl(var(--sk-clr-a) / var(--sk-op-a));
+  .bg\:\$red100 {
+    background-color: #fee2e2;
   }
 
-  .bg\:\$red100 {
+  .bg\:\$accent {
+    background-color: var(--sk-a, #37cdbe);
+  }
+
+  @media screen and (width >= 768px) {
+    .screen\:md\:\[padding\=1px\] {
+      padding: 1px;
+    }
   }
 
   @media (width >= 768px) {
+    .md\:\[padding\=1px\] {
+      padding: 1px;
+    }
+
     .md\:p\:\$px {
       padding: 1px;
+    }
+
+    .md\:pt\:\[1px\] {
+      padding-top: 1px;
+    }
+
+    .md\:\(alpha\=0\.5\)\:bg\:\$pink100 {
+      background-color: #fce7f380;
+    }
+
+    .md\:\(darken\=\=050\)\:bg\:\$red100 {
+      background-color: #da0707;
     }
   }
 

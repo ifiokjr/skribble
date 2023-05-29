@@ -20,6 +20,7 @@ lazy_static = { workspace = true }
 palette = { workspace = true, features = ["serializing"] }
 serde = { workspace = true, optional = true }
 thiserror = { workspace = true }
+typed-builder = { workspace = true }
 
 [dev-dependencies]
 insta = { features = ["json"], workspace = true }

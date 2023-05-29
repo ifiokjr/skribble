@@ -1,9 +1,11 @@
 use indexmap::IndexMap;
 use indexmap::IndexSet;
 
-use crate::Arguments;
-use crate::Class;
-use crate::ClassSize;
+use super::Arguments;
+use super::Class;
+use super::ClassScore;
+use super::ClassTransformer;
+use crate::AtomType;
 use crate::RunnerConfig;
 
 /// Skribble classes represent a css class.
@@ -23,7 +25,7 @@ pub struct ClassFactory<'config> {
   css_chunk: Option<String>,
   /// Whether the atom of this class is a keyframe. The keyframe name should be
   /// taken from value_name.
-  keyframe: bool,
+  atom_type: Option<AtomType>,
   /// The layer to be used for this class. If left empty the default layer will
   /// be used.
   layer: Option<String>,
@@ -31,15 +33,19 @@ pub struct ClassFactory<'config> {
   media_queries: IndexMap<String, usize>,
   /// The ordered list of modifiers.
   modifiers: IndexMap<String, usize>,
+  /// The ordered list of modifiers.
+  transformers: IndexMap<ClassTransformer, (usize, usize)>,
   /// The name of the shorthand class.
   named_class: Option<String>,
   /// The score of this class. This is used to determine the order of the
   /// classes provided. A smaller number appears first.
-  score: ClassSize,
+  score: ClassScore,
   /// Whether this class is valid or not.
   valid: Option<bool>,
   /// The pre-configured value of the atom.
   value_name: Option<String>,
+  /// The parent selector of this class. This only applies to named classes.
+  parent_class_name: Option<String>,
 }
 
 impl<'config> ClassFactory<'config> {
@@ -49,14 +55,26 @@ impl<'config> ClassFactory<'config> {
     let mut factory = Self::new(config);
 
     for token in string.split(':') {
+      if token.starts_with('(') && token.ends_with(')') {
+        let transformer = ClassTransformer::from(token);
+        factory.add_transformer(&transformer);
+        continue;
+      }
+
       if token.starts_with('[') && token.ends_with(']') {
         if let Some(value) = token.get(1..token.len() - 1) {
           factory.add_argument(value.into());
         }
+
+        continue;
       }
+
       if !token.starts_with('$') {
         factory.add_token(token);
-      } else if let Some(value) = token.get(1..) {
+        continue;
+      }
+
+      if let Some(value) = token.get(1..) {
         factory.add_token(value);
       }
     }
@@ -64,36 +82,36 @@ impl<'config> ClassFactory<'config> {
     factory
   }
 
-  pub fn from_tokens<T: AsRef<str>>(config: &'config RunnerConfig, tokens: &[T]) -> Self {
-    let mut factory = Self::new(config);
-
-    for token in tokens {
-      factory.add_token(token);
-    }
-
-    factory
-  }
-
   pub fn new(config: &'config RunnerConfig) -> Self {
     Self {
+      config,
       alias: None,
       argument: None,
       atom: None,
-      config,
       css_chunk: None,
-      keyframe: false,
+      atom_type: None,
       layer: None,
       media_queries: IndexMap::new(),
       modifiers: IndexMap::new(),
+      transformers: IndexMap::new(),
       named_class: None,
-      score: ClassSize::default(),
+      score: ClassScore::default(),
       valid: None,
       value_name: None,
+      parent_class_name: None,
     }
   }
 }
 
 impl<'config> ClassFactory<'config> {
+  pub fn get_atom_type(&self) -> Option<AtomType> {
+    self.atom_type
+  }
+
+  pub fn get_atom(&self) -> Option<&String> {
+    self.atom.as_ref()
+  }
+
   pub fn add_argument(&mut self, argument: Arguments) -> &Self {
     match argument {
       Arguments::V(_) => {
@@ -190,7 +208,7 @@ impl<'config> ClassFactory<'config> {
       } else {
         self.atom = Some(token.as_ref().to_string());
         self.score.atom = index.checked_add(1).unwrap_or(index);
-        self.keyframe = self.config.get_atom_is_keyframe(&token);
+        self.atom_type = self.config.get_atom_type(&token);
       }
     }
     // named_class.
@@ -232,6 +250,35 @@ impl<'config> ClassFactory<'config> {
         self.score.modifiers.sort();
         self
           .modifiers
+          .sort_by(|_, a_index, _, z_index| a_index.cmp(z_index));
+      }
+
+      true
+    } else {
+      false
+    }
+  }
+
+  pub fn add_transformer(&mut self, transformer: &ClassTransformer) -> bool {
+    if let Some(index) = self.config.get_transformer_index(&transformer.name) {
+      if self.transformers.contains_key(transformer) {
+        self.valid = Some(false);
+      } else {
+        let value_index = self
+          .config
+          .get_transformer(&transformer.name)
+          .and_then(|transformer| transformer.values.as_ref())
+          .zip(transformer.get_reference_value())
+          .and_then(|(values, key)| values.get_index_of(key))
+          .and_then(|index| index.checked_add(1))
+          .unwrap_or(0);
+        self
+          .transformers
+          .insert(transformer.clone(), (index, value_index));
+        self.score.transformers.push((index, value_index));
+        self.score.transformers.sort();
+        self
+          .transformers
           .sort_by(|_, a_index, _, z_index| a_index.cmp(z_index));
       }
 
@@ -291,6 +338,8 @@ impl<'config> ClassFactory<'config> {
     let media_queries: IndexSet<String> =
       self.media_queries.into_iter().map(|(key, _)| key).collect();
     let modifiers: IndexSet<String> = self.modifiers.into_iter().map(|(key, _)| key).collect();
+    let transformers: IndexSet<ClassTransformer> =
+      self.transformers.into_iter().map(|(key, _)| key).collect();
 
     let class = Class::builder()
       .alias(self.alias)
@@ -298,13 +347,15 @@ impl<'config> ClassFactory<'config> {
       .atom(self.atom)
       .css_chunk(self.css_chunk)
       .css_variables(css_variables)
-      .keyframe(self.keyframe)
+      .atom_type(self.atom_type)
       .layer(self.layer)
       .media_queries(media_queries)
       .modifiers(modifiers)
+      .transformers(transformers)
       .named_class(self.named_class)
       .score(self.score)
       .value_name(self.value_name)
+      .parent_class_name(self.parent_class_name)
       .build();
 
     Some(class)
@@ -312,37 +363,73 @@ impl<'config> ClassFactory<'config> {
 
   pub fn into_classes(self) -> Vec<Class> {
     let mut classes = vec![];
+    let config = self.config;
 
-    let Some(alias) = self.alias.as_ref().and_then(|alias| self.config.aliases.get(alias)) else {
-      return match self.into_class().take() {
-        Some(class) => {classes.push(class); classes},
-        None => classes,
-      }
-    };
+    if let Some(alias) = self
+      .alias
+      .as_ref()
+      .and_then(|alias| config.aliases.get(alias))
+    {
+      if !alias.combined {
+        for name in alias.classes.iter() {
+          let mut factory = Self::from_string(config, name);
 
-    // TODO this should only be done if `alias.combine == false`
-    if !alias.combined {
-      for name in alias.classes.iter() {
-        let mut factory = Self::from_string(self.config, name);
+          for token in self.media_queries.keys() {
+            factory.add_media_query_token(token);
+          }
 
-        for token in self.media_queries.keys() {
-          factory.add_media_query_token(token);
+          for token in self.modifiers.keys() {
+            factory.add_modifier_token(token);
+          }
+
+          for transformer in self.transformers.keys() {
+            factory.add_transformer(transformer);
+          }
+
+          let Some(class) = factory.into_class() else {
+            continue;
+          };
+
+          classes.push(class);
         }
-
-        for token in self.modifiers.keys() {
-          factory.add_modifier_token(token);
-        }
-
-        let Some(class) = factory.into_class() else {
-          continue;
-        };
-
+      } else if let Some(class) = self.into_class() {
+        // TODO this should only be done if `alias.combine == true`
+        // Currently this is a noop because combining the class will take a lot more
+        // work.
         classes.push(class);
       }
-    } else if let Some(class) = self.into_class() {
-      // TODO this should only be done if `alias.combine == true`
-      // Currently this is a noop because combining the class will take a lot more
-      // work.
+    } else if let Some(class) = self.into_class().take() {
+      if let Some((atom, selector)) = class
+        .get_atom()
+        .and_then(|atom_name| config.atoms.get(atom_name))
+        .zip(class.class_name().ok())
+      {
+        for named_class in atom.children.iter() {
+          let mut factory = Self::new(config);
+
+          for token in class.get_media_queries() {
+            factory.add_media_query_token(token);
+          }
+
+          for token in class.get_modifiers() {
+            factory.add_modifier_token(token);
+          }
+
+          for transformer in class.get_transformers() {
+            factory.add_transformer(transformer);
+          }
+
+          factory.add_token(named_class);
+          factory.parent_class_name = Some(selector.clone());
+
+          let Some(child_class) = factory.into_class() else {
+            continue;
+          };
+
+          classes.push(child_class);
+        }
+      }
+
       classes.push(class);
     }
 

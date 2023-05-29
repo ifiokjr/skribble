@@ -14,6 +14,7 @@ use crate::Keyframe;
 use crate::LinkedValues;
 use crate::MediaQuery;
 use crate::Modifier;
+use crate::NamedClass;
 use crate::Placeholder;
 use crate::PropertySyntaxValue;
 use crate::SkribbleRunner;
@@ -44,6 +45,7 @@ fn class_order(#[case] a: &str, #[case] z: &str) -> AnyEmptyResult {
 #[case("colors", &["bg:$secondary", "sm:bg:$primary"])]
 #[case("keyframes", &["animate:$spin", "screen:animate:$spin"])]
 #[case("atom_arguments", &["pt:[1px]", "md:pt:[1vh]"])]
+#[case("references", &["needs-custom:$px", "needs-custom:$10", "$custom"])]
 #[case("modifier_arguments", &["[padding=1px]", "md:[padding=1vh]", "hover:[--something=red]", "aria-hidden:[--something=red]"])]
 fn css(#[case] id: &str, #[case] names: &[&str]) -> AnyEmptyResult {
   set_snapshot_suffix!("{id}");
@@ -83,9 +85,17 @@ fn create_config() -> StyleConfig {
     ])
     .atoms(vec![
       Atom::builder()
+        .name("needs-custom")
+        .values(vec!["spacing"])
+        .children(vec!["custom-reference"])
+        .styles(indexmap! {
+          "--some-variable" => Some(Placeholder::wrapped_variable("custom", None))
+        })
+        .build(),
+      Atom::builder()
         .name("bg")
-        .values(LinkedValues::Color)
-        .styles(indexmap! { "color" => None as Option<String> })
+        .values(LinkedValues::Color(Default::default()))
+        .styles(indexmap! { "background-color" => None as Option<String> })
         .build(),
       Atom::builder()
         .name("pt")
@@ -231,6 +241,12 @@ fn create_config() -> StyleConfig {
     ])
     .variables(vec![
       CssVariable::builder()
+        .name("custom")
+        .variable("--c")
+        .value("")
+        .description("A custom variable")
+        .build(),
+      CssVariable::builder()
         .name("primary")
         .variable("--p")
         .value("#570df8")
@@ -247,6 +263,14 @@ fn create_config() -> StyleConfig {
           Placeholder::media_query("print") => indexmap! { "" => "#0000b8", ".dark" => "#ff00ff" },
           Placeholder::media_query("dark") => indexmap! { "" => "#ffffee" },
         })
+        .build(),
+    ])
+    .classes(vec![
+      NamedClass::builder()
+        .name("custom-reference")
+        .description("for testing reference types")
+        .reference(true)
+        .styles(indexmap! { Placeholder::variable("custom") => "" })
         .build(),
     ])
     .build()

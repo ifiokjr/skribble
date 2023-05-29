@@ -4,9 +4,6 @@ use lazy_static::lazy_static;
 
 lazy_static! {
   pub(crate) static ref OPEN_COLOR_PALETTE: IndexMap<&'static str, &'static str> = indexmap! {
-    "inherit" => "inherit",
-    "current" => "currentColor",
-    "transparent" => "transparent",
     "white" => "#ffffff",
     "black" => "#000000",
     "gray50" => "#f8f9fa",
@@ -141,9 +138,6 @@ lazy_static! {
     "orange900" => "#d9480f",
   };
   pub(crate) static ref TAILWIND_PALETTE: IndexMap<&'static str, &'static str> = indexmap! {
-    "inherit" => "inherit",
-    "current" => "currentColor",
-    "transparent" => "transparent",
     "black" => "#000000",
     "white" => "#ffffff",
     "slate50" => "#f8fafc",

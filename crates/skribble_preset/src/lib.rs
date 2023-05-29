@@ -51,6 +51,7 @@ impl Plugin for PresetPlugin {
     self.update_keyframes(&mut config.keyframes);
     self.update_media_queries(&mut config.media_queries);
     self.update_modifiers(&mut config.modifiers);
+    self.update_transformers(&mut config.transformers);
     self.update_named_classes(&mut config.classes);
     self.update_palette(&mut config.palette);
     self.update_value_sets(&mut config.value_sets);
@@ -103,6 +104,10 @@ impl PresetPlugin {
     if self.dark_mode == DarkMode::Class {
       modifiers.extend_group(DARK_PARENT_MODIFIERS.clone());
     }
+  }
+
+  fn update_transformers(&self, transformers: &mut Transformers) {
+    transformers.extend(TRANSFORMERS.clone());
   }
 
   fn update_named_classes(&self, named_classes: &mut NamedClasses) {

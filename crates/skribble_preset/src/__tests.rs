@@ -26,6 +26,10 @@ fn default_can_be_added_to_runner() -> AnyEmptyResult {
 #[case("modifiers", &["hover:bg:$primary"])]
 #[case("chained-modifiers", &["rtl:required:hover:bg:$primary"])]
 #[case("font-size", &["font-size:$xs", "font-size:$8xl"])]
+#[case("important", &["(important):font-size:$xs", "(important):font-size:$8xl"])]
+#[case("darken", &["(darken==005):bg:red100", "(darken=5%):bg:pink900", "(darken==050):bg:primary", "(darken=50%):bg:secondary"])]
+#[case("lighten", &["(lighten==005):bg:red100", "(lighten=5%):bg:pink900", "(lighten==050):bg:primary", "(lighten=50%):bg:secondary"])]
+#[case("alpha", &["(alpha==005):bg:red100", "(alpha=0.05):bg:pink900", "(alpha==050):bg:primary", "(alpha=0.5):bg:secondary"])]
 fn css_from_class_names(#[case] id: &str, #[case] names: &[&str]) -> AnyEmptyResult {
   let plugin = PresetPlugin::default();
   let config: StyleConfig = StyleConfig::builder()
@@ -40,6 +44,12 @@ fn css_from_class_names(#[case] id: &str, #[case] names: &[&str]) -> AnyEmptyRes
   }
 
   classes.sort_by_class();
+
+  println!("CLASSES: {classes:#?}, LENGTH: {}", classes.len());
+
+  for class in classes.iter() {
+    println!("{:#?}", class);
+  }
 
   set_snapshot_suffix!("{id}");
   insta::assert_display_snapshot!(classes.to_skribble_css(runner_config)?);

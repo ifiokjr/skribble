@@ -25,10 +25,10 @@ expression: "StyleConfig::default()"
     },
     "useRegisteredProperties": false,
     "variablePrefix": "sk",
-    "opacityPrefix": "op",
-    "colorPrefix": "clr",
     "defaultColor": "#000000",
-    "minify": false
+    "minify": false,
+    "disableFormatting": false,
+    "formatters": []
   },
   "layers": [
     {
@@ -49,6 +49,7 @@ expression: "StyleConfig::default()"
   "variables": [],
   "mediaQueries": [],
   "modifiers": [],
+  "transformers": [],
   "atoms": [],
   "classes": [],
   "aliases": [],

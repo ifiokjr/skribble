@@ -20,6 +20,15 @@ pub struct GeneratedFile {
   pub content: String,
 }
 
+impl GeneratedFile {
+  pub fn with_content(&self, content: impl Into<String>) -> Self {
+    Self {
+      path: self.path.clone(),
+      content: content.into(),
+    }
+  }
+}
+
 impl Hash for GeneratedFile {
   fn hash<H: Hasher>(&self, state: &mut H) {
     self.path.hash(state);

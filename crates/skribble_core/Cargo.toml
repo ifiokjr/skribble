@@ -20,6 +20,7 @@ derive_more = { workspace = true }
 doc-comment = { workspace = true }
 globset = { workspace = true }
 heck = { workspace = true }
+hex = { workspace = true }
 indent_write = { workspace = true }
 indexmap = { features = ["serde"], workspace = true }
 lazy_static = { workspace = true }
@@ -29,6 +30,7 @@ regex = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
 skribble_color = { workspace = true, features = ["serde"] }
+tempfile = { workspace = true }
 thiserror = { workspace = true }
 typed-builder = { workspace = true }
 vfs = { workspace = true }

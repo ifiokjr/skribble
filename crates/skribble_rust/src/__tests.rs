@@ -30,6 +30,28 @@ fn can_generate_skribble_rust_code() -> AnyEmptyResult {
   Ok(())
 }
 
+#[test]
+fn can_generate_skribble_rust_methods() -> AnyEmptyResult {
+  let default_preset = PresetPlugin::builder().build();
+  let rust_plugin = RustPlugin::builder().build();
+
+  let config: StyleConfig = StyleConfig::builder()
+    .plugins(vec![
+      PluginContainer::from(default_preset),
+      PluginContainer::from(rust_plugin),
+    ])
+    .build();
+
+  let vfs: VfsPath = MemoryFS::new().into();
+  let mut runner = SkribbleRunner::new(config, "/", Some(vfs));
+  let _ = runner.initialize()?;
+  let result = runner.generate()?;
+  let GeneratedFile { content, .. } = result.last().ok_or(Error::Unknown)?;
+  insta::assert_display_snapshot!(content);
+
+  Ok(())
+}
+
 #[apply(test_cases)]
 fn can_scan_and_generate_css<S: AsRef<str>>(id: &str, files: &[(&str, S)]) -> AnyEmptyResult {
   let default_preset = PresetPlugin::builder().build();
@@ -45,6 +67,7 @@ fn can_scan_and_generate_css<S: AsRef<str>>(id: &str, files: &[(&str, S)]) -> An
   let vfs: VfsPath = create_memory_fs(files)?;
   let mut runner = SkribbleRunner::new(config, "/", Some(vfs));
   let _ = runner.initialize()?;
+  let _ = runner.generate()?;
   let scanned = runner.scan()?;
   set_snapshot_suffix!("{id}");
   insta::assert_display_snapshot!(scanned.code);
@@ -68,11 +91,35 @@ fn create_memory_fs<S: AsRef<str>>(files: &[(&str, S)]) -> AnyResult<VfsPath> {
 #[template]
 #[rstest]
 #[case("function-default", &[("src/lib.rs", function("default", DEFAULT_NAMES))])]
+#[case("basic-component-default", &[("src/lib.rs", basic_component("default", DEFAULT_NAMES))])]
 #[case("component-default", &[("src/lib.rs", component("default", DEFAULT_NAMES))])]
 #[case("variables-default", &[("src/lib.rs", variables(DEFAULT_NAMES))])]
 fn test_cases<S: AsRef<str>>(#[case] id: &str, #[case] files: &[(&str, S)]) {}
 
 fn component(name: &str, values: &[&str]) -> String {
+  let classes = values.join(", ");
+  format!(
+    r#"
+use leptos::*;
+use crate::skribble::*;
+#[component]
+fn {name}(cx: Scope) -> impl IntoView {{
+  view! {{
+    cx,
+    <div class={{sk().__("width", "50px")}}>
+      {{&[{classes}].into_iter()
+        .map(|class| view! {{ cx, <span class={{class}}>{{class}}</span> }})
+        .collect_view(cx)
+      }}
+      <span class=sk().xxl().p().n1()>"Hello World"</span>
+    </div>
+  }}
+}}
+"#
+  )
+}
+
+fn basic_component(name: &str, values: &[&str]) -> String {
   let classes = values.join(", ");
   format!(
     r#"
@@ -130,4 +177,7 @@ const DEFAULT_NAMES: &[&str] = &[
   r#"sk().p_("101px")"#,
   r#"sk().bg().red100()"#,
   r#"sk().aspect().square()"#,
+  r#"sk().__("height", "50px")"#,
+  r#"sk().md().darken_050().bg().red100()"#,
+  r#"sk().md().alpha("0.5").bg().pink100()"#,
 ];

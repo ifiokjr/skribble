@@ -21,7 +21,9 @@ indexmap = { workspace = true }
 indoc = { workspace = true }
 lazy_static = { workspace = true }
 readonly = { workspace = true }
+rstml = { workspace = true }
 serde = { workspace = true }
+serde_json = { workspace = true }
 skribble_core = { workspace = true }
 syn = { workspace = true, features = ["full", "visit", "extra-traits"] }
 thiserror = { workspace = true }

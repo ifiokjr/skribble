@@ -1,6 +1,7 @@
 use indexmap::indexmap;
 use lazy_static::lazy_static;
 use skribble_core::Atom;
+use skribble_core::ColorField;
 use skribble_core::LinkedValues;
 use skribble_core::OptionalStringMap;
 use skribble_core::Placeholder;
@@ -87,6 +88,18 @@ lazy_static! {
     let backdrop_sepia = Placeholder::variable("backdrop-sepia");
     let backdrop_drop_shadow = Placeholder::variable("backdrop-drop-shadow");
     let backdrop_custom = Placeholder::variable("backdrop-custom");
+
+    let gradient_from = Placeholder::variable("gradient-from");
+    let gradient_to = Placeholder::variable("gradient-to");
+    let gradient_stops = Placeholder::variable("gradient-stops");
+    let gradient_to_position = Placeholder::variable("gradient-to-position");
+    let gradient_from_position = Placeholder::variable("gradient-from-position");
+    let gradient_via_position = Placeholder::variable("gradient-via-position");
+    let wrapped_gradient_to_position = Placeholder::wrapped_variable("gradient-to-position", None);
+    let wrapped_gradient_from_position = Placeholder::wrapped_variable("gradient-from-position", None);
+    let wrapped_gradient_via_position = Placeholder::wrapped_variable("gradient-via-position", None);
+    let wrapped_gradient_from = Placeholder::wrapped_variable("gradient-from", None);
+    let wrapped_gradient_to = Placeholder::wrapped_variable("gradient-to", None);
 
     vec![
       Atom::builder()
@@ -970,7 +983,7 @@ lazy_static! {
         .build(),
       Atom::builder()
         .name("self")
-        .description("Control how an individual flex or grid item is positioned along its container's cross axis.")
+        .description("Control how an individual flex or grid item is positioned along its container's cross axis. The misspelling is to avoid conflicts with the `self` keyword in rust which can't be a raw identifier.")
         .values(vec!["align-self"])
         .styles(indexmap! { "align-self" => none })
         .build(),
@@ -996,12 +1009,12 @@ lazy_static! {
         // Svg
         Atom::builder()
         .name("fill")
-        .values(LinkedValues::Color)
+        .values(ColorField::default())
         .styles(indexmap! { "fill" => none })
         .build(),
         Atom::builder()
         .name("stroke")
-        .values(LinkedValues::Color)
+        .values(ColorField::default())
         .styles(indexmap! { "stroke" => none })
         .build(),
       Atom::builder()
@@ -1089,7 +1102,7 @@ lazy_static! {
         .build(),
       Atom::builder()
         .name("text")
-        .values(LinkedValues::Color)
+        .values(ColorField::default())
         .styles(indexmap! { "color" => none })
         .build(),
       Atom::builder()
@@ -1099,7 +1112,7 @@ lazy_static! {
         .build(),
       Atom::builder()
         .name("decoration")
-        .values(LinkedValues::Color)
+        .values(ColorField::default())
         .styles(indexmap! { "text-decoration-color" => none })
         .build(),
       Atom::builder()
@@ -1166,7 +1179,7 @@ lazy_static! {
         .build(),
       Atom::builder()
         .name("bg")
-        .values(LinkedValues::Color)
+        .values(ColorField::default())
         .styles(indexmap! { "background-color" => none })
         .build(),
       Atom::builder()
@@ -1193,6 +1206,71 @@ lazy_static! {
         .name("bg-size")
         .values(vec!["background-size"])
         .styles(indexmap! { "background-size" => none })
+        .build(),
+      Atom::builder()
+        .name("bg-gradient")
+        .values(vec!["none", "background-gradient"])
+        .styles(indexmap! { "background-image" => none })
+        .build(),
+      Atom::builder()
+        .name("from-color")
+        .values(ColorField::default())
+        .children(vec!["gradient-reference"])
+        .styles({
+          let value = Placeholder::value("");
+          let transparent_value = Placeholder::value("transparent");
+          let gradient_from_value = format!("{value} {wrapped_gradient_from_position}");
+          let gradient_to_value = format!("{transparent_value} {wrapped_gradient_to_position}");
+          let gradient_stops_value = format!("{wrapped_gradient_from}, {wrapped_gradient_to}");
+          indexmap! {
+            &gradient_from => Some(gradient_from_value),
+            &gradient_to => Some(gradient_to_value),
+            &gradient_stops => Some(gradient_stops_value),
+          }
+        })
+        .build(),
+      Atom::builder()
+        .name("from-position")
+        .values(vec!["gradient-position"])
+        .children(vec!["gradient-reference"])
+        .styles(indexmap! { &gradient_from_position => none })
+        .build(),
+      Atom::builder()
+        .name("via")
+        .values(ColorField::default())
+        .children(vec!["gradient-reference"])
+        .styles({
+          let value = Placeholder::value("");
+          let transparent_value = Placeholder::value("transparent");
+          let gradient_to_value = format!("{transparent_value} {wrapped_gradient_to_position}");
+          let gradient_stops_value = format!("{wrapped_gradient_from}, {value} {wrapped_gradient_via_position}, {wrapped_gradient_to}");
+          indexmap! {
+            &gradient_to => Some(gradient_to_value),
+            &gradient_stops => Some(gradient_stops_value),
+          }
+        })
+        .build(),
+      Atom::builder()
+        .name("via-position")
+        .values(vec!["gradient-position"])
+        .children(vec!["gradient-reference"])
+        .styles(indexmap! { &gradient_via_position => none })
+        .build(),
+      Atom::builder()
+        .name("to")
+        .values(ColorField::default())
+        .children(vec!["gradient-reference"])
+        .styles({
+          let value = Placeholder::value("");
+          let gradient_to_value = format!("{value} {wrapped_gradient_to_position}");
+          indexmap! { &gradient_to => Some(gradient_to_value) }
+        })
+        .build(),
+      Atom::builder()
+        .name("to-position")
+        .values(vec!["gradient-position"])
+        .children(vec!["gradient-reference"])
+        .styles(indexmap! { &gradient_to_position => none })
         .build(),
     ]
   };

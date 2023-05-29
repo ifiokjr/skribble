@@ -360,5 +360,29 @@ lazy_static! {
       .syntax(PropertySyntaxValue::Number)
       .value("0")
       .build(),
+    CssVariable::builder()
+      .name("gradient-stops")
+      .variable("--gradient-stops")
+      .build(),
+    CssVariable::builder()
+      .name("gradient-from")
+      .variable("--gradient-from")
+      .build(),
+    CssVariable::builder()
+      .name("gradient-to")
+      .variable("--gradient-to")
+      .build(),
+    CssVariable::builder()
+      .name("gradient-from-position")
+      .variable("--gradient-from-position")
+      .build(),
+    CssVariable::builder()
+      .name("gradient-to-position")
+      .variable("--gradient-to-position")
+      .build(),
+    CssVariable::builder()
+      .name("gradient-via-position")
+      .variable("--gradient-via-position")
+      .build(),
   ];
 }

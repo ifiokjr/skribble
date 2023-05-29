@@ -17,6 +17,18 @@ use crate::RunnerConfig;
 #[derive(Clone, Debug, Default, Deserialize, PartialEq, Serialize, Deref, DerefMut)]
 pub struct NamedClasses(Vec<NamedClass>);
 
+impl From<&[NamedClass]> for NamedClasses {
+  fn from(value: &[NamedClass]) -> Self {
+    Self(value.to_vec())
+  }
+}
+
+impl From<Vec<NamedClass>> for NamedClasses {
+  fn from(value: Vec<NamedClass>) -> Self {
+    Self(value)
+  }
+}
+
 impl IntoIterator for NamedClasses {
   type IntoIter = std::vec::IntoIter<Self::Item>;
   type Item = NamedClass;
@@ -53,6 +65,11 @@ pub struct NamedClass {
   /// The styles for the specific class.
   #[builder(setter(into))]
   pub styles: StringMap,
+  /// Determines if this a reference class. If true, the class be injected only
+  /// when an atom references it. It can't be used directly.
+  #[serde(default)]
+  #[builder(default, setter(into))]
+  pub reference: bool,
   /// A modifier for the selector of the class.
   #[builder(default, setter(into, strip_option))]
   pub modifier: Option<String>,
@@ -96,5 +113,9 @@ impl NamedClass {
       Placeholder::collect_css_variables(property, css_variables);
       Placeholder::collect_css_variables(css_value, css_variables);
     }
+  }
+
+  pub fn is_reference(&self) -> bool {
+    self.reference
   }
 }

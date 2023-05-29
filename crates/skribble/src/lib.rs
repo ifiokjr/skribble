@@ -58,11 +58,11 @@ pub fn run(
 ) -> Result<SkribbleRunner> {
   let mut runner = SkribbleRunner::new(config, cwd, vfs);
   let _ = runner.initialize()?;
-  let generate_files = runner.generate()?;
+  let mut generated_files = runner.generate()?;
   let css_result = runner.scan()?;
 
   // Write the files to their destinations.
-  runner.write_files(&generate_files)?;
+  runner.write_files(&mut generated_files)?;
   // Write the css file to the destination.
   runner.write_css(&css_result)?;
 

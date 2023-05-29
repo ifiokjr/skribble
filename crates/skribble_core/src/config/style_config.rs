@@ -23,6 +23,7 @@ use crate::Plugin;
 use crate::PluginConfig;
 use crate::PluginContainer;
 use crate::Result;
+use crate::Transformers;
 
 /// The style configuration which can also use the builder pattern.
 #[derive(Derivative, Deserialize, Serialize, TypedBuilder)]
@@ -52,6 +53,9 @@ pub struct StyleConfig {
   /// modifiers or child modifiers.
   #[builder(default, setter(into))]
   pub modifiers: Modifiers,
+  /// Transformers are used to transform the values or properties of atoms.
+  #[builder(default, setter(into))]
+  pub transformers: Transformers,
   /// Set up the style rules which determine the styles that each atom name will
   /// correspond to.
   #[builder(default, setter(into))]
@@ -101,6 +105,7 @@ impl StyleConfig {
       options,
       palette,
       plugins,
+      transformers,
       value_sets,
       variables,
     } = self;
@@ -117,6 +122,7 @@ impl StyleConfig {
         media_queries,
         modifiers,
         palette,
+        transformers,
         value_sets,
         variables,
       },

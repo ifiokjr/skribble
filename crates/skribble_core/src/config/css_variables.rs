@@ -5,7 +5,8 @@ use derive_more::DerefMut;
 use indexmap::IndexMap;
 use serde::Deserialize;
 use serde::Serialize;
-use skribble_color::Color;
+use skribble_color::palette::Hsla;
+use skribble_color::HslaCss;
 use typed_builder::TypedBuilder;
 
 use super::NestedStringMap;
@@ -81,8 +82,8 @@ pub struct CssVariable {
   pub syntax: PropertySyntax,
   /// The initial value of the CSS variable. This is required if the
   /// [PropertySyntax] is set to anything other than [PropertySyntaxValue::Any].
-  #[builder(default, setter(into, strip_option))]
-  pub value: Option<String>,
+  #[builder(default, setter(into))]
+  pub value: String,
   /// Define the value of the CSS variable under different nested media query
   /// situations.
   ///
@@ -109,11 +110,7 @@ impl CssVariable {
 
     self.variable = other.variable;
     self.syntax = other.syntax;
-
-    if let Some(value) = other.value {
-      self.value = Some(value);
-    }
-
+    self.value = other.value;
     self.media_queries.extend(other.media_queries);
   }
 
@@ -124,97 +121,83 @@ impl CssVariable {
     self.variable.as_str().replacen("--", &replacement, 1)
   }
 
-  pub fn get_wrapped_variable(&self, options: &Options, default: Option<String>) -> String {
+  pub fn get_wrapped_variable(&self, options: &Options) -> String {
     let variable = self.get_variable(options);
-    wrap_css_variable(variable, default)
+    wrap_css_variable(
+      variable,
+      if self.value.is_empty() {
+        None
+      } else {
+        Some(self.value.clone())
+      },
+    )
   }
 
-  pub fn get_opacity_variable(&self, options: &Options) -> String {
-    let prefix = &options.variable_prefix;
-    let opacity_prefix = &options.opacity_prefix;
-    let replacement = format!("--{prefix}-{opacity_prefix}-");
-    self.variable.as_str().replacen("--", &replacement, 1)
-  }
-
-  pub fn get_wrapped_opacity_variable(&self, options: &Options, default: Option<String>) -> String {
-    let variable = self.get_opacity_variable(options);
-    wrap_css_variable(variable, default)
-  }
-
-  pub fn get_color_variable(&self, options: &Options) -> String {
-    let prefix = &options.variable_prefix;
-    let color_prefix = &options.color_prefix;
-    let replacement = format!("--{prefix}-{color_prefix}-");
-    self.variable.as_str().replacen("--", &replacement, 1)
-  }
-
-  pub fn get_wrapped_color_variable(&self, options: &Options, default: Option<String>) -> String {
-    let variable = self.get_color_variable(options);
-    wrap_css_variable(variable, default)
-  }
-
-  pub fn get_default_opacity(&self, value: Option<&String>) -> f32 {
-    value
-      .or(self.value.as_ref())
-      .and_then(|value| value.parse::<Color>().ok())
-      .map(|color| color.alpha())
-      .unwrap_or(1.0)
+  pub fn hsla_color_variable(&self, options: &Options) -> HslaColorVariable {
+    HslaColorVariable::new(&self.variable, options)
   }
 
   pub fn write_property_rule(
     &self,
     writer: &mut dyn Write,
     config: &RunnerConfig,
-    with_opacity: bool,
+    with_parts: bool,
   ) -> AnyEmptyResult {
     let options = config.options();
     let syntax = &self.syntax;
-    let _color_format = &options.color_format;
     let variable_name = self.get_variable(options);
-    let inherits = !self.media_queries.is_empty() || self.value.is_some();
-    let initial_value = if self.is_color() {
-      let normalized_color = options
-        .color_format
-        .get_normalized_color(config, self, None)?
-        .to_string();
-      if with_opacity {
-        let opacity_variable = self.get_opacity_variable(options);
-        let alpha = self.get_default_opacity(None);
+    let mut value = Placeholder::normalize(&self.value, config);
+    if self.is_color() {
+      value = options.color_format.get_color(value)?.to_string();
+      let hsla = options.color_format.get_hsla(&value)?;
 
-        writeln!(writer, "@property {opacity_variable} {{")?;
+      if with_parts {
+        let HslaColorVariable { h, s, l, a, .. } = self.hsla_color_variable(options);
+        let hsla_css = HslaCss::new(&hsla);
+        let hue = hsla_css.hue();
+        let saturation = hsla_css.saturation();
+        let lightness = hsla_css.lightness();
+        let alpha = hsla_css.alpha();
+
+        writeln!(writer, "@property {h} {{")?;
         let mut indented_writer = indent_writer();
-        writeln!(indented_writer, "syntax: \"<number>\";")?;
-        writeln!(indented_writer, "inherits: {inherits};")?;
+        writeln!(indented_writer, "syntax: \"<number> | <angle>\";")?;
+        writeln!(indented_writer, "inherits: true;")?;
+        writeln!(indented_writer, "initial-value: {hue};")?;
+        write!(writer, "{}", indented_writer.get_ref())?;
+        writeln!(writer, "}}")?;
+
+        writeln!(writer, "@property {s} {{")?;
+        let mut indented_writer = indent_writer();
+        writeln!(indented_writer, "syntax: \"<percentage>\";")?;
+        writeln!(indented_writer, "inherits: true;")?;
+        writeln!(indented_writer, "initial-value: {saturation};")?;
+        write!(writer, "{}", indented_writer.get_ref())?;
+        writeln!(writer, "}}")?;
+
+        writeln!(writer, "@property {l} {{")?;
+        let mut indented_writer = indent_writer();
+        writeln!(indented_writer, "syntax: \"<percentage>\";")?;
+        writeln!(indented_writer, "inherits: true;")?;
+        writeln!(indented_writer, "initial-value: {lightness};")?;
+        write!(writer, "{}", indented_writer.get_ref())?;
+        writeln!(writer, "}}")?;
+
+        writeln!(writer, "@property {a} {{")?;
+        let mut indented_writer = indent_writer();
+        writeln!(indented_writer, "syntax: \"<number> | <percentage>\";")?;
+        writeln!(indented_writer, "inherits: true;")?;
         writeln!(indented_writer, "initial-value: {alpha};")?;
         write!(writer, "{}", indented_writer.get_ref())?;
         writeln!(writer, "}}")?;
-
-        let color_variable = self.get_color_variable(options);
-        let color_parts = options.color_format.get_inner_color(&normalized_color)?;
-
-        writeln!(writer, "@property {color_variable} {{")?;
-        let mut indented_writer = indent_writer();
-        writeln!(indented_writer, "syntax: \"*\";")?;
-        writeln!(indented_writer, "inherits: {inherits};")?;
-        writeln!(indented_writer, "initial-value: {color_parts};")?;
-        write!(writer, "{}", indented_writer.get_ref())?;
-        writeln!(writer, "}}")?;
       }
-
-      normalized_color
-    } else {
-      let default_initial_value = "/* */".into();
-      Placeholder::normalize(
-        self.value.as_ref().unwrap_or(&default_initial_value),
-        config,
-      )
-    };
+    }
 
     writeln!(writer, "@property {variable_name} {{")?;
     let mut indented_writer = indent_writer();
     writeln!(indented_writer, "syntax: \"{syntax}\";")?;
-    writeln!(indented_writer, "inherits: {inherits};")?;
-    writeln!(indented_writer, "initial-value: {initial_value};")?;
+    writeln!(indented_writer, "inherits: true;")?;
+    writeln!(indented_writer, "initial-value: {value};")?;
     write!(writer, "{}", indented_writer.get_ref())?;
     writeln!(writer, "}}")?;
 
@@ -232,21 +215,15 @@ impl CssVariable {
     config: &RunnerConfig,
     dictionary: &mut IndexMap<Option<String>, StringMap>,
   ) -> AnyEmptyResult {
-    let options = config.options();
-    let variable_name = self.get_variable(options);
-
     if self.media_queries.is_empty() {
-      if let Some(ref initial_value) = self.value {
-        let selector_name = ":root".to_string();
-        self.extend_dictionary_for_selector(
-          config,
-          dictionary,
-          &variable_name,
-          &None,
-          &selector_name,
-          initial_value,
-        )?;
-      };
+      let selector_name = ":root".to_string();
+      self.extend_dictionary_for_selector(
+        config,
+        dictionary,
+        &None,
+        &selector_name,
+        &self.value,
+      )?;
     }
 
     for (query, selector_map) in self.media_queries.iter() {
@@ -257,24 +234,20 @@ impl CssVariable {
       };
 
       if query.is_none() {
-        if let Some(ref initial_value) = self.value {
-          let selector_name = ":root".to_string();
-          self.extend_dictionary_for_selector(
-            config,
-            dictionary,
-            &variable_name,
-            &query,
-            &selector_name,
-            initial_value,
-          )?;
-        };
+        let selector_name = ":root".to_string();
+        self.extend_dictionary_for_selector(
+          config,
+          dictionary,
+          &query,
+          &selector_name,
+          &self.value,
+        )?;
       }
 
       for (selector_name, variable_value) in selector_map.iter() {
         self.extend_dictionary_for_selector(
           config,
           dictionary,
-          &variable_name,
           &query,
           selector_name,
           variable_value,
@@ -289,7 +262,6 @@ impl CssVariable {
     &self,
     config: &RunnerConfig,
     dictionary: &mut IndexMap<Option<String>, StringMap>,
-    variable_name: &String,
     query: &Option<String>,
     selector_name: &String,
     variable_value: &String,
@@ -303,11 +275,11 @@ impl CssVariable {
       Some(map) => {
         match map.get_mut(&selector) {
           Some(writer) => {
-            self.write_media_query_css(writer, config, variable_name, variable_value)?;
+            self.write_media_query_css(writer, config, variable_value)?;
           }
           None => {
             let mut writer = String::new();
-            self.write_media_query_css(&mut writer, config, variable_name, variable_value)?;
+            self.write_media_query_css(&mut writer, config, variable_value)?;
             map.insert(selector, writer);
           }
         }
@@ -316,7 +288,7 @@ impl CssVariable {
         let mut map = StringMap::default();
         let mut writer = String::new();
 
-        self.write_media_query_css(&mut writer, config, variable_name, variable_value)?;
+        self.write_media_query_css(&mut writer, config, variable_value)?;
         map.insert(selector, writer);
         dictionary.insert(query.clone(), map);
       }
@@ -328,25 +300,25 @@ impl CssVariable {
     &self,
     writer: &mut dyn Write,
     config: &RunnerConfig,
-    variable_name: &String,
     variable_value: &String,
   ) -> AnyEmptyResult {
+    let variable_name = &self.get_variable(config.options());
+
     if self.is_color() {
       let options = config.options();
-      let opacity_variable = self.get_opacity_variable(options);
-      let opacity_value = self.get_default_opacity(Some(variable_value));
-      let color_variable = self.get_color_variable(options);
-      let inner_color_value = options.color_format.get_inner_color(
-        options
-          .color_format
-          .get_normalized_color(config, self, Some(variable_value))?
-          .to_string(),
-      )?;
-      let variable_value = options
-        .color_format
-        .get_color_with_parts_and_opacity(self, options);
-      writeln!(writer, "{opacity_variable}: {opacity_value};")?;
-      writeln!(writer, "{color_variable}: {inner_color_value};")?;
+      let hsla = options.color_format.get_hsla(&self.value)?;
+      let HslaColorVariable { h, s, l, a, .. } = self.hsla_color_variable(options);
+      let hsla_css = HslaCss::new(&hsla);
+      let hue = hsla_css.hue();
+      let saturation = hsla_css.saturation();
+      let lightness = hsla_css.lightness();
+      let alpha = hsla_css.alpha();
+      let variable_value = options.color_format.get_color(variable_value)?;
+
+      writeln!(writer, "{h}: {hue};")?;
+      writeln!(writer, "{s}: {saturation};")?;
+      writeln!(writer, "{l}: {lightness};")?;
+      writeln!(writer, "{a}: {alpha};")?;
       writeln!(writer, "{variable_name}: {variable_value};")?;
     } else {
       writeln!(writer, "{variable_name}: {variable_value};")?;
@@ -361,5 +333,61 @@ impl<T: Into<String>> From<T> for CssVariable {
     let name: String = name.into();
     let variable: String = format!("--{}", format_css_string(&name));
     CssVariable::builder().name(name).variable(variable).build()
+  }
+}
+
+pub struct HslaColorVariable {
+  color: Hsla,
+  pub h: String,
+  pub s: String,
+  pub l: String,
+  pub a: String,
+}
+
+impl HslaColorVariable {
+  pub fn new(variable: impl AsRef<str>, options: &Options) -> Self {
+    let variable = variable.as_ref().replacen("--", "", 1);
+    let prefix = &options.variable_prefix;
+    let color = Hsla::new(0.0, 0.0, 0.0, 0.0);
+
+    Self {
+      color,
+      h: format!("--{prefix}-{variable}-hue"),
+      s: format!("--{prefix}-{variable}-saturation"),
+      l: format!("--{prefix}-{variable}-lightness"),
+      a: format!("--{prefix}-{variable}-alpha"),
+    }
+  }
+
+  pub fn h_wrapped(&self) -> String {
+    wrap_css_variable(&self.h, None)
+  }
+
+  pub fn s_wrapped(&self) -> String {
+    wrap_css_variable(&self.s, None)
+  }
+
+  pub fn l_wrapped(&self) -> String {
+    wrap_css_variable(&self.l, None)
+  }
+
+  pub fn a_wrapped(&self) -> String {
+    wrap_css_variable(&self.a, None)
+  }
+
+  pub fn hsla_css(&self) -> HslaCss<'_> {
+    HslaCss::builder()
+      .hsla(&self.color)
+      .h(self.h_wrapped())
+      .s(self.s_wrapped())
+      .l(self.l_wrapped())
+      .a(self.a_wrapped())
+      .build()
+  }
+
+  pub fn wrapped_transparent(&self) -> String {
+    let mut hsla_css = self.hsla_css();
+    hsla_css.a = Some("0".into());
+    hsla_css.to_string()
   }
 }

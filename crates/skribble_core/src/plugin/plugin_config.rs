@@ -13,6 +13,7 @@ pub struct PluginConfig {
   pub layers: Layers,
   pub media_queries: MediaQueries,
   pub modifiers: Modifiers,
+  pub transformers: Transformers,
   pub palette: Palette,
   pub value_sets: ValueSets,
   pub variables: CssVariables,

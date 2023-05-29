@@ -1,5 +1,6 @@
 use indexmap::indexmap;
 use lazy_static::lazy_static;
+use skribble_core::Placeholder;
 use skribble_core::ValueSet;
 
 lazy_static! {
@@ -1151,46 +1152,46 @@ lazy_static! {
       ValueSet::builder()
         .name("line-clamp")
         .values(indexmap!{
-          "1" => indexmap! { 
-            "overflow" => "hidden", 
-            "display" => "-webkit-box", 
-            "orient" => "vertical", 
+          "1" => indexmap! {
+            "overflow" => "hidden",
+            "display" => "-webkit-box",
+            "orient" => "vertical",
             "clamp" =>  "1",
           },
-          "2" => indexmap! { 
-            "overflow" => "hidden", 
-            "display" => "-webkit-box", 
-            "orient" => "vertical", 
+          "2" => indexmap! {
+            "overflow" => "hidden",
+            "display" => "-webkit-box",
+            "orient" => "vertical",
             "clamp" =>  "2",
           },
-          "3" => indexmap! { 
-            "overflow" => "hidden", 
-            "display" => "-webkit-box", 
-            "orient" => "vertical", 
+          "3" => indexmap! {
+            "overflow" => "hidden",
+            "display" => "-webkit-box",
+            "orient" => "vertical",
             "clamp" =>  "3",
           },
-          "4" => indexmap! { 
-            "overflow" => "hidden", 
-            "display" => "-webkit-box", 
-            "orient" => "vertical", 
+          "4" => indexmap! {
+            "overflow" => "hidden",
+            "display" => "-webkit-box",
+            "orient" => "vertical",
             "clamp" =>  "4",
           },
-          "5" => indexmap! { 
-            "overflow" => "hidden", 
-            "display" => "-webkit-box", 
-            "orient" => "vertical", 
+          "5" => indexmap! {
+            "overflow" => "hidden",
+            "display" => "-webkit-box",
+            "orient" => "vertical",
             "clamp" =>  "5",
           },
-          "6" => indexmap! { 
-            "overflow" => "hidden", 
-            "display" => "-webkit-box", 
-            "orient" => "vertical", 
+          "6" => indexmap! {
+            "overflow" => "hidden",
+            "display" => "-webkit-box",
+            "orient" => "vertical",
             "clamp" =>  "6",
           },
-          "none" => indexmap! { 
-            "overflow" => "visible", 
-            "display" => "block", 
-            "orient" => "horizontal", 
+          "none" => indexmap! {
+            "overflow" => "visible",
+            "display" => "block",
+            "orient" => "horizontal",
             "clamp" =>  "none",
           },
         })
@@ -1374,7 +1375,7 @@ lazy_static! {
         .build(),
       ValueSet::builder()
         .name("background-attachment")
-        .values(indexmap! { 
+        .values(indexmap! {
           "fixed" => "fixed",
           "local" => "local",
           "scroll" => "scroll",
@@ -1382,7 +1383,7 @@ lazy_static! {
         .build(),
       ValueSet::builder()
         .name("background-origin")
-        .values(indexmap! { 
+        .values(indexmap! {
           "border" => "border-box",
           "padding" => "padding-box",
           "content" => "content-box",
@@ -1390,13 +1391,13 @@ lazy_static! {
         .build(),
       ValueSet::builder()
         .name("background-text")
-        .values(indexmap! { 
+        .values(indexmap! {
           "text" => "text",
         })
         .build(),
       ValueSet::builder()
         .name("background-position")
-        .values(indexmap! { 
+        .values(indexmap! {
           "bottom"	=> "bottom",
           "center"	=> "center",
           "left"	=> "left",
@@ -1410,7 +1411,7 @@ lazy_static! {
         .build(),
       ValueSet::builder()
         .name("background-repeat")
-        .values(indexmap! { 
+        .values(indexmap! {
           "default" => "repeat",
           "none" => "no-repeat",
           "x" => "repeat-x",
@@ -1421,10 +1422,52 @@ lazy_static! {
         .build(),
       ValueSet::builder()
         .name("background-size")
-        .values(indexmap! { 
+        .values(indexmap! {
           "auto" => "auto",
           "cover" => "cover",
           "contain" => "contain",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("background-gradient")
+        .values({
+          let gradient_stops = Placeholder::wrapped_variable("gradient-stops", None);
+          indexmap! {
+            "to-top" => format!("linear-gradient(to top, {gradient_stops})"),
+            "to-top-right" => format!("linear-gradient(to top right, {gradient_stops})"),
+            "to-right" => format!("linear-gradient(to right, {gradient_stops})"),
+            "to-bottom-right" => format!("linear-gradient(to bottom right, {gradient_stops})"),
+            "to-bottom" => format!("linear-gradient(to bottom, {gradient_stops})"),
+            "to-bottom-left" => format!("linear-gradient(to bottom left, {gradient_stops})"),
+            "to-left" => format!("linear-gradient(to left, {gradient_stops})"),
+            "to-top-left" => format!("linear-gradient(to top left, {gradient_stops})"),
+          }
+        })
+        .build(),
+      ValueSet::builder()
+        .name("gradient-position")
+        .values(indexmap! {
+          "0%" => "0%",
+          "5%" => "5%",
+          "10%" => "10%",
+          "15%" => "15%",
+          "20%" => "20%",
+          "25%" => "25%",
+          "30%" => "30%",
+          "35%" => "35%",
+          "40%" => "40%",
+          "45%" => "45%",
+          "50%" => "50%",
+          "55%" => "55%",
+          "60%" => "60%",
+          "65%" => "65%",
+          "70%" => "70%",
+          "75%" => "75%",
+          "80%" => "80%",
+          "85%" => "85%",
+          "90%" => "90%",
+          "95%" => "95%",
+          "100%" => "100%",
         })
         .build(),
     ]

@@ -3,7 +3,9 @@
 
 doc_comment::doctest!("../readme.md");
 
+use std::fmt;
 use std::fmt::Display;
+use std::fmt::Formatter;
 use std::str::FromStr;
 
 pub use palette; // Re-export palette
@@ -19,6 +21,7 @@ pub use palette::OklabHue;
 pub use palette::Oklaba;
 pub use palette::Oklcha;
 pub use palette::RgbHue;
+use typed_builder::TypedBuilder;
 
 /// This enum represents a color in any of the supported css color formats.
 ///
@@ -487,24 +490,6 @@ impl Color {
     }
   }
 
-  /// This is used in the `skribble_core` library to create a string value with
-  /// a custom opacity `css_variable`
-  pub fn to_string_with_opacity(&self, opacity_variable: impl AsRef<str>) -> String {
-    let opacity_variable = opacity_variable.as_ref();
-
-    match self {
-      Self::Hex(ref rgba) => hex_to_css(rgba, Some(opacity_variable)),
-      Self::Rgb(ref rgba) => rgb_to_css(rgba, Some(opacity_variable)),
-      Self::Hsl(ref hsla) => hsl_to_css(hsla, Some(opacity_variable)),
-      Self::Hwb(ref hwba) => hwb_to_css(hwba, Some(opacity_variable)),
-      Self::Hsv(ref hsva) => hsv_to_css(hsva, Some(opacity_variable)),
-      Self::Lch(ref lch) => lch_to_css(lch, Some(opacity_variable)),
-      Self::Oklch(ref oklch) => oklch_to_css(oklch, Some(opacity_variable)),
-      Self::Lab(ref lab) => lab_to_css(lab, Some(opacity_variable)),
-      Self::Oklab(ref oklab) => oklab_to_css(oklab, Some(opacity_variable)),
-    }
-  }
-
   /// Get the alpha value of the current color as an [`f32`] value between `0.0`
   /// and `1.0`.
   pub fn alpha(&self) -> f32 {
@@ -525,15 +510,15 @@ impl Color {
 impl Display for Color {
   fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
     match self {
-      Self::Hex(ref rgba) => write!(f, "{}", hex_to_css::<String>(rgba, None)),
-      Self::Rgb(ref rgba) => write!(f, "{}", rgb_to_css::<String>(rgba, None)),
-      Self::Hsl(ref hsla) => write!(f, "{}", hsl_to_css::<String>(hsla, None)),
-      Self::Hwb(ref hwba) => write!(f, "{}", hwb_to_css::<String>(hwba, None)),
-      Self::Hsv(ref hsva) => write!(f, "{}", hsv_to_css::<String>(hsva, None)),
-      Self::Lch(ref lch) => write!(f, "{}", lch_to_css::<String>(lch, None)),
-      Self::Oklch(ref oklch) => write!(f, "{}", oklch_to_css::<String>(oklch, None)),
-      Self::Lab(ref lab) => write!(f, "{}", lab_to_css::<String>(lab, None)),
-      Self::Oklab(ref oklab) => write!(f, "{}", oklab_to_css::<String>(oklab, None)),
+      Self::Hex(ref rgba) => write!(f, "{}", hex_to_css(rgba)),
+      Self::Rgb(ref rgba) => write!(f, "{}", rgb_to_css(rgba)),
+      Self::Hsl(ref hsla) => write!(f, "{}", HslaCss::new(hsla).to_css()),
+      Self::Hwb(ref hwba) => write!(f, "{}", hwb_to_css(hwba)),
+      Self::Hsv(ref hsva) => write!(f, "{}", hsv_to_css(hsva)),
+      Self::Lch(ref lch) => write!(f, "{}", lch_to_css(lch)),
+      Self::Oklch(ref oklch) => write!(f, "{}", oklch_to_css(oklch)),
+      Self::Lab(ref lab) => write!(f, "{}", lab_to_css(lab)),
+      Self::Oklab(ref oklab) => write!(f, "{}", oklab_to_css(oklab)),
     }
   }
 }
@@ -572,14 +557,12 @@ pub enum ColorError {
   InvalidUnknown,
 }
 
-fn rgb_to_css<T: AsRef<str>>(rgba: &Rgba, opacity: Option<T>) -> String {
-  let is_alpha = opacity.is_some() || rgba.alpha != 1.0;
+fn rgb_to_css(rgba: &Rgba) -> String {
+  let is_alpha = rgba.alpha != 1.0;
   let red = (rgba.red * 255.0) as u8;
   let green = (rgba.green * 255.0) as u8;
   let blue = (rgba.blue * 255.0) as u8;
-  let alpha = opacity
-    .map(|v| v.as_ref().to_string())
-    .unwrap_or(rgba.alpha.to_string());
+  let alpha = rgba.alpha.to_string();
 
   if !is_alpha {
     return format!("rgb({red} {green} {blue})");
@@ -588,51 +571,100 @@ fn rgb_to_css<T: AsRef<str>>(rgba: &Rgba, opacity: Option<T>) -> String {
   format!("rgb({red} {green} {blue} / {alpha})")
 }
 
-fn hex_to_css<T: AsRef<str>>(rgba: &Rgba, opacity: Option<T>) -> String {
-  let opacity_is_some = opacity.is_some();
-  let is_alpha = opacity_is_some || rgba.alpha != 1.0;
+fn hex_to_css(rgba: &Rgba) -> String {
+  let is_alpha = rgba.alpha != 1.0;
   let red = (rgba.red * 255.0) as u8;
   let green = (rgba.green * 255.0) as u8;
   let blue = (rgba.blue * 255.0) as u8;
-  let alpha = opacity
-    .map(|v| v.as_ref().to_string())
-    .unwrap_or(rgba.alpha.to_string());
 
   if !is_alpha {
     format!("#{red:x}{green:x}{blue:x}")
-  } else if opacity_is_some {
-    // No way to specify alpha channel as a variable in hex
-    format!("rgb({red} {green} {blue} / {alpha})")
   } else {
     let alpha = (rgba.alpha * 255.0) as u8;
     format!("#{red:x}{green:x}{blue:x}{alpha:x}")
   }
 }
 
-fn hsl_to_css<T: AsRef<str>>(hsla: &Hsla, opacity: Option<T>) -> String {
-  let is_alpha = opacity.is_some() || hsla.alpha != 1.0;
-  let hue = hsla.hue.into_positive_degrees();
-  let saturation = hsla.saturation * 100.0;
-  let lightness = hsla.lightness * 100.0;
-  let alpha = opacity
-    .map(|v| v.as_ref().to_string())
-    .unwrap_or(hsla.alpha.to_string());
-
-  if !is_alpha {
-    return format!("hsl({hue} {saturation}% {lightness}%)");
-  }
-
-  format!("hsl({hue} {saturation}% {lightness}% / {alpha})")
+/// Override the hue, saturation, lightness, and/or alpha of a hsl value.
+#[derive(TypedBuilder, Clone)]
+pub struct HslaCss<'a> {
+  hsla: &'a Hsla,
+  #[builder(default, setter(into, strip_option))]
+  pub h: Option<String>,
+  #[builder(default, setter(into, strip_option))]
+  pub s: Option<String>,
+  #[builder(default, setter(into, strip_option))]
+  pub l: Option<String>,
+  #[builder(default, setter(into, strip_option))]
+  pub a: Option<String>,
 }
 
-fn hwb_to_css<T: AsRef<str>>(hwba: &Hwba, opacity: Option<T>) -> String {
-  let is_alpha = opacity.is_some() || hwba.alpha != 1.0;
+impl<'a> HslaCss<'a> {
+  pub fn new(hsla: &'a Hsla) -> Self {
+    Self {
+      hsla,
+      h: None,
+      s: None,
+      l: None,
+      a: None,
+    }
+  }
+
+  pub fn hue(&self) -> String {
+    self
+      .h
+      .clone()
+      .unwrap_or(self.hsla.hue.into_positive_degrees().to_string())
+  }
+
+  pub fn saturation(&self) -> String {
+    self
+      .s
+      .clone()
+      .unwrap_or(format!("{}%", self.hsla.saturation * 100.0))
+  }
+
+  pub fn lightness(&self) -> String {
+    self
+      .l
+      .clone()
+      .unwrap_or(format!("{}%", self.hsla.lightness * 100.0))
+  }
+
+  pub fn alpha(&self) -> String {
+    self.a.clone().unwrap_or(self.hsla.alpha.to_string())
+  }
+
+  pub fn is_alpha(&self) -> bool {
+    self.a.is_some() || self.hsla.alpha != 1.0
+  }
+
+  pub fn to_css(&self) -> String {
+    let hue = self.hue();
+    let saturation = self.saturation();
+    let lightness = self.lightness();
+
+    if self.is_alpha() {
+      let alpha = self.alpha();
+      format!("hsl({hue} {saturation} {lightness} / {alpha})")
+    } else {
+      format!("hsl({hue} {saturation} {lightness})")
+    }
+  }
+}
+
+impl Display for HslaCss<'_> {
+  fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
+    write!(f, "{}", self.to_css())
+  }
+}
+
+fn hwb_to_css(hwba: &Hwba) -> String {
+  let is_alpha = hwba.alpha != 1.0;
   let hue = hwba.hue.into_positive_degrees();
   let whiteness = hwba.whiteness * 100.0;
   let blackness = hwba.blackness * 100.0;
-  let alpha = opacity
-    .map(|v| v.as_ref().to_string())
-    .unwrap_or(hwba.alpha.to_string());
+  let alpha = hwba.alpha.to_string();
 
   if !is_alpha {
     return format!("hwb({hue} {whiteness}% {blackness}%)");
@@ -641,20 +673,18 @@ fn hwb_to_css<T: AsRef<str>>(hwba: &Hwba, opacity: Option<T>) -> String {
   format!("hwb({hue} {whiteness}% {blackness}% / {alpha})")
 }
 
-fn hsv_to_css<T: AsRef<str>>(hsva: &Hsva, opacity: Option<T>) -> String {
+fn hsv_to_css(hsva: &Hsva) -> String {
   // There is no hsv() function in CSS, so we convert it to hsl()
   let hsla = Hsla::from_color(*hsva);
-  hsl_to_css(&hsla, opacity)
+  HslaCss::new(&hsla).to_css()
 }
 
-fn lch_to_css<T: AsRef<str>>(lcha: &Lcha, opacity: Option<T>) -> String {
-  let is_alpha = opacity.is_some() || lcha.alpha != 1.0;
+fn lch_to_css(lcha: &Lcha) -> String {
+  let is_alpha = lcha.alpha != 1.0;
   let lightness = lcha.l;
   let chroma = lcha.chroma / 150.0 * 100.0;
   let hue = lcha.hue.into_positive_degrees();
-  let alpha = opacity
-    .map(|v| v.as_ref().to_string())
-    .unwrap_or(lcha.alpha.to_string());
+  let alpha = lcha.alpha.to_string();
 
   if !is_alpha {
     return format!("lch({lightness}% {chroma}% {hue})");
@@ -663,14 +693,12 @@ fn lch_to_css<T: AsRef<str>>(lcha: &Lcha, opacity: Option<T>) -> String {
   format!("lch({lightness}% {chroma}% {hue} / {alpha})")
 }
 
-fn oklch_to_css<T: AsRef<str>>(oklcha: &Oklcha, opacity: Option<T>) -> String {
-  let is_alpha = opacity.is_some() || oklcha.alpha != 1.0;
+fn oklch_to_css(oklcha: &Oklcha) -> String {
+  let is_alpha = oklcha.alpha != 1.0;
   let lightness = oklcha.l * 100.0;
   let chroma = oklcha.chroma * 100.0;
   let hue = oklcha.hue.into_positive_degrees();
-  let alpha = opacity
-    .map(|v| v.as_ref().to_string())
-    .unwrap_or(oklcha.alpha.to_string());
+  let alpha = oklcha.alpha.to_string();
 
   if !is_alpha {
     return format!("oklch({lightness}% {chroma}% {hue})");
@@ -679,14 +707,12 @@ fn oklch_to_css<T: AsRef<str>>(oklcha: &Oklcha, opacity: Option<T>) -> String {
   format!("oklch({lightness}% {chroma}% {hue} / {alpha})")
 }
 
-fn lab_to_css<T: AsRef<str>>(laba: &Laba, opacity: Option<T>) -> String {
-  let is_alpha = opacity.is_some() || laba.alpha != 1.0;
+fn lab_to_css(laba: &Laba) -> String {
+  let is_alpha = laba.alpha != 1.0;
   let lightness = laba.l;
   let a = remap(laba.a, LAB_PALETTE_RANGE, LAB_CSS_RANGE);
   let b = remap(laba.b, LAB_PALETTE_RANGE, LAB_CSS_RANGE);
-  let alpha = opacity
-    .map(|v| v.as_ref().to_string())
-    .unwrap_or(laba.alpha.to_string());
+  let alpha = laba.alpha.to_string();
 
   if !is_alpha {
     return format!("lab({lightness}% {a} {b})");
@@ -695,14 +721,12 @@ fn lab_to_css<T: AsRef<str>>(laba: &Laba, opacity: Option<T>) -> String {
   format!("lab({lightness}% {a} {b} / {alpha})")
 }
 
-fn oklab_to_css<T: AsRef<str>>(laba: &Oklaba, opacity: Option<T>) -> String {
-  let is_alpha = opacity.is_some() || laba.alpha != 1.0;
+fn oklab_to_css(laba: &Oklaba) -> String {
+  let is_alpha = laba.alpha != 1.0;
   let l = laba.l;
   let a = remap(laba.a, OKLAB_PALETTE_RANGE, OKLAB_CSS_RANGE);
   let b = remap(laba.b, OKLAB_PALETTE_RANGE, OKLAB_CSS_RANGE);
-  let alpha = opacity
-    .map(|v| v.as_ref().to_string())
-    .unwrap_or(laba.alpha.to_string());
+  let alpha = laba.alpha.to_string();
 
   if !is_alpha {
     return format!("oklab({l}% {a} {b})");
@@ -713,10 +737,6 @@ fn oklab_to_css<T: AsRef<str>>(laba: &Oklaba, opacity: Option<T>) -> String {
 
 fn parse<S: AsRef<str>>(input: S) -> Result<Color, ColorError> {
   let input = input.as_ref().trim().to_lowercase();
-
-  if input == "transparent" {
-    return Ok(Color::rgb(0.0, 0.0, 0.0, 0.0));
-  }
 
   // hex format
   if let Some(hex) = input.strip_prefix('#') {

@@ -1,13 +1,11 @@
 use serde::Deserialize;
 use serde::Serialize;
 use skribble_color::Color;
+use skribble_color::ColorError;
+use skribble_color::Hsla;
 
-use crate::CssVariable;
 use crate::Error;
-use crate::Options;
-use crate::Placeholder;
 use crate::Result;
-use crate::RunnerConfig;
 
 /// ColorFormat is used to determine the default format of the colors. The
 /// integration with lightning css may cause this to be overridden in the
@@ -73,65 +71,13 @@ impl ColorFormat {
     }
   }
 
-  pub fn get_normalized_color(
-    &self,
-    config: &RunnerConfig,
-    css_variable: &CssVariable,
-    initial_value: Option<&String>,
-  ) -> Result<Color> {
-    let initial_value = if let Some(initial_value) = initial_value {
-      initial_value.clone()
-    } else {
-      css_variable
-        .value
-        .as_ref()
-        .map(|value| Placeholder::normalize(value, config))
-        .ok_or(Error::InvalidCssVariable(css_variable.name.clone()))?
-    };
-
-    self.get_color(initial_value)
-  }
-
-  /// Get the inner color of the color format.
-  ///
-  /// Go from `hsl(100 10% 40% / 0.9)` to `100 10% 40%`
-  pub fn get_inner_color(&self, value: impl AsRef<str>) -> Result<String> {
-    let value = value.as_ref();
-    let color = if self == &Self::Hex {
-      Self::Rgb.get_color(value)?.to_string()
-    } else {
-      self.get_color(value)?.to_string()
-    };
-
+  pub fn get_hsla(&self, value: impl AsRef<str>) -> Result<Hsla> {
+    let color = self.get_color(value)?;
     color
-      .split('/')
-      .next()
-      .and_then(|value| value.split('(').nth(1))
-      .and_then(|value| value.get(0..value.len() - 1))
-      .map(|value| value.trim().to_string())
-      .ok_or(Error::InnerColor)
-  }
-
-  /// Get the color value with the parts and opacity.
-  pub fn get_color_with_parts_and_opacity(
-    &self,
-    variable: &CssVariable,
-    options: &Options,
-  ) -> String {
-    let prefix = match self {
-      Self::Hex => "rgb",
-      Self::Rgb => "rgb",
-      Self::Hsl => "hsl",
-      Self::Hwb => "hwb",
-      Self::Lch => "lch",
-      Self::Oklch => "oklch",
-      Self::Lab => "lab",
-      Self::Oklab => "oklab",
-    };
-    let color = variable.get_wrapped_color_variable(options, None);
-    let opacity = variable.get_wrapped_opacity_variable(options, None);
-
-    format!("{}({} / {})", prefix, color, opacity)
+      .into_hsl()
+      .get_hsl()
+      .copied()
+      .ok_or(Error::Color(ColorError::InvalidHsl))
   }
 }
 

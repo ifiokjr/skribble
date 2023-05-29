@@ -68,6 +68,8 @@ pub enum Error {
   #[error("something went wrong while writing the file: `{0}`")]
   FileWriteError(PathBuf),
   #[error("generating the css failed")]
+  FormatterError(#[source] AnyError),
+  #[error("generating the css failed")]
   GenerateCssError(#[source] AnyError),
   #[error("minifying the css with lightning css failed with error: {0}")]
   LightningMinifyError(#[source] LightningError<MinifyErrorKind>),

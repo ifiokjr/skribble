@@ -8,17 +8,18 @@ use typed_builder::TypedBuilder;
 
 use crate::Alias;
 use crate::Atom;
+use crate::AtomType;
 use crate::CssChunk;
 use crate::CssVariable;
 use crate::Error;
 use crate::Keyframe;
-use crate::LinkedValues;
 use crate::MediaQuery;
 use crate::Modifier;
 use crate::NamedClass;
 use crate::Options;
 use crate::Result;
 use crate::StringMap;
+use crate::Transformer;
 use crate::ValueSet;
 
 /// The configuration after all plugins have been run.
@@ -35,6 +36,7 @@ pub struct RunnerConfig {
   pub layers: IndexSet<String>,
   pub media_queries: IndexMap<String, IndexMap<String, MediaQuery>>,
   pub modifiers: IndexMap<String, IndexMap<String, Modifier>>,
+  pub transformers: IndexMap<String, IndexMap<String, Transformer>>,
   #[builder(default)]
   pub names: IndexMap<String, IndexSet<String>>,
   pub palette: StringMap,
@@ -56,12 +58,8 @@ impl RunnerConfig {
       .and_then(|map| map.get_index_of(name.as_ref()))
   }
 
-  pub fn get_atom_is_keyframe(&self, name: impl AsRef<str>) -> bool {
-    self
-      .atoms
-      .get(name.as_ref())
-      .map(|atom| atom.values == LinkedValues::Keyframes)
-      .unwrap_or(false)
+  pub fn get_atom_type(&self, name: impl AsRef<str>) -> Option<AtomType> {
+    self.atoms.get(name.as_ref()).map(|atom| atom.get_type())
   }
 
   pub fn get_atom_values_index(
@@ -122,6 +120,28 @@ impl RunnerConfig {
   pub fn get_modifiers(&self) -> Vec<&Modifier> {
     self
       .modifiers
+      .values()
+      .flat_map(|map| map.values())
+      .collect()
+  }
+
+  pub fn get_transformer(&self, name: impl AsRef<str>) -> Option<&Transformer> {
+    self
+      .get_transformers()
+      .into_iter()
+      .find(|&transformer| transformer.name == name.as_ref())
+  }
+
+  pub fn get_transformer_index(&self, name: impl AsRef<str>) -> Option<usize> {
+    self
+      .names
+      .get("transformers")
+      .and_then(|map| map.get_index_of(name.as_ref()))
+  }
+
+  pub fn get_transformers(&self) -> Vec<&Transformer> {
+    self
+      .transformers
       .values()
       .flat_map(|map| map.values())
       .collect()

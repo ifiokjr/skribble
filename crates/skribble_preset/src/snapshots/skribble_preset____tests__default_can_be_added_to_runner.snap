@@ -1265,6 +1265,7 @@ expression: runner_config
       "priority": 150,
       "styles": {},
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1280,6 +1281,7 @@ expression: runner_config
       "priority": 150,
       "styles": {},
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1297,6 +1299,7 @@ expression: runner_config
         "transition-property": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1314,6 +1317,7 @@ expression: runner_config
         "transition-duration": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1331,6 +1335,7 @@ expression: runner_config
         "transition-timing-function": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1348,6 +1353,7 @@ expression: runner_config
         "transition-delay": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1366,6 +1372,7 @@ expression: runner_config
         "animation-duration": "__:CSS_VARIABLE::animation-duration:__"
       },
       "modifier": null,
+      "children": [],
       "values": "keyframes"
     },
     "fade-in": {
@@ -1376,6 +1383,7 @@ expression: runner_config
         "__:CSS_VARIABLE::enter-opacity:__": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1393,6 +1401,7 @@ expression: runner_config
         "__:CSS_VARIABLE::exit-opacity:__": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1410,6 +1419,7 @@ expression: runner_config
         "__:CSS_VARIABLE::enter-rotate:__": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1427,6 +1437,7 @@ expression: runner_config
         "__:CSS_VARIABLE::exit-rotate:__": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1444,6 +1455,7 @@ expression: runner_config
         "__:CSS_VARIABLE::enter-translate-x:__": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1461,6 +1473,7 @@ expression: runner_config
         "__:CSS_VARIABLE::enter-translate-x:__": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1478,6 +1491,7 @@ expression: runner_config
         "__:CSS_VARIABLE::exit-translate-x:__": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1495,6 +1509,7 @@ expression: runner_config
         "__:CSS_VARIABLE::exit-translate-x:__": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1512,6 +1527,7 @@ expression: runner_config
         "__:CSS_VARIABLE::enter-translate-y:__": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1529,6 +1545,7 @@ expression: runner_config
         "__:CSS_VARIABLE::enter-translate-y:__": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1546,6 +1563,7 @@ expression: runner_config
         "__:CSS_VARIABLE::exit-translate-y:__": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1563,6 +1581,7 @@ expression: runner_config
         "__:CSS_VARIABLE::exit-translate-y:__": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1581,6 +1600,7 @@ expression: runner_config
         "__:CSS_VARIABLE::enter-scale-y:__": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1599,6 +1619,7 @@ expression: runner_config
         "__:CSS_VARIABLE::exit-scale-y:__": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1616,6 +1637,7 @@ expression: runner_config
         "animation-duration": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1633,6 +1655,7 @@ expression: runner_config
         "animation-timing-function": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1650,6 +1673,7 @@ expression: runner_config
         "animation-delay": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1667,6 +1691,7 @@ expression: runner_config
         "animation-iteration-count": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1684,6 +1709,7 @@ expression: runner_config
         "animation-direction": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1701,6 +1727,7 @@ expression: runner_config
         "animation-fill-mode": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1718,6 +1745,7 @@ expression: runner_config
         "animation-play-state": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1735,6 +1763,7 @@ expression: runner_config
         "__:CSS_VARIABLE::enter-scale:__": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1752,6 +1781,7 @@ expression: runner_config
         "padding": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1774,6 +1804,7 @@ expression: runner_config
         "padding-bottom": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1796,6 +1827,7 @@ expression: runner_config
         "padding-left": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1817,6 +1849,7 @@ expression: runner_config
         "padding-block": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1838,6 +1871,7 @@ expression: runner_config
         "padding-block-start": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1859,6 +1893,7 @@ expression: runner_config
         "padding-block-end": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1880,6 +1915,7 @@ expression: runner_config
         "padding-inline": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1901,6 +1937,7 @@ expression: runner_config
         "padding-inline-start": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1922,6 +1959,7 @@ expression: runner_config
         "padding-inline-end": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1943,6 +1981,7 @@ expression: runner_config
         "padding-top": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1964,6 +2003,7 @@ expression: runner_config
         "padding-right": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -1985,6 +2025,7 @@ expression: runner_config
         "padding-bottom": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2006,6 +2047,7 @@ expression: runner_config
         "padding-left": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2027,6 +2069,7 @@ expression: runner_config
         "margin": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2049,6 +2092,7 @@ expression: runner_config
         "margin-bottom": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2071,6 +2115,7 @@ expression: runner_config
         "margin-left": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2092,6 +2137,7 @@ expression: runner_config
         "margin-block": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2113,6 +2159,7 @@ expression: runner_config
         "margin-block-start": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2134,6 +2181,7 @@ expression: runner_config
         "margin-block-end": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2155,6 +2203,7 @@ expression: runner_config
         "margin-inline": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2176,6 +2225,7 @@ expression: runner_config
         "margin-inline-start": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2197,6 +2247,7 @@ expression: runner_config
         "margin-inline-end": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2218,6 +2269,7 @@ expression: runner_config
         "margin-top": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2239,6 +2291,7 @@ expression: runner_config
         "margin-right": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2260,6 +2313,7 @@ expression: runner_config
         "margin-bottom": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2281,6 +2335,7 @@ expression: runner_config
         "margin-left": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2303,6 +2358,7 @@ expression: runner_config
         "margin-left": "calc(__:VALUE:::__ * calc(1 - var(__:CSS_VARIABLE::space-x-reverse:__, 0)))"
       },
       "modifier": "&>:not([hidden])~:not([hidden])",
+      "children": [],
       "values": {
         "values": [
           {
@@ -2325,6 +2381,7 @@ expression: runner_config
         "margin-bottom": "calc(__:VALUE:::__ * var(__:CSS_VARIABLE::space-y-reverse:__, 0))"
       },
       "modifier": "&>:not([hidden])~:not([hidden])",
+      "children": [],
       "values": {
         "values": [
           {
@@ -2346,6 +2403,7 @@ expression: runner_config
         "z-index": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2363,6 +2421,7 @@ expression: runner_config
         "direction": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2380,6 +2439,7 @@ expression: runner_config
         "opacity": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2397,6 +2457,7 @@ expression: runner_config
         "aspect-ratio": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2414,6 +2475,7 @@ expression: runner_config
         "columns": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2435,6 +2497,7 @@ expression: runner_config
         "break-after": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2452,6 +2515,7 @@ expression: runner_config
         "break-before": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2469,6 +2533,7 @@ expression: runner_config
         "break-inside": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2486,6 +2551,7 @@ expression: runner_config
         "box-decoration-break": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2503,6 +2569,7 @@ expression: runner_config
         "box-sizing": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2520,6 +2587,7 @@ expression: runner_config
         "display": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2537,6 +2605,7 @@ expression: runner_config
         "visibility": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2554,6 +2623,7 @@ expression: runner_config
         "float": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2571,6 +2641,7 @@ expression: runner_config
         "clear": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2592,6 +2663,7 @@ expression: runner_config
         "isolation": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2609,6 +2681,7 @@ expression: runner_config
         "object-fit": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2626,6 +2699,7 @@ expression: runner_config
         "object-position": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2643,6 +2717,7 @@ expression: runner_config
         "overflow": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2660,6 +2735,7 @@ expression: runner_config
         "overflow-x": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2677,6 +2753,7 @@ expression: runner_config
         "overflow-y": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2694,6 +2771,7 @@ expression: runner_config
         "overscroll-behavior": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2711,6 +2789,7 @@ expression: runner_config
         "overscroll-behavior-x": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2728,6 +2807,7 @@ expression: runner_config
         "overscroll-behavior-y": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2745,6 +2825,7 @@ expression: runner_config
         "position": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2762,6 +2843,7 @@ expression: runner_config
         "inset": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2792,6 +2874,7 @@ expression: runner_config
         "right": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2822,6 +2905,7 @@ expression: runner_config
         "bottom": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2851,6 +2935,7 @@ expression: runner_config
         "inset-inline-start": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2880,6 +2965,7 @@ expression: runner_config
         "inset-inline-end": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2909,6 +2995,7 @@ expression: runner_config
         "top": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2938,6 +3025,7 @@ expression: runner_config
         "right": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2967,6 +3055,7 @@ expression: runner_config
         "bottom": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -2996,6 +3085,7 @@ expression: runner_config
         "left": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3026,6 +3116,7 @@ expression: runner_config
         "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3044,6 +3135,7 @@ expression: runner_config
         "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3062,6 +3154,7 @@ expression: runner_config
         "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3080,6 +3173,7 @@ expression: runner_config
         "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3098,6 +3192,7 @@ expression: runner_config
         "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3116,6 +3211,7 @@ expression: runner_config
         "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3134,6 +3230,7 @@ expression: runner_config
         "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3152,6 +3249,7 @@ expression: runner_config
         "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3170,6 +3268,7 @@ expression: runner_config
         "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3188,6 +3287,7 @@ expression: runner_config
         "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3205,6 +3305,7 @@ expression: runner_config
         "filter": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3223,6 +3324,7 @@ expression: runner_config
         "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3241,6 +3343,7 @@ expression: runner_config
         "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3259,6 +3362,7 @@ expression: runner_config
         "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3277,6 +3381,7 @@ expression: runner_config
         "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3295,6 +3400,7 @@ expression: runner_config
         "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3313,6 +3419,7 @@ expression: runner_config
         "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3331,6 +3438,7 @@ expression: runner_config
         "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3349,6 +3457,7 @@ expression: runner_config
         "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3367,6 +3476,7 @@ expression: runner_config
         "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3385,6 +3495,7 @@ expression: runner_config
         "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3402,6 +3513,7 @@ expression: runner_config
         "backdrop-filter": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3419,6 +3531,7 @@ expression: runner_config
         "width": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3448,6 +3561,7 @@ expression: runner_config
         "min-width": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3473,6 +3587,7 @@ expression: runner_config
         "max-width": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3494,6 +3609,7 @@ expression: runner_config
         "height": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3523,6 +3639,7 @@ expression: runner_config
         "min-height": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3552,6 +3669,7 @@ expression: runner_config
         "max-height": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3581,6 +3699,7 @@ expression: runner_config
         "flex-basis": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3602,6 +3721,7 @@ expression: runner_config
         "flex-direction": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3619,6 +3739,7 @@ expression: runner_config
         "flex-wrap": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3636,6 +3757,7 @@ expression: runner_config
         "flex": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3653,6 +3775,7 @@ expression: runner_config
         "flex-grow": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3670,6 +3793,7 @@ expression: runner_config
         "flex-shrink": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3687,6 +3811,7 @@ expression: runner_config
         "order": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3708,6 +3833,7 @@ expression: runner_config
         "grid-template-columns": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3725,6 +3851,7 @@ expression: runner_config
         "grid-template-rows": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3742,6 +3869,7 @@ expression: runner_config
         "grid-column": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3759,6 +3887,7 @@ expression: runner_config
         "grid-column-start": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3776,6 +3905,7 @@ expression: runner_config
         "grid-column-end": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3793,6 +3923,7 @@ expression: runner_config
         "grid-row": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3810,6 +3941,7 @@ expression: runner_config
         "grid-row-start": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3827,6 +3959,7 @@ expression: runner_config
         "grid-row-end": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3844,6 +3977,7 @@ expression: runner_config
         "grid-auto-flow": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3861,6 +3995,7 @@ expression: runner_config
         "grid-auto-columns": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3878,6 +4013,7 @@ expression: runner_config
         "grid-auto-rows": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3895,6 +4031,7 @@ expression: runner_config
         "gap": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3912,6 +4049,7 @@ expression: runner_config
         "column-gap": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3929,6 +4067,7 @@ expression: runner_config
         "row-gap": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3946,6 +4085,7 @@ expression: runner_config
         "justify-content": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3963,6 +4103,7 @@ expression: runner_config
         "justify-items": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -3980,6 +4121,7 @@ expression: runner_config
         "justify-self": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4002,6 +4144,7 @@ expression: runner_config
         "content": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4023,6 +4166,7 @@ expression: runner_config
         "align-items": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4034,12 +4178,13 @@ expression: runner_config
     },
     "self": {
       "name": "self",
-      "description": "Control how an individual flex or grid item is positioned along its container's cross axis.",
+      "description": "Control how an individual flex or grid item is positioned along its container's cross axis. The misspelling is to avoid conflicts with the `self` keyword in rust which can't be a raw identifier.",
       "priority": 150,
       "styles": {
         "align-self": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4057,6 +4202,7 @@ expression: runner_config
         "place-content": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4074,6 +4220,7 @@ expression: runner_config
         "place-items": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4091,6 +4238,7 @@ expression: runner_config
         "place-self": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4112,7 +4260,14 @@ expression: runner_config
         "fill": null
       },
       "modifier": null,
-      "values": "color"
+      "children": [],
+      "values": {
+        "color": {
+          "disableNamedDefaults": false,
+          "disablePalette": false,
+          "excluded": []
+        }
+      }
     },
     "stroke": {
       "name": "stroke",
@@ -4122,7 +4277,14 @@ expression: runner_config
         "stroke": null
       },
       "modifier": null,
-      "values": "color"
+      "children": [],
+      "values": {
+        "color": {
+          "disableNamedDefaults": false,
+          "disablePalette": false,
+          "excluded": []
+        }
+      }
     },
     "stroke-width": {
       "name": "stroke-width",
@@ -4132,6 +4294,7 @@ expression: runner_config
         "stroke-width": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4149,6 +4312,7 @@ expression: runner_config
         "font-family": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4167,6 +4331,7 @@ expression: runner_config
         "line-height": "__:VALUE::height:__"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4185,6 +4350,7 @@ expression: runner_config
         "-moz-osx-font-smoothing": "__:VALUE::moz:__"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4202,6 +4368,7 @@ expression: runner_config
         "font-style": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4219,6 +4386,7 @@ expression: runner_config
         "font-weight": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4236,6 +4404,7 @@ expression: runner_config
         "font-variant-numeric": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4253,6 +4422,7 @@ expression: runner_config
         "letter-spacing": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4273,6 +4443,7 @@ expression: runner_config
         "-webkit-box-clamp": "__:VALUE::clamp:__"
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4290,6 +4461,7 @@ expression: runner_config
         "line-height": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4307,6 +4479,7 @@ expression: runner_config
         "list-style-image": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4324,6 +4497,7 @@ expression: runner_config
         "list-style-position": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4341,6 +4515,7 @@ expression: runner_config
         "list-style-type": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4362,6 +4537,7 @@ expression: runner_config
         "text-align": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4379,7 +4555,14 @@ expression: runner_config
         "color": null
       },
       "modifier": null,
-      "values": "color"
+      "children": [],
+      "values": {
+        "color": {
+          "disableNamedDefaults": false,
+          "disablePalette": false,
+          "excluded": []
+        }
+      }
     },
     "text-decoration": {
       "name": "text-decoration",
@@ -4389,6 +4572,7 @@ expression: runner_config
         "text-decoration-line": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4410,7 +4594,14 @@ expression: runner_config
         "text-decoration-color": null
       },
       "modifier": null,
-      "values": "color"
+      "children": [],
+      "values": {
+        "color": {
+          "disableNamedDefaults": false,
+          "disablePalette": false,
+          "excluded": []
+        }
+      }
     },
     "decoration-style": {
       "name": "decoration-style",
@@ -4420,6 +4611,7 @@ expression: runner_config
         "text-decoration-style": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4437,6 +4629,7 @@ expression: runner_config
         "text-decoration-thickness": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4454,6 +4647,7 @@ expression: runner_config
         "text-underline-offset": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4471,6 +4665,7 @@ expression: runner_config
         "text-transform": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4492,6 +4687,7 @@ expression: runner_config
         "text-overflow": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4509,6 +4705,7 @@ expression: runner_config
         "text-indent": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4526,6 +4723,7 @@ expression: runner_config
         "vertical-align": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4543,6 +4741,7 @@ expression: runner_config
         "white-space": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4558,6 +4757,7 @@ expression: runner_config
       "priority": 150,
       "styles": {},
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4575,6 +4775,7 @@ expression: runner_config
         "hyphens": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4600,6 +4801,7 @@ expression: runner_config
         "background-attachment": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4617,7 +4819,14 @@ expression: runner_config
         "background-color": null
       },
       "modifier": null,
-      "values": "color"
+      "children": [],
+      "values": {
+        "color": {
+          "disableNamedDefaults": false,
+          "disablePalette": false,
+          "excluded": []
+        }
+      }
     },
     "bg-clip": {
       "name": "bg-clip",
@@ -4627,6 +4836,7 @@ expression: runner_config
         "background-clip": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4648,6 +4858,7 @@ expression: runner_config
         "background-origin": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4665,6 +4876,7 @@ expression: runner_config
         "background-position": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4682,6 +4894,7 @@ expression: runner_config
         "background-repeat": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
@@ -4699,11 +4912,154 @@ expression: runner_config
         "background-size": null
       },
       "modifier": null,
+      "children": [],
       "values": {
         "values": [
           {
             "priority": 150,
             "value": "background-size"
+          }
+        ]
+      }
+    },
+    "bg-gradient": {
+      "name": "bg-gradient",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "background-image": null
+      },
+      "modifier": null,
+      "children": [],
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "none"
+          },
+          {
+            "priority": 150,
+            "value": "background-gradient"
+          }
+        ]
+      }
+    },
+    "from-color": {
+      "name": "from-color",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::gradient-from:__": "__:VALUE:::__ var(__:CSS_VARIABLE::gradient-from-position:__)",
+        "__:CSS_VARIABLE::gradient-to:__": "__:VALUE::transparent:__ var(__:CSS_VARIABLE::gradient-to-position:__)",
+        "__:CSS_VARIABLE::gradient-stops:__": "var(__:CSS_VARIABLE::gradient-from:__), var(__:CSS_VARIABLE::gradient-to:__)"
+      },
+      "modifier": null,
+      "children": [
+        "gradient-reference"
+      ],
+      "values": {
+        "color": {
+          "disableNamedDefaults": false,
+          "disablePalette": false,
+          "excluded": []
+        }
+      }
+    },
+    "from-position": {
+      "name": "from-position",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::gradient-from-position:__": null
+      },
+      "modifier": null,
+      "children": [
+        "gradient-reference"
+      ],
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "gradient-position"
+          }
+        ]
+      }
+    },
+    "via": {
+      "name": "via",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::gradient-to:__": "__:VALUE::transparent:__ var(__:CSS_VARIABLE::gradient-to-position:__)",
+        "__:CSS_VARIABLE::gradient-stops:__": "var(__:CSS_VARIABLE::gradient-from:__), __:VALUE:::__ var(__:CSS_VARIABLE::gradient-via-position:__), var(__:CSS_VARIABLE::gradient-to:__)"
+      },
+      "modifier": null,
+      "children": [
+        "gradient-reference"
+      ],
+      "values": {
+        "color": {
+          "disableNamedDefaults": false,
+          "disablePalette": false,
+          "excluded": []
+        }
+      }
+    },
+    "via-position": {
+      "name": "via-position",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::gradient-via-position:__": null
+      },
+      "modifier": null,
+      "children": [
+        "gradient-reference"
+      ],
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "gradient-position"
+          }
+        ]
+      }
+    },
+    "to": {
+      "name": "to",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::gradient-to:__": "__:VALUE:::__ var(__:CSS_VARIABLE::gradient-to-position:__)"
+      },
+      "modifier": null,
+      "children": [
+        "gradient-reference"
+      ],
+      "values": {
+        "color": {
+          "disableNamedDefaults": false,
+          "disablePalette": false,
+          "excluded": []
+        }
+      }
+    },
+    "to-position": {
+      "name": "to-position",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::gradient-to-position:__": null
+      },
+      "modifier": null,
+      "children": [
+        "gradient-reference"
+      ],
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "gradient-position"
           }
         ]
       }
@@ -4715,6 +5071,7 @@ expression: runner_config
       "description": null,
       "priority": 150,
       "styles": {},
+      "reference": false,
       "modifier": null
     },
     "contained": {
@@ -4725,6 +5082,7 @@ expression: runner_config
         "width": "100%",
         "max-width": "var(__:CSS_VARIABLE::contained-max-width:__)"
       },
+      "reference": false,
       "modifier": null
     },
     "italic": {
@@ -4734,6 +5092,7 @@ expression: runner_config
       "styles": {
         "font-style": "italic"
       },
+      "reference": false,
       "modifier": null
     },
     "non-italic": {
@@ -4743,6 +5102,7 @@ expression: runner_config
       "styles": {
         "font-style": "normal"
       },
+      "reference": false,
       "modifier": null
     },
     "oblique": {
@@ -4752,6 +5112,7 @@ expression: runner_config
       "styles": {
         "font-style": "oblique -10deg"
       },
+      "reference": false,
       "modifier": null
     },
     "antialiased": {
@@ -4762,6 +5123,7 @@ expression: runner_config
         "-webkit-font-smoothing": "antialiased",
         "-moz-osx-font-smoothing": "grayscale"
       },
+      "reference": false,
       "modifier": null
     },
     "subpixel-antialiased": {
@@ -4772,6 +5134,7 @@ expression: runner_config
         "-webkit-font-smoothing": "auto",
         "-moz-osx-font-smoothing": "auto"
       },
+      "reference": false,
       "modifier": null
     },
     "invisible": {
@@ -4781,6 +5144,7 @@ expression: runner_config
       "styles": {
         "visibility": "hidden"
       },
+      "reference": false,
       "modifier": null
     },
     "visible": {
@@ -4790,6 +5154,7 @@ expression: runner_config
       "styles": {
         "visibility": "visible"
       },
+      "reference": false,
       "modifier": null
     },
     "transform-gpu": {
@@ -4799,6 +5164,7 @@ expression: runner_config
       "styles": {
         "__:CSS_VARIABLE::group-nested-transform:__": "__:CSS_VARIABLE::group-nested-transform-gpu:__"
       },
+      "reference": false,
       "modifier": null
     },
     "transform-cpu": {
@@ -4808,6 +5174,7 @@ expression: runner_config
       "styles": {
         "__:CSS_VARIABLE::group-nested-transform:__": "__:CSS_VARIABLE::group-nested-transform-cpu:__"
       },
+      "reference": false,
       "modifier": null
     },
     "space-x-reverse": {
@@ -4817,6 +5184,7 @@ expression: runner_config
       "styles": {
         "__:CSS_VARIABLE::space-x-reverse:__": "1"
       },
+      "reference": false,
       "modifier": null
     },
     "space-y-reverse": {
@@ -4826,6 +5194,7 @@ expression: runner_config
       "styles": {
         "__:CSS_VARIABLE::space-y-reverse:__": "1"
       },
+      "reference": false,
       "modifier": null
     },
     "sr-only": {
@@ -4843,6 +5212,7 @@ expression: runner_config
         "white-space": "nowrap",
         "border-width": "0"
       },
+      "reference": false,
       "modifier": null
     },
     "sr-exclude": {
@@ -4859,6 +5229,19 @@ expression: runner_config
         "clip": "auto",
         "white-space": "normal"
       },
+      "reference": false,
+      "modifier": null
+    },
+    "gradient-reference": {
+      "name": "gradient-reference",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "__:CSS_VARIABLE::gradient-from-position:__": "",
+        "__:CSS_VARIABLE::gradient-via-position:__": "",
+        "__:CSS_VARIABLE::gradient-to-position:__": ""
+      },
+      "reference": true,
       "modifier": null
     }
   },
@@ -5093,7 +5476,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--filter-blur",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "filter-brightness": {
@@ -5102,7 +5485,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--filter-brightness",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "filter-contrast": {
@@ -5111,7 +5494,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--filter-contrast",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "filter-custom": {
@@ -5120,7 +5503,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--filter-custom",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "filter-grayscale": {
@@ -5129,7 +5512,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--filter-grayscale",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "filter-hue-rotate": {
@@ -5138,7 +5521,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--filter-hue-rotate",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "filter-invert": {
@@ -5147,7 +5530,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--filter-invert",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "filter-saturate": {
@@ -5156,7 +5539,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--filter-saturate",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "filter-sepia": {
@@ -5165,7 +5548,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--filter-sepia",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "filter-drop-shadow": {
@@ -5174,7 +5557,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--filter-drop-shadow",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "backdrop-blur": {
@@ -5183,7 +5566,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--backdrop-blur",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "backdrop-brightness": {
@@ -5192,7 +5575,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--backdrop-brightness",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "backdrop-contrast": {
@@ -5201,7 +5584,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--backdrop-contrast",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "backdrop-custom": {
@@ -5210,7 +5593,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--backdrop-custom",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "backdrop-grayscale": {
@@ -5219,7 +5602,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--backdrop-grayscale",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "backdrop-hue-rotate": {
@@ -5228,7 +5611,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--backdrop-hue-rotate",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "backdrop-invert": {
@@ -5237,7 +5620,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--backdrop-invert",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "backdrop-saturate": {
@@ -5246,7 +5629,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--backdrop-saturate",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "backdrop-sepia": {
@@ -5255,7 +5638,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--backdrop-sepia",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "backdrop-drop-shadow": {
@@ -5264,7 +5647,7 @@ expression: runner_config
       "priority": 150,
       "variable": "--backdrop-drop-shadow",
       "syntax": "*",
-      "value": null,
+      "value": "",
       "mediaQueries": {}
     },
     "transition-duration": {
@@ -5427,6 +5810,60 @@ expression: runner_config
       "variable": "--space-y-reverse",
       "syntax": "<number>",
       "value": "0",
+      "mediaQueries": {}
+    },
+    "gradient-stops": {
+      "name": "gradient-stops",
+      "description": null,
+      "priority": 150,
+      "variable": "--gradient-stops",
+      "syntax": "*",
+      "value": "",
+      "mediaQueries": {}
+    },
+    "gradient-from": {
+      "name": "gradient-from",
+      "description": null,
+      "priority": 150,
+      "variable": "--gradient-from",
+      "syntax": "*",
+      "value": "",
+      "mediaQueries": {}
+    },
+    "gradient-to": {
+      "name": "gradient-to",
+      "description": null,
+      "priority": 150,
+      "variable": "--gradient-to",
+      "syntax": "*",
+      "value": "",
+      "mediaQueries": {}
+    },
+    "gradient-from-position": {
+      "name": "gradient-from-position",
+      "description": null,
+      "priority": 150,
+      "variable": "--gradient-from-position",
+      "syntax": "*",
+      "value": "",
+      "mediaQueries": {}
+    },
+    "gradient-to-position": {
+      "name": "gradient-to-position",
+      "description": null,
+      "priority": 150,
+      "variable": "--gradient-to-position",
+      "syntax": "*",
+      "value": "",
+      "mediaQueries": {}
+    },
+    "gradient-via-position": {
+      "name": "gradient-via-position",
+      "description": null,
+      "priority": 150,
+      "variable": "--gradient-via-position",
+      "syntax": "*",
+      "value": "",
       "mediaQueries": {}
     }
   },
@@ -6298,6 +6735,243 @@ expression: runner_config
       }
     }
   },
+  "transformers": {
+    "important": {
+      "important": {
+        "name": "important",
+        "description": "Append `!important` to every property in the transformed atom / named class.",
+        "transformation": {
+          "type": "Replacement",
+          "value": "& !important"
+        },
+        "values": null,
+        "scope": "all",
+        "recipient": "property",
+        "priority": 150
+      }
+    },
+    "alpha": {
+      "alpha": {
+        "name": "alpha",
+        "description": "Sets the alpha value of a color to this value. Should be a value between 0 and 1.",
+        "transformation": {
+          "type": "Color",
+          "value": {
+            "alpha": "set"
+          }
+        },
+        "values": {
+          "000": "0",
+          "005": "0.05",
+          "010": "0.1",
+          "015": "0.15",
+          "020": "0.2",
+          "025": "0.25",
+          "030": "0.3",
+          "040": "0.4",
+          "050": "0.5",
+          "060": "0.6",
+          "070": "0.7",
+          "075": "0.75",
+          "080": "0.8",
+          "090": "0.9",
+          "095": "0.95",
+          "100": "1"
+        },
+        "scope": "color",
+        "recipient": "value",
+        "priority": 150
+      },
+      "opaquify": {
+        "name": "opaquify",
+        "description": "Increase the opacity of the color.",
+        "transformation": {
+          "type": "Color",
+          "value": {
+            "alpha": "add"
+          }
+        },
+        "values": {
+          "001": "0.01",
+          "002": "0.02",
+          "003": "0.03",
+          "004": "0.04",
+          "005": "0.05",
+          "010": "0.1",
+          "015": "0.15",
+          "020": "0.2",
+          "025": "0.25",
+          "030": "0.3",
+          "040": "0.4",
+          "050": "0.5",
+          "060": "0.6",
+          "070": "0.7",
+          "075": "0.75",
+          "080": "0.8",
+          "090": "0.9",
+          "095": "0.95",
+          "100": "1"
+        },
+        "scope": "color",
+        "recipient": "value",
+        "priority": 150
+      },
+      "transparentize": {
+        "name": "transparentize",
+        "description": "Decrease the opacity of the color.",
+        "transformation": {
+          "type": "Color",
+          "value": {
+            "alpha": "subtract"
+          }
+        },
+        "values": {
+          "001": "0.01",
+          "002": "0.02",
+          "003": "0.03",
+          "004": "0.04",
+          "005": "0.05",
+          "010": "0.1",
+          "015": "0.15",
+          "020": "0.2",
+          "025": "0.25",
+          "030": "0.3",
+          "040": "0.4",
+          "050": "0.5",
+          "060": "0.6",
+          "070": "0.7",
+          "075": "0.75",
+          "080": "0.8",
+          "090": "0.9",
+          "095": "0.95",
+          "100": "1"
+        },
+        "scope": "color",
+        "recipient": "value",
+        "priority": 150
+      }
+    },
+    "lightness": {
+      "lightness": {
+        "name": "lightness",
+        "description": "Set the lightness of the color.",
+        "transformation": {
+          "type": "Color",
+          "value": {
+            "lightness": "set"
+          }
+        },
+        "values": {
+          "000": "0%",
+          "001": "1%",
+          "002": "2%",
+          "003": "3%",
+          "004": "4%",
+          "005": "5%",
+          "010": "10%",
+          "015": "15%",
+          "020": "20%",
+          "025": "25%",
+          "030": "30%",
+          "035": "35%",
+          "040": "40%",
+          "045": "45%",
+          "050": "50%",
+          "055": "55%",
+          "060": "60%",
+          "065": "65%",
+          "070": "70%",
+          "075": "75%",
+          "080": "80%",
+          "085": "85%",
+          "090": "90%",
+          "095": "95%",
+          "100": "100%"
+        },
+        "scope": "color",
+        "recipient": "value",
+        "priority": 150
+      },
+      "lighten": {
+        "name": "lighten",
+        "description": "Lighten the color by the provided percentage.",
+        "transformation": {
+          "type": "Color",
+          "value": {
+            "lightness": "add"
+          }
+        },
+        "values": {
+          "001": "1%",
+          "002": "2%",
+          "003": "3%",
+          "004": "4%",
+          "005": "5%",
+          "010": "10%",
+          "015": "15%",
+          "020": "20%",
+          "025": "25%",
+          "030": "30%",
+          "035": "35%",
+          "040": "40%",
+          "045": "45%",
+          "050": "50%",
+          "055": "55%",
+          "060": "60%",
+          "065": "65%",
+          "070": "70%",
+          "075": "75%",
+          "080": "80%",
+          "085": "85%",
+          "090": "90%",
+          "095": "95%",
+          "100": "100%"
+        },
+        "scope": "color",
+        "recipient": "value",
+        "priority": 150
+      },
+      "darken": {
+        "name": "darken",
+        "description": "Darken the color by the provided percentage.",
+        "transformation": {
+          "type": "Color",
+          "value": {
+            "lightness": "subtract"
+          }
+        },
+        "values": {
+          "001": "1%",
+          "002": "2%",
+          "003": "3%",
+          "004": "4%",
+          "005": "5%",
+          "010": "10%",
+          "015": "15%",
+          "020": "20%",
+          "025": "25%",
+          "030": "30%",
+          "035": "35%",
+          "040": "40%",
+          "045": "45%",
+          "050": "50%",
+          "055": "55%",
+          "060": "60%",
+          "065": "65%",
+          "070": "70%",
+          "075": "75%",
+          "080": "80%",
+          "085": "85%",
+          "090": "90%",
+          "095": "95%",
+          "100": "100%"
+        },
+        "scope": "color",
+        "recipient": "value",
+        "priority": 150
+      }
+    }
+  },
   "names": {
     "keyframes": [
       "in",
@@ -6365,7 +7039,13 @@ expression: runner_config
       "exit-scale-y",
       "exit-rotate",
       "space-x-reverse",
-      "space-y-reverse"
+      "space-y-reverse",
+      "gradient-stops",
+      "gradient-from",
+      "gradient-to",
+      "gradient-from-position",
+      "gradient-to-position",
+      "gradient-via-position"
     ],
     "atoms": [
       "sr",
@@ -6551,7 +7231,14 @@ expression: runner_config
       "bg-origin",
       "bg-position",
       "bg-repeat",
-      "bg-size"
+      "bg-size",
+      "bg-gradient",
+      "from-color",
+      "from-position",
+      "via",
+      "via-position",
+      "to",
+      "to-position"
     ],
     "classes": [
       "group",
@@ -6568,7 +7255,8 @@ expression: runner_config
       "space-x-reverse",
       "space-y-reverse",
       "sr-only",
-      "sr-exclude"
+      "sr-exclude",
+      "gradient-reference"
     ],
     "css_chunks": [
       "reset"
@@ -6810,6 +7498,15 @@ expression: runner_config
       "first-line",
       "before",
       "after"
+    ],
+    "transformers": [
+      "important",
+      "alpha",
+      "opaquify",
+      "transparentize",
+      "lightness",
+      "lighten",
+      "darken"
     ],
     "atom:sr": [
       "only",
@@ -11453,29 +12150,9 @@ expression: runner_config
       "auto"
     ],
     "atom:fill": [
-      "primary",
-      "primary-content",
-      "secondary",
-      "secondary-content",
-      "accent",
-      "accent-content",
-      "neutral",
-      "neutral-content",
-      "base100",
-      "base200",
-      "base300",
-      "base-content",
-      "info",
-      "info-content",
-      "success",
-      "success-content",
-      "warning",
-      "warning-content",
-      "error",
-      "error-content",
       "inherit",
-      "current",
       "transparent",
+      "current",
       "black",
       "white",
       "slate50",
@@ -11719,32 +12396,32 @@ expression: runner_config
       "rose700",
       "rose800",
       "rose900",
-      "rose950"
+      "rose950",
+      "primary",
+      "primary-content",
+      "secondary",
+      "secondary-content",
+      "accent",
+      "accent-content",
+      "neutral",
+      "neutral-content",
+      "base100",
+      "base200",
+      "base300",
+      "base-content",
+      "info",
+      "info-content",
+      "success",
+      "success-content",
+      "warning",
+      "warning-content",
+      "error",
+      "error-content"
     ],
     "atom:stroke": [
-      "primary",
-      "primary-content",
-      "secondary",
-      "secondary-content",
-      "accent",
-      "accent-content",
-      "neutral",
-      "neutral-content",
-      "base100",
-      "base200",
-      "base300",
-      "base-content",
-      "info",
-      "info-content",
-      "success",
-      "success-content",
-      "warning",
-      "warning-content",
-      "error",
-      "error-content",
       "inherit",
-      "current",
       "transparent",
+      "current",
       "black",
       "white",
       "slate50",
@@ -11988,7 +12665,27 @@ expression: runner_config
       "rose700",
       "rose800",
       "rose900",
-      "rose950"
+      "rose950",
+      "primary",
+      "primary-content",
+      "secondary",
+      "secondary-content",
+      "accent",
+      "accent-content",
+      "neutral",
+      "neutral-content",
+      "base100",
+      "base200",
+      "base300",
+      "base-content",
+      "info",
+      "info-content",
+      "success",
+      "success-content",
+      "warning",
+      "warning-content",
+      "error",
+      "error-content"
     ],
     "atom:stroke-width": [
       "0",
@@ -12101,29 +12798,9 @@ expression: runner_config
       "end"
     ],
     "atom:text": [
-      "primary",
-      "primary-content",
-      "secondary",
-      "secondary-content",
-      "accent",
-      "accent-content",
-      "neutral",
-      "neutral-content",
-      "base100",
-      "base200",
-      "base300",
-      "base-content",
-      "info",
-      "info-content",
-      "success",
-      "success-content",
-      "warning",
-      "warning-content",
-      "error",
-      "error-content",
       "inherit",
-      "current",
       "transparent",
+      "current",
       "black",
       "white",
       "slate50",
@@ -12367,7 +13044,27 @@ expression: runner_config
       "rose700",
       "rose800",
       "rose900",
-      "rose950"
+      "rose950",
+      "primary",
+      "primary-content",
+      "secondary",
+      "secondary-content",
+      "accent",
+      "accent-content",
+      "neutral",
+      "neutral-content",
+      "base100",
+      "base200",
+      "base300",
+      "base-content",
+      "info",
+      "info-content",
+      "success",
+      "success-content",
+      "warning",
+      "warning-content",
+      "error",
+      "error-content"
     ],
     "atom:text-decoration": [
       "underline",
@@ -12376,29 +13073,9 @@ expression: runner_config
       "none"
     ],
     "atom:decoration": [
-      "primary",
-      "primary-content",
-      "secondary",
-      "secondary-content",
-      "accent",
-      "accent-content",
-      "neutral",
-      "neutral-content",
-      "base100",
-      "base200",
-      "base300",
-      "base-content",
-      "info",
-      "info-content",
-      "success",
-      "success-content",
-      "warning",
-      "warning-content",
-      "error",
-      "error-content",
       "inherit",
-      "current",
       "transparent",
+      "current",
       "black",
       "white",
       "slate50",
@@ -12642,7 +13319,27 @@ expression: runner_config
       "rose700",
       "rose800",
       "rose900",
-      "rose950"
+      "rose950",
+      "primary",
+      "primary-content",
+      "secondary",
+      "secondary-content",
+      "accent",
+      "accent-content",
+      "neutral",
+      "neutral-content",
+      "base100",
+      "base200",
+      "base300",
+      "base-content",
+      "info",
+      "info-content",
+      "success",
+      "success-content",
+      "warning",
+      "warning-content",
+      "error",
+      "error-content"
     ],
     "atom:decoration-style": [
       "solid",
@@ -12748,29 +13445,9 @@ expression: runner_config
       "scroll"
     ],
     "atom:bg": [
-      "primary",
-      "primary-content",
-      "secondary",
-      "secondary-content",
-      "accent",
-      "accent-content",
-      "neutral",
-      "neutral-content",
-      "base100",
-      "base200",
-      "base300",
-      "base-content",
-      "info",
-      "info-content",
-      "success",
-      "success-content",
-      "warning",
-      "warning-content",
-      "error",
-      "error-content",
       "inherit",
-      "current",
       "transparent",
+      "current",
       "black",
       "white",
       "slate50",
@@ -13014,7 +13691,27 @@ expression: runner_config
       "rose700",
       "rose800",
       "rose900",
-      "rose950"
+      "rose950",
+      "primary",
+      "primary-content",
+      "secondary",
+      "secondary-content",
+      "accent",
+      "accent-content",
+      "neutral",
+      "neutral-content",
+      "base100",
+      "base200",
+      "base300",
+      "base-content",
+      "info",
+      "info-content",
+      "success",
+      "success-content",
+      "warning",
+      "warning-content",
+      "error",
+      "error-content"
     ],
     "atom:bg-clip": [
       "border",
@@ -13050,12 +13747,896 @@ expression: runner_config
       "auto",
       "cover",
       "contain"
+    ],
+    "atom:bg-gradient": [
+      "none",
+      "to-top",
+      "to-top-right",
+      "to-right",
+      "to-bottom-right",
+      "to-bottom",
+      "to-bottom-left",
+      "to-left",
+      "to-top-left"
+    ],
+    "atom:from-color": [
+      "inherit",
+      "transparent",
+      "current",
+      "black",
+      "white",
+      "slate50",
+      "slate100",
+      "slate200",
+      "slate300",
+      "slate400",
+      "slate500",
+      "slate600",
+      "slate700",
+      "slate800",
+      "slate900",
+      "slate950",
+      "gray50",
+      "gray100",
+      "gray200",
+      "gray300",
+      "gray400",
+      "gray500",
+      "gray600",
+      "gray700",
+      "gray800",
+      "gray900",
+      "gray950",
+      "zinc50",
+      "zinc100",
+      "zinc200",
+      "zinc300",
+      "zinc400",
+      "zinc500",
+      "zinc600",
+      "zinc700",
+      "zinc800",
+      "zinc900",
+      "zinc950",
+      "neutral50",
+      "neutral100",
+      "neutral200",
+      "neutral300",
+      "neutral400",
+      "neutral500",
+      "neutral600",
+      "neutral700",
+      "neutral800",
+      "neutral900",
+      "neutral950",
+      "stone50",
+      "stone100",
+      "stone200",
+      "stone300",
+      "stone400",
+      "stone500",
+      "stone600",
+      "stone700",
+      "stone800",
+      "stone900",
+      "stone950",
+      "red50",
+      "red100",
+      "red200",
+      "red300",
+      "red400",
+      "red500",
+      "red600",
+      "red700",
+      "red800",
+      "red900",
+      "red950",
+      "orange50",
+      "orange100",
+      "orange200",
+      "orange300",
+      "orange400",
+      "orange500",
+      "orange600",
+      "orange700",
+      "orange800",
+      "orange900",
+      "orange950",
+      "amber50",
+      "amber100",
+      "amber200",
+      "amber300",
+      "amber400",
+      "amber500",
+      "amber600",
+      "amber700",
+      "amber800",
+      "amber900",
+      "amber950",
+      "yellow50",
+      "yellow100",
+      "yellow200",
+      "yellow300",
+      "yellow400",
+      "yellow500",
+      "yellow600",
+      "yellow700",
+      "yellow800",
+      "yellow900",
+      "yellow950",
+      "lime50",
+      "lime100",
+      "lime200",
+      "lime300",
+      "lime400",
+      "lime500",
+      "lime600",
+      "lime700",
+      "lime800",
+      "lime900",
+      "lime950",
+      "green50",
+      "green100",
+      "green200",
+      "green300",
+      "green400",
+      "green500",
+      "green600",
+      "green700",
+      "green800",
+      "green900",
+      "green950",
+      "emerald50",
+      "emerald100",
+      "emerald200",
+      "emerald300",
+      "emerald400",
+      "emerald500",
+      "emerald600",
+      "emerald700",
+      "emerald800",
+      "emerald900",
+      "emerald950",
+      "teal50",
+      "teal100",
+      "teal200",
+      "teal300",
+      "teal400",
+      "teal500",
+      "teal600",
+      "teal700",
+      "teal800",
+      "teal900",
+      "teal950",
+      "cyan50",
+      "cyan100",
+      "cyan200",
+      "cyan300",
+      "cyan400",
+      "cyan500",
+      "cyan600",
+      "cyan700",
+      "cyan800",
+      "cyan900",
+      "cyan950",
+      "sky50",
+      "sky100",
+      "sky200",
+      "sky300",
+      "sky400",
+      "sky500",
+      "sky600",
+      "sky700",
+      "sky800",
+      "sky900",
+      "sky950",
+      "blue50",
+      "blue100",
+      "blue200",
+      "blue300",
+      "blue400",
+      "blue500",
+      "blue600",
+      "blue700",
+      "blue800",
+      "blue900",
+      "blue950",
+      "indigo50",
+      "indigo100",
+      "indigo200",
+      "indigo300",
+      "indigo400",
+      "indigo500",
+      "indigo600",
+      "indigo700",
+      "indigo800",
+      "indigo900",
+      "indigo950",
+      "violet50",
+      "violet100",
+      "violet200",
+      "violet300",
+      "violet400",
+      "violet500",
+      "violet600",
+      "violet700",
+      "violet800",
+      "violet900",
+      "violet950",
+      "purple50",
+      "purple100",
+      "purple200",
+      "purple300",
+      "purple400",
+      "purple500",
+      "purple600",
+      "purple700",
+      "purple800",
+      "purple900",
+      "purple950",
+      "fuchsia50",
+      "fuchsia100",
+      "fuchsia200",
+      "fuchsia300",
+      "fuchsia400",
+      "fuchsia500",
+      "fuchsia600",
+      "fuchsia700",
+      "fuchsia800",
+      "fuchsia900",
+      "fuchsia950",
+      "pink50",
+      "pink100",
+      "pink200",
+      "pink300",
+      "pink400",
+      "pink500",
+      "pink600",
+      "pink700",
+      "pink800",
+      "pink900",
+      "pink950",
+      "rose50",
+      "rose100",
+      "rose200",
+      "rose300",
+      "rose400",
+      "rose500",
+      "rose600",
+      "rose700",
+      "rose800",
+      "rose900",
+      "rose950",
+      "primary",
+      "primary-content",
+      "secondary",
+      "secondary-content",
+      "accent",
+      "accent-content",
+      "neutral",
+      "neutral-content",
+      "base100",
+      "base200",
+      "base300",
+      "base-content",
+      "info",
+      "info-content",
+      "success",
+      "success-content",
+      "warning",
+      "warning-content",
+      "error",
+      "error-content"
+    ],
+    "atom:from-position": [
+      "0%",
+      "5%",
+      "10%",
+      "15%",
+      "20%",
+      "25%",
+      "30%",
+      "35%",
+      "40%",
+      "45%",
+      "50%",
+      "55%",
+      "60%",
+      "65%",
+      "70%",
+      "75%",
+      "80%",
+      "85%",
+      "90%",
+      "95%",
+      "100%"
+    ],
+    "atom:via": [
+      "inherit",
+      "transparent",
+      "current",
+      "black",
+      "white",
+      "slate50",
+      "slate100",
+      "slate200",
+      "slate300",
+      "slate400",
+      "slate500",
+      "slate600",
+      "slate700",
+      "slate800",
+      "slate900",
+      "slate950",
+      "gray50",
+      "gray100",
+      "gray200",
+      "gray300",
+      "gray400",
+      "gray500",
+      "gray600",
+      "gray700",
+      "gray800",
+      "gray900",
+      "gray950",
+      "zinc50",
+      "zinc100",
+      "zinc200",
+      "zinc300",
+      "zinc400",
+      "zinc500",
+      "zinc600",
+      "zinc700",
+      "zinc800",
+      "zinc900",
+      "zinc950",
+      "neutral50",
+      "neutral100",
+      "neutral200",
+      "neutral300",
+      "neutral400",
+      "neutral500",
+      "neutral600",
+      "neutral700",
+      "neutral800",
+      "neutral900",
+      "neutral950",
+      "stone50",
+      "stone100",
+      "stone200",
+      "stone300",
+      "stone400",
+      "stone500",
+      "stone600",
+      "stone700",
+      "stone800",
+      "stone900",
+      "stone950",
+      "red50",
+      "red100",
+      "red200",
+      "red300",
+      "red400",
+      "red500",
+      "red600",
+      "red700",
+      "red800",
+      "red900",
+      "red950",
+      "orange50",
+      "orange100",
+      "orange200",
+      "orange300",
+      "orange400",
+      "orange500",
+      "orange600",
+      "orange700",
+      "orange800",
+      "orange900",
+      "orange950",
+      "amber50",
+      "amber100",
+      "amber200",
+      "amber300",
+      "amber400",
+      "amber500",
+      "amber600",
+      "amber700",
+      "amber800",
+      "amber900",
+      "amber950",
+      "yellow50",
+      "yellow100",
+      "yellow200",
+      "yellow300",
+      "yellow400",
+      "yellow500",
+      "yellow600",
+      "yellow700",
+      "yellow800",
+      "yellow900",
+      "yellow950",
+      "lime50",
+      "lime100",
+      "lime200",
+      "lime300",
+      "lime400",
+      "lime500",
+      "lime600",
+      "lime700",
+      "lime800",
+      "lime900",
+      "lime950",
+      "green50",
+      "green100",
+      "green200",
+      "green300",
+      "green400",
+      "green500",
+      "green600",
+      "green700",
+      "green800",
+      "green900",
+      "green950",
+      "emerald50",
+      "emerald100",
+      "emerald200",
+      "emerald300",
+      "emerald400",
+      "emerald500",
+      "emerald600",
+      "emerald700",
+      "emerald800",
+      "emerald900",
+      "emerald950",
+      "teal50",
+      "teal100",
+      "teal200",
+      "teal300",
+      "teal400",
+      "teal500",
+      "teal600",
+      "teal700",
+      "teal800",
+      "teal900",
+      "teal950",
+      "cyan50",
+      "cyan100",
+      "cyan200",
+      "cyan300",
+      "cyan400",
+      "cyan500",
+      "cyan600",
+      "cyan700",
+      "cyan800",
+      "cyan900",
+      "cyan950",
+      "sky50",
+      "sky100",
+      "sky200",
+      "sky300",
+      "sky400",
+      "sky500",
+      "sky600",
+      "sky700",
+      "sky800",
+      "sky900",
+      "sky950",
+      "blue50",
+      "blue100",
+      "blue200",
+      "blue300",
+      "blue400",
+      "blue500",
+      "blue600",
+      "blue700",
+      "blue800",
+      "blue900",
+      "blue950",
+      "indigo50",
+      "indigo100",
+      "indigo200",
+      "indigo300",
+      "indigo400",
+      "indigo500",
+      "indigo600",
+      "indigo700",
+      "indigo800",
+      "indigo900",
+      "indigo950",
+      "violet50",
+      "violet100",
+      "violet200",
+      "violet300",
+      "violet400",
+      "violet500",
+      "violet600",
+      "violet700",
+      "violet800",
+      "violet900",
+      "violet950",
+      "purple50",
+      "purple100",
+      "purple200",
+      "purple300",
+      "purple400",
+      "purple500",
+      "purple600",
+      "purple700",
+      "purple800",
+      "purple900",
+      "purple950",
+      "fuchsia50",
+      "fuchsia100",
+      "fuchsia200",
+      "fuchsia300",
+      "fuchsia400",
+      "fuchsia500",
+      "fuchsia600",
+      "fuchsia700",
+      "fuchsia800",
+      "fuchsia900",
+      "fuchsia950",
+      "pink50",
+      "pink100",
+      "pink200",
+      "pink300",
+      "pink400",
+      "pink500",
+      "pink600",
+      "pink700",
+      "pink800",
+      "pink900",
+      "pink950",
+      "rose50",
+      "rose100",
+      "rose200",
+      "rose300",
+      "rose400",
+      "rose500",
+      "rose600",
+      "rose700",
+      "rose800",
+      "rose900",
+      "rose950",
+      "primary",
+      "primary-content",
+      "secondary",
+      "secondary-content",
+      "accent",
+      "accent-content",
+      "neutral",
+      "neutral-content",
+      "base100",
+      "base200",
+      "base300",
+      "base-content",
+      "info",
+      "info-content",
+      "success",
+      "success-content",
+      "warning",
+      "warning-content",
+      "error",
+      "error-content"
+    ],
+    "atom:via-position": [
+      "0%",
+      "5%",
+      "10%",
+      "15%",
+      "20%",
+      "25%",
+      "30%",
+      "35%",
+      "40%",
+      "45%",
+      "50%",
+      "55%",
+      "60%",
+      "65%",
+      "70%",
+      "75%",
+      "80%",
+      "85%",
+      "90%",
+      "95%",
+      "100%"
+    ],
+    "atom:to": [
+      "inherit",
+      "transparent",
+      "current",
+      "black",
+      "white",
+      "slate50",
+      "slate100",
+      "slate200",
+      "slate300",
+      "slate400",
+      "slate500",
+      "slate600",
+      "slate700",
+      "slate800",
+      "slate900",
+      "slate950",
+      "gray50",
+      "gray100",
+      "gray200",
+      "gray300",
+      "gray400",
+      "gray500",
+      "gray600",
+      "gray700",
+      "gray800",
+      "gray900",
+      "gray950",
+      "zinc50",
+      "zinc100",
+      "zinc200",
+      "zinc300",
+      "zinc400",
+      "zinc500",
+      "zinc600",
+      "zinc700",
+      "zinc800",
+      "zinc900",
+      "zinc950",
+      "neutral50",
+      "neutral100",
+      "neutral200",
+      "neutral300",
+      "neutral400",
+      "neutral500",
+      "neutral600",
+      "neutral700",
+      "neutral800",
+      "neutral900",
+      "neutral950",
+      "stone50",
+      "stone100",
+      "stone200",
+      "stone300",
+      "stone400",
+      "stone500",
+      "stone600",
+      "stone700",
+      "stone800",
+      "stone900",
+      "stone950",
+      "red50",
+      "red100",
+      "red200",
+      "red300",
+      "red400",
+      "red500",
+      "red600",
+      "red700",
+      "red800",
+      "red900",
+      "red950",
+      "orange50",
+      "orange100",
+      "orange200",
+      "orange300",
+      "orange400",
+      "orange500",
+      "orange600",
+      "orange700",
+      "orange800",
+      "orange900",
+      "orange950",
+      "amber50",
+      "amber100",
+      "amber200",
+      "amber300",
+      "amber400",
+      "amber500",
+      "amber600",
+      "amber700",
+      "amber800",
+      "amber900",
+      "amber950",
+      "yellow50",
+      "yellow100",
+      "yellow200",
+      "yellow300",
+      "yellow400",
+      "yellow500",
+      "yellow600",
+      "yellow700",
+      "yellow800",
+      "yellow900",
+      "yellow950",
+      "lime50",
+      "lime100",
+      "lime200",
+      "lime300",
+      "lime400",
+      "lime500",
+      "lime600",
+      "lime700",
+      "lime800",
+      "lime900",
+      "lime950",
+      "green50",
+      "green100",
+      "green200",
+      "green300",
+      "green400",
+      "green500",
+      "green600",
+      "green700",
+      "green800",
+      "green900",
+      "green950",
+      "emerald50",
+      "emerald100",
+      "emerald200",
+      "emerald300",
+      "emerald400",
+      "emerald500",
+      "emerald600",
+      "emerald700",
+      "emerald800",
+      "emerald900",
+      "emerald950",
+      "teal50",
+      "teal100",
+      "teal200",
+      "teal300",
+      "teal400",
+      "teal500",
+      "teal600",
+      "teal700",
+      "teal800",
+      "teal900",
+      "teal950",
+      "cyan50",
+      "cyan100",
+      "cyan200",
+      "cyan300",
+      "cyan400",
+      "cyan500",
+      "cyan600",
+      "cyan700",
+      "cyan800",
+      "cyan900",
+      "cyan950",
+      "sky50",
+      "sky100",
+      "sky200",
+      "sky300",
+      "sky400",
+      "sky500",
+      "sky600",
+      "sky700",
+      "sky800",
+      "sky900",
+      "sky950",
+      "blue50",
+      "blue100",
+      "blue200",
+      "blue300",
+      "blue400",
+      "blue500",
+      "blue600",
+      "blue700",
+      "blue800",
+      "blue900",
+      "blue950",
+      "indigo50",
+      "indigo100",
+      "indigo200",
+      "indigo300",
+      "indigo400",
+      "indigo500",
+      "indigo600",
+      "indigo700",
+      "indigo800",
+      "indigo900",
+      "indigo950",
+      "violet50",
+      "violet100",
+      "violet200",
+      "violet300",
+      "violet400",
+      "violet500",
+      "violet600",
+      "violet700",
+      "violet800",
+      "violet900",
+      "violet950",
+      "purple50",
+      "purple100",
+      "purple200",
+      "purple300",
+      "purple400",
+      "purple500",
+      "purple600",
+      "purple700",
+      "purple800",
+      "purple900",
+      "purple950",
+      "fuchsia50",
+      "fuchsia100",
+      "fuchsia200",
+      "fuchsia300",
+      "fuchsia400",
+      "fuchsia500",
+      "fuchsia600",
+      "fuchsia700",
+      "fuchsia800",
+      "fuchsia900",
+      "fuchsia950",
+      "pink50",
+      "pink100",
+      "pink200",
+      "pink300",
+      "pink400",
+      "pink500",
+      "pink600",
+      "pink700",
+      "pink800",
+      "pink900",
+      "pink950",
+      "rose50",
+      "rose100",
+      "rose200",
+      "rose300",
+      "rose400",
+      "rose500",
+      "rose600",
+      "rose700",
+      "rose800",
+      "rose900",
+      "rose950",
+      "primary",
+      "primary-content",
+      "secondary",
+      "secondary-content",
+      "accent",
+      "accent-content",
+      "neutral",
+      "neutral-content",
+      "base100",
+      "base200",
+      "base300",
+      "base-content",
+      "info",
+      "info-content",
+      "success",
+      "success-content",
+      "warning",
+      "warning-content",
+      "error",
+      "error-content"
+    ],
+    "atom:to-position": [
+      "0%",
+      "5%",
+      "10%",
+      "15%",
+      "20%",
+      "25%",
+      "30%",
+      "35%",
+      "40%",
+      "45%",
+      "50%",
+      "55%",
+      "60%",
+      "65%",
+      "70%",
+      "75%",
+      "80%",
+      "85%",
+      "90%",
+      "95%",
+      "100%"
     ]
   },
   "palette": {
-    "inherit": "inherit",
-    "current": "currentColor",
-    "transparent": "transparent",
     "black": "#000000",
     "white": "#ffffff",
     "slate50": "#f8fafc",
@@ -14984,6 +16565,49 @@ expression: runner_config
         "auto": "auto",
         "cover": "cover",
         "contain": "contain"
+      }
+    },
+    "background-gradient": {
+      "name": "background-gradient",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "to-top": "linear-gradient(to top, var(__:CSS_VARIABLE::gradient-stops:__))",
+        "to-top-right": "linear-gradient(to top right, var(__:CSS_VARIABLE::gradient-stops:__))",
+        "to-right": "linear-gradient(to right, var(__:CSS_VARIABLE::gradient-stops:__))",
+        "to-bottom-right": "linear-gradient(to bottom right, var(__:CSS_VARIABLE::gradient-stops:__))",
+        "to-bottom": "linear-gradient(to bottom, var(__:CSS_VARIABLE::gradient-stops:__))",
+        "to-bottom-left": "linear-gradient(to bottom left, var(__:CSS_VARIABLE::gradient-stops:__))",
+        "to-left": "linear-gradient(to left, var(__:CSS_VARIABLE::gradient-stops:__))",
+        "to-top-left": "linear-gradient(to top left, var(__:CSS_VARIABLE::gradient-stops:__))"
+      }
+    },
+    "gradient-position": {
+      "name": "gradient-position",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "0%": "0%",
+        "5%": "5%",
+        "10%": "10%",
+        "15%": "15%",
+        "20%": "20%",
+        "25%": "25%",
+        "30%": "30%",
+        "35%": "35%",
+        "40%": "40%",
+        "45%": "45%",
+        "50%": "50%",
+        "55%": "55%",
+        "60%": "60%",
+        "65%": "65%",
+        "70%": "70%",
+        "75%": "75%",
+        "80%": "80%",
+        "85%": "85%",
+        "90%": "90%",
+        "95%": "95%",
+        "100%": "100%"
       }
     }
   }

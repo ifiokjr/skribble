@@ -2,8 +2,6 @@
 #![deny(clippy::indexing_slicing)]
 
 doc_comment::doctest!("../readme.md");
-use std::process::Command;
-use std::process::Stdio;
 
 use generate::generate_file_contents;
 use heck::ToPascalCase;
@@ -23,21 +21,12 @@ use skribble_core::PluginData;
 use skribble_core::RunnerConfig;
 use typed_builder::TypedBuilder;
 
-mod error;
 mod generate;
 mod scan;
 
 /// This plugin generates `rust` code from the configuration.
 #[derive(Debug, Clone, Default, Deserialize, TypedBuilder, Serialize)]
 pub struct RustPlugin {
-  /// The formatter command.
-  /// e.g. `dprint`
-  #[builder(default, setter(into, strip_option))]
-  pub formatter: Option<String>,
-  /// The formatter arguments.
-  /// e.g. `["fmt", "--stdin", "file.rs"]`
-  #[builder(default, setter(into))]
-  pub formatter_args: Vec<String>,
   /// The method names used in the generated code. This is also used to remap
   /// method names to the stored names.
   #[builder(default, setter(skip))]
@@ -50,7 +39,7 @@ impl Plugin for RustPlugin {
     PluginData::builder()
       .id("skribble_rust")
       .name("Rust Plugin")
-      .globs(["**/*.rs".into()])
+      .globs(vec!["**/*.rs"])
       .description(
         "This plugin provides support for generating rust code from your `skribble` configuration.",
       )
@@ -59,36 +48,23 @@ impl Plugin for RustPlugin {
   }
 
   fn generate_code(&mut self, config: &RunnerConfig) -> AnyResult<GeneratedFiles> {
-    let (mut contents, method_names) = generate_file_contents(config)?;
+    let mut files = GeneratedFiles::default();
+    let (contents, method_names) = generate_file_contents(config)?;
+    let method_names_json = serde_json::to_string_pretty(&method_names)?;
+
     self.method_names = method_names;
 
-    if let Some(ref formatter) = self.formatter {
-      let input = Command::new("echo")
-        .arg(&contents)
-        .stdout(Stdio::piped())
-        .spawn()?;
-
-      if let Some(stdout) = input.stdout {
-        let output = Command::new(formatter)
-          .args(&self.formatter_args)
-          .stdin(stdout)
-          .stdout(std::process::Stdio::piped())
-          .output()?;
-        let result = String::from_utf8(output.stdout)?;
-
-        contents = if result.trim().is_empty() && !contents.trim().is_empty() {
-          contents
-        } else {
-          result
-        }
-      }
-    }
-
-    let mut files = GeneratedFiles::default();
     files.insert(
       GeneratedFile::builder()
         .path("./src/skribble.rs")
         .content(contents)
+        .build(),
+    );
+    files.insert(
+      GeneratedFile::builder()
+        // TODO where should this be placed
+        .path("./cache/skribble_rust.json")
+        .content(method_names_json)
         .build(),
     );
 
@@ -101,7 +77,13 @@ impl Plugin for RustPlugin {
     file_path: &str,
     content: &str,
   ) -> AnyResult<Classes> {
-    scan(config, file_path, content)
+    scan(config, file_path, content, &self.method_names)
+  }
+}
+
+impl RustPlugin {
+  pub fn get_method_names(&self) -> &IndexMap<String, String> {
+    &self.method_names
   }
 }
 
