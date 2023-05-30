@@ -6017,6 +6017,44 @@ expression: runner_config
         ]
       }
     },
+    "divide-x": {
+      "name": "divide-x",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "border-left-width": "__:VALUE::left:__",
+        "border-right-width": "__:VALUE::right:__"
+      },
+      "modifier": "& > * + *",
+      "children": [],
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "divide-x"
+          }
+        ]
+      }
+    },
+    "divide-y": {
+      "name": "divide-y",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "border-top-width": "__:VALUE::top:__",
+        "border-bottom-width": "__:VALUE::bottom:__"
+      },
+      "modifier": "& > * + *",
+      "children": [],
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "divide-y"
+          }
+        ]
+      }
+    },
     "scale": {
       "name": "scale",
       "description": null,
@@ -8584,6 +8622,8 @@ expression: runner_config
       "border-style-right",
       "border-style-bottom",
       "border-style-left",
+      "divide-x",
+      "divide-y",
       "scale",
       "scale-x",
       "scale-y",
@@ -19580,6 +19620,20 @@ expression: runner_config
       "hidden",
       "none"
     ],
+    "atom:divide-x": [
+      "0",
+      "2",
+      "4",
+      "8",
+      "default"
+    ],
+    "atom:divide-y": [
+      "0",
+      "2",
+      "4",
+      "8",
+      "default"
+    ],
     "atom:scale": [
       "0",
       "50",
@@ -21852,6 +21906,60 @@ expression: runner_config
         "bottom-left": "bottom left",
         "left": "left",
         "top-left": "top left"
+      }
+    },
+    "divide-x": {
+      "name": "divide-x",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "0": {
+          "right": "0px",
+          "left": "0px"
+        },
+        "2": {
+          "right": "0px",
+          "left": "2px"
+        },
+        "4": {
+          "right": "0px",
+          "left": "4px"
+        },
+        "8": {
+          "right": "0px",
+          "left": "8px"
+        },
+        "default": {
+          "right": "0px",
+          "left": "1px"
+        }
+      }
+    },
+    "divide-y": {
+      "name": "divide-y",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "0": {
+          "bottom": "0px",
+          "top": "0px"
+        },
+        "2": {
+          "bottom": "0px",
+          "top": "2px"
+        },
+        "4": {
+          "bottom": "0px",
+          "top": "4px"
+        },
+        "8": {
+          "bottom": "0px",
+          "top": "8px"
+        },
+        "default": {
+          "bottom": "0px",
+          "top": "1px"
+        }
       }
     }
   }

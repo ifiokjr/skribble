@@ -1614,6 +1614,24 @@ lazy_static! {
         .values(vec!["border-style"])
         .styles(indexmap! { "border-left-style" => none })
         .build(),
+      Atom::builder()
+        .name("divide-x")
+        .values(vec!["divide-x"])
+        .modifier("& > * + *")
+        .styles(indexmap! {
+          "border-left-width" => Some(Placeholder::value("left")),
+          "border-right-width" => Some(Placeholder::value("right")),
+        })
+        .build(),
+      Atom::builder()
+        .name("divide-y")
+        .values(vec!["divide-y"])
+        .modifier("& > * + *")
+        .styles(indexmap! {
+          "border-top-width" => Some(Placeholder::value("top")),
+          "border-bottom-width" => Some(Placeholder::value("bottom")),
+        })
+        .build(),
 
       // Transforms
       Atom::builder()

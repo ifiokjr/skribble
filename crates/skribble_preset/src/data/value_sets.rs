@@ -1545,6 +1545,26 @@ lazy_static! {
           "top-left" => "top left",
         })
         .build(),
+      ValueSet::builder()
+        .name("divide-x")
+        .values(indexmap! {
+          "0" => indexmap! { "right" => "0px", "left" => "0px" },
+          "2" => indexmap! { "right" => "0px", "left" => "2px" },
+          "4" => indexmap! { "right" => "0px", "left" => "4px" },
+          "8" => indexmap! { "right" => "0px", "left" => "8px" },
+          "default" => indexmap! { "right" => "0px", "left" => "1px" },
+        })
+        .build(),
+      ValueSet::builder()
+        .name("divide-y")
+        .values(indexmap! {
+          "0" => indexmap! { "bottom" => "0px", "top" => "0px" },
+          "2" => indexmap! { "bottom" => "0px", "top" => "2px" },
+          "4" => indexmap! { "bottom" => "0px", "top" => "4px" },
+          "8" => indexmap! { "bottom" => "0px", "top" => "8px" },
+          "default" => indexmap! { "bottom" => "0px", "top" => "1px" },
+        })
+        .build(),
     ]
   };
 }

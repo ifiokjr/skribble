@@ -10393,6 +10393,66 @@ pub trait GeneratedValueSetOriginTopLeft: GeneratedSkribbleValue {
     self.append_value("top-left")
   }
 }
+pub trait GeneratedValueSetDivideXN0: GeneratedSkribbleValue {
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+}
+pub trait GeneratedValueSetDivideXN2: GeneratedSkribbleValue {
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+}
+pub trait GeneratedValueSetDivideXN4: GeneratedSkribbleValue {
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+}
+pub trait GeneratedValueSetDivideXN8: GeneratedSkribbleValue {
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+}
+pub trait GeneratedValueSetDivideXDefault: GeneratedSkribbleValue {
+  #[inline]
+  fn default(&self) -> String {
+    self.append_value("default")
+  }
+}
+pub trait GeneratedValueSetDivideYN0: GeneratedSkribbleValue {
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+}
+pub trait GeneratedValueSetDivideYN2: GeneratedSkribbleValue {
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+}
+pub trait GeneratedValueSetDivideYN4: GeneratedSkribbleValue {
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+}
+pub trait GeneratedValueSetDivideYN8: GeneratedSkribbleValue {
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+}
+pub trait GeneratedValueSetDivideYDefault: GeneratedSkribbleValue {
+  #[inline]
+  fn default(&self) -> String {
+    self.append_value("default")
+  }
+}
 pub struct GeneratedAtomSrChild(String);
 impl GeneratedSkribbleValue for GeneratedAtomSrChild {
   #[inline]
@@ -23310,6 +23370,38 @@ impl GeneratedValueSetBorderStyleDotted for GeneratedAtomBorderStyleLeftChild {}
 impl GeneratedValueSetBorderStyleDouble for GeneratedAtomBorderStyleLeftChild {}
 impl GeneratedValueSetBorderStyleHidden for GeneratedAtomBorderStyleLeftChild {}
 impl GeneratedValueSetBorderStyleNone for GeneratedAtomBorderStyleLeftChild {}
+pub struct GeneratedAtomDivideXChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomDivideXChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetDivideXN0 for GeneratedAtomDivideXChild {}
+impl GeneratedValueSetDivideXN2 for GeneratedAtomDivideXChild {}
+impl GeneratedValueSetDivideXN4 for GeneratedAtomDivideXChild {}
+impl GeneratedValueSetDivideXN8 for GeneratedAtomDivideXChild {}
+impl GeneratedValueSetDivideXDefault for GeneratedAtomDivideXChild {}
+pub struct GeneratedAtomDivideYChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomDivideYChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetDivideYN0 for GeneratedAtomDivideYChild {}
+impl GeneratedValueSetDivideYN2 for GeneratedAtomDivideYChild {}
+impl GeneratedValueSetDivideYN4 for GeneratedAtomDivideYChild {}
+impl GeneratedValueSetDivideYN8 for GeneratedAtomDivideYChild {}
+impl GeneratedValueSetDivideYDefault for GeneratedAtomDivideYChild {}
 pub struct GeneratedAtomScaleChild(String);
 impl GeneratedSkribbleValue for GeneratedAtomScaleChild {
   #[inline]
@@ -26305,6 +26397,26 @@ pub trait GeneratedAtomBorderStyleLeft: GeneratedSkribbleValue {
     self.append(format!("border-style-left:[{}]", value.trim()))
   }
 }
+pub trait GeneratedAtomDivideX: GeneratedSkribbleValue {
+  #[inline]
+  fn divide_x(&self) -> GeneratedAtomDivideXChild {
+    GeneratedAtomDivideXChild::from_ref(self.append("divide-x"))
+  }
+  #[inline]
+  fn divide_x_(&self, value: &'static str) -> String {
+    self.append(format!("divide-x:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomDivideY: GeneratedSkribbleValue {
+  #[inline]
+  fn divide_y(&self) -> GeneratedAtomDivideYChild {
+    GeneratedAtomDivideYChild::from_ref(self.append("divide-y"))
+  }
+  #[inline]
+  fn divide_y_(&self, value: &'static str) -> String {
+    self.append(format!("divide-y:[{}]", value.trim()))
+  }
+}
 pub trait GeneratedAtomScale: GeneratedSkribbleValue {
   #[inline]
   fn scale(&self) -> GeneratedAtomScaleChild {
@@ -27315,6 +27427,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedSkribbleRoot {}
 impl GeneratedAtomBorderStyleRight for GeneratedSkribbleRoot {}
 impl GeneratedAtomBorderStyleBottom for GeneratedSkribbleRoot {}
 impl GeneratedAtomBorderStyleLeft for GeneratedSkribbleRoot {}
+impl GeneratedAtomDivideX for GeneratedSkribbleRoot {}
+impl GeneratedAtomDivideY for GeneratedSkribbleRoot {}
 impl GeneratedAtomScale for GeneratedSkribbleRoot {}
 impl GeneratedAtomScaleX for GeneratedSkribbleRoot {}
 impl GeneratedAtomScaleY for GeneratedSkribbleRoot {}
@@ -27607,6 +27721,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomDivideX for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomDivideY for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomScale for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomScaleX for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomScaleY for GeneratedMediaQueryDeviceCategoriesChild {}
@@ -27898,6 +28014,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomDivideX for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomDivideY for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomScale for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomScaleX for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomScaleY for GeneratedMediaQueryBreakpointsChild {}
@@ -28188,6 +28306,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomDivideX for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomDivideY for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomScale for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomScaleX for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomScaleY for GeneratedMediaQueryOrientationChild {}
@@ -28477,6 +28597,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomDivideX for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomDivideY for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomScale for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomScaleX for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomScaleY for GeneratedMediaQueryMotionChild {}
@@ -28765,6 +28887,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomDivideX for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomDivideY for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomScale for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomScaleX for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomScaleY for GeneratedMediaQueryDarkModeChild {}
@@ -29052,6 +29176,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierParentGroupChild {}
@@ -29338,6 +29464,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierHoverGroupChild {}
@@ -29623,6 +29751,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierActiveGroupChild {}
@@ -29907,6 +30037,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierFocusGroupChild {}
@@ -30190,6 +30322,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierFocusWithinGroupChild {}
@@ -30472,6 +30606,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierFocusVisibleGroupChild {}
@@ -30753,6 +30889,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierEnabledGroupChild {}
@@ -31033,6 +31171,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierEmptyGroupChild {}
@@ -31312,6 +31452,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierReadGroupChild {}
@@ -31590,6 +31732,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierCheckedGroupChild {}
@@ -31867,6 +32011,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierValidGroupChild {}
@@ -32143,6 +32289,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierAutofillGroupChild {}
@@ -32418,6 +32566,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierEvenGroupChild {}
@@ -32692,6 +32842,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierNodePositionGroupChild {}
@@ -32965,6 +33117,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierNodeOfTypeGroupChild {}
@@ -33237,6 +33391,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierVisitedGroupChild {}
@@ -33508,6 +33664,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierOptionalGroupChild {}
@@ -33778,6 +33936,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierAriaChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierAriaChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierAriaChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierAriaChild {}
+impl GeneratedAtomDivideX for GeneratedModifierAriaChild {}
+impl GeneratedAtomDivideY for GeneratedModifierAriaChild {}
 impl GeneratedAtomScale for GeneratedModifierAriaChild {}
 impl GeneratedAtomScaleX for GeneratedModifierAriaChild {}
 impl GeneratedAtomScaleY for GeneratedModifierAriaChild {}
@@ -34047,6 +34207,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierFullScreenGroupChild {}
@@ -34315,6 +34477,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierTargetGroupChild {}
@@ -34582,6 +34746,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierPlaceholderShownGroupChild
 impl GeneratedAtomBorderStyleRight for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierPlaceholderShownGroupChild {}
@@ -34848,6 +35014,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierRequiredGroupChild {}
@@ -35113,6 +35281,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierDefaultGroupChild {}
@@ -35377,6 +35547,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierOnlyChildGroupChild {}
@@ -35640,6 +35812,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierOnlyGroupChild {}
@@ -35902,6 +36076,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierRootGroupChild {}
@@ -36163,6 +36339,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierLinkGroupChild {}
@@ -36423,6 +36601,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomBorderStyleRight for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomDivideX for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomDivideY for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierPseudoGroupChild {}
@@ -36682,6 +36862,8 @@ impl GeneratedAtomBorderStyleTop for GeneratedTransformerImportantGroupImportant
 impl GeneratedAtomBorderStyleRight for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomBorderStyleBottom for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomDivideX for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomDivideY for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomScale for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomScaleX for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomScaleY for GeneratedTransformerImportantGroupImportantChild {}

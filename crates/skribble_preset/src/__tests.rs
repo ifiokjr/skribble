@@ -31,6 +31,7 @@ fn default_can_be_added_to_runner() -> AnyEmptyResult {
 #[case("lighten", &["(lighten==005):bg:$red100", "(lighten=5%):bg:$pink900", "(lighten==050):bg:$primary", "(lighten=50%):bg:$secondary"])]
 #[case("alpha", &["(alpha==005):bg:$red100", "(alpha=0.05):bg:$pink900", "(alpha==050):bg:$primary", "(alpha=0.5):bg:$secondary"])]
 #[case("scale", &["scale:$50", "$transform-gpu"])]
+#[case("divide", &["divide-x:$2", "divide-y:$2"])]
 fn css_from_class_names(#[case] id: &str, #[case] names: &[&str]) -> AnyEmptyResult {
   let plugin = PresetPlugin::default();
   let config: StyleConfig = StyleConfig::builder()
