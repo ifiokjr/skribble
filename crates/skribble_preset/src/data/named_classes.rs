@@ -15,6 +15,16 @@ lazy_static! {
     let contained_max_width = Placeholder::wrapped_variable("contained-max-width", None);
     let space_x_reverse = Placeholder::variable("space-x-reverse");
     let space_y_reverse = Placeholder::variable("space-y-reverse");
+    // Transforms
+    let translate_x = Placeholder::wrapped_variable("translate-x", None);
+    let translate_y = Placeholder::wrapped_variable("translate-y", None);
+    let rotate = Placeholder::wrapped_variable("rotate", None);
+    let skew_x = Placeholder::wrapped_variable("skew-x", None);
+    let skew_y = Placeholder::wrapped_variable("skew-y", None);
+    let scale_x = Placeholder::wrapped_variable("scale-x", None);
+    let scale_y = Placeholder::wrapped_variable("scale-y", None);
+    let transform_gpu = format!("translate3d({translate_x}, {translate_y}, 0) rotate({rotate} skewX({skew_x}) skewY({skew_y}) scaleX({scale_x}) scaleY({scale_y})");
+    let transform_cpu = format!("translate({translate_x}, {translate_y}) rotate({rotate}) skewX({skew_x}) skewY({skew_y}) scaleX({scale_x}) scaleY({scale_y})");
 
     vec![
       NamedClass::builder()
@@ -108,13 +118,27 @@ lazy_static! {
       NamedClass::builder()
         .name("gradient-reference")
         .reference(true)
-        .styles({
-          indexmap! {
+        .styles(indexmap! {
             &gradient_from_position => "",
             &gradient_via_position => "",
             &gradient_to_position => "",
-          }
         })
+        .build(),
+      NamedClass::builder()
+        .name("transform")
+        .layer("base")
+        .reference(true)
+        .styles(indexmap! { "transform" => &transform_cpu })
+        .build(),
+      NamedClass::builder()
+        .name("transform-gpu")
+        .layer("priority-class")
+        .styles(indexmap! { "transform" => &transform_gpu })
+        .build(),
+      NamedClass::builder()
+        .name("transform-cpu")
+        .layer("priority-class")
+        .styles(indexmap! { "transform" => &transform_cpu })
         .build(),
     ]
   };

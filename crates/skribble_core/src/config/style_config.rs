@@ -177,9 +177,15 @@ pub fn default_layers() -> Layers {
     priority: Priority::DEFAULT,
   };
 
+  let priority_class = PrioritizedString {
+    value: "priority-class".into(),
+    priority: 149.into(),
+  };
+
   layers.insert(base);
   layers.insert(alias);
   layers.insert(default);
+  layers.insert(priority_class);
 
   layers
 }

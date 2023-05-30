@@ -2,7 +2,7 @@
 source: crates/skribble_rust/src/__tests.rs
 expression: scanned.code
 ---
-@layer base, alias, default;
+@layer base, alias, default, priority-class;
 
 @property --sk-a-hue {
   syntax: "<number> | <angle>";

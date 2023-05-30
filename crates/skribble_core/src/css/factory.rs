@@ -188,15 +188,6 @@ impl<'config> ClassFactory<'config> {
         self.valid = Some(true);
       }
     }
-    // layer.
-    else if let Some(index) = self.config.layers.get_index_of(token.as_ref()) {
-      if self.layer.is_some() {
-        self.valid = Some(false);
-      } else {
-        self.layer = Some(token.as_ref().to_string());
-        self.score.layer = index.checked_add(1).unwrap_or(index);
-      }
-    }
     // media_query
     else if self.add_media_query_token(&token) || self.add_modifier_token(&token) {
       // Prevent further branches being run
@@ -212,12 +203,21 @@ impl<'config> ClassFactory<'config> {
       }
     }
     // named_class.
-    else if let Some(index) = self.config.get_named_class_index(&token) {
+    else if let Some((index, named_class)) = self
+      .config
+      .get_named_class_index(&token)
+      .zip(self.config.classes.get(token.as_ref()))
+    {
       if self.named_class.is_some() {
         self.valid = Some(false);
       } else {
         self.named_class = Some(token.as_ref().to_string());
         self.score.named_class = index.checked_add(1).unwrap_or(index);
+
+        if let Some(ref name) = named_class.layer {
+          self.layer = Some(name.clone());
+        };
+
         self.valid = Some(true);
       }
     } else if let Some(index) = self.config.get_alias_index(&token) {

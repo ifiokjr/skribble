@@ -70,6 +70,11 @@ pub struct NamedClass {
   #[serde(default)]
   #[builder(default, setter(into))]
   pub reference: bool,
+  /// Determines which layer the class should be placed in. This can be used to
+  /// .
+  #[serde(default)]
+  #[builder(default, setter(into, strip_option))]
+  pub layer: Option<String>,
   /// A modifier for the selector of the class.
   #[builder(default, setter(into, strip_option))]
   pub modifier: Option<String>,

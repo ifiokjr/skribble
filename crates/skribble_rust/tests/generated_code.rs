@@ -696,6 +696,83 @@ impl GeneratedCssVariables {
   pub fn gradient_via_position(&self) -> String {
     "--sk-gradient-via-position".into()
   }
+  /// ```css
+  /// @property --sk-scale-x {
+  ///   syntax: "<number> | <percentage>";
+  ///   inherits: true;
+  ///   initial-value: 1;
+  /// }
+  /// ```
+  #[inline]
+  pub fn scale_x(&self) -> String {
+    "--sk-scale-x".into()
+  }
+  /// ```css
+  /// @property --sk-scale-y {
+  ///   syntax: "<number> | <percentage>";
+  ///   inherits: true;
+  ///   initial-value: 1;
+  /// }
+  /// ```
+  #[inline]
+  pub fn scale_y(&self) -> String {
+    "--sk-scale-y".into()
+  }
+  /// ```css
+  /// @property --sk-translate-x {
+  ///   syntax: "<length-percentage>";
+  ///   inherits: true;
+  ///   initial-value: 0;
+  /// }
+  /// ```
+  #[inline]
+  pub fn translate_x(&self) -> String {
+    "--sk-translate-x".into()
+  }
+  /// ```css
+  /// @property --sk-translate-y {
+  ///   syntax: "<length-percentage>";
+  ///   inherits: true;
+  ///   initial-value: 0;
+  /// }
+  /// ```
+  #[inline]
+  pub fn translate_y(&self) -> String {
+    "--sk-translate-y".into()
+  }
+  /// ```css
+  /// @property --sk-skew-x {
+  ///   syntax: "<angle>";
+  ///   inherits: true;
+  ///   initial-value: 0;
+  /// }
+  /// ```
+  #[inline]
+  pub fn skew_x(&self) -> String {
+    "--sk-skew-x".into()
+  }
+  /// ```css
+  /// @property --sk-skew-y {
+  ///   syntax: "<angle>";
+  ///   inherits: true;
+  ///   initial-value: 0;
+  /// }
+  /// ```
+  #[inline]
+  pub fn skew_y(&self) -> String {
+    "--sk-skew-y".into()
+  }
+  /// ```css
+  /// @property --sk-rotate {
+  ///   syntax: "<angle>";
+  ///   inherits: true;
+  ///   initial-value: 0;
+  /// }
+  /// ```
+  #[inline]
+  pub fn rotate(&self) -> String {
+    "--sk-rotate".into()
+  }
 }
 pub struct GeneratedMediaQueryDeviceCategoriesChild(String);
 impl GeneratedSkribbleValue for GeneratedMediaQueryDeviceCategoriesChild {
@@ -10042,6 +10119,276 @@ pub trait GeneratedValueSetGradientPositionN100: GeneratedSkribbleValue {
     self.append_value("100%")
   }
 }
+pub trait GeneratedValueSetBorderRadiusDefault: GeneratedSkribbleValue {
+  #[inline]
+  fn default(&self) -> String {
+    self.append_value("default")
+  }
+}
+pub trait GeneratedValueSetBorderRadiusNone: GeneratedSkribbleValue {
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+pub trait GeneratedValueSetBorderRadiusSm: GeneratedSkribbleValue {
+  #[inline]
+  fn sm(&self) -> String {
+    self.append_value("sm")
+  }
+}
+pub trait GeneratedValueSetBorderRadiusMd: GeneratedSkribbleValue {
+  #[inline]
+  fn md(&self) -> String {
+    self.append_value("md")
+  }
+}
+pub trait GeneratedValueSetBorderRadiusLg: GeneratedSkribbleValue {
+  #[inline]
+  fn lg(&self) -> String {
+    self.append_value("lg")
+  }
+}
+pub trait GeneratedValueSetBorderRadiusXl: GeneratedSkribbleValue {
+  #[inline]
+  fn xl(&self) -> String {
+    self.append_value("xl")
+  }
+}
+pub trait GeneratedValueSetBorderRadiusN2xl: GeneratedSkribbleValue {
+  #[inline]
+  fn n2xl(&self) -> String {
+    self.append_value("2xl")
+  }
+}
+pub trait GeneratedValueSetBorderRadiusN3xl: GeneratedSkribbleValue {
+  #[inline]
+  fn n3xl(&self) -> String {
+    self.append_value("3xl")
+  }
+}
+pub trait GeneratedValueSetBorderRadiusFull: GeneratedSkribbleValue {
+  #[inline]
+  fn full(&self) -> String {
+    self.append_value("full")
+  }
+}
+pub trait GeneratedValueSetBorderWidthN0: GeneratedSkribbleValue {
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+}
+pub trait GeneratedValueSetBorderWidthDefault: GeneratedSkribbleValue {
+  #[inline]
+  fn default(&self) -> String {
+    self.append_value("default")
+  }
+}
+pub trait GeneratedValueSetBorderWidthN2: GeneratedSkribbleValue {
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+}
+pub trait GeneratedValueSetBorderWidthN4: GeneratedSkribbleValue {
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+}
+pub trait GeneratedValueSetBorderWidthN8: GeneratedSkribbleValue {
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+}
+pub trait GeneratedValueSetBorderStyleSolid: GeneratedSkribbleValue {
+  #[inline]
+  fn solid(&self) -> String {
+    self.append_value("solid")
+  }
+}
+pub trait GeneratedValueSetBorderStyleDashed: GeneratedSkribbleValue {
+  #[inline]
+  fn dashed(&self) -> String {
+    self.append_value("dashed")
+  }
+}
+pub trait GeneratedValueSetBorderStyleDotted: GeneratedSkribbleValue {
+  #[inline]
+  fn dotted(&self) -> String {
+    self.append_value("dotted")
+  }
+}
+pub trait GeneratedValueSetBorderStyleDouble: GeneratedSkribbleValue {
+  #[inline]
+  fn double(&self) -> String {
+    self.append_value("double")
+  }
+}
+pub trait GeneratedValueSetBorderStyleHidden: GeneratedSkribbleValue {
+  #[inline]
+  fn hidden(&self) -> String {
+    self.append_value("hidden")
+  }
+}
+pub trait GeneratedValueSetBorderStyleNone: GeneratedSkribbleValue {
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+pub trait GeneratedValueSetScaleN0: GeneratedSkribbleValue {
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+}
+pub trait GeneratedValueSetScaleN50: GeneratedSkribbleValue {
+  #[inline]
+  fn n50(&self) -> String {
+    self.append_value("50")
+  }
+}
+pub trait GeneratedValueSetScaleN75: GeneratedSkribbleValue {
+  #[inline]
+  fn n75(&self) -> String {
+    self.append_value("75")
+  }
+}
+pub trait GeneratedValueSetScaleN90: GeneratedSkribbleValue {
+  #[inline]
+  fn n90(&self) -> String {
+    self.append_value("90")
+  }
+}
+pub trait GeneratedValueSetScaleN95: GeneratedSkribbleValue {
+  #[inline]
+  fn n95(&self) -> String {
+    self.append_value("95")
+  }
+}
+pub trait GeneratedValueSetScaleN100: GeneratedSkribbleValue {
+  #[inline]
+  fn n100(&self) -> String {
+    self.append_value("100")
+  }
+}
+pub trait GeneratedValueSetScaleN105: GeneratedSkribbleValue {
+  #[inline]
+  fn n105(&self) -> String {
+    self.append_value("105")
+  }
+}
+pub trait GeneratedValueSetScaleN110: GeneratedSkribbleValue {
+  #[inline]
+  fn n110(&self) -> String {
+    self.append_value("110")
+  }
+}
+pub trait GeneratedValueSetScaleN125: GeneratedSkribbleValue {
+  #[inline]
+  fn n125(&self) -> String {
+    self.append_value("125")
+  }
+}
+pub trait GeneratedValueSetScaleN150: GeneratedSkribbleValue {
+  #[inline]
+  fn n150(&self) -> String {
+    self.append_value("150")
+  }
+}
+pub trait GeneratedValueSetSkewN0: GeneratedSkribbleValue {
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+}
+pub trait GeneratedValueSetSkewN1: GeneratedSkribbleValue {
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+}
+pub trait GeneratedValueSetSkewN2: GeneratedSkribbleValue {
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+}
+pub trait GeneratedValueSetSkewN3: GeneratedSkribbleValue {
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+}
+pub trait GeneratedValueSetSkewN6: GeneratedSkribbleValue {
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+}
+pub trait GeneratedValueSetSkewN12: GeneratedSkribbleValue {
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+}
+pub trait GeneratedValueSetOriginCenter: GeneratedSkribbleValue {
+  #[inline]
+  fn center(&self) -> String {
+    self.append_value("center")
+  }
+}
+pub trait GeneratedValueSetOriginTop: GeneratedSkribbleValue {
+  #[inline]
+  fn top(&self) -> String {
+    self.append_value("top")
+  }
+}
+pub trait GeneratedValueSetOriginTopRight: GeneratedSkribbleValue {
+  #[inline]
+  fn top_right(&self) -> String {
+    self.append_value("top-right")
+  }
+}
+pub trait GeneratedValueSetOriginRight: GeneratedSkribbleValue {
+  #[inline]
+  fn right(&self) -> String {
+    self.append_value("right")
+  }
+}
+pub trait GeneratedValueSetOriginBottomRight: GeneratedSkribbleValue {
+  #[inline]
+  fn bottom_right(&self) -> String {
+    self.append_value("bottom-right")
+  }
+}
+pub trait GeneratedValueSetOriginBottom: GeneratedSkribbleValue {
+  #[inline]
+  fn bottom(&self) -> String {
+    self.append_value("bottom")
+  }
+}
+pub trait GeneratedValueSetOriginBottomLeft: GeneratedSkribbleValue {
+  #[inline]
+  fn bottom_left(&self) -> String {
+    self.append_value("bottom-left")
+  }
+}
+pub trait GeneratedValueSetOriginLeft: GeneratedSkribbleValue {
+  #[inline]
+  fn left(&self) -> String {
+    self.append_value("left")
+  }
+}
+pub trait GeneratedValueSetOriginTopLeft: GeneratedSkribbleValue {
+  #[inline]
+  fn top_left(&self) -> String {
+    self.append_value("top-left")
+  }
+}
 pub struct GeneratedAtomSrChild(String);
 impl GeneratedSkribbleValue for GeneratedAtomSrChild {
   #[inline]
@@ -18616,6 +18963,4783 @@ impl GeneratedValueSetGradientPositionN85 for GeneratedAtomToPositionChild {}
 impl GeneratedValueSetGradientPositionN90 for GeneratedAtomToPositionChild {}
 impl GeneratedValueSetGradientPositionN95 for GeneratedAtomToPositionChild {}
 impl GeneratedValueSetGradientPositionN100 for GeneratedAtomToPositionChild {}
+pub struct GeneratedAtomRoundedChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRoundedChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderRadiusDefault for GeneratedAtomRoundedChild {}
+impl GeneratedValueSetBorderRadiusNone for GeneratedAtomRoundedChild {}
+impl GeneratedValueSetBorderRadiusSm for GeneratedAtomRoundedChild {}
+impl GeneratedValueSetBorderRadiusMd for GeneratedAtomRoundedChild {}
+impl GeneratedValueSetBorderRadiusLg for GeneratedAtomRoundedChild {}
+impl GeneratedValueSetBorderRadiusXl for GeneratedAtomRoundedChild {}
+impl GeneratedValueSetBorderRadiusN2xl for GeneratedAtomRoundedChild {}
+impl GeneratedValueSetBorderRadiusN3xl for GeneratedAtomRoundedChild {}
+impl GeneratedValueSetBorderRadiusFull for GeneratedAtomRoundedChild {}
+pub struct GeneratedAtomRoundedStartChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRoundedStartChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderRadiusDefault for GeneratedAtomRoundedStartChild {}
+impl GeneratedValueSetBorderRadiusNone for GeneratedAtomRoundedStartChild {}
+impl GeneratedValueSetBorderRadiusSm for GeneratedAtomRoundedStartChild {}
+impl GeneratedValueSetBorderRadiusMd for GeneratedAtomRoundedStartChild {}
+impl GeneratedValueSetBorderRadiusLg for GeneratedAtomRoundedStartChild {}
+impl GeneratedValueSetBorderRadiusXl for GeneratedAtomRoundedStartChild {}
+impl GeneratedValueSetBorderRadiusN2xl for GeneratedAtomRoundedStartChild {}
+impl GeneratedValueSetBorderRadiusN3xl for GeneratedAtomRoundedStartChild {}
+impl GeneratedValueSetBorderRadiusFull for GeneratedAtomRoundedStartChild {}
+pub struct GeneratedAtomRoundedEndChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRoundedEndChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderRadiusDefault for GeneratedAtomRoundedEndChild {}
+impl GeneratedValueSetBorderRadiusNone for GeneratedAtomRoundedEndChild {}
+impl GeneratedValueSetBorderRadiusSm for GeneratedAtomRoundedEndChild {}
+impl GeneratedValueSetBorderRadiusMd for GeneratedAtomRoundedEndChild {}
+impl GeneratedValueSetBorderRadiusLg for GeneratedAtomRoundedEndChild {}
+impl GeneratedValueSetBorderRadiusXl for GeneratedAtomRoundedEndChild {}
+impl GeneratedValueSetBorderRadiusN2xl for GeneratedAtomRoundedEndChild {}
+impl GeneratedValueSetBorderRadiusN3xl for GeneratedAtomRoundedEndChild {}
+impl GeneratedValueSetBorderRadiusFull for GeneratedAtomRoundedEndChild {}
+pub struct GeneratedAtomRoundedTopChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRoundedTopChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderRadiusDefault for GeneratedAtomRoundedTopChild {}
+impl GeneratedValueSetBorderRadiusNone for GeneratedAtomRoundedTopChild {}
+impl GeneratedValueSetBorderRadiusSm for GeneratedAtomRoundedTopChild {}
+impl GeneratedValueSetBorderRadiusMd for GeneratedAtomRoundedTopChild {}
+impl GeneratedValueSetBorderRadiusLg for GeneratedAtomRoundedTopChild {}
+impl GeneratedValueSetBorderRadiusXl for GeneratedAtomRoundedTopChild {}
+impl GeneratedValueSetBorderRadiusN2xl for GeneratedAtomRoundedTopChild {}
+impl GeneratedValueSetBorderRadiusN3xl for GeneratedAtomRoundedTopChild {}
+impl GeneratedValueSetBorderRadiusFull for GeneratedAtomRoundedTopChild {}
+pub struct GeneratedAtomRoundedRightChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRoundedRightChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderRadiusDefault for GeneratedAtomRoundedRightChild {}
+impl GeneratedValueSetBorderRadiusNone for GeneratedAtomRoundedRightChild {}
+impl GeneratedValueSetBorderRadiusSm for GeneratedAtomRoundedRightChild {}
+impl GeneratedValueSetBorderRadiusMd for GeneratedAtomRoundedRightChild {}
+impl GeneratedValueSetBorderRadiusLg for GeneratedAtomRoundedRightChild {}
+impl GeneratedValueSetBorderRadiusXl for GeneratedAtomRoundedRightChild {}
+impl GeneratedValueSetBorderRadiusN2xl for GeneratedAtomRoundedRightChild {}
+impl GeneratedValueSetBorderRadiusN3xl for GeneratedAtomRoundedRightChild {}
+impl GeneratedValueSetBorderRadiusFull for GeneratedAtomRoundedRightChild {}
+pub struct GeneratedAtomRoundedBottomChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRoundedBottomChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderRadiusDefault for GeneratedAtomRoundedBottomChild {}
+impl GeneratedValueSetBorderRadiusNone for GeneratedAtomRoundedBottomChild {}
+impl GeneratedValueSetBorderRadiusSm for GeneratedAtomRoundedBottomChild {}
+impl GeneratedValueSetBorderRadiusMd for GeneratedAtomRoundedBottomChild {}
+impl GeneratedValueSetBorderRadiusLg for GeneratedAtomRoundedBottomChild {}
+impl GeneratedValueSetBorderRadiusXl for GeneratedAtomRoundedBottomChild {}
+impl GeneratedValueSetBorderRadiusN2xl for GeneratedAtomRoundedBottomChild {}
+impl GeneratedValueSetBorderRadiusN3xl for GeneratedAtomRoundedBottomChild {}
+impl GeneratedValueSetBorderRadiusFull for GeneratedAtomRoundedBottomChild {}
+pub struct GeneratedAtomRoundedLeftChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRoundedLeftChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderRadiusDefault for GeneratedAtomRoundedLeftChild {}
+impl GeneratedValueSetBorderRadiusNone for GeneratedAtomRoundedLeftChild {}
+impl GeneratedValueSetBorderRadiusSm for GeneratedAtomRoundedLeftChild {}
+impl GeneratedValueSetBorderRadiusMd for GeneratedAtomRoundedLeftChild {}
+impl GeneratedValueSetBorderRadiusLg for GeneratedAtomRoundedLeftChild {}
+impl GeneratedValueSetBorderRadiusXl for GeneratedAtomRoundedLeftChild {}
+impl GeneratedValueSetBorderRadiusN2xl for GeneratedAtomRoundedLeftChild {}
+impl GeneratedValueSetBorderRadiusN3xl for GeneratedAtomRoundedLeftChild {}
+impl GeneratedValueSetBorderRadiusFull for GeneratedAtomRoundedLeftChild {}
+pub struct GeneratedAtomRoundedStartStartChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRoundedStartStartChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderRadiusDefault for GeneratedAtomRoundedStartStartChild {}
+impl GeneratedValueSetBorderRadiusNone for GeneratedAtomRoundedStartStartChild {}
+impl GeneratedValueSetBorderRadiusSm for GeneratedAtomRoundedStartStartChild {}
+impl GeneratedValueSetBorderRadiusMd for GeneratedAtomRoundedStartStartChild {}
+impl GeneratedValueSetBorderRadiusLg for GeneratedAtomRoundedStartStartChild {}
+impl GeneratedValueSetBorderRadiusXl for GeneratedAtomRoundedStartStartChild {}
+impl GeneratedValueSetBorderRadiusN2xl for GeneratedAtomRoundedStartStartChild {}
+impl GeneratedValueSetBorderRadiusN3xl for GeneratedAtomRoundedStartStartChild {}
+impl GeneratedValueSetBorderRadiusFull for GeneratedAtomRoundedStartStartChild {}
+pub struct GeneratedAtomRoundedStartEndChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRoundedStartEndChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderRadiusDefault for GeneratedAtomRoundedStartEndChild {}
+impl GeneratedValueSetBorderRadiusNone for GeneratedAtomRoundedStartEndChild {}
+impl GeneratedValueSetBorderRadiusSm for GeneratedAtomRoundedStartEndChild {}
+impl GeneratedValueSetBorderRadiusMd for GeneratedAtomRoundedStartEndChild {}
+impl GeneratedValueSetBorderRadiusLg for GeneratedAtomRoundedStartEndChild {}
+impl GeneratedValueSetBorderRadiusXl for GeneratedAtomRoundedStartEndChild {}
+impl GeneratedValueSetBorderRadiusN2xl for GeneratedAtomRoundedStartEndChild {}
+impl GeneratedValueSetBorderRadiusN3xl for GeneratedAtomRoundedStartEndChild {}
+impl GeneratedValueSetBorderRadiusFull for GeneratedAtomRoundedStartEndChild {}
+pub struct GeneratedAtomRoundedEndEndChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRoundedEndEndChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderRadiusDefault for GeneratedAtomRoundedEndEndChild {}
+impl GeneratedValueSetBorderRadiusNone for GeneratedAtomRoundedEndEndChild {}
+impl GeneratedValueSetBorderRadiusSm for GeneratedAtomRoundedEndEndChild {}
+impl GeneratedValueSetBorderRadiusMd for GeneratedAtomRoundedEndEndChild {}
+impl GeneratedValueSetBorderRadiusLg for GeneratedAtomRoundedEndEndChild {}
+impl GeneratedValueSetBorderRadiusXl for GeneratedAtomRoundedEndEndChild {}
+impl GeneratedValueSetBorderRadiusN2xl for GeneratedAtomRoundedEndEndChild {}
+impl GeneratedValueSetBorderRadiusN3xl for GeneratedAtomRoundedEndEndChild {}
+impl GeneratedValueSetBorderRadiusFull for GeneratedAtomRoundedEndEndChild {}
+pub struct GeneratedAtomRoundedEndStartChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRoundedEndStartChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderRadiusDefault for GeneratedAtomRoundedEndStartChild {}
+impl GeneratedValueSetBorderRadiusNone for GeneratedAtomRoundedEndStartChild {}
+impl GeneratedValueSetBorderRadiusSm for GeneratedAtomRoundedEndStartChild {}
+impl GeneratedValueSetBorderRadiusMd for GeneratedAtomRoundedEndStartChild {}
+impl GeneratedValueSetBorderRadiusLg for GeneratedAtomRoundedEndStartChild {}
+impl GeneratedValueSetBorderRadiusXl for GeneratedAtomRoundedEndStartChild {}
+impl GeneratedValueSetBorderRadiusN2xl for GeneratedAtomRoundedEndStartChild {}
+impl GeneratedValueSetBorderRadiusN3xl for GeneratedAtomRoundedEndStartChild {}
+impl GeneratedValueSetBorderRadiusFull for GeneratedAtomRoundedEndStartChild {}
+pub struct GeneratedAtomRoundedTopLeftChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRoundedTopLeftChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderRadiusDefault for GeneratedAtomRoundedTopLeftChild {}
+impl GeneratedValueSetBorderRadiusNone for GeneratedAtomRoundedTopLeftChild {}
+impl GeneratedValueSetBorderRadiusSm for GeneratedAtomRoundedTopLeftChild {}
+impl GeneratedValueSetBorderRadiusMd for GeneratedAtomRoundedTopLeftChild {}
+impl GeneratedValueSetBorderRadiusLg for GeneratedAtomRoundedTopLeftChild {}
+impl GeneratedValueSetBorderRadiusXl for GeneratedAtomRoundedTopLeftChild {}
+impl GeneratedValueSetBorderRadiusN2xl for GeneratedAtomRoundedTopLeftChild {}
+impl GeneratedValueSetBorderRadiusN3xl for GeneratedAtomRoundedTopLeftChild {}
+impl GeneratedValueSetBorderRadiusFull for GeneratedAtomRoundedTopLeftChild {}
+pub struct GeneratedAtomRoundedTopRightChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRoundedTopRightChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderRadiusDefault for GeneratedAtomRoundedTopRightChild {}
+impl GeneratedValueSetBorderRadiusNone for GeneratedAtomRoundedTopRightChild {}
+impl GeneratedValueSetBorderRadiusSm for GeneratedAtomRoundedTopRightChild {}
+impl GeneratedValueSetBorderRadiusMd for GeneratedAtomRoundedTopRightChild {}
+impl GeneratedValueSetBorderRadiusLg for GeneratedAtomRoundedTopRightChild {}
+impl GeneratedValueSetBorderRadiusXl for GeneratedAtomRoundedTopRightChild {}
+impl GeneratedValueSetBorderRadiusN2xl for GeneratedAtomRoundedTopRightChild {}
+impl GeneratedValueSetBorderRadiusN3xl for GeneratedAtomRoundedTopRightChild {}
+impl GeneratedValueSetBorderRadiusFull for GeneratedAtomRoundedTopRightChild {}
+pub struct GeneratedAtomRoundedBottomLeftChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRoundedBottomLeftChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderRadiusDefault for GeneratedAtomRoundedBottomLeftChild {}
+impl GeneratedValueSetBorderRadiusNone for GeneratedAtomRoundedBottomLeftChild {}
+impl GeneratedValueSetBorderRadiusSm for GeneratedAtomRoundedBottomLeftChild {}
+impl GeneratedValueSetBorderRadiusMd for GeneratedAtomRoundedBottomLeftChild {}
+impl GeneratedValueSetBorderRadiusLg for GeneratedAtomRoundedBottomLeftChild {}
+impl GeneratedValueSetBorderRadiusXl for GeneratedAtomRoundedBottomLeftChild {}
+impl GeneratedValueSetBorderRadiusN2xl for GeneratedAtomRoundedBottomLeftChild {}
+impl GeneratedValueSetBorderRadiusN3xl for GeneratedAtomRoundedBottomLeftChild {}
+impl GeneratedValueSetBorderRadiusFull for GeneratedAtomRoundedBottomLeftChild {}
+pub struct GeneratedAtomRoundedBottomRightChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRoundedBottomRightChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderRadiusDefault for GeneratedAtomRoundedBottomRightChild {}
+impl GeneratedValueSetBorderRadiusNone for GeneratedAtomRoundedBottomRightChild {}
+impl GeneratedValueSetBorderRadiusSm for GeneratedAtomRoundedBottomRightChild {}
+impl GeneratedValueSetBorderRadiusMd for GeneratedAtomRoundedBottomRightChild {}
+impl GeneratedValueSetBorderRadiusLg for GeneratedAtomRoundedBottomRightChild {}
+impl GeneratedValueSetBorderRadiusXl for GeneratedAtomRoundedBottomRightChild {}
+impl GeneratedValueSetBorderRadiusN2xl for GeneratedAtomRoundedBottomRightChild {}
+impl GeneratedValueSetBorderRadiusN3xl for GeneratedAtomRoundedBottomRightChild {}
+impl GeneratedValueSetBorderRadiusFull for GeneratedAtomRoundedBottomRightChild {}
+pub struct GeneratedAtomBorderChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderWidthN0 for GeneratedAtomBorderChild {}
+impl GeneratedValueSetBorderWidthDefault for GeneratedAtomBorderChild {}
+impl GeneratedValueSetBorderWidthN2 for GeneratedAtomBorderChild {}
+impl GeneratedValueSetBorderWidthN4 for GeneratedAtomBorderChild {}
+impl GeneratedValueSetBorderWidthN8 for GeneratedAtomBorderChild {}
+pub struct GeneratedAtomBorderXChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderXChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderWidthN0 for GeneratedAtomBorderXChild {}
+impl GeneratedValueSetBorderWidthDefault for GeneratedAtomBorderXChild {}
+impl GeneratedValueSetBorderWidthN2 for GeneratedAtomBorderXChild {}
+impl GeneratedValueSetBorderWidthN4 for GeneratedAtomBorderXChild {}
+impl GeneratedValueSetBorderWidthN8 for GeneratedAtomBorderXChild {}
+pub struct GeneratedAtomBorderYChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderYChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderWidthN0 for GeneratedAtomBorderYChild {}
+impl GeneratedValueSetBorderWidthDefault for GeneratedAtomBorderYChild {}
+impl GeneratedValueSetBorderWidthN2 for GeneratedAtomBorderYChild {}
+impl GeneratedValueSetBorderWidthN4 for GeneratedAtomBorderYChild {}
+impl GeneratedValueSetBorderWidthN8 for GeneratedAtomBorderYChild {}
+pub struct GeneratedAtomBorderInlineChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderInlineChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderWidthN0 for GeneratedAtomBorderInlineChild {}
+impl GeneratedValueSetBorderWidthDefault for GeneratedAtomBorderInlineChild {}
+impl GeneratedValueSetBorderWidthN2 for GeneratedAtomBorderInlineChild {}
+impl GeneratedValueSetBorderWidthN4 for GeneratedAtomBorderInlineChild {}
+impl GeneratedValueSetBorderWidthN8 for GeneratedAtomBorderInlineChild {}
+pub struct GeneratedAtomBorderInlineStartChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderInlineStartChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderWidthN0 for GeneratedAtomBorderInlineStartChild {}
+impl GeneratedValueSetBorderWidthDefault for GeneratedAtomBorderInlineStartChild {}
+impl GeneratedValueSetBorderWidthN2 for GeneratedAtomBorderInlineStartChild {}
+impl GeneratedValueSetBorderWidthN4 for GeneratedAtomBorderInlineStartChild {}
+impl GeneratedValueSetBorderWidthN8 for GeneratedAtomBorderInlineStartChild {}
+pub struct GeneratedAtomBorderInlineEndChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderInlineEndChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderWidthN0 for GeneratedAtomBorderInlineEndChild {}
+impl GeneratedValueSetBorderWidthDefault for GeneratedAtomBorderInlineEndChild {}
+impl GeneratedValueSetBorderWidthN2 for GeneratedAtomBorderInlineEndChild {}
+impl GeneratedValueSetBorderWidthN4 for GeneratedAtomBorderInlineEndChild {}
+impl GeneratedValueSetBorderWidthN8 for GeneratedAtomBorderInlineEndChild {}
+pub struct GeneratedAtomBorderBlockChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderBlockChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderWidthN0 for GeneratedAtomBorderBlockChild {}
+impl GeneratedValueSetBorderWidthDefault for GeneratedAtomBorderBlockChild {}
+impl GeneratedValueSetBorderWidthN2 for GeneratedAtomBorderBlockChild {}
+impl GeneratedValueSetBorderWidthN4 for GeneratedAtomBorderBlockChild {}
+impl GeneratedValueSetBorderWidthN8 for GeneratedAtomBorderBlockChild {}
+pub struct GeneratedAtomBorderBlockStartChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderBlockStartChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderWidthN0 for GeneratedAtomBorderBlockStartChild {}
+impl GeneratedValueSetBorderWidthDefault for GeneratedAtomBorderBlockStartChild {}
+impl GeneratedValueSetBorderWidthN2 for GeneratedAtomBorderBlockStartChild {}
+impl GeneratedValueSetBorderWidthN4 for GeneratedAtomBorderBlockStartChild {}
+impl GeneratedValueSetBorderWidthN8 for GeneratedAtomBorderBlockStartChild {}
+pub struct GeneratedAtomBorderBlockEndChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderBlockEndChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderWidthN0 for GeneratedAtomBorderBlockEndChild {}
+impl GeneratedValueSetBorderWidthDefault for GeneratedAtomBorderBlockEndChild {}
+impl GeneratedValueSetBorderWidthN2 for GeneratedAtomBorderBlockEndChild {}
+impl GeneratedValueSetBorderWidthN4 for GeneratedAtomBorderBlockEndChild {}
+impl GeneratedValueSetBorderWidthN8 for GeneratedAtomBorderBlockEndChild {}
+pub struct GeneratedAtomBorderTopChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderTopChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderWidthN0 for GeneratedAtomBorderTopChild {}
+impl GeneratedValueSetBorderWidthDefault for GeneratedAtomBorderTopChild {}
+impl GeneratedValueSetBorderWidthN2 for GeneratedAtomBorderTopChild {}
+impl GeneratedValueSetBorderWidthN4 for GeneratedAtomBorderTopChild {}
+impl GeneratedValueSetBorderWidthN8 for GeneratedAtomBorderTopChild {}
+pub struct GeneratedAtomBorderRightChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderRightChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderWidthN0 for GeneratedAtomBorderRightChild {}
+impl GeneratedValueSetBorderWidthDefault for GeneratedAtomBorderRightChild {}
+impl GeneratedValueSetBorderWidthN2 for GeneratedAtomBorderRightChild {}
+impl GeneratedValueSetBorderWidthN4 for GeneratedAtomBorderRightChild {}
+impl GeneratedValueSetBorderWidthN8 for GeneratedAtomBorderRightChild {}
+pub struct GeneratedAtomBorderBottomChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderBottomChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderWidthN0 for GeneratedAtomBorderBottomChild {}
+impl GeneratedValueSetBorderWidthDefault for GeneratedAtomBorderBottomChild {}
+impl GeneratedValueSetBorderWidthN2 for GeneratedAtomBorderBottomChild {}
+impl GeneratedValueSetBorderWidthN4 for GeneratedAtomBorderBottomChild {}
+impl GeneratedValueSetBorderWidthN8 for GeneratedAtomBorderBottomChild {}
+pub struct GeneratedAtomBorderLeftChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderLeftChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderWidthN0 for GeneratedAtomBorderLeftChild {}
+impl GeneratedValueSetBorderWidthDefault for GeneratedAtomBorderLeftChild {}
+impl GeneratedValueSetBorderWidthN2 for GeneratedAtomBorderLeftChild {}
+impl GeneratedValueSetBorderWidthN4 for GeneratedAtomBorderLeftChild {}
+impl GeneratedValueSetBorderWidthN8 for GeneratedAtomBorderLeftChild {}
+pub struct GeneratedAtomBorderColorChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderColorChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorPrimary for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPrimaryContent for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSecondary for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSecondaryContent for GeneratedAtomBorderColorChild {}
+impl GeneratedColorAccent for GeneratedAtomBorderColorChild {}
+impl GeneratedColorAccentContent for GeneratedAtomBorderColorChild {}
+impl GeneratedColorNeutral for GeneratedAtomBorderColorChild {}
+impl GeneratedColorNeutralContent for GeneratedAtomBorderColorChild {}
+impl GeneratedColorBase100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorBase200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorBase300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorBaseContent for GeneratedAtomBorderColorChild {}
+impl GeneratedColorInfo for GeneratedAtomBorderColorChild {}
+impl GeneratedColorInfoContent for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSuccess for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSuccessContent for GeneratedAtomBorderColorChild {}
+impl GeneratedColorWarning for GeneratedAtomBorderColorChild {}
+impl GeneratedColorWarningContent for GeneratedAtomBorderColorChild {}
+impl GeneratedColorError for GeneratedAtomBorderColorChild {}
+impl GeneratedColorErrorContent for GeneratedAtomBorderColorChild {}
+impl GeneratedColorBlack for GeneratedAtomBorderColorChild {}
+impl GeneratedColorWhite for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSlate50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSlate100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSlate200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSlate300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSlate400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSlate500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSlate600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSlate700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSlate800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSlate900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSlate950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGray50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGray100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGray200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGray300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGray400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGray500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGray600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGray700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGray800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGray900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGray950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorZinc50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorZinc100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorZinc200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorZinc300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorZinc400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorZinc500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorZinc600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorZinc700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorZinc800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorZinc900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorZinc950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorNeutral50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorNeutral100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorNeutral200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorNeutral300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorNeutral400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorNeutral500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorNeutral600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorNeutral700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorNeutral800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorNeutral900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorNeutral950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorStone50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorStone100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorStone200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorStone300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorStone400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorStone500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorStone600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorStone700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorStone800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorStone900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorStone950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRed50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRed100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRed200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRed300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRed400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRed500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRed600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRed700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRed800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRed900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRed950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorOrange50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorOrange100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorOrange200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorOrange300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorOrange400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorOrange500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorOrange600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorOrange700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorOrange800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorOrange900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorOrange950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorAmber50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorAmber100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorAmber200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorAmber300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorAmber400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorAmber500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorAmber600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorAmber700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorAmber800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorAmber900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorAmber950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorYellow50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorYellow100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorYellow200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorYellow300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorYellow400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorYellow500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorYellow600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorYellow700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorYellow800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorYellow900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorYellow950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorLime50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorLime100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorLime200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorLime300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorLime400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorLime500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorLime600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorLime700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorLime800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorLime900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorLime950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGreen50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGreen100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGreen200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGreen300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGreen400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGreen500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGreen600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGreen700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGreen800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGreen900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorGreen950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorEmerald50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorEmerald100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorEmerald200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorEmerald300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorEmerald400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorEmerald500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorEmerald600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorEmerald700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorEmerald800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorEmerald900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorEmerald950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorTeal50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorTeal100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorTeal200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorTeal300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorTeal400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorTeal500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorTeal600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorTeal700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorTeal800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorTeal900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorTeal950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorCyan50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorCyan100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorCyan200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorCyan300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorCyan400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorCyan500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorCyan600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorCyan700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorCyan800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorCyan900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorCyan950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSky50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSky100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSky200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSky300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSky400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSky500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSky600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSky700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSky800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSky900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorSky950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorBlue50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorBlue100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorBlue200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorBlue300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorBlue400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorBlue500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorBlue600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorBlue700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorBlue800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorBlue900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorBlue950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorIndigo50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorIndigo100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorIndigo200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorIndigo300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorIndigo400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorIndigo500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorIndigo600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorIndigo700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorIndigo800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorIndigo900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorIndigo950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorViolet50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorViolet100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorViolet200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorViolet300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorViolet400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorViolet500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorViolet600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorViolet700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorViolet800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorViolet900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorViolet950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPurple50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPurple100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPurple200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPurple300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPurple400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPurple500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPurple600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPurple700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPurple800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPurple900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPurple950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorFuchsia50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorFuchsia100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorFuchsia200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorFuchsia300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorFuchsia400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorFuchsia500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorFuchsia600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorFuchsia700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorFuchsia800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorFuchsia900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorFuchsia950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPink50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPink100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPink200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPink300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPink400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPink500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPink600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPink700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPink800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPink900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorPink950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRose50 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRose100 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRose200 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRose300 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRose400 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRose500 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRose600 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRose700 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRose800 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRose900 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRose950 for GeneratedAtomBorderColorChild {}
+impl GeneratedColorInherit for GeneratedAtomBorderColorChild {}
+impl GeneratedColorTransparent for GeneratedAtomBorderColorChild {}
+impl GeneratedColorCurrent for GeneratedAtomBorderColorChild {}
+pub struct GeneratedAtomBorderColorXChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderColorXChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorPrimary for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPrimaryContent for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSecondary for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSecondaryContent for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorAccent for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorAccentContent for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorNeutral for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorNeutralContent for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorBase100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorBase200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorBase300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorBaseContent for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorInfo for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorInfoContent for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSuccess for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSuccessContent for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorWarning for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorWarningContent for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorError for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorErrorContent for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorBlack for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorWhite for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSlate50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSlate100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSlate200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSlate300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSlate400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSlate500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSlate600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSlate700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSlate800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSlate900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSlate950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGray50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGray100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGray200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGray300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGray400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGray500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGray600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGray700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGray800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGray900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGray950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorZinc50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorZinc100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorZinc200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorZinc300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorZinc400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorZinc500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorZinc600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorZinc700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorZinc800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorZinc900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorZinc950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorNeutral50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorNeutral100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorNeutral200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorNeutral300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorNeutral400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorNeutral500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorNeutral600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorNeutral700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorNeutral800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorNeutral900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorNeutral950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorStone50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorStone100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorStone200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorStone300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorStone400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorStone500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorStone600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorStone700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorStone800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorStone900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorStone950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRed50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRed100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRed200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRed300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRed400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRed500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRed600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRed700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRed800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRed900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRed950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorOrange50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorOrange100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorOrange200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorOrange300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorOrange400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorOrange500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorOrange600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorOrange700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorOrange800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorOrange900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorOrange950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorAmber50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorAmber100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorAmber200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorAmber300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorAmber400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorAmber500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorAmber600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorAmber700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorAmber800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorAmber900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorAmber950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorYellow50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorYellow100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorYellow200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorYellow300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorYellow400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorYellow500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorYellow600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorYellow700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorYellow800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorYellow900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorYellow950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorLime50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorLime100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorLime200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorLime300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorLime400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorLime500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorLime600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorLime700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorLime800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorLime900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorLime950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGreen50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGreen100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGreen200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGreen300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGreen400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGreen500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGreen600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGreen700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGreen800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGreen900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorGreen950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorEmerald50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorEmerald100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorEmerald200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorEmerald300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorEmerald400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorEmerald500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorEmerald600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorEmerald700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorEmerald800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorEmerald900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorEmerald950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorTeal50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorTeal100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorTeal200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorTeal300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorTeal400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorTeal500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorTeal600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorTeal700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorTeal800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorTeal900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorTeal950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorCyan50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorCyan100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorCyan200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorCyan300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorCyan400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorCyan500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorCyan600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorCyan700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorCyan800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorCyan900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorCyan950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSky50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSky100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSky200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSky300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSky400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSky500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSky600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSky700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSky800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSky900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorSky950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorBlue50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorBlue100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorBlue200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorBlue300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorBlue400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorBlue500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorBlue600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorBlue700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorBlue800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorBlue900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorBlue950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorIndigo50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorIndigo100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorIndigo200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorIndigo300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorIndigo400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorIndigo500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorIndigo600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorIndigo700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorIndigo800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorIndigo900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorIndigo950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorViolet50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorViolet100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorViolet200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorViolet300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorViolet400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorViolet500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorViolet600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorViolet700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorViolet800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorViolet900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorViolet950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPurple50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPurple100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPurple200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPurple300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPurple400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPurple500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPurple600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPurple700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPurple800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPurple900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPurple950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorFuchsia50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorFuchsia100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorFuchsia200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorFuchsia300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorFuchsia400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorFuchsia500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorFuchsia600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorFuchsia700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorFuchsia800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorFuchsia900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorFuchsia950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPink50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPink100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPink200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPink300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPink400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPink500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPink600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPink700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPink800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPink900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorPink950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRose50 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRose100 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRose200 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRose300 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRose400 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRose500 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRose600 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRose700 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRose800 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRose900 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRose950 for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorInherit for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorTransparent for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorCurrent for GeneratedAtomBorderColorXChild {}
+pub struct GeneratedAtomBorderColorYChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderColorYChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorPrimary for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPrimaryContent for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSecondary for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSecondaryContent for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorAccent for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorAccentContent for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorNeutral for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorNeutralContent for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorBase100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorBase200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorBase300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorBaseContent for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorInfo for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorInfoContent for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSuccess for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSuccessContent for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorWarning for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorWarningContent for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorError for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorErrorContent for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorBlack for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorWhite for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSlate50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSlate100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSlate200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSlate300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSlate400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSlate500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSlate600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSlate700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSlate800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSlate900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSlate950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGray50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGray100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGray200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGray300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGray400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGray500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGray600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGray700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGray800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGray900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGray950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorZinc50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorZinc100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorZinc200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorZinc300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorZinc400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorZinc500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorZinc600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorZinc700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorZinc800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorZinc900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorZinc950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorNeutral50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorNeutral100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorNeutral200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorNeutral300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorNeutral400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorNeutral500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorNeutral600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorNeutral700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorNeutral800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorNeutral900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorNeutral950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorStone50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorStone100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorStone200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorStone300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorStone400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorStone500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorStone600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorStone700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorStone800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorStone900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorStone950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRed50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRed100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRed200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRed300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRed400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRed500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRed600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRed700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRed800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRed900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRed950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorOrange50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorOrange100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorOrange200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorOrange300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorOrange400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorOrange500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorOrange600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorOrange700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorOrange800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorOrange900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorOrange950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorAmber50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorAmber100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorAmber200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorAmber300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorAmber400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorAmber500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorAmber600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorAmber700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorAmber800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorAmber900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorAmber950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorYellow50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorYellow100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorYellow200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorYellow300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorYellow400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorYellow500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorYellow600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorYellow700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorYellow800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorYellow900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorYellow950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorLime50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorLime100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorLime200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorLime300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorLime400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorLime500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorLime600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorLime700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorLime800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorLime900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorLime950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGreen50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGreen100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGreen200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGreen300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGreen400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGreen500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGreen600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGreen700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGreen800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGreen900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorGreen950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorEmerald50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorEmerald100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorEmerald200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorEmerald300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorEmerald400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorEmerald500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorEmerald600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorEmerald700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorEmerald800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorEmerald900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorEmerald950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorTeal50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorTeal100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorTeal200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorTeal300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorTeal400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorTeal500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorTeal600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorTeal700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorTeal800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorTeal900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorTeal950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorCyan50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorCyan100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorCyan200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorCyan300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorCyan400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorCyan500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorCyan600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorCyan700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorCyan800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorCyan900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorCyan950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSky50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSky100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSky200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSky300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSky400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSky500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSky600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSky700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSky800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSky900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorSky950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorBlue50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorBlue100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorBlue200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorBlue300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorBlue400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorBlue500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorBlue600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorBlue700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorBlue800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorBlue900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorBlue950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorIndigo50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorIndigo100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorIndigo200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorIndigo300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorIndigo400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorIndigo500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorIndigo600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorIndigo700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorIndigo800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorIndigo900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorIndigo950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorViolet50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorViolet100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorViolet200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorViolet300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorViolet400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorViolet500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorViolet600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorViolet700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorViolet800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorViolet900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorViolet950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPurple50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPurple100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPurple200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPurple300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPurple400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPurple500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPurple600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPurple700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPurple800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPurple900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPurple950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorFuchsia50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorFuchsia100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorFuchsia200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorFuchsia300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorFuchsia400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorFuchsia500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorFuchsia600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorFuchsia700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorFuchsia800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorFuchsia900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorFuchsia950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPink50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPink100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPink200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPink300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPink400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPink500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPink600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPink700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPink800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPink900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorPink950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRose50 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRose100 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRose200 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRose300 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRose400 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRose500 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRose600 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRose700 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRose800 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRose900 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRose950 for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorInherit for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorTransparent for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorCurrent for GeneratedAtomBorderColorYChild {}
+pub struct GeneratedAtomBorderColorInlineChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderColorInlineChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorPrimary for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPrimaryContent for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSecondary for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSecondaryContent for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorAccent for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorAccentContent for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorNeutral for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorNeutralContent for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorBase100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorBase200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorBase300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorBaseContent for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorInfo for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorInfoContent for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSuccess for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSuccessContent for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorWarning for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorWarningContent for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorError for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorErrorContent for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorBlack for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorWhite for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSlate50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSlate100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSlate200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSlate300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSlate400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSlate500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSlate600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSlate700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSlate800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSlate900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSlate950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGray50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGray100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGray200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGray300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGray400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGray500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGray600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGray700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGray800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGray900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGray950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorZinc50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorZinc100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorZinc200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorZinc300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorZinc400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorZinc500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorZinc600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorZinc700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorZinc800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorZinc900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorZinc950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorNeutral50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorNeutral100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorNeutral200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorNeutral300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorNeutral400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorNeutral500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorNeutral600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorNeutral700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorNeutral800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorNeutral900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorNeutral950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorStone50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorStone100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorStone200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorStone300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorStone400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorStone500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorStone600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorStone700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorStone800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorStone900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorStone950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRed50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRed100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRed200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRed300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRed400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRed500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRed600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRed700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRed800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRed900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRed950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorOrange50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorOrange100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorOrange200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorOrange300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorOrange400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorOrange500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorOrange600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorOrange700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorOrange800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorOrange900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorOrange950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorAmber50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorAmber100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorAmber200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorAmber300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorAmber400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorAmber500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorAmber600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorAmber700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorAmber800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorAmber900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorAmber950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorYellow50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorYellow100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorYellow200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorYellow300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorYellow400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorYellow500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorYellow600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorYellow700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorYellow800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorYellow900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorYellow950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorLime50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorLime100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorLime200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorLime300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorLime400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorLime500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorLime600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorLime700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorLime800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorLime900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorLime950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGreen50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGreen100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGreen200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGreen300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGreen400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGreen500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGreen600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGreen700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGreen800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGreen900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorGreen950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorEmerald50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorEmerald100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorEmerald200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorEmerald300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorEmerald400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorEmerald500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorEmerald600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorEmerald700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorEmerald800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorEmerald900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorEmerald950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorTeal50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorTeal100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorTeal200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorTeal300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorTeal400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorTeal500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorTeal600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorTeal700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorTeal800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorTeal900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorTeal950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorCyan50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorCyan100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorCyan200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorCyan300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorCyan400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorCyan500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorCyan600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorCyan700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorCyan800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorCyan900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorCyan950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSky50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSky100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSky200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSky300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSky400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSky500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSky600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSky700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSky800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSky900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorSky950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorBlue50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorBlue100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorBlue200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorBlue300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorBlue400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorBlue500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorBlue600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorBlue700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorBlue800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorBlue900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorBlue950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorIndigo50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorIndigo100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorIndigo200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorIndigo300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorIndigo400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorIndigo500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorIndigo600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorIndigo700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorIndigo800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorIndigo900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorIndigo950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorViolet50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorViolet100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorViolet200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorViolet300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorViolet400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorViolet500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorViolet600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorViolet700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorViolet800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorViolet900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorViolet950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPurple50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPurple100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPurple200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPurple300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPurple400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPurple500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPurple600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPurple700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPurple800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPurple900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPurple950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorFuchsia50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorFuchsia100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorFuchsia200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorFuchsia300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorFuchsia400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorFuchsia500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorFuchsia600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorFuchsia700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorFuchsia800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorFuchsia900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorFuchsia950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPink50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPink100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPink200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPink300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPink400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPink500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPink600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPink700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPink800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPink900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorPink950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRose50 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRose100 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRose200 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRose300 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRose400 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRose500 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRose600 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRose700 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRose800 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRose900 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRose950 for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorInherit for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorTransparent for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorCurrent for GeneratedAtomBorderColorInlineChild {}
+pub struct GeneratedAtomBorderColorInlineStartChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderColorInlineStartChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorPrimary for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPrimaryContent for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSecondary for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSecondaryContent for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorAccent for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorAccentContent for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorNeutral for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorNeutralContent for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorBase100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorBase200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorBase300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorBaseContent for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorInfo for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorInfoContent for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSuccess for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSuccessContent for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorWarning for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorWarningContent for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorError for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorErrorContent for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorBlack for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorWhite for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSlate50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSlate100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSlate200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSlate300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSlate400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSlate500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSlate600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSlate700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSlate800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSlate900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSlate950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGray50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGray100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGray200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGray300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGray400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGray500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGray600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGray700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGray800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGray900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGray950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorZinc50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorZinc100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorZinc200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorZinc300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorZinc400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorZinc500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorZinc600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorZinc700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorZinc800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorZinc900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorZinc950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorNeutral50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorNeutral100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorNeutral200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorNeutral300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorNeutral400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorNeutral500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorNeutral600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorNeutral700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorNeutral800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorNeutral900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorNeutral950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorStone50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorStone100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorStone200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorStone300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorStone400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorStone500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorStone600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorStone700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorStone800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorStone900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorStone950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRed50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRed100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRed200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRed300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRed400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRed500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRed600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRed700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRed800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRed900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRed950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorOrange50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorOrange100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorOrange200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorOrange300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorOrange400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorOrange500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorOrange600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorOrange700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorOrange800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorOrange900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorOrange950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorAmber50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorAmber100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorAmber200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorAmber300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorAmber400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorAmber500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorAmber600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorAmber700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorAmber800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorAmber900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorAmber950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorYellow50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorYellow100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorYellow200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorYellow300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorYellow400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorYellow500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorYellow600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorYellow700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorYellow800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorYellow900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorYellow950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorLime50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorLime100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorLime200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorLime300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorLime400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorLime500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorLime600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorLime700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorLime800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorLime900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorLime950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGreen50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGreen100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGreen200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGreen300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGreen400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGreen500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGreen600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGreen700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGreen800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGreen900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorGreen950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorEmerald50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorEmerald100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorEmerald200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorEmerald300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorEmerald400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorEmerald500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorEmerald600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorEmerald700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorEmerald800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorEmerald900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorEmerald950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorTeal50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorTeal100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorTeal200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorTeal300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorTeal400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorTeal500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorTeal600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorTeal700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorTeal800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorTeal900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorTeal950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorCyan50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorCyan100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorCyan200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorCyan300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorCyan400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorCyan500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorCyan600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorCyan700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorCyan800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorCyan900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorCyan950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSky50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSky100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSky200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSky300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSky400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSky500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSky600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSky700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSky800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSky900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorSky950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorBlue50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorBlue100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorBlue200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorBlue300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorBlue400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorBlue500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorBlue600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorBlue700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorBlue800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorBlue900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorBlue950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorIndigo50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorIndigo100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorIndigo200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorIndigo300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorIndigo400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorIndigo500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorIndigo600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorIndigo700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorIndigo800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorIndigo900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorIndigo950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorViolet50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorViolet100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorViolet200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorViolet300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorViolet400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorViolet500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorViolet600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorViolet700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorViolet800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorViolet900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorViolet950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPurple50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPurple100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPurple200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPurple300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPurple400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPurple500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPurple600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPurple700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPurple800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPurple900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPurple950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorFuchsia50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorFuchsia100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorFuchsia200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorFuchsia300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorFuchsia400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorFuchsia500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorFuchsia600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorFuchsia700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorFuchsia800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorFuchsia900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorFuchsia950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPink50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPink100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPink200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPink300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPink400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPink500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPink600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPink700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPink800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPink900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorPink950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRose50 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRose100 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRose200 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRose300 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRose400 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRose500 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRose600 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRose700 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRose800 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRose900 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRose950 for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorInherit for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorTransparent for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorCurrent for GeneratedAtomBorderColorInlineStartChild {}
+pub struct GeneratedAtomBorderColorInlineEndChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderColorInlineEndChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorPrimary for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPrimaryContent for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSecondary for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSecondaryContent for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorAccent for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorAccentContent for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorNeutral for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorNeutralContent for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorBase100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorBase200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorBase300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorBaseContent for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorInfo for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorInfoContent for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSuccess for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSuccessContent for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorWarning for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorWarningContent for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorError for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorErrorContent for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorBlack for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorWhite for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSlate50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSlate100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSlate200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSlate300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSlate400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSlate500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSlate600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSlate700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSlate800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSlate900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSlate950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGray50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGray100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGray200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGray300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGray400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGray500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGray600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGray700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGray800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGray900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGray950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorZinc50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorZinc100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorZinc200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorZinc300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorZinc400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorZinc500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorZinc600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorZinc700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorZinc800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorZinc900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorZinc950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorNeutral50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorNeutral100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorNeutral200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorNeutral300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorNeutral400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorNeutral500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorNeutral600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorNeutral700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorNeutral800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorNeutral900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorNeutral950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorStone50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorStone100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorStone200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorStone300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorStone400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorStone500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorStone600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorStone700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorStone800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorStone900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorStone950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRed50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRed100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRed200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRed300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRed400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRed500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRed600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRed700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRed800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRed900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRed950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorOrange50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorOrange100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorOrange200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorOrange300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorOrange400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorOrange500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorOrange600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorOrange700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorOrange800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorOrange900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorOrange950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorAmber50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorAmber100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorAmber200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorAmber300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorAmber400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorAmber500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorAmber600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorAmber700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorAmber800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorAmber900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorAmber950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorYellow50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorYellow100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorYellow200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorYellow300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorYellow400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorYellow500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorYellow600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorYellow700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorYellow800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorYellow900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorYellow950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorLime50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorLime100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorLime200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorLime300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorLime400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorLime500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorLime600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorLime700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorLime800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorLime900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorLime950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGreen50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGreen100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGreen200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGreen300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGreen400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGreen500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGreen600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGreen700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGreen800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGreen900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorGreen950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorEmerald50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorEmerald100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorEmerald200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorEmerald300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorEmerald400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorEmerald500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorEmerald600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorEmerald700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorEmerald800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorEmerald900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorEmerald950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorTeal50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorTeal100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorTeal200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorTeal300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorTeal400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorTeal500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorTeal600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorTeal700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorTeal800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorTeal900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorTeal950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorCyan50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorCyan100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorCyan200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorCyan300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorCyan400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorCyan500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorCyan600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorCyan700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorCyan800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorCyan900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorCyan950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSky50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSky100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSky200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSky300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSky400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSky500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSky600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSky700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSky800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSky900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorSky950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorBlue50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorBlue100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorBlue200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorBlue300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorBlue400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorBlue500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorBlue600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorBlue700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorBlue800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorBlue900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorBlue950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorIndigo50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorIndigo100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorIndigo200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorIndigo300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorIndigo400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorIndigo500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorIndigo600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorIndigo700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorIndigo800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorIndigo900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorIndigo950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorViolet50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorViolet100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorViolet200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorViolet300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorViolet400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorViolet500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorViolet600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorViolet700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorViolet800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorViolet900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorViolet950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPurple50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPurple100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPurple200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPurple300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPurple400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPurple500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPurple600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPurple700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPurple800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPurple900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPurple950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorFuchsia50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorFuchsia100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorFuchsia200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorFuchsia300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorFuchsia400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorFuchsia500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorFuchsia600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorFuchsia700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorFuchsia800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorFuchsia900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorFuchsia950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPink50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPink100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPink200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPink300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPink400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPink500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPink600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPink700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPink800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPink900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorPink950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRose50 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRose100 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRose200 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRose300 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRose400 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRose500 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRose600 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRose700 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRose800 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRose900 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRose950 for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorInherit for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorTransparent for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorCurrent for GeneratedAtomBorderColorInlineEndChild {}
+pub struct GeneratedAtomBorderColorBlockChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderColorBlockChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorPrimary for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPrimaryContent for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSecondary for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSecondaryContent for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorAccent for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorAccentContent for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorNeutral for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorNeutralContent for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorBase100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorBase200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorBase300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorBaseContent for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorInfo for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorInfoContent for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSuccess for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSuccessContent for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorWarning for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorWarningContent for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorError for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorErrorContent for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorBlack for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorWhite for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSlate50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSlate100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSlate200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSlate300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSlate400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSlate500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSlate600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSlate700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSlate800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSlate900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSlate950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGray50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGray100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGray200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGray300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGray400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGray500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGray600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGray700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGray800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGray900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGray950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorZinc50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorZinc100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorZinc200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorZinc300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorZinc400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorZinc500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorZinc600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorZinc700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorZinc800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorZinc900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorZinc950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorNeutral50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorNeutral100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorNeutral200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorNeutral300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorNeutral400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorNeutral500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorNeutral600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorNeutral700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorNeutral800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorNeutral900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorNeutral950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorStone50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorStone100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorStone200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorStone300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorStone400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorStone500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorStone600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorStone700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorStone800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorStone900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorStone950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRed50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRed100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRed200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRed300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRed400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRed500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRed600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRed700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRed800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRed900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRed950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorOrange50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorOrange100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorOrange200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorOrange300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorOrange400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorOrange500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorOrange600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorOrange700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorOrange800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorOrange900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorOrange950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorAmber50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorAmber100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorAmber200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorAmber300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorAmber400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorAmber500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorAmber600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorAmber700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorAmber800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorAmber900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorAmber950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorYellow50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorYellow100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorYellow200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorYellow300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorYellow400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorYellow500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorYellow600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorYellow700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorYellow800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorYellow900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorYellow950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorLime50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorLime100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorLime200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorLime300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorLime400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorLime500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorLime600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorLime700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorLime800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorLime900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorLime950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGreen50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGreen100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGreen200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGreen300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGreen400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGreen500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGreen600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGreen700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGreen800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGreen900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorGreen950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorEmerald50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorEmerald100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorEmerald200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorEmerald300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorEmerald400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorEmerald500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorEmerald600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorEmerald700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorEmerald800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorEmerald900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorEmerald950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorTeal50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorTeal100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorTeal200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorTeal300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorTeal400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorTeal500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorTeal600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorTeal700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorTeal800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorTeal900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorTeal950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorCyan50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorCyan100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorCyan200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorCyan300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorCyan400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorCyan500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorCyan600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorCyan700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorCyan800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorCyan900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorCyan950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSky50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSky100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSky200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSky300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSky400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSky500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSky600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSky700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSky800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSky900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorSky950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorBlue50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorBlue100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorBlue200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorBlue300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorBlue400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorBlue500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorBlue600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorBlue700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorBlue800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorBlue900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorBlue950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorIndigo50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorIndigo100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorIndigo200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorIndigo300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorIndigo400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorIndigo500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorIndigo600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorIndigo700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorIndigo800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorIndigo900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorIndigo950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorViolet50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorViolet100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorViolet200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorViolet300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorViolet400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorViolet500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorViolet600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorViolet700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorViolet800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorViolet900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorViolet950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPurple50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPurple100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPurple200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPurple300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPurple400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPurple500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPurple600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPurple700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPurple800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPurple900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPurple950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorFuchsia50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorFuchsia100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorFuchsia200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorFuchsia300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorFuchsia400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorFuchsia500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorFuchsia600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorFuchsia700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorFuchsia800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorFuchsia900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorFuchsia950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPink50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPink100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPink200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPink300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPink400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPink500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPink600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPink700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPink800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPink900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorPink950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRose50 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRose100 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRose200 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRose300 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRose400 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRose500 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRose600 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRose700 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRose800 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRose900 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRose950 for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorInherit for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorTransparent for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorCurrent for GeneratedAtomBorderColorBlockChild {}
+pub struct GeneratedAtomBorderColorBlockStartChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderColorBlockStartChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorPrimary for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPrimaryContent for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSecondary for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSecondaryContent for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorAccent for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorAccentContent for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorNeutral for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorNeutralContent for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorBase100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorBase200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorBase300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorBaseContent for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorInfo for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorInfoContent for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSuccess for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSuccessContent for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorWarning for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorWarningContent for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorError for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorErrorContent for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorBlack for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorWhite for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSlate50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSlate100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSlate200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSlate300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSlate400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSlate500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSlate600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSlate700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSlate800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSlate900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSlate950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGray50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGray100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGray200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGray300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGray400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGray500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGray600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGray700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGray800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGray900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGray950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorZinc50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorZinc100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorZinc200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorZinc300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorZinc400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorZinc500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorZinc600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorZinc700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorZinc800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorZinc900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorZinc950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorNeutral50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorNeutral100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorNeutral200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorNeutral300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorNeutral400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorNeutral500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorNeutral600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorNeutral700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorNeutral800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorNeutral900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorNeutral950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorStone50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorStone100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorStone200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorStone300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorStone400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorStone500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorStone600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorStone700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorStone800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorStone900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorStone950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRed50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRed100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRed200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRed300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRed400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRed500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRed600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRed700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRed800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRed900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRed950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorOrange50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorOrange100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorOrange200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorOrange300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorOrange400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorOrange500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorOrange600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorOrange700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorOrange800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorOrange900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorOrange950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorAmber50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorAmber100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorAmber200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorAmber300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorAmber400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorAmber500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorAmber600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorAmber700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorAmber800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorAmber900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorAmber950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorYellow50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorYellow100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorYellow200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorYellow300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorYellow400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorYellow500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorYellow600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorYellow700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorYellow800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorYellow900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorYellow950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorLime50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorLime100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorLime200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorLime300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorLime400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorLime500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorLime600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorLime700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorLime800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorLime900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorLime950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGreen50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGreen100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGreen200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGreen300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGreen400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGreen500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGreen600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGreen700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGreen800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGreen900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorGreen950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorEmerald50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorEmerald100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorEmerald200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorEmerald300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorEmerald400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorEmerald500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorEmerald600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorEmerald700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorEmerald800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorEmerald900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorEmerald950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorTeal50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorTeal100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorTeal200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorTeal300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorTeal400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorTeal500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorTeal600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorTeal700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorTeal800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorTeal900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorTeal950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorCyan50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorCyan100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorCyan200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorCyan300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorCyan400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorCyan500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorCyan600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorCyan700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorCyan800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorCyan900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorCyan950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSky50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSky100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSky200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSky300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSky400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSky500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSky600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSky700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSky800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSky900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorSky950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorBlue50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorBlue100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorBlue200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorBlue300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorBlue400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorBlue500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorBlue600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorBlue700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorBlue800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorBlue900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorBlue950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorIndigo50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorIndigo100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorIndigo200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorIndigo300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorIndigo400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorIndigo500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorIndigo600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorIndigo700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorIndigo800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorIndigo900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorIndigo950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorViolet50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorViolet100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorViolet200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorViolet300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorViolet400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorViolet500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorViolet600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorViolet700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorViolet800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorViolet900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorViolet950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPurple50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPurple100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPurple200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPurple300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPurple400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPurple500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPurple600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPurple700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPurple800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPurple900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPurple950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorFuchsia50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorFuchsia100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorFuchsia200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorFuchsia300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorFuchsia400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorFuchsia500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorFuchsia600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorFuchsia700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorFuchsia800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorFuchsia900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorFuchsia950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPink50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPink100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPink200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPink300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPink400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPink500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPink600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPink700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPink800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPink900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorPink950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRose50 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRose100 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRose200 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRose300 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRose400 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRose500 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRose600 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRose700 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRose800 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRose900 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRose950 for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorInherit for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorTransparent for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorCurrent for GeneratedAtomBorderColorBlockStartChild {}
+pub struct GeneratedAtomBorderColorBlockEndChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderColorBlockEndChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorPrimary for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPrimaryContent for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSecondary for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSecondaryContent for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorAccent for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorAccentContent for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorNeutral for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorNeutralContent for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorBase100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorBase200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorBase300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorBaseContent for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorInfo for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorInfoContent for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSuccess for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSuccessContent for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorWarning for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorWarningContent for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorError for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorErrorContent for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorBlack for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorWhite for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSlate50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSlate100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSlate200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSlate300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSlate400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSlate500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSlate600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSlate700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSlate800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSlate900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSlate950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGray50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGray100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGray200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGray300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGray400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGray500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGray600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGray700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGray800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGray900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGray950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorZinc50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorZinc100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorZinc200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorZinc300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorZinc400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorZinc500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorZinc600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorZinc700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorZinc800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorZinc900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorZinc950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorNeutral50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorNeutral100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorNeutral200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorNeutral300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorNeutral400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorNeutral500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorNeutral600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorNeutral700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorNeutral800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorNeutral900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorNeutral950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorStone50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorStone100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorStone200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorStone300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorStone400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorStone500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorStone600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorStone700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorStone800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorStone900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorStone950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRed50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRed100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRed200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRed300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRed400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRed500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRed600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRed700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRed800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRed900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRed950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorOrange50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorOrange100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorOrange200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorOrange300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorOrange400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorOrange500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorOrange600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorOrange700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorOrange800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorOrange900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorOrange950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorAmber50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorAmber100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorAmber200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorAmber300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorAmber400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorAmber500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorAmber600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorAmber700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorAmber800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorAmber900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorAmber950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorYellow50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorYellow100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorYellow200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorYellow300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorYellow400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorYellow500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorYellow600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorYellow700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorYellow800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorYellow900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorYellow950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorLime50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorLime100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorLime200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorLime300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorLime400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorLime500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorLime600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorLime700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorLime800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorLime900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorLime950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGreen50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGreen100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGreen200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGreen300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGreen400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGreen500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGreen600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGreen700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGreen800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGreen900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorGreen950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorEmerald50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorEmerald100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorEmerald200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorEmerald300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorEmerald400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorEmerald500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorEmerald600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorEmerald700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorEmerald800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorEmerald900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorEmerald950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorTeal50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorTeal100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorTeal200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorTeal300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorTeal400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorTeal500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorTeal600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorTeal700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorTeal800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorTeal900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorTeal950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorCyan50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorCyan100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorCyan200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorCyan300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorCyan400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorCyan500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorCyan600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorCyan700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorCyan800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorCyan900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorCyan950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSky50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSky100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSky200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSky300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSky400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSky500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSky600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSky700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSky800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSky900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorSky950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorBlue50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorBlue100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorBlue200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorBlue300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorBlue400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorBlue500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorBlue600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorBlue700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorBlue800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorBlue900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorBlue950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorIndigo50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorIndigo100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorIndigo200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorIndigo300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorIndigo400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorIndigo500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorIndigo600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorIndigo700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorIndigo800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorIndigo900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorIndigo950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorViolet50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorViolet100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorViolet200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorViolet300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorViolet400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorViolet500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorViolet600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorViolet700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorViolet800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorViolet900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorViolet950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPurple50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPurple100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPurple200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPurple300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPurple400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPurple500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPurple600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPurple700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPurple800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPurple900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPurple950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorFuchsia50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorFuchsia100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorFuchsia200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorFuchsia300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorFuchsia400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorFuchsia500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorFuchsia600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorFuchsia700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorFuchsia800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorFuchsia900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorFuchsia950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPink50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPink100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPink200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPink300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPink400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPink500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPink600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPink700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPink800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPink900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorPink950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRose50 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRose100 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRose200 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRose300 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRose400 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRose500 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRose600 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRose700 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRose800 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRose900 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRose950 for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorInherit for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorTransparent for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorCurrent for GeneratedAtomBorderColorBlockEndChild {}
+pub struct GeneratedAtomBorderColorTopChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderColorTopChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorPrimary for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPrimaryContent for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSecondary for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSecondaryContent for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorAccent for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorAccentContent for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorNeutral for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorNeutralContent for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorBase100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorBase200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorBase300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorBaseContent for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorInfo for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorInfoContent for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSuccess for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSuccessContent for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorWarning for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorWarningContent for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorError for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorErrorContent for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorBlack for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorWhite for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSlate50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSlate100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSlate200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSlate300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSlate400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSlate500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSlate600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSlate700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSlate800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSlate900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSlate950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGray50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGray100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGray200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGray300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGray400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGray500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGray600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGray700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGray800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGray900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGray950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorZinc50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorZinc100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorZinc200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorZinc300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorZinc400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorZinc500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorZinc600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorZinc700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorZinc800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorZinc900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorZinc950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorNeutral50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorNeutral100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorNeutral200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorNeutral300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorNeutral400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorNeutral500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorNeutral600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorNeutral700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorNeutral800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorNeutral900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorNeutral950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorStone50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorStone100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorStone200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorStone300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorStone400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorStone500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorStone600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorStone700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorStone800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorStone900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorStone950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRed50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRed100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRed200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRed300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRed400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRed500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRed600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRed700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRed800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRed900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRed950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorOrange50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorOrange100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorOrange200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorOrange300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorOrange400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorOrange500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorOrange600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorOrange700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorOrange800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorOrange900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorOrange950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorAmber50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorAmber100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorAmber200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorAmber300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorAmber400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorAmber500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorAmber600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorAmber700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorAmber800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorAmber900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorAmber950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorYellow50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorYellow100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorYellow200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorYellow300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorYellow400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorYellow500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorYellow600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorYellow700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorYellow800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorYellow900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorYellow950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorLime50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorLime100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorLime200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorLime300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorLime400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorLime500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorLime600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorLime700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorLime800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorLime900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorLime950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGreen50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGreen100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGreen200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGreen300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGreen400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGreen500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGreen600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGreen700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGreen800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGreen900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorGreen950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorEmerald50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorEmerald100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorEmerald200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorEmerald300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorEmerald400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorEmerald500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorEmerald600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorEmerald700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorEmerald800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorEmerald900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorEmerald950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorTeal50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorTeal100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorTeal200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorTeal300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorTeal400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorTeal500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorTeal600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorTeal700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorTeal800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorTeal900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorTeal950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorCyan50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorCyan100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorCyan200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorCyan300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorCyan400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorCyan500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorCyan600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorCyan700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorCyan800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorCyan900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorCyan950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSky50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSky100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSky200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSky300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSky400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSky500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSky600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSky700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSky800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSky900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorSky950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorBlue50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorBlue100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorBlue200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorBlue300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorBlue400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorBlue500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorBlue600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorBlue700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorBlue800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorBlue900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorBlue950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorIndigo50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorIndigo100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorIndigo200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorIndigo300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorIndigo400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorIndigo500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorIndigo600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorIndigo700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorIndigo800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorIndigo900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorIndigo950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorViolet50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorViolet100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorViolet200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorViolet300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorViolet400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorViolet500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorViolet600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorViolet700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorViolet800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorViolet900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorViolet950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPurple50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPurple100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPurple200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPurple300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPurple400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPurple500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPurple600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPurple700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPurple800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPurple900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPurple950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorFuchsia50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorFuchsia100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorFuchsia200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorFuchsia300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorFuchsia400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorFuchsia500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorFuchsia600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorFuchsia700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorFuchsia800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorFuchsia900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorFuchsia950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPink50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPink100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPink200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPink300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPink400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPink500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPink600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPink700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPink800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPink900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorPink950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRose50 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRose100 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRose200 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRose300 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRose400 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRose500 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRose600 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRose700 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRose800 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRose900 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRose950 for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorInherit for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorTransparent for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorCurrent for GeneratedAtomBorderColorTopChild {}
+pub struct GeneratedAtomBorderColorRightChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderColorRightChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorPrimary for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPrimaryContent for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSecondary for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSecondaryContent for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorAccent for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorAccentContent for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorNeutral for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorNeutralContent for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorBase100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorBase200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorBase300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorBaseContent for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorInfo for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorInfoContent for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSuccess for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSuccessContent for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorWarning for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorWarningContent for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorError for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorErrorContent for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorBlack for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorWhite for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSlate50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSlate100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSlate200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSlate300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSlate400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSlate500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSlate600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSlate700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSlate800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSlate900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSlate950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGray50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGray100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGray200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGray300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGray400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGray500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGray600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGray700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGray800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGray900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGray950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorZinc50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorZinc100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorZinc200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorZinc300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorZinc400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorZinc500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorZinc600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorZinc700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorZinc800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorZinc900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorZinc950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorNeutral50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorNeutral100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorNeutral200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorNeutral300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorNeutral400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorNeutral500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorNeutral600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorNeutral700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorNeutral800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorNeutral900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorNeutral950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorStone50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorStone100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorStone200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorStone300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorStone400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorStone500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorStone600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorStone700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorStone800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorStone900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorStone950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRed50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRed100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRed200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRed300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRed400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRed500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRed600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRed700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRed800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRed900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRed950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorOrange50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorOrange100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorOrange200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorOrange300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorOrange400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorOrange500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorOrange600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorOrange700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorOrange800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorOrange900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorOrange950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorAmber50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorAmber100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorAmber200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorAmber300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorAmber400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorAmber500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorAmber600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorAmber700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorAmber800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorAmber900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorAmber950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorYellow50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorYellow100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorYellow200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorYellow300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorYellow400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorYellow500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorYellow600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorYellow700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorYellow800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorYellow900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorYellow950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorLime50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorLime100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorLime200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorLime300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorLime400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorLime500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorLime600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorLime700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorLime800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorLime900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorLime950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGreen50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGreen100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGreen200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGreen300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGreen400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGreen500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGreen600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGreen700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGreen800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGreen900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorGreen950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorEmerald50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorEmerald100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorEmerald200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorEmerald300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorEmerald400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorEmerald500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorEmerald600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorEmerald700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorEmerald800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorEmerald900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorEmerald950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorTeal50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorTeal100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorTeal200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorTeal300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorTeal400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorTeal500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorTeal600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorTeal700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorTeal800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorTeal900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorTeal950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorCyan50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorCyan100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorCyan200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorCyan300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorCyan400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorCyan500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorCyan600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorCyan700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorCyan800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorCyan900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorCyan950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSky50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSky100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSky200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSky300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSky400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSky500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSky600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSky700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSky800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSky900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorSky950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorBlue50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorBlue100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorBlue200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorBlue300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorBlue400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorBlue500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorBlue600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorBlue700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorBlue800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorBlue900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorBlue950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorIndigo50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorIndigo100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorIndigo200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorIndigo300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorIndigo400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorIndigo500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorIndigo600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorIndigo700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorIndigo800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorIndigo900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorIndigo950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorViolet50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorViolet100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorViolet200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorViolet300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorViolet400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorViolet500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorViolet600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorViolet700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorViolet800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorViolet900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorViolet950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPurple50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPurple100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPurple200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPurple300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPurple400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPurple500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPurple600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPurple700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPurple800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPurple900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPurple950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorFuchsia50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorFuchsia100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorFuchsia200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorFuchsia300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorFuchsia400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorFuchsia500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorFuchsia600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorFuchsia700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorFuchsia800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorFuchsia900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorFuchsia950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPink50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPink100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPink200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPink300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPink400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPink500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPink600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPink700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPink800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPink900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorPink950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRose50 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRose100 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRose200 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRose300 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRose400 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRose500 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRose600 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRose700 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRose800 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRose900 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRose950 for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorInherit for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorTransparent for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorCurrent for GeneratedAtomBorderColorRightChild {}
+pub struct GeneratedAtomBorderColorBottomChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderColorBottomChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorPrimary for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPrimaryContent for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSecondary for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSecondaryContent for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorAccent for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorAccentContent for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorNeutral for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorNeutralContent for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorBase100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorBase200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorBase300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorBaseContent for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorInfo for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorInfoContent for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSuccess for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSuccessContent for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorWarning for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorWarningContent for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorError for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorErrorContent for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorBlack for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorWhite for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSlate50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSlate100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSlate200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSlate300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSlate400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSlate500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSlate600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSlate700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSlate800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSlate900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSlate950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGray50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGray100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGray200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGray300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGray400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGray500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGray600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGray700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGray800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGray900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGray950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorZinc50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorZinc100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorZinc200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorZinc300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorZinc400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorZinc500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorZinc600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorZinc700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorZinc800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorZinc900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorZinc950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorNeutral50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorNeutral100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorNeutral200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorNeutral300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorNeutral400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorNeutral500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorNeutral600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorNeutral700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorNeutral800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorNeutral900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorNeutral950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorStone50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorStone100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorStone200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorStone300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorStone400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorStone500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorStone600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorStone700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorStone800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorStone900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorStone950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRed50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRed100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRed200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRed300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRed400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRed500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRed600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRed700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRed800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRed900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRed950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorOrange50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorOrange100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorOrange200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorOrange300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorOrange400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorOrange500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorOrange600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorOrange700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorOrange800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorOrange900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorOrange950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorAmber50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorAmber100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorAmber200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorAmber300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorAmber400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorAmber500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorAmber600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorAmber700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorAmber800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorAmber900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorAmber950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorYellow50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorYellow100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorYellow200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorYellow300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorYellow400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorYellow500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorYellow600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorYellow700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorYellow800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorYellow900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorYellow950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorLime50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorLime100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorLime200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorLime300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorLime400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorLime500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorLime600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorLime700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorLime800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorLime900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorLime950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGreen50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGreen100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGreen200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGreen300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGreen400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGreen500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGreen600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGreen700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGreen800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGreen900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorGreen950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorEmerald50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorEmerald100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorEmerald200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorEmerald300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorEmerald400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorEmerald500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorEmerald600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorEmerald700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorEmerald800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorEmerald900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorEmerald950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorTeal50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorTeal100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorTeal200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorTeal300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorTeal400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorTeal500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorTeal600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorTeal700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorTeal800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorTeal900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorTeal950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorCyan50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorCyan100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorCyan200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorCyan300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorCyan400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorCyan500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorCyan600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorCyan700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorCyan800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorCyan900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorCyan950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSky50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSky100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSky200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSky300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSky400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSky500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSky600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSky700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSky800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSky900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorSky950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorBlue50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorBlue100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorBlue200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorBlue300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorBlue400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorBlue500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorBlue600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorBlue700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorBlue800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorBlue900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorBlue950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorIndigo50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorIndigo100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorIndigo200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorIndigo300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorIndigo400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorIndigo500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorIndigo600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorIndigo700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorIndigo800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorIndigo900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorIndigo950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorViolet50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorViolet100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorViolet200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorViolet300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorViolet400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorViolet500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorViolet600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorViolet700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorViolet800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorViolet900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorViolet950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPurple50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPurple100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPurple200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPurple300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPurple400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPurple500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPurple600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPurple700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPurple800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPurple900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPurple950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorFuchsia50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorFuchsia100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorFuchsia200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorFuchsia300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorFuchsia400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorFuchsia500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorFuchsia600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorFuchsia700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorFuchsia800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorFuchsia900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorFuchsia950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPink50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPink100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPink200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPink300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPink400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPink500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPink600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPink700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPink800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPink900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorPink950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRose50 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRose100 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRose200 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRose300 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRose400 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRose500 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRose600 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRose700 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRose800 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRose900 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRose950 for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorInherit for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorTransparent for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorCurrent for GeneratedAtomBorderColorBottomChild {}
+pub struct GeneratedAtomBorderColorLeftChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderColorLeftChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorPrimary for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPrimaryContent for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSecondary for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSecondaryContent for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorAccent for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorAccentContent for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorNeutral for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorNeutralContent for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorBase100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorBase200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorBase300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorBaseContent for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorInfo for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorInfoContent for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSuccess for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSuccessContent for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorWarning for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorWarningContent for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorError for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorErrorContent for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorBlack for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorWhite for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSlate50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSlate100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSlate200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSlate300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSlate400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSlate500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSlate600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSlate700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSlate800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSlate900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSlate950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGray50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGray100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGray200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGray300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGray400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGray500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGray600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGray700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGray800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGray900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGray950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorZinc50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorZinc100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorZinc200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorZinc300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorZinc400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorZinc500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorZinc600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorZinc700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorZinc800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorZinc900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorZinc950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorNeutral50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorNeutral100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorNeutral200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorNeutral300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorNeutral400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorNeutral500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorNeutral600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorNeutral700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorNeutral800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorNeutral900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorNeutral950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorStone50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorStone100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorStone200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorStone300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorStone400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorStone500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorStone600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorStone700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorStone800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorStone900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorStone950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRed50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRed100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRed200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRed300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRed400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRed500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRed600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRed700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRed800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRed900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRed950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorOrange50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorOrange100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorOrange200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorOrange300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorOrange400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorOrange500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorOrange600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorOrange700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorOrange800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorOrange900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorOrange950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorAmber50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorAmber100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorAmber200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorAmber300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorAmber400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorAmber500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorAmber600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorAmber700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorAmber800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorAmber900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorAmber950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorYellow50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorYellow100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorYellow200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorYellow300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorYellow400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorYellow500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorYellow600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorYellow700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorYellow800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorYellow900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorYellow950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorLime50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorLime100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorLime200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorLime300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorLime400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorLime500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorLime600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorLime700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorLime800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorLime900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorLime950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGreen50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGreen100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGreen200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGreen300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGreen400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGreen500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGreen600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGreen700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGreen800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGreen900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorGreen950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorEmerald50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorEmerald100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorEmerald200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorEmerald300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorEmerald400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorEmerald500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorEmerald600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorEmerald700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorEmerald800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorEmerald900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorEmerald950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorTeal50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorTeal100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorTeal200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorTeal300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorTeal400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorTeal500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorTeal600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorTeal700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorTeal800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorTeal900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorTeal950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorCyan50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorCyan100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorCyan200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorCyan300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorCyan400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorCyan500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorCyan600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorCyan700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorCyan800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorCyan900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorCyan950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSky50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSky100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSky200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSky300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSky400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSky500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSky600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSky700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSky800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSky900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorSky950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorBlue50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorBlue100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorBlue200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorBlue300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorBlue400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorBlue500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorBlue600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorBlue700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorBlue800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorBlue900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorBlue950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorIndigo50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorIndigo100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorIndigo200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorIndigo300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorIndigo400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorIndigo500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorIndigo600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorIndigo700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorIndigo800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorIndigo900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorIndigo950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorViolet50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorViolet100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorViolet200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorViolet300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorViolet400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorViolet500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorViolet600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorViolet700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorViolet800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorViolet900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorViolet950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPurple50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPurple100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPurple200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPurple300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPurple400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPurple500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPurple600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPurple700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPurple800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPurple900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPurple950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorFuchsia50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorFuchsia100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorFuchsia200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorFuchsia300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorFuchsia400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorFuchsia500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorFuchsia600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorFuchsia700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorFuchsia800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorFuchsia900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorFuchsia950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPink50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPink100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPink200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPink300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPink400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPink500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPink600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPink700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPink800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPink900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorPink950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRose50 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRose100 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRose200 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRose300 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRose400 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRose500 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRose600 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRose700 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRose800 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRose900 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRose950 for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorInherit for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorTransparent for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorCurrent for GeneratedAtomBorderColorLeftChild {}
+pub struct GeneratedAtomBorderStyleChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderStyleChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderStyleSolid for GeneratedAtomBorderStyleChild {}
+impl GeneratedValueSetBorderStyleDashed for GeneratedAtomBorderStyleChild {}
+impl GeneratedValueSetBorderStyleDotted for GeneratedAtomBorderStyleChild {}
+impl GeneratedValueSetBorderStyleDouble for GeneratedAtomBorderStyleChild {}
+impl GeneratedValueSetBorderStyleHidden for GeneratedAtomBorderStyleChild {}
+impl GeneratedValueSetBorderStyleNone for GeneratedAtomBorderStyleChild {}
+pub struct GeneratedAtomBorderStyleXChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderStyleXChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderStyleSolid for GeneratedAtomBorderStyleXChild {}
+impl GeneratedValueSetBorderStyleDashed for GeneratedAtomBorderStyleXChild {}
+impl GeneratedValueSetBorderStyleDotted for GeneratedAtomBorderStyleXChild {}
+impl GeneratedValueSetBorderStyleDouble for GeneratedAtomBorderStyleXChild {}
+impl GeneratedValueSetBorderStyleHidden for GeneratedAtomBorderStyleXChild {}
+impl GeneratedValueSetBorderStyleNone for GeneratedAtomBorderStyleXChild {}
+pub struct GeneratedAtomBorderStyleYChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderStyleYChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderStyleSolid for GeneratedAtomBorderStyleYChild {}
+impl GeneratedValueSetBorderStyleDashed for GeneratedAtomBorderStyleYChild {}
+impl GeneratedValueSetBorderStyleDotted for GeneratedAtomBorderStyleYChild {}
+impl GeneratedValueSetBorderStyleDouble for GeneratedAtomBorderStyleYChild {}
+impl GeneratedValueSetBorderStyleHidden for GeneratedAtomBorderStyleYChild {}
+impl GeneratedValueSetBorderStyleNone for GeneratedAtomBorderStyleYChild {}
+pub struct GeneratedAtomBorderStyleInlineChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderStyleInlineChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderStyleSolid for GeneratedAtomBorderStyleInlineChild {}
+impl GeneratedValueSetBorderStyleDashed for GeneratedAtomBorderStyleInlineChild {}
+impl GeneratedValueSetBorderStyleDotted for GeneratedAtomBorderStyleInlineChild {}
+impl GeneratedValueSetBorderStyleDouble for GeneratedAtomBorderStyleInlineChild {}
+impl GeneratedValueSetBorderStyleHidden for GeneratedAtomBorderStyleInlineChild {}
+impl GeneratedValueSetBorderStyleNone for GeneratedAtomBorderStyleInlineChild {}
+pub struct GeneratedAtomBorderStyleInlineStartChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderStyleInlineStartChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderStyleSolid for GeneratedAtomBorderStyleInlineStartChild {}
+impl GeneratedValueSetBorderStyleDashed for GeneratedAtomBorderStyleInlineStartChild {}
+impl GeneratedValueSetBorderStyleDotted for GeneratedAtomBorderStyleInlineStartChild {}
+impl GeneratedValueSetBorderStyleDouble for GeneratedAtomBorderStyleInlineStartChild {}
+impl GeneratedValueSetBorderStyleHidden for GeneratedAtomBorderStyleInlineStartChild {}
+impl GeneratedValueSetBorderStyleNone for GeneratedAtomBorderStyleInlineStartChild {}
+pub struct GeneratedAtomBorderStyleInlineEndChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderStyleInlineEndChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderStyleSolid for GeneratedAtomBorderStyleInlineEndChild {}
+impl GeneratedValueSetBorderStyleDashed for GeneratedAtomBorderStyleInlineEndChild {}
+impl GeneratedValueSetBorderStyleDotted for GeneratedAtomBorderStyleInlineEndChild {}
+impl GeneratedValueSetBorderStyleDouble for GeneratedAtomBorderStyleInlineEndChild {}
+impl GeneratedValueSetBorderStyleHidden for GeneratedAtomBorderStyleInlineEndChild {}
+impl GeneratedValueSetBorderStyleNone for GeneratedAtomBorderStyleInlineEndChild {}
+pub struct GeneratedAtomBorderStyleBlockChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderStyleBlockChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderStyleSolid for GeneratedAtomBorderStyleBlockChild {}
+impl GeneratedValueSetBorderStyleDashed for GeneratedAtomBorderStyleBlockChild {}
+impl GeneratedValueSetBorderStyleDotted for GeneratedAtomBorderStyleBlockChild {}
+impl GeneratedValueSetBorderStyleDouble for GeneratedAtomBorderStyleBlockChild {}
+impl GeneratedValueSetBorderStyleHidden for GeneratedAtomBorderStyleBlockChild {}
+impl GeneratedValueSetBorderStyleNone for GeneratedAtomBorderStyleBlockChild {}
+pub struct GeneratedAtomBorderStyleBlockStartChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderStyleBlockStartChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderStyleSolid for GeneratedAtomBorderStyleBlockStartChild {}
+impl GeneratedValueSetBorderStyleDashed for GeneratedAtomBorderStyleBlockStartChild {}
+impl GeneratedValueSetBorderStyleDotted for GeneratedAtomBorderStyleBlockStartChild {}
+impl GeneratedValueSetBorderStyleDouble for GeneratedAtomBorderStyleBlockStartChild {}
+impl GeneratedValueSetBorderStyleHidden for GeneratedAtomBorderStyleBlockStartChild {}
+impl GeneratedValueSetBorderStyleNone for GeneratedAtomBorderStyleBlockStartChild {}
+pub struct GeneratedAtomBorderStyleBlockEndChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderStyleBlockEndChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderStyleSolid for GeneratedAtomBorderStyleBlockEndChild {}
+impl GeneratedValueSetBorderStyleDashed for GeneratedAtomBorderStyleBlockEndChild {}
+impl GeneratedValueSetBorderStyleDotted for GeneratedAtomBorderStyleBlockEndChild {}
+impl GeneratedValueSetBorderStyleDouble for GeneratedAtomBorderStyleBlockEndChild {}
+impl GeneratedValueSetBorderStyleHidden for GeneratedAtomBorderStyleBlockEndChild {}
+impl GeneratedValueSetBorderStyleNone for GeneratedAtomBorderStyleBlockEndChild {}
+pub struct GeneratedAtomBorderStyleTopChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderStyleTopChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderStyleSolid for GeneratedAtomBorderStyleTopChild {}
+impl GeneratedValueSetBorderStyleDashed for GeneratedAtomBorderStyleTopChild {}
+impl GeneratedValueSetBorderStyleDotted for GeneratedAtomBorderStyleTopChild {}
+impl GeneratedValueSetBorderStyleDouble for GeneratedAtomBorderStyleTopChild {}
+impl GeneratedValueSetBorderStyleHidden for GeneratedAtomBorderStyleTopChild {}
+impl GeneratedValueSetBorderStyleNone for GeneratedAtomBorderStyleTopChild {}
+pub struct GeneratedAtomBorderStyleRightChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderStyleRightChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderStyleSolid for GeneratedAtomBorderStyleRightChild {}
+impl GeneratedValueSetBorderStyleDashed for GeneratedAtomBorderStyleRightChild {}
+impl GeneratedValueSetBorderStyleDotted for GeneratedAtomBorderStyleRightChild {}
+impl GeneratedValueSetBorderStyleDouble for GeneratedAtomBorderStyleRightChild {}
+impl GeneratedValueSetBorderStyleHidden for GeneratedAtomBorderStyleRightChild {}
+impl GeneratedValueSetBorderStyleNone for GeneratedAtomBorderStyleRightChild {}
+pub struct GeneratedAtomBorderStyleBottomChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderStyleBottomChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderStyleSolid for GeneratedAtomBorderStyleBottomChild {}
+impl GeneratedValueSetBorderStyleDashed for GeneratedAtomBorderStyleBottomChild {}
+impl GeneratedValueSetBorderStyleDotted for GeneratedAtomBorderStyleBottomChild {}
+impl GeneratedValueSetBorderStyleDouble for GeneratedAtomBorderStyleBottomChild {}
+impl GeneratedValueSetBorderStyleHidden for GeneratedAtomBorderStyleBottomChild {}
+impl GeneratedValueSetBorderStyleNone for GeneratedAtomBorderStyleBottomChild {}
+pub struct GeneratedAtomBorderStyleLeftChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBorderStyleLeftChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetBorderStyleSolid for GeneratedAtomBorderStyleLeftChild {}
+impl GeneratedValueSetBorderStyleDashed for GeneratedAtomBorderStyleLeftChild {}
+impl GeneratedValueSetBorderStyleDotted for GeneratedAtomBorderStyleLeftChild {}
+impl GeneratedValueSetBorderStyleDouble for GeneratedAtomBorderStyleLeftChild {}
+impl GeneratedValueSetBorderStyleHidden for GeneratedAtomBorderStyleLeftChild {}
+impl GeneratedValueSetBorderStyleNone for GeneratedAtomBorderStyleLeftChild {}
+pub struct GeneratedAtomScaleChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScaleChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetScaleN0 for GeneratedAtomScaleChild {}
+impl GeneratedValueSetScaleN50 for GeneratedAtomScaleChild {}
+impl GeneratedValueSetScaleN75 for GeneratedAtomScaleChild {}
+impl GeneratedValueSetScaleN90 for GeneratedAtomScaleChild {}
+impl GeneratedValueSetScaleN95 for GeneratedAtomScaleChild {}
+impl GeneratedValueSetScaleN100 for GeneratedAtomScaleChild {}
+impl GeneratedValueSetScaleN105 for GeneratedAtomScaleChild {}
+impl GeneratedValueSetScaleN110 for GeneratedAtomScaleChild {}
+impl GeneratedValueSetScaleN125 for GeneratedAtomScaleChild {}
+impl GeneratedValueSetScaleN150 for GeneratedAtomScaleChild {}
+pub struct GeneratedAtomScaleXChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScaleXChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetScaleN0 for GeneratedAtomScaleXChild {}
+impl GeneratedValueSetScaleN50 for GeneratedAtomScaleXChild {}
+impl GeneratedValueSetScaleN75 for GeneratedAtomScaleXChild {}
+impl GeneratedValueSetScaleN90 for GeneratedAtomScaleXChild {}
+impl GeneratedValueSetScaleN95 for GeneratedAtomScaleXChild {}
+impl GeneratedValueSetScaleN100 for GeneratedAtomScaleXChild {}
+impl GeneratedValueSetScaleN105 for GeneratedAtomScaleXChild {}
+impl GeneratedValueSetScaleN110 for GeneratedAtomScaleXChild {}
+impl GeneratedValueSetScaleN125 for GeneratedAtomScaleXChild {}
+impl GeneratedValueSetScaleN150 for GeneratedAtomScaleXChild {}
+pub struct GeneratedAtomScaleYChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScaleYChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetScaleN0 for GeneratedAtomScaleYChild {}
+impl GeneratedValueSetScaleN50 for GeneratedAtomScaleYChild {}
+impl GeneratedValueSetScaleN75 for GeneratedAtomScaleYChild {}
+impl GeneratedValueSetScaleN90 for GeneratedAtomScaleYChild {}
+impl GeneratedValueSetScaleN95 for GeneratedAtomScaleYChild {}
+impl GeneratedValueSetScaleN100 for GeneratedAtomScaleYChild {}
+impl GeneratedValueSetScaleN105 for GeneratedAtomScaleYChild {}
+impl GeneratedValueSetScaleN110 for GeneratedAtomScaleYChild {}
+impl GeneratedValueSetScaleN125 for GeneratedAtomScaleYChild {}
+impl GeneratedValueSetScaleN150 for GeneratedAtomScaleYChild {}
+pub struct GeneratedAtomRotateChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRotateChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetRotationN0 for GeneratedAtomRotateChild {}
+impl GeneratedValueSetRotationN1 for GeneratedAtomRotateChild {}
+impl GeneratedValueSetRotationN2 for GeneratedAtomRotateChild {}
+impl GeneratedValueSetRotationN3 for GeneratedAtomRotateChild {}
+impl GeneratedValueSetRotationN6 for GeneratedAtomRotateChild {}
+impl GeneratedValueSetRotationN12 for GeneratedAtomRotateChild {}
+impl GeneratedValueSetRotationN30 for GeneratedAtomRotateChild {}
+impl GeneratedValueSetRotationN45 for GeneratedAtomRotateChild {}
+impl GeneratedValueSetRotationN90 for GeneratedAtomRotateChild {}
+impl GeneratedValueSetRotationN180 for GeneratedAtomRotateChild {}
+pub struct GeneratedAtomTranslateChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomTranslateChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetPositiveTranslationFull for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN0 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationPx for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN05 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN1 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN15 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN2 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN25 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN3 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN35 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN4 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN5 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN6 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN7 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN8 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN9 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN10 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN11 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN12 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN14 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN16 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN20 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN24 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN28 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN32 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN36 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN40 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN44 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN48 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN52 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN56 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN60 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN64 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN72 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN80 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN96 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN1Of3 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN2Of3 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN1Of4 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationHalf for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetPositiveTranslationN3Of4 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationFull for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN0 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationPx for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN05 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN1 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN15 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN2 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN25 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN3 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN35 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN4 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN5 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN6 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN7 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN8 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN9 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN10 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN11 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN12 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN14 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN16 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN20 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN24 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN28 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN32 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN36 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN40 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN44 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN48 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN52 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN56 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN60 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN64 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN72 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN80 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN96 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN1Of3 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN2Of3 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN1Of4 for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationHalf for GeneratedAtomTranslateChild {}
+impl GeneratedValueSetNegativeTranslationN3Of4 for GeneratedAtomTranslateChild {}
+pub struct GeneratedAtomTranslateXChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomTranslateXChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetPositiveTranslationFull for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN0 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationPx for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN05 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN1 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN15 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN2 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN25 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN3 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN35 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN4 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN5 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN6 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN7 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN8 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN9 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN10 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN11 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN12 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN14 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN16 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN20 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN24 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN28 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN32 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN36 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN40 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN44 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN48 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN52 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN56 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN60 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN64 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN72 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN80 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN96 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN1Of3 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN2Of3 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN1Of4 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationHalf for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetPositiveTranslationN3Of4 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationFull for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN0 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationPx for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN05 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN1 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN15 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN2 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN25 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN3 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN35 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN4 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN5 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN6 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN7 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN8 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN9 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN10 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN11 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN12 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN14 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN16 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN20 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN24 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN28 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN32 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN36 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN40 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN44 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN48 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN52 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN56 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN60 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN64 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN72 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN80 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN96 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN1Of3 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN2Of3 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN1Of4 for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationHalf for GeneratedAtomTranslateXChild {}
+impl GeneratedValueSetNegativeTranslationN3Of4 for GeneratedAtomTranslateXChild {}
+pub struct GeneratedAtomTranslateYChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomTranslateYChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetPositiveTranslationFull for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN0 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationPx for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN05 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN1 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN15 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN2 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN25 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN3 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN35 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN4 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN5 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN6 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN7 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN8 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN9 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN10 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN11 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN12 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN14 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN16 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN20 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN24 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN28 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN32 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN36 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN40 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN44 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN48 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN52 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN56 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN60 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN64 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN72 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN80 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN96 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN1Of3 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN2Of3 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN1Of4 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationHalf for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetPositiveTranslationN3Of4 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationFull for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN0 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationPx for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN05 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN1 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN15 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN2 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN25 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN3 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN35 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN4 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN5 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN6 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN7 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN8 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN9 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN10 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN11 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN12 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN14 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN16 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN20 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN24 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN28 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN32 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN36 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN40 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN44 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN48 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN52 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN56 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN60 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN64 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN72 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN80 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN96 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN1Of3 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN2Of3 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN1Of4 for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationHalf for GeneratedAtomTranslateYChild {}
+impl GeneratedValueSetNegativeTranslationN3Of4 for GeneratedAtomTranslateYChild {}
+pub struct GeneratedAtomSkewChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomSkewChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSkewN0 for GeneratedAtomSkewChild {}
+impl GeneratedValueSetSkewN1 for GeneratedAtomSkewChild {}
+impl GeneratedValueSetSkewN2 for GeneratedAtomSkewChild {}
+impl GeneratedValueSetSkewN3 for GeneratedAtomSkewChild {}
+impl GeneratedValueSetSkewN6 for GeneratedAtomSkewChild {}
+impl GeneratedValueSetSkewN12 for GeneratedAtomSkewChild {}
+pub struct GeneratedAtomSkewXChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomSkewXChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSkewN0 for GeneratedAtomSkewXChild {}
+impl GeneratedValueSetSkewN1 for GeneratedAtomSkewXChild {}
+impl GeneratedValueSetSkewN2 for GeneratedAtomSkewXChild {}
+impl GeneratedValueSetSkewN3 for GeneratedAtomSkewXChild {}
+impl GeneratedValueSetSkewN6 for GeneratedAtomSkewXChild {}
+impl GeneratedValueSetSkewN12 for GeneratedAtomSkewXChild {}
+pub struct GeneratedAtomSkewYChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomSkewYChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSkewN0 for GeneratedAtomSkewYChild {}
+impl GeneratedValueSetSkewN1 for GeneratedAtomSkewYChild {}
+impl GeneratedValueSetSkewN2 for GeneratedAtomSkewYChild {}
+impl GeneratedValueSetSkewN3 for GeneratedAtomSkewYChild {}
+impl GeneratedValueSetSkewN6 for GeneratedAtomSkewYChild {}
+impl GeneratedValueSetSkewN12 for GeneratedAtomSkewYChild {}
+pub struct GeneratedAtomOriginChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomOriginChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetOriginCenter for GeneratedAtomOriginChild {}
+impl GeneratedValueSetOriginTop for GeneratedAtomOriginChild {}
+impl GeneratedValueSetOriginTopRight for GeneratedAtomOriginChild {}
+impl GeneratedValueSetOriginRight for GeneratedAtomOriginChild {}
+impl GeneratedValueSetOriginBottomRight for GeneratedAtomOriginChild {}
+impl GeneratedValueSetOriginBottom for GeneratedAtomOriginChild {}
+impl GeneratedValueSetOriginBottomLeft for GeneratedAtomOriginChild {}
+impl GeneratedValueSetOriginLeft for GeneratedAtomOriginChild {}
+impl GeneratedValueSetOriginTopLeft for GeneratedAtomOriginChild {}
 pub trait GeneratedAtomSr: GeneratedSkribbleValue {
   /// Screen reader only
   #[inline]
@@ -20619,6 +25743,674 @@ pub trait GeneratedAtomToPosition: GeneratedSkribbleValue {
     self.append(format!("to-position:[{}]", value.trim()))
   }
 }
+pub trait GeneratedAtomRounded: GeneratedSkribbleValue {
+  /// Control the border radius of an element.
+  #[inline]
+  fn rounded(&self) -> GeneratedAtomRoundedChild {
+    GeneratedAtomRoundedChild::from_ref(self.append("rounded"))
+  }
+  #[inline]
+  fn rounded_(&self, value: &'static str) -> String {
+    self.append(format!("rounded:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomRoundedStart: GeneratedSkribbleValue {
+  /// Control the `start` border radius of an element.
+  #[inline]
+  fn rounded_start(&self) -> GeneratedAtomRoundedStartChild {
+    GeneratedAtomRoundedStartChild::from_ref(self.append("rounded-start"))
+  }
+  #[inline]
+  fn rounded_start_(&self, value: &'static str) -> String {
+    self.append(format!("rounded-start:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomRoundedEnd: GeneratedSkribbleValue {
+  /// Control the `end` border radius of an element.
+  #[inline]
+  fn rounded_end(&self) -> GeneratedAtomRoundedEndChild {
+    GeneratedAtomRoundedEndChild::from_ref(self.append("rounded-end"))
+  }
+  #[inline]
+  fn rounded_end_(&self, value: &'static str) -> String {
+    self.append(format!("rounded-end:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomRoundedTop: GeneratedSkribbleValue {
+  /// Control the `top` border radius of an element.
+  #[inline]
+  fn rounded_top(&self) -> GeneratedAtomRoundedTopChild {
+    GeneratedAtomRoundedTopChild::from_ref(self.append("rounded-top"))
+  }
+  #[inline]
+  fn rounded_top_(&self, value: &'static str) -> String {
+    self.append(format!("rounded-top:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomRoundedRight: GeneratedSkribbleValue {
+  /// Control the `right` border radius of an element.
+  #[inline]
+  fn rounded_right(&self) -> GeneratedAtomRoundedRightChild {
+    GeneratedAtomRoundedRightChild::from_ref(self.append("rounded-right"))
+  }
+  #[inline]
+  fn rounded_right_(&self, value: &'static str) -> String {
+    self.append(format!("rounded-right:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomRoundedBottom: GeneratedSkribbleValue {
+  /// Control the `bottom` border radius of an element.
+  #[inline]
+  fn rounded_bottom(&self) -> GeneratedAtomRoundedBottomChild {
+    GeneratedAtomRoundedBottomChild::from_ref(self.append("rounded-bottom"))
+  }
+  #[inline]
+  fn rounded_bottom_(&self, value: &'static str) -> String {
+    self.append(format!("rounded-bottom:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomRoundedLeft: GeneratedSkribbleValue {
+  /// Control the `left` border radius of an element.
+  #[inline]
+  fn rounded_left(&self) -> GeneratedAtomRoundedLeftChild {
+    GeneratedAtomRoundedLeftChild::from_ref(self.append("rounded-left"))
+  }
+  #[inline]
+  fn rounded_left_(&self, value: &'static str) -> String {
+    self.append(format!("rounded-left:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomRoundedStartStart: GeneratedSkribbleValue {
+  /// Control the `start-start` border radius of an element.
+  #[inline]
+  fn rounded_start_start(&self) -> GeneratedAtomRoundedStartStartChild {
+    GeneratedAtomRoundedStartStartChild::from_ref(self.append("rounded-start-start"))
+  }
+  #[inline]
+  fn rounded_start_start_(&self, value: &'static str) -> String {
+    self.append(format!("rounded-start-start:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomRoundedStartEnd: GeneratedSkribbleValue {
+  /// Control the `start-end` border radius of an element.
+  #[inline]
+  fn rounded_start_end(&self) -> GeneratedAtomRoundedStartEndChild {
+    GeneratedAtomRoundedStartEndChild::from_ref(self.append("rounded-start-end"))
+  }
+  #[inline]
+  fn rounded_start_end_(&self, value: &'static str) -> String {
+    self.append(format!("rounded-start-end:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomRoundedEndEnd: GeneratedSkribbleValue {
+  /// Control the `end-end` border radius of an element.
+  #[inline]
+  fn rounded_end_end(&self) -> GeneratedAtomRoundedEndEndChild {
+    GeneratedAtomRoundedEndEndChild::from_ref(self.append("rounded-end-end"))
+  }
+  #[inline]
+  fn rounded_end_end_(&self, value: &'static str) -> String {
+    self.append(format!("rounded-end-end:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomRoundedEndStart: GeneratedSkribbleValue {
+  /// Control the `end-start` border radius of an element.
+  #[inline]
+  fn rounded_end_start(&self) -> GeneratedAtomRoundedEndStartChild {
+    GeneratedAtomRoundedEndStartChild::from_ref(self.append("rounded-end-start"))
+  }
+  #[inline]
+  fn rounded_end_start_(&self, value: &'static str) -> String {
+    self.append(format!("rounded-end-start:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomRoundedTopLeft: GeneratedSkribbleValue {
+  /// Control the `top-left` border radius of an element.
+  #[inline]
+  fn rounded_top_left(&self) -> GeneratedAtomRoundedTopLeftChild {
+    GeneratedAtomRoundedTopLeftChild::from_ref(self.append("rounded-top-left"))
+  }
+  #[inline]
+  fn rounded_top_left_(&self, value: &'static str) -> String {
+    self.append(format!("rounded-top-left:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomRoundedTopRight: GeneratedSkribbleValue {
+  /// Control the `top-right` border radius of an element.
+  #[inline]
+  fn rounded_top_right(&self) -> GeneratedAtomRoundedTopRightChild {
+    GeneratedAtomRoundedTopRightChild::from_ref(self.append("rounded-top-right"))
+  }
+  #[inline]
+  fn rounded_top_right_(&self, value: &'static str) -> String {
+    self.append(format!("rounded-top-right:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomRoundedBottomLeft: GeneratedSkribbleValue {
+  /// Control the `bottom-left` border radius of an element.
+  #[inline]
+  fn rounded_bottom_left(&self) -> GeneratedAtomRoundedBottomLeftChild {
+    GeneratedAtomRoundedBottomLeftChild::from_ref(self.append("rounded-bottom-left"))
+  }
+  #[inline]
+  fn rounded_bottom_left_(&self, value: &'static str) -> String {
+    self.append(format!("rounded-bottom-left:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomRoundedBottomRight: GeneratedSkribbleValue {
+  /// Control the `bottom-right` border radius of an element.
+  #[inline]
+  fn rounded_bottom_right(&self) -> GeneratedAtomRoundedBottomRightChild {
+    GeneratedAtomRoundedBottomRightChild::from_ref(self.append("rounded-bottom-right"))
+  }
+  #[inline]
+  fn rounded_bottom_right_(&self, value: &'static str) -> String {
+    self.append(format!("rounded-bottom-right:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorder: GeneratedSkribbleValue {
+  /// Control the border width of an element.
+  #[inline]
+  fn border(&self) -> GeneratedAtomBorderChild {
+    GeneratedAtomBorderChild::from_ref(self.append("border"))
+  }
+  #[inline]
+  fn border_(&self, value: &'static str) -> String {
+    self.append(format!("border:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderX: GeneratedSkribbleValue {
+  /// Control the left and right border width of an element.
+  #[inline]
+  fn border_x(&self) -> GeneratedAtomBorderXChild {
+    GeneratedAtomBorderXChild::from_ref(self.append("border-x"))
+  }
+  #[inline]
+  fn border_x_(&self, value: &'static str) -> String {
+    self.append(format!("border-x:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderY: GeneratedSkribbleValue {
+  /// Control the top and bottom border width of an element.
+  #[inline]
+  fn border_y(&self) -> GeneratedAtomBorderYChild {
+    GeneratedAtomBorderYChild::from_ref(self.append("border-y"))
+  }
+  #[inline]
+  fn border_y_(&self, value: &'static str) -> String {
+    self.append(format!("border-y:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderInline: GeneratedSkribbleValue {
+  #[inline]
+  fn border_inline(&self) -> GeneratedAtomBorderInlineChild {
+    GeneratedAtomBorderInlineChild::from_ref(self.append("border-inline"))
+  }
+  #[inline]
+  fn border_inline_(&self, value: &'static str) -> String {
+    self.append(format!("border-inline:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderInlineStart: GeneratedSkribbleValue {
+  #[inline]
+  fn border_inline_start(&self) -> GeneratedAtomBorderInlineStartChild {
+    GeneratedAtomBorderInlineStartChild::from_ref(self.append("border-inline-start"))
+  }
+  #[inline]
+  fn border_inline_start_(&self, value: &'static str) -> String {
+    self.append(format!("border-inline-start:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderInlineEnd: GeneratedSkribbleValue {
+  #[inline]
+  fn border_inline_end(&self) -> GeneratedAtomBorderInlineEndChild {
+    GeneratedAtomBorderInlineEndChild::from_ref(self.append("border-inline-end"))
+  }
+  #[inline]
+  fn border_inline_end_(&self, value: &'static str) -> String {
+    self.append(format!("border-inline-end:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderBlock: GeneratedSkribbleValue {
+  #[inline]
+  fn border_block(&self) -> GeneratedAtomBorderBlockChild {
+    GeneratedAtomBorderBlockChild::from_ref(self.append("border-block"))
+  }
+  #[inline]
+  fn border_block_(&self, value: &'static str) -> String {
+    self.append(format!("border-block:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderBlockStart: GeneratedSkribbleValue {
+  #[inline]
+  fn border_block_start(&self) -> GeneratedAtomBorderBlockStartChild {
+    GeneratedAtomBorderBlockStartChild::from_ref(self.append("border-block-start"))
+  }
+  #[inline]
+  fn border_block_start_(&self, value: &'static str) -> String {
+    self.append(format!("border-block-start:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderBlockEnd: GeneratedSkribbleValue {
+  #[inline]
+  fn border_block_end(&self) -> GeneratedAtomBorderBlockEndChild {
+    GeneratedAtomBorderBlockEndChild::from_ref(self.append("border-block-end"))
+  }
+  #[inline]
+  fn border_block_end_(&self, value: &'static str) -> String {
+    self.append(format!("border-block-end:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderTop: GeneratedSkribbleValue {
+  #[inline]
+  fn border_top(&self) -> GeneratedAtomBorderTopChild {
+    GeneratedAtomBorderTopChild::from_ref(self.append("border-top"))
+  }
+  #[inline]
+  fn border_top_(&self, value: &'static str) -> String {
+    self.append(format!("border-top:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderRight: GeneratedSkribbleValue {
+  #[inline]
+  fn border_right(&self) -> GeneratedAtomBorderRightChild {
+    GeneratedAtomBorderRightChild::from_ref(self.append("border-right"))
+  }
+  #[inline]
+  fn border_right_(&self, value: &'static str) -> String {
+    self.append(format!("border-right:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderBottom: GeneratedSkribbleValue {
+  #[inline]
+  fn border_bottom(&self) -> GeneratedAtomBorderBottomChild {
+    GeneratedAtomBorderBottomChild::from_ref(self.append("border-bottom"))
+  }
+  #[inline]
+  fn border_bottom_(&self, value: &'static str) -> String {
+    self.append(format!("border-bottom:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderLeft: GeneratedSkribbleValue {
+  #[inline]
+  fn border_left(&self) -> GeneratedAtomBorderLeftChild {
+    GeneratedAtomBorderLeftChild::from_ref(self.append("border-left"))
+  }
+  #[inline]
+  fn border_left_(&self, value: &'static str) -> String {
+    self.append(format!("border-left:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderColor: GeneratedSkribbleValue {
+  #[inline]
+  fn border_color(&self) -> GeneratedAtomBorderColorChild {
+    GeneratedAtomBorderColorChild::from_ref(self.append("border-color"))
+  }
+  #[inline]
+  fn border_color_(&self, value: &'static str) -> String {
+    self.append(format!("border-color:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderColorX: GeneratedSkribbleValue {
+  #[inline]
+  fn border_color_x(&self) -> GeneratedAtomBorderColorXChild {
+    GeneratedAtomBorderColorXChild::from_ref(self.append("border-color-x"))
+  }
+  #[inline]
+  fn border_color_x_(&self, value: &'static str) -> String {
+    self.append(format!("border-color-x:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderColorY: GeneratedSkribbleValue {
+  #[inline]
+  fn border_color_y(&self) -> GeneratedAtomBorderColorYChild {
+    GeneratedAtomBorderColorYChild::from_ref(self.append("border-color-y"))
+  }
+  #[inline]
+  fn border_color_y_(&self, value: &'static str) -> String {
+    self.append(format!("border-color-y:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderColorInline: GeneratedSkribbleValue {
+  #[inline]
+  fn border_color_inline(&self) -> GeneratedAtomBorderColorInlineChild {
+    GeneratedAtomBorderColorInlineChild::from_ref(self.append("border-color-inline"))
+  }
+  #[inline]
+  fn border_color_inline_(&self, value: &'static str) -> String {
+    self.append(format!("border-color-inline:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderColorInlineStart: GeneratedSkribbleValue {
+  #[inline]
+  fn border_color_inline_start(&self) -> GeneratedAtomBorderColorInlineStartChild {
+    GeneratedAtomBorderColorInlineStartChild::from_ref(self.append("border-color-inline-start"))
+  }
+  #[inline]
+  fn border_color_inline_start_(&self, value: &'static str) -> String {
+    self.append(format!("border-color-inline-start:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderColorInlineEnd: GeneratedSkribbleValue {
+  #[inline]
+  fn border_color_inline_end(&self) -> GeneratedAtomBorderColorInlineEndChild {
+    GeneratedAtomBorderColorInlineEndChild::from_ref(self.append("border-color-inline-end"))
+  }
+  #[inline]
+  fn border_color_inline_end_(&self, value: &'static str) -> String {
+    self.append(format!("border-color-inline-end:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderColorBlock: GeneratedSkribbleValue {
+  #[inline]
+  fn border_color_block(&self) -> GeneratedAtomBorderColorBlockChild {
+    GeneratedAtomBorderColorBlockChild::from_ref(self.append("border-color-block"))
+  }
+  #[inline]
+  fn border_color_block_(&self, value: &'static str) -> String {
+    self.append(format!("border-color-block:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderColorBlockStart: GeneratedSkribbleValue {
+  #[inline]
+  fn border_color_block_start(&self) -> GeneratedAtomBorderColorBlockStartChild {
+    GeneratedAtomBorderColorBlockStartChild::from_ref(self.append("border-color-block-start"))
+  }
+  #[inline]
+  fn border_color_block_start_(&self, value: &'static str) -> String {
+    self.append(format!("border-color-block-start:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderColorBlockEnd: GeneratedSkribbleValue {
+  #[inline]
+  fn border_color_block_end(&self) -> GeneratedAtomBorderColorBlockEndChild {
+    GeneratedAtomBorderColorBlockEndChild::from_ref(self.append("border-color-block-end"))
+  }
+  #[inline]
+  fn border_color_block_end_(&self, value: &'static str) -> String {
+    self.append(format!("border-color-block-end:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderColorTop: GeneratedSkribbleValue {
+  #[inline]
+  fn border_color_top(&self) -> GeneratedAtomBorderColorTopChild {
+    GeneratedAtomBorderColorTopChild::from_ref(self.append("border-color-top"))
+  }
+  #[inline]
+  fn border_color_top_(&self, value: &'static str) -> String {
+    self.append(format!("border-color-top:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderColorRight: GeneratedSkribbleValue {
+  #[inline]
+  fn border_color_right(&self) -> GeneratedAtomBorderColorRightChild {
+    GeneratedAtomBorderColorRightChild::from_ref(self.append("border-color-right"))
+  }
+  #[inline]
+  fn border_color_right_(&self, value: &'static str) -> String {
+    self.append(format!("border-color-right:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderColorBottom: GeneratedSkribbleValue {
+  #[inline]
+  fn border_color_bottom(&self) -> GeneratedAtomBorderColorBottomChild {
+    GeneratedAtomBorderColorBottomChild::from_ref(self.append("border-color-bottom"))
+  }
+  #[inline]
+  fn border_color_bottom_(&self, value: &'static str) -> String {
+    self.append(format!("border-color-bottom:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderColorLeft: GeneratedSkribbleValue {
+  #[inline]
+  fn border_color_left(&self) -> GeneratedAtomBorderColorLeftChild {
+    GeneratedAtomBorderColorLeftChild::from_ref(self.append("border-color-left"))
+  }
+  #[inline]
+  fn border_color_left_(&self, value: &'static str) -> String {
+    self.append(format!("border-color-left:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderStyle: GeneratedSkribbleValue {
+  #[inline]
+  fn border_style(&self) -> GeneratedAtomBorderStyleChild {
+    GeneratedAtomBorderStyleChild::from_ref(self.append("border-style"))
+  }
+  #[inline]
+  fn border_style_(&self, value: &'static str) -> String {
+    self.append(format!("border-style:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderStyleX: GeneratedSkribbleValue {
+  #[inline]
+  fn border_style_x(&self) -> GeneratedAtomBorderStyleXChild {
+    GeneratedAtomBorderStyleXChild::from_ref(self.append("border-style-x"))
+  }
+  #[inline]
+  fn border_style_x_(&self, value: &'static str) -> String {
+    self.append(format!("border-style-x:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderStyleY: GeneratedSkribbleValue {
+  #[inline]
+  fn border_style_y(&self) -> GeneratedAtomBorderStyleYChild {
+    GeneratedAtomBorderStyleYChild::from_ref(self.append("border-style-y"))
+  }
+  #[inline]
+  fn border_style_y_(&self, value: &'static str) -> String {
+    self.append(format!("border-style-y:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderStyleInline: GeneratedSkribbleValue {
+  #[inline]
+  fn border_style_inline(&self) -> GeneratedAtomBorderStyleInlineChild {
+    GeneratedAtomBorderStyleInlineChild::from_ref(self.append("border-style-inline"))
+  }
+  #[inline]
+  fn border_style_inline_(&self, value: &'static str) -> String {
+    self.append(format!("border-style-inline:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderStyleInlineStart: GeneratedSkribbleValue {
+  #[inline]
+  fn border_style_inline_start(&self) -> GeneratedAtomBorderStyleInlineStartChild {
+    GeneratedAtomBorderStyleInlineStartChild::from_ref(self.append("border-style-inline-start"))
+  }
+  #[inline]
+  fn border_style_inline_start_(&self, value: &'static str) -> String {
+    self.append(format!("border-style-inline-start:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderStyleInlineEnd: GeneratedSkribbleValue {
+  #[inline]
+  fn border_style_inline_end(&self) -> GeneratedAtomBorderStyleInlineEndChild {
+    GeneratedAtomBorderStyleInlineEndChild::from_ref(self.append("border-style-inline-end"))
+  }
+  #[inline]
+  fn border_style_inline_end_(&self, value: &'static str) -> String {
+    self.append(format!("border-style-inline-end:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderStyleBlock: GeneratedSkribbleValue {
+  #[inline]
+  fn border_style_block(&self) -> GeneratedAtomBorderStyleBlockChild {
+    GeneratedAtomBorderStyleBlockChild::from_ref(self.append("border-style-block"))
+  }
+  #[inline]
+  fn border_style_block_(&self, value: &'static str) -> String {
+    self.append(format!("border-style-block:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderStyleBlockStart: GeneratedSkribbleValue {
+  #[inline]
+  fn border_style_block_start(&self) -> GeneratedAtomBorderStyleBlockStartChild {
+    GeneratedAtomBorderStyleBlockStartChild::from_ref(self.append("border-style-block-start"))
+  }
+  #[inline]
+  fn border_style_block_start_(&self, value: &'static str) -> String {
+    self.append(format!("border-style-block-start:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderStyleBlockEnd: GeneratedSkribbleValue {
+  #[inline]
+  fn border_style_block_end(&self) -> GeneratedAtomBorderStyleBlockEndChild {
+    GeneratedAtomBorderStyleBlockEndChild::from_ref(self.append("border-style-block-end"))
+  }
+  #[inline]
+  fn border_style_block_end_(&self, value: &'static str) -> String {
+    self.append(format!("border-style-block-end:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderStyleTop: GeneratedSkribbleValue {
+  #[inline]
+  fn border_style_top(&self) -> GeneratedAtomBorderStyleTopChild {
+    GeneratedAtomBorderStyleTopChild::from_ref(self.append("border-style-top"))
+  }
+  #[inline]
+  fn border_style_top_(&self, value: &'static str) -> String {
+    self.append(format!("border-style-top:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderStyleRight: GeneratedSkribbleValue {
+  #[inline]
+  fn border_style_right(&self) -> GeneratedAtomBorderStyleRightChild {
+    GeneratedAtomBorderStyleRightChild::from_ref(self.append("border-style-right"))
+  }
+  #[inline]
+  fn border_style_right_(&self, value: &'static str) -> String {
+    self.append(format!("border-style-right:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderStyleBottom: GeneratedSkribbleValue {
+  #[inline]
+  fn border_style_bottom(&self) -> GeneratedAtomBorderStyleBottomChild {
+    GeneratedAtomBorderStyleBottomChild::from_ref(self.append("border-style-bottom"))
+  }
+  #[inline]
+  fn border_style_bottom_(&self, value: &'static str) -> String {
+    self.append(format!("border-style-bottom:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBorderStyleLeft: GeneratedSkribbleValue {
+  #[inline]
+  fn border_style_left(&self) -> GeneratedAtomBorderStyleLeftChild {
+    GeneratedAtomBorderStyleLeftChild::from_ref(self.append("border-style-left"))
+  }
+  #[inline]
+  fn border_style_left_(&self, value: &'static str) -> String {
+    self.append(format!("border-style-left:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScale: GeneratedSkribbleValue {
+  #[inline]
+  fn scale(&self) -> GeneratedAtomScaleChild {
+    GeneratedAtomScaleChild::from_ref(self.append("scale"))
+  }
+  #[inline]
+  fn scale_(&self, value: &'static str) -> String {
+    self.append(format!("scale:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScaleX: GeneratedSkribbleValue {
+  #[inline]
+  fn scale_x(&self) -> GeneratedAtomScaleXChild {
+    GeneratedAtomScaleXChild::from_ref(self.append("scale-x"))
+  }
+  #[inline]
+  fn scale_x_(&self, value: &'static str) -> String {
+    self.append(format!("scale-x:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScaleY: GeneratedSkribbleValue {
+  #[inline]
+  fn scale_y(&self) -> GeneratedAtomScaleYChild {
+    GeneratedAtomScaleYChild::from_ref(self.append("scale-y"))
+  }
+  #[inline]
+  fn scale_y_(&self, value: &'static str) -> String {
+    self.append(format!("scale-y:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomRotate: GeneratedSkribbleValue {
+  #[inline]
+  fn rotate(&self) -> GeneratedAtomRotateChild {
+    GeneratedAtomRotateChild::from_ref(self.append("rotate"))
+  }
+  #[inline]
+  fn rotate_(&self, value: &'static str) -> String {
+    self.append(format!("rotate:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomTranslate: GeneratedSkribbleValue {
+  #[inline]
+  fn translate(&self) -> GeneratedAtomTranslateChild {
+    GeneratedAtomTranslateChild::from_ref(self.append("translate"))
+  }
+  #[inline]
+  fn translate_(&self, value: &'static str) -> String {
+    self.append(format!("translate:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomTranslateX: GeneratedSkribbleValue {
+  #[inline]
+  fn translate_x(&self) -> GeneratedAtomTranslateXChild {
+    GeneratedAtomTranslateXChild::from_ref(self.append("translate-x"))
+  }
+  #[inline]
+  fn translate_x_(&self, value: &'static str) -> String {
+    self.append(format!("translate-x:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomTranslateY: GeneratedSkribbleValue {
+  #[inline]
+  fn translate_y(&self) -> GeneratedAtomTranslateYChild {
+    GeneratedAtomTranslateYChild::from_ref(self.append("translate-y"))
+  }
+  #[inline]
+  fn translate_y_(&self, value: &'static str) -> String {
+    self.append(format!("translate-y:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomSkew: GeneratedSkribbleValue {
+  #[inline]
+  fn skew(&self) -> GeneratedAtomSkewChild {
+    GeneratedAtomSkewChild::from_ref(self.append("skew"))
+  }
+  #[inline]
+  fn skew_(&self, value: &'static str) -> String {
+    self.append(format!("skew:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomSkewX: GeneratedSkribbleValue {
+  #[inline]
+  fn skew_x(&self) -> GeneratedAtomSkewXChild {
+    GeneratedAtomSkewXChild::from_ref(self.append("skew-x"))
+  }
+  #[inline]
+  fn skew_x_(&self, value: &'static str) -> String {
+    self.append(format!("skew-x:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomSkewY: GeneratedSkribbleValue {
+  #[inline]
+  fn skew_y(&self) -> GeneratedAtomSkewYChild {
+    GeneratedAtomSkewYChild::from_ref(self.append("skew-y"))
+  }
+  #[inline]
+  fn skew_y_(&self, value: &'static str) -> String {
+    self.append(format!("skew-y:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomOrigin: GeneratedSkribbleValue {
+  #[inline]
+  fn origin(&self) -> GeneratedAtomOriginChild {
+    GeneratedAtomOriginChild::from_ref(self.append("origin"))
+  }
+  #[inline]
+  fn origin_(&self, value: &'static str) -> String {
+    self.append(format!("origin:[{}]", value.trim()))
+  }
+}
 pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   #[inline]
   fn group(&self) -> String {
@@ -21465,6 +27257,71 @@ impl GeneratedAtomFromPosition for GeneratedSkribbleRoot {}
 impl GeneratedAtomViaPosition for GeneratedSkribbleRoot {}
 impl GeneratedAtomToColor for GeneratedSkribbleRoot {}
 impl GeneratedAtomToPosition for GeneratedSkribbleRoot {}
+impl GeneratedAtomRounded for GeneratedSkribbleRoot {}
+impl GeneratedAtomRoundedStart for GeneratedSkribbleRoot {}
+impl GeneratedAtomRoundedEnd for GeneratedSkribbleRoot {}
+impl GeneratedAtomRoundedTop for GeneratedSkribbleRoot {}
+impl GeneratedAtomRoundedRight for GeneratedSkribbleRoot {}
+impl GeneratedAtomRoundedBottom for GeneratedSkribbleRoot {}
+impl GeneratedAtomRoundedLeft for GeneratedSkribbleRoot {}
+impl GeneratedAtomRoundedStartStart for GeneratedSkribbleRoot {}
+impl GeneratedAtomRoundedStartEnd for GeneratedSkribbleRoot {}
+impl GeneratedAtomRoundedEndEnd for GeneratedSkribbleRoot {}
+impl GeneratedAtomRoundedEndStart for GeneratedSkribbleRoot {}
+impl GeneratedAtomRoundedTopLeft for GeneratedSkribbleRoot {}
+impl GeneratedAtomRoundedTopRight for GeneratedSkribbleRoot {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedSkribbleRoot {}
+impl GeneratedAtomRoundedBottomRight for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorder for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderX for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderY for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderInline for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderInlineStart for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderInlineEnd for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderBlock for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderBlockStart for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderBlockEnd for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderTop for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderRight for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderBottom for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderLeft for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderColor for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderColorX for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderColorY for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderColorInline for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderColorBlock for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderColorTop for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderColorRight for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderColorBottom for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderColorLeft for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderStyle for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderStyleX for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderStyleY for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderStyleInline for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderStyleBlock for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderStyleTop for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderStyleRight for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderStyleBottom for GeneratedSkribbleRoot {}
+impl GeneratedAtomBorderStyleLeft for GeneratedSkribbleRoot {}
+impl GeneratedAtomScale for GeneratedSkribbleRoot {}
+impl GeneratedAtomScaleX for GeneratedSkribbleRoot {}
+impl GeneratedAtomScaleY for GeneratedSkribbleRoot {}
+impl GeneratedAtomRotate for GeneratedSkribbleRoot {}
+impl GeneratedAtomTranslate for GeneratedSkribbleRoot {}
+impl GeneratedAtomTranslateX for GeneratedSkribbleRoot {}
+impl GeneratedAtomTranslateY for GeneratedSkribbleRoot {}
+impl GeneratedAtomSkew for GeneratedSkribbleRoot {}
+impl GeneratedAtomSkewX for GeneratedSkribbleRoot {}
+impl GeneratedAtomSkewY for GeneratedSkribbleRoot {}
+impl GeneratedAtomOrigin for GeneratedSkribbleRoot {}
 impl GeneratedNamedClasses for GeneratedSkribbleRoot {}
 impl GeneratedAliases for GeneratedSkribbleRoot {}
 impl GeneratedMediaQueryBreakpoints for GeneratedMediaQueryDeviceCategoriesChild {}
@@ -21692,6 +27549,71 @@ impl GeneratedAtomFromPosition for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomViaPosition for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomToColor for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomToPosition for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRounded for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRoundedStart for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRoundedEnd for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRoundedTop for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRoundedRight for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRoundedBottom for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRoundedLeft for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorder for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderX for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderY for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderInline for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderBlock for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderTop for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderRight for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderBottom for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderLeft for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderColor for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderColorX for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderColorY for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderColorInline for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderColorTop for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderColorRight for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderStyle for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderStyleX for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderStyleY for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScale for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScaleX for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScaleY for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRotate for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomTranslate for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomTranslateX for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomTranslateY for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomSkew for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomSkewX for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomSkewY for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomOrigin for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAliases for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedMediaQueryOrientation for GeneratedMediaQueryBreakpointsChild {}
@@ -21918,6 +27840,71 @@ impl GeneratedAtomFromPosition for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomViaPosition for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomToColor for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomToPosition for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRounded for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRoundedStart for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRoundedEnd for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRoundedTop for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRoundedRight for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRoundedBottom for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRoundedLeft for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorder for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderX for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderY for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderInline for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderBlock for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderTop for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderRight for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderBottom for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderLeft for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderColor for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderColorX for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderColorY for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderColorInline for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderColorTop for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderColorRight for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderStyle for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderStyleX for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderStyleY for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScale for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScaleX for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScaleY for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRotate for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomTranslate for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomTranslateX for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomTranslateY for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomSkew for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomSkewX for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomSkewY for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomOrigin for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAliases for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedMediaQueryMotion for GeneratedMediaQueryOrientationChild {}
@@ -22143,6 +28130,71 @@ impl GeneratedAtomFromPosition for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomViaPosition for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomToColor for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomToPosition for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRounded for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRoundedStart for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRoundedEnd for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRoundedTop for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRoundedRight for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRoundedBottom for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRoundedLeft for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorder for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderX for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderY for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderInline for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderBlock for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderTop for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderRight for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderBottom for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderLeft for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderColor for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderColorX for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderColorY for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderColorInline for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderColorTop for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderColorRight for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderStyle for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderStyleX for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderStyleY for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScale for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScaleX for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScaleY for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRotate for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomTranslate for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomTranslateX for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomTranslateY for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomSkew for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomSkewX for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomSkewY for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomOrigin for GeneratedMediaQueryOrientationChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAliases for GeneratedMediaQueryOrientationChild {}
 impl GeneratedMediaQueryDarkMode for GeneratedMediaQueryMotionChild {}
@@ -22367,6 +28419,71 @@ impl GeneratedAtomFromPosition for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomViaPosition for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomToColor for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomToPosition for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRounded for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRoundedStart for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRoundedEnd for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRoundedTop for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRoundedRight for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRoundedBottom for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRoundedLeft for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorder for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderX for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderY for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderInline for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderBlock for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderTop for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderRight for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderBottom for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderLeft for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderColor for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderColorX for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderColorY for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderColorInline for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderColorTop for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderColorRight for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderStyle for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderStyleX for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderStyleY for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScale for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScaleX for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScaleY for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRotate for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomTranslate for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomTranslateX for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomTranslateY for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomSkew for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomSkewX for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomSkewY for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomOrigin for GeneratedMediaQueryMotionChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryMotionChild {}
 impl GeneratedAliases for GeneratedMediaQueryMotionChild {}
 impl GeneratedModifierParentGroup for GeneratedMediaQueryDarkModeChild {}
@@ -22590,6 +28707,71 @@ impl GeneratedAtomFromPosition for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomViaPosition for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomToColor for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomToPosition for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRounded for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRoundedStart for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRoundedEnd for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRoundedTop for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRoundedRight for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRoundedBottom for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRoundedLeft for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorder for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderX for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderY for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderInline for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderBlock for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderTop for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderRight for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderBottom for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderLeft for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderColor for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderColorX for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderColorY for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderColorInline for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderColorTop for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderColorRight for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderStyle for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderStyleX for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderStyleY for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScale for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScaleX for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScaleY for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRotate for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomTranslate for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomTranslateX for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomTranslateY for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomSkew for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomSkewX for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomSkewY for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomOrigin for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAliases for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedModifierHoverGroup for GeneratedModifierParentGroupChild {}
@@ -22812,6 +28994,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierParentGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierParentGroupChild {}
 impl GeneratedAliases for GeneratedModifierParentGroupChild {}
 impl GeneratedModifierActiveGroup for GeneratedModifierHoverGroupChild {}
@@ -23033,6 +29280,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierHoverGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierHoverGroupChild {}
 impl GeneratedAliases for GeneratedModifierHoverGroupChild {}
 impl GeneratedModifierFocusGroup for GeneratedModifierActiveGroupChild {}
@@ -23253,6 +29565,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierActiveGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierActiveGroupChild {}
 impl GeneratedAliases for GeneratedModifierActiveGroupChild {}
 impl GeneratedModifierFocusWithinGroup for GeneratedModifierFocusGroupChild {}
@@ -23472,6 +29849,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierFocusGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierFocusGroupChild {}
 impl GeneratedAliases for GeneratedModifierFocusGroupChild {}
 impl GeneratedModifierFocusVisibleGroup for GeneratedModifierFocusWithinGroupChild {}
@@ -23690,6 +30132,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAliases for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedModifierEnabledGroup for GeneratedModifierFocusVisibleGroupChild {}
@@ -23907,6 +30414,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAliases for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedModifierEmptyGroup for GeneratedModifierEnabledGroupChild {}
@@ -24123,6 +30695,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierEnabledGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAliases for GeneratedModifierEnabledGroupChild {}
 impl GeneratedModifierReadGroup for GeneratedModifierEmptyGroupChild {}
@@ -24338,6 +30975,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierEmptyGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAliases for GeneratedModifierEmptyGroupChild {}
 impl GeneratedModifierCheckedGroup for GeneratedModifierReadGroupChild {}
@@ -24552,6 +31254,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierReadGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierReadGroupChild {}
 impl GeneratedAliases for GeneratedModifierReadGroupChild {}
 impl GeneratedModifierValidGroup for GeneratedModifierCheckedGroupChild {}
@@ -24765,6 +31532,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierCheckedGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAliases for GeneratedModifierCheckedGroupChild {}
 impl GeneratedModifierAutofillGroup for GeneratedModifierValidGroupChild {}
@@ -24977,6 +31809,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierValidGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierValidGroupChild {}
 impl GeneratedAliases for GeneratedModifierValidGroupChild {}
 impl GeneratedModifierEvenGroup for GeneratedModifierAutofillGroupChild {}
@@ -25188,6 +32085,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierAutofillGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAliases for GeneratedModifierAutofillGroupChild {}
 impl GeneratedModifierNodePositionGroup for GeneratedModifierEvenGroupChild {}
@@ -25398,6 +32360,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierEvenGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierEvenGroupChild {}
 impl GeneratedAliases for GeneratedModifierEvenGroupChild {}
 impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierNodePositionGroupChild {}
@@ -25607,6 +32634,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAliases for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedModifierVisitedGroup for GeneratedModifierNodeOfTypeGroupChild {}
@@ -25815,6 +32907,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAliases for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedModifierOptionalGroup for GeneratedModifierVisitedGroupChild {}
@@ -26022,6 +33179,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierVisitedGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAliases for GeneratedModifierVisitedGroupChild {}
 impl GeneratedModifierAria for GeneratedModifierOptionalGroupChild {}
@@ -26228,6 +33450,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierOptionalGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAliases for GeneratedModifierOptionalGroupChild {}
 impl GeneratedModifierFullScreenGroup for GeneratedModifierAriaChild {}
@@ -26433,6 +33720,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierAriaChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierAriaChild {}
 impl GeneratedAtomToColor for GeneratedModifierAriaChild {}
 impl GeneratedAtomToPosition for GeneratedModifierAriaChild {}
+impl GeneratedAtomRounded for GeneratedModifierAriaChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierAriaChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierAriaChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierAriaChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierAriaChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierAriaChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierAriaChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierAriaChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierAriaChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierAriaChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierAriaChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierAriaChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierAriaChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierAriaChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorder for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderX for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderY for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierAriaChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierAriaChild {}
+impl GeneratedAtomScale for GeneratedModifierAriaChild {}
+impl GeneratedAtomScaleX for GeneratedModifierAriaChild {}
+impl GeneratedAtomScaleY for GeneratedModifierAriaChild {}
+impl GeneratedAtomRotate for GeneratedModifierAriaChild {}
+impl GeneratedAtomTranslate for GeneratedModifierAriaChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierAriaChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierAriaChild {}
+impl GeneratedAtomSkew for GeneratedModifierAriaChild {}
+impl GeneratedAtomSkewX for GeneratedModifierAriaChild {}
+impl GeneratedAtomSkewY for GeneratedModifierAriaChild {}
+impl GeneratedAtomOrigin for GeneratedModifierAriaChild {}
 impl GeneratedNamedClasses for GeneratedModifierAriaChild {}
 impl GeneratedAliases for GeneratedModifierAriaChild {}
 impl GeneratedModifierTargetGroup for GeneratedModifierFullScreenGroupChild {}
@@ -26637,6 +33989,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAliases for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierTargetGroupChild {}
@@ -26840,6 +34257,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierTargetGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierTargetGroupChild {}
 impl GeneratedAliases for GeneratedModifierTargetGroupChild {}
 impl GeneratedModifierRequiredGroup for GeneratedModifierPlaceholderShownGroupChild {}
@@ -27042,6 +34524,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierPlaceholderShownGroupChild {
 impl GeneratedAtomViaPosition for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAliases for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedModifierDefaultGroup for GeneratedModifierRequiredGroupChild {}
@@ -27243,6 +34790,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierRequiredGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAliases for GeneratedModifierRequiredGroupChild {}
 impl GeneratedModifierOnlyChildGroup for GeneratedModifierDefaultGroupChild {}
@@ -27443,6 +35055,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierDefaultGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAliases for GeneratedModifierDefaultGroupChild {}
 impl GeneratedModifierOnlyGroup for GeneratedModifierOnlyChildGroupChild {}
@@ -27642,6 +35319,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAliases for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedModifierRootGroup for GeneratedModifierOnlyGroupChild {}
@@ -27840,6 +35582,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierOnlyGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAliases for GeneratedModifierOnlyGroupChild {}
 impl GeneratedModifierLinkGroup for GeneratedModifierRootGroupChild {}
@@ -28037,6 +35844,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierRootGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierRootGroupChild {}
 impl GeneratedAliases for GeneratedModifierRootGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierLinkGroupChild {}
@@ -28233,6 +36105,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierLinkGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierLinkGroupChild {}
 impl GeneratedAliases for GeneratedModifierLinkGroupChild {}
 impl GeneratedTransformerImportant for GeneratedModifierPseudoGroupChild {}
@@ -28428,6 +36365,71 @@ impl GeneratedAtomFromPosition for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomViaPosition for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomToColor for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomToPosition for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRounded for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRoundedStart for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRoundedEnd for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRoundedTop for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRoundedRight for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRoundedBottom for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRoundedLeft for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorder for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderX for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderY for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderInline for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderBlock for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderTop for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderRight for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderBottom for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderLeft for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderColor for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderColorX for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderColorY for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderColorInline for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderColorTop for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderColorRight for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderStyle for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderStyleX for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderStyleY for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScale for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScaleX for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScaleY for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRotate for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomTranslate for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomTranslateX for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomTranslateY for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomSkew for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomSkewX for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomSkewY for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomOrigin for GeneratedModifierPseudoGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAliases for GeneratedModifierPseudoGroupChild {}
 impl GeneratedTransformerAlpha for GeneratedTransformerImportantGroupImportantChild {}
@@ -28622,6 +36624,71 @@ impl GeneratedAtomFromPosition for GeneratedTransformerImportantGroupImportantCh
 impl GeneratedAtomViaPosition for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomToColor for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomToPosition for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRounded for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRoundedStart for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRoundedEnd for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRoundedTop for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRoundedRight for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRoundedBottom for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRoundedLeft for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRoundedStartStart for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRoundedStartEnd for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRoundedEndEnd for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRoundedEndStart for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRoundedTopLeft for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRoundedTopRight for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRoundedBottomLeft for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRoundedBottomRight for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorder for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderX for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderY for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderInline for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderInlineStart for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderInlineEnd for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderBlock for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderBlockStart for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderBlockEnd for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderTop for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderRight for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderBottom for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderLeft for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderColor for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderColorX for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderColorY for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderColorInline for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderColorTop for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderColorRight for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderStyle for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderStyleX for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderStyleY for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderStyleInline for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderStyleInlineStart for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderStyleInlineEnd for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderStyleBlock for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderStyleBlockStart for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderStyleBlockEnd for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderStyleTop for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderStyleRight for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderStyleBottom for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBorderStyleLeft for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScale for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScaleX for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScaleY for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRotate for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomTranslate for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomTranslateX for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomTranslateY for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomSkew for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomSkewX for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomSkewY for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomOrigin for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedNamedClasses for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAliases for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomFill for GeneratedTransformerAlphaGroupAlphaChild {}
@@ -28631,6 +36698,19 @@ impl GeneratedAtomDecoration for GeneratedTransformerAlphaGroupAlphaChild {}
 impl GeneratedAtomBg for GeneratedTransformerAlphaGroupAlphaChild {}
 impl GeneratedAtomFromColor for GeneratedTransformerAlphaGroupAlphaChild {}
 impl GeneratedAtomToColor for GeneratedTransformerAlphaGroupAlphaChild {}
+impl GeneratedAtomBorderColor for GeneratedTransformerAlphaGroupAlphaChild {}
+impl GeneratedAtomBorderColorX for GeneratedTransformerAlphaGroupAlphaChild {}
+impl GeneratedAtomBorderColorY for GeneratedTransformerAlphaGroupAlphaChild {}
+impl GeneratedAtomBorderColorInline for GeneratedTransformerAlphaGroupAlphaChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedTransformerAlphaGroupAlphaChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedTransformerAlphaGroupAlphaChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedTransformerAlphaGroupAlphaChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedTransformerAlphaGroupAlphaChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedTransformerAlphaGroupAlphaChild {}
+impl GeneratedAtomBorderColorTop for GeneratedTransformerAlphaGroupAlphaChild {}
+impl GeneratedAtomBorderColorRight for GeneratedTransformerAlphaGroupAlphaChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedTransformerAlphaGroupAlphaChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedTransformerAlphaGroupAlphaChild {}
 impl GeneratedAtomFill for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomStroke for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomText for GeneratedTransformerAlphaGroupOpaquifyChild {}
@@ -28638,6 +36718,19 @@ impl GeneratedAtomDecoration for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomBg for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomFromColor for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomToColor for GeneratedTransformerAlphaGroupOpaquifyChild {}
+impl GeneratedAtomBorderColor for GeneratedTransformerAlphaGroupOpaquifyChild {}
+impl GeneratedAtomBorderColorX for GeneratedTransformerAlphaGroupOpaquifyChild {}
+impl GeneratedAtomBorderColorY for GeneratedTransformerAlphaGroupOpaquifyChild {}
+impl GeneratedAtomBorderColorInline for GeneratedTransformerAlphaGroupOpaquifyChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedTransformerAlphaGroupOpaquifyChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedTransformerAlphaGroupOpaquifyChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedTransformerAlphaGroupOpaquifyChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedTransformerAlphaGroupOpaquifyChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedTransformerAlphaGroupOpaquifyChild {}
+impl GeneratedAtomBorderColorTop for GeneratedTransformerAlphaGroupOpaquifyChild {}
+impl GeneratedAtomBorderColorRight for GeneratedTransformerAlphaGroupOpaquifyChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedTransformerAlphaGroupOpaquifyChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomFill for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomStroke for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomText for GeneratedTransformerAlphaGroupTransparentizeChild {}
@@ -28645,6 +36738,19 @@ impl GeneratedAtomDecoration for GeneratedTransformerAlphaGroupTransparentizeChi
 impl GeneratedAtomBg for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomFromColor for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomToColor for GeneratedTransformerAlphaGroupTransparentizeChild {}
+impl GeneratedAtomBorderColor for GeneratedTransformerAlphaGroupTransparentizeChild {}
+impl GeneratedAtomBorderColorX for GeneratedTransformerAlphaGroupTransparentizeChild {}
+impl GeneratedAtomBorderColorY for GeneratedTransformerAlphaGroupTransparentizeChild {}
+impl GeneratedAtomBorderColorInline for GeneratedTransformerAlphaGroupTransparentizeChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedTransformerAlphaGroupTransparentizeChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedTransformerAlphaGroupTransparentizeChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedTransformerAlphaGroupTransparentizeChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedTransformerAlphaGroupTransparentizeChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedTransformerAlphaGroupTransparentizeChild {}
+impl GeneratedAtomBorderColorTop for GeneratedTransformerAlphaGroupTransparentizeChild {}
+impl GeneratedAtomBorderColorRight for GeneratedTransformerAlphaGroupTransparentizeChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedTransformerAlphaGroupTransparentizeChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomFill for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomStroke for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomText for GeneratedTransformerLightnessGroupLightnessChild {}
@@ -28652,6 +36758,19 @@ impl GeneratedAtomDecoration for GeneratedTransformerLightnessGroupLightnessChil
 impl GeneratedAtomBg for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomFromColor for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomToColor for GeneratedTransformerLightnessGroupLightnessChild {}
+impl GeneratedAtomBorderColor for GeneratedTransformerLightnessGroupLightnessChild {}
+impl GeneratedAtomBorderColorX for GeneratedTransformerLightnessGroupLightnessChild {}
+impl GeneratedAtomBorderColorY for GeneratedTransformerLightnessGroupLightnessChild {}
+impl GeneratedAtomBorderColorInline for GeneratedTransformerLightnessGroupLightnessChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedTransformerLightnessGroupLightnessChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedTransformerLightnessGroupLightnessChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedTransformerLightnessGroupLightnessChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedTransformerLightnessGroupLightnessChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedTransformerLightnessGroupLightnessChild {}
+impl GeneratedAtomBorderColorTop for GeneratedTransformerLightnessGroupLightnessChild {}
+impl GeneratedAtomBorderColorRight for GeneratedTransformerLightnessGroupLightnessChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedTransformerLightnessGroupLightnessChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomFill for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomStroke for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomText for GeneratedTransformerLightnessGroupLightenChild {}
@@ -28659,6 +36778,19 @@ impl GeneratedAtomDecoration for GeneratedTransformerLightnessGroupLightenChild 
 impl GeneratedAtomBg for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomFromColor for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomToColor for GeneratedTransformerLightnessGroupLightenChild {}
+impl GeneratedAtomBorderColor for GeneratedTransformerLightnessGroupLightenChild {}
+impl GeneratedAtomBorderColorX for GeneratedTransformerLightnessGroupLightenChild {}
+impl GeneratedAtomBorderColorY for GeneratedTransformerLightnessGroupLightenChild {}
+impl GeneratedAtomBorderColorInline for GeneratedTransformerLightnessGroupLightenChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedTransformerLightnessGroupLightenChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedTransformerLightnessGroupLightenChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedTransformerLightnessGroupLightenChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedTransformerLightnessGroupLightenChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedTransformerLightnessGroupLightenChild {}
+impl GeneratedAtomBorderColorTop for GeneratedTransformerLightnessGroupLightenChild {}
+impl GeneratedAtomBorderColorRight for GeneratedTransformerLightnessGroupLightenChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedTransformerLightnessGroupLightenChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomFill for GeneratedTransformerLightnessGroupDarkenChild {}
 impl GeneratedAtomStroke for GeneratedTransformerLightnessGroupDarkenChild {}
 impl GeneratedAtomText for GeneratedTransformerLightnessGroupDarkenChild {}
@@ -28666,3 +36798,16 @@ impl GeneratedAtomDecoration for GeneratedTransformerLightnessGroupDarkenChild {
 impl GeneratedAtomBg for GeneratedTransformerLightnessGroupDarkenChild {}
 impl GeneratedAtomFromColor for GeneratedTransformerLightnessGroupDarkenChild {}
 impl GeneratedAtomToColor for GeneratedTransformerLightnessGroupDarkenChild {}
+impl GeneratedAtomBorderColor for GeneratedTransformerLightnessGroupDarkenChild {}
+impl GeneratedAtomBorderColorX for GeneratedTransformerLightnessGroupDarkenChild {}
+impl GeneratedAtomBorderColorY for GeneratedTransformerLightnessGroupDarkenChild {}
+impl GeneratedAtomBorderColorInline for GeneratedTransformerLightnessGroupDarkenChild {}
+impl GeneratedAtomBorderColorInlineStart for GeneratedTransformerLightnessGroupDarkenChild {}
+impl GeneratedAtomBorderColorInlineEnd for GeneratedTransformerLightnessGroupDarkenChild {}
+impl GeneratedAtomBorderColorBlock for GeneratedTransformerLightnessGroupDarkenChild {}
+impl GeneratedAtomBorderColorBlockStart for GeneratedTransformerLightnessGroupDarkenChild {}
+impl GeneratedAtomBorderColorBlockEnd for GeneratedTransformerLightnessGroupDarkenChild {}
+impl GeneratedAtomBorderColorTop for GeneratedTransformerLightnessGroupDarkenChild {}
+impl GeneratedAtomBorderColorRight for GeneratedTransformerLightnessGroupDarkenChild {}
+impl GeneratedAtomBorderColorBottom for GeneratedTransformerLightnessGroupDarkenChild {}
+impl GeneratedAtomBorderColorLeft for GeneratedTransformerLightnessGroupDarkenChild {}

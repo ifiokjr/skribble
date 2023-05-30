@@ -100,6 +100,14 @@ lazy_static! {
     let wrapped_gradient_via_position = Placeholder::wrapped_variable("gradient-via-position", None);
     let wrapped_gradient_from = Placeholder::wrapped_variable("gradient-from", None);
     let wrapped_gradient_to = Placeholder::wrapped_variable("gradient-to", None);
+    // Transforms
+    let translate_x = Placeholder::variable("translate-x");
+    let translate_y = Placeholder::variable("translate-y");
+    let rotate = Placeholder::variable("rotate");
+    let skew_x = Placeholder::variable("skew-x");
+    let skew_y = Placeholder::variable("skew-y");
+    let scale_x = Placeholder::variable("scale-x");
+    let scale_y = Placeholder::variable("scale-y");
 
     vec![
       Atom::builder()
@@ -1271,6 +1279,407 @@ lazy_static! {
         .values(vec!["gradient-position"])
         .children(vec!["gradient-reference"])
         .styles(indexmap! { &gradient_to_position => none })
+        .build(),
+      // Borders
+      Atom::builder()
+        .name("rounded")
+        .description("Control the border radius of an element.")
+        .values(vec!["border-radius"])
+        .styles(indexmap! { "border-radius" => none })
+        .build(),
+      Atom::builder()
+        .name("rounded-start")
+        .description("Control the `start` border radius of an element.")
+        .values(vec!["border-radius"])
+        .styles(indexmap! {
+          "border-start-start-radius" => none,
+          "border-end-start-radius" => none,
+        })
+        .build(),
+      Atom::builder()
+        .name("rounded-end")
+        .description("Control the `end` border radius of an element.")
+        .values(vec!["border-radius"])
+        .styles(indexmap! {
+          "border-start-end-radius" => none,
+          "border-end-end-radius" => none,
+        })
+        .build(),
+      Atom::builder()
+        .name("rounded-top")
+        .description("Control the `top` border radius of an element.")
+        .values(vec!["border-radius"])
+        .styles(indexmap! {
+          "border-top-left-radius" => none,
+          "border-top-right-radius" => none,
+        })
+        .build(),
+      Atom::builder()
+        .name("rounded-top")
+        .description("Control the `top` border radius of an element.")
+        .values(vec!["border-radius"])
+        .styles(indexmap! {
+          "border-top-left-radius" => none,
+          "border-top-right-radius" => none,
+        })
+        .build(),
+      Atom::builder()
+        .name("rounded-right")
+        .description("Control the `right` border radius of an element.")
+        .values(vec!["border-radius"])
+        .styles(indexmap! {
+          "border-top-right-radius" => none,
+          "border-bottom-right-radius" => none,
+        })
+        .build(),
+      Atom::builder()
+        .name("rounded-bottom")
+        .description("Control the `bottom` border radius of an element.")
+        .values(vec!["border-radius"])
+        .styles(indexmap! {
+          "border-bottom-right-radius" => none,
+          "border-bottom-left-radius" => none,
+        })
+        .build(),
+      Atom::builder()
+        .name("rounded-left")
+        .description("Control the `left` border radius of an element.")
+        .values(vec!["border-radius"])
+        .styles(indexmap! {
+          "border-top-left-radius" => none,
+          "border-bottom-left-radius" => none,
+        })
+        .build(),
+      Atom::builder()
+        .name("rounded-start-start")
+        .description("Control the `start-start` border radius of an element.")
+        .values(vec!["border-radius"])
+        .styles(indexmap! { "border-start-start-radius" => none })
+        .build(),
+      Atom::builder()
+        .name("rounded-start-end")
+        .description("Control the `start-end` border radius of an element.")
+        .values(vec!["border-radius"])
+        .styles(indexmap! { "border-start-end-radius" => none })
+        .build(),
+      Atom::builder()
+        .name("rounded-end-end")
+        .description("Control the `end-end` border radius of an element.")
+        .values(vec!["border-radius"])
+        .styles(indexmap! { "border-end-end-radius" => none })
+        .build(),
+      Atom::builder()
+        .name("rounded-end-start")
+        .description("Control the `end-start` border radius of an element.")
+        .values(vec!["border-radius"])
+        .styles(indexmap! { "border-end-start-radius" => none })
+        .build(),
+      Atom::builder()
+        .name("rounded-top-left")
+        .description("Control the `top-left` border radius of an element.")
+        .values(vec!["border-radius"])
+        .styles(indexmap! { "border-top-left-radius" => none })
+        .build(),
+      Atom::builder()
+        .name("rounded-top-right")
+        .description("Control the `top-right` border radius of an element.")
+        .values(vec!["border-radius"])
+        .styles(indexmap! { "border-top-right-radius" => none })
+        .build(),
+      Atom::builder()
+        .name("rounded-bottom-left")
+        .description("Control the `bottom-left` border radius of an element.")
+        .values(vec!["border-radius"])
+        .styles(indexmap! { "border-bottom-left-radius" => none })
+        .build(),
+      Atom::builder()
+        .name("rounded-bottom-right")
+        .description("Control the `bottom-right` border radius of an element.")
+        .values(vec!["border-radius"])
+        .styles(indexmap! { "border-bottom-right-radius" => none })
+        .build(),
+      Atom::builder()
+        .name("border")
+        .description("Control the border width of an element.")
+        .values(vec!["border-width"])
+        .styles(indexmap! { "border" => none })
+        .build(),
+      Atom::builder()
+        .name("border-x")
+        .description("Control the left and right border width of an element.")
+        .values(vec!["border-width"])
+        .styles(indexmap! {
+          "border-left-width" => none,
+          "border-right-width" => none,
+        })
+        .build(),
+      Atom::builder()
+        .name("border-y")
+        .description("Control the top and bottom border width of an element.")
+        .values(vec!["border-width"])
+        .styles(indexmap! {
+          "border-top-width" => none,
+          "border-bottom-width" => none,
+        })
+        .build(),
+      Atom::builder()
+        .name("border-inline")
+        .values(vec!["border-width"])
+        .styles(indexmap! { "border-inline-width" => none })
+        .build(),
+      Atom::builder()
+        .name("border-inline-start")
+        .values(vec!["border-width"])
+        .styles(indexmap! { "border-inline-start-width" => none })
+        .build(),
+      Atom::builder()
+        .name("border-inline-end")
+        .values(vec!["border-width"])
+        .styles(indexmap! { "border-inline-end-width" => none })
+        .build(),
+      Atom::builder()
+        .name("border-block")
+        .values(vec!["border-width"])
+        .styles(indexmap! { "border-block-width" => none })
+        .build(),
+      Atom::builder()
+        .name("border-block-start")
+        .values(vec!["border-width"])
+        .styles(indexmap! { "border-block-start-width" => none })
+        .build(),
+      Atom::builder()
+        .name("border-block-end")
+        .values(vec!["border-width"])
+        .styles(indexmap! { "border-block-end-width" => none })
+        .build(),
+      Atom::builder()
+        .name("border-top")
+        .values(vec!["border-width"])
+        .styles(indexmap! { "border-top-width" => none })
+        .build(),
+      Atom::builder()
+        .name("border-right")
+        .values(vec!["border-width"])
+        .styles(indexmap! { "border-right-width" => none })
+        .build(),
+      Atom::builder()
+        .name("border-bottom")
+        .values(vec!["border-width"])
+        .styles(indexmap! { "border-bottom-width" => none })
+        .build(),
+      Atom::builder()
+        .name("border-left")
+        .values(vec!["border-width"])
+        .styles(indexmap! { "border-left-width" => none })
+        .build(),
+      Atom::builder()
+        .name("border-color")
+        .values(ColorField::default())
+        .styles(indexmap! { "border-color" => none })
+        .build(),
+      Atom::builder()
+        .name("border-color-x")
+        .values(ColorField::default())
+        .styles(indexmap! {
+          "border-left-color" => none,
+          "border-right-color" => none,
+        })
+        .build(),
+      Atom::builder()
+        .name("border-color-y")
+        .values(ColorField::default())
+        .styles(indexmap! {
+          "border-top-color" => none,
+          "border-bottom-color" => none,
+        })
+        .build(),
+      Atom::builder()
+        .name("border-color-inline")
+        .values(ColorField::default())
+        .styles(indexmap! { "border-inline-color" => none })
+        .build(),
+      Atom::builder()
+        .name("border-color-inline-start")
+        .values(ColorField::default())
+        .styles(indexmap! { "border-inline-start-color" => none })
+        .build(),
+      Atom::builder()
+        .name("border-color-inline-end")
+        .values(ColorField::default())
+        .styles(indexmap! { "border-inline-end-color" => none })
+        .build(),
+      Atom::builder()
+        .name("border-color-block")
+        .values(ColorField::default())
+        .styles(indexmap! { "border-block-color" => none })
+        .build(),
+      Atom::builder()
+        .name("border-color-block-start")
+        .values(ColorField::default())
+        .styles(indexmap! { "border-block-start-color" => none })
+        .build(),
+      Atom::builder()
+        .name("border-color-block-end")
+        .values(ColorField::default())
+        .styles(indexmap! { "border-block-end-color" => none })
+        .build(),
+      Atom::builder()
+        .name("border-color-top")
+        .values(ColorField::default())
+        .styles(indexmap! { "border-top-color" => none })
+        .build(),
+      Atom::builder()
+        .name("border-color-right")
+        .values(ColorField::default())
+        .styles(indexmap! { "border-right-color" => none })
+        .build(),
+      Atom::builder()
+        .name("border-color-bottom")
+        .values(ColorField::default())
+        .styles(indexmap! { "border-bottom-color" => none })
+        .build(),
+      Atom::builder()
+        .name("border-color-left")
+        .values(ColorField::default())
+        .styles(indexmap! { "border-left-color" => none })
+        .build(),
+      Atom::builder()
+        .name("border-style")
+        .values(vec!["border-style"])
+        .styles(indexmap! { "border-style" => none })
+        .build(),
+        Atom::builder()
+        .name("border-style-x")
+        .values(vec!["border-style"])
+        .styles(indexmap! {
+          "border-left-style" => none,
+          "border-right-style" => none,
+        })
+        .build(),
+      Atom::builder()
+        .name("border-style-y")
+        .values(vec!["border-style"])
+        .styles(indexmap! {
+          "border-top-style" => none,
+          "border-bottom-style" => none,
+        })
+        .build(),
+      Atom::builder()
+        .name("border-style-inline")
+        .values(vec!["border-style"])
+        .styles(indexmap! { "border-inline-style" => none })
+        .build(),
+      Atom::builder()
+        .name("border-style-inline-start")
+        .values(vec!["border-style"])
+        .styles(indexmap! { "border-inline-start-style" => none })
+        .build(),
+      Atom::builder()
+        .name("border-style-inline-end")
+        .values(vec!["border-style"])
+        .styles(indexmap! { "border-inline-end-style" => none })
+        .build(),
+      Atom::builder()
+        .name("border-style-block")
+        .values(vec!["border-style"])
+        .styles(indexmap! { "border-block-style" => none })
+        .build(),
+      Atom::builder()
+        .name("border-style-block-start")
+        .values(vec!["border-style"])
+        .styles(indexmap! { "border-block-start-style" => none })
+        .build(),
+      Atom::builder()
+        .name("border-style-block-end")
+        .values(vec!["border-style"])
+        .styles(indexmap! { "border-block-end-style" => none })
+        .build(),
+      Atom::builder()
+        .name("border-style-top")
+        .values(vec!["border-style"])
+        .styles(indexmap! { "border-top-style" => none })
+        .build(),
+      Atom::builder()
+        .name("border-style-right")
+        .values(vec!["border-style"])
+        .styles(indexmap! { "border-right-style" => none })
+        .build(),
+      Atom::builder()
+        .name("border-style-bottom")
+        .values(vec!["border-style"])
+        .styles(indexmap! { "border-bottom-style" => none })
+        .build(),
+      Atom::builder()
+        .name("border-style-left")
+        .values(vec!["border-style"])
+        .styles(indexmap! { "border-left-style" => none })
+        .build(),
+
+      // Transforms
+      Atom::builder()
+        .name("scale")
+        .values(vec!["scale"])
+        .children(vec!["transform"])
+        .styles(indexmap! { &scale_x => none, &scale_y => none })
+        .build(),
+      Atom::builder()
+        .name("scale-x")
+        .values(vec!["scale"])
+        .children(vec!["transform"])
+        .styles(indexmap! { &scale_x => none })
+        .build(),
+      Atom::builder()
+        .name("scale-y")
+        .values(vec!["scale"])
+        .children(vec!["transform"])
+        .styles(indexmap! { &scale_y => none })
+        .build(),
+      Atom::builder()
+        .name("rotate")
+        .values(vec!["rotation"])
+        .children(vec!["transform"])
+        .styles(indexmap! { &rotate => none })
+        .build(),
+      Atom::builder()
+        .name("translate")
+        .values(vec!["positive-translation", "negative-translation"])
+        .children(vec!["transform"])
+        .styles(indexmap! { &translate_x => none, &translate_y => none })
+        .build(),
+      Atom::builder()
+        .name("translate-x")
+        .values(vec!["positive-translation", "negative-translation"])
+        .children(vec!["transform"])
+        .styles(indexmap! { &translate_x => none })
+        .build(),
+      Atom::builder()
+        .name("translate-y")
+        .values(vec!["positive-translation", "negative-translation"])
+        .children(vec!["transform"])
+        .styles(indexmap! { &translate_y => none })
+        .build(),
+      Atom::builder()
+        .name("skew")
+        .values(vec!["skew"])
+        .children(vec!["transform"])
+        .styles(indexmap! { &skew_x => none, &skew_y => none })
+        .build(),
+      Atom::builder()
+        .name("skew-x")
+        .values(vec!["skew"])
+        .children(vec!["transform"])
+        .styles(indexmap! { &skew_x => none })
+        .build(),
+      Atom::builder()
+        .name("skew-y")
+        .values(vec!["skew"])
+        .children(vec!["transform"])
+        .styles(indexmap! { &skew_y => none })
+        .build(),
+      Atom::builder()
+        .name("origin")
+        .values(vec!["origin"])
+        .styles(indexmap! { "transform-origin" => none })
         .build(),
     ]
   };

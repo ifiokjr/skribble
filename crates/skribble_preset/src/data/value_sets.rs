@@ -1470,6 +1470,81 @@ lazy_static! {
           "100%" => "100%",
         })
         .build(),
+      ValueSet::builder()
+        .name("border-radius")
+        .values(indexmap! {
+          "default" => "0.25rem",
+          "none" =>	"0px",
+          "sm" =>	"0.125rem",
+          "md" =>	"0.375rem",
+          "lg" =>	"0.5rem",
+          "xl" =>	"0.75rem",
+          "2xl" =>	"1rem",
+          "3xl" =>	"1.5rem",
+          "full" =>	"9999px",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("border-width")
+        .values(indexmap! {
+          "0" => "0px",
+          "default" => "1px",
+          "2" => "2px",
+          "4" => "4px",
+          "8" => "8px",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("border-style")
+        .values(indexmap! {
+          "solid" => "solid",
+          "dashed" => "dashed",
+          "dotted" => "dotted",
+          "double" => "double",
+          "hidden" => "hidden",
+          "none" => "none",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("scale")
+        .values(indexmap! {
+          "0" => "0",
+          "50" => ".5",
+          "75" => ".75",
+          "90" => ".9",
+          "95" => ".95",
+          "100" => "1",
+          "105" => "1.05",
+          "110" => "1.1",
+          "125" => "1.25",
+          "150" => "1.5",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("skew")
+        .values(indexmap! {
+          "0" => "0deg",
+          "1" => "1deg",
+          "2" => "2deg",
+          "3" => "3deg",
+          "6" => "6deg",
+          "12" => "12deg",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("origin")
+        .values(indexmap! {
+          "center" => "center",
+          "top" => "top",
+          "top-right" => "top right",
+          "right" => "right",
+          "bottom-right" => "bottom right",
+          "bottom" => "bottom",
+          "bottom-left" => "bottom left",
+          "left" => "left",
+          "top-left" => "top left",
+        })
+        .build(),
     ]
   };
 }

@@ -384,5 +384,53 @@ lazy_static! {
       .name("gradient-via-position")
       .variable("--gradient-via-position")
       .build(),
+    CssVariable::builder()
+      .name("scale-x")
+      .variable("--scale-x")
+      .syntax(vec![
+        PropertySyntaxValue::Number,
+        PropertySyntaxValue::Percentage
+      ])
+      .value("1")
+      .build(),
+    CssVariable::builder()
+      .name("scale-y")
+      .variable("--scale-y")
+      .syntax(vec![
+        PropertySyntaxValue::Number,
+        PropertySyntaxValue::Percentage
+      ])
+      .value("1")
+      .build(),
+    CssVariable::builder()
+      .name("translate-x")
+      .variable("--translate-x")
+      .syntax(PropertySyntaxValue::LengthPercentage)
+      .value("0")
+      .build(),
+    CssVariable::builder()
+      .name("translate-y")
+      .variable("--translate-y")
+      .syntax(PropertySyntaxValue::LengthPercentage)
+      .value("0")
+      .build(),
+    CssVariable::builder()
+      .name("skew-x")
+      .variable("--skew-x")
+      .syntax(PropertySyntaxValue::Angle)
+      .value("0")
+      .build(),
+    CssVariable::builder()
+      .name("skew-y")
+      .variable("--skew-y")
+      .syntax(PropertySyntaxValue::Angle)
+      .value("0")
+      .build(),
+    CssVariable::builder()
+      .name("rotate")
+      .variable("--rotate")
+      .syntax(PropertySyntaxValue::Angle)
+      .value("0")
+      .build(),
   ];
 }

@@ -42,6 +42,10 @@ expression: "StyleConfig::default()"
     {
       "priority": 150,
       "value": "default"
+    },
+    {
+      "priority": 149,
+      "value": "priority-class"
     }
   ],
   "cssChunks": [],
