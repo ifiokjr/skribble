@@ -8,8 +8,6 @@ pub use config::*;
 pub use constants::*;
 pub use css::*;
 pub use error::*;
-pub use indexmap::indexmap as map;
-pub use indexmap::indexset as set;
 pub use macros::*;
 pub use plugin::*;
 pub use runner::*;
