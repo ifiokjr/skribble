@@ -65,14 +65,6 @@ lazy_static! {
         })
         .build(),
       NamedClass::builder()
-        .name("invisible")
-        .styles(indexmap! { "visibility" => "hidden" })
-        .build(),
-      NamedClass::builder()
-        .name("visible")
-        .styles(indexmap! { "visibility" => "visible" })
-        .build(),
-      NamedClass::builder()
         .name("transform-gpu")
         .styles(indexmap! { &group_nested_transform => group_nested_transform_gpu })
         .build(),
@@ -139,6 +131,13 @@ lazy_static! {
         .name("transform-cpu")
         .layer("priority-class")
         .styles(indexmap! { "transform" => &transform_cpu })
+        .build(),
+      NamedClass::builder()
+        .name("outline-none")
+        .styles(indexmap! {
+          "outline" => "2px solid transparent",
+          "outline-offset" => "2px",
+         })
         .build(),
     ]
   };

@@ -432,5 +432,37 @@ lazy_static! {
       .syntax(PropertySyntaxValue::Angle)
       .value("0")
       .build(),
+    CssVariable::builder()
+      .name("ring-offset-shadow")
+      .variable("--ring-offset-shadow")
+      .build(),
+    CssVariable::builder()
+      .name("ring-offset-color")
+      .variable("--ring-offset-color")
+      .syntax(Color)
+      .value(Placeholder::palette("white"))
+      .build(),
+    CssVariable::builder()
+      .name("ring-color")
+      .variable("--ring-color")
+      .syntax(Color)
+      .value("#3b82f680")
+      .build(),
+    CssVariable::builder()
+      .name("ring-inset")
+      .variable("--ring-inset")
+      .build(),
+    CssVariable::builder()
+      .name("ring-offset-width")
+      .variable("--ring-offset-width")
+      .build(),
+    CssVariable::builder()
+      .name("ring-shadow")
+      .variable("--ring-shadow")
+      .build(),
+    CssVariable::builder()
+      .name("shadow")
+      .variable("--shadow")
+      .build(),
   ];
 }

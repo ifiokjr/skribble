@@ -1565,6 +1565,45 @@ lazy_static! {
           "default" => indexmap! { "bottom" => "0px", "top" => "1px" },
         })
         .build(),
+      ValueSet::builder()
+        .name("divide-style")
+        .values(indexmap! {
+          "solid" => "solid",
+          "dashed" => "dashed",
+          "dotted" => "dotted",
+          "double" => "double",
+          "none" => "none",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("outline-width")
+        .values(indexmap! {
+          "0" => "0px",
+          "1" => "1px",
+          "2" => "2px",
+          "4" => "4px",
+          "8" => "8px",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("ring-width")
+        .values(indexmap! {
+          "0" => "0px",
+          "1" => "1px",
+          "2" => "2px",
+          "4" => "4px",
+          "8" => "8px",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("outline-style")
+        .values(indexmap! {
+          "default" => "solid",
+          "dashed" => "dashed",
+          "dotted" => "dotted",
+          "double" => "double",
+        })
+        .build(),
     ]
   };
 }

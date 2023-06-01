@@ -777,6 +777,63 @@ impl GeneratedCssVariables {
   pub fn rotate(&self) -> String {
     "--sk-rotate".into()
   }
+  /// ```css
+  /// 
+  /// ```
+  #[inline]
+  pub fn ring_offset_shadow(&self) -> String {
+    "--sk-ring-offset-shadow".into()
+  }
+  /// ```css
+  /// @property --sk-ring-offset-color {
+  ///   syntax: "<color>";
+  ///   inherits: true;
+  ///   initial-value: hsl(0 0% 100%);
+  /// }
+  /// ```
+  #[inline]
+  pub fn ring_offset_color(&self) -> String {
+    "--sk-ring-offset-color".into()
+  }
+  /// ```css
+  /// @property --sk-ring-color {
+  ///   syntax: "<color>";
+  ///   inherits: true;
+  ///   initial-value: hsl(217.21925 91.21951% 59.80392% / 0.5019608);
+  /// }
+  /// ```
+  #[inline]
+  pub fn ring_color(&self) -> String {
+    "--sk-ring-color".into()
+  }
+  /// ```css
+  /// 
+  /// ```
+  #[inline]
+  pub fn ring_inset(&self) -> String {
+    "--sk-ring-inset".into()
+  }
+  /// ```css
+  /// 
+  /// ```
+  #[inline]
+  pub fn ring_offset_width(&self) -> String {
+    "--sk-ring-offset-width".into()
+  }
+  /// ```css
+  /// 
+  /// ```
+  #[inline]
+  pub fn ring_shadow(&self) -> String {
+    "--sk-ring-shadow".into()
+  }
+  /// ```css
+  /// 
+  /// ```
+  #[inline]
+  pub fn shadow(&self) -> String {
+    "--sk-shadow".into()
+  }
 }
 pub struct GeneratedMediaQueryDeviceCategoriesChild(String);
 impl GeneratedSkribbleValue for GeneratedMediaQueryDeviceCategoriesChild {
@@ -3449,6 +3506,32 @@ pub trait GeneratedColorErrorContent: GeneratedSkribbleValue {
   #[inline]
   fn error_content(&self) -> String {
     self.append_value("error-content")
+  }
+}
+pub trait GeneratedColorRingOffsetColor: GeneratedSkribbleValue {
+  /// ```css
+  /// @property --sk-ring-offset-color {
+  ///   syntax: "<color>";
+  ///   inherits: true;
+  ///   initial-value: hsl(0 0% 100%);
+  /// }
+  /// ```
+  #[inline]
+  fn ring_offset_color(&self) -> String {
+    self.append_value("ring-offset-color")
+  }
+}
+pub trait GeneratedColorRingColor: GeneratedSkribbleValue {
+  /// ```css
+  /// @property --sk-ring-color {
+  ///   syntax: "<color>";
+  ///   inherits: true;
+  ///   initial-value: hsl(217.21925 91.21951% 59.80392% / 0.5019608);
+  /// }
+  /// ```
+  #[inline]
+  fn ring_color(&self) -> String {
+    self.append_value("ring-color")
   }
 }
 pub trait GeneratedColorBlack: GeneratedSkribbleValue {
@@ -10453,6 +10536,120 @@ pub trait GeneratedValueSetDivideYDefault: GeneratedSkribbleValue {
     self.append_value("default")
   }
 }
+pub trait GeneratedValueSetDivideStyleSolid: GeneratedSkribbleValue {
+  #[inline]
+  fn solid(&self) -> String {
+    self.append_value("solid")
+  }
+}
+pub trait GeneratedValueSetDivideStyleDashed: GeneratedSkribbleValue {
+  #[inline]
+  fn dashed(&self) -> String {
+    self.append_value("dashed")
+  }
+}
+pub trait GeneratedValueSetDivideStyleDotted: GeneratedSkribbleValue {
+  #[inline]
+  fn dotted(&self) -> String {
+    self.append_value("dotted")
+  }
+}
+pub trait GeneratedValueSetDivideStyleDouble: GeneratedSkribbleValue {
+  #[inline]
+  fn double(&self) -> String {
+    self.append_value("double")
+  }
+}
+pub trait GeneratedValueSetDivideStyleNone: GeneratedSkribbleValue {
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+pub trait GeneratedValueSetOutlineWidthN0: GeneratedSkribbleValue {
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+}
+pub trait GeneratedValueSetOutlineWidthN1: GeneratedSkribbleValue {
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+}
+pub trait GeneratedValueSetOutlineWidthN2: GeneratedSkribbleValue {
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+}
+pub trait GeneratedValueSetOutlineWidthN4: GeneratedSkribbleValue {
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+}
+pub trait GeneratedValueSetOutlineWidthN8: GeneratedSkribbleValue {
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+}
+pub trait GeneratedValueSetRingWidthN0: GeneratedSkribbleValue {
+  #[inline]
+  fn n0(&self) -> String {
+    self.append_value("0")
+  }
+}
+pub trait GeneratedValueSetRingWidthN1: GeneratedSkribbleValue {
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+}
+pub trait GeneratedValueSetRingWidthN2: GeneratedSkribbleValue {
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+}
+pub trait GeneratedValueSetRingWidthN4: GeneratedSkribbleValue {
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+}
+pub trait GeneratedValueSetRingWidthN8: GeneratedSkribbleValue {
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+}
+pub trait GeneratedValueSetOutlineStyleDefault: GeneratedSkribbleValue {
+  #[inline]
+  fn default(&self) -> String {
+    self.append_value("default")
+  }
+}
+pub trait GeneratedValueSetOutlineStyleDashed: GeneratedSkribbleValue {
+  #[inline]
+  fn dashed(&self) -> String {
+    self.append_value("dashed")
+  }
+}
+pub trait GeneratedValueSetOutlineStyleDotted: GeneratedSkribbleValue {
+  #[inline]
+  fn dotted(&self) -> String {
+    self.append_value("dotted")
+  }
+}
+pub trait GeneratedValueSetOutlineStyleDouble: GeneratedSkribbleValue {
+  #[inline]
+  fn double(&self) -> String {
+    self.append_value("double")
+  }
+}
 pub struct GeneratedAtomSrChild(String);
 impl GeneratedSkribbleValue for GeneratedAtomSrChild {
   #[inline]
@@ -16462,6 +16659,8 @@ impl GeneratedColorWarning for GeneratedAtomFillChild {}
 impl GeneratedColorWarningContent for GeneratedAtomFillChild {}
 impl GeneratedColorError for GeneratedAtomFillChild {}
 impl GeneratedColorErrorContent for GeneratedAtomFillChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomFillChild {}
+impl GeneratedColorRingColor for GeneratedAtomFillChild {}
 impl GeneratedColorBlack for GeneratedAtomFillChild {}
 impl GeneratedColorWhite for GeneratedAtomFillChild {}
 impl GeneratedColorSlate50 for GeneratedAtomFillChild {}
@@ -16740,6 +16939,8 @@ impl GeneratedColorWarning for GeneratedAtomStrokeChild {}
 impl GeneratedColorWarningContent for GeneratedAtomStrokeChild {}
 impl GeneratedColorError for GeneratedAtomStrokeChild {}
 impl GeneratedColorErrorContent for GeneratedAtomStrokeChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomStrokeChild {}
+impl GeneratedColorRingColor for GeneratedAtomStrokeChild {}
 impl GeneratedColorBlack for GeneratedAtomStrokeChild {}
 impl GeneratedColorWhite for GeneratedAtomStrokeChild {}
 impl GeneratedColorSlate50 for GeneratedAtomStrokeChild {}
@@ -17254,6 +17455,8 @@ impl GeneratedColorWarning for GeneratedAtomTextChild {}
 impl GeneratedColorWarningContent for GeneratedAtomTextChild {}
 impl GeneratedColorError for GeneratedAtomTextChild {}
 impl GeneratedColorErrorContent for GeneratedAtomTextChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomTextChild {}
+impl GeneratedColorRingColor for GeneratedAtomTextChild {}
 impl GeneratedColorBlack for GeneratedAtomTextChild {}
 impl GeneratedColorWhite for GeneratedAtomTextChild {}
 impl GeneratedColorSlate50 for GeneratedAtomTextChild {}
@@ -17547,6 +17750,8 @@ impl GeneratedColorWarning for GeneratedAtomDecorationChild {}
 impl GeneratedColorWarningContent for GeneratedAtomDecorationChild {}
 impl GeneratedColorError for GeneratedAtomDecorationChild {}
 impl GeneratedColorErrorContent for GeneratedAtomDecorationChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomDecorationChild {}
+impl GeneratedColorRingColor for GeneratedAtomDecorationChild {}
 impl GeneratedColorBlack for GeneratedAtomDecorationChild {}
 impl GeneratedColorWhite for GeneratedAtomDecorationChild {}
 impl GeneratedColorSlate50 for GeneratedAtomDecorationChild {}
@@ -18028,6 +18233,8 @@ impl GeneratedColorWarning for GeneratedAtomBgChild {}
 impl GeneratedColorWarningContent for GeneratedAtomBgChild {}
 impl GeneratedColorError for GeneratedAtomBgChild {}
 impl GeneratedColorErrorContent for GeneratedAtomBgChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomBgChild {}
+impl GeneratedColorRingColor for GeneratedAtomBgChild {}
 impl GeneratedColorBlack for GeneratedAtomBgChild {}
 impl GeneratedColorWhite for GeneratedAtomBgChild {}
 impl GeneratedColorSlate50 for GeneratedAtomBgChild {}
@@ -18406,6 +18613,8 @@ impl GeneratedColorWarning for GeneratedAtomFromColorChild {}
 impl GeneratedColorWarningContent for GeneratedAtomFromColorChild {}
 impl GeneratedColorError for GeneratedAtomFromColorChild {}
 impl GeneratedColorErrorContent for GeneratedAtomFromColorChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomFromColorChild {}
+impl GeneratedColorRingColor for GeneratedAtomFromColorChild {}
 impl GeneratedColorBlack for GeneratedAtomFromColorChild {}
 impl GeneratedColorWhite for GeneratedAtomFromColorChild {}
 impl GeneratedColorSlate50 for GeneratedAtomFromColorChild {}
@@ -18748,6 +18957,8 @@ impl GeneratedColorWarning for GeneratedAtomToColorChild {}
 impl GeneratedColorWarningContent for GeneratedAtomToColorChild {}
 impl GeneratedColorError for GeneratedAtomToColorChild {}
 impl GeneratedColorErrorContent for GeneratedAtomToColorChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomToColorChild {}
+impl GeneratedColorRingColor for GeneratedAtomToColorChild {}
 impl GeneratedColorBlack for GeneratedAtomToColorChild {}
 impl GeneratedColorWhite for GeneratedAtomToColorChild {}
 impl GeneratedColorSlate50 for GeneratedAtomToColorChild {}
@@ -19566,6 +19777,8 @@ impl GeneratedColorWarning for GeneratedAtomBorderColorChild {}
 impl GeneratedColorWarningContent for GeneratedAtomBorderColorChild {}
 impl GeneratedColorError for GeneratedAtomBorderColorChild {}
 impl GeneratedColorErrorContent for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomBorderColorChild {}
+impl GeneratedColorRingColor for GeneratedAtomBorderColorChild {}
 impl GeneratedColorBlack for GeneratedAtomBorderColorChild {}
 impl GeneratedColorWhite for GeneratedAtomBorderColorChild {}
 impl GeneratedColorSlate50 for GeneratedAtomBorderColorChild {}
@@ -19844,6 +20057,8 @@ impl GeneratedColorWarning for GeneratedAtomBorderColorXChild {}
 impl GeneratedColorWarningContent for GeneratedAtomBorderColorXChild {}
 impl GeneratedColorError for GeneratedAtomBorderColorXChild {}
 impl GeneratedColorErrorContent for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomBorderColorXChild {}
+impl GeneratedColorRingColor for GeneratedAtomBorderColorXChild {}
 impl GeneratedColorBlack for GeneratedAtomBorderColorXChild {}
 impl GeneratedColorWhite for GeneratedAtomBorderColorXChild {}
 impl GeneratedColorSlate50 for GeneratedAtomBorderColorXChild {}
@@ -20122,6 +20337,8 @@ impl GeneratedColorWarning for GeneratedAtomBorderColorYChild {}
 impl GeneratedColorWarningContent for GeneratedAtomBorderColorYChild {}
 impl GeneratedColorError for GeneratedAtomBorderColorYChild {}
 impl GeneratedColorErrorContent for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomBorderColorYChild {}
+impl GeneratedColorRingColor for GeneratedAtomBorderColorYChild {}
 impl GeneratedColorBlack for GeneratedAtomBorderColorYChild {}
 impl GeneratedColorWhite for GeneratedAtomBorderColorYChild {}
 impl GeneratedColorSlate50 for GeneratedAtomBorderColorYChild {}
@@ -20400,6 +20617,8 @@ impl GeneratedColorWarning for GeneratedAtomBorderColorInlineChild {}
 impl GeneratedColorWarningContent for GeneratedAtomBorderColorInlineChild {}
 impl GeneratedColorError for GeneratedAtomBorderColorInlineChild {}
 impl GeneratedColorErrorContent for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomBorderColorInlineChild {}
+impl GeneratedColorRingColor for GeneratedAtomBorderColorInlineChild {}
 impl GeneratedColorBlack for GeneratedAtomBorderColorInlineChild {}
 impl GeneratedColorWhite for GeneratedAtomBorderColorInlineChild {}
 impl GeneratedColorSlate50 for GeneratedAtomBorderColorInlineChild {}
@@ -20678,6 +20897,8 @@ impl GeneratedColorWarning for GeneratedAtomBorderColorInlineStartChild {}
 impl GeneratedColorWarningContent for GeneratedAtomBorderColorInlineStartChild {}
 impl GeneratedColorError for GeneratedAtomBorderColorInlineStartChild {}
 impl GeneratedColorErrorContent for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomBorderColorInlineStartChild {}
+impl GeneratedColorRingColor for GeneratedAtomBorderColorInlineStartChild {}
 impl GeneratedColorBlack for GeneratedAtomBorderColorInlineStartChild {}
 impl GeneratedColorWhite for GeneratedAtomBorderColorInlineStartChild {}
 impl GeneratedColorSlate50 for GeneratedAtomBorderColorInlineStartChild {}
@@ -20956,6 +21177,8 @@ impl GeneratedColorWarning for GeneratedAtomBorderColorInlineEndChild {}
 impl GeneratedColorWarningContent for GeneratedAtomBorderColorInlineEndChild {}
 impl GeneratedColorError for GeneratedAtomBorderColorInlineEndChild {}
 impl GeneratedColorErrorContent for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomBorderColorInlineEndChild {}
+impl GeneratedColorRingColor for GeneratedAtomBorderColorInlineEndChild {}
 impl GeneratedColorBlack for GeneratedAtomBorderColorInlineEndChild {}
 impl GeneratedColorWhite for GeneratedAtomBorderColorInlineEndChild {}
 impl GeneratedColorSlate50 for GeneratedAtomBorderColorInlineEndChild {}
@@ -21234,6 +21457,8 @@ impl GeneratedColorWarning for GeneratedAtomBorderColorBlockChild {}
 impl GeneratedColorWarningContent for GeneratedAtomBorderColorBlockChild {}
 impl GeneratedColorError for GeneratedAtomBorderColorBlockChild {}
 impl GeneratedColorErrorContent for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomBorderColorBlockChild {}
+impl GeneratedColorRingColor for GeneratedAtomBorderColorBlockChild {}
 impl GeneratedColorBlack for GeneratedAtomBorderColorBlockChild {}
 impl GeneratedColorWhite for GeneratedAtomBorderColorBlockChild {}
 impl GeneratedColorSlate50 for GeneratedAtomBorderColorBlockChild {}
@@ -21512,6 +21737,8 @@ impl GeneratedColorWarning for GeneratedAtomBorderColorBlockStartChild {}
 impl GeneratedColorWarningContent for GeneratedAtomBorderColorBlockStartChild {}
 impl GeneratedColorError for GeneratedAtomBorderColorBlockStartChild {}
 impl GeneratedColorErrorContent for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomBorderColorBlockStartChild {}
+impl GeneratedColorRingColor for GeneratedAtomBorderColorBlockStartChild {}
 impl GeneratedColorBlack for GeneratedAtomBorderColorBlockStartChild {}
 impl GeneratedColorWhite for GeneratedAtomBorderColorBlockStartChild {}
 impl GeneratedColorSlate50 for GeneratedAtomBorderColorBlockStartChild {}
@@ -21790,6 +22017,8 @@ impl GeneratedColorWarning for GeneratedAtomBorderColorBlockEndChild {}
 impl GeneratedColorWarningContent for GeneratedAtomBorderColorBlockEndChild {}
 impl GeneratedColorError for GeneratedAtomBorderColorBlockEndChild {}
 impl GeneratedColorErrorContent for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomBorderColorBlockEndChild {}
+impl GeneratedColorRingColor for GeneratedAtomBorderColorBlockEndChild {}
 impl GeneratedColorBlack for GeneratedAtomBorderColorBlockEndChild {}
 impl GeneratedColorWhite for GeneratedAtomBorderColorBlockEndChild {}
 impl GeneratedColorSlate50 for GeneratedAtomBorderColorBlockEndChild {}
@@ -22068,6 +22297,8 @@ impl GeneratedColorWarning for GeneratedAtomBorderColorTopChild {}
 impl GeneratedColorWarningContent for GeneratedAtomBorderColorTopChild {}
 impl GeneratedColorError for GeneratedAtomBorderColorTopChild {}
 impl GeneratedColorErrorContent for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomBorderColorTopChild {}
+impl GeneratedColorRingColor for GeneratedAtomBorderColorTopChild {}
 impl GeneratedColorBlack for GeneratedAtomBorderColorTopChild {}
 impl GeneratedColorWhite for GeneratedAtomBorderColorTopChild {}
 impl GeneratedColorSlate50 for GeneratedAtomBorderColorTopChild {}
@@ -22346,6 +22577,8 @@ impl GeneratedColorWarning for GeneratedAtomBorderColorRightChild {}
 impl GeneratedColorWarningContent for GeneratedAtomBorderColorRightChild {}
 impl GeneratedColorError for GeneratedAtomBorderColorRightChild {}
 impl GeneratedColorErrorContent for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomBorderColorRightChild {}
+impl GeneratedColorRingColor for GeneratedAtomBorderColorRightChild {}
 impl GeneratedColorBlack for GeneratedAtomBorderColorRightChild {}
 impl GeneratedColorWhite for GeneratedAtomBorderColorRightChild {}
 impl GeneratedColorSlate50 for GeneratedAtomBorderColorRightChild {}
@@ -22624,6 +22857,8 @@ impl GeneratedColorWarning for GeneratedAtomBorderColorBottomChild {}
 impl GeneratedColorWarningContent for GeneratedAtomBorderColorBottomChild {}
 impl GeneratedColorError for GeneratedAtomBorderColorBottomChild {}
 impl GeneratedColorErrorContent for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomBorderColorBottomChild {}
+impl GeneratedColorRingColor for GeneratedAtomBorderColorBottomChild {}
 impl GeneratedColorBlack for GeneratedAtomBorderColorBottomChild {}
 impl GeneratedColorWhite for GeneratedAtomBorderColorBottomChild {}
 impl GeneratedColorSlate50 for GeneratedAtomBorderColorBottomChild {}
@@ -22902,6 +23137,8 @@ impl GeneratedColorWarning for GeneratedAtomBorderColorLeftChild {}
 impl GeneratedColorWarningContent for GeneratedAtomBorderColorLeftChild {}
 impl GeneratedColorError for GeneratedAtomBorderColorLeftChild {}
 impl GeneratedColorErrorContent for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomBorderColorLeftChild {}
+impl GeneratedColorRingColor for GeneratedAtomBorderColorLeftChild {}
 impl GeneratedColorBlack for GeneratedAtomBorderColorLeftChild {}
 impl GeneratedColorWhite for GeneratedAtomBorderColorLeftChild {}
 impl GeneratedColorSlate50 for GeneratedAtomBorderColorLeftChild {}
@@ -23402,6 +23639,1216 @@ impl GeneratedValueSetDivideYN2 for GeneratedAtomDivideYChild {}
 impl GeneratedValueSetDivideYN4 for GeneratedAtomDivideYChild {}
 impl GeneratedValueSetDivideYN8 for GeneratedAtomDivideYChild {}
 impl GeneratedValueSetDivideYDefault for GeneratedAtomDivideYChild {}
+pub struct GeneratedAtomDivideChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomDivideChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorPrimary for GeneratedAtomDivideChild {}
+impl GeneratedColorPrimaryContent for GeneratedAtomDivideChild {}
+impl GeneratedColorSecondary for GeneratedAtomDivideChild {}
+impl GeneratedColorSecondaryContent for GeneratedAtomDivideChild {}
+impl GeneratedColorAccent for GeneratedAtomDivideChild {}
+impl GeneratedColorAccentContent for GeneratedAtomDivideChild {}
+impl GeneratedColorNeutral for GeneratedAtomDivideChild {}
+impl GeneratedColorNeutralContent for GeneratedAtomDivideChild {}
+impl GeneratedColorBase100 for GeneratedAtomDivideChild {}
+impl GeneratedColorBase200 for GeneratedAtomDivideChild {}
+impl GeneratedColorBase300 for GeneratedAtomDivideChild {}
+impl GeneratedColorBaseContent for GeneratedAtomDivideChild {}
+impl GeneratedColorInfo for GeneratedAtomDivideChild {}
+impl GeneratedColorInfoContent for GeneratedAtomDivideChild {}
+impl GeneratedColorSuccess for GeneratedAtomDivideChild {}
+impl GeneratedColorSuccessContent for GeneratedAtomDivideChild {}
+impl GeneratedColorWarning for GeneratedAtomDivideChild {}
+impl GeneratedColorWarningContent for GeneratedAtomDivideChild {}
+impl GeneratedColorError for GeneratedAtomDivideChild {}
+impl GeneratedColorErrorContent for GeneratedAtomDivideChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomDivideChild {}
+impl GeneratedColorRingColor for GeneratedAtomDivideChild {}
+impl GeneratedColorBlack for GeneratedAtomDivideChild {}
+impl GeneratedColorWhite for GeneratedAtomDivideChild {}
+impl GeneratedColorSlate50 for GeneratedAtomDivideChild {}
+impl GeneratedColorSlate100 for GeneratedAtomDivideChild {}
+impl GeneratedColorSlate200 for GeneratedAtomDivideChild {}
+impl GeneratedColorSlate300 for GeneratedAtomDivideChild {}
+impl GeneratedColorSlate400 for GeneratedAtomDivideChild {}
+impl GeneratedColorSlate500 for GeneratedAtomDivideChild {}
+impl GeneratedColorSlate600 for GeneratedAtomDivideChild {}
+impl GeneratedColorSlate700 for GeneratedAtomDivideChild {}
+impl GeneratedColorSlate800 for GeneratedAtomDivideChild {}
+impl GeneratedColorSlate900 for GeneratedAtomDivideChild {}
+impl GeneratedColorSlate950 for GeneratedAtomDivideChild {}
+impl GeneratedColorGray50 for GeneratedAtomDivideChild {}
+impl GeneratedColorGray100 for GeneratedAtomDivideChild {}
+impl GeneratedColorGray200 for GeneratedAtomDivideChild {}
+impl GeneratedColorGray300 for GeneratedAtomDivideChild {}
+impl GeneratedColorGray400 for GeneratedAtomDivideChild {}
+impl GeneratedColorGray500 for GeneratedAtomDivideChild {}
+impl GeneratedColorGray600 for GeneratedAtomDivideChild {}
+impl GeneratedColorGray700 for GeneratedAtomDivideChild {}
+impl GeneratedColorGray800 for GeneratedAtomDivideChild {}
+impl GeneratedColorGray900 for GeneratedAtomDivideChild {}
+impl GeneratedColorGray950 for GeneratedAtomDivideChild {}
+impl GeneratedColorZinc50 for GeneratedAtomDivideChild {}
+impl GeneratedColorZinc100 for GeneratedAtomDivideChild {}
+impl GeneratedColorZinc200 for GeneratedAtomDivideChild {}
+impl GeneratedColorZinc300 for GeneratedAtomDivideChild {}
+impl GeneratedColorZinc400 for GeneratedAtomDivideChild {}
+impl GeneratedColorZinc500 for GeneratedAtomDivideChild {}
+impl GeneratedColorZinc600 for GeneratedAtomDivideChild {}
+impl GeneratedColorZinc700 for GeneratedAtomDivideChild {}
+impl GeneratedColorZinc800 for GeneratedAtomDivideChild {}
+impl GeneratedColorZinc900 for GeneratedAtomDivideChild {}
+impl GeneratedColorZinc950 for GeneratedAtomDivideChild {}
+impl GeneratedColorNeutral50 for GeneratedAtomDivideChild {}
+impl GeneratedColorNeutral100 for GeneratedAtomDivideChild {}
+impl GeneratedColorNeutral200 for GeneratedAtomDivideChild {}
+impl GeneratedColorNeutral300 for GeneratedAtomDivideChild {}
+impl GeneratedColorNeutral400 for GeneratedAtomDivideChild {}
+impl GeneratedColorNeutral500 for GeneratedAtomDivideChild {}
+impl GeneratedColorNeutral600 for GeneratedAtomDivideChild {}
+impl GeneratedColorNeutral700 for GeneratedAtomDivideChild {}
+impl GeneratedColorNeutral800 for GeneratedAtomDivideChild {}
+impl GeneratedColorNeutral900 for GeneratedAtomDivideChild {}
+impl GeneratedColorNeutral950 for GeneratedAtomDivideChild {}
+impl GeneratedColorStone50 for GeneratedAtomDivideChild {}
+impl GeneratedColorStone100 for GeneratedAtomDivideChild {}
+impl GeneratedColorStone200 for GeneratedAtomDivideChild {}
+impl GeneratedColorStone300 for GeneratedAtomDivideChild {}
+impl GeneratedColorStone400 for GeneratedAtomDivideChild {}
+impl GeneratedColorStone500 for GeneratedAtomDivideChild {}
+impl GeneratedColorStone600 for GeneratedAtomDivideChild {}
+impl GeneratedColorStone700 for GeneratedAtomDivideChild {}
+impl GeneratedColorStone800 for GeneratedAtomDivideChild {}
+impl GeneratedColorStone900 for GeneratedAtomDivideChild {}
+impl GeneratedColorStone950 for GeneratedAtomDivideChild {}
+impl GeneratedColorRed50 for GeneratedAtomDivideChild {}
+impl GeneratedColorRed100 for GeneratedAtomDivideChild {}
+impl GeneratedColorRed200 for GeneratedAtomDivideChild {}
+impl GeneratedColorRed300 for GeneratedAtomDivideChild {}
+impl GeneratedColorRed400 for GeneratedAtomDivideChild {}
+impl GeneratedColorRed500 for GeneratedAtomDivideChild {}
+impl GeneratedColorRed600 for GeneratedAtomDivideChild {}
+impl GeneratedColorRed700 for GeneratedAtomDivideChild {}
+impl GeneratedColorRed800 for GeneratedAtomDivideChild {}
+impl GeneratedColorRed900 for GeneratedAtomDivideChild {}
+impl GeneratedColorRed950 for GeneratedAtomDivideChild {}
+impl GeneratedColorOrange50 for GeneratedAtomDivideChild {}
+impl GeneratedColorOrange100 for GeneratedAtomDivideChild {}
+impl GeneratedColorOrange200 for GeneratedAtomDivideChild {}
+impl GeneratedColorOrange300 for GeneratedAtomDivideChild {}
+impl GeneratedColorOrange400 for GeneratedAtomDivideChild {}
+impl GeneratedColorOrange500 for GeneratedAtomDivideChild {}
+impl GeneratedColorOrange600 for GeneratedAtomDivideChild {}
+impl GeneratedColorOrange700 for GeneratedAtomDivideChild {}
+impl GeneratedColorOrange800 for GeneratedAtomDivideChild {}
+impl GeneratedColorOrange900 for GeneratedAtomDivideChild {}
+impl GeneratedColorOrange950 for GeneratedAtomDivideChild {}
+impl GeneratedColorAmber50 for GeneratedAtomDivideChild {}
+impl GeneratedColorAmber100 for GeneratedAtomDivideChild {}
+impl GeneratedColorAmber200 for GeneratedAtomDivideChild {}
+impl GeneratedColorAmber300 for GeneratedAtomDivideChild {}
+impl GeneratedColorAmber400 for GeneratedAtomDivideChild {}
+impl GeneratedColorAmber500 for GeneratedAtomDivideChild {}
+impl GeneratedColorAmber600 for GeneratedAtomDivideChild {}
+impl GeneratedColorAmber700 for GeneratedAtomDivideChild {}
+impl GeneratedColorAmber800 for GeneratedAtomDivideChild {}
+impl GeneratedColorAmber900 for GeneratedAtomDivideChild {}
+impl GeneratedColorAmber950 for GeneratedAtomDivideChild {}
+impl GeneratedColorYellow50 for GeneratedAtomDivideChild {}
+impl GeneratedColorYellow100 for GeneratedAtomDivideChild {}
+impl GeneratedColorYellow200 for GeneratedAtomDivideChild {}
+impl GeneratedColorYellow300 for GeneratedAtomDivideChild {}
+impl GeneratedColorYellow400 for GeneratedAtomDivideChild {}
+impl GeneratedColorYellow500 for GeneratedAtomDivideChild {}
+impl GeneratedColorYellow600 for GeneratedAtomDivideChild {}
+impl GeneratedColorYellow700 for GeneratedAtomDivideChild {}
+impl GeneratedColorYellow800 for GeneratedAtomDivideChild {}
+impl GeneratedColorYellow900 for GeneratedAtomDivideChild {}
+impl GeneratedColorYellow950 for GeneratedAtomDivideChild {}
+impl GeneratedColorLime50 for GeneratedAtomDivideChild {}
+impl GeneratedColorLime100 for GeneratedAtomDivideChild {}
+impl GeneratedColorLime200 for GeneratedAtomDivideChild {}
+impl GeneratedColorLime300 for GeneratedAtomDivideChild {}
+impl GeneratedColorLime400 for GeneratedAtomDivideChild {}
+impl GeneratedColorLime500 for GeneratedAtomDivideChild {}
+impl GeneratedColorLime600 for GeneratedAtomDivideChild {}
+impl GeneratedColorLime700 for GeneratedAtomDivideChild {}
+impl GeneratedColorLime800 for GeneratedAtomDivideChild {}
+impl GeneratedColorLime900 for GeneratedAtomDivideChild {}
+impl GeneratedColorLime950 for GeneratedAtomDivideChild {}
+impl GeneratedColorGreen50 for GeneratedAtomDivideChild {}
+impl GeneratedColorGreen100 for GeneratedAtomDivideChild {}
+impl GeneratedColorGreen200 for GeneratedAtomDivideChild {}
+impl GeneratedColorGreen300 for GeneratedAtomDivideChild {}
+impl GeneratedColorGreen400 for GeneratedAtomDivideChild {}
+impl GeneratedColorGreen500 for GeneratedAtomDivideChild {}
+impl GeneratedColorGreen600 for GeneratedAtomDivideChild {}
+impl GeneratedColorGreen700 for GeneratedAtomDivideChild {}
+impl GeneratedColorGreen800 for GeneratedAtomDivideChild {}
+impl GeneratedColorGreen900 for GeneratedAtomDivideChild {}
+impl GeneratedColorGreen950 for GeneratedAtomDivideChild {}
+impl GeneratedColorEmerald50 for GeneratedAtomDivideChild {}
+impl GeneratedColorEmerald100 for GeneratedAtomDivideChild {}
+impl GeneratedColorEmerald200 for GeneratedAtomDivideChild {}
+impl GeneratedColorEmerald300 for GeneratedAtomDivideChild {}
+impl GeneratedColorEmerald400 for GeneratedAtomDivideChild {}
+impl GeneratedColorEmerald500 for GeneratedAtomDivideChild {}
+impl GeneratedColorEmerald600 for GeneratedAtomDivideChild {}
+impl GeneratedColorEmerald700 for GeneratedAtomDivideChild {}
+impl GeneratedColorEmerald800 for GeneratedAtomDivideChild {}
+impl GeneratedColorEmerald900 for GeneratedAtomDivideChild {}
+impl GeneratedColorEmerald950 for GeneratedAtomDivideChild {}
+impl GeneratedColorTeal50 for GeneratedAtomDivideChild {}
+impl GeneratedColorTeal100 for GeneratedAtomDivideChild {}
+impl GeneratedColorTeal200 for GeneratedAtomDivideChild {}
+impl GeneratedColorTeal300 for GeneratedAtomDivideChild {}
+impl GeneratedColorTeal400 for GeneratedAtomDivideChild {}
+impl GeneratedColorTeal500 for GeneratedAtomDivideChild {}
+impl GeneratedColorTeal600 for GeneratedAtomDivideChild {}
+impl GeneratedColorTeal700 for GeneratedAtomDivideChild {}
+impl GeneratedColorTeal800 for GeneratedAtomDivideChild {}
+impl GeneratedColorTeal900 for GeneratedAtomDivideChild {}
+impl GeneratedColorTeal950 for GeneratedAtomDivideChild {}
+impl GeneratedColorCyan50 for GeneratedAtomDivideChild {}
+impl GeneratedColorCyan100 for GeneratedAtomDivideChild {}
+impl GeneratedColorCyan200 for GeneratedAtomDivideChild {}
+impl GeneratedColorCyan300 for GeneratedAtomDivideChild {}
+impl GeneratedColorCyan400 for GeneratedAtomDivideChild {}
+impl GeneratedColorCyan500 for GeneratedAtomDivideChild {}
+impl GeneratedColorCyan600 for GeneratedAtomDivideChild {}
+impl GeneratedColorCyan700 for GeneratedAtomDivideChild {}
+impl GeneratedColorCyan800 for GeneratedAtomDivideChild {}
+impl GeneratedColorCyan900 for GeneratedAtomDivideChild {}
+impl GeneratedColorCyan950 for GeneratedAtomDivideChild {}
+impl GeneratedColorSky50 for GeneratedAtomDivideChild {}
+impl GeneratedColorSky100 for GeneratedAtomDivideChild {}
+impl GeneratedColorSky200 for GeneratedAtomDivideChild {}
+impl GeneratedColorSky300 for GeneratedAtomDivideChild {}
+impl GeneratedColorSky400 for GeneratedAtomDivideChild {}
+impl GeneratedColorSky500 for GeneratedAtomDivideChild {}
+impl GeneratedColorSky600 for GeneratedAtomDivideChild {}
+impl GeneratedColorSky700 for GeneratedAtomDivideChild {}
+impl GeneratedColorSky800 for GeneratedAtomDivideChild {}
+impl GeneratedColorSky900 for GeneratedAtomDivideChild {}
+impl GeneratedColorSky950 for GeneratedAtomDivideChild {}
+impl GeneratedColorBlue50 for GeneratedAtomDivideChild {}
+impl GeneratedColorBlue100 for GeneratedAtomDivideChild {}
+impl GeneratedColorBlue200 for GeneratedAtomDivideChild {}
+impl GeneratedColorBlue300 for GeneratedAtomDivideChild {}
+impl GeneratedColorBlue400 for GeneratedAtomDivideChild {}
+impl GeneratedColorBlue500 for GeneratedAtomDivideChild {}
+impl GeneratedColorBlue600 for GeneratedAtomDivideChild {}
+impl GeneratedColorBlue700 for GeneratedAtomDivideChild {}
+impl GeneratedColorBlue800 for GeneratedAtomDivideChild {}
+impl GeneratedColorBlue900 for GeneratedAtomDivideChild {}
+impl GeneratedColorBlue950 for GeneratedAtomDivideChild {}
+impl GeneratedColorIndigo50 for GeneratedAtomDivideChild {}
+impl GeneratedColorIndigo100 for GeneratedAtomDivideChild {}
+impl GeneratedColorIndigo200 for GeneratedAtomDivideChild {}
+impl GeneratedColorIndigo300 for GeneratedAtomDivideChild {}
+impl GeneratedColorIndigo400 for GeneratedAtomDivideChild {}
+impl GeneratedColorIndigo500 for GeneratedAtomDivideChild {}
+impl GeneratedColorIndigo600 for GeneratedAtomDivideChild {}
+impl GeneratedColorIndigo700 for GeneratedAtomDivideChild {}
+impl GeneratedColorIndigo800 for GeneratedAtomDivideChild {}
+impl GeneratedColorIndigo900 for GeneratedAtomDivideChild {}
+impl GeneratedColorIndigo950 for GeneratedAtomDivideChild {}
+impl GeneratedColorViolet50 for GeneratedAtomDivideChild {}
+impl GeneratedColorViolet100 for GeneratedAtomDivideChild {}
+impl GeneratedColorViolet200 for GeneratedAtomDivideChild {}
+impl GeneratedColorViolet300 for GeneratedAtomDivideChild {}
+impl GeneratedColorViolet400 for GeneratedAtomDivideChild {}
+impl GeneratedColorViolet500 for GeneratedAtomDivideChild {}
+impl GeneratedColorViolet600 for GeneratedAtomDivideChild {}
+impl GeneratedColorViolet700 for GeneratedAtomDivideChild {}
+impl GeneratedColorViolet800 for GeneratedAtomDivideChild {}
+impl GeneratedColorViolet900 for GeneratedAtomDivideChild {}
+impl GeneratedColorViolet950 for GeneratedAtomDivideChild {}
+impl GeneratedColorPurple50 for GeneratedAtomDivideChild {}
+impl GeneratedColorPurple100 for GeneratedAtomDivideChild {}
+impl GeneratedColorPurple200 for GeneratedAtomDivideChild {}
+impl GeneratedColorPurple300 for GeneratedAtomDivideChild {}
+impl GeneratedColorPurple400 for GeneratedAtomDivideChild {}
+impl GeneratedColorPurple500 for GeneratedAtomDivideChild {}
+impl GeneratedColorPurple600 for GeneratedAtomDivideChild {}
+impl GeneratedColorPurple700 for GeneratedAtomDivideChild {}
+impl GeneratedColorPurple800 for GeneratedAtomDivideChild {}
+impl GeneratedColorPurple900 for GeneratedAtomDivideChild {}
+impl GeneratedColorPurple950 for GeneratedAtomDivideChild {}
+impl GeneratedColorFuchsia50 for GeneratedAtomDivideChild {}
+impl GeneratedColorFuchsia100 for GeneratedAtomDivideChild {}
+impl GeneratedColorFuchsia200 for GeneratedAtomDivideChild {}
+impl GeneratedColorFuchsia300 for GeneratedAtomDivideChild {}
+impl GeneratedColorFuchsia400 for GeneratedAtomDivideChild {}
+impl GeneratedColorFuchsia500 for GeneratedAtomDivideChild {}
+impl GeneratedColorFuchsia600 for GeneratedAtomDivideChild {}
+impl GeneratedColorFuchsia700 for GeneratedAtomDivideChild {}
+impl GeneratedColorFuchsia800 for GeneratedAtomDivideChild {}
+impl GeneratedColorFuchsia900 for GeneratedAtomDivideChild {}
+impl GeneratedColorFuchsia950 for GeneratedAtomDivideChild {}
+impl GeneratedColorPink50 for GeneratedAtomDivideChild {}
+impl GeneratedColorPink100 for GeneratedAtomDivideChild {}
+impl GeneratedColorPink200 for GeneratedAtomDivideChild {}
+impl GeneratedColorPink300 for GeneratedAtomDivideChild {}
+impl GeneratedColorPink400 for GeneratedAtomDivideChild {}
+impl GeneratedColorPink500 for GeneratedAtomDivideChild {}
+impl GeneratedColorPink600 for GeneratedAtomDivideChild {}
+impl GeneratedColorPink700 for GeneratedAtomDivideChild {}
+impl GeneratedColorPink800 for GeneratedAtomDivideChild {}
+impl GeneratedColorPink900 for GeneratedAtomDivideChild {}
+impl GeneratedColorPink950 for GeneratedAtomDivideChild {}
+impl GeneratedColorRose50 for GeneratedAtomDivideChild {}
+impl GeneratedColorRose100 for GeneratedAtomDivideChild {}
+impl GeneratedColorRose200 for GeneratedAtomDivideChild {}
+impl GeneratedColorRose300 for GeneratedAtomDivideChild {}
+impl GeneratedColorRose400 for GeneratedAtomDivideChild {}
+impl GeneratedColorRose500 for GeneratedAtomDivideChild {}
+impl GeneratedColorRose600 for GeneratedAtomDivideChild {}
+impl GeneratedColorRose700 for GeneratedAtomDivideChild {}
+impl GeneratedColorRose800 for GeneratedAtomDivideChild {}
+impl GeneratedColorRose900 for GeneratedAtomDivideChild {}
+impl GeneratedColorRose950 for GeneratedAtomDivideChild {}
+impl GeneratedColorInherit for GeneratedAtomDivideChild {}
+impl GeneratedColorTransparent for GeneratedAtomDivideChild {}
+impl GeneratedColorCurrent for GeneratedAtomDivideChild {}
+pub struct GeneratedAtomDivideStyleChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomDivideStyleChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetDivideStyleSolid for GeneratedAtomDivideStyleChild {}
+impl GeneratedValueSetDivideStyleDashed for GeneratedAtomDivideStyleChild {}
+impl GeneratedValueSetDivideStyleDotted for GeneratedAtomDivideStyleChild {}
+impl GeneratedValueSetDivideStyleDouble for GeneratedAtomDivideStyleChild {}
+impl GeneratedValueSetDivideStyleNone for GeneratedAtomDivideStyleChild {}
+pub struct GeneratedAtomOutlineWidthChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomOutlineWidthChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetOutlineWidthN0 for GeneratedAtomOutlineWidthChild {}
+impl GeneratedValueSetOutlineWidthN1 for GeneratedAtomOutlineWidthChild {}
+impl GeneratedValueSetOutlineWidthN2 for GeneratedAtomOutlineWidthChild {}
+impl GeneratedValueSetOutlineWidthN4 for GeneratedAtomOutlineWidthChild {}
+impl GeneratedValueSetOutlineWidthN8 for GeneratedAtomOutlineWidthChild {}
+pub struct GeneratedAtomOutlineChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomOutlineChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorPrimary for GeneratedAtomOutlineChild {}
+impl GeneratedColorPrimaryContent for GeneratedAtomOutlineChild {}
+impl GeneratedColorSecondary for GeneratedAtomOutlineChild {}
+impl GeneratedColorSecondaryContent for GeneratedAtomOutlineChild {}
+impl GeneratedColorAccent for GeneratedAtomOutlineChild {}
+impl GeneratedColorAccentContent for GeneratedAtomOutlineChild {}
+impl GeneratedColorNeutral for GeneratedAtomOutlineChild {}
+impl GeneratedColorNeutralContent for GeneratedAtomOutlineChild {}
+impl GeneratedColorBase100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorBase200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorBase300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorBaseContent for GeneratedAtomOutlineChild {}
+impl GeneratedColorInfo for GeneratedAtomOutlineChild {}
+impl GeneratedColorInfoContent for GeneratedAtomOutlineChild {}
+impl GeneratedColorSuccess for GeneratedAtomOutlineChild {}
+impl GeneratedColorSuccessContent for GeneratedAtomOutlineChild {}
+impl GeneratedColorWarning for GeneratedAtomOutlineChild {}
+impl GeneratedColorWarningContent for GeneratedAtomOutlineChild {}
+impl GeneratedColorError for GeneratedAtomOutlineChild {}
+impl GeneratedColorErrorContent for GeneratedAtomOutlineChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomOutlineChild {}
+impl GeneratedColorRingColor for GeneratedAtomOutlineChild {}
+impl GeneratedColorBlack for GeneratedAtomOutlineChild {}
+impl GeneratedColorWhite for GeneratedAtomOutlineChild {}
+impl GeneratedColorSlate50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSlate100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSlate200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSlate300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSlate400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSlate500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSlate600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSlate700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSlate800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSlate900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSlate950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGray50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGray100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGray200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGray300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGray400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGray500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGray600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGray700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGray800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGray900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGray950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorZinc50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorZinc100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorZinc200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorZinc300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorZinc400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorZinc500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorZinc600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorZinc700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorZinc800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorZinc900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorZinc950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorNeutral50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorNeutral100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorNeutral200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorNeutral300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorNeutral400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorNeutral500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorNeutral600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorNeutral700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorNeutral800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorNeutral900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorNeutral950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorStone50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorStone100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorStone200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorStone300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorStone400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorStone500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorStone600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorStone700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorStone800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorStone900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorStone950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRed50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRed100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRed200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRed300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRed400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRed500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRed600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRed700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRed800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRed900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRed950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorOrange50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorOrange100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorOrange200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorOrange300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorOrange400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorOrange500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorOrange600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorOrange700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorOrange800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorOrange900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorOrange950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorAmber50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorAmber100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorAmber200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorAmber300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorAmber400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorAmber500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorAmber600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorAmber700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorAmber800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorAmber900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorAmber950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorYellow50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorYellow100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorYellow200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorYellow300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorYellow400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorYellow500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorYellow600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorYellow700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorYellow800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorYellow900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorYellow950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorLime50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorLime100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorLime200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorLime300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorLime400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorLime500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorLime600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorLime700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorLime800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorLime900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorLime950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGreen50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGreen100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGreen200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGreen300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGreen400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGreen500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGreen600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGreen700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGreen800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGreen900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorGreen950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorEmerald50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorEmerald100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorEmerald200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorEmerald300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorEmerald400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorEmerald500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorEmerald600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorEmerald700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorEmerald800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorEmerald900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorEmerald950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorTeal50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorTeal100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorTeal200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorTeal300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorTeal400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorTeal500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorTeal600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorTeal700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorTeal800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorTeal900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorTeal950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorCyan50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorCyan100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorCyan200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorCyan300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorCyan400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorCyan500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorCyan600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorCyan700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorCyan800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorCyan900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorCyan950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSky50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSky100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSky200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSky300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSky400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSky500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSky600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSky700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSky800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSky900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorSky950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorBlue50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorBlue100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorBlue200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorBlue300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorBlue400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorBlue500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorBlue600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorBlue700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorBlue800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorBlue900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorBlue950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorIndigo50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorIndigo100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorIndigo200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorIndigo300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorIndigo400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorIndigo500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorIndigo600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorIndigo700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorIndigo800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorIndigo900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorIndigo950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorViolet50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorViolet100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorViolet200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorViolet300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorViolet400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorViolet500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorViolet600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorViolet700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorViolet800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorViolet900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorViolet950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPurple50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPurple100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPurple200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPurple300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPurple400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPurple500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPurple600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPurple700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPurple800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPurple900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPurple950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorFuchsia50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorFuchsia100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorFuchsia200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorFuchsia300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorFuchsia400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorFuchsia500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorFuchsia600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorFuchsia700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorFuchsia800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorFuchsia900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorFuchsia950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPink50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPink100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPink200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPink300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPink400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPink500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPink600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPink700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPink800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPink900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorPink950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRose50 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRose100 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRose200 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRose300 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRose400 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRose500 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRose600 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRose700 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRose800 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRose900 for GeneratedAtomOutlineChild {}
+impl GeneratedColorRose950 for GeneratedAtomOutlineChild {}
+impl GeneratedColorInherit for GeneratedAtomOutlineChild {}
+impl GeneratedColorTransparent for GeneratedAtomOutlineChild {}
+impl GeneratedColorCurrent for GeneratedAtomOutlineChild {}
+pub struct GeneratedAtomOutlineStyleChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomOutlineStyleChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetOutlineStyleDefault for GeneratedAtomOutlineStyleChild {}
+impl GeneratedValueSetOutlineStyleDashed for GeneratedAtomOutlineStyleChild {}
+impl GeneratedValueSetOutlineStyleDotted for GeneratedAtomOutlineStyleChild {}
+impl GeneratedValueSetOutlineStyleDouble for GeneratedAtomOutlineStyleChild {}
+pub struct GeneratedAtomOutlineOffsetChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomOutlineOffsetChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub struct GeneratedAtomRingChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRingChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetRingWidthN0 for GeneratedAtomRingChild {}
+impl GeneratedValueSetRingWidthN1 for GeneratedAtomRingChild {}
+impl GeneratedValueSetRingWidthN2 for GeneratedAtomRingChild {}
+impl GeneratedValueSetRingWidthN4 for GeneratedAtomRingChild {}
+impl GeneratedValueSetRingWidthN8 for GeneratedAtomRingChild {}
+pub struct GeneratedAtomRingColorChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRingColorChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorPrimary for GeneratedAtomRingColorChild {}
+impl GeneratedColorPrimaryContent for GeneratedAtomRingColorChild {}
+impl GeneratedColorSecondary for GeneratedAtomRingColorChild {}
+impl GeneratedColorSecondaryContent for GeneratedAtomRingColorChild {}
+impl GeneratedColorAccent for GeneratedAtomRingColorChild {}
+impl GeneratedColorAccentContent for GeneratedAtomRingColorChild {}
+impl GeneratedColorNeutral for GeneratedAtomRingColorChild {}
+impl GeneratedColorNeutralContent for GeneratedAtomRingColorChild {}
+impl GeneratedColorBase100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorBase200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorBase300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorBaseContent for GeneratedAtomRingColorChild {}
+impl GeneratedColorInfo for GeneratedAtomRingColorChild {}
+impl GeneratedColorInfoContent for GeneratedAtomRingColorChild {}
+impl GeneratedColorSuccess for GeneratedAtomRingColorChild {}
+impl GeneratedColorSuccessContent for GeneratedAtomRingColorChild {}
+impl GeneratedColorWarning for GeneratedAtomRingColorChild {}
+impl GeneratedColorWarningContent for GeneratedAtomRingColorChild {}
+impl GeneratedColorError for GeneratedAtomRingColorChild {}
+impl GeneratedColorErrorContent for GeneratedAtomRingColorChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomRingColorChild {}
+impl GeneratedColorRingColor for GeneratedAtomRingColorChild {}
+impl GeneratedColorBlack for GeneratedAtomRingColorChild {}
+impl GeneratedColorWhite for GeneratedAtomRingColorChild {}
+impl GeneratedColorSlate50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSlate100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSlate200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSlate300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSlate400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSlate500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSlate600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSlate700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSlate800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSlate900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSlate950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGray50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGray100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGray200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGray300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGray400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGray500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGray600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGray700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGray800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGray900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGray950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorZinc50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorZinc100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorZinc200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorZinc300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorZinc400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorZinc500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorZinc600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorZinc700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorZinc800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorZinc900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorZinc950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorNeutral50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorNeutral100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorNeutral200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorNeutral300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorNeutral400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorNeutral500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorNeutral600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorNeutral700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorNeutral800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorNeutral900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorNeutral950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorStone50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorStone100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorStone200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorStone300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorStone400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorStone500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorStone600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorStone700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorStone800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorStone900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorStone950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRed50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRed100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRed200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRed300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRed400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRed500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRed600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRed700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRed800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRed900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRed950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorOrange50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorOrange100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorOrange200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorOrange300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorOrange400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorOrange500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorOrange600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorOrange700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorOrange800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorOrange900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorOrange950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorAmber50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorAmber100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorAmber200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorAmber300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorAmber400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorAmber500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorAmber600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorAmber700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorAmber800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorAmber900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorAmber950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorYellow50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorYellow100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorYellow200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorYellow300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorYellow400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorYellow500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorYellow600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorYellow700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorYellow800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorYellow900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorYellow950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorLime50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorLime100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorLime200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorLime300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorLime400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorLime500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorLime600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorLime700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorLime800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorLime900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorLime950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGreen50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGreen100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGreen200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGreen300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGreen400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGreen500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGreen600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGreen700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGreen800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGreen900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorGreen950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorEmerald50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorEmerald100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorEmerald200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorEmerald300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorEmerald400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorEmerald500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorEmerald600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorEmerald700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorEmerald800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorEmerald900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorEmerald950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorTeal50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorTeal100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorTeal200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorTeal300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorTeal400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorTeal500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorTeal600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorTeal700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorTeal800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorTeal900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorTeal950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorCyan50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorCyan100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorCyan200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorCyan300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorCyan400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorCyan500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorCyan600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorCyan700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorCyan800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorCyan900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorCyan950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSky50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSky100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSky200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSky300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSky400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSky500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSky600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSky700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSky800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSky900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorSky950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorBlue50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorBlue100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorBlue200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorBlue300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorBlue400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorBlue500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorBlue600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorBlue700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorBlue800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorBlue900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorBlue950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorIndigo50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorIndigo100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorIndigo200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorIndigo300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorIndigo400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorIndigo500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorIndigo600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorIndigo700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorIndigo800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorIndigo900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorIndigo950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorViolet50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorViolet100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorViolet200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorViolet300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorViolet400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorViolet500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorViolet600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorViolet700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorViolet800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorViolet900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorViolet950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPurple50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPurple100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPurple200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPurple300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPurple400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPurple500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPurple600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPurple700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPurple800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPurple900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPurple950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorFuchsia50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorFuchsia100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorFuchsia200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorFuchsia300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorFuchsia400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorFuchsia500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorFuchsia600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorFuchsia700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorFuchsia800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorFuchsia900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorFuchsia950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPink50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPink100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPink200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPink300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPink400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPink500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPink600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPink700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPink800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPink900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorPink950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRose50 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRose100 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRose200 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRose300 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRose400 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRose500 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRose600 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRose700 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRose800 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRose900 for GeneratedAtomRingColorChild {}
+impl GeneratedColorRose950 for GeneratedAtomRingColorChild {}
+impl GeneratedColorInherit for GeneratedAtomRingColorChild {}
+impl GeneratedColorTransparent for GeneratedAtomRingColorChild {}
+impl GeneratedColorCurrent for GeneratedAtomRingColorChild {}
+pub struct GeneratedAtomRingOffsetChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRingOffsetChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetRingWidthN0 for GeneratedAtomRingOffsetChild {}
+impl GeneratedValueSetRingWidthN1 for GeneratedAtomRingOffsetChild {}
+impl GeneratedValueSetRingWidthN2 for GeneratedAtomRingOffsetChild {}
+impl GeneratedValueSetRingWidthN4 for GeneratedAtomRingOffsetChild {}
+impl GeneratedValueSetRingWidthN8 for GeneratedAtomRingOffsetChild {}
+pub struct GeneratedAtomRingOffsetColorChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomRingOffsetColorChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorPrimary for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPrimaryContent for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSecondary for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSecondaryContent for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorAccent for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorAccentContent for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorNeutral for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorNeutralContent for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorBase100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorBase200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorBase300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorBaseContent for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorInfo for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorInfoContent for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSuccess for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSuccessContent for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorWarning for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorWarningContent for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorError for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorErrorContent for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRingColor for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorBlack for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorWhite for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSlate50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSlate100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSlate200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSlate300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSlate400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSlate500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSlate600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSlate700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSlate800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSlate900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSlate950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGray50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGray100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGray200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGray300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGray400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGray500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGray600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGray700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGray800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGray900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGray950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorZinc50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorZinc100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorZinc200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorZinc300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorZinc400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorZinc500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorZinc600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorZinc700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorZinc800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorZinc900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorZinc950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorNeutral50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorNeutral100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorNeutral200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorNeutral300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorNeutral400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorNeutral500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorNeutral600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorNeutral700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorNeutral800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorNeutral900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorNeutral950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorStone50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorStone100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorStone200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorStone300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorStone400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorStone500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorStone600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorStone700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorStone800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorStone900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorStone950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRed50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRed100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRed200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRed300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRed400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRed500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRed600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRed700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRed800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRed900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRed950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorOrange50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorOrange100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorOrange200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorOrange300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorOrange400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorOrange500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorOrange600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorOrange700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorOrange800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorOrange900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorOrange950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorAmber50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorAmber100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorAmber200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorAmber300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorAmber400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorAmber500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorAmber600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorAmber700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorAmber800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorAmber900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorAmber950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorYellow50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorYellow100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorYellow200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorYellow300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorYellow400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorYellow500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorYellow600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorYellow700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorYellow800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorYellow900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorYellow950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorLime50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorLime100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorLime200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorLime300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorLime400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorLime500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorLime600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorLime700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorLime800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorLime900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorLime950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGreen50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGreen100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGreen200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGreen300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGreen400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGreen500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGreen600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGreen700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGreen800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGreen900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorGreen950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorEmerald50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorEmerald100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorEmerald200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorEmerald300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorEmerald400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorEmerald500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorEmerald600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorEmerald700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorEmerald800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorEmerald900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorEmerald950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorTeal50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorTeal100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorTeal200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorTeal300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorTeal400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorTeal500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorTeal600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorTeal700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorTeal800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorTeal900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorTeal950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorCyan50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorCyan100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorCyan200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorCyan300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorCyan400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorCyan500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorCyan600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorCyan700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorCyan800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorCyan900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorCyan950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSky50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSky100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSky200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSky300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSky400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSky500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSky600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSky700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSky800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSky900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorSky950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorBlue50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorBlue100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorBlue200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorBlue300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorBlue400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorBlue500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorBlue600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorBlue700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorBlue800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorBlue900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorBlue950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorIndigo50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorIndigo100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorIndigo200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorIndigo300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorIndigo400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorIndigo500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorIndigo600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorIndigo700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorIndigo800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorIndigo900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorIndigo950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorViolet50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorViolet100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorViolet200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorViolet300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorViolet400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorViolet500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorViolet600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorViolet700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorViolet800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorViolet900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorViolet950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPurple50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPurple100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPurple200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPurple300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPurple400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPurple500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPurple600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPurple700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPurple800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPurple900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPurple950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorFuchsia50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorFuchsia100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorFuchsia200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorFuchsia300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorFuchsia400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorFuchsia500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorFuchsia600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorFuchsia700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorFuchsia800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorFuchsia900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorFuchsia950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPink50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPink100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPink200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPink300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPink400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPink500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPink600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPink700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPink800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPink900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorPink950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRose50 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRose100 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRose200 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRose300 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRose400 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRose500 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRose600 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRose700 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRose800 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRose900 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorRose950 for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorInherit for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorTransparent for GeneratedAtomRingOffsetColorChild {}
+impl GeneratedColorCurrent for GeneratedAtomRingOffsetColorChild {}
 pub struct GeneratedAtomScaleChild(String);
 impl GeneratedSkribbleValue for GeneratedAtomScaleChild {
   #[inline]
@@ -26417,6 +27864,106 @@ pub trait GeneratedAtomDivideY: GeneratedSkribbleValue {
     self.append(format!("divide-y:[{}]", value.trim()))
   }
 }
+pub trait GeneratedAtomDivide: GeneratedSkribbleValue {
+  #[inline]
+  fn divide(&self) -> GeneratedAtomDivideChild {
+    GeneratedAtomDivideChild::from_ref(self.append("divide"))
+  }
+  #[inline]
+  fn divide_(&self, value: &'static str) -> String {
+    self.append(format!("divide:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomDivideStyle: GeneratedSkribbleValue {
+  #[inline]
+  fn divide_style(&self) -> GeneratedAtomDivideStyleChild {
+    GeneratedAtomDivideStyleChild::from_ref(self.append("divide-style"))
+  }
+  #[inline]
+  fn divide_style_(&self, value: &'static str) -> String {
+    self.append(format!("divide-style:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomOutlineWidth: GeneratedSkribbleValue {
+  #[inline]
+  fn outline_width(&self) -> GeneratedAtomOutlineWidthChild {
+    GeneratedAtomOutlineWidthChild::from_ref(self.append("outline-width"))
+  }
+  #[inline]
+  fn outline_width_(&self, value: &'static str) -> String {
+    self.append(format!("outline-width:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomOutline: GeneratedSkribbleValue {
+  #[inline]
+  fn outline(&self) -> GeneratedAtomOutlineChild {
+    GeneratedAtomOutlineChild::from_ref(self.append("outline"))
+  }
+  #[inline]
+  fn outline_(&self, value: &'static str) -> String {
+    self.append(format!("outline:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomOutlineStyle: GeneratedSkribbleValue {
+  #[inline]
+  fn outline_style(&self) -> GeneratedAtomOutlineStyleChild {
+    GeneratedAtomOutlineStyleChild::from_ref(self.append("outline-style"))
+  }
+  #[inline]
+  fn outline_style_(&self, value: &'static str) -> String {
+    self.append(format!("outline-style:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomOutlineOffset: GeneratedSkribbleValue {
+  #[inline]
+  fn outline_offset(&self) -> GeneratedAtomOutlineOffsetChild {
+    GeneratedAtomOutlineOffsetChild::from_ref(self.append("outline-offset"))
+  }
+  #[inline]
+  fn outline_offset_(&self, value: &'static str) -> String {
+    self.append(format!("outline-offset:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomRing: GeneratedSkribbleValue {
+  #[inline]
+  fn ring(&self) -> GeneratedAtomRingChild {
+    GeneratedAtomRingChild::from_ref(self.append("ring"))
+  }
+  #[inline]
+  fn ring_(&self, value: &'static str) -> String {
+    self.append(format!("ring:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomRingColor: GeneratedSkribbleValue {
+  #[inline]
+  fn ring_color(&self) -> GeneratedAtomRingColorChild {
+    GeneratedAtomRingColorChild::from_ref(self.append("ring-color"))
+  }
+  #[inline]
+  fn ring_color_(&self, value: &'static str) -> String {
+    self.append(format!("ring-color:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomRingOffset: GeneratedSkribbleValue {
+  #[inline]
+  fn ring_offset(&self) -> GeneratedAtomRingOffsetChild {
+    GeneratedAtomRingOffsetChild::from_ref(self.append("ring-offset"))
+  }
+  #[inline]
+  fn ring_offset_(&self, value: &'static str) -> String {
+    self.append(format!("ring-offset:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomRingOffsetColor: GeneratedSkribbleValue {
+  #[inline]
+  fn ring_offset_color(&self) -> GeneratedAtomRingOffsetColorChild {
+    GeneratedAtomRingOffsetColorChild::from_ref(self.append("ring-offset-color"))
+  }
+  #[inline]
+  fn ring_offset_color_(&self, value: &'static str) -> String {
+    self.append(format!("ring-offset-color:[{}]", value.trim()))
+  }
+}
 pub trait GeneratedAtomScale: GeneratedSkribbleValue {
   #[inline]
   fn scale(&self) -> GeneratedAtomScaleChild {
@@ -26557,14 +28104,6 @@ pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
     self.append_value("subpixel-antialiased")
   }
   #[inline]
-  fn invisible(&self) -> String {
-    self.append_value("invisible")
-  }
-  #[inline]
-  fn visible(&self) -> String {
-    self.append_value("visible")
-  }
-  #[inline]
   fn transform_gpu(&self) -> String {
     self.append_value("transform-gpu")
   }
@@ -26587,6 +28126,10 @@ pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   #[inline]
   fn sr_exclude(&self) -> String {
     self.append_value("sr-exclude")
+  }
+  #[inline]
+  fn outline_none(&self) -> String {
+    self.append_value("outline-none")
   }
 }
 pub trait GeneratedAliases: GeneratedSkribbleValue {
@@ -26675,11 +28218,11 @@ pub trait GeneratedAliases: GeneratedSkribbleValue {
     ["display:$none"].map(|class| self.append(class)).join(" ")
   }
   #[inline]
-  fn visible_1(&self) -> String {
+  fn visible(&self) -> String {
     ["visibility:$visible"].map(|class| self.append(class)).join(" ")
   }
   #[inline]
-  fn invisible_1(&self) -> String {
+  fn invisible(&self) -> String {
     ["visibility:$hidden"].map(|class| self.append(class)).join(" ")
   }
   #[inline]
@@ -27146,6 +28689,10 @@ pub trait GeneratedAliases: GeneratedSkribbleValue {
   fn bg_contain(&self) -> String {
     ["bg-size:$contain"].map(|class| self.append(class)).join(" ")
   }
+  #[inline]
+  fn ring_1(&self) -> String {
+    ["ring:$default"].map(|class| self.append(class)).join(" ")
+  }
 }
 impl GeneratedMediaQueryDeviceCategories for GeneratedSkribbleRoot {}
 impl GeneratedMediaQueryBreakpoints for GeneratedSkribbleRoot {}
@@ -27429,6 +28976,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedSkribbleRoot {}
 impl GeneratedAtomBorderStyleLeft for GeneratedSkribbleRoot {}
 impl GeneratedAtomDivideX for GeneratedSkribbleRoot {}
 impl GeneratedAtomDivideY for GeneratedSkribbleRoot {}
+impl GeneratedAtomDivide for GeneratedSkribbleRoot {}
+impl GeneratedAtomDivideStyle for GeneratedSkribbleRoot {}
+impl GeneratedAtomOutlineWidth for GeneratedSkribbleRoot {}
+impl GeneratedAtomOutline for GeneratedSkribbleRoot {}
+impl GeneratedAtomOutlineStyle for GeneratedSkribbleRoot {}
+impl GeneratedAtomOutlineOffset for GeneratedSkribbleRoot {}
+impl GeneratedAtomRing for GeneratedSkribbleRoot {}
+impl GeneratedAtomRingColor for GeneratedSkribbleRoot {}
+impl GeneratedAtomRingOffset for GeneratedSkribbleRoot {}
+impl GeneratedAtomRingOffsetColor for GeneratedSkribbleRoot {}
 impl GeneratedAtomScale for GeneratedSkribbleRoot {}
 impl GeneratedAtomScaleX for GeneratedSkribbleRoot {}
 impl GeneratedAtomScaleY for GeneratedSkribbleRoot {}
@@ -27723,6 +29280,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedMediaQueryDeviceCategoriesChild
 impl GeneratedAtomBorderStyleLeft for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomDivideX for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomDivideY for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomDivide for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomDivideStyle for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomOutlineWidth for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomOutline for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomOutlineStyle for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomOutlineOffset for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRing for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRingColor for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRingOffset for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomScale for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomScaleX for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomScaleY for GeneratedMediaQueryDeviceCategoriesChild {}
@@ -28016,6 +29583,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomDivideX for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomDivideY for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomDivide for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomDivideStyle for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomOutlineWidth for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomOutline for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomOutlineStyle for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomOutlineOffset for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRing for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRingColor for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRingOffset for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomScale for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomScaleX for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomScaleY for GeneratedMediaQueryBreakpointsChild {}
@@ -28308,6 +29885,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomDivideX for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomDivideY for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomDivide for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomDivideStyle for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomOutlineWidth for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomOutline for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomOutlineStyle for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomOutlineOffset for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRing for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRingColor for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRingOffset for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomScale for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomScaleX for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomScaleY for GeneratedMediaQueryOrientationChild {}
@@ -28599,6 +30186,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomDivideX for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomDivideY for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomDivide for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomDivideStyle for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomOutlineWidth for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomOutline for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomOutlineStyle for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomOutlineOffset for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRing for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRingColor for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRingOffset for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomScale for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomScaleX for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomScaleY for GeneratedMediaQueryMotionChild {}
@@ -28889,6 +30486,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomDivideX for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomDivideY for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomDivide for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomDivideStyle for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomOutlineWidth for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomOutline for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomOutlineStyle for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomOutlineOffset for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRing for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRingColor for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRingOffset for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomScale for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomScaleX for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomScaleY for GeneratedMediaQueryDarkModeChild {}
@@ -29178,6 +30785,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierParentGroupChild {}
@@ -29466,6 +31083,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierHoverGroupChild {}
@@ -29753,6 +31380,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierActiveGroupChild {}
@@ -30039,6 +31676,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierFocusGroupChild {}
@@ -30324,6 +31971,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierFocusWithinGroupChild {
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierFocusWithinGroupChild {}
@@ -30608,6 +32265,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierFocusVisibleGroupChild 
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierFocusVisibleGroupChild {}
@@ -30891,6 +32558,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierEnabledGroupChild {}
@@ -31173,6 +32850,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierEmptyGroupChild {}
@@ -31454,6 +33141,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierReadGroupChild {}
@@ -31734,6 +33431,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierCheckedGroupChild {}
@@ -32013,6 +33720,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierValidGroupChild {}
@@ -32291,6 +34008,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierAutofillGroupChild {}
@@ -32568,6 +34295,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierEvenGroupChild {}
@@ -32844,6 +34581,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierNodePositionGroupChild 
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierNodePositionGroupChild {}
@@ -33119,6 +34866,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierNodeOfTypeGroupChild {}
@@ -33393,6 +35150,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierVisitedGroupChild {}
@@ -33666,6 +35433,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierOptionalGroupChild {}
@@ -33938,6 +35715,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierAriaChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierAriaChild {}
 impl GeneratedAtomDivideX for GeneratedModifierAriaChild {}
 impl GeneratedAtomDivideY for GeneratedModifierAriaChild {}
+impl GeneratedAtomDivide for GeneratedModifierAriaChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierAriaChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierAriaChild {}
+impl GeneratedAtomOutline for GeneratedModifierAriaChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierAriaChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierAriaChild {}
+impl GeneratedAtomRing for GeneratedModifierAriaChild {}
+impl GeneratedAtomRingColor for GeneratedModifierAriaChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierAriaChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierAriaChild {}
 impl GeneratedAtomScale for GeneratedModifierAriaChild {}
 impl GeneratedAtomScaleX for GeneratedModifierAriaChild {}
 impl GeneratedAtomScaleY for GeneratedModifierAriaChild {}
@@ -34209,6 +35996,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierFullScreenGroupChild {}
@@ -34479,6 +36276,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierTargetGroupChild {}
@@ -34748,6 +36555,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierPlaceholderShownGroupCh
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierPlaceholderShownGroupChild {}
@@ -35016,6 +36833,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierRequiredGroupChild {}
@@ -35283,6 +37110,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierDefaultGroupChild {}
@@ -35549,6 +37386,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierOnlyChildGroupChild {}
@@ -35814,6 +37661,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierOnlyGroupChild {}
@@ -36078,6 +37935,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierRootGroupChild {}
@@ -36341,6 +38208,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierLinkGroupChild {}
@@ -36603,6 +38480,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomBorderStyleLeft for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomDivideX for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomDivideY for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomDivide for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomDivideStyle for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomOutlineWidth for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomOutline for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomOutlineStyle for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomOutlineOffset for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRing for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRingColor for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRingOffset for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierPseudoGroupChild {}
@@ -36864,6 +38751,16 @@ impl GeneratedAtomBorderStyleBottom for GeneratedTransformerImportantGroupImport
 impl GeneratedAtomBorderStyleLeft for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomDivideX for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomDivideY for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomDivide for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomDivideStyle for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomOutlineWidth for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomOutline for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomOutlineStyle for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomOutlineOffset for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRing for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRingColor for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRingOffset for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomScale for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomScaleX for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomScaleY for GeneratedTransformerImportantGroupImportantChild {}
@@ -36897,6 +38794,10 @@ impl GeneratedAtomBorderColorTop for GeneratedTransformerAlphaGroupAlphaChild {}
 impl GeneratedAtomBorderColorRight for GeneratedTransformerAlphaGroupAlphaChild {}
 impl GeneratedAtomBorderColorBottom for GeneratedTransformerAlphaGroupAlphaChild {}
 impl GeneratedAtomBorderColorLeft for GeneratedTransformerAlphaGroupAlphaChild {}
+impl GeneratedAtomDivide for GeneratedTransformerAlphaGroupAlphaChild {}
+impl GeneratedAtomOutline for GeneratedTransformerAlphaGroupAlphaChild {}
+impl GeneratedAtomRingColor for GeneratedTransformerAlphaGroupAlphaChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedTransformerAlphaGroupAlphaChild {}
 impl GeneratedAtomFill for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomStroke for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomText for GeneratedTransformerAlphaGroupOpaquifyChild {}
@@ -36917,6 +38818,10 @@ impl GeneratedAtomBorderColorTop for GeneratedTransformerAlphaGroupOpaquifyChild
 impl GeneratedAtomBorderColorRight for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomBorderColorBottom for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomBorderColorLeft for GeneratedTransformerAlphaGroupOpaquifyChild {}
+impl GeneratedAtomDivide for GeneratedTransformerAlphaGroupOpaquifyChild {}
+impl GeneratedAtomOutline for GeneratedTransformerAlphaGroupOpaquifyChild {}
+impl GeneratedAtomRingColor for GeneratedTransformerAlphaGroupOpaquifyChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomFill for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomStroke for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomText for GeneratedTransformerAlphaGroupTransparentizeChild {}
@@ -36937,6 +38842,10 @@ impl GeneratedAtomBorderColorTop for GeneratedTransformerAlphaGroupTransparentiz
 impl GeneratedAtomBorderColorRight for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomBorderColorBottom for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomBorderColorLeft for GeneratedTransformerAlphaGroupTransparentizeChild {}
+impl GeneratedAtomDivide for GeneratedTransformerAlphaGroupTransparentizeChild {}
+impl GeneratedAtomOutline for GeneratedTransformerAlphaGroupTransparentizeChild {}
+impl GeneratedAtomRingColor for GeneratedTransformerAlphaGroupTransparentizeChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomFill for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomStroke for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomText for GeneratedTransformerLightnessGroupLightnessChild {}
@@ -36957,6 +38866,10 @@ impl GeneratedAtomBorderColorTop for GeneratedTransformerLightnessGroupLightness
 impl GeneratedAtomBorderColorRight for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomBorderColorBottom for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomBorderColorLeft for GeneratedTransformerLightnessGroupLightnessChild {}
+impl GeneratedAtomDivide for GeneratedTransformerLightnessGroupLightnessChild {}
+impl GeneratedAtomOutline for GeneratedTransformerLightnessGroupLightnessChild {}
+impl GeneratedAtomRingColor for GeneratedTransformerLightnessGroupLightnessChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomFill for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomStroke for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomText for GeneratedTransformerLightnessGroupLightenChild {}
@@ -36977,6 +38890,10 @@ impl GeneratedAtomBorderColorTop for GeneratedTransformerLightnessGroupLightenCh
 impl GeneratedAtomBorderColorRight for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomBorderColorBottom for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomBorderColorLeft for GeneratedTransformerLightnessGroupLightenChild {}
+impl GeneratedAtomDivide for GeneratedTransformerLightnessGroupLightenChild {}
+impl GeneratedAtomOutline for GeneratedTransformerLightnessGroupLightenChild {}
+impl GeneratedAtomRingColor for GeneratedTransformerLightnessGroupLightenChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomFill for GeneratedTransformerLightnessGroupDarkenChild {}
 impl GeneratedAtomStroke for GeneratedTransformerLightnessGroupDarkenChild {}
 impl GeneratedAtomText for GeneratedTransformerLightnessGroupDarkenChild {}
@@ -36997,3 +38914,7 @@ impl GeneratedAtomBorderColorTop for GeneratedTransformerLightnessGroupDarkenChi
 impl GeneratedAtomBorderColorRight for GeneratedTransformerLightnessGroupDarkenChild {}
 impl GeneratedAtomBorderColorBottom for GeneratedTransformerLightnessGroupDarkenChild {}
 impl GeneratedAtomBorderColorLeft for GeneratedTransformerLightnessGroupDarkenChild {}
+impl GeneratedAtomDivide for GeneratedTransformerLightnessGroupDarkenChild {}
+impl GeneratedAtomOutline for GeneratedTransformerLightnessGroupDarkenChild {}
+impl GeneratedAtomRingColor for GeneratedTransformerLightnessGroupDarkenChild {}
+impl GeneratedAtomRingOffsetColor for GeneratedTransformerLightnessGroupDarkenChild {}

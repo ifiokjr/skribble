@@ -108,6 +108,17 @@ lazy_static! {
     let skew_y = Placeholder::variable("skew-y");
     let scale_x = Placeholder::variable("scale-x");
     let scale_y = Placeholder::variable("scale-y");
+    // Box shadow
+    let ring_offset_shadow = Placeholder::variable("ring-offset-shadow");
+    let ring_shadow = Placeholder::variable("ring-shadow");
+    let ring_offset_width_wrapped = Placeholder::wrapped_variable("ring-offset-width", None);
+    let ring_offset_color_wrapped = Placeholder::wrapped_variable("ring-offset-color", None);
+    let ring_color_wrapped = Placeholder::wrapped_variable("ring-color", None);
+    let ring_offset_width = Placeholder::variable("ring-offset-width");
+    let ring_offset_color = Placeholder::variable("ring-offset-color");
+    let ring_color = Placeholder::variable("ring-color");
+    let ring_inset = Placeholder::wrapped_variable("ring-inset", None);
+    let shadow = Placeholder::wrapped_variable("shadow", Some("0 0 #0000".into()));
 
     vec![
       Atom::builder()
@@ -1225,9 +1236,8 @@ lazy_static! {
         .values(ColorField::default())
         .children(vec!["gradient-reference"])
         .styles({
-          let value = Placeholder::value("");
           let transparent_value = Placeholder::value("transparent");
-          let gradient_from_value = format!("{value} {wrapped_gradient_from_position}");
+          let gradient_from_value = format!("{placeholder_value} {wrapped_gradient_from_position}");
           let gradient_to_value = format!("{transparent_value} {wrapped_gradient_to_position}");
           let gradient_stops_value = format!("{wrapped_gradient_from}, {wrapped_gradient_to}");
           indexmap! {
@@ -1248,10 +1258,9 @@ lazy_static! {
         .values(ColorField::default())
         .children(vec!["gradient-reference"])
         .styles({
-          let value = Placeholder::value("");
           let transparent_value = Placeholder::value("transparent");
           let gradient_to_value = format!("{transparent_value} {wrapped_gradient_to_position}");
-          let gradient_stops_value = format!("{wrapped_gradient_from}, {value} {wrapped_gradient_via_position}, {wrapped_gradient_to}");
+          let gradient_stops_value = format!("{wrapped_gradient_from}, {placeholder_value} {wrapped_gradient_via_position}, {wrapped_gradient_to}");
           indexmap! {
             &gradient_to => Some(gradient_to_value),
             &gradient_stops => Some(gradient_stops_value),
@@ -1268,11 +1277,7 @@ lazy_static! {
         .name("to-color")
         .values(ColorField::default())
         .children(vec!["gradient-reference"])
-        .styles({
-          let value = Placeholder::value("");
-          let gradient_to_value = format!("{value} {wrapped_gradient_to_position}");
-          indexmap! { &gradient_to => Some(gradient_to_value) }
-        })
+        .styles(indexmap! { &gradient_to => Some(format!("{placeholder_value} {wrapped_gradient_to_position}")) })
         .build(),
       Atom::builder()
         .name("to-position")
@@ -1632,6 +1637,64 @@ lazy_static! {
           "border-bottom-width" => Some(Placeholder::value("bottom")),
         })
         .build(),
+      Atom::builder()
+        .name("divide")
+        .values(ColorField::default())
+        .modifier("& > * + *")
+        .styles(indexmap! { "border-color" => none })
+        .build(),
+      Atom::builder()
+        .name("divide-style")
+        .values(vec!["divide-style"])
+        .modifier("& > * + *")
+        .styles(indexmap! { "border-style" => none })
+        .build(),
+      Atom::builder()
+        .name("outline-width")
+        .values(vec!["outline-width"])
+        .styles(indexmap! { "outline-width" => none })
+        .build(),
+        Atom::builder()
+        .name("outline")
+        .values(ColorField::default())
+        .styles(indexmap! { "outline-color" => none })
+        .build(),
+      Atom::builder()
+        .name("outline-style")
+        .values(vec!["outline-style"])
+        .styles(indexmap! { "outline-style" => none })
+        .build(),
+      Atom::builder()
+        .name("outline-offset")
+        .values(vec!["outline-offset"])
+        .styles(indexmap! { "outline-offset" => none })
+        .build(),
+      Atom::builder()
+        .name("ring")
+        .values(vec!["ring-width"])
+        .styles(indexmap! {
+          ring_offset_shadow.as_str() => Some(format!("{ring_inset} 0 0 0 {ring_offset_width_wrapped} {ring_offset_color_wrapped})")),
+          ring_shadow.as_str() => Some(format!("{ring_inset} 0 0 0 calc({placeholder_value} + {ring_offset_width_wrapped}) {ring_color_wrapped}")),
+          "box-shadow" => Some(format!("{ring_offset_shadow}, {ring_shadow}, {shadow}")),
+        })
+        .build(),
+      Atom::builder()
+        .name("ring-color")
+        .values(ColorField::default())
+        .styles(indexmap! { &ring_color => none })
+        .build(),
+      Atom::builder()
+        .name("ring-offset")
+        .values(vec!["ring-width"])
+        .styles(indexmap! { &ring_offset_width => none })
+        .build(),
+      Atom::builder()
+        .name("ring-offset-color")
+        .values(ColorField::default())
+        .styles(indexmap! { &ring_offset_color => none })
+        .build(),
+
+      // Effects
 
       // Transforms
       Atom::builder()

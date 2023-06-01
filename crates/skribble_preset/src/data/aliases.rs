@@ -567,5 +567,9 @@ lazy_static! {
       .name("bg-contain")
       .classes(vec!["bg-size:$contain"])
       .build(),
+    Alias::builder()
+      .name("ring")
+      .classes(vec!["ring:$default"])
+      .build(),
   ];
 }
