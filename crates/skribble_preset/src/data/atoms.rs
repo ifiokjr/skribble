@@ -111,14 +111,18 @@ lazy_static! {
     // Box shadow
     let ring_offset_shadow = Placeholder::variable("ring-offset-shadow");
     let ring_shadow = Placeholder::variable("ring-shadow");
-    let ring_offset_width_wrapped = Placeholder::wrapped_variable("ring-offset-width", None);
-    let ring_offset_color_wrapped = Placeholder::wrapped_variable("ring-offset-color", None);
-    let ring_color_wrapped = Placeholder::wrapped_variable("ring-color", None);
+    let wrapped_ring_offset_width = Placeholder::wrapped_variable("ring-offset-width", None);
+    let wrapped_ring_offset_color = Placeholder::wrapped_variable("ring-offset-color", None);
+    let wrapped_ring_color = Placeholder::wrapped_variable("ring-color", None);
     let ring_offset_width = Placeholder::variable("ring-offset-width");
     let ring_offset_color = Placeholder::variable("ring-offset-color");
     let ring_color = Placeholder::variable("ring-color");
-    let ring_inset = Placeholder::wrapped_variable("ring-inset", None);
-    let shadow = Placeholder::wrapped_variable("shadow", Some("0 0 #0000".into()));
+    let wrapped_ring_inset = Placeholder::wrapped_variable("ring-inset", None);
+    let shadow = Placeholder::variable("shadow");
+    let wrapped_shadow = Placeholder::wrapped_variable("shadow", Some("0 0 #0000".into()));
+    let shadow_colored = Placeholder::variable("shadow-colored");
+    let wrapped_shadow_colored = Placeholder::wrapped_variable("shadow-colored", None);
+    let shadow_color = Placeholder::variable("shadow-color");
 
     vec![
       Atom::builder()
@@ -1673,9 +1677,9 @@ lazy_static! {
         .name("ring")
         .values(vec!["ring-width"])
         .styles(indexmap! {
-          ring_offset_shadow.as_str() => Some(format!("{ring_inset} 0 0 0 {ring_offset_width_wrapped} {ring_offset_color_wrapped})")),
-          ring_shadow.as_str() => Some(format!("{ring_inset} 0 0 0 calc({placeholder_value} + {ring_offset_width_wrapped}) {ring_color_wrapped}")),
-          "box-shadow" => Some(format!("{ring_offset_shadow}, {ring_shadow}, {shadow}")),
+          ring_offset_shadow.as_str() => Some(format!("{wrapped_ring_inset} 0 0 0 {wrapped_ring_offset_width} {wrapped_ring_offset_color})")),
+          ring_shadow.as_str() => Some(format!("{wrapped_ring_inset} 0 0 0 calc({placeholder_value} + {wrapped_ring_offset_width}) {wrapped_ring_color}")),
+          "box-shadow" => Some(format!("{ring_offset_shadow}, {ring_shadow}, {wrapped_shadow}")),
         })
         .build(),
       Atom::builder()
@@ -1695,6 +1699,23 @@ lazy_static! {
         .build(),
 
       // Effects
+      Atom::builder()
+        .name("shadow")
+        .values(vec!["shadow"])
+        .styles(indexmap! {
+          shadow.as_str() => Some(Placeholder::value("default")),
+          shadow_colored.as_str() => Some(Placeholder::value("colored")),
+          "box-shadow" => Some(format!("{ring_offset_shadow}, {ring_shadow}, {wrapped_shadow}")),
+         })
+        .build(),
+      Atom::builder()
+        .name("shadow-color")
+        .values(ColorField::default())
+        .styles(indexmap! {
+          &shadow_color => Some(placeholder_value),
+          &shadow => Some(wrapped_shadow_colored),
+        })
+        .build(),
 
       // Transforms
       Atom::builder()

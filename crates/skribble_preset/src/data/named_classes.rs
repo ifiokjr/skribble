@@ -139,6 +139,12 @@ lazy_static! {
           "outline-offset" => "2px",
          })
         .build(),
+      NamedClass::builder()
+        .name("shadow-none")
+        .styles(indexmap! {
+          "box-shadow" => "0 0 #000",
+         })
+        .build(),
     ]
   };
 }

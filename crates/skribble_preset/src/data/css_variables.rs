@@ -464,5 +464,13 @@ lazy_static! {
       .name("shadow")
       .variable("--shadow")
       .build(),
+    CssVariable::builder()
+      .name("shadow-colored")
+      .variable("--shadow-colored")
+      .build(),
+    CssVariable::builder()
+      .name("shadow-color")
+      .variable("--shadow-color")
+      .build(),
   ];
 }

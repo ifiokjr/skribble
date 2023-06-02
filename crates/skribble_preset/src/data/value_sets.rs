@@ -1604,6 +1604,43 @@ lazy_static! {
           "double" => "double",
         })
         .build(),
+      ValueSet::builder()
+        .name("shadow")
+        .values({
+          let wrapped_shadow_color = Placeholder::wrapped_variable("shadow-color", None);
+
+          indexmap! {
+            "sm" => indexmap! {
+              "colored" => format!("0 1px 2px 0 {wrapped_shadow_color}"),
+              "default" => "0 1px 2px 0 rgb(0 0 0 / 0.05)".to_string(),
+            },
+            "default" => indexmap! {
+              "colored" => format!("0 1px 3px 0 {wrapped_shadow_color}, 0 1px 2px -1px {wrapped_shadow_color}"),
+              "default" => "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)".to_string(),
+            },
+            "md" => indexmap! {
+              "colored" => format!("0 4px 6px -1px {wrapped_shadow_color}, 0 2px 4px -2px {wrapped_shadow_color}"),
+              "default" => "0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)".to_string(),
+            },
+            "lg" => indexmap! {
+              "colored" => format!("0 10px 15px -3px {wrapped_shadow_color}, 0 4px 6px -4px {wrapped_shadow_color}"),
+              "default" => "0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)".to_string(),
+            },
+            "xl" => indexmap! {
+              "colored" => format!("0 20px 25px -5px {wrapped_shadow_color}, 0 8px 10px -6px {wrapped_shadow_color}"),
+              "default" => "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)".to_string(),
+            },
+            "2xl" => indexmap! {
+              "colored" => format!("0 25px 50px -12px {wrapped_shadow_color}"),
+              "default" => "0 25px 50px -12px rgb(0 0 0 / 0.25)".to_string(),
+            },
+            "inner" => indexmap! {
+              "colored" => format!("inset 0 2px 4px 0 {wrapped_shadow_color}"),
+              "default" => "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)".to_string(),
+            },
+          }
+        })
+        .build(),
     ]
   };
 }

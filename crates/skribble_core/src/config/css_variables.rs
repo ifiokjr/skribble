@@ -147,7 +147,12 @@ impl CssVariable {
     let syntax = &self.syntax;
     let variable_name = self.get_variable(options);
     let mut value = Placeholder::normalize(&self.value, config);
-    if self.is_color() {
+
+    if value.is_empty() {
+      return Ok(());
+    }
+
+    if self.is_color()  {
       value = options.color_format.get_color(value)?.to_string();
       let hsla = options.color_format.get_hsla(&value)?;
 
@@ -193,15 +198,13 @@ impl CssVariable {
       }
     }
 
-    if !value.is_empty() {
-      writeln!(writer, "@property {variable_name} {{")?;
-      let mut indented_writer = indent_writer();
-      writeln!(indented_writer, "syntax: \"{syntax}\";")?;
-      writeln!(indented_writer, "inherits: true;")?;
-      writeln!(indented_writer, "initial-value: {value};")?;
-      write!(writer, "{}", indented_writer.get_ref())?;
-      writeln!(writer, "}}")?;
-    }
+    writeln!(writer, "@property {variable_name} {{")?;
+    let mut indented_writer = indent_writer();
+    writeln!(indented_writer, "syntax: \"{syntax}\";")?;
+    writeln!(indented_writer, "inherits: true;")?;
+    writeln!(indented_writer, "initial-value: {value};")?;
+    write!(writer, "{}", indented_writer.get_ref())?;
+    writeln!(writer, "}}")?;
 
     Ok(())
   }
