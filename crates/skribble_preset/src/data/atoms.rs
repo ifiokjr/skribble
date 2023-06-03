@@ -34,23 +34,6 @@ lazy_static! {
     let space_margin_top =
       format!("calc({placeholder_value} * calc(1 - {wrapped_space_y_reverse}))");
     let space_margin_bottom = format!("calc({placeholder_value} * {wrapped_space_y_reverse})");
-    let filter = {
-      let filter_blur = Placeholder::wrapped_variable("filter-blur", None);
-      let filter_brightness = Placeholder::wrapped_variable("filter-brightness", None);
-      let filter_contrast = Placeholder::wrapped_variable("filter-contrast", None);
-      let filter_grayscale = Placeholder::wrapped_variable("filter-grayscale", None);
-      let filter_hue_rotate = Placeholder::wrapped_variable("filter-hue-rotate", None);
-      let filter_invert = Placeholder::wrapped_variable("filter-invert", None);
-      let filter_saturate = Placeholder::wrapped_variable("filter-saturate", None);
-      let filter_sepia = Placeholder::wrapped_variable("filter-sepia", None);
-      let filter_drop_shadow = Placeholder::wrapped_variable("filter-drop-shadow", None);
-      let filter_custom = Placeholder::wrapped_variable("filter-custom", None);
-      format!(
-        "{filter_blur} {filter_brightness} {filter_contrast} {filter_grayscale} \
-         {filter_hue_rotate} {filter_invert} {filter_saturate} {filter_sepia} \
-         {filter_drop_shadow} {filter_custom}",
-      )
-    };
     let filter_blur = Placeholder::variable("filter-blur");
     let filter_brightness = Placeholder::variable("filter-brightness");
     let filter_contrast = Placeholder::variable("filter-contrast");
@@ -61,23 +44,6 @@ lazy_static! {
     let filter_sepia = Placeholder::variable("filter-sepia");
     let filter_drop_shadow = Placeholder::variable("filter-drop-shadow");
     let filter_custom = Placeholder::variable("filter-custom");
-    let backdrop_filter = {
-      let backdrop_blur = Placeholder::wrapped_variable("backdrop-blur", None);
-      let backdrop_brightness = Placeholder::wrapped_variable("backdrop-brightness", None);
-      let backdrop_contrast = Placeholder::wrapped_variable("backdrop-contrast", None);
-      let backdrop_grayscale = Placeholder::wrapped_variable("backdrop-grayscale", None);
-      let backdrop_hue_rotate = Placeholder::wrapped_variable("backdrop-hue-rotate", None);
-      let backdrop_invert = Placeholder::wrapped_variable("backdrop-invert", None);
-      let backdrop_saturate = Placeholder::wrapped_variable("backdrop-saturate", None);
-      let backdrop_sepia = Placeholder::wrapped_variable("backdrop-sepia", None);
-      let backdrop_drop_shadow = Placeholder::wrapped_variable("backdrop-drop-shadow", None);
-      let backdrop_custom = Placeholder::wrapped_variable("backdrop-custom", None);
-      format!(
-        "{backdrop_blur} {backdrop_brightness} {backdrop_contrast} {backdrop_grayscale} \
-         {backdrop_hue_rotate} {backdrop_invert} {backdrop_saturate} {backdrop_sepia} \
-         {backdrop_drop_shadow} {backdrop_custom}",
-      )
-    };
     let backdrop_blur = Placeholder::variable("backdrop-blur");
     let backdrop_brightness = Placeholder::variable("backdrop-brightness");
     let backdrop_contrast = Placeholder::variable("backdrop-contrast");
@@ -490,11 +456,6 @@ lazy_static! {
         .styles(indexmap! { "direction" => none })
         .build(),
       Atom::builder()
-        .name("opacity")
-        .values(vec!["opacity"])
-        .styles(indexmap! { "opacity" => none })
-        .build(),
-      Atom::builder()
         .name("aspect")
         .values(vec!["ratio"])
         .description("Control the aspect ratio of an element.")
@@ -680,133 +641,142 @@ lazy_static! {
         .name("blur")
         .description("Control the blur filters to an element.")
         .values(vec!["blur"])
-        .styles(indexmap! { filter_blur.as_str() => none,  "filter" => Some(&filter) })
+        .children(vec!["filter"])
+        .styles(indexmap! { &filter_blur => none })
         .build(),
       Atom::builder()
         .name("brightness")
         .description("Control the brightness filters to an element.")
         .values(vec!["brightness"])
-        .styles(indexmap! { filter_brightness.as_str() => none,  "filter" => Some(&filter) })
+        .children(vec!["filter"])
+        .styles(indexmap! { &filter_brightness => none })
         .build(),
       Atom::builder()
         .name("contrast")
         .description("Control the contrast filters to an element.")
         .values(vec!["contrast"])
-        .styles(indexmap! { filter_contrast.as_str() => none,  "filter" => Some(&filter) })
+        .children(vec!["filter"])
+        .styles(indexmap! { &filter_contrast => none })
         .build(),
       Atom::builder()
         .name("grayscale")
         .description("Control the grayscale filters to an element.")
         .values(vec!["grayscale"])
-        .styles(indexmap! { filter_grayscale.as_str() => none,  "filter" => Some(&filter) })
+        .children(vec!["filter"])
+        .styles(indexmap! { &filter_grayscale => none })
         .build(),
       Atom::builder()
         .name("hue-rotate")
         .description("Control the hue-rotate filters to an element.")
         .values(vec!["hue-rotate"])
-        .styles(indexmap! { filter_hue_rotate.as_str() => none,  "filter" => Some(&filter) })
+        .children(vec!["filter"])
+        .styles(indexmap! { &filter_hue_rotate => none })
         .build(),
       Atom::builder()
         .name("invert")
         .description("Control the invert filters to an element.")
         .values(vec!["invert"])
-        .styles(indexmap! { filter_invert.as_str() => none,  "filter" => Some(&filter) })
+        .children(vec!["filter"])
+        .styles(indexmap! { &filter_invert => none })
         .build(),
       Atom::builder()
         .name("saturate")
         .description("Control the saturate filters to an element.")
         .values(vec!["saturate"])
-        .styles(indexmap! { filter_saturate.as_str() => none,  "filter" => Some(&filter) })
+        .children(vec!["filter"])
+        .styles(indexmap! { &filter_saturate => none })
         .build(),
       Atom::builder()
         .name("sepia")
         .description("Control the sepia filters to an element.")
         .values(vec!["sepia"])
-        .styles(indexmap! { filter_sepia.as_str() => none,  "filter" => Some(&filter) })
+        .children(vec!["filter"])
+        .styles(indexmap! { &filter_sepia => none })
         .build(),
       Atom::builder()
         .name("drop-shadow")
         .description("Control the drop-shadow filters to an element.")
         .values(vec!["drop-shadow"])
-        .styles(indexmap! { filter_drop_shadow.as_str() => none,  "filter" => Some(&filter) })
+        .children(vec!["filter"])
+        .styles(indexmap! { &filter_drop_shadow => none })
         .build(),
-      Atom::builder()
-        .name("custom")
-        .description("Control the custom filters to an element.")
-        .values(vec!["custom"])
-        .styles(indexmap! { filter_custom.as_str() => none,  "filter" => Some(&filter) })
-        .build(),
+
       Atom::builder()
         .name("filter")
-        .description("Control the filters to an element.")
+        .description("Set the custom svg filters.")
         .values(vec!["filter"])
-        .styles(indexmap! { "filter" => none })
+        .children(vec!["filter"])
+        .styles(indexmap! { &filter_custom => none })
         .build(),
       Atom::builder()
         .name("backdrop-blur")
         .description("Control the backdrop-blur filters to an element.")
         .values(vec!["blur"])
-        .styles(indexmap! { backdrop_blur.as_str() => none,  "backdrop-filter" => Some(&backdrop_filter) })
+        .children(vec!["backdrop-filter"])
+        .styles(indexmap! { &backdrop_blur => none })
         .build(),
       Atom::builder()
         .name("backdrop-brightness")
         .description("Control the backdrop-brightness filters to an element.")
         .values(vec!["brightness"])
-        .styles(indexmap! { backdrop_brightness.as_str() => none,  "backdrop-filter" => Some(&backdrop_filter) })
+        .children(vec!["backdrop-filter"])
+        .styles(indexmap! { &backdrop_brightness => none })
         .build(),
       Atom::builder()
         .name("backdrop-contrast")
         .description("Control the backdrop-contrast filters to an element.")
         .values(vec!["contrast"])
-        .styles(indexmap! { backdrop_contrast.as_str() => none,  "backdrop-filter" => Some(&backdrop_filter) })
+        .children(vec!["backdrop-filter"])
+        .styles(indexmap! { &backdrop_contrast => none })
         .build(),
       Atom::builder()
         .name("backdrop-grayscale")
         .description("Control the backdrop-grayscale filters to an element.")
         .values(vec!["grayscale"])
-        .styles(indexmap! { backdrop_grayscale.as_str() => none,  "backdrop-filter" => Some(&backdrop_filter) })
+        .children(vec!["backdrop-filter"])
+        .styles(indexmap! { &backdrop_grayscale => none })
         .build(),
       Atom::builder()
         .name("backdrop-hue-rotate")
         .description("Control the backdrop-hue-rotate filters to an element.")
         .values(vec!["hue-rotate"])
-        .styles(indexmap! { backdrop_hue_rotate.as_str() => none,  "backdrop-filter" => Some(&backdrop_filter) })
+        .children(vec!["backdrop-filter"])
+        .styles(indexmap! { &backdrop_hue_rotate => none })
         .build(),
       Atom::builder()
         .name("backdrop-invert")
         .description("Control the backdrop-invert filters to an element.")
         .values(vec!["invert"])
-        .styles(indexmap! { backdrop_invert.as_str() => none,  "backdrop-filter" => Some(&backdrop_filter) })
+        .children(vec!["backdrop-filter"])
+        .styles(indexmap! { &backdrop_invert => none })
         .build(),
       Atom::builder()
         .name("backdrop-saturate")
         .description("Control the backdrop-saturate filters to an element.")
         .values(vec!["saturate"])
-        .styles(indexmap! { backdrop_saturate.as_str() => none,  "backdrop-filter" => Some(&backdrop_filter) })
+        .children(vec!["backdrop-filter"])
+        .styles(indexmap! { &backdrop_saturate => none })
         .build(),
       Atom::builder()
         .name("backdrop-sepia")
         .description("Control the backdrop-sepia filters to an element.")
         .values(vec!["sepia"])
-        .styles(indexmap! { backdrop_sepia.as_str() => none,  "backdrop-filter" => Some(&backdrop_filter) })
+        .children(vec!["backdrop-filter"])
+        .styles(indexmap! { &backdrop_sepia => none })
         .build(),
       Atom::builder()
         .name("backdrop-drop-shadow")
         .description("Control the backdrop-drop-shadow filters to an element.")
         .values(vec!["drop-shadow"])
-        .styles(indexmap! { backdrop_drop_shadow.as_str() => none,  "backdrop-filter" => Some(&backdrop_filter) })
-        .build(),
-      Atom::builder()
-        .name("backdrop-custom")
-        .description("Control the backdrop-custom filters to an element.")
-        .values(vec!["custom"])
-        .styles(indexmap! { backdrop_custom.as_str() => none,  "backdrop-filter" => Some(&backdrop_filter) })
+        .children(vec!["backdrop-filter"])
+        .styles(indexmap! { &backdrop_drop_shadow => none })
         .build(),
       Atom::builder()
         .name("backdrop-filter")
-        .description("Control the backdrop-filters to an element.")
-        .values(vec!["filter"])
-        .styles(indexmap! { "backdrop-filter" => none })
+        .description("Control the backdrop-custom filters to an element.")
+        .values(vec!["backdrop-filter"])
+        .children(vec!["backdrop-filter"])
+        .styles(indexmap! { &backdrop_custom => none })
         .build(),
       Atom::builder()
         .name("w")
@@ -1715,6 +1685,21 @@ lazy_static! {
           &shadow_color => Some(placeholder_value),
           &shadow => Some(wrapped_shadow_colored),
         })
+        .build(),
+      Atom::builder()
+        .name("opacity")
+        .values(vec!["opacity"])
+        .styles(indexmap! { "opacity" => none })
+        .build(),
+      Atom::builder()
+        .name("mix-blend")
+        .values(vec!["mix-blend"])
+        .styles(indexmap! { "mix-blend-mode" => none })
+        .build(),
+      Atom::builder()
+        .name("bg-blend")
+        .values(vec!["mix-blend"])
+        .styles(indexmap! { "background-blend-mode" => none })
         .build(),
 
       // Transforms

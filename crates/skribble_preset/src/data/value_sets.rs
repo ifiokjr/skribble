@@ -813,7 +813,11 @@ lazy_static! {
         .build(),
       ValueSet::builder()
         .name("filter")
-        .values(indexmap! { "none" => "none" })
+        .values(indexmap! { "svg" => "" })
+        .build(),
+      ValueSet::builder()
+        .name("backdrop-filter")
+        .values(indexmap! { "svg" => "" })
         .build(),
       ValueSet::builder()
         .name("flex-direction")
@@ -1639,6 +1643,19 @@ lazy_static! {
               "default" => "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)".to_string(),
             },
           }
+        })
+        .build(),
+      ValueSet::builder()
+        .name("mix-blend")
+        .values(indexmap! {
+          "normal" => "normal",
+          "multiply" => "multiply",
+          "screen" => "screen",
+          "overlay" => "overlay",
+          "darken" => "darken",
+          "lighten" => "lighten",
+          "color-dodge" => "color-dodge",
+          "color-burn" => "color-burn",
         })
         .build(),
     ]

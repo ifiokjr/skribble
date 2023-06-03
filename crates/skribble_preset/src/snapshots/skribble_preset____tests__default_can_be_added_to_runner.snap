@@ -2440,24 +2440,6 @@ expression: runner_config
         ]
       }
     },
-    "opacity": {
-      "name": "opacity",
-      "description": null,
-      "priority": 150,
-      "styles": {
-        "opacity": null
-      },
-      "modifier": null,
-      "children": [],
-      "values": {
-        "values": [
-          {
-            "priority": 150,
-            "value": "opacity"
-          }
-        ]
-      }
-    },
     "aspect": {
       "name": "aspect",
       "description": "Control the aspect ratio of an element.",
@@ -3121,11 +3103,12 @@ expression: runner_config
       "description": "Control the blur filters to an element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::filter-blur:__": null,
-        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+        "__:CSS_VARIABLE::filter-blur:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "filter"
+      ],
       "values": {
         "values": [
           {
@@ -3140,11 +3123,12 @@ expression: runner_config
       "description": "Control the brightness filters to an element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::filter-brightness:__": null,
-        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+        "__:CSS_VARIABLE::filter-brightness:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "filter"
+      ],
       "values": {
         "values": [
           {
@@ -3159,11 +3143,12 @@ expression: runner_config
       "description": "Control the contrast filters to an element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::filter-contrast:__": null,
-        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+        "__:CSS_VARIABLE::filter-contrast:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "filter"
+      ],
       "values": {
         "values": [
           {
@@ -3178,11 +3163,12 @@ expression: runner_config
       "description": "Control the grayscale filters to an element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::filter-grayscale:__": null,
-        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+        "__:CSS_VARIABLE::filter-grayscale:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "filter"
+      ],
       "values": {
         "values": [
           {
@@ -3197,11 +3183,12 @@ expression: runner_config
       "description": "Control the hue-rotate filters to an element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::filter-hue-rotate:__": null,
-        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+        "__:CSS_VARIABLE::filter-hue-rotate:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "filter"
+      ],
       "values": {
         "values": [
           {
@@ -3216,11 +3203,12 @@ expression: runner_config
       "description": "Control the invert filters to an element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::filter-invert:__": null,
-        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+        "__:CSS_VARIABLE::filter-invert:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "filter"
+      ],
       "values": {
         "values": [
           {
@@ -3235,11 +3223,12 @@ expression: runner_config
       "description": "Control the saturate filters to an element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::filter-saturate:__": null,
-        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+        "__:CSS_VARIABLE::filter-saturate:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "filter"
+      ],
       "values": {
         "values": [
           {
@@ -3254,11 +3243,12 @@ expression: runner_config
       "description": "Control the sepia filters to an element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::filter-sepia:__": null,
-        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+        "__:CSS_VARIABLE::filter-sepia:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "filter"
+      ],
       "values": {
         "values": [
           {
@@ -3273,11 +3263,12 @@ expression: runner_config
       "description": "Control the drop-shadow filters to an element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::filter-drop-shadow:__": null,
-        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+        "__:CSS_VARIABLE::filter-drop-shadow:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "filter"
+      ],
       "values": {
         "values": [
           {
@@ -3287,34 +3278,17 @@ expression: runner_config
         ]
       }
     },
-    "custom": {
-      "name": "custom",
-      "description": "Control the custom filters to an element.",
-      "priority": 150,
-      "styles": {
-        "__:CSS_VARIABLE::filter-custom:__": null,
-        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
-      },
-      "modifier": null,
-      "children": [],
-      "values": {
-        "values": [
-          {
-            "priority": 150,
-            "value": "custom"
-          }
-        ]
-      }
-    },
     "filter": {
       "name": "filter",
-      "description": "Control the filters to an element.",
+      "description": "Set the custom svg filters.",
       "priority": 150,
       "styles": {
-        "filter": null
+        "__:CSS_VARIABLE::filter-custom:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "filter"
+      ],
       "values": {
         "values": [
           {
@@ -3329,11 +3303,12 @@ expression: runner_config
       "description": "Control the backdrop-blur filters to an element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::backdrop-blur:__": null,
-        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+        "__:CSS_VARIABLE::backdrop-blur:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "backdrop-filter"
+      ],
       "values": {
         "values": [
           {
@@ -3348,11 +3323,12 @@ expression: runner_config
       "description": "Control the backdrop-brightness filters to an element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::backdrop-brightness:__": null,
-        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+        "__:CSS_VARIABLE::backdrop-brightness:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "backdrop-filter"
+      ],
       "values": {
         "values": [
           {
@@ -3367,11 +3343,12 @@ expression: runner_config
       "description": "Control the backdrop-contrast filters to an element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::backdrop-contrast:__": null,
-        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+        "__:CSS_VARIABLE::backdrop-contrast:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "backdrop-filter"
+      ],
       "values": {
         "values": [
           {
@@ -3386,11 +3363,12 @@ expression: runner_config
       "description": "Control the backdrop-grayscale filters to an element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::backdrop-grayscale:__": null,
-        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+        "__:CSS_VARIABLE::backdrop-grayscale:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "backdrop-filter"
+      ],
       "values": {
         "values": [
           {
@@ -3405,11 +3383,12 @@ expression: runner_config
       "description": "Control the backdrop-hue-rotate filters to an element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::backdrop-hue-rotate:__": null,
-        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+        "__:CSS_VARIABLE::backdrop-hue-rotate:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "backdrop-filter"
+      ],
       "values": {
         "values": [
           {
@@ -3424,11 +3403,12 @@ expression: runner_config
       "description": "Control the backdrop-invert filters to an element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::backdrop-invert:__": null,
-        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+        "__:CSS_VARIABLE::backdrop-invert:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "backdrop-filter"
+      ],
       "values": {
         "values": [
           {
@@ -3443,11 +3423,12 @@ expression: runner_config
       "description": "Control the backdrop-saturate filters to an element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::backdrop-saturate:__": null,
-        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+        "__:CSS_VARIABLE::backdrop-saturate:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "backdrop-filter"
+      ],
       "values": {
         "values": [
           {
@@ -3462,11 +3443,12 @@ expression: runner_config
       "description": "Control the backdrop-sepia filters to an element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::backdrop-sepia:__": null,
-        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+        "__:CSS_VARIABLE::backdrop-sepia:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "backdrop-filter"
+      ],
       "values": {
         "values": [
           {
@@ -3481,11 +3463,12 @@ expression: runner_config
       "description": "Control the backdrop-drop-shadow filters to an element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::backdrop-drop-shadow:__": null,
-        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+        "__:CSS_VARIABLE::backdrop-drop-shadow:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "backdrop-filter"
+      ],
       "values": {
         "values": [
           {
@@ -3495,39 +3478,22 @@ expression: runner_config
         ]
       }
     },
-    "backdrop-custom": {
-      "name": "backdrop-custom",
+    "backdrop-filter": {
+      "name": "backdrop-filter",
       "description": "Control the backdrop-custom filters to an element.",
       "priority": 150,
       "styles": {
-        "__:CSS_VARIABLE::backdrop-custom:__": null,
-        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+        "__:CSS_VARIABLE::backdrop-custom:__": null
       },
       "modifier": null,
-      "children": [],
+      "children": [
+        "backdrop-filter"
+      ],
       "values": {
         "values": [
           {
             "priority": 150,
-            "value": "custom"
-          }
-        ]
-      }
-    },
-    "backdrop-filter": {
-      "name": "backdrop-filter",
-      "description": "Control the backdrop-filters to an element.",
-      "priority": 150,
-      "styles": {
-        "backdrop-filter": null
-      },
-      "modifier": null,
-      "children": [],
-      "values": {
-        "values": [
-          {
-            "priority": 150,
-            "value": "filter"
+            "value": "backdrop-filter"
           }
         ]
       }
@@ -6280,6 +6246,60 @@ expression: runner_config
         }
       }
     },
+    "opacity": {
+      "name": "opacity",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "opacity": null
+      },
+      "modifier": null,
+      "children": [],
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "opacity"
+          }
+        ]
+      }
+    },
+    "mix-blend": {
+      "name": "mix-blend",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "mix-blend-mode": null
+      },
+      "modifier": null,
+      "children": [],
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "mix-blend"
+          }
+        ]
+      }
+    },
+    "bg-blend": {
+      "name": "bg-blend",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "background-blend-mode": null
+      },
+      "modifier": null,
+      "children": [],
+      "values": {
+        "values": [
+          {
+            "priority": 150,
+            "value": "mix-blend"
+          }
+        ]
+      }
+    },
     "scale": {
       "name": "scale",
       "description": null,
@@ -6569,30 +6589,6 @@ expression: runner_config
       "layer": null,
       "modifier": null
     },
-    "antialiased": {
-      "name": "antialiased",
-      "description": null,
-      "priority": 150,
-      "styles": {
-        "-webkit-font-smoothing": "antialiased",
-        "-moz-osx-font-smoothing": "grayscale"
-      },
-      "reference": false,
-      "layer": null,
-      "modifier": null
-    },
-    "subpixel-antialiased": {
-      "name": "subpixel-antialiased",
-      "description": null,
-      "priority": 150,
-      "styles": {
-        "-webkit-font-smoothing": "auto",
-        "-moz-osx-font-smoothing": "auto"
-      },
-      "reference": false,
-      "layer": null,
-      "modifier": null
-    },
     "transform-gpu": {
       "name": "transform-gpu",
       "description": null,
@@ -6721,6 +6717,50 @@ expression: runner_config
       },
       "reference": false,
       "layer": null,
+      "modifier": null
+    },
+    "filter": {
+      "name": "filter",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "filter": "var(__:CSS_VARIABLE::filter-blur:__) var(__:CSS_VARIABLE::filter-brightness:__) var(__:CSS_VARIABLE::filter-contrast:__) var(__:CSS_VARIABLE::filter-grayscale:__) var(__:CSS_VARIABLE::filter-hue-rotate:__) var(__:CSS_VARIABLE::filter-invert:__) var(__:CSS_VARIABLE::filter-saturate:__) var(__:CSS_VARIABLE::filter-sepia:__) var(__:CSS_VARIABLE::filter-drop-shadow:__) var(__:CSS_VARIABLE::filter-custom:__)"
+      },
+      "reference": true,
+      "layer": "base",
+      "modifier": null
+    },
+    "filter-none": {
+      "name": "filter-none",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "filter": "none"
+      },
+      "reference": false,
+      "layer": "priority-class",
+      "modifier": null
+    },
+    "backdrop-filter": {
+      "name": "backdrop-filter",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "backdrop-filter": "var(__:CSS_VARIABLE::backdrop-blur:__) var(__:CSS_VARIABLE::backdrop-brightness:__) var(__:CSS_VARIABLE::backdrop-contrast:__) var(__:CSS_VARIABLE::backdrop-grayscale:__) var(__:CSS_VARIABLE::backdrop-hue-rotate:__) var(__:CSS_VARIABLE::backdrop-invert:__) var(__:CSS_VARIABLE::backdrop-saturate:__) var(__:CSS_VARIABLE::backdrop-sepia:__) var(__:CSS_VARIABLE::backdrop-drop-shadow:__) var(__:CSS_VARIABLE::backdrop-custom:__)"
+      },
+      "reference": true,
+      "layer": "base",
+      "modifier": null
+    },
+    "backdrop-filter-none": {
+      "name": "backdrop-filter-none",
+      "description": null,
+      "priority": 150,
+      "styles": {
+        "backdrop-filter": "none"
+      },
+      "reference": false,
+      "layer": "priority-class",
       "modifier": null
     }
   },
@@ -8753,7 +8793,6 @@ expression: runner_config
       "space-y",
       "z",
       "dir",
-      "opacity",
       "aspect",
       "columns",
       "break-after",
@@ -8793,7 +8832,6 @@ expression: runner_config
       "saturate",
       "sepia",
       "drop-shadow",
-      "custom",
       "filter",
       "backdrop-blur",
       "backdrop-brightness",
@@ -8804,7 +8842,6 @@ expression: runner_config
       "backdrop-saturate",
       "backdrop-sepia",
       "backdrop-drop-shadow",
-      "backdrop-custom",
       "backdrop-filter",
       "w",
       "min-w",
@@ -8952,6 +8989,9 @@ expression: runner_config
       "ring-offset-color",
       "shadow",
       "shadow-color",
+      "opacity",
+      "mix-blend",
+      "bg-blend",
       "scale",
       "scale-x",
       "scale-y",
@@ -8970,8 +9010,6 @@ expression: runner_config
       "italic",
       "non-italic",
       "oblique",
-      "antialiased",
-      "subpixel-antialiased",
       "transform-gpu",
       "transform-cpu",
       "space-x-reverse",
@@ -8981,7 +9019,11 @@ expression: runner_config
       "gradient-reference",
       "transform",
       "outline-none",
-      "shadow-none"
+      "shadow-none",
+      "filter",
+      "filter-none",
+      "backdrop-filter",
+      "backdrop-filter-none"
     ],
     "css_chunks": [
       "reset"
@@ -11808,22 +11850,6 @@ expression: runner_config
       "ltr",
       "rtl"
     ],
-    "atom:opacity": [
-      "0",
-      "5",
-      "10",
-      "20",
-      "30",
-      "40",
-      "50",
-      "60",
-      "70",
-      "75",
-      "80",
-      "90",
-      "95",
-      "100"
-    ],
     "atom:aspect": [
       "auto",
       "square",
@@ -13006,9 +13032,8 @@ expression: runner_config
       "2xl",
       "none"
     ],
-    "atom:custom": [],
     "atom:filter": [
-      "none"
+      "svg"
     ],
     "atom:backdrop-blur": [
       "default",
@@ -13078,9 +13103,8 @@ expression: runner_config
       "2xl",
       "none"
     ],
-    "atom:backdrop-custom": [],
     "atom:backdrop-filter": [
-      "none"
+      "svg"
     ],
     "atom:w": [
       "0",
@@ -21402,6 +21426,42 @@ expression: runner_config
       "ring-offset-color",
       "ring-color"
     ],
+    "atom:opacity": [
+      "0",
+      "5",
+      "10",
+      "20",
+      "30",
+      "40",
+      "50",
+      "60",
+      "70",
+      "75",
+      "80",
+      "90",
+      "95",
+      "100"
+    ],
+    "atom:mix-blend": [
+      "normal",
+      "multiply",
+      "screen",
+      "overlay",
+      "darken",
+      "lighten",
+      "color-dodge",
+      "color-burn"
+    ],
+    "atom:bg-blend": [
+      "normal",
+      "multiply",
+      "screen",
+      "overlay",
+      "darken",
+      "lighten",
+      "color-dodge",
+      "color-burn"
+    ],
     "atom:scale": [
       "0",
       "50",
@@ -22788,7 +22848,15 @@ expression: runner_config
       "description": null,
       "priority": 150,
       "values": {
-        "none": "none"
+        "svg": ""
+      }
+    },
+    "backdrop-filter": {
+      "name": "backdrop-filter",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "svg": ""
       }
     },
     "flex-direction": {
@@ -23810,6 +23878,21 @@ expression: runner_config
           "colored": "inset 0 2px 4px 0 var(__:CSS_VARIABLE::shadow-color:__)",
           "default": "inset 0 2px 4px 0 rgb(0 0 0 / 0.05)"
         }
+      }
+    },
+    "mix-blend": {
+      "name": "mix-blend",
+      "description": null,
+      "priority": 150,
+      "values": {
+        "normal": "normal",
+        "multiply": "multiply",
+        "screen": "screen",
+        "overlay": "overlay",
+        "darken": "darken",
+        "lighten": "lighten",
+        "color-dodge": "color-dodge",
+        "color-burn": "color-burn"
       }
     }
   }

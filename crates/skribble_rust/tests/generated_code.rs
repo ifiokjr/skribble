@@ -8086,10 +8086,16 @@ pub trait GeneratedValueSetSaturateN200: GeneratedSkribbleValue {
     self.append_value("200")
   }
 }
-pub trait GeneratedValueSetFilterNone: GeneratedSkribbleValue {
+pub trait GeneratedValueSetFilterSvg: GeneratedSkribbleValue {
   #[inline]
-  fn none(&self) -> String {
-    self.append_value("none")
+  fn svg(&self) -> String {
+    self.append_value("svg")
+  }
+}
+pub trait GeneratedValueSetBackdropFilterSvg: GeneratedSkribbleValue {
+  #[inline]
+  fn svg(&self) -> String {
+    self.append_value("svg")
   }
 }
 pub trait GeneratedValueSetFlexDirectionRow: GeneratedSkribbleValue {
@@ -10700,6 +10706,54 @@ pub trait GeneratedValueSetShadowInner: GeneratedSkribbleValue {
   #[inline]
   fn inner(&self) -> String {
     self.append_value("inner")
+  }
+}
+pub trait GeneratedValueSetMixBlendNormal: GeneratedSkribbleValue {
+  #[inline]
+  fn normal(&self) -> String {
+    self.append_value("normal")
+  }
+}
+pub trait GeneratedValueSetMixBlendMultiply: GeneratedSkribbleValue {
+  #[inline]
+  fn multiply(&self) -> String {
+    self.append_value("multiply")
+  }
+}
+pub trait GeneratedValueSetMixBlendScreen: GeneratedSkribbleValue {
+  #[inline]
+  fn screen(&self) -> String {
+    self.append_value("screen")
+  }
+}
+pub trait GeneratedValueSetMixBlendOverlay: GeneratedSkribbleValue {
+  #[inline]
+  fn overlay(&self) -> String {
+    self.append_value("overlay")
+  }
+}
+pub trait GeneratedValueSetMixBlendDarken: GeneratedSkribbleValue {
+  #[inline]
+  fn darken(&self) -> String {
+    self.append_value("darken")
+  }
+}
+pub trait GeneratedValueSetMixBlendLighten: GeneratedSkribbleValue {
+  #[inline]
+  fn lighten(&self) -> String {
+    self.append_value("lighten")
+  }
+}
+pub trait GeneratedValueSetMixBlendColorDodge: GeneratedSkribbleValue {
+  #[inline]
+  fn color_dodge(&self) -> String {
+    self.append_value("color-dodge")
+  }
+}
+pub trait GeneratedValueSetMixBlendColorBurn: GeneratedSkribbleValue {
+  #[inline]
+  fn color_burn(&self) -> String {
+    self.append_value("color-burn")
   }
 }
 pub struct GeneratedAtomSrChild(String);
@@ -13807,31 +13861,6 @@ impl GeneratedSkribbleValue for GeneratedAtomDirChild {
 }
 impl GeneratedValueSetDirectionLtr for GeneratedAtomDirChild {}
 impl GeneratedValueSetDirectionRtl for GeneratedAtomDirChild {}
-pub struct GeneratedAtomOpacityChild(String);
-impl GeneratedSkribbleValue for GeneratedAtomOpacityChild {
-  #[inline]
-  fn from_ref(value: impl AsRef<str>) -> Self {
-    Self(value.as_ref().to_string())
-  }
-  #[inline]
-  fn get_skribble_value(&self) -> &String {
-    &self.0
-  }
-}
-impl GeneratedValueSetOpacityN0 for GeneratedAtomOpacityChild {}
-impl GeneratedValueSetOpacityN5 for GeneratedAtomOpacityChild {}
-impl GeneratedValueSetOpacityN10 for GeneratedAtomOpacityChild {}
-impl GeneratedValueSetOpacityN20 for GeneratedAtomOpacityChild {}
-impl GeneratedValueSetOpacityN30 for GeneratedAtomOpacityChild {}
-impl GeneratedValueSetOpacityN40 for GeneratedAtomOpacityChild {}
-impl GeneratedValueSetOpacityN50 for GeneratedAtomOpacityChild {}
-impl GeneratedValueSetOpacityN60 for GeneratedAtomOpacityChild {}
-impl GeneratedValueSetOpacityN70 for GeneratedAtomOpacityChild {}
-impl GeneratedValueSetOpacityN75 for GeneratedAtomOpacityChild {}
-impl GeneratedValueSetOpacityN80 for GeneratedAtomOpacityChild {}
-impl GeneratedValueSetOpacityN90 for GeneratedAtomOpacityChild {}
-impl GeneratedValueSetOpacityN95 for GeneratedAtomOpacityChild {}
-impl GeneratedValueSetOpacityN100 for GeneratedAtomOpacityChild {}
 pub struct GeneratedAtomAspectChild(String);
 impl GeneratedSkribbleValue for GeneratedAtomAspectChild {
   #[inline]
@@ -15365,17 +15394,6 @@ impl GeneratedValueSetDropShadowLg for GeneratedAtomDropShadowChild {}
 impl GeneratedValueSetDropShadowXl for GeneratedAtomDropShadowChild {}
 impl GeneratedValueSetDropShadowN2xl for GeneratedAtomDropShadowChild {}
 impl GeneratedValueSetDropShadowNone for GeneratedAtomDropShadowChild {}
-pub struct GeneratedAtomCustomChild(String);
-impl GeneratedSkribbleValue for GeneratedAtomCustomChild {
-  #[inline]
-  fn from_ref(value: impl AsRef<str>) -> Self {
-    Self(value.as_ref().to_string())
-  }
-  #[inline]
-  fn get_skribble_value(&self) -> &String {
-    &self.0
-  }
-}
 pub struct GeneratedAtomFilterChild(String);
 impl GeneratedSkribbleValue for GeneratedAtomFilterChild {
   #[inline]
@@ -15387,7 +15405,7 @@ impl GeneratedSkribbleValue for GeneratedAtomFilterChild {
     &self.0
   }
 }
-impl GeneratedValueSetFilterNone for GeneratedAtomFilterChild {}
+impl GeneratedValueSetFilterSvg for GeneratedAtomFilterChild {}
 pub struct GeneratedAtomBackdropBlurChild(String);
 impl GeneratedSkribbleValue for GeneratedAtomBackdropBlurChild {
   #[inline]
@@ -15537,17 +15555,6 @@ impl GeneratedValueSetDropShadowLg for GeneratedAtomBackdropDropShadowChild {}
 impl GeneratedValueSetDropShadowXl for GeneratedAtomBackdropDropShadowChild {}
 impl GeneratedValueSetDropShadowN2xl for GeneratedAtomBackdropDropShadowChild {}
 impl GeneratedValueSetDropShadowNone for GeneratedAtomBackdropDropShadowChild {}
-pub struct GeneratedAtomBackdropCustomChild(String);
-impl GeneratedSkribbleValue for GeneratedAtomBackdropCustomChild {
-  #[inline]
-  fn from_ref(value: impl AsRef<str>) -> Self {
-    Self(value.as_ref().to_string())
-  }
-  #[inline]
-  fn get_skribble_value(&self) -> &String {
-    &self.0
-  }
-}
 pub struct GeneratedAtomBackdropFilterChild(String);
 impl GeneratedSkribbleValue for GeneratedAtomBackdropFilterChild {
   #[inline]
@@ -15559,7 +15566,7 @@ impl GeneratedSkribbleValue for GeneratedAtomBackdropFilterChild {
     &self.0
   }
 }
-impl GeneratedValueSetFilterNone for GeneratedAtomBackdropFilterChild {}
+impl GeneratedValueSetBackdropFilterSvg for GeneratedAtomBackdropFilterChild {}
 pub struct GeneratedAtomWChild(String);
 impl GeneratedSkribbleValue for GeneratedAtomWChild {
   #[inline]
@@ -25199,6 +25206,69 @@ impl GeneratedColorRose950 for GeneratedAtomShadowColorChild {}
 impl GeneratedColorInherit for GeneratedAtomShadowColorChild {}
 impl GeneratedColorTransparent for GeneratedAtomShadowColorChild {}
 impl GeneratedColorCurrent for GeneratedAtomShadowColorChild {}
+pub struct GeneratedAtomOpacityChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomOpacityChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetOpacityN0 for GeneratedAtomOpacityChild {}
+impl GeneratedValueSetOpacityN5 for GeneratedAtomOpacityChild {}
+impl GeneratedValueSetOpacityN10 for GeneratedAtomOpacityChild {}
+impl GeneratedValueSetOpacityN20 for GeneratedAtomOpacityChild {}
+impl GeneratedValueSetOpacityN30 for GeneratedAtomOpacityChild {}
+impl GeneratedValueSetOpacityN40 for GeneratedAtomOpacityChild {}
+impl GeneratedValueSetOpacityN50 for GeneratedAtomOpacityChild {}
+impl GeneratedValueSetOpacityN60 for GeneratedAtomOpacityChild {}
+impl GeneratedValueSetOpacityN70 for GeneratedAtomOpacityChild {}
+impl GeneratedValueSetOpacityN75 for GeneratedAtomOpacityChild {}
+impl GeneratedValueSetOpacityN80 for GeneratedAtomOpacityChild {}
+impl GeneratedValueSetOpacityN90 for GeneratedAtomOpacityChild {}
+impl GeneratedValueSetOpacityN95 for GeneratedAtomOpacityChild {}
+impl GeneratedValueSetOpacityN100 for GeneratedAtomOpacityChild {}
+pub struct GeneratedAtomMixBlendChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomMixBlendChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetMixBlendNormal for GeneratedAtomMixBlendChild {}
+impl GeneratedValueSetMixBlendMultiply for GeneratedAtomMixBlendChild {}
+impl GeneratedValueSetMixBlendScreen for GeneratedAtomMixBlendChild {}
+impl GeneratedValueSetMixBlendOverlay for GeneratedAtomMixBlendChild {}
+impl GeneratedValueSetMixBlendDarken for GeneratedAtomMixBlendChild {}
+impl GeneratedValueSetMixBlendLighten for GeneratedAtomMixBlendChild {}
+impl GeneratedValueSetMixBlendColorDodge for GeneratedAtomMixBlendChild {}
+impl GeneratedValueSetMixBlendColorBurn for GeneratedAtomMixBlendChild {}
+pub struct GeneratedAtomBgBlendChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomBgBlendChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetMixBlendNormal for GeneratedAtomBgBlendChild {}
+impl GeneratedValueSetMixBlendMultiply for GeneratedAtomBgBlendChild {}
+impl GeneratedValueSetMixBlendScreen for GeneratedAtomBgBlendChild {}
+impl GeneratedValueSetMixBlendOverlay for GeneratedAtomBgBlendChild {}
+impl GeneratedValueSetMixBlendDarken for GeneratedAtomBgBlendChild {}
+impl GeneratedValueSetMixBlendLighten for GeneratedAtomBgBlendChild {}
+impl GeneratedValueSetMixBlendColorDodge for GeneratedAtomBgBlendChild {}
+impl GeneratedValueSetMixBlendColorBurn for GeneratedAtomBgBlendChild {}
 pub struct GeneratedAtomScaleChild(String);
 impl GeneratedSkribbleValue for GeneratedAtomScaleChild {
   #[inline]
@@ -26241,16 +26311,6 @@ pub trait GeneratedAtomDir: GeneratedSkribbleValue {
     self.append(format!("dir:[{}]", value.trim()))
   }
 }
-pub trait GeneratedAtomOpacity: GeneratedSkribbleValue {
-  #[inline]
-  fn opacity(&self) -> GeneratedAtomOpacityChild {
-    GeneratedAtomOpacityChild::from_ref(self.append("opacity"))
-  }
-  #[inline]
-  fn opacity_(&self, value: &'static str) -> String {
-    self.append(format!("opacity:[{}]", value.trim()))
-  }
-}
 pub trait GeneratedAtomAspect: GeneratedSkribbleValue {
   /// Control the aspect ratio of an element.
   #[inline]
@@ -26677,19 +26737,8 @@ pub trait GeneratedAtomDropShadow: GeneratedSkribbleValue {
     self.append(format!("drop-shadow:[{}]", value.trim()))
   }
 }
-pub trait GeneratedAtomCustom: GeneratedSkribbleValue {
-  /// Control the custom filters to an element.
-  #[inline]
-  fn custom(&self) -> GeneratedAtomCustomChild {
-    GeneratedAtomCustomChild::from_ref(self.append("custom"))
-  }
-  #[inline]
-  fn custom_(&self, value: &'static str) -> String {
-    self.append(format!("custom:[{}]", value.trim()))
-  }
-}
 pub trait GeneratedAtomFilter: GeneratedSkribbleValue {
-  /// Control the filters to an element.
+  /// Set the custom svg filters.
   #[inline]
   fn filter(&self) -> GeneratedAtomFilterChild {
     GeneratedAtomFilterChild::from_ref(self.append("filter"))
@@ -26798,19 +26847,8 @@ pub trait GeneratedAtomBackdropDropShadow: GeneratedSkribbleValue {
     self.append(format!("backdrop-drop-shadow:[{}]", value.trim()))
   }
 }
-pub trait GeneratedAtomBackdropCustom: GeneratedSkribbleValue {
-  /// Control the backdrop-custom filters to an element.
-  #[inline]
-  fn backdrop_custom(&self) -> GeneratedAtomBackdropCustomChild {
-    GeneratedAtomBackdropCustomChild::from_ref(self.append("backdrop-custom"))
-  }
-  #[inline]
-  fn backdrop_custom_(&self, value: &'static str) -> String {
-    self.append(format!("backdrop-custom:[{}]", value.trim()))
-  }
-}
 pub trait GeneratedAtomBackdropFilter: GeneratedSkribbleValue {
-  /// Control the backdrop-filters to an element.
+  /// Control the backdrop-custom filters to an element.
   #[inline]
   fn backdrop_filter(&self) -> GeneratedAtomBackdropFilterChild {
     GeneratedAtomBackdropFilterChild::from_ref(self.append("backdrop-filter"))
@@ -28334,6 +28372,36 @@ pub trait GeneratedAtomShadowColor: GeneratedSkribbleValue {
     self.append(format!("shadow-color:[{}]", value.trim()))
   }
 }
+pub trait GeneratedAtomOpacity: GeneratedSkribbleValue {
+  #[inline]
+  fn opacity(&self) -> GeneratedAtomOpacityChild {
+    GeneratedAtomOpacityChild::from_ref(self.append("opacity"))
+  }
+  #[inline]
+  fn opacity_(&self, value: &'static str) -> String {
+    self.append(format!("opacity:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomMixBlend: GeneratedSkribbleValue {
+  #[inline]
+  fn mix_blend(&self) -> GeneratedAtomMixBlendChild {
+    GeneratedAtomMixBlendChild::from_ref(self.append("mix-blend"))
+  }
+  #[inline]
+  fn mix_blend_(&self, value: &'static str) -> String {
+    self.append(format!("mix-blend:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomBgBlend: GeneratedSkribbleValue {
+  #[inline]
+  fn bg_blend(&self) -> GeneratedAtomBgBlendChild {
+    GeneratedAtomBgBlendChild::from_ref(self.append("bg-blend"))
+  }
+  #[inline]
+  fn bg_blend_(&self, value: &'static str) -> String {
+    self.append(format!("bg-blend:[{}]", value.trim()))
+  }
+}
 pub trait GeneratedAtomScale: GeneratedSkribbleValue {
   #[inline]
   fn scale(&self) -> GeneratedAtomScaleChild {
@@ -28466,14 +28534,6 @@ pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
     self.append_value("oblique")
   }
   #[inline]
-  fn antialiased(&self) -> String {
-    self.append_value("antialiased")
-  }
-  #[inline]
-  fn subpixel_antialiased(&self) -> String {
-    self.append_value("subpixel-antialiased")
-  }
-  #[inline]
   fn transform_gpu(&self) -> String {
     self.append_value("transform-gpu")
   }
@@ -28504,6 +28564,14 @@ pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   #[inline]
   fn shadow_none(&self) -> String {
     self.append_value("shadow-none")
+  }
+  #[inline]
+  fn filter_none(&self) -> String {
+    self.append_value("filter-none")
+  }
+  #[inline]
+  fn backdrop_filter_none(&self) -> String {
+    self.append_value("backdrop-filter-none")
   }
 }
 pub trait GeneratedAliases: GeneratedSkribbleValue {
@@ -28648,7 +28716,7 @@ pub trait GeneratedAliases: GeneratedSkribbleValue {
     ["sepia:$default"].map(|class| self.append(class)).join(" ")
   }
   #[inline]
-  fn filter_none(&self) -> String {
+  fn filter_none_1(&self) -> String {
     ["filter:$none"].map(|class| self.append(class)).join(" ")
   }
   #[inline]
@@ -28672,7 +28740,7 @@ pub trait GeneratedAliases: GeneratedSkribbleValue {
     ["backdrop-sepia:$default"].map(|class| self.append(class)).join(" ")
   }
   #[inline]
-  fn backdrop_filter_none(&self) -> String {
+  fn backdrop_filter_none_1(&self) -> String {
     ["backdrop-filter:$none"].map(|class| self.append(class)).join(" ")
   }
   #[inline]
@@ -28776,11 +28844,11 @@ pub trait GeneratedAliases: GeneratedSkribbleValue {
     ["font-size:$9xl"].map(|class| self.append(class)).join(" ")
   }
   #[inline]
-  fn antialiased_1(&self) -> String {
+  fn antialiased(&self) -> String {
     ["smoothing:$antialiased"].map(|class| self.append(class)).join(" ")
   }
   #[inline]
-  fn subpixel_antialiased_1(&self) -> String {
+  fn subpixel_antialiased(&self) -> String {
     ["smoothing:$subpixel"].map(|class| self.append(class)).join(" ")
   }
   #[inline]
@@ -29163,7 +29231,6 @@ impl GeneratedAtomSpaceX for GeneratedSkribbleRoot {}
 impl GeneratedAtomSpaceY for GeneratedSkribbleRoot {}
 impl GeneratedAtomZ for GeneratedSkribbleRoot {}
 impl GeneratedAtomDir for GeneratedSkribbleRoot {}
-impl GeneratedAtomOpacity for GeneratedSkribbleRoot {}
 impl GeneratedAtomAspect for GeneratedSkribbleRoot {}
 impl GeneratedAtomColumns for GeneratedSkribbleRoot {}
 impl GeneratedAtomBreakAfter for GeneratedSkribbleRoot {}
@@ -29203,7 +29270,6 @@ impl GeneratedAtomInvert for GeneratedSkribbleRoot {}
 impl GeneratedAtomSaturate for GeneratedSkribbleRoot {}
 impl GeneratedAtomSepia for GeneratedSkribbleRoot {}
 impl GeneratedAtomDropShadow for GeneratedSkribbleRoot {}
-impl GeneratedAtomCustom for GeneratedSkribbleRoot {}
 impl GeneratedAtomFilter for GeneratedSkribbleRoot {}
 impl GeneratedAtomBackdropBlur for GeneratedSkribbleRoot {}
 impl GeneratedAtomBackdropBrightness for GeneratedSkribbleRoot {}
@@ -29214,7 +29280,6 @@ impl GeneratedAtomBackdropInvert for GeneratedSkribbleRoot {}
 impl GeneratedAtomBackdropSaturate for GeneratedSkribbleRoot {}
 impl GeneratedAtomBackdropSepia for GeneratedSkribbleRoot {}
 impl GeneratedAtomBackdropDropShadow for GeneratedSkribbleRoot {}
-impl GeneratedAtomBackdropCustom for GeneratedSkribbleRoot {}
 impl GeneratedAtomBackdropFilter for GeneratedSkribbleRoot {}
 impl GeneratedAtomW for GeneratedSkribbleRoot {}
 impl GeneratedAtomMinW for GeneratedSkribbleRoot {}
@@ -29362,6 +29427,9 @@ impl GeneratedAtomRingOffset for GeneratedSkribbleRoot {}
 impl GeneratedAtomRingOffsetColor for GeneratedSkribbleRoot {}
 impl GeneratedAtomShadow for GeneratedSkribbleRoot {}
 impl GeneratedAtomShadowColor for GeneratedSkribbleRoot {}
+impl GeneratedAtomOpacity for GeneratedSkribbleRoot {}
+impl GeneratedAtomMixBlend for GeneratedSkribbleRoot {}
+impl GeneratedAtomBgBlend for GeneratedSkribbleRoot {}
 impl GeneratedAtomScale for GeneratedSkribbleRoot {}
 impl GeneratedAtomScaleX for GeneratedSkribbleRoot {}
 impl GeneratedAtomScaleY for GeneratedSkribbleRoot {}
@@ -29469,7 +29537,6 @@ impl GeneratedAtomSpaceX for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomSpaceY for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomZ for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomDir for GeneratedMediaQueryDeviceCategoriesChild {}
-impl GeneratedAtomOpacity for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomAspect for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomColumns for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomBreakAfter for GeneratedMediaQueryDeviceCategoriesChild {}
@@ -29509,7 +29576,6 @@ impl GeneratedAtomInvert for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomSaturate for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomSepia for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomDropShadow for GeneratedMediaQueryDeviceCategoriesChild {}
-impl GeneratedAtomCustom for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomFilter for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomBackdropBlur for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedMediaQueryDeviceCategoriesChild {}
@@ -29520,7 +29586,6 @@ impl GeneratedAtomBackdropInvert for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomBackdropSepia for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedMediaQueryDeviceCategoriesChild {}
-impl GeneratedAtomBackdropCustom for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomBackdropFilter for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomW for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomMinW for GeneratedMediaQueryDeviceCategoriesChild {}
@@ -29668,6 +29733,9 @@ impl GeneratedAtomRingOffset for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomShadow for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomShadowColor for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomOpacity for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomMixBlend for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomBgBlend for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomScale for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomScaleX for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomScaleY for GeneratedMediaQueryDeviceCategoriesChild {}
@@ -29774,7 +29842,6 @@ impl GeneratedAtomSpaceX for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomSpaceY for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomZ for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomDir for GeneratedMediaQueryBreakpointsChild {}
-impl GeneratedAtomOpacity for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomAspect for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomColumns for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomBreakAfter for GeneratedMediaQueryBreakpointsChild {}
@@ -29814,7 +29881,6 @@ impl GeneratedAtomInvert for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomSaturate for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomSepia for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomDropShadow for GeneratedMediaQueryBreakpointsChild {}
-impl GeneratedAtomCustom for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomFilter for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomBackdropBlur for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedMediaQueryBreakpointsChild {}
@@ -29825,7 +29891,6 @@ impl GeneratedAtomBackdropInvert for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomBackdropSepia for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedMediaQueryBreakpointsChild {}
-impl GeneratedAtomBackdropCustom for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomBackdropFilter for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomW for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomMinW for GeneratedMediaQueryBreakpointsChild {}
@@ -29973,6 +30038,9 @@ impl GeneratedAtomRingOffset for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomShadow for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomShadowColor for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomOpacity for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomMixBlend for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomBgBlend for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomScale for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomScaleX for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomScaleY for GeneratedMediaQueryBreakpointsChild {}
@@ -30078,7 +30146,6 @@ impl GeneratedAtomSpaceX for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomSpaceY for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomZ for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomDir for GeneratedMediaQueryOrientationChild {}
-impl GeneratedAtomOpacity for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomAspect for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomColumns for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomBreakAfter for GeneratedMediaQueryOrientationChild {}
@@ -30118,7 +30185,6 @@ impl GeneratedAtomInvert for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomSaturate for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomSepia for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomDropShadow for GeneratedMediaQueryOrientationChild {}
-impl GeneratedAtomCustom for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomFilter for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomBackdropBlur for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedMediaQueryOrientationChild {}
@@ -30129,7 +30195,6 @@ impl GeneratedAtomBackdropInvert for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomBackdropSepia for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedMediaQueryOrientationChild {}
-impl GeneratedAtomBackdropCustom for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomBackdropFilter for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomW for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomMinW for GeneratedMediaQueryOrientationChild {}
@@ -30277,6 +30342,9 @@ impl GeneratedAtomRingOffset for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomShadow for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomShadowColor for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomOpacity for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomMixBlend for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomBgBlend for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomScale for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomScaleX for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomScaleY for GeneratedMediaQueryOrientationChild {}
@@ -30381,7 +30449,6 @@ impl GeneratedAtomSpaceX for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomSpaceY for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomZ for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomDir for GeneratedMediaQueryMotionChild {}
-impl GeneratedAtomOpacity for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomAspect for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomColumns for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomBreakAfter for GeneratedMediaQueryMotionChild {}
@@ -30421,7 +30488,6 @@ impl GeneratedAtomInvert for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomSaturate for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomSepia for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomDropShadow for GeneratedMediaQueryMotionChild {}
-impl GeneratedAtomCustom for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomFilter for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomBackdropBlur for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedMediaQueryMotionChild {}
@@ -30432,7 +30498,6 @@ impl GeneratedAtomBackdropInvert for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomBackdropSepia for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedMediaQueryMotionChild {}
-impl GeneratedAtomBackdropCustom for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomBackdropFilter for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomW for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomMinW for GeneratedMediaQueryMotionChild {}
@@ -30580,6 +30645,9 @@ impl GeneratedAtomRingOffset for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomShadow for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomShadowColor for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomOpacity for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomMixBlend for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomBgBlend for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomScale for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomScaleX for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomScaleY for GeneratedMediaQueryMotionChild {}
@@ -30683,7 +30751,6 @@ impl GeneratedAtomSpaceX for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomSpaceY for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomZ for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomDir for GeneratedMediaQueryDarkModeChild {}
-impl GeneratedAtomOpacity for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomAspect for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomColumns for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomBreakAfter for GeneratedMediaQueryDarkModeChild {}
@@ -30723,7 +30790,6 @@ impl GeneratedAtomInvert for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomSaturate for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomSepia for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomDropShadow for GeneratedMediaQueryDarkModeChild {}
-impl GeneratedAtomCustom for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomFilter for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomBackdropBlur for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedMediaQueryDarkModeChild {}
@@ -30734,7 +30800,6 @@ impl GeneratedAtomBackdropInvert for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomBackdropSepia for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedMediaQueryDarkModeChild {}
-impl GeneratedAtomBackdropCustom for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomBackdropFilter for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomW for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomMinW for GeneratedMediaQueryDarkModeChild {}
@@ -30882,6 +30947,9 @@ impl GeneratedAtomRingOffset for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomShadow for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomShadowColor for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomOpacity for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomMixBlend for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomBgBlend for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomScale for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomScaleX for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomScaleY for GeneratedMediaQueryDarkModeChild {}
@@ -30984,7 +31052,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierParentGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierParentGroupChild {}
@@ -31024,7 +31091,6 @@ impl GeneratedAtomInvert for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierParentGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierParentGroupChild {}
@@ -31035,7 +31101,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierParentGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomW for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierParentGroupChild {}
@@ -31183,6 +31248,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierParentGroupChild {}
@@ -31284,7 +31352,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierHoverGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierHoverGroupChild {}
@@ -31324,7 +31391,6 @@ impl GeneratedAtomInvert for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierHoverGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierHoverGroupChild {}
@@ -31335,7 +31401,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierHoverGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomW for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierHoverGroupChild {}
@@ -31483,6 +31548,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierHoverGroupChild {}
@@ -31583,7 +31651,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierActiveGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierActiveGroupChild {}
@@ -31623,7 +31690,6 @@ impl GeneratedAtomInvert for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierActiveGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierActiveGroupChild {}
@@ -31634,7 +31700,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierActiveGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomW for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierActiveGroupChild {}
@@ -31782,6 +31847,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierActiveGroupChild {}
@@ -31881,7 +31949,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierFocusGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierFocusGroupChild {}
@@ -31921,7 +31988,6 @@ impl GeneratedAtomInvert for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierFocusGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierFocusGroupChild {}
@@ -31932,7 +31998,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierFocusGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomW for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierFocusGroupChild {}
@@ -32080,6 +32145,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierFocusGroupChild {}
@@ -32178,7 +32246,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierFocusWithinGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierFocusWithinGroupChild {}
@@ -32218,7 +32285,6 @@ impl GeneratedAtomInvert for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierFocusWithinGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierFocusWithinGroupChild {}
@@ -32229,7 +32295,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierFocusWithinGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomW for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierFocusWithinGroupChild {}
@@ -32377,6 +32442,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierFocusWithinGroupChild {}
@@ -32474,7 +32542,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierFocusVisibleGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierFocusVisibleGroupChild {}
@@ -32514,7 +32581,6 @@ impl GeneratedAtomInvert for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierFocusVisibleGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierFocusVisibleGroupChild {}
@@ -32525,7 +32591,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierFocusVisibleGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomW for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierFocusVisibleGroupChild {}
@@ -32673,6 +32738,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierFocusVisibleGroupChild {}
@@ -32769,7 +32837,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierEnabledGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierEnabledGroupChild {}
@@ -32809,7 +32876,6 @@ impl GeneratedAtomInvert for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierEnabledGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierEnabledGroupChild {}
@@ -32820,7 +32886,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierEnabledGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomW for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierEnabledGroupChild {}
@@ -32968,6 +33033,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierEnabledGroupChild {}
@@ -33063,7 +33131,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierEmptyGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierEmptyGroupChild {}
@@ -33103,7 +33170,6 @@ impl GeneratedAtomInvert for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierEmptyGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierEmptyGroupChild {}
@@ -33114,7 +33180,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierEmptyGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomW for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierEmptyGroupChild {}
@@ -33262,6 +33327,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierEmptyGroupChild {}
@@ -33356,7 +33424,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierReadGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierReadGroupChild {}
@@ -33396,7 +33463,6 @@ impl GeneratedAtomInvert for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierReadGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierReadGroupChild {}
@@ -33407,7 +33473,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierReadGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomW for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierReadGroupChild {}
@@ -33555,6 +33620,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierReadGroupChild {}
@@ -33648,7 +33716,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierCheckedGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierCheckedGroupChild {}
@@ -33688,7 +33755,6 @@ impl GeneratedAtomInvert for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierCheckedGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierCheckedGroupChild {}
@@ -33699,7 +33765,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierCheckedGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomW for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierCheckedGroupChild {}
@@ -33847,6 +33912,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierCheckedGroupChild {}
@@ -33939,7 +34007,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierValidGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierValidGroupChild {}
@@ -33979,7 +34046,6 @@ impl GeneratedAtomInvert for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierValidGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierValidGroupChild {}
@@ -33990,7 +34056,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierValidGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomW for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierValidGroupChild {}
@@ -34138,6 +34203,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierValidGroupChild {}
@@ -34229,7 +34297,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierAutofillGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierAutofillGroupChild {}
@@ -34269,7 +34336,6 @@ impl GeneratedAtomInvert for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierAutofillGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierAutofillGroupChild {}
@@ -34280,7 +34346,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierAutofillGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomW for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierAutofillGroupChild {}
@@ -34428,6 +34493,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierAutofillGroupChild {}
@@ -34518,7 +34586,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierEvenGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierEvenGroupChild {}
@@ -34558,7 +34625,6 @@ impl GeneratedAtomInvert for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierEvenGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierEvenGroupChild {}
@@ -34569,7 +34635,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierEvenGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomW for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierEvenGroupChild {}
@@ -34717,6 +34782,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierEvenGroupChild {}
@@ -34806,7 +34874,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierNodePositionGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierNodePositionGroupChild {}
@@ -34846,7 +34913,6 @@ impl GeneratedAtomInvert for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierNodePositionGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierNodePositionGroupChild {}
@@ -34857,7 +34923,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierNodePositionGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomW for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierNodePositionGroupChild {}
@@ -35005,6 +35070,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierNodePositionGroupChild {}
@@ -35093,7 +35161,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierNodeOfTypeGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierNodeOfTypeGroupChild {}
@@ -35133,7 +35200,6 @@ impl GeneratedAtomInvert for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierNodeOfTypeGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierNodeOfTypeGroupChild {}
@@ -35144,7 +35210,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierNodeOfTypeGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomW for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierNodeOfTypeGroupChild {}
@@ -35292,6 +35357,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierNodeOfTypeGroupChild {}
@@ -35379,7 +35447,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierVisitedGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierVisitedGroupChild {}
@@ -35419,7 +35486,6 @@ impl GeneratedAtomInvert for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierVisitedGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierVisitedGroupChild {}
@@ -35430,7 +35496,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierVisitedGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomW for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierVisitedGroupChild {}
@@ -35578,6 +35643,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierVisitedGroupChild {}
@@ -35664,7 +35732,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierOptionalGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierOptionalGroupChild {}
@@ -35704,7 +35771,6 @@ impl GeneratedAtomInvert for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierOptionalGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierOptionalGroupChild {}
@@ -35715,7 +35781,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierOptionalGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomW for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierOptionalGroupChild {}
@@ -35863,6 +35928,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierOptionalGroupChild {}
@@ -35948,7 +36016,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierAriaChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierAriaChild {}
 impl GeneratedAtomZ for GeneratedModifierAriaChild {}
 impl GeneratedAtomDir for GeneratedModifierAriaChild {}
-impl GeneratedAtomOpacity for GeneratedModifierAriaChild {}
 impl GeneratedAtomAspect for GeneratedModifierAriaChild {}
 impl GeneratedAtomColumns for GeneratedModifierAriaChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierAriaChild {}
@@ -35988,7 +36055,6 @@ impl GeneratedAtomInvert for GeneratedModifierAriaChild {}
 impl GeneratedAtomSaturate for GeneratedModifierAriaChild {}
 impl GeneratedAtomSepia for GeneratedModifierAriaChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierAriaChild {}
-impl GeneratedAtomCustom for GeneratedModifierAriaChild {}
 impl GeneratedAtomFilter for GeneratedModifierAriaChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierAriaChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierAriaChild {}
@@ -35999,7 +36065,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierAriaChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierAriaChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierAriaChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierAriaChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierAriaChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierAriaChild {}
 impl GeneratedAtomW for GeneratedModifierAriaChild {}
 impl GeneratedAtomMinW for GeneratedModifierAriaChild {}
@@ -36147,6 +36212,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierAriaChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierAriaChild {}
 impl GeneratedAtomShadow for GeneratedModifierAriaChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierAriaChild {}
+impl GeneratedAtomOpacity for GeneratedModifierAriaChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierAriaChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierAriaChild {}
 impl GeneratedAtomScale for GeneratedModifierAriaChild {}
 impl GeneratedAtomScaleX for GeneratedModifierAriaChild {}
 impl GeneratedAtomScaleY for GeneratedModifierAriaChild {}
@@ -36231,7 +36299,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierFullScreenGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierFullScreenGroupChild {}
@@ -36271,7 +36338,6 @@ impl GeneratedAtomInvert for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierFullScreenGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierFullScreenGroupChild {}
@@ -36282,7 +36348,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierFullScreenGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomW for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierFullScreenGroupChild {}
@@ -36430,6 +36495,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierFullScreenGroupChild {}
@@ -36513,7 +36581,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierTargetGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierTargetGroupChild {}
@@ -36553,7 +36620,6 @@ impl GeneratedAtomInvert for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierTargetGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierTargetGroupChild {}
@@ -36564,7 +36630,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierTargetGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomW for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierTargetGroupChild {}
@@ -36712,6 +36777,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierTargetGroupChild {}
@@ -36794,7 +36862,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierPlaceholderShownGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierPlaceholderShownGroupChild {}
@@ -36834,7 +36901,6 @@ impl GeneratedAtomInvert for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierPlaceholderShownGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierPlaceholderShownGroupChild {}
@@ -36845,7 +36911,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierPlaceholderShownGroupChild
 impl GeneratedAtomBackdropSaturate for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierPlaceholderShownGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomW for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierPlaceholderShownGroupChild {}
@@ -36993,6 +37058,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierPlaceholderShownGroupChild {}
@@ -37074,7 +37142,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierRequiredGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierRequiredGroupChild {}
@@ -37114,7 +37181,6 @@ impl GeneratedAtomInvert for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierRequiredGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierRequiredGroupChild {}
@@ -37125,7 +37191,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierRequiredGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomW for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierRequiredGroupChild {}
@@ -37273,6 +37338,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierRequiredGroupChild {}
@@ -37353,7 +37421,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierDefaultGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierDefaultGroupChild {}
@@ -37393,7 +37460,6 @@ impl GeneratedAtomInvert for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierDefaultGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierDefaultGroupChild {}
@@ -37404,7 +37470,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierDefaultGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomW for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierDefaultGroupChild {}
@@ -37552,6 +37617,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierDefaultGroupChild {}
@@ -37631,7 +37699,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierOnlyChildGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierOnlyChildGroupChild {}
@@ -37671,7 +37738,6 @@ impl GeneratedAtomInvert for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierOnlyChildGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierOnlyChildGroupChild {}
@@ -37682,7 +37748,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierOnlyChildGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomW for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierOnlyChildGroupChild {}
@@ -37830,6 +37895,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierOnlyChildGroupChild {}
@@ -37908,7 +37976,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierOnlyGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierOnlyGroupChild {}
@@ -37948,7 +38015,6 @@ impl GeneratedAtomInvert for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierOnlyGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierOnlyGroupChild {}
@@ -37959,7 +38025,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierOnlyGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomW for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierOnlyGroupChild {}
@@ -38107,6 +38172,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierOnlyGroupChild {}
@@ -38184,7 +38252,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierRootGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierRootGroupChild {}
@@ -38224,7 +38291,6 @@ impl GeneratedAtomInvert for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierRootGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierRootGroupChild {}
@@ -38235,7 +38301,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierRootGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomW for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierRootGroupChild {}
@@ -38383,6 +38448,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierRootGroupChild {}
@@ -38459,7 +38527,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierLinkGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierLinkGroupChild {}
@@ -38499,7 +38566,6 @@ impl GeneratedAtomInvert for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierLinkGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierLinkGroupChild {}
@@ -38510,7 +38576,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierLinkGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomW for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierLinkGroupChild {}
@@ -38658,6 +38723,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierLinkGroupChild {}
@@ -38733,7 +38801,6 @@ impl GeneratedAtomSpaceX for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomSpaceY for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomZ for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomDir for GeneratedModifierPseudoGroupChild {}
-impl GeneratedAtomOpacity for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomAspect for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomColumns for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomBreakAfter for GeneratedModifierPseudoGroupChild {}
@@ -38773,7 +38840,6 @@ impl GeneratedAtomInvert for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomSaturate for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomSepia for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomDropShadow for GeneratedModifierPseudoGroupChild {}
-impl GeneratedAtomCustom for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomFilter for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomBackdropBlur for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedModifierPseudoGroupChild {}
@@ -38784,7 +38850,6 @@ impl GeneratedAtomBackdropInvert for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomBackdropSaturate for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomBackdropSepia for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedModifierPseudoGroupChild {}
-impl GeneratedAtomBackdropCustom for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomBackdropFilter for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomW for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomMinW for GeneratedModifierPseudoGroupChild {}
@@ -38932,6 +38997,9 @@ impl GeneratedAtomRingOffset for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomShadow for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomShadowColor for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomOpacity for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomMixBlend for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomBgBlend for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomScale for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomScaleX for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomScaleY for GeneratedModifierPseudoGroupChild {}
@@ -39006,7 +39074,6 @@ impl GeneratedAtomSpaceX for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomSpaceY for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomZ for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomDir for GeneratedTransformerImportantGroupImportantChild {}
-impl GeneratedAtomOpacity for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomAspect for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomColumns for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomBreakAfter for GeneratedTransformerImportantGroupImportantChild {}
@@ -39046,7 +39113,6 @@ impl GeneratedAtomInvert for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomSaturate for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomSepia for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomDropShadow for GeneratedTransformerImportantGroupImportantChild {}
-impl GeneratedAtomCustom for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomFilter for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomBackdropBlur for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomBackdropBrightness for GeneratedTransformerImportantGroupImportantChild {}
@@ -39057,7 +39123,6 @@ impl GeneratedAtomBackdropInvert for GeneratedTransformerImportantGroupImportant
 impl GeneratedAtomBackdropSaturate for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomBackdropSepia for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomBackdropDropShadow for GeneratedTransformerImportantGroupImportantChild {}
-impl GeneratedAtomBackdropCustom for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomBackdropFilter for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomW for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomMinW for GeneratedTransformerImportantGroupImportantChild {}
@@ -39205,6 +39270,9 @@ impl GeneratedAtomRingOffset for GeneratedTransformerImportantGroupImportantChil
 impl GeneratedAtomRingOffsetColor for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomShadow for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomShadowColor for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomOpacity for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomMixBlend for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomBgBlend for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomScale for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomScaleX for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomScaleY for GeneratedTransformerImportantGroupImportantChild {}
