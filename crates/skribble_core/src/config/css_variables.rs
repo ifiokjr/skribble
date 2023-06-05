@@ -152,7 +152,7 @@ impl CssVariable {
       return Ok(());
     }
 
-    if self.is_color()  {
+    if self.is_color() {
       value = options.color_format.get_color(value)?.to_string();
       let hsla = options.color_format.get_hsla(&value)?;
 
