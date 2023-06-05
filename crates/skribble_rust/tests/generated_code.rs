@@ -7180,6 +7180,102 @@ pub trait GeneratedValueSetRatioRBox: GeneratedSkribbleValue {
     self.append_value("box")
   }
 }
+pub trait GeneratedValueSetAspectRatioN1: GeneratedSkribbleValue {
+  #[inline]
+  fn n1(&self) -> String {
+    self.append_value("1")
+  }
+}
+pub trait GeneratedValueSetAspectRatioN2: GeneratedSkribbleValue {
+  #[inline]
+  fn n2(&self) -> String {
+    self.append_value("2")
+  }
+}
+pub trait GeneratedValueSetAspectRatioN3: GeneratedSkribbleValue {
+  #[inline]
+  fn n3(&self) -> String {
+    self.append_value("3")
+  }
+}
+pub trait GeneratedValueSetAspectRatioN4: GeneratedSkribbleValue {
+  #[inline]
+  fn n4(&self) -> String {
+    self.append_value("4")
+  }
+}
+pub trait GeneratedValueSetAspectRatioN5: GeneratedSkribbleValue {
+  #[inline]
+  fn n5(&self) -> String {
+    self.append_value("5")
+  }
+}
+pub trait GeneratedValueSetAspectRatioN6: GeneratedSkribbleValue {
+  #[inline]
+  fn n6(&self) -> String {
+    self.append_value("6")
+  }
+}
+pub trait GeneratedValueSetAspectRatioN7: GeneratedSkribbleValue {
+  #[inline]
+  fn n7(&self) -> String {
+    self.append_value("7")
+  }
+}
+pub trait GeneratedValueSetAspectRatioN8: GeneratedSkribbleValue {
+  #[inline]
+  fn n8(&self) -> String {
+    self.append_value("8")
+  }
+}
+pub trait GeneratedValueSetAspectRatioN9: GeneratedSkribbleValue {
+  #[inline]
+  fn n9(&self) -> String {
+    self.append_value("9")
+  }
+}
+pub trait GeneratedValueSetAspectRatioN10: GeneratedSkribbleValue {
+  #[inline]
+  fn n10(&self) -> String {
+    self.append_value("10")
+  }
+}
+pub trait GeneratedValueSetAspectRatioN11: GeneratedSkribbleValue {
+  #[inline]
+  fn n11(&self) -> String {
+    self.append_value("11")
+  }
+}
+pub trait GeneratedValueSetAspectRatioN12: GeneratedSkribbleValue {
+  #[inline]
+  fn n12(&self) -> String {
+    self.append_value("12")
+  }
+}
+pub trait GeneratedValueSetAspectRatioN13: GeneratedSkribbleValue {
+  #[inline]
+  fn n13(&self) -> String {
+    self.append_value("13")
+  }
+}
+pub trait GeneratedValueSetAspectRatioN14: GeneratedSkribbleValue {
+  #[inline]
+  fn n14(&self) -> String {
+    self.append_value("14")
+  }
+}
+pub trait GeneratedValueSetAspectRatioN15: GeneratedSkribbleValue {
+  #[inline]
+  fn n15(&self) -> String {
+    self.append_value("15")
+  }
+}
+pub trait GeneratedValueSetAspectRatioN16: GeneratedSkribbleValue {
+  #[inline]
+  fn n16(&self) -> String {
+    self.append_value("16")
+  }
+}
 pub trait GeneratedValueSetGridCountN1: GeneratedSkribbleValue {
   #[inline]
   fn n1(&self) -> String {
@@ -25703,6 +25799,286 @@ impl GeneratedValueSetOriginBottom for GeneratedAtomOriginChild {}
 impl GeneratedValueSetOriginBottomLeft for GeneratedAtomOriginChild {}
 impl GeneratedValueSetOriginLeft for GeneratedAtomOriginChild {}
 impl GeneratedValueSetOriginTopLeft for GeneratedAtomOriginChild {}
+pub struct GeneratedAtomAccentChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomAccentChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorPrimary for GeneratedAtomAccentChild {}
+impl GeneratedColorPrimaryContent for GeneratedAtomAccentChild {}
+impl GeneratedColorSecondary for GeneratedAtomAccentChild {}
+impl GeneratedColorSecondaryContent for GeneratedAtomAccentChild {}
+impl GeneratedColorAccent for GeneratedAtomAccentChild {}
+impl GeneratedColorAccentContent for GeneratedAtomAccentChild {}
+impl GeneratedColorNeutral for GeneratedAtomAccentChild {}
+impl GeneratedColorNeutralContent for GeneratedAtomAccentChild {}
+impl GeneratedColorBase100 for GeneratedAtomAccentChild {}
+impl GeneratedColorBase200 for GeneratedAtomAccentChild {}
+impl GeneratedColorBase300 for GeneratedAtomAccentChild {}
+impl GeneratedColorBaseContent for GeneratedAtomAccentChild {}
+impl GeneratedColorInfo for GeneratedAtomAccentChild {}
+impl GeneratedColorInfoContent for GeneratedAtomAccentChild {}
+impl GeneratedColorSuccess for GeneratedAtomAccentChild {}
+impl GeneratedColorSuccessContent for GeneratedAtomAccentChild {}
+impl GeneratedColorWarning for GeneratedAtomAccentChild {}
+impl GeneratedColorWarningContent for GeneratedAtomAccentChild {}
+impl GeneratedColorError for GeneratedAtomAccentChild {}
+impl GeneratedColorErrorContent for GeneratedAtomAccentChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomAccentChild {}
+impl GeneratedColorRingColor for GeneratedAtomAccentChild {}
+impl GeneratedColorBlack for GeneratedAtomAccentChild {}
+impl GeneratedColorWhite for GeneratedAtomAccentChild {}
+impl GeneratedColorSlate50 for GeneratedAtomAccentChild {}
+impl GeneratedColorSlate100 for GeneratedAtomAccentChild {}
+impl GeneratedColorSlate200 for GeneratedAtomAccentChild {}
+impl GeneratedColorSlate300 for GeneratedAtomAccentChild {}
+impl GeneratedColorSlate400 for GeneratedAtomAccentChild {}
+impl GeneratedColorSlate500 for GeneratedAtomAccentChild {}
+impl GeneratedColorSlate600 for GeneratedAtomAccentChild {}
+impl GeneratedColorSlate700 for GeneratedAtomAccentChild {}
+impl GeneratedColorSlate800 for GeneratedAtomAccentChild {}
+impl GeneratedColorSlate900 for GeneratedAtomAccentChild {}
+impl GeneratedColorSlate950 for GeneratedAtomAccentChild {}
+impl GeneratedColorGray50 for GeneratedAtomAccentChild {}
+impl GeneratedColorGray100 for GeneratedAtomAccentChild {}
+impl GeneratedColorGray200 for GeneratedAtomAccentChild {}
+impl GeneratedColorGray300 for GeneratedAtomAccentChild {}
+impl GeneratedColorGray400 for GeneratedAtomAccentChild {}
+impl GeneratedColorGray500 for GeneratedAtomAccentChild {}
+impl GeneratedColorGray600 for GeneratedAtomAccentChild {}
+impl GeneratedColorGray700 for GeneratedAtomAccentChild {}
+impl GeneratedColorGray800 for GeneratedAtomAccentChild {}
+impl GeneratedColorGray900 for GeneratedAtomAccentChild {}
+impl GeneratedColorGray950 for GeneratedAtomAccentChild {}
+impl GeneratedColorZinc50 for GeneratedAtomAccentChild {}
+impl GeneratedColorZinc100 for GeneratedAtomAccentChild {}
+impl GeneratedColorZinc200 for GeneratedAtomAccentChild {}
+impl GeneratedColorZinc300 for GeneratedAtomAccentChild {}
+impl GeneratedColorZinc400 for GeneratedAtomAccentChild {}
+impl GeneratedColorZinc500 for GeneratedAtomAccentChild {}
+impl GeneratedColorZinc600 for GeneratedAtomAccentChild {}
+impl GeneratedColorZinc700 for GeneratedAtomAccentChild {}
+impl GeneratedColorZinc800 for GeneratedAtomAccentChild {}
+impl GeneratedColorZinc900 for GeneratedAtomAccentChild {}
+impl GeneratedColorZinc950 for GeneratedAtomAccentChild {}
+impl GeneratedColorNeutral50 for GeneratedAtomAccentChild {}
+impl GeneratedColorNeutral100 for GeneratedAtomAccentChild {}
+impl GeneratedColorNeutral200 for GeneratedAtomAccentChild {}
+impl GeneratedColorNeutral300 for GeneratedAtomAccentChild {}
+impl GeneratedColorNeutral400 for GeneratedAtomAccentChild {}
+impl GeneratedColorNeutral500 for GeneratedAtomAccentChild {}
+impl GeneratedColorNeutral600 for GeneratedAtomAccentChild {}
+impl GeneratedColorNeutral700 for GeneratedAtomAccentChild {}
+impl GeneratedColorNeutral800 for GeneratedAtomAccentChild {}
+impl GeneratedColorNeutral900 for GeneratedAtomAccentChild {}
+impl GeneratedColorNeutral950 for GeneratedAtomAccentChild {}
+impl GeneratedColorStone50 for GeneratedAtomAccentChild {}
+impl GeneratedColorStone100 for GeneratedAtomAccentChild {}
+impl GeneratedColorStone200 for GeneratedAtomAccentChild {}
+impl GeneratedColorStone300 for GeneratedAtomAccentChild {}
+impl GeneratedColorStone400 for GeneratedAtomAccentChild {}
+impl GeneratedColorStone500 for GeneratedAtomAccentChild {}
+impl GeneratedColorStone600 for GeneratedAtomAccentChild {}
+impl GeneratedColorStone700 for GeneratedAtomAccentChild {}
+impl GeneratedColorStone800 for GeneratedAtomAccentChild {}
+impl GeneratedColorStone900 for GeneratedAtomAccentChild {}
+impl GeneratedColorStone950 for GeneratedAtomAccentChild {}
+impl GeneratedColorRed50 for GeneratedAtomAccentChild {}
+impl GeneratedColorRed100 for GeneratedAtomAccentChild {}
+impl GeneratedColorRed200 for GeneratedAtomAccentChild {}
+impl GeneratedColorRed300 for GeneratedAtomAccentChild {}
+impl GeneratedColorRed400 for GeneratedAtomAccentChild {}
+impl GeneratedColorRed500 for GeneratedAtomAccentChild {}
+impl GeneratedColorRed600 for GeneratedAtomAccentChild {}
+impl GeneratedColorRed700 for GeneratedAtomAccentChild {}
+impl GeneratedColorRed800 for GeneratedAtomAccentChild {}
+impl GeneratedColorRed900 for GeneratedAtomAccentChild {}
+impl GeneratedColorRed950 for GeneratedAtomAccentChild {}
+impl GeneratedColorOrange50 for GeneratedAtomAccentChild {}
+impl GeneratedColorOrange100 for GeneratedAtomAccentChild {}
+impl GeneratedColorOrange200 for GeneratedAtomAccentChild {}
+impl GeneratedColorOrange300 for GeneratedAtomAccentChild {}
+impl GeneratedColorOrange400 for GeneratedAtomAccentChild {}
+impl GeneratedColorOrange500 for GeneratedAtomAccentChild {}
+impl GeneratedColorOrange600 for GeneratedAtomAccentChild {}
+impl GeneratedColorOrange700 for GeneratedAtomAccentChild {}
+impl GeneratedColorOrange800 for GeneratedAtomAccentChild {}
+impl GeneratedColorOrange900 for GeneratedAtomAccentChild {}
+impl GeneratedColorOrange950 for GeneratedAtomAccentChild {}
+impl GeneratedColorAmber50 for GeneratedAtomAccentChild {}
+impl GeneratedColorAmber100 for GeneratedAtomAccentChild {}
+impl GeneratedColorAmber200 for GeneratedAtomAccentChild {}
+impl GeneratedColorAmber300 for GeneratedAtomAccentChild {}
+impl GeneratedColorAmber400 for GeneratedAtomAccentChild {}
+impl GeneratedColorAmber500 for GeneratedAtomAccentChild {}
+impl GeneratedColorAmber600 for GeneratedAtomAccentChild {}
+impl GeneratedColorAmber700 for GeneratedAtomAccentChild {}
+impl GeneratedColorAmber800 for GeneratedAtomAccentChild {}
+impl GeneratedColorAmber900 for GeneratedAtomAccentChild {}
+impl GeneratedColorAmber950 for GeneratedAtomAccentChild {}
+impl GeneratedColorYellow50 for GeneratedAtomAccentChild {}
+impl GeneratedColorYellow100 for GeneratedAtomAccentChild {}
+impl GeneratedColorYellow200 for GeneratedAtomAccentChild {}
+impl GeneratedColorYellow300 for GeneratedAtomAccentChild {}
+impl GeneratedColorYellow400 for GeneratedAtomAccentChild {}
+impl GeneratedColorYellow500 for GeneratedAtomAccentChild {}
+impl GeneratedColorYellow600 for GeneratedAtomAccentChild {}
+impl GeneratedColorYellow700 for GeneratedAtomAccentChild {}
+impl GeneratedColorYellow800 for GeneratedAtomAccentChild {}
+impl GeneratedColorYellow900 for GeneratedAtomAccentChild {}
+impl GeneratedColorYellow950 for GeneratedAtomAccentChild {}
+impl GeneratedColorLime50 for GeneratedAtomAccentChild {}
+impl GeneratedColorLime100 for GeneratedAtomAccentChild {}
+impl GeneratedColorLime200 for GeneratedAtomAccentChild {}
+impl GeneratedColorLime300 for GeneratedAtomAccentChild {}
+impl GeneratedColorLime400 for GeneratedAtomAccentChild {}
+impl GeneratedColorLime500 for GeneratedAtomAccentChild {}
+impl GeneratedColorLime600 for GeneratedAtomAccentChild {}
+impl GeneratedColorLime700 for GeneratedAtomAccentChild {}
+impl GeneratedColorLime800 for GeneratedAtomAccentChild {}
+impl GeneratedColorLime900 for GeneratedAtomAccentChild {}
+impl GeneratedColorLime950 for GeneratedAtomAccentChild {}
+impl GeneratedColorGreen50 for GeneratedAtomAccentChild {}
+impl GeneratedColorGreen100 for GeneratedAtomAccentChild {}
+impl GeneratedColorGreen200 for GeneratedAtomAccentChild {}
+impl GeneratedColorGreen300 for GeneratedAtomAccentChild {}
+impl GeneratedColorGreen400 for GeneratedAtomAccentChild {}
+impl GeneratedColorGreen500 for GeneratedAtomAccentChild {}
+impl GeneratedColorGreen600 for GeneratedAtomAccentChild {}
+impl GeneratedColorGreen700 for GeneratedAtomAccentChild {}
+impl GeneratedColorGreen800 for GeneratedAtomAccentChild {}
+impl GeneratedColorGreen900 for GeneratedAtomAccentChild {}
+impl GeneratedColorGreen950 for GeneratedAtomAccentChild {}
+impl GeneratedColorEmerald50 for GeneratedAtomAccentChild {}
+impl GeneratedColorEmerald100 for GeneratedAtomAccentChild {}
+impl GeneratedColorEmerald200 for GeneratedAtomAccentChild {}
+impl GeneratedColorEmerald300 for GeneratedAtomAccentChild {}
+impl GeneratedColorEmerald400 for GeneratedAtomAccentChild {}
+impl GeneratedColorEmerald500 for GeneratedAtomAccentChild {}
+impl GeneratedColorEmerald600 for GeneratedAtomAccentChild {}
+impl GeneratedColorEmerald700 for GeneratedAtomAccentChild {}
+impl GeneratedColorEmerald800 for GeneratedAtomAccentChild {}
+impl GeneratedColorEmerald900 for GeneratedAtomAccentChild {}
+impl GeneratedColorEmerald950 for GeneratedAtomAccentChild {}
+impl GeneratedColorTeal50 for GeneratedAtomAccentChild {}
+impl GeneratedColorTeal100 for GeneratedAtomAccentChild {}
+impl GeneratedColorTeal200 for GeneratedAtomAccentChild {}
+impl GeneratedColorTeal300 for GeneratedAtomAccentChild {}
+impl GeneratedColorTeal400 for GeneratedAtomAccentChild {}
+impl GeneratedColorTeal500 for GeneratedAtomAccentChild {}
+impl GeneratedColorTeal600 for GeneratedAtomAccentChild {}
+impl GeneratedColorTeal700 for GeneratedAtomAccentChild {}
+impl GeneratedColorTeal800 for GeneratedAtomAccentChild {}
+impl GeneratedColorTeal900 for GeneratedAtomAccentChild {}
+impl GeneratedColorTeal950 for GeneratedAtomAccentChild {}
+impl GeneratedColorCyan50 for GeneratedAtomAccentChild {}
+impl GeneratedColorCyan100 for GeneratedAtomAccentChild {}
+impl GeneratedColorCyan200 for GeneratedAtomAccentChild {}
+impl GeneratedColorCyan300 for GeneratedAtomAccentChild {}
+impl GeneratedColorCyan400 for GeneratedAtomAccentChild {}
+impl GeneratedColorCyan500 for GeneratedAtomAccentChild {}
+impl GeneratedColorCyan600 for GeneratedAtomAccentChild {}
+impl GeneratedColorCyan700 for GeneratedAtomAccentChild {}
+impl GeneratedColorCyan800 for GeneratedAtomAccentChild {}
+impl GeneratedColorCyan900 for GeneratedAtomAccentChild {}
+impl GeneratedColorCyan950 for GeneratedAtomAccentChild {}
+impl GeneratedColorSky50 for GeneratedAtomAccentChild {}
+impl GeneratedColorSky100 for GeneratedAtomAccentChild {}
+impl GeneratedColorSky200 for GeneratedAtomAccentChild {}
+impl GeneratedColorSky300 for GeneratedAtomAccentChild {}
+impl GeneratedColorSky400 for GeneratedAtomAccentChild {}
+impl GeneratedColorSky500 for GeneratedAtomAccentChild {}
+impl GeneratedColorSky600 for GeneratedAtomAccentChild {}
+impl GeneratedColorSky700 for GeneratedAtomAccentChild {}
+impl GeneratedColorSky800 for GeneratedAtomAccentChild {}
+impl GeneratedColorSky900 for GeneratedAtomAccentChild {}
+impl GeneratedColorSky950 for GeneratedAtomAccentChild {}
+impl GeneratedColorBlue50 for GeneratedAtomAccentChild {}
+impl GeneratedColorBlue100 for GeneratedAtomAccentChild {}
+impl GeneratedColorBlue200 for GeneratedAtomAccentChild {}
+impl GeneratedColorBlue300 for GeneratedAtomAccentChild {}
+impl GeneratedColorBlue400 for GeneratedAtomAccentChild {}
+impl GeneratedColorBlue500 for GeneratedAtomAccentChild {}
+impl GeneratedColorBlue600 for GeneratedAtomAccentChild {}
+impl GeneratedColorBlue700 for GeneratedAtomAccentChild {}
+impl GeneratedColorBlue800 for GeneratedAtomAccentChild {}
+impl GeneratedColorBlue900 for GeneratedAtomAccentChild {}
+impl GeneratedColorBlue950 for GeneratedAtomAccentChild {}
+impl GeneratedColorIndigo50 for GeneratedAtomAccentChild {}
+impl GeneratedColorIndigo100 for GeneratedAtomAccentChild {}
+impl GeneratedColorIndigo200 for GeneratedAtomAccentChild {}
+impl GeneratedColorIndigo300 for GeneratedAtomAccentChild {}
+impl GeneratedColorIndigo400 for GeneratedAtomAccentChild {}
+impl GeneratedColorIndigo500 for GeneratedAtomAccentChild {}
+impl GeneratedColorIndigo600 for GeneratedAtomAccentChild {}
+impl GeneratedColorIndigo700 for GeneratedAtomAccentChild {}
+impl GeneratedColorIndigo800 for GeneratedAtomAccentChild {}
+impl GeneratedColorIndigo900 for GeneratedAtomAccentChild {}
+impl GeneratedColorIndigo950 for GeneratedAtomAccentChild {}
+impl GeneratedColorViolet50 for GeneratedAtomAccentChild {}
+impl GeneratedColorViolet100 for GeneratedAtomAccentChild {}
+impl GeneratedColorViolet200 for GeneratedAtomAccentChild {}
+impl GeneratedColorViolet300 for GeneratedAtomAccentChild {}
+impl GeneratedColorViolet400 for GeneratedAtomAccentChild {}
+impl GeneratedColorViolet500 for GeneratedAtomAccentChild {}
+impl GeneratedColorViolet600 for GeneratedAtomAccentChild {}
+impl GeneratedColorViolet700 for GeneratedAtomAccentChild {}
+impl GeneratedColorViolet800 for GeneratedAtomAccentChild {}
+impl GeneratedColorViolet900 for GeneratedAtomAccentChild {}
+impl GeneratedColorViolet950 for GeneratedAtomAccentChild {}
+impl GeneratedColorPurple50 for GeneratedAtomAccentChild {}
+impl GeneratedColorPurple100 for GeneratedAtomAccentChild {}
+impl GeneratedColorPurple200 for GeneratedAtomAccentChild {}
+impl GeneratedColorPurple300 for GeneratedAtomAccentChild {}
+impl GeneratedColorPurple400 for GeneratedAtomAccentChild {}
+impl GeneratedColorPurple500 for GeneratedAtomAccentChild {}
+impl GeneratedColorPurple600 for GeneratedAtomAccentChild {}
+impl GeneratedColorPurple700 for GeneratedAtomAccentChild {}
+impl GeneratedColorPurple800 for GeneratedAtomAccentChild {}
+impl GeneratedColorPurple900 for GeneratedAtomAccentChild {}
+impl GeneratedColorPurple950 for GeneratedAtomAccentChild {}
+impl GeneratedColorFuchsia50 for GeneratedAtomAccentChild {}
+impl GeneratedColorFuchsia100 for GeneratedAtomAccentChild {}
+impl GeneratedColorFuchsia200 for GeneratedAtomAccentChild {}
+impl GeneratedColorFuchsia300 for GeneratedAtomAccentChild {}
+impl GeneratedColorFuchsia400 for GeneratedAtomAccentChild {}
+impl GeneratedColorFuchsia500 for GeneratedAtomAccentChild {}
+impl GeneratedColorFuchsia600 for GeneratedAtomAccentChild {}
+impl GeneratedColorFuchsia700 for GeneratedAtomAccentChild {}
+impl GeneratedColorFuchsia800 for GeneratedAtomAccentChild {}
+impl GeneratedColorFuchsia900 for GeneratedAtomAccentChild {}
+impl GeneratedColorFuchsia950 for GeneratedAtomAccentChild {}
+impl GeneratedColorPink50 for GeneratedAtomAccentChild {}
+impl GeneratedColorPink100 for GeneratedAtomAccentChild {}
+impl GeneratedColorPink200 for GeneratedAtomAccentChild {}
+impl GeneratedColorPink300 for GeneratedAtomAccentChild {}
+impl GeneratedColorPink400 for GeneratedAtomAccentChild {}
+impl GeneratedColorPink500 for GeneratedAtomAccentChild {}
+impl GeneratedColorPink600 for GeneratedAtomAccentChild {}
+impl GeneratedColorPink700 for GeneratedAtomAccentChild {}
+impl GeneratedColorPink800 for GeneratedAtomAccentChild {}
+impl GeneratedColorPink900 for GeneratedAtomAccentChild {}
+impl GeneratedColorPink950 for GeneratedAtomAccentChild {}
+impl GeneratedColorRose50 for GeneratedAtomAccentChild {}
+impl GeneratedColorRose100 for GeneratedAtomAccentChild {}
+impl GeneratedColorRose200 for GeneratedAtomAccentChild {}
+impl GeneratedColorRose300 for GeneratedAtomAccentChild {}
+impl GeneratedColorRose400 for GeneratedAtomAccentChild {}
+impl GeneratedColorRose500 for GeneratedAtomAccentChild {}
+impl GeneratedColorRose600 for GeneratedAtomAccentChild {}
+impl GeneratedColorRose700 for GeneratedAtomAccentChild {}
+impl GeneratedColorRose800 for GeneratedAtomAccentChild {}
+impl GeneratedColorRose900 for GeneratedAtomAccentChild {}
+impl GeneratedColorRose950 for GeneratedAtomAccentChild {}
+impl GeneratedColorInherit for GeneratedAtomAccentChild {}
+impl GeneratedColorTransparent for GeneratedAtomAccentChild {}
+impl GeneratedColorCurrent for GeneratedAtomAccentChild {}
 pub trait GeneratedAtomSr: GeneratedSkribbleValue {
   /// Screen reader only
   #[inline]
@@ -28512,6 +28888,16 @@ pub trait GeneratedAtomOrigin: GeneratedSkribbleValue {
     self.append(format!("origin:[{}]", value.trim()))
   }
 }
+pub trait GeneratedAtomAccent: GeneratedSkribbleValue {
+  #[inline]
+  fn accent(&self) -> GeneratedAtomAccentChild {
+    GeneratedAtomAccentChild::from_ref(self.append("accent"))
+  }
+  #[inline]
+  fn accent_(&self, value: &'static str) -> String {
+    self.append(format!("accent:[{}]", value.trim()))
+  }
+}
 pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   #[inline]
   fn group(&self) -> String {
@@ -29441,6 +29827,7 @@ impl GeneratedAtomSkew for GeneratedSkribbleRoot {}
 impl GeneratedAtomSkewX for GeneratedSkribbleRoot {}
 impl GeneratedAtomSkewY for GeneratedSkribbleRoot {}
 impl GeneratedAtomOrigin for GeneratedSkribbleRoot {}
+impl GeneratedAtomAccent for GeneratedSkribbleRoot {}
 impl GeneratedNamedClasses for GeneratedSkribbleRoot {}
 impl GeneratedAliases for GeneratedSkribbleRoot {}
 impl GeneratedMediaQueryBreakpoints for GeneratedMediaQueryDeviceCategoriesChild {}
@@ -29747,6 +30134,7 @@ impl GeneratedAtomSkew for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomSkewX for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomSkewY for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomOrigin for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomAccent for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAliases for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedMediaQueryOrientation for GeneratedMediaQueryBreakpointsChild {}
@@ -30052,6 +30440,7 @@ impl GeneratedAtomSkew for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomSkewX for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomSkewY for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomOrigin for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomAccent for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAliases for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedMediaQueryMotion for GeneratedMediaQueryOrientationChild {}
@@ -30356,6 +30745,7 @@ impl GeneratedAtomSkew for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomSkewX for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomSkewY for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomOrigin for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomAccent for GeneratedMediaQueryOrientationChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAliases for GeneratedMediaQueryOrientationChild {}
 impl GeneratedMediaQueryDarkMode for GeneratedMediaQueryMotionChild {}
@@ -30659,6 +31049,7 @@ impl GeneratedAtomSkew for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomSkewX for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomSkewY for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomOrigin for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomAccent for GeneratedMediaQueryMotionChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryMotionChild {}
 impl GeneratedAliases for GeneratedMediaQueryMotionChild {}
 impl GeneratedModifierParentGroup for GeneratedMediaQueryDarkModeChild {}
@@ -30961,6 +31352,7 @@ impl GeneratedAtomSkew for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomSkewX for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomSkewY for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomOrigin for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomAccent for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAliases for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedModifierHoverGroup for GeneratedModifierParentGroupChild {}
@@ -31262,6 +31654,7 @@ impl GeneratedAtomSkew for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierParentGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierParentGroupChild {}
 impl GeneratedAliases for GeneratedModifierParentGroupChild {}
 impl GeneratedModifierActiveGroup for GeneratedModifierHoverGroupChild {}
@@ -31562,6 +31955,7 @@ impl GeneratedAtomSkew for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierHoverGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierHoverGroupChild {}
 impl GeneratedAliases for GeneratedModifierHoverGroupChild {}
 impl GeneratedModifierFocusGroup for GeneratedModifierActiveGroupChild {}
@@ -31861,6 +32255,7 @@ impl GeneratedAtomSkew for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierActiveGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierActiveGroupChild {}
 impl GeneratedAliases for GeneratedModifierActiveGroupChild {}
 impl GeneratedModifierFocusWithinGroup for GeneratedModifierFocusGroupChild {}
@@ -32159,6 +32554,7 @@ impl GeneratedAtomSkew for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierFocusGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierFocusGroupChild {}
 impl GeneratedAliases for GeneratedModifierFocusGroupChild {}
 impl GeneratedModifierFocusVisibleGroup for GeneratedModifierFocusWithinGroupChild {}
@@ -32456,6 +32852,7 @@ impl GeneratedAtomSkew for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAliases for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedModifierEnabledGroup for GeneratedModifierFocusVisibleGroupChild {}
@@ -32752,6 +33149,7 @@ impl GeneratedAtomSkew for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAliases for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedModifierEmptyGroup for GeneratedModifierEnabledGroupChild {}
@@ -33047,6 +33445,7 @@ impl GeneratedAtomSkew for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierEnabledGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAliases for GeneratedModifierEnabledGroupChild {}
 impl GeneratedModifierReadGroup for GeneratedModifierEmptyGroupChild {}
@@ -33341,6 +33740,7 @@ impl GeneratedAtomSkew for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierEmptyGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAliases for GeneratedModifierEmptyGroupChild {}
 impl GeneratedModifierCheckedGroup for GeneratedModifierReadGroupChild {}
@@ -33634,6 +34034,7 @@ impl GeneratedAtomSkew for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierReadGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierReadGroupChild {}
 impl GeneratedAliases for GeneratedModifierReadGroupChild {}
 impl GeneratedModifierValidGroup for GeneratedModifierCheckedGroupChild {}
@@ -33926,6 +34327,7 @@ impl GeneratedAtomSkew for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierCheckedGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAliases for GeneratedModifierCheckedGroupChild {}
 impl GeneratedModifierAutofillGroup for GeneratedModifierValidGroupChild {}
@@ -34217,6 +34619,7 @@ impl GeneratedAtomSkew for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierValidGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierValidGroupChild {}
 impl GeneratedAliases for GeneratedModifierValidGroupChild {}
 impl GeneratedModifierEvenGroup for GeneratedModifierAutofillGroupChild {}
@@ -34507,6 +34910,7 @@ impl GeneratedAtomSkew for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierAutofillGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAliases for GeneratedModifierAutofillGroupChild {}
 impl GeneratedModifierNodePositionGroup for GeneratedModifierEvenGroupChild {}
@@ -34796,6 +35200,7 @@ impl GeneratedAtomSkew for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierEvenGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierEvenGroupChild {}
 impl GeneratedAliases for GeneratedModifierEvenGroupChild {}
 impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierNodePositionGroupChild {}
@@ -35084,6 +35489,7 @@ impl GeneratedAtomSkew for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAliases for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedModifierVisitedGroup for GeneratedModifierNodeOfTypeGroupChild {}
@@ -35371,6 +35777,7 @@ impl GeneratedAtomSkew for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAliases for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedModifierOptionalGroup for GeneratedModifierVisitedGroupChild {}
@@ -35657,6 +36064,7 @@ impl GeneratedAtomSkew for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierVisitedGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAliases for GeneratedModifierVisitedGroupChild {}
 impl GeneratedModifierAria for GeneratedModifierOptionalGroupChild {}
@@ -35942,6 +36350,7 @@ impl GeneratedAtomSkew for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierOptionalGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAliases for GeneratedModifierOptionalGroupChild {}
 impl GeneratedModifierFullScreenGroup for GeneratedModifierAriaChild {}
@@ -36226,6 +36635,7 @@ impl GeneratedAtomSkew for GeneratedModifierAriaChild {}
 impl GeneratedAtomSkewX for GeneratedModifierAriaChild {}
 impl GeneratedAtomSkewY for GeneratedModifierAriaChild {}
 impl GeneratedAtomOrigin for GeneratedModifierAriaChild {}
+impl GeneratedAtomAccent for GeneratedModifierAriaChild {}
 impl GeneratedNamedClasses for GeneratedModifierAriaChild {}
 impl GeneratedAliases for GeneratedModifierAriaChild {}
 impl GeneratedModifierTargetGroup for GeneratedModifierFullScreenGroupChild {}
@@ -36509,6 +36919,7 @@ impl GeneratedAtomSkew for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAliases for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierTargetGroupChild {}
@@ -36791,6 +37202,7 @@ impl GeneratedAtomSkew for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierTargetGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierTargetGroupChild {}
 impl GeneratedAliases for GeneratedModifierTargetGroupChild {}
 impl GeneratedModifierRequiredGroup for GeneratedModifierPlaceholderShownGroupChild {}
@@ -37072,6 +37484,7 @@ impl GeneratedAtomSkew for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAliases for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedModifierDefaultGroup for GeneratedModifierRequiredGroupChild {}
@@ -37352,6 +37765,7 @@ impl GeneratedAtomSkew for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierRequiredGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAliases for GeneratedModifierRequiredGroupChild {}
 impl GeneratedModifierOnlyChildGroup for GeneratedModifierDefaultGroupChild {}
@@ -37631,6 +38045,7 @@ impl GeneratedAtomSkew for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierDefaultGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAliases for GeneratedModifierDefaultGroupChild {}
 impl GeneratedModifierOnlyGroup for GeneratedModifierOnlyChildGroupChild {}
@@ -37909,6 +38324,7 @@ impl GeneratedAtomSkew for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAliases for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedModifierRootGroup for GeneratedModifierOnlyGroupChild {}
@@ -38186,6 +38602,7 @@ impl GeneratedAtomSkew for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierOnlyGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAliases for GeneratedModifierOnlyGroupChild {}
 impl GeneratedModifierLinkGroup for GeneratedModifierRootGroupChild {}
@@ -38462,6 +38879,7 @@ impl GeneratedAtomSkew for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierRootGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierRootGroupChild {}
 impl GeneratedAliases for GeneratedModifierRootGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierLinkGroupChild {}
@@ -38737,6 +39155,7 @@ impl GeneratedAtomSkew for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierLinkGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierLinkGroupChild {}
 impl GeneratedAliases for GeneratedModifierLinkGroupChild {}
 impl GeneratedTransformerImportant for GeneratedModifierPseudoGroupChild {}
@@ -39011,6 +39430,7 @@ impl GeneratedAtomSkew for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomSkewX for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomAccent for GeneratedModifierPseudoGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAliases for GeneratedModifierPseudoGroupChild {}
 impl GeneratedTransformerAlpha for GeneratedTransformerImportantGroupImportantChild {}
@@ -39284,6 +39704,7 @@ impl GeneratedAtomSkew for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomSkewX for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomSkewY for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomOrigin for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomAccent for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedNamedClasses for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAliases for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomFill for GeneratedTransformerAlphaGroupAlphaChild {}
@@ -39311,6 +39732,7 @@ impl GeneratedAtomOutline for GeneratedTransformerAlphaGroupAlphaChild {}
 impl GeneratedAtomRingColor for GeneratedTransformerAlphaGroupAlphaChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedTransformerAlphaGroupAlphaChild {}
 impl GeneratedAtomShadowColor for GeneratedTransformerAlphaGroupAlphaChild {}
+impl GeneratedAtomAccent for GeneratedTransformerAlphaGroupAlphaChild {}
 impl GeneratedAtomFill for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomStroke for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomText for GeneratedTransformerAlphaGroupOpaquifyChild {}
@@ -39336,6 +39758,7 @@ impl GeneratedAtomOutline for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomRingColor for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomShadowColor for GeneratedTransformerAlphaGroupOpaquifyChild {}
+impl GeneratedAtomAccent for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomFill for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomStroke for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomText for GeneratedTransformerAlphaGroupTransparentizeChild {}
@@ -39361,6 +39784,7 @@ impl GeneratedAtomOutline for GeneratedTransformerAlphaGroupTransparentizeChild 
 impl GeneratedAtomRingColor for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomShadowColor for GeneratedTransformerAlphaGroupTransparentizeChild {}
+impl GeneratedAtomAccent for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomFill for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomStroke for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomText for GeneratedTransformerLightnessGroupLightnessChild {}
@@ -39386,6 +39810,7 @@ impl GeneratedAtomOutline for GeneratedTransformerLightnessGroupLightnessChild {
 impl GeneratedAtomRingColor for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomShadowColor for GeneratedTransformerLightnessGroupLightnessChild {}
+impl GeneratedAtomAccent for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomFill for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomStroke for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomText for GeneratedTransformerLightnessGroupLightenChild {}
@@ -39411,6 +39836,7 @@ impl GeneratedAtomOutline for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomRingColor for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomShadowColor for GeneratedTransformerLightnessGroupLightenChild {}
+impl GeneratedAtomAccent for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomFill for GeneratedTransformerLightnessGroupDarkenChild {}
 impl GeneratedAtomStroke for GeneratedTransformerLightnessGroupDarkenChild {}
 impl GeneratedAtomText for GeneratedTransformerLightnessGroupDarkenChild {}
@@ -39436,3 +39862,4 @@ impl GeneratedAtomOutline for GeneratedTransformerLightnessGroupDarkenChild {}
 impl GeneratedAtomRingColor for GeneratedTransformerLightnessGroupDarkenChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedTransformerLightnessGroupDarkenChild {}
 impl GeneratedAtomShadowColor for GeneratedTransformerLightnessGroupDarkenChild {}
+impl GeneratedAtomAccent for GeneratedTransformerLightnessGroupDarkenChild {}

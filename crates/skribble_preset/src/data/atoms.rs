@@ -1768,6 +1768,13 @@ lazy_static! {
         .values(vec!["origin"])
         .styles(indexmap! { "transform-origin" => none })
         .build(),
+
+      // Interactivity
+      Atom::builder()
+        .name("accent")
+        .values(ColorField::default())
+        .styles(indexmap! { "accent-color" => none })
+        .build(),
     ]
   };
 }
