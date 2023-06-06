@@ -844,6 +844,17 @@ impl GeneratedCssVariables {
   pub fn shadow_color(&self) -> String {
     "--sk-shadow-color".into()
   }
+  /// ```css
+  /// @property --sk-scroll-snap-strictness {
+  ///   syntax: "mandatory | proximity";
+  ///   inherits: true;
+  ///   initial-value: proximity;
+  /// }
+  /// ```
+  #[inline]
+  pub fn scroll_snap_strictness(&self) -> String {
+    "--sk-scroll-snap-strictness".into()
+  }
 }
 pub struct GeneratedMediaQueryDeviceCategoriesChild(String);
 impl GeneratedSkribbleValue for GeneratedMediaQueryDeviceCategoriesChild {
@@ -7180,102 +7191,6 @@ pub trait GeneratedValueSetRatioRBox: GeneratedSkribbleValue {
     self.append_value("box")
   }
 }
-pub trait GeneratedValueSetAspectRatioN1: GeneratedSkribbleValue {
-  #[inline]
-  fn n1(&self) -> String {
-    self.append_value("1")
-  }
-}
-pub trait GeneratedValueSetAspectRatioN2: GeneratedSkribbleValue {
-  #[inline]
-  fn n2(&self) -> String {
-    self.append_value("2")
-  }
-}
-pub trait GeneratedValueSetAspectRatioN3: GeneratedSkribbleValue {
-  #[inline]
-  fn n3(&self) -> String {
-    self.append_value("3")
-  }
-}
-pub trait GeneratedValueSetAspectRatioN4: GeneratedSkribbleValue {
-  #[inline]
-  fn n4(&self) -> String {
-    self.append_value("4")
-  }
-}
-pub trait GeneratedValueSetAspectRatioN5: GeneratedSkribbleValue {
-  #[inline]
-  fn n5(&self) -> String {
-    self.append_value("5")
-  }
-}
-pub trait GeneratedValueSetAspectRatioN6: GeneratedSkribbleValue {
-  #[inline]
-  fn n6(&self) -> String {
-    self.append_value("6")
-  }
-}
-pub trait GeneratedValueSetAspectRatioN7: GeneratedSkribbleValue {
-  #[inline]
-  fn n7(&self) -> String {
-    self.append_value("7")
-  }
-}
-pub trait GeneratedValueSetAspectRatioN8: GeneratedSkribbleValue {
-  #[inline]
-  fn n8(&self) -> String {
-    self.append_value("8")
-  }
-}
-pub trait GeneratedValueSetAspectRatioN9: GeneratedSkribbleValue {
-  #[inline]
-  fn n9(&self) -> String {
-    self.append_value("9")
-  }
-}
-pub trait GeneratedValueSetAspectRatioN10: GeneratedSkribbleValue {
-  #[inline]
-  fn n10(&self) -> String {
-    self.append_value("10")
-  }
-}
-pub trait GeneratedValueSetAspectRatioN11: GeneratedSkribbleValue {
-  #[inline]
-  fn n11(&self) -> String {
-    self.append_value("11")
-  }
-}
-pub trait GeneratedValueSetAspectRatioN12: GeneratedSkribbleValue {
-  #[inline]
-  fn n12(&self) -> String {
-    self.append_value("12")
-  }
-}
-pub trait GeneratedValueSetAspectRatioN13: GeneratedSkribbleValue {
-  #[inline]
-  fn n13(&self) -> String {
-    self.append_value("13")
-  }
-}
-pub trait GeneratedValueSetAspectRatioN14: GeneratedSkribbleValue {
-  #[inline]
-  fn n14(&self) -> String {
-    self.append_value("14")
-  }
-}
-pub trait GeneratedValueSetAspectRatioN15: GeneratedSkribbleValue {
-  #[inline]
-  fn n15(&self) -> String {
-    self.append_value("15")
-  }
-}
-pub trait GeneratedValueSetAspectRatioN16: GeneratedSkribbleValue {
-  #[inline]
-  fn n16(&self) -> String {
-    self.append_value("16")
-  }
-}
 pub trait GeneratedValueSetGridCountN1: GeneratedSkribbleValue {
   #[inline]
   fn n1(&self) -> String {
@@ -10850,6 +10765,450 @@ pub trait GeneratedValueSetMixBlendColorBurn: GeneratedSkribbleValue {
   #[inline]
   fn color_burn(&self) -> String {
     self.append_value("color-burn")
+  }
+}
+pub trait GeneratedValueSetCursorAuto: GeneratedSkribbleValue {
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+}
+pub trait GeneratedValueSetCursorDefault: GeneratedSkribbleValue {
+  #[inline]
+  fn default(&self) -> String {
+    self.append_value("default")
+  }
+}
+pub trait GeneratedValueSetCursorPointer: GeneratedSkribbleValue {
+  #[inline]
+  fn pointer(&self) -> String {
+    self.append_value("pointer")
+  }
+}
+pub trait GeneratedValueSetCursorWait: GeneratedSkribbleValue {
+  #[inline]
+  fn wait(&self) -> String {
+    self.append_value("wait")
+  }
+}
+pub trait GeneratedValueSetCursorText: GeneratedSkribbleValue {
+  #[inline]
+  fn text(&self) -> String {
+    self.append_value("text")
+  }
+}
+pub trait GeneratedValueSetCursorRMove: GeneratedSkribbleValue {
+  #[inline]
+  fn r#move(&self) -> String {
+    self.append_value("move")
+  }
+}
+pub trait GeneratedValueSetCursorHelp: GeneratedSkribbleValue {
+  #[inline]
+  fn help(&self) -> String {
+    self.append_value("help")
+  }
+}
+pub trait GeneratedValueSetCursorNotAllowed: GeneratedSkribbleValue {
+  #[inline]
+  fn not_allowed(&self) -> String {
+    self.append_value("not-allowed")
+  }
+}
+pub trait GeneratedValueSetCursorNone: GeneratedSkribbleValue {
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+pub trait GeneratedValueSetCursorContextMenu: GeneratedSkribbleValue {
+  #[inline]
+  fn context_menu(&self) -> String {
+    self.append_value("context-menu")
+  }
+}
+pub trait GeneratedValueSetCursorProgress: GeneratedSkribbleValue {
+  #[inline]
+  fn progress(&self) -> String {
+    self.append_value("progress")
+  }
+}
+pub trait GeneratedValueSetCursorCell: GeneratedSkribbleValue {
+  #[inline]
+  fn cell(&self) -> String {
+    self.append_value("cell")
+  }
+}
+pub trait GeneratedValueSetCursorCrosshair: GeneratedSkribbleValue {
+  #[inline]
+  fn crosshair(&self) -> String {
+    self.append_value("crosshair")
+  }
+}
+pub trait GeneratedValueSetCursorVerticalText: GeneratedSkribbleValue {
+  #[inline]
+  fn vertical_text(&self) -> String {
+    self.append_value("vertical-text")
+  }
+}
+pub trait GeneratedValueSetCursorAlias: GeneratedSkribbleValue {
+  #[inline]
+  fn alias(&self) -> String {
+    self.append_value("alias")
+  }
+}
+pub trait GeneratedValueSetCursorCopy: GeneratedSkribbleValue {
+  #[inline]
+  fn copy(&self) -> String {
+    self.append_value("copy")
+  }
+}
+pub trait GeneratedValueSetCursorNoDrop: GeneratedSkribbleValue {
+  #[inline]
+  fn no_drop(&self) -> String {
+    self.append_value("no-drop")
+  }
+}
+pub trait GeneratedValueSetCursorGrab: GeneratedSkribbleValue {
+  #[inline]
+  fn grab(&self) -> String {
+    self.append_value("grab")
+  }
+}
+pub trait GeneratedValueSetCursorGrabbing: GeneratedSkribbleValue {
+  #[inline]
+  fn grabbing(&self) -> String {
+    self.append_value("grabbing")
+  }
+}
+pub trait GeneratedValueSetCursorAllScroll: GeneratedSkribbleValue {
+  #[inline]
+  fn all_scroll(&self) -> String {
+    self.append_value("all-scroll")
+  }
+}
+pub trait GeneratedValueSetCursorColResize: GeneratedSkribbleValue {
+  #[inline]
+  fn col_resize(&self) -> String {
+    self.append_value("col-resize")
+  }
+}
+pub trait GeneratedValueSetCursorRowResize: GeneratedSkribbleValue {
+  #[inline]
+  fn row_resize(&self) -> String {
+    self.append_value("row-resize")
+  }
+}
+pub trait GeneratedValueSetCursorNResize: GeneratedSkribbleValue {
+  #[inline]
+  fn n_resize(&self) -> String {
+    self.append_value("n-resize")
+  }
+}
+pub trait GeneratedValueSetCursorEResize: GeneratedSkribbleValue {
+  #[inline]
+  fn e_resize(&self) -> String {
+    self.append_value("e-resize")
+  }
+}
+pub trait GeneratedValueSetCursorSResize: GeneratedSkribbleValue {
+  #[inline]
+  fn s_resize(&self) -> String {
+    self.append_value("s-resize")
+  }
+}
+pub trait GeneratedValueSetCursorWResize: GeneratedSkribbleValue {
+  #[inline]
+  fn w_resize(&self) -> String {
+    self.append_value("w-resize")
+  }
+}
+pub trait GeneratedValueSetCursorNeResize: GeneratedSkribbleValue {
+  #[inline]
+  fn ne_resize(&self) -> String {
+    self.append_value("ne-resize")
+  }
+}
+pub trait GeneratedValueSetCursorNwResize: GeneratedSkribbleValue {
+  #[inline]
+  fn nw_resize(&self) -> String {
+    self.append_value("nw-resize")
+  }
+}
+pub trait GeneratedValueSetCursorSeResize: GeneratedSkribbleValue {
+  #[inline]
+  fn se_resize(&self) -> String {
+    self.append_value("se-resize")
+  }
+}
+pub trait GeneratedValueSetCursorSwResize: GeneratedSkribbleValue {
+  #[inline]
+  fn sw_resize(&self) -> String {
+    self.append_value("sw-resize")
+  }
+}
+pub trait GeneratedValueSetCursorEwResize: GeneratedSkribbleValue {
+  #[inline]
+  fn ew_resize(&self) -> String {
+    self.append_value("ew-resize")
+  }
+}
+pub trait GeneratedValueSetCursorNsResize: GeneratedSkribbleValue {
+  #[inline]
+  fn ns_resize(&self) -> String {
+    self.append_value("ns-resize")
+  }
+}
+pub trait GeneratedValueSetCursorNeswResize: GeneratedSkribbleValue {
+  #[inline]
+  fn nesw_resize(&self) -> String {
+    self.append_value("nesw-resize")
+  }
+}
+pub trait GeneratedValueSetCursorNwseResize: GeneratedSkribbleValue {
+  #[inline]
+  fn nwse_resize(&self) -> String {
+    self.append_value("nwse-resize")
+  }
+}
+pub trait GeneratedValueSetCursorZoomIn: GeneratedSkribbleValue {
+  #[inline]
+  fn zoom_in(&self) -> String {
+    self.append_value("zoom-in")
+  }
+}
+pub trait GeneratedValueSetCursorZoomOut: GeneratedSkribbleValue {
+  #[inline]
+  fn zoom_out(&self) -> String {
+    self.append_value("zoom-out")
+  }
+}
+pub trait GeneratedValueSetPointerEventsNone: GeneratedSkribbleValue {
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+pub trait GeneratedValueSetPointerEventsAuto: GeneratedSkribbleValue {
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+}
+pub trait GeneratedValueSetResizeNone: GeneratedSkribbleValue {
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+pub trait GeneratedValueSetResizeY: GeneratedSkribbleValue {
+  #[inline]
+  fn y(&self) -> String {
+    self.append_value("y")
+  }
+}
+pub trait GeneratedValueSetResizeX: GeneratedSkribbleValue {
+  #[inline]
+  fn x(&self) -> String {
+    self.append_value("x")
+  }
+}
+pub trait GeneratedValueSetResizeBoth: GeneratedSkribbleValue {
+  #[inline]
+  fn both(&self) -> String {
+    self.append_value("both")
+  }
+}
+pub trait GeneratedValueSetScrollBehaviorAuto: GeneratedSkribbleValue {
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+}
+pub trait GeneratedValueSetScrollBehaviorSmooth: GeneratedSkribbleValue {
+  #[inline]
+  fn smooth(&self) -> String {
+    self.append_value("smooth")
+  }
+}
+pub trait GeneratedValueSetScrollSnapAlignStart: GeneratedSkribbleValue {
+  #[inline]
+  fn start(&self) -> String {
+    self.append_value("start")
+  }
+}
+pub trait GeneratedValueSetScrollSnapAlignEnd: GeneratedSkribbleValue {
+  #[inline]
+  fn end(&self) -> String {
+    self.append_value("end")
+  }
+}
+pub trait GeneratedValueSetScrollSnapAlignCenter: GeneratedSkribbleValue {
+  #[inline]
+  fn center(&self) -> String {
+    self.append_value("center")
+  }
+}
+pub trait GeneratedValueSetScrollSnapAlignNone: GeneratedSkribbleValue {
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+pub trait GeneratedValueSetScrollSnapStopNormal: GeneratedSkribbleValue {
+  #[inline]
+  fn normal(&self) -> String {
+    self.append_value("normal")
+  }
+}
+pub trait GeneratedValueSetScrollSnapStopAlways: GeneratedSkribbleValue {
+  #[inline]
+  fn always(&self) -> String {
+    self.append_value("always")
+  }
+}
+pub trait GeneratedValueSetScrollSnapTypeNone: GeneratedSkribbleValue {
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+pub trait GeneratedValueSetScrollSnapTypeX: GeneratedSkribbleValue {
+  #[inline]
+  fn x(&self) -> String {
+    self.append_value("x")
+  }
+}
+pub trait GeneratedValueSetScrollSnapTypeY: GeneratedSkribbleValue {
+  #[inline]
+  fn y(&self) -> String {
+    self.append_value("y")
+  }
+}
+pub trait GeneratedValueSetScrollSnapTypeBoth: GeneratedSkribbleValue {
+  #[inline]
+  fn both(&self) -> String {
+    self.append_value("both")
+  }
+}
+pub trait GeneratedValueSetTouchActionAuto: GeneratedSkribbleValue {
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+}
+pub trait GeneratedValueSetTouchActionNone: GeneratedSkribbleValue {
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+pub trait GeneratedValueSetTouchActionPanX: GeneratedSkribbleValue {
+  #[inline]
+  fn pan_x(&self) -> String {
+    self.append_value("pan-x")
+  }
+}
+pub trait GeneratedValueSetTouchActionPanLeft: GeneratedSkribbleValue {
+  #[inline]
+  fn pan_left(&self) -> String {
+    self.append_value("pan-left")
+  }
+}
+pub trait GeneratedValueSetTouchActionPanRight: GeneratedSkribbleValue {
+  #[inline]
+  fn pan_right(&self) -> String {
+    self.append_value("pan-right")
+  }
+}
+pub trait GeneratedValueSetTouchActionPanY: GeneratedSkribbleValue {
+  #[inline]
+  fn pan_y(&self) -> String {
+    self.append_value("pan-y")
+  }
+}
+pub trait GeneratedValueSetTouchActionPanUp: GeneratedSkribbleValue {
+  #[inline]
+  fn pan_up(&self) -> String {
+    self.append_value("pan-up")
+  }
+}
+pub trait GeneratedValueSetTouchActionPanDown: GeneratedSkribbleValue {
+  #[inline]
+  fn pan_down(&self) -> String {
+    self.append_value("pan-down")
+  }
+}
+pub trait GeneratedValueSetTouchActionPinchZoom: GeneratedSkribbleValue {
+  #[inline]
+  fn pinch_zoom(&self) -> String {
+    self.append_value("pinch-zoom")
+  }
+}
+pub trait GeneratedValueSetTouchActionManipulation: GeneratedSkribbleValue {
+  #[inline]
+  fn manipulation(&self) -> String {
+    self.append_value("manipulation")
+  }
+}
+pub trait GeneratedValueSetUserSelectNone: GeneratedSkribbleValue {
+  #[inline]
+  fn none(&self) -> String {
+    self.append_value("none")
+  }
+}
+pub trait GeneratedValueSetUserSelectText: GeneratedSkribbleValue {
+  #[inline]
+  fn text(&self) -> String {
+    self.append_value("text")
+  }
+}
+pub trait GeneratedValueSetUserSelectAll: GeneratedSkribbleValue {
+  #[inline]
+  fn all(&self) -> String {
+    self.append_value("all")
+  }
+}
+pub trait GeneratedValueSetUserSelectAuto: GeneratedSkribbleValue {
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+}
+pub trait GeneratedValueSetWillChangeAuto: GeneratedSkribbleValue {
+  #[inline]
+  fn auto(&self) -> String {
+    self.append_value("auto")
+  }
+}
+pub trait GeneratedValueSetWillChangeScroll: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll(&self) -> String {
+    self.append_value("scroll")
+  }
+}
+pub trait GeneratedValueSetWillChangeContents: GeneratedSkribbleValue {
+  #[inline]
+  fn contents(&self) -> String {
+    self.append_value("contents")
+  }
+}
+pub trait GeneratedValueSetWillChangeTransform: GeneratedSkribbleValue {
+  #[inline]
+  fn transform(&self) -> String {
+    self.append_value("transform")
+  }
+}
+pub trait GeneratedColorFillNone: GeneratedSkribbleValue {
+  #[inline]
+  fn fill_none(&self) -> String {
+    self.append_value("fill-none")
+  }
+}
+pub trait GeneratedColorStrokeNone: GeneratedSkribbleValue {
+  #[inline]
+  fn stroke_none(&self) -> String {
+    self.append_value("stroke-none")
   }
 }
 pub struct GeneratedAtomSrChild(String);
@@ -16794,6 +17153,7 @@ impl GeneratedSkribbleValue for GeneratedAtomFillChild {
     &self.0
   }
 }
+impl GeneratedColorFillNone for GeneratedAtomFillChild {}
 impl GeneratedColorPrimary for GeneratedAtomFillChild {}
 impl GeneratedColorPrimaryContent for GeneratedAtomFillChild {}
 impl GeneratedColorSecondary for GeneratedAtomFillChild {}
@@ -17074,6 +17434,7 @@ impl GeneratedSkribbleValue for GeneratedAtomStrokeChild {
     &self.0
   }
 }
+impl GeneratedColorStrokeNone for GeneratedAtomStrokeChild {}
 impl GeneratedColorPrimary for GeneratedAtomStrokeChild {}
 impl GeneratedColorPrimaryContent for GeneratedAtomStrokeChild {}
 impl GeneratedColorSecondary for GeneratedAtomStrokeChild {}
@@ -26079,6 +26440,2546 @@ impl GeneratedColorRose950 for GeneratedAtomAccentChild {}
 impl GeneratedColorInherit for GeneratedAtomAccentChild {}
 impl GeneratedColorTransparent for GeneratedAtomAccentChild {}
 impl GeneratedColorCurrent for GeneratedAtomAccentChild {}
+pub struct GeneratedAtomCursorChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomCursorChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetCursorAuto for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorDefault for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorPointer for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorWait for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorText for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorRMove for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorHelp for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorNotAllowed for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorNone for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorContextMenu for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorProgress for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorCell for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorCrosshair for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorVerticalText for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorAlias for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorCopy for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorNoDrop for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorGrab for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorGrabbing for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorAllScroll for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorColResize for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorRowResize for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorNResize for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorEResize for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorSResize for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorWResize for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorNeResize for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorNwResize for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorSeResize for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorSwResize for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorEwResize for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorNsResize for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorNeswResize for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorNwseResize for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorZoomIn for GeneratedAtomCursorChild {}
+impl GeneratedValueSetCursorZoomOut for GeneratedAtomCursorChild {}
+pub struct GeneratedAtomCaretChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomCaretChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedColorPrimary for GeneratedAtomCaretChild {}
+impl GeneratedColorPrimaryContent for GeneratedAtomCaretChild {}
+impl GeneratedColorSecondary for GeneratedAtomCaretChild {}
+impl GeneratedColorSecondaryContent for GeneratedAtomCaretChild {}
+impl GeneratedColorAccent for GeneratedAtomCaretChild {}
+impl GeneratedColorAccentContent for GeneratedAtomCaretChild {}
+impl GeneratedColorNeutral for GeneratedAtomCaretChild {}
+impl GeneratedColorNeutralContent for GeneratedAtomCaretChild {}
+impl GeneratedColorBase100 for GeneratedAtomCaretChild {}
+impl GeneratedColorBase200 for GeneratedAtomCaretChild {}
+impl GeneratedColorBase300 for GeneratedAtomCaretChild {}
+impl GeneratedColorBaseContent for GeneratedAtomCaretChild {}
+impl GeneratedColorInfo for GeneratedAtomCaretChild {}
+impl GeneratedColorInfoContent for GeneratedAtomCaretChild {}
+impl GeneratedColorSuccess for GeneratedAtomCaretChild {}
+impl GeneratedColorSuccessContent for GeneratedAtomCaretChild {}
+impl GeneratedColorWarning for GeneratedAtomCaretChild {}
+impl GeneratedColorWarningContent for GeneratedAtomCaretChild {}
+impl GeneratedColorError for GeneratedAtomCaretChild {}
+impl GeneratedColorErrorContent for GeneratedAtomCaretChild {}
+impl GeneratedColorRingOffsetColor for GeneratedAtomCaretChild {}
+impl GeneratedColorRingColor for GeneratedAtomCaretChild {}
+impl GeneratedColorBlack for GeneratedAtomCaretChild {}
+impl GeneratedColorWhite for GeneratedAtomCaretChild {}
+impl GeneratedColorSlate50 for GeneratedAtomCaretChild {}
+impl GeneratedColorSlate100 for GeneratedAtomCaretChild {}
+impl GeneratedColorSlate200 for GeneratedAtomCaretChild {}
+impl GeneratedColorSlate300 for GeneratedAtomCaretChild {}
+impl GeneratedColorSlate400 for GeneratedAtomCaretChild {}
+impl GeneratedColorSlate500 for GeneratedAtomCaretChild {}
+impl GeneratedColorSlate600 for GeneratedAtomCaretChild {}
+impl GeneratedColorSlate700 for GeneratedAtomCaretChild {}
+impl GeneratedColorSlate800 for GeneratedAtomCaretChild {}
+impl GeneratedColorSlate900 for GeneratedAtomCaretChild {}
+impl GeneratedColorSlate950 for GeneratedAtomCaretChild {}
+impl GeneratedColorGray50 for GeneratedAtomCaretChild {}
+impl GeneratedColorGray100 for GeneratedAtomCaretChild {}
+impl GeneratedColorGray200 for GeneratedAtomCaretChild {}
+impl GeneratedColorGray300 for GeneratedAtomCaretChild {}
+impl GeneratedColorGray400 for GeneratedAtomCaretChild {}
+impl GeneratedColorGray500 for GeneratedAtomCaretChild {}
+impl GeneratedColorGray600 for GeneratedAtomCaretChild {}
+impl GeneratedColorGray700 for GeneratedAtomCaretChild {}
+impl GeneratedColorGray800 for GeneratedAtomCaretChild {}
+impl GeneratedColorGray900 for GeneratedAtomCaretChild {}
+impl GeneratedColorGray950 for GeneratedAtomCaretChild {}
+impl GeneratedColorZinc50 for GeneratedAtomCaretChild {}
+impl GeneratedColorZinc100 for GeneratedAtomCaretChild {}
+impl GeneratedColorZinc200 for GeneratedAtomCaretChild {}
+impl GeneratedColorZinc300 for GeneratedAtomCaretChild {}
+impl GeneratedColorZinc400 for GeneratedAtomCaretChild {}
+impl GeneratedColorZinc500 for GeneratedAtomCaretChild {}
+impl GeneratedColorZinc600 for GeneratedAtomCaretChild {}
+impl GeneratedColorZinc700 for GeneratedAtomCaretChild {}
+impl GeneratedColorZinc800 for GeneratedAtomCaretChild {}
+impl GeneratedColorZinc900 for GeneratedAtomCaretChild {}
+impl GeneratedColorZinc950 for GeneratedAtomCaretChild {}
+impl GeneratedColorNeutral50 for GeneratedAtomCaretChild {}
+impl GeneratedColorNeutral100 for GeneratedAtomCaretChild {}
+impl GeneratedColorNeutral200 for GeneratedAtomCaretChild {}
+impl GeneratedColorNeutral300 for GeneratedAtomCaretChild {}
+impl GeneratedColorNeutral400 for GeneratedAtomCaretChild {}
+impl GeneratedColorNeutral500 for GeneratedAtomCaretChild {}
+impl GeneratedColorNeutral600 for GeneratedAtomCaretChild {}
+impl GeneratedColorNeutral700 for GeneratedAtomCaretChild {}
+impl GeneratedColorNeutral800 for GeneratedAtomCaretChild {}
+impl GeneratedColorNeutral900 for GeneratedAtomCaretChild {}
+impl GeneratedColorNeutral950 for GeneratedAtomCaretChild {}
+impl GeneratedColorStone50 for GeneratedAtomCaretChild {}
+impl GeneratedColorStone100 for GeneratedAtomCaretChild {}
+impl GeneratedColorStone200 for GeneratedAtomCaretChild {}
+impl GeneratedColorStone300 for GeneratedAtomCaretChild {}
+impl GeneratedColorStone400 for GeneratedAtomCaretChild {}
+impl GeneratedColorStone500 for GeneratedAtomCaretChild {}
+impl GeneratedColorStone600 for GeneratedAtomCaretChild {}
+impl GeneratedColorStone700 for GeneratedAtomCaretChild {}
+impl GeneratedColorStone800 for GeneratedAtomCaretChild {}
+impl GeneratedColorStone900 for GeneratedAtomCaretChild {}
+impl GeneratedColorStone950 for GeneratedAtomCaretChild {}
+impl GeneratedColorRed50 for GeneratedAtomCaretChild {}
+impl GeneratedColorRed100 for GeneratedAtomCaretChild {}
+impl GeneratedColorRed200 for GeneratedAtomCaretChild {}
+impl GeneratedColorRed300 for GeneratedAtomCaretChild {}
+impl GeneratedColorRed400 for GeneratedAtomCaretChild {}
+impl GeneratedColorRed500 for GeneratedAtomCaretChild {}
+impl GeneratedColorRed600 for GeneratedAtomCaretChild {}
+impl GeneratedColorRed700 for GeneratedAtomCaretChild {}
+impl GeneratedColorRed800 for GeneratedAtomCaretChild {}
+impl GeneratedColorRed900 for GeneratedAtomCaretChild {}
+impl GeneratedColorRed950 for GeneratedAtomCaretChild {}
+impl GeneratedColorOrange50 for GeneratedAtomCaretChild {}
+impl GeneratedColorOrange100 for GeneratedAtomCaretChild {}
+impl GeneratedColorOrange200 for GeneratedAtomCaretChild {}
+impl GeneratedColorOrange300 for GeneratedAtomCaretChild {}
+impl GeneratedColorOrange400 for GeneratedAtomCaretChild {}
+impl GeneratedColorOrange500 for GeneratedAtomCaretChild {}
+impl GeneratedColorOrange600 for GeneratedAtomCaretChild {}
+impl GeneratedColorOrange700 for GeneratedAtomCaretChild {}
+impl GeneratedColorOrange800 for GeneratedAtomCaretChild {}
+impl GeneratedColorOrange900 for GeneratedAtomCaretChild {}
+impl GeneratedColorOrange950 for GeneratedAtomCaretChild {}
+impl GeneratedColorAmber50 for GeneratedAtomCaretChild {}
+impl GeneratedColorAmber100 for GeneratedAtomCaretChild {}
+impl GeneratedColorAmber200 for GeneratedAtomCaretChild {}
+impl GeneratedColorAmber300 for GeneratedAtomCaretChild {}
+impl GeneratedColorAmber400 for GeneratedAtomCaretChild {}
+impl GeneratedColorAmber500 for GeneratedAtomCaretChild {}
+impl GeneratedColorAmber600 for GeneratedAtomCaretChild {}
+impl GeneratedColorAmber700 for GeneratedAtomCaretChild {}
+impl GeneratedColorAmber800 for GeneratedAtomCaretChild {}
+impl GeneratedColorAmber900 for GeneratedAtomCaretChild {}
+impl GeneratedColorAmber950 for GeneratedAtomCaretChild {}
+impl GeneratedColorYellow50 for GeneratedAtomCaretChild {}
+impl GeneratedColorYellow100 for GeneratedAtomCaretChild {}
+impl GeneratedColorYellow200 for GeneratedAtomCaretChild {}
+impl GeneratedColorYellow300 for GeneratedAtomCaretChild {}
+impl GeneratedColorYellow400 for GeneratedAtomCaretChild {}
+impl GeneratedColorYellow500 for GeneratedAtomCaretChild {}
+impl GeneratedColorYellow600 for GeneratedAtomCaretChild {}
+impl GeneratedColorYellow700 for GeneratedAtomCaretChild {}
+impl GeneratedColorYellow800 for GeneratedAtomCaretChild {}
+impl GeneratedColorYellow900 for GeneratedAtomCaretChild {}
+impl GeneratedColorYellow950 for GeneratedAtomCaretChild {}
+impl GeneratedColorLime50 for GeneratedAtomCaretChild {}
+impl GeneratedColorLime100 for GeneratedAtomCaretChild {}
+impl GeneratedColorLime200 for GeneratedAtomCaretChild {}
+impl GeneratedColorLime300 for GeneratedAtomCaretChild {}
+impl GeneratedColorLime400 for GeneratedAtomCaretChild {}
+impl GeneratedColorLime500 for GeneratedAtomCaretChild {}
+impl GeneratedColorLime600 for GeneratedAtomCaretChild {}
+impl GeneratedColorLime700 for GeneratedAtomCaretChild {}
+impl GeneratedColorLime800 for GeneratedAtomCaretChild {}
+impl GeneratedColorLime900 for GeneratedAtomCaretChild {}
+impl GeneratedColorLime950 for GeneratedAtomCaretChild {}
+impl GeneratedColorGreen50 for GeneratedAtomCaretChild {}
+impl GeneratedColorGreen100 for GeneratedAtomCaretChild {}
+impl GeneratedColorGreen200 for GeneratedAtomCaretChild {}
+impl GeneratedColorGreen300 for GeneratedAtomCaretChild {}
+impl GeneratedColorGreen400 for GeneratedAtomCaretChild {}
+impl GeneratedColorGreen500 for GeneratedAtomCaretChild {}
+impl GeneratedColorGreen600 for GeneratedAtomCaretChild {}
+impl GeneratedColorGreen700 for GeneratedAtomCaretChild {}
+impl GeneratedColorGreen800 for GeneratedAtomCaretChild {}
+impl GeneratedColorGreen900 for GeneratedAtomCaretChild {}
+impl GeneratedColorGreen950 for GeneratedAtomCaretChild {}
+impl GeneratedColorEmerald50 for GeneratedAtomCaretChild {}
+impl GeneratedColorEmerald100 for GeneratedAtomCaretChild {}
+impl GeneratedColorEmerald200 for GeneratedAtomCaretChild {}
+impl GeneratedColorEmerald300 for GeneratedAtomCaretChild {}
+impl GeneratedColorEmerald400 for GeneratedAtomCaretChild {}
+impl GeneratedColorEmerald500 for GeneratedAtomCaretChild {}
+impl GeneratedColorEmerald600 for GeneratedAtomCaretChild {}
+impl GeneratedColorEmerald700 for GeneratedAtomCaretChild {}
+impl GeneratedColorEmerald800 for GeneratedAtomCaretChild {}
+impl GeneratedColorEmerald900 for GeneratedAtomCaretChild {}
+impl GeneratedColorEmerald950 for GeneratedAtomCaretChild {}
+impl GeneratedColorTeal50 for GeneratedAtomCaretChild {}
+impl GeneratedColorTeal100 for GeneratedAtomCaretChild {}
+impl GeneratedColorTeal200 for GeneratedAtomCaretChild {}
+impl GeneratedColorTeal300 for GeneratedAtomCaretChild {}
+impl GeneratedColorTeal400 for GeneratedAtomCaretChild {}
+impl GeneratedColorTeal500 for GeneratedAtomCaretChild {}
+impl GeneratedColorTeal600 for GeneratedAtomCaretChild {}
+impl GeneratedColorTeal700 for GeneratedAtomCaretChild {}
+impl GeneratedColorTeal800 for GeneratedAtomCaretChild {}
+impl GeneratedColorTeal900 for GeneratedAtomCaretChild {}
+impl GeneratedColorTeal950 for GeneratedAtomCaretChild {}
+impl GeneratedColorCyan50 for GeneratedAtomCaretChild {}
+impl GeneratedColorCyan100 for GeneratedAtomCaretChild {}
+impl GeneratedColorCyan200 for GeneratedAtomCaretChild {}
+impl GeneratedColorCyan300 for GeneratedAtomCaretChild {}
+impl GeneratedColorCyan400 for GeneratedAtomCaretChild {}
+impl GeneratedColorCyan500 for GeneratedAtomCaretChild {}
+impl GeneratedColorCyan600 for GeneratedAtomCaretChild {}
+impl GeneratedColorCyan700 for GeneratedAtomCaretChild {}
+impl GeneratedColorCyan800 for GeneratedAtomCaretChild {}
+impl GeneratedColorCyan900 for GeneratedAtomCaretChild {}
+impl GeneratedColorCyan950 for GeneratedAtomCaretChild {}
+impl GeneratedColorSky50 for GeneratedAtomCaretChild {}
+impl GeneratedColorSky100 for GeneratedAtomCaretChild {}
+impl GeneratedColorSky200 for GeneratedAtomCaretChild {}
+impl GeneratedColorSky300 for GeneratedAtomCaretChild {}
+impl GeneratedColorSky400 for GeneratedAtomCaretChild {}
+impl GeneratedColorSky500 for GeneratedAtomCaretChild {}
+impl GeneratedColorSky600 for GeneratedAtomCaretChild {}
+impl GeneratedColorSky700 for GeneratedAtomCaretChild {}
+impl GeneratedColorSky800 for GeneratedAtomCaretChild {}
+impl GeneratedColorSky900 for GeneratedAtomCaretChild {}
+impl GeneratedColorSky950 for GeneratedAtomCaretChild {}
+impl GeneratedColorBlue50 for GeneratedAtomCaretChild {}
+impl GeneratedColorBlue100 for GeneratedAtomCaretChild {}
+impl GeneratedColorBlue200 for GeneratedAtomCaretChild {}
+impl GeneratedColorBlue300 for GeneratedAtomCaretChild {}
+impl GeneratedColorBlue400 for GeneratedAtomCaretChild {}
+impl GeneratedColorBlue500 for GeneratedAtomCaretChild {}
+impl GeneratedColorBlue600 for GeneratedAtomCaretChild {}
+impl GeneratedColorBlue700 for GeneratedAtomCaretChild {}
+impl GeneratedColorBlue800 for GeneratedAtomCaretChild {}
+impl GeneratedColorBlue900 for GeneratedAtomCaretChild {}
+impl GeneratedColorBlue950 for GeneratedAtomCaretChild {}
+impl GeneratedColorIndigo50 for GeneratedAtomCaretChild {}
+impl GeneratedColorIndigo100 for GeneratedAtomCaretChild {}
+impl GeneratedColorIndigo200 for GeneratedAtomCaretChild {}
+impl GeneratedColorIndigo300 for GeneratedAtomCaretChild {}
+impl GeneratedColorIndigo400 for GeneratedAtomCaretChild {}
+impl GeneratedColorIndigo500 for GeneratedAtomCaretChild {}
+impl GeneratedColorIndigo600 for GeneratedAtomCaretChild {}
+impl GeneratedColorIndigo700 for GeneratedAtomCaretChild {}
+impl GeneratedColorIndigo800 for GeneratedAtomCaretChild {}
+impl GeneratedColorIndigo900 for GeneratedAtomCaretChild {}
+impl GeneratedColorIndigo950 for GeneratedAtomCaretChild {}
+impl GeneratedColorViolet50 for GeneratedAtomCaretChild {}
+impl GeneratedColorViolet100 for GeneratedAtomCaretChild {}
+impl GeneratedColorViolet200 for GeneratedAtomCaretChild {}
+impl GeneratedColorViolet300 for GeneratedAtomCaretChild {}
+impl GeneratedColorViolet400 for GeneratedAtomCaretChild {}
+impl GeneratedColorViolet500 for GeneratedAtomCaretChild {}
+impl GeneratedColorViolet600 for GeneratedAtomCaretChild {}
+impl GeneratedColorViolet700 for GeneratedAtomCaretChild {}
+impl GeneratedColorViolet800 for GeneratedAtomCaretChild {}
+impl GeneratedColorViolet900 for GeneratedAtomCaretChild {}
+impl GeneratedColorViolet950 for GeneratedAtomCaretChild {}
+impl GeneratedColorPurple50 for GeneratedAtomCaretChild {}
+impl GeneratedColorPurple100 for GeneratedAtomCaretChild {}
+impl GeneratedColorPurple200 for GeneratedAtomCaretChild {}
+impl GeneratedColorPurple300 for GeneratedAtomCaretChild {}
+impl GeneratedColorPurple400 for GeneratedAtomCaretChild {}
+impl GeneratedColorPurple500 for GeneratedAtomCaretChild {}
+impl GeneratedColorPurple600 for GeneratedAtomCaretChild {}
+impl GeneratedColorPurple700 for GeneratedAtomCaretChild {}
+impl GeneratedColorPurple800 for GeneratedAtomCaretChild {}
+impl GeneratedColorPurple900 for GeneratedAtomCaretChild {}
+impl GeneratedColorPurple950 for GeneratedAtomCaretChild {}
+impl GeneratedColorFuchsia50 for GeneratedAtomCaretChild {}
+impl GeneratedColorFuchsia100 for GeneratedAtomCaretChild {}
+impl GeneratedColorFuchsia200 for GeneratedAtomCaretChild {}
+impl GeneratedColorFuchsia300 for GeneratedAtomCaretChild {}
+impl GeneratedColorFuchsia400 for GeneratedAtomCaretChild {}
+impl GeneratedColorFuchsia500 for GeneratedAtomCaretChild {}
+impl GeneratedColorFuchsia600 for GeneratedAtomCaretChild {}
+impl GeneratedColorFuchsia700 for GeneratedAtomCaretChild {}
+impl GeneratedColorFuchsia800 for GeneratedAtomCaretChild {}
+impl GeneratedColorFuchsia900 for GeneratedAtomCaretChild {}
+impl GeneratedColorFuchsia950 for GeneratedAtomCaretChild {}
+impl GeneratedColorPink50 for GeneratedAtomCaretChild {}
+impl GeneratedColorPink100 for GeneratedAtomCaretChild {}
+impl GeneratedColorPink200 for GeneratedAtomCaretChild {}
+impl GeneratedColorPink300 for GeneratedAtomCaretChild {}
+impl GeneratedColorPink400 for GeneratedAtomCaretChild {}
+impl GeneratedColorPink500 for GeneratedAtomCaretChild {}
+impl GeneratedColorPink600 for GeneratedAtomCaretChild {}
+impl GeneratedColorPink700 for GeneratedAtomCaretChild {}
+impl GeneratedColorPink800 for GeneratedAtomCaretChild {}
+impl GeneratedColorPink900 for GeneratedAtomCaretChild {}
+impl GeneratedColorPink950 for GeneratedAtomCaretChild {}
+impl GeneratedColorRose50 for GeneratedAtomCaretChild {}
+impl GeneratedColorRose100 for GeneratedAtomCaretChild {}
+impl GeneratedColorRose200 for GeneratedAtomCaretChild {}
+impl GeneratedColorRose300 for GeneratedAtomCaretChild {}
+impl GeneratedColorRose400 for GeneratedAtomCaretChild {}
+impl GeneratedColorRose500 for GeneratedAtomCaretChild {}
+impl GeneratedColorRose600 for GeneratedAtomCaretChild {}
+impl GeneratedColorRose700 for GeneratedAtomCaretChild {}
+impl GeneratedColorRose800 for GeneratedAtomCaretChild {}
+impl GeneratedColorRose900 for GeneratedAtomCaretChild {}
+impl GeneratedColorRose950 for GeneratedAtomCaretChild {}
+impl GeneratedColorInherit for GeneratedAtomCaretChild {}
+impl GeneratedColorTransparent for GeneratedAtomCaretChild {}
+impl GeneratedColorCurrent for GeneratedAtomCaretChild {}
+pub struct GeneratedAtomPointerEventsChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomPointerEventsChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetPointerEventsNone for GeneratedAtomPointerEventsChild {}
+impl GeneratedValueSetPointerEventsAuto for GeneratedAtomPointerEventsChild {}
+pub struct GeneratedAtomResizeChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomResizeChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetResizeNone for GeneratedAtomResizeChild {}
+impl GeneratedValueSetResizeY for GeneratedAtomResizeChild {}
+impl GeneratedValueSetResizeX for GeneratedAtomResizeChild {}
+impl GeneratedValueSetResizeBoth for GeneratedAtomResizeChild {}
+pub struct GeneratedAtomScrollChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+pub struct GeneratedAtomScrollMChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollMChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollMChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollMChild {}
+pub struct GeneratedAtomScrollMyChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollMyChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollMyChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollMyChild {}
+pub struct GeneratedAtomScrollMxChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollMxChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollMxChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollMxChild {}
+pub struct GeneratedAtomScrollMBlockChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollMBlockChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollMBlockChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollMBlockChild {}
+pub struct GeneratedAtomScrollMbsChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollMbsChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollMbsChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollMbsChild {}
+pub struct GeneratedAtomScrollMbeChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollMbeChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollMbeChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollMbeChild {}
+pub struct GeneratedAtomScrollMInlineChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollMInlineChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollMInlineChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollMInlineChild {}
+pub struct GeneratedAtomScrollMsChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollMsChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollMsChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollMsChild {}
+pub struct GeneratedAtomScrollMeChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollMeChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollMeChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollMeChild {}
+pub struct GeneratedAtomScrollMtChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollMtChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollMtChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollMtChild {}
+pub struct GeneratedAtomScrollMrChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollMrChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollMrChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollMrChild {}
+pub struct GeneratedAtomScrollMbChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollMbChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollMbChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollMbChild {}
+pub struct GeneratedAtomScrollMlChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollMlChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollMlChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollMlChild {}
+pub struct GeneratedAtomScrollPChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollPChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollPChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollPChild {}
+pub struct GeneratedAtomScrollPyChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollPyChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollPyChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollPyChild {}
+pub struct GeneratedAtomScrollPxChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollPxChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollPxChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollPxChild {}
+pub struct GeneratedAtomScrollPBlockChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollPBlockChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollPBlockChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollPBlockChild {}
+pub struct GeneratedAtomScrollPbsChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollPbsChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollPbsChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollPbsChild {}
+pub struct GeneratedAtomScrollPbeChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollPbeChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollPbeChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollPbeChild {}
+pub struct GeneratedAtomScrollPInlineChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollPInlineChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollPInlineChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollPInlineChild {}
+pub struct GeneratedAtomScrollPsChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollPsChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollPsChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollPsChild {}
+pub struct GeneratedAtomScrollPeChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollPeChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollPeChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollPeChild {}
+pub struct GeneratedAtomScrollPtChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollPtChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollPtChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollPtChild {}
+pub struct GeneratedAtomScrollPrChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollPrChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollPrChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollPrChild {}
+pub struct GeneratedAtomScrollPbChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollPbChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollPbChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollPbChild {}
+pub struct GeneratedAtomScrollPlChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomScrollPlChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetSpacingN0 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN1 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN2 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN3 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN4 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN5 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN6 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN7 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN8 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN9 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN10 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN11 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN12 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN14 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN16 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN20 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN24 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN28 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN32 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN36 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN40 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN44 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN48 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN52 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN56 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN60 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN64 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN72 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN80 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN96 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingPx for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN05 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN15 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN25 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetSpacingN35 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM1 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM2 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM3 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM4 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM5 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM6 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM7 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM8 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM9 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM10 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM11 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM12 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM14 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM16 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM20 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM24 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM28 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM32 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM36 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM40 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM44 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM48 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM52 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM56 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM60 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM64 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM72 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM80 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM96 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingMpx for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM05 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM15 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM25 for GeneratedAtomScrollPlChild {}
+impl GeneratedValueSetNegativeSpacingM35 for GeneratedAtomScrollPlChild {}
+pub struct GeneratedAtomSnapAlignChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomSnapAlignChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetScrollSnapAlignStart for GeneratedAtomSnapAlignChild {}
+impl GeneratedValueSetScrollSnapAlignEnd for GeneratedAtomSnapAlignChild {}
+impl GeneratedValueSetScrollSnapAlignCenter for GeneratedAtomSnapAlignChild {}
+impl GeneratedValueSetScrollSnapAlignNone for GeneratedAtomSnapAlignChild {}
+pub struct GeneratedAtomSnapStopChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomSnapStopChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetScrollSnapStopNormal for GeneratedAtomSnapStopChild {}
+impl GeneratedValueSetScrollSnapStopAlways for GeneratedAtomSnapStopChild {}
+pub struct GeneratedAtomSnapChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomSnapChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetScrollSnapTypeNone for GeneratedAtomSnapChild {}
+impl GeneratedValueSetScrollSnapTypeX for GeneratedAtomSnapChild {}
+impl GeneratedValueSetScrollSnapTypeY for GeneratedAtomSnapChild {}
+impl GeneratedValueSetScrollSnapTypeBoth for GeneratedAtomSnapChild {}
+pub struct GeneratedAtomTouchChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomTouchChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetTouchActionAuto for GeneratedAtomTouchChild {}
+impl GeneratedValueSetTouchActionNone for GeneratedAtomTouchChild {}
+impl GeneratedValueSetTouchActionPanX for GeneratedAtomTouchChild {}
+impl GeneratedValueSetTouchActionPanLeft for GeneratedAtomTouchChild {}
+impl GeneratedValueSetTouchActionPanRight for GeneratedAtomTouchChild {}
+impl GeneratedValueSetTouchActionPanY for GeneratedAtomTouchChild {}
+impl GeneratedValueSetTouchActionPanUp for GeneratedAtomTouchChild {}
+impl GeneratedValueSetTouchActionPanDown for GeneratedAtomTouchChild {}
+impl GeneratedValueSetTouchActionPinchZoom for GeneratedAtomTouchChild {}
+impl GeneratedValueSetTouchActionManipulation for GeneratedAtomTouchChild {}
+pub struct GeneratedAtomSelectChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomSelectChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetUserSelectNone for GeneratedAtomSelectChild {}
+impl GeneratedValueSetUserSelectText for GeneratedAtomSelectChild {}
+impl GeneratedValueSetUserSelectAll for GeneratedAtomSelectChild {}
+impl GeneratedValueSetUserSelectAuto for GeneratedAtomSelectChild {}
+pub struct GeneratedAtomWillChangeChild(String);
+impl GeneratedSkribbleValue for GeneratedAtomWillChangeChild {
+  #[inline]
+  fn from_ref(value: impl AsRef<str>) -> Self {
+    Self(value.as_ref().to_string())
+  }
+  #[inline]
+  fn get_skribble_value(&self) -> &String {
+    &self.0
+  }
+}
+impl GeneratedValueSetWillChangeAuto for GeneratedAtomWillChangeChild {}
+impl GeneratedValueSetWillChangeScroll for GeneratedAtomWillChangeChild {}
+impl GeneratedValueSetWillChangeContents for GeneratedAtomWillChangeChild {}
+impl GeneratedValueSetWillChangeTransform for GeneratedAtomWillChangeChild {}
 pub trait GeneratedAtomSr: GeneratedSkribbleValue {
   /// Screen reader only
   #[inline]
@@ -28889,6 +31790,7 @@ pub trait GeneratedAtomOrigin: GeneratedSkribbleValue {
   }
 }
 pub trait GeneratedAtomAccent: GeneratedSkribbleValue {
+  /// Control the accented color of a form control.
   #[inline]
   fn accent(&self) -> GeneratedAtomAccentChild {
     GeneratedAtomAccentChild::from_ref(self.append("accent"))
@@ -28896,6 +31798,387 @@ pub trait GeneratedAtomAccent: GeneratedSkribbleValue {
   #[inline]
   fn accent_(&self, value: &'static str) -> String {
     self.append(format!("accent:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomCursor: GeneratedSkribbleValue {
+  /// Control the cursor style when hovering over an element.
+  #[inline]
+  fn cursor(&self) -> GeneratedAtomCursorChild {
+    GeneratedAtomCursorChild::from_ref(self.append("cursor"))
+  }
+  #[inline]
+  fn cursor_(&self, value: &'static str) -> String {
+    self.append(format!("cursor:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomCaret: GeneratedSkribbleValue {
+  /// Control the color of the text input cursor.
+  #[inline]
+  fn caret(&self) -> GeneratedAtomCaretChild {
+    GeneratedAtomCaretChild::from_ref(self.append("caret"))
+  }
+  #[inline]
+  fn caret_(&self, value: &'static str) -> String {
+    self.append(format!("caret:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomPointerEvents: GeneratedSkribbleValue {
+  /// Control whether an element responds to pointer events.
+  #[inline]
+  fn pointer_events(&self) -> GeneratedAtomPointerEventsChild {
+    GeneratedAtomPointerEventsChild::from_ref(self.append("pointer-events"))
+  }
+  #[inline]
+  fn pointer_events_(&self, value: &'static str) -> String {
+    self.append(format!("pointer-events:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomResize: GeneratedSkribbleValue {
+  /// Control how an element can be resized.
+  #[inline]
+  fn resize(&self) -> GeneratedAtomResizeChild {
+    GeneratedAtomResizeChild::from_ref(self.append("resize"))
+  }
+  #[inline]
+  fn resize_(&self, value: &'static str) -> String {
+    self.append(format!("resize:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScroll: GeneratedSkribbleValue {
+  /// Control the scroll behavior of an element.
+  #[inline]
+  fn scroll(&self) -> GeneratedAtomScrollChild {
+    GeneratedAtomScrollChild::from_ref(self.append("scroll"))
+  }
+  #[inline]
+  fn scroll_(&self, value: &'static str) -> String {
+    self.append(format!("scroll:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollM: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_m(&self) -> GeneratedAtomScrollMChild {
+    GeneratedAtomScrollMChild::from_ref(self.append("scroll-m"))
+  }
+  #[inline]
+  fn scroll_m_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-m:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollMy: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_my(&self) -> GeneratedAtomScrollMyChild {
+    GeneratedAtomScrollMyChild::from_ref(self.append("scroll-my"))
+  }
+  #[inline]
+  fn scroll_my_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-my:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollMx: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_mx(&self) -> GeneratedAtomScrollMxChild {
+    GeneratedAtomScrollMxChild::from_ref(self.append("scroll-mx"))
+  }
+  #[inline]
+  fn scroll_mx_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-mx:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollMBlock: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_m_block(&self) -> GeneratedAtomScrollMBlockChild {
+    GeneratedAtomScrollMBlockChild::from_ref(self.append("scroll-m-block"))
+  }
+  #[inline]
+  fn scroll_m_block_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-m-block:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollMbs: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_mbs(&self) -> GeneratedAtomScrollMbsChild {
+    GeneratedAtomScrollMbsChild::from_ref(self.append("scroll-mbs"))
+  }
+  #[inline]
+  fn scroll_mbs_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-mbs:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollMbe: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_mbe(&self) -> GeneratedAtomScrollMbeChild {
+    GeneratedAtomScrollMbeChild::from_ref(self.append("scroll-mbe"))
+  }
+  #[inline]
+  fn scroll_mbe_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-mbe:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollMInline: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_m_inline(&self) -> GeneratedAtomScrollMInlineChild {
+    GeneratedAtomScrollMInlineChild::from_ref(self.append("scroll-m-inline"))
+  }
+  #[inline]
+  fn scroll_m_inline_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-m-inline:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollMs: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_ms(&self) -> GeneratedAtomScrollMsChild {
+    GeneratedAtomScrollMsChild::from_ref(self.append("scroll-ms"))
+  }
+  #[inline]
+  fn scroll_ms_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-ms:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollMe: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_me(&self) -> GeneratedAtomScrollMeChild {
+    GeneratedAtomScrollMeChild::from_ref(self.append("scroll-me"))
+  }
+  #[inline]
+  fn scroll_me_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-me:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollMt: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_mt(&self) -> GeneratedAtomScrollMtChild {
+    GeneratedAtomScrollMtChild::from_ref(self.append("scroll-mt"))
+  }
+  #[inline]
+  fn scroll_mt_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-mt:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollMr: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_mr(&self) -> GeneratedAtomScrollMrChild {
+    GeneratedAtomScrollMrChild::from_ref(self.append("scroll-mr"))
+  }
+  #[inline]
+  fn scroll_mr_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-mr:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollMb: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_mb(&self) -> GeneratedAtomScrollMbChild {
+    GeneratedAtomScrollMbChild::from_ref(self.append("scroll-mb"))
+  }
+  #[inline]
+  fn scroll_mb_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-mb:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollMl: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_ml(&self) -> GeneratedAtomScrollMlChild {
+    GeneratedAtomScrollMlChild::from_ref(self.append("scroll-ml"))
+  }
+  #[inline]
+  fn scroll_ml_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-ml:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollP: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_p(&self) -> GeneratedAtomScrollPChild {
+    GeneratedAtomScrollPChild::from_ref(self.append("scroll-p"))
+  }
+  #[inline]
+  fn scroll_p_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-p:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollPy: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_py(&self) -> GeneratedAtomScrollPyChild {
+    GeneratedAtomScrollPyChild::from_ref(self.append("scroll-py"))
+  }
+  #[inline]
+  fn scroll_py_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-py:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollPx: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_px(&self) -> GeneratedAtomScrollPxChild {
+    GeneratedAtomScrollPxChild::from_ref(self.append("scroll-px"))
+  }
+  #[inline]
+  fn scroll_px_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-px:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollPBlock: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_p_block(&self) -> GeneratedAtomScrollPBlockChild {
+    GeneratedAtomScrollPBlockChild::from_ref(self.append("scroll-p-block"))
+  }
+  #[inline]
+  fn scroll_p_block_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-p-block:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollPbs: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_pbs(&self) -> GeneratedAtomScrollPbsChild {
+    GeneratedAtomScrollPbsChild::from_ref(self.append("scroll-pbs"))
+  }
+  #[inline]
+  fn scroll_pbs_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-pbs:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollPbe: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_pbe(&self) -> GeneratedAtomScrollPbeChild {
+    GeneratedAtomScrollPbeChild::from_ref(self.append("scroll-pbe"))
+  }
+  #[inline]
+  fn scroll_pbe_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-pbe:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollPInline: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_p_inline(&self) -> GeneratedAtomScrollPInlineChild {
+    GeneratedAtomScrollPInlineChild::from_ref(self.append("scroll-p-inline"))
+  }
+  #[inline]
+  fn scroll_p_inline_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-p-inline:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollPs: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_ps(&self) -> GeneratedAtomScrollPsChild {
+    GeneratedAtomScrollPsChild::from_ref(self.append("scroll-ps"))
+  }
+  #[inline]
+  fn scroll_ps_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-ps:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollPe: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_pe(&self) -> GeneratedAtomScrollPeChild {
+    GeneratedAtomScrollPeChild::from_ref(self.append("scroll-pe"))
+  }
+  #[inline]
+  fn scroll_pe_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-pe:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollPt: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_pt(&self) -> GeneratedAtomScrollPtChild {
+    GeneratedAtomScrollPtChild::from_ref(self.append("scroll-pt"))
+  }
+  #[inline]
+  fn scroll_pt_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-pt:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollPr: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_pr(&self) -> GeneratedAtomScrollPrChild {
+    GeneratedAtomScrollPrChild::from_ref(self.append("scroll-pr"))
+  }
+  #[inline]
+  fn scroll_pr_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-pr:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollPb: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_pb(&self) -> GeneratedAtomScrollPbChild {
+    GeneratedAtomScrollPbChild::from_ref(self.append("scroll-pb"))
+  }
+  #[inline]
+  fn scroll_pb_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-pb:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomScrollPl: GeneratedSkribbleValue {
+  #[inline]
+  fn scroll_pl(&self) -> GeneratedAtomScrollPlChild {
+    GeneratedAtomScrollPlChild::from_ref(self.append("scroll-pl"))
+  }
+  #[inline]
+  fn scroll_pl_(&self, value: &'static str) -> String {
+    self.append(format!("scroll-pl:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomSnapAlign: GeneratedSkribbleValue {
+  /// Control the scroll snap alignment of an element.
+  #[inline]
+  fn snap_align(&self) -> GeneratedAtomSnapAlignChild {
+    GeneratedAtomSnapAlignChild::from_ref(self.append("snap-align"))
+  }
+  #[inline]
+  fn snap_align_(&self, value: &'static str) -> String {
+    self.append(format!("snap-align:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomSnapStop: GeneratedSkribbleValue {
+  /// Control whether you can skip past possible snap positions.
+  #[inline]
+  fn snap_stop(&self) -> GeneratedAtomSnapStopChild {
+    GeneratedAtomSnapStopChild::from_ref(self.append("snap-stop"))
+  }
+  #[inline]
+  fn snap_stop_(&self, value: &'static str) -> String {
+    self.append(format!("snap-stop:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomSnap: GeneratedSkribbleValue {
+  /// Control how strictly snap points are enforced in a snap container.
+  #[inline]
+  fn snap(&self) -> GeneratedAtomSnapChild {
+    GeneratedAtomSnapChild::from_ref(self.append("snap"))
+  }
+  #[inline]
+  fn snap_(&self, value: &'static str) -> String {
+    self.append(format!("snap:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomTouch: GeneratedSkribbleValue {
+  /// Control how an element can be scrolled and zoomed on touchscreens.
+  #[inline]
+  fn touch(&self) -> GeneratedAtomTouchChild {
+    GeneratedAtomTouchChild::from_ref(self.append("touch"))
+  }
+  #[inline]
+  fn touch_(&self, value: &'static str) -> String {
+    self.append(format!("touch:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomSelect: GeneratedSkribbleValue {
+  /// Control whether the user can select text in an element.
+  #[inline]
+  fn select(&self) -> GeneratedAtomSelectChild {
+    GeneratedAtomSelectChild::from_ref(self.append("select"))
+  }
+  #[inline]
+  fn select_(&self, value: &'static str) -> String {
+    self.append(format!("select:[{}]", value.trim()))
+  }
+}
+pub trait GeneratedAtomWillChange: GeneratedSkribbleValue {
+  /// Optimize upcoming animations of elements that are expected to change.
+  #[inline]
+  fn will_change(&self) -> GeneratedAtomWillChangeChild {
+    GeneratedAtomWillChangeChild::from_ref(self.append("will-change"))
+  }
+  #[inline]
+  fn will_change_(&self, value: &'static str) -> String {
+    self.append(format!("will-change:[{}]", value.trim()))
   }
 }
 pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
@@ -28958,6 +32241,21 @@ pub trait GeneratedNamedClasses: GeneratedSkribbleValue {
   #[inline]
   fn backdrop_filter_none(&self) -> String {
     self.append_value("backdrop-filter-none")
+  }
+  /// Suppress native form control styling.
+  #[inline]
+  fn appearance_none(&self) -> String {
+    self.append_value("appearance-none")
+  }
+  /// Use the `snap-mandatory` utility to force a snap container to always come to rest on a snap point.
+  #[inline]
+  fn snap_mandatory(&self) -> String {
+    self.append_value("snap-mandatory")
+  }
+  /// Use the `snap-proximity` utility to make a snap container come to rest on snap points that are close in proximity. This is the browser default.
+  #[inline]
+  fn snap_proximity(&self) -> String {
+    self.append_value("snap-proximity")
   }
 }
 pub trait GeneratedAliases: GeneratedSkribbleValue {
@@ -29828,6 +33126,43 @@ impl GeneratedAtomSkewX for GeneratedSkribbleRoot {}
 impl GeneratedAtomSkewY for GeneratedSkribbleRoot {}
 impl GeneratedAtomOrigin for GeneratedSkribbleRoot {}
 impl GeneratedAtomAccent for GeneratedSkribbleRoot {}
+impl GeneratedAtomCursor for GeneratedSkribbleRoot {}
+impl GeneratedAtomCaret for GeneratedSkribbleRoot {}
+impl GeneratedAtomPointerEvents for GeneratedSkribbleRoot {}
+impl GeneratedAtomResize for GeneratedSkribbleRoot {}
+impl GeneratedAtomScroll for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollM for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollMy for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollMx for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollMBlock for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollMbs for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollMbe for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollMInline for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollMs for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollMe for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollMt for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollMr for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollMb for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollMl for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollP for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollPy for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollPx for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollPBlock for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollPbs for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollPbe for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollPInline for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollPs for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollPe for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollPt for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollPr for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollPb for GeneratedSkribbleRoot {}
+impl GeneratedAtomScrollPl for GeneratedSkribbleRoot {}
+impl GeneratedAtomSnapAlign for GeneratedSkribbleRoot {}
+impl GeneratedAtomSnapStop for GeneratedSkribbleRoot {}
+impl GeneratedAtomSnap for GeneratedSkribbleRoot {}
+impl GeneratedAtomTouch for GeneratedSkribbleRoot {}
+impl GeneratedAtomSelect for GeneratedSkribbleRoot {}
+impl GeneratedAtomWillChange for GeneratedSkribbleRoot {}
 impl GeneratedNamedClasses for GeneratedSkribbleRoot {}
 impl GeneratedAliases for GeneratedSkribbleRoot {}
 impl GeneratedMediaQueryBreakpoints for GeneratedMediaQueryDeviceCategoriesChild {}
@@ -30135,6 +33470,43 @@ impl GeneratedAtomSkewX for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomSkewY for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomOrigin for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAtomAccent for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomCursor for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomCaret for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomPointerEvents for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomResize for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScroll for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollM for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollMy for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollMx for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollMBlock for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollMbs for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollMbe for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollMInline for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollMs for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollMe for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollMt for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollMr for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollMb for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollMl for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollP for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollPy for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollPx for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollPBlock for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollPbs for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollPbe for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollPInline for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollPs for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollPe for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollPt for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollPr for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollPb for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomScrollPl for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomSnapAlign for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomSnapStop for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomSnap for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomTouch for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomSelect for GeneratedMediaQueryDeviceCategoriesChild {}
+impl GeneratedAtomWillChange for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedAliases for GeneratedMediaQueryDeviceCategoriesChild {}
 impl GeneratedMediaQueryOrientation for GeneratedMediaQueryBreakpointsChild {}
@@ -30441,6 +33813,43 @@ impl GeneratedAtomSkewX for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomSkewY for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomOrigin for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAtomAccent for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomCursor for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomCaret for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomPointerEvents for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomResize for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScroll for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollM for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollMy for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollMx for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollMBlock for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollMbs for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollMbe for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollMInline for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollMs for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollMe for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollMt for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollMr for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollMb for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollMl for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollP for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollPy for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollPx for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollPBlock for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollPbs for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollPbe for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollPInline for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollPs for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollPe for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollPt for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollPr for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollPb for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomScrollPl for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomSnapAlign for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomSnapStop for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomSnap for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomTouch for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomSelect for GeneratedMediaQueryBreakpointsChild {}
+impl GeneratedAtomWillChange for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedAliases for GeneratedMediaQueryBreakpointsChild {}
 impl GeneratedMediaQueryMotion for GeneratedMediaQueryOrientationChild {}
@@ -30746,6 +34155,43 @@ impl GeneratedAtomSkewX for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomSkewY for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomOrigin for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAtomAccent for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomCursor for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomCaret for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomPointerEvents for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomResize for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScroll for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollM for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollMy for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollMx for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollMBlock for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollMbs for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollMbe for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollMInline for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollMs for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollMe for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollMt for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollMr for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollMb for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollMl for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollP for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollPy for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollPx for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollPBlock for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollPbs for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollPbe for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollPInline for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollPs for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollPe for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollPt for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollPr for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollPb for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomScrollPl for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomSnapAlign for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomSnapStop for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomSnap for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomTouch for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomSelect for GeneratedMediaQueryOrientationChild {}
+impl GeneratedAtomWillChange for GeneratedMediaQueryOrientationChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryOrientationChild {}
 impl GeneratedAliases for GeneratedMediaQueryOrientationChild {}
 impl GeneratedMediaQueryDarkMode for GeneratedMediaQueryMotionChild {}
@@ -31050,6 +34496,43 @@ impl GeneratedAtomSkewX for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomSkewY for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomOrigin for GeneratedMediaQueryMotionChild {}
 impl GeneratedAtomAccent for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomCursor for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomCaret for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomPointerEvents for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomResize for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScroll for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollM for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollMy for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollMx for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollMBlock for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollMbs for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollMbe for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollMInline for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollMs for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollMe for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollMt for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollMr for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollMb for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollMl for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollP for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollPy for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollPx for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollPBlock for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollPbs for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollPbe for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollPInline for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollPs for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollPe for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollPt for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollPr for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollPb for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomScrollPl for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomSnapAlign for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomSnapStop for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomSnap for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomTouch for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomSelect for GeneratedMediaQueryMotionChild {}
+impl GeneratedAtomWillChange for GeneratedMediaQueryMotionChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryMotionChild {}
 impl GeneratedAliases for GeneratedMediaQueryMotionChild {}
 impl GeneratedModifierParentGroup for GeneratedMediaQueryDarkModeChild {}
@@ -31353,6 +34836,43 @@ impl GeneratedAtomSkewX for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomSkewY for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomOrigin for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAtomAccent for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomCursor for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomCaret for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomPointerEvents for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomResize for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScroll for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollM for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollMy for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollMx for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollMBlock for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollMbs for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollMbe for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollMInline for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollMs for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollMe for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollMt for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollMr for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollMb for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollMl for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollP for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollPy for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollPx for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollPBlock for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollPbs for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollPbe for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollPInline for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollPs for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollPe for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollPt for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollPr for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollPb for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomScrollPl for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomSnapAlign for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomSnapStop for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomSnap for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomTouch for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomSelect for GeneratedMediaQueryDarkModeChild {}
+impl GeneratedAtomWillChange for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedNamedClasses for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedAliases for GeneratedMediaQueryDarkModeChild {}
 impl GeneratedModifierHoverGroup for GeneratedModifierParentGroupChild {}
@@ -31655,6 +35175,43 @@ impl GeneratedAtomSkewX for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierParentGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierParentGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierParentGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierParentGroupChild {}
 impl GeneratedAliases for GeneratedModifierParentGroupChild {}
 impl GeneratedModifierActiveGroup for GeneratedModifierHoverGroupChild {}
@@ -31956,6 +35513,43 @@ impl GeneratedAtomSkewX for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierHoverGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierHoverGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierHoverGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierHoverGroupChild {}
 impl GeneratedAliases for GeneratedModifierHoverGroupChild {}
 impl GeneratedModifierFocusGroup for GeneratedModifierActiveGroupChild {}
@@ -32256,6 +35850,43 @@ impl GeneratedAtomSkewX for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierActiveGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierActiveGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierActiveGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierActiveGroupChild {}
 impl GeneratedAliases for GeneratedModifierActiveGroupChild {}
 impl GeneratedModifierFocusWithinGroup for GeneratedModifierFocusGroupChild {}
@@ -32555,6 +36186,43 @@ impl GeneratedAtomSkewX for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierFocusGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierFocusGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierFocusGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierFocusGroupChild {}
 impl GeneratedAliases for GeneratedModifierFocusGroupChild {}
 impl GeneratedModifierFocusVisibleGroup for GeneratedModifierFocusWithinGroupChild {}
@@ -32853,6 +36521,43 @@ impl GeneratedAtomSkewX for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierFocusWithinGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedAliases for GeneratedModifierFocusWithinGroupChild {}
 impl GeneratedModifierEnabledGroup for GeneratedModifierFocusVisibleGroupChild {}
@@ -33150,6 +36855,43 @@ impl GeneratedAtomSkewX for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierFocusVisibleGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedAliases for GeneratedModifierFocusVisibleGroupChild {}
 impl GeneratedModifierEmptyGroup for GeneratedModifierEnabledGroupChild {}
@@ -33446,6 +37188,43 @@ impl GeneratedAtomSkewX for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierEnabledGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierEnabledGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierEnabledGroupChild {}
 impl GeneratedAliases for GeneratedModifierEnabledGroupChild {}
 impl GeneratedModifierReadGroup for GeneratedModifierEmptyGroupChild {}
@@ -33741,6 +37520,43 @@ impl GeneratedAtomSkewX for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierEmptyGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierEmptyGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierEmptyGroupChild {}
 impl GeneratedAliases for GeneratedModifierEmptyGroupChild {}
 impl GeneratedModifierCheckedGroup for GeneratedModifierReadGroupChild {}
@@ -34035,6 +37851,43 @@ impl GeneratedAtomSkewX for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierReadGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierReadGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierReadGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierReadGroupChild {}
 impl GeneratedAliases for GeneratedModifierReadGroupChild {}
 impl GeneratedModifierValidGroup for GeneratedModifierCheckedGroupChild {}
@@ -34328,6 +38181,43 @@ impl GeneratedAtomSkewX for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierCheckedGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierCheckedGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierCheckedGroupChild {}
 impl GeneratedAliases for GeneratedModifierCheckedGroupChild {}
 impl GeneratedModifierAutofillGroup for GeneratedModifierValidGroupChild {}
@@ -34620,6 +38510,43 @@ impl GeneratedAtomSkewX for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierValidGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierValidGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierValidGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierValidGroupChild {}
 impl GeneratedAliases for GeneratedModifierValidGroupChild {}
 impl GeneratedModifierEvenGroup for GeneratedModifierAutofillGroupChild {}
@@ -34911,6 +38838,43 @@ impl GeneratedAtomSkewX for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierAutofillGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierAutofillGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierAutofillGroupChild {}
 impl GeneratedAliases for GeneratedModifierAutofillGroupChild {}
 impl GeneratedModifierNodePositionGroup for GeneratedModifierEvenGroupChild {}
@@ -35201,6 +39165,43 @@ impl GeneratedAtomSkewX for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierEvenGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierEvenGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierEvenGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierEvenGroupChild {}
 impl GeneratedAliases for GeneratedModifierEvenGroupChild {}
 impl GeneratedModifierNodeOfTypeGroup for GeneratedModifierNodePositionGroupChild {}
@@ -35490,6 +39491,43 @@ impl GeneratedAtomSkewX for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierNodePositionGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedAliases for GeneratedModifierNodePositionGroupChild {}
 impl GeneratedModifierVisitedGroup for GeneratedModifierNodeOfTypeGroupChild {}
@@ -35778,6 +39816,43 @@ impl GeneratedAtomSkewX for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierNodeOfTypeGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedAliases for GeneratedModifierNodeOfTypeGroupChild {}
 impl GeneratedModifierOptionalGroup for GeneratedModifierVisitedGroupChild {}
@@ -36065,6 +40140,43 @@ impl GeneratedAtomSkewX for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierVisitedGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierVisitedGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierVisitedGroupChild {}
 impl GeneratedAliases for GeneratedModifierVisitedGroupChild {}
 impl GeneratedModifierAria for GeneratedModifierOptionalGroupChild {}
@@ -36351,6 +40463,43 @@ impl GeneratedAtomSkewX for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierOptionalGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierOptionalGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierOptionalGroupChild {}
 impl GeneratedAliases for GeneratedModifierOptionalGroupChild {}
 impl GeneratedModifierFullScreenGroup for GeneratedModifierAriaChild {}
@@ -36636,6 +40785,43 @@ impl GeneratedAtomSkewX for GeneratedModifierAriaChild {}
 impl GeneratedAtomSkewY for GeneratedModifierAriaChild {}
 impl GeneratedAtomOrigin for GeneratedModifierAriaChild {}
 impl GeneratedAtomAccent for GeneratedModifierAriaChild {}
+impl GeneratedAtomCursor for GeneratedModifierAriaChild {}
+impl GeneratedAtomCaret for GeneratedModifierAriaChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierAriaChild {}
+impl GeneratedAtomResize for GeneratedModifierAriaChild {}
+impl GeneratedAtomScroll for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollM for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollP for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierAriaChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierAriaChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierAriaChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierAriaChild {}
+impl GeneratedAtomSnap for GeneratedModifierAriaChild {}
+impl GeneratedAtomTouch for GeneratedModifierAriaChild {}
+impl GeneratedAtomSelect for GeneratedModifierAriaChild {}
+impl GeneratedAtomWillChange for GeneratedModifierAriaChild {}
 impl GeneratedNamedClasses for GeneratedModifierAriaChild {}
 impl GeneratedAliases for GeneratedModifierAriaChild {}
 impl GeneratedModifierTargetGroup for GeneratedModifierFullScreenGroupChild {}
@@ -36920,6 +41106,43 @@ impl GeneratedAtomSkewX for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierFullScreenGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedAliases for GeneratedModifierFullScreenGroupChild {}
 impl GeneratedModifierPlaceholderShownGroup for GeneratedModifierTargetGroupChild {}
@@ -37203,6 +41426,43 @@ impl GeneratedAtomSkewX for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierTargetGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierTargetGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierTargetGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierTargetGroupChild {}
 impl GeneratedAliases for GeneratedModifierTargetGroupChild {}
 impl GeneratedModifierRequiredGroup for GeneratedModifierPlaceholderShownGroupChild {}
@@ -37485,6 +41745,43 @@ impl GeneratedAtomSkewX for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierPlaceholderShownGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedAliases for GeneratedModifierPlaceholderShownGroupChild {}
 impl GeneratedModifierDefaultGroup for GeneratedModifierRequiredGroupChild {}
@@ -37766,6 +42063,43 @@ impl GeneratedAtomSkewX for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierRequiredGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierRequiredGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierRequiredGroupChild {}
 impl GeneratedAliases for GeneratedModifierRequiredGroupChild {}
 impl GeneratedModifierOnlyChildGroup for GeneratedModifierDefaultGroupChild {}
@@ -38046,6 +42380,43 @@ impl GeneratedAtomSkewX for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierDefaultGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierDefaultGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierDefaultGroupChild {}
 impl GeneratedAliases for GeneratedModifierDefaultGroupChild {}
 impl GeneratedModifierOnlyGroup for GeneratedModifierOnlyChildGroupChild {}
@@ -38325,6 +42696,43 @@ impl GeneratedAtomSkewX for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierOnlyChildGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedAliases for GeneratedModifierOnlyChildGroupChild {}
 impl GeneratedModifierRootGroup for GeneratedModifierOnlyGroupChild {}
@@ -38603,6 +43011,43 @@ impl GeneratedAtomSkewX for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierOnlyGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierOnlyGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierOnlyGroupChild {}
 impl GeneratedAliases for GeneratedModifierOnlyGroupChild {}
 impl GeneratedModifierLinkGroup for GeneratedModifierRootGroupChild {}
@@ -38880,6 +43325,43 @@ impl GeneratedAtomSkewX for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierRootGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierRootGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierRootGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierRootGroupChild {}
 impl GeneratedAliases for GeneratedModifierRootGroupChild {}
 impl GeneratedModifierPseudoGroup for GeneratedModifierLinkGroupChild {}
@@ -39156,6 +43638,43 @@ impl GeneratedAtomSkewX for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierLinkGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierLinkGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierLinkGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierLinkGroupChild {}
 impl GeneratedAliases for GeneratedModifierLinkGroupChild {}
 impl GeneratedTransformerImportant for GeneratedModifierPseudoGroupChild {}
@@ -39431,6 +43950,43 @@ impl GeneratedAtomSkewX for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomSkewY for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomOrigin for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAtomAccent for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomCursor for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomCaret for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomPointerEvents for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomResize for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScroll for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollM for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollMy for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollMx for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollMBlock for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollMbs for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollMbe for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollMInline for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollMs for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollMe for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollMt for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollMr for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollMb for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollMl for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollP for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollPy for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollPx for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollPBlock for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollPbs for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollPbe for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollPInline for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollPs for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollPe for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollPt for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollPr for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollPb for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomScrollPl for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomSnapAlign for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomSnapStop for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomSnap for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomTouch for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomSelect for GeneratedModifierPseudoGroupChild {}
+impl GeneratedAtomWillChange for GeneratedModifierPseudoGroupChild {}
 impl GeneratedNamedClasses for GeneratedModifierPseudoGroupChild {}
 impl GeneratedAliases for GeneratedModifierPseudoGroupChild {}
 impl GeneratedTransformerAlpha for GeneratedTransformerImportantGroupImportantChild {}
@@ -39705,6 +44261,43 @@ impl GeneratedAtomSkewX for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomSkewY for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomOrigin for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomAccent for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomCursor for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomCaret for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomPointerEvents for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomResize for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScroll for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollM for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollMy for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollMx for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollMBlock for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollMbs for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollMbe for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollMInline for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollMs for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollMe for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollMt for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollMr for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollMb for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollMl for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollP for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollPy for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollPx for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollPBlock for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollPbs for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollPbe for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollPInline for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollPs for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollPe for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollPt for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollPr for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollPb for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomScrollPl for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomSnapAlign for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomSnapStop for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomSnap for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomTouch for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomSelect for GeneratedTransformerImportantGroupImportantChild {}
+impl GeneratedAtomWillChange for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedNamedClasses for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAliases for GeneratedTransformerImportantGroupImportantChild {}
 impl GeneratedAtomFill for GeneratedTransformerAlphaGroupAlphaChild {}
@@ -39733,6 +44326,7 @@ impl GeneratedAtomRingColor for GeneratedTransformerAlphaGroupAlphaChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedTransformerAlphaGroupAlphaChild {}
 impl GeneratedAtomShadowColor for GeneratedTransformerAlphaGroupAlphaChild {}
 impl GeneratedAtomAccent for GeneratedTransformerAlphaGroupAlphaChild {}
+impl GeneratedAtomCaret for GeneratedTransformerAlphaGroupAlphaChild {}
 impl GeneratedAtomFill for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomStroke for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomText for GeneratedTransformerAlphaGroupOpaquifyChild {}
@@ -39759,6 +44353,7 @@ impl GeneratedAtomRingColor for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomShadowColor for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomAccent for GeneratedTransformerAlphaGroupOpaquifyChild {}
+impl GeneratedAtomCaret for GeneratedTransformerAlphaGroupOpaquifyChild {}
 impl GeneratedAtomFill for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomStroke for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomText for GeneratedTransformerAlphaGroupTransparentizeChild {}
@@ -39785,6 +44380,7 @@ impl GeneratedAtomRingColor for GeneratedTransformerAlphaGroupTransparentizeChil
 impl GeneratedAtomRingOffsetColor for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomShadowColor for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomAccent for GeneratedTransformerAlphaGroupTransparentizeChild {}
+impl GeneratedAtomCaret for GeneratedTransformerAlphaGroupTransparentizeChild {}
 impl GeneratedAtomFill for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomStroke for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomText for GeneratedTransformerLightnessGroupLightnessChild {}
@@ -39811,6 +44407,7 @@ impl GeneratedAtomRingColor for GeneratedTransformerLightnessGroupLightnessChild
 impl GeneratedAtomRingOffsetColor for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomShadowColor for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomAccent for GeneratedTransformerLightnessGroupLightnessChild {}
+impl GeneratedAtomCaret for GeneratedTransformerLightnessGroupLightnessChild {}
 impl GeneratedAtomFill for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomStroke for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomText for GeneratedTransformerLightnessGroupLightenChild {}
@@ -39837,6 +44434,7 @@ impl GeneratedAtomRingColor for GeneratedTransformerLightnessGroupLightenChild {
 impl GeneratedAtomRingOffsetColor for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomShadowColor for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomAccent for GeneratedTransformerLightnessGroupLightenChild {}
+impl GeneratedAtomCaret for GeneratedTransformerLightnessGroupLightenChild {}
 impl GeneratedAtomFill for GeneratedTransformerLightnessGroupDarkenChild {}
 impl GeneratedAtomStroke for GeneratedTransformerLightnessGroupDarkenChild {}
 impl GeneratedAtomText for GeneratedTransformerLightnessGroupDarkenChild {}
@@ -39863,3 +44461,4 @@ impl GeneratedAtomRingColor for GeneratedTransformerLightnessGroupDarkenChild {}
 impl GeneratedAtomRingOffsetColor for GeneratedTransformerLightnessGroupDarkenChild {}
 impl GeneratedAtomShadowColor for GeneratedTransformerLightnessGroupDarkenChild {}
 impl GeneratedAtomAccent for GeneratedTransformerLightnessGroupDarkenChild {}
+impl GeneratedAtomCaret for GeneratedTransformerLightnessGroupDarkenChild {}

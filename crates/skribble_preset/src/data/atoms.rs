@@ -3,6 +3,7 @@ use lazy_static::lazy_static;
 use skribble_core::Atom;
 use skribble_core::ColorField;
 use skribble_core::LinkedValues;
+use skribble_core::NamedColorField;
 use skribble_core::OptionalStringMap;
 use skribble_core::Placeholder;
 
@@ -1002,12 +1003,12 @@ lazy_static! {
         // Svg
         Atom::builder()
         .name("fill")
-        .values(ColorField::default())
+        .values(ColorField::builder().named_fields(indexmap! { String::from("none") => NamedColorField::from("none") }).build())
         .styles(indexmap! { "fill" => none })
         .build(),
         Atom::builder()
         .name("stroke")
-        .values(ColorField::default())
+        .values(ColorField::builder().named_fields(indexmap! { String::from("none") => NamedColorField::from("none") }).build())
         .styles(indexmap! { "stroke" => none })
         .build(),
       Atom::builder()
@@ -1772,8 +1773,205 @@ lazy_static! {
       // Interactivity
       Atom::builder()
         .name("accent")
+        .description("Control the accented color of a form control.")
         .values(ColorField::default())
         .styles(indexmap! { "accent-color" => none })
+        .build(),
+      Atom::builder()
+        .name("cursor")
+        .description("Control the cursor style when hovering over an element.")
+        .values(vec!["cursor"])
+        .styles(indexmap! { "cursor" => none })
+        .build(),
+      Atom::builder()
+        .name("caret")
+        .description("Control the color of the text input cursor.")
+        .values(ColorField::default())
+        .styles(indexmap! { "caret-color" => none })
+        .build(),
+      Atom::builder()
+        .name("pointer-events")
+        .description("Control whether an element responds to pointer events.")
+        .values(vec!["pointer-events"])
+        .styles(indexmap! { "pointer-events" => none })
+        .build(),
+      Atom::builder()
+        .name("resize")
+        .description("Control how an element can be resized.")
+        .values(vec!["resize"])
+        .styles(indexmap! { "resize" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll")
+        .description("Control the scroll behavior of an element.")
+        .values(vec!["scroll"])
+        .styles(indexmap! { "scroll-behavior" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-m")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-margin" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-my")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-margin-top" => none, "scroll-margin-bottom" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-mx")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-margin-right" => none, "scroll-margin-left" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-m-block")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-margin-block" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-mbs")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-margin-block-start" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-mbe")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-margin-block-end" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-m-inline")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-margin-inline" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-ms")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-margin-inline-start" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-me")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-margin-inline-end" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-mt")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-margin-top" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-mr")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-margin-right" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-mb")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-margin-bottom" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-ml")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-margin-left" => none })
+        .build(),
+        Atom::builder()
+        .name("scroll-p")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-padding" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-py")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-padding-top" => none, "scroll-padding-bottom" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-px")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-padding-right" => none, "scroll-padding-left" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-p-block")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-padding-block" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-pbs")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-padding-block-start" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-pbe")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-padding-block-end" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-p-inline")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-padding-inline" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-ps")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-padding-inline-start" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-pe")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-padding-inline-end" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-pt")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-padding-top" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-pr")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-padding-right" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-pb")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-padding-bottom" => none })
+        .build(),
+      Atom::builder()
+        .name("scroll-pl")
+        .values(vec!["spacing", "negative-spacing"])
+        .styles(indexmap! { "scroll-padding-left" => none })
+        .build(),
+      Atom::builder()
+        .name("snap-align")
+        .description("Control the scroll snap alignment of an element.")
+        .values(vec!["scroll-snap-align"])
+        .styles(indexmap! { "scroll-snap-align" => none })
+        .build(),
+      Atom::builder()
+        .name("snap-stop")
+        .description("Control whether you can skip past possible snap positions.")
+        .values(vec!["scroll-snap-stop"])
+        .styles(indexmap! { "scroll-snap-stop" => none })
+        .build(),
+      Atom::builder()
+        .name("snap")
+        .description("Control how strictly snap points are enforced in a snap container.")
+        .values(vec!["scroll-snap-type"])
+        .styles(indexmap! { "scroll-snap-stop" => none })
+        .build(),
+      Atom::builder()
+        .name("touch")
+        .description("Control how an element can be scrolled and zoomed on touchscreens.")
+        .values(vec!["touch-action"])
+        .styles(indexmap! { "touch-action" => none })
+        .build(),
+      Atom::builder()
+        .name("select")
+        .description("Control whether the user can select text in an element.")
+        .values(vec!["user-select"])
+        .styles(indexmap! { "user-select" => none })
+        .build(),
+      Atom::builder()
+        .name("will-change")
+        .description("Optimize upcoming animations of elements that are expected to change.")
+        .values(vec!["will-change"])
+        .styles(indexmap! { "will-change" => none })
         .build(),
     ]
   };

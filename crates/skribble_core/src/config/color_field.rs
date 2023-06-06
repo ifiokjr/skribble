@@ -47,10 +47,10 @@ impl ColorField {
   }
 
   pub fn get_fields(&self) -> IndexMap<String, NamedColorField> {
-    let mut fields = DEFAULT_COLOR_FIELDS.clone();
+    let mut fields = self.named_fields.clone();
 
     if !self.disable_named_defaults {
-      fields.extend(self.named_fields.clone());
+      fields.extend(DEFAULT_COLOR_FIELDS.clone());
     }
 
     fields
@@ -66,6 +66,12 @@ pub struct NamedColorField {
   #[serde(default = "default_fallback_color")]
   #[builder(default = default_fallback_color(), setter(into))]
   pub fallback_color: String,
+}
+
+impl<T: Into<String>> From<T> for NamedColorField {
+  fn from(value: T) -> Self {
+    Self::builder().value(value).build()
+  }
 }
 
 fn default_fallback_color() -> String {

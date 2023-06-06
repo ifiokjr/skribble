@@ -538,28 +538,6 @@ lazy_static! {
         })
         .build(),
       ValueSet::builder()
-        .name("aspect-ratio")
-        .description("Ratio of the width to the height")
-        .values(indexmap! {
-          "1" => "1",
-          "2" => "2",
-          "3" => "3",
-          "4" => "4",
-          "5" => "5",
-          "6" => "6",
-          "7" => "7",
-          "8" => "8",
-          "9" => "9",
-          "10" => "10",
-          "11" => "11",
-          "12" => "12",
-          "13" => "13",
-          "14" => "14",
-          "15" => "15",
-          "16" => "16",
-        })
-        .build(),
-      ValueSet::builder()
         .name("grid-count")
         .description("Column and row counts for grid layouts")
         .values(indexmap! {
@@ -1678,6 +1656,131 @@ lazy_static! {
           "lighten" => "lighten",
           "color-dodge" => "color-dodge",
           "color-burn" => "color-burn",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("cursor")
+        .values(indexmap! {
+          "auto" => "auto",
+          "default" => "default",
+          "pointer" => "pointer",
+          "wait" => "wait",
+          "text" => "text",
+          "move" => "move",
+          "help" => "help",
+          "not-allowed" => "not-allowed",
+          "none" => "none",
+          "context-menu" => "context-menu",
+          "progress" => "progress",
+          "cell" => "cell",
+          "crosshair" => "crosshair",
+          "vertical-text" => "vertical-text",
+          "alias" => "alias",
+          "copy" => "copy",
+          "no-drop" => "no-drop",
+          "grab" => "grab",
+          "grabbing" => "grabbing",
+          "all-scroll" => "all-scroll",
+          "col-resize" => "col-resize",
+          "row-resize" => "row-resize",
+          "n-resize" => "n-resize",
+          "e-resize" => "e-resize",
+          "s-resize" => "s-resize",
+          "w-resize" => "w-resize",
+          "ne-resize" => "ne-resize",
+          "nw-resize" => "nw-resize",
+          "se-resize" => "se-resize",
+          "sw-resize" => "sw-resize",
+          "ew-resize" => "ew-resize",
+          "ns-resize" => "ns-resize",
+          "nesw-resize" => "nesw-resize",
+          "nwse-resize" => "nwse-resize",
+          "zoom-in" => "zoom-in",
+          "zoom-out" => "zoom-out",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("pointer-events")
+        .values(indexmap! {
+          "none" => "none",
+          "auto" => "auto",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("resize")
+        .values(indexmap! {
+          "none" => "none",
+          "y" => "vertical",
+          "x" => "horizontal",
+          "both" => "both",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("scroll-behavior")
+        .values(indexmap! {
+          "auto" => "auto",
+          "smooth" => "smooth",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("scroll-snap-align")
+        .values(indexmap! {
+          "start" => "start",
+          "end" => "end",
+          "center" => "center",
+          "none" => "none",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("scroll-snap-stop")
+        .values(indexmap! {
+          "normal" => "normal",
+          "always" => "always",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("scroll-snap-type")
+        .values({
+          let wrapped_scroll_snap_strictness = Placeholder::wrapped_variable("scroll-snap-strictness", None);
+          indexmap! {
+            "none" => "none".to_string(),
+            "x" => format!("x {wrapped_scroll_snap_strictness}"),
+            "y" => format!("y {wrapped_scroll_snap_strictness}"),
+            "both" => format!("both {wrapped_scroll_snap_strictness}"),
+          }
+        })
+        .build(),
+      ValueSet::builder()
+        .name("touch-action")
+        .values(indexmap! {
+          "auto" => "auto",
+          "none" => "none",
+          "pan-x" => "pan-x",
+          "pan-left" => "pan-left",
+          "pan-right" => "pan-right",
+          "pan-y" => "pan-y",
+          "pan-up" => "pan-up",
+          "pan-down" => "pan-down",
+          "pinch-zoom" => "pinch-zoom",
+          "manipulation" => "manipulation",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("user-select")
+        .values(indexmap! {
+          "none" => "none",
+          "text" => "text",
+          "all" => "all",
+          "auto" => "auto",
+        })
+        .build(),
+      ValueSet::builder()
+        .name("will-change")
+        .values(indexmap! {
+          "auto" => "auto",
+          "scroll" => "scroll-position",
+          "contents" => "contents",
+          "transform" => "transform",
         })
         .build(),
     ]

@@ -433,7 +433,12 @@ fn generate_atoms(
     match atom.values {
       LinkedValues::Color(ref color_field) => {
         for name in color_field.named_fields.keys() {
-          generate_color_method(name, sections, method_names, None)?;
+          let unique_name = format!("{atom_name}-{name}");
+          generate_color_method(&unique_name, sections, method_names, None)?;
+          let color_trait_name = get_color_trait_name(unique_name);
+          struct_content.push(format!(
+            "impl {color_trait_name} for {atom_struct_name} {{}}"
+          ));
         }
 
         let mut valid_color_names = Vec::<String>::new();
@@ -450,7 +455,7 @@ fn generate_atoms(
           valid_color_names.extend(config.palette.keys().cloned());
         }
 
-        let fields = color_field.get_fields();
+        let fields = DEFAULT_COLOR_FIELDS.clone();
         valid_color_names.extend(fields.keys().cloned());
 
         for name in valid_color_names.iter() {

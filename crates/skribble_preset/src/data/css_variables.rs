@@ -2,6 +2,7 @@ use indexmap::indexmap;
 use lazy_static::lazy_static;
 use skribble_core::CssVariable;
 use skribble_core::Placeholder;
+use skribble_core::PropertySyntax;
 use skribble_core::PropertySyntaxValue;
 use skribble_core::PropertySyntaxValue::Color;
 
@@ -471,6 +472,15 @@ lazy_static! {
     CssVariable::builder()
       .name("shadow-color")
       .variable("--shadow-color")
+      .build(),
+    CssVariable::builder()
+      .name("scroll-snap-strictness")
+      .variable("--scroll-snap-strictness")
+      .syntax(PropertySyntax::List(vec![
+        "mandatory".into(),
+        "proximity".into()
+      ]))
+      .value("proximity")
       .build(),
   ];
 }

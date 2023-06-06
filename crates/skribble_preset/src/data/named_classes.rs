@@ -61,6 +61,8 @@ lazy_static! {
       )
     };
 
+    let scroll_snap_strictness = Placeholder::variable("scroll-snap-strictness");
+
     vec![
       NamedClass::builder()
         .name("group")
@@ -187,6 +189,21 @@ lazy_static! {
         .name("backdrop-filter-none")
         .layer("priority-class")
         .styles(indexmap! { "backdrop-filter" => "none" })
+        .build(),
+      NamedClass::builder()
+        .name("appearance-none")
+        .description("Suppress native form control styling.")
+        .styles(indexmap! { "appearance" => "none" })
+        .build(),
+      NamedClass::builder()
+        .name("snap-mandatory")
+        .description("Use the `snap-mandatory` utility to force a snap container to always come to rest on a snap point.")
+        .styles(indexmap! { &scroll_snap_strictness => "mandatory" })
+        .build(),
+      NamedClass::builder()
+        .name("snap-proximity")
+        .description("Use the `snap-proximity` utility to make a snap container come to rest on snap points that are close in proximity. This is the browser default.")
+        .styles(indexmap! { &scroll_snap_strictness => "proximity" })
         .build(),
     ]
   };
