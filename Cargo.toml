@@ -5,6 +5,7 @@ resolver = "2"
 
 [workspace.dependencies]
 abi_stable = "0.11"
+clap = "4"
 derivative = "2"
 derive_more = "0.99"
 dirs = "5"
@@ -18,9 +19,9 @@ indexmap = "1"
 indoc = "2"
 insta = "1"
 lazy_static = "1"
-lightningcss = "1.0.0-alpha.41"
+lightningcss = "1.0.0-alpha.42"
 logos = "0.13"
-"miette" = "5"
+miette = "5"
 palette = "0.7"
 readonly = "0.2"
 regex = "1"
@@ -42,6 +43,7 @@ wasmer-wasi = "3"
 
 # Internal crates
 skribble = { path = "./crates/skribble", version = "0.0.0" }
+skribble_cli = { path = "./crates/skribble_cli", version = "0.0.0" }
 skribble_color = { path = "./crates/skribble_color", version = "0.0.0" }
 skribble_core = { path = "./crates/skribble_core", version = "0.0.0" }
 skribble_lsp = { path = "./crates/skribble_lsp", version = "0.0.0" }

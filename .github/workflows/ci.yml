@@ -19,6 +19,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
+        rust: [stable, 1.69.0, nightly]
     runs-on: ${{ matrix.os }}
     steps:
       - name: checkout repository
@@ -29,6 +30,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           nix-cache: /tmp/nixcache
+          rust: ${{ matrix.rust }}
 
       - name: cache rust dependencies
         uses: Swatinem/rust-cache@v2
