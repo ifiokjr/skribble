@@ -1,5 +1,5 @@
 name: devenv
-description: "Setup development environment with devenv"
+description: 'Setup development environment with devenv'
 inputs:
   github-token:
     description: Provide a github token
@@ -28,7 +28,7 @@ runs:
       shell: bash
 
     - name: install nix
-      uses: cachix/install-nix-action@v21
+      uses: cachix/install-nix-action@v22
       with:
         github_access_token: ${{ inputs.github-token }}
 
@@ -45,7 +45,7 @@ runs:
     - name: install devenv.sh
       run: |
         cachix use devenv
-        nix profile install --accept-flake-config github:cachix/devenv/v0.6.2
+        nix profile install --accept-flake-config github:cachix/devenv/v0.6.3
       shell: bash
 
     - name: run devenv in ci

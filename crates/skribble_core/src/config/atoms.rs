@@ -33,154 +33,151 @@ use crate::RunnerConfig;
 pub struct Atoms(Vec<Atom>);
 
 impl From<Vec<Atom>> for Atoms {
-  fn from(value: Vec<Atom>) -> Self {
-    Self(value)
-  }
+	fn from(value: Vec<Atom>) -> Self {
+		Self(value)
+	}
 }
 
 impl IntoIterator for Atoms {
-  type IntoIter = std::vec::IntoIter<Self::Item>;
-  type Item = Atom;
+	type IntoIter = std::vec::IntoIter<Self::Item>;
+	type Item = Atom;
 
-  fn into_iter(self) -> Self::IntoIter {
-    self.0.into_iter()
-  }
+	fn into_iter(self) -> Self::IntoIter {
+		self.0.into_iter()
+	}
 }
 
 impl<V> FromIterator<V> for Atoms
 where
-  V: Into<Atom>,
+	V: Into<Atom>,
 {
-  fn from_iter<T: IntoIterator<Item = V>>(iter: T) -> Self {
-    let rules = iter.into_iter().map(|value| value.into()).collect();
+	fn from_iter<T: IntoIterator<Item = V>>(iter: T) -> Self {
+		let rules = iter.into_iter().map(|value| value.into()).collect();
 
-    Self(rules)
-  }
+		Self(rules)
+	}
 }
 
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
 pub struct Atom {
-  /// The name of the atom.
-  #[builder(setter(into))]
-  pub name: String,
-  /// A markdown description of what this media query should be used for.
-  #[builder(default, setter(into, strip_option))]
-  pub description: Option<String>,
-  /// The priority of this items.
-  #[builder(default, setter(into))]
-  pub priority: Priority,
-  /// The styles for the specific named rule. All values left as [None] will be
-  /// filled with the value provided by the `atom`.
-  #[builder(setter(into))]
-  pub styles: OptionalStringMap,
-  /// Modify the selector.
-  #[builder(default, setter(into, strip_option))]
-  pub modifier: Option<String>,
-  /// Reference the named classes that are automatically injected whenever this
-  /// atom is added.
-  #[builder(default, setter(into))]
-  pub children: StringList,
-  /// The names of the [`ValueSet`]s that will be used to generate the styles.
-  #[builder(default, setter(into))]
-  pub values: LinkedValues,
+	/// The name of the atom.
+	#[builder(setter(into))]
+	pub name: String,
+	/// A markdown description of what this media query should be used for.
+	#[builder(default, setter(into, strip_option))]
+	pub description: Option<String>,
+	/// The priority of this items.
+	#[builder(default, setter(into))]
+	pub priority: Priority,
+	/// The styles for the specific named rule. All values left as [None] will
+	/// be filled with the value provided by the `atom`.
+	#[builder(setter(into))]
+	pub styles: OptionalStringMap,
+	/// Modify the selector.
+	#[builder(default, setter(into, strip_option))]
+	pub modifier: Option<String>,
+	/// Reference the named classes that are automatically injected whenever
+	/// this atom is added.
+	#[builder(default, setter(into))]
+	pub children: StringList,
+	/// The names of the [`ValueSet`]s that will be used to generate the styles.
+	#[builder(default, setter(into))]
+	pub values: LinkedValues,
 }
 
 impl Atom {
-  pub fn write_css_properties(
-    &self,
-    writer: &mut dyn Write,
-    config: &RunnerConfig,
-    name: impl AsRef<str>,
-    transformers: &IndexSet<ClassTransformer>,
-  ) -> AnyEmptyResult {
-    self
-      .values
-      .write_css_properties(writer, config, self, name, transformers)?;
-    Ok(())
-  }
+	pub fn write_css_properties(
+		&self,
+		writer: &mut dyn Write,
+		config: &RunnerConfig,
+		name: impl AsRef<str>,
+		transformers: &IndexSet<ClassTransformer>,
+	) -> AnyEmptyResult {
+		self.values
+			.write_css_properties(writer, config, self, name, transformers)?;
+		Ok(())
+	}
 
-  pub fn write_css_argument(
-    &self,
-    writer: &mut dyn Write,
-    config: &RunnerConfig,
-    argument: &Arguments,
-    transformers: &IndexSet<ClassTransformer>,
-  ) -> AnyEmptyResult {
-    self
-      .values
-      .write_css_argument(writer, config, self, argument, transformers)?;
-    Ok(())
-  }
+	pub fn write_css_argument(
+		&self,
+		writer: &mut dyn Write,
+		config: &RunnerConfig,
+		argument: &Arguments,
+		transformers: &IndexSet<ClassTransformer>,
+	) -> AnyEmptyResult {
+		self.values
+			.write_css_argument(writer, config, self, argument, transformers)?;
+		Ok(())
+	}
 
-  /// Add a value to the [`ValueSet`] that will be used to generate the builtin
-  /// style variants.
-  pub fn add_value_set<V: Into<PrioritizedString>>(&mut self, value: V) -> &Self {
-    if let LinkedValues::Values(value_set) = &mut self.values {
-      value_set.insert(value.into());
-    }
+	/// Add a value to the [`ValueSet`] that will be used to generate the
+	/// builtin style variants.
+	pub fn add_value_set<V: Into<PrioritizedString>>(&mut self, value: V) -> &Self {
+		if let LinkedValues::Values(value_set) = &mut self.values {
+			value_set.insert(value.into());
+		}
 
-    self
-  }
+		self
+	}
 
-  pub fn merge(&mut self, other: impl Into<Self>) {
-    let other = other.into();
+	pub fn merge(&mut self, other: impl Into<Self>) {
+		let other = other.into();
 
-    if self.name != other.name {
-      panic!("Cannot merge atoms with different names");
-    }
+		if self.name != other.name {
+			panic!("Cannot merge atoms with different names");
+		}
 
-    if let Some(description) = other.description {
-      self.description = Some(description);
-    }
+		if let Some(description) = other.description {
+			self.description = Some(description);
+		}
 
-    if other.priority < self.priority {
-      self.priority = other.priority;
-    }
+		if other.priority < self.priority {
+			self.priority = other.priority;
+		}
 
-    self.styles.extend(other.styles);
-    self.values.merge(other.values);
-  }
+		self.styles.extend(other.styles);
+		self.values.merge(other.values);
+	}
 
-  pub fn collect_css_variables(
-    &self,
-    config: &RunnerConfig,
-    name: Option<&String>,
-    css_variables: &mut IndexSet<String>,
-  ) {
-    if let Some(name) = name {
-      self
-        .values
-        .collect_css_variables(config, name, css_variables);
-    }
+	pub fn collect_css_variables(
+		&self,
+		config: &RunnerConfig,
+		name: Option<&String>,
+		css_variables: &mut IndexSet<String>,
+	) {
+		if let Some(name) = name {
+			self.values
+				.collect_css_variables(config, name, css_variables);
+		}
 
-    for (key, value) in self.styles.iter() {
-      Placeholder::collect_css_variables(key, css_variables);
+		for (key, value) in self.styles.iter() {
+			Placeholder::collect_css_variables(key, css_variables);
 
-      if let Some(ref content) = value {
-        Placeholder::collect_css_variables(content, css_variables);
-      }
-    }
-  }
+			if let Some(ref content) = value {
+				Placeholder::collect_css_variables(content, css_variables);
+			}
+		}
+	}
 
-  pub fn get_type(&self) -> AtomType {
-    match self.values {
-      LinkedValues::Values(_) => AtomType::Values,
-      LinkedValues::Color(_) => AtomType::Color,
-      LinkedValues::Keyframes => AtomType::Keyframes,
-    }
-  }
+	pub fn get_type(&self) -> AtomType {
+		match self.values {
+			LinkedValues::Values(_) => AtomType::Values,
+			LinkedValues::Color(_) => AtomType::Color,
+			LinkedValues::Keyframes => AtomType::Keyframes,
+		}
+	}
 }
 
 #[derive(Copy, Clone, Debug, Deserialize, PartialEq, Eq, Serialize)]
 pub enum AtomType {
-  Values,
-  Color,
-  Keyframes,
+	Values,
+	Color,
+	Keyframes,
 }
 
 impl Hash for AtomType {
-  fn hash<H: Hasher>(&self, state: &mut H) {
-    std::mem::discriminant(self).hash(state);
-  }
+	fn hash<H: Hasher>(&self, state: &mut H) {
+		std::mem::discriminant(self).hash(state);
+	}
 }

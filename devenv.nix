@@ -9,6 +9,7 @@
     pkgs.dprint
     pkgs.mdbook
     pkgs.rustup
+    pkgs.yamlfmt
   ];
 
   # Scripts

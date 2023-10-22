@@ -4,8 +4,8 @@ use skribble_core::Placeholder;
 use skribble_core::ValueSet;
 
 lazy_static! {
-  pub(crate) static ref ATOM_VALUE_SETS: Vec<ValueSet> = {
-    vec![
+	pub(crate) static ref ATOM_VALUE_SETS: Vec<ValueSet> = {
+		vec![
       ValueSet::builder()
         .name("screen-reader")
         .values(indexmap! {
@@ -1784,5 +1784,5 @@ lazy_static! {
         })
         .build(),
     ]
-  };
+	};
 }

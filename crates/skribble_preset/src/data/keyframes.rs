@@ -4,21 +4,23 @@ use skribble_core::Keyframe;
 use skribble_core::Placeholder;
 
 lazy_static! {
-  pub(crate) static ref KEYFRAMES: Vec<Keyframe> = {
-    let enter_opacity = Placeholder::wrapped_variable("enter-opacity", Some("1".into()));
-    let enter_translate_x = Placeholder::wrapped_variable("enter-translate-x", Some("0".into()));
-    let enter_translate_y = Placeholder::wrapped_variable("enter-translate-y", Some("0".into()));
-    let enter_scale_x = Placeholder::wrapped_variable("enter-scale-x", Some("1".into()));
-    let enter_scale_y = Placeholder::wrapped_variable("enter-scale-y", Some("1".into()));
-    let enter_rotate = Placeholder::wrapped_variable("enter-rotate", Some("0deg".into()));
-    let exit_opacity = Placeholder::wrapped_variable("exit-opacity", Some("1".into()));
-    let exit_translate_x = Placeholder::wrapped_variable("exit-translate-x", Some("0".into()));
-    let exit_translate_y = Placeholder::wrapped_variable("exit-translate-y", Some("0".into()));
-    let exit_scale_x = Placeholder::wrapped_variable("exit-scale-x", Some("1".into()));
-    let exit_scale_y = Placeholder::wrapped_variable("exit-scale-y", Some("1".into()));
-    let exit_rotate = Placeholder::wrapped_variable("exit-rotate", Some("0deg".into()));
+	pub(crate) static ref KEYFRAMES: Vec<Keyframe> = {
+		let enter_opacity = Placeholder::wrapped_variable("enter-opacity", Some("1".into()));
+		let enter_translate_x =
+			Placeholder::wrapped_variable("enter-translate-x", Some("0".into()));
+		let enter_translate_y =
+			Placeholder::wrapped_variable("enter-translate-y", Some("0".into()));
+		let enter_scale_x = Placeholder::wrapped_variable("enter-scale-x", Some("1".into()));
+		let enter_scale_y = Placeholder::wrapped_variable("enter-scale-y", Some("1".into()));
+		let enter_rotate = Placeholder::wrapped_variable("enter-rotate", Some("0deg".into()));
+		let exit_opacity = Placeholder::wrapped_variable("exit-opacity", Some("1".into()));
+		let exit_translate_x = Placeholder::wrapped_variable("exit-translate-x", Some("0".into()));
+		let exit_translate_y = Placeholder::wrapped_variable("exit-translate-y", Some("0".into()));
+		let exit_scale_x = Placeholder::wrapped_variable("exit-scale-x", Some("1".into()));
+		let exit_scale_y = Placeholder::wrapped_variable("exit-scale-y", Some("1".into()));
+		let exit_rotate = Placeholder::wrapped_variable("exit-rotate", Some("0deg".into()));
 
-    vec![
+		vec![
       Keyframe::builder()
         .name("in")
         .rules(indexmap! {
@@ -72,5 +74,5 @@ lazy_static! {
         .description("Manages the keyframes for the bounce animation.")
         .build(),
     ]
-  };
+	};
 }

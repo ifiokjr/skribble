@@ -19,7 +19,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        rust: [stable, 1.69.0, nightly]
+        rust: [stable, 1.70.0, nightly]
     runs-on: ${{ matrix.os }}
     steps:
       - name: checkout repository

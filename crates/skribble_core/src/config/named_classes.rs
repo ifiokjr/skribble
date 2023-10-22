@@ -18,109 +18,109 @@ use crate::RunnerConfig;
 pub struct NamedClasses(Vec<NamedClass>);
 
 impl From<&[NamedClass]> for NamedClasses {
-  fn from(value: &[NamedClass]) -> Self {
-    Self(value.to_vec())
-  }
+	fn from(value: &[NamedClass]) -> Self {
+		Self(value.to_vec())
+	}
 }
 
 impl From<Vec<NamedClass>> for NamedClasses {
-  fn from(value: Vec<NamedClass>) -> Self {
-    Self(value)
-  }
+	fn from(value: Vec<NamedClass>) -> Self {
+		Self(value)
+	}
 }
 
 impl IntoIterator for NamedClasses {
-  type IntoIter = std::vec::IntoIter<Self::Item>;
-  type Item = NamedClass;
+	type IntoIter = std::vec::IntoIter<Self::Item>;
+	type Item = NamedClass;
 
-  fn into_iter(self) -> Self::IntoIter {
-    self.0.into_iter()
-  }
+	fn into_iter(self) -> Self::IntoIter {
+		self.0.into_iter()
+	}
 }
 
 impl<V> FromIterator<V> for NamedClasses
 where
-  V: Into<NamedClass>,
+	V: Into<NamedClass>,
 {
-  fn from_iter<T: IntoIterator<Item = V>>(iter: T) -> Self {
-    let classes = iter.into_iter().map(|value| value.into()).collect();
+	fn from_iter<T: IntoIterator<Item = V>>(iter: T) -> Self {
+		let classes = iter.into_iter().map(|value| value.into()).collect();
 
-    Self(classes)
-  }
+		Self(classes)
+	}
 }
 
 /// A named class is a class with all it's values defined ahead of time.
 #[derive(Debug, Clone, PartialEq, Default, Serialize, Deserialize, TypedBuilder)]
 #[serde(rename_all = "camelCase")]
 pub struct NamedClass {
-  /// The name of the standalone class.
-  #[builder(setter(into))]
-  pub name: String,
-  /// A markdown description of what this standalone class should be used for.
-  #[builder(default, setter(into, strip_option))]
-  pub description: Option<String>,
-  /// The priority of this items.
-  #[builder(default, setter(into))]
-  pub priority: Priority,
-  /// The styles for the specific class.
-  #[builder(setter(into))]
-  pub styles: StringMap,
-  /// Determines if this a reference class. If true, the class be injected only
-  /// when an atom references it. It can't be used directly.
-  #[serde(default)]
-  #[builder(default, setter(into))]
-  pub reference: bool,
-  /// Determines which layer the class should be placed in. This can be used to
-  /// .
-  #[serde(default)]
-  #[builder(default, setter(into, strip_option))]
-  pub layer: Option<String>,
-  /// A modifier for the selector of the class.
-  #[builder(default, setter(into, strip_option))]
-  pub modifier: Option<String>,
+	/// The name of the standalone class.
+	#[builder(setter(into))]
+	pub name: String,
+	/// A markdown description of what this standalone class should be used for.
+	#[builder(default, setter(into, strip_option))]
+	pub description: Option<String>,
+	/// The priority of this items.
+	#[builder(default, setter(into))]
+	pub priority: Priority,
+	/// The styles for the specific class.
+	#[builder(setter(into))]
+	pub styles: StringMap,
+	/// Determines if this a reference class. If true, the class be injected
+	/// only when an atom references it. It can't be used directly.
+	#[serde(default)]
+	#[builder(default, setter(into))]
+	pub reference: bool,
+	/// Determines which layer the class should be placed in. This can be used
+	/// to .
+	#[serde(default)]
+	#[builder(default, setter(into, strip_option))]
+	pub layer: Option<String>,
+	/// A modifier for the selector of the class.
+	#[builder(default, setter(into, strip_option))]
+	pub modifier: Option<String>,
 }
 
 impl NamedClass {
-  pub fn merge(&mut self, other: impl Into<Self>) {
-    let other = other.into();
+	pub fn merge(&mut self, other: impl Into<Self>) {
+		let other = other.into();
 
-    if self.name != other.name {
-      panic!("Cannot merge named classes with different names");
-    }
+		if self.name != other.name {
+			panic!("Cannot merge named classes with different names");
+		}
 
-    if let Some(description) = other.description {
-      self.description = Some(description);
-    }
+		if let Some(description) = other.description {
+			self.description = Some(description);
+		}
 
-    if other.priority < self.priority {
-      self.priority = other.priority;
-    }
+		if other.priority < self.priority {
+			self.priority = other.priority;
+		}
 
-    self.styles.extend(other.styles);
-  }
+		self.styles.extend(other.styles);
+	}
 
-  pub fn write_css_properties(
-    &self,
-    writer: &mut dyn Write,
-    config: &RunnerConfig,
-  ) -> AnyEmptyResult {
-    for (property, css_value) in self.styles.iter() {
-      let property = Placeholder::normalize(property, config);
-      let css_value = Placeholder::normalize(css_value, config);
-      writeln!(writer, "{}: {};", property, css_value)?;
-    }
+	pub fn write_css_properties(
+		&self,
+		writer: &mut dyn Write,
+		config: &RunnerConfig,
+	) -> AnyEmptyResult {
+		for (property, css_value) in self.styles.iter() {
+			let property = Placeholder::normalize(property, config);
+			let css_value = Placeholder::normalize(css_value, config);
+			writeln!(writer, "{}: {};", property, css_value)?;
+		}
 
-    Ok(())
-  }
+		Ok(())
+	}
 
-  pub fn collect_css_variables(&self, css_variables: &mut IndexSet<String>) {
-    for (property, css_value) in self.styles.iter() {
-      Placeholder::collect_css_variables(property, css_variables);
-      Placeholder::collect_css_variables(css_value, css_variables);
-    }
-  }
+	pub fn collect_css_variables(&self, css_variables: &mut IndexSet<String>) {
+		for (property, css_value) in self.styles.iter() {
+			Placeholder::collect_css_variables(property, css_variables);
+			Placeholder::collect_css_variables(css_value, css_variables);
+		}
+	}
 
-  pub fn is_reference(&self) -> bool {
-    self.reference
-  }
+	pub fn is_reference(&self) -> bool {
+		self.reference
+	}
 }

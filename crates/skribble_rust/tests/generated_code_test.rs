@@ -28,5 +28,5 @@ use similar_asserts::assert_eq;
 )]
 #[case::variables(vars().primary(), "--sk-p")]
 fn generated_class_names(#[case] input: impl AsRef<str>, #[case] expected: &str) {
-  assert_eq!(input.as_ref(), expected);
+	assert_eq!(input.as_ref(), expected);
 }

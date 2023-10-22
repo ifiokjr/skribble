@@ -11,7 +11,7 @@
 /// This is taken from [clap](https://docs.rs/clap_builder/4.2.1/src/clap_builder/macros.rs.html#16).
 #[macro_export]
 macro_rules! crate_version {
-  () => {
-    env!("CARGO_PKG_VERSION")
-  };
+	() => {
+		env!("CARGO_PKG_VERSION")
+	};
 }

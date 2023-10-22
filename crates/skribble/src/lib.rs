@@ -25,48 +25,48 @@ use crate::rust::RustPlugin;
 /// The plugins can be overriden since the `StyleConfig` can be mutated with
 /// methods like `config.add_plugins()` and `config.remove_plugin()`.
 pub fn create_config() -> StyleConfig {
-  let default_preset = PresetPlugin::builder().build();
-  let rust_plugin = RustPlugin::builder().build();
+	let default_preset = PresetPlugin::builder().build();
+	let rust_plugin = RustPlugin::builder().build();
 
-  let config: StyleConfig = StyleConfig::builder()
-    .plugins(vec![
-      PluginContainer::from(default_preset),
-      PluginContainer::from(rust_plugin),
-    ])
-    .build();
+	let config: StyleConfig = StyleConfig::builder()
+		.plugins(vec![
+			PluginContainer::from(default_preset),
+			PluginContainer::from(rust_plugin),
+		])
+		.build();
 
-  config
+	config
 }
 
 /// Generate the files that created by plugins and also the css files.
 pub fn run_with_config(config: StyleConfig) -> Result<SkribbleRunner> {
-  let mut runner = SkribbleRunner::try_new(config)?;
-  let _ = runner.initialize()?;
-  let _generate_files = runner.generate()?; // Write the files to their destinations.
-  let _css_result = runner.scan()?; // Write the css file to the destination.
+	let mut runner = SkribbleRunner::try_new(config)?;
+	let _ = runner.initialize()?;
+	let _generate_files = runner.generate()?; // Write the files to their destinations.
+	let _css_result = runner.scan()?; // Write the css file to the destination.
 
-  Ok(runner)
+	Ok(runner)
 }
 
 /// Generate the files that created by plugins and also the css files.
 ///
 /// This is likely to change a lot in the future.
 pub fn run(
-  config: StyleConfig,
-  cwd: impl AsRef<Path>,
-  vfs: Option<VfsPath>,
+	config: StyleConfig,
+	cwd: impl AsRef<Path>,
+	vfs: Option<VfsPath>,
 ) -> Result<SkribbleRunner> {
-  let mut runner = SkribbleRunner::new(config, cwd, vfs);
-  let _ = runner.initialize()?;
-  let mut generated_files = runner.generate()?;
-  let css_result = runner.scan()?;
+	let mut runner = SkribbleRunner::new(config, cwd, vfs);
+	let _ = runner.initialize()?;
+	let mut generated_files = runner.generate()?;
+	let css_result = runner.scan()?;
 
-  // Write the files to their destinations.
-  runner.write_files(&mut generated_files)?;
-  // Write the css file to the destination.
-  runner.write_css(&css_result)?;
+	// Write the files to their destinations.
+	runner.write_files(&mut generated_files)?;
+	// Write the css file to the destination.
+	runner.write_css(&css_result)?;
 
-  Ok(runner)
+	Ok(runner)
 }
 
 #[cfg(test)]

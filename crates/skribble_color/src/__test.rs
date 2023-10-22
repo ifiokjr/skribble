@@ -13,12 +13,12 @@ use crate::ExtractedParams;
 #[case("20 20 10", ("20,20,10", false, false, false))]
 #[case("20 20 10/10", ("20,20,10,10", false, true, true))]
 fn valid_extracted_params(#[case] input: &str, #[case] expected: (&str, bool, bool, bool)) {
-  let extracted: ExtractedParams = input.into();
-  assert_eq!(extracted.params.join(","), expected.0);
-  assert_eq!(extracted.is_comma_separated(), expected.1);
-  assert_eq!(extracted.is_slash_separated(), expected.2);
-  assert_eq!(extracted.is_alpha(), expected.3);
-  assert_eq!(extracted.is_valid(), true);
+	let extracted: ExtractedParams = input.into();
+	assert_eq!(extracted.params.join(","), expected.0);
+	assert_eq!(extracted.is_comma_separated(), expected.1);
+	assert_eq!(extracted.is_slash_separated(), expected.2);
+	assert_eq!(extracted.is_alpha(), expected.3);
+	assert_eq!(extracted.is_valid(), true);
 }
 
 #[rstest]
@@ -31,8 +31,8 @@ fn valid_extracted_params(#[case] input: &str, #[case] expected: (&str, bool, bo
 #[case::trailing_slash("20 20 10 10/")]
 #[case::slash_with_no_content("20 20 10/ ")]
 fn invalid_extracted_params(#[case] input: &str) {
-  let extracted: ExtractedParams = input.into();
-  assert_eq!(extracted.is_valid(), false);
+	let extracted: ExtractedParams = input.into();
+	assert_eq!(extracted.is_valid(), false);
 }
 
 #[rstest]
@@ -66,8 +66,8 @@ fn invalid_extracted_params(#[case] input: &str) {
 #[case("lab(61 -9.8 -52.2 / 0.79)", "lab(61% -9.800003 -52.199997 / 0.79)")]
 #[case("lab(61 -9.8 -52.2 / 79%)", "lab(61% -9.800003 -52.199997 / 0.79)")]
 fn valid_colors(#[case] input: &str, #[case] expected: &str) {
-  let color: Color = input.parse().unwrap();
-  assert_eq!(color.to_string(), expected);
+	let color: Color = input.parse().unwrap();
+	assert_eq!(color.to_string(), expected);
 }
 
 #[rstest]
@@ -84,6 +84,6 @@ fn valid_colors(#[case] input: &str, #[case] expected: &str) {
 #[case("hwb(100, 50%, 50%, 0.5)", ColorError::InvalidHwb)]
 #[case("hwb(100px 50% 50% / 0.5)", ColorError::InvalidHwb)]
 fn invalid_colors(#[case] input: &str, #[case] expected: ColorError) {
-  let color = input.parse::<Color>();
-  assert_eq!(color.unwrap_err(), expected);
+	let color = input.parse::<Color>();
+	assert_eq!(color.unwrap_err(), expected);
 }

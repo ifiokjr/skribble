@@ -16,12 +16,12 @@ One problem with atomic css libraries is that css selectors that appear later in
 In the css that is generated the `padding` property, added by the `.p::$px` class appears before the `padding-right` property, added by the `.pr::$2` class. This is usually what is desired.
 
 ```css
-.p\:\:\$px {
-  padding: 1px;
+.p::$px {
+    padding: 1px;
 }
 
-.pr\:\:\$2 {
-  padding-right: 4px;
+.pr::$2 {
+    padding-right: 4px;
 }
 ```
 
@@ -31,7 +31,7 @@ Imagine we want to set the padding on a component.
 import { c } from "skribble/client";
 
 const OverridePadding = (props) => {
-  return <div className={[c.p.$px, c.pr.$2].join(" ")}>{props.children}</div>;
+	return <div className={[c.p.$px, c.pr.$2].join(" ")}>{props.children}</div>;
 };
 ```
 
@@ -43,7 +43,7 @@ But, as shown below, when we try to do the opposite and override the `padding-ri
 import { c } from "skribble/client";
 
 const FailedOverridePadding = (props) => {
-  return <div className={[c.pr.$2, c.p.$px].join(" ")}>{props.children}</div>;
+	return <div className={[c.pr.$2, c.p.$px].join(" ")}>{props.children}</div>;
 };
 ```
 

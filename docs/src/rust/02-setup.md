@@ -8,8 +8,8 @@ use skribble::create_config;
 use skribble::run_with_config;
 
 fn main() -> Result<()> {
-  let config = create_config();
-  run_with_config(config)?;
-  Ok(())
+	let config = create_config();
+	run_with_config(config)?;
+	Ok(())
 }
 ```
